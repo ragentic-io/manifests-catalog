@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_amadeus.com_images_en_technolog
 
 | | |
 | --- | --- |
-| Signed bundle | `1b8b4f09b195266e9b95a6e7493519fe7b1ee598e4bb5e6d0b17347d376f5d4b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_amadeus.com_images_en_technolog
 
 42 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/shopping/flight-offers` | getFlightOffers | Return list of Flight Offers based on searching criteria. |
-| POST | `/shopping/flight-offers` | searchFlightOffers | Return list of Flight Offers based on posted searching criteria. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/shopping/flight-offers` | getFlightOffers | `originLocationCode`*, `destinationLocationCode`*, `departureDate`*, `returnDate`, `adults`*, `children`, `infants`, `travelClass`, `includedAirlineCodes`, `excludedAirlineCodes`, `nonStop`, `currencyCode`, `maxPrice`, `max` | object | yes | Return list of Flight Offers based on searching criteria. |
+| POST | `/shopping/flight-offers` | searchFlightOffers | `X-HTTP-Method-Override`*, body*: GetFlightOffersQuery | object |  | Return list of Flight Offers based on posted searching criteria. |

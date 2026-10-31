@@ -153,6 +153,116 @@
         "from": "handwrytten-com-50ca2009b6",
         "kind": "EXPOSES",
         "to": "operation:post:/templates/view"
+      },
+      {
+        "from": "operation:post:/auth/authorization",
+        "kind": "ACCEPTS",
+        "to": "schema:Login"
+      },
+      {
+        "from": "operation:post:/auth/register",
+        "kind": "ACCEPTS",
+        "to": "schema:Registration"
+      },
+      {
+        "from": "operation:post:/cards/list",
+        "kind": "RETURNS",
+        "to": "schema:Card"
+      },
+      {
+        "from": "operation:post:/cards/view",
+        "kind": "RETURNS",
+        "to": "schema:CardDetails"
+      },
+      {
+        "from": "operation:get:/countries/list",
+        "kind": "RETURNS",
+        "to": "schema:Country"
+      },
+      {
+        "from": "operation:get:/fonts/list",
+        "kind": "RETURNS",
+        "to": "schema:Font"
+      },
+      {
+        "from": "operation:get:/fonts/listForCustomizer",
+        "kind": "RETURNS",
+        "to": "schema:FontForCustomizer"
+      },
+      {
+        "from": "operation:get:/giftCards/view",
+        "kind": "RETURNS",
+        "to": "schema:GiftCard"
+      },
+      {
+        "from": "operation:post:/giftCards/view",
+        "kind": "RETURNS",
+        "to": "schema:GiftCard"
+      },
+      {
+        "from": "operation:post:/profile/recipientsList",
+        "kind": "RETURNS",
+        "to": "schema:recipientAddress"
+      },
+      {
+        "from": "operation:get:/templateCategories/list",
+        "kind": "RETURNS",
+        "to": "schema:TemplateCategory"
+      },
+      {
+        "from": "operation:post:/templateCategories/list",
+        "kind": "RETURNS",
+        "to": "schema:TemplateCategory"
+      },
+      {
+        "from": "operation:post:/templates/create",
+        "kind": "RETURNS",
+        "to": "schema:Template"
+      },
+      {
+        "from": "operation:get:/templates/list",
+        "kind": "RETURNS",
+        "to": "schema:Template"
+      },
+      {
+        "from": "operation:post:/templates/list",
+        "kind": "RETURNS",
+        "to": "schema:Template"
+      },
+      {
+        "from": "operation:post:/templates/update",
+        "kind": "RETURNS",
+        "to": "schema:Template"
+      },
+      {
+        "from": "operation:post:/templates/view",
+        "kind": "RETURNS",
+        "to": "schema:Template"
+      },
+      {
+        "from": "schema:CardDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ImageArray"
+      },
+      {
+        "from": "schema:Country",
+        "kind": "REFERENCES",
+        "to": "schema:State"
+      },
+      {
+        "from": "schema:GiftCard",
+        "kind": "REFERENCES",
+        "to": "schema:Denomination"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:Card"
       }
     ],
     "nodes": [
@@ -168,8 +278,28 @@
         "name": "login",
         "path": "/auth/authorization",
         "pointer": "#/paths/~1auth~1authorization/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Login"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Logs in to an existing account"
+        "summary": "Logs in to an existing account",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
@@ -179,8 +309,28 @@
         "name": "changePassword",
         "path": "/auth/changePassword",
         "pointer": "#/paths/~1auth~1changePassword/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "405"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "changes a user's password"
+        "summary": "changes a user's password",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
@@ -190,8 +340,28 @@
         "name": "logout",
         "path": "/auth/logout",
         "pointer": "#/paths/~1auth~1logout/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "405"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "logs out a session uid"
+        "summary": "logs out a session uid",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
@@ -201,8 +371,28 @@
         "name": "register",
         "path": "/auth/register",
         "pointer": "#/paths/~1auth~1register/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Registration"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "405"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Registers a new account"
+        "summary": "Registers a new account",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
@@ -212,8 +402,28 @@
         "name": "resetPasswordRequest",
         "path": "/auth/resetPasswordRequest",
         "pointer": "#/paths/~1auth~1resetPasswordRequest/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "405"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "resets a user's password"
+        "summary": "resets a user's password",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
@@ -223,30 +433,82 @@
         "name": "CreateCustomCard",
         "path": "/cards/createCustomCard",
         "pointer": "#/paths/~1cards~1createCustomCard/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new custom card"
+        "summary": "Create a new custom card",
+        "tags": [
+          "customizer"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Filterable card list.",
         "id": "operation:get:/cards/list",
         "kind": "operation",
         "method": "get",
         "name": "simpleListCards",
         "path": "/cards/list",
         "pointer": "#/paths/~1cards~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists information on cards"
+        "summary": "Lists information on cards",
+        "tags": [
+          "cards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Simple listing of cards.",
         "id": "operation:post:/cards/list",
         "kind": "operation",
         "method": "post",
         "name": "listCards",
         "path": "/cards/list",
         "pointer": "#/paths/~1cards~1list/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Card[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Lists information on cards"
+        "summary": "Lists information on cards",
+        "tags": [
+          "cards"
+        ]
       },
       {
         "deprecated": false,
@@ -254,32 +516,94 @@
         "kind": "operation",
         "method": "post",
         "name": "uploadCustomLogo",
+        "parameters": [
+          {
+            "description": "upload images for customc cards",
+            "in": "formData",
+            "name": "file",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "description": "set to cover or header",
+            "in": "formData",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "uid of the user",
+            "in": "formData",
+            "name": "uid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/cards/uploadCustomLogo",
         "pointer": "#/paths/~1cards~1uploadCustomLogo/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "upload logo or cover image for card"
+        "summary": "upload logo or cover image for card",
+        "tags": [
+          "customizer"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Full card details",
         "id": "operation:post:/cards/view",
         "kind": "operation",
         "method": "post",
         "name": "filterableCardDetails",
         "path": "/cards/view",
         "pointer": "#/paths/~1cards~1view/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CardDetails"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Provides full information on a specific card"
+        "summary": "Provides full information on a specific card",
+        "tags": [
+          "cards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the countries to which Handwritten can mail, their associated country ID and any costs",
         "id": "operation:get:/countries/list",
         "kind": "operation",
         "method": "get",
         "name": "get /countries/list",
         "path": "/countries/list",
         "pointer": "#/paths/~1countries~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Country[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "countries"
+        ]
       },
       {
         "deprecated": false,
@@ -289,8 +613,18 @@
         "name": "fontsList",
         "path": "/fonts/list",
         "pointer": "#/paths/~1fonts~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Font[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists Handwryting styles available for use"
+        "summary": "Lists Handwryting styles available for use",
+        "tags": [
+          "fonts"
+        ]
       },
       {
         "deprecated": false,
@@ -300,41 +634,91 @@
         "name": "fontsListForCustomizer",
         "path": "/fonts/listForCustomizer",
         "pointer": "#/paths/~1fonts~1listForCustomizer/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FontForCustomizer[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists fonts available for use with the card customizer"
+        "summary": "Lists fonts available for use with the card customizer",
+        "tags": [
+          "customizer"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns images and details (and associated denominations) of all gift cards",
         "id": "operation:get:/giftCards/view",
         "kind": "operation",
         "method": "get",
         "name": "getGiftCardDetails",
         "path": "/giftCards/view",
         "pointer": "#/paths/~1giftCards~1view/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GiftCard[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists information on gift cards"
+        "summary": "Lists information on gift cards",
+        "tags": [
+          "giftCards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns images and details (and associated denominations) of all gift cards",
         "id": "operation:post:/giftCards/view",
         "kind": "operation",
         "method": "post",
         "name": "giftCardDetails",
         "path": "/giftCards/view",
         "pointer": "#/paths/~1giftCards~1view/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GiftCard[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Lists information on gift cards"
+        "summary": "Lists information on gift cards",
+        "tags": [
+          "giftCards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends an order in one step.",
         "id": "operation:post:/orders/singleStepOrder",
         "kind": "operation",
         "method": "post",
         "name": "singleStepOrder",
         "path": "/orders/singleStepOrder",
         "pointer": "#/paths/~1orders~1singleStepOrder/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "sends an order in a single step.  This is much easier than using other order commands"
+        "summary": "sends an order in a single step.  This is much easier than using other order commands",
+        "tags": [
+          "orders"
+        ]
       },
       {
         "deprecated": false,
@@ -344,8 +728,25 @@
         "name": "userAddress",
         "path": "/profile/address",
         "pointer": "#/paths/~1profile~1address/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "gets the user's return address information"
+        "summary": "gets the user's return address information",
+        "tags": [
+          "profile"
+        ]
       },
       {
         "deprecated": false,
@@ -355,8 +756,25 @@
         "name": "deleteRecipient",
         "path": "/profile/deleteRecipient",
         "pointer": "#/paths/~1profile~1deleteRecipient/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "deletes an existing recipient address"
+        "summary": "deletes an existing recipient address",
+        "tags": [
+          "address"
+        ]
       },
       {
         "deprecated": false,
@@ -366,8 +784,25 @@
         "name": "addRecipientAddress",
         "path": "/profile/profileAddRecipient",
         "pointer": "#/paths/~1profile~1profileAddRecipient/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "add a new recipient address"
+        "summary": "add a new recipient address",
+        "tags": [
+          "address"
+        ]
       },
       {
         "deprecated": false,
@@ -377,8 +812,25 @@
         "name": "recipientsList",
         "path": "/profile/recipientsList",
         "pointer": "#/paths/~1profile~1recipientsList/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "recipientAddress[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "list the addresses in the user's account"
+        "summary": "list the addresses in the user's account",
+        "tags": [
+          "address"
+        ]
       },
       {
         "deprecated": false,
@@ -388,8 +840,25 @@
         "name": "updateUserAddress",
         "path": "/profile/updateAddress",
         "pointer": "#/paths/~1profile~1updateAddress/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "update the user's return address information"
+        "summary": "update the user's return address information",
+        "tags": [
+          "profile"
+        ]
       },
       {
         "deprecated": false,
@@ -399,74 +868,185 @@
         "name": "updateRecipient",
         "path": "/profile/updateRecipient",
         "pointer": "#/paths/~1profile~1updateRecipient/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "updates an existing new recipient address"
+        "summary": "updates an existing new recipient address",
+        "tags": [
+          "address"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the common template categories of all users.",
         "id": "operation:get:/templateCategories/list",
         "kind": "operation",
         "method": "get",
         "name": "getTemplateCategories",
         "path": "/templateCategories/list",
         "pointer": "#/paths/~1templateCategories~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TemplateCategory[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List template categories"
+        "summary": "List template categories",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the template categories of all users.",
         "id": "operation:post:/templateCategories/list",
         "kind": "operation",
         "method": "post",
         "name": "getTemplateCategoriesAuthorized",
         "path": "/templateCategories/list",
         "pointer": "#/paths/~1templateCategories~1list/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TemplateCategory[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List template categories"
+        "summary": "List template categories",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new Template in the User’s Account",
         "id": "operation:post:/templates/create",
         "kind": "operation",
         "method": "post",
         "name": "createTemplate",
         "path": "/templates/create",
         "pointer": "#/paths/~1templates~1create/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Template[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a New Template in the User’s Account"
+        "summary": "Creates a New Template in the User’s Account",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a template in the User’s Account",
         "id": "operation:post:/templates/delete",
         "kind": "operation",
         "method": "post",
         "name": "deleteTemplate",
         "path": "/templates/delete",
         "pointer": "#/paths/~1templates~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Deletes a users template"
+        "summary": "Deletes a users template",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the common template categories of all users.",
         "id": "operation:get:/templates/list",
         "kind": "operation",
         "method": "get",
         "name": "getTemplates",
         "path": "/templates/list",
         "pointer": "#/paths/~1templates~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Template[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List template categories"
+        "summary": "List template categories",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the template categories of all users.",
         "id": "operation:post:/templates/list",
         "kind": "operation",
         "method": "post",
         "name": "getTemplatessAuthorized",
         "path": "/templates/list",
         "pointer": "#/paths/~1templates~1list/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Template[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "List template categories"
+        "summary": "List template categories",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
@@ -476,99 +1056,150 @@
         "name": "updateTemplate",
         "path": "/templates/update",
         "pointer": "#/paths/~1templates~1update/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Template[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates an Existing Template in the User’s Account"
+        "summary": "Updates an Existing Template in the User’s Account",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Provides all details on a template",
         "id": "operation:post:/templates/view",
         "kind": "operation",
         "method": "post",
         "name": "getTemplateDetail",
         "path": "/templates/view",
         "pointer": "#/paths/~1templates~1view/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Template"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get all info on a template"
+        "summary": "Get all info on a template",
+        "tags": [
+          "templates"
+        ]
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:Card",
         "kind": "schema",
-        "name": "Card"
+        "name": "Card",
+        "type": "object"
       },
       {
         "id": "schema:CardDetails",
         "kind": "schema",
-        "name": "CardDetails"
+        "name": "CardDetails",
+        "type": "object"
       },
       {
         "id": "schema:Country",
         "kind": "schema",
-        "name": "Country"
+        "name": "Country",
+        "type": "object"
       },
       {
         "id": "schema:Denomination",
         "kind": "schema",
-        "name": "Denomination"
+        "name": "Denomination",
+        "type": "object"
       },
       {
         "id": "schema:Font",
         "kind": "schema",
-        "name": "Font"
+        "name": "Font",
+        "type": "object"
       },
       {
         "id": "schema:FontForCustomizer",
         "kind": "schema",
-        "name": "FontForCustomizer"
+        "name": "FontForCustomizer",
+        "type": "object"
       },
       {
         "id": "schema:GiftCard",
         "kind": "schema",
-        "name": "GiftCard"
+        "name": "GiftCard",
+        "type": "object"
       },
       {
         "id": "schema:ImageArray",
         "kind": "schema",
-        "name": "ImageArray"
+        "name": "ImageArray",
+        "type": "object"
       },
       {
         "id": "schema:Login",
         "kind": "schema",
-        "name": "Login"
+        "name": "Login",
+        "type": "object"
       },
       {
         "id": "schema:Order",
         "kind": "schema",
-        "name": "Order"
+        "name": "Order",
+        "type": "object"
       },
       {
         "id": "schema:Registration",
         "kind": "schema",
-        "name": "Registration"
+        "name": "Registration",
+        "type": "object"
       },
       {
         "id": "schema:State",
         "kind": "schema",
-        "name": "State"
+        "name": "State",
+        "type": "object"
       },
       {
         "id": "schema:Template",
         "kind": "schema",
-        "name": "Template"
+        "name": "Template",
+        "type": "object"
       },
       {
         "id": "schema:TemplateCategory",
         "kind": "schema",
-        "name": "TemplateCategory"
+        "name": "TemplateCategory",
+        "type": "object"
       },
       {
         "id": "schema:recipientAddress",
         "kind": "schema",
-        "name": "recipientAddress"
+        "name": "recipientAddress",
+        "type": "object"
       }
     ]
   },

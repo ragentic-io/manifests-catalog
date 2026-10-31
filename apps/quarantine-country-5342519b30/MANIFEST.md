@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `fe4f38b39a0ac6376329700286627b216f10593caaeb2cb7aa2b5cbe0c27e6ad` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/spots/day` | get /spots/day | Resolve change chart by day |
-| GET | `/spots/month` | get /spots/month | Resolve change chart for week |
-| GET | `/spots/week` | get /spots/week | Resolve change chart for week |
-| GET | `/spots/year` | get /spots/year | Resolve change chart for week |
-| GET | `/summary/latest` | get /summary/latest | Get latest coronavirus situation report |
-| GET | `/summary/region` | get /summary/region | Resolve report for region |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/spots/day` | get /spots/day | `region`*, `date` | SpotsResponse | yes | Resolve change chart by day |
+| GET | `/spots/month` | get /spots/month | `region`*, `date` | SpotsResponse | yes | Resolve change chart for week |
+| GET | `/spots/week` | get /spots/week | `region`*, `date` | SpotsResponse | yes | Resolve change chart for week |
+| GET | `/spots/year` | get /spots/year | `region`*, `date` | SpotsResponse | yes | Resolve change chart for week |
+| GET | `/summary/latest` | get /summary/latest | `date` | ReportResponse | yes | Get latest coronavirus situation report |
+| GET | `/summary/region` | get /summary/region | `region`*, `date` | ReportResponse | yes | Resolve report for region |

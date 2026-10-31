@@ -8,6 +8,161 @@
         "from": "betfair-com-84ad41b192",
         "kind": "EXPOSES",
         "to": "operation:post:/request"
+      },
+      {
+        "from": "operation:post:/request",
+        "kind": "ACCEPTS",
+        "to": "schema:AllRequestTypesExample"
+      },
+      {
+        "from": "schema:AllRequestTypesExample",
+        "kind": "REFERENCES",
+        "to": "schema:AuthenticationMessage"
+      },
+      {
+        "from": "schema:AllRequestTypesExample",
+        "kind": "REFERENCES",
+        "to": "schema:HeartbeatMessage"
+      },
+      {
+        "from": "schema:AllRequestTypesExample",
+        "kind": "REFERENCES",
+        "to": "schema:MarketSubscriptionMessage"
+      },
+      {
+        "from": "schema:AllRequestTypesExample",
+        "kind": "REFERENCES",
+        "to": "schema:OrderSubscriptionMessage"
+      },
+      {
+        "from": "schema:AllResponseTypesExample",
+        "kind": "REFERENCES",
+        "to": "schema:ConnectionMessage"
+      },
+      {
+        "from": "schema:AllResponseTypesExample",
+        "kind": "REFERENCES",
+        "to": "schema:MarketChangeMessage"
+      },
+      {
+        "from": "schema:AllResponseTypesExample",
+        "kind": "REFERENCES",
+        "to": "schema:OrderChangeMessage"
+      },
+      {
+        "from": "schema:AllResponseTypesExample",
+        "kind": "REFERENCES",
+        "to": "schema:StatusMessage"
+      },
+      {
+        "from": "schema:AuthenticationMessage",
+        "kind": "REFERENCES",
+        "to": "schema:RequestMessage"
+      },
+      {
+        "from": "schema:ConnectionMessage",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMessage"
+      },
+      {
+        "from": "schema:HeartbeatMessage",
+        "kind": "REFERENCES",
+        "to": "schema:RequestMessage"
+      },
+      {
+        "from": "schema:KeyLineDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:KeyLineSelection"
+      },
+      {
+        "from": "schema:MarketChange",
+        "kind": "REFERENCES",
+        "to": "schema:MarketDefinition"
+      },
+      {
+        "from": "schema:MarketChange",
+        "kind": "REFERENCES",
+        "to": "schema:RunnerChange"
+      },
+      {
+        "from": "schema:MarketChangeMessage",
+        "kind": "REFERENCES",
+        "to": "schema:MarketChange"
+      },
+      {
+        "from": "schema:MarketChangeMessage",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMessage"
+      },
+      {
+        "from": "schema:MarketDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:KeyLineDefinition"
+      },
+      {
+        "from": "schema:MarketDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:PriceLadderDefinition"
+      },
+      {
+        "from": "schema:MarketDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:RunnerDefinition"
+      },
+      {
+        "from": "schema:MarketSubscriptionMessage",
+        "kind": "REFERENCES",
+        "to": "schema:MarketDataFilter"
+      },
+      {
+        "from": "schema:MarketSubscriptionMessage",
+        "kind": "REFERENCES",
+        "to": "schema:MarketFilter"
+      },
+      {
+        "from": "schema:MarketSubscriptionMessage",
+        "kind": "REFERENCES",
+        "to": "schema:RequestMessage"
+      },
+      {
+        "from": "schema:OrderChangeMessage",
+        "kind": "REFERENCES",
+        "to": "schema:OrderMarketChange"
+      },
+      {
+        "from": "schema:OrderChangeMessage",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMessage"
+      },
+      {
+        "from": "schema:OrderMarketChange",
+        "kind": "REFERENCES",
+        "to": "schema:OrderRunnerChange"
+      },
+      {
+        "from": "schema:OrderRunnerChange",
+        "kind": "REFERENCES",
+        "to": "schema:Order"
+      },
+      {
+        "from": "schema:OrderRunnerChange",
+        "kind": "REFERENCES",
+        "to": "schema:StrategyMatchChange"
+      },
+      {
+        "from": "schema:OrderSubscriptionMessage",
+        "kind": "REFERENCES",
+        "to": "schema:OrderFilter"
+      },
+      {
+        "from": "schema:OrderSubscriptionMessage",
+        "kind": "REFERENCES",
+        "to": "schema:RequestMessage"
+      },
+      {
+        "from": "schema:StatusMessage",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseMessage"
       }
     ],
     "nodes": [
@@ -17,144 +172,185 @@
       },
       {
         "deprecated": false,
+        "description": "This is a socket protocol delimited by CRLF (not http)",
         "id": "operation:post:/request",
         "kind": "operation",
         "method": "post",
         "name": "post /request",
         "path": "/request",
         "pointer": "#/paths/~1request/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AllRequestTypesExample"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "AllResponseTypesExample"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:AllRequestTypesExample",
         "kind": "schema",
-        "name": "AllRequestTypesExample"
+        "name": "AllRequestTypesExample",
+        "type": "object"
       },
       {
         "id": "schema:AllResponseTypesExample",
         "kind": "schema",
-        "name": "AllResponseTypesExample"
+        "name": "AllResponseTypesExample",
+        "type": "object"
       },
       {
         "id": "schema:AuthenticationMessage",
         "kind": "schema",
-        "name": "AuthenticationMessage"
+        "name": "AuthenticationMessage",
+        "type": "RequestMessage|object"
       },
       {
         "id": "schema:ConnectionMessage",
         "kind": "schema",
-        "name": "ConnectionMessage"
+        "name": "ConnectionMessage",
+        "type": "ResponseMessage|object"
       },
       {
         "id": "schema:HeartbeatMessage",
         "kind": "schema",
-        "name": "HeartbeatMessage"
+        "name": "HeartbeatMessage",
+        "type": "RequestMessage|object"
       },
       {
         "id": "schema:KeyLineDefinition",
         "kind": "schema",
-        "name": "KeyLineDefinition"
+        "name": "KeyLineDefinition",
+        "type": "object"
       },
       {
         "id": "schema:KeyLineSelection",
         "kind": "schema",
-        "name": "KeyLineSelection"
+        "name": "KeyLineSelection",
+        "type": "object"
       },
       {
         "id": "schema:MarketChange",
         "kind": "schema",
-        "name": "MarketChange"
+        "name": "MarketChange",
+        "type": "object"
       },
       {
         "id": "schema:MarketChangeMessage",
         "kind": "schema",
-        "name": "MarketChangeMessage"
+        "name": "MarketChangeMessage",
+        "type": "ResponseMessage|object"
       },
       {
         "id": "schema:MarketDataFilter",
         "kind": "schema",
-        "name": "MarketDataFilter"
+        "name": "MarketDataFilter",
+        "type": "object"
       },
       {
         "id": "schema:MarketDefinition",
         "kind": "schema",
-        "name": "MarketDefinition"
+        "name": "MarketDefinition",
+        "type": "object"
       },
       {
         "id": "schema:MarketFilter",
         "kind": "schema",
-        "name": "MarketFilter"
+        "name": "MarketFilter",
+        "type": "object"
       },
       {
         "id": "schema:MarketSubscriptionMessage",
         "kind": "schema",
-        "name": "MarketSubscriptionMessage"
+        "name": "MarketSubscriptionMessage",
+        "type": "RequestMessage|object"
       },
       {
         "id": "schema:Order",
         "kind": "schema",
-        "name": "Order"
+        "name": "Order",
+        "type": "object"
       },
       {
         "id": "schema:OrderChangeMessage",
         "kind": "schema",
-        "name": "OrderChangeMessage"
+        "name": "OrderChangeMessage",
+        "type": "ResponseMessage|object"
       },
       {
         "id": "schema:OrderFilter",
         "kind": "schema",
-        "name": "OrderFilter"
+        "name": "OrderFilter",
+        "type": "object"
       },
       {
         "id": "schema:OrderMarketChange",
         "kind": "schema",
-        "name": "OrderMarketChange"
+        "name": "OrderMarketChange",
+        "type": "object"
       },
       {
         "id": "schema:OrderRunnerChange",
         "kind": "schema",
-        "name": "OrderRunnerChange"
+        "name": "OrderRunnerChange",
+        "type": "object"
       },
       {
         "id": "schema:OrderSubscriptionMessage",
         "kind": "schema",
-        "name": "OrderSubscriptionMessage"
+        "name": "OrderSubscriptionMessage",
+        "type": "RequestMessage|object"
       },
       {
         "id": "schema:PriceLadderDefinition",
         "kind": "schema",
-        "name": "PriceLadderDefinition"
+        "name": "PriceLadderDefinition",
+        "type": "object"
       },
       {
         "id": "schema:RequestMessage",
         "kind": "schema",
-        "name": "RequestMessage"
+        "name": "RequestMessage",
+        "type": "object"
       },
       {
         "id": "schema:ResponseMessage",
         "kind": "schema",
-        "name": "ResponseMessage"
+        "name": "ResponseMessage",
+        "type": "object"
       },
       {
         "id": "schema:RunnerChange",
         "kind": "schema",
-        "name": "RunnerChange"
+        "name": "RunnerChange",
+        "type": "object"
       },
       {
         "id": "schema:RunnerDefinition",
         "kind": "schema",
-        "name": "RunnerDefinition"
+        "name": "RunnerDefinition",
+        "type": "object"
       },
       {
         "id": "schema:StatusMessage",
         "kind": "schema",
-        "name": "StatusMessage"
+        "name": "StatusMessage",
+        "type": "ResponseMessage|object"
       },
       {
         "id": "schema:StrategyMatchChange",
         "kind": "schema",
-        "name": "StrategyMatchChange"
+        "name": "StrategyMatchChange",
+        "type": "object"
       }
     ]
   },

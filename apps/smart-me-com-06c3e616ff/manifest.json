@@ -162,22 +162,22 @@
       {
         "from": "smart-me-com-06c3e616ff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/SubUser/{id}"
-      },
-      {
-        "from": "smart-me-com-06c3e616ff",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/SubUser/{id}"
       },
       {
         "from": "smart-me-com-06c3e616ff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/User"
+        "to": "operation:delete:/api/SubUser/{id}"
       },
       {
         "from": "smart-me-com-06c3e616ff",
         "kind": "EXPOSES",
         "to": "operation:get:/api/User"
+      },
+      {
+        "from": "smart-me-com-06c3e616ff",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/User"
       },
       {
         "from": "smart-me-com-06c3e616ff",
@@ -252,11 +252,6 @@
       {
         "from": "smart-me-com-06c3e616ff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/folder/settings/{id}"
-      },
-      {
-        "from": "smart-me-com-06c3e616ff",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/folder/settings/{id}"
       },
       {
@@ -267,12 +262,17 @@
       {
         "from": "smart-me-com-06c3e616ff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/folder/user/assign"
+        "to": "operation:delete:/api/folder/settings/{id}"
       },
       {
         "from": "smart-me-com-06c3e616ff",
         "kind": "EXPOSES",
         "to": "operation:post:/api/folder/user/assign"
+      },
+      {
+        "from": "smart-me-com-06c3e616ff",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/folder/user/assign"
       },
       {
         "from": "smart-me-com-06c3e616ff",
@@ -323,6 +323,371 @@
         "from": "smart-me-com-06c3e616ff",
         "kind": "EXPOSES",
         "to": "operation:post:/api/pico/tryenablecablelock/{id}"
+      },
+      {
+        "from": "operation:put:/api/AccessToken",
+        "kind": "ACCEPTS",
+        "to": "schema:AccessTokenToPut"
+      },
+      {
+        "from": "operation:get:/api/Account/login",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:post:/api/Account/login",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:post:/api/Actions",
+        "kind": "ACCEPTS",
+        "to": "schema:ActionToPost"
+      },
+      {
+        "from": "operation:get:/api/Actions/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ActionInformation"
+      },
+      {
+        "from": "operation:get:/api/AdditionalDeviceInformation/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AdditionalDeviceInformation"
+      },
+      {
+        "from": "operation:get:/api/CustomDevice",
+        "kind": "RETURNS",
+        "to": "schema:CustomDeviceToPost"
+      },
+      {
+        "from": "operation:post:/api/CustomDevice",
+        "kind": "ACCEPTS",
+        "to": "schema:CustomDeviceToPost"
+      },
+      {
+        "from": "operation:post:/api/CustomDevice",
+        "kind": "RETURNS",
+        "to": "schema:CustomDeviceToPost"
+      },
+      {
+        "from": "operation:get:/api/CustomDevice/{id}",
+        "kind": "RETURNS",
+        "to": "schema:CustomDeviceToPost"
+      },
+      {
+        "from": "operation:get:/api/DeviceBySerial",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:get:/api/Devices",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:post:/api/Devices",
+        "kind": "ACCEPTS",
+        "to": "schema:DeviceToPost"
+      },
+      {
+        "from": "operation:post:/api/Devices",
+        "kind": "RETURNS",
+        "to": "schema:DeviceToPost"
+      },
+      {
+        "from": "operation:get:/api/Devices/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:put:/api/Devices/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:get:/api/DevicesByEnergy",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:get:/api/DevicesBySubType",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:get:/api/Folder/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FolderData"
+      },
+      {
+        "from": "operation:get:/api/FolderMenu",
+        "kind": "RETURNS",
+        "to": "schema:FolderMenuConfiguration"
+      },
+      {
+        "from": "operation:post:/api/FolderMenu",
+        "kind": "ACCEPTS",
+        "to": "schema:FolderMenuConfiguration"
+      },
+      {
+        "from": "operation:get:/api/Health",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:post:/api/MBus",
+        "kind": "ACCEPTS",
+        "to": "schema:MBusData"
+      },
+      {
+        "from": "operation:post:/api/MBus",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:post:/api/MeterFolderInformation",
+        "kind": "ACCEPTS",
+        "to": "schema:MeterFolderInformationToPost"
+      },
+      {
+        "from": "operation:get:/api/MeterFolderInformation/{id}",
+        "kind": "RETURNS",
+        "to": "schema:MeterFolderInformation"
+      },
+      {
+        "from": "operation:get:/api/MeterValues/{id}",
+        "kind": "RETURNS",
+        "to": "schema:DeviceInPast"
+      },
+      {
+        "from": "operation:get:/api/RegisterForRealtimeApi",
+        "kind": "RETURNS",
+        "to": "schema:RegisterRealtimeApiData"
+      },
+      {
+        "from": "operation:post:/api/RegisterForRealtimeApi",
+        "kind": "ACCEPTS",
+        "to": "schema:RegisterRealtimeApiData"
+      },
+      {
+        "from": "operation:post:/api/SmartMeDeviceConfiguration",
+        "kind": "ACCEPTS",
+        "to": "schema:SmartMeDeviceConfigurationContainer"
+      },
+      {
+        "from": "operation:get:/api/SmartMeDeviceConfiguration/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SmartMeDeviceConfigurationContainer"
+      },
+      {
+        "from": "operation:post:/api/SubUser",
+        "kind": "ACCEPTS",
+        "to": "schema:SubUserData"
+      },
+      {
+        "from": "operation:get:/api/SubUser/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SubUserData"
+      },
+      {
+        "from": "operation:get:/api/User",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:delete:/api/User",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:get:/api/Values/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ValuesData"
+      },
+      {
+        "from": "operation:get:/api/ValuesInPast/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ValuesData"
+      },
+      {
+        "from": "operation:get:/api/ValuesInPastMultiple/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ValuesData"
+      },
+      {
+        "from": "operation:get:/api/VirtualBillingMeterActive",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:post:/api/VirtualBillingMeterActive",
+        "kind": "ACCEPTS",
+        "to": "schema:VMeterToActivate"
+      },
+      {
+        "from": "operation:post:/api/VirtualBillingMeterActive",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:post:/api/VirtualBillingMeterDeactivate",
+        "kind": "ACCEPTS",
+        "to": "schema:VMeterToDeactivate"
+      },
+      {
+        "from": "operation:post:/api/VirtualBillingMeterDeactivate",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:get:/api/VirtualBillingMeters",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:get:/api/VirtualMeterCalculateFormula",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:get:/api/VirtualTariff",
+        "kind": "RETURNS",
+        "to": "schema:VirtualTariffsOfFolder"
+      },
+      {
+        "from": "operation:get:/api/VirtualTariff/{id}",
+        "kind": "RETURNS",
+        "to": "schema:VirtualTariffsOfFolder"
+      },
+      {
+        "from": "operation:get:/api/VirtualTariffConsumption",
+        "kind": "RETURNS",
+        "to": "schema:VirtualTariffConsumptionData"
+      },
+      {
+        "from": "operation:get:/api/VirtualTariffsForProperty/{id}",
+        "kind": "RETURNS",
+        "to": "schema:VirtualTariffsOfFolder"
+      },
+      {
+        "from": "operation:get:/api/folder/settings/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FolderSettings"
+      },
+      {
+        "from": "operation:post:/api/folder/settings/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:FolderSettings"
+      },
+      {
+        "from": "operation:post:/api/folder/settings/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FolderMenuItem"
+      },
+      {
+        "from": "operation:get:/api/oauth/authorize",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:post:/api/oauth/authorize",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:get:/api/pico",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:get:/api/pico/charging/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PicoChargingData"
+      },
+      {
+        "from": "operation:get:/api/pico/history/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PicoChargingHistoryData"
+      },
+      {
+        "from": "operation:get:/api/pico/loadmanagementgroup",
+        "kind": "RETURNS",
+        "to": "schema:PicoLoadmanagementGroupDto"
+      },
+      {
+        "from": "operation:post:/api/pico/loadmanagementgroup/current/{serial}",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "operation:get:/api/pico/loadmanagementgroup/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PicoLoadmanagementGroupDto"
+      },
+      {
+        "from": "operation:get:/api/pico/settings/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PicoSettingsDto"
+      },
+      {
+        "from": "operation:post:/api/pico/tryenablecablelock/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Object"
+      },
+      {
+        "from": "schema:ActionToPost",
+        "kind": "REFERENCES",
+        "to": "schema:ActionToPostItem"
+      },
+      {
+        "from": "schema:CustomDeviceToPost",
+        "kind": "REFERENCES",
+        "to": "schema:CustomDeviceValues"
+      },
+      {
+        "from": "schema:FolderMenuConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:FolderMenuItem"
+      },
+      {
+        "from": "schema:FolderMenuItem",
+        "kind": "REFERENCES",
+        "to": "schema:AutoExportSettings"
+      },
+      {
+        "from": "schema:MeterFolderInformation",
+        "kind": "REFERENCES",
+        "to": "schema:InputInformation"
+      },
+      {
+        "from": "schema:MeterFolderInformation",
+        "kind": "REFERENCES",
+        "to": "schema:OutputInformation"
+      },
+      {
+        "from": "schema:SmartMeDeviceConfigurationContainer",
+        "kind": "REFERENCES",
+        "to": "schema:InputConfigurationContainer"
+      },
+      {
+        "from": "schema:SmartMeDeviceConfigurationContainer",
+        "kind": "REFERENCES",
+        "to": "schema:OutputConfigurationContainer"
+      },
+      {
+        "from": "schema:SmartMeDeviceConfigurationContainer",
+        "kind": "REFERENCES",
+        "to": "schema:SwitchConfigurationContainer"
+      },
+      {
+        "from": "schema:ValuesData",
+        "kind": "REFERENCES",
+        "to": "schema:ValueData"
+      },
+      {
+        "from": "schema:VirtualTariffsOfFolder",
+        "kind": "REFERENCES",
+        "to": "schema:VirtualTariff"
       }
     ],
     "nodes": [
@@ -338,8 +703,29 @@
         "name": "AccessToken_Put",
         "path": "/api/AccessToken",
         "pointer": "#/paths/~1api~1AccessToken/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "AccessTokenToPut"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a Access Token to write on a Card (e.g. NFC)"
+        "summary": "Creates a Access Token to write on a Card (e.g. NFC)",
+        "tags": [
+          "AccessToken"
+        ]
       },
       {
         "deprecated": false,
@@ -349,8 +735,18 @@
         "name": "Account_Login",
         "path": "/api/Account/login",
         "pointer": "#/paths/~1api~1Account~1login/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
@@ -360,8 +756,18 @@
         "name": "post /api/Account/login",
         "path": "/api/Account/login",
         "pointer": "#/paths/~1api~1Account~1login/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
@@ -371,8 +777,28 @@
         "name": "Actions_Post",
         "path": "/api/Actions",
         "pointer": "#/paths/~1api~1Actions/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "ActionToPost"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Set an action for the specified device."
+        "summary": "Set an action for the specified device.",
+        "tags": [
+          "Actions"
+        ]
       },
       {
         "deprecated": false,
@@ -380,10 +806,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Actions_Get",
+        "parameters": [
+          {
+            "description": "The ID of the device",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/Actions/{id}",
         "pointer": "#/paths/~1api~1Actions~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ActionInformation[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all available Actions of a Device"
+        "summary": "Gets all available Actions of a Device",
+        "tags": [
+          "Actions"
+        ]
       },
       {
         "deprecated": false,
@@ -391,21 +836,51 @@
         "kind": "operation",
         "method": "get",
         "name": "AdditionalDeviceInformation_Get",
+        "parameters": [
+          {
+            "description": "The ID of the device",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/AdditionalDeviceInformation/{id}",
         "pointer": "#/paths/~1api~1AdditionalDeviceInformation~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdditionalDeviceInformation"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the additional information (e.g. Firmware Version) about a device."
+        "summary": "Gets the additional information (e.g. Firmware Version) about a device.",
+        "tags": [
+          "AdditionalDeviceInformation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets all Devices",
         "id": "operation:get:/api/CustomDevice",
         "kind": "operation",
         "method": "get",
         "name": "CustomDevice_Get",
         "path": "/api/CustomDevice",
         "pointer": "#/paths/~1api~1CustomDevice/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomDeviceToPost[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all Custom Devices"
+        "summary": "Gets all Custom Devices",
+        "tags": [
+          "CustomDevice"
+        ]
       },
       {
         "deprecated": false,
@@ -415,19 +890,63 @@
         "name": "CustomDevice_Post",
         "path": "/api/CustomDevice",
         "pointer": "#/paths/~1api~1CustomDevice/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "CustomDeviceToPost"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomDeviceToPost"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates or updates a Custom Device or updates it's values."
+        "summary": "Creates or updates a Custom Device or updates it's values.",
+        "tags": [
+          "CustomDevice"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a Device by it's ID",
         "id": "operation:get:/api/CustomDevice/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/CustomDevice/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the device",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/CustomDevice/{id}",
         "pointer": "#/paths/~1api~1CustomDevice~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CustomDeviceToPost"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a Custom Device by it's ID"
+        "summary": "Gets a Custom Device by it's ID",
+        "tags": [
+          "CustomDevice"
+        ]
       },
       {
         "deprecated": false,
@@ -435,10 +954,29 @@
         "kind": "operation",
         "method": "get",
         "name": "DeviceBySerial_Get",
+        "parameters": [
+          {
+            "description": "The Serial Number of the device",
+            "in": "query",
+            "name": "serial",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/DeviceBySerial",
         "pointer": "#/paths/~1api~1DeviceBySerial/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a Device by it's Serial Number. The Serial is the part before the \"-\"."
+        "summary": "Gets a Device by it's Serial Number. The Serial is the part before the \"-\".",
+        "tags": [
+          "DeviceBySerial"
+        ]
       },
       {
         "deprecated": false,
@@ -448,8 +986,18 @@
         "name": "Devices_Get",
         "path": "/api/Devices",
         "pointer": "#/paths/~1api~1Devices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all Devices"
+        "summary": "Gets all Devices",
+        "tags": [
+          "Devices"
+        ]
       },
       {
         "deprecated": false,
@@ -459,8 +1007,32 @@
         "name": "Devices_Post",
         "path": "/api/Devices",
         "pointer": "#/paths/~1api~1Devices/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "DeviceToPost"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeviceToPost"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates or updates a Device or updates it's values."
+        "summary": "Creates or updates a Device or updates it's values.",
+        "tags": [
+          "Devices"
+        ]
       },
       {
         "deprecated": false,
@@ -468,21 +1040,80 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/Devices/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the device",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/Devices/{id}",
         "pointer": "#/paths/~1api~1Devices~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a Device by it's ID"
+        "summary": "Gets a Device by it's ID",
+        "tags": [
+          "Devices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the On/Off Switch on a device For new implementations please use the \"actions\" command",
         "id": "operation:put:/api/Devices/{id}",
         "kind": "operation",
         "method": "put",
         "name": "Devices_Put",
+        "parameters": [
+          {
+            "description": "The ID of the device",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The new state of the switch",
+            "in": "query",
+            "name": "switchState",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "description": "The number of the switch if there are multiple (1 for L1, 3 for L3)",
+            "in": "query",
+            "name": "switchNumber",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Devices/{id}",
         "pointer": "#/paths/~1api~1Devices~1{id}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "405"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Updates the On/Off Switch on a device. \r\n            For new implementations please use the \"actions\" command"
+        "summary": "Updates the On/Off Switch on a device. \r\n            For new implementations please use the \"actions\" command",
+        "tags": [
+          "Devices"
+        ]
       },
       {
         "deprecated": false,
@@ -490,10 +1121,45 @@
         "kind": "operation",
         "method": "get",
         "name": "DevicesByEnergy_Get",
+        "parameters": [
+          {
+            "enum": [
+              "MeterTypeUnknown",
+              "MeterTypeElectricity",
+              "MeterTypeWater",
+              "MeterTypeGas",
+              "MeterTypeHeat",
+              "MeterTypeHCA",
+              "MeterTypeAllMeters",
+              "MeterTypeTemperature",
+              "MeterTypeMBusGateway",
+              "MeterTypeRS485Gateway",
+              "MeterTypeCustomDevice",
+              "MeterTypeCompressedAir",
+              "MeterTypeSolarLog",
+              "MeterTypeVirtualMeter",
+              "MeterTypeWMBusGateway"
+            ],
+            "in": "query",
+            "name": "meterEnergyType",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/DevicesByEnergy",
         "pointer": "#/paths/~1api~1DevicesByEnergy/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all Devices for an Energy Type"
+        "summary": "Gets all Devices for an Energy Type",
+        "tags": [
+          "DevicesByEnergy"
+        ]
       },
       {
         "deprecated": false,
@@ -501,10 +1167,40 @@
         "kind": "operation",
         "method": "get",
         "name": "DevicesBySubType_Get",
+        "parameters": [
+          {
+            "enum": [
+              "MeterSubTypeUnknown",
+              "MeterSubTypeCold",
+              "MeterSubTypeHeat",
+              "MeterSubTypeChargingStation",
+              "MeterSubTypeElectricity",
+              "MeterSubTypeWater",
+              "MeterSubTypeGas",
+              "MeterSubTypeElectricityHeat",
+              "MeterSubTypeTemperature",
+              "MeterSubTypeVirtualBattery"
+            ],
+            "in": "query",
+            "name": "meterSubType",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/DevicesBySubType",
         "pointer": "#/paths/~1api~1DevicesBySubType/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all Devices by it's Sub Type (e.g. E-Charging Station)"
+        "summary": "Gets all Devices by it's Sub Type (e.g. E-Charging Station)",
+        "tags": [
+          "DevicesBySubType"
+        ]
       },
       {
         "deprecated": false,
@@ -512,10 +1208,27 @@
         "kind": "operation",
         "method": "get",
         "name": "FastSendDeviceValues_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/FastSendDeviceValues/{id}",
         "pointer": "#/paths/~1api~1FastSendDeviceValues~1{id}/get",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Force a device to send the data every second (if supported). This for about 30s.\r\n            Don't use this call to force a device to send the data every second for a longer time."
+        "summary": "Force a device to send the data every second (if supported). This for about 30s.\r\n            Don't use this call to force a device to send the data every second for a longer time.",
+        "tags": [
+          "FastSendDeviceValues"
+        ]
       },
       {
         "deprecated": false,
@@ -523,10 +1236,28 @@
         "kind": "operation",
         "method": "get",
         "name": "Folder_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/Folder/{id}",
         "pointer": "#/paths/~1api~1Folder~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FolderData"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the Values for a folder or a meter"
+        "summary": "Gets the Values for a folder or a meter",
+        "tags": [
+          "Folder"
+        ]
       },
       {
         "deprecated": false,
@@ -534,10 +1265,29 @@
         "kind": "operation",
         "method": "get",
         "name": "FolderMenu_Get",
+        "parameters": [
+          {
+            "description": "(optional) Filter for the folders and meters: all: load everything assigned: load only folders and meters that are assigend to a folder unassigend: load only m…",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/FolderMenu",
         "pointer": "#/paths/~1api~1FolderMenu/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FolderMenuConfiguration"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the folder menu items (each item might contain child items)"
+        "summary": "Gets the folder menu items (each item might contain child items)",
+        "tags": [
+          "FolderMenu"
+        ]
       },
       {
         "deprecated": false,
@@ -547,8 +1297,28 @@
         "name": "FolderMenu_Post",
         "path": "/api/FolderMenu",
         "pointer": "#/paths/~1api~1FolderMenu/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "FolderMenuConfiguration"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates and updates the folder menu items"
+        "summary": "Creates and updates the folder menu items",
+        "tags": [
+          "FolderMenu"
+        ]
       },
       {
         "deprecated": false,
@@ -558,8 +1328,18 @@
         "name": "Health_Get",
         "path": "/api/Health",
         "pointer": "#/paths/~1api~1Health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "A method returning HTTP 200 OK when queried.\r\n            It is used by Kubernetes probes to determine whether the app is healthy."
+        "summary": "A method returning HTTP 200 OK when queried.\r\n            It is used by Kubernetes probes to determine whether the app is healthy.",
+        "tags": [
+          "Health"
+        ]
       },
       {
         "deprecated": false,
@@ -569,8 +1349,35 @@
         "name": "MBus_Post",
         "path": "/api/MBus",
         "pointer": "#/paths/~1api~1MBus/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "MBusData"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "M-BUS API: Adds data of a M-BUS Meter to the smart-me Cloud.\r\n            Just send us the M-BUS Telegram (RSP_UD) and we will do the Rest."
+        "summary": "M-BUS API: Adds data of a M-BUS Meter to the smart-me Cloud.\r\n            Just send us the M-BUS Telegram (RSP_UD) and we will do the Rest.",
+        "tags": [
+          "MBus"
+        ]
       },
       {
         "deprecated": false,
@@ -580,8 +1387,28 @@
         "name": "MeterFolderInformation_Post",
         "path": "/api/MeterFolderInformation",
         "pointer": "#/paths/~1api~1MeterFolderInformation/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "MeterFolderInformationToPost"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Sets the Name of a Meter or a Folder"
+        "summary": "Sets the Name of a Meter or a Folder",
+        "tags": [
+          "MeterFolderInformation"
+        ]
       },
       {
         "deprecated": false,
@@ -589,10 +1416,28 @@
         "kind": "operation",
         "method": "get",
         "name": "MeterFolderInformation_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/MeterFolderInformation/{id}",
         "pointer": "#/paths/~1api~1MeterFolderInformation~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MeterFolderInformation"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Beta: Gets the General Information for a Meter or a Folder"
+        "summary": "Beta: Gets the General Information for a Meter or a Folder",
+        "tags": [
+          "MeterFolderInformation"
+        ]
       },
       {
         "deprecated": false,
@@ -600,10 +1445,34 @@
         "kind": "operation",
         "method": "get",
         "name": "MeterValues_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "date",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/api/MeterValues/{id}",
         "pointer": "#/paths/~1api~1MeterValues~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeviceInPast"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the Values for a Meter at a given Date. \r\n            The first Value found before the given Date is returned."
+        "summary": "Gets the Values for a Meter at a given Date. \r\n            The first Value found before the given Date is returned.",
+        "tags": [
+          "MeterValues"
+        ]
       },
       {
         "deprecated": false,
@@ -613,8 +1482,18 @@
         "name": "RegisterForRealtimeApi_Get",
         "path": "/api/RegisterForRealtimeApi",
         "pointer": "#/paths/~1api~1RegisterForRealtimeApi/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RegisterRealtimeApiData[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all registrations for the Realtime API."
+        "summary": "Gets all registrations for the Realtime API.",
+        "tags": [
+          "RegisterForRealtimeApi"
+        ]
       },
       {
         "deprecated": false,
@@ -624,8 +1503,28 @@
         "name": "RegisterForRealtimeApi_Post",
         "path": "/api/RegisterForRealtimeApi",
         "pointer": "#/paths/~1api~1RegisterForRealtimeApi/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "RegisterRealtimeApiData"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates a new registration for the realtime API. The Realtime API sends you the data of the registred devices as soon as we have them on the cloud.\r\n             More Information about the realtime API: https://www.smart-me.com/Description/api/realtimeapi.aspx"
+        "summary": "Creates a new registration for the realtime API. The Realtime API sends you the data of the registred devices as soon as we have them on the cloud.\r\n             More Information about the realtime API: https://www.smart-me.com/Description/api/realtimeapi.aspx",
+        "tags": [
+          "RegisterForRealtimeApi"
+        ]
       },
       {
         "deprecated": false,
@@ -633,10 +1532,28 @@
         "kind": "operation",
         "method": "delete",
         "name": "RegisterForRealtimeApi_Delete",
+        "parameters": [
+          {
+            "description": "The ID of the realtime API registration",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/RegisterForRealtimeApi/{id}",
         "pointer": "#/paths/~1api~1RegisterForRealtimeApi~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Deletes a realtime API registration."
+        "summary": "Deletes a realtime API registration.",
+        "tags": [
+          "RegisterForRealtimeApi"
+        ]
       },
       {
         "deprecated": false,
@@ -646,8 +1563,28 @@
         "name": "SmartMeDeviceConfiguration_Post",
         "path": "/api/SmartMeDeviceConfiguration",
         "pointer": "#/paths/~1api~1SmartMeDeviceConfiguration/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "SmartMeDeviceConfigurationContainer"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Sets the configuration of a smart-me device. The device needs to be online."
+        "summary": "Sets the configuration of a smart-me device. The device needs to be online.",
+        "tags": [
+          "SmartMeDeviceConfiguration"
+        ]
       },
       {
         "deprecated": false,
@@ -655,10 +1592,28 @@
         "kind": "operation",
         "method": "get",
         "name": "SmartMeDeviceConfiguration_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/SmartMeDeviceConfiguration/{id}",
         "pointer": "#/paths/~1api~1SmartMeDeviceConfiguration~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SmartMeDeviceConfigurationContainer"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the configuration of a smart-me device."
+        "summary": "Gets the configuration of a smart-me device.",
+        "tags": [
+          "SmartMeDeviceConfiguration"
+        ]
       },
       {
         "deprecated": false,
@@ -668,19 +1623,28 @@
         "name": "SubUser_Post",
         "path": "/api/SubUser",
         "pointer": "#/paths/~1api~1SubUser/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "SubUserData"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Creates or updates a subuser.\r\n            To create a new user set no ID (empty)"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/SubUser/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "SubUser_Delete",
-        "path": "/api/SubUser/{id}",
-        "pointer": "#/paths/~1api~1SubUser~1{id}/delete",
-        "security": [],
-        "summary": "Delete a subuser"
+        "summary": "Creates or updates a subuser.\r\n            To create a new user set no ID (empty)",
+        "tags": [
+          "SubUser"
+        ]
       },
       {
         "deprecated": false,
@@ -688,21 +1652,56 @@
         "kind": "operation",
         "method": "get",
         "name": "SubUser_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/SubUser/{id}",
         "pointer": "#/paths/~1api~1SubUser~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubUserData"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a sub user. The user must be assigend to the user that makes this call."
+        "summary": "Get a sub user. The user must be assigend to the user that makes this call.",
+        "tags": [
+          "SubUser"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/User",
+        "id": "operation:delete:/api/SubUser/{id}",
         "kind": "operation",
         "method": "delete",
-        "name": "User_Delete",
-        "path": "/api/User",
-        "pointer": "#/paths/~1api~1User/delete",
+        "name": "SubUser_Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/SubUser/{id}",
+        "pointer": "#/paths/~1api~1SubUser~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Triggers user account deletion."
+        "summary": "Delete a subuser",
+        "tags": [
+          "SubUser"
+        ]
       },
       {
         "deprecated": false,
@@ -712,8 +1711,39 @@
         "name": "User_Get",
         "path": "/api/User",
         "pointer": "#/paths/~1api~1User/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the informations for the user."
+        "summary": "Gets the informations for the user.",
+        "tags": [
+          "User"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/User",
+        "kind": "operation",
+        "method": "delete",
+        "name": "User_Delete",
+        "path": "/api/User",
+        "pointer": "#/paths/~1api~1User/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Triggers user account deletion.",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -721,21 +1751,67 @@
         "kind": "operation",
         "method": "get",
         "name": "Values_Get",
+        "parameters": [
+          {
+            "description": "The ID of the device",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/Values/{id}",
         "pointer": "#/paths/~1api~1Values~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValuesData"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all (last) values of a device"
+        "summary": "Gets all (last) values of a device",
+        "tags": [
+          "Values"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the Values for a device at a given Date.",
         "id": "operation:get:/api/ValuesInPast/{id}",
         "kind": "operation",
         "method": "get",
         "name": "ValuesInPast_Get",
+        "parameters": [
+          {
+            "description": "The ID of the device",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the date of the value",
+            "in": "query",
+            "name": "date",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/api/ValuesInPast/{id}",
         "pointer": "#/paths/~1api~1ValuesInPast~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValuesData"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all (last) values of a device\r\n            The first Value found before the given Date is returned."
+        "summary": "Gets all (last) values of a device\r\n            The first Value found before the given Date is returned.",
+        "tags": [
+          "ValuesInPast"
+        ]
       },
       {
         "deprecated": false,
@@ -743,21 +1819,72 @@
         "kind": "operation",
         "method": "get",
         "name": "ValuesInPastMultiple_Get",
+        "parameters": [
+          {
+            "description": "The ID of the device",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The date when the first value should start",
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The date when the last value should start",
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The interval in minutes betwenn the values.",
+            "in": "query",
+            "name": "interval",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/ValuesInPastMultiple/{id}",
         "pointer": "#/paths/~1api~1ValuesInPastMultiple~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ValuesData[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets multiple values of a device. This call needs a smart-me professional licence."
+        "summary": "Gets multiple values of a device. This call needs a smart-me professional licence.",
+        "tags": [
+          "ValuesInPastMultiple"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Beta: Gets all active virtual meters.",
         "id": "operation:get:/api/VirtualBillingMeterActive",
         "kind": "operation",
         "method": "get",
         "name": "VirtualBillingMeterActive_Get",
         "path": "/api/VirtualBillingMeterActive",
         "pointer": "#/paths/~1api~1VirtualBillingMeterActive/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Beta: Gets all active virtual meters"
+        "summary": "Beta: Gets all active virtual meters",
+        "tags": [
+          "VirtualBillingMeterActive"
+        ]
       },
       {
         "deprecated": false,
@@ -767,8 +1894,38 @@
         "name": "VirtualBillingMeterActive_Post",
         "path": "/api/VirtualBillingMeterActive",
         "pointer": "#/paths/~1api~1VirtualBillingMeterActive/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "VMeterToActivate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Beta: Virtual Meter API: Activates a Meter and add the Consumption to a Virtual Meter assosiated with the User."
+        "summary": "Beta: Virtual Meter API: Activates a Meter and add the Consumption to a Virtual Meter assosiated with the User.",
+        "tags": [
+          "VirtualBillingMeterActive"
+        ]
       },
       {
         "deprecated": false,
@@ -778,8 +1935,38 @@
         "name": "VirtualBillingMeterDeactivate_Post",
         "path": "/api/VirtualBillingMeterDeactivate",
         "pointer": "#/paths/~1api~1VirtualBillingMeterDeactivate/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "VMeterToDeactivate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Beta: Virtual Meter API: Deactivates a Virtual Meter."
+        "summary": "Beta: Virtual Meter API: Deactivates a Virtual Meter.",
+        "tags": [
+          "VirtualBillingMeterDeactivate"
+        ]
       },
       {
         "deprecated": false,
@@ -789,8 +1976,18 @@
         "name": "VirtualBillingMeters_Get",
         "path": "/api/VirtualBillingMeters",
         "pointer": "#/paths/~1api~1VirtualBillingMeters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Beta: Gets all Meters available to activate as a Virtual Meter."
+        "summary": "Beta: Gets all Meters available to activate as a Virtual Meter.",
+        "tags": [
+          "VirtualBillingMeters"
+        ]
       },
       {
         "deprecated": false,
@@ -798,10 +1995,28 @@
         "kind": "operation",
         "method": "get",
         "name": "VirtualMeterCalculateFormula_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "formula",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/VirtualMeterCalculateFormula",
         "pointer": "#/paths/~1api~1VirtualMeterCalculateFormula/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Calculates a virtual meter from a formula. \r\n            A meter is coded as ID(\"METERID\")"
+        "summary": "Calculates a virtual meter from a formula. \r\n            A meter is coded as ID(\"METERID\")",
+        "tags": [
+          "VirtualMeterCalculateFormula"
+        ]
       },
       {
         "deprecated": false,
@@ -811,8 +2026,18 @@
         "name": "VirtualTariff_Get",
         "path": "/api/VirtualTariff",
         "pointer": "#/paths/~1api~1VirtualTariff/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VirtualTariffsOfFolder[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all Virtual Tariffs of a user"
+        "summary": "Gets all Virtual Tariffs of a user",
+        "tags": [
+          "VirtualTariff"
+        ]
       },
       {
         "deprecated": false,
@@ -820,10 +2045,29 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/VirtualTariff/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the Folder",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/VirtualTariff/{id}",
         "pointer": "#/paths/~1api~1VirtualTariff~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VirtualTariffsOfFolder"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all virtual tariffs of a folder"
+        "summary": "Gets all virtual tariffs of a folder",
+        "tags": [
+          "VirtualTariff"
+        ]
       },
       {
         "deprecated": false,
@@ -831,10 +2075,43 @@
         "kind": "operation",
         "method": "get",
         "name": "VirtualTariffConsumption_Get",
+        "parameters": [
+          {
+            "description": "The ID of the Folder",
+            "in": "query",
+            "name": "folderId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The start date (UTC)",
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The end date (UTC)",
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/api/VirtualTariffConsumption",
         "pointer": "#/paths/~1api~1VirtualTariffConsumption/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VirtualTariffConsumptionData[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the consumption of a folder with a virtuall tariffs."
+        "summary": "Gets the consumption of a folder with a virtuall tariffs.",
+        "tags": [
+          "VirtualTariffConsumption"
+        ]
       },
       {
         "deprecated": false,
@@ -842,10 +2119,28 @@
         "kind": "operation",
         "method": "get",
         "name": "VirtualTariffsForProperty_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/VirtualTariffsForProperty/{id}",
         "pointer": "#/paths/~1api~1VirtualTariffsForProperty~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VirtualTariffsOfFolder[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all Virtual Tariffs for a property (folder)"
+        "summary": "Gets all Virtual Tariffs for a property (folder)",
+        "tags": [
+          "VirtualTariffsForProperty"
+        ]
       },
       {
         "deprecated": false,
@@ -853,10 +2148,28 @@
         "kind": "operation",
         "method": "get",
         "name": "VirtualTariffsStatusForProperty_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/VirtualTariffsStatusForProperty/{id}",
         "pointer": "#/paths/~1api~1VirtualTariffsStatusForProperty~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the calculation status for a virtual tariff property"
+        "summary": "Gets the calculation status for a virtual tariff property",
+        "tags": [
+          "VirtualTariffsStatusForProperty"
+        ]
       },
       {
         "deprecated": false,
@@ -864,21 +2177,35 @@
         "kind": "operation",
         "method": "post",
         "name": "FolderAssign_Post",
+        "parameters": [
+          {
+            "description": "The ID of the meter or folder that should be assign",
+            "in": "query",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the meter or folder that should be the parent",
+            "in": "query",
+            "name": "target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/folder/assign",
         "pointer": "#/paths/~1api~1folder~1assign/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Assign a folder (source) or meter to another folder (target). Can be used to create a folder structure."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/folder/settings/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "FolderSettings_Delete",
-        "path": "/api/folder/settings/{id}",
-        "pointer": "#/paths/~1api~1folder~1settings~1{id}/delete",
-        "security": [],
-        "summary": "Deletes a folder"
+        "summary": "Assign a folder (source) or meter to another folder (target). Can be used to create a folder structure.",
+        "tags": [
+          "FolderAssign"
+        ]
       },
       {
         "deprecated": false,
@@ -886,10 +2213,28 @@
         "kind": "operation",
         "method": "get",
         "name": "FolderSettings_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/folder/settings/{id}",
         "pointer": "#/paths/~1api~1folder~1settings~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FolderSettings"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the settings of a folder or meter"
+        "summary": "Gets the settings of a folder or meter",
+        "tags": [
+          "FolderSettings"
+        ]
       },
       {
         "deprecated": false,
@@ -897,21 +2242,69 @@
         "kind": "operation",
         "method": "post",
         "name": "FolderSettings_Post",
+        "parameters": [
+          {
+            "description": "The ID of the folder or meter to edit.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/folder/settings/{id}",
         "pointer": "#/paths/~1api~1folder~1settings~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "application/xml",
+            "text/json",
+            "text/xml"
+          ],
+          "required": true,
+          "type": "FolderSettings"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FolderMenuItem"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Add or edit a folder or a meter. To add a new folder use and empty ID"
+        "summary": "Add or edit a folder or a meter. To add a new folder use and empty ID",
+        "tags": [
+          "FolderSettings"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/folder/user/assign",
+        "id": "operation:delete:/api/folder/settings/{id}",
         "kind": "operation",
         "method": "delete",
-        "name": "UserToFolderAssign_Delete",
-        "path": "/api/folder/user/assign",
-        "pointer": "#/paths/~1api~1folder~1user~1assign/delete",
+        "name": "FolderSettings_Delete",
+        "parameters": [
+          {
+            "description": "The ID of the folder",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/folder/settings/{id}",
+        "pointer": "#/paths/~1api~1folder~1settings~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Deletes a user to folder assignement"
+        "summary": "Deletes a folder",
+        "tags": [
+          "FolderSettings"
+        ]
       },
       {
         "deprecated": false,
@@ -919,10 +2312,78 @@
         "kind": "operation",
         "method": "post",
         "name": "UserToFolderAssign_Post",
+        "parameters": [
+          {
+            "description": "The ID of the user that should be assign",
+            "in": "query",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the folder that should be the parent",
+            "in": "query",
+            "name": "target",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the old folder (in case of a drag and drop to a new folder)",
+            "in": "query",
+            "name": "oldFolder",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/folder/user/assign",
         "pointer": "#/paths/~1api~1folder~1user~1assign/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Assign a user to a folder"
+        "summary": "Assign a user to a folder",
+        "tags": [
+          "UserToFolderAssign"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/folder/user/assign",
+        "kind": "operation",
+        "method": "delete",
+        "name": "UserToFolderAssign_Delete",
+        "parameters": [
+          {
+            "description": "The ID of the user that should be de-assign",
+            "in": "query",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the folder",
+            "in": "query",
+            "name": "target",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/folder/user/assign",
+        "pointer": "#/paths/~1api~1folder~1user~1assign/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Deletes a user to folder assignement",
+        "tags": [
+          "UserToFolderAssign"
+        ]
       },
       {
         "deprecated": false,
@@ -930,10 +2391,52 @@
         "kind": "operation",
         "method": "get",
         "name": "OAuth_Authorize",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "redirect_uri",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "client_secret",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/oauth/authorize",
         "pointer": "#/paths/~1api~1oauth~1authorize/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "OAuth"
+        ]
       },
       {
         "deprecated": false,
@@ -941,10 +2444,52 @@
         "kind": "operation",
         "method": "post",
         "name": "post /api/oauth/authorize",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "redirect_uri",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "client_secret",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/oauth/authorize",
         "pointer": "#/paths/~1api~1oauth~1authorize/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "OAuth"
+        ]
       },
       {
         "deprecated": false,
@@ -954,8 +2499,18 @@
         "name": "Pico_Get",
         "path": "/api/pico",
         "pointer": "#/paths/~1api~1pico/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all pico charging stations for this user"
+        "summary": "Gets all pico charging stations for this user",
+        "tags": [
+          "Pico"
+        ]
       },
       {
         "deprecated": false,
@@ -963,10 +2518,28 @@
         "kind": "operation",
         "method": "get",
         "name": "PicoCharging_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/pico/charging/{id}",
         "pointer": "#/paths/~1api~1pico~1charging~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PicoChargingData"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the active charging data of a pico station"
+        "summary": "Gets the active charging data of a pico station",
+        "tags": [
+          "PicoCharging"
+        ]
       },
       {
         "deprecated": false,
@@ -974,10 +2547,28 @@
         "kind": "operation",
         "method": "get",
         "name": "PicoChargingHistory_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/pico/history/{id}",
         "pointer": "#/paths/~1api~1pico~1history~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PicoChargingHistoryData[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the last charging history for a pico station"
+        "summary": "Gets the last charging history for a pico station",
+        "tags": [
+          "PicoChargingHistory"
+        ]
       },
       {
         "deprecated": false,
@@ -987,8 +2578,18 @@
         "name": "get /api/pico/loadmanagementgroup",
         "path": "/api/pico/loadmanagementgroup",
         "pointer": "#/paths/~1api~1pico~1loadmanagementgroup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PicoLoadmanagementGroupDto[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GET: api/pico/loadmanagementgroup\r\n            \r\n            Returns all available load management groups"
+        "summary": "GET: api/pico/loadmanagementgroup\r\n            \r\n            Returns all available load management groups",
+        "tags": [
+          "PicoLoadmanagementGroup"
+        ]
       },
       {
         "deprecated": false,
@@ -996,10 +2597,36 @@
         "kind": "operation",
         "method": "post",
         "name": "PicoLoadmanagementSetDynamicCurrent_Post",
+        "parameters": [
+          {
+            "description": "The serial number can be any pico serial in the group (e.g.",
+            "in": "path",
+            "name": "serial",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The dynamic current of the group (in mA)",
+            "in": "query",
+            "name": "current",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/pico/loadmanagementgroup/current/{serial}",
         "pointer": "#/paths/~1api~1pico~1loadmanagementgroup~1current~1{serial}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Sets the dynamic current of a load management group or a single station."
+        "summary": "Sets the dynamic current of a load management group or a single station.",
+        "tags": [
+          "PicoLoadmanagementSetDynamicCurrent"
+        ]
       },
       {
         "deprecated": false,
@@ -1007,10 +2634,28 @@
         "kind": "operation",
         "method": "get",
         "name": "PicoLoadmanagementGroup_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/pico/loadmanagementgroup/{id}",
         "pointer": "#/paths/~1api~1pico~1loadmanagementgroup~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PicoLoadmanagementGroupDto"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GET: api/pico/loadmanagementgroup\r\n            \r\n            Returns a pico load management group by it's id"
+        "summary": "GET: api/pico/loadmanagementgroup\r\n            \r\n            Returns a pico load management group by it's id",
+        "tags": [
+          "PicoLoadmanagementGroup"
+        ]
       },
       {
         "deprecated": false,
@@ -1018,10 +2663,28 @@
         "kind": "operation",
         "method": "get",
         "name": "PicoSettings_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/pico/settings/{id}",
         "pointer": "#/paths/~1api~1pico~1settings~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PicoSettingsDto"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "GET: api/pico/settings\r\n            \r\n            Returns the settings of a pico charging station."
+        "summary": "GET: api/pico/settings\r\n            \r\n            Returns the settings of a pico charging station.",
+        "tags": [
+          "PicoSettings"
+        ]
       },
       {
         "deprecated": false,
@@ -1029,205 +2692,298 @@
         "kind": "operation",
         "method": "post",
         "name": "PicoEnableFixCableLock_Post",
+        "parameters": [
+          {
+            "description": "The ID of the pico",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/pico/tryenablecablelock/{id}",
         "pointer": "#/paths/~1api~1pico~1tryenablecablelock~1{id}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Try to fix lock the cable of a pico. The pico must be online and a cable (without car) needs to be connected. Otherwise this will fail."
+        "summary": "Try to fix lock the cable of a pico. The pico must be online and a cable (without car) needs to be connected. Otherwise this will fail.",
+        "tags": [
+          "PicoEnableFixCableLock"
+        ]
       },
       {
+        "description": "Container Class for the Put action of an Access Token",
         "id": "schema:AccessTokenToPut",
         "kind": "schema",
-        "name": "AccessTokenToPut"
+        "name": "AccessTokenToPut",
+        "type": "object"
       },
       {
+        "description": "The Information about an Action of a device",
         "id": "schema:ActionInformation",
         "kind": "schema",
-        "name": "ActionInformation"
+        "name": "ActionInformation",
+        "type": "object"
       },
       {
+        "description": "Container Class for an action to post",
         "id": "schema:ActionToPost",
         "kind": "schema",
-        "name": "ActionToPost"
+        "name": "ActionToPost",
+        "type": "object"
       },
       {
+        "description": "Container class for an action item",
         "id": "schema:ActionToPostItem",
         "kind": "schema",
-        "name": "ActionToPostItem"
+        "name": "ActionToPostItem",
+        "type": "object"
       },
       {
+        "description": "Additional Information For a device",
         "id": "schema:AdditionalDeviceInformation",
         "kind": "schema",
-        "name": "AdditionalDeviceInformation"
+        "name": "AdditionalDeviceInformation",
+        "type": "object"
       },
       {
+        "description": "Settings for the auto export functionality of a meter",
         "id": "schema:AutoExportSettings",
         "kind": "schema",
-        "name": "AutoExportSettings"
+        "name": "AutoExportSettings",
+        "type": "object"
       },
       {
+        "description": "Container Class for the Web API",
         "id": "schema:CustomDeviceToPost",
         "kind": "schema",
-        "name": "CustomDeviceToPost"
+        "name": "CustomDeviceToPost",
+        "type": "object"
       },
       {
+        "description": "Container Class for the Custom Device Values",
         "id": "schema:CustomDeviceValues",
         "kind": "schema",
-        "name": "CustomDeviceValues"
+        "name": "CustomDeviceValues",
+        "type": "object"
       },
       {
+        "description": "Container Class for the Web API",
         "id": "schema:Device",
         "kind": "schema",
-        "name": "Device"
+        "name": "Device",
+        "type": "object"
       },
       {
+        "description": "Container Class for the Web API.",
         "id": "schema:DeviceInPast",
         "kind": "schema",
-        "name": "DeviceInPast"
+        "name": "DeviceInPast",
+        "type": "object"
       },
       {
+        "description": "Container Class for the Web API",
         "id": "schema:DeviceToPost",
         "kind": "schema",
-        "name": "DeviceToPost"
+        "name": "DeviceToPost",
+        "type": "object"
       },
       {
+        "description": "Container class for the folder API",
         "id": "schema:FolderData",
         "kind": "schema",
-        "name": "FolderData"
+        "name": "FolderData",
+        "type": "object"
       },
       {
+        "description": "Container Class for the Web API representing a folder menu and it's items",
         "id": "schema:FolderMenuConfiguration",
         "kind": "schema",
-        "name": "FolderMenuConfiguration"
+        "name": "FolderMenuConfiguration",
+        "type": "object"
       },
       {
+        "description": "A folder menu item",
         "id": "schema:FolderMenuItem",
         "kind": "schema",
-        "name": "FolderMenuItem"
+        "name": "FolderMenuItem",
+        "type": "object"
       },
       {
+        "description": "Container for the folder settings",
         "id": "schema:FolderSettings",
         "kind": "schema",
-        "name": "FolderSettings"
+        "name": "FolderSettings",
+        "type": "object"
       },
       {
+        "description": "Configuration for the input of a meter (digital inputs)",
         "id": "schema:InputConfigurationContainer",
         "kind": "schema",
-        "name": "InputConfigurationContainer"
+        "name": "InputConfigurationContainer",
+        "type": "object"
       },
       {
+        "description": "Informations about the Inputs of a Meter or Folder",
         "id": "schema:InputInformation",
         "kind": "schema",
-        "name": "InputInformation"
+        "name": "InputInformation",
+        "type": "object"
       },
       {
         "id": "schema:MBusData",
         "kind": "schema",
-        "name": "MBusData"
+        "name": "MBusData",
+        "type": "object"
       },
       {
+        "description": "Container Class for the Web API",
         "id": "schema:MeterFolderInformation",
         "kind": "schema",
-        "name": "MeterFolderInformation"
+        "name": "MeterFolderInformation",
+        "type": "object"
       },
       {
+        "description": "Container for a Meter or Folder Information to Post",
         "id": "schema:MeterFolderInformationToPost",
         "kind": "schema",
-        "name": "MeterFolderInformationToPost"
+        "name": "MeterFolderInformationToPost",
+        "type": "object"
       },
       {
         "id": "schema:Object",
         "kind": "schema",
-        "name": "Object"
+        "name": "Object",
+        "type": "object"
       },
       {
+        "description": "Configuration for the outputs of a meter (analog/digital outputs)",
         "id": "schema:OutputConfigurationContainer",
         "kind": "schema",
-        "name": "OutputConfigurationContainer"
+        "name": "OutputConfigurationContainer",
+        "type": "object"
       },
       {
+        "description": "Informations about the Outputs of a Meter or Folder",
         "id": "schema:OutputInformation",
         "kind": "schema",
-        "name": "OutputInformation"
+        "name": "OutputInformation",
+        "type": "object"
       },
       {
+        "description": "Container class for the pico charging station API",
         "id": "schema:PicoChargingData",
         "kind": "schema",
-        "name": "PicoChargingData"
+        "name": "PicoChargingData",
+        "type": "object"
       },
       {
+        "description": "Api container for the charging station history",
         "id": "schema:PicoChargingHistoryData",
         "kind": "schema",
-        "name": "PicoChargingHistoryData"
+        "name": "PicoChargingHistoryData",
+        "type": "object"
       },
       {
+        "description": "DTO for the pico loadmanagement group",
         "id": "schema:PicoLoadmanagementGroupDto",
         "kind": "schema",
-        "name": "PicoLoadmanagementGroupDto"
+        "name": "PicoLoadmanagementGroupDto",
+        "type": "object"
       },
       {
+        "description": "DTO for the pico charging station settings",
         "id": "schema:PicoSettingsDto",
         "kind": "schema",
-        "name": "PicoSettingsDto"
+        "name": "PicoSettingsDto",
+        "type": "object"
       },
       {
+        "description": "Container class for the register realtime API API",
         "id": "schema:RegisterRealtimeApiData",
         "kind": "schema",
-        "name": "RegisterRealtimeApiData"
+        "name": "RegisterRealtimeApiData",
+        "type": "object"
       },
       {
+        "description": "API Container class for the meter configuration",
         "id": "schema:SmartMeDeviceConfigurationContainer",
         "kind": "schema",
-        "name": "SmartMeDeviceConfigurationContainer"
+        "name": "SmartMeDeviceConfigurationContainer",
+        "type": "object"
       },
       {
+        "description": "Container data for the sub user",
         "id": "schema:SubUserData",
         "kind": "schema",
-        "name": "SubUserData"
+        "name": "SubUserData",
+        "type": "object"
       },
       {
+        "description": "The configuration for a phase switch",
         "id": "schema:SwitchConfigurationContainer",
         "kind": "schema",
-        "name": "SwitchConfigurationContainer"
+        "name": "SwitchConfigurationContainer",
+        "type": "object"
       },
       {
+        "description": "Container Class for the Web API",
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
+        "description": "Actives a virtual Meter",
         "id": "schema:VMeterToActivate",
         "kind": "schema",
-        "name": "VMeterToActivate"
+        "name": "VMeterToActivate",
+        "type": "object"
       },
       {
+        "description": "Deactivates a virtual Meter",
         "id": "schema:VMeterToDeactivate",
         "kind": "schema",
-        "name": "VMeterToDeactivate"
+        "name": "VMeterToDeactivate",
+        "type": "object"
       },
       {
+        "description": "API Container for a (Device) Value",
         "id": "schema:ValueData",
         "kind": "schema",
-        "name": "ValueData"
+        "name": "ValueData",
+        "type": "object"
       },
       {
+        "description": "API Container for a Meter Value",
         "id": "schema:ValuesData",
         "kind": "schema",
-        "name": "ValuesData"
+        "name": "ValuesData",
+        "type": "object"
       },
       {
         "id": "schema:VirtualTariff",
         "kind": "schema",
-        "name": "VirtualTariff"
+        "name": "VirtualTariff",
+        "type": "object"
       },
       {
+        "description": "Container class for the virtual tariff consumption",
         "id": "schema:VirtualTariffConsumptionData",
         "kind": "schema",
-        "name": "VirtualTariffConsumptionData"
+        "name": "VirtualTariffConsumptionData",
+        "type": "object"
       },
       {
         "id": "schema:VirtualTariffsOfFolder",
         "kind": "schema",
-        "name": "VirtualTariffsOfFolder"
+        "name": "VirtualTariffsOfFolder",
+        "type": "object"
       }
     ]
   },

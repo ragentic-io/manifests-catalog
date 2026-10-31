@@ -42,11 +42,6 @@
       {
         "from": "ably-io-platform-640c6f8fb1",
         "kind": "EXPOSES",
-        "to": "operation:delete:/push/channelSubscriptions"
-      },
-      {
-        "from": "ably-io-platform-640c6f8fb1",
-        "kind": "EXPOSES",
         "to": "operation:get:/push/channelSubscriptions"
       },
       {
@@ -57,12 +52,12 @@
       {
         "from": "ably-io-platform-640c6f8fb1",
         "kind": "EXPOSES",
-        "to": "operation:get:/push/channels"
+        "to": "operation:delete:/push/channelSubscriptions"
       },
       {
         "from": "ably-io-platform-640c6f8fb1",
         "kind": "EXPOSES",
-        "to": "operation:delete:/push/deviceRegistrations"
+        "to": "operation:get:/push/channels"
       },
       {
         "from": "ably-io-platform-640c6f8fb1",
@@ -77,7 +72,7 @@
       {
         "from": "ably-io-platform-640c6f8fb1",
         "kind": "EXPOSES",
-        "to": "operation:delete:/push/deviceRegistrations/{device_id}"
+        "to": "operation:delete:/push/deviceRegistrations"
       },
       {
         "from": "ably-io-platform-640c6f8fb1",
@@ -87,12 +82,17 @@
       {
         "from": "ably-io-platform-640c6f8fb1",
         "kind": "EXPOSES",
-        "to": "operation:patch:/push/deviceRegistrations/{device_id}"
+        "to": "operation:put:/push/deviceRegistrations/{device_id}"
       },
       {
         "from": "ably-io-platform-640c6f8fb1",
         "kind": "EXPOSES",
-        "to": "operation:put:/push/deviceRegistrations/{device_id}"
+        "to": "operation:delete:/push/deviceRegistrations/{device_id}"
+      },
+      {
+        "from": "ably-io-platform-640c6f8fb1",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/push/deviceRegistrations/{device_id}"
       },
       {
         "from": "ably-io-platform-640c6f8fb1",
@@ -113,6 +113,141 @@
         "from": "ably-io-platform-640c6f8fb1",
         "kind": "EXPOSES",
         "to": "operation:get:/time"
+      },
+      {
+        "from": "operation:get:/channels",
+        "kind": "RETURNS",
+        "to": "schema:ChannelDetails"
+      },
+      {
+        "from": "operation:get:/channels/{channel_id}",
+        "kind": "RETURNS",
+        "to": "schema:ChannelDetails"
+      },
+      {
+        "from": "operation:get:/channels/{channel_id}/messages",
+        "kind": "RETURNS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:post:/channels/{channel_id}/messages",
+        "kind": "ACCEPTS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:get:/channels/{channel_id}/presence",
+        "kind": "RETURNS",
+        "to": "schema:PresenceMessage"
+      },
+      {
+        "from": "operation:get:/channels/{channel_id}/presence/history",
+        "kind": "RETURNS",
+        "to": "schema:PresenceMessage"
+      },
+      {
+        "from": "operation:post:/keys/{keyName}/requestToken",
+        "kind": "ACCEPTS",
+        "to": "schema:SignedTokenRequest"
+      },
+      {
+        "from": "operation:post:/keys/{keyName}/requestToken",
+        "kind": "ACCEPTS",
+        "to": "schema:TokenRequest"
+      },
+      {
+        "from": "operation:post:/keys/{keyName}/requestToken",
+        "kind": "RETURNS",
+        "to": "schema:TokenDetails"
+      },
+      {
+        "from": "operation:get:/push/channelSubscriptions",
+        "kind": "RETURNS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "operation:get:/push/deviceRegistrations",
+        "kind": "RETURNS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "operation:post:/push/deviceRegistrations",
+        "kind": "ACCEPTS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "operation:post:/push/deviceRegistrations",
+        "kind": "RETURNS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "operation:get:/push/deviceRegistrations/{device_id}",
+        "kind": "RETURNS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "operation:put:/push/deviceRegistrations/{device_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "operation:put:/push/deviceRegistrations/{device_id}",
+        "kind": "RETURNS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "operation:patch:/push/deviceRegistrations/{device_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "operation:patch:/push/deviceRegistrations/{device_id}",
+        "kind": "RETURNS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "operation:get:/push/deviceRegistrations/{device_id}/resetUpdateToken",
+        "kind": "RETURNS",
+        "to": "schema:DeviceDetails"
+      },
+      {
+        "from": "schema:ChannelDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ChannelStatus"
+      },
+      {
+        "from": "schema:ChannelStatus",
+        "kind": "REFERENCES",
+        "to": "schema:Occupancy"
+      },
+      {
+        "from": "schema:DeviceDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Recipient"
+      },
+      {
+        "from": "schema:Extras",
+        "kind": "REFERENCES",
+        "to": "schema:Push"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:Extras"
+      },
+      {
+        "from": "schema:PresenceMessage",
+        "kind": "REFERENCES",
+        "to": "schema:Extras"
+      },
+      {
+        "from": "schema:Push",
+        "kind": "REFERENCES",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "schema:SignedTokenRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TokenRequest"
       }
     ],
     "nodes": [
@@ -126,8 +261,66 @@
         "kind": "operation",
         "method": "get",
         "name": "getMetadataOfAllChannels",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Optionally limits the query to only those channels whose name starts with the given prefix",
+            "in": "query",
+            "name": "prefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "optionally specifies whether to return just channel names (by=id) or ChannelDetails (by=value)",
+            "enum": [
+              "value",
+              "id"
+            ],
+            "in": "query",
+            "name": "by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/channels",
         "pointer": "#/paths/~1channels/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "ChannelDetails[]|string[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -136,7 +329,10 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Enumerate all active channels of the application"
+        "summary": "Enumerate all active channels of the application",
+        "tags": [
+          "Status"
+        ]
       },
       {
         "deprecated": false,
@@ -144,8 +340,48 @@
         "kind": "operation",
         "method": "get",
         "name": "getMetadataOfChannel",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The [Channel's ID](https://www.ably.io/documentation/rest/channels).",
+            "in": "path",
+            "name": "channel_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/channels/{channel_id}",
         "pointer": "#/paths/~1channels~1{channel_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ChannelDetails"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -154,7 +390,10 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Get metadata of a channel"
+        "summary": "Get metadata of a channel",
+        "tags": [
+          "Status"
+        ]
       },
       {
         "deprecated": false,
@@ -162,8 +401,78 @@
         "kind": "operation",
         "method": "get",
         "name": "getMessagesByChannel",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The [Channel's ID](https://www.ably.io/documentation/rest/channels).",
+            "in": "path",
+            "name": "channel_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "now",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "backwards",
+            "enum": [
+              "forwards",
+              "backwards"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/channels/{channel_id}/messages",
         "pointer": "#/paths/~1channels~1{channel_id}~1messages/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "Message[]"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -172,16 +481,69 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Get message history for a channel"
+        "summary": "Get message history for a channel",
+        "tags": [
+          "History"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Publish a message to the specified channel",
         "id": "operation:post:/channels/{channel_id}/messages",
         "kind": "operation",
         "method": "post",
         "name": "publishMessagesToChannel",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The [Channel's ID](https://www.ably.io/documentation/rest/channels).",
+            "in": "path",
+            "name": "channel_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/channels/{channel_id}/messages",
         "pointer": "#/paths/~1channels~1{channel_id}~1messages/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-msgpack",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "Message"
+        },
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
@@ -190,16 +552,79 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Publish a message to a channel"
+        "summary": "Publish a message to a channel",
+        "tags": [
+          "Publishing"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get presence on a channel",
         "id": "operation:get:/channels/{channel_id}/presence",
         "kind": "operation",
         "method": "get",
         "name": "getPresenceOfChannel",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The [Channel's ID](https://www.ably.io/documentation/rest/channels).",
+            "in": "path",
+            "name": "channel_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "clientId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "connectionId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/channels/{channel_id}/presence",
         "pointer": "#/paths/~1channels~1{channel_id}~1presence/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PresenceMessage[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -208,16 +633,91 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Get presence of a channel"
+        "summary": "Get presence of a channel",
+        "tags": [
+          "Status"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get presence on a channel",
         "id": "operation:get:/channels/{channel_id}/presence/history",
         "kind": "operation",
         "method": "get",
         "name": "getPresenceHistoryOfChannel",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The [Channel's ID](https://www.ably.io/documentation/rest/channels).",
+            "in": "path",
+            "name": "channel_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "now",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "backwards",
+            "enum": [
+              "forwards",
+              "backwards"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/channels/{channel_id}/presence/history",
         "pointer": "#/paths/~1channels~1{channel_id}~1presence~1history/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "PresenceMessage[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -226,16 +726,67 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Get presence history of a channel"
+        "summary": "Get presence history of a channel",
+        "tags": [
+          "History"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is the means by which clients obtain access tokens to use the service.",
         "id": "operation:post:/keys/{keyName}/requestToken",
         "kind": "operation",
         "method": "post",
         "name": "requestAccessToken",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The [key name](https://www.ably.io/documentation/rest-api/token-request-spec#api-key-format) comprises of the app ID and key ID of an API key.",
+            "in": "path",
+            "name": "keyName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/keys/{keyName}/requestToken",
         "pointer": "#/paths/~1keys~1{keyName}~1requestToken/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "TokenRequest|SignedTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "TokenDetails"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
@@ -244,34 +795,82 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Request an access token"
+        "summary": "Request an access token",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/push/channelSubscriptions",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deletePushDeviceDetails",
-        "path": "/push/channelSubscriptions",
-        "pointer": "#/paths/~1push~1channelSubscriptions/delete",
-        "security": [
-          {
-            "basicAuth": []
-          },
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete a registered device's update token"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a list of push notification subscriptions to channels.",
         "id": "operation:get:/push/channelSubscriptions",
         "kind": "operation",
         "method": "get",
         "name": "getPushSubscriptionsOnChannels",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to restrict to subscriptions associated with that channel.",
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional filter to restrict to devices associated with that deviceId.",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional filter to restrict to devices associated with that clientId.",
+            "in": "query",
+            "name": "clientId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The maximum number of records to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/push/channelSubscriptions",
         "pointer": "#/paths/~1push~1channelSubscriptions/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "DeviceDetails"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -280,16 +879,61 @@
             "bearerAuth": []
           }
         ],
-        "summary": "List channel subscriptions"
+        "summary": "List channel subscriptions",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Subscribe either a single device or all devices associated with a client ID to receive push notifications from messages sent to a channel.",
         "id": "operation:post:/push/channelSubscriptions",
         "kind": "operation",
         "method": "post",
         "name": "subscribePushDeviceToChannel",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/push/channelSubscriptions",
         "pointer": "#/paths/~1push~1channelSubscriptions/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-msgpack",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "2XX"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
@@ -298,16 +942,128 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Subscribe a device to a channel"
+        "summary": "Subscribe a device to a channel",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a device details object.",
+        "id": "operation:delete:/push/channelSubscriptions",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deletePushDeviceDetails",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to restrict to subscriptions associated with that channel.",
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Must be set when clientId is empty, cannot be used with clientId.",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Must be set when deviceId is empty, cannot be used with deviceId.",
+            "in": "query",
+            "name": "clientId",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/push/channelSubscriptions",
+        "pointer": "#/paths/~1push~1channelSubscriptions/delete",
+        "responses": [
+          {
+            "status": "2XX"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete a registered device's update token",
+        "tags": [
+          "Push"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a paginated response of channel names.",
         "id": "operation:get:/push/channels",
         "kind": "operation",
         "method": "get",
         "name": "getChannelsWithPushSubscribers",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/push/channels",
         "pointer": "#/paths/~1push~1channels/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "string[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -316,34 +1072,75 @@
             "bearerAuth": []
           }
         ],
-        "summary": "List all channels with at least one subscribed device"
+        "summary": "List all channels with at least one subscribed device",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/push/deviceRegistrations",
-        "kind": "operation",
-        "method": "delete",
-        "name": "unregisterAllPushDevices",
-        "path": "/push/deviceRegistrations",
-        "pointer": "#/paths/~1push~1deviceRegistrations/delete",
-        "security": [
-          {
-            "basicAuth": []
-          },
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Unregister matching devices for push notifications"
-      },
-      {
-        "deprecated": false,
+        "description": "List of device details of devices registed for push notifications.",
         "id": "operation:get:/push/deviceRegistrations",
         "kind": "operation",
         "method": "get",
         "name": "getRegisteredPushDevices",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional filter to restrict to devices associated with that deviceId.",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional filter to restrict to devices associated with that clientId.",
+            "in": "query",
+            "name": "clientId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "The maximum number of records to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/push/deviceRegistrations",
         "pointer": "#/paths/~1push~1deviceRegistrations/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "DeviceDetails"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -352,16 +1149,61 @@
             "bearerAuth": []
           }
         ],
-        "summary": "List devices registered for receiving push notifications"
+        "summary": "List devices registered for receiving push notifications",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Register a device’s details, including the information necessary to deliver push notifications to it.",
         "id": "operation:post:/push/deviceRegistrations",
         "kind": "operation",
         "method": "post",
         "name": "registerPushDevice",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/push/deviceRegistrations",
         "pointer": "#/paths/~1push~1deviceRegistrations/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-msgpack"
+          ],
+          "required": false,
+          "type": "DeviceDetails"
+        },
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "DeviceDetails"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
@@ -370,16 +1212,66 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Register a device for receiving push notifications"
+        "summary": "Register a device for receiving push notifications",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/push/deviceRegistrations/{device_id}",
+        "description": "Unregisters devices.",
+        "id": "operation:delete:/push/deviceRegistrations",
         "kind": "operation",
         "method": "delete",
-        "name": "unregisterPushDevice",
-        "path": "/push/deviceRegistrations/{device_id}",
-        "pointer": "#/paths/~1push~1deviceRegistrations~1{device_id}/delete",
+        "name": "unregisterAllPushDevices",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional filter to restrict to devices associated with that deviceId.",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional filter to restrict to devices associated with that clientId.",
+            "in": "query",
+            "name": "clientId",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/push/deviceRegistrations",
+        "pointer": "#/paths/~1push~1deviceRegistrations/delete",
+        "responses": [
+          {
+            "status": "2XX"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
@@ -388,16 +1280,60 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Unregister a single device for push notifications"
+        "summary": "Unregister matching devices for push notifications",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the full details of a device.",
         "id": "operation:get:/push/deviceRegistrations/{device_id}",
         "kind": "operation",
         "method": "get",
         "name": "getPushDeviceDetails",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Device's ID.",
+            "in": "path",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/push/deviceRegistrations/{device_id}",
         "pointer": "#/paths/~1push~1deviceRegistrations~1{device_id}/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "DeviceDetails"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -406,34 +1342,69 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Get a device registration"
+        "summary": "Get a device registration",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/push/deviceRegistrations/{device_id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchPushDeviceDetails",
-        "path": "/push/deviceRegistrations/{device_id}",
-        "pointer": "#/paths/~1push~1deviceRegistrations~1{device_id}/patch",
-        "security": [
-          {
-            "basicAuth": []
-          },
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Update a device registration"
-      },
-      {
-        "deprecated": false,
+        "description": "Device registrations can be upserted (the existing registration is replaced entirely) with a PUT operation.",
         "id": "operation:put:/push/deviceRegistrations/{device_id}",
         "kind": "operation",
         "method": "put",
         "name": "putPushDeviceDetails",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Device's ID.",
+            "in": "path",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/push/deviceRegistrations/{device_id}",
         "pointer": "#/paths/~1push~1deviceRegistrations~1{device_id}/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-msgpack",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "DeviceDetails"
+        },
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "DeviceDetails"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
@@ -442,16 +1413,192 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Update a device registration"
+        "summary": "Update a device registration",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Unregisters a single device by its device ID.",
+        "id": "operation:delete:/push/deviceRegistrations/{device_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "unregisterPushDevice",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Device's ID.",
+            "in": "path",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/push/deviceRegistrations/{device_id}",
+        "pointer": "#/paths/~1push~1deviceRegistrations~1{device_id}/delete",
+        "responses": [
+          {
+            "status": "2XX"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Unregister a single device for push notifications",
+        "tags": [
+          "Push"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Specific attributes of an existing registration can be updated.",
+        "id": "operation:patch:/push/deviceRegistrations/{device_id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchPushDeviceDetails",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Device's ID.",
+            "in": "path",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/push/deviceRegistrations/{device_id}",
+        "pointer": "#/paths/~1push~1deviceRegistrations~1{device_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-msgpack",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "DeviceDetails"
+        },
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "DeviceDetails"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Update a device registration",
+        "tags": [
+          "Push"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Gets an updated device details object.",
         "id": "operation:get:/push/deviceRegistrations/{device_id}/resetUpdateToken",
         "kind": "operation",
         "method": "get",
         "name": "updatePushDeviceDetails",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Device's ID.",
+            "in": "path",
+            "name": "device_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/push/deviceRegistrations/{device_id}/resetUpdateToken",
         "pointer": "#/paths/~1push~1deviceRegistrations~1{device_id}~1resetUpdateToken/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "DeviceDetails"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -460,16 +1607,61 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Reset a registered device's update token"
+        "summary": "Reset a registered device's update token",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A convenience endpoint to deliver a push notification payload to a single device or set of devices identified by their client identifier.",
         "id": "operation:post:/push/publish",
         "kind": "operation",
         "method": "post",
         "name": "publishPushNotificationToDevices",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/push/publish",
         "pointer": "#/paths/~1push~1publish/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-msgpack",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "2XX"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
@@ -478,16 +1670,98 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Publish a push notification to device(s)"
+        "summary": "Publish a push notification to device(s)",
+        "tags": [
+          "Push"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The Ably system can be queried to obtain usage statistics for a given application, and results are provided aggregated across all channels in use in the applic…",
         "id": "operation:get:/stats",
         "kind": "operation",
         "method": "get",
         "name": "getStats",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "100",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "now",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "backwards",
+            "enum": [
+              "forwards",
+              "backwards"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "minute",
+            "description": "Specifies the unit of aggregation in the returned results.",
+            "enum": [
+              "minute",
+              "hour",
+              "day",
+              "month"
+            ],
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/stats",
         "pointer": "#/paths/~1stats/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -496,88 +1770,148 @@
             "bearerAuth": []
           }
         ],
-        "summary": "Retrieve usage statistics for an application"
+        "summary": "Retrieve usage statistics for an application",
+        "tags": [
+          "Stats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns the service time in milliseconds since the epoch.",
         "id": "operation:get:/time",
         "kind": "operation",
         "method": "get",
         "name": "getTime",
+        "parameters": [
+          {
+            "description": "The version of the API you wish to use.",
+            "in": "header",
+            "name": "X-Ably-Version",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The response format you would like",
+            "enum": [
+              "json",
+              "jsonp",
+              "msgpack",
+              "html"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/time",
         "pointer": "#/paths/~1time/get",
+        "responses": [
+          {
+            "status": "2XX",
+            "type": "integer[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the service time"
+        "summary": "Get the service time",
+        "tags": [
+          "Stats"
+        ]
       },
       {
         "id": "schema:ChannelDetails",
         "kind": "schema",
-        "name": "ChannelDetails"
+        "name": "ChannelDetails",
+        "type": "object"
       },
       {
+        "description": "A ChannelStatus instance.",
         "id": "schema:ChannelStatus",
         "kind": "schema",
-        "name": "ChannelStatus"
+        "name": "ChannelStatus",
+        "type": "object"
       },
       {
         "id": "schema:DeviceDetails",
         "kind": "schema",
-        "name": "DeviceDetails"
+        "name": "DeviceDetails",
+        "type": "object"
       },
       {
+        "description": "Returned error from failed REST.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "Extras object.",
         "id": "schema:Extras",
         "kind": "schema",
-        "name": "Extras"
+        "name": "Extras",
+        "type": "object"
       },
       {
+        "description": "Message object.",
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
         "id": "schema:Notification",
         "kind": "schema",
-        "name": "Notification"
+        "name": "Notification",
+        "type": "object"
       },
       {
+        "description": "An Occupancy instance indicating the occupancy of a channel.",
         "id": "schema:Occupancy",
         "kind": "schema",
-        "name": "Occupancy"
+        "name": "Occupancy",
+        "type": "object"
       },
       {
         "id": "schema:PresenceMessage",
         "kind": "schema",
-        "name": "PresenceMessage"
+        "name": "PresenceMessage",
+        "type": "object"
       },
       {
         "id": "schema:Push",
         "kind": "schema",
-        "name": "Push"
+        "name": "Push",
+        "type": "object"
       },
       {
+        "description": "Push recipient details for a device.",
         "id": "schema:Recipient",
         "kind": "schema",
-        "name": "Recipient"
+        "name": "Recipient",
+        "type": "object"
       },
       {
         "id": "schema:SignedTokenRequest",
         "kind": "schema",
-        "name": "SignedTokenRequest"
+        "name": "SignedTokenRequest",
+        "type": "TokenRequest|object"
       },
       {
         "id": "schema:TokenDetails",
         "kind": "schema",
-        "name": "TokenDetails"
+        "name": "TokenDetails",
+        "type": "object"
       },
       {
         "id": "schema:TokenRequest",
         "kind": "schema",
-        "name": "TokenRequest"
+        "name": "TokenRequest",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `d3855607be998fa2620d884e243ed7b88c7d42e136dbb59e326589b62e026f89` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,11 +34,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/detect` | post /detect | Detect the language of a single text |
-| GET | `/frontend/settings` | get /frontend/settings | Retrieve frontend specific settings |
-| GET | `/languages` | get /languages | Retrieve list of supported languages |
-| POST | `/suggest` | post /suggest | Submit a suggestion to improve a translation |
-| POST | `/translate` | post /translate | Translate text from a language to another |
-| POST | `/translate_file` | post /translate_file | Translate file from a language to another |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/detect` | post /detect | body: string | detections |  | Detect the language of a single text |
+| GET | `/frontend/settings` | get /frontend/settings | — | frontend-settings | yes | Retrieve frontend specific settings |
+| GET | `/languages` | get /languages | — | languages | yes | Retrieve list of supported languages |
+| POST | `/suggest` | post /suggest | body: string | suggest-response |  | Submit a suggestion to improve a translation |
+| POST | `/translate` | post /translate | body: string | translate |  | Translate text from a language to another |
+| POST | `/translate_file` | post /translate_file | body*: string | translate-file |  | Translate file from a language to another |

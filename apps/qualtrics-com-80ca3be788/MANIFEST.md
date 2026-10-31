@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_qualtrics.com_apple-touch-icon.
 
 | | |
 | --- | --- |
-| Signed bundle | `c96905d55728607dfa3e5c1b539c93fecbf906e72e9a5b7db7657fc85ab98e7e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,13 +34,15 @@ logo: "https://api.apis.guru/v2/cache/logo/https_qualtrics.com_apple-touch-icon.
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/directories/{DirectoryId}/mailinglists/{MailingListId}/contacts` | CreateContactInMailinglist | Create contact in mailing list |
-| GET | `/distributions` | GetDistributions | Get distributions for survey |
-| POST | `/distributions` | GenerateDistributionLinks | Generate distribution links |
-| GET | `/distributions/{DistributionId}/links` | Retrievedistributionlinks | Retrieve distribution links |
-| DELETE | `/eventsubscriptions/` | WebhookDelete | Remove subscription to response event |
-| POST | `/eventsubscriptions/` | WhenAResponseIsReceived | Triggers when a response is submitted to a qualtrics survey |
-| GET | `/eventsubscriptions/{SubscriptionId}` | GetEventSubscriptions | Get event subscriptions |
-| GET | `/survey-definitions/{SurveyId}` | GetSurvey | Get survey |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/directories/{DirectoryId}/mailinglists/{MailingListId}/contacts` | CreateContactInMailinglist | `DirectoryId`*, `MailingListId`*, body*: CreateContactInMailingList | — |  | Create contact in mailing list |
+| GET | `/distributions` | GetDistributions | `surveyId`* | DistributionsResponse | yes | Get distributions for survey |
+| POST | `/distributions` | GenerateDistributionLinks | body*: CreateDistributionLinks | — |  | Generate distribution links |
+| GET | `/distributions/{DistributionId}/links` | Retrievedistributionlinks | `surveyId`*, `DistributionId`* | RetrieveDistributionLinksResponse | yes | Retrieve distribution links |
+| POST | `/eventsubscriptions/` | WhenAResponseIsReceived | body*: SubscribeToEventBody | EventSubscriptionsResponse |  | Triggers when a response is submitted to a qualtrics survey |
+| DELETE | `/eventsubscriptions/` | WebhookDelete | body*: SubscribeToEventBody | EventSubscriptionsResponse |  | Remove subscription to response event |
+| GET | `/eventsubscriptions/{SubscriptionId}` | GetEventSubscriptions | `SubscriptionId`* | EventSubscriptionsResponse | yes | Get event subscriptions |
+| GET | `/survey-definitions/{SurveyId}` | GetSurvey | `SurveyId`* | SurveyResponse | yes | Get survey |

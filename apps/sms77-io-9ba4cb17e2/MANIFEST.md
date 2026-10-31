@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.sms77.io_wp-content_uploads
 
 | | |
 | --- | --- |
-| Signed bundle | `995dddb3ff73cbdfe31d3ab14ae10f9a76e115a2bce6ae7a64baa74c16722f7c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,21 +34,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.sms77.io_wp-content_uploads
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/analytics` | Analytics | — |
-| GET | `/balance` | Balance | — |
-| GET | `/contacts` | ContactsGet | — |
-| POST | `/contacts` | ContactsPOST | — |
-| GET | `/hooks` | HooksGet | — |
-| POST | `/hooks` | HooksPOST | — |
-| POST | `/lookup` | Lookup | — |
-| POST | `/lookup/cnam` | LookupCnam | — |
-| POST | `/lookup/format` | LookupFormat | — |
-| POST | `/lookup/hlr` | LookupHlr | — |
-| POST | `/lookup/mnp` | LookupMnp | — |
-| GET | `/pricing` | Pricing | — |
-| POST | `/sms` | Sms | — |
-| GET | `/status` | Status | — |
-| POST | `/validate_for_voice` | ValidateForVoice | — |
-| POST | `/voice` | Voice | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/analytics` | Analytics | `start`, `end`, `label`, `subaccounts`, `group_by` | object | yes | — |
+| GET | `/balance` | Balance | — | number:float | yes | — |
+| GET | `/contacts` | ContactsGet | `action`*, `json` | string | yes | — |
+| POST | `/contacts` | ContactsPOST | `action`*, `json`, `id`, `nick`, `empfaenger`, `email` | string |  | — |
+| GET | `/hooks` | HooksGet | `action`* | object | yes | — |
+| POST | `/hooks` | HooksPOST | `action`*, `id`, `target_url`, `event_type`, `request_method` | object |  | — |
+| POST | `/lookup` | Lookup | `type`*, `number`*, `json` | — |  | — |
+| POST | `/lookup/cnam` | LookupCnam | `number`* | — |  | — |
+| POST | `/lookup/format` | LookupFormat | `number`* | — |  | — |
+| POST | `/lookup/hlr` | LookupHlr | `number`* | — |  | — |
+| POST | `/lookup/mnp` | LookupMnp | `number`*, `json` | — |  | — |
+| GET | `/pricing` | Pricing | `country`, `format` | — | yes | — |
+| POST | `/sms` | Sms | `text`*, `to`*, `from`, `foreign_id`, `label`, `udh`, `delay`, `debug`, `no_reload`, `unicode`, `flash`, `utf8`, `details`, `return_msg_id`, `json`, `performance_tracking` | object |  | — |
+| GET | `/status` | Status | `msg_id`* | string | yes | — |
+| POST | `/validate_for_voice` | ValidateForVoice | `number`*, `callback` | object |  | — |
+| POST | `/voice` | Voice | `to`*, `text`*, `xml`, `from` | string |  | — |

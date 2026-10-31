@@ -27,12 +27,12 @@
       {
         "from": "qualtrics-com-80ca3be788",
         "kind": "EXPOSES",
-        "to": "operation:delete:/eventsubscriptions/"
+        "to": "operation:post:/eventsubscriptions/"
       },
       {
         "from": "qualtrics-com-80ca3be788",
         "kind": "EXPOSES",
-        "to": "operation:post:/eventsubscriptions/"
+        "to": "operation:delete:/eventsubscriptions/"
       },
       {
         "from": "qualtrics-com-80ca3be788",
@@ -43,6 +43,56 @@
         "from": "qualtrics-com-80ca3be788",
         "kind": "EXPOSES",
         "to": "operation:get:/survey-definitions/{SurveyId}"
+      },
+      {
+        "from": "operation:post:/directories/{DirectoryId}/mailinglists/{MailingListId}/contacts",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateContactInMailingList"
+      },
+      {
+        "from": "operation:get:/distributions",
+        "kind": "RETURNS",
+        "to": "schema:DistributionsResponse"
+      },
+      {
+        "from": "operation:post:/distributions",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateDistributionLinks"
+      },
+      {
+        "from": "operation:get:/distributions/{DistributionId}/links",
+        "kind": "RETURNS",
+        "to": "schema:RetrieveDistributionLinksResponse"
+      },
+      {
+        "from": "operation:post:/eventsubscriptions/",
+        "kind": "ACCEPTS",
+        "to": "schema:SubscribeToEventBody"
+      },
+      {
+        "from": "operation:post:/eventsubscriptions/",
+        "kind": "RETURNS",
+        "to": "schema:EventSubscriptionsResponse"
+      },
+      {
+        "from": "operation:delete:/eventsubscriptions/",
+        "kind": "ACCEPTS",
+        "to": "schema:SubscribeToEventBody"
+      },
+      {
+        "from": "operation:delete:/eventsubscriptions/",
+        "kind": "RETURNS",
+        "to": "schema:EventSubscriptionsResponse"
+      },
+      {
+        "from": "operation:get:/eventsubscriptions/{SubscriptionId}",
+        "kind": "RETURNS",
+        "to": "schema:EventSubscriptionsResponse"
+      },
+      {
+        "from": "operation:get:/survey-definitions/{SurveyId}",
+        "kind": "RETURNS",
+        "to": "schema:SurveyResponse"
       }
     ],
     "nodes": [
@@ -52,69 +102,184 @@
       },
       {
         "deprecated": false,
+        "description": "Creates a contact in a given mailing list",
         "id": "operation:post:/directories/{DirectoryId}/mailinglists/{MailingListId}/contacts",
         "kind": "operation",
         "method": "post",
         "name": "CreateContactInMailinglist",
+        "parameters": [
+          {
+            "description": "ID of the qualtrics directory to create the contact to",
+            "in": "path",
+            "name": "DirectoryId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the mailing list",
+            "in": "path",
+            "name": "MailingListId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/directories/{DirectoryId}/mailinglists/{MailingListId}/contacts",
         "pointer": "#/paths/~1directories~1{DirectoryId}~1mailinglists~1{MailingListId}~1contacts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateContactInMailingList"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Create contact in mailing list"
       },
       {
         "deprecated": false,
+        "description": "Gets all distributions for a given survey",
         "id": "operation:get:/distributions",
         "kind": "operation",
         "method": "get",
         "name": "GetDistributions",
+        "parameters": [
+          {
+            "description": "The survey for which to load the distributions",
+            "in": "query",
+            "name": "surveyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/distributions",
         "pointer": "#/paths/~1distributions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DistributionsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get distributions for survey"
       },
       {
         "deprecated": false,
+        "description": "Geneates links for individual distribution",
         "id": "operation:post:/distributions",
         "kind": "operation",
         "method": "post",
         "name": "GenerateDistributionLinks",
         "path": "/distributions",
         "pointer": "#/paths/~1distributions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateDistributionLinks"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Generate distribution links"
       },
       {
         "deprecated": false,
+        "description": "Retrieves all the individual links for a given distribution",
         "id": "operation:get:/distributions/{DistributionId}/links",
         "kind": "operation",
         "method": "get",
         "name": "Retrievedistributionlinks",
+        "parameters": [
+          {
+            "description": "ID of the survey (eg: SV_123)",
+            "in": "query",
+            "name": "surveyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "ID of the distribution list",
+            "in": "path",
+            "name": "DistributionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/distributions/{DistributionId}/links",
         "pointer": "#/paths/~1distributions~1{DistributionId}~1links/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RetrieveDistributionLinksResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Retrieve distribution links"
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/eventsubscriptions/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "WebhookDelete",
-        "path": "/eventsubscriptions/",
-        "pointer": "#/paths/~1eventsubscriptions~1/delete",
-        "security": [],
-        "summary": "Remove subscription to response event"
-      },
-      {
-        "deprecated": false,
+        "description": "Subscribe to response event",
         "id": "operation:post:/eventsubscriptions/",
         "kind": "operation",
         "method": "post",
         "name": "WhenAResponseIsReceived",
         "path": "/eventsubscriptions/",
         "pointer": "#/paths/~1eventsubscriptions~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SubscribeToEventBody"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventSubscriptionsResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Triggers when a response is submitted to a qualtrics survey"
+      },
+      {
+        "deprecated": false,
+        "description": "Remove event subscription",
+        "id": "operation:delete:/eventsubscriptions/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "WebhookDelete",
+        "path": "/eventsubscriptions/",
+        "pointer": "#/paths/~1eventsubscriptions~1/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SubscribeToEventBody"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventSubscriptionsResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Remove subscription to response event"
       },
       {
         "deprecated": false,
@@ -122,61 +287,105 @@
         "kind": "operation",
         "method": "get",
         "name": "GetEventSubscriptions",
+        "parameters": [
+          {
+            "description": "ID of event subscription - can be obtained from web hook response",
+            "in": "path",
+            "name": "SubscriptionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/eventsubscriptions/{SubscriptionId}",
         "pointer": "#/paths/~1eventsubscriptions~1{SubscriptionId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventSubscriptionsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get event subscriptions"
       },
       {
         "deprecated": false,
+        "description": "Gets a single Qualtrics survey speficied by its ID",
         "id": "operation:get:/survey-definitions/{SurveyId}",
         "kind": "operation",
         "method": "get",
         "name": "GetSurvey",
+        "parameters": [
+          {
+            "description": "ID of survey (eg.",
+            "in": "path",
+            "name": "SurveyId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/survey-definitions/{SurveyId}",
         "pointer": "#/paths/~1survey-definitions~1{SurveyId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SurveyResponse"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get survey"
       },
       {
         "id": "schema:CreateContactInMailingList",
         "kind": "schema",
-        "name": "CreateContactInMailingList"
+        "name": "CreateContactInMailingList",
+        "type": "object"
       },
       {
         "id": "schema:CreateDistributionLinks",
         "kind": "schema",
-        "name": "CreateDistributionLinks"
+        "name": "CreateDistributionLinks",
+        "type": "object"
       },
       {
         "id": "schema:DistributionsResponse",
         "kind": "schema",
-        "name": "DistributionsResponse"
+        "name": "DistributionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:EventSubscriptionHookSchema",
         "kind": "schema",
-        "name": "EventSubscriptionHookSchema"
+        "name": "EventSubscriptionHookSchema",
+        "type": "object"
       },
       {
         "id": "schema:EventSubscriptionsResponse",
         "kind": "schema",
-        "name": "EventSubscriptionsResponse"
+        "name": "EventSubscriptionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:RetrieveDistributionLinksResponse",
         "kind": "schema",
-        "name": "RetrieveDistributionLinksResponse"
+        "name": "RetrieveDistributionLinksResponse",
+        "type": "object"
       },
       {
         "id": "schema:SubscribeToEventBody",
         "kind": "schema",
-        "name": "SubscribeToEventBody"
+        "name": "SubscribeToEventBody",
+        "type": "object"
       },
       {
         "id": "schema:SurveyResponse",
         "kind": "schema",
-        "name": "SurveyResponse"
+        "name": "SurveyResponse",
+        "type": "object"
       }
     ]
   },

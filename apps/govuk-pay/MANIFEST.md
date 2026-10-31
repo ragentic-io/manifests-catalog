@@ -12,7 +12,7 @@ Connect to GOV.UK Pay with an independent Ragentic integration. Not affiliated w
 
 | | |
 | --- | --- |
-| Signed bundle | `73ced7293dd2f05fb0b1a9effc09066cdf07bc7d73fa1d73333d7842ea7c04ae` in `bundles/`, expires 2027-01-28 01:47 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://publicapi.payments.service.gov.uk` |
 | Credential | static_bearer |
 | Connection test | GET `https://publicapi.payments.service.gov.uk/v1/payments` |
@@ -39,21 +39,23 @@ Independent connector for GOV.UK Pay. Not affiliated with or endorsed by GOV.UK 
 
 46 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/agreements` | Search agreements | Search agreements for recurring payments |
-| POST | `/v1/agreements` | Create an agreement | Create an agreement for recurring payments |
-| GET | `/v1/agreements/{agreementId}` | Get an agreement | Get information about a single agreement for recurring payments |
-| POST | `/v1/agreements/{agreementId}/cancel` | Cancel an agreement | Cancel an agreement for recurring payments |
-| POST | `/v1/auth` | Authorise a MOTO payment | Send card details to authorise a MOTO payment |
-| GET | `/v1/disputes` | Search disputes | Search disputes |
-| GET | `/v1/payments` | Search payments | Search payments |
-| POST | `/v1/payments` | Create a payment | Create a payment |
-| GET | `/v1/payments/{paymentId}` | Get a payment | Get information about a single payment |
-| POST | `/v1/payments/{paymentId}/cancel` | Cancel a payment | Cancel payment |
-| POST | `/v1/payments/{paymentId}/capture` | Capture a payment | Take a delayed payment |
-| GET | `/v1/payments/{paymentId}/events` | Get events for a payment | Get a payment's events |
-| GET | `/v1/payments/{paymentId}/refunds` | Get all refunds for a payment | Get information about a payment’s refunds |
-| POST | `/v1/payments/{paymentId}/refunds` | Submit a refund for a payment | Refund a payment |
-| GET | `/v1/payments/{paymentId}/refunds/{refundId}` | Get a payment refund | Check the status of a refund |
-| GET | `/v1/refunds` | Search refunds | Search refunds |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/agreements` | Search agreements | `reference`, `status`, `page`, `display_size` | AgreementSearchResults | yes | Search agreements for recurring payments |
+| POST | `/v1/agreements` | Create an agreement | body*: CreateAgreementRequest | Agreement |  | Create an agreement for recurring payments |
+| GET | `/v1/agreements/{agreementId}` | Get an agreement | `agreementId`* | Agreement | yes | Get information about a single agreement for recurring payments |
+| POST | `/v1/agreements/{agreementId}/cancel` | Cancel an agreement | `agreementId`* | — |  | Cancel an agreement for recurring payments |
+| POST | `/v1/auth` | Authorise a MOTO payment | body*: AuthorisationRequest | — |  | Send card details to authorise a MOTO payment |
+| GET | `/v1/disputes` | Search disputes | `from_date`, `to_date`, `from_settled_date`, `to_settled_date`, `status`, `page`, `display_size` | DisputesSearchResults | yes | Search disputes |
+| GET | `/v1/payments` | Search payments | `reference`, `email`, `state`, `card_brand`, `from_date`, `to_date`, `page`, `display_size`, `cardholder_name`, `first_digits_card_number`, `last_digits_card_number`, `from_settled_date`, `to_settled_date`, `agreement_id` | PaymentSearchResults | yes | Search payments |
+| POST | `/v1/payments` | Create a payment | `Idempotency-Key`, body*: CreateCardPaymentRequest | CreatePaymentResult |  | Create a payment |
+| GET | `/v1/payments/{paymentId}` | Get a payment | `paymentId`* | PaymentWithAllLinks | yes | Get information about a single payment |
+| POST | `/v1/payments/{paymentId}/cancel` | Cancel a payment | `paymentId`* | — |  | Cancel payment |
+| POST | `/v1/payments/{paymentId}/capture` | Capture a payment | `paymentId`* | — |  | Take a delayed payment |
+| GET | `/v1/payments/{paymentId}/events` | Get events for a payment | `paymentId`* | PaymentEvents | yes | Get a payment's events |
+| GET | `/v1/payments/{paymentId}/refunds` | Get all refunds for a payment | `paymentId`* | RefundForSearchResult | yes | Get information about a payment’s refunds |
+| POST | `/v1/payments/{paymentId}/refunds` | Submit a refund for a payment | `paymentId`*, body*: PaymentRefundRequest | Refund |  | Refund a payment |
+| GET | `/v1/payments/{paymentId}/refunds/{refundId}` | Get a payment refund | `paymentId`*, `refundId`* | Refund | yes | Check the status of a refund |
+| GET | `/v1/refunds` | Search refunds | `from_date`, `to_date`, `from_settled_date`, `to_settled_date`, `page`, `display_size` | RefundSearchResults | yes | Search refunds |

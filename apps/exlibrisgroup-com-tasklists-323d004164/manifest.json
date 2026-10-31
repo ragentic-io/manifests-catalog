@@ -62,153 +62,670 @@
       },
       {
         "deprecated": false,
+        "description": "This API returns a list of Printouts.",
         "id": "operation:get:/almaws/v1/task-lists/printouts",
         "kind": "operation",
         "method": "get",
         "name": "get/almaws/v1/task-lists/printouts",
+        "parameters": [
+          {
+            "default": "ALL",
+            "description": "Printout Name.",
+            "in": "query",
+            "name": "letter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ALL",
+            "description": "Printout status.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ALL",
+            "description": "Printout Printer",
+            "in": "query",
+            "name": "printer_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ALL",
+            "description": "A list of Printout IDs (for example: 123,456,778) from 1 to the limit of 100 Optional.",
+            "in": "query",
+            "name": "printout_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "10",
+            "description": "Limits the number of results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "0",
+            "description": "Offset of the results returned.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/almaws/v1/task-lists/printouts",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1printouts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Retrieve Printouts"
+        "summary": "Retrieve Printouts",
+        "tags": [
+          "Printouts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API performs an action on printouts: mark as printed or canceled.",
         "id": "operation:post:/almaws/v1/task-lists/printouts",
         "kind": "operation",
         "method": "post",
         "name": "post/almaws/v1/task-lists/printouts",
+        "parameters": [
+          {
+            "default": "ALL",
+            "description": "Printout Name.",
+            "in": "query",
+            "name": "letter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ALL",
+            "description": "Printout status.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ALL",
+            "description": "Printout Printer",
+            "in": "query",
+            "name": "printer_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ALL",
+            "description": "A list of Printout IDs (for example: 123,456,778) from 1 to the limit of 100 Optional.",
+            "in": "query",
+            "name": "printout_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The operation to perform on the printout.",
+            "in": "query",
+            "name": "op",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/almaws/v1/task-lists/printouts",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1printouts/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Act on Printouts"
+        "summary": "Act on Printouts",
+        "tags": [
+          "Printouts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This Web service returns a Printout given a Printout ID.",
         "id": "operation:get:/almaws/v1/task-lists/printouts/{printout_id}",
         "kind": "operation",
         "method": "get",
         "name": "get/almaws/v1/task-lists/printouts/{printout_id}",
+        "parameters": [
+          {
+            "description": "The Printout ID",
+            "in": "path",
+            "name": "printout_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/almaws/v1/task-lists/printouts/{printout_id}",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1printouts~1{printout_id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Retrieve a Printout"
+        "summary": "Retrieve a Printout",
+        "tags": [
+          "Printouts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API operates on an printout.",
         "id": "operation:post:/almaws/v1/task-lists/printouts/{printout_id}",
         "kind": "operation",
         "method": "post",
         "name": "post/almaws/v1/task-lists/printouts/{printout_id}",
+        "parameters": [
+          {
+            "description": "The Printout ID",
+            "in": "path",
+            "name": "printout_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The operation to perform on the printout.",
+            "in": "query",
+            "name": "op",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/almaws/v1/task-lists/printouts/{printout_id}",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1printouts~1{printout_id}/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Printout Service"
+        "summary": "Printout Service",
+        "tags": [
+          "Printouts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API returns a list of requested resources to be picked from the shelf in Alma",
         "id": "operation:get:/almaws/v1/task-lists/requested-resources",
         "kind": "operation",
         "method": "get",
         "name": "get/almaws/v1/task-lists/requested-resources",
+        "parameters": [
+          {
+            "description": "The library of the given circulation desk or department where the resources are located.",
+            "in": "query",
+            "name": "library",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The circulation desk where the action is being performed.",
+            "in": "query",
+            "name": "circ_desk",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The location code.",
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "call_number",
+            "description": "The order in which to retrieve the results: location/call_number (default).",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "asc",
+            "description": "The order direction in which to retrieve the results.",
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The pickup institution.",
+            "in": "query",
+            "name": "pickup_inst",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Show reported results: Y/N.",
+            "in": "query",
+            "name": "reported",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Show printed results: Y/N.",
+            "in": "query",
+            "name": "printed",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "10",
+            "description": "Limits the number of results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "0",
+            "description": "Offset of the results returned.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/almaws/v1/task-lists/requested-resources",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1requested-resources/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get Requested Resources"
+        "summary": "Get Requested Resources",
+        "tags": [
+          "Requested Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API performs an action on requested resources that are on the shelf in Alma",
         "id": "operation:post:/almaws/v1/task-lists/requested-resources",
         "kind": "operation",
         "method": "post",
         "name": "post/almaws/v1/task-lists/requested-resources",
+        "parameters": [
+          {
+            "description": "The library of the given circulation desk or department where the resources are located.",
+            "in": "query",
+            "name": "library",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The circulation desk where the action is being performed.",
+            "in": "query",
+            "name": "circ_desk",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Operation to be preformed on the list of given requests.",
+            "in": "query",
+            "name": "op",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The location code.",
+            "in": "query",
+            "name": "location",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The pickup institution.",
+            "in": "query",
+            "name": "pickup_inst",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Show reported results: Y/N.",
+            "in": "query",
+            "name": "reported",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Show printed results: Y/N.",
+            "in": "query",
+            "name": "printed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/almaws/v1/task-lists/requested-resources",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1requested-resources/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Act on Requested Resources"
+        "summary": "Act on Requested Resources",
+        "tags": [
+          "Requested Resources"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API returns a list of lending requests in Alma",
         "id": "operation:get:/almaws/v1/task-lists/rs/lending-requests",
         "kind": "operation",
         "method": "get",
         "name": "get/almaws/v1/task-lists/rs/lending-requests",
+        "parameters": [
+          {
+            "description": "The resource sharing library for which lending requests should be retrieved.",
+            "in": "query",
+            "name": "library",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The status of lending requests to retrieve.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The 'printed' value of lending requests to retrieve.",
+            "in": "query",
+            "name": "printed",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The 'reported' value of lending requests to retrieve.",
+            "in": "query",
+            "name": "reported",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The partner value.",
+            "in": "query",
+            "name": "partner",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Requested format of the resource.",
+            "in": "query",
+            "name": "requested_format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Supplied Format of the resource.",
+            "in": "query",
+            "name": "supplied_format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/almaws/v1/task-lists/rs/lending-requests",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1rs~1lending-requests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get Lending Requests"
+        "summary": "Get Lending Requests",
+        "tags": [
+          "Lending Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API preforms the requested action on a list (specified by given filters) of lending requests in Alma",
         "id": "operation:post:/almaws/v1/task-lists/rs/lending-requests",
         "kind": "operation",
         "method": "post",
         "name": "post/almaws/v1/task-lists/rs/lending-requests",
+        "parameters": [
+          {
+            "description": "The resource sharing library from which lending requests should be retrieved.",
+            "in": "query",
+            "name": "library",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Operation to be preformed on the list of given requests.",
+            "in": "query",
+            "name": "op",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The status of lending requests to retrieve.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The 'printed' value of lending requests to retrieve.",
+            "in": "query",
+            "name": "printed",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The 'reported' value of lending requests to retrieve.",
+            "in": "query",
+            "name": "reported",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The partner value.",
+            "in": "query",
+            "name": "partner",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Requested format of the resource.",
+            "in": "query",
+            "name": "requested_format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Supplied Format of the resource.",
+            "in": "query",
+            "name": "supplied_format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/almaws/v1/task-lists/rs/lending-requests",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1rs~1lending-requests/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Act on Lending Requests"
+        "summary": "Act on Lending Requests",
+        "tags": [
+          "Lending Requests"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is used to test if the API key was configured correctly.It returns a short XML (no schema available - the output is subject to changes) with the follo…",
         "id": "operation:get:/almaws/v1/task-lists/test",
         "kind": "operation",
         "method": "get",
         "name": "get/almaws/v1/task-lists/test",
         "path": "/almaws/v1/task-lists/test",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1test/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "GET Task-lists Test API"
+        "summary": "GET Task-lists Test API",
+        "tags": [
+          "Test"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is used to test if the API key was configured correctly, including read/write permissions.It returns a short XML (no schema available - the output is…",
         "id": "operation:post:/almaws/v1/task-lists/test",
         "kind": "operation",
         "method": "post",
         "name": "post/almaws/v1/task-lists/test",
         "path": "/almaws/v1/task-lists/test",
         "pointer": "#/paths/~1almaws~1v1~1task-lists~1test/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "POST Task-lists Test API"
+        "summary": "POST Task-lists Test API",
+        "tags": [
+          "Test"
+        ]
       }
     ]
   },

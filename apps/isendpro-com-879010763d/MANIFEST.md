@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_en.isendpro.com_img_logo-isendp
 
 | | |
 | --- | --- |
-| Signed bundle | `d202f813b7f1b396b198adc488164285799d273e18eb2b9a959d75d00a64b1e5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,19 +34,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_en.isendpro.com_img_logo-isendp
 
 35 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/campagne` | getCampagne | Retourne les SMS envoyés sur une période donnée |
-| POST | `/comptage` | comptage | Compter le nombre de caractère |
-| GET | `/credit` | getCredit | Interrogation credit |
-| POST | `/dellistenoire` | delListeNoire | Ajoute un numero en liste noire |
-| POST | `/getlistenoire` | getListeNoire | Retourne le liste noire |
-| POST | `/hlr` | getHlr | Vérifier la validité d'un numéro |
-| POST | `/repertoire` | repertoireCrea | Gestion repertoire (creation) |
-| PUT | `/repertoire` | repertoire | Gestion repertoire (modification) |
-| POST | `/setlistenoire` | setListeNoire | Ajoute un numero en liste noire |
-| POST | `/shortlink` | addShortlink | add a shortlink |
-| POST | `/sms` | sendSms | Envoyer un sms |
-| POST | `/smsmulti` | sendSmsMulti | Envoyer des SMS |
-| POST | `/subaccount` | subaccountAdd | Ajoute un sous compte |
-| PUT | `/subaccount` | subaccountEdit | Edit a subaccount |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/campagne` | getCampagne | `keyid`*, `rapportCampagne`*, `date_deb`*, `date_fin`* | string:binary | yes | Retourne les SMS envoyés sur une période donnée |
+| POST | `/comptage` | comptage | body*: ComptageRequest | ComptageReponse |  | Compter le nombre de caractère |
+| GET | `/credit` | getCredit | `keyid`*, `credit`* | CreditResponse | yes | Interrogation credit |
+| POST | `/dellistenoire` | delListeNoire | `keyid`*, `delListeNoire`*, `num`* | LISTENOIREReponse |  | Ajoute un numero en liste noire |
+| POST | `/getlistenoire` | getListeNoire | `keyid`*, `getListeNoire`* | string:binary |  | Retourne le liste noire |
+| POST | `/hlr` | getHlr | body*: HLRrequest | HLRReponse |  | Vérifier la validité d'un numéro |
+| PUT | `/repertoire` | repertoire | body*: REPERTOIREmodifrequest | REPERTOIREmodifreponse |  | Gestion repertoire (modification) |
+| POST | `/repertoire` | repertoireCrea | body*: REPERTOIREcreaterequest | REPERTOIREcreatereponse |  | Gestion repertoire (creation) |
+| POST | `/setlistenoire` | setListeNoire | `keyid`*, `setlisteNoire`*, `num`* | LISTENOIREReponse |  | Ajoute un numero en liste noire |
+| POST | `/shortlink` | addShortlink | body*: ShortlinkRequest | ShortlinkResponse |  | add a shortlink |
+| POST | `/sms` | sendSms | body*: SmsUniqueRequest | SMSReponse |  | Envoyer un sms |
+| POST | `/smsmulti` | sendSmsMulti | body*: SMSRequest | SMSReponse |  | Envoyer des SMS |
+| PUT | `/subaccount` | subaccountEdit | body*: SubaccountRequest | SubaccountResponse |  | Edit a subaccount |
+| POST | `/subaccount` | subaccountAdd | body*: SubaccountAddRequest | SubaccountAddResponse |  | Ajoute un sous compte |

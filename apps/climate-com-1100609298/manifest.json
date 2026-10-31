@@ -133,6 +133,271 @@
         "from": "climate-com-1100609298",
         "kind": "EXPOSES",
         "to": "operation:get:/v4/uploads/{uploadId}/status"
+      },
+      {
+        "from": "operation:post:/v4/boundaries",
+        "kind": "ACCEPTS",
+        "to": "schema:BoundaryUpload"
+      },
+      {
+        "from": "operation:post:/v4/boundaries",
+        "kind": "RETURNS",
+        "to": "schema:UploadedBoundaryId"
+      },
+      {
+        "from": "operation:post:/v4/boundaries/query",
+        "kind": "ACCEPTS",
+        "to": "schema:BoundariesQuery"
+      },
+      {
+        "from": "operation:post:/v4/boundaries/query",
+        "kind": "RETURNS",
+        "to": "schema:Boundaries"
+      },
+      {
+        "from": "operation:get:/v4/boundaries/{boundaryId}",
+        "kind": "RETURNS",
+        "to": "schema:Boundary"
+      },
+      {
+        "from": "operation:post:/v4/exports",
+        "kind": "ACCEPTS",
+        "to": "schema:Export"
+      },
+      {
+        "from": "operation:post:/v4/exports",
+        "kind": "RETURNS",
+        "to": "schema:CreatedExport"
+      },
+      {
+        "from": "operation:get:/v4/exports/{exportId}/contents",
+        "kind": "RETURNS",
+        "to": "schema:ExportContents"
+      },
+      {
+        "from": "operation:get:/v4/exports/{exportId}/status",
+        "kind": "RETURNS",
+        "to": "schema:ExportStatus"
+      },
+      {
+        "from": "operation:get:/v4/farmOrganizations/{farmOrganizationType}/{farmOrganizationId}",
+        "kind": "RETURNS",
+        "to": "schema:FarmOrganization"
+      },
+      {
+        "from": "operation:get:/v4/fields",
+        "kind": "RETURNS",
+        "to": "schema:Fields"
+      },
+      {
+        "from": "operation:get:/v4/fields/all",
+        "kind": "RETURNS",
+        "to": "schema:Fields"
+      },
+      {
+        "from": "operation:get:/v4/fields/{fieldId}",
+        "kind": "RETURNS",
+        "to": "schema:Field"
+      },
+      {
+        "from": "operation:get:/v4/layers/asApplied",
+        "kind": "RETURNS",
+        "to": "schema:ApplicationActivities"
+      },
+      {
+        "from": "operation:get:/v4/layers/asApplied/{activityId}/contents",
+        "kind": "RETURNS",
+        "to": "schema:ApplicationActivityContents"
+      },
+      {
+        "from": "operation:get:/v4/layers/asHarvested",
+        "kind": "RETURNS",
+        "to": "schema:HarvestActivities"
+      },
+      {
+        "from": "operation:get:/v4/layers/asHarvested/{activityId}/contents",
+        "kind": "RETURNS",
+        "to": "schema:HarvestActivityContents"
+      },
+      {
+        "from": "operation:get:/v4/layers/asPlanted",
+        "kind": "RETURNS",
+        "to": "schema:PlantingActivities"
+      },
+      {
+        "from": "operation:get:/v4/layers/asPlanted/{activityId}/contents",
+        "kind": "RETURNS",
+        "to": "schema:PlantingActivityContents"
+      },
+      {
+        "from": "operation:get:/v4/layers/scoutingObservations",
+        "kind": "RETURNS",
+        "to": "schema:ScoutingObservations"
+      },
+      {
+        "from": "operation:get:/v4/layers/scoutingObservations/{scoutingObservationId}",
+        "kind": "RETURNS",
+        "to": "schema:ScoutingObservation"
+      },
+      {
+        "from": "operation:get:/v4/layers/scoutingObservations/{scoutingObservationId}/attachments",
+        "kind": "RETURNS",
+        "to": "schema:ScoutingObservationAttachments"
+      },
+      {
+        "from": "operation:get:/v4/layers/scoutingObservations/{scoutingObservationId}/attachments/{attachmentId}/contents",
+        "kind": "RETURNS",
+        "to": "schema:ScoutingObservationAttachmentContents"
+      },
+      {
+        "from": "operation:get:/v4/operations/all",
+        "kind": "RETURNS",
+        "to": "schema:Operations"
+      },
+      {
+        "from": "operation:get:/v4/resourceOwners/{resourceOwnerId}",
+        "kind": "RETURNS",
+        "to": "schema:ResourceOwner"
+      },
+      {
+        "from": "operation:post:/v4/uploads",
+        "kind": "ACCEPTS",
+        "to": "schema:Upload"
+      },
+      {
+        "from": "operation:post:/v4/uploads",
+        "kind": "RETURNS",
+        "to": "schema:CreatedUpload"
+      },
+      {
+        "from": "operation:post:/v4/uploads/status/query",
+        "kind": "ACCEPTS",
+        "to": "schema:UploadStatusQuery"
+      },
+      {
+        "from": "operation:post:/v4/uploads/status/query",
+        "kind": "RETURNS",
+        "to": "schema:UploadStatuses"
+      },
+      {
+        "from": "operation:get:/v4/uploads/{uploadId}/status",
+        "kind": "RETURNS",
+        "to": "schema:UploadStatus"
+      },
+      {
+        "from": "schema:ApplicationActivities",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationActivitySummary"
+      },
+      {
+        "from": "schema:ApplicationActivityContents",
+        "kind": "REFERENCES",
+        "to": "schema:BinaryData"
+      },
+      {
+        "from": "schema:Boundaries",
+        "kind": "REFERENCES",
+        "to": "schema:Boundary"
+      },
+      {
+        "from": "schema:Boundary",
+        "kind": "REFERENCES",
+        "to": "schema:BoundaryProperties"
+      },
+      {
+        "from": "schema:Boundary",
+        "kind": "REFERENCES",
+        "to": "schema:Geometry"
+      },
+      {
+        "from": "schema:BoundaryProperties",
+        "kind": "REFERENCES",
+        "to": "schema:Area"
+      },
+      {
+        "from": "schema:BoundaryProperties",
+        "kind": "REFERENCES",
+        "to": "schema:Point"
+      },
+      {
+        "from": "schema:BoundaryUpload",
+        "kind": "REFERENCES",
+        "to": "schema:Geometry"
+      },
+      {
+        "from": "schema:ExportContents",
+        "kind": "REFERENCES",
+        "to": "schema:BinaryData"
+      },
+      {
+        "from": "schema:Field",
+        "kind": "REFERENCES",
+        "to": "schema:Parent"
+      },
+      {
+        "from": "schema:Fields",
+        "kind": "REFERENCES",
+        "to": "schema:Field"
+      },
+      {
+        "from": "schema:HarvestActivities",
+        "kind": "REFERENCES",
+        "to": "schema:HarvestActivitySummary"
+      },
+      {
+        "from": "schema:HarvestActivityContents",
+        "kind": "REFERENCES",
+        "to": "schema:BinaryData"
+      },
+      {
+        "from": "schema:Operations",
+        "kind": "REFERENCES",
+        "to": "schema:Operation"
+      },
+      {
+        "from": "schema:PlantingActivities",
+        "kind": "REFERENCES",
+        "to": "schema:PlantingActivitySummary"
+      },
+      {
+        "from": "schema:PlantingActivityContents",
+        "kind": "REFERENCES",
+        "to": "schema:BinaryData"
+      },
+      {
+        "from": "schema:ScoutingObservation",
+        "kind": "REFERENCES",
+        "to": "schema:Geometry"
+      },
+      {
+        "from": "schema:ScoutingObservation",
+        "kind": "REFERENCES",
+        "to": "schema:ScoutingTag"
+      },
+      {
+        "from": "schema:ScoutingObservationAttachmentContents",
+        "kind": "REFERENCES",
+        "to": "schema:BinaryData"
+      },
+      {
+        "from": "schema:ScoutingObservationAttachments",
+        "kind": "REFERENCES",
+        "to": "schema:ScoutingObservationAttachment"
+      },
+      {
+        "from": "schema:ScoutingObservations",
+        "kind": "REFERENCES",
+        "to": "schema:ScoutingObservationSummary"
+      },
+      {
+        "from": "schema:Upload",
+        "kind": "REFERENCES",
+        "to": "schema:Metadata"
+      },
+      {
+        "from": "schema:UploadStatuses",
+        "kind": "REFERENCES",
+        "to": "schema:UploadStatus"
       }
     ],
     "nodes": [
@@ -142,12 +407,55 @@
       },
       {
         "deprecated": false,
+        "description": "Upload a **Boundary** entry by passing the geometry of the boundary.",
         "id": "operation:post:/v4/boundaries",
         "kind": "operation",
         "method": "post",
         "name": "uploadBoundary",
         "path": "/v4/boundaries",
         "pointer": "#/paths/~1v4~1boundaries/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BoundaryUpload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UploadedBoundaryId"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -158,16 +466,62 @@
             ]
           }
         ],
-        "summary": "Upload a boundary"
+        "summary": "Upload a boundary",
+        "tags": [
+          "Boundaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve multiple **Boundaries** (up to 10 per request).",
         "id": "operation:post:/v4/boundaries/query",
         "kind": "operation",
         "method": "post",
         "name": "fetchBoundaries",
         "path": "/v4/boundaries/query",
         "pointer": "#/paths/~1v4~1boundaries~1query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BoundariesQuery"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Boundaries"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -178,16 +532,64 @@
             ]
           }
         ],
-        "summary": "Retrieve Boundaries in batch"
+        "summary": "Retrieve Boundaries in batch",
+        "tags": [
+          "Boundaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a **Boundary** by ID.",
         "id": "operation:get:/v4/boundaries/{boundaryId}",
         "kind": "operation",
         "method": "get",
         "name": "fetchBoundaryById",
+        "parameters": [
+          {
+            "description": "Unique identifier of the Boundary",
+            "in": "path",
+            "name": "boundaryId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v4/boundaries/{boundaryId}",
         "pointer": "#/paths/~1v4~1boundaries~1{boundaryId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Boundary"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -199,16 +601,58 @@
             ]
           }
         ],
-        "summary": "Retrieve a Boundary by ID"
+        "summary": "Retrieve a Boundary by ID",
+        "tags": [
+          "Boundaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Step one in requesting a data product.",
         "id": "operation:post:/v4/exports",
         "kind": "operation",
         "method": "post",
         "name": "postExport",
         "path": "/v4/exports",
         "pointer": "#/paths/~1v4~1exports/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Export"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreatedExport"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -219,16 +663,97 @@
             ]
           }
         ],
-        "summary": "Initiate a new export request."
+        "summary": "Initiate a new export request.",
+        "tags": [
+          "Exports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Downloads larger than `5MiB` (`5242880 bytes`) in size must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB` (`104857…",
         "id": "operation:get:/v4/exports/{exportId}/contents",
         "kind": "operation",
         "method": "get",
         "name": "fetchExportContentsById",
+        "parameters": [
+          {
+            "description": "Must be either \\*/* or application/octet-stream,application/json",
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of an Export.",
+            "in": "path",
+            "name": "exportId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Byte range `bytes=start-end` (https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.1).",
+            "in": "header",
+            "name": "Range",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v4/exports/{exportId}/contents",
         "pointer": "#/paths/~1v4~1exports~1{exportId}~1contents/get",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "206",
+            "type": "ExportContents"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "410",
+            "type": "Error"
+          },
+          {
+            "status": "416",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -239,16 +764,64 @@
             ]
           }
         ],
-        "summary": "Retrieve the binary contents of a processed export request."
+        "summary": "Retrieve the binary contents of a processed export request.",
+        "tags": [
+          "Exports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Check the status of an **Export** by ID.",
         "id": "operation:get:/v4/exports/{exportId}/status",
         "kind": "operation",
         "method": "get",
         "name": "fetchExportStatusById",
+        "parameters": [
+          {
+            "description": "Unique identifier of an Export.",
+            "in": "path",
+            "name": "exportId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v4/exports/{exportId}/status",
         "pointer": "#/paths/~1v4~1exports~1{exportId}~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExportStatus"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -259,16 +832,74 @@
             ]
           }
         ],
-        "summary": "Retrieve the status of an Export."
+        "summary": "Retrieve the status of an Export.",
+        "tags": [
+          "Exports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a given **farm organization** by organization type and ID.",
         "id": "operation:get:/v4/farmOrganizations/{farmOrganizationType}/{farmOrganizationId}",
         "kind": "operation",
         "method": "get",
         "name": "fetchFarmOrganizationByTypeAndId",
+        "parameters": [
+          {
+            "description": "Type of the farm organization.",
+            "enum": [
+              "farm"
+            ],
+            "in": "path",
+            "name": "farmOrganizationType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the farm organization.",
+            "in": "path",
+            "name": "farmOrganizationId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v4/farmOrganizations/{farmOrganizationType}/{farmOrganizationId}",
         "pointer": "#/paths/~1v4~1farmOrganizations~1{farmOrganizationType}~1{farmOrganizationId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FarmOrganization"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -279,16 +910,82 @@
             ]
           }
         ],
-        "summary": "Retrieve a specific farm organization by organization type and ID"
+        "summary": "Retrieve a specific farm organization by organization type and ID",
+        "tags": [
+          "FarmOrganizations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve list of **Fields**.",
         "id": "operation:get:/v4/fields",
         "kind": "operation",
         "method": "get",
         "name": "fetchFields",
+        "parameters": [
+          {
+            "description": "Opaque string which allows for fetching the next batch of results.",
+            "in": "header",
+            "name": "X-Next-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Max number of results to return per batch.",
+            "in": "header",
+            "name": "X-Limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional prefix filter for field name.",
+            "in": "query",
+            "name": "fieldName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v4/fields",
         "pointer": "#/paths/~1v4~1fields/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Fields"
+          },
+          {
+            "status": "206",
+            "type": "Fields"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -300,16 +997,86 @@
             ]
           }
         ],
-        "summary": "Retrieve list of Fields"
+        "summary": "Retrieve list of Fields",
+        "tags": [
+          "Fields"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all fields the authenticated user has access to, including fields shared with the authenticated user from other resource owners.",
         "id": "operation:get:/v4/fields/all",
         "kind": "operation",
         "method": "get",
         "name": "fetchAllFields",
+        "parameters": [
+          {
+            "description": "Opaque string which allows for fetching the next batch of results.",
+            "in": "header",
+            "name": "X-Next-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Max number of results to return per batch.",
+            "in": "header",
+            "name": "X-Limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional prefix filter for field name.",
+            "in": "query",
+            "name": "fieldName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v4/fields/all",
         "pointer": "#/paths/~1v4~1fields~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Fields"
+          },
+          {
+            "status": "206",
+            "type": "Fields"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -321,16 +1088,64 @@
             ]
           }
         ],
-        "summary": "Retrieve list of all Fields the user has access to."
+        "summary": "Retrieve list of all Fields the user has access to.",
+        "tags": [
+          "Fields"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a given **Field** by ID.",
         "id": "operation:get:/v4/fields/{fieldId}",
         "kind": "operation",
         "method": "get",
         "name": "fetchFieldById",
+        "parameters": [
+          {
+            "description": "Unique identifier of the Field.",
+            "in": "path",
+            "name": "fieldId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v4/fields/{fieldId}",
         "pointer": "#/paths/~1v4~1fields~1{fieldId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Field"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -342,16 +1157,90 @@
             ]
           }
         ],
-        "summary": "Retrieve a specific Field by ID"
+        "summary": "Retrieve a specific Field by ID",
+        "tags": [
+          "Fields"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of application activities.",
         "id": "operation:get:/v4/layers/asApplied",
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/asApplied",
+        "parameters": [
+          {
+            "description": "Must be either \\*/* or application/octet-stream,application/json",
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Opaque string which allows for fetching the next batch of results.",
+            "in": "header",
+            "name": "X-Next-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Max number of results to return per batch.",
+            "in": "header",
+            "name": "X-Limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional unique identifier of the resource owner.",
+            "in": "query",
+            "name": "resourceOwnerId",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Optional start time by which to filter layer results.",
+            "in": "query",
+            "name": "occurredAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Optional end time by which to filter layer results.",
+            "in": "query",
+            "name": "occurredBefore",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Optional updated time by which to filter layer results.",
+            "in": "query",
+            "name": "updatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/v4/layers/asApplied",
         "pointer": "#/paths/~1v4~1layers~1asApplied/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApplicationActivities"
+          },
+          {
+            "status": "206",
+            "type": "ApplicationActivities"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -363,16 +1252,86 @@
             ]
           }
         ],
-        "summary": "Retrieve a list of application activities"
+        "summary": "Retrieve a list of application activities",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve an individual application activity by id.",
         "id": "operation:get:/v4/layers/asApplied/{activityId}/contents",
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/asApplied/{activityId}/contents",
+        "parameters": [
+          {
+            "description": "Must be either \\*/* or application/octet-stream,application/json",
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the Application Activity.",
+            "in": "path",
+            "name": "activityId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Byte range `bytes=start-end` (https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.1).",
+            "in": "header",
+            "name": "Range",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v4/layers/asApplied/{activityId}/contents",
         "pointer": "#/paths/~1v4~1layers~1asApplied~1{activityId}~1contents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApplicationActivityContents"
+          },
+          {
+            "status": "206",
+            "type": "ApplicationActivityContents"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "416",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -383,16 +1342,90 @@
             ]
           }
         ],
-        "summary": "Retrieve the raw application activity"
+        "summary": "Retrieve the raw application activity",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of harvest activities.",
         "id": "operation:get:/v4/layers/asHarvested",
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/asHarvested",
+        "parameters": [
+          {
+            "description": "Must be either \\*/* or application/octet-stream,application/json",
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Opaque string which allows for fetching the next batch of results.",
+            "in": "header",
+            "name": "X-Next-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Max number of results to return per batch.",
+            "in": "header",
+            "name": "X-Limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional unique identifier of the resource owner.",
+            "in": "query",
+            "name": "resourceOwnerId",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Optional start time by which to filter layer results.",
+            "in": "query",
+            "name": "occurredAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Optional end time by which to filter layer results.",
+            "in": "query",
+            "name": "occurredBefore",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Optional updated time by which to filter layer results.",
+            "in": "query",
+            "name": "updatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/v4/layers/asHarvested",
         "pointer": "#/paths/~1v4~1layers~1asHarvested/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HarvestActivities"
+          },
+          {
+            "status": "206",
+            "type": "HarvestActivities"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -404,16 +1437,86 @@
             ]
           }
         ],
-        "summary": "Retrieve a list of harvest activities"
+        "summary": "Retrieve a list of harvest activities",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve an individual harvest activity by id.",
         "id": "operation:get:/v4/layers/asHarvested/{activityId}/contents",
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/asHarvested/{activityId}/contents",
+        "parameters": [
+          {
+            "description": "Must be either \\*/* or application/octet-stream,application/json",
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the Harvest Activity.",
+            "in": "path",
+            "name": "activityId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Byte range `bytes=start-end` (https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.1).",
+            "in": "header",
+            "name": "Range",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v4/layers/asHarvested/{activityId}/contents",
         "pointer": "#/paths/~1v4~1layers~1asHarvested~1{activityId}~1contents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HarvestActivityContents"
+          },
+          {
+            "status": "206",
+            "type": "HarvestActivityContents"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "416",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -424,16 +1527,90 @@
             ]
           }
         ],
-        "summary": "Retrieve the raw harvest activity"
+        "summary": "Retrieve the raw harvest activity",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of planting activities.",
         "id": "operation:get:/v4/layers/asPlanted",
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/asPlanted",
+        "parameters": [
+          {
+            "description": "Must be either \\*/* or application/octet-stream,application/json",
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Opaque string which allows for fetching the next batch of results.",
+            "in": "header",
+            "name": "X-Next-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Max number of results to return per batch.",
+            "in": "header",
+            "name": "X-Limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional unique identifier of the resource owner.",
+            "in": "query",
+            "name": "resourceOwnerId",
+            "required": false,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Optional start time by which to filter layer results.",
+            "in": "query",
+            "name": "occurredAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Optional end time by which to filter layer results.",
+            "in": "query",
+            "name": "occurredBefore",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Optional updated time by which to filter layer results.",
+            "in": "query",
+            "name": "updatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/v4/layers/asPlanted",
         "pointer": "#/paths/~1v4~1layers~1asPlanted/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlantingActivities"
+          },
+          {
+            "status": "206",
+            "type": "PlantingActivities"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -445,16 +1622,86 @@
             ]
           }
         ],
-        "summary": "Retrieve a list of planting activities"
+        "summary": "Retrieve a list of planting activities",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve an individual planting activity by id.",
         "id": "operation:get:/v4/layers/asPlanted/{activityId}/contents",
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/asPlanted/{activityId}/contents",
+        "parameters": [
+          {
+            "description": "Must be either \\*/* or application/octet-stream,application/json",
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the Planting Activity.",
+            "in": "path",
+            "name": "activityId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Byte range `bytes=start-end` (https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.1).",
+            "in": "header",
+            "name": "Range",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v4/layers/asPlanted/{activityId}/contents",
         "pointer": "#/paths/~1v4~1layers~1asPlanted~1{activityId}~1contents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlantingActivityContents"
+          },
+          {
+            "status": "206",
+            "type": "PlantingActivityContents"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "416",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -465,16 +1712,69 @@
             ]
           }
         ],
-        "summary": "Retrieve the raw planting activity"
+        "summary": "Retrieve the raw planting activity",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of scouting observations created or updated by the user identified by the Authorization header.",
         "id": "operation:get:/v4/layers/scoutingObservations",
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/scoutingObservations",
+        "parameters": [
+          {
+            "description": "Opaque string which allows for fetching the next batch of results.",
+            "in": "header",
+            "name": "X-Next-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Max number of results to return per batch.",
+            "in": "header",
+            "name": "X-Limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional start time by which to filter layer results.",
+            "in": "query",
+            "name": "occurredAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Optional end time by which to filter layer results.",
+            "in": "query",
+            "name": "occurredBefore",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/v4/layers/scoutingObservations",
         "pointer": "#/paths/~1v4~1layers~1scoutingObservations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoutingObservations"
+          },
+          {
+            "status": "206",
+            "type": "ScoutingObservations"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -486,16 +1786,48 @@
             ]
           }
         ],
-        "summary": "Retrieve a list of scouting observations"
+        "summary": "Retrieve a list of scouting observations",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve an individual scouting observation by id.",
         "id": "operation:get:/v4/layers/scoutingObservations/{scoutingObservationId}",
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/scoutingObservations/{scoutingObservationId}",
+        "parameters": [
+          {
+            "description": "Unique identifier of the Scouting Observation.",
+            "in": "path",
+            "name": "scoutingObservationId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v4/layers/scoutingObservations/{scoutingObservationId}",
         "pointer": "#/paths/~1v4~1layers~1scoutingObservations~1{scoutingObservationId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoutingObservation"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -507,7 +1839,10 @@
             ]
           }
         ],
-        "summary": "Retrieve individual scouting observation"
+        "summary": "Retrieve individual scouting observation",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
@@ -515,8 +1850,58 @@
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/scoutingObservations/{scoutingObservationId}/attachments",
+        "parameters": [
+          {
+            "description": "Unique identifier of the Scouting Observation.",
+            "in": "path",
+            "name": "scoutingObservationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Opaque string which allows for fetching the next batch of results.",
+            "in": "header",
+            "name": "X-Next-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Max number of results to return per batch.",
+            "in": "header",
+            "name": "X-Limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/v4/layers/scoutingObservations/{scoutingObservationId}/attachments",
         "pointer": "#/paths/~1v4~1layers~1scoutingObservations~1{scoutingObservationId}~1attachments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoutingObservationAttachments"
+          },
+          {
+            "status": "206",
+            "type": "ScoutingObservationAttachments"
+          },
+          {
+            "status": "304",
+            "type": "Empty"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -528,16 +1913,89 @@
             ]
           }
         ],
-        "summary": "Retrieve attachments associated with a given scouting observation."
+        "summary": "Retrieve attachments associated with a given scouting observation.",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Photos added to scouting notes in the FieldView app are capped to `20MiB` (`20971520 bytes`), and we won’t store photos larger than that in a scouting note.",
         "id": "operation:get:/v4/layers/scoutingObservations/{scoutingObservationId}/attachments/{attachmentId}/contents",
         "kind": "operation",
         "method": "get",
         "name": "get /v4/layers/scoutingObservations/{scoutingObservationId}/attachments/{attachmentId}/contents",
+        "parameters": [
+          {
+            "description": "Must be either \\*/* or application/octet-stream,application/json",
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the Scouting Observation.",
+            "in": "path",
+            "name": "scoutingObservationId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Unique identifier of the attachment.",
+            "in": "path",
+            "name": "attachmentId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Byte range `bytes=start-end` (https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.1).",
+            "in": "header",
+            "name": "Range",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v4/layers/scoutingObservations/{scoutingObservationId}/attachments/{attachmentId}/contents",
         "pointer": "#/paths/~1v4~1layers~1scoutingObservations~1{scoutingObservationId}~1attachments~1{attachmentId}~1contents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoutingObservationAttachmentContents"
+          },
+          {
+            "status": "206",
+            "type": "ScoutingObservationAttachmentContents"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "416",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -549,16 +2007,64 @@
             ]
           }
         ],
-        "summary": "Retrieve the binary contents of a scouting observation’s attachment."
+        "summary": "Retrieve the binary contents of a scouting observation’s attachment.",
+        "tags": [
+          "Layers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the **operations** accessible to the authenticated user.",
         "id": "operation:get:/v4/operations/all",
         "kind": "operation",
         "method": "get",
         "name": "fetchOperations",
+        "parameters": [
+          {
+            "description": "Optional comma-separated list of resource owner unique identifiers by which to filter results.",
+            "in": "query",
+            "name": "resourceOwnerId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v4/operations/all",
         "pointer": "#/paths/~1v4~1operations~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Operations"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -569,16 +2075,48 @@
             ]
           }
         ],
-        "summary": "Retrieve the operations accessible to a a given user."
+        "summary": "Retrieve the operations accessible to a a given user.",
+        "tags": [
+          "Operations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a resource owner for the given `resourceOwnerId`.",
         "id": "operation:get:/v4/resourceOwners/{resourceOwnerId}",
         "kind": "operation",
         "method": "get",
         "name": "getResourceOwner",
+        "parameters": [
+          {
+            "description": "Unique identifier of the resource owner.",
+            "in": "path",
+            "name": "resourceOwnerId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v4/resourceOwners/{resourceOwnerId}",
         "pointer": "#/paths/~1v4~1resourceOwners~1{resourceOwnerId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceOwner"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -590,16 +2128,67 @@
             ]
           }
         ],
-        "summary": "Retrieve a resource owner by ID"
+        "summary": "Retrieve a resource owner by ID",
+        "tags": [
+          "ResourceOwners"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Step one in uploading a data product.",
         "id": "operation:post:/v4/uploads",
         "kind": "operation",
         "method": "post",
         "name": "postUpload",
+        "parameters": [
+          {
+            "description": "Email address associated with a Climate account, used when to sending to another user.",
+            "in": "header",
+            "name": "X-Recipient-Email",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v4/uploads",
         "pointer": "#/paths/~1v4~1uploads/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Upload"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreatedUpload"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -618,16 +2207,62 @@
             ]
           }
         ],
-        "summary": "Initiate a new upload"
+        "summary": "Initiate a new upload",
+        "tags": [
+          "Uploads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Check the status of multiple **Uploads** (up to 100 per request).",
         "id": "operation:post:/v4/uploads/status/query",
         "kind": "operation",
         "method": "post",
         "name": "fetchUploadStatuses",
         "path": "/v4/uploads/status/query",
         "pointer": "#/paths/~1v4~1uploads~1status~1query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UploadStatusQuery"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UploadStatuses"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -644,16 +2279,77 @@
             ]
           }
         ],
-        "summary": "Retrieve Upload statuses in batch"
+        "summary": "Retrieve Upload statuses in batch",
+        "tags": [
+          "Uploads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Send chunked data for an **Upload**.",
         "id": "operation:put:/v4/uploads/{uploadId}",
         "kind": "operation",
         "method": "put",
         "name": "chunkedUpload",
+        "parameters": [
+          {
+            "description": "Byte range `bytes start-end/total` (https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16).",
+            "in": "header",
+            "name": "Content-Range",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of an Upload.",
+            "in": "path",
+            "name": "uploadId",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Must be `application/octet-stream`",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v4/uploads/{uploadId}",
         "pointer": "#/paths/~1v4~1uploads~1{uploadId}/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -671,16 +2367,64 @@
             ]
           }
         ],
-        "summary": "Chunked upload of data"
+        "summary": "Chunked upload of data",
+        "tags": [
+          "Uploads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Check the status of an **Upload** by ID.",
         "id": "operation:get:/v4/uploads/{uploadId}/status",
         "kind": "operation",
         "method": "get",
         "name": "fetchUploadStatusById",
+        "parameters": [
+          {
+            "description": "Unique identifier of an Upload.",
+            "in": "path",
+            "name": "uploadId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/v4/uploads/{uploadId}/status",
         "pointer": "#/paths/~1v4~1uploads~1{uploadId}~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UploadStatus"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -697,237 +2441,308 @@
             ]
           }
         ],
-        "summary": "Retrieve Upload status"
+        "summary": "Retrieve Upload status",
+        "tags": [
+          "Uploads"
+        ]
       },
       {
+        "description": "A batch of application activities",
         "id": "schema:ApplicationActivities",
         "kind": "schema",
-        "name": "ApplicationActivities"
+        "name": "ApplicationActivities",
+        "type": "object"
       },
       {
         "id": "schema:ApplicationActivityContents",
         "kind": "schema",
-        "name": "ApplicationActivityContents"
+        "name": "ApplicationActivityContents",
+        "type": "object"
       },
       {
         "id": "schema:ApplicationActivitySummary",
         "kind": "schema",
-        "name": "ApplicationActivitySummary"
+        "name": "ApplicationActivitySummary",
+        "type": "object"
       },
       {
+        "description": "Area with units.",
         "id": "schema:Area",
         "kind": "schema",
-        "name": "Area"
+        "name": "Area",
+        "type": "object"
       },
       {
         "id": "schema:Binary",
         "kind": "schema",
-        "name": "Binary"
+        "name": "Binary",
+        "type": "string:binary"
       },
       {
+        "description": "Binary contents",
         "id": "schema:BinaryData",
         "kind": "schema",
-        "name": "BinaryData"
+        "name": "BinaryData",
+        "type": "string:binary"
       },
       {
+        "description": "A batch of boundary results",
         "id": "schema:Boundaries",
         "kind": "schema",
-        "name": "Boundaries"
+        "name": "Boundaries",
+        "type": "object"
       },
       {
         "id": "schema:BoundariesQuery",
         "kind": "schema",
-        "name": "BoundariesQuery"
+        "name": "BoundariesQuery",
+        "type": "object"
       },
       {
+        "description": "Arbitrary boundary.",
         "id": "schema:Boundary",
         "kind": "schema",
-        "name": "Boundary"
+        "name": "Boundary",
+        "type": "object"
       },
       {
+        "description": "Properties map.",
         "id": "schema:BoundaryProperties",
         "kind": "schema",
-        "name": "BoundaryProperties"
+        "name": "BoundaryProperties",
+        "type": "object"
       },
       {
+        "description": "Arbitrary boundary in a geometry map",
         "id": "schema:BoundaryUpload",
         "kind": "schema",
-        "name": "BoundaryUpload"
+        "name": "BoundaryUpload",
+        "type": "object"
       },
       {
         "id": "schema:CreatedExport",
         "kind": "schema",
-        "name": "CreatedExport"
+        "name": "CreatedExport",
+        "type": "object"
       },
       {
+        "description": "Successfully created upload request",
         "id": "schema:CreatedUpload",
         "kind": "schema",
-        "name": "CreatedUpload"
+        "name": "CreatedUpload",
+        "type": "string:uuid"
       },
       {
         "id": "schema:Empty",
         "kind": "schema",
-        "name": "Empty"
+        "name": "Empty",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "Client request to export data from a user.",
         "id": "schema:Export",
         "kind": "schema",
-        "name": "Export"
+        "name": "Export",
+        "type": "object"
       },
       {
         "id": "schema:ExportContents",
         "kind": "schema",
-        "name": "ExportContents"
+        "name": "ExportContents",
+        "type": "object"
       },
       {
         "id": "schema:ExportStatus",
         "kind": "schema",
-        "name": "ExportStatus"
+        "name": "ExportStatus",
+        "type": "object"
       },
       {
+        "description": "Logical representation of a farm organization with a name and type.",
         "id": "schema:FarmOrganization",
         "kind": "schema",
-        "name": "FarmOrganization"
+        "name": "FarmOrganization",
+        "type": "object"
       },
       {
+        "description": "Logical representation of a Field with a name.",
         "id": "schema:Field",
         "kind": "schema",
-        "name": "Field"
+        "name": "Field",
+        "type": "object"
       },
       {
+        "description": "A batch of field results",
         "id": "schema:Fields",
         "kind": "schema",
-        "name": "Fields"
+        "name": "Fields",
+        "type": "object"
       },
       {
+        "description": "GeoJSON",
         "id": "schema:Geometry",
         "kind": "schema",
-        "name": "Geometry"
+        "name": "Geometry",
+        "type": "object"
       },
       {
+        "description": "A batch of harvest activities",
         "id": "schema:HarvestActivities",
         "kind": "schema",
-        "name": "HarvestActivities"
+        "name": "HarvestActivities",
+        "type": "object"
       },
       {
         "id": "schema:HarvestActivityContents",
         "kind": "schema",
-        "name": "HarvestActivityContents"
+        "name": "HarvestActivityContents",
+        "type": "object"
       },
       {
         "id": "schema:HarvestActivitySummary",
         "kind": "schema",
-        "name": "HarvestActivitySummary"
+        "name": "HarvestActivitySummary",
+        "type": "object"
       },
       {
         "id": "schema:Metadata",
         "kind": "schema",
-        "name": "Metadata"
+        "name": "Metadata",
+        "type": "object"
       },
       {
+        "description": "Logical representation of an operation with a name and resource owner.",
         "id": "schema:Operation",
         "kind": "schema",
-        "name": "Operation"
+        "name": "Operation",
+        "type": "object"
       },
       {
+        "description": "A batch of operation results.",
         "id": "schema:Operations",
         "kind": "schema",
-        "name": "Operations"
+        "name": "Operations",
+        "type": "object"
       },
       {
+        "description": "A minimal set of attributes regarding the parent of a farm organization.",
         "id": "schema:Parent",
         "kind": "schema",
-        "name": "Parent"
+        "name": "Parent",
+        "type": "object"
       },
       {
+        "description": "A batch of planting activities",
         "id": "schema:PlantingActivities",
         "kind": "schema",
-        "name": "PlantingActivities"
+        "name": "PlantingActivities",
+        "type": "object"
       },
       {
         "id": "schema:PlantingActivityContents",
         "kind": "schema",
-        "name": "PlantingActivityContents"
+        "name": "PlantingActivityContents",
+        "type": "object"
       },
       {
         "id": "schema:PlantingActivitySummary",
         "kind": "schema",
-        "name": "PlantingActivitySummary"
+        "name": "PlantingActivitySummary",
+        "type": "object"
       },
       {
         "id": "schema:Point",
         "kind": "schema",
-        "name": "Point"
+        "name": "Point",
+        "type": "object"
       },
       {
         "id": "schema:ResourceOwner",
         "kind": "schema",
-        "name": "ResourceOwner"
+        "name": "ResourceOwner",
+        "type": "object"
       },
       {
         "id": "schema:ScoutingObservation",
         "kind": "schema",
-        "name": "ScoutingObservation"
+        "name": "ScoutingObservation",
+        "type": "object"
       },
       {
         "id": "schema:ScoutingObservationAttachment",
         "kind": "schema",
-        "name": "ScoutingObservationAttachment"
+        "name": "ScoutingObservationAttachment",
+        "type": "object"
       },
       {
         "id": "schema:ScoutingObservationAttachmentContents",
         "kind": "schema",
-        "name": "ScoutingObservationAttachmentContents"
+        "name": "ScoutingObservationAttachmentContents",
+        "type": "object"
       },
       {
+        "description": "A batch of scouting attachments",
         "id": "schema:ScoutingObservationAttachments",
         "kind": "schema",
-        "name": "ScoutingObservationAttachments"
+        "name": "ScoutingObservationAttachments",
+        "type": "object"
       },
       {
         "id": "schema:ScoutingObservationSummary",
         "kind": "schema",
-        "name": "ScoutingObservationSummary"
+        "name": "ScoutingObservationSummary",
+        "type": "object"
       },
       {
+        "description": "A batch of scouting observations",
         "id": "schema:ScoutingObservations",
         "kind": "schema",
-        "name": "ScoutingObservations"
+        "name": "ScoutingObservations",
+        "type": "object"
       },
       {
         "id": "schema:ScoutingTag",
         "kind": "schema",
-        "name": "ScoutingTag"
+        "name": "ScoutingTag",
+        "type": "object"
       },
       {
+        "description": "Client request to upload data for a user.",
         "id": "schema:Upload",
         "kind": "schema",
-        "name": "Upload"
+        "name": "Upload",
+        "type": "object"
       },
       {
         "id": "schema:UploadStatus",
         "kind": "schema",
-        "name": "UploadStatus"
+        "name": "UploadStatus",
+        "type": "object"
       },
       {
         "id": "schema:UploadStatusQuery",
         "kind": "schema",
-        "name": "UploadStatusQuery"
+        "name": "UploadStatusQuery",
+        "type": "object"
       },
       {
         "id": "schema:UploadStatuses",
         "kind": "schema",
-        "name": "UploadStatuses"
+        "name": "UploadStatuses",
+        "type": "object"
       },
       {
+        "description": "Unique identifier of a successfully uploaded boundary",
         "id": "schema:UploadedBoundaryId",
         "kind": "schema",
-        "name": "UploadedBoundaryId"
+        "name": "UploadedBoundaryId",
+        "type": "object"
       }
     ]
   },

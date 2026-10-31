@@ -172,355 +172,1037 @@
       },
       {
         "deprecated": false,
+        "description": "**Test Endpoint** Returns the information about the Medium API",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "get /",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Welcome"
+        "summary": "Get Welcome",
+        "tags": [
+          "Welcome"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the article related information such as *Title, Subtitle, Tags, Topics* (assigned by Medium), *Publication, Published date and time, Clap Count, Voter…",
         "id": "operation:get:/article/{article_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /article/{article_id}",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium Article.",
+            "in": "path",
+            "name": "article_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/article/{article_id}",
         "pointer": "#/paths/~1article~1{article_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Article Info"
+        "summary": "Get Article Info",
+        "tags": [
+          "Article"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the content of an article/story, for the corresponding `article_id`",
         "id": "operation:get:/article/{article_id}/content",
         "kind": "operation",
         "method": "get",
         "name": "get /article/{article_id}/content",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium Article.",
+            "in": "path",
+            "name": "article_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/article/{article_id}/content",
         "pointer": "#/paths/~1article~1{article_id}~1content/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Article's Content"
+        "summary": "Get Article's Content",
+        "tags": [
+          "Article"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of `user_ids` of the people who clapped on the article (a.k.a `voters`).",
         "id": "operation:get:/article/{article_id}/fans",
         "kind": "operation",
         "method": "get",
         "name": "get /article/{article_id}/fans",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium Article.",
+            "in": "path",
+            "name": "article_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/article/{article_id}/fans",
         "pointer": "#/paths/~1article~1{article_id}~1fans/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Article Fans"
+        "summary": "Get Article Fans",
+        "tags": [
+          "Article"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the markdown of an article/story from Medium, for the corresponding `article_id`",
         "id": "operation:get:/article/{article_id}/markdown",
         "kind": "operation",
         "method": "get",
         "name": "get /article/{article_id}/markdown",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium Article.",
+            "in": "path",
+            "name": "article_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/article/{article_id}/markdown",
         "pointer": "#/paths/~1article~1{article_id}~1markdown/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Article's Markdown"
+        "summary": "Get Article's Markdown",
+        "tags": [
+          "Article"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of `article_ids` of the related posts.",
         "id": "operation:get:/article/{article_id}/related",
         "kind": "operation",
         "method": "get",
         "name": "get /article/{article_id}/related",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium Article.",
+            "in": "path",
+            "name": "article_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/article/{article_id}/related",
         "pointer": "#/paths/~1article~1{article_id}~1related/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Related Articles"
+        "summary": "Get Related Articles",
+        "tags": [
+          "Article"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of responses (`response_ids`, same as `article_ids`) for a given article (`article_id`) Note: To see the content of the response, use the \"Get A…",
         "id": "operation:get:/article/{article_id}/responses",
         "kind": "operation",
         "method": "get",
         "name": "get /article/{article_id}/responses",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium Article.",
+            "in": "path",
+            "name": "article_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/article/{article_id}/responses",
         "pointer": "#/paths/~1article~1{article_id}~1responses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Article Responses"
+        "summary": "Get Article Responses",
+        "tags": [
+          "Article"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of latest posts (`article_ids`) for a topic/niche (as classified by the Medium platform).",
         "id": "operation:get:/latestposts/{topic_slug}",
         "kind": "operation",
         "method": "get",
         "name": "get /latestposts/{topic_slug}",
+        "parameters": [
+          {
+            "description": "It's a unique string, usually hyphen-separated, representing a topic/niche, as classified by Medium.",
+            "in": "path",
+            "name": "topic_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/latestposts/{topic_slug}",
         "pointer": "#/paths/~1latestposts~1{topic_slug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Latest Posts"
+        "summary": "Get Latest Posts",
+        "tags": [
+          "Misc"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list-related information such as *id, name, author, description, thumbnail image url, creation datetime, last article inserted datetime, number of…",
         "id": "operation:get:/list/{list_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /list/{list_id}",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium List.",
+            "in": "path",
+            "name": "list_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/list/{list_id}",
         "pointer": "#/paths/~1list~1{list_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get List Info"
+        "summary": "Get List Info",
+        "tags": [
+          "List"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of `articles_ids` present in the given Medium List.",
         "id": "operation:get:/list/{list_id}/articles",
         "kind": "operation",
         "method": "get",
         "name": "get /list/{list_id}/articles",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium List.",
+            "in": "path",
+            "name": "list_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/list/{list_id}/articles",
         "pointer": "#/paths/~1list~1{list_id}~1articles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get List Articles"
+        "summary": "Get List Articles",
+        "tags": [
+          "List"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of `response_ids` of the comments (same as `article_ids`) on the given Medium List.",
         "id": "operation:get:/list/{list_id}/responses",
         "kind": "operation",
         "method": "get",
         "name": "get /list/{list_id}/responses",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium List.",
+            "in": "path",
+            "name": "list_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/list/{list_id}/responses",
         "pointer": "#/paths/~1list~1{list_id}~1responses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get List Responses"
+        "summary": "Get List Responses",
+        "tags": [
+          "List"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the unique `publication_id` for the given `publication_slug`.",
         "id": "operation:get:/publication/id_for/{publication_slug}",
         "kind": "operation",
         "method": "get",
         "name": "get /publication/id_for/{publication_slug}",
+        "parameters": [
+          {
+            "description": "It's a lowercased hyphen-separated unique string alloted to each Medium Publication.",
+            "in": "path",
+            "name": "publication_slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/publication/id_for/{publication_slug}",
         "pointer": "#/paths/~1publication~1id_for~1{publication_slug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Publication ID"
+        "summary": "Get Publication ID",
+        "tags": [
+          "Publication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the publication related information such as *Publication name, Tagline, Description, Tags, Followers Count, Twitter username, Instagram username, Faceb…",
         "id": "operation:get:/publication/{publication_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /publication/{publication_id}",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium Publication.",
+            "in": "path",
+            "name": "publication_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/publication/{publication_id}",
         "pointer": "#/paths/~1publication~1{publication_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Publication Info"
+        "summary": "Get Publication Info",
+        "tags": [
+          "Publication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of `articles_ids`, of the latest 25 articles, posted in that publication.",
         "id": "operation:get:/publication/{publication_id}/articles",
         "kind": "operation",
         "method": "get",
         "name": "get /publication/{publication_id}/articles",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium Publication.",
+            "in": "path",
+            "name": "publication_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "To get the articles before specified date and time.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/publication/{publication_id}/articles",
         "pointer": "#/paths/~1publication~1{publication_id}~1articles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Publication Articles"
+        "summary": "Get Publication Articles",
+        "tags": [
+          "Publication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the newsletter related information such as *id, name, description, slug, creator_id, subscribers, image_url, etc …* **Note:** If you don't know the `pu…",
         "id": "operation:get:/publication/{publication_id}/newsletter",
         "kind": "operation",
         "method": "get",
         "name": "get /publication/{publication_id}/newsletter",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every Medium Publication.",
+            "in": "path",
+            "name": "publication_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/publication/{publication_id}/newsletter",
         "pointer": "#/paths/~1publication~1{publication_id}~1newsletter/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Publication Newsletter"
+        "summary": "Get Publication Newsletter",
+        "tags": [
+          "Publication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of `related_tags` for the given `tag`.",
         "id": "operation:get:/related_tags/{tag}",
         "kind": "operation",
         "method": "get",
         "name": "get /related_tags/{tag}",
+        "parameters": [
+          {
+            "description": "It's a unique string, usually hyphen-separated, representing a class of content.",
+            "in": "path",
+            "name": "tag",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/related_tags/{tag}",
         "pointer": "#/paths/~1related_tags~1{tag}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Related Tags"
+        "summary": "Get Related Tags",
+        "tags": [
+          "Misc"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of `articles_ids` for the given search query results.",
         "id": "operation:get:/search/articles?query={query}",
         "kind": "operation",
         "method": "get",
         "name": "get /search/articles?query={query}",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search/articles?query={query}",
         "pointer": "#/paths/~1search~1articles?query={query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search Articles"
+        "summary": "Search Articles",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of `list_ids` for the given search query results.",
         "id": "operation:get:/search/lists?query={query}",
         "kind": "operation",
         "method": "get",
         "name": "get /search/lists?query={query}",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search/lists?query={query}",
         "pointer": "#/paths/~1search~1lists?query={query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search Lists"
+        "summary": "Search Lists",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of `publication_ids` for the given search query results.",
         "id": "operation:get:/search/publications?query={query}",
         "kind": "operation",
         "method": "get",
         "name": "get /search/publications?query={query}",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search/publications?query={query}",
         "pointer": "#/paths/~1search~1publications?query={query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search Publications"
+        "summary": "Search Publications",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of `tags` for the given search query results.",
         "id": "operation:get:/search/tags?query={query}",
         "kind": "operation",
         "method": "get",
         "name": "get /search/tags?query={query}",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search/tags?query={query}",
         "pointer": "#/paths/~1search~1tags?query={query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search Tags"
+        "summary": "Search Tags",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of `user_ids` for the given search query results.",
         "id": "operation:get:/search/users?query={query}",
         "kind": "operation",
         "method": "get",
         "name": "get /search/users?query={query}",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/search/users?query={query}",
         "pointer": "#/paths/~1search~1users?query={query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search Users"
+        "summary": "Search Users",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of top writers (`user_ids`) within a particular topic/niche (`topic_slug`).",
         "id": "operation:get:/top_writer/{topic_slug}",
         "kind": "operation",
         "method": "get",
         "name": "get /top_writer/{topic_slug}",
+        "parameters": [
+          {
+            "description": "It's a unique string, usually hyphen-separated, representing a topic/niche, as classified by Medium.",
+            "in": "path",
+            "name": "topic_slug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Limits the number of `article_ids` in the result.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/top_writer/{topic_slug}",
         "pointer": "#/paths/~1top_writer~1{topic_slug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Top Writers"
+        "summary": "Get Top Writers",
+        "tags": [
+          "Misc"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of `article_ids` (length: 25) for the given `tag` and `mode`.",
         "id": "operation:get:/topfeeds/{tag}/{mode}",
         "kind": "operation",
         "method": "get",
         "name": "get /topfeeds/{tag}/{mode}",
+        "parameters": [
+          {
+            "description": "It's a unique string, usually hyphen-separated, representing a class of content.",
+            "in": "path",
+            "name": "tag",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Mode: - `hot` : For getting trending articles - `new` : For getting latest articles - `top_year` : For getting best articles of the year - `top_month` : For ge…",
+            "in": "path",
+            "name": "mode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "To get the subsequent top feeds.",
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "To limit the number of top feeds.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/topfeeds/{tag}/{mode}",
         "pointer": "#/paths/~1topfeeds~1{tag}~1{mode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Topfeeds"
+        "summary": "Get Topfeeds",
+        "tags": [
+          "Misc"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the unique `user_id` for the given `username`.",
         "id": "operation:get:/user/id_for/{username}",
         "kind": "operation",
         "method": "get",
         "name": "get /user/id_for/{username}",
+        "parameters": [
+          {
+            "description": "It's a unique string chosen by every single Medium user.",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/id_for/{username}",
         "pointer": "#/paths/~1user~1id_for~1{username}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User ID"
+        "summary": "Get User ID",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns user related information like *Full name, Bio, Followers count, Following count, Twitter username, Profile-image URL, User ID, etc...* It takes `user_i…",
         "id": "operation:get:/user/{user_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{user_id}",
+        "parameters": [
+          {
+            "description": "It's a unique hash id assigned to every single Medium user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/{user_id}",
         "pointer": "#/paths/~1user~1{user_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User Info"
+        "summary": "Get User Info",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of articles (`article_ids`) written by the user.",
         "id": "operation:get:/user/{user_id}/articles",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{user_id}/articles",
+        "parameters": [
+          {
+            "description": "Unique hash id assigned to every single Medium user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/{user_id}/articles",
         "pointer": "#/paths/~1user~1{user_id}~1articles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User's Articles"
+        "summary": "Get User's Articles",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of `user_ids` of the user's followers.",
         "id": "operation:get:/user/{user_id}/followers",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{user_id}/followers",
+        "parameters": [
+          {
+            "description": "Unique hash id assigned to every single Medium user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "To limit the number of results.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/user/{user_id}/followers",
         "pointer": "#/paths/~1user~1{user_id}~1followers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User Followers"
+        "summary": "Get User Followers",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of `user_ids` of the user's followings.",
         "id": "operation:get:/user/{user_id}/following",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{user_id}/following",
+        "parameters": [
+          {
+            "description": "Unique hash id assigned to every single Medium user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "To limit the number of results.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/user/{user_id}/following",
         "pointer": "#/paths/~1user~1{user_id}~1following/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User Following"
+        "summary": "Get User Following",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of tags that the given user follows.",
         "id": "operation:get:/user/{user_id}/interests",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{user_id}/interests",
+        "parameters": [
+          {
+            "description": "Unique hash id assigned to every single Medium user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/{user_id}/interests",
         "pointer": "#/paths/~1user~1{user_id}~1interests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User's Interests"
+        "summary": "Get User's Interests",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of `list_ids` created by the user.",
         "id": "operation:get:/user/{user_id}/lists",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{user_id}/lists",
+        "parameters": [
+          {
+            "description": "Unique hash id assigned to every single Medium user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/{user_id}/lists",
         "pointer": "#/paths/~1user~1{user_id}~1lists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User's Lists"
+        "summary": "Get User's Lists",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of `publication_ids` where the user is the editor and/or creator.",
         "id": "operation:get:/user/{user_id}/publications",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{user_id}/publications",
+        "parameters": [
+          {
+            "description": "Unique hash id assigned to every single Medium user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/{user_id}/publications",
         "pointer": "#/paths/~1user~1{user_id}~1publications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User's Publications"
+        "summary": "Get User's Publications",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of `article_ids` of the top 10 articles on the user's profile, for a given `user_id`.",
         "id": "operation:get:/user/{user_id}/top_articles",
         "kind": "operation",
         "method": "get",
         "name": "get /user/{user_id}/top_articles",
+        "parameters": [
+          {
+            "description": "Unique hash id assigned to every single Medium user.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/user/{user_id}/top_articles",
         "pointer": "#/paths/~1user~1{user_id}~1top_articles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get User's Top Articles"
+        "summary": "Get User's Top Articles",
+        "tags": [
+          "User"
+        ]
       }
     ]
   },

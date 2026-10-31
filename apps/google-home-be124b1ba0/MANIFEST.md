@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `adad34e429cd30d50c0a51c702b98f226b4f01c3646206636fa97ee9ccc383fe` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,35 +34,37 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 70 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/NOTICE.html.gz` | LegalNotice | Legal Notice |
-| POST | `/assistant/a11y_mode` | Accessibility | Accessibility |
-| GET | `/assistant/alarms` | GetAlarmsandTimers | Get Alarms and Timers |
-| POST | `/assistant/alarms/delete` | DeleteAlarmsandTimers | Delete Alarms and Timers |
-| POST | `/assistant/alarms/volume` | AlarmVolume | Alarm Volume |
-| POST | `/assistant/check_ready_status` | CheckReadyStatus | Check Ready Status |
-| POST | `/assistant/notifications` | DoNotDisturb | Do Not Disturb |
-| POST | `/assistant/set_night_mode_params` | NightModesettings | Night Mode settings |
-| POST | `/bluetooth/bond` | Forgetpaireddevice | Forget paired device |
-| POST | `/bluetooth/connect` | PairwithSpeaker | Pair with Speaker |
-| POST | `/bluetooth/discovery` | ChangeDiscoverability | Change Discoverability |
-| GET | `/bluetooth/get_bonded` | GetPairedDevices | Get Paired Devices |
-| POST | `/bluetooth/scan` | Scanfordevices | Scan for devices |
-| GET | `/bluetooth/scan_results` | GetScanResults | Get Scan Results |
-| GET | `/bluetooth/status` | Status | Status |
-| GET | `/configured_networks` | GetSavedNetworks | Get Saved Networks |
-| POST | `/connect_wifi` | ConnecttoWi-FiNetwork | Connect to Wi-Fi Network |
-| GET | `/eureka_info` | EurekaInfo | Eureka Info |
-| POST | `/forget_wifi` | ForgetWi-FiNetwork | Forget Wi-Fi Network |
-| POST | `/get_app_device_id` | AppDeviceID | App Device ID |
-| GET | `/icon.png` | ChromecastIcon | Chromecast Icon |
-| GET | `/offer` | Offer | Offer |
-| POST | `/reboot` | RebootandFactoryReset | Reboot and Factory Reset |
-| GET | `/scan_results` | GetWi-FiScanResults | Get Wi-Fi Scan Results |
-| POST | `/scan_wifi` | ScanforNetworks | Scan for Networks |
-| POST | `/set_eureka_info` | SetEurekaInfo | Set Eureka Info |
-| GET | `/supported_locales` | Locales | Locales |
-| GET | `/supported_timezones` | Timezones | Timezones |
-| POST | `/test_internet_download_speed` | TestInternetDownloadSpeed | Test Internet Download Speed |
-| POST | `/user_eq/set_equalizer` | SetEqualizerValues | Set Equalizer Values |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/NOTICE.html.gz` | LegalNotice | — | string | yes | Legal Notice |
+| POST | `/assistant/a11y_mode` | Accessibility | body*: AccessibilityRequest | Getcurrentvalues |  | Accessibility |
+| GET | `/assistant/alarms` | GetAlarmsandTimers | — | Example18 | yes | Get Alarms and Timers |
+| POST | `/assistant/alarms/delete` | DeleteAlarmsandTimers | body*: DeleteAlarmsandTimersRequest | Example19 |  | Delete Alarms and Timers |
+| POST | `/assistant/alarms/volume` | AlarmVolume | body*: AlarmVolumeRequest | Getvolume |  | Alarm Volume |
+| POST | `/assistant/check_ready_status` | CheckReadyStatus | body*: CheckReadyStatusRequest | Example13 |  | Check Ready Status |
+| POST | `/assistant/notifications` | DoNotDisturb | `Content-Type`* | Getcurrentstate |  | Do Not Disturb |
+| POST | `/assistant/set_night_mode_params` | NightModesettings | body*: NightModesettingsRequest | Example17 |  | Night Mode settings |
+| POST | `/bluetooth/bond` | Forgetpaireddevice | body*: ForgetpaireddeviceRequest | object |  | Forget paired device |
+| POST | `/bluetooth/connect` | PairwithSpeaker | body*: PairwithSpeakerRequest | object |  | Pair with Speaker |
+| POST | `/bluetooth/discovery` | ChangeDiscoverability | body*: ChangeDiscoverabilityRequest | object |  | Change Discoverability |
+| GET | `/bluetooth/get_bonded` | GetPairedDevices | — | Example111[] | yes | Get Paired Devices |
+| POST | `/bluetooth/scan` | Scanfordevices | body*: ScanfordevicesRequest | object |  | Scan for devices |
+| GET | `/bluetooth/scan_results` | GetScanResults | — | Example112[] | yes | Get Scan Results |
+| GET | `/bluetooth/status` | Status | — | Example110 | yes | Status |
+| GET | `/configured_networks` | GetSavedNetworks | — | Example113[] | yes | Get Saved Networks |
+| POST | `/connect_wifi` | ConnecttoWi-FiNetwork | body*: ConnecttoWi-FiNetworkRequest | — |  | Connect to Wi-Fi Network |
+| GET | `/eureka_info` | EurekaInfo | `params`*, `options`*, `nonce`* | Example1 | yes | Eureka Info |
+| POST | `/forget_wifi` | ForgetWi-FiNetwork | body*: ForgetWi-FiNetworkRequest | object |  | Forget Wi-Fi Network |
+| POST | `/get_app_device_id` | AppDeviceID | body*: AppDeviceIDRequest | Example11 |  | App Device ID |
+| GET | `/icon.png` | ChromecastIcon | — | — | yes | Chromecast Icon |
+| GET | `/offer` | Offer | — | Example12 | yes | Offer |
+| POST | `/reboot` | RebootandFactoryReset | body*: RebootandFactoryResetRequest | object |  | Reboot and Factory Reset |
+| GET | `/scan_results` | GetWi-FiScanResults | — | Example114[] | yes | Get Wi-Fi Scan Results |
+| POST | `/scan_wifi` | ScanforNetworks | — | object |  | Scan for Networks |
+| POST | `/set_eureka_info` | SetEurekaInfo | body*: SetEurekaInfoRequest | object |  | Set Eureka Info |
+| GET | `/supported_locales` | Locales | — | Example15[] | yes | Locales |
+| GET | `/supported_timezones` | Timezones | — | Example14[] | yes | Timezones |
+| POST | `/test_internet_download_speed` | TestInternetDownloadSpeed | body*: TestInternetDownloadSpeedRequest | Example16 |  | Test Internet Download Speed |
+| POST | `/user_eq/set_equalizer` | SetEqualizerValues | body*: SetEqualizerValuesRequest | object |  | Set Equalizer Values |

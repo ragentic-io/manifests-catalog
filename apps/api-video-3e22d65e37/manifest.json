@@ -47,12 +47,12 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:delete:/live-streams/{liveStreamId}"
+        "to": "operation:get:/live-streams/{liveStreamId}"
       },
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:get:/live-streams/{liveStreamId}"
+        "to": "operation:delete:/live-streams/{liveStreamId}"
       },
       {
         "from": "api-video-3e22d65e37",
@@ -62,12 +62,12 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:delete:/live-streams/{liveStreamId}/thumbnail"
+        "to": "operation:post:/live-streams/{liveStreamId}/thumbnail"
       },
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:post:/live-streams/{liveStreamId}/thumbnail"
+        "to": "operation:delete:/live-streams/{liveStreamId}/thumbnail"
       },
       {
         "from": "api-video-3e22d65e37",
@@ -82,12 +82,12 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:delete:/players/{playerId}"
+        "to": "operation:get:/players/{playerId}"
       },
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:get:/players/{playerId}"
+        "to": "operation:delete:/players/{playerId}"
       },
       {
         "from": "api-video-3e22d65e37",
@@ -97,12 +97,12 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:delete:/players/{playerId}/logo"
+        "to": "operation:post:/players/{playerId}/logo"
       },
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:post:/players/{playerId}/logo"
+        "to": "operation:delete:/players/{playerId}/logo"
       },
       {
         "from": "api-video-3e22d65e37",
@@ -122,12 +122,12 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:delete:/upload-tokens/{uploadToken}"
+        "to": "operation:get:/upload-tokens/{uploadToken}"
       },
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:get:/upload-tokens/{uploadToken}"
+        "to": "operation:delete:/upload-tokens/{uploadToken}"
       },
       {
         "from": "api-video-3e22d65e37",
@@ -142,12 +142,12 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:delete:/videos/{videoId}"
+        "to": "operation:get:/videos/{videoId}"
       },
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:get:/videos/{videoId}"
+        "to": "operation:delete:/videos/{videoId}"
       },
       {
         "from": "api-video-3e22d65e37",
@@ -162,17 +162,7 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:delete:/videos/{videoId}/captions/{language}"
-      },
-      {
-        "from": "api-video-3e22d65e37",
-        "kind": "EXPOSES",
         "to": "operation:get:/videos/{videoId}/captions/{language}"
-      },
-      {
-        "from": "api-video-3e22d65e37",
-        "kind": "EXPOSES",
-        "to": "operation:patch:/videos/{videoId}/captions/{language}"
       },
       {
         "from": "api-video-3e22d65e37",
@@ -182,12 +172,17 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:get:/videos/{videoId}/chapters"
+        "to": "operation:delete:/videos/{videoId}/captions/{language}"
       },
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:delete:/videos/{videoId}/chapters/{language}"
+        "to": "operation:patch:/videos/{videoId}/captions/{language}"
+      },
+      {
+        "from": "api-video-3e22d65e37",
+        "kind": "EXPOSES",
+        "to": "operation:get:/videos/{videoId}/chapters"
       },
       {
         "from": "api-video-3e22d65e37",
@@ -202,6 +197,11 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
+        "to": "operation:delete:/videos/{videoId}/chapters/{language}"
+      },
+      {
+        "from": "api-video-3e22d65e37",
+        "kind": "EXPOSES",
         "to": "operation:post:/videos/{videoId}/source"
       },
       {
@@ -212,12 +212,12 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:patch:/videos/{videoId}/thumbnail"
+        "to": "operation:post:/videos/{videoId}/thumbnail"
       },
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:post:/videos/{videoId}/thumbnail"
+        "to": "operation:patch:/videos/{videoId}/thumbnail"
       },
       {
         "from": "api-video-3e22d65e37",
@@ -232,12 +232,547 @@
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:delete:/webhooks/{webhookId}"
+        "to": "operation:get:/webhooks/{webhookId}"
       },
       {
         "from": "api-video-3e22d65e37",
         "kind": "EXPOSES",
-        "to": "operation:get:/webhooks/{webhookId}"
+        "to": "operation:delete:/webhooks/{webhookId}"
+      },
+      {
+        "from": "operation:get:/account",
+        "kind": "RETURNS",
+        "to": "schema:account"
+      },
+      {
+        "from": "operation:get:/analytics/live-streams/{liveStreamId}",
+        "kind": "RETURNS",
+        "to": "schema:raw-statistics-list-live-stream-analytics-response"
+      },
+      {
+        "from": "operation:get:/analytics/sessions/{sessionId}/events",
+        "kind": "RETURNS",
+        "to": "schema:raw-statistics-list-player-session-events-response"
+      },
+      {
+        "from": "operation:get:/analytics/videos/{videoId}",
+        "kind": "RETURNS",
+        "to": "schema:raw-statistics-list-sessions-response"
+      },
+      {
+        "from": "operation:post:/auth/api-key",
+        "kind": "ACCEPTS",
+        "to": "schema:authenticate-payload"
+      },
+      {
+        "from": "operation:post:/auth/api-key",
+        "kind": "RETURNS",
+        "to": "schema:access-token"
+      },
+      {
+        "from": "operation:post:/auth/refresh",
+        "kind": "ACCEPTS",
+        "to": "schema:refresh-token-payload"
+      },
+      {
+        "from": "operation:post:/auth/refresh",
+        "kind": "RETURNS",
+        "to": "schema:access-token"
+      },
+      {
+        "from": "operation:get:/live-streams",
+        "kind": "RETURNS",
+        "to": "schema:live-stream-list-response"
+      },
+      {
+        "from": "operation:post:/live-streams",
+        "kind": "ACCEPTS",
+        "to": "schema:live-stream-create-payload"
+      },
+      {
+        "from": "operation:post:/live-streams",
+        "kind": "RETURNS",
+        "to": "schema:live-stream"
+      },
+      {
+        "from": "operation:get:/live-streams/{liveStreamId}",
+        "kind": "RETURNS",
+        "to": "schema:live-stream"
+      },
+      {
+        "from": "operation:patch:/live-streams/{liveStreamId}",
+        "kind": "ACCEPTS",
+        "to": "schema:live-stream-update-payload"
+      },
+      {
+        "from": "operation:patch:/live-streams/{liveStreamId}",
+        "kind": "RETURNS",
+        "to": "schema:live-stream"
+      },
+      {
+        "from": "operation:post:/live-streams/{liveStreamId}/thumbnail",
+        "kind": "ACCEPTS",
+        "to": "schema:live-stream-thumbnail-upload-payload"
+      },
+      {
+        "from": "operation:post:/live-streams/{liveStreamId}/thumbnail",
+        "kind": "RETURNS",
+        "to": "schema:live-stream"
+      },
+      {
+        "from": "operation:delete:/live-streams/{liveStreamId}/thumbnail",
+        "kind": "RETURNS",
+        "to": "schema:live-stream"
+      },
+      {
+        "from": "operation:get:/players",
+        "kind": "RETURNS",
+        "to": "schema:players-list-response"
+      },
+      {
+        "from": "operation:post:/players",
+        "kind": "ACCEPTS",
+        "to": "schema:playerCreationPayload"
+      },
+      {
+        "from": "operation:post:/players",
+        "kind": "RETURNS",
+        "to": "schema:player"
+      },
+      {
+        "from": "operation:get:/players/{playerId}",
+        "kind": "RETURNS",
+        "to": "schema:player"
+      },
+      {
+        "from": "operation:patch:/players/{playerId}",
+        "kind": "ACCEPTS",
+        "to": "schema:playerUpdatePayload"
+      },
+      {
+        "from": "operation:patch:/players/{playerId}",
+        "kind": "RETURNS",
+        "to": "schema:player"
+      },
+      {
+        "from": "operation:post:/players/{playerId}/logo",
+        "kind": "ACCEPTS",
+        "to": "schema:players-upload-logo-payload"
+      },
+      {
+        "from": "operation:post:/players/{playerId}/logo",
+        "kind": "RETURNS",
+        "to": "schema:player"
+      },
+      {
+        "from": "operation:post:/upload",
+        "kind": "ACCEPTS",
+        "to": "schema:token-upload-payload"
+      },
+      {
+        "from": "operation:post:/upload",
+        "kind": "RETURNS",
+        "to": "schema:video"
+      },
+      {
+        "from": "operation:get:/upload-tokens",
+        "kind": "RETURNS",
+        "to": "schema:token-list-response"
+      },
+      {
+        "from": "operation:post:/upload-tokens",
+        "kind": "ACCEPTS",
+        "to": "schema:token-create-payload"
+      },
+      {
+        "from": "operation:post:/upload-tokens",
+        "kind": "RETURNS",
+        "to": "schema:upload-token"
+      },
+      {
+        "from": "operation:get:/upload-tokens/{uploadToken}",
+        "kind": "RETURNS",
+        "to": "schema:upload-token"
+      },
+      {
+        "from": "operation:get:/videos",
+        "kind": "RETURNS",
+        "to": "schema:videos-list-response"
+      },
+      {
+        "from": "operation:post:/videos",
+        "kind": "ACCEPTS",
+        "to": "schema:video-create-payload"
+      },
+      {
+        "from": "operation:post:/videos",
+        "kind": "RETURNS",
+        "to": "schema:video"
+      },
+      {
+        "from": "operation:get:/videos/{videoId}",
+        "kind": "RETURNS",
+        "to": "schema:video"
+      },
+      {
+        "from": "operation:patch:/videos/{videoId}",
+        "kind": "ACCEPTS",
+        "to": "schema:video-update-payload"
+      },
+      {
+        "from": "operation:patch:/videos/{videoId}",
+        "kind": "RETURNS",
+        "to": "schema:video"
+      },
+      {
+        "from": "operation:get:/videos/{videoId}/captions",
+        "kind": "RETURNS",
+        "to": "schema:captions-list-response"
+      },
+      {
+        "from": "operation:get:/videos/{videoId}/captions/{language}",
+        "kind": "RETURNS",
+        "to": "schema:subtitle"
+      },
+      {
+        "from": "operation:post:/videos/{videoId}/captions/{language}",
+        "kind": "ACCEPTS",
+        "to": "schema:captions-upload-payload"
+      },
+      {
+        "from": "operation:post:/videos/{videoId}/captions/{language}",
+        "kind": "RETURNS",
+        "to": "schema:subtitle"
+      },
+      {
+        "from": "operation:patch:/videos/{videoId}/captions/{language}",
+        "kind": "ACCEPTS",
+        "to": "schema:captions-update-payload"
+      },
+      {
+        "from": "operation:patch:/videos/{videoId}/captions/{language}",
+        "kind": "RETURNS",
+        "to": "schema:subtitle"
+      },
+      {
+        "from": "operation:get:/videos/{videoId}/chapters",
+        "kind": "RETURNS",
+        "to": "schema:chapters-list-response"
+      },
+      {
+        "from": "operation:get:/videos/{videoId}/chapters/{language}",
+        "kind": "RETURNS",
+        "to": "schema:chapter"
+      },
+      {
+        "from": "operation:post:/videos/{videoId}/chapters/{language}",
+        "kind": "ACCEPTS",
+        "to": "schema:chapters-update-payload"
+      },
+      {
+        "from": "operation:post:/videos/{videoId}/chapters/{language}",
+        "kind": "RETURNS",
+        "to": "schema:chapter"
+      },
+      {
+        "from": "operation:post:/videos/{videoId}/source",
+        "kind": "ACCEPTS",
+        "to": "schema:video-upload-payload"
+      },
+      {
+        "from": "operation:post:/videos/{videoId}/source",
+        "kind": "RETURNS",
+        "to": "schema:video"
+      },
+      {
+        "from": "operation:get:/videos/{videoId}/status",
+        "kind": "RETURNS",
+        "to": "schema:videostatus"
+      },
+      {
+        "from": "operation:post:/videos/{videoId}/thumbnail",
+        "kind": "ACCEPTS",
+        "to": "schema:video-thumbnail-upload-payload"
+      },
+      {
+        "from": "operation:post:/videos/{videoId}/thumbnail",
+        "kind": "RETURNS",
+        "to": "schema:video"
+      },
+      {
+        "from": "operation:patch:/videos/{videoId}/thumbnail",
+        "kind": "ACCEPTS",
+        "to": "schema:video-thumbnail-pick-payload"
+      },
+      {
+        "from": "operation:patch:/videos/{videoId}/thumbnail",
+        "kind": "RETURNS",
+        "to": "schema:video"
+      },
+      {
+        "from": "operation:get:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:webhooks-list-response"
+      },
+      {
+        "from": "operation:post:/webhooks",
+        "kind": "ACCEPTS",
+        "to": "schema:webhooks-create-payload"
+      },
+      {
+        "from": "operation:post:/webhooks",
+        "kind": "RETURNS",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "operation:get:/webhooks/{webhookId}",
+        "kind": "RETURNS",
+        "to": "schema:webhook"
+      },
+      {
+        "from": "schema:captions-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:captions-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:subtitle"
+      },
+      {
+        "from": "schema:chapters-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:chapter"
+      },
+      {
+        "from": "schema:chapters-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:live-stream",
+        "kind": "REFERENCES",
+        "to": "schema:live_stream_assets"
+      },
+      {
+        "from": "schema:live-stream-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:live-stream"
+      },
+      {
+        "from": "schema:live-stream-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:live-stream-session",
+        "kind": "REFERENCES",
+        "to": "schema:live_stream_session_client"
+      },
+      {
+        "from": "schema:live-stream-session",
+        "kind": "REFERENCES",
+        "to": "schema:live_stream_session_device"
+      },
+      {
+        "from": "schema:live-stream-session",
+        "kind": "REFERENCES",
+        "to": "schema:live_stream_session_location"
+      },
+      {
+        "from": "schema:live-stream-session",
+        "kind": "REFERENCES",
+        "to": "schema:live_stream_session_referrer"
+      },
+      {
+        "from": "schema:live-stream-session",
+        "kind": "REFERENCES",
+        "to": "schema:live_stream_session_session"
+      },
+      {
+        "from": "schema:live-stream-session",
+        "kind": "REFERENCES",
+        "to": "schema:video_session_os"
+      },
+      {
+        "from": "schema:pagination",
+        "kind": "REFERENCES",
+        "to": "schema:pagination_link"
+      },
+      {
+        "from": "schema:player",
+        "kind": "REFERENCES",
+        "to": "schema:playerinput"
+      },
+      {
+        "from": "schema:playerCreationPayload",
+        "kind": "REFERENCES",
+        "to": "schema:playerinput"
+      },
+      {
+        "from": "schema:playerUpdatePayload",
+        "kind": "REFERENCES",
+        "to": "schema:playerinput"
+      },
+      {
+        "from": "schema:players-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:players-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:player"
+      },
+      {
+        "from": "schema:raw-statistics-list-live-stream-analytics-response",
+        "kind": "REFERENCES",
+        "to": "schema:live-stream-session"
+      },
+      {
+        "from": "schema:raw-statistics-list-live-stream-analytics-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:raw-statistics-list-player-session-events-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:raw-statistics-list-player-session-events-response",
+        "kind": "REFERENCES",
+        "to": "schema:player-session-event"
+      },
+      {
+        "from": "schema:raw-statistics-list-sessions-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:raw-statistics-list-sessions-response",
+        "kind": "REFERENCES",
+        "to": "schema:video-session"
+      },
+      {
+        "from": "schema:token-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:token-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:upload-token"
+      },
+      {
+        "from": "schema:video",
+        "kind": "REFERENCES",
+        "to": "schema:metadata"
+      },
+      {
+        "from": "schema:video",
+        "kind": "REFERENCES",
+        "to": "schema:videoAssets"
+      },
+      {
+        "from": "schema:video",
+        "kind": "REFERENCES",
+        "to": "schema:videoSource"
+      },
+      {
+        "from": "schema:video-create-payload",
+        "kind": "REFERENCES",
+        "to": "schema:metadata"
+      },
+      {
+        "from": "schema:video-session",
+        "kind": "REFERENCES",
+        "to": "schema:video_session_client"
+      },
+      {
+        "from": "schema:video-session",
+        "kind": "REFERENCES",
+        "to": "schema:video_session_device"
+      },
+      {
+        "from": "schema:video-session",
+        "kind": "REFERENCES",
+        "to": "schema:video_session_location"
+      },
+      {
+        "from": "schema:video-session",
+        "kind": "REFERENCES",
+        "to": "schema:video_session_os"
+      },
+      {
+        "from": "schema:video-session",
+        "kind": "REFERENCES",
+        "to": "schema:video_session_referrer"
+      },
+      {
+        "from": "schema:video-session",
+        "kind": "REFERENCES",
+        "to": "schema:video_session_session"
+      },
+      {
+        "from": "schema:video-update-payload",
+        "kind": "REFERENCES",
+        "to": "schema:metadata"
+      },
+      {
+        "from": "schema:videoSource",
+        "kind": "REFERENCES",
+        "to": "schema:video_source_live_stream"
+      },
+      {
+        "from": "schema:video_source_live_stream",
+        "kind": "REFERENCES",
+        "to": "schema:video_source_live_stream_link"
+      },
+      {
+        "from": "schema:videos-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:videos-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:video"
+      },
+      {
+        "from": "schema:videostatus",
+        "kind": "REFERENCES",
+        "to": "schema:videostatus_encoding"
+      },
+      {
+        "from": "schema:videostatus",
+        "kind": "REFERENCES",
+        "to": "schema:videostatus_ingest"
+      },
+      {
+        "from": "schema:videostatus_encoding",
+        "kind": "REFERENCES",
+        "to": "schema:quality"
+      },
+      {
+        "from": "schema:videostatus_encoding",
+        "kind": "REFERENCES",
+        "to": "schema:videostatus_encoding_metadata"
+      },
+      {
+        "from": "schema:videostatus_ingest",
+        "kind": "REFERENCES",
+        "to": "schema:bytes_range"
+      },
+      {
+        "from": "schema:webhooks-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:pagination"
+      },
+      {
+        "from": "schema:webhooks-list-response",
+        "kind": "REFERENCES",
+        "to": "schema:webhook"
       }
     ],
     "nodes": [
@@ -247,18 +782,33 @@
       },
       {
         "deprecated": true,
+        "description": "Deprecated.",
         "id": "operation:get:/account",
         "kind": "operation",
         "method": "get",
         "name": "GET_account",
         "path": "/account",
         "pointer": "#/paths/~1account/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Show account"
+        "summary": "Show account",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
@@ -266,96 +816,398 @@
         "kind": "operation",
         "method": "get",
         "name": "GET_analytics-live-streams-liveStreamId",
+        "parameters": [
+          {
+            "description": "The unique identifier for the live stream you want to retrieve analytics for.",
+            "in": "path",
+            "name": "liveStreamId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Period must have one of the following formats: - For a day : \"2018-01-01\", - For a week: \"2018-W01\", - For a month: \"2018-01\" - For a year: \"2018\" For a range…",
+            "in": "query",
+            "name": "period",
+            "required": false,
+            "type": "string:period"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analytics/live-streams/{liveStreamId}",
         "pointer": "#/paths/~1analytics~1live-streams~1{liveStreamId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "raw-statistics-list-live-stream-analytics-response"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List live stream player sessions"
+        "summary": "List live stream player sessions",
+        "tags": [
+          "Analytics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Useful to track and measure video's engagement.",
         "id": "operation:get:/analytics/sessions/{sessionId}/events",
         "kind": "operation",
         "method": "get",
         "name": "GET_analytics-sessions-sessionId-events",
+        "parameters": [
+          {
+            "description": "A unique identifier you can use to reference and track a session with.",
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analytics/sessions/{sessionId}/events",
         "pointer": "#/paths/~1analytics~1sessions~1{sessionId}~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "raw-statistics-list-player-session-events-response"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List player session events"
+        "summary": "List player session events",
+        "tags": [
+          "Analytics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all available user sessions for a specific video.",
         "id": "operation:get:/analytics/videos/{videoId}",
         "kind": "operation",
         "method": "get",
         "name": "GET_analytics-videos-videoId",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want to retrieve session information for.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Period must have one of the following formats: - For a day : 2018-01-01, - For a week: 2018-W01, - For a month: 2018-01 - For a year: 2018 For a range period:…",
+            "in": "query",
+            "name": "period",
+            "required": false,
+            "type": "string:period"
+          },
+          {
+            "description": "Metadata and [Dynamic Metadata](https://api.video/blog/endpoints/dynamic-metadata) filter.",
+            "in": "query",
+            "name": "metadata",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/analytics/videos/{videoId}",
         "pointer": "#/paths/~1analytics~1videos~1{videoId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "raw-statistics-list-sessions-response"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List video player sessions"
+        "summary": "List video player sessions",
+        "tags": [
+          "Analytics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To get started, submit your API key in the body of your request.",
         "id": "operation:post:/auth/api-key",
         "kind": "operation",
         "method": "post",
         "name": "POST_auth-api-key",
         "path": "/auth/api-key",
         "pointer": "#/paths/~1auth~1api-key/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "authenticate-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "access-token"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Authenticate"
+        "summary": "Authenticate",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the refresh endpoint with the refresh token you received when you first authenticated using the api-key endpoint.",
         "id": "operation:post:/auth/refresh",
         "kind": "operation",
         "method": "post",
         "name": "POST_auth-refresh",
         "path": "/auth/refresh",
         "pointer": "#/paths/~1auth~1refresh/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "refresh-token-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "access-token"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Refresh token"
+        "summary": "Refresh token",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "With no parameters added to the url, this will return all livestreams.",
         "id": "operation:get:/live-streams",
         "kind": "operation",
         "method": "get",
         "name": "GET_live-streams",
+        "parameters": [
+          {
+            "description": "The unique stream key that allows you to stream videos.",
+            "in": "query",
+            "name": "streamKey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "You can filter live streams by their name or a part of their name.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allowed: createdAt, publishedAt, name.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allowed: asc, desc.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/live-streams",
         "pointer": "#/paths/~1live-streams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "live-stream-list-response"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List all live streams"
+        "summary": "List all live streams",
+        "tags": [
+          "Live"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A live stream will give you the 'connection point' to RTMP your video stream to api.video.",
         "id": "operation:post:/live-streams",
         "kind": "operation",
         "method": "post",
         "name": "POST_live-streams",
         "path": "/live-streams",
         "pointer": "#/paths/~1live-streams/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "live-stream-create-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "live-stream"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Create live stream"
+        "summary": "Create live stream",
+        "tags": [
+          "Live"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Supply a LivestreamId, and you'll get all the details for streaming into, and watching the livestream.",
+        "id": "operation:get:/live-streams/{liveStreamId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "GET_live-streams-liveStreamId",
+        "parameters": [
+          {
+            "description": "The unique ID for the live stream you want to watch.",
+            "in": "path",
+            "name": "liveStreamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/live-streams/{liveStreamId}",
+        "pointer": "#/paths/~1live-streams~1{liveStreamId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "live-stream"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Show live stream",
+        "tags": [
+          "Live"
+        ]
       },
       {
         "deprecated": false,
@@ -363,149 +1215,443 @@
         "kind": "operation",
         "method": "delete",
         "name": "DELETE_live-streams-liveStreamId",
+        "parameters": [
+          {
+            "description": "The unique ID for the live stream that you want to remove.",
+            "in": "path",
+            "name": "liveStreamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/live-streams/{liveStreamId}",
         "pointer": "#/paths/~1live-streams~1{liveStreamId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Delete a live stream"
+        "summary": "Delete a live stream",
+        "tags": [
+          "Live"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/live-streams/{liveStreamId}",
-        "kind": "operation",
-        "method": "get",
-        "name": "GET_live-streams-liveStreamId",
-        "path": "/live-streams/{liveStreamId}",
-        "pointer": "#/paths/~1live-streams~1{liveStreamId}/get",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Show live stream"
-      },
-      {
-        "deprecated": false,
+        "description": "Use this endpoint to update the player, or to turn recording on/off (saving a copy of the livestream).",
         "id": "operation:patch:/live-streams/{liveStreamId}",
         "kind": "operation",
         "method": "patch",
         "name": "PATCH_live-streams-liveStreamId",
+        "parameters": [
+          {
+            "description": "The unique ID for the live stream that you want to update information for such as player details, or whether you want the recording on or off.",
+            "in": "path",
+            "name": "liveStreamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/live-streams/{liveStreamId}",
         "pointer": "#/paths/~1live-streams~1{liveStreamId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "live-stream-update-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "live-stream"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Update a live stream"
+        "summary": "Update a live stream",
+        "tags": [
+          "Live"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/live-streams/{liveStreamId}/thumbnail",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DELETE_live-streams-liveStreamId-thumbnail",
-        "path": "/live-streams/{liveStreamId}/thumbnail",
-        "pointer": "#/paths/~1live-streams~1{liveStreamId}~1thumbnail/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete a thumbnail"
-      },
-      {
-        "deprecated": false,
+        "description": "Upload an image to use as a backdrop for your livestream.",
         "id": "operation:post:/live-streams/{liveStreamId}/thumbnail",
         "kind": "operation",
         "method": "post",
         "name": "POST_live-streams-liveStreamId-thumbnail",
+        "parameters": [
+          {
+            "description": "The unique ID for the live stream you want to upload.",
+            "in": "path",
+            "name": "liveStreamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/live-streams/{liveStreamId}/thumbnail",
         "pointer": "#/paths/~1live-streams~1{liveStreamId}~1thumbnail/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "live-stream-thumbnail-upload-payload"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "live-stream"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Upload a thumbnail"
+        "summary": "Upload a thumbnail",
+        "tags": [
+          "Live"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Send the unique identifier for a live stream to delete it from the system.",
+        "id": "operation:delete:/live-streams/{liveStreamId}/thumbnail",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DELETE_live-streams-liveStreamId-thumbnail",
+        "parameters": [
+          {
+            "description": "The unique identifier for the live stream you want to delete.",
+            "in": "path",
+            "name": "liveStreamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/live-streams/{liveStreamId}/thumbnail",
+        "pointer": "#/paths/~1live-streams~1{liveStreamId}~1thumbnail/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "live-stream"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete a thumbnail",
+        "tags": [
+          "Live"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieve a list of all the players you created, as well as details about each one.",
         "id": "operation:get:/players",
         "kind": "operation",
         "method": "get",
         "name": "GET_players",
+        "parameters": [
+          {
+            "description": "createdAt is the time the player was created.",
+            "enum": [
+              "createdAt",
+              "updatedAt"
+            ],
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allowed: asc, desc.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/players",
         "pointer": "#/paths/~1players/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "players-list-response"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List all players"
+        "summary": "List all players",
+        "tags": [
+          "Players"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a player for your video, and customise it.",
         "id": "operation:post:/players",
         "kind": "operation",
         "method": "post",
         "name": "POST_players",
         "path": "/players",
         "pointer": "#/paths/~1players/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "playerCreationPayload"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "player"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Create a player"
+        "summary": "Create a player",
+        "tags": [
+          "Players"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/players/{playerId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DELETE_players-playerId",
-        "path": "/players/{playerId}",
-        "pointer": "#/paths/~1players~1{playerId}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete a player"
-      },
-      {
-        "deprecated": false,
+        "description": "Use a player ID to retrieve details about the player and display it for viewers.",
         "id": "operation:get:/players/{playerId}",
         "kind": "operation",
         "method": "get",
         "name": "GET_players-playerId",
+        "parameters": [
+          {
+            "description": "The unique identifier for the player you want to retrieve.",
+            "in": "path",
+            "name": "playerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/players/{playerId}",
         "pointer": "#/paths/~1players~1{playerId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "player"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Show a player"
+        "summary": "Show a player",
+        "tags": [
+          "Players"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a player if you no longer need it.",
+        "id": "operation:delete:/players/{playerId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DELETE_players-playerId",
+        "parameters": [
+          {
+            "description": "The unique identifier for the player you want to delete.",
+            "in": "path",
+            "name": "playerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/players/{playerId}",
+        "pointer": "#/paths/~1players~1{playerId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete a player",
+        "tags": [
+          "Players"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use a player ID to update specific details for a player.",
         "id": "operation:patch:/players/{playerId}",
         "kind": "operation",
         "method": "patch",
         "name": "PATCH_players-playerId",
+        "parameters": [
+          {
+            "description": "The unique identifier for the player.",
+            "in": "path",
+            "name": "playerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/players/{playerId}",
         "pointer": "#/paths/~1players~1{playerId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "playerUpdatePayload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "player"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Update a player"
+        "summary": "Update a player",
+        "tags": [
+          "Players"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The uploaded image maximum size should be 200x100 and its weight should be 200KB.",
+        "id": "operation:post:/players/{playerId}/logo",
+        "kind": "operation",
+        "method": "post",
+        "name": "POST_players-playerId-logo",
+        "parameters": [
+          {
+            "description": "The unique identifier for the player.",
+            "in": "path",
+            "name": "playerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/players/{playerId}/logo",
+        "pointer": "#/paths/~1players~1{playerId}~1logo/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "players-upload-logo-payload"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "player"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Upload a logo",
+        "tags": [
+          "Players"
+        ]
       },
       {
         "deprecated": false,
@@ -513,265 +1659,949 @@
         "kind": "operation",
         "method": "delete",
         "name": "DELETE_players-playerId-logo",
+        "parameters": [
+          {
+            "description": "The unique identifier for the player.",
+            "in": "path",
+            "name": "playerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/players/{playerId}/logo",
         "pointer": "#/paths/~1players~1{playerId}~1logo/delete",
+        "responses": [
+          {
+            "status": "204",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Delete logo"
+        "summary": "Delete logo",
+        "tags": [
+          "Players"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/players/{playerId}/logo",
-        "kind": "operation",
-        "method": "post",
-        "name": "POST_players-playerId-logo",
-        "path": "/players/{playerId}/logo",
-        "pointer": "#/paths/~1players~1{playerId}~1logo/post",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Upload a logo"
-      },
-      {
-        "deprecated": false,
+        "description": "When given a token, anyone can upload a file to the URI `https://ws.api.video/upload?token=<tokenId>`.",
         "id": "operation:post:/upload",
         "kind": "operation",
         "method": "post",
         "name": "POST_upload",
+        "parameters": [
+          {
+            "description": "The unique identifier for the token you want to use to upload a video.",
+            "in": "query",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Content-Range represents the range of bytes that will be returned as a result of the request.",
+            "in": "header",
+            "name": "Content-Range",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/upload",
         "pointer": "#/paths/~1upload/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "token-upload-payload"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "video"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Upload with an upload token"
+        "summary": "Upload with an upload token",
+        "tags": [
+          "Videos - Delegated upload"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A delegated token is used to allow secure uploads without exposing your API key.",
         "id": "operation:get:/upload-tokens",
         "kind": "operation",
         "method": "get",
         "name": "GET_upload-tokens",
+        "parameters": [
+          {
+            "description": "Allowed: createdAt, ttl.",
+            "enum": [
+              "createdAt",
+              "ttl"
+            ],
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allowed: asc, desc.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/upload-tokens",
         "pointer": "#/paths/~1upload-tokens/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "token-list-response"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List all active upload tokens."
+        "summary": "List all active upload tokens.",
+        "tags": [
+          "Videos - Delegated upload"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to generate an upload token.",
         "id": "operation:post:/upload-tokens",
         "kind": "operation",
         "method": "post",
         "name": "POST_upload-tokens",
         "path": "/upload-tokens",
         "pointer": "#/paths/~1upload-tokens/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "token-create-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "upload-token"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Generate an upload token"
+        "summary": "Generate an upload token",
+        "tags": [
+          "Videos - Delegated upload"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/upload-tokens/{uploadToken}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DELETE_upload-tokens-uploadToken",
-        "path": "/upload-tokens/{uploadToken}",
-        "pointer": "#/paths/~1upload-tokens~1{uploadToken}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete an upload token"
-      },
-      {
-        "deprecated": false,
+        "description": "You can retrieve details about a specific upload token if you have the unique identifier for the upload token.",
         "id": "operation:get:/upload-tokens/{uploadToken}",
         "kind": "operation",
         "method": "get",
         "name": "GET_upload-tokens-uploadToken",
+        "parameters": [
+          {
+            "description": "The unique identifier for the token you want information about.",
+            "in": "path",
+            "name": "uploadToken",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/upload-tokens/{uploadToken}",
         "pointer": "#/paths/~1upload-tokens~1{uploadToken}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "upload-token"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Show upload token"
+        "summary": "Show upload token",
+        "tags": [
+          "Videos - Delegated upload"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an existing upload token.",
+        "id": "operation:delete:/upload-tokens/{uploadToken}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DELETE_upload-tokens-uploadToken",
+        "parameters": [
+          {
+            "description": "The unique identifier for the upload token you want to delete.",
+            "in": "path",
+            "name": "uploadToken",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/upload-tokens/{uploadToken}",
+        "pointer": "#/paths/~1upload-tokens~1{uploadToken}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete an upload token",
+        "tags": [
+          "Videos - Delegated upload"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Requests to this endpoint return a list of your videos (with all their details).",
         "id": "operation:get:/videos",
         "kind": "operation",
         "method": "get",
         "name": "LIST-videos",
+        "parameters": [
+          {
+            "description": "The title of a specific video you want to find.",
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A tag is a category you create and apply to videos.",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Videos can be tagged with metadata tags in key:value pairs.",
+            "in": "query",
+            "name": "metadata",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "If you described a video with a term or sentence, you can add it here to return videos containing this string.",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If you know the ID for a live stream, you can retrieve the stream by adding the ID for it here.",
+            "in": "query",
+            "name": "liveStreamId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allowed: publishedAt, title.",
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allowed: asc, desc.",
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/videos",
         "pointer": "#/paths/~1videos/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "videos-list-response"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List all videos"
+        "summary": "List all videos",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To create a video, you create its container&parameters first, before adding the video file (exception - when using an existing HTTP source).",
         "id": "operation:post:/videos",
         "kind": "operation",
         "method": "post",
         "name": "POST-video",
         "path": "/videos",
         "pointer": "#/paths/~1videos/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "video-create-payload"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "video"
+          },
+          {
+            "status": "202",
+            "type": "video"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Create a video"
+        "summary": "Create a video",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/videos/{videoId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DELETE-video",
-        "path": "/videos/{videoId}",
-        "pointer": "#/paths/~1videos~1{videoId}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete a video"
-      },
-      {
-        "deprecated": false,
+        "description": "This call provides the same JSON information provided on video creation.",
         "id": "operation:get:/videos/{videoId}",
         "kind": "operation",
         "method": "get",
         "name": "GET-video",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want details about.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/videos/{videoId}",
         "pointer": "#/paths/~1videos~1{videoId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "video"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Show a video"
+        "summary": "Show a video",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
+        "description": "If you do not need a video any longer, you can send a request to delete it.",
+        "id": "operation:delete:/videos/{videoId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DELETE-video",
+        "parameters": [
+          {
+            "description": "The video ID for the video you want to delete.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/videos/{videoId}",
+        "pointer": "#/paths/~1videos~1{videoId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete a video",
+        "tags": [
+          "Videos"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this endpoint to update the parameters associated with your video.",
         "id": "operation:patch:/videos/{videoId}",
         "kind": "operation",
         "method": "patch",
         "name": "PATCH-video",
+        "parameters": [
+          {
+            "description": "The video ID for the video you want to delete.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/videos/{videoId}",
         "pointer": "#/paths/~1videos~1{videoId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "video-update-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "video"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Update a video"
+        "summary": "Update a video",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of available captions for the videoId you provide.",
         "id": "operation:get:/videos/{videoId}/captions",
         "kind": "operation",
         "method": "get",
         "name": "GET_videos-videoId-captions",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want to retrieve a list of captions for.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/videos/{videoId}/captions",
         "pointer": "#/paths/~1videos~1{videoId}~1captions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "captions-list-response"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List video captions"
+        "summary": "List video captions",
+        "tags": [
+          "Captions"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/videos/{videoId}/captions/{language}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DELETE_videos-videoId-captions-language",
-        "path": "/videos/{videoId}/captions/{language}",
-        "pointer": "#/paths/~1videos~1{videoId}~1captions~1{language}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete a caption"
-      },
-      {
-        "deprecated": false,
+        "description": "Display a caption for a video in a specific language.",
         "id": "operation:get:/videos/{videoId}/captions/{language}",
         "kind": "operation",
         "method": "get",
         "name": "GET_videos-videoId-captions-language",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want captions for.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A valid [BCP 47](https://github.com/libyal/libfwnt/wiki/Language-Code-identifiers) language representation",
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/videos/{videoId}/captions/{language}",
         "pointer": "#/paths/~1videos~1{videoId}~1captions~1{language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "subtitle"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Show a caption"
+        "summary": "Show a caption",
+        "tags": [
+          "Captions"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/videos/{videoId}/captions/{language}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "PATCH_videos-videoId-captions-language",
-        "path": "/videos/{videoId}/captions/{language}",
-        "pointer": "#/paths/~1videos~1{videoId}~1captions~1{language}/patch",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Update caption"
-      },
-      {
-        "deprecated": false,
+        "description": "Upload a VTT file to add captions to your video.",
         "id": "operation:post:/videos/{videoId}/captions/{language}",
         "kind": "operation",
         "method": "post",
         "name": "POST_videos-videoId-captions-language",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want to add a caption to.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A valid BCP 47 language representation.",
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/videos/{videoId}/captions/{language}",
         "pointer": "#/paths/~1videos~1{videoId}~1captions~1{language}/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "captions-upload-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subtitle"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Upload a caption"
+        "summary": "Upload a caption",
+        "tags": [
+          "Captions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a caption in a specific language by providing the video ID for the video you want to delete the caption from and the language the caption is in.",
+        "id": "operation:delete:/videos/{videoId}/captions/{language}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DELETE_videos-videoId-captions-language",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want to delete a caption from.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A valid [BCP 47](https://github.com/libyal/libfwnt/wiki/Language-Code-identifiers) language representation.",
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/videos/{videoId}/captions/{language}",
+        "pointer": "#/paths/~1videos~1{videoId}~1captions~1{language}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete a caption",
+        "tags": [
+          "Captions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "To have the captions on automatically, use this PATCH to set default: true.",
+        "id": "operation:patch:/videos/{videoId}/captions/{language}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "PATCH_videos-videoId-captions-language",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want to have automatic captions for.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A valid [BCP 47](https://github.com/libyal/libfwnt/wiki/Language-Code-identifiers) language representation.",
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/videos/{videoId}/captions/{language}",
+        "pointer": "#/paths/~1videos~1{videoId}~1captions~1{language}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "captions-update-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "subtitle"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Update caption",
+        "tags": [
+          "Captions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieve a list of all chapters for a specified video.",
         "id": "operation:get:/videos/{videoId}/chapters",
         "kind": "operation",
         "method": "get",
         "name": "GET_videos-videoId-chapters",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want to retrieve a list of chapters for.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/videos/{videoId}/chapters",
         "pointer": "#/paths/~1videos~1{videoId}~1chapters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "chapters-list-response"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List video chapters"
+        "summary": "List video chapters",
+        "tags": [
+          "Chapters"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Chapters help your viewers find the sections of the video they are most interested in viewing.",
+        "id": "operation:get:/videos/{videoId}/chapters/{language}",
+        "kind": "operation",
+        "method": "get",
+        "name": "GET_videos-videoId-chapters-language",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want to show a chapter for.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A valid [BCP 47](https://github.com/libyal/libfwnt/wiki/Language-Code-identifiers) language representation.",
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/videos/{videoId}/chapters/{language}",
+        "pointer": "#/paths/~1videos~1{videoId}~1chapters~1{language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "chapter"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Show a chapter",
+        "tags": [
+          "Chapters"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Chapters help break the video into sections.",
+        "id": "operation:post:/videos/{videoId}/chapters/{language}",
+        "kind": "operation",
+        "method": "post",
+        "name": "POST_videos-videoId-chapters-language",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want to upload a chapter for.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A valid [BCP 47](https://github.com/libyal/libfwnt/wiki/Language-Code-identifiers) language representation.",
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/videos/{videoId}/chapters/{language}",
+        "pointer": "#/paths/~1videos~1{videoId}~1chapters~1{language}/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "chapters-update-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "chapter"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Upload a chapter",
+        "tags": [
+          "Chapters"
+        ]
       },
       {
         "deprecated": false,
@@ -779,514 +2609,827 @@
         "kind": "operation",
         "method": "delete",
         "name": "DELETE_videos-videoId-chapters-language",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want to delete a chapter from.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A valid [BCP 47](https://github.com/libyal/libfwnt/wiki/Language-Code-identifiers) language representation.",
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/videos/{videoId}/chapters/{language}",
         "pointer": "#/paths/~1videos~1{videoId}~1chapters~1{language}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Delete a chapter"
+        "summary": "Delete a chapter",
+        "tags": [
+          "Chapters"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/videos/{videoId}/chapters/{language}",
-        "kind": "operation",
-        "method": "get",
-        "name": "GET_videos-videoId-chapters-language",
-        "path": "/videos/{videoId}/chapters/{language}",
-        "pointer": "#/paths/~1videos~1{videoId}~1chapters~1{language}/get",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Show a chapter"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/videos/{videoId}/chapters/{language}",
-        "kind": "operation",
-        "method": "post",
-        "name": "POST_videos-videoId-chapters-language",
-        "path": "/videos/{videoId}/chapters/{language}",
-        "pointer": "#/paths/~1videos~1{videoId}~1chapters~1{language}/post",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Upload a chapter"
-      },
-      {
-        "deprecated": false,
+        "description": "To upload a video to the videoId you created.",
         "id": "operation:post:/videos/{videoId}/source",
         "kind": "operation",
         "method": "post",
         "name": "POST_videos-videoId-source",
+        "parameters": [
+          {
+            "description": "Enter the videoId you want to use to upload your video.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Content-Range represents the range of bytes that will be returned as a result of the request.",
+            "in": "header",
+            "name": "Content-Range",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/videos/{videoId}/source",
         "pointer": "#/paths/~1videos~1{videoId}~1source/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "video-upload-payload"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "video"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Upload a video"
+        "summary": "Upload a video",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API provides upload status & encoding status to determine when the video is uploaded or ready to playback.",
         "id": "operation:get:/videos/{videoId}/status",
         "kind": "operation",
         "method": "get",
         "name": "GET-video-status",
+        "parameters": [
+          {
+            "description": "The unique identifier for the video you want the status for.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/videos/{videoId}/status",
         "pointer": "#/paths/~1videos~1{videoId}~1status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "videostatus"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Show video status"
+        "summary": "Show video status",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/videos/{videoId}/thumbnail",
-        "kind": "operation",
-        "method": "patch",
-        "name": "PATCH_videos-videoId-thumbnail",
-        "path": "/videos/{videoId}/thumbnail",
-        "pointer": "#/paths/~1videos~1{videoId}~1thumbnail/patch",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Pick a thumbnail"
-      },
-      {
-        "deprecated": false,
+        "description": "The thumbnail is the poster that appears in the player window before video playback begins.",
         "id": "operation:post:/videos/{videoId}/thumbnail",
         "kind": "operation",
         "method": "post",
         "name": "POST_videos-videoId-thumbnail",
+        "parameters": [
+          {
+            "description": "Unique identifier of the chosen video",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/videos/{videoId}/thumbnail",
         "pointer": "#/paths/~1videos~1{videoId}~1thumbnail/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "video-thumbnail-upload-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "video"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Upload a thumbnail"
+        "summary": "Upload a thumbnail",
+        "tags": [
+          "Videos"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Pick a thumbnail from the given time code.",
+        "id": "operation:patch:/videos/{videoId}/thumbnail",
+        "kind": "operation",
+        "method": "patch",
+        "name": "PATCH_videos-videoId-thumbnail",
+        "parameters": [
+          {
+            "description": "Unique identifier of the video you want to add a thumbnail to, where you use a section of your video as the thumbnail.",
+            "in": "path",
+            "name": "videoId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/videos/{videoId}/thumbnail",
+        "pointer": "#/paths/~1videos~1{videoId}~1thumbnail/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "video-thumbnail-pick-payload"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "video"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Pick a thumbnail",
+        "tags": [
+          "Videos"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Requests to this endpoint return a list of your webhooks (with all their details).",
         "id": "operation:get:/webhooks",
         "kind": "operation",
         "method": "get",
         "name": "LIST-webhooks",
+        "parameters": [
+          {
+            "description": "The webhook event that you wish to filter on.",
+            "in": "query",
+            "name": "events",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Choose the number of search results to return per page.",
+            "in": "query",
+            "name": "currentPage",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "Results per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhooks-list-response"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List all webhooks"
+        "summary": "List all webhooks",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Webhooks can push notifications to your server, rather than polling api.video for changes.",
         "id": "operation:post:/webhooks",
         "kind": "operation",
         "method": "post",
         "name": "POST-webhooks",
         "path": "/webhooks",
         "pointer": "#/paths/~1webhooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "webhooks-create-payload"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "webhook"
+          },
+          {
+            "status": "400",
+            "type": "bad-request"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Create Webhook"
+        "summary": "Create Webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/webhooks/{webhookId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DELETE-webhook",
-        "path": "/webhooks/{webhookId}",
-        "pointer": "#/paths/~1webhooks~1{webhookId}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Delete a Webhook"
-      },
-      {
-        "deprecated": false,
+        "description": "This call provides the same JSON information provided on Webjhook creation.",
         "id": "operation:get:/webhooks/{webhookId}",
         "kind": "operation",
         "method": "get",
         "name": "GET-Webhook",
+        "parameters": [
+          {
+            "description": "The unique webhook you wish to retreive details on.",
+            "in": "path",
+            "name": "webhookId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/webhooks/{webhookId}",
         "pointer": "#/paths/~1webhooks~1{webhookId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "webhook"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Show Webhook details"
+        "summary": "Show Webhook details",
+        "tags": [
+          "Webhooks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint will delete the indicated webhook.",
+        "id": "operation:delete:/webhooks/{webhookId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DELETE-webhook",
+        "parameters": [
+          {
+            "description": "The webhook you wish to delete.",
+            "in": "path",
+            "name": "webhookId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/webhooks/{webhookId}",
+        "pointer": "#/paths/~1webhooks~1{webhookId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "not-found"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete a Webhook",
+        "tags": [
+          "Webhooks"
+        ]
       },
       {
         "id": "schema:access-token",
         "kind": "schema",
-        "name": "access-token"
+        "name": "access-token",
+        "type": "object"
       },
       {
         "id": "schema:account",
         "kind": "schema",
-        "name": "account"
+        "name": "account",
+        "type": "object"
       },
       {
         "id": "schema:authenticate-payload",
         "kind": "schema",
-        "name": "authenticate-payload"
+        "name": "authenticate-payload",
+        "type": "object"
       },
       {
         "id": "schema:bad-request",
         "kind": "schema",
-        "name": "bad-request"
+        "name": "bad-request",
+        "type": "object"
       },
       {
         "id": "schema:bytes_range",
         "kind": "schema",
-        "name": "bytes_range"
+        "name": "bytes_range",
+        "type": "object"
       },
       {
         "id": "schema:captions-list-response",
         "kind": "schema",
-        "name": "captions-list-response"
+        "name": "captions-list-response",
+        "type": "object"
       },
       {
         "id": "schema:captions-update-payload",
         "kind": "schema",
-        "name": "captions-update-payload"
+        "name": "captions-update-payload",
+        "type": "object"
       },
       {
         "id": "schema:captions-upload-payload",
         "kind": "schema",
-        "name": "captions-upload-payload"
+        "name": "captions-upload-payload",
+        "type": "object"
       },
       {
         "id": "schema:chapter",
         "kind": "schema",
-        "name": "chapter"
+        "name": "chapter",
+        "type": "object"
       },
       {
         "id": "schema:chapters-list-response",
         "kind": "schema",
-        "name": "chapters-list-response"
+        "name": "chapters-list-response",
+        "type": "object"
       },
       {
         "id": "schema:chapters-update-payload",
         "kind": "schema",
-        "name": "chapters-update-payload"
+        "name": "chapters-update-payload",
+        "type": "object"
       },
       {
         "id": "schema:link",
         "kind": "schema",
-        "name": "link"
+        "name": "link",
+        "type": "object"
       },
       {
         "id": "schema:live-stream",
         "kind": "schema",
-        "name": "live-stream"
+        "name": "live-stream",
+        "type": "object"
       },
       {
         "id": "schema:live-stream-create-payload",
         "kind": "schema",
-        "name": "live-stream-create-payload"
+        "name": "live-stream-create-payload",
+        "type": "object"
       },
       {
         "id": "schema:live-stream-list-response",
         "kind": "schema",
-        "name": "live-stream-list-response"
+        "name": "live-stream-list-response",
+        "type": "object"
       },
       {
         "id": "schema:live-stream-session",
         "kind": "schema",
-        "name": "live-stream-session"
+        "name": "live-stream-session",
+        "type": "object"
       },
       {
         "id": "schema:live-stream-thumbnail-upload-payload",
         "kind": "schema",
-        "name": "live-stream-thumbnail-upload-payload"
+        "name": "live-stream-thumbnail-upload-payload",
+        "type": "object"
       },
       {
         "id": "schema:live-stream-update-payload",
         "kind": "schema",
-        "name": "live-stream-update-payload"
+        "name": "live-stream-update-payload",
+        "type": "object"
       },
       {
         "id": "schema:live_stream_assets",
         "kind": "schema",
-        "name": "live_stream_assets"
+        "name": "live_stream_assets",
+        "type": "object"
       },
       {
+        "description": "What kind of browser the viewer is using for the live stream session.",
         "id": "schema:live_stream_session_client",
         "kind": "schema",
-        "name": "live_stream_session_client"
+        "name": "live_stream_session_client",
+        "type": "object"
       },
       {
+        "description": "What type of device the user is on when in the live stream session.",
         "id": "schema:live_stream_session_device",
         "kind": "schema",
-        "name": "live_stream_session_device"
+        "name": "live_stream_session_device",
+        "type": "object"
       },
       {
+        "description": "The location of the viewer of the live stream.",
         "id": "schema:live_stream_session_location",
         "kind": "schema",
-        "name": "live_stream_session_location"
+        "name": "live_stream_session_location",
+        "type": "object"
       },
       {
         "id": "schema:live_stream_session_referrer",
         "kind": "schema",
-        "name": "live_stream_session_referrer"
+        "name": "live_stream_session_referrer",
+        "type": "object"
       },
       {
         "id": "schema:live_stream_session_session",
         "kind": "schema",
-        "name": "live_stream_session_session"
+        "name": "live_stream_session_session",
+        "type": "object"
       },
       {
         "id": "schema:metadata",
         "kind": "schema",
-        "name": "metadata"
+        "name": "metadata",
+        "type": "object"
       },
       {
         "id": "schema:not-found",
         "kind": "schema",
-        "name": "not-found"
+        "name": "not-found",
+        "type": "object"
       },
       {
         "id": "schema:pagination",
         "kind": "schema",
-        "name": "pagination"
+        "name": "pagination",
+        "type": "object"
       },
       {
         "id": "schema:pagination_link",
         "kind": "schema",
-        "name": "pagination_link"
+        "name": "pagination_link",
+        "type": "object"
       },
       {
         "id": "schema:player",
         "kind": "schema",
-        "name": "player"
+        "name": "player",
+        "type": "playerinput|object"
       },
       {
         "id": "schema:player-session-event",
         "kind": "schema",
-        "name": "player-session-event"
+        "name": "player-session-event",
+        "type": "object"
       },
       {
         "id": "schema:playerCreationPayload",
         "kind": "schema",
-        "name": "playerCreationPayload"
+        "name": "playerCreationPayload",
+        "type": "playerinput"
       },
       {
         "id": "schema:playerUpdatePayload",
         "kind": "schema",
-        "name": "playerUpdatePayload"
+        "name": "playerUpdatePayload",
+        "type": "playerinput"
       },
       {
         "id": "schema:playerinput",
         "kind": "schema",
-        "name": "playerinput"
+        "name": "playerinput",
+        "type": "object"
       },
       {
         "id": "schema:players-list-response",
         "kind": "schema",
-        "name": "players-list-response"
+        "name": "players-list-response",
+        "type": "object"
       },
       {
         "id": "schema:players-upload-logo-payload",
         "kind": "schema",
-        "name": "players-upload-logo-payload"
+        "name": "players-upload-logo-payload",
+        "type": "object"
       },
       {
         "id": "schema:quality",
         "kind": "schema",
-        "name": "quality"
+        "name": "quality",
+        "type": "object"
       },
       {
         "id": "schema:raw-statistics-list-live-stream-analytics-response",
         "kind": "schema",
-        "name": "raw-statistics-list-live-stream-analytics-response"
+        "name": "raw-statistics-list-live-stream-analytics-response",
+        "type": "object"
       },
       {
         "id": "schema:raw-statistics-list-player-session-events-response",
         "kind": "schema",
-        "name": "raw-statistics-list-player-session-events-response"
+        "name": "raw-statistics-list-player-session-events-response",
+        "type": "object"
       },
       {
         "id": "schema:raw-statistics-list-sessions-response",
         "kind": "schema",
-        "name": "raw-statistics-list-sessions-response"
+        "name": "raw-statistics-list-sessions-response",
+        "type": "object"
       },
       {
         "id": "schema:refresh-token-payload",
         "kind": "schema",
-        "name": "refresh-token-payload"
+        "name": "refresh-token-payload",
+        "type": "object"
       },
       {
         "id": "schema:subtitle",
         "kind": "schema",
-        "name": "subtitle"
+        "name": "subtitle",
+        "type": "object"
       },
       {
         "id": "schema:token-create-payload",
         "kind": "schema",
-        "name": "token-create-payload"
+        "name": "token-create-payload",
+        "type": "object"
       },
       {
         "id": "schema:token-list-response",
         "kind": "schema",
-        "name": "token-list-response"
+        "name": "token-list-response",
+        "type": "object"
       },
       {
         "id": "schema:token-upload-payload",
         "kind": "schema",
-        "name": "token-upload-payload"
+        "name": "token-upload-payload",
+        "type": "object"
       },
       {
         "id": "schema:upload-token",
         "kind": "schema",
-        "name": "upload-token"
+        "name": "upload-token",
+        "type": "object"
       },
       {
         "id": "schema:video",
         "kind": "schema",
-        "name": "video"
+        "name": "video",
+        "type": "object"
       },
       {
         "id": "schema:video-create-payload",
         "kind": "schema",
-        "name": "video-create-payload"
+        "name": "video-create-payload",
+        "type": "object"
       },
       {
         "id": "schema:video-session",
         "kind": "schema",
-        "name": "video-session"
+        "name": "video-session",
+        "type": "object"
       },
       {
         "id": "schema:video-thumbnail-pick-payload",
         "kind": "schema",
-        "name": "video-thumbnail-pick-payload"
+        "name": "video-thumbnail-pick-payload",
+        "type": "object"
       },
       {
         "id": "schema:video-thumbnail-upload-payload",
         "kind": "schema",
-        "name": "video-thumbnail-upload-payload"
+        "name": "video-thumbnail-upload-payload",
+        "type": "object"
       },
       {
         "id": "schema:video-update-payload",
         "kind": "schema",
-        "name": "video-update-payload"
+        "name": "video-update-payload",
+        "type": "object"
       },
       {
         "id": "schema:video-upload-payload",
         "kind": "schema",
-        "name": "video-upload-payload"
+        "name": "video-upload-payload",
+        "type": "object"
       },
       {
+        "description": "Collection of details about the video object that you can use to work with the video object.",
         "id": "schema:videoAssets",
         "kind": "schema",
-        "name": "videoAssets"
+        "name": "videoAssets",
+        "type": "object"
       },
       {
+        "description": "Source information about the video.",
         "id": "schema:videoSource",
         "kind": "schema",
-        "name": "videoSource"
+        "name": "videoSource",
+        "type": "object"
       },
       {
+        "description": "What kind of browser the viewer is using for the video session.",
         "id": "schema:video_session_client",
         "kind": "schema",
-        "name": "video_session_client"
+        "name": "video_session_client",
+        "type": "object"
       },
       {
+        "description": "What type of device the user is on when in the video session.",
         "id": "schema:video_session_device",
         "kind": "schema",
-        "name": "video_session_device"
+        "name": "video_session_device",
+        "type": "object"
       },
       {
+        "description": "The location of the viewer.",
         "id": "schema:video_session_location",
         "kind": "schema",
-        "name": "video_session_location"
+        "name": "video_session_location",
+        "type": "object"
       },
       {
+        "description": "The operating system the viewer is on.",
         "id": "schema:video_session_os",
         "kind": "schema",
-        "name": "video_session_os"
+        "name": "video_session_os",
+        "type": "object"
       },
       {
         "id": "schema:video_session_referrer",
         "kind": "schema",
-        "name": "video_session_referrer"
+        "name": "video_session_referrer",
+        "type": "object"
       },
       {
         "id": "schema:video_session_session",
         "kind": "schema",
-        "name": "video_session_session"
+        "name": "video_session_session",
+        "type": "object"
       },
       {
+        "description": "This appears if the video is from a Live Record.",
         "id": "schema:video_source_live_stream",
         "kind": "schema",
-        "name": "video_source_live_stream"
+        "name": "video_source_live_stream",
+        "type": "object"
       },
       {
         "id": "schema:video_source_live_stream_link",
         "kind": "schema",
-        "name": "video_source_live_stream_link"
+        "name": "video_source_live_stream_link",
+        "type": "object"
       },
       {
         "id": "schema:videos-list-response",
         "kind": "schema",
-        "name": "videos-list-response"
+        "name": "videos-list-response",
+        "type": "object"
       },
       {
         "id": "schema:videostatus",
         "kind": "schema",
-        "name": "videostatus"
+        "name": "videostatus",
+        "type": "object"
       },
       {
         "id": "schema:videostatus_encoding",
         "kind": "schema",
-        "name": "videostatus_encoding"
+        "name": "videostatus_encoding",
+        "type": "object"
       },
       {
         "id": "schema:videostatus_encoding_metadata",
         "kind": "schema",
-        "name": "videostatus_encoding_metadata"
+        "name": "videostatus_encoding_metadata",
+        "type": "object"
       },
       {
+        "description": "Details about the capturing, transferring, and storing of your video for use immediately or in the future.",
         "id": "schema:videostatus_ingest",
         "kind": "schema",
-        "name": "videostatus_ingest"
+        "name": "videostatus_ingest",
+        "type": "object"
       },
       {
         "id": "schema:webhook",
         "kind": "schema",
-        "name": "webhook"
+        "name": "webhook",
+        "type": "object"
       },
       {
         "id": "schema:webhooks-create-payload",
         "kind": "schema",
-        "name": "webhooks-create-payload"
+        "name": "webhooks-create-payload",
+        "type": "object"
       },
       {
         "id": "schema:webhooks-list-response",
         "kind": "schema",
-        "name": "webhooks-list-response"
+        "name": "webhooks-list-response",
+        "type": "object"
       }
     ]
   },

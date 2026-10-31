@@ -23,6 +23,11 @@
         "from": "byautomata-io-2a34e3c15d",
         "kind": "EXPOSES",
         "to": "operation:get:/similar"
+      },
+      {
+        "from": "schema:SimilarCompanySearch",
+        "kind": "REFERENCES",
+        "to": "schema:Snippet"
       }
     ],
     "nodes": [
@@ -36,10 +41,38 @@
         "kind": "operation",
         "method": "get",
         "name": "get /contentpro-search",
+        "parameters": [
+          {
+            "description": "We provide information about related companies and articles based on the search terms you provide.",
+            "in": "query",
+            "name": "terms",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contentpro-search",
         "pointer": "#/paths/~1contentpro-search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "501"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Send search terms to receive the most relevant articles and companies."
+        "summary": "Send search terms to receive the most relevant articles and companies.",
+        "tags": [
+          "contentpro-search"
+        ]
       },
       {
         "deprecated": false,
@@ -49,8 +82,34 @@
         "name": "post /contentpro-similar-text",
         "path": "/contentpro-similar-text",
         "pointer": "#/paths/~1contentpro-similar-text/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "501"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "The /contentpro-similar-text endpoint accepts and arbitrary piece of text and returns similar articles and blogs written by companies."
+        "summary": "The /contentpro-similar-text endpoint accepts and arbitrary piece of text and returns similar articles and blogs written by companies.",
+        "tags": [
+          "contentpro-similar-text"
+        ]
       },
       {
         "deprecated": false,
@@ -58,10 +117,46 @@
         "kind": "operation",
         "method": "get",
         "name": "get /search",
+        "parameters": [
+          {
+            "description": "We provide information about related companies based on the search terms you provide.",
+            "in": "query",
+            "name": "terms",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "0",
+            "description": "Page number of search results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "501"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Send search terms to receive the most relevant companies along with text snippets."
+        "summary": "Send search terms to receive the most relevant companies along with text snippets.",
+        "tags": [
+          "search"
+        ]
       },
       {
         "deprecated": false,
@@ -69,45 +164,88 @@
         "kind": "operation",
         "method": "get",
         "name": "get /similar",
+        "parameters": [
+          {
+            "description": "We'll provide information about related companies based on the site you provide.",
+            "in": "query",
+            "name": "link",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "0",
+            "description": "Page number of search results.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/similar",
         "pointer": "#/paths/~1similar/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "501"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Send a company website to receive a list of companies related to them."
+        "summary": "Send a company website to receive a list of companies related to them.",
+        "tags": [
+          "similar"
+        ]
       },
       {
         "id": "schema:Article",
         "kind": "schema",
-        "name": "Article"
+        "name": "Article",
+        "type": "object"
       },
       {
         "id": "schema:ContentProCompany",
         "kind": "schema",
-        "name": "ContentProCompany"
+        "name": "ContentProCompany",
+        "type": "object"
       },
       {
         "id": "schema:ContentProSnippets",
         "kind": "schema",
-        "name": "ContentProSnippets"
+        "name": "ContentProSnippets",
+        "type": "object"
       },
       {
         "id": "schema:InputCompany",
         "kind": "schema",
-        "name": "InputCompany"
+        "name": "InputCompany",
+        "type": "object"
       },
       {
         "id": "schema:SimilarCompany",
         "kind": "schema",
-        "name": "SimilarCompany"
+        "name": "SimilarCompany",
+        "type": "object"
       },
       {
         "id": "schema:SimilarCompanySearch",
         "kind": "schema",
-        "name": "SimilarCompanySearch"
+        "name": "SimilarCompanySearch",
+        "type": "object"
       },
       {
         "id": "schema:Snippet",
         "kind": "schema",
-        "name": "Snippet"
+        "name": "Snippet",
+        "type": "object"
       }
     ]
   },

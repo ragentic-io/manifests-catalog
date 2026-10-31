@@ -8,6 +8,16 @@
         "from": "freetv-app-com-dadd2d75dd",
         "kind": "EXPOSES",
         "to": "operation:get:/services"
+      },
+      {
+        "from": "operation:get:/services",
+        "kind": "RETURNS",
+        "to": "schema:ApiResponse"
+      },
+      {
+        "from": "schema:ApiResponse",
+        "kind": "REFERENCES",
+        "to": "schema:NewsItem"
       }
     ],
     "nodes": [
@@ -17,24 +27,54 @@
       },
       {
         "deprecated": false,
+        "description": "Get the current latest news to user",
         "id": "operation:get:/services",
         "kind": "operation",
         "method": "get",
         "name": "getLatestNews",
+        "parameters": [
+          {
+            "enum": [
+              1
+            ],
+            "in": "query",
+            "name": "mobile",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "enum": [
+              "getLatestNewsForChatGPT"
+            ],
+            "in": "query",
+            "name": "funcs",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/services",
         "pointer": "#/paths/~1services/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Query the latest news"
       },
       {
         "id": "schema:ApiResponse",
         "kind": "schema",
-        "name": "ApiResponse"
+        "name": "ApiResponse",
+        "type": "object"
       },
       {
         "id": "schema:NewsItem",
         "kind": "schema",
-        "name": "NewsItem"
+        "name": "NewsItem",
+        "type": "object"
       }
     ]
   },

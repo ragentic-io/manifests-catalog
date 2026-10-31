@@ -22,11 +22,6 @@
       {
         "from": "getsandbox-com-5c68c9c38b",
         "kind": "EXPOSES",
-        "to": "operation:delete:/1/sandboxes/{sandboxName}"
-      },
-      {
-        "from": "getsandbox-com-5c68c9c38b",
-        "kind": "EXPOSES",
         "to": "operation:get:/1/sandboxes/{sandboxName}"
       },
       {
@@ -37,7 +32,17 @@
       {
         "from": "getsandbox-com-5c68c9c38b",
         "kind": "EXPOSES",
+        "to": "operation:delete:/1/sandboxes/{sandboxName}"
+      },
+      {
+        "from": "getsandbox-com-5c68c9c38b",
+        "kind": "EXPOSES",
         "to": "operation:get:/1/sandboxes/{sandboxName}/fork"
+      },
+      {
+        "from": "getsandbox-com-5c68c9c38b",
+        "kind": "EXPOSES",
+        "to": "operation:get:/1/sandboxes/{sandboxName}/state"
       },
       {
         "from": "getsandbox-com-5c68c9c38b",
@@ -45,9 +50,74 @@
         "to": "operation:delete:/1/sandboxes/{sandboxName}/state"
       },
       {
-        "from": "getsandbox-com-5c68c9c38b",
-        "kind": "EXPOSES",
-        "to": "operation:get:/1/sandboxes/{sandboxName}/state"
+        "from": "operation:get:/1/activity/search",
+        "kind": "RETURNS",
+        "to": "schema:ActivityMessage"
+      },
+      {
+        "from": "operation:get:/1/sandboxes",
+        "kind": "RETURNS",
+        "to": "schema:Sandbox"
+      },
+      {
+        "from": "operation:post:/1/sandboxes",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateSandbox"
+      },
+      {
+        "from": "operation:post:/1/sandboxes",
+        "kind": "RETURNS",
+        "to": "schema:Sandbox"
+      },
+      {
+        "from": "operation:get:/1/sandboxes/{sandboxName}",
+        "kind": "RETURNS",
+        "to": "schema:Sandbox"
+      },
+      {
+        "from": "operation:put:/1/sandboxes/{sandboxName}",
+        "kind": "ACCEPTS",
+        "to": "schema:Sandbox"
+      },
+      {
+        "from": "operation:put:/1/sandboxes/{sandboxName}",
+        "kind": "RETURNS",
+        "to": "schema:Sandbox"
+      },
+      {
+        "from": "operation:get:/1/sandboxes/{sandboxName}/fork",
+        "kind": "RETURNS",
+        "to": "schema:Sandbox"
+      },
+      {
+        "from": "schema:ActivityMessage",
+        "kind": "REFERENCES",
+        "to": "schema:RuntimeTransaction"
+      },
+      {
+        "from": "schema:ConfiguredRouteDetails",
+        "kind": "REFERENCES",
+        "to": "schema:RouteConfig"
+      },
+      {
+        "from": "schema:RuntimeResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:RuntimeTransaction",
+        "kind": "REFERENCES",
+        "to": "schema:RuntimeRequest"
+      },
+      {
+        "from": "schema:RuntimeTransaction",
+        "kind": "REFERENCES",
+        "to": "schema:RuntimeResponse"
+      },
+      {
+        "from": "schema:Sandbox",
+        "kind": "REFERENCES",
+        "to": "schema:ConfiguredRouteDetails"
       }
     ],
     "nodes": [
@@ -61,10 +131,57 @@
         "kind": "operation",
         "method": "get",
         "name": "getSandboxesActivity",
+        "parameters": [
+          {
+            "description": "Timestamp to start search from, epoch time in milliseconds.",
+            "in": "query",
+            "name": "fromTimestamp",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Comma-separated list of Sandbox names to search.",
+            "in": "query",
+            "name": "sourceSandboxes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A keyword to search activities by, will match any part of the ActivityMessage.",
+            "in": "query",
+            "name": "keyword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Flag to return all types of activity, defaults to just Requests",
+            "in": "query",
+            "name": "allTypes",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "maxResults",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/1/activity/search",
         "pointer": "#/paths/~11~1activity~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ActivityMessage[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "searchActivity"
+        "summary": "searchActivity",
+        "tags": [
+          "Activity"
+        ]
       },
       {
         "deprecated": false,
@@ -72,10 +189,28 @@
         "kind": "operation",
         "method": "get",
         "name": "getSandboxes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "filterType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/1/sandboxes",
         "pointer": "#/paths/~11~1sandboxes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sandbox[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSandboxes"
+        "summary": "getSandboxes",
+        "tags": [
+          "Sandbox"
+        ]
       },
       {
         "deprecated": false,
@@ -85,19 +220,25 @@
         "name": "createSandbox",
         "path": "/1/sandboxes",
         "pointer": "#/paths/~11~1sandboxes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateSandbox"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sandbox"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "createSandbox"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/1/sandboxes/{sandboxName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSandbox",
-        "path": "/1/sandboxes/{sandboxName}",
-        "pointer": "#/paths/~11~1sandboxes~1{sandboxName}/delete",
-        "security": [],
-        "summary": "deleteSandbox"
+        "summary": "createSandbox",
+        "tags": [
+          "Sandbox"
+        ]
       },
       {
         "deprecated": false,
@@ -105,10 +246,29 @@
         "kind": "operation",
         "method": "get",
         "name": "getSandbox",
+        "parameters": [
+          {
+            "description": "Name of the Sandbox",
+            "in": "path",
+            "name": "sandboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/1/sandboxes/{sandboxName}",
         "pointer": "#/paths/~11~1sandboxes~1{sandboxName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sandbox"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSandbox"
+        "summary": "getSandbox",
+        "tags": [
+          "Sandbox"
+        ]
       },
       {
         "deprecated": false,
@@ -116,10 +276,65 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSandbox",
+        "parameters": [
+          {
+            "description": "Name of the Sandbox",
+            "in": "path",
+            "name": "sandboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/1/sandboxes/{sandboxName}",
         "pointer": "#/paths/~11~1sandboxes~1{sandboxName}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Sandbox"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sandbox"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "updateSandbox"
+        "summary": "updateSandbox",
+        "tags": [
+          "Sandbox"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/1/sandboxes/{sandboxName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSandbox",
+        "parameters": [
+          {
+            "description": "Name of the Sandbox",
+            "in": "path",
+            "name": "sandboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/1/sandboxes/{sandboxName}",
+        "pointer": "#/paths/~11~1sandboxes~1{sandboxName}/delete",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "deleteSandbox",
+        "tags": [
+          "Sandbox"
+        ]
       },
       {
         "deprecated": false,
@@ -127,21 +342,29 @@
         "kind": "operation",
         "method": "get",
         "name": "forkSandbox",
+        "parameters": [
+          {
+            "description": "Name of the Sandbox",
+            "in": "path",
+            "name": "sandboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/1/sandboxes/{sandboxName}/fork",
         "pointer": "#/paths/~11~1sandboxes~1{sandboxName}~1fork/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sandbox"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "forkSandbox"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/1/sandboxes/{sandboxName}/state",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSandboxState",
-        "path": "/1/sandboxes/{sandboxName}/state",
-        "pointer": "#/paths/~11~1sandboxes~1{sandboxName}~1state/delete",
-        "security": [],
-        "summary": "deleteSandboxState"
+        "summary": "forkSandbox",
+        "tags": [
+          "Sandbox"
+        ]
       },
       {
         "deprecated": false,
@@ -149,55 +372,111 @@
         "kind": "operation",
         "method": "get",
         "name": "getSandboxState",
+        "parameters": [
+          {
+            "description": "Name of the Sandbox",
+            "in": "path",
+            "name": "sandboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/1/sandboxes/{sandboxName}/state",
         "pointer": "#/paths/~11~1sandboxes~1{sandboxName}~1state/get",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getSandboxState"
+        "summary": "getSandboxState",
+        "tags": [
+          "Sandbox"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/1/sandboxes/{sandboxName}/state",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSandboxState",
+        "parameters": [
+          {
+            "description": "Name of the Sandbox",
+            "in": "path",
+            "name": "sandboxName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/1/sandboxes/{sandboxName}/state",
+        "pointer": "#/paths/~11~1sandboxes~1{sandboxName}~1state/delete",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "deleteSandboxState",
+        "tags": [
+          "Sandbox"
+        ]
       },
       {
         "id": "schema:ActivityMessage",
         "kind": "schema",
-        "name": "ActivityMessage"
+        "name": "ActivityMessage",
+        "type": "object"
       },
       {
         "id": "schema:ConfiguredRouteDetails",
         "kind": "schema",
-        "name": "ConfiguredRouteDetails"
+        "name": "ConfiguredRouteDetails",
+        "type": "object"
       },
       {
         "id": "schema:CreateSandbox",
         "kind": "schema",
-        "name": "CreateSandbox"
+        "name": "CreateSandbox",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:RouteConfig",
         "kind": "schema",
-        "name": "RouteConfig"
+        "name": "RouteConfig",
+        "type": "object"
       },
       {
         "id": "schema:RuntimeRequest",
         "kind": "schema",
-        "name": "RuntimeRequest"
+        "name": "RuntimeRequest",
+        "type": "object"
       },
       {
         "id": "schema:RuntimeResponse",
         "kind": "schema",
-        "name": "RuntimeResponse"
+        "name": "RuntimeResponse",
+        "type": "object"
       },
       {
         "id": "schema:RuntimeTransaction",
         "kind": "schema",
-        "name": "RuntimeTransaction"
+        "name": "RuntimeTransaction",
+        "type": "object"
       },
       {
         "id": "schema:Sandbox",
         "kind": "schema",
-        "name": "Sandbox"
+        "name": "Sandbox",
+        "type": "object"
       }
     ]
   },

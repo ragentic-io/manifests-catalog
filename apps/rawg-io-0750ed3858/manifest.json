@@ -153,6 +153,86 @@
         "from": "rawg-io-0750ed3858",
         "kind": "EXPOSES",
         "to": "operation:get:/tags/{id}"
+      },
+      {
+        "from": "operation:get:/creators/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PersonSingle"
+      },
+      {
+        "from": "operation:get:/developers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:DeveloperSingle"
+      },
+      {
+        "from": "operation:get:/games/{id}",
+        "kind": "RETURNS",
+        "to": "schema:GameSingle"
+      },
+      {
+        "from": "operation:get:/games/{id}/achievements",
+        "kind": "RETURNS",
+        "to": "schema:ParentAchievement"
+      },
+      {
+        "from": "operation:get:/games/{id}/movies",
+        "kind": "RETURNS",
+        "to": "schema:Movie"
+      },
+      {
+        "from": "operation:get:/games/{id}/reddit",
+        "kind": "RETURNS",
+        "to": "schema:Reddit"
+      },
+      {
+        "from": "operation:get:/games/{id}/suggested",
+        "kind": "RETURNS",
+        "to": "schema:GameSingle"
+      },
+      {
+        "from": "operation:get:/games/{id}/twitch",
+        "kind": "RETURNS",
+        "to": "schema:Twitch"
+      },
+      {
+        "from": "operation:get:/games/{id}/youtube",
+        "kind": "RETURNS",
+        "to": "schema:Youtube"
+      },
+      {
+        "from": "operation:get:/genres/{id}",
+        "kind": "RETURNS",
+        "to": "schema:GenreSingle"
+      },
+      {
+        "from": "operation:get:/platforms/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PlatformSingle"
+      },
+      {
+        "from": "operation:get:/publishers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PublisherSingle"
+      },
+      {
+        "from": "operation:get:/stores/{id}",
+        "kind": "RETURNS",
+        "to": "schema:StoreSingle"
+      },
+      {
+        "from": "operation:get:/tags/{id}",
+        "kind": "RETURNS",
+        "to": "schema:TagSingle"
+      },
+      {
+        "from": "schema:GameSingle",
+        "kind": "REFERENCES",
+        "to": "schema:GamePlatformMetacritic"
+      },
+      {
+        "from": "schema:PlatformParentSingle",
+        "kind": "REFERENCES",
+        "to": "schema:Platform"
       }
     ],
     "nodes": [
@@ -166,10 +246,36 @@
         "kind": "operation",
         "method": "get",
         "name": "creator-roles_list",
+        "parameters": [
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/creator-roles",
         "pointer": "#/paths/~1creator-roles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of creator positions (jobs)."
+        "summary": "Get a list of creator positions (jobs).",
+        "tags": [
+          "creator-roles"
+        ]
       },
       {
         "deprecated": false,
@@ -177,10 +283,36 @@
         "kind": "operation",
         "method": "get",
         "name": "creators_list",
+        "parameters": [
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/creators",
         "pointer": "#/paths/~1creators/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of game creators."
+        "summary": "Get a list of game creators.",
+        "tags": [
+          "creators"
+        ]
       },
       {
         "deprecated": false,
@@ -188,10 +320,28 @@
         "kind": "operation",
         "method": "get",
         "name": "creators_read",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/creators/{id}",
         "pointer": "#/paths/~1creators~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonSingle"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get details of the creator."
+        "summary": "Get details of the creator.",
+        "tags": [
+          "creators"
+        ]
       },
       {
         "deprecated": false,
@@ -199,10 +349,36 @@
         "kind": "operation",
         "method": "get",
         "name": "developers_list",
+        "parameters": [
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/developers",
         "pointer": "#/paths/~1developers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of game developers."
+        "summary": "Get a list of game developers.",
+        "tags": [
+          "developers"
+        ]
       },
       {
         "deprecated": false,
@@ -210,10 +386,29 @@
         "kind": "operation",
         "method": "get",
         "name": "developers_read",
+        "parameters": [
+          {
+            "description": "A unique integer value identifying this Developer.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/developers/{id}",
         "pointer": "#/paths/~1developers~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeveloperSingle"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get details of the developer."
+        "summary": "Get details of the developer.",
+        "tags": [
+          "developers"
+        ]
       },
       {
         "deprecated": false,
@@ -221,10 +416,183 @@
         "kind": "operation",
         "method": "get",
         "name": "games_list",
+        "parameters": [
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Search query.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Disable fuzziness for the search query.",
+            "in": "query",
+            "name": "search_precise",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Mark the search query as exact.",
+            "in": "query",
+            "name": "search_exact",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter by parent platforms, for example: `1,2,3`.",
+            "in": "query",
+            "name": "parent_platforms",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by platforms, for example: `4,5`.",
+            "in": "query",
+            "name": "platforms",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by stores, for example: `5,6`.",
+            "in": "query",
+            "name": "stores",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by developers, for example: `1612,18893` or `valve-software,feral-interactive`.",
+            "in": "query",
+            "name": "developers",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by publishers, for example: `354,20987` or `electronic-arts,microsoft-studios`.",
+            "in": "query",
+            "name": "publishers",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by genres, for example: `4,51` or `action,indie`.",
+            "in": "query",
+            "name": "genres",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by tags, for example: `31,7` or `singleplayer,multiplayer`.",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by creators, for example: `78,28` or `cris-velasco,mike-morasky`.",
+            "in": "query",
+            "name": "creators",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by a release date, for example: `2010-01-01,2018-12-31.1960-01-01,1969-12-31`.",
+            "in": "query",
+            "name": "dates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by an update date, for example: `2020-12-01,2020-12-31`.",
+            "in": "query",
+            "name": "updated",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by platforms count, for example: `1`.",
+            "in": "query",
+            "name": "platforms_count",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter by a metacritic rating, for example: `80,100`.",
+            "in": "query",
+            "name": "metacritic",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Exclude games from a particular collection, for example: `123`.",
+            "in": "query",
+            "name": "exclude_collection",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Exclude additions.",
+            "in": "query",
+            "name": "exclude_additions",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Exclude games which have additions.",
+            "in": "query",
+            "name": "exclude_parents",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Exclude games which included in a game series.",
+            "in": "query",
+            "name": "exclude_game_series",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Exclude stores, for example: `5,6`.",
+            "in": "query",
+            "name": "exclude_stores",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Available fields: `name`, `released`, `added`, `created`, `updated`, `rating`, `metacritic`.",
+            "in": "query",
+            "name": "ordering",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/games",
         "pointer": "#/paths/~1games/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of games."
+        "summary": "Get a list of games.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -232,10 +600,42 @@
         "kind": "operation",
         "method": "get",
         "name": "games_additions_list",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "game_pk",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/games/{game_pk}/additions",
         "pointer": "#/paths/~1games~1{game_pk}~1additions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of DLC's for the game, GOTY and other editions, companion apps, etc."
+        "summary": "Get a list of DLC's for the game, GOTY and other editions, companion apps, etc.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -243,10 +643,49 @@
         "kind": "operation",
         "method": "get",
         "name": "games_development-team_list",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "game_pk",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Which field to use when ordering the results.",
+            "in": "query",
+            "name": "ordering",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/games/{game_pk}/development-team",
         "pointer": "#/paths/~1games~1{game_pk}~1development-team/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of individual creators that were part of the development team."
+        "summary": "Get a list of individual creators that were part of the development team.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -254,10 +693,42 @@
         "kind": "operation",
         "method": "get",
         "name": "games_game-series_list",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "game_pk",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/games/{game_pk}/game-series",
         "pointer": "#/paths/~1games~1{game_pk}~1game-series/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of games that are part of the same series."
+        "summary": "Get a list of games that are part of the same series.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -265,10 +736,42 @@
         "kind": "operation",
         "method": "get",
         "name": "games_parent-games_list",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "game_pk",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/games/{game_pk}/parent-games",
         "pointer": "#/paths/~1games~1{game_pk}~1parent-games/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of parent games for DLC's and editions."
+        "summary": "Get a list of parent games for DLC's and editions.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -276,10 +779,49 @@
         "kind": "operation",
         "method": "get",
         "name": "games_screenshots_list",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "game_pk",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Which field to use when ordering the results.",
+            "in": "query",
+            "name": "ordering",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/games/{game_pk}/screenshots",
         "pointer": "#/paths/~1games~1{game_pk}~1screenshots/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get screenshots for the game."
+        "summary": "Get screenshots for the game.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -287,10 +829,49 @@
         "kind": "operation",
         "method": "get",
         "name": "games_stores_list",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "game_pk",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Which field to use when ordering the results.",
+            "in": "query",
+            "name": "ordering",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/games/{game_pk}/stores",
         "pointer": "#/paths/~1games~1{game_pk}~1stores/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get links to the stores that sell the game."
+        "summary": "Get links to the stores that sell the game.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -298,10 +879,29 @@
         "kind": "operation",
         "method": "get",
         "name": "games_read",
+        "parameters": [
+          {
+            "description": "An ID or a slug identifying this Game.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/games/{id}",
         "pointer": "#/paths/~1games~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameSingle"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get details of the game."
+        "summary": "Get details of the game.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -309,10 +909,29 @@
         "kind": "operation",
         "method": "get",
         "name": "games_achievements_read",
+        "parameters": [
+          {
+            "description": "An ID or a slug identifying this Game.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/games/{id}/achievements",
         "pointer": "#/paths/~1games~1{id}~1achievements/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ParentAchievement"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of game achievements."
+        "summary": "Get a list of game achievements.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -320,10 +939,29 @@
         "kind": "operation",
         "method": "get",
         "name": "games_movies_read",
+        "parameters": [
+          {
+            "description": "An ID or a slug identifying this Game.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/games/{id}/movies",
         "pointer": "#/paths/~1games~1{id}~1movies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Movie"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of game trailers."
+        "summary": "Get a list of game trailers.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -331,10 +969,29 @@
         "kind": "operation",
         "method": "get",
         "name": "games_reddit_read",
+        "parameters": [
+          {
+            "description": "An ID or a slug identifying this Game.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/games/{id}/reddit",
         "pointer": "#/paths/~1games~1{id}~1reddit/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Reddit"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of most recent posts from the game's subreddit."
+        "summary": "Get a list of most recent posts from the game's subreddit.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -342,10 +999,29 @@
         "kind": "operation",
         "method": "get",
         "name": "games_suggested_read",
+        "parameters": [
+          {
+            "description": "An ID or a slug identifying this Game.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/games/{id}/suggested",
         "pointer": "#/paths/~1games~1{id}~1suggested/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameSingle"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of visually similar games, available only for business and enterprise API users."
+        "summary": "Get a list of visually similar games, available only for business and enterprise API users.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -353,10 +1029,29 @@
         "kind": "operation",
         "method": "get",
         "name": "games_twitch_read",
+        "parameters": [
+          {
+            "description": "An ID or a slug identifying this Game.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/games/{id}/twitch",
         "pointer": "#/paths/~1games~1{id}~1twitch/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Twitch"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get streams on Twitch associated with the game, available only for business and enterprise API users."
+        "summary": "Get streams on Twitch associated with the game, available only for business and enterprise API users.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -364,10 +1059,29 @@
         "kind": "operation",
         "method": "get",
         "name": "games_youtube_read",
+        "parameters": [
+          {
+            "description": "An ID or a slug identifying this Game.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/games/{id}/youtube",
         "pointer": "#/paths/~1games~1{id}~1youtube/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Youtube"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get videos from YouTube associated with the game, available only for business and enterprise API users."
+        "summary": "Get videos from YouTube associated with the game, available only for business and enterprise API users.",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
@@ -375,10 +1089,43 @@
         "kind": "operation",
         "method": "get",
         "name": "genres_list",
+        "parameters": [
+          {
+            "description": "Which field to use when ordering the results.",
+            "in": "query",
+            "name": "ordering",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/genres",
         "pointer": "#/paths/~1genres/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of video game genres."
+        "summary": "Get a list of video game genres.",
+        "tags": [
+          "genres"
+        ]
       },
       {
         "deprecated": false,
@@ -386,10 +1133,29 @@
         "kind": "operation",
         "method": "get",
         "name": "genres_read",
+        "parameters": [
+          {
+            "description": "A unique integer value identifying this Genre.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/genres/{id}",
         "pointer": "#/paths/~1genres~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GenreSingle"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get details of the genre."
+        "summary": "Get details of the genre.",
+        "tags": [
+          "genres"
+        ]
       },
       {
         "deprecated": false,
@@ -397,21 +1163,88 @@
         "kind": "operation",
         "method": "get",
         "name": "platforms_list",
+        "parameters": [
+          {
+            "description": "Which field to use when ordering the results.",
+            "in": "query",
+            "name": "ordering",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/platforms",
         "pointer": "#/paths/~1platforms/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of video game platforms."
+        "summary": "Get a list of video game platforms.",
+        "tags": [
+          "platforms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "For instance, for PS2 and PS4 the “parent platform” is PlayStation.",
         "id": "operation:get:/platforms/lists/parents",
         "kind": "operation",
         "method": "get",
         "name": "platforms_lists_parents_list",
+        "parameters": [
+          {
+            "description": "Which field to use when ordering the results.",
+            "in": "query",
+            "name": "ordering",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/platforms/lists/parents",
         "pointer": "#/paths/~1platforms~1lists~1parents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of parent platforms."
+        "summary": "Get a list of parent platforms.",
+        "tags": [
+          "platforms"
+        ]
       },
       {
         "deprecated": false,
@@ -419,10 +1252,29 @@
         "kind": "operation",
         "method": "get",
         "name": "platforms_read",
+        "parameters": [
+          {
+            "description": "A unique integer value identifying this Platform.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/platforms/{id}",
         "pointer": "#/paths/~1platforms~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlatformSingle"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get details of the platform."
+        "summary": "Get details of the platform.",
+        "tags": [
+          "platforms"
+        ]
       },
       {
         "deprecated": false,
@@ -430,10 +1282,36 @@
         "kind": "operation",
         "method": "get",
         "name": "publishers_list",
+        "parameters": [
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/publishers",
         "pointer": "#/paths/~1publishers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of video game publishers."
+        "summary": "Get a list of video game publishers.",
+        "tags": [
+          "publishers"
+        ]
       },
       {
         "deprecated": false,
@@ -441,10 +1319,29 @@
         "kind": "operation",
         "method": "get",
         "name": "publishers_read",
+        "parameters": [
+          {
+            "description": "A unique integer value identifying this Publisher.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/publishers/{id}",
         "pointer": "#/paths/~1publishers~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublisherSingle"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get details of the publisher."
+        "summary": "Get details of the publisher.",
+        "tags": [
+          "publishers"
+        ]
       },
       {
         "deprecated": false,
@@ -452,10 +1349,43 @@
         "kind": "operation",
         "method": "get",
         "name": "stores_list",
+        "parameters": [
+          {
+            "description": "Which field to use when ordering the results.",
+            "in": "query",
+            "name": "ordering",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/stores",
         "pointer": "#/paths/~1stores/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of video game storefronts."
+        "summary": "Get a list of video game storefronts.",
+        "tags": [
+          "stores"
+        ]
       },
       {
         "deprecated": false,
@@ -463,10 +1393,29 @@
         "kind": "operation",
         "method": "get",
         "name": "stores_read",
+        "parameters": [
+          {
+            "description": "A unique integer value identifying this Store.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/stores/{id}",
         "pointer": "#/paths/~1stores~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StoreSingle"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get details of the store."
+        "summary": "Get details of the store.",
+        "tags": [
+          "stores"
+        ]
       },
       {
         "deprecated": false,
@@ -474,10 +1423,36 @@
         "kind": "operation",
         "method": "get",
         "name": "tags_list",
+        "parameters": [
+          {
+            "description": "A page number within the paginated result set.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of results to return per page.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/tags",
         "pointer": "#/paths/~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of tags."
+        "summary": "Get a list of tags.",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
@@ -485,145 +1460,191 @@
         "kind": "operation",
         "method": "get",
         "name": "tags_read",
+        "parameters": [
+          {
+            "description": "A unique integer value identifying this Tag.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/tags/{id}",
         "pointer": "#/paths/~1tags~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagSingle"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get details of the tag."
+        "summary": "Get details of the tag.",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "id": "schema:Developer",
         "kind": "schema",
-        "name": "Developer"
+        "name": "Developer",
+        "type": "object"
       },
       {
         "id": "schema:DeveloperSingle",
         "kind": "schema",
-        "name": "DeveloperSingle"
+        "name": "DeveloperSingle",
+        "type": "object"
       },
       {
         "id": "schema:Game",
         "kind": "schema",
-        "name": "Game"
+        "name": "Game",
+        "type": "object"
       },
       {
         "id": "schema:GamePersonList",
         "kind": "schema",
-        "name": "GamePersonList"
+        "name": "GamePersonList",
+        "type": "object"
       },
       {
         "id": "schema:GamePlatformMetacritic",
         "kind": "schema",
-        "name": "GamePlatformMetacritic"
+        "name": "GamePlatformMetacritic",
+        "type": "object"
       },
       {
         "id": "schema:GameSingle",
         "kind": "schema",
-        "name": "GameSingle"
+        "name": "GameSingle",
+        "type": "object"
       },
       {
         "id": "schema:GameStoreFull",
         "kind": "schema",
-        "name": "GameStoreFull"
+        "name": "GameStoreFull",
+        "type": "object"
       },
       {
         "id": "schema:Genre",
         "kind": "schema",
-        "name": "Genre"
+        "name": "Genre",
+        "type": "object"
       },
       {
         "id": "schema:GenreSingle",
         "kind": "schema",
-        "name": "GenreSingle"
+        "name": "GenreSingle",
+        "type": "object"
       },
       {
         "id": "schema:Movie",
         "kind": "schema",
-        "name": "Movie"
+        "name": "Movie",
+        "type": "object"
       },
       {
         "id": "schema:ParentAchievement",
         "kind": "schema",
-        "name": "ParentAchievement"
+        "name": "ParentAchievement",
+        "type": "object"
       },
       {
         "id": "schema:Person",
         "kind": "schema",
-        "name": "Person"
+        "name": "Person",
+        "type": "object"
       },
       {
         "id": "schema:PersonSingle",
         "kind": "schema",
-        "name": "PersonSingle"
+        "name": "PersonSingle",
+        "type": "object"
       },
       {
         "id": "schema:Platform",
         "kind": "schema",
-        "name": "Platform"
+        "name": "Platform",
+        "type": "object"
       },
       {
         "id": "schema:PlatformParentSingle",
         "kind": "schema",
-        "name": "PlatformParentSingle"
+        "name": "PlatformParentSingle",
+        "type": "object"
       },
       {
         "id": "schema:PlatformSingle",
         "kind": "schema",
-        "name": "PlatformSingle"
+        "name": "PlatformSingle",
+        "type": "object"
       },
       {
         "id": "schema:Position",
         "kind": "schema",
-        "name": "Position"
+        "name": "Position",
+        "type": "object"
       },
       {
         "id": "schema:Publisher",
         "kind": "schema",
-        "name": "Publisher"
+        "name": "Publisher",
+        "type": "object"
       },
       {
         "id": "schema:PublisherSingle",
         "kind": "schema",
-        "name": "PublisherSingle"
+        "name": "PublisherSingle",
+        "type": "object"
       },
       {
         "id": "schema:Reddit",
         "kind": "schema",
-        "name": "Reddit"
+        "name": "Reddit",
+        "type": "object"
       },
       {
         "id": "schema:ScreenShot",
         "kind": "schema",
-        "name": "ScreenShot"
+        "name": "ScreenShot",
+        "type": "object"
       },
       {
         "id": "schema:Store",
         "kind": "schema",
-        "name": "Store"
+        "name": "Store",
+        "type": "object"
       },
       {
         "id": "schema:StoreSingle",
         "kind": "schema",
-        "name": "StoreSingle"
+        "name": "StoreSingle",
+        "type": "object"
       },
       {
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
         "id": "schema:TagSingle",
         "kind": "schema",
-        "name": "TagSingle"
+        "name": "TagSingle",
+        "type": "object"
       },
       {
         "id": "schema:Twitch",
         "kind": "schema",
-        "name": "Twitch"
+        "name": "Twitch",
+        "type": "object"
       },
       {
         "id": "schema:Youtube",
         "kind": "schema",
-        "name": "Youtube"
+        "name": "Youtube",
+        "type": "object"
       }
     ]
   },

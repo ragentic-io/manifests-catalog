@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_listennotes_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `d933b7d2c2694e8147e821a84ce722f7282035a08b8754826d58d486bc0f236c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,28 +34,30 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_listennotes_profile
 
 101 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/best_podcasts` | getBestPodcasts | Fetch a list of best podcasts by genre |
-| GET | `/curated_podcasts` | getCuratedPodcasts | Fetch curated lists of podcasts |
-| GET | `/curated_podcasts/{id}` | getCuratedPodcastById | Fetch a curated list of podcasts by id |
-| POST | `/episodes` | getEpisodesInBatch | Batch fetch basic meta data for episodes |
-| GET | `/episodes/{id}` | getEpisodeById | Fetch detailed meta data for an episode by id |
-| GET | `/episodes/{id}/recommendations` | getEpisodeRecommendations | Fetch recommendations for an episode |
-| GET | `/genres` | getGenres | Fetch a list of podcast genres |
-| GET | `/just_listen` | justListen | Fetch a random podcast episode |
-| GET | `/languages` | getLanguages | Fetch a list of supported languages for podcasts |
-| GET | `/playlists` | getPlaylists | Fetch a list of your playlists. |
-| GET | `/playlists/{id}` | getPlaylistById | Fetch a playlist's info and items (i.e., episodes or podcasts). |
-| POST | `/podcasts` | getPodcastsInBatch | Batch fetch basic meta data for podcasts |
-| POST | `/podcasts/submit` | submitPodcast | Submit a podcast to Listen Notes database |
-| DELETE | `/podcasts/{id}` | deletePodcastById | Request to delete a podcast |
-| GET | `/podcasts/{id}` | getPodcastById | Fetch detailed meta data and episodes for a podcast by id |
-| GET | `/podcasts/{id}/audience` | getPodcastAudience | Fetch audience demographics for a podcast |
-| GET | `/podcasts/{id}/recommendations` | getPodcastRecommendations | Fetch recommendations for a podcast |
-| GET | `/regions` | getRegions | Fetch a list of supported countries/regions for best podcasts |
-| GET | `/related_searches` | getRelatedSearches | Fetch related search terms |
-| GET | `/search` | search | Full-text search |
-| GET | `/spellcheck` | spellcheck | Spell check on a search term |
-| GET | `/trending_searches` | getTrendingSearches | Fetch trending search terms |
-| GET | `/typeahead` | typeahead | Typeahead search |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/best_podcasts` | getBestPodcasts | `X-ListenAPI-Key`*, `genre_id`, `page`, `region`, `publisher_region`, `language`, `sort`, `safe_mode` | BestPodcastsResponse | yes | Fetch a list of best podcasts by genre |
+| GET | `/curated_podcasts` | getCuratedPodcasts | `X-ListenAPI-Key`*, `page` | GetCuratedPodcastsResponse | yes | Fetch curated lists of podcasts |
+| GET | `/curated_podcasts/{id}` | getCuratedPodcastById | `X-ListenAPI-Key`*, `id`* | CuratedListFull | yes | Fetch a curated list of podcasts by id |
+| POST | `/episodes` | getEpisodesInBatch | `X-ListenAPI-Key`*, body*: GetEpisodesInBatchForm | GetEpisodesInBatchResponse |  | Batch fetch basic meta data for episodes |
+| GET | `/episodes/{id}` | getEpisodeById | `X-ListenAPI-Key`*, `id`*, `show_transcript` | EpisodeFull | yes | Fetch detailed meta data for an episode by id |
+| GET | `/episodes/{id}/recommendations` | getEpisodeRecommendations | `X-ListenAPI-Key`*, `id`*, `safe_mode` | GetEpisodeRecommendationsResponse | yes | Fetch recommendations for an episode |
+| GET | `/genres` | getGenres | `X-ListenAPI-Key`*, `top_level_only` | GetGenresResponse | yes | Fetch a list of podcast genres |
+| GET | `/just_listen` | justListen | `X-ListenAPI-Key`* | EpisodeSimple | yes | Fetch a random podcast episode |
+| GET | `/languages` | getLanguages | `X-ListenAPI-Key`* | GetLanguagesResponse | yes | Fetch a list of supported languages for podcasts |
+| GET | `/playlists` | getPlaylists | `X-ListenAPI-Key`*, `sort`, `page` | PlaylistsResponse | yes | Fetch a list of your playlists. |
+| GET | `/playlists/{id}` | getPlaylistById | `X-ListenAPI-Key`*, `id`*, `type`, `last_timestamp_ms`, `sort` | PlaylistResponse | yes | Fetch a playlist's info and items (i.e., episodes or podcasts). |
+| POST | `/podcasts` | getPodcastsInBatch | `X-ListenAPI-Key`*, body: GetPodcastsInBatchForm | GetPodcastsInBatchResponse |  | Batch fetch basic meta data for podcasts |
+| POST | `/podcasts/submit` | submitPodcast | `X-ListenAPI-Key`*, body*: SubmitPodcastForm | SubmitPodcastResponse |  | Submit a podcast to Listen Notes database |
+| GET | `/podcasts/{id}` | getPodcastById | `X-ListenAPI-Key`*, `id`*, `next_episode_pub_date`, `sort` | PodcastFull | yes | Fetch detailed meta data and episodes for a podcast by id |
+| DELETE | `/podcasts/{id}` | deletePodcastById | `X-ListenAPI-Key`*, `id`*, `reason` | DeletePodcastResponse |  | Request to delete a podcast |
+| GET | `/podcasts/{id}/audience` | getPodcastAudience | `X-ListenAPI-Key`*, `id`* | PodcastAudienceResponse | yes | Fetch audience demographics for a podcast |
+| GET | `/podcasts/{id}/recommendations` | getPodcastRecommendations | `X-ListenAPI-Key`*, `id`*, `safe_mode` | GetPodcastRecommendationsResponse | yes | Fetch recommendations for a podcast |
+| GET | `/regions` | getRegions | `X-ListenAPI-Key`* | GetRegionsResponse | yes | Fetch a list of supported countries/regions for best podcasts |
+| GET | `/related_searches` | getRelatedSearches | `X-ListenAPI-Key`*, `q`* | RelatedSearchesResponse | yes | Fetch related search terms |
+| GET | `/search` | search | `X-ListenAPI-Key`*, `q`*, `sort_by_date`, `type`, `offset`, `len_min`, `len_max`, `episode_count_min`, `episode_count_max`, `update_freq_min`, `update_freq_max`, `genre_ids`, `published_before`, `published_after`, `only_in`, `language`, `region`, `ocid`, `ncid`, `safe_mode`, `unique_podcasts` | SearchResponse | yes | Full-text search |
+| GET | `/spellcheck` | spellcheck | `X-ListenAPI-Key`*, `q`* | SpellCheckResponse | yes | Spell check on a search term |
+| GET | `/trending_searches` | getTrendingSearches | `X-ListenAPI-Key`* | TrendingSearchesResponse | yes | Fetch trending search terms |
+| GET | `/typeahead` | typeahead | `X-ListenAPI-Key`*, `q`*, `show_podcasts`, `show_genres`, `safe_mode` | TypeaheadResponse | yes | Typeahead search |

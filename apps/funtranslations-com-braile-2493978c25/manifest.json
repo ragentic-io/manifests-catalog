@@ -37,78 +37,188 @@
       },
       {
         "deprecated": false,
+        "description": "Translate from English to Braille.",
         "id": "operation:get:/translate/braille",
         "kind": "operation",
         "method": "get",
         "name": "get /translate/braille",
+        "parameters": [
+          {
+            "description": "Text to translate",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/translate/braille",
         "pointer": "#/paths/~1translate~1braille/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Funtranslations-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Braille"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to see which dots are enabled for each Braille letters.",
         "id": "operation:get:/translate/braille/dots",
         "kind": "operation",
         "method": "get",
         "name": "get /translate/braille/dots",
+        "parameters": [
+          {
+            "description": "Text to translate",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/translate/braille/dots",
         "pointer": "#/paths/~1translate~1braille~1dots/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Funtranslations-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Braille"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Translate from English to Braille Image characters.",
         "id": "operation:get:/translate/braille/html",
         "kind": "operation",
         "method": "get",
         "name": "get /translate/braille/html",
+        "parameters": [
+          {
+            "description": "Text to translate",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/translate/braille/html",
         "pointer": "#/paths/~1translate~1braille~1html/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Funtranslations-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Braille"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Translate from English to Braille image characters.",
         "id": "operation:get:/translate/braille/image",
         "kind": "operation",
         "method": "get",
         "name": "get /translate/braille/image",
+        "parameters": [
+          {
+            "description": "Text to translate",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/translate/braille/image",
         "pointer": "#/paths/~1translate~1braille~1image/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Funtranslations-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Braille"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Translate from English to Braille Unicode characters.",
         "id": "operation:get:/translate/braille/unicode",
         "kind": "operation",
         "method": "get",
         "name": "get /translate/braille/unicode",
+        "parameters": [
+          {
+            "description": "Text to translate",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/translate/braille/unicode",
         "pointer": "#/paths/~1translate~1braille~1unicode/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "X-Funtranslations-Api-Secret": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Braille"
+        ]
       }
     ]
   },

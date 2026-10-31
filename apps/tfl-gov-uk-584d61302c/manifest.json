@@ -423,6 +423,891 @@
         "from": "tfl-gov-uk-584d61302c",
         "kind": "EXPOSES",
         "to": "operation:get:/Vehicle/{ids}/Arrivals"
+      },
+      {
+        "from": "operation:get:/AccidentStats/{year}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail"
+      },
+      {
+        "from": "operation:get:/AirQuality",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/BikePoint",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "operation:get:/BikePoint/Search",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "operation:get:/BikePoint/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "operation:get:/Cabwise/search",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/Journey/JourneyResults/{from}/to/{to}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult"
+      },
+      {
+        "from": "operation:get:/Journey/Meta/Modes",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Mode"
+      },
+      {
+        "from": "operation:get:/Line/Meta/Modes",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Mode"
+      },
+      {
+        "from": "operation:get:/Line/Meta/Severity",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StatusSeverity"
+      },
+      {
+        "from": "operation:get:/Line/Mode/{modes}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "operation:get:/Line/Mode/{modes}/Disruption",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Disruption"
+      },
+      {
+        "from": "operation:get:/Line/Mode/{modes}/Route",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "operation:get:/Line/Mode/{modes}/Status",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "operation:get:/Line/Route",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "operation:get:/Line/Search/{query}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.RouteSearchResponse"
+      },
+      {
+        "from": "operation:get:/Line/Status/{severity}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "operation:get:/Line/{ids}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "operation:get:/Line/{ids}/Arrivals/{stopPointId}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Prediction"
+      },
+      {
+        "from": "operation:get:/Line/{ids}/Disruption",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Disruption"
+      },
+      {
+        "from": "operation:get:/Line/{ids}/Route",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "operation:get:/Line/{ids}/Status",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "operation:get:/Line/{ids}/Status/{StartDate}/to/{EndDate}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "operation:get:/Line/{id}/Route/Sequence/{direction}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.RouteSequence"
+      },
+      {
+        "from": "operation:get:/Line/{id}/StopPoints",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "operation:get:/Line/{id}/Timetable/{fromStopPointId}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.TimetableResponse"
+      },
+      {
+        "from": "operation:get:/Line/{id}/Timetable/{fromStopPointId}/to/{toStopPointId}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.TimetableResponse"
+      },
+      {
+        "from": "operation:get:/Mode/ActiveServiceTypes",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.ActiveServiceType"
+      },
+      {
+        "from": "operation:get:/Mode/{mode}/Arrivals",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Prediction"
+      },
+      {
+        "from": "operation:get:/Occupancy/BikePoints/{ids}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.BikePointOccupancy"
+      },
+      {
+        "from": "operation:get:/Occupancy/CarPark",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.CarParkOccupancy"
+      },
+      {
+        "from": "operation:get:/Occupancy/CarPark/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.CarParkOccupancy"
+      },
+      {
+        "from": "operation:get:/Occupancy/ChargeConnector",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy"
+      },
+      {
+        "from": "operation:get:/Occupancy/ChargeConnector/{ids}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy"
+      },
+      {
+        "from": "operation:get:/Place",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "operation:get:/Place/Address/Streets/{Postcode}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/Place/Meta/Categories",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.PlaceCategory"
+      },
+      {
+        "from": "operation:get:/Place/Meta/PlaceTypes",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.PlaceCategory"
+      },
+      {
+        "from": "operation:get:/Place/Search",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "operation:get:/Place/Type/{types}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "operation:get:/Place/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "operation:get:/Place/{type}/At/{Lat}/{Lon}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/Place/{type}/overlay/{z}/{Lat}/{Lon}/{width}/{height}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/Road",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.RoadCorridor"
+      },
+      {
+        "from": "operation:get:/Road/Meta/Severities",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StatusSeverity"
+      },
+      {
+        "from": "operation:get:/Road/all/Disruption/{disruptionIds}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.RoadDisruption"
+      },
+      {
+        "from": "operation:get:/Road/all/Street/Disruption",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/Road/{ids}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.RoadCorridor"
+      },
+      {
+        "from": "operation:get:/Road/{ids}/Disruption",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.RoadDisruption"
+      },
+      {
+        "from": "operation:get:/Road/{ids}/Status",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.RoadCorridor"
+      },
+      {
+        "from": "operation:get:/Search",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.SearchResponse"
+      },
+      {
+        "from": "operation:get:/Search/BusSchedules",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.SearchResponse"
+      },
+      {
+        "from": "operation:get:/StopPoint",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPointsResponse"
+      },
+      {
+        "from": "operation:get:/StopPoint/Meta/Categories",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPointCategory"
+      },
+      {
+        "from": "operation:get:/StopPoint/Meta/Modes",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Mode"
+      },
+      {
+        "from": "operation:get:/StopPoint/Mode/{modes}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPointsResponse"
+      },
+      {
+        "from": "operation:get:/StopPoint/Mode/{modes}/Disruption",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.DisruptedPoint"
+      },
+      {
+        "from": "operation:get:/StopPoint/Search",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.SearchResponse"
+      },
+      {
+        "from": "operation:get:/StopPoint/Search/{query}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.SearchResponse"
+      },
+      {
+        "from": "operation:get:/StopPoint/ServiceTypes",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.LineServiceType"
+      },
+      {
+        "from": "operation:get:/StopPoint/Sms/{id}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/StopPoint/Type/{types}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "operation:get:/StopPoint/Type/{types}/page/{page}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "operation:get:/StopPoint/{ids}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "operation:get:/StopPoint/{ids}/Disruption",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.DisruptedPoint"
+      },
+      {
+        "from": "operation:get:/StopPoint/{id}/ArrivalDepartures",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.ArrivalDeparture"
+      },
+      {
+        "from": "operation:get:/StopPoint/{id}/Arrivals",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Prediction"
+      },
+      {
+        "from": "operation:get:/StopPoint/{id}/CanReachOnLine/{lineId}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "operation:get:/StopPoint/{id}/Crowding/{line}",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "operation:get:/StopPoint/{id}/Route",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPointRouteSection"
+      },
+      {
+        "from": "operation:get:/StopPoint/{id}/placeTypes",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "operation:get:/StopPoint/{stopPointId}/CarParks",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "operation:get:/StopPoint/{stopPointId}/TaxiRanks",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "operation:get:/TravelTimes/compareOverlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}",
+        "kind": "RETURNS",
+        "to": "schema:System.Object"
+      },
+      {
+        "from": "operation:get:/Vehicle/{ids}/Arrivals",
+        "kind": "RETURNS",
+        "to": "schema:Tfl.Api.Presentation.Entities.Prediction"
+      },
+      {
+        "from": "schema:System.Data.Spatial.DbGeography",
+        "kind": "REFERENCES",
+        "to": "schema:System.Data.Spatial.DbGeographyWellKnownValue"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.AccidentStats.Casualty"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.AccidentStats.Vehicle"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.ArrivalDeparture",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.PredictionTiming"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.ArrivalDepartureWithLine",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.PredictionTiming"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.CarParkOccupancy",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Bay"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Crowding",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.PassengerFlow"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Crowding",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.TrainLoading"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.CycleSuperhighway",
+        "kind": "REFERENCES",
+        "to": "schema:System.Data.Spatial.DbGeography"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.DisruptedRoute",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.RouteSectionNaptanEntrySequence"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Disruption",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.DisruptedRoute"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Disruption",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.FareBounds",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Message"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.FareDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Fares.Ticket"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.FareDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Message"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.FaresSection",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Fares.FareDetails"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.FaresSection",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Fares.Journey"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.FaresSection",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Message"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.Journey",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Fares.FareStation"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.Recommendation",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Message"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.RecommendationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Fares.Recommendation"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.Ticket",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Fares.TicketTime"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.Ticket",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Fares.TicketType"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Fares.Ticket",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Message"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Identifier",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Crowding"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Instruction",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.InstructionStep"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.InstructionStep",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.PathAttribute"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Fare",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.FareTap"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.FareTap",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.FareTapDetails"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Journey"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyPlannerCycleHireDockingStationData"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyVector"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.SearchCriteria"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Line"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Journey",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyFare"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Journey",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyFare",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Fare"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyFare",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.FareCaveat"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Disruption"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Identifier"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Instruction"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Obstacle"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Path"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.PlannedWork"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.RouteOption"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Point"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Path",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Common.JourneyPlanner.JpElevation"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Path",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Identifier"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.RouteOption",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Identifier"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.SearchCriteria",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustments"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustments",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustment"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Line",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Crowding"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Line",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Disruption"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Line",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.LineServiceTypeInfo"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Line",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.LineStatus"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Line",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.MatchedRoute"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.LineServiceType",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.LineSpecificServiceType"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.LineSpecificServiceType",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.LineServiceTypeInfo"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.LineStatus",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Disruption"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.LineStatus",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.ValidityPeriod"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.MatchedStop",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Identifier"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Period",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.ServiceFrequency"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Period",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.TwentyFourHourClockTime"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Place",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.AdditionalProperties"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.PlacePolygon",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Common.GeoPoint"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Prediction",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.PredictionTiming"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RoadDisruption",
+        "kind": "REFERENCES",
+        "to": "schema:System.Data.Spatial.DbGeography"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RoadDisruption",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.RoadDisruptionImpactArea"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RoadDisruption",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.RoadDisruptionLine"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RoadDisruption",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.RoadDisruptionSchedule"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RoadDisruption",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.RoadProject"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RoadDisruption",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Street"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RoadDisruptionImpactArea",
+        "kind": "REFERENCES",
+        "to": "schema:System.Data.Spatial.DbGeography"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RoadDisruptionLine",
+        "kind": "REFERENCES",
+        "to": "schema:System.Data.Spatial.DbGeography"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RouteSearchMatch",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.LineRouteSection"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RouteSearchMatch",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.MatchedRouteSections"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RouteSearchMatch",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.MatchedStop"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RouteSearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.RouteSearchMatch"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RouteSectionNaptanEntrySequence",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RouteSequence",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.MatchedStop"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RouteSequence",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.OrderedRoute"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.RouteSequence",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPointSequence"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Schedule",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.KnownJourney"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Schedule",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Period"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.SearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.SearchMatch"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.StationInterval",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Interval"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.StopPoint",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.AdditionalProperties"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.StopPoint",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Identifier"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.StopPoint",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.LineGroup"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.StopPoint",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.LineModeGroup"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.StopPoint",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Place"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.StopPointSequence",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.MatchedStop"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.StopPointsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.StopPoint"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Street",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.StreetSegment"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Timetable",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.TimetableRoute"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.TimetableResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.MatchedStop"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.TimetableResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Timetable"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.TimetableResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Timetables.Disambiguation"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.TimetableRoute",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Schedule"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.TimetableRoute",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.StationInterval"
+      },
+      {
+        "from": "schema:Tfl.Api.Presentation.Entities.Timetables.Disambiguation",
+        "kind": "REFERENCES",
+        "to": "schema:Tfl.Api.Presentation.Entities.Timetables.DisambiguationOption"
       }
     ],
     "nodes": [
@@ -436,10 +1321,29 @@
         "kind": "operation",
         "method": "get",
         "name": "AccidentStats_Get",
+        "parameters": [
+          {
+            "description": "The year for which to filter the accidents on.",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/AccidentStats/{year}",
         "pointer": "#/paths/~1AccidentStats~1{year}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all accident details for accidents occuring in the specified year"
+        "summary": "Gets all accident details for accidents occuring in the specified year",
+        "tags": [
+          "AccidentStats"
+        ]
       },
       {
         "deprecated": false,
@@ -449,8 +1353,18 @@
         "name": "AirQuality_Get",
         "path": "/AirQuality",
         "pointer": "#/paths/~1AirQuality/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets air quality data feed"
+        "summary": "Gets air quality data feed",
+        "tags": [
+          "AirQuality"
+        ]
       },
       {
         "deprecated": false,
@@ -460,8 +1374,18 @@
         "name": "BikePoint_GetAll",
         "path": "/BikePoint",
         "pointer": "#/paths/~1BikePoint/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Place[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all bike point locations. The Place object has an addtionalProperties array which contains the nbBikes, nbDocks and nbSpaces\r\n            numbers which give the status of the BikePoint. A mismatch in these numbers i.e. nbDocks - (nbBikes + nbSpaces) != 0 indicates broken docks."
+        "summary": "Gets all bike point locations. The Place object has an addtionalProperties array which contains the nbBikes, nbDocks and nbSpaces\r\n            numbers which give the status of the BikePoint. A mismatch in these numbers i.e. nbDocks - (nbBikes + nbSpaces) != 0 indicates broken docks.",
+        "tags": [
+          "BikePoint"
+        ]
       },
       {
         "deprecated": false,
@@ -469,10 +1393,29 @@
         "kind": "operation",
         "method": "get",
         "name": "BikePoint_Search",
+        "parameters": [
+          {
+            "description": "The search term e.g.",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/BikePoint/Search",
         "pointer": "#/paths/~1BikePoint~1Search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Place[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search for bike stations by their name, a bike point's name often contains information about the name of the street\r\n            or nearby landmarks, for example. Note that the search result does not contain the PlaceProperties i.e. the status\r\n            or occupancy of the BikePoint, to get that information you should retrieve the BikePoint by its id on /BikePoint/id."
+        "summary": "Search for bike stations by their name, a bike point's name often contains information about the name of the street\r\n            or nearby landmarks, for example. Note that the search result does not contain the PlaceProperties i.e. the status\r\n            or occupancy of the BikePoint, to get that information you should retrieve the BikePoint by its id on /BikePoint/id.",
+        "tags": [
+          "BikePoint"
+        ]
       },
       {
         "deprecated": false,
@@ -480,10 +1423,29 @@
         "kind": "operation",
         "method": "get",
         "name": "BikePoint_Get",
+        "parameters": [
+          {
+            "description": "A bike point id (a list of ids can be obtained from the above BikePoint call)",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/BikePoint/{id}",
         "pointer": "#/paths/~1BikePoint~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Place"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the bike point with the given id."
+        "summary": "Gets the bike point with the given id.",
+        "tags": [
+          "BikePoint"
+        ]
       },
       {
         "deprecated": false,
@@ -491,10 +1453,92 @@
         "kind": "operation",
         "method": "get",
         "name": "Cabwise_Get",
+        "parameters": [
+          {
+            "description": "Latitude",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Longitude",
+            "in": "query",
+            "name": "lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Operator Type e.g Minicab, Executive, Limousine",
+            "in": "query",
+            "name": "optype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Wheelchair accessible",
+            "in": "query",
+            "name": "wc",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The radius of the bounding circle in metres",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "Trading name of operating company",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An optional parameter to limit the number of results return.",
+            "in": "query",
+            "name": "maxResults",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Legacy Format",
+            "in": "query",
+            "name": "legacyFormat",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Force Xml",
+            "in": "query",
+            "name": "forceXml",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Twenty Four Seven Only",
+            "in": "query",
+            "name": "twentyFourSevenOnly",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Cabwise/search",
         "pointer": "#/paths/~1Cabwise~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets taxis and minicabs contact information"
+        "summary": "Gets taxis and minicabs contact information",
+        "tags": [
+          "Cabwise"
+        ]
       },
       {
         "deprecated": false,
@@ -502,10 +1546,239 @@
         "kind": "operation",
         "method": "get",
         "name": "Journey_JourneyResults",
+        "parameters": [
+          {
+            "description": "Origin of the journey.",
+            "in": "path",
+            "name": "from",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Destination of the journey.",
+            "in": "path",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Travel through point on the journey.",
+            "in": "query",
+            "name": "via",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Does the journey cover stops outside London?",
+            "in": "query",
+            "name": "nationalSearch",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The date must be in yyyyMMdd format",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The time must be in HHmm format",
+            "in": "query",
+            "name": "time",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Does the time given relate to arrival or leaving time?",
+            "enum": [
+              "Arriving",
+              "Departing"
+            ],
+            "in": "query",
+            "name": "timeIs",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The journey preference eg possible options: \"leastinterchange\" | \"leasttime\" | \"leastwalking\"",
+            "enum": [
+              "LeastInterchange",
+              "LeastTime",
+              "LeastWalking"
+            ],
+            "in": "query",
+            "name": "journeyPreference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The mode must be a comma separated list of modes.",
+            "in": "query",
+            "name": "mode",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The accessibility preference must be a comma separated list eg.",
+            "in": "query",
+            "name": "accessibilityPreference",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An optional name to associate with the origin of the journey in the results.",
+            "in": "query",
+            "name": "fromName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An optional name to associate with the destination of the journey in the results.",
+            "in": "query",
+            "name": "toName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An optional name to associate with the via point of the journey in the results.",
+            "in": "query",
+            "name": "viaName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The max walking time in minutes for transfer eg.",
+            "in": "query",
+            "name": "maxTransferMinutes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The max walking time in minutes for journeys eg.",
+            "in": "query",
+            "name": "maxWalkingMinutes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The walking speed.",
+            "enum": [
+              "Slow",
+              "Average",
+              "Fast"
+            ],
+            "in": "query",
+            "name": "walkingSpeed",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The cycle preference.",
+            "enum": [
+              "None",
+              "LeaveAtStation",
+              "TakeOnTransport",
+              "AllTheWay",
+              "CycleHire"
+            ],
+            "in": "query",
+            "name": "cyclePreference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Time adjustment command.",
+            "in": "query",
+            "name": "adjustment",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of cycling proficiency levels.",
+            "in": "query",
+            "name": "bikeProficiency",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Option to determine whether to return alternative cycling journey",
+            "in": "query",
+            "name": "alternativeCycle",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Option to determine whether to return alternative walking journey",
+            "in": "query",
+            "name": "alternativeWalking",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Flag to determine whether certain text (e.g.",
+            "in": "query",
+            "name": "applyHtmlMarkup",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A boolean to indicate whether or not to return 3 public transport journeys, a bus journey, a cycle hire journey, a personal cycle journey and a walking journey",
+            "in": "query",
+            "name": "useMultiModalCall",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A boolean to indicate whether to optimize journeys using walking",
+            "in": "query",
+            "name": "walkingOptimization",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A boolean to indicate whether to return one or more taxi journeys.",
+            "in": "query",
+            "name": "taxiOnlyTrip",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A boolean to indicate whether public transport routes should include directions between platforms and station entrances.",
+            "in": "query",
+            "name": "routeBetweenEntrances",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A boolean to indicate if we want to receive real time live arrivals data where available.",
+            "in": "query",
+            "name": "useRealTimeLiveArrivals",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A boolean to make Journey Planner calculate journeys in one temporal direction only.",
+            "in": "query",
+            "name": "calcOneDirection",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Journey/JourneyResults/{from}/to/{to}",
         "pointer": "#/paths/~1Journey~1JourneyResults~1{from}~1to~1{to}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Perform a Journey Planner search from the parameters specified in simple types"
+        "summary": "Perform a Journey Planner search from the parameters specified in simple types",
+        "tags": [
+          "Journey"
+        ]
       },
       {
         "deprecated": false,
@@ -515,8 +1788,18 @@
         "name": "Journey_Meta",
         "path": "/Journey/Meta/Modes",
         "pointer": "#/paths/~1Journey~1Meta~1Modes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Mode[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of all of the available journey planner modes"
+        "summary": "Gets a list of all of the available journey planner modes",
+        "tags": [
+          "Journey"
+        ]
       },
       {
         "deprecated": false,
@@ -526,8 +1809,18 @@
         "name": "Line_MetaDisruptionCategories",
         "path": "/Line/Meta/DisruptionCategories",
         "pointer": "#/paths/~1Line~1Meta~1DisruptionCategories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of valid disruption categories"
+        "summary": "Gets a list of valid disruption categories",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -537,8 +1830,18 @@
         "name": "Line_MetaModes",
         "path": "/Line/Meta/Modes",
         "pointer": "#/paths/~1Line~1Meta~1Modes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Mode[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of valid modes"
+        "summary": "Gets a list of valid modes",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -548,8 +1851,18 @@
         "name": "Line_MetaServiceTypes",
         "path": "/Line/Meta/ServiceTypes",
         "pointer": "#/paths/~1Line~1Meta~1ServiceTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of valid ServiceTypes to filter on"
+        "summary": "Gets a list of valid ServiceTypes to filter on",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -559,8 +1872,18 @@
         "name": "Line_MetaSeverity",
         "path": "/Line/Meta/Severity",
         "pointer": "#/paths/~1Line~1Meta~1Severity/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StatusSeverity[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of valid severity codes"
+        "summary": "Gets a list of valid severity codes",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -568,10 +1891,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_GetByMode",
+        "parameters": [
+          {
+            "description": "A comma-separated list of modes e.g.",
+            "in": "path",
+            "name": "modes",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/Line/Mode/{modes}",
         "pointer": "#/paths/~1Line~1Mode~1{modes}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Line[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets lines that serve the given modes."
+        "summary": "Gets lines that serve the given modes.",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -579,10 +1921,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_DisruptionByMode",
+        "parameters": [
+          {
+            "description": "A comma-separated list of modes e.g.",
+            "in": "path",
+            "name": "modes",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/Line/Mode/{modes}/Disruption",
         "pointer": "#/paths/~1Line~1Mode~1{modes}~1Disruption/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Disruption[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get disruptions for all lines of the given modes."
+        "summary": "Get disruptions for all lines of the given modes.",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -590,10 +1951,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_RouteByMode",
+        "parameters": [
+          {
+            "description": "A comma-separated list of modes e.g.",
+            "in": "path",
+            "name": "modes",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma seperated list of service types to filter on.",
+            "in": "query",
+            "name": "serviceTypes",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/Line/Mode/{modes}/Route",
         "pointer": "#/paths/~1Line~1Mode~1{modes}~1Route/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Line[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all lines and their valid routes for given modes, including the name and id of the originating and terminating stops for each route"
+        "summary": "Gets all lines and their valid routes for given modes, including the name and id of the originating and terminating stops for each route",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -601,10 +1988,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_StatusByMode",
+        "parameters": [
+          {
+            "description": "A comma-separated list of modes to filter by.",
+            "in": "path",
+            "name": "modes",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Include details of the disruptions that are causing the line status including the affected stops and routes",
+            "in": "query",
+            "name": "detail",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If specified, ensures that only those line status(es) are returned within the lines that have disruptions with the matching severity level.",
+            "in": "query",
+            "name": "severityLevel",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/Line/Mode/{modes}/Status",
         "pointer": "#/paths/~1Line~1Mode~1{modes}~1Status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Line[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the line status of for all lines for the given modes"
+        "summary": "Gets the line status of for all lines for the given modes",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -612,10 +2032,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_Route",
+        "parameters": [
+          {
+            "description": "A comma seperated list of service types to filter on.",
+            "in": "query",
+            "name": "serviceTypes",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/Line/Route",
         "pointer": "#/paths/~1Line~1Route/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Line[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route."
+        "summary": "Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route.",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -623,10 +2062,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_Search",
+        "parameters": [
+          {
+            "description": "Search term e.g victoria",
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Optionally filter by the specified modes",
+            "in": "query",
+            "name": "modes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma seperated list of service types to filter on.",
+            "in": "query",
+            "name": "serviceTypes",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/Line/Search/{query}",
         "pointer": "#/paths/~1Line~1Search~1{query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.RouteSearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search for lines or routes matching the query string"
+        "summary": "Search for lines or routes matching the query string",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -634,10 +2106,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_StatusBySeverity",
+        "parameters": [
+          {
+            "description": "The level of severity (eg: a number from 0 to 14)",
+            "in": "path",
+            "name": "severity",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/Line/Status/{severity}",
         "pointer": "#/paths/~1Line~1Status~1{severity}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Line[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the line status for all lines with a given severity\r\n            A list of valid severity codes can be obtained from a call to Line/Meta/Severity"
+        "summary": "Gets the line status for all lines with a given severity\r\n            A list of valid severity codes can be obtained from a call to Line/Meta/Severity",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -645,10 +2136,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_Get",
+        "parameters": [
+          {
+            "description": "A comma-separated list of line ids e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/Line/{ids}",
         "pointer": "#/paths/~1Line~1{ids}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Line[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets lines that match the specified line ids."
+        "summary": "Gets lines that match the specified line ids.",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -656,10 +2166,55 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_Arrivals",
+        "parameters": [
+          {
+            "description": "A comma-separated list of line ids e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Optional.",
+            "in": "path",
+            "name": "stopPointId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Optional.",
+            "enum": [
+              "inbound",
+              "outbound",
+              "all"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional.",
+            "in": "query",
+            "name": "destinationStationId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/Line/{ids}/Arrivals/{stopPointId}",
         "pointer": "#/paths/~1Line~1{ids}~1Arrivals~1{stopPointId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Prediction[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the list of arrival predictions for given line ids based at the given stop"
+        "summary": "Get the list of arrival predictions for given line ids based at the given stop",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -667,10 +2222,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_Disruption",
+        "parameters": [
+          {
+            "description": "A comma-separated list of line ids e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/Line/{ids}/Disruption",
         "pointer": "#/paths/~1Line~1{ids}~1Disruption/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Disruption[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get disruptions for the given line ids"
+        "summary": "Get disruptions for the given line ids",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -678,10 +2252,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_LineRoutesByIds",
+        "parameters": [
+          {
+            "description": "A comma-separated list of line ids e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "A comma seperated list of service types to filter on.",
+            "in": "query",
+            "name": "serviceTypes",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/Line/{ids}/Route",
         "pointer": "#/paths/~1Line~1{ids}~1Route/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Line[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route."
+        "summary": "Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route.",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -689,10 +2289,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_StatusByIds",
+        "parameters": [
+          {
+            "description": "A comma-separated list of line ids e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Include details of the disruptions that are causing the line status including the affected stops and routes",
+            "in": "query",
+            "name": "detail",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Line/{ids}/Status",
         "pointer": "#/paths/~1Line~1{ids}~1Status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Line[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the line status of for given line ids e.g Minor Delays"
+        "summary": "Gets the line status of for given line ids e.g Minor Delays",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -700,10 +2326,74 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_Status",
+        "parameters": [
+          {
+            "description": "A comma-separated list of line ids e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Include details of the disruptions that are causing the line status including the affected stops and routes",
+            "in": "query",
+            "name": "detail",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "dateRange.startDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "dateRange.endDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "StartDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "EndDate",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Line/{ids}/Status/{StartDate}/to/{EndDate}",
         "pointer": "#/paths/~1Line~1{ids}~1Status~1{StartDate}~1to~1{EndDate}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Line[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the line status for given line ids during the provided dates e.g Minor Delays"
+        "summary": "Gets the line status for given line ids during the provided dates e.g Minor Delays",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -711,10 +2401,55 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_RouteSequence",
+        "parameters": [
+          {
+            "description": "A single line id e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The direction of travel.",
+            "enum": [
+              "inbound",
+              "outbound",
+              "all"
+            ],
+            "in": "path",
+            "name": "direction",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma seperated list of service types to filter on.",
+            "in": "query",
+            "name": "serviceTypes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "That excludes crowding from line disruptions.",
+            "in": "query",
+            "name": "excludeCrowding",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Line/{id}/Route/Sequence/{direction}",
         "pointer": "#/paths/~1Line~1{id}~1Route~1Sequence~1{direction}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.RouteSequence"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all valid routes for given line id, including the sequence of stops on each route."
+        "summary": "Gets all valid routes for given line id, including the sequence of stops on each route.",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -722,10 +2457,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_StopPoints",
+        "parameters": [
+          {
+            "description": "A single line id e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If the national-rail line is requested, this flag will filter the national rail stations so that only those operated by TfL are returned",
+            "in": "query",
+            "name": "tflOperatedNationalRailStationsOnly",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Line/{id}/StopPoints",
         "pointer": "#/paths/~1Line~1{id}~1StopPoints/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPoint[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of the stations that serve the given line id"
+        "summary": "Gets a list of the stations that serve the given line id",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -733,10 +2494,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_Timetable",
+        "parameters": [
+          {
+            "description": "The originating station's stop point id (station naptan code e.g.",
+            "in": "path",
+            "name": "fromStopPointId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A single line id e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Line/{id}/Timetable/{fromStopPointId}",
         "pointer": "#/paths/~1Line~1{id}~1Timetable~1{fromStopPointId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.TimetableResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the timetable for a specified station on the give line"
+        "summary": "Gets the timetable for a specified station on the give line",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -744,10 +2531,43 @@
         "kind": "operation",
         "method": "get",
         "name": "Line_TimetableTo",
+        "parameters": [
+          {
+            "description": "The originating station's stop point id (station naptan code e.g.",
+            "in": "path",
+            "name": "fromStopPointId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A single line id e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The destination stations's Naptan code",
+            "in": "path",
+            "name": "toStopPointId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Line/{id}/Timetable/{fromStopPointId}/to/{toStopPointId}",
         "pointer": "#/paths/~1Line~1{id}~1Timetable~1{fromStopPointId}~1to~1{toStopPointId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.TimetableResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the timetable for a specified station on the give line with specified destination"
+        "summary": "Gets the timetable for a specified station on the give line with specified destination",
+        "tags": [
+          "Line"
+        ]
       },
       {
         "deprecated": false,
@@ -757,8 +2577,18 @@
         "name": "Mode_GetActiveServiceTypes",
         "path": "/Mode/ActiveServiceTypes",
         "pointer": "#/paths/~1Mode~1ActiveServiceTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.ActiveServiceType[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the service type active for a mode.\r\n            Currently only supports tube"
+        "summary": "Returns the service type active for a mode.\r\n            Currently only supports tube",
+        "tags": [
+          "Mode"
+        ]
       },
       {
         "deprecated": false,
@@ -766,10 +2596,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Mode_Arrivals",
+        "parameters": [
+          {
+            "description": "A mode name e.g.",
+            "in": "path",
+            "name": "mode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A number of arrivals to return for each stop, -1 to return all available.",
+            "in": "query",
+            "name": "count",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/Mode/{mode}/Arrivals",
         "pointer": "#/paths/~1Mode~1{mode}~1Arrivals/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Prediction[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the next arrival predictions for all stops of a given mode"
+        "summary": "Gets the next arrival predictions for all stops of a given mode",
+        "tags": [
+          "Mode"
+        ]
       },
       {
         "deprecated": false,
@@ -777,10 +2633,28 @@
         "kind": "operation",
         "method": "get",
         "name": "Occupancy_GetBikePointsOccupancies",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/Occupancy/BikePoints/{ids}",
         "pointer": "#/paths/~1Occupancy~1BikePoints~1{ids}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.BikePointOccupancy[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the occupancy for bike points."
+        "summary": "Get the occupancy for bike points.",
+        "tags": [
+          "Occupancy"
+        ]
       },
       {
         "deprecated": false,
@@ -790,8 +2664,18 @@
         "name": "get /Occupancy/CarPark",
         "path": "/Occupancy/CarPark",
         "pointer": "#/paths/~1Occupancy~1CarPark/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.CarParkOccupancy[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the occupancy for all car parks that have occupancy data"
+        "summary": "Gets the occupancy for all car parks that have occupancy data",
+        "tags": [
+          "Occupancy"
+        ]
       },
       {
         "deprecated": false,
@@ -799,10 +2683,28 @@
         "kind": "operation",
         "method": "get",
         "name": "Occupancy_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Occupancy/CarPark/{id}",
         "pointer": "#/paths/~1Occupancy~1CarPark~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.CarParkOccupancy"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the occupancy for a car park with a given id"
+        "summary": "Gets the occupancy for a car park with a given id",
+        "tags": [
+          "Occupancy"
+        ]
       },
       {
         "deprecated": false,
@@ -812,8 +2714,18 @@
         "name": "Occupancy_GetAllChargeConnectorStatus",
         "path": "/Occupancy/ChargeConnector",
         "pointer": "#/paths/~1Occupancy~1ChargeConnector/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the occupancy for all charge connectors"
+        "summary": "Gets the occupancy for all charge connectors",
+        "tags": [
+          "Occupancy"
+        ]
       },
       {
         "deprecated": false,
@@ -821,10 +2733,28 @@
         "kind": "operation",
         "method": "get",
         "name": "Occupancy_GetChargeConnectorStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/Occupancy/ChargeConnector/{ids}",
         "pointer": "#/paths/~1Occupancy~1ChargeConnector~1{ids}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the occupancy for a charge connectors with a given id (sourceSystemPlaceId)"
+        "summary": "Gets the occupancy for a charge connectors with a given id (sourceSystemPlaceId)",
+        "tags": [
+          "Occupancy"
+        ]
       },
       {
         "deprecated": false,
@@ -832,10 +2762,100 @@
         "kind": "operation",
         "method": "get",
         "name": "Place_GetByGeo",
+        "parameters": [
+          {
+            "description": "The radius of the bounding circle in metres when only lat/lon are specified.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "description": "An optional list of comma separated property categories to return in the Place's property bag.",
+            "in": "query",
+            "name": "categories",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Defaults to false.",
+            "in": "query",
+            "name": "includeChildren",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Place types to filter on, or null to return all types",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An optional parameter to limit the results to active records only (Currently only the 'VariableMessageSign' place type is supported)",
+            "in": "query",
+            "name": "activeOnly",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If specified, limits the number of returned places equal to the given value",
+            "in": "query",
+            "name": "numberOfPlacesToReturn",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "placeGeo.swLat",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "placeGeo.swLon",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "placeGeo.neLat",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "placeGeo.neLon",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "placeGeo.lat",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "placeGeo.lon",
+            "required": false,
+            "type": "number:double"
+          }
+        ],
         "path": "/Place",
         "pointer": "#/paths/~1Place/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPoint[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the places that lie within a geographic region. The geographic region of interest can either be specified\r\n            by using a lat/lon geo-point and a radius in metres to return places within the locus defined by the lat/lon of\r\n            its centre or alternatively, by the use of a bounding box defined by the lat/lon of its north-west and south-east corners.\r\n            Optionally filters on type and can strip properties for a smaller payload."
+        "summary": "Gets the places that lie within a geographic region. The geographic region of interest can either be specified\r\n            by using a lat/lon geo-point and a radius in metres to return places within the locus defined by the lat/lon of\r\n            its centre or alternatively, by the use of a bounding box defined by the lat/lon of its north-west and south-east corners.\r\n            Optionally filters on type and can strip properties for a smaller payload.",
+        "tags": [
+          "Place"
+        ]
       },
       {
         "deprecated": false,
@@ -843,10 +2863,41 @@
         "kind": "operation",
         "method": "get",
         "name": "Place_GetStreetsByPostCode",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "postcode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "postcodeInput.postcode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "Postcode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Place/Address/Streets/{Postcode}",
         "pointer": "#/paths/~1Place~1Address~1Streets~1{Postcode}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the set of streets associated with a post code."
+        "summary": "Gets the set of streets associated with a post code.",
+        "tags": [
+          "Place"
+        ]
       },
       {
         "deprecated": false,
@@ -856,8 +2907,18 @@
         "name": "Place_MetaCategories",
         "path": "/Place/Meta/Categories",
         "pointer": "#/paths/~1Place~1Meta~1Categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.PlaceCategory[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of all of the available place property categories and keys."
+        "summary": "Gets a list of all of the available place property categories and keys.",
+        "tags": [
+          "Place"
+        ]
       },
       {
         "deprecated": false,
@@ -867,8 +2928,18 @@
         "name": "Place_MetaPlaceTypes",
         "path": "/Place/Meta/PlaceTypes",
         "pointer": "#/paths/~1Place~1Meta~1PlaceTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.PlaceCategory[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of the available types of Place."
+        "summary": "Gets a list of the available types of Place.",
+        "tags": [
+          "Place"
+        ]
       },
       {
         "deprecated": false,
@@ -876,10 +2947,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Place_Search",
+        "parameters": [
+          {
+            "description": "The name of the place, you can use the /Place/Types/{types} endpoint to get a list of places for a given type including their names.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma-separated list of the types to return.",
+            "in": "query",
+            "name": "types",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/Place/Search",
         "pointer": "#/paths/~1Place~1Search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Place[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all places that matches the given query"
+        "summary": "Gets all places that matches the given query",
+        "tags": [
+          "Place"
+        ]
       },
       {
         "deprecated": false,
@@ -887,10 +2984,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Place_GetByType",
+        "parameters": [
+          {
+            "description": "A comma-separated list of the types to return.",
+            "in": "path",
+            "name": "types",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "An optional parameter to limit the results to active records only (Currently only the 'VariableMessageSign' place type is supported)",
+            "in": "query",
+            "name": "activeOnly",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Place/Type/{types}",
         "pointer": "#/paths/~1Place~1Type~1{types}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Place[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all places of a given type"
+        "summary": "Gets all places of a given type",
+        "tags": [
+          "Place"
+        ]
       },
       {
         "deprecated": false,
@@ -898,10 +3021,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Place_Get",
+        "parameters": [
+          {
+            "description": "The id of the place, you can use the /Place/Types/{types} endpoint to get a list of places for a given type including their ids",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Defaults to false.",
+            "in": "query",
+            "name": "includeChildren",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Place/{id}",
         "pointer": "#/paths/~1Place~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Place[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the place with the given id."
+        "summary": "Gets the place with the given id.",
+        "tags": [
+          "Place"
+        ]
       },
       {
         "deprecated": false,
@@ -909,10 +3058,67 @@
         "kind": "operation",
         "method": "get",
         "name": "Place_GetAt",
+        "parameters": [
+          {
+            "description": "The place type (a valid list of place types can be obtained from the /Place/Meta/placeTypes endpoint)",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "lon",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "location.lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "location.lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "Lat",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "Lon",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Place/{type}/At/{Lat}/{Lon}",
         "pointer": "#/paths/~1Place~1{type}~1At~1{Lat}~1{Lon}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets any places of the given type whose geography intersects the given latitude and longitude. In practice this means the Place\r\n            must be polygonal e.g. a BoroughBoundary."
+        "summary": "Gets any places of the given type whose geography intersects the given latitude and longitude. In practice this means the Place\r\n            must be polygonal e.g. a BoroughBoundary.",
+        "tags": [
+          "Place"
+        ]
       },
       {
         "deprecated": false,
@@ -920,10 +3126,88 @@
         "kind": "operation",
         "method": "get",
         "name": "Place_GetOverlay",
+        "parameters": [
+          {
+            "description": "The zoom level",
+            "in": "path",
+            "name": "z",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The place type (a valid list of place types can be obtained from the /Place/Meta/placeTypes endpoint)",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "The width of the requested overlay.",
+            "in": "path",
+            "name": "width",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The height of the requested overlay.",
+            "in": "path",
+            "name": "height",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "lon",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "location.lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "location.lon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "Lat",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "Lon",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Place/{type}/overlay/{z}/{Lat}/{Lon}/{width}/{height}",
         "pointer": "#/paths/~1Place~1{type}~1overlay~1{z}~1{Lat}~1{Lon}~1{width}~1{height}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the place overlay for a given set of co-ordinates and a given width/height."
+        "summary": "Gets the place overlay for a given set of co-ordinates and a given width/height.",
+        "tags": [
+          "Place"
+        ]
       },
       {
         "deprecated": false,
@@ -933,8 +3217,18 @@
         "name": "Road_Get",
         "path": "/Road",
         "pointer": "#/paths/~1Road/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.RoadCorridor[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all roads managed by TfL"
+        "summary": "Gets all roads managed by TfL",
+        "tags": [
+          "Road"
+        ]
       },
       {
         "deprecated": false,
@@ -944,8 +3238,18 @@
         "name": "Road_MetaCategories",
         "path": "/Road/Meta/Categories",
         "pointer": "#/paths/~1Road~1Meta~1Categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of valid RoadDisruption categories"
+        "summary": "Gets a list of valid RoadDisruption categories",
+        "tags": [
+          "Road"
+        ]
       },
       {
         "deprecated": false,
@@ -955,8 +3259,18 @@
         "name": "Road_MetaSeverities",
         "path": "/Road/Meta/Severities",
         "pointer": "#/paths/~1Road~1Meta~1Severities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StatusSeverity[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of valid RoadDisruption severity codes"
+        "summary": "Gets a list of valid RoadDisruption severity codes",
+        "tags": [
+          "Road"
+        ]
       },
       {
         "deprecated": false,
@@ -964,10 +3278,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Road_DisruptionById",
+        "parameters": [
+          {
+            "description": "Comma-separated list of disruption identifiers to filter by.",
+            "in": "path",
+            "name": "disruptionIds",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Optional, defaults to false.",
+            "in": "query",
+            "name": "stripContent",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Road/all/Disruption/{disruptionIds}",
         "pointer": "#/paths/~1Road~1all~1Disruption~1{disruptionIds}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.RoadDisruption"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of active disruptions filtered by disruption Ids."
+        "summary": "Gets a list of active disruptions filtered by disruption Ids.",
+        "tags": [
+          "Road"
+        ]
       },
       {
         "deprecated": false,
@@ -975,10 +3315,36 @@
         "kind": "operation",
         "method": "get",
         "name": "Road_DisruptedStreets",
+        "parameters": [
+          {
+            "description": "Optional, the start time to filter on.",
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Optional, The end time to filter on.",
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/Road/all/Street/Disruption",
         "pointer": "#/paths/~1Road~1all~1Street~1Disruption/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of disrupted streets. If no date filters are provided, current disruptions are returned."
+        "summary": "Gets a list of disrupted streets. If no date filters are provided, current disruptions are returned.",
+        "tags": [
+          "Road"
+        ]
       },
       {
         "deprecated": false,
@@ -986,10 +3352,29 @@
         "kind": "operation",
         "method": "get",
         "name": "get /Road/{ids}",
+        "parameters": [
+          {
+            "description": "Comma-separated list of road identifiers e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/Road/{ids}",
         "pointer": "#/paths/~1Road~1{ids}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.RoadCorridor[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the road with the specified id (e.g. A1)"
+        "summary": "Gets the road with the specified id (e.g. A1)",
+        "tags": [
+          "Road"
+        ]
       },
       {
         "deprecated": false,
@@ -997,10 +3382,57 @@
         "kind": "operation",
         "method": "get",
         "name": "Road_Disruption",
+        "parameters": [
+          {
+            "description": "Comma-separated list of road identifiers e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Optional, defaults to false.",
+            "in": "query",
+            "name": "stripContent",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "an optional list of Severity names to filter on (a valid list of severities can be obtained from the /Road/Meta/severities endpoint)",
+            "in": "query",
+            "name": "severities",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "an optional list of category names to filter on (a valid list of categories can be obtained from the /Road/Meta/categories endpoint)",
+            "in": "query",
+            "name": "categories",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Optional, defaults to true.",
+            "in": "query",
+            "name": "closures",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/Road/{ids}/Disruption",
         "pointer": "#/paths/~1Road~1{ids}~1Disruption/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.RoadDisruption[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get active disruptions, filtered by road ids"
+        "summary": "Get active disruptions, filtered by road ids",
+        "tags": [
+          "Road"
+        ]
       },
       {
         "deprecated": false,
@@ -1008,10 +3440,41 @@
         "kind": "operation",
         "method": "get",
         "name": "Road_Status",
+        "parameters": [
+          {
+            "description": "Comma-separated list of road identifiers e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "dateRangeNullable.startDate",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "dateRangeNullable.endDate",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/Road/{ids}/Status",
         "pointer": "#/paths/~1Road~1{ids}~1Status/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.RoadCorridor[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed."
+        "summary": "Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.",
+        "tags": [
+          "Road"
+        ]
       },
       {
         "deprecated": false,
@@ -1019,10 +3482,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Search_Get",
+        "parameters": [
+          {
+            "description": "The search query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Search",
         "pointer": "#/paths/~1Search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.SearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search the site for occurrences of the query string. The maximum number of results returned is equal to the maximum page size\r\n            of 100. To return subsequent pages, use the paginated overload."
+        "summary": "Search the site for occurrences of the query string. The maximum number of results returned is equal to the maximum page size\r\n            of 100. To return subsequent pages, use the paginated overload.",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -1030,10 +3512,29 @@
         "kind": "operation",
         "method": "get",
         "name": "Search_BusSchedules",
+        "parameters": [
+          {
+            "description": "The search query",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/Search/BusSchedules",
         "pointer": "#/paths/~1Search~1BusSchedules/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.SearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Searches the bus schedules folder on S3 for a given bus number."
+        "summary": "Searches the bus schedules folder on S3 for a given bus number.",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -1043,8 +3544,18 @@
         "name": "Search_MetaCategories",
         "path": "/Search/Meta/Categories",
         "pointer": "#/paths/~1Search~1Meta~1Categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the available search categories."
+        "summary": "Gets the available search categories.",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -1054,8 +3565,18 @@
         "name": "Search_MetaSearchProviders",
         "path": "/Search/Meta/SearchProviders",
         "pointer": "#/paths/~1Search~1Meta~1SearchProviders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the available searchProvider names."
+        "summary": "Gets the available searchProvider names.",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -1065,8 +3586,18 @@
         "name": "Search_MetaSorts",
         "path": "/Search/Meta/Sorts",
         "pointer": "#/paths/~1Search~1Meta~1Sorts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the available sorting options."
+        "summary": "Gets the available sorting options.",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
@@ -1074,10 +3605,76 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_GetByGeoPoint",
+        "parameters": [
+          {
+            "description": "a list of stopTypes that should be returned (a list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint)",
+            "in": "query",
+            "name": "stopTypes",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "the radius of the bounding circle in metres (default : 200)",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Re-arrange the output into a parent/child hierarchy",
+            "in": "query",
+            "name": "useStopPointHierarchy",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "the list of modes to search (comma separated mode names e.g.",
+            "in": "query",
+            "name": "modes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "an optional list of comma separated property categories to return in the StopPoint's property bag.",
+            "in": "query",
+            "name": "categories",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "true to return the lines that each stop point serves as a nested resource",
+            "in": "query",
+            "name": "returnLines",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "location.lat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "location.lon",
+            "required": true,
+            "type": "number:double"
+          }
+        ],
         "path": "/StopPoint",
         "pointer": "#/paths/~1StopPoint/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPointsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of StopPoints within {radius} by the specified criteria"
+        "summary": "Gets a list of StopPoints within {radius} by the specified criteria",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1087,8 +3684,18 @@
         "name": "StopPoint_MetaCategories",
         "path": "/StopPoint/Meta/Categories",
         "pointer": "#/paths/~1StopPoint~1Meta~1Categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPointCategory[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the list of available StopPoint additional information categories"
+        "summary": "Gets the list of available StopPoint additional information categories",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1098,8 +3705,18 @@
         "name": "StopPoint_MetaModes",
         "path": "/StopPoint/Meta/Modes",
         "pointer": "#/paths/~1StopPoint~1Meta~1Modes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Mode[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the list of available StopPoint modes"
+        "summary": "Gets the list of available StopPoint modes",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1109,8 +3726,18 @@
         "name": "StopPoint_MetaStopTypes",
         "path": "/StopPoint/Meta/StopTypes",
         "pointer": "#/paths/~1StopPoint~1Meta~1StopTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the list of available StopPoint types"
+        "summary": "Gets the list of available StopPoint types",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1118,10 +3745,36 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_GetByMode",
+        "parameters": [
+          {
+            "description": "A comma-seperated list of modes e.g.",
+            "in": "path",
+            "name": "modes",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "The data set page to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/StopPoint/Mode/{modes}",
         "pointer": "#/paths/~1StopPoint~1Mode~1{modes}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPointsResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of StopPoints filtered by the modes available at that StopPoint."
+        "summary": "Gets a list of StopPoints filtered by the modes available at that StopPoint.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1129,10 +3782,35 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_DisruptionByMode",
+        "parameters": [
+          {
+            "description": "A comma-seperated list of modes e.g.",
+            "in": "path",
+            "name": "modes",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "includeRouteBlockedStops",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/StopPoint/Mode/{modes}/Disruption",
         "pointer": "#/paths/~1StopPoint~1Mode~1{modes}~1Disruption/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.DisruptedPoint[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a distinct list of disrupted stop points for the given modes"
+        "summary": "Gets a distinct list of disrupted stop points for the given modes",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1140,10 +3818,71 @@
         "kind": "operation",
         "method": "get",
         "name": "get /StopPoint/Search",
+        "parameters": [
+          {
+            "description": "The query string, case-insensitive.",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional, parameter separated list of the modes to filter by",
+            "in": "query",
+            "name": "modes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "True to only return stations in that have Fares data available for single fares to another station.",
+            "in": "query",
+            "name": "faresOnly",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "An optional result limit, defaulting to and with a maximum of 50.",
+            "in": "query",
+            "name": "maxResults",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "An optional, parameter separated list of the lines to filter by",
+            "in": "query",
+            "name": "lines",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "If true, returns results including HUBs.",
+            "in": "query",
+            "name": "includeHubs",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If the national-rail mode is included, this flag will filter the national rail stations so that only those operated by TfL are returned",
+            "in": "query",
+            "name": "tflOperatedNationalRailStationsOnly",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/StopPoint/Search",
         "pointer": "#/paths/~1StopPoint~1Search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.SearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search StopPoints by their common name, or their 5-digit Countdown Bus Stop Code."
+        "summary": "Search StopPoints by their common name, or their 5-digit Countdown Bus Stop Code.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1151,10 +3890,71 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_Search",
+        "parameters": [
+          {
+            "description": "The query string, case-insensitive.",
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "An optional, parameter separated list of the modes to filter by",
+            "in": "query",
+            "name": "modes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "True to only return stations in that have Fares data available for single fares to another station.",
+            "in": "query",
+            "name": "faresOnly",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "An optional result limit, defaulting to and with a maximum of 50.",
+            "in": "query",
+            "name": "maxResults",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "An optional, parameter separated list of the lines to filter by",
+            "in": "query",
+            "name": "lines",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "If true, returns results including HUBs.",
+            "in": "query",
+            "name": "includeHubs",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If the national-rail mode is included, this flag will filter the national rail stations so that only those operated by TfL are returned",
+            "in": "query",
+            "name": "tflOperatedNationalRailStationsOnly",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/StopPoint/Search/{query}",
         "pointer": "#/paths/~1StopPoint~1Search~1{query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.SearchResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search StopPoints by their common name, or their 5-digit Countdown Bus Stop Code."
+        "summary": "Search StopPoints by their common name, or their 5-digit Countdown Bus Stop Code.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1162,10 +3962,43 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_GetServiceTypes",
+        "parameters": [
+          {
+            "description": "The Naptan id of the stop",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The lines which contain the given Naptan id (all lines relevant to the given stoppoint if empty)",
+            "in": "query",
+            "name": "lineIds",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The modes which the lines are relevant to (all if empty)",
+            "in": "query",
+            "name": "modes",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/StopPoint/ServiceTypes",
         "pointer": "#/paths/~1StopPoint~1ServiceTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.LineServiceType[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the service types for a given stoppoint"
+        "summary": "Gets the service types for a given stoppoint",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1173,10 +4006,36 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_GetBySms",
+        "parameters": [
+          {
+            "description": "A 5-digit Countdown Bus Stop Code e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If set to \"web\", a 302 redirect to relevant website bus stop page is returned.",
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/StopPoint/Sms/{id}",
         "pointer": "#/paths/~1StopPoint~1Sms~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a StopPoint for a given sms code."
+        "summary": "Gets a StopPoint for a given sms code.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1184,10 +4043,29 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_GetByType",
+        "parameters": [
+          {
+            "description": "A comma-separated list of the types to return.",
+            "in": "path",
+            "name": "types",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/StopPoint/Type/{types}",
         "pointer": "#/paths/~1StopPoint~1Type~1{types}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPoint[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all stop points of a given type"
+        "summary": "Gets all stop points of a given type",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1195,10 +4073,34 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_GetByTypeWithPagination",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "types",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "in": "path",
+            "name": "page",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/StopPoint/Type/{types}/page/{page}",
         "pointer": "#/paths/~1StopPoint~1Type~1{types}~1page~1{page}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPoint[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all the stop points of given type(s) with a page number"
+        "summary": "Gets all the stop points of given type(s) with a page number",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1206,10 +4108,36 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_Get",
+        "parameters": [
+          {
+            "description": "A comma-separated list of stop point ids (station naptan code e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Include the crowding data (static).",
+            "in": "query",
+            "name": "includeCrowdingData",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/StopPoint/{ids}",
         "pointer": "#/paths/~1StopPoint~1{ids}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPoint[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of StopPoints corresponding to the given list of stop ids."
+        "summary": "Gets a list of StopPoints corresponding to the given list of stop ids.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1217,10 +4145,49 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_Disruption",
+        "parameters": [
+          {
+            "description": "A comma-seperated list of stop point ids.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "Specify true to return disruptions for entire family, or false to return disruptions for just this stop point.",
+            "in": "query",
+            "name": "getFamily",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "includeRouteBlockedStops",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Specify true to associate all disruptions with parent stop point.",
+            "in": "query",
+            "name": "flattenResponse",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/StopPoint/{ids}/Disruption",
         "pointer": "#/paths/~1StopPoint~1{ids}~1Disruption/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.DisruptedPoint[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have."
+        "summary": "Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1228,10 +4195,36 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_ArrivalDepartures",
+        "parameters": [
+          {
+            "description": "A StopPoint id (station naptan code e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma-separated list of line ids e.g.",
+            "in": "query",
+            "name": "lineIds",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/StopPoint/{id}/ArrivalDepartures",
         "pointer": "#/paths/~1StopPoint~1{id}~1ArrivalDepartures/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.ArrivalDeparture[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the list of arrival and departure predictions for the given stop point id (overground, Elizabeth line and thameslink only)"
+        "summary": "Gets the list of arrival and departure predictions for the given stop point id (overground, Elizabeth line and thameslink only)",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1239,10 +4232,29 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_Arrivals",
+        "parameters": [
+          {
+            "description": "A StopPoint id (station naptan code e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/StopPoint/{id}/Arrivals",
         "pointer": "#/paths/~1StopPoint~1{id}~1Arrivals/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Prediction[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the list of arrival predictions for the given stop point id"
+        "summary": "Gets the list of arrival predictions for the given stop point id",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1250,10 +4262,43 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_ReachableFrom",
+        "parameters": [
+          {
+            "description": "The id (station naptan code e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Line id of the line to filter by (e.g.",
+            "in": "path",
+            "name": "lineId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma-separated list of service types to filter on.",
+            "in": "query",
+            "name": "serviceTypes",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/StopPoint/{id}/CanReachOnLine/{lineId}",
         "pointer": "#/paths/~1StopPoint~1{id}~1CanReachOnLine~1{lineId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPoint[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets Stopoints that are reachable from a station/line combination."
+        "summary": "Gets Stopoints that are reachable from a station/line combination.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1261,10 +4306,48 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_Crowding",
+        "parameters": [
+          {
+            "description": "The Naptan id of the stop",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A particular line e.g.",
+            "in": "path",
+            "name": "line",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The direction of travel.",
+            "enum": [
+              "inbound",
+              "outbound",
+              "all"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/StopPoint/{id}/Crowding/{line}",
         "pointer": "#/paths/~1StopPoint~1{id}~1Crowding~1{line}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPoint[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets all the Crowding data (static) for the StopPointId, plus crowding data for a given line and optionally a particular direction."
+        "summary": "Gets all the Crowding data (static) for the StopPointId, plus crowding data for a given line and optionally a particular direction.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1272,10 +4355,43 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_Direction",
+        "parameters": [
+          {
+            "description": "Originating stop id (station naptan code e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Destination stop id (station naptan code e.g.",
+            "in": "path",
+            "name": "toStopPointId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Optional line id filter e.g.",
+            "in": "query",
+            "name": "lineId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/StopPoint/{id}/DirectionTo/{toStopPointId}",
         "pointer": "#/paths/~1StopPoint~1{id}~1DirectionTo~1{toStopPointId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the canonical direction, \"inbound\" or \"outbound\", for a given pair of stop point Ids in the direction from -&gt; to."
+        "summary": "Returns the canonical direction, \"inbound\" or \"outbound\", for a given pair of stop point Ids in the direction from -&gt; to.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1283,10 +4399,36 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_Route",
+        "parameters": [
+          {
+            "description": "A stop point id (station naptan codes e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma-separated list of service types to filter on.",
+            "in": "query",
+            "name": "serviceTypes",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/StopPoint/{id}/Route",
         "pointer": "#/paths/~1StopPoint~1{id}~1Route/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.StopPointRouteSection[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the route sections for all the lines that service the given stop point ids"
+        "summary": "Returns the route sections for all the lines that service the given stop point ids",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1294,10 +4436,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /StopPoint/{id}/placeTypes",
+        "parameters": [
+          {
+            "description": "A naptan id for a stop point (station naptan code e.g.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comcomma-separated value representing the place types.",
+            "in": "query",
+            "name": "placeTypes",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/StopPoint/{id}/placeTypes",
         "pointer": "#/paths/~1StopPoint~1{id}~1placeTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Place[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a list of places corresponding to a given id and place types."
+        "summary": "Get a list of places corresponding to a given id and place types.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1305,10 +4473,29 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_GetCarParksById",
+        "parameters": [
+          {
+            "description": "stopPointId is required to get the car parks.",
+            "in": "path",
+            "name": "stopPointId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/StopPoint/{stopPointId}/CarParks",
         "pointer": "#/paths/~1StopPoint~1{stopPointId}~1CarParks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Place[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get car parks corresponding to the given stop point id."
+        "summary": "Get car parks corresponding to the given stop point id.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1316,10 +4503,29 @@
         "kind": "operation",
         "method": "get",
         "name": "StopPoint_GetTaxiRanksByIds",
+        "parameters": [
+          {
+            "description": "stopPointId is required to get the taxi ranks.",
+            "in": "path",
+            "name": "stopPointId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/StopPoint/{stopPointId}/TaxiRanks",
         "pointer": "#/paths/~1StopPoint~1{stopPointId}~1TaxiRanks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Place[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets a list of taxi ranks corresponding to the given stop point id."
+        "summary": "Gets a list of taxi ranks corresponding to the given stop point id.",
+        "tags": [
+          "StopPoint"
+        ]
       },
       {
         "deprecated": false,
@@ -1327,10 +4533,123 @@
         "kind": "operation",
         "method": "get",
         "name": "TravelTime_GetCompareOverlay",
+        "parameters": [
+          {
+            "description": "The zoom level.",
+            "in": "path",
+            "name": "z",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The latitude of the pin.",
+            "in": "path",
+            "name": "pinLat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "The longitude of the pin.",
+            "in": "path",
+            "name": "pinLon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "The map center latitude.",
+            "in": "path",
+            "name": "mapCenterLat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "The map center longitude.",
+            "in": "path",
+            "name": "mapCenterLon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "The title of the scenario.",
+            "in": "query",
+            "name": "scenarioTitle",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id for the time of day (AM/INTER/PM)",
+            "in": "query",
+            "name": "timeOfDayId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the mode.",
+            "in": "query",
+            "name": "modeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The width of the requested overlay.",
+            "in": "path",
+            "name": "width",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The height of the requested overlay.",
+            "in": "path",
+            "name": "height",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The direction of travel.",
+            "enum": [
+              "Average",
+              "From",
+              "To"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The total minutes between the travel time bands",
+            "in": "query",
+            "name": "travelTimeInterval",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "compareType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "compareValue",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/TravelTimes/compareOverlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}",
         "pointer": "#/paths/~1TravelTimes~1compareOverlay~1{z}~1mapcenter~1{mapCenterLat}~1{mapCenterLon}~1pinlocation~1{pinLat}~1{pinLon}~1dimensions~1{width}~1{height}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the TravelTime overlay."
+        "summary": "Gets the TravelTime overlay.",
+        "tags": [
+          "TravelTime"
+        ]
       },
       {
         "deprecated": false,
@@ -1338,10 +4657,111 @@
         "kind": "operation",
         "method": "get",
         "name": "TravelTime_GetOverlay",
+        "parameters": [
+          {
+            "description": "The zoom level.",
+            "in": "path",
+            "name": "z",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The latitude of the pin.",
+            "in": "path",
+            "name": "pinLat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "The longitude of the pin.",
+            "in": "path",
+            "name": "pinLon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "The map center latitude.",
+            "in": "path",
+            "name": "mapCenterLat",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "The map center longitude.",
+            "in": "path",
+            "name": "mapCenterLon",
+            "required": true,
+            "type": "number:double"
+          },
+          {
+            "description": "The title of the scenario.",
+            "in": "query",
+            "name": "scenarioTitle",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id for the time of day (AM/INTER/PM)",
+            "in": "query",
+            "name": "timeOfDayId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the mode.",
+            "in": "query",
+            "name": "modeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The width of the requested overlay.",
+            "in": "path",
+            "name": "width",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The height of the requested overlay.",
+            "in": "path",
+            "name": "height",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The direction of travel.",
+            "enum": [
+              "Average",
+              "From",
+              "To"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The total minutes between the travel time bands",
+            "in": "query",
+            "name": "travelTimeInterval",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}",
         "pointer": "#/paths/~1TravelTimes~1overlay~1{z}~1mapcenter~1{mapCenterLat}~1{mapCenterLon}~1pinlocation~1{pinLat}~1{pinLon}~1dimensions~1{width}~1{height}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "System.Object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the TravelTime overlay."
+        "summary": "Gets the TravelTime overlay.",
+        "tags": [
+          "TravelTime"
+        ]
       },
       {
         "deprecated": false,
@@ -1349,615 +4769,768 @@
         "kind": "operation",
         "method": "get",
         "name": "Vehicle_Get",
+        "parameters": [
+          {
+            "description": "A comma-separated list of vehicle ids e.g.",
+            "in": "path",
+            "name": "ids",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/Vehicle/{ids}/Arrivals",
         "pointer": "#/paths/~1Vehicle~1{ids}~1Arrivals/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tfl.Api.Presentation.Entities.Prediction[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets the predictions for a given list of vehicle Id's."
+        "summary": "Gets the predictions for a given list of vehicle Id's.",
+        "tags": [
+          "Vehicle"
+        ]
       },
       {
         "id": "schema:System.Data.Spatial.DbGeography",
         "kind": "schema",
-        "name": "System.Data.Spatial.DbGeography"
+        "name": "System.Data.Spatial.DbGeography",
+        "type": "object"
       },
       {
         "id": "schema:System.Data.Spatial.DbGeographyWellKnownValue",
         "kind": "schema",
-        "name": "System.Data.Spatial.DbGeographyWellKnownValue"
+        "name": "System.Data.Spatial.DbGeographyWellKnownValue",
+        "type": "object"
       },
       {
         "id": "schema:System.Object",
         "kind": "schema",
-        "name": "System.Object"
+        "name": "System.Object",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Common.ApiVersionInfo",
         "kind": "schema",
-        "name": "Tfl.Api.Common.ApiVersionInfo"
+        "name": "Tfl.Api.Common.ApiVersionInfo",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Common.DateRange",
         "kind": "schema",
-        "name": "Tfl.Api.Common.DateRange"
+        "name": "Tfl.Api.Common.DateRange",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Common.DateRangeNullable",
         "kind": "schema",
-        "name": "Tfl.Api.Common.DateRangeNullable"
+        "name": "Tfl.Api.Common.DateRangeNullable",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Common.GeoPoint",
         "kind": "schema",
-        "name": "Tfl.Api.Common.GeoPoint"
+        "name": "Tfl.Api.Common.GeoPoint",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Common.JourneyPlanner.JpElevation",
         "kind": "schema",
-        "name": "Tfl.Api.Common.JourneyPlanner.JpElevation"
+        "name": "Tfl.Api.Common.JourneyPlanner.JpElevation",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Common.PlaceGeo",
         "kind": "schema",
-        "name": "Tfl.Api.Common.PlaceGeo"
+        "name": "Tfl.Api.Common.PlaceGeo",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Common.PostcodeInput",
         "kind": "schema",
-        "name": "Tfl.Api.Common.PostcodeInput"
+        "name": "Tfl.Api.Common.PostcodeInput",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail"
+        "name": "Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.AccidentStats.AccidentStatsOrderedSummary",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.AccidentStats.AccidentStatsOrderedSummary"
+        "name": "Tfl.Api.Presentation.Entities.AccidentStats.AccidentStatsOrderedSummary",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.AccidentStats.Casualty",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.AccidentStats.Casualty"
+        "name": "Tfl.Api.Presentation.Entities.AccidentStats.Casualty",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.AccidentStats.Vehicle",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.AccidentStats.Vehicle"
+        "name": "Tfl.Api.Presentation.Entities.AccidentStats.Vehicle",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.ActiveServiceType",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.ActiveServiceType"
+        "name": "Tfl.Api.Presentation.Entities.ActiveServiceType",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.AdditionalProperties",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.AdditionalProperties"
+        "name": "Tfl.Api.Presentation.Entities.AdditionalProperties",
+        "type": "object"
       },
       {
+        "description": "DTO to capture the prediction details",
         "id": "schema:Tfl.Api.Presentation.Entities.ArrivalDeparture",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.ArrivalDeparture"
+        "name": "Tfl.Api.Presentation.Entities.ArrivalDeparture",
+        "type": "object"
       },
       {
+        "description": "DTO to capture the prediction details",
         "id": "schema:Tfl.Api.Presentation.Entities.ArrivalDepartureWithLine",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.ArrivalDepartureWithLine"
+        "name": "Tfl.Api.Presentation.Entities.ArrivalDepartureWithLine",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Bay",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Bay"
+        "name": "Tfl.Api.Presentation.Entities.Bay",
+        "type": "object"
       },
       {
+        "description": "Bike point occupancy",
         "id": "schema:Tfl.Api.Presentation.Entities.BikePointOccupancy",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.BikePointOccupancy"
+        "name": "Tfl.Api.Presentation.Entities.BikePointOccupancy",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.CarParkOccupancy",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.CarParkOccupancy"
+        "name": "Tfl.Api.Presentation.Entities.CarParkOccupancy",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy"
+        "name": "Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Coordinate",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Coordinate"
+        "name": "Tfl.Api.Presentation.Entities.Coordinate",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Crowding",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Crowding"
+        "name": "Tfl.Api.Presentation.Entities.Crowding",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.CycleSuperhighway",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.CycleSuperhighway"
+        "name": "Tfl.Api.Presentation.Entities.CycleSuperhighway",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.DisruptedPoint",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.DisruptedPoint"
+        "name": "Tfl.Api.Presentation.Entities.DisruptedPoint",
+        "type": "object"
       },
       {
+        "description": "keep old RouteSection name so as not to break contract",
         "id": "schema:Tfl.Api.Presentation.Entities.DisruptedRoute",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.DisruptedRoute"
+        "name": "Tfl.Api.Presentation.Entities.DisruptedRoute",
+        "type": "object"
       },
       {
+        "description": "Represents a disruption to a route within the transport network.",
         "id": "schema:Tfl.Api.Presentation.Entities.Disruption",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Disruption"
+        "name": "Tfl.Api.Presentation.Entities.Disruption",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.Fare",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.Fare"
+        "name": "Tfl.Api.Presentation.Entities.Fares.Fare",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.FareBounds",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.FareBounds"
+        "name": "Tfl.Api.Presentation.Entities.Fares.FareBounds",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.FareDetails",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.FareDetails"
+        "name": "Tfl.Api.Presentation.Entities.Fares.FareDetails",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.FareStation",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.FareStation"
+        "name": "Tfl.Api.Presentation.Entities.Fares.FareStation",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.FaresMode",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.FaresMode"
+        "name": "Tfl.Api.Presentation.Entities.Fares.FaresMode",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.FaresPeriod",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.FaresPeriod"
+        "name": "Tfl.Api.Presentation.Entities.Fares.FaresPeriod",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.FaresSection",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.FaresSection"
+        "name": "Tfl.Api.Presentation.Entities.Fares.FaresSection",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.Journey",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.Journey"
+        "name": "Tfl.Api.Presentation.Entities.Fares.Journey",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.PassengerType",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.PassengerType"
+        "name": "Tfl.Api.Presentation.Entities.Fares.PassengerType",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.Recommendation",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.Recommendation"
+        "name": "Tfl.Api.Presentation.Entities.Fares.Recommendation",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.RecommendationResponse",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.RecommendationResponse"
+        "name": "Tfl.Api.Presentation.Entities.Fares.RecommendationResponse",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.Ticket",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.Ticket"
+        "name": "Tfl.Api.Presentation.Entities.Fares.Ticket",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.TicketTime",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.TicketTime"
+        "name": "Tfl.Api.Presentation.Entities.Fares.TicketTime",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Fares.TicketType",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Fares.TicketType"
+        "name": "Tfl.Api.Presentation.Entities.Fares.TicketType",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.GeoCodeSearchMatch",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.GeoCodeSearchMatch"
+        "name": "Tfl.Api.Presentation.Entities.GeoCodeSearchMatch",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Identifier",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Identifier"
+        "name": "Tfl.Api.Presentation.Entities.Identifier",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Instruction",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Instruction"
+        "name": "Tfl.Api.Presentation.Entities.Instruction",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.InstructionStep",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.InstructionStep"
+        "name": "Tfl.Api.Presentation.Entities.InstructionStep",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Interval",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Interval"
+        "name": "Tfl.Api.Presentation.Entities.Interval",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Fare",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Fare"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Fare",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.FareCaveat",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareCaveat"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareCaveat",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.FareTap",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareTap"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareTap",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.FareTapDetails",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareTapDetails"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareTapDetails",
+        "type": "object"
       },
       {
+        "description": "A DTO representing a list of possible journeys.",
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult",
+        "type": "object"
       },
       {
+        "description": "Object that represents an end to end journey (see schematic).",
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Journey",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Journey"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Journey",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyFare",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyFare"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyFare",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyPlannerCycleHireDockingStationData",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyPlannerCycleHireDockingStationData"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyPlannerCycleHireDockingStationData",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyVector",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyVector"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyVector",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Leg"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Leg",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Obstacle",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Obstacle"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Obstacle",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.Path",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Path"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.Path",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.PlannedWork",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.PlannedWork"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.PlannedWork",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.RouteOption",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.RouteOption"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.RouteOption",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.SearchCriteria",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.SearchCriteria"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.SearchCriteria",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustment",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustment"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustment",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustments",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustments"
+        "name": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustments",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.KnownJourney",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.KnownJourney"
+        "name": "Tfl.Api.Presentation.Entities.KnownJourney",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Line",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Line"
+        "name": "Tfl.Api.Presentation.Entities.Line",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.LineGroup",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.LineGroup"
+        "name": "Tfl.Api.Presentation.Entities.LineGroup",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.LineModeGroup",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.LineModeGroup"
+        "name": "Tfl.Api.Presentation.Entities.LineModeGroup",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.LineRouteSection",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.LineRouteSection"
+        "name": "Tfl.Api.Presentation.Entities.LineRouteSection",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.LineServiceType",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.LineServiceType"
+        "name": "Tfl.Api.Presentation.Entities.LineServiceType",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.LineServiceTypeInfo",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo"
+        "name": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.LineSpecificServiceType",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.LineSpecificServiceType"
+        "name": "Tfl.Api.Presentation.Entities.LineSpecificServiceType",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.LineStatus",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.LineStatus"
+        "name": "Tfl.Api.Presentation.Entities.LineStatus",
+        "type": "object"
       },
       {
+        "description": "Description of a Route used in Route search results.",
         "id": "schema:Tfl.Api.Presentation.Entities.MatchedRoute",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.MatchedRoute"
+        "name": "Tfl.Api.Presentation.Entities.MatchedRoute",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.MatchedRouteSections",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.MatchedRouteSections"
+        "name": "Tfl.Api.Presentation.Entities.MatchedRouteSections",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.MatchedStop",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.MatchedStop"
+        "name": "Tfl.Api.Presentation.Entities.MatchedStop",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Message",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Message"
+        "name": "Tfl.Api.Presentation.Entities.Message",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Mode",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Mode"
+        "name": "Tfl.Api.Presentation.Entities.Mode",
+        "type": "object"
       },
       {
+        "description": "Represent travel network status",
         "id": "schema:Tfl.Api.Presentation.Entities.NetworkStatus",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.NetworkStatus"
+        "name": "Tfl.Api.Presentation.Entities.NetworkStatus",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.OrderedRoute",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.OrderedRoute"
+        "name": "Tfl.Api.Presentation.Entities.OrderedRoute",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.PassengerFlow",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.PassengerFlow"
+        "name": "Tfl.Api.Presentation.Entities.PassengerFlow",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.PathAttribute",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.PathAttribute"
+        "name": "Tfl.Api.Presentation.Entities.PathAttribute",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Period",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Period"
+        "name": "Tfl.Api.Presentation.Entities.Period",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Place",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Place"
+        "name": "Tfl.Api.Presentation.Entities.Place",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.PlaceCategory",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.PlaceCategory"
+        "name": "Tfl.Api.Presentation.Entities.PlaceCategory",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.PlacePolygon",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.PlacePolygon"
+        "name": "Tfl.Api.Presentation.Entities.PlacePolygon",
+        "type": "object"
       },
       {
+        "description": "Represents a point located at a latitude and longitude using the WGS84 co-ordinate system.",
         "id": "schema:Tfl.Api.Presentation.Entities.Point",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Point"
+        "name": "Tfl.Api.Presentation.Entities.Point",
+        "type": "object"
       },
       {
+        "description": "DTO to capture the prediction details",
         "id": "schema:Tfl.Api.Presentation.Entities.Prediction",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Prediction"
+        "name": "Tfl.Api.Presentation.Entities.Prediction",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.PredictionTiming",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.PredictionTiming"
+        "name": "Tfl.Api.Presentation.Entities.PredictionTiming",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Redirect",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Redirect"
+        "name": "Tfl.Api.Presentation.Entities.Redirect",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RoadCorridor",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RoadCorridor"
+        "name": "Tfl.Api.Presentation.Entities.RoadCorridor",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RoadDisruption",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RoadDisruption"
+        "name": "Tfl.Api.Presentation.Entities.RoadDisruption",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RoadDisruptionImpactArea",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RoadDisruptionImpactArea"
+        "name": "Tfl.Api.Presentation.Entities.RoadDisruptionImpactArea",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RoadDisruptionLine",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RoadDisruptionLine"
+        "name": "Tfl.Api.Presentation.Entities.RoadDisruptionLine",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RoadDisruptionSchedule",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RoadDisruptionSchedule"
+        "name": "Tfl.Api.Presentation.Entities.RoadDisruptionSchedule",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RoadProject",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RoadProject"
+        "name": "Tfl.Api.Presentation.Entities.RoadProject",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RouteSearchMatch",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RouteSearchMatch"
+        "name": "Tfl.Api.Presentation.Entities.RouteSearchMatch",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RouteSearchResponse",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RouteSearchResponse"
+        "name": "Tfl.Api.Presentation.Entities.RouteSearchResponse",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RouteSectionNaptanEntrySequence",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RouteSectionNaptanEntrySequence"
+        "name": "Tfl.Api.Presentation.Entities.RouteSectionNaptanEntrySequence",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.RouteSequence",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.RouteSequence"
+        "name": "Tfl.Api.Presentation.Entities.RouteSequence",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Schedule",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Schedule"
+        "name": "Tfl.Api.Presentation.Entities.Schedule",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.SearchMatch",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.SearchMatch"
+        "name": "Tfl.Api.Presentation.Entities.SearchMatch",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.SearchResponse",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.SearchResponse"
+        "name": "Tfl.Api.Presentation.Entities.SearchResponse",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.ServiceFrequency",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.ServiceFrequency"
+        "name": "Tfl.Api.Presentation.Entities.ServiceFrequency",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.StationInterval",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.StationInterval"
+        "name": "Tfl.Api.Presentation.Entities.StationInterval",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.StatusSeverity",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.StatusSeverity"
+        "name": "Tfl.Api.Presentation.Entities.StatusSeverity",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.StopPoint",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.StopPoint"
+        "name": "Tfl.Api.Presentation.Entities.StopPoint",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.StopPointCategory",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.StopPointCategory"
+        "name": "Tfl.Api.Presentation.Entities.StopPointCategory",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.StopPointRouteSection",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.StopPointRouteSection"
+        "name": "Tfl.Api.Presentation.Entities.StopPointRouteSection",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.StopPointSequence",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.StopPointSequence"
+        "name": "Tfl.Api.Presentation.Entities.StopPointSequence",
+        "type": "object"
       },
       {
+        "description": "A paged response containing StopPoints",
         "id": "schema:Tfl.Api.Presentation.Entities.StopPointsResponse",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.StopPointsResponse"
+        "name": "Tfl.Api.Presentation.Entities.StopPointsResponse",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Street",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Street"
+        "name": "Tfl.Api.Presentation.Entities.Street",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.StreetSegment",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.StreetSegment"
+        "name": "Tfl.Api.Presentation.Entities.StreetSegment",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Timetable",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Timetable"
+        "name": "Tfl.Api.Presentation.Entities.Timetable",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.TimetableResponse",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.TimetableResponse"
+        "name": "Tfl.Api.Presentation.Entities.TimetableResponse",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.TimetableRoute",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.TimetableRoute"
+        "name": "Tfl.Api.Presentation.Entities.TimetableRoute",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Timetables.Disambiguation",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Timetables.Disambiguation"
+        "name": "Tfl.Api.Presentation.Entities.Timetables.Disambiguation",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.Timetables.DisambiguationOption",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.Timetables.DisambiguationOption"
+        "name": "Tfl.Api.Presentation.Entities.Timetables.DisambiguationOption",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.TrainLoading",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.TrainLoading"
+        "name": "Tfl.Api.Presentation.Entities.TrainLoading",
+        "type": "object"
       },
       {
         "id": "schema:Tfl.Api.Presentation.Entities.TwentyFourHourClockTime",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.TwentyFourHourClockTime"
+        "name": "Tfl.Api.Presentation.Entities.TwentyFourHourClockTime",
+        "type": "object"
       },
       {
+        "description": "Represents a period for which a planned works is valid.",
         "id": "schema:Tfl.Api.Presentation.Entities.ValidityPeriod",
         "kind": "schema",
-        "name": "Tfl.Api.Presentation.Entities.ValidityPeriod"
+        "name": "Tfl.Api.Presentation.Entities.ValidityPeriod",
+        "type": "object"
       }
     ]
   },

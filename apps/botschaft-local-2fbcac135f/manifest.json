@@ -53,6 +53,36 @@
         "from": "botschaft-local-2fbcac135f",
         "kind": "EXPOSES",
         "to": "operation:post:/twilio"
+      },
+      {
+        "from": "operation:get:/config",
+        "kind": "RETURNS",
+        "to": "schema:Config"
+      },
+      {
+        "from": "operation:post:/discord",
+        "kind": "ACCEPTS",
+        "to": "schema:DiscordMessageRequest"
+      },
+      {
+        "from": "operation:post:/slack",
+        "kind": "ACCEPTS",
+        "to": "schema:SlackMessageRequest"
+      },
+      {
+        "from": "operation:post:/sns",
+        "kind": "ACCEPTS",
+        "to": "schema:SnsMessageRequest"
+      },
+      {
+        "from": "operation:post:/twilio",
+        "kind": "ACCEPTS",
+        "to": "schema:TwilioMessageRequest"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
       }
     ],
     "nodes": [
@@ -66,8 +96,27 @@
         "kind": "operation",
         "method": "get",
         "name": "config_config_get",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/config",
         "pointer": "#/paths/~1config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Config"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Config"
       },
@@ -77,10 +126,49 @@
         "kind": "operation",
         "method": "get",
         "name": "discord_get_discord_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "channel",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "base64_message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/discord",
         "pointer": "#/paths/~1discord/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Discord Get"
+        "summary": "Discord Get",
+        "tags": [
+          "discord"
+        ]
       },
       {
         "deprecated": false,
@@ -88,10 +176,38 @@
         "kind": "operation",
         "method": "post",
         "name": "discord_post_discord_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/discord",
         "pointer": "#/paths/~1discord/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DiscordMessageRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Discord Post"
+        "summary": "Discord Post",
+        "tags": [
+          "discord"
+        ]
       },
       {
         "deprecated": false,
@@ -99,10 +215,49 @@
         "kind": "operation",
         "method": "get",
         "name": "slack_get_slack_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "channel",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "base64_message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/slack",
         "pointer": "#/paths/~1slack/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Slack Get"
+        "summary": "Slack Get",
+        "tags": [
+          "slack"
+        ]
       },
       {
         "deprecated": false,
@@ -110,10 +265,38 @@
         "kind": "operation",
         "method": "post",
         "name": "slack_post_slack_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/slack",
         "pointer": "#/paths/~1slack/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SlackMessageRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Slack Post"
+        "summary": "Slack Post",
+        "tags": [
+          "slack"
+        ]
       },
       {
         "deprecated": false,
@@ -121,10 +304,43 @@
         "kind": "operation",
         "method": "get",
         "name": "sns_get_sns_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "base64_message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sns",
         "pointer": "#/paths/~1sns/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Sns Get"
+        "summary": "Sns Get",
+        "tags": [
+          "sns"
+        ]
       },
       {
         "deprecated": false,
@@ -132,10 +348,38 @@
         "kind": "operation",
         "method": "post",
         "name": "sns_post_sns_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sns",
         "pointer": "#/paths/~1sns/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SnsMessageRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Sns Post"
+        "summary": "Sns Post",
+        "tags": [
+          "sns"
+        ]
       },
       {
         "deprecated": false,
@@ -143,8 +387,44 @@
         "kind": "operation",
         "method": "get",
         "name": "topic_topic__topic_name__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "topic_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "base64_message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/topic/{topic_name}",
         "pointer": "#/paths/~1topic~1{topic_name}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Topic"
       },
@@ -154,10 +434,49 @@
         "kind": "operation",
         "method": "get",
         "name": "twilio_message_get_twilio_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "base64_message",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/twilio",
         "pointer": "#/paths/~1twilio/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Twilio Message Get"
+        "summary": "Twilio Message Get",
+        "tags": [
+          "twilio"
+        ]
       },
       {
         "deprecated": false,
@@ -165,45 +484,80 @@
         "kind": "operation",
         "method": "post",
         "name": "twilio_message_post_twilio_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/twilio",
         "pointer": "#/paths/~1twilio/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TwilioMessageRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Twilio Message Post"
+        "summary": "Twilio Message Post",
+        "tags": [
+          "twilio"
+        ]
       },
       {
         "id": "schema:Config",
         "kind": "schema",
-        "name": "Config"
+        "name": "Config",
+        "type": "object"
       },
       {
         "id": "schema:DiscordMessageRequest",
         "kind": "schema",
-        "name": "DiscordMessageRequest"
+        "name": "DiscordMessageRequest",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:SlackMessageRequest",
         "kind": "schema",
-        "name": "SlackMessageRequest"
+        "name": "SlackMessageRequest",
+        "type": "object"
       },
       {
         "id": "schema:SnsMessageRequest",
         "kind": "schema",
-        "name": "SnsMessageRequest"
+        "name": "SnsMessageRequest",
+        "type": "object"
       },
       {
         "id": "schema:TwilioMessageRequest",
         "kind": "schema",
-        "name": "TwilioMessageRequest"
+        "name": "TwilioMessageRequest",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       }
     ]
   },

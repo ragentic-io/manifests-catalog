@@ -13,6 +13,26 @@
         "from": "faceidentity-beta-azurewebsites-net-06d671ca37",
         "kind": "EXPOSES",
         "to": "operation:post:/authentication/customer/token"
+      },
+      {
+        "from": "operation:post:/authentication/customer/registration",
+        "kind": "ACCEPTS",
+        "to": "schema:Customer"
+      },
+      {
+        "from": "operation:post:/authentication/customer/registration",
+        "kind": "RETURNS",
+        "to": "schema:ResponseStatus"
+      },
+      {
+        "from": "operation:post:/authentication/customer/token",
+        "kind": "ACCEPTS",
+        "to": "schema:LoginUser"
+      },
+      {
+        "from": "operation:post:/authentication/customer/token",
+        "kind": "RETURNS",
+        "to": "schema:JwtResponse"
       }
     ],
     "nodes": [
@@ -28,8 +48,41 @@
         "name": "register",
         "path": "/authentication/customer/registration",
         "pointer": "#/paths/~1authentication~1customer~1registration/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Customer"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseStatus"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "Problem"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Customer Registration"
+        "summary": "Customer Registration",
+        "tags": [
+          "authentication-api-controller"
+        ]
       },
       {
         "deprecated": false,
@@ -39,38 +92,77 @@
         "name": "authenticateUser",
         "path": "/authentication/customer/token",
         "pointer": "#/paths/~1authentication~1customer~1token/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LoginUser"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "JwtResponse"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "400",
+            "type": "Problem"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get Token"
+        "summary": "Get Token",
+        "tags": [
+          "authentication-api-controller"
+        ]
       },
       {
         "id": "schema:Customer",
         "kind": "schema",
-        "name": "Customer"
+        "name": "Customer",
+        "type": "object"
       },
       {
         "id": "schema:JwtResponse",
         "kind": "schema",
-        "name": "JwtResponse"
+        "name": "JwtResponse",
+        "type": "object"
       },
       {
         "id": "schema:LoginUser",
         "kind": "schema",
-        "name": "LoginUser"
+        "name": "LoginUser",
+        "type": "object"
       },
       {
         "id": "schema:Problem",
         "kind": "schema",
-        "name": "Problem"
+        "name": "Problem",
+        "type": "object"
       },
       {
         "id": "schema:ResponseEntity",
         "kind": "schema",
-        "name": "ResponseEntity"
+        "name": "ResponseEntity",
+        "type": "object"
       },
       {
         "id": "schema:ResponseStatus",
         "kind": "schema",
-        "name": "ResponseStatus"
+        "name": "ResponseStatus",
+        "type": "object"
       }
     ]
   },

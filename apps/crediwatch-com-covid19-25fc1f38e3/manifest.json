@@ -28,6 +28,66 @@
         "from": "crediwatch-com-covid19-25fc1f38e3",
         "kind": "EXPOSES",
         "to": "operation:get:/api/v1/verify/sku"
+      },
+      {
+        "from": "operation:get:/api/v1/status/call",
+        "kind": "RETURNS",
+        "to": "schema:StatusCall"
+      },
+      {
+        "from": "operation:get:/api/v1/status/sku",
+        "kind": "RETURNS",
+        "to": "schema:StatusCall"
+      },
+      {
+        "from": "operation:get:/api/v1/verify/name",
+        "kind": "RETURNS",
+        "to": "schema:VerifyName"
+      },
+      {
+        "from": "operation:get:/api/v1/verify/phone",
+        "kind": "RETURNS",
+        "to": "schema:VerifyPhone"
+      },
+      {
+        "from": "operation:get:/api/v1/verify/sku",
+        "kind": "RETURNS",
+        "to": "schema:VerifyPhone"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:StatusCall",
+        "kind": "REFERENCES",
+        "to": "schema:GetStatus"
+      },
+      {
+        "from": "schema:StatusCall",
+        "kind": "REFERENCES",
+        "to": "schema:VerifyNameMeta"
+      },
+      {
+        "from": "schema:VerifyName",
+        "kind": "REFERENCES",
+        "to": "schema:VerifyNameData"
+      },
+      {
+        "from": "schema:VerifyName",
+        "kind": "REFERENCES",
+        "to": "schema:VerifyNameMeta"
+      },
+      {
+        "from": "schema:VerifyPhone",
+        "kind": "REFERENCES",
+        "to": "schema:PlaceCall"
+      },
+      {
+        "from": "schema:VerifyPhone",
+        "kind": "REFERENCES",
+        "to": "schema:VerifyNameMeta"
       }
     ],
     "nodes": [
@@ -41,8 +101,27 @@
         "kind": "operation",
         "method": "get",
         "name": "status_call_api_v1_status_call_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/status/call",
         "pointer": "#/paths/~1api~1v1~1status~1call/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StatusCall"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Status Call"
       },
@@ -52,8 +131,27 @@
         "kind": "operation",
         "method": "get",
         "name": "status_sku_api_v1_status_sku_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/status/sku",
         "pointer": "#/paths/~1api~1v1~1status~1sku/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StatusCall"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Status Sku"
       },
@@ -63,8 +161,39 @@
         "kind": "operation",
         "method": "get",
         "name": "verify_name_api_v1_verify_name_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "city",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/verify/name",
         "pointer": "#/paths/~1api~1v1~1verify~1name/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VerifyName"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Verify Name"
       },
@@ -74,8 +203,33 @@
         "kind": "operation",
         "method": "get",
         "name": "verify_business_api_v1_verify_phone_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 24,
+            "in": "query",
+            "name": "locking_period",
+            "required": false
+          }
+        ],
         "path": "/api/v1/verify/phone",
         "pointer": "#/paths/~1api~1v1~1verify~1phone/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VerifyPhone"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Verify Business"
       },
@@ -85,55 +239,89 @@
         "kind": "operation",
         "method": "get",
         "name": "verify_sku_api_v1_verify_sku_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 24,
+            "in": "query",
+            "name": "locking_period",
+            "required": false
+          }
+        ],
         "path": "/api/v1/verify/sku",
         "pointer": "#/paths/~1api~1v1~1verify~1sku/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VerifyPhone"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Verify Sku"
       },
       {
         "id": "schema:GetStatus",
         "kind": "schema",
-        "name": "GetStatus"
+        "name": "GetStatus",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:PlaceCall",
         "kind": "schema",
-        "name": "PlaceCall"
+        "name": "PlaceCall",
+        "type": "object"
       },
       {
         "id": "schema:StatusCall",
         "kind": "schema",
-        "name": "StatusCall"
+        "name": "StatusCall",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:VerifyName",
         "kind": "schema",
-        "name": "VerifyName"
+        "name": "VerifyName",
+        "type": "object"
       },
       {
         "id": "schema:VerifyNameData",
         "kind": "schema",
-        "name": "VerifyNameData"
+        "name": "VerifyNameData",
+        "type": "object"
       },
       {
         "id": "schema:VerifyNameMeta",
         "kind": "schema",
-        "name": "VerifyNameMeta"
+        "name": "VerifyNameMeta",
+        "type": "object"
       },
       {
         "id": "schema:VerifyPhone",
         "kind": "schema",
-        "name": "VerifyPhone"
+        "name": "VerifyPhone",
+        "type": "object"
       }
     ]
   },

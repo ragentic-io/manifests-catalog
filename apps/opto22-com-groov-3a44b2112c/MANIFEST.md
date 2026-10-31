@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_opto22_profile_imag
 
 | | |
 | --- | --- |
-| Signed bundle | `ee10d37839c490b82fa6fa8e836ee5e00b91e2f4c8c5ff947e77c181dbe4bbde` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_opto22_profile_imag
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/info` | groovInfo | — |
-| GET | `/v1/data-store/devices` | listDevices | — |
-| GET | `/v1/data-store/devices/{id}/tags` | listDeviceTags | — |
-| POST | `/v1/data-store/read` | batchReadTags | — |
-| GET | `/v1/data-store/read/{id}` | readTag | — |
-| GET | `/v1/data-store/tags` | listAllTags | — |
-| POST | `/v1/data-store/write/{id}` | writeTag | — |
-| GET | `/v1/logging/groovLogs.json` | downloadLogJson | — |
-| GET | `/v1/logging/groovLogs.txt` | downloadLogText | — |
-| GET | `/whoami` | whoAmI | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/info` | groovInfo | — | groovInfo | yes | — |
+| GET | `/v1/data-store/devices` | listDevices | — | dataStoreDevice[] | yes | — |
+| GET | `/v1/data-store/devices/{id}/tags` | listDeviceTags | `id`* | tagDefinition[] | yes | — |
+| POST | `/v1/data-store/read` | batchReadTags | body*: tagReference[] | tagValue[] |  | — |
+| GET | `/v1/data-store/read/{id}` | readTag | `id`*, `index`, `count` | tagValue | yes | — |
+| GET | `/v1/data-store/tags` | listAllTags | — | tagDefinition[] | yes | — |
+| POST | `/v1/data-store/write/{id}` | writeTag | `id`*, `value`*, `index` | tagValue |  | — |
+| GET | `/v1/logging/groovLogs.json` | downloadLogJson | `minimum-log-level`, `last-timestamp`, `filter` | string:binary | yes | — |
+| GET | `/v1/logging/groovLogs.txt` | downloadLogText | `minimum-log-level`, `last-timestamp`, `filter` | string:binary | yes | — |
+| GET | `/whoami` | whoAmI | — | User | yes | — |

@@ -28,6 +28,21 @@
         "from": "nrm-se-georg-9ff5845303",
         "kind": "EXPOSES",
         "to": "operation:post:/upload"
+      },
+      {
+        "from": "operation:post:/upload",
+        "kind": "ACCEPTS",
+        "to": "schema:MultipartFormDataInput"
+      },
+      {
+        "from": "schema:InputPart",
+        "kind": "REFERENCES",
+        "to": "schema:MediaType"
+      },
+      {
+        "from": "schema:MultipartFormDataInput",
+        "kind": "REFERENCES",
+        "to": "schema:InputPart"
       }
     ],
     "nodes": [
@@ -37,73 +52,231 @@
       },
       {
         "deprecated": false,
+        "description": "Return search results in json",
         "id": "operation:get:/autocomplete",
         "kind": "operation",
         "method": "get",
         "name": "autoComplete",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sources",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "layers",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "countryCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/autocomplete",
         "pointer": "#/paths/~1autocomplete/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search"
+        "summary": "Search",
+        "tags": [
+          "georg"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return search results in json",
         "id": "operation:get:/coordinates",
         "kind": "operation",
         "method": "get",
         "name": "searchCoordinates",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "coordinates",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/coordinates",
         "pointer": "#/paths/~1coordinates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search coordinates in different formate"
+        "summary": "Search coordinates in different formate",
+        "tags": [
+          "georg"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return search results in json",
         "id": "operation:get:/reverse",
         "kind": "operation",
         "method": "get",
         "name": "getReverseGeoCode",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "lat",
+            "required": false,
+            "type": "number:double"
+          },
+          {
+            "in": "query",
+            "name": "lng",
+            "required": false,
+            "type": "number:double"
+          }
+        ],
         "path": "/reverse",
         "pointer": "#/paths/~1reverse/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get reverse geocoding"
+        "summary": "Get reverse geocoding",
+        "tags": [
+          "georg"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return search results in json",
         "id": "operation:get:/search",
         "kind": "operation",
         "method": "get",
         "name": "search",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "sources",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "layers",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "countryCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get geocoding"
+        "summary": "Get geocoding",
+        "tags": [
+          "georg"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Upload csv file with minimum two columns (Id, SourceLocality).",
         "id": "operation:post:/upload",
         "kind": "operation",
         "method": "post",
         "name": "uploadFile",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/upload",
         "pointer": "#/paths/~1upload/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "MultipartFormDataInput"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Batch upload"
+        "summary": "Batch upload",
+        "tags": [
+          "georg"
+        ]
       },
       {
         "id": "schema:InputPart",
         "kind": "schema",
-        "name": "InputPart"
+        "name": "InputPart",
+        "type": "object"
       },
       {
         "id": "schema:MediaType",
         "kind": "schema",
-        "name": "MediaType"
+        "name": "MediaType",
+        "type": "object"
       },
       {
         "id": "schema:MultipartFormDataInput",
         "kind": "schema",
-        "name": "MultipartFormDataInput"
+        "name": "MultipartFormDataInput",
+        "type": "object"
       }
     ]
   },

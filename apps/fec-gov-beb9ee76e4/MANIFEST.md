@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_FEC_profile_image.p
 
 | | |
 | --- | --- |
-| Signed bundle | `7cb2ed5ef2093ae6a38c72e2050f4c8de9a6e5028c5be3496286f89d710f6002` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,96 +34,98 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_FEC_profile_image.p
 
 170 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/audit-case/` | get /audit-case/ | — |
-| GET | `/audit-category/` | get /audit-category/ | — |
-| GET | `/audit-primary-category/` | get /audit-primary-category/ | — |
-| GET | `/calendar-dates/` | get /calendar-dates/ | — |
-| GET | `/calendar-dates/export/` | get /calendar-dates/export/ | — |
-| GET | `/candidate/{candidate_id}/` | get /candidate/{candidate_id}/ | — |
-| GET | `/candidate/{candidate_id}/committees/` | get /candidate/{candidate_id}/committees/ | — |
-| GET | `/candidate/{candidate_id}/committees/history/` | get /candidate/{candidate_id}/committees/history/ | — |
-| GET | `/candidate/{candidate_id}/committees/history/{cycle}/` | get /candidate/{candidate_id}/committees/history/{cycle}/ | — |
-| GET | `/candidate/{candidate_id}/filings/` | get /candidate/{candidate_id}/filings/ | — |
-| GET | `/candidate/{candidate_id}/history/` | get /candidate/{candidate_id}/history/ | — |
-| GET | `/candidate/{candidate_id}/history/{cycle}/` | get /candidate/{candidate_id}/history/{cycle}/ | — |
-| GET | `/candidate/{candidate_id}/totals/` | get /candidate/{candidate_id}/totals/ | — |
-| GET | `/candidates/` | get /candidates/ | — |
-| GET | `/candidates/search/` | get /candidates/search/ | — |
-| GET | `/candidates/totals/` | get /candidates/totals/ | — |
-| GET | `/candidates/totals/aggregates/` | get /candidates/totals/aggregates/ | — |
-| GET | `/candidates/totals/by_office/` | get /candidates/totals/by_office/ | — |
-| GET | `/candidates/totals/by_office/by_party/` | get /candidates/totals/by_office/by_party/ | — |
-| GET | `/committee/{committee_id}/` | get /committee/{committee_id}/ | — |
-| GET | `/committee/{committee_id}/candidates/` | get /committee/{committee_id}/candidates/ | — |
-| GET | `/committee/{committee_id}/candidates/history/` | get /committee/{committee_id}/candidates/history/ | — |
-| GET | `/committee/{committee_id}/candidates/history/{cycle}/` | get /committee/{committee_id}/candidates/history/{cycle}/ | — |
-| GET | `/committee/{committee_id}/filings/` | get /committee/{committee_id}/filings/ | — |
-| GET | `/committee/{committee_id}/history/` | get /committee/{committee_id}/history/ | — |
-| GET | `/committee/{committee_id}/history/{cycle}/` | get /committee/{committee_id}/history/{cycle}/ | — |
-| GET | `/committee/{committee_id}/reports/` | get /committee/{committee_id}/reports/ | — |
-| GET | `/committee/{committee_id}/totals/` | get /committee/{committee_id}/totals/ | — |
-| GET | `/committees/` | get /committees/ | — |
-| GET | `/communication_costs/` | get /communication_costs/ | — |
-| GET | `/communication_costs/aggregates/` | get /communication_costs/aggregates/ | — |
-| GET | `/communication_costs/by_candidate/` | get /communication_costs/by_candidate/ | — |
-| GET | `/communication_costs/totals/by_candidate/` | get /communication_costs/totals/by_candidate/ | — |
-| GET | `/efile/filings/` | get /efile/filings/ | — |
-| GET | `/efile/reports/house-senate/` | get /efile/reports/house-senate/ | — |
-| GET | `/efile/reports/pac-party/` | get /efile/reports/pac-party/ | — |
-| GET | `/efile/reports/presidential/` | get /efile/reports/presidential/ | — |
-| GET | `/election-dates/` | get /election-dates/ | — |
-| GET | `/electioneering/` | get /electioneering/ | — |
-| GET | `/electioneering/aggregates/` | get /electioneering/aggregates/ | — |
-| GET | `/electioneering/by_candidate/` | get /electioneering/by_candidate/ | — |
-| GET | `/electioneering/totals/by_candidate/` | get /electioneering/totals/by_candidate/ | — |
-| GET | `/elections/` | get /elections/ | — |
-| GET | `/elections/search/` | get /elections/search/ | — |
-| GET | `/elections/summary/` | get /elections/summary/ | — |
-| GET | `/filings/` | get /filings/ | — |
-| GET | `/legal/search/` | get /legal/search/ | — |
-| GET | `/names/audit_candidates/` | get /names/audit_candidates/ | — |
-| GET | `/names/audit_committees/` | get /names/audit_committees/ | — |
-| GET | `/names/candidates/` | get /names/candidates/ | — |
-| GET | `/names/committees/` | get /names/committees/ | — |
-| GET | `/operations-log/` | get /operations-log/ | — |
-| GET | `/presidential/contributions/by_candidate/` | get /presidential/contributions/by_candidate/ | — |
-| GET | `/presidential/contributions/by_size/` | get /presidential/contributions/by_size/ | — |
-| GET | `/presidential/contributions/by_state/` | get /presidential/contributions/by_state/ | — |
-| GET | `/presidential/coverage_end_date/` | get /presidential/coverage_end_date/ | — |
-| GET | `/presidential/financial_summary/` | get /presidential/financial_summary/ | — |
-| GET | `/rad-analyst/` | get /rad-analyst/ | — |
-| GET | `/reporting-dates/` | get /reporting-dates/ | — |
-| GET | `/reports/{entity_type}/` | get /reports/{entity_type}/ | — |
-| GET | `/schedules/schedule_a/` | get /schedules/schedule_a/ | — |
-| GET | `/schedules/schedule_a/by_employer/` | get /schedules/schedule_a/by_employer/ | — |
-| GET | `/schedules/schedule_a/by_occupation/` | get /schedules/schedule_a/by_occupation/ | — |
-| GET | `/schedules/schedule_a/by_size/` | get /schedules/schedule_a/by_size/ | — |
-| GET | `/schedules/schedule_a/by_size/by_candidate/` | get /schedules/schedule_a/by_size/by_candidate/ | — |
-| GET | `/schedules/schedule_a/by_state/` | get /schedules/schedule_a/by_state/ | — |
-| GET | `/schedules/schedule_a/by_state/by_candidate/` | get /schedules/schedule_a/by_state/by_candidate/ | — |
-| GET | `/schedules/schedule_a/by_state/by_candidate/totals/` | get /schedules/schedule_a/by_state/by_candidate/totals/ | — |
-| GET | `/schedules/schedule_a/by_state/totals/` | get /schedules/schedule_a/by_state/totals/ | — |
-| GET | `/schedules/schedule_a/by_zip/` | get /schedules/schedule_a/by_zip/ | — |
-| GET | `/schedules/schedule_a/efile/` | get /schedules/schedule_a/efile/ | — |
-| GET | `/schedules/schedule_a/{sub_id}/` | get /schedules/schedule_a/{sub_id}/ | — |
-| GET | `/schedules/schedule_b/` | get /schedules/schedule_b/ | — |
-| GET | `/schedules/schedule_b/by_purpose/` | get /schedules/schedule_b/by_purpose/ | — |
-| GET | `/schedules/schedule_b/by_recipient/` | get /schedules/schedule_b/by_recipient/ | — |
-| GET | `/schedules/schedule_b/by_recipient_id/` | get /schedules/schedule_b/by_recipient_id/ | — |
-| GET | `/schedules/schedule_b/efile/` | get /schedules/schedule_b/efile/ | — |
-| GET | `/schedules/schedule_b/{sub_id}/` | get /schedules/schedule_b/{sub_id}/ | — |
-| GET | `/schedules/schedule_c/` | get /schedules/schedule_c/ | — |
-| GET | `/schedules/schedule_c/{sub_id}/` | get /schedules/schedule_c/{sub_id}/ | — |
-| GET | `/schedules/schedule_d/` | get /schedules/schedule_d/ | — |
-| GET | `/schedules/schedule_d/{sub_id}/` | get /schedules/schedule_d/{sub_id}/ | — |
-| GET | `/schedules/schedule_e/` | get /schedules/schedule_e/ | — |
-| GET | `/schedules/schedule_e/by_candidate/` | get /schedules/schedule_e/by_candidate/ | — |
-| GET | `/schedules/schedule_e/efile/` | get /schedules/schedule_e/efile/ | — |
-| GET | `/schedules/schedule_e/totals/by_candidate/` | get /schedules/schedule_e/totals/by_candidate/ | — |
-| GET | `/schedules/schedule_f/` | get /schedules/schedule_f/ | — |
-| GET | `/schedules/schedule_f/{sub_id}/` | get /schedules/schedule_f/{sub_id}/ | — |
-| GET | `/state-election-office/` | get /state-election-office/ | — |
-| GET | `/totals/by_entity/` | get /totals/by_entity/ | — |
-| GET | `/totals/{entity_type}/` | get /totals/{entity_type}/ | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/audit-case/` | get /audit-case/ | `audit_case_id`, `cycle`, `sub_category_id`, `sort_nulls_last`, `sort_hide_null`, `min_election_cycle`, `audit_id`, `q`, `per_page`, `max_election_cycle`, `candidate_id`, `committee_type`, `qq`, `page`, `committee_id`, `api_key`*, `committee_designation`, `primary_category_id`, `sort_null_only`, `sort` | — | yes | — |
+| GET | `/audit-category/` | get /audit-category/ | `sort_nulls_last`, `page`, `primary_category_name`, `sort_hide_null`, `api_key`*, `primary_category_id`, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/audit-primary-category/` | get /audit-primary-category/ | `sort_nulls_last`, `page`, `primary_category_name`, `sort_hide_null`, `api_key`*, `primary_category_id`, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/calendar-dates/` | get /calendar-dates/ | `sort_nulls_last`, `page`, `min_start_date`, `calendar_category_id`, `sort_hide_null`, `api_key`*, `min_end_date`, `event_id`, `sort_null_only`, `per_page`, `description`, `sort`, `max_end_date`, `summary`, `max_start_date` | — | yes | — |
+| GET | `/calendar-dates/export/` | get /calendar-dates/export/ | `renderer`, `sort_nulls_last`, `page`, `min_start_date`, `calendar_category_id`, `sort_hide_null`, `api_key`*, `min_end_date`, `event_id`, `sort_null_only`, `per_page`, `description`, `sort`, `max_end_date`, `summary`, `max_start_date` | — | yes | — |
+| GET | `/candidate/{candidate_id}/` | get /candidate/{candidate_id}/ | `office`, `candidate_status`, `cycle`, `sort_nulls_last`, `state`, `district`, `year`, `name`, `sort_hide_null`, `federal_funds_flag`, `per_page`, `page`, `sort`, `has_raised_funds`, `election_year`, `api_key`*, `sort_null_only`, `incumbent_challenge`, `party`, `candidate_id`* | — | yes | — |
+| GET | `/candidate/{candidate_id}/committees/` | get /candidate/{candidate_id}/committees/ | `designation`, `committee_type`, `page`, `filing_frequency`, `cycle`, `sort_hide_null`, `year`, `sort_nulls_last`, `api_key`*, `sort_null_only`, `per_page`, `organization_type`, `sort`, `candidate_id`* | — | yes | — |
+| GET | `/candidate/{candidate_id}/committees/history/` | get /candidate/{candidate_id}/committees/history/ | `designation`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort`, `candidate_id`* | — | yes | — |
+| GET | `/candidate/{candidate_id}/committees/history/{cycle}/` | get /candidate/{candidate_id}/committees/history/{cycle}/ | `designation`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort`, `candidate_id`*, `cycle`* | — | yes | — |
+| GET | `/candidate/{candidate_id}/filings/` | get /candidate/{candidate_id}/filings/ | `office`, `file_number`, `form_category`, `cycle`, `district`, `document_type`, `sort_hide_null`, `state`, `amendment_indicator`, `sort_nulls_last`, `is_amended`, `filer_type`, `max_receipt_date`, `per_page`, `primary_general_indicator`, `request_type`, `report_year`, `form_type`, `committee_type`, `beginning_image_number`, `page`, `sort`, `api_key`*, `min_receipt_date`, `sort_null_only`, `q_filer`, `report_type`, `party`, `most_recent`, `candidate_id`* | — | yes | — |
+| GET | `/candidate/{candidate_id}/history/` | get /candidate/{candidate_id}/history/ | `api_key`*, `sort_nulls_last`, `per_page`, `sort_null_only`, `sort_hide_null`, `sort`, `election_full`, `page`, `candidate_id`* | — | yes | — |
+| GET | `/candidate/{candidate_id}/history/{cycle}/` | get /candidate/{candidate_id}/history/{cycle}/ | `api_key`*, `sort_nulls_last`, `per_page`, `sort_null_only`, `sort_hide_null`, `sort`, `election_full`, `page`, `candidate_id`*, `cycle`* | — | yes | — |
+| GET | `/candidate/{candidate_id}/totals/` | get /candidate/{candidate_id}/totals/ | `sort_nulls_last`, `cycle`, `page`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort`, `candidate_id`* | — | yes | — |
+| GET | `/candidates/` | get /candidates/ | `office`, `candidate_status`, `cycle`, `district`, `sort_nulls_last`, `sort_hide_null`, `year`, `state`, `name`, `is_active_candidate`, `q`, `federal_funds_flag`, `per_page`, `candidate_id`, `min_first_file_date`, `page`, `sort`, `has_raised_funds`, `election_year`, `api_key`*, `incumbent_challenge`, `sort_null_only`, `max_first_file_date`, `party` | — | yes | — |
+| GET | `/candidates/search/` | get /candidates/search/ | `office`, `candidate_status`, `cycle`, `district`, `sort_nulls_last`, `sort_hide_null`, `year`, `state`, `name`, `is_active_candidate`, `q`, `federal_funds_flag`, `per_page`, `candidate_id`, `min_first_file_date`, `page`, `sort`, `has_raised_funds`, `election_year`, `api_key`*, `incumbent_challenge`, `sort_null_only`, `max_first_file_date`, `party` | — | yes | — |
+| GET | `/candidates/totals/` | get /candidates/totals/ | `office`, `min_receipts`, `cycle`, `district`, `max_receipts`, `sort_hide_null`, `state`, `max_debts_owed_by_committee`, `sort_nulls_last`, `min_debts_owed_by_committee`, `is_active_candidate`, `q`, `federal_funds_flag`, `per_page`, `max_cash_on_hand_end_period`, `max_disbursements`, `candidate_id`, `page`, `has_raised_funds`, `election_full`, `election_year`, `api_key`*, `sort_null_only`, `min_cash_on_hand_end_period`, `sort`, `party`, `min_disbursements` | — | yes | — |
+| GET | `/candidates/totals/aggregates/` | get /candidates/totals/aggregates/ | `office`, `sort_nulls_last`, `district`, `state`, `min_election_cycle`, `sort_hide_null`, `is_active_candidate`, `per_page`, `max_election_cycle`, `aggregate_by`, `page`, `election_year`, `election_full`, `api_key`*, `sort_null_only`, `sort`, `party` | — | yes | — |
+| GET | `/candidates/totals/by_office/` | get /candidates/totals/by_office/ | `office`, `sort_nulls_last`, `page`, `min_election_cycle`, `sort_hide_null`, `election_year`, `election_full`, `api_key`*, `is_active_candidate`, `sort_null_only`, `per_page`, `max_election_cycle`, `sort` | — | yes | — |
+| GET | `/candidates/totals/by_office/by_party/` | get /candidates/totals/by_office/by_party/ | `office`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_year`, `election_full`, `api_key`*, `is_active_candidate`, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/committee/{committee_id}/` | get /committee/{committee_id}/ | `designation`, `committee_type`, `page`, `filing_frequency`, `cycle`, `sort_hide_null`, `year`, `sort_nulls_last`, `api_key`*, `sort_null_only`, `per_page`, `organization_type`, `sort`, `committee_id`* | — | yes | — |
+| GET | `/committee/{committee_id}/candidates/` | get /committee/{committee_id}/candidates/ | `office`, `candidate_status`, `cycle`, `sort_nulls_last`, `state`, `district`, `year`, `name`, `sort_hide_null`, `federal_funds_flag`, `per_page`, `page`, `sort`, `has_raised_funds`, `election_year`, `api_key`*, `sort_null_only`, `incumbent_challenge`, `party`, `committee_id`* | — | yes | — |
+| GET | `/committee/{committee_id}/candidates/history/` | get /committee/{committee_id}/candidates/history/ | `api_key`*, `sort_nulls_last`, `per_page`, `sort_null_only`, `sort_hide_null`, `sort`, `election_full`, `page`, `committee_id`* | — | yes | — |
+| GET | `/committee/{committee_id}/candidates/history/{cycle}/` | get /committee/{committee_id}/candidates/history/{cycle}/ | `api_key`*, `sort_nulls_last`, `per_page`, `sort_null_only`, `sort_hide_null`, `sort`, `election_full`, `page`, `committee_id`*, `cycle`* | — | yes | — |
+| GET | `/committee/{committee_id}/filings/` | get /committee/{committee_id}/filings/ | `office`, `file_number`, `form_category`, `cycle`, `district`, `document_type`, `sort_hide_null`, `state`, `amendment_indicator`, `sort_nulls_last`, `is_amended`, `filer_type`, `max_receipt_date`, `per_page`, `primary_general_indicator`, `request_type`, `report_year`, `form_type`, `committee_type`, `beginning_image_number`, `page`, `sort`, `api_key`*, `min_receipt_date`, `sort_null_only`, `q_filer`, `report_type`, `party`, `most_recent`, `committee_id`* | — | yes | — |
+| GET | `/committee/{committee_id}/history/` | get /committee/{committee_id}/history/ | `designation`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort`, `committee_id`* | — | yes | — |
+| GET | `/committee/{committee_id}/history/{cycle}/` | get /committee/{committee_id}/history/{cycle}/ | `designation`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort`, `committee_id`*, `cycle`* | — | yes | — |
+| GET | `/committee/{committee_id}/reports/` | get /committee/{committee_id}/reports/ | `min_debts_owed_amount`, `max_disbursements_amount`, `max_total_contributions`, `max_debts_owed_expenditures`, `cycle`, `sort_nulls_last`, `sort_hide_null`, `year`, `max_receipts_amount`, `max_cash_on_hand_end_period_amount`, `is_amended`, `min_disbursements_amount`, `max_party_coordinated_expenditures`, `per_page`, `max_independent_expenditures`, `min_receipts_amount`, `min_party_coordinated_expenditures`, `candidate_id`, `beginning_image_number`, `page`, `type`, `sort`, `min_total_contributions`, `api_key`*, `min_cash_on_hand_end_period_amount`, `sort_null_only`, `min_independent_expenditures`, `report_type`, `committee_id`* | — | yes | — |
+| GET | `/committee/{committee_id}/totals/` | get /committee/{committee_id}/totals/ | `cycle`, `sort_nulls_last`, `per_page`, `sort_null_only`, `sort_hide_null`, `sort`, `api_key`*, `page`, `committee_id`* | — | yes | — |
+| GET | `/committees/` | get /committees/ | `designation`, `max_first_f1_date`, `min_first_f1_date`, `cycle`, `filing_frequency`, `sort_nulls_last`, `sort_hide_null`, `year`, `state`, `sponsor_candidate_id`, `q`, `per_page`, `min_last_f1_date`, `candidate_id`, `committee_type`, `min_first_file_date`, `page`, `sort`, `committee_id`, `api_key`*, `sort_null_only`, `max_last_f1_date`, `treasurer_name`, `organization_type`, `max_first_file_date`, `party` | — | yes | — |
+| GET | `/communication_costs/` | get /communication_costs/ | `max_amount`, `max_image_number`, `sort_nulls_last`, `support_oppose_indicator`, `sort_hide_null`, `line_number`, `per_page`, `candidate_id`, `page`, `min_date`, `committee_id`, `api_key`*, `min_amount`, `min_image_number`, `sort_null_only`, `image_number`, `sort`, `max_date` | — | yes | — |
+| GET | `/communication_costs/aggregates/` | get /communication_costs/aggregates/ | `candidate_id`, `page`, `cycle`, `support_oppose_indicator`, `sort_hide_null`, `sort_nulls_last`, `committee_id`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/communication_costs/by_candidate/` | get /communication_costs/by_candidate/ | `office`, `candidate_id`, `cycle`, `district`, `state`, `page`, `support_oppose`, `election_full`, `sort_hide_null`, `sort_nulls_last`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/communication_costs/totals/by_candidate/` | get /communication_costs/totals/by_candidate/ | `candidate_id`, `sort_nulls_last`, `page`, `cycle`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/efile/filings/` | get /efile/filings/ | `file_number`, `sort_nulls_last`, `page`, `per_page`, `sort_hide_null`, `committee_id`, `api_key`*, `min_receipt_date`, `max_receipt_date`, `q_filer`, `sort_null_only`, `sort` | — | yes | — |
+| GET | `/efile/reports/house-senate/` | get /efile/reports/house-senate/ | `file_number`, `sort_nulls_last`, `page`, `per_page`, `sort_hide_null`, `committee_id`, `api_key`*, `min_receipt_date`, `max_receipt_date`, `q_filer`, `sort_null_only`, `sort` | — | yes | — |
+| GET | `/efile/reports/pac-party/` | get /efile/reports/pac-party/ | `file_number`, `sort_nulls_last`, `page`, `per_page`, `sort_hide_null`, `committee_id`, `api_key`*, `min_receipt_date`, `max_receipt_date`, `q_filer`, `sort_null_only`, `sort` | — | yes | — |
+| GET | `/efile/reports/presidential/` | get /efile/reports/presidential/ | `file_number`, `sort_nulls_last`, `page`, `per_page`, `sort_hide_null`, `committee_id`, `api_key`*, `min_receipt_date`, `max_receipt_date`, `q_filer`, `sort_null_only`, `sort` | — | yes | — |
+| GET | `/election-dates/` | get /election-dates/ | `max_update_date`, `sort_nulls_last`, `sort_hide_null`, `max_primary_general_date`, `min_update_date`, `max_create_date`, `per_page`, `min_election_date`, `election_party`, `election_type_id`, `page`, `min_create_date`, `min_primary_general_date`, `election_year`, `api_key`*, `election_district`, `office_sought`, `sort_null_only`, `max_election_date`, `sort`, `election_state` | — | yes | — |
+| GET | `/electioneering/` | get /electioneering/ | `candidate_id`, `max_amount`, `sort_nulls_last`, `page`, `sort_hide_null`, `committee_id`, `min_date`, `api_key`*, `min_amount`, `per_page`, `sort_null_only`, `description`, `sort`, `report_year`, `last_index`, `max_date` | — | yes | — |
+| GET | `/electioneering/aggregates/` | get /electioneering/aggregates/ | `candidate_id`, `sort_nulls_last`, `page`, `cycle`, `sort_hide_null`, `committee_id`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/electioneering/by_candidate/` | get /electioneering/by_candidate/ | `office`, `candidate_id`, `cycle`, `district`, `state`, `page`, `sort_hide_null`, `election_full`, `sort_nulls_last`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/electioneering/totals/by_candidate/` | get /electioneering/totals/by_candidate/ | `candidate_id`, `sort_nulls_last`, `page`, `cycle`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/elections/` | get /elections/ | `office`*, `page`, `district`, `state`, `cycle`*, `sort_hide_null`, `election_full`, `sort_nulls_last`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/elections/search/` | get /elections/search/ | `office`, `cycle`, `district`, `zip`, `state`, `sort_hide_null`, `sort_nulls_last`, `page`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/elections/summary/` | get /elections/summary/ | `office`*, `cycle`*, `district`, `state`, `api_key`*, `election_full` | — | yes | — |
+| GET | `/filings/` | get /filings/ | `office`, `file_number`, `form_category`, `cycle`, `district`, `document_type`, `sort_hide_null`, `state`, `amendment_indicator`, `sort_nulls_last`, `is_amended`, `filer_type`, `max_receipt_date`, `per_page`, `primary_general_indicator`, `request_type`, `report_year`, `form_type`, `candidate_id`, `committee_type`, `beginning_image_number`, `page`, `sort`, `committee_id`, `api_key`*, `min_receipt_date`, `sort_null_only`, `q_filer`, `report_type`, `party`, `most_recent` | — | yes | — |
+| GET | `/legal/search/` | get /legal/search/ | `hits_returned`, `af_report_year`, `case_max_open_date`, `ao_max_issue_date`, `case_statutory_citation`, `case_respondents`, `q`, `ao_min_issue_date`, `af_max_fd_date`, `from_hit`, `af_fd_fine_amount`, `type`, `api_key`*, `af_name`, `ao_requestor_type`, `ao_statutory_citation`, `ao_entity_name`, `mur_type`, `ao_regulatory_citation`, `af_committee_id`, `ao_requestor`, `case_citation_require_all`, `af_min_fd_date`, `ao_is_pending`, `af_rtb_fine_amount`, `case_election_cycles`, `ao_category`, `ao_citation_require_all`, `case_dispositions`, `af_max_rtb_date`, `case_min_open_date`, `case_max_close_date`, `ao_min_request_date`, `ao_status`, `case_doc_category_id`, `af_min_rtb_date`, `ao_name`, `case_regulatory_citation`, `ao_no`, `case_min_close_date`, `sort`, `ao_max_request_date`, `case_no` | — | yes | — |
+| GET | `/names/audit_candidates/` | get /names/audit_candidates/ | `api_key`*, `q`* | — | yes | — |
+| GET | `/names/audit_committees/` | get /names/audit_committees/ | `api_key`*, `q`* | — | yes | — |
+| GET | `/names/candidates/` | get /names/candidates/ | `api_key`*, `q`* | — | yes | — |
+| GET | `/names/committees/` | get /names/committees/ | `api_key`*, `q`* | — | yes | — |
+| GET | `/operations-log/` | get /operations-log/ | `max_coverage_end_date`, `sort_nulls_last`, `amendment_indicator`, `sort_hide_null`, `max_receipt_date`, `per_page`, `min_transaction_data_complete_date`, `form_type`, `max_transaction_data_complete_date`, `beginning_image_number`, `page`, `min_coverage_end_date`, `sort`, `api_key`*, `min_receipt_date`, `sort_null_only`, `candidate_committee_id`, `report_type`, `report_year`, `status_num` | — | yes | — |
+| GET | `/presidential/contributions/by_candidate/` | get /presidential/contributions/by_candidate/ | `contributor_state`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_year`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/presidential/contributions/by_size/` | get /presidential/contributions/by_size/ | `candidate_id`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_year`, `api_key`*, `size`, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/presidential/contributions/by_state/` | get /presidential/contributions/by_state/ | `candidate_id`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_year`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/presidential/coverage_end_date/` | get /presidential/coverage_end_date/ | `candidate_id`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_year`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/presidential/financial_summary/` | get /presidential/financial_summary/ | `candidate_id`, `sort_nulls_last`, `page`, `sort_hide_null`, `election_year`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/rad-analyst/` | get /rad-analyst/ | `min_assignment_update_date`, `max_assignment_update_date`, `analyst_short_id`, `email`, `page`, `sort_nulls_last`, `title`, `sort_hide_null`, `committee_id`, `name`, `telephone_ext`, `api_key`*, `analyst_id`, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/reporting-dates/` | get /reporting-dates/ | `max_update_date`, `page`, `max_due_date`, `min_create_date`, `min_due_date`, `sort_hide_null`, `sort_nulls_last`, `api_key`*, `min_update_date`, `max_create_date`, `per_page`, `sort_null_only`, `sort`, `report_year`, `report_type` | — | yes | — |
+| GET | `/reports/{entity_type}/` | get /reports/{entity_type}/ | `min_debts_owed_amount`, `max_debts_owed_expenditures`, `sort_hide_null`, `year`, `max_cash_on_hand_end_period_amount`, `filer_type`, `max_party_coordinated_expenditures`, `q_spender`, `max_receipt_date`, `per_page`, `max_independent_expenditures`, `min_party_coordinated_expenditures`, `committee_type`, `page`, `min_total_contributions`, `api_key`*, `min_cash_on_hand_end_period_amount`, `min_receipt_date`, `sort_null_only`, `min_independent_expenditures`, `q_filer`, `max_disbursements_amount`, `max_total_contributions`, `cycle`, `amendment_indicator`, `sort_nulls_last`, `max_receipts_amount`, `is_amended`, `min_disbursements_amount`, `min_receipts_amount`, `candidate_id`, `beginning_image_number`, `sort`, `committee_id`, `report_type`, `most_recent`, `entity_type`* | — | yes | — |
+| GET | `/schedules/schedule_a/` | get /schedules/schedule_a/ | `max_load_date`, `max_amount`, `max_image_number`, `contributor_occupation`, `recipient_committee_designation`, `sort_hide_null`, `is_individual`, `line_number`, `contributor_type`, `recipient_committee_type`, `per_page`, `contributor_zip`, `contributor_city`, `last_index`, `last_contribution_receipt_amount`, `contributor_id`, `recipient_committee_org_type`, `contributor_state`, `sort`, `two_year_transaction_period`, `min_date`, `committee_id`, `contributor_employer`, `min_load_date`, `api_key`*, `last_contribution_receipt_date`, `min_image_number`, `contributor_name`, `sort_null_only`, `image_number`, `min_amount`, `max_date` | — | yes | — |
+| GET | `/schedules/schedule_a/by_employer/` | get /schedules/schedule_a/by_employer/ | `employer`, `page`, `sort_nulls_last`, `cycle`, `sort_hide_null`, `committee_id`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_a/by_occupation/` | get /schedules/schedule_a/by_occupation/ | `occupation`, `page`, `sort_nulls_last`, `cycle`, `sort_hide_null`, `committee_id`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_a/by_size/` | get /schedules/schedule_a/by_size/ | `sort_nulls_last`, `page`, `cycle`, `sort_hide_null`, `committee_id`, `api_key`*, `size`, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_a/by_size/by_candidate/` | get /schedules/schedule_a/by_size/by_candidate/ | `candidate_id`*, `sort_nulls_last`, `cycle`*, `page`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_a/by_state/` | get /schedules/schedule_a/by_state/ | `hide_null`, `page`, `cycle`, `state`, `sort_hide_null`, `sort_nulls_last`, `committee_id`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_a/by_state/by_candidate/` | get /schedules/schedule_a/by_state/by_candidate/ | `candidate_id`*, `sort_nulls_last`, `cycle`*, `page`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_a/by_state/by_candidate/totals/` | get /schedules/schedule_a/by_state/by_candidate/totals/ | `candidate_id`*, `sort_nulls_last`, `cycle`*, `page`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_a/by_state/totals/` | get /schedules/schedule_a/by_state/totals/ | `committee_type`, `cycle`, `page`, `state`, `sort_hide_null`, `sort_nulls_last`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_a/by_zip/` | get /schedules/schedule_a/by_zip/ | `page`, `cycle`, `zip`, `sort_hide_null`, `state`, `committee_id`, `sort_nulls_last`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_a/efile/` | get /schedules/schedule_a/efile/ | `max_amount`, `contributor_occupation`, `max_image_number`, `sort_nulls_last`, `sort_hide_null`, `line_number`, `per_page`, `contributor_city`, `contributor_state`, `page`, `sort`, `committee_id`, `min_date`, `contributor_employer`, `api_key`*, `contributor_name`, `min_image_number`, `sort_null_only`, `image_number`, `min_amount`, `max_date` | — | yes | — |
+| GET | `/schedules/schedule_a/{sub_id}/` | get /schedules/schedule_a/{sub_id}/ | `max_load_date`, `max_amount`, `max_image_number`, `contributor_occupation`, `recipient_committee_designation`, `sort_hide_null`, `is_individual`, `line_number`, `contributor_type`, `recipient_committee_type`, `per_page`, `contributor_zip`, `contributor_city`, `last_index`, `last_contribution_receipt_amount`, `contributor_id`, `recipient_committee_org_type`, `contributor_state`, `sort`, `two_year_transaction_period`, `min_date`, `committee_id`, `contributor_employer`, `min_load_date`, `api_key`*, `last_contribution_receipt_date`, `min_image_number`, `contributor_name`, `sort_null_only`, `image_number`, `min_amount`, `max_date`, `sub_id`* | — | yes | — |
+| GET | `/schedules/schedule_b/` | get /schedules/schedule_b/ | `disbursement_description`, `max_amount`, `max_image_number`, `image_number`, `sort_hide_null`, `last_disbursement_date`, `line_number`, `spender_committee_designation`, `last_disbursement_amount`, `per_page`, `last_index`, `spender_committee_type`, `sort`, `two_year_transaction_period`, `min_date`, `committee_id`, `api_key`*, `disbursement_purpose_category`, `recipient_name`, `recipient_state`, `recipient_city`, `min_image_number`, `spender_committee_org_type`, `sort_null_only`, `recipient_committee_id`, `min_amount`, `max_date` | — | yes | — |
+| GET | `/schedules/schedule_b/by_purpose/` | get /schedules/schedule_b/by_purpose/ | `purpose`, `sort_nulls_last`, `page`, `cycle`, `sort_hide_null`, `committee_id`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_b/by_recipient/` | get /schedules/schedule_b/by_recipient/ | `sort_nulls_last`, `page`, `cycle`, `sort_hide_null`, `committee_id`, `api_key`*, `recipient_name`, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_b/by_recipient_id/` | get /schedules/schedule_b/by_recipient_id/ | `sort_nulls_last`, `page`, `cycle`, `sort_hide_null`, `committee_id`, `api_key`*, `sort_null_only`, `per_page`, `recipient_id`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_b/efile/` | get /schedules/schedule_b/efile/ | `disbursement_description`, `max_amount`, `page`, `sort_nulls_last`, `sort`, `sort_hide_null`, `committee_id`, `min_date`, `api_key`*, `recipient_state`, `recipient_city`, `sort_null_only`, `per_page`, `image_number`, `min_amount`, `max_date` | — | yes | — |
+| GET | `/schedules/schedule_b/{sub_id}/` | get /schedules/schedule_b/{sub_id}/ | `disbursement_description`, `max_amount`, `max_image_number`, `image_number`, `sort_hide_null`, `last_disbursement_date`, `line_number`, `spender_committee_designation`, `last_disbursement_amount`, `per_page`, `last_index`, `spender_committee_type`, `sort`, `two_year_transaction_period`, `min_date`, `committee_id`, `api_key`*, `disbursement_purpose_category`, `recipient_name`, `recipient_state`, `recipient_city`, `min_image_number`, `spender_committee_org_type`, `sort_null_only`, `recipient_committee_id`, `min_amount`, `max_date`, `sub_id`* | — | yes | — |
+| GET | `/schedules/schedule_c/` | get /schedules/schedule_c/ | `min_incurred_date`, `candidate_name`, `max_amount`, `max_image_number`, `sort_nulls_last`, `sort_hide_null`, `line_number`, `max_incurred_date`, `per_page`, `last_index`, `loan_source_name`, `page`, `sort`, `max_payment_to_date`, `min_payment_to_date`, `committee_id`, `api_key`*, `min_image_number`, `sort_null_only`, `image_number`, `min_amount` | — | yes | — |
+| GET | `/schedules/schedule_c/{sub_id}/` | get /schedules/schedule_c/{sub_id}/ | `sort_nulls_last`, `per_page`, `sort_null_only`, `sort_hide_null`, `sort`, `api_key`*, `page`, `sub_id`* | — | yes | — |
+| GET | `/schedules/schedule_d/` | get /schedules/schedule_d/ | `creditor_debtor_name`, `max_image_number`, `sort_nulls_last`, `max_amount_outstanding_beginning`, `sort_hide_null`, `min_payment_period`, `max_amount_incurred`, `nature_of_debt`, `per_page`, `max_amount_outstanding_close`, `candidate_id`, `page`, `min_date`, `committee_id`, `min_amount_outstanding_close`, `api_key`*, `max_payment_period`, `min_image_number`, `min_amount_incurred`, `sort_null_only`, `image_number`, `sort`, `min_amount_outstanding_beginning`, `max_date` | — | yes | — |
+| GET | `/schedules/schedule_d/{sub_id}/` | get /schedules/schedule_d/{sub_id}/ | `sort_nulls_last`, `per_page`, `sort_null_only`, `sort_hide_null`, `sort`, `api_key`*, `page`, `sub_id`* | — | yes | — |
+| GET | `/schedules/schedule_e/` | get /schedules/schedule_e/ | `max_dissemination_date`, `sort_hide_null`, `payee_name`, `q_spender`, `per_page`, `last_index`, `min_dissemination_date`, `candidate_office_state`, `api_key`*, `filing_form`, `sort_null_only`, `max_amount`, `max_image_number`, `min_filing_date`, `cycle`, `sort_nulls_last`, `support_oppose_indicator`, `candidate_office`, `is_notice`, `line_number`, `last_expenditure_amount`, `last_expenditure_date`, `candidate_id`, `last_office_total_ytd`, `last_support_oppose_indicator`, `min_date`, `candidate_party`, `committee_id`, `min_image_number`, `max_filing_date`, `candidate_office_district`, `min_amount`, `image_number`, `sort`, `max_date`, `most_recent` | — | yes | — |
+| GET | `/schedules/schedule_e/by_candidate/` | get /schedules/schedule_e/by_candidate/ | `office`, `candidate_id`, `cycle`, `district`, `state`, `page`, `support_oppose`, `election_full`, `committee_id`, `sort_hide_null`, `sort_nulls_last`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_e/efile/` | get /schedules/schedule_e/efile/ | `spender_name`, `min_expenditure_date`, `sort_nulls_last`, `max_dissemination_date`, `support_oppose_indicator`, `sort_hide_null`, `candidate_office`, `is_notice`, `payee_name`, `per_page`, `candidate_search`, `max_expenditure_amount`, `min_dissemination_date`, `min_filed_date`, `candidate_id`, `candidate_office_state`, `max_filed_date`, `page`, `min_expenditure_amount`, `committee_id`, `candidate_party`, `api_key`*, `max_expenditure_date`, `filing_form`, `sort_null_only`, `candidate_office_district`, `image_number`, `sort`, `most_recent` | — | yes | — |
+| GET | `/schedules/schedule_e/totals/by_candidate/` | get /schedules/schedule_e/totals/by_candidate/ | `candidate_id`, `sort_nulls_last`, `page`, `cycle`, `sort_hide_null`, `election_full`, `api_key`*, `sort_null_only`, `per_page`, `sort` | — | yes | — |
+| GET | `/schedules/schedule_f/` | get /schedules/schedule_f/ | `max_amount`, `max_image_number`, `cycle`, `sort_nulls_last`, `sort_hide_null`, `line_number`, `payee_name`, `per_page`, `candidate_id`, `page`, `min_date`, `committee_id`, `api_key`*, `min_amount`, `min_image_number`, `sort_null_only`, `image_number`, `sort`, `max_date` | — | yes | — |
+| GET | `/schedules/schedule_f/{sub_id}/` | get /schedules/schedule_f/{sub_id}/ | `per_page`, `api_key`*, `page`, `sub_id`* | — | yes | — |
+| GET | `/state-election-office/` | get /state-election-office/ | `sort_null_only`, `sort_nulls_last`, `per_page`, `state`*, `sort_hide_null`, `sort`, `api_key`*, `page` | — | yes | — |
+| GET | `/totals/by_entity/` | get /totals/by_entity/ | `cycle`*, `sort_nulls_last`, `per_page`, `sort_null_only`, `sort_hide_null`, `sort`, `api_key`*, `page` | — | yes | — |
+| GET | `/totals/{entity_type}/` | get /totals/{entity_type}/ | `max_first_f1_date`, `min_receipts`, `cycle`, `filing_frequency`, `max_receipts`, `sort_hide_null`, `sort_nulls_last`, `min_last_debts_owed_by_committee`, `max_last_cash_on_hand_end_period`, `treasurer_name`, `sponsor_candidate_id`, `per_page`, `max_disbursements`, `committee_state`, `committee_type`, `page`, `max_last_debts_owed_by_committee`, `committee_id`, `api_key`*, `committee_designation`, `sort_null_only`, `min_first_f1_date`, `organization_type`, `sort`, `min_disbursements`, `min_last_cash_on_hand_end_period`, `entity_type`* | — | yes | — |

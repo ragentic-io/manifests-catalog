@@ -53,6 +53,261 @@
         "from": "payments-service-gov-uk-payments-a694dce2a0",
         "kind": "EXPOSES",
         "to": "operation:get:/v1/refunds"
+      },
+      {
+        "from": "operation:get:/v1/payments",
+        "kind": "RETURNS",
+        "to": "schema:PaymentSearchResults"
+      },
+      {
+        "from": "operation:post:/v1/payments",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateCardPaymentRequest"
+      },
+      {
+        "from": "operation:post:/v1/payments",
+        "kind": "RETURNS",
+        "to": "schema:CreatePaymentResult"
+      },
+      {
+        "from": "operation:get:/v1/payments/{paymentId}",
+        "kind": "RETURNS",
+        "to": "schema:GetPaymentResult"
+      },
+      {
+        "from": "operation:get:/v1/payments/{paymentId}/events",
+        "kind": "RETURNS",
+        "to": "schema:PaymentEvents"
+      },
+      {
+        "from": "operation:get:/v1/payments/{paymentId}/refunds",
+        "kind": "RETURNS",
+        "to": "schema:RefundForSearchResult"
+      },
+      {
+        "from": "operation:post:/v1/payments/{paymentId}/refunds",
+        "kind": "ACCEPTS",
+        "to": "schema:PaymentRefundRequest"
+      },
+      {
+        "from": "operation:post:/v1/payments/{paymentId}/refunds",
+        "kind": "RETURNS",
+        "to": "schema:Refund"
+      },
+      {
+        "from": "operation:get:/v1/payments/{paymentId}/refunds/{refundId}",
+        "kind": "RETURNS",
+        "to": "schema:Refund"
+      },
+      {
+        "from": "operation:get:/v1/refunds",
+        "kind": "RETURNS",
+        "to": "schema:RefundSearchResults"
+      },
+      {
+        "from": "schema:CardDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:CreateCardPaymentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PrefilledCardholderDetails"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:CardDetails"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLinks"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentSettlementSummary"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentState"
+      },
+      {
+        "from": "schema:CreatePaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSummary"
+      },
+      {
+        "from": "schema:EmbeddedRefunds",
+        "kind": "REFERENCES",
+        "to": "schema:Refund"
+      },
+      {
+        "from": "schema:GetPaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:CardDetails"
+      },
+      {
+        "from": "schema:GetPaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLinks"
+      },
+      {
+        "from": "schema:GetPaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentSettlementSummary"
+      },
+      {
+        "from": "schema:GetPaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentState"
+      },
+      {
+        "from": "schema:GetPaymentResult",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSummary"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:CardDetails"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLinksForSearch"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentSettlementSummary"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentState"
+      },
+      {
+        "from": "schema:PaymentDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSummary"
+      },
+      {
+        "from": "schema:PaymentEvent",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentEventLink"
+      },
+      {
+        "from": "schema:PaymentEvent",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentState"
+      },
+      {
+        "from": "schema:PaymentEventLink",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:PaymentEvents",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentEvent"
+      },
+      {
+        "from": "schema:PaymentEvents",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentLinksForEvents"
+      },
+      {
+        "from": "schema:PaymentLinks",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:PaymentLinks",
+        "kind": "REFERENCES",
+        "to": "schema:PostLink"
+      },
+      {
+        "from": "schema:PaymentLinksForEvents",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:PaymentLinksForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:PaymentLinksForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:PostLink"
+      },
+      {
+        "from": "schema:PaymentSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentDetailForSearch"
+      },
+      {
+        "from": "schema:PaymentSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchNavigationLinks"
+      },
+      {
+        "from": "schema:PrefilledCardholderDetails",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:Refund",
+        "kind": "REFERENCES",
+        "to": "schema:RefundLinksForSearch"
+      },
+      {
+        "from": "schema:Refund",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSettlementSummary"
+      },
+      {
+        "from": "schema:RefundDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:RefundLinksForSearch"
+      },
+      {
+        "from": "schema:RefundDetailForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:RefundSettlementSummary"
+      },
+      {
+        "from": "schema:RefundForSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedRefunds"
+      },
+      {
+        "from": "schema:RefundForSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:RefundLinksForSearch"
+      },
+      {
+        "from": "schema:RefundLinksForSearch",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:RefundSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:RefundDetailForSearch"
+      },
+      {
+        "from": "schema:RefundSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchNavigationLinks"
+      },
+      {
+        "from": "schema:SearchNavigationLinks",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
       }
     ],
     "nodes": [
@@ -62,313 +317,873 @@
       },
       {
         "deprecated": false,
+        "description": "Search payments by reference, state, 'from' and 'to' date.",
         "id": "operation:get:/v1/payments",
         "kind": "operation",
         "method": "get",
         "name": "Search payments",
+        "parameters": [
+          {
+            "description": "Your payment reference to search (exact match, case insensitive)",
+            "in": "query",
+            "name": "reference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user email used in the payment to be searched",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "State of payments to be searched.",
+            "enum": [
+              "created",
+              "started",
+              "submitted",
+              "success",
+              "failed",
+              "cancelled",
+              "error"
+            ],
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Card brand used for payment.",
+            "in": "query",
+            "name": "card_brand",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "From date of payments to be searched (this date is inclusive).",
+            "in": "query",
+            "name": "from_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "To date of payments to be searched (this date is exclusive).",
+            "in": "query",
+            "name": "to_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page number requested for the search, should be a positive integer (optional, defaults to 1)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500)",
+            "in": "query",
+            "name": "display_size",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name on card used to make payment",
+            "in": "query",
+            "name": "cardholder_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "First six digits of the card used to make payment",
+            "in": "query",
+            "name": "first_digits_card_number",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last four digits of the card used to make payment",
+            "in": "query",
+            "name": "last_digits_card_number",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "From settled date of payment to be searched (this date is inclusive).",
+            "in": "query",
+            "name": "from_settled_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "To settled date of payment to be searched (this date is inclusive).",
+            "in": "query",
+            "name": "to_settled_date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments",
         "pointer": "#/paths/~1v1~1payments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentSearchResults"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422",
+            "type": "PaymentError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "PaymentError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Search payments"
+        "summary": "Search payments",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new payment for the account associated to the Authorisation token.",
         "id": "operation:post:/v1/payments",
         "kind": "operation",
         "method": "post",
         "name": "Create a payment",
         "path": "/v1/payments",
         "pointer": "#/paths/~1v1~1payments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateCardPaymentRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreatePaymentResult"
+          },
+          {
+            "status": "400",
+            "type": "PaymentError"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422",
+            "type": "PaymentError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "PaymentError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Create new payment"
+        "summary": "Create new payment",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return information about the payment The Authorisation token needs to be specified in the 'authorization' header as 'authorization: Bearer YOUR_API_KEY_HERE'",
         "id": "operation:get:/v1/payments/{paymentId}",
         "kind": "operation",
         "method": "get",
         "name": "Get a payment",
+        "parameters": [
+          {
+            "description": "Payment identifier",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetPaymentResult"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "PaymentError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "PaymentError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find payment by ID"
+        "summary": "Find payment by ID",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Cancel a payment based on the provided payment ID and the Authorisation token.",
         "id": "operation:post:/v1/payments/{paymentId}/cancel",
         "kind": "operation",
         "method": "post",
         "name": "Cancel a payment",
+        "parameters": [
+          {
+            "description": "Payment identifier",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/cancel",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1cancel/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "PaymentError"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "PaymentError"
+          },
+          {
+            "status": "409",
+            "type": "PaymentError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "PaymentError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Cancel payment"
+        "summary": "Cancel payment",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Capture a payment based on the provided payment ID and the Authorisation token.",
         "id": "operation:post:/v1/payments/{paymentId}/capture",
         "kind": "operation",
         "method": "post",
         "name": "Capture a payment",
+        "parameters": [
+          {
+            "description": "Payment identifier",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/capture",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1capture/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "PaymentError"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "PaymentError"
+          },
+          {
+            "status": "409",
+            "type": "PaymentError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "PaymentError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Capture payment"
+        "summary": "Capture payment",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return payment events information about a certain payment The Authorisation token needs to be specified in the 'authorization' header as 'authorization: Bearer…",
         "id": "operation:get:/v1/payments/{paymentId}/events",
         "kind": "operation",
         "method": "get",
         "name": "Get events for a payment",
+        "parameters": [
+          {
+            "description": "Payment identifier",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/events",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentEvents"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "PaymentError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "PaymentError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Return payment events by ID"
+        "summary": "Return payment events by ID",
+        "tags": [
+          "Card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return refunds for a payment.",
         "id": "operation:get:/v1/payments/{paymentId}/refunds",
         "kind": "operation",
         "method": "get",
         "name": "Get all refunds for a payment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/refunds",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1refunds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RefundForSearchResult"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "PaymentError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "PaymentError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Get all refunds for a payment"
+        "summary": "Get all refunds for a payment",
+        "tags": [
+          "Refunding card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return issued refund information.",
         "id": "operation:post:/v1/payments/{paymentId}/refunds",
         "kind": "operation",
         "method": "post",
         "name": "Submit a refund for a payment",
+        "parameters": [
+          {
+            "description": "paymentId",
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/refunds",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1refunds/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PaymentRefundRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Refund"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "PaymentError"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "PaymentError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Submit a refund for a payment"
+        "summary": "Submit a refund for a payment",
+        "tags": [
+          "Refunding card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return payment refund information by Refund ID The Authorisation token needs to be specified in the 'authorization' header as 'authorization: Bearer YOUR_API_K…",
         "id": "operation:get:/v1/payments/{paymentId}/refunds/{refundId}",
         "kind": "operation",
         "method": "get",
         "name": "Get a payment refund",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "paymentId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "refundId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentId}/refunds/{refundId}",
         "pointer": "#/paths/~1v1~1payments~1{paymentId}~1refunds~1{refundId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Refund"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404",
+            "type": "PaymentError"
+          },
+          {
+            "status": "429",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "PaymentError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Find payment refund by ID"
+        "summary": "Find payment refund by ID",
+        "tags": [
+          "Refunding card payments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search refunds by 'from' and 'to' date.",
         "id": "operation:get:/v1/refunds",
         "kind": "operation",
         "method": "get",
         "name": "Search refunds",
+        "parameters": [
+          {
+            "description": "From date of refunds to be searched (this date is inclusive).",
+            "in": "query",
+            "name": "from_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "To date of refunds to be searched (this date is exclusive).",
+            "in": "query",
+            "name": "to_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "From settled date of refund to be searched (this date is inclusive).",
+            "in": "query",
+            "name": "from_settled_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "To settled date of refund to be searched (this date is inclusive).",
+            "in": "query",
+            "name": "to_settled_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page number requested for the search, should be a positive integer (optional, defaults to 1)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of results to be shown per page, should be a positive integer (optional, defaults to 500, max 500)",
+            "in": "query",
+            "name": "display_size",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/refunds",
         "pointer": "#/paths/~1v1~1refunds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RefundSearchResults"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422",
+            "type": "RefundError"
+          },
+          {
+            "status": "500",
+            "type": "RefundError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Search refunds"
+        "summary": "Search refunds",
+        "tags": [
+          "Refunding card payments"
+        ]
       },
       {
+        "description": "A structure representing the billing address of a card",
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
+        "description": "A structure representing the payment card",
         "id": "schema:CardDetails",
         "kind": "schema",
-        "name": "CardDetails"
+        "name": "CardDetails",
+        "type": "object"
       },
       {
+        "description": "The Payment Request Payload",
         "id": "schema:CreateCardPaymentRequest",
         "kind": "schema",
-        "name": "CreateCardPaymentRequest"
+        "name": "CreateCardPaymentRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreatePaymentResult",
         "kind": "schema",
-        "name": "CreatePaymentResult"
+        "name": "CreatePaymentResult",
+        "type": "object"
       },
       {
         "id": "schema:EmbeddedRefunds",
         "kind": "schema",
-        "name": "EmbeddedRefunds"
+        "name": "EmbeddedRefunds",
+        "type": "object"
       },
       {
+        "description": "An error response",
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetPaymentResult",
         "kind": "schema",
-        "name": "GetPaymentResult"
+        "name": "GetPaymentResult",
+        "type": "object"
       },
       {
+        "description": "A link related to a payment",
         "id": "schema:Link",
         "kind": "schema",
-        "name": "Link"
+        "name": "Link",
+        "type": "object"
       },
       {
         "id": "schema:Payer",
         "kind": "schema",
-        "name": "Payer"
+        "name": "Payer",
+        "type": "object"
       },
       {
         "id": "schema:PaymentDetailForSearch",
         "kind": "schema",
-        "name": "PaymentDetailForSearch"
+        "name": "PaymentDetailForSearch",
+        "type": "object"
       },
       {
+        "description": "A Payment Error response",
         "id": "schema:PaymentError",
         "kind": "schema",
-        "name": "PaymentError"
+        "name": "PaymentError",
+        "type": "object"
       },
       {
+        "description": "A List of Payment Events information",
         "id": "schema:PaymentEvent",
         "kind": "schema",
-        "name": "PaymentEvent"
+        "name": "PaymentEvent",
+        "type": "object"
       },
       {
+        "description": "Resource link for a payment of a payment event",
         "id": "schema:PaymentEventLink",
         "kind": "schema",
-        "name": "PaymentEventLink"
+        "name": "PaymentEventLink",
+        "type": "object"
       },
       {
+        "description": "A List of Payment Events information",
         "id": "schema:PaymentEvents",
         "kind": "schema",
-        "name": "PaymentEvents"
+        "name": "PaymentEvents",
+        "type": "object"
       },
       {
+        "description": "links for payment",
         "id": "schema:PaymentLinks",
         "kind": "schema",
-        "name": "PaymentLinks"
+        "name": "PaymentLinks",
+        "type": "object"
       },
       {
+        "description": "links for events resource",
         "id": "schema:PaymentLinksForEvents",
         "kind": "schema",
-        "name": "PaymentLinksForEvents"
+        "name": "PaymentLinksForEvents",
+        "type": "object"
       },
       {
+        "description": "links for search payment resource",
         "id": "schema:PaymentLinksForSearch",
         "kind": "schema",
-        "name": "PaymentLinksForSearch"
+        "name": "PaymentLinksForSearch",
+        "type": "object"
       },
       {
+        "description": "The Payment Refund Request Payload",
         "id": "schema:PaymentRefundRequest",
         "kind": "schema",
-        "name": "PaymentRefundRequest"
+        "name": "PaymentRefundRequest",
+        "type": "object"
       },
       {
         "id": "schema:PaymentSearchResults",
         "kind": "schema",
-        "name": "PaymentSearchResults"
+        "name": "PaymentSearchResults",
+        "type": "object"
       },
       {
+        "description": "A structure representing information about a settlement",
         "id": "schema:PaymentSettlementSummary",
         "kind": "schema",
-        "name": "PaymentSettlementSummary"
+        "name": "PaymentSettlementSummary",
+        "type": "object"
       },
       {
+        "description": "A structure representing the current state of the payment in its lifecycle.",
         "id": "schema:PaymentState",
         "kind": "schema",
-        "name": "PaymentState"
+        "name": "PaymentState",
+        "type": "object"
       },
       {
+        "description": "A POST link related to a payment",
         "id": "schema:PostLink",
         "kind": "schema",
-        "name": "PostLink"
+        "name": "PostLink",
+        "type": "object"
       },
       {
         "id": "schema:PrefilledCardholderDetails",
         "kind": "schema",
-        "name": "PrefilledCardholderDetails"
+        "name": "PrefilledCardholderDetails",
+        "type": "object"
       },
       {
         "id": "schema:Refund",
         "kind": "schema",
-        "name": "Refund"
+        "name": "Refund",
+        "type": "object"
       },
       {
         "id": "schema:RefundDetailForSearch",
         "kind": "schema",
-        "name": "RefundDetailForSearch"
+        "name": "RefundDetailForSearch",
+        "type": "object"
       },
       {
+        "description": "A Refund Error response",
         "id": "schema:RefundError",
         "kind": "schema",
-        "name": "RefundError"
+        "name": "RefundError",
+        "type": "object"
       },
       {
         "id": "schema:RefundForSearchResult",
         "kind": "schema",
-        "name": "RefundForSearchResult"
+        "name": "RefundForSearchResult",
+        "type": "object"
       },
       {
+        "description": "links for search refunds resource",
         "id": "schema:RefundLinksForSearch",
         "kind": "schema",
-        "name": "RefundLinksForSearch"
+        "name": "RefundLinksForSearch",
+        "type": "object"
       },
       {
         "id": "schema:RefundSearchResults",
         "kind": "schema",
-        "name": "RefundSearchResults"
+        "name": "RefundSearchResults",
+        "type": "object"
       },
       {
+        "description": "A structure representing information about a settlement for refunds",
         "id": "schema:RefundSettlementSummary",
         "kind": "schema",
-        "name": "RefundSettlementSummary"
+        "name": "RefundSettlementSummary",
+        "type": "object"
       },
       {
+        "description": "A structure representing the refunds availability",
         "id": "schema:RefundSummary",
         "kind": "schema",
-        "name": "RefundSummary"
+        "name": "RefundSummary",
+        "type": "object"
       },
       {
+        "description": "Links to navigate through pages",
         "id": "schema:SearchNavigationLinks",
         "kind": "schema",
-        "name": "SearchNavigationLinks"
+        "name": "SearchNavigationLinks",
+        "type": "object"
       }
     ]
   },

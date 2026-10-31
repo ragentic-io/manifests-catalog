@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `be3fbcb28907ab5b4cdfd7920b39ca75e7d1b058631e8af8439730eb1e0e2bc5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,203 +34,205 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 1245 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/accounts/balance/get` | accountsBalanceGet | Retrieve real-time balance data |
-| POST | `/accounts/get` | accountsGet | Retrieve accounts |
-| POST | `/application/get` | applicationGet | Retrieve information about a Plaid application |
-| POST | `/asset_report/audit_copy/create` | assetReportAuditCopyCreate | Create Asset Report Audit Copy |
-| POST | `/asset_report/audit_copy/get` | assetReportAuditCopyGet | Retrieve an Asset Report Audit Copy |
-| POST | `/asset_report/audit_copy/remove` | assetReportAuditCopyRemove | Remove Asset Report Audit Copy |
-| POST | `/asset_report/create` | assetReportCreate | Create an Asset Report |
-| POST | `/asset_report/filter` | assetReportFilter | Filter Asset Report |
-| POST | `/asset_report/get` | assetReportGet | Retrieve an Asset Report |
-| POST | `/asset_report/pdf/get` | assetReportPdfGet | Retrieve a PDF Asset Report |
-| POST | `/asset_report/refresh` | assetReportRefresh | Refresh an Asset Report |
-| POST | `/asset_report/remove` | assetReportRemove | Delete an Asset Report |
-| POST | `/auth/get` | authGet | Retrieve auth data |
-| POST | `/bank_transfer/balance/get` | bankTransferBalanceGet | Get balance of your Bank Transfer account |
-| POST | `/bank_transfer/cancel` | bankTransferCancel | Cancel a bank transfer |
-| POST | `/bank_transfer/create` | bankTransferCreate | Create a bank transfer |
-| POST | `/bank_transfer/event/list` | bankTransferEventList | List bank transfer events |
-| POST | `/bank_transfer/event/sync` | bankTransferEventSync | Sync bank transfer events |
-| POST | `/bank_transfer/get` | bankTransferGet | Retrieve a bank transfer |
-| POST | `/bank_transfer/list` | bankTransferList | List bank transfers |
-| POST | `/bank_transfer/migrate_account` | bankTransferMigrateAccount | Migrate account into Bank Transfers |
-| POST | `/bank_transfer/sweep/get` | bankTransferSweepGet | Retrieve a sweep |
-| POST | `/bank_transfer/sweep/list` | bankTransferSweepList | List sweeps |
-| POST | `/beta/credit/v1/bank_employment/get` | creditBankEmploymentGet | Retrieve information from the bank accounts used for employment verification |
-| POST | `/beta/transactions/rules/v1/create` | transactionsRulesCreate | Create transaction category rule |
-| POST | `/beta/transactions/rules/v1/list` | transactionsRulesList | Return a list of rules created for the Item associated with the access token. |
-| POST | `/beta/transactions/rules/v1/remove` | transactionsRulesRemove | Remove transaction rule |
-| POST | `/beta/transactions/v1/enhance` | transactionsEnhance | enhance locally-held transaction data |
-| POST | `/categories/get` | categoriesGet | Get Categories |
-| POST | `/credit/asset_report/freddie_mac/get` | creditAssetReportFreddieMacGet | Retrieve an Asset Report with Freddie Mac format. Only Freddie Mac can use this endpoint. |
-| POST | `/credit/audit_copy_token/create` | creditAuditCopyTokenCreate | Create Asset or Income Report Audit Copy Token |
-| POST | `/credit/audit_copy_token/remove` | creditReportAuditCopyRemove | Remove an Audit Copy token |
-| POST | `/credit/audit_copy_token/update` | creditAuditCopyTokenUpdate | Update an Audit Copy Token |
-| POST | `/credit/bank_income/get` | creditBankIncomeGet | Retrieve information from the bank accounts used for income verification |
-| POST | `/credit/bank_income/pdf/get` | creditBankIncomePdfGet | Retrieve information from the bank accounts used for income verification in PDF format |
-| POST | `/credit/bank_income/refresh` | creditBankIncomeRefresh | Refresh a user's bank income information |
-| POST | `/credit/employment/get` | creditEmploymentGet | Retrieve a summary of an individual's employment information |
-| POST | `/credit/freddie_mac/reports/get` | creditFreddieMacReportsGet | Retrieve an Asset Report with Freddie Mac format (aka VOA - Verification Of Assets), and a Verification Of Employment (VOE) report if this one is available. Only Freddie Mac can use this endpoint. |
-| POST | `/credit/payroll_income/get` | creditPayrollIncomeGet | Retrieve a user's payroll information |
-| POST | `/credit/payroll_income/precheck` | creditPayrollIncomePrecheck | Check income verification eligibility and optimize conversion |
-| POST | `/credit/payroll_income/refresh` | creditPayrollIncomeRefresh | Refresh a digital payroll income verification |
-| POST | `/credit/relay/create` | creditRelayCreate | Create a relay token to share an Asset Report with a partner client (beta) |
-| POST | `/credit/relay/get` | creditRelayGet | Retrieve the reports associated with a relay token that was shared with you (beta) |
-| POST | `/credit/relay/refresh` | creditRelayRefresh | Refresh a report of a relay token (beta) |
-| POST | `/credit/relay/remove` | creditRelayRemove | Remove relay token (beta) |
-| POST | `/credit/sessions/get` | creditSessionsGet | Retrieve Link sessions for your user |
-| POST | `/dashboard_user/get` | dashboardUserGet | Retrieve a dashboard user |
-| POST | `/dashboard_user/list` | dashboardUserList | List dashboard users |
-| POST | `/deposit_switch/alt/create` | depositSwitchAltCreate | Create a deposit switch without using Plaid Exchange |
-| POST | `/deposit_switch/create` | depositSwitchCreate | Create a deposit switch |
-| POST | `/deposit_switch/get` | depositSwitchGet | Retrieve a deposit switch |
-| POST | `/deposit_switch/token/create` | depositSwitchTokenCreate | Create a deposit switch token |
-| POST | `/employers/search` | employersSearch | Search employer database |
-| POST | `/employment/verification/get` | employmentVerificationGet | (Deprecated) Retrieve a summary of an individual's employment information |
-| POST | `/fdx/notifications` | fdxNotifications | Webhook receiver for fdx notifications |
-| POST | `/identity/get` | identityGet | Retrieve identity data |
-| POST | `/identity/match` | identityMatch | Retrieve identity match score |
-| POST | `/identity_verification/create` | identityVerificationCreate | Create a new identity verification |
-| POST | `/identity_verification/get` | identityVerificationGet | Retrieve Identity Verification |
-| POST | `/identity_verification/list` | identityVerificationList | List Identity Verifications |
-| POST | `/identity_verification/retry` | identityVerificationRetry | Retry an Identity Verification |
-| POST | `/income/verification/create` | incomeVerificationCreate | (Deprecated) Create an income verification instance |
-| POST | `/income/verification/documents/download` | incomeVerificationDocumentsDownload | (Deprecated) Download the original documents used for income verification |
-| POST | `/income/verification/paystubs/get` | incomeVerificationPaystubsGet | (Deprecated) Retrieve information from the paystubs used for income verification |
-| POST | `/income/verification/precheck` | incomeVerificationPrecheck | (Deprecated) Check digital income verification eligibility and optimize conversion |
-| POST | `/income/verification/taxforms/get` | incomeVerificationTaxformsGet | (Deprecated) Retrieve information from the tax documents used for income verification |
-| POST | `/institutions/get` | institutionsGet | Get details of all supported institutions |
-| POST | `/institutions/get_by_id` | institutionsGetById | Get details of an institution |
-| POST | `/institutions/search` | institutionsSearch | Search institutions |
-| POST | `/investments/holdings/get` | investmentsHoldingsGet | Get Investment holdings |
-| POST | `/investments/transactions/get` | investmentsTransactionsGet | Get investment transactions |
-| POST | `/item/access_token/invalidate` | itemAccessTokenInvalidate | Invalidate access_token |
-| POST | `/item/activity/list` | itemActivityList | List a historical log of user consent events |
-| POST | `/item/application/list` | itemApplicationList | List a user’s connected applications |
-| POST | `/item/application/scopes/update` | itemApplicationScopesUpdate | Update the scopes of access for a particular application |
-| POST | `/item/get` | itemGet | Retrieve an Item |
-| POST | `/item/import` | itemImport | Import Item |
-| POST | `/item/public_token/create` | itemCreatePublicToken | Create public token |
-| POST | `/item/public_token/exchange` | itemPublicTokenExchange | Exchange public token for an access token |
-| POST | `/item/remove` | itemRemove | Remove an Item |
-| POST | `/item/webhook/update` | itemWebhookUpdate | Update Webhook URL |
-| POST | `/liabilities/get` | liabilitiesGet | Retrieve Liabilities data |
-| POST | `/link/oauth/correlation_id/exchange` | linkOauthCorrelationIdExchange | Exchange the Link Correlation Id for a Link Token |
-| POST | `/link/token/create` | linkTokenCreate | Create Link Token |
-| POST | `/link/token/get` | linkTokenGet | Get Link Token |
-| POST | `/link_delivery/create` | linkDeliveryCreate | Create Link Delivery session |
-| POST | `/link_delivery/get` | linkDeliveryGet | Get Link Delivery session |
-| POST | `/partner/customer/create` | partnerCustomerCreate | Creates a new end customer for a Plaid reseller. |
-| POST | `/partner/customer/enable` | partnerCustomerEnable | Enables a Plaid reseller's end customer in the Production environment. |
-| POST | `/partner/customer/get` | partnerCustomerGet | Returns a Plaid reseller's end customer. |
-| POST | `/partner/customer/oauth_institutions/get` | partnerCustomerOauthInstitutionsGet | Returns OAuth-institution registration information for a given end customer. |
-| POST | `/partner/customer/remove` | partnerCustomerRemove | Removes a Plaid reseller's end customer. |
-| POST | `/payment_initiation/consent/create` | paymentInitiationConsentCreate | Create payment consent |
-| POST | `/payment_initiation/consent/get` | paymentInitiationConsentGet | Get payment consent |
-| POST | `/payment_initiation/consent/payment/execute` | paymentInitiationConsentPaymentExecute | Execute a single payment using consent |
-| POST | `/payment_initiation/consent/revoke` | paymentInitiationConsentRevoke | Revoke payment consent |
-| POST | `/payment_initiation/payment/create` | paymentInitiationPaymentCreate | Create a payment |
-| POST | `/payment_initiation/payment/get` | paymentInitiationPaymentGet | Get payment details |
-| POST | `/payment_initiation/payment/list` | paymentInitiationPaymentList | List payments |
-| POST | `/payment_initiation/payment/reverse` | paymentInitiationPaymentReverse | Reverse an existing payment |
-| POST | `/payment_initiation/payment/token/create` | createPaymentToken | Create payment token |
-| POST | `/payment_initiation/recipient/create` | paymentInitiationRecipientCreate | Create payment recipient |
-| POST | `/payment_initiation/recipient/get` | paymentInitiationRecipientGet | Get payment recipient |
-| POST | `/payment_initiation/recipient/list` | paymentInitiationRecipientList | List payment recipients |
-| POST | `/payment_profile/create` | paymentProfileCreate | Create payment profile |
-| POST | `/payment_profile/get` | paymentProfileGet | Get payment profile |
-| POST | `/payment_profile/remove` | paymentProfileRemove | Remove payment profile |
-| POST | `/processor/apex/processor_token/create` | processorApexProcessorTokenCreate | Create Apex bank account token |
-| POST | `/processor/auth/get` | processorAuthGet | Retrieve Auth data |
-| POST | `/processor/balance/get` | processorBalanceGet | Retrieve Balance data |
-| POST | `/processor/bank_transfer/create` | processorBankTransferCreate | Create a bank transfer as a processor |
-| POST | `/processor/identity/get` | processorIdentityGet | Retrieve Identity data |
-| POST | `/processor/signal/decision/report` | processorSignalDecisionReport | Report whether you initiated an ACH transaction |
-| POST | `/processor/signal/evaluate` | processorSignalEvaluate | Evaluate a planned ACH transaction |
-| POST | `/processor/signal/return/report` | processorSignalReturnReport | Report a return for an ACH transaction |
-| POST | `/processor/stripe/bank_account_token/create` | processorStripeBankAccountTokenCreate | Create Stripe bank account token |
-| POST | `/processor/token/create` | processorTokenCreate | Create processor token |
-| POST | `/sandbox/bank_transfer/fire_webhook` | sandboxBankTransferFireWebhook | Manually fire a Bank Transfer webhook |
-| POST | `/sandbox/bank_transfer/simulate` | sandboxBankTransferSimulate | Simulate a bank transfer event in Sandbox |
-| POST | `/sandbox/income/fire_webhook` | sandboxIncomeFireWebhook | Manually fire an Income webhook |
-| POST | `/sandbox/item/fire_webhook` | sandboxItemFireWebhook | Fire a test webhook |
-| POST | `/sandbox/item/reset_login` | sandboxItemResetLogin | Force a Sandbox Item into an error state |
-| POST | `/sandbox/item/set_verification_status` | sandboxItemSetVerificationStatus | Set verification status for Sandbox account |
-| POST | `/sandbox/oauth/select_accounts` | sandboxOauthSelectAccounts | Save the selected accounts when connecting to the Platypus Oauth institution |
-| POST | `/sandbox/payment_profile/reset_login` | sandboxPaymentProfileResetLogin | Reset the login of a Payment Profile |
-| POST | `/sandbox/processor_token/create` | sandboxProcessorTokenCreate | Create a test Item and processor token |
-| POST | `/sandbox/public_token/create` | sandboxPublicTokenCreate | Create a test Item |
-| POST | `/sandbox/transfer/fire_webhook` | sandboxTransferFireWebhook | Manually fire a Transfer webhook |
-| POST | `/sandbox/transfer/repayment/simulate` | sandboxTransferRepaymentSimulate | Trigger the creation of a repayment |
-| POST | `/sandbox/transfer/simulate` | sandboxTransferSimulate | Simulate a transfer event in Sandbox |
-| POST | `/sandbox/transfer/sweep/simulate` | sandboxTransferSweepSimulate | Simulate creating a sweep |
-| POST | `/sandbox/transfer/test_clock/advance` | sandboxTransferTestClockAdvance | Advance a test clock |
-| POST | `/sandbox/transfer/test_clock/create` | sandboxTransferTestClockCreate | Create a test clock |
-| POST | `/sandbox/transfer/test_clock/get` | sandboxTransferTestClockGet | Get a test clock |
-| POST | `/sandbox/transfer/test_clock/list` | sandboxTransferTestClockList | List test clocks |
-| POST | `/signal/decision/report` | signalDecisionReport | Report whether you initiated an ACH transaction |
-| POST | `/signal/evaluate` | signalEvaluate | Evaluate a planned ACH transaction |
-| POST | `/signal/prepare` | signalPrepare | Opt-in an Item to Signal |
-| POST | `/signal/return/report` | signalReturnReport | Report a return for an ACH transaction |
-| POST | `/transactions/enrich` | transactionsEnrich | Enrich locally-held transaction data |
-| POST | `/transactions/get` | transactionsGet | Get transaction data |
-| POST | `/transactions/recurring/get` | transactionsRecurringGet | Fetch recurring transaction streams |
-| POST | `/transactions/refresh` | transactionsRefresh | Refresh transaction data |
-| POST | `/transactions/sync` | transactionsSync | Get incremental transaction updates on an Item |
-| POST | `/transfer/authorization/create` | transferAuthorizationCreate | Create a transfer authorization |
-| POST | `/transfer/cancel` | transferCancel | Cancel a transfer |
-| POST | `/transfer/capabilities/get` | transferCapabilitiesGet | Get RTP eligibility information of a transfer |
-| POST | `/transfer/create` | transferCreate | Create a transfer |
-| POST | `/transfer/event/list` | transferEventList | List transfer events |
-| POST | `/transfer/event/sync` | transferEventSync | Sync transfer events |
-| POST | `/transfer/get` | transferGet | Retrieve a transfer |
-| POST | `/transfer/intent/create` | transferIntentCreate | Create a transfer intent object to invoke the Transfer UI |
-| POST | `/transfer/intent/get` | transferIntentGet | Retrieve more information about a transfer intent |
-| POST | `/transfer/list` | transferList | List transfers |
-| POST | `/transfer/migrate_account` | transferMigrateAccount | Migrate account into Transfers |
-| POST | `/transfer/originator/create` | transferOriginatorCreate | Create a new originator |
-| POST | `/transfer/originator/get` | transferOriginatorGet | Get status of an originator's onboarding |
-| POST | `/transfer/originator/list` | transferOriginatorList | Get status of all originators' onboarding |
-| POST | `/transfer/questionnaire/create` | transferQuestionnaireCreate | Generate a Plaid-hosted onboarding UI URL. |
-| POST | `/transfer/recurring/cancel` | transferRecurringCancel | Cancel a recurring transfer. |
-| POST | `/transfer/recurring/create` | transferRecurringCreate | Create a recurring transfer |
-| POST | `/transfer/recurring/get` | transferRecurringGet | Retrieve a recurring transfer |
-| POST | `/transfer/recurring/list` | transferRecurringList | List recurring transfers |
-| POST | `/transfer/refund/cancel` | transferRefundCancel | Cancel a refund |
-| POST | `/transfer/refund/create` | transferRefundCreate | Create a refund |
-| POST | `/transfer/refund/get` | transferRefundGet | Retrieve a refund |
-| POST | `/transfer/repayment/list` | transferRepaymentList | Lists historical repayments |
-| POST | `/transfer/repayment/return/list` | transferRepaymentReturnList | List the returns included in a repayment |
-| POST | `/transfer/sweep/get` | transferSweepGet | Retrieve a sweep |
-| POST | `/transfer/sweep/list` | transferSweepList | List sweeps |
-| POST | `/user/create` | userCreate | Create user |
-| POST | `/wallet/create` | walletCreate | Create an e-wallet |
-| POST | `/wallet/get` | walletGet | Fetch an e-wallet |
-| POST | `/wallet/list` | walletList | Fetch a list of e-wallets |
-| POST | `/wallet/transaction/execute` | walletTransactionExecute | Execute a transaction using an e-wallet |
-| POST | `/wallet/transaction/get` | walletTransactionGet | Fetch an e-wallet transaction |
-| POST | `/wallet/transaction/list` | walletTransactionList | List e-wallet transactions |
-| POST | `/watchlist_screening/entity/create` | watchlistScreeningEntityCreate | Create a watchlist screening for an entity |
-| POST | `/watchlist_screening/entity/get` | watchlistScreeningEntityGet | Get an entity screening |
-| POST | `/watchlist_screening/entity/history/list` | watchlistScreeningEntityHistoryList | List history for entity watchlist screenings |
-| POST | `/watchlist_screening/entity/hit/list` | watchlistScreeningEntityHitList | List hits for entity watchlist screenings |
-| POST | `/watchlist_screening/entity/list` | watchlistScreeningEntityList | List entity watchlist screenings |
-| POST | `/watchlist_screening/entity/program/get` | watchlistScreeningEntityProgramGet | Get entity watchlist screening program |
-| POST | `/watchlist_screening/entity/program/list` | watchlistScreeningEntityProgramList | List entity watchlist screening programs |
-| POST | `/watchlist_screening/entity/review/create` | watchlistScreeningEntityReviewCreate | Create a review for an entity watchlist screening |
-| POST | `/watchlist_screening/entity/review/list` | watchlistScreeningEntityReviewList | List reviews for entity watchlist screenings |
-| POST | `/watchlist_screening/entity/update` | watchlistScreeningEntityUpdate | Update an entity screening |
-| POST | `/watchlist_screening/individual/create` | watchlistScreeningIndividualCreate | Create a watchlist screening for a person |
-| POST | `/watchlist_screening/individual/get` | watchlistScreeningIndividualGet | Retrieve an individual watchlist screening |
-| POST | `/watchlist_screening/individual/history/list` | watchlistScreeningIndividualHistoryList | List history for individual watchlist screenings |
-| POST | `/watchlist_screening/individual/hit/list` | watchlistScreeningIndividualHitList | List hits for individual watchlist screening |
-| POST | `/watchlist_screening/individual/list` | watchlistScreeningIndividualList | List Individual Watchlist Screenings |
-| POST | `/watchlist_screening/individual/program/get` | watchlistScreeningIndividualProgramGet | Get individual watchlist screening program |
-| POST | `/watchlist_screening/individual/program/list` | watchlistScreeningIndividualProgramList | List individual watchlist screening programs |
-| POST | `/watchlist_screening/individual/review/create` | watchlistScreeningIndividualReviewCreate | Create a review for an individual watchlist screening |
-| POST | `/watchlist_screening/individual/review/list` | watchlistScreeningIndividualReviewList | List reviews for individual watchlist screenings |
-| POST | `/watchlist_screening/individual/update` | watchlistScreeningIndividualUpdate | Update individual watchlist screening |
-| POST | `/webhook_verification_key/get` | webhookVerificationKeyGet | Get webhook verification key |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/accounts/balance/get` | accountsBalanceGet | body*: AccountsBalanceGetRequest | AccountsGetResponse |  | Retrieve real-time balance data |
+| POST | `/accounts/get` | accountsGet | body*: AccountsGetRequest | AccountsGetResponse |  | Retrieve accounts |
+| POST | `/application/get` | applicationGet | body*: ApplicationGetRequest | ApplicationGetResponse |  | Retrieve information about a Plaid application |
+| POST | `/asset_report/audit_copy/create` | assetReportAuditCopyCreate | body*: AssetReportAuditCopyCreateRequest | AssetReportAuditCopyCreateResponse |  | Create Asset Report Audit Copy |
+| POST | `/asset_report/audit_copy/get` | assetReportAuditCopyGet | body*: AssetReportAuditCopyGetRequest | AssetReportGetResponse |  | Retrieve an Asset Report Audit Copy |
+| POST | `/asset_report/audit_copy/remove` | assetReportAuditCopyRemove | body*: AssetReportAuditCopyRemoveRequest | AssetReportAuditCopyRemoveResponse |  | Remove Asset Report Audit Copy |
+| POST | `/asset_report/create` | assetReportCreate | body*: AssetReportCreateRequest | AssetReportCreateResponse |  | Create an Asset Report |
+| POST | `/asset_report/filter` | assetReportFilter | body*: AssetReportFilterRequest | AssetReportFilterResponse |  | Filter Asset Report |
+| POST | `/asset_report/get` | assetReportGet | body*: AssetReportGetRequest | AssetReportGetResponse |  | Retrieve an Asset Report |
+| POST | `/asset_report/pdf/get` | assetReportPdfGet | body*: AssetReportPDFGetRequest | AssetReportPDFGetResponse |  | Retrieve a PDF Asset Report |
+| POST | `/asset_report/refresh` | assetReportRefresh | body*: AssetReportRefreshRequest | AssetReportRefreshResponse |  | Refresh an Asset Report |
+| POST | `/asset_report/remove` | assetReportRemove | body*: AssetReportRemoveRequest | AssetReportRemoveResponse |  | Delete an Asset Report |
+| POST | `/auth/get` | authGet | body*: AuthGetRequest | AuthGetResponse |  | Retrieve auth data |
+| POST | `/bank_transfer/balance/get` | bankTransferBalanceGet | body*: BankTransferBalanceGetRequest | BankTransferBalanceGetResponse |  | Get balance of your Bank Transfer account |
+| POST | `/bank_transfer/cancel` | bankTransferCancel | body*: BankTransferCancelRequest | BankTransferCancelResponse |  | Cancel a bank transfer |
+| POST | `/bank_transfer/create` | bankTransferCreate | body*: BankTransferCreateRequest | BankTransferCreateResponse |  | Create a bank transfer |
+| POST | `/bank_transfer/event/list` | bankTransferEventList | body*: BankTransferEventListRequest | BankTransferEventListResponse |  | List bank transfer events |
+| POST | `/bank_transfer/event/sync` | bankTransferEventSync | body*: BankTransferEventSyncRequest | BankTransferEventSyncResponse |  | Sync bank transfer events |
+| POST | `/bank_transfer/get` | bankTransferGet | body*: BankTransferGetRequest | BankTransferGetResponse |  | Retrieve a bank transfer |
+| POST | `/bank_transfer/list` | bankTransferList | body*: BankTransferListRequest | BankTransferListResponse |  | List bank transfers |
+| POST | `/bank_transfer/migrate_account` | bankTransferMigrateAccount | body*: BankTransferMigrateAccountRequest | BankTransferMigrateAccountResponse |  | Migrate account into Bank Transfers |
+| POST | `/bank_transfer/sweep/get` | bankTransferSweepGet | body*: BankTransferSweepGetRequest | BankTransferSweepGetResponse |  | Retrieve a sweep |
+| POST | `/bank_transfer/sweep/list` | bankTransferSweepList | body*: BankTransferSweepListRequest | BankTransferSweepListResponse |  | List sweeps |
+| POST | `/beta/credit/v1/bank_employment/get` | creditBankEmploymentGet | body*: CreditBankEmploymentGetRequest | CreditBankEmploymentGetResponse |  | Retrieve information from the bank accounts used for employment verification |
+| POST | `/beta/transactions/rules/v1/create` | transactionsRulesCreate | body*: TransactionsRulesCreateRequest | TransactionsRulesCreateResponse |  | Create transaction category rule |
+| POST | `/beta/transactions/rules/v1/list` | transactionsRulesList | body*: TransactionsRulesListRequest | TransactionsRulesListResponse |  | Return a list of rules created for the Item associated with the access token. |
+| POST | `/beta/transactions/rules/v1/remove` | transactionsRulesRemove | body*: TransactionsRulesRemoveRequest | TransactionsRulesRemoveResponse |  | Remove transaction rule |
+| POST | `/beta/transactions/v1/enhance` | transactionsEnhance | body*: TransactionsEnhanceGetRequest | TransactionsEnhanceGetResponse |  | enhance locally-held transaction data |
+| POST | `/categories/get` | categoriesGet | body*: CategoriesGetRequest | CategoriesGetResponse |  | Get Categories |
+| POST | `/credit/asset_report/freddie_mac/get` | creditAssetReportFreddieMacGet | body*: AssetReportFreddieGetRequest | AssetReportFreddieGetResponse |  | Retrieve an Asset Report with Freddie Mac format. Only Freddie Mac can use this endpoint. |
+| POST | `/credit/audit_copy_token/create` | creditAuditCopyTokenCreate | body*: CreditAuditCopyTokenCreateRequest | CreditAuditCopyTokenCreateResponse |  | Create Asset or Income Report Audit Copy Token |
+| POST | `/credit/audit_copy_token/remove` | creditReportAuditCopyRemove | body*: CreditAuditCopyTokenRemoveRequest | CreditAuditCopyTokenRemoveResponse |  | Remove an Audit Copy token |
+| POST | `/credit/audit_copy_token/update` | creditAuditCopyTokenUpdate | body*: CreditAuditCopyTokenUpdateRequest | CreditAuditCopyTokenUpdateResponse |  | Update an Audit Copy Token |
+| POST | `/credit/bank_income/get` | creditBankIncomeGet | body*: CreditBankIncomeGetRequest | CreditBankIncomeGetResponse |  | Retrieve information from the bank accounts used for income verification |
+| POST | `/credit/bank_income/pdf/get` | creditBankIncomePdfGet | body*: CreditBankIncomePDFGetRequest | CreditBankIncomePDFGetResponse |  | Retrieve information from the bank accounts used for income verification in PDF format |
+| POST | `/credit/bank_income/refresh` | creditBankIncomeRefresh | body*: CreditBankIncomeRefreshRequest | CreditBankIncomeRefreshResponse |  | Refresh a user's bank income information |
+| POST | `/credit/employment/get` | creditEmploymentGet | body*: CreditEmploymentGetRequest | CreditEmploymentGetResponse |  | Retrieve a summary of an individual's employment information |
+| POST | `/credit/freddie_mac/reports/get` | creditFreddieMacReportsGet | body*: CreditFreddieMacReportsGetRequest | CreditFreddieMacReportsGetResponse |  | Retrieve an Asset Report with Freddie Mac format (aka VOA - Verification Of Assets), and a Verification Of Employment (VOE) report if this one is available. Only Freddie Mac can use this endpoint. |
+| POST | `/credit/payroll_income/get` | creditPayrollIncomeGet | body*: CreditPayrollIncomeGetRequest | CreditPayrollIncomeGetResponse |  | Retrieve a user's payroll information |
+| POST | `/credit/payroll_income/precheck` | creditPayrollIncomePrecheck | body*: CreditPayrollIncomePrecheckRequest | CreditPayrollIncomePrecheckResponse |  | Check income verification eligibility and optimize conversion |
+| POST | `/credit/payroll_income/refresh` | creditPayrollIncomeRefresh | body*: CreditPayrollIncomeRefreshRequest | CreditPayrollIncomeRefreshResponse |  | Refresh a digital payroll income verification |
+| POST | `/credit/relay/create` | creditRelayCreate | body*: CreditRelayCreateRequest | CreditRelayCreateResponse |  | Create a relay token to share an Asset Report with a partner client (beta) |
+| POST | `/credit/relay/get` | creditRelayGet | body*: CreditRelayGetRequest | AssetReportGetResponse |  | Retrieve the reports associated with a relay token that was shared with you (beta) |
+| POST | `/credit/relay/refresh` | creditRelayRefresh | body*: CreditRelayRefreshRequest | CreditRelayRefreshResponse |  | Refresh a report of a relay token (beta) |
+| POST | `/credit/relay/remove` | creditRelayRemove | body*: CreditRelayRemoveRequest | CreditRelayRemoveResponse |  | Remove relay token (beta) |
+| POST | `/credit/sessions/get` | creditSessionsGet | body*: CreditSessionsGetRequest | CreditSessionsGetResponse |  | Retrieve Link sessions for your user |
+| POST | `/dashboard_user/get` | dashboardUserGet | body*: DashboardUserGetRequest | DashboardUserGetResponse |  | Retrieve a dashboard user |
+| POST | `/dashboard_user/list` | dashboardUserList | body*: DashboardUserListRequest | DashboardUserListResponse |  | List dashboard users |
+| POST | `/deposit_switch/alt/create` | depositSwitchAltCreate | body*: DepositSwitchAltCreateRequest | DepositSwitchAltCreateResponse |  | Create a deposit switch without using Plaid Exchange |
+| POST | `/deposit_switch/create` | depositSwitchCreate | body*: DepositSwitchCreateRequest | DepositSwitchCreateResponse |  | Create a deposit switch |
+| POST | `/deposit_switch/get` | depositSwitchGet | body*: DepositSwitchGetRequest | DepositSwitchGetResponse |  | Retrieve a deposit switch |
+| POST | `/deposit_switch/token/create` | depositSwitchTokenCreate | body*: DepositSwitchTokenCreateRequest | DepositSwitchTokenCreateResponse |  | Create a deposit switch token |
+| POST | `/employers/search` | employersSearch | body*: EmployersSearchRequest | EmployersSearchResponse |  | Search employer database |
+| POST | `/employment/verification/get` | employmentVerificationGet | body*: EmploymentVerificationGetRequest | EmploymentVerificationGetResponse |  | (Deprecated) Retrieve a summary of an individual's employment information |
+| POST | `/fdx/notifications` | fdxNotifications | body*: FDXNotification | — |  | Webhook receiver for fdx notifications |
+| POST | `/identity/get` | identityGet | body*: IdentityGetRequest | IdentityGetResponse |  | Retrieve identity data |
+| POST | `/identity/match` | identityMatch | body*: IdentityMatchRequest | IdentityMatchResponse |  | Retrieve identity match score |
+| POST | `/identity_verification/create` | identityVerificationCreate | body*: IdentityVerificationCreateRequest | IdentityVerificationCreateResponse |  | Create a new identity verification |
+| POST | `/identity_verification/get` | identityVerificationGet | body*: IdentityVerificationGetRequest | IdentityVerificationGetResponse |  | Retrieve Identity Verification |
+| POST | `/identity_verification/list` | identityVerificationList | body*: IdentityVerificationListRequest | IdentityVerificationListResponse |  | List Identity Verifications |
+| POST | `/identity_verification/retry` | identityVerificationRetry | body*: IdentityVerificationRetryRequest | IdentityVerificationRetryResponse |  | Retry an Identity Verification |
+| POST | `/income/verification/create` | incomeVerificationCreate | body*: IncomeVerificationCreateRequest | IncomeVerificationCreateResponse |  | (Deprecated) Create an income verification instance |
+| POST | `/income/verification/documents/download` | incomeVerificationDocumentsDownload | body*: IncomeVerificationDocumentsDownloadRequest | string:binary |  | (Deprecated) Download the original documents used for income verification |
+| POST | `/income/verification/paystubs/get` | incomeVerificationPaystubsGet | body*: IncomeVerificationPaystubsGetRequest | IncomeVerificationPaystubsGetResponse |  | (Deprecated) Retrieve information from the paystubs used for income verification |
+| POST | `/income/verification/precheck` | incomeVerificationPrecheck | body*: IncomeVerificationPrecheckRequest | IncomeVerificationPrecheckResponse |  | (Deprecated) Check digital income verification eligibility and optimize conversion |
+| POST | `/income/verification/taxforms/get` | incomeVerificationTaxformsGet | body*: IncomeVerificationTaxformsGetRequest | IncomeVerificationTaxformsGetResponse |  | (Deprecated) Retrieve information from the tax documents used for income verification |
+| POST | `/institutions/get` | institutionsGet | body*: InstitutionsGetRequest | InstitutionsGetResponse |  | Get details of all supported institutions |
+| POST | `/institutions/get_by_id` | institutionsGetById | body*: InstitutionsGetByIdRequest | InstitutionsGetByIdResponse |  | Get details of an institution |
+| POST | `/institutions/search` | institutionsSearch | body*: InstitutionsSearchRequest | InstitutionsSearchResponse |  | Search institutions |
+| POST | `/investments/holdings/get` | investmentsHoldingsGet | body*: InvestmentsHoldingsGetRequest | InvestmentsHoldingsGetResponse |  | Get Investment holdings |
+| POST | `/investments/transactions/get` | investmentsTransactionsGet | body*: InvestmentsTransactionsGetRequest | InvestmentsTransactionsGetResponse |  | Get investment transactions |
+| POST | `/item/access_token/invalidate` | itemAccessTokenInvalidate | body*: ItemAccessTokenInvalidateRequest | ItemAccessTokenInvalidateResponse |  | Invalidate access_token |
+| POST | `/item/activity/list` | itemActivityList | body*: ItemActivityListRequest | ItemActivityListResponse |  | List a historical log of user consent events |
+| POST | `/item/application/list` | itemApplicationList | body*: ItemApplicationListRequest | ItemApplicationListResponse |  | List a user’s connected applications |
+| POST | `/item/application/scopes/update` | itemApplicationScopesUpdate | body*: ItemApplicationScopesUpdateRequest | ItemApplicationScopesUpdateResponse |  | Update the scopes of access for a particular application |
+| POST | `/item/get` | itemGet | body*: ItemGetRequest | ItemGetResponse |  | Retrieve an Item |
+| POST | `/item/import` | itemImport | body*: ItemImportRequest | ItemImportResponse |  | Import Item |
+| POST | `/item/public_token/create` | itemCreatePublicToken | body*: ItemPublicTokenCreateRequest | ItemPublicTokenCreateResponse |  | Create public token |
+| POST | `/item/public_token/exchange` | itemPublicTokenExchange | body*: ItemPublicTokenExchangeRequest | ItemPublicTokenExchangeResponse |  | Exchange public token for an access token |
+| POST | `/item/remove` | itemRemove | body*: ItemRemoveRequest | ItemRemoveResponse |  | Remove an Item |
+| POST | `/item/webhook/update` | itemWebhookUpdate | body*: ItemWebhookUpdateRequest | ItemWebhookUpdateResponse |  | Update Webhook URL |
+| POST | `/liabilities/get` | liabilitiesGet | body*: LiabilitiesGetRequest | LiabilitiesGetResponse |  | Retrieve Liabilities data |
+| POST | `/link/oauth/correlation_id/exchange` | linkOauthCorrelationIdExchange | body*: LinkOAuthCorrelationIdExchangeRequest | LinkOAuthCorrelationIdExchangeResponse |  | Exchange the Link Correlation Id for a Link Token |
+| POST | `/link/token/create` | linkTokenCreate | body*: LinkTokenCreateRequest | LinkTokenCreateResponse |  | Create Link Token |
+| POST | `/link/token/get` | linkTokenGet | body*: LinkTokenGetRequest | LinkTokenGetResponse |  | Get Link Token |
+| POST | `/link_delivery/create` | linkDeliveryCreate | body*: LinkDeliveryCreateRequest | LinkDeliveryCreateResponse |  | Create Link Delivery session |
+| POST | `/link_delivery/get` | linkDeliveryGet | body*: LinkDeliveryGetRequest | LinkDeliveryGetResponse |  | Get Link Delivery session |
+| POST | `/partner/customer/create` | partnerCustomerCreate | body*: PartnerCustomerCreateRequest | PartnerCustomerCreateResponse |  | Creates a new end customer for a Plaid reseller. |
+| POST | `/partner/customer/enable` | partnerCustomerEnable | body*: PartnerCustomerEnableRequest | PartnerCustomerEnableResponse |  | Enables a Plaid reseller's end customer in the Production environment. |
+| POST | `/partner/customer/get` | partnerCustomerGet | body*: PartnerCustomerGetRequest | PartnerCustomerGetResponse |  | Returns a Plaid reseller's end customer. |
+| POST | `/partner/customer/oauth_institutions/get` | partnerCustomerOauthInstitutionsGet | body*: PartnerCustomerOAuthInstitutionsGetRequest | PartnerCustomerOAuthInstitutionsGetResponse |  | Returns OAuth-institution registration information for a given end customer. |
+| POST | `/partner/customer/remove` | partnerCustomerRemove | body*: PartnerCustomerRemoveRequest | PartnerCustomerRemoveResponse |  | Removes a Plaid reseller's end customer. |
+| POST | `/payment_initiation/consent/create` | paymentInitiationConsentCreate | body*: PaymentInitiationConsentCreateRequest | PaymentInitiationConsentCreateResponse |  | Create payment consent |
+| POST | `/payment_initiation/consent/get` | paymentInitiationConsentGet | body*: PaymentInitiationConsentGetRequest | PaymentInitiationConsentGetResponse |  | Get payment consent |
+| POST | `/payment_initiation/consent/payment/execute` | paymentInitiationConsentPaymentExecute | body*: PaymentInitiationConsentPaymentExecuteRequest | PaymentInitiationConsentPaymentExecuteResponse |  | Execute a single payment using consent |
+| POST | `/payment_initiation/consent/revoke` | paymentInitiationConsentRevoke | body*: PaymentInitiationConsentRevokeRequest | PaymentInitiationConsentRevokeResponse |  | Revoke payment consent |
+| POST | `/payment_initiation/payment/create` | paymentInitiationPaymentCreate | body*: PaymentInitiationPaymentCreateRequest | PaymentInitiationPaymentCreateResponse |  | Create a payment |
+| POST | `/payment_initiation/payment/get` | paymentInitiationPaymentGet | body*: PaymentInitiationPaymentGetRequest | PaymentInitiationPaymentGetResponse |  | Get payment details |
+| POST | `/payment_initiation/payment/list` | paymentInitiationPaymentList | body*: PaymentInitiationPaymentListRequest | PaymentInitiationPaymentListResponse |  | List payments |
+| POST | `/payment_initiation/payment/reverse` | paymentInitiationPaymentReverse | body*: PaymentInitiationPaymentReverseRequest | PaymentInitiationPaymentReverseResponse |  | Reverse an existing payment |
+| POST | `/payment_initiation/payment/token/create` | createPaymentToken | body*: PaymentInitiationPaymentTokenCreateRequest | PaymentInitiationPaymentTokenCreateResponse |  | Create payment token |
+| POST | `/payment_initiation/recipient/create` | paymentInitiationRecipientCreate | body*: PaymentInitiationRecipientCreateRequest | PaymentInitiationRecipientCreateResponse |  | Create payment recipient |
+| POST | `/payment_initiation/recipient/get` | paymentInitiationRecipientGet | body*: PaymentInitiationRecipientGetRequest | PaymentInitiationRecipientGetResponse |  | Get payment recipient |
+| POST | `/payment_initiation/recipient/list` | paymentInitiationRecipientList | body*: PaymentInitiationRecipientListRequest | PaymentInitiationRecipientListResponse |  | List payment recipients |
+| POST | `/payment_profile/create` | paymentProfileCreate | body*: PaymentProfileCreateRequest | PaymentProfileCreateResponse |  | Create payment profile |
+| POST | `/payment_profile/get` | paymentProfileGet | body*: PaymentProfileGetRequest | PaymentProfileGetResponse |  | Get payment profile |
+| POST | `/payment_profile/remove` | paymentProfileRemove | body*: PaymentProfileRemoveRequest | PaymentProfileRemoveResponse |  | Remove payment profile |
+| POST | `/processor/apex/processor_token/create` | processorApexProcessorTokenCreate | body*: ProcessorApexProcessorTokenCreateRequest | ProcessorTokenCreateResponse |  | Create Apex bank account token |
+| POST | `/processor/auth/get` | processorAuthGet | body*: ProcessorAuthGetRequest | ProcessorAuthGetResponse |  | Retrieve Auth data |
+| POST | `/processor/balance/get` | processorBalanceGet | body*: ProcessorBalanceGetRequest | ProcessorBalanceGetResponse |  | Retrieve Balance data |
+| POST | `/processor/bank_transfer/create` | processorBankTransferCreate | body*: ProcessorBankTransferCreateRequest | ProcessorBankTransferCreateResponse |  | Create a bank transfer as a processor |
+| POST | `/processor/identity/get` | processorIdentityGet | body*: ProcessorIdentityGetRequest | ProcessorIdentityGetResponse |  | Retrieve Identity data |
+| POST | `/processor/signal/decision/report` | processorSignalDecisionReport | body*: ProcessorSignalDecisionReportRequest | ProcessorSignalDecisionReportResponse |  | Report whether you initiated an ACH transaction |
+| POST | `/processor/signal/evaluate` | processorSignalEvaluate | body*: ProcessorSignalEvaluateRequest | ProcessorSignalEvaluateResponse |  | Evaluate a planned ACH transaction |
+| POST | `/processor/signal/return/report` | processorSignalReturnReport | body*: ProcessorSignalReturnReportRequest | ProcessorSignalReturnReportResponse |  | Report a return for an ACH transaction |
+| POST | `/processor/stripe/bank_account_token/create` | processorStripeBankAccountTokenCreate | body*: ProcessorStripeBankAccountTokenCreateRequest | ProcessorStripeBankAccountTokenCreateResponse |  | Create Stripe bank account token |
+| POST | `/processor/token/create` | processorTokenCreate | body*: ProcessorTokenCreateRequest | ProcessorTokenCreateResponse |  | Create processor token |
+| POST | `/sandbox/bank_transfer/fire_webhook` | sandboxBankTransferFireWebhook | body*: SandboxBankTransferFireWebhookRequest | SandboxBankTransferFireWebhookResponse |  | Manually fire a Bank Transfer webhook |
+| POST | `/sandbox/bank_transfer/simulate` | sandboxBankTransferSimulate | body*: SandboxBankTransferSimulateRequest | SandboxBankTransferSimulateResponse |  | Simulate a bank transfer event in Sandbox |
+| POST | `/sandbox/income/fire_webhook` | sandboxIncomeFireWebhook | body*: SandboxIncomeFireWebhookRequest | SandboxIncomeFireWebhookResponse |  | Manually fire an Income webhook |
+| POST | `/sandbox/item/fire_webhook` | sandboxItemFireWebhook | body*: SandboxItemFireWebhookRequest | SandboxItemFireWebhookResponse |  | Fire a test webhook |
+| POST | `/sandbox/item/reset_login` | sandboxItemResetLogin | body*: SandboxItemResetLoginRequest | SandboxItemResetLoginResponse |  | Force a Sandbox Item into an error state |
+| POST | `/sandbox/item/set_verification_status` | sandboxItemSetVerificationStatus | body*: SandboxItemSetVerificationStatusRequest | SandboxItemSetVerificationStatusResponse |  | Set verification status for Sandbox account |
+| POST | `/sandbox/oauth/select_accounts` | sandboxOauthSelectAccounts | body*: SandboxOauthSelectAccountsRequest | SandboxOauthSelectAccountsResponse |  | Save the selected accounts when connecting to the Platypus Oauth institution |
+| POST | `/sandbox/payment_profile/reset_login` | sandboxPaymentProfileResetLogin | body*: SandboxPaymentProfileResetLoginRequest | SandboxPaymentProfileResetLoginResponse |  | Reset the login of a Payment Profile |
+| POST | `/sandbox/processor_token/create` | sandboxProcessorTokenCreate | body*: SandboxProcessorTokenCreateRequest | SandboxProcessorTokenCreateResponse |  | Create a test Item and processor token |
+| POST | `/sandbox/public_token/create` | sandboxPublicTokenCreate | body*: SandboxPublicTokenCreateRequest | SandboxPublicTokenCreateResponse |  | Create a test Item |
+| POST | `/sandbox/transfer/fire_webhook` | sandboxTransferFireWebhook | body*: SandboxTransferFireWebhookRequest | SandboxTransferFireWebhookResponse |  | Manually fire a Transfer webhook |
+| POST | `/sandbox/transfer/repayment/simulate` | sandboxTransferRepaymentSimulate | body*: SandboxTransferRepaymentSimulateRequest | SandboxTransferRepaymentSimulateResponse |  | Trigger the creation of a repayment |
+| POST | `/sandbox/transfer/simulate` | sandboxTransferSimulate | body*: SandboxTransferSimulateRequest | SandboxTransferSimulateResponse |  | Simulate a transfer event in Sandbox |
+| POST | `/sandbox/transfer/sweep/simulate` | sandboxTransferSweepSimulate | body*: SandboxTransferSweepSimulateRequest | SandboxTransferSweepSimulateResponse |  | Simulate creating a sweep |
+| POST | `/sandbox/transfer/test_clock/advance` | sandboxTransferTestClockAdvance | body*: SandboxTransferTestClockAdvanceRequest | SandboxTransferTestClockAdvanceResponse |  | Advance a test clock |
+| POST | `/sandbox/transfer/test_clock/create` | sandboxTransferTestClockCreate | body*: SandboxTransferTestClockCreateRequest | SandboxTransferTestClockCreateResponse |  | Create a test clock |
+| POST | `/sandbox/transfer/test_clock/get` | sandboxTransferTestClockGet | body*: SandboxTransferTestClockGetRequest | SandboxTransferTestClockGetResponse |  | Get a test clock |
+| POST | `/sandbox/transfer/test_clock/list` | sandboxTransferTestClockList | body*: SandboxTransferTestClockListRequest | SandboxTransferTestClockListResponse |  | List test clocks |
+| POST | `/signal/decision/report` | signalDecisionReport | body*: SignalDecisionReportRequest | SignalDecisionReportResponse |  | Report whether you initiated an ACH transaction |
+| POST | `/signal/evaluate` | signalEvaluate | body*: SignalEvaluateRequest | SignalEvaluateResponse |  | Evaluate a planned ACH transaction |
+| POST | `/signal/prepare` | signalPrepare | body*: SignalPrepareRequest | SignalPrepareResponse |  | Opt-in an Item to Signal |
+| POST | `/signal/return/report` | signalReturnReport | body*: SignalReturnReportRequest | SignalReturnReportResponse |  | Report a return for an ACH transaction |
+| POST | `/transactions/enrich` | transactionsEnrich | body*: TransactionsEnrichGetRequest | TransactionsEnrichGetResponse |  | Enrich locally-held transaction data |
+| POST | `/transactions/get` | transactionsGet | body*: TransactionsGetRequest | TransactionsGetResponse |  | Get transaction data |
+| POST | `/transactions/recurring/get` | transactionsRecurringGet | body*: TransactionsRecurringGetRequest | TransactionsRecurringGetResponse |  | Fetch recurring transaction streams |
+| POST | `/transactions/refresh` | transactionsRefresh | body*: TransactionsRefreshRequest | TransactionsRefreshResponse |  | Refresh transaction data |
+| POST | `/transactions/sync` | transactionsSync | body*: TransactionsSyncRequest | TransactionsSyncResponse |  | Get incremental transaction updates on an Item |
+| POST | `/transfer/authorization/create` | transferAuthorizationCreate | body*: TransferAuthorizationCreateRequest | TransferAuthorizationCreateResponse |  | Create a transfer authorization |
+| POST | `/transfer/cancel` | transferCancel | body*: TransferCancelRequest | TransferCancelResponse |  | Cancel a transfer |
+| POST | `/transfer/capabilities/get` | transferCapabilitiesGet | body*: TransferCapabilitiesGetRequest | TransferCapabilitiesGetResponse |  | Get RTP eligibility information of a transfer |
+| POST | `/transfer/create` | transferCreate | body*: TransferCreateRequest | TransferCreateResponse |  | Create a transfer |
+| POST | `/transfer/event/list` | transferEventList | body*: TransferEventListRequest | TransferEventListResponse |  | List transfer events |
+| POST | `/transfer/event/sync` | transferEventSync | body*: TransferEventSyncRequest | TransferEventSyncResponse |  | Sync transfer events |
+| POST | `/transfer/get` | transferGet | body*: TransferGetRequest | TransferGetResponse |  | Retrieve a transfer |
+| POST | `/transfer/intent/create` | transferIntentCreate | body*: TransferIntentCreateRequest | TransferIntentCreateResponse |  | Create a transfer intent object to invoke the Transfer UI |
+| POST | `/transfer/intent/get` | transferIntentGet | body*: TransferIntentGetRequest | TransferIntentGetResponse |  | Retrieve more information about a transfer intent |
+| POST | `/transfer/list` | transferList | body*: TransferListRequest | TransferListResponse |  | List transfers |
+| POST | `/transfer/migrate_account` | transferMigrateAccount | body*: TransferMigrateAccountRequest | TransferMigrateAccountResponse |  | Migrate account into Transfers |
+| POST | `/transfer/originator/create` | transferOriginatorCreate | body*: TransferOriginatorCreateRequest | TransferOriginatorCreateResponse |  | Create a new originator |
+| POST | `/transfer/originator/get` | transferOriginatorGet | body*: TransferOriginatorGetRequest | TransferOriginatorGetResponse |  | Get status of an originator's onboarding |
+| POST | `/transfer/originator/list` | transferOriginatorList | body*: TransferOriginatorListRequest | TransferOriginatorListResponse |  | Get status of all originators' onboarding |
+| POST | `/transfer/questionnaire/create` | transferQuestionnaireCreate | body*: TransferQuestionnaireCreateRequest | TransferQuestionnaireCreateResponse |  | Generate a Plaid-hosted onboarding UI URL. |
+| POST | `/transfer/recurring/cancel` | transferRecurringCancel | body*: TransferRecurringCancelRequest | TransferRecurringCancelResponse |  | Cancel a recurring transfer. |
+| POST | `/transfer/recurring/create` | transferRecurringCreate | body*: TransferRecurringCreateRequest | TransferRecurringCreateResponse |  | Create a recurring transfer |
+| POST | `/transfer/recurring/get` | transferRecurringGet | body*: TransferRecurringGetRequest | TransferRecurringGetResponse |  | Retrieve a recurring transfer |
+| POST | `/transfer/recurring/list` | transferRecurringList | body*: TransferRecurringListRequest | TransferRecurringListResponse |  | List recurring transfers |
+| POST | `/transfer/refund/cancel` | transferRefundCancel | body*: TransferRefundCancelRequest | TransferRefundCancelResponse |  | Cancel a refund |
+| POST | `/transfer/refund/create` | transferRefundCreate | body*: TransferRefundCreateRequest | TransferRefundCreateResponse |  | Create a refund |
+| POST | `/transfer/refund/get` | transferRefundGet | body*: TransferRefundGetRequest | TransferRefundGetResponse |  | Retrieve a refund |
+| POST | `/transfer/repayment/list` | transferRepaymentList | body*: TransferRepaymentListRequest | TransferRepaymentListResponse |  | Lists historical repayments |
+| POST | `/transfer/repayment/return/list` | transferRepaymentReturnList | body*: TransferRepaymentReturnListRequest | TransferRepaymentReturnListResponse |  | List the returns included in a repayment |
+| POST | `/transfer/sweep/get` | transferSweepGet | body*: TransferSweepGetRequest | TransferSweepGetResponse |  | Retrieve a sweep |
+| POST | `/transfer/sweep/list` | transferSweepList | body*: TransferSweepListRequest | TransferSweepListResponse |  | List sweeps |
+| POST | `/user/create` | userCreate | body*: UserCreateRequest | UserCreateResponse |  | Create user |
+| POST | `/wallet/create` | walletCreate | body*: WalletCreateRequest | WalletCreateResponse |  | Create an e-wallet |
+| POST | `/wallet/get` | walletGet | body*: WalletGetRequest | WalletGetResponse |  | Fetch an e-wallet |
+| POST | `/wallet/list` | walletList | body*: WalletListRequest | WalletListResponse |  | Fetch a list of e-wallets |
+| POST | `/wallet/transaction/execute` | walletTransactionExecute | body*: WalletTransactionExecuteRequest | WalletTransactionExecuteResponse |  | Execute a transaction using an e-wallet |
+| POST | `/wallet/transaction/get` | walletTransactionGet | body*: WalletTransactionGetRequest | WalletTransactionGetResponse |  | Fetch an e-wallet transaction |
+| POST | `/wallet/transaction/list` | walletTransactionList | body*: WalletTransactionListRequest | WalletTransactionListResponse |  | List e-wallet transactions |
+| POST | `/watchlist_screening/entity/create` | watchlistScreeningEntityCreate | body*: WatchlistScreeningEntityCreateRequest | WatchlistScreeningEntityCreateResponse |  | Create a watchlist screening for an entity |
+| POST | `/watchlist_screening/entity/get` | watchlistScreeningEntityGet | body*: WatchlistScreeningEntityGetRequest | WatchlistScreeningEntityGetResponse |  | Get an entity screening |
+| POST | `/watchlist_screening/entity/history/list` | watchlistScreeningEntityHistoryList | body*: WatchlistScreeningEntityHistoryListRequest | WatchlistScreeningEntityHistoryListResponse |  | List history for entity watchlist screenings |
+| POST | `/watchlist_screening/entity/hit/list` | watchlistScreeningEntityHitList | body*: WatchlistScreeningEntityHitListRequest | WatchlistScreeningEntityHitListResponse |  | List hits for entity watchlist screenings |
+| POST | `/watchlist_screening/entity/list` | watchlistScreeningEntityList | body*: WatchlistScreeningEntityListRequest | WatchlistScreeningEntityListResponse |  | List entity watchlist screenings |
+| POST | `/watchlist_screening/entity/program/get` | watchlistScreeningEntityProgramGet | body*: WatchlistScreeningEntityProgramGetRequest | WatchlistScreeningEntityProgramGetResponse |  | Get entity watchlist screening program |
+| POST | `/watchlist_screening/entity/program/list` | watchlistScreeningEntityProgramList | body*: WatchlistScreeningEntityProgramListRequest | WatchlistScreeningEntityProgramListResponse |  | List entity watchlist screening programs |
+| POST | `/watchlist_screening/entity/review/create` | watchlistScreeningEntityReviewCreate | body*: WatchlistScreeningEntityReviewCreateRequest | WatchlistScreeningEntityReviewCreateResponse |  | Create a review for an entity watchlist screening |
+| POST | `/watchlist_screening/entity/review/list` | watchlistScreeningEntityReviewList | body*: WatchlistScreeningEntityReviewListRequest | WatchlistScreeningEntityReviewListResponse |  | List reviews for entity watchlist screenings |
+| POST | `/watchlist_screening/entity/update` | watchlistScreeningEntityUpdate | body*: WatchlistScreeningEntityUpdateRequest | WatchlistScreeningEntityUpdateResponse |  | Update an entity screening |
+| POST | `/watchlist_screening/individual/create` | watchlistScreeningIndividualCreate | body*: WatchlistScreeningIndividualCreateRequest | WatchlistScreeningIndividualCreateResponse |  | Create a watchlist screening for a person |
+| POST | `/watchlist_screening/individual/get` | watchlistScreeningIndividualGet | body*: WatchlistScreeningIndividualGetRequest | WatchlistScreeningIndividualGetResponse |  | Retrieve an individual watchlist screening |
+| POST | `/watchlist_screening/individual/history/list` | watchlistScreeningIndividualHistoryList | body*: WatchlistScreeningIndividualHistoryListRequest | WatchlistScreeningIndividualHistoryListResponse |  | List history for individual watchlist screenings |
+| POST | `/watchlist_screening/individual/hit/list` | watchlistScreeningIndividualHitList | body*: WatchlistScreeningIndividualHitListRequest | WatchlistScreeningIndividualHitListResponse |  | List hits for individual watchlist screening |
+| POST | `/watchlist_screening/individual/list` | watchlistScreeningIndividualList | body*: WatchlistScreeningIndividualListRequest | WatchlistScreeningIndividualListResponse |  | List Individual Watchlist Screenings |
+| POST | `/watchlist_screening/individual/program/get` | watchlistScreeningIndividualProgramGet | body*: WatchlistScreeningIndividualProgramGetRequest | WatchlistScreeningIndividualProgramGetResponse |  | Get individual watchlist screening program |
+| POST | `/watchlist_screening/individual/program/list` | watchlistScreeningIndividualProgramList | body*: WatchlistScreeningIndividualProgramListRequest | WatchlistScreeningIndividualProgramListResponse |  | List individual watchlist screening programs |
+| POST | `/watchlist_screening/individual/review/create` | watchlistScreeningIndividualReviewCreate | body*: WatchlistScreeningIndividualReviewCreateRequest | WatchlistScreeningIndividualReviewCreateResponse |  | Create a review for an individual watchlist screening |
+| POST | `/watchlist_screening/individual/review/list` | watchlistScreeningIndividualReviewList | body*: WatchlistScreeningIndividualReviewListRequest | WatchlistScreeningIndividualReviewListResponse |  | List reviews for individual watchlist screenings |
+| POST | `/watchlist_screening/individual/update` | watchlistScreeningIndividualUpdate | body*: WatchlistScreeningIndividualUpdateRequest | WatchlistScreeningIndividualUpdateResponse |  | Update individual watchlist screening |
+| POST | `/webhook_verification_key/get` | webhookVerificationKeyGet | body*: WebhookVerificationKeyGetRequest | WebhookVerificationKeyGetResponse |  | Get webhook verification key |

@@ -113,6 +113,526 @@
         "from": "ndhm-gov-in-ndhm-cm-06c88a9e22",
         "kind": "EXPOSES",
         "to": "operation:post:/v0.5/users/auth/on-notify"
+      },
+      {
+        "from": "operation:post:/v0.5/care-contexts/on-discover",
+        "kind": "ACCEPTS",
+        "to": "schema:PatientDiscoveryResult"
+      },
+      {
+        "from": "operation:post:/v0.5/consent-requests/init",
+        "kind": "ACCEPTS",
+        "to": "schema:ConsentRequest"
+      },
+      {
+        "from": "operation:post:/v0.5/consent-requests/status",
+        "kind": "ACCEPTS",
+        "to": "schema:ConsentRequestStatusRequest"
+      },
+      {
+        "from": "operation:post:/v0.5/consents/fetch",
+        "kind": "ACCEPTS",
+        "to": "schema:ConsentFetchRequest"
+      },
+      {
+        "from": "operation:post:/v0.5/consents/hip/on-notify",
+        "kind": "ACCEPTS",
+        "to": "schema:HIPConsentNotificationResponse"
+      },
+      {
+        "from": "operation:post:/v0.5/consents/hiu/on-notify",
+        "kind": "ACCEPTS",
+        "to": "schema:HIUConsentNotificationResponse"
+      },
+      {
+        "from": "operation:post:/v0.5/health-information/notify",
+        "kind": "ACCEPTS",
+        "to": "schema:HealthInformationNotification"
+      },
+      {
+        "from": "operation:post:/v0.5/health-information/on-request",
+        "kind": "ACCEPTS",
+        "to": "schema:HIPHealthInformationRequestAcknowledgement"
+      },
+      {
+        "from": "operation:post:/v0.5/health-information/request",
+        "kind": "ACCEPTS",
+        "to": "schema:HIRequest"
+      },
+      {
+        "from": "operation:get:/v0.5/heartbeat",
+        "kind": "RETURNS",
+        "to": "schema:HeartbeatResponse"
+      },
+      {
+        "from": "operation:post:/v0.5/links/link/add-contexts",
+        "kind": "ACCEPTS",
+        "to": "schema:PatientCareContextLinkRequest"
+      },
+      {
+        "from": "operation:post:/v0.5/links/link/on-confirm",
+        "kind": "ACCEPTS",
+        "to": "schema:PatientLinkResult"
+      },
+      {
+        "from": "operation:post:/v0.5/links/link/on-init",
+        "kind": "ACCEPTS",
+        "to": "schema:PatientLinkReferenceResult"
+      },
+      {
+        "from": "operation:post:/v0.5/patients/find",
+        "kind": "ACCEPTS",
+        "to": "schema:PatientIdentificationRequest"
+      },
+      {
+        "from": "operation:post:/v0.5/patients/profile/on-share",
+        "kind": "ACCEPTS",
+        "to": "schema:ShareProfileResult"
+      },
+      {
+        "from": "operation:post:/v0.5/subscription-requests/cm/init",
+        "kind": "ACCEPTS",
+        "to": "schema:SubscriptionRequest"
+      },
+      {
+        "from": "operation:post:/v0.5/subscription-requests/hiu/on-notify",
+        "kind": "ACCEPTS",
+        "to": "schema:HIUSubscriptionRequestNotificationAcknowledgement"
+      },
+      {
+        "from": "operation:post:/v0.5/subscriptions/hiu/on-notify",
+        "kind": "ACCEPTS",
+        "to": "schema:HIUSubscriptionNotificationAcknowledgment"
+      },
+      {
+        "from": "operation:post:/v0.5/users/auth/confirm",
+        "kind": "ACCEPTS",
+        "to": "schema:PatientAuthConfirmRequest"
+      },
+      {
+        "from": "operation:post:/v0.5/users/auth/fetch-modes",
+        "kind": "ACCEPTS",
+        "to": "schema:PatientAuthModeQueryRequest"
+      },
+      {
+        "from": "operation:post:/v0.5/users/auth/init",
+        "kind": "ACCEPTS",
+        "to": "schema:PatientAuthInitRequest"
+      },
+      {
+        "from": "operation:post:/v0.5/users/auth/on-notify",
+        "kind": "ACCEPTS",
+        "to": "schema:PatientAuthNotificationAcknowledgement"
+      },
+      {
+        "from": "schema:AuthConfirmIdentifier",
+        "kind": "REFERENCES",
+        "to": "schema:AuthConfirmIdentifierType"
+      },
+      {
+        "from": "schema:ConsentFetchRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:ConsentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CareContextDefinition"
+      },
+      {
+        "from": "schema:ConsentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ConsentManagerPatientID"
+      },
+      {
+        "from": "schema:ConsentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:HITypeEnum"
+      },
+      {
+        "from": "schema:ConsentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:OrganizationRepresentation"
+      },
+      {
+        "from": "schema:ConsentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "schema:ConsentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Requester"
+      },
+      {
+        "from": "schema:ConsentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:ConsentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:UsePurpose"
+      },
+      {
+        "from": "schema:ConsentRequestStatusRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:ErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:HIPConsentNotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ConsentAcknowledgement"
+      },
+      {
+        "from": "schema:HIPConsentNotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:HIPConsentNotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:HIPConsentNotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:HIPHealthInformationRequestAcknowledgement",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:HIPHealthInformationRequestAcknowledgement",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:HIPHealthInformationRequestAcknowledgement",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:HIRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DateRange"
+      },
+      {
+        "from": "schema:HIRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:HIRequest",
+        "kind": "REFERENCES",
+        "to": "schema:UuidSchema"
+      },
+      {
+        "from": "schema:HIRequest",
+        "kind": "REFERENCES",
+        "to": "schema:consent"
+      },
+      {
+        "from": "schema:HIRequest",
+        "kind": "REFERENCES",
+        "to": "schema:keyMaterial"
+      },
+      {
+        "from": "schema:HIUConsentNotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ConsentAcknowledgement"
+      },
+      {
+        "from": "schema:HIUConsentNotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:HIUConsentNotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:HIUConsentNotificationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:HIUSubscriptionNotificationAcknowledgment",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:HIUSubscriptionNotificationAcknowledgment",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:HIUSubscriptionNotificationAcknowledgment",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:HIUSubscriptionRequestNotificationAcknowledgement",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:HIUSubscriptionRequestNotificationAcknowledgement",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:HIUSubscriptionRequestNotificationAcknowledgement",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:HealthInformationNotification",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:HealthInformationNotification",
+        "kind": "REFERENCES",
+        "to": "schema:UuidSchema"
+      },
+      {
+        "from": "schema:HeartbeatResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:HeartbeatResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:Identifier",
+        "kind": "REFERENCES",
+        "to": "schema:IdentifierType"
+      },
+      {
+        "from": "schema:PatientAuthConfirmRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientDemographic"
+      },
+      {
+        "from": "schema:PatientAuthConfirmRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:PatientAuthInitRequest",
+        "kind": "REFERENCES",
+        "to": "schema:AuthenticationMode"
+      },
+      {
+        "from": "schema:PatientAuthInitRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientAuthPurpose"
+      },
+      {
+        "from": "schema:PatientAuthInitRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientAuthRequester"
+      },
+      {
+        "from": "schema:PatientAuthInitRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:PatientAuthModeQueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientAuthPurpose"
+      },
+      {
+        "from": "schema:PatientAuthModeQueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:PatientAuthNotificationAcknowledgement",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:PatientAuthNotificationAcknowledgement",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:PatientAuthNotificationAcknowledgement",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:PatientCareContextLink",
+        "kind": "REFERENCES",
+        "to": "schema:CareContextRepresentation"
+      },
+      {
+        "from": "schema:PatientCareContextLinkRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientCareContextLink"
+      },
+      {
+        "from": "schema:PatientCareContextLinkRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:PatientDemographic",
+        "kind": "REFERENCES",
+        "to": "schema:AuthConfirmIdentifier"
+      },
+      {
+        "from": "schema:PatientDemographic",
+        "kind": "REFERENCES",
+        "to": "schema:PatientGender"
+      },
+      {
+        "from": "schema:PatientDiscoveryResult",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:PatientDiscoveryResult",
+        "kind": "REFERENCES",
+        "to": "schema:PatientRepresentation"
+      },
+      {
+        "from": "schema:PatientDiscoveryResult",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:PatientDiscoveryResult",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:PatientIdentificationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:PatientLinkReferenceResult",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:PatientLinkReferenceResult",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:PatientLinkReferenceResult",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:PatientLinkReferenceResult",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:PatientLinkReferenceResult",
+        "kind": "REFERENCES",
+        "to": "schema:UuidSchema"
+      },
+      {
+        "from": "schema:PatientLinkResult",
+        "kind": "REFERENCES",
+        "to": "schema:CareContextRepresentation"
+      },
+      {
+        "from": "schema:PatientLinkResult",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:PatientLinkResult",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:PatientLinkResult",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:PatientRepresentation",
+        "kind": "REFERENCES",
+        "to": "schema:CareContextRepresentation"
+      },
+      {
+        "from": "schema:PatientRepresentation",
+        "kind": "REFERENCES",
+        "to": "schema:IdentifierType"
+      },
+      {
+        "from": "schema:ShareProfileResult",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:ShareProfileResult",
+        "kind": "REFERENCES",
+        "to": "schema:RequestReference"
+      },
+      {
+        "from": "schema:ShareProfileResult",
+        "kind": "REFERENCES",
+        "to": "schema:ShareProfileAcknowledgement"
+      },
+      {
+        "from": "schema:ShareProfileResult",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:SubscriptionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ConsentManagerPatientID"
+      },
+      {
+        "from": "schema:SubscriptionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:OrganizationRepresentation"
+      },
+      {
+        "from": "schema:SubscriptionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SubscriptionCategory"
+      },
+      {
+        "from": "schema:SubscriptionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:SubscriptionPeriod"
+      },
+      {
+        "from": "schema:SubscriptionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TimestampSchema"
+      },
+      {
+        "from": "schema:SubscriptionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:UsePurpose"
+      },
+      {
+        "from": "schema:keyMaterial",
+        "kind": "REFERENCES",
+        "to": "schema:KeyObject"
       }
     ],
     "nodes": [
@@ -122,102 +642,443 @@
       },
       {
         "deprecated": false,
+        "description": "Result of patient care-context discovery request at HIP end.",
         "id": "operation:post:/v0.5/care-contexts/on-discover",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/care-contexts/on-discover",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/care-contexts/on-discover",
         "pointer": "#/paths/~1v0.5~1care-contexts~1on-discover/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "PatientDiscoveryResult"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Response to patient's account discovery request"
+        "summary": "Response to patient's account discovery request",
+        "tags": [
+          "discovery"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a consent request to get data about a patient by HIU user.",
         "id": "operation:post:/v0.5/consent-requests/init",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/consent-requests/init",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/consent-requests/init",
         "pointer": "#/paths/~1v0.5~1consent-requests~1init/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "ConsentRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create consent request"
+        "summary": "Create consent request",
+        "tags": [
+          "consent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get status of consent request done previously.",
         "id": "operation:post:/v0.5/consent-requests/status",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/consent-requests/status",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/consent-requests/status",
         "pointer": "#/paths/~1v0.5~1consent-requests~1status/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "ConsentRequestStatusRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get consent request status"
+        "summary": "Get consent request status",
+        "tags": [
+          "consent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is called when a HIU makes a request to get a consent artefact.",
         "id": "operation:post:/v0.5/consents/fetch",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/consents/fetch",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/consents/fetch",
         "pointer": "#/paths/~1v0.5~1consents~1fetch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ConsentFetchRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get consent artefact"
+        "summary": "Get consent artefact",
+        "tags": [
+          "consent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is called by HIP as acknowledgement to notification of consents, in cases of consent revocation and expiration, notified by CM earlier via Gateway API…",
         "id": "operation:post:/v0.5/consents/hip/on-notify",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/consents/hip/on-notify",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/consents/hip/on-notify",
         "pointer": "#/paths/~1v0.5~1consents~1hip~1on-notify/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "HIPConsentNotificationResponse"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Consent notification"
+        "summary": "Consent notification",
+        "tags": [
+          "consent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is called by HIU as acknowledgement to consent notifications, specifically for cases when consent is REVOKED or EXPIRED, notified by CM earlier via Ga…",
         "id": "operation:post:/v0.5/consents/hiu/on-notify",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/consents/hiu/on-notify",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/consents/hiu/on-notify",
         "pointer": "#/paths/~1v0.5~1consents~1hiu~1on-notify/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "HIUConsentNotificationResponse"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Consent notification"
+        "summary": "Consent notification",
+        "tags": [
+          "consent"
+        ]
       },
       {
         "deprecated": false,
+        "description": "API called by HIU and HIP during data-transfer.",
         "id": "operation:post:/v0.5/health-information/notify",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/health-information/notify",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/health-information/notify",
         "pointer": "#/paths/~1v0.5~1health-information~1notify/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "HealthInformationNotification"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Notifications corresponding to events during data flow"
+        "summary": "Notifications corresponding to events during data flow",
+        "tags": [
+          "data flow"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is called by HIP to acknowledge Health information request receipt.",
         "id": "operation:post:/v0.5/health-information/on-request",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/health-information/on-request",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/health-information/on-request",
         "pointer": "#/paths/~1v0.5~1health-information~1on-request/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "HIPHealthInformationRequestAcknowledgement"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Health information data request acknowledgement from HIP"
+        "summary": "Health information data request acknowledgement from HIP",
+        "tags": [
+          "data flow"
+        ]
       },
       {
         "deprecated": false,
+        "description": "HIU request for Health information against a consent id.",
         "id": "operation:post:/v0.5/health-information/request",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/health-information/request",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/health-information/request",
         "pointer": "#/paths/~1v0.5~1health-information~1request/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "HIRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Health information data request from HIU"
+        "summary": "Health information data request from HIU",
+        "tags": [
+          "data flow"
+        ]
       },
       {
         "deprecated": false,
@@ -227,415 +1088,947 @@
         "name": "get /v0.5/heartbeat",
         "path": "/v0.5/heartbeat",
         "pointer": "#/paths/~1v0.5~1heartbeat/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HeartbeatResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get consent request status"
+        "summary": "Get consent request status",
+        "tags": [
+          "monitoring"
+        ]
       },
       {
         "deprecated": false,
+        "description": "API to submit care-context to CM for HIP initiated linking.",
         "id": "operation:post:/v0.5/links/link/add-contexts",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/links/link/add-contexts",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/links/link/add-contexts",
         "pointer": "#/paths/~1v0.5~1links~1link~1add-contexts/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "PatientCareContextLinkRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "API for HIP initiated care-context linking for patient"
+        "summary": "API for HIP initiated care-context linking for patient",
+        "tags": [
+          "link"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of linked care contexts with patient reference number.",
         "id": "operation:post:/v0.5/links/link/on-confirm",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/links/link/on-confirm",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/links/link/on-confirm",
         "pointer": "#/paths/~1v0.5~1links~1link~1on-confirm/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "PatientLinkResult"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Token authenticated by HIP, indicating completion of linkage of care-contexts"
+        "summary": "Token authenticated by HIP, indicating completion of linkage of care-contexts",
+        "tags": [
+          "link"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Result of patient care-context link request from HIP end.",
         "id": "operation:post:/v0.5/links/link/on-init",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/links/link/on-init",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/links/link/on-init",
         "pointer": "#/paths/~1v0.5~1links~1link~1on-init/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "PatientLinkReferenceResult"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Response to patient's care context link request"
+        "summary": "Response to patient's care context link request",
+        "tags": [
+          "link"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is meant for identify to patient given her consent-manager-user-id.",
         "id": "operation:post:/v0.5/patients/find",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/patients/find",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/patients/find",
         "pointer": "#/paths/~1v0.5~1patients~1find/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "PatientIdentificationRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Identify a patient by her consent-manager user-id"
+        "summary": "Identify a patient by her consent-manager user-id",
+        "tags": [
+          "identification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Result of patient share profile request at HIP end.",
         "id": "operation:post:/v0.5/patients/profile/on-share",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/patients/profile/on-share",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/patients/profile/on-share",
         "pointer": "#/paths/~1v0.5~1patients~1profile~1on-share/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "ShareProfileResult"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Response to patient's share profile request"
+        "summary": "Response to patient's share profile request",
+        "tags": [
+          "profile"
+        ]
       },
       {
         "deprecated": false,
+        "description": "creates a request for subscription.",
         "id": "operation:post:/v0.5/subscription-requests/cm/init",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/subscription-requests/cm/init",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/subscription-requests/cm/init",
         "pointer": "#/paths/~1v0.5~1subscription-requests~1cm~1init/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "SubscriptionRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Request for subscription"
+        "summary": "Request for subscription",
+        "tags": [
+          "subscriptions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is called by HIU as acknowledgement to subscription request relevant notifications.",
         "id": "operation:post:/v0.5/subscription-requests/hiu/on-notify",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/subscription-requests/hiu/on-notify",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/subscription-requests/hiu/on-notify",
         "pointer": "#/paths/~1v0.5~1subscription-requests~1hiu~1on-notify/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "HIUSubscriptionRequestNotificationAcknowledgement"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Callback API for /subscription-requests/hiu/notify to acknowledge receipt of notification."
+        "summary": "Callback API for /subscription-requests/hiu/notify to acknowledge receipt of notification.",
+        "tags": [
+          "subscriptions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is called by HIU as acknowledgement to consent notifications, specifically for cases when consent is REVOKED or EXPIRED.",
         "id": "operation:post:/v0.5/subscriptions/hiu/on-notify",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/subscriptions/hiu/on-notify",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/subscriptions/hiu/on-notify",
         "pointer": "#/paths/~1v0.5~1subscriptions~1hiu~1on-notify/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "HIUSubscriptionNotificationAcknowledgment"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Callback API for /subscriptions/hiu/notify to acknowledge receipt of notification."
+        "summary": "Callback API for /subscriptions/hiu/notify to acknowledge receipt of notification.",
+        "tags": [
+          "subscriptions",
+          "hiu facing"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is called by HIP/HIUs to confirm authentication of users.",
         "id": "operation:post:/v0.5/users/auth/confirm",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/users/auth/confirm",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/users/auth/confirm",
         "pointer": "#/paths/~1v0.5~1users~1auth~1confirm/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "PatientAuthConfirmRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Confirmation request sending token, otp or other authentication details from HIP/HIU for confirmation"
+        "summary": "Confirmation request sending token, otp or other authentication details from HIP/HIU for confirmation",
+        "tags": [
+          "user auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is meant for identify supported authentication modes for a patient given a specific purpose",
         "id": "operation:post:/v0.5/users/auth/fetch-modes",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/users/auth/fetch-modes",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/users/auth/fetch-modes",
         "pointer": "#/paths/~1v0.5~1users~1auth~1fetch-modes/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "PatientAuthModeQueryRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get a patient's authentication modes relevant to specified purpose"
+        "summary": "Get a patient's authentication modes relevant to specified purpose",
+        "tags": [
+          "user auth",
+          "hip facing"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is called by HIPs to initiate authentication of users.",
         "id": "operation:post:/v0.5/users/auth/init",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/users/auth/init",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/users/auth/init",
         "pointer": "#/paths/~1v0.5~1users~1auth~1init/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "PatientAuthInitRequest"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Initialize authentication from HIP"
+        "summary": "Initialize authentication from HIP",
+        "tags": [
+          "user auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API is called by HIU/HIPs to confirm acknowledgement for receipt of auth notification is case of DIRECT authentication.",
         "id": "operation:post:/v0.5/users/auth/on-notify",
         "kind": "operation",
         "method": "post",
         "name": "post /v0.5/users/auth/on-notify",
+        "parameters": [
+          {
+            "description": "Access token which was issued after successful login with gateway auth server.",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v0.5/users/auth/on-notify",
         "pointer": "#/paths/~1v0.5~1users~1auth~1on-notify/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/xml"
+          ],
+          "required": true,
+          "type": "PatientAuthNotificationAcknowledgement"
+        },
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "callback API from HIU/HIPs as acknowledgement of auth notification (in case of DIRECT auth)"
+        "summary": "callback API from HIU/HIPs as acknowledgement of auth notification (in case of DIRECT auth)",
+        "tags": [
+          "user auth",
+          "hip facing",
+          "hiu facing"
+        ]
       },
       {
         "id": "schema:AuthConfirmIdentifier",
         "kind": "schema",
-        "name": "AuthConfirmIdentifier"
+        "name": "AuthConfirmIdentifier",
+        "type": "object"
       },
       {
         "id": "schema:AuthConfirmIdentifierType",
         "kind": "schema",
-        "name": "AuthConfirmIdentifierType"
+        "name": "AuthConfirmIdentifierType",
+        "type": "string"
       },
       {
+        "description": "Subjected to CM specific capability 1.",
         "id": "schema:AuthenticationMode",
         "kind": "schema",
-        "name": "AuthenticationMode"
+        "name": "AuthenticationMode",
+        "type": "string"
       },
       {
         "id": "schema:CareContextDefinition",
         "kind": "schema",
-        "name": "CareContextDefinition"
+        "name": "CareContextDefinition",
+        "type": "object"
       },
       {
         "id": "schema:CareContextRepresentation",
         "kind": "schema",
-        "name": "CareContextRepresentation"
+        "name": "CareContextRepresentation",
+        "type": "object"
       },
       {
         "id": "schema:ConsentAcknowledgement",
         "kind": "schema",
-        "name": "ConsentAcknowledgement"
+        "name": "ConsentAcknowledgement",
+        "type": "object"
       },
       {
         "id": "schema:ConsentFetchRequest",
         "kind": "schema",
-        "name": "ConsentFetchRequest"
+        "name": "ConsentFetchRequest",
+        "type": "object"
       },
       {
         "id": "schema:ConsentManagerPatientID",
         "kind": "schema",
-        "name": "ConsentManagerPatientID"
+        "name": "ConsentManagerPatientID",
+        "type": "object"
       },
       {
         "id": "schema:ConsentRequest",
         "kind": "schema",
-        "name": "ConsentRequest"
+        "name": "ConsentRequest",
+        "type": "object"
       },
       {
         "id": "schema:ConsentRequestStatusRequest",
         "kind": "schema",
-        "name": "ConsentRequestStatusRequest"
+        "name": "ConsentRequestStatusRequest",
+        "type": "object"
       },
       {
         "id": "schema:DateRange",
         "kind": "schema",
-        "name": "DateRange"
+        "name": "DateRange",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:HIPConsentNotificationResponse",
         "kind": "schema",
-        "name": "HIPConsentNotificationResponse"
+        "name": "HIPConsentNotificationResponse",
+        "type": "object"
       },
       {
         "id": "schema:HIPHealthInformationRequestAcknowledgement",
         "kind": "schema",
-        "name": "HIPHealthInformationRequestAcknowledgement"
+        "name": "HIPHealthInformationRequestAcknowledgement",
+        "type": "object"
       },
       {
         "id": "schema:HIRequest",
         "kind": "schema",
-        "name": "HIRequest"
+        "name": "HIRequest",
+        "type": "object"
       },
       {
         "id": "schema:HITypeEnum",
         "kind": "schema",
-        "name": "HITypeEnum"
+        "name": "HITypeEnum",
+        "type": "string"
       },
       {
         "id": "schema:HIUConsentNotificationResponse",
         "kind": "schema",
-        "name": "HIUConsentNotificationResponse"
+        "name": "HIUConsentNotificationResponse",
+        "type": "object"
       },
       {
         "id": "schema:HIUSubscriptionNotificationAcknowledgment",
         "kind": "schema",
-        "name": "HIUSubscriptionNotificationAcknowledgment"
+        "name": "HIUSubscriptionNotificationAcknowledgment",
+        "type": "object"
       },
       {
         "id": "schema:HIUSubscriptionRequestNotificationAcknowledgement",
         "kind": "schema",
-        "name": "HIUSubscriptionRequestNotificationAcknowledgement"
+        "name": "HIUSubscriptionRequestNotificationAcknowledgement",
+        "type": "object"
       },
       {
         "id": "schema:HealthInformationNotification",
         "kind": "schema",
-        "name": "HealthInformationNotification"
+        "name": "HealthInformationNotification",
+        "type": "object"
       },
       {
         "id": "schema:HeartbeatResponse",
         "kind": "schema",
-        "name": "HeartbeatResponse"
+        "name": "HeartbeatResponse",
+        "type": "object"
       },
       {
         "id": "schema:Identifier",
         "kind": "schema",
-        "name": "Identifier"
+        "name": "Identifier",
+        "type": "object"
       },
       {
         "id": "schema:IdentifierType",
         "kind": "schema",
-        "name": "IdentifierType"
+        "name": "IdentifierType",
+        "type": "string"
       },
       {
         "id": "schema:KeyObject",
         "kind": "schema",
-        "name": "KeyObject"
+        "name": "KeyObject",
+        "type": "object"
       },
       {
         "id": "schema:Meta",
         "kind": "schema",
-        "name": "Meta"
+        "name": "Meta",
+        "type": "object"
       },
       {
         "id": "schema:OrganizationRepresentation",
         "kind": "schema",
-        "name": "OrganizationRepresentation"
+        "name": "OrganizationRepresentation",
+        "type": "object"
       },
       {
         "id": "schema:PatientAuthConfirmRequest",
         "kind": "schema",
-        "name": "PatientAuthConfirmRequest"
+        "name": "PatientAuthConfirmRequest",
+        "type": "object"
       },
       {
         "id": "schema:PatientAuthInitRequest",
         "kind": "schema",
-        "name": "PatientAuthInitRequest"
+        "name": "PatientAuthInitRequest",
+        "type": "object"
       },
       {
         "id": "schema:PatientAuthModeQueryRequest",
         "kind": "schema",
-        "name": "PatientAuthModeQueryRequest"
+        "name": "PatientAuthModeQueryRequest",
+        "type": "object"
       },
       {
         "id": "schema:PatientAuthNotificationAcknowledgement",
         "kind": "schema",
-        "name": "PatientAuthNotificationAcknowledgement"
+        "name": "PatientAuthNotificationAcknowledgement",
+        "type": "object"
       },
       {
+        "description": "what is the purpose of user auth",
         "id": "schema:PatientAuthPurpose",
         "kind": "schema",
-        "name": "PatientAuthPurpose"
+        "name": "PatientAuthPurpose",
+        "type": "string"
       },
       {
+        "description": "identification of requester",
         "id": "schema:PatientAuthRequester",
         "kind": "schema",
-        "name": "PatientAuthRequester"
+        "name": "PatientAuthRequester",
+        "type": "object"
       },
       {
         "id": "schema:PatientCareContextLink",
         "kind": "schema",
-        "name": "PatientCareContextLink"
+        "name": "PatientCareContextLink",
+        "type": "object"
       },
       {
         "id": "schema:PatientCareContextLinkRequest",
         "kind": "schema",
-        "name": "PatientCareContextLinkRequest"
+        "name": "PatientCareContextLinkRequest",
+        "type": "object"
       },
       {
+        "description": "Demographic details must be same as registered",
         "id": "schema:PatientDemographic",
         "kind": "schema",
-        "name": "PatientDemographic"
+        "name": "PatientDemographic",
+        "type": "object"
       },
       {
         "id": "schema:PatientDiscoveryResult",
         "kind": "schema",
-        "name": "PatientDiscoveryResult"
+        "name": "PatientDiscoveryResult",
+        "type": "object"
       },
       {
         "id": "schema:PatientGender",
         "kind": "schema",
-        "name": "PatientGender"
+        "name": "PatientGender",
+        "type": "string"
       },
       {
         "id": "schema:PatientIdentificationRequest",
         "kind": "schema",
-        "name": "PatientIdentificationRequest"
+        "name": "PatientIdentificationRequest",
+        "type": "object"
       },
       {
         "id": "schema:PatientLinkReferenceResult",
         "kind": "schema",
-        "name": "PatientLinkReferenceResult"
+        "name": "PatientLinkReferenceResult",
+        "type": "object"
       },
       {
         "id": "schema:PatientLinkResult",
         "kind": "schema",
-        "name": "PatientLinkResult"
+        "name": "PatientLinkResult",
+        "type": "object"
       },
       {
         "id": "schema:PatientRepresentation",
         "kind": "schema",
-        "name": "PatientRepresentation"
+        "name": "PatientRepresentation",
+        "type": "object"
       },
       {
         "id": "schema:Permission",
         "kind": "schema",
-        "name": "Permission"
+        "name": "Permission",
+        "type": "object"
       },
       {
         "id": "schema:RequestReference",
         "kind": "schema",
-        "name": "RequestReference"
+        "name": "RequestReference",
+        "type": "object"
       },
       {
         "id": "schema:Requester",
         "kind": "schema",
-        "name": "Requester"
+        "name": "Requester",
+        "type": "object"
       },
       {
         "id": "schema:ShareProfileAcknowledgement",
         "kind": "schema",
-        "name": "ShareProfileAcknowledgement"
+        "name": "ShareProfileAcknowledgement",
+        "type": "object"
       },
       {
         "id": "schema:ShareProfileResult",
         "kind": "schema",
-        "name": "ShareProfileResult"
+        "name": "ShareProfileResult",
+        "type": "object"
       },
       {
         "id": "schema:SubscriptionCategory",
         "kind": "schema",
-        "name": "SubscriptionCategory"
+        "name": "SubscriptionCategory",
+        "type": "string"
       },
       {
         "id": "schema:SubscriptionPeriod",
         "kind": "schema",
-        "name": "SubscriptionPeriod"
+        "name": "SubscriptionPeriod",
+        "type": "object"
       },
       {
         "id": "schema:SubscriptionRequest",
         "kind": "schema",
-        "name": "SubscriptionRequest"
+        "name": "SubscriptionRequest",
+        "type": "object"
       },
       {
+        "description": "Date time format in UTC, includes miliseconds YYYY-MM-DDThh:mm:ss.vZ",
         "id": "schema:TimestampSchema",
         "kind": "schema",
-        "name": "TimestampSchema"
+        "name": "TimestampSchema",
+        "type": "string:date-time"
       },
       {
         "id": "schema:UsePurpose",
         "kind": "schema",
-        "name": "UsePurpose"
+        "name": "UsePurpose",
+        "type": "object"
       },
       {
         "id": "schema:UuidSchema",
         "kind": "schema",
-        "name": "UuidSchema"
+        "name": "UuidSchema",
+        "type": "string:uuid"
       },
       {
         "id": "schema:consent",
         "kind": "schema",
-        "name": "consent"
+        "name": "consent",
+        "type": "object"
       },
       {
         "id": "schema:keyMaterial",
         "kind": "schema",
-        "name": "keyMaterial"
+        "name": "keyMaterial",
+        "type": "object"
       }
     ]
   },

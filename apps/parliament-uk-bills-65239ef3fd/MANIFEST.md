@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `ab123d90dface94583b51c65550b6bf754b2657cb8fdbdbcfea241d1a525dfb6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,24 +34,26 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 43 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/BillTypes` | get /api/v1/BillTypes | Returns a list of Bill types. |
-| GET | `/api/v1/Bills` | GetBills | Returns a list of Bills. |
-| GET | `/api/v1/Bills/{billId}` | GetBill | Return a Bill. |
-| GET | `/api/v1/Bills/{billId}/NewsArticles` | GetNewsArticles | Returns a list of news articles for a Bill. |
-| GET | `/api/v1/Bills/{billId}/Publications` | GetBillPublication | Return a list of Bill publications. |
-| GET | `/api/v1/Bills/{billId}/Stages` | get /api/v1/Bills/{billId}/Stages | Returns all Bill stages. |
-| GET | `/api/v1/Bills/{billId}/Stages/{billStageId}` | GetBillStageDetails | Returns a Bill stage. |
-| GET | `/api/v1/Bills/{billId}/Stages/{billStageId}/Amendments` | GetAmendments | Returns a list of amendments. |
-| GET | `/api/v1/Bills/{billId}/Stages/{billStageId}/Amendments/{amendmentId}` | GetAmendment | Returns an amendment. |
-| GET | `/api/v1/Bills/{billId}/Stages/{stageId}/Publications` | get /api/v1/Bills/{billId}/Stages/{stageId}/Publications | Return a list of Bill stage publications. |
-| GET | `/api/v1/PublicationTypes` | get /api/v1/PublicationTypes | Returns a list of publication types. |
-| GET | `/api/v1/Publications/{publicationId}/Documents/{documentId}` | get /api/v1/Publications/{publicationId}/Documents/{documentId} | Return information on a document. |
-| GET | `/api/v1/Publications/{publicationId}/Documents/{documentId}/Download` | get /api/v1/Publications/{publicationId}/Documents/{documentId}/Download | Return a document. |
-| GET | `/api/v1/Rss/Bills/{id}.rss` | get /api/v1/Rss/Bills/{id}.rss | Returns an Rss feed of a certain Bill. |
-| GET | `/api/v1/Rss/allbills.rss` | get /api/v1/Rss/allbills.rss | Returns an Rss feed of all Bills. |
-| GET | `/api/v1/Rss/privatebills.rss` | get /api/v1/Rss/privatebills.rss | Returns an Rss feed of private Bills. |
-| GET | `/api/v1/Rss/publicbills.rss` | get /api/v1/Rss/publicbills.rss | Returns an Rss feed of public Bills. |
-| GET | `/api/v1/Sittings` | GetSittings | Returns a list of Sittings. |
-| GET | `/api/v1/Stages` | get /api/v1/Stages | Returns a list of Bill stages. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/BillTypes` | get /api/v1/BillTypes | `Category`, `Skip`, `Take` | BillTypeSearchResult | yes | Returns a list of Bill types. |
+| GET | `/api/v1/Bills` | GetBills | `SearchTerm`, `Session`, `CurrentHouse`, `OriginatingHouse`, `MemberId`, `DepartmentId`, `BillStage`, `BillStagesExcluded`, `IsDefeated`, `IsWithdrawn`, `BillType`, `SortOrder`, `BillIds`, `Skip`, `Take` | BillSummarySearchResult | yes | Returns a list of Bills. |
+| GET | `/api/v1/Bills/{billId}` | GetBill | `billId`* | Bill | yes | Return a Bill. |
+| GET | `/api/v1/Bills/{billId}/NewsArticles` | GetNewsArticles | `billId`*, `Skip`, `Take` | NewsArticlesSummarySearchResult | yes | Returns a list of news articles for a Bill. |
+| GET | `/api/v1/Bills/{billId}/Publications` | GetBillPublication | `billId`* | BillPublicationList | yes | Return a list of Bill publications. |
+| GET | `/api/v1/Bills/{billId}/Stages` | get /api/v1/Bills/{billId}/Stages | `billId`*, `Skip`, `Take` | StageSummarySearchResult | yes | Returns all Bill stages. |
+| GET | `/api/v1/Bills/{billId}/Stages/{billStageId}` | GetBillStageDetails | `billId`*, `billStageId`* | BillStageDetails | yes | Returns a Bill stage. |
+| GET | `/api/v1/Bills/{billId}/Stages/{billStageId}/Amendments` | GetAmendments | `billId`*, `billStageId`*, `SearchTerm`, `Decision`, `MemberId`, `Skip`, `Take` | AmendmentSearchItemSearchResult | yes | Returns a list of amendments. |
+| GET | `/api/v1/Bills/{billId}/Stages/{billStageId}/Amendments/{amendmentId}` | GetAmendment | `billId`*, `billStageId`*, `amendmentId`* | AmendmentDetail | yes | Returns an amendment. |
+| GET | `/api/v1/Bills/{billId}/Stages/{stageId}/Publications` | get /api/v1/Bills/{billId}/Stages/{stageId}/Publications | `billId`*, `stageId`* | BillStagePublicationList | yes | Return a list of Bill stage publications. |
+| GET | `/api/v1/PublicationTypes` | get /api/v1/PublicationTypes | `Skip`, `Take` | PublicationTypeSearchResult | yes | Returns a list of publication types. |
+| GET | `/api/v1/Publications/{publicationId}/Documents/{documentId}` | get /api/v1/Publications/{publicationId}/Documents/{documentId} | `publicationId`*, `documentId`* | PublicationDocument | yes | Return information on a document. |
+| GET | `/api/v1/Publications/{publicationId}/Documents/{documentId}/Download` | get /api/v1/Publications/{publicationId}/Documents/{documentId}/Download | `publicationId`*, `documentId`* | — | yes | Return a document. |
+| GET | `/api/v1/Rss/Bills/{id}.rss` | get /api/v1/Rss/Bills/{id}.rss | `id`* | — | yes | Returns an Rss feed of a certain Bill. |
+| GET | `/api/v1/Rss/allbills.rss` | get /api/v1/Rss/allbills.rss | — | — | yes | Returns an Rss feed of all Bills. |
+| GET | `/api/v1/Rss/privatebills.rss` | get /api/v1/Rss/privatebills.rss | — | — | yes | Returns an Rss feed of private Bills. |
+| GET | `/api/v1/Rss/publicbills.rss` | get /api/v1/Rss/publicbills.rss | — | — | yes | Returns an Rss feed of public Bills. |
+| GET | `/api/v1/Sittings` | GetSittings | `House`, `DateFrom`, `DateTo`, `Skip`, `Take` | BillStageSittingSearchResult | yes | Returns a list of Sittings. |
+| GET | `/api/v1/Stages` | get /api/v1/Stages | `Skip`, `Take` | StageReferenceSearchResult | yes | Returns a list of Bill stages. |

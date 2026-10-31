@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_user-images.githubusercontent.c
 
 | | |
 | --- | --- |
-| Signed bundle | `88a7c01cdadb2560f99112d13e8972389e3ab9cf806cba4791b053030e18ed32` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,141 +34,143 @@ logo: "https://api.apis.guru/v2/cache/logo/https_user-images.githubusercontent.c
 
 92 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | private_account | Private Account information |
-| GET | `/account/articles` | private_articles_list | Private Articles |
-| POST | `/account/articles` | private_article_create | Create new Article |
-| GET | `/account/articles/export` | account_article_report | Account Article Report |
-| POST | `/account/articles/export` | account_article_report_generate | Initiate a new Report |
-| POST | `/account/articles/search` | private_articles_search | Private Articles search |
-| DELETE | `/account/articles/{article_id}` | private_article_delete | Delete article |
-| GET | `/account/articles/{article_id}` | private_article_details | Article details |
-| PUT | `/account/articles/{article_id}` | private_article_update | Update article |
-| GET | `/account/articles/{article_id}/authors` | private_article_authors_list | List article authors |
-| POST | `/account/articles/{article_id}/authors` | private_article_authors_add | Add article authors |
-| PUT | `/account/articles/{article_id}/authors` | private_article_authors_replace | Replace article authors |
-| DELETE | `/account/articles/{article_id}/authors/{author_id}` | private_article_author_delete | Delete article author |
-| GET | `/account/articles/{article_id}/categories` | private_article_categories_list | List article categories |
-| POST | `/account/articles/{article_id}/categories` | private_article_categories_add | Add article categories |
-| PUT | `/account/articles/{article_id}/categories` | private_article_categories_replace | Replace article categories |
-| DELETE | `/account/articles/{article_id}/categories/{category_id}` | private_article_category_delete | Delete article category |
-| DELETE | `/account/articles/{article_id}/confidentiality` | private_article_confidentiality_delete | Delete article confidentiality |
-| GET | `/account/articles/{article_id}/confidentiality` | private_article_confidentiality_details | Article confidentiality details |
-| PUT | `/account/articles/{article_id}/confidentiality` | private_article_confidentiality_update | Update article confidentiality |
-| DELETE | `/account/articles/{article_id}/embargo` | private_article_embargo_delete | Delete Article Embargo |
-| GET | `/account/articles/{article_id}/embargo` | private_article_embargo_details | Article Embargo Details |
-| PUT | `/account/articles/{article_id}/embargo` | private_article_embargo_update | Update Article Embargo |
-| GET | `/account/articles/{article_id}/files` | private_article_files_list | List article files |
-| POST | `/account/articles/{article_id}/files` | private_article_upload_initiate | Initiate Upload |
-| DELETE | `/account/articles/{article_id}/files/{file_id}` | private_article_file_delete | File Delete |
-| GET | `/account/articles/{article_id}/files/{file_id}` | private_article_file | Single File |
-| POST | `/account/articles/{article_id}/files/{file_id}` | private_article_upload_complete | Complete Upload |
-| GET | `/account/articles/{article_id}/private_links` | private_article_private_link | List private links |
-| POST | `/account/articles/{article_id}/private_links` | private_article_private_link_create | Create private link |
-| DELETE | `/account/articles/{article_id}/private_links/{link_id}` | private_article_private_link_delete | Disable private link |
-| PUT | `/account/articles/{article_id}/private_links/{link_id}` | private_article_private_link_update | Update private link |
-| POST | `/account/articles/{article_id}/publish` | private_article_publish | Private Article Publish |
-| POST | `/account/articles/{article_id}/reserve_doi` | private_article_reserve_doi | Private Article Reserve DOI |
-| POST | `/account/articles/{article_id}/reserve_handle` | private_article_reserve_handle | Private Article Reserve Handle |
-| POST | `/account/articles/{article_id}/resource` | private_article_resource | Private Article Resource |
-| PUT | `/account/articles/{article_id}/versions/{version_id}/` | article_version_update | Update article version |
-| PUT | `/account/articles/{article_id}/versions/{version_id}/update_thumb` | article_version_update_thumb | Update article version thumbnail |
-| POST | `/account/authors/search` | private_authors_search | Search Authors |
-| GET | `/account/authors/{author_id}` | private_author_details | Author details |
-| GET | `/account/categories` | private_categories_list | Private Account Categories |
-| GET | `/account/collections` | private_collections_list | Private Collections List |
-| POST | `/account/collections` | private_collection_create | Create collection |
-| POST | `/account/collections/search` | private_collections_search | Private Collections Search |
-| DELETE | `/account/collections/{collection_id}` | private_collection_delete | Delete collection |
-| GET | `/account/collections/{collection_id}` | private_collection_details | Collection details |
-| PUT | `/account/collections/{collection_id}` | private_collection_update | Update collection |
-| GET | `/account/collections/{collection_id}/articles` | private_collection_articles_list | List collection articles |
-| POST | `/account/collections/{collection_id}/articles` | private_collection_articles_add | Add collection articles |
-| PUT | `/account/collections/{collection_id}/articles` | private_collection_articles_replace | Replace collection articles |
-| DELETE | `/account/collections/{collection_id}/articles/{article_id}` | private_collection_article_delete | Delete collection article |
-| GET | `/account/collections/{collection_id}/authors` | private_collection_authors_list | List collection authors |
-| POST | `/account/collections/{collection_id}/authors` | private_collection_authors_add | Add collection authors |
-| PUT | `/account/collections/{collection_id}/authors` | private_collection_authors_replace | Replace collection authors |
-| DELETE | `/account/collections/{collection_id}/authors/{author_id}` | private_collection_author_delete | Delete collection author |
-| GET | `/account/collections/{collection_id}/categories` | private_collection_categories_list | List collection categories |
-| POST | `/account/collections/{collection_id}/categories` | private_collection_categories_add | Add collection categories |
-| PUT | `/account/collections/{collection_id}/categories` | private_collection_categories_replace | Replace collection categories |
-| DELETE | `/account/collections/{collection_id}/categories/{category_id}` | private_collection_category_delete | Delete collection category |
-| GET | `/account/collections/{collection_id}/private_links` | private_collection_private_links_list | List collection private links |
-| POST | `/account/collections/{collection_id}/private_links` | private_collection_private_link_create | Create collection private link |
-| DELETE | `/account/collections/{collection_id}/private_links/{link_id}` | private_collection_private_link_delete | Disable private link |
-| PUT | `/account/collections/{collection_id}/private_links/{link_id}` | private_collection_private_link_update | Update collection private link |
-| POST | `/account/collections/{collection_id}/publish` | private_collection_publish | Private Collection Publish |
-| POST | `/account/collections/{collection_id}/reserve_doi` | private_collection_reserve_doi | Private Collection Reserve DOI |
-| POST | `/account/collections/{collection_id}/reserve_handle` | private_collection_reserve_handle | Private Collection Reserve Handle |
-| POST | `/account/collections/{collection_id}/resource` | private_collection_resource | Private Collection Resource |
-| POST | `/account/funding/search` | private_funding_search | Search Funding |
-| GET | `/account/institution` | private_institution_details | Private Account Institutions |
-| GET | `/account/institution/accounts` | private_institution_accounts_list | Private Account Institution Accounts |
-| POST | `/account/institution/accounts` | private_institution_accounts_create | Create new Institution Account |
-| POST | `/account/institution/accounts/search` | private_institution_accounts_search | Private Account Institution Accounts Search |
-| PUT | `/account/institution/accounts/{account_id}` | private_institution_accounts_update | Update Institution Account |
-| GET | `/account/institution/articles` | private_institution_articles | Private Institution Articles |
-| GET | `/account/institution/custom_fields` | custom_fields_list | Private account institution group custom fields |
-| POST | `/account/institution/custom_fields/{custom_field_id}/items/upload` | custom_fields_upload | Custom fields values files upload |
-| GET | `/account/institution/embargo_options` | private_institution_embargo_options_details | Private Account Institution embargo options |
-| GET | `/account/institution/groups` | private_institution_groups_list | Private Account Institution Groups |
-| GET | `/account/institution/groups/{group_id}/embargo_options` | private_group_embargo_options_details | Private Account Institution Group Embargo Options |
-| GET | `/account/institution/review/{curation_id}` | account_institution_curation | Institution Curation Review |
-| GET | `/account/institution/review/{curation_id}/comments` | account_institution_curation_comments | Institution Curation Review Comments |
-| POST | `/account/institution/review/{curation_id}/comments` | post /account/institution/review/{curation_id}/comments | POST Institution Curation Review Comment |
-| GET | `/account/institution/reviews` | account_institution_curations | Institution Curation Reviews |
-| GET | `/account/institution/roles` | private_institution_roles_list | Private Account Institution Roles |
-| GET | `/account/institution/roles/{account_id}` | private_institution_account_group_roles | List Institution Account Group Roles |
-| POST | `/account/institution/roles/{account_id}` | private_institution_account_group_roles_create | Add Institution Account Group Roles |
-| DELETE | `/account/institution/roles/{account_id}/{group_id}/{role_id}` | private_institution_account_group_role_delete | Delete Institution Account Group Role |
-| GET | `/account/institution/users/{account_id}` | private_account_institution_user | Private Account Institution User |
-| GET | `/account/licenses` | private_licenses_list | Private Account Licenses |
-| GET | `/account/projects` | private_projects_list | Private Projects |
-| POST | `/account/projects` | private_project_create | Create project |
-| POST | `/account/projects/search` | private_projects_search | Private Projects search |
-| DELETE | `/account/projects/{project_id}` | private_project_delete | Delete project |
-| GET | `/account/projects/{project_id}` | private_project_details | View project details |
-| PUT | `/account/projects/{project_id}` | private_project_update | Update project |
-| GET | `/account/projects/{project_id}/articles` | private_project_articles_list | List project articles |
-| POST | `/account/projects/{project_id}/articles` | private_project_articles_create | Create project article |
-| DELETE | `/account/projects/{project_id}/articles/{article_id}` | private_project_article_delete | Delete project article |
-| GET | `/account/projects/{project_id}/articles/{article_id}` | private_project_article_details | Project article details |
-| GET | `/account/projects/{project_id}/articles/{article_id}/files` | private_project_article_files | Project article list files |
-| GET | `/account/projects/{project_id}/articles/{article_id}/files/{file_id}` | private_project_article_file | Project article file details |
-| GET | `/account/projects/{project_id}/collaborators` | private_project_collaborators_list | List project collaborators |
-| POST | `/account/projects/{project_id}/collaborators` | private_project_collaborators_invite | Invite project collaborators |
-| DELETE | `/account/projects/{project_id}/collaborators/{user_id}` | private_project_collaborator__Delete | Remove project collaborator |
-| POST | `/account/projects/{project_id}/leave` | private_project_leave | Private Project Leave |
-| GET | `/account/projects/{project_id}/notes` | private_project_notes_list | List project notes |
-| POST | `/account/projects/{project_id}/notes` | private_project_notes_create | Create project note |
-| DELETE | `/account/projects/{project_id}/notes/{note_id}` | private_project_note_delete | Delete project note |
-| GET | `/account/projects/{project_id}/notes/{note_id}` | private_project_note | Project note details |
-| PUT | `/account/projects/{project_id}/notes/{note_id}` | private_project_note_update | Update project note |
-| POST | `/account/projects/{project_id}/publish` | private_project_publish | Private Project Publish |
-| GET | `/articles` | articles_list | Public Articles |
-| POST | `/articles/search` | articles_search | Public Articles Search |
-| GET | `/articles/{article_id}` | article_details | View article details |
-| GET | `/articles/{article_id}/files` | article_files | List article files |
-| GET | `/articles/{article_id}/files/{file_id}` | article_file_details | Article file details |
-| GET | `/articles/{article_id}/versions` | article_versions | List article versions |
-| GET | `/articles/{article_id}/versions/{v_number}` | article_version_details | Article details for version |
-| GET | `/articles/{article_id}/versions/{v_number}/confidentiality` | article_version_confidentiality | Public Article Confidentiality for article version |
-| GET | `/articles/{article_id}/versions/{v_number}/embargo` | article_version_embargo | Public Article Embargo for article version |
-| GET | `/categories` | categories_list | Public Categories |
-| GET | `/collections` | collections_list | Public Collections |
-| POST | `/collections/search` | collections_search | Public Collections Search |
-| GET | `/collections/{collection_id}` | collection_details | Collection details |
-| GET | `/collections/{collection_id}/articles` | collection_articles | Public Collection Articles |
-| GET | `/collections/{collection_id}/versions` | collection_versions | Collection Versions list |
-| GET | `/collections/{collection_id}/versions/{version_id}` | collection_version_details | Collection Version details |
-| GET | `/file/download/{file_id}` | file_download | Public File Download |
-| POST | `/institution/hrfeed/upload` | institution_hrfeed_upload | Private Institution HRfeed Upload |
-| GET | `/institutions/{institution_string_id}/articles/filter-by` | institution_articles | Public Licenses |
-| GET | `/item_types` | item_types_list | Item Types |
-| GET | `/licenses` | licenses_list | Public Licenses |
-| GET | `/projects` | projects_list | Public Projects |
-| POST | `/projects/search` | projects_search | Public Projects Search |
-| GET | `/projects/{project_id}` | project_details | Public Project |
-| GET | `/projects/{project_id}/articles` | project_articles | Public Project Articles |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | private_account | — | Account | yes | Private Account information |
+| GET | `/account/articles` | private_articles_list | `page`, `page_size`, `limit`, `offset` | Article[] | yes | Private Articles |
+| POST | `/account/articles` | private_article_create | body*: ArticleCreate | LocationWarnings |  | Create new Article |
+| GET | `/account/articles/export` | account_article_report | `group_id` | AccountReport[] | yes | Account Article Report |
+| POST | `/account/articles/export` | account_article_report_generate | — | AccountReport |  | Initiate a new Report |
+| POST | `/account/articles/search` | private_articles_search | body*: PrivateArticleSearch | ArticleWithProject[] |  | Private Articles search |
+| GET | `/account/articles/{article_id}` | private_article_details | `article_id`* | ArticleCompletePrivate | yes | Article details |
+| PUT | `/account/articles/{article_id}` | private_article_update | `article_id`*, body*: ArticleUpdate | LocationWarningsUpdate |  | Update article |
+| DELETE | `/account/articles/{article_id}` | private_article_delete | `article_id`* | — |  | Delete article |
+| GET | `/account/articles/{article_id}/authors` | private_article_authors_list | `article_id`* | Author[] | yes | List article authors |
+| PUT | `/account/articles/{article_id}/authors` | private_article_authors_replace | `article_id`*, body*: AuthorsCreator | — |  | Replace article authors |
+| POST | `/account/articles/{article_id}/authors` | private_article_authors_add | `article_id`*, body*: AuthorsCreator | — |  | Add article authors |
+| DELETE | `/account/articles/{article_id}/authors/{author_id}` | private_article_author_delete | `article_id`*, `author_id`* | — |  | Delete article author |
+| GET | `/account/articles/{article_id}/categories` | private_article_categories_list | `article_id`* | Category[] | yes | List article categories |
+| PUT | `/account/articles/{article_id}/categories` | private_article_categories_replace | `article_id`*, body*: CategoriesCreator | — |  | Replace article categories |
+| POST | `/account/articles/{article_id}/categories` | private_article_categories_add | `article_id`*, body*: CategoriesCreator | — |  | Add article categories |
+| DELETE | `/account/articles/{article_id}/categories/{category_id}` | private_article_category_delete | `article_id`*, `category_id`* | — |  | Delete article category |
+| GET | `/account/articles/{article_id}/confidentiality` | private_article_confidentiality_details | `article_id`* | ArticleConfidentiality | yes | Article confidentiality details |
+| PUT | `/account/articles/{article_id}/confidentiality` | private_article_confidentiality_update | `article_id`*, body*: ConfidentialityCreator | — |  | Update article confidentiality |
+| DELETE | `/account/articles/{article_id}/confidentiality` | private_article_confidentiality_delete | `article_id`* | — |  | Delete article confidentiality |
+| GET | `/account/articles/{article_id}/embargo` | private_article_embargo_details | `article_id`* | ArticleEmbargo | yes | Article Embargo Details |
+| PUT | `/account/articles/{article_id}/embargo` | private_article_embargo_update | `article_id`*, body*: ArticleEmbargoUpdater | — |  | Update Article Embargo |
+| DELETE | `/account/articles/{article_id}/embargo` | private_article_embargo_delete | `article_id`* | — |  | Delete Article Embargo |
+| GET | `/account/articles/{article_id}/files` | private_article_files_list | `article_id`* | PrivateFile[] | yes | List article files |
+| POST | `/account/articles/{article_id}/files` | private_article_upload_initiate | `article_id`*, body*: FileCreator | Location |  | Initiate Upload |
+| GET | `/account/articles/{article_id}/files/{file_id}` | private_article_file | `article_id`*, `file_id`* | PrivateFile | yes | Single File |
+| POST | `/account/articles/{article_id}/files/{file_id}` | private_article_upload_complete | `article_id`*, `file_id`* | — |  | Complete Upload |
+| DELETE | `/account/articles/{article_id}/files/{file_id}` | private_article_file_delete | `article_id`*, `file_id`* | — |  | File Delete |
+| GET | `/account/articles/{article_id}/private_links` | private_article_private_link | `article_id`* | PrivateLink[] | yes | List private links |
+| POST | `/account/articles/{article_id}/private_links` | private_article_private_link_create | `article_id`*, body: PrivateLinkCreator | PrivateLinkResponse |  | Create private link |
+| PUT | `/account/articles/{article_id}/private_links/{link_id}` | private_article_private_link_update | `article_id`*, `link_id`*, body: PrivateLinkCreator | — |  | Update private link |
+| DELETE | `/account/articles/{article_id}/private_links/{link_id}` | private_article_private_link_delete | `article_id`*, `link_id`* | — |  | Disable private link |
+| POST | `/account/articles/{article_id}/publish` | private_article_publish | `article_id`* | Location |  | Private Article Publish |
+| POST | `/account/articles/{article_id}/reserve_doi` | private_article_reserve_doi | `article_id`* | ArticleDOI |  | Private Article Reserve DOI |
+| POST | `/account/articles/{article_id}/reserve_handle` | private_article_reserve_handle | `article_id`* | ArticleHandle |  | Private Article Reserve Handle |
+| POST | `/account/articles/{article_id}/resource` | private_article_resource | `article_id`*, body*: Resource | Location |  | Private Article Resource |
+| PUT | `/account/articles/{article_id}/versions/{version_id}/` | article_version_update | `article_id`*, `version_id`*, body*: ArticleUpdate | LocationWarningsUpdate |  | Update article version |
+| PUT | `/account/articles/{article_id}/versions/{version_id}/update_thumb` | article_version_update_thumb | `article_id`*, `version_id`*, body*: FileId | — |  | Update article version thumbnail |
+| POST | `/account/authors/search` | private_authors_search | body: PrivateAuthorsSearch | Author[] |  | Search Authors |
+| GET | `/account/authors/{author_id}` | private_author_details | `author_id`* | AuthorComplete | yes | Author details |
+| GET | `/account/categories` | private_categories_list | — | Category[] | yes | Private Account Categories |
+| GET | `/account/collections` | private_collections_list | `page`, `page_size`, `limit`, `offset`, `order`, `order_direction` | Collection[] | yes | Private Collections List |
+| POST | `/account/collections` | private_collection_create | body*: CollectionCreate | LocationWarnings |  | Create collection |
+| POST | `/account/collections/search` | private_collections_search | body*: PrivateCollectionSearch | Collection[] |  | Private Collections Search |
+| GET | `/account/collections/{collection_id}` | private_collection_details | `collection_id`* | CollectionCompletePrivate | yes | Collection details |
+| PUT | `/account/collections/{collection_id}` | private_collection_update | `collection_id`*, body*: CollectionUpdate | LocationWarningsUpdate |  | Update collection |
+| DELETE | `/account/collections/{collection_id}` | private_collection_delete | `collection_id`* | — |  | Delete collection |
+| GET | `/account/collections/{collection_id}/articles` | private_collection_articles_list | `collection_id`*, `page`, `page_size`, `limit`, `offset` | Article[] | yes | List collection articles |
+| PUT | `/account/collections/{collection_id}/articles` | private_collection_articles_replace | `collection_id`*, body*: ArticlesCreator | — |  | Replace collection articles |
+| POST | `/account/collections/{collection_id}/articles` | private_collection_articles_add | `collection_id`*, body*: ArticlesCreator | Location |  | Add collection articles |
+| DELETE | `/account/collections/{collection_id}/articles/{article_id}` | private_collection_article_delete | `collection_id`*, `article_id`* | — |  | Delete collection article |
+| GET | `/account/collections/{collection_id}/authors` | private_collection_authors_list | `collection_id`* | Author[] | yes | List collection authors |
+| PUT | `/account/collections/{collection_id}/authors` | private_collection_authors_replace | `collection_id`*, body*: AuthorsCreator | — |  | Replace collection authors |
+| POST | `/account/collections/{collection_id}/authors` | private_collection_authors_add | `collection_id`*, body*: AuthorsCreator | Location |  | Add collection authors |
+| DELETE | `/account/collections/{collection_id}/authors/{author_id}` | private_collection_author_delete | `collection_id`*, `author_id`* | — |  | Delete collection author |
+| GET | `/account/collections/{collection_id}/categories` | private_collection_categories_list | `collection_id`* | Category[] | yes | List collection categories |
+| PUT | `/account/collections/{collection_id}/categories` | private_collection_categories_replace | `collection_id`*, body*: CategoriesCreator | — |  | Replace collection categories |
+| POST | `/account/collections/{collection_id}/categories` | private_collection_categories_add | `collection_id`*, body*: CategoriesCreator | Location |  | Add collection categories |
+| DELETE | `/account/collections/{collection_id}/categories/{category_id}` | private_collection_category_delete | `collection_id`*, `category_id`* | — |  | Delete collection category |
+| GET | `/account/collections/{collection_id}/private_links` | private_collection_private_links_list | `collection_id`* | PrivateLink[] | yes | List collection private links |
+| POST | `/account/collections/{collection_id}/private_links` | private_collection_private_link_create | `collection_id`*, body: CollectionPrivateLinkCreator | PrivateLinkResponse |  | Create collection private link |
+| PUT | `/account/collections/{collection_id}/private_links/{link_id}` | private_collection_private_link_update | `collection_id`*, `link_id`*, body: CollectionPrivateLinkCreator | — |  | Update collection private link |
+| DELETE | `/account/collections/{collection_id}/private_links/{link_id}` | private_collection_private_link_delete | `collection_id`*, `link_id`* | — |  | Disable private link |
+| POST | `/account/collections/{collection_id}/publish` | private_collection_publish | `collection_id`* | Location |  | Private Collection Publish |
+| POST | `/account/collections/{collection_id}/reserve_doi` | private_collection_reserve_doi | `collection_id`* | CollectionDOI |  | Private Collection Reserve DOI |
+| POST | `/account/collections/{collection_id}/reserve_handle` | private_collection_reserve_handle | `collection_id`* | CollectionHandle |  | Private Collection Reserve Handle |
+| POST | `/account/collections/{collection_id}/resource` | private_collection_resource | `collection_id`*, body*: Resource | Location |  | Private Collection Resource |
+| POST | `/account/funding/search` | private_funding_search | body: FundingSearch | FundingInformation[] |  | Search Funding |
+| GET | `/account/institution` | private_institution_details | — | Institution | yes | Private Account Institutions |
+| GET | `/account/institution/accounts` | private_institution_accounts_list | `page`, `page_size`, `limit`, `offset`, `is_active`, `institution_user_id`, `email`, `id_lte`, `id_gte` | ShortAccount[] | yes | Private Account Institution Accounts |
+| POST | `/account/institution/accounts` | private_institution_accounts_create | body*: AccountCreate | — |  | Create new Institution Account |
+| POST | `/account/institution/accounts/search` | private_institution_accounts_search | body*: InstitutionAccountsSearch | ShortAccount[] |  | Private Account Institution Accounts Search |
+| PUT | `/account/institution/accounts/{account_id}` | private_institution_accounts_update | `account_id`*, body*: AccountUpdate | — |  | Update Institution Account |
+| GET | `/account/institution/articles` | private_institution_articles | `page`, `page_size`, `limit`, `offset`, `order`, `order_direction`, `published_since`, `modified_since`, `status`, `resource_doi`, `item_type` | Article[] | yes | Private Institution Articles |
+| GET | `/account/institution/custom_fields` | custom_fields_list | `group_id` | ShortCustomField[] | yes | Private account institution group custom fields |
+| POST | `/account/institution/custom_fields/{custom_field_id}/items/upload` | custom_fields_upload | `custom_field_id`*, body: object | object |  | Custom fields values files upload |
+| GET | `/account/institution/embargo_options` | private_institution_embargo_options_details | — | GroupEmbargoOptions[] | yes | Private Account Institution embargo options |
+| GET | `/account/institution/groups` | private_institution_groups_list | — | Group[] | yes | Private Account Institution Groups |
+| GET | `/account/institution/groups/{group_id}/embargo_options` | private_group_embargo_options_details | `group_id`* | GroupEmbargoOptions[] | yes | Private Account Institution Group Embargo Options |
+| GET | `/account/institution/review/{curation_id}` | account_institution_curation | `curation_id`* | CurationDetail | yes | Institution Curation Review |
+| GET | `/account/institution/review/{curation_id}/comments` | account_institution_curation_comments | `curation_id`*, `limit`, `offset` | CurationComment | yes | Institution Curation Review Comments |
+| POST | `/account/institution/review/{curation_id}/comments` | post /account/institution/review/{curation_id}/comments | `curation_id`*, body*: CurationCommentCreate | — |  | POST Institution Curation Review Comment |
+| GET | `/account/institution/reviews` | account_institution_curations | `group_id`, `article_id`, `status`, `limit`, `offset` | Curation | yes | Institution Curation Reviews |
+| GET | `/account/institution/roles` | private_institution_roles_list | — | Role[] | yes | Private Account Institution Roles |
+| GET | `/account/institution/roles/{account_id}` | private_institution_account_group_roles | `account_id`* | AccountGroupRoles | yes | List Institution Account Group Roles |
+| POST | `/account/institution/roles/{account_id}` | private_institution_account_group_roles_create | `account_id`*, body*: AccountGroupRolesCreate | — |  | Add Institution Account Group Roles |
+| DELETE | `/account/institution/roles/{account_id}/{group_id}/{role_id}` | private_institution_account_group_role_delete | `account_id`*, `group_id`*, `role_id`* | — |  | Delete Institution Account Group Role |
+| GET | `/account/institution/users/{account_id}` | private_account_institution_user | `account_id`* | User | yes | Private Account Institution User |
+| GET | `/account/licenses` | private_licenses_list | — | License[] | yes | Private Account Licenses |
+| GET | `/account/projects` | private_projects_list | `page`, `page_size`, `limit`, `offset`, `order`, `order_direction`, `storage`, `roles` | ProjectPrivate[] | yes | Private Projects |
+| POST | `/account/projects` | private_project_create | body*: ProjectCreate | CreateProjectResponse |  | Create project |
+| POST | `/account/projects/search` | private_projects_search | body: ProjectsSearch | ProjectPrivate[] |  | Private Projects search |
+| GET | `/account/projects/{project_id}` | private_project_details | `project_id`* | ProjectCompletePrivate | yes | View project details |
+| PUT | `/account/projects/{project_id}` | private_project_update | `project_id`*, body*: ProjectUpdate | — |  | Update project |
+| DELETE | `/account/projects/{project_id}` | private_project_delete | `project_id`* | — |  | Delete project |
+| GET | `/account/projects/{project_id}/articles` | private_project_articles_list | `project_id`*, `page`, `page_size`, `limit`, `offset` | Article[] | yes | List project articles |
+| POST | `/account/projects/{project_id}/articles` | private_project_articles_create | `project_id`*, `page`, `page_size`, `limit`, `offset`, body*: ArticleProjectCreate | LocationWarnings |  | Create project article |
+| GET | `/account/projects/{project_id}/articles/{article_id}` | private_project_article_details | `project_id`*, `article_id`* | ProjectArticle | yes | Project article details |
+| DELETE | `/account/projects/{project_id}/articles/{article_id}` | private_project_article_delete | `project_id`*, `article_id`* | — |  | Delete project article |
+| GET | `/account/projects/{project_id}/articles/{article_id}/files` | private_project_article_files | `project_id`*, `article_id`* | PrivateFile[] | yes | Project article list files |
+| GET | `/account/projects/{project_id}/articles/{article_id}/files/{file_id}` | private_project_article_file | `project_id`*, `article_id`*, `file_id`* | PrivateFile | yes | Project article file details |
+| GET | `/account/projects/{project_id}/collaborators` | private_project_collaborators_list | `project_id`* | ProjectCollaborator[] | yes | List project collaborators |
+| POST | `/account/projects/{project_id}/collaborators` | private_project_collaborators_invite | `project_id`*, body*: ProjectCollaboratorInvite | ResponseMessage |  | Invite project collaborators |
+| DELETE | `/account/projects/{project_id}/collaborators/{user_id}` | private_project_collaborator__Delete | `project_id`*, `user_id`* | — |  | Remove project collaborator |
+| POST | `/account/projects/{project_id}/leave` | private_project_leave | `project_id`* | — |  | Private Project Leave |
+| GET | `/account/projects/{project_id}/notes` | private_project_notes_list | `project_id`*, `page`, `page_size`, `limit`, `offset` | ProjectNote[] | yes | List project notes |
+| POST | `/account/projects/{project_id}/notes` | private_project_notes_create | `project_id`*, body*: ProjectNoteCreate | Location |  | Create project note |
+| GET | `/account/projects/{project_id}/notes/{note_id}` | private_project_note | `project_id`*, `note_id`* | ProjectNotePrivate | yes | Project note details |
+| PUT | `/account/projects/{project_id}/notes/{note_id}` | private_project_note_update | `project_id`*, `note_id`*, body*: ProjectNoteCreate | — |  | Update project note |
+| DELETE | `/account/projects/{project_id}/notes/{note_id}` | private_project_note_delete | `project_id`*, `note_id`* | — |  | Delete project note |
+| POST | `/account/projects/{project_id}/publish` | private_project_publish | `project_id`* | ResponseMessage |  | Private Project Publish |
+| GET | `/articles` | articles_list | `X-Cursor`, `page`, `page_size`, `limit`, `offset`, `order`, `order_direction`, `institution`, `published_since`, `modified_since`, `group`, `resource_doi`, `item_type`, `doi`, `handle` | Article[] | yes | Public Articles |
+| POST | `/articles/search` | articles_search | `X-Cursor`, body: ArticleSearch | ArticleWithProject[] |  | Public Articles Search |
+| GET | `/articles/{article_id}` | article_details | `article_id`* | ArticleComplete | yes | View article details |
+| GET | `/articles/{article_id}/files` | article_files | `article_id`* | PublicFile[] | yes | List article files |
+| GET | `/articles/{article_id}/files/{file_id}` | article_file_details | `article_id`*, `file_id`* | PublicFile | yes | Article file details |
+| GET | `/articles/{article_id}/versions` | article_versions | `article_id`* | ArticleVersions[] | yes | List article versions |
+| GET | `/articles/{article_id}/versions/{v_number}` | article_version_details | `article_id`*, `v_number`* | ArticleComplete | yes | Article details for version |
+| GET | `/articles/{article_id}/versions/{v_number}/confidentiality` | article_version_confidentiality | `article_id`*, `v_number`* | ArticleConfidentiality | yes | Public Article Confidentiality for article version |
+| GET | `/articles/{article_id}/versions/{v_number}/embargo` | article_version_embargo | `article_id`*, `v_number`* | ArticleEmbargo | yes | Public Article Embargo for article version |
+| GET | `/categories` | categories_list | — | Category[] | yes | Public Categories |
+| GET | `/collections` | collections_list | `X-Cursor`, `page`, `page_size`, `limit`, `offset`, `order`, `order_direction`, `institution`, `published_since`, `modified_since`, `group`, `resource_doi`, `doi`, `handle` | Collection[] | yes | Public Collections |
+| POST | `/collections/search` | collections_search | `X-Cursor`, body: CollectionSearch | Collection[] |  | Public Collections Search |
+| GET | `/collections/{collection_id}` | collection_details | `collection_id`* | CollectionComplete | yes | Collection details |
+| GET | `/collections/{collection_id}/articles` | collection_articles | `collection_id`*, `page`, `page_size`, `limit`, `offset` | Article[] | yes | Public Collection Articles |
+| GET | `/collections/{collection_id}/versions` | collection_versions | `collection_id`* | CollectionVersions[] | yes | Collection Versions list |
+| GET | `/collections/{collection_id}/versions/{version_id}` | collection_version_details | `collection_id`*, `version_id`* | CollectionComplete | yes | Collection Version details |
+| GET | `/file/download/{file_id}` | file_download | `file_id`* | — | yes | Public File Download |
+| POST | `/institution/hrfeed/upload` | institution_hrfeed_upload | body: object | ResponseMessage |  | Private Institution HRfeed Upload |
+| GET | `/institutions/{institution_string_id}/articles/filter-by` | institution_articles | `institution_string_id`*, `resource_id`*, `filename`* | Article[] | yes | Public Licenses |
+| GET | `/item_types` | item_types_list | `group_id` | ItemType[] | yes | Item Types |
+| GET | `/licenses` | licenses_list | — | License[] | yes | Public Licenses |
+| GET | `/projects` | projects_list | `X-Cursor`, `page`, `page_size`, `limit`, `offset`, `order`, `order_direction`, `institution`, `published_since`, `group` | Project[] | yes | Public Projects |
+| POST | `/projects/search` | projects_search | `X-Cursor`, body: ProjectsSearch | Project[] |  | Public Projects Search |
+| GET | `/projects/{project_id}` | project_details | `project_id`* | ProjectComplete | yes | Public Project |
+| GET | `/projects/{project_id}/articles` | project_articles | `project_id`* | Article[] | yes | Public Project Articles |

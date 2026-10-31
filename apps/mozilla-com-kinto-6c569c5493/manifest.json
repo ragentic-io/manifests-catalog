@@ -67,12 +67,12 @@
       {
         "from": "mozilla-com-kinto-6c569c5493",
         "kind": "EXPOSES",
-        "to": "operation:delete:/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment"
+        "to": "operation:post:/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment"
       },
       {
         "from": "mozilla-com-kinto-6c569c5493",
         "kind": "EXPOSES",
-        "to": "operation:post:/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment"
+        "to": "operation:delete:/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment"
       },
       {
         "from": "mozilla-com-kinto-6c569c5493",
@@ -113,8 +113,18 @@
         "name": "server_info",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Utilities"
+        ]
       },
       {
         "deprecated": false,
@@ -124,8 +134,18 @@
         "name": "get_openapi_spec",
         "path": "/__api__",
         "pointer": "#/paths/~1__api__/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Utilities"
+        ]
       },
       {
         "deprecated": false,
@@ -135,8 +155,22 @@
         "name": "__heartbeat__",
         "path": "/__heartbeat__",
         "pointer": "#/paths/~1__heartbeat__/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "503",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Utilities"
+        ]
       },
       {
         "deprecated": false,
@@ -146,8 +180,18 @@
         "name": "__lbheartbeat__",
         "path": "/__lbheartbeat__",
         "pointer": "#/paths/~1__lbheartbeat__/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Utilities"
+        ]
       },
       {
         "deprecated": false,
@@ -157,8 +201,18 @@
         "name": "__version__",
         "path": "/__version__",
         "pointer": "#/paths/~1__version__/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Utilities"
+        ]
       },
       {
         "deprecated": false,
@@ -168,8 +222,33 @@
         "name": "batch",
         "path": "/batch",
         "pointer": "#/paths/~1batch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Batch"
+        ]
       },
       {
         "deprecated": false,
@@ -177,10 +256,115 @@
         "kind": "operation",
         "method": "get",
         "name": "get_buckets",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "_limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_since",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_to",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_before",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "last_modified",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_fields",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets",
         "pointer": "#/paths/~1buckets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "412",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Buckets"
+        ]
       },
       {
         "deprecated": false,
@@ -188,10 +372,115 @@
         "kind": "operation",
         "method": "get",
         "name": "get_changess",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "_limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_since",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_to",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_before",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "last_modified",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_fields",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/monitor/collections/changes/records",
         "pointer": "#/paths/~1buckets~1monitor~1collections~1changes~1records/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "412",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Changess"
+        ]
       },
       {
         "deprecated": false,
@@ -199,10 +488,63 @@
         "kind": "operation",
         "method": "get",
         "name": "get_collection-changeset",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "cid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_expected",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "bucket",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "collection",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bid}/collections/{cid}/changeset",
         "pointer": "#/paths/~1buckets~1{bid}~1collections~1{cid}~1changeset/get",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Collection-changeset"
+        ]
       },
       {
         "deprecated": false,
@@ -210,10 +552,121 @@
         "kind": "operation",
         "method": "get",
         "name": "get_collections",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bucket_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_since",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_to",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_before",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "last_modified",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_fields",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucket_id}/collections",
         "pointer": "#/paths/~1buckets~1{bucket_id}~1collections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "412",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
@@ -221,10 +674,127 @@
         "kind": "operation",
         "method": "get",
         "name": "get_records",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bucket_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_since",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_to",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_before",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "last_modified",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_fields",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucket_id}/collections/{collection_id}/records",
         "pointer": "#/paths/~1buckets~1{bucket_id}~1collections~1{collection_id}~1records/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "412",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Records"
+        ]
       },
       {
         "deprecated": false,
@@ -232,21 +802,89 @@
         "kind": "operation",
         "method": "get",
         "name": "get_record",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bucket_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_fields",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucket_id}/collections/{collection_id}/records/{id}",
         "pointer": "#/paths/~1buckets~1{bucket_id}~1collections~1{collection_id}~1records~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "412",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_attachment",
-        "path": "/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment",
-        "pointer": "#/paths/~1buckets~1{bucket_id}~1collections~1{collection_id}~1records~1{id}~1attachment/delete",
-        "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Records"
+        ]
       },
       {
         "deprecated": false,
@@ -254,10 +892,79 @@
         "kind": "operation",
         "method": "post",
         "name": "create_attachment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bucket_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment",
         "pointer": "#/paths/~1buckets~1{bucket_id}~1collections~1{collection_id}~1records~1{id}~1attachment/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Attachment"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_attachment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bucket_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/buckets/{bucket_id}/collections/{collection_id}/records/{id}/attachment",
+        "pointer": "#/paths/~1buckets~1{bucket_id}~1collections~1{collection_id}~1records~1{id}~1attachment/delete",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "Attachment"
+        ]
       },
       {
         "deprecated": false,
@@ -265,10 +972,83 @@
         "kind": "operation",
         "method": "get",
         "name": "get_collection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bucket_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_fields",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucket_id}/collections/{id}",
         "pointer": "#/paths/~1buckets~1{bucket_id}~1collections~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "412",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Collections"
+        ]
       },
       {
         "deprecated": false,
@@ -276,10 +1056,121 @@
         "kind": "operation",
         "method": "get",
         "name": "get_groups",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bucket_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_sort",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_since",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_to",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_before",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "last_modified",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "_fields",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucket_id}/groups",
         "pointer": "#/paths/~1buckets~1{bucket_id}~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "412",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -287,10 +1178,83 @@
         "kind": "operation",
         "method": "get",
         "name": "get_group",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bucket_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_fields",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{bucket_id}/groups/{id}",
         "pointer": "#/paths/~1buckets~1{bucket_id}~1groups~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "412",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -298,10 +1262,77 @@
         "kind": "operation",
         "method": "get",
         "name": "get_bucket",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_fields",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/buckets/{id}",
         "pointer": "#/paths/~1buckets~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "406",
+            "type": "object"
+          },
+          {
+            "status": "412",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Buckets"
+        ]
       },
       {
         "deprecated": false,
@@ -311,8 +1342,18 @@
         "name": "contribute",
         "path": "/contribute.json",
         "pointer": "#/paths/~1contribute.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Utilities"
+        ]
       }
     ]
   },

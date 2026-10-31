@@ -22,12 +22,12 @@
       {
         "from": "linqr-app-a03ea78590",
         "kind": "EXPOSES",
-        "to": "operation:delete:/images/{id}"
+        "to": "operation:get:/images/{id}"
       },
       {
         "from": "linqr-app-a03ea78590",
         "kind": "EXPOSES",
-        "to": "operation:get:/images/{id}"
+        "to": "operation:delete:/images/{id}"
       },
       {
         "from": "linqr-app-a03ea78590",
@@ -73,6 +73,776 @@
         "from": "linqr-app-a03ea78590",
         "kind": "EXPOSES",
         "to": "operation:post:/qrcode/wifi"
+      },
+      {
+        "from": "operation:post:/batch/qrcode",
+        "kind": "ACCEPTS",
+        "to": "schema:AutoQRCodeBatch"
+      },
+      {
+        "from": "operation:get:/images",
+        "kind": "RETURNS",
+        "to": "schema:ImageMetadata"
+      },
+      {
+        "from": "operation:post:/images",
+        "kind": "RETURNS",
+        "to": "schema:ImageMetadata"
+      },
+      {
+        "from": "operation:get:/images/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ImageMetadata"
+      },
+      {
+        "from": "operation:post:/qrcode",
+        "kind": "ACCEPTS",
+        "to": "schema:AutoQRCode"
+      },
+      {
+        "from": "operation:post:/qrcode/contact",
+        "kind": "ACCEPTS",
+        "to": "schema:ContactQRCode"
+      },
+      {
+        "from": "operation:post:/qrcode/crypto",
+        "kind": "ACCEPTS",
+        "to": "schema:CryptoPaymentQRCode"
+      },
+      {
+        "from": "operation:post:/qrcode/email",
+        "kind": "ACCEPTS",
+        "to": "schema:EmailQRCode"
+      },
+      {
+        "from": "operation:post:/qrcode/geo",
+        "kind": "ACCEPTS",
+        "to": "schema:GeolocationQRCode"
+      },
+      {
+        "from": "operation:post:/qrcode/phone",
+        "kind": "ACCEPTS",
+        "to": "schema:PhoneQRCode"
+      },
+      {
+        "from": "operation:post:/qrcode/sms",
+        "kind": "ACCEPTS",
+        "to": "schema:SMSQRCode"
+      },
+      {
+        "from": "operation:post:/qrcode/text",
+        "kind": "ACCEPTS",
+        "to": "schema:TextQRCode"
+      },
+      {
+        "from": "operation:post:/qrcode/wifi",
+        "kind": "ACCEPTS",
+        "to": "schema:WiFiQRCode"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:ContactData"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:CryptoPaymentData"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmailData"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImage"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:GeolocationData"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneData"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:SMSData"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Size"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:TextData"
+      },
+      {
+        "from": "schema:AutoQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:WiFiData"
+      },
+      {
+        "from": "schema:AutoQRCodeBatch",
+        "kind": "REFERENCES",
+        "to": "schema:AutoQRCode"
+      },
+      {
+        "from": "schema:AutoQRCodeBatch",
+        "kind": "REFERENCES",
+        "to": "schema:BatchOutputFile"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:ContactData"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:CryptoPaymentData"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmailData"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImageMultipart"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:GeolocationData"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneData"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SMSData"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SizeMultipart"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:TextData"
+      },
+      {
+        "from": "schema:AutoQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:WiFiData"
+      },
+      {
+        "from": "schema:AutoQRCodeMultipartBody",
+        "kind": "REFERENCES",
+        "to": "schema:AutoQRCodeMetadata"
+      },
+      {
+        "from": "schema:BatchOutputFile",
+        "kind": "REFERENCES",
+        "to": "schema:BatchFormat"
+      },
+      {
+        "from": "schema:ContactData",
+        "kind": "REFERENCES",
+        "to": "schema:MeCardData"
+      },
+      {
+        "from": "schema:ContactData",
+        "kind": "REFERENCES",
+        "to": "schema:VCardData"
+      },
+      {
+        "from": "schema:ContactQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:ContactData"
+      },
+      {
+        "from": "schema:ContactQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImage"
+      },
+      {
+        "from": "schema:ContactQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:ContactQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Size"
+      },
+      {
+        "from": "schema:ContactQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:ContactQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:ContactData"
+      },
+      {
+        "from": "schema:ContactQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImageMultipart"
+      },
+      {
+        "from": "schema:ContactQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:ContactQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SizeMultipart"
+      },
+      {
+        "from": "schema:ContactQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:ContactQRCodeMultipartBody",
+        "kind": "REFERENCES",
+        "to": "schema:ContactQRCodeMetadata"
+      },
+      {
+        "from": "schema:CryptoPaymentData",
+        "kind": "REFERENCES",
+        "to": "schema:Cryptocurrency"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:CryptoPaymentData"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImage"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Size"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:CryptoPaymentData"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImageMultipart"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SizeMultipart"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:CryptoPaymentQRCodeMultipartBody",
+        "kind": "REFERENCES",
+        "to": "schema:CryptoPaymentQRCodeMetadata"
+      },
+      {
+        "from": "schema:EmailData",
+        "kind": "REFERENCES",
+        "to": "schema:Recipient"
+      },
+      {
+        "from": "schema:EmailQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmailData"
+      },
+      {
+        "from": "schema:EmailQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImage"
+      },
+      {
+        "from": "schema:EmailQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:EmailQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Size"
+      },
+      {
+        "from": "schema:EmailQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:EmailQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmailData"
+      },
+      {
+        "from": "schema:EmailQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImageMultipart"
+      },
+      {
+        "from": "schema:EmailQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:EmailQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SizeMultipart"
+      },
+      {
+        "from": "schema:EmailQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:EmailQRCodeMultipartBody",
+        "kind": "REFERENCES",
+        "to": "schema:EmailQRCodeMetadata"
+      },
+      {
+        "from": "schema:EmbeddedImage",
+        "kind": "REFERENCES",
+        "to": "schema:Icon"
+      },
+      {
+        "from": "schema:EmbeddedImage",
+        "kind": "REFERENCES",
+        "to": "schema:Storage"
+      },
+      {
+        "from": "schema:EmbeddedImage",
+        "kind": "REFERENCES",
+        "to": "schema:URL"
+      },
+      {
+        "from": "schema:GeolocationData",
+        "kind": "REFERENCES",
+        "to": "schema:GeolocationUriFormat"
+      },
+      {
+        "from": "schema:GeolocationQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImage"
+      },
+      {
+        "from": "schema:GeolocationQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:GeolocationData"
+      },
+      {
+        "from": "schema:GeolocationQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:GeolocationQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Size"
+      },
+      {
+        "from": "schema:GeolocationQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:GeolocationQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImageMultipart"
+      },
+      {
+        "from": "schema:GeolocationQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:GeolocationData"
+      },
+      {
+        "from": "schema:GeolocationQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:GeolocationQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SizeMultipart"
+      },
+      {
+        "from": "schema:GeolocationQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:GeolocationQRCodeMultipartBody",
+        "kind": "REFERENCES",
+        "to": "schema:GeolocationQRCodeMetadata"
+      },
+      {
+        "from": "schema:Gradient",
+        "kind": "REFERENCES",
+        "to": "schema:LinearGradient"
+      },
+      {
+        "from": "schema:Gradient",
+        "kind": "REFERENCES",
+        "to": "schema:RadialGradient"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:Icon",
+        "kind": "REFERENCES",
+        "to": "schema:Icons"
+      },
+      {
+        "from": "schema:InnerEyeStyle",
+        "kind": "REFERENCES",
+        "to": "schema:InnerEyeShapes"
+      },
+      {
+        "from": "schema:LinearGradient",
+        "kind": "REFERENCES",
+        "to": "schema:GradientStop"
+      },
+      {
+        "from": "schema:ModuleStyle",
+        "kind": "REFERENCES",
+        "to": "schema:Gradient"
+      },
+      {
+        "from": "schema:ModuleStyle",
+        "kind": "REFERENCES",
+        "to": "schema:ModuleShapes"
+      },
+      {
+        "from": "schema:OuterEyeStyle",
+        "kind": "REFERENCES",
+        "to": "schema:OuterEyeShapes"
+      },
+      {
+        "from": "schema:OutputFile",
+        "kind": "REFERENCES",
+        "to": "schema:Format"
+      },
+      {
+        "from": "schema:PhoneQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImage"
+      },
+      {
+        "from": "schema:PhoneQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:PhoneQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneData"
+      },
+      {
+        "from": "schema:PhoneQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Size"
+      },
+      {
+        "from": "schema:PhoneQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:PhoneQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImageMultipart"
+      },
+      {
+        "from": "schema:PhoneQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:PhoneQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneData"
+      },
+      {
+        "from": "schema:PhoneQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SizeMultipart"
+      },
+      {
+        "from": "schema:PhoneQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:PhoneQRCodeMultipartBody",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneQRCodeMetadata"
+      },
+      {
+        "from": "schema:RadialGradient",
+        "kind": "REFERENCES",
+        "to": "schema:GradientStop"
+      },
+      {
+        "from": "schema:SMSQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImage"
+      },
+      {
+        "from": "schema:SMSQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:SMSQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:SMSData"
+      },
+      {
+        "from": "schema:SMSQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Size"
+      },
+      {
+        "from": "schema:SMSQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:SMSQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImageMultipart"
+      },
+      {
+        "from": "schema:SMSQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:SMSQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SMSData"
+      },
+      {
+        "from": "schema:SMSQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SizeMultipart"
+      },
+      {
+        "from": "schema:SMSQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:SMSQRCodeMultipartBody",
+        "kind": "REFERENCES",
+        "to": "schema:SMSQRCodeMetadata"
+      },
+      {
+        "from": "schema:Size",
+        "kind": "REFERENCES",
+        "to": "schema:ECLevel"
+      },
+      {
+        "from": "schema:Style",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundStyle"
+      },
+      {
+        "from": "schema:Style",
+        "kind": "REFERENCES",
+        "to": "schema:InnerEyeStyle"
+      },
+      {
+        "from": "schema:Style",
+        "kind": "REFERENCES",
+        "to": "schema:ModuleStyle"
+      },
+      {
+        "from": "schema:Style",
+        "kind": "REFERENCES",
+        "to": "schema:OuterEyeStyle"
+      },
+      {
+        "from": "schema:TextQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImage"
+      },
+      {
+        "from": "schema:TextQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:TextQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Size"
+      },
+      {
+        "from": "schema:TextQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:TextQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:TextData"
+      },
+      {
+        "from": "schema:TextQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImageMultipart"
+      },
+      {
+        "from": "schema:TextQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:TextQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SizeMultipart"
+      },
+      {
+        "from": "schema:TextQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:TextQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:TextData"
+      },
+      {
+        "from": "schema:TextQRCodeMultipartBody",
+        "kind": "REFERENCES",
+        "to": "schema:TextQRCodeMetadata"
+      },
+      {
+        "from": "schema:WiFiData",
+        "kind": "REFERENCES",
+        "to": "schema:WiFiSecurity"
+      },
+      {
+        "from": "schema:WiFiQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImage"
+      },
+      {
+        "from": "schema:WiFiQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:WiFiQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Size"
+      },
+      {
+        "from": "schema:WiFiQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:WiFiQRCode",
+        "kind": "REFERENCES",
+        "to": "schema:WiFiData"
+      },
+      {
+        "from": "schema:WiFiQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:EmbeddedImageMultipart"
+      },
+      {
+        "from": "schema:WiFiQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:OutputFile"
+      },
+      {
+        "from": "schema:WiFiQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:SizeMultipart"
+      },
+      {
+        "from": "schema:WiFiQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:Style"
+      },
+      {
+        "from": "schema:WiFiQRCodeMetadata",
+        "kind": "REFERENCES",
+        "to": "schema:WiFiData"
+      },
+      {
+        "from": "schema:WiFiQRCodeMultipartBody",
+        "kind": "REFERENCES",
+        "to": "schema:WiFiQRCodeMetadata"
       }
     ],
     "nodes": [
@@ -82,12 +852,39 @@
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to generate an archive containing multiple QR Codes with a single request.",
         "id": "operation:post:/batch/qrcode",
         "kind": "operation",
         "method": "post",
         "name": "qrCodeBatch_batch_qrcode_post",
         "path": "/batch/qrcode",
         "pointer": "#/paths/~1batch~1qrcode/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AutoQRCodeBatch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -96,76 +893,217 @@
             "RapidAPI": []
           }
         ],
-        "summary": "QR Code Batch"
+        "summary": "QR Code Batch",
+        "tags": [
+          "Multiple QR Codes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to list images hosted in the LinQR storage.",
         "id": "operation:get:/images",
         "kind": "operation",
         "method": "get",
         "name": "imageListAll_images_get",
         "path": "/images",
         "pointer": "#/paths/~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageMetadata[]"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RapidAPI": []
           }
         ],
-        "summary": "List all images"
+        "summary": "List all images",
+        "tags": [
+          "Image management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to upload images to LinQR storage.",
         "id": "operation:post:/images",
         "kind": "operation",
         "method": "post",
         "name": "imageUpload_images_post",
         "path": "/images",
         "pointer": "#/paths/~1images/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageMetadata"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "RapidAPI": []
           }
         ],
-        "summary": "Upload image"
+        "summary": "Upload image",
+        "tags": [
+          "Image management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/images/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "imageDelete_images__id__delete",
-        "path": "/images/{id}",
-        "pointer": "#/paths/~1images~1{id}/delete",
-        "security": [
-          {
-            "RapidAPI": []
-          }
-        ],
-        "summary": "Delete image"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint allows you to list single image hosted in the LinQR storage.",
         "id": "operation:get:/images/{id}",
         "kind": "operation",
         "method": "get",
         "name": "imageList_images__id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid4"
+          }
+        ],
         "path": "/images/{id}",
         "pointer": "#/paths/~1images~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageMetadata"
+          },
+          {
+            "status": "404",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RapidAPI": []
           }
         ],
-        "summary": "List image"
+        "summary": "List image",
+        "tags": [
+          "Image management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to delete images hosted in the LinQR storage.",
+        "id": "operation:delete:/images/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "imageDelete_images__id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid4"
+          }
+        ],
+        "path": "/images/{id}",
+        "pointer": "#/paths/~1images~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "RapidAPI": []
+          }
+        ],
+        "summary": "Delete image",
+        "tags": [
+          "Image management"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint aggregates the functionality of all other endpoints in the group.",
         "id": "operation:post:/qrcode",
         "kind": "operation",
         "method": "post",
         "name": "dispatcher_qrcode_post",
         "path": "/qrcode",
         "pointer": "#/paths/~1qrcode/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "AutoQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "GenericError"
+          },
+          {
+            "status": "415",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -174,16 +1112,55 @@
             "RapidAPI": []
           }
         ],
-        "summary": "Arbitrary data type QR Code"
+        "summary": "Arbitrary data type QR Code",
+        "tags": [
+          "Single QR Code"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a QR Code that allows user to quickly add contact information to the phone book.",
         "id": "operation:post:/qrcode/contact",
         "kind": "operation",
         "method": "post",
         "name": "dispatcher_qrcode_contact_post",
         "path": "/qrcode/contact",
         "pointer": "#/paths/~1qrcode~1contact/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "ContactQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "GenericError"
+          },
+          {
+            "status": "415",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -192,16 +1169,55 @@
             "RapidAPI": []
           }
         ],
-        "summary": "Contact QR Code"
+        "summary": "Contact QR Code",
+        "tags": [
+          "Single QR Code"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a QR Code that allows user to make a quick cryptocurrency transfer.",
         "id": "operation:post:/qrcode/crypto",
         "kind": "operation",
         "method": "post",
         "name": "dispatcher_qrcode_crypto_post",
         "path": "/qrcode/crypto",
         "pointer": "#/paths/~1qrcode~1crypto/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "CryptoPaymentQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "GenericError"
+          },
+          {
+            "status": "415",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -210,16 +1226,55 @@
             "RapidAPI": []
           }
         ],
-        "summary": "Cryptocurrency payment QR Code"
+        "summary": "Cryptocurrency payment QR Code",
+        "tags": [
+          "Single QR Code"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the creation of a QR Code allowing the user to quickly send an email.",
         "id": "operation:post:/qrcode/email",
         "kind": "operation",
         "method": "post",
         "name": "dispatcher_qrcode_email_post",
         "path": "/qrcode/email",
         "pointer": "#/paths/~1qrcode~1email/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "EmailQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "GenericError"
+          },
+          {
+            "status": "415",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -228,16 +1283,55 @@
             "RapidAPI": []
           }
         ],
-        "summary": "Email QR Code"
+        "summary": "Email QR Code",
+        "tags": [
+          "Single QR Code"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a QR Code that allows to share location with the user.",
         "id": "operation:post:/qrcode/geo",
         "kind": "operation",
         "method": "post",
         "name": "dispatcher_qrcode_geo_post",
         "path": "/qrcode/geo",
         "pointer": "#/paths/~1qrcode~1geo/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "GeolocationQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "GenericError"
+          },
+          {
+            "status": "415",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -246,16 +1340,55 @@
             "RapidAPI": []
           }
         ],
-        "summary": "Geolocation QR Code"
+        "summary": "Geolocation QR Code",
+        "tags": [
+          "Single QR Code"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a QR Code that allows user to make quick telephone call.",
         "id": "operation:post:/qrcode/phone",
         "kind": "operation",
         "method": "post",
         "name": "dispatcher_qrcode_phone_post",
         "path": "/qrcode/phone",
         "pointer": "#/paths/~1qrcode~1phone/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "PhoneQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "GenericError"
+          },
+          {
+            "status": "415",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -264,16 +1397,55 @@
             "RapidAPI": []
           }
         ],
-        "summary": "Telephone QR Code"
+        "summary": "Telephone QR Code",
+        "tags": [
+          "Single QR Code"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a QR Code that allows user to quickly send SMS.",
         "id": "operation:post:/qrcode/sms",
         "kind": "operation",
         "method": "post",
         "name": "dispatcher_qrcode_sms_post",
         "path": "/qrcode/sms",
         "pointer": "#/paths/~1qrcode~1sms/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "SMSQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "GenericError"
+          },
+          {
+            "status": "415",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -282,16 +1454,55 @@
             "RapidAPI": []
           }
         ],
-        "summary": "SMS QR Code"
+        "summary": "SMS QR Code",
+        "tags": [
+          "Single QR Code"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a QR Code containing any text, in particular, an URL that may redirect the user to the website.",
         "id": "operation:post:/qrcode/text",
         "kind": "operation",
         "method": "post",
         "name": "dispatcher_qrcode_text_post",
         "path": "/qrcode/text",
         "pointer": "#/paths/~1qrcode~1text/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "TextQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "GenericError"
+          },
+          {
+            "status": "415",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -300,16 +1511,55 @@
             "RapidAPI": []
           }
         ],
-        "summary": "Text QR Code"
+        "summary": "Text QR Code",
+        "tags": [
+          "Single QR Code"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to create a QR Code that allows user to quickly connect to a WiFi network.",
         "id": "operation:post:/qrcode/wifi",
         "kind": "operation",
         "method": "post",
         "name": "dispatcher_qrcode_wifi_post",
         "path": "/qrcode/wifi",
         "pointer": "#/paths/~1qrcode~1wifi/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "WiFiQRCode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "GenericError"
+          },
+          {
+            "status": "415",
+            "type": "GenericError"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "424",
+            "type": "GenericError"
+          },
+          {
+            "status": "500",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Byvalue": []
@@ -318,367 +1568,457 @@
             "RapidAPI": []
           }
         ],
-        "summary": "WiFi QR Code"
+        "summary": "WiFi QR Code",
+        "tags": [
+          "Single QR Code"
+        ]
       },
       {
         "id": "schema:AutoQRCode",
         "kind": "schema",
-        "name": "AutoQRCode"
+        "name": "AutoQRCode",
+        "type": "object"
       },
       {
         "id": "schema:AutoQRCodeBatch",
         "kind": "schema",
-        "name": "AutoQRCodeBatch"
+        "name": "AutoQRCodeBatch",
+        "type": "object"
       },
       {
         "id": "schema:AutoQRCodeMetadata",
         "kind": "schema",
-        "name": "AutoQRCodeMetadata"
+        "name": "AutoQRCodeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:AutoQRCodeMultipartBody",
         "kind": "schema",
-        "name": "AutoQRCodeMultipartBody"
+        "name": "AutoQRCodeMultipartBody",
+        "type": "object"
       },
       {
         "id": "schema:BackgroundStyle",
         "kind": "schema",
-        "name": "BackgroundStyle"
+        "name": "BackgroundStyle",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:BatchFormat",
         "kind": "schema",
-        "name": "BatchFormat"
+        "name": "BatchFormat",
+        "type": "string"
       },
       {
         "id": "schema:BatchOutputFile",
         "kind": "schema",
-        "name": "BatchOutputFile"
+        "name": "BatchOutputFile",
+        "type": "object"
       },
       {
         "id": "schema:ContactData",
         "kind": "schema",
-        "name": "ContactData"
+        "name": "ContactData",
+        "type": "VCardData|MeCardData"
       },
       {
         "id": "schema:ContactQRCode",
         "kind": "schema",
-        "name": "ContactQRCode"
+        "name": "ContactQRCode",
+        "type": "object"
       },
       {
         "id": "schema:ContactQRCodeMetadata",
         "kind": "schema",
-        "name": "ContactQRCodeMetadata"
+        "name": "ContactQRCodeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:ContactQRCodeMultipartBody",
         "kind": "schema",
-        "name": "ContactQRCodeMultipartBody"
+        "name": "ContactQRCodeMultipartBody",
+        "type": "object"
       },
       {
         "id": "schema:CryptoPaymentData",
         "kind": "schema",
-        "name": "CryptoPaymentData"
+        "name": "CryptoPaymentData",
+        "type": "object"
       },
       {
         "id": "schema:CryptoPaymentQRCode",
         "kind": "schema",
-        "name": "CryptoPaymentQRCode"
+        "name": "CryptoPaymentQRCode",
+        "type": "object"
       },
       {
         "id": "schema:CryptoPaymentQRCodeMetadata",
         "kind": "schema",
-        "name": "CryptoPaymentQRCodeMetadata"
+        "name": "CryptoPaymentQRCodeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:CryptoPaymentQRCodeMultipartBody",
         "kind": "schema",
-        "name": "CryptoPaymentQRCodeMultipartBody"
+        "name": "CryptoPaymentQRCodeMultipartBody",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Cryptocurrency",
         "kind": "schema",
-        "name": "Cryptocurrency"
+        "name": "Cryptocurrency",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:ECLevel",
         "kind": "schema",
-        "name": "ECLevel"
+        "name": "ECLevel",
+        "type": "string"
       },
       {
         "id": "schema:EmailData",
         "kind": "schema",
-        "name": "EmailData"
+        "name": "EmailData",
+        "type": "object"
       },
       {
         "id": "schema:EmailQRCode",
         "kind": "schema",
-        "name": "EmailQRCode"
+        "name": "EmailQRCode",
+        "type": "object"
       },
       {
         "id": "schema:EmailQRCodeMetadata",
         "kind": "schema",
-        "name": "EmailQRCodeMetadata"
+        "name": "EmailQRCodeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:EmailQRCodeMultipartBody",
         "kind": "schema",
-        "name": "EmailQRCodeMultipartBody"
+        "name": "EmailQRCodeMultipartBody",
+        "type": "object"
       },
       {
         "id": "schema:EmbeddedImage",
         "kind": "schema",
-        "name": "EmbeddedImage"
+        "name": "EmbeddedImage",
+        "type": "object"
       },
       {
         "id": "schema:EmbeddedImageMultipart",
         "kind": "schema",
-        "name": "EmbeddedImageMultipart"
+        "name": "EmbeddedImageMultipart",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Format",
         "kind": "schema",
-        "name": "Format"
+        "name": "Format",
+        "type": "string"
       },
       {
         "id": "schema:GenericError",
         "kind": "schema",
-        "name": "GenericError"
+        "name": "GenericError",
+        "type": "object"
       },
       {
         "id": "schema:GeolocationData",
         "kind": "schema",
-        "name": "GeolocationData"
+        "name": "GeolocationData",
+        "type": "object"
       },
       {
         "id": "schema:GeolocationQRCode",
         "kind": "schema",
-        "name": "GeolocationQRCode"
+        "name": "GeolocationQRCode",
+        "type": "object"
       },
       {
         "id": "schema:GeolocationQRCodeMetadata",
         "kind": "schema",
-        "name": "GeolocationQRCodeMetadata"
+        "name": "GeolocationQRCodeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:GeolocationQRCodeMultipartBody",
         "kind": "schema",
-        "name": "GeolocationQRCodeMultipartBody"
+        "name": "GeolocationQRCodeMultipartBody",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:GeolocationUriFormat",
         "kind": "schema",
-        "name": "GeolocationUriFormat"
+        "name": "GeolocationUriFormat",
+        "type": "string"
       },
       {
         "id": "schema:Gradient",
         "kind": "schema",
-        "name": "Gradient"
+        "name": "Gradient",
+        "type": "LinearGradient|RadialGradient"
       },
       {
         "id": "schema:GradientStop",
         "kind": "schema",
-        "name": "GradientStop"
+        "name": "GradientStop",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
+        "description": "Resource locator for the predefined icons.",
         "id": "schema:Icon",
         "kind": "schema",
-        "name": "Icon"
+        "name": "Icon",
+        "type": "Icons"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Icons",
         "kind": "schema",
-        "name": "Icons"
+        "name": "Icons",
+        "type": "string"
       },
       {
         "id": "schema:ImageMetadata",
         "kind": "schema",
-        "name": "ImageMetadata"
+        "name": "ImageMetadata",
+        "type": "object"
       },
       {
         "id": "schema:ImageMultipartBody",
         "kind": "schema",
-        "name": "ImageMultipartBody"
+        "name": "ImageMultipartBody",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:InnerEyeShapes",
         "kind": "schema",
-        "name": "InnerEyeShapes"
+        "name": "InnerEyeShapes",
+        "type": "string"
       },
       {
         "id": "schema:InnerEyeStyle",
         "kind": "schema",
-        "name": "InnerEyeStyle"
+        "name": "InnerEyeStyle",
+        "type": "object"
       },
       {
         "id": "schema:LinearGradient",
         "kind": "schema",
-        "name": "LinearGradient"
+        "name": "LinearGradient",
+        "type": "object"
       },
       {
         "id": "schema:MeCardData",
         "kind": "schema",
-        "name": "MeCardData"
+        "name": "MeCardData",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:ModuleShapes",
         "kind": "schema",
-        "name": "ModuleShapes"
+        "name": "ModuleShapes",
+        "type": "string"
       },
       {
         "id": "schema:ModuleStyle",
         "kind": "schema",
-        "name": "ModuleStyle"
+        "name": "ModuleStyle",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:OuterEyeShapes",
         "kind": "schema",
-        "name": "OuterEyeShapes"
+        "name": "OuterEyeShapes",
+        "type": "string"
       },
       {
         "id": "schema:OuterEyeStyle",
         "kind": "schema",
-        "name": "OuterEyeStyle"
+        "name": "OuterEyeStyle",
+        "type": "object"
       },
       {
         "id": "schema:OutputFile",
         "kind": "schema",
-        "name": "OutputFile"
+        "name": "OutputFile",
+        "type": "object"
       },
       {
         "id": "schema:PhoneData",
         "kind": "schema",
-        "name": "PhoneData"
+        "name": "PhoneData",
+        "type": "object"
       },
       {
         "id": "schema:PhoneQRCode",
         "kind": "schema",
-        "name": "PhoneQRCode"
+        "name": "PhoneQRCode",
+        "type": "object"
       },
       {
         "id": "schema:PhoneQRCodeMetadata",
         "kind": "schema",
-        "name": "PhoneQRCodeMetadata"
+        "name": "PhoneQRCodeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:PhoneQRCodeMultipartBody",
         "kind": "schema",
-        "name": "PhoneQRCodeMultipartBody"
+        "name": "PhoneQRCodeMultipartBody",
+        "type": "object"
       },
       {
         "id": "schema:RadialGradient",
         "kind": "schema",
-        "name": "RadialGradient"
+        "name": "RadialGradient",
+        "type": "object"
       },
       {
+        "description": "Email address.",
         "id": "schema:Recipient",
         "kind": "schema",
-        "name": "Recipient"
+        "name": "Recipient",
+        "type": "string:email"
       },
       {
         "id": "schema:SMSData",
         "kind": "schema",
-        "name": "SMSData"
+        "name": "SMSData",
+        "type": "object"
       },
       {
         "id": "schema:SMSQRCode",
         "kind": "schema",
-        "name": "SMSQRCode"
+        "name": "SMSQRCode",
+        "type": "object"
       },
       {
         "id": "schema:SMSQRCodeMetadata",
         "kind": "schema",
-        "name": "SMSQRCodeMetadata"
+        "name": "SMSQRCodeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:SMSQRCodeMultipartBody",
         "kind": "schema",
-        "name": "SMSQRCodeMultipartBody"
+        "name": "SMSQRCodeMultipartBody",
+        "type": "object"
       },
       {
         "id": "schema:Size",
         "kind": "schema",
-        "name": "Size"
+        "name": "Size",
+        "type": "object"
       },
       {
         "id": "schema:SizeMultipart",
         "kind": "schema",
-        "name": "SizeMultipart"
+        "name": "SizeMultipart",
+        "type": "object"
       },
       {
+        "description": "Resource locator for the image pre-uploaded to the API i.e.",
         "id": "schema:Storage",
         "kind": "schema",
-        "name": "Storage"
+        "name": "Storage",
+        "type": "string:uuid4"
       },
       {
         "id": "schema:Style",
         "kind": "schema",
-        "name": "Style"
+        "name": "Style",
+        "type": "object"
       },
       {
+        "description": "Text to be encoded in the QR Code.",
         "id": "schema:TextData",
         "kind": "schema",
-        "name": "TextData"
+        "name": "TextData",
+        "type": "string"
       },
       {
         "id": "schema:TextQRCode",
         "kind": "schema",
-        "name": "TextQRCode"
+        "name": "TextQRCode",
+        "type": "object"
       },
       {
         "id": "schema:TextQRCodeMetadata",
         "kind": "schema",
-        "name": "TextQRCodeMetadata"
+        "name": "TextQRCodeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:TextQRCodeMultipartBody",
         "kind": "schema",
-        "name": "TextQRCodeMultipartBody"
+        "name": "TextQRCodeMultipartBody",
+        "type": "object"
       },
       {
+        "description": "URL of the image to be placed on the QR Code.",
         "id": "schema:URL",
         "kind": "schema",
-        "name": "URL"
+        "name": "URL",
+        "type": "string:uri"
       },
       {
         "id": "schema:VCardData",
         "kind": "schema",
-        "name": "VCardData"
+        "name": "VCardData",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:WiFiData",
         "kind": "schema",
-        "name": "WiFiData"
+        "name": "WiFiData",
+        "type": "object"
       },
       {
         "id": "schema:WiFiQRCode",
         "kind": "schema",
-        "name": "WiFiQRCode"
+        "name": "WiFiQRCode",
+        "type": "object"
       },
       {
         "id": "schema:WiFiQRCodeMetadata",
         "kind": "schema",
-        "name": "WiFiQRCodeMetadata"
+        "name": "WiFiQRCodeMetadata",
+        "type": "object"
       },
       {
         "id": "schema:WiFiQRCodeMultipartBody",
         "kind": "schema",
-        "name": "WiFiQRCodeMultipartBody"
+        "name": "WiFiQRCodeMultipartBody",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:WiFiSecurity",
         "kind": "schema",
-        "name": "WiFiSecurity"
+        "name": "WiFiSecurity",
+        "type": "string"
       }
     ]
   },

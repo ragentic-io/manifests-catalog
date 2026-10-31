@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.datocms-assets.com_26885_15
 
 | | |
 | --- | --- |
-| Signed bundle | `54bfcdd5a3caab243aa06b3fd73cdedfe36a43c47e955da323a0acdf8e7d7f20` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,52 +34,54 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.datocms-assets.com_26885_15
 
 70 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | GET_account | Show account |
-| GET | `/analytics/live-streams/{liveStreamId}` | GET_analytics-live-streams-liveStreamId | List live stream player sessions |
-| GET | `/analytics/sessions/{sessionId}/events` | GET_analytics-sessions-sessionId-events | List player session events |
-| GET | `/analytics/videos/{videoId}` | GET_analytics-videos-videoId | List video player sessions |
-| POST | `/auth/api-key` | POST_auth-api-key | Authenticate |
-| POST | `/auth/refresh` | POST_auth-refresh | Refresh token |
-| GET | `/live-streams` | GET_live-streams | List all live streams |
-| POST | `/live-streams` | POST_live-streams | Create live stream |
-| DELETE | `/live-streams/{liveStreamId}` | DELETE_live-streams-liveStreamId | Delete a live stream |
-| GET | `/live-streams/{liveStreamId}` | GET_live-streams-liveStreamId | Show live stream |
-| PATCH | `/live-streams/{liveStreamId}` | PATCH_live-streams-liveStreamId | Update a live stream |
-| DELETE | `/live-streams/{liveStreamId}/thumbnail` | DELETE_live-streams-liveStreamId-thumbnail | Delete a thumbnail |
-| POST | `/live-streams/{liveStreamId}/thumbnail` | POST_live-streams-liveStreamId-thumbnail | Upload a thumbnail |
-| GET | `/players` | GET_players | List all players |
-| POST | `/players` | POST_players | Create a player |
-| DELETE | `/players/{playerId}` | DELETE_players-playerId | Delete a player |
-| GET | `/players/{playerId}` | GET_players-playerId | Show a player |
-| PATCH | `/players/{playerId}` | PATCH_players-playerId | Update a player |
-| DELETE | `/players/{playerId}/logo` | DELETE_players-playerId-logo | Delete logo |
-| POST | `/players/{playerId}/logo` | POST_players-playerId-logo | Upload a logo |
-| POST | `/upload` | POST_upload | Upload with an upload token |
-| GET | `/upload-tokens` | GET_upload-tokens | List all active upload tokens. |
-| POST | `/upload-tokens` | POST_upload-tokens | Generate an upload token |
-| DELETE | `/upload-tokens/{uploadToken}` | DELETE_upload-tokens-uploadToken | Delete an upload token |
-| GET | `/upload-tokens/{uploadToken}` | GET_upload-tokens-uploadToken | Show upload token |
-| GET | `/videos` | LIST-videos | List all videos |
-| POST | `/videos` | POST-video | Create a video |
-| DELETE | `/videos/{videoId}` | DELETE-video | Delete a video |
-| GET | `/videos/{videoId}` | GET-video | Show a video |
-| PATCH | `/videos/{videoId}` | PATCH-video | Update a video |
-| GET | `/videos/{videoId}/captions` | GET_videos-videoId-captions | List video captions |
-| DELETE | `/videos/{videoId}/captions/{language}` | DELETE_videos-videoId-captions-language | Delete a caption |
-| GET | `/videos/{videoId}/captions/{language}` | GET_videos-videoId-captions-language | Show a caption |
-| PATCH | `/videos/{videoId}/captions/{language}` | PATCH_videos-videoId-captions-language | Update caption |
-| POST | `/videos/{videoId}/captions/{language}` | POST_videos-videoId-captions-language | Upload a caption |
-| GET | `/videos/{videoId}/chapters` | GET_videos-videoId-chapters | List video chapters |
-| DELETE | `/videos/{videoId}/chapters/{language}` | DELETE_videos-videoId-chapters-language | Delete a chapter |
-| GET | `/videos/{videoId}/chapters/{language}` | GET_videos-videoId-chapters-language | Show a chapter |
-| POST | `/videos/{videoId}/chapters/{language}` | POST_videos-videoId-chapters-language | Upload a chapter |
-| POST | `/videos/{videoId}/source` | POST_videos-videoId-source | Upload a video |
-| GET | `/videos/{videoId}/status` | GET-video-status | Show video status |
-| PATCH | `/videos/{videoId}/thumbnail` | PATCH_videos-videoId-thumbnail | Pick a thumbnail |
-| POST | `/videos/{videoId}/thumbnail` | POST_videos-videoId-thumbnail | Upload a thumbnail |
-| GET | `/webhooks` | LIST-webhooks | List all webhooks |
-| POST | `/webhooks` | POST-webhooks | Create Webhook |
-| DELETE | `/webhooks/{webhookId}` | DELETE-webhook | Delete a Webhook |
-| GET | `/webhooks/{webhookId}` | GET-Webhook | Show Webhook details |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | GET_account | — | account | yes | Show account |
+| GET | `/analytics/live-streams/{liveStreamId}` | GET_analytics-live-streams-liveStreamId | `liveStreamId`*, `period`, `currentPage`, `pageSize` | raw-statistics-list-live-stream-analytics-response | yes | List live stream player sessions |
+| GET | `/analytics/sessions/{sessionId}/events` | GET_analytics-sessions-sessionId-events | `sessionId`*, `currentPage`, `pageSize` | raw-statistics-list-player-session-events-response | yes | List player session events |
+| GET | `/analytics/videos/{videoId}` | GET_analytics-videos-videoId | `videoId`*, `period`, `metadata`, `currentPage`, `pageSize` | raw-statistics-list-sessions-response | yes | List video player sessions |
+| POST | `/auth/api-key` | POST_auth-api-key | body: authenticate-payload | access-token |  | Authenticate |
+| POST | `/auth/refresh` | POST_auth-refresh | body: refresh-token-payload | access-token |  | Refresh token |
+| GET | `/live-streams` | GET_live-streams | `streamKey`, `name`, `sortBy`, `sortOrder`, `currentPage`, `pageSize` | live-stream-list-response | yes | List all live streams |
+| POST | `/live-streams` | POST_live-streams | body: live-stream-create-payload | live-stream |  | Create live stream |
+| GET | `/live-streams/{liveStreamId}` | GET_live-streams-liveStreamId | `liveStreamId`* | live-stream | yes | Show live stream |
+| DELETE | `/live-streams/{liveStreamId}` | DELETE_live-streams-liveStreamId | `liveStreamId`* | — |  | Delete a live stream |
+| PATCH | `/live-streams/{liveStreamId}` | PATCH_live-streams-liveStreamId | `liveStreamId`*, body: live-stream-update-payload | live-stream |  | Update a live stream |
+| POST | `/live-streams/{liveStreamId}/thumbnail` | POST_live-streams-liveStreamId-thumbnail | `liveStreamId`*, body: live-stream-thumbnail-upload-payload | live-stream |  | Upload a thumbnail |
+| DELETE | `/live-streams/{liveStreamId}/thumbnail` | DELETE_live-streams-liveStreamId-thumbnail | `liveStreamId`* | live-stream |  | Delete a thumbnail |
+| GET | `/players` | GET_players | `sortBy`, `sortOrder`, `currentPage`, `pageSize` | players-list-response | yes | List all players |
+| POST | `/players` | POST_players | body*: playerCreationPayload | player |  | Create a player |
+| GET | `/players/{playerId}` | GET_players-playerId | `playerId`* | player | yes | Show a player |
+| DELETE | `/players/{playerId}` | DELETE_players-playerId | `playerId`* | — |  | Delete a player |
+| PATCH | `/players/{playerId}` | PATCH_players-playerId | `playerId`*, body*: playerUpdatePayload | player |  | Update a player |
+| POST | `/players/{playerId}/logo` | POST_players-playerId-logo | `playerId`*, body: players-upload-logo-payload | player |  | Upload a logo |
+| DELETE | `/players/{playerId}/logo` | DELETE_players-playerId-logo | `playerId`* | object |  | Delete logo |
+| POST | `/upload` | POST_upload | `token`*, `Content-Range`, body: token-upload-payload | video |  | Upload with an upload token |
+| GET | `/upload-tokens` | GET_upload-tokens | `sortBy`, `sortOrder`, `currentPage`, `pageSize` | token-list-response | yes | List all active upload tokens. |
+| POST | `/upload-tokens` | POST_upload-tokens | body: token-create-payload | upload-token |  | Generate an upload token |
+| GET | `/upload-tokens/{uploadToken}` | GET_upload-tokens-uploadToken | `uploadToken`* | upload-token | yes | Show upload token |
+| DELETE | `/upload-tokens/{uploadToken}` | DELETE_upload-tokens-uploadToken | `uploadToken`* | — |  | Delete an upload token |
+| GET | `/videos` | LIST-videos | `title`, `tags`, `metadata`, `description`, `liveStreamId`, `sortBy`, `sortOrder`, `currentPage`, `pageSize` | videos-list-response | yes | List all videos |
+| POST | `/videos` | POST-video | body: video-create-payload | video |  | Create a video |
+| GET | `/videos/{videoId}` | GET-video | `videoId`* | video | yes | Show a video |
+| DELETE | `/videos/{videoId}` | DELETE-video | `videoId`* | — |  | Delete a video |
+| PATCH | `/videos/{videoId}` | PATCH-video | `videoId`*, body: video-update-payload | video |  | Update a video |
+| GET | `/videos/{videoId}/captions` | GET_videos-videoId-captions | `videoId`*, `currentPage`, `pageSize` | captions-list-response | yes | List video captions |
+| GET | `/videos/{videoId}/captions/{language}` | GET_videos-videoId-captions-language | `videoId`*, `language`* | subtitle | yes | Show a caption |
+| POST | `/videos/{videoId}/captions/{language}` | POST_videos-videoId-captions-language | `videoId`*, `language`*, body: captions-upload-payload | subtitle |  | Upload a caption |
+| DELETE | `/videos/{videoId}/captions/{language}` | DELETE_videos-videoId-captions-language | `videoId`*, `language`* | — |  | Delete a caption |
+| PATCH | `/videos/{videoId}/captions/{language}` | PATCH_videos-videoId-captions-language | `videoId`*, `language`*, body: captions-update-payload | subtitle |  | Update caption |
+| GET | `/videos/{videoId}/chapters` | GET_videos-videoId-chapters | `videoId`*, `currentPage`, `pageSize` | chapters-list-response | yes | List video chapters |
+| GET | `/videos/{videoId}/chapters/{language}` | GET_videos-videoId-chapters-language | `videoId`*, `language`* | chapter | yes | Show a chapter |
+| POST | `/videos/{videoId}/chapters/{language}` | POST_videos-videoId-chapters-language | `videoId`*, `language`*, body: chapters-update-payload | chapter |  | Upload a chapter |
+| DELETE | `/videos/{videoId}/chapters/{language}` | DELETE_videos-videoId-chapters-language | `videoId`*, `language`* | — |  | Delete a chapter |
+| POST | `/videos/{videoId}/source` | POST_videos-videoId-source | `videoId`*, `Content-Range`, body: video-upload-payload | video |  | Upload a video |
+| GET | `/videos/{videoId}/status` | GET-video-status | `videoId`* | videostatus | yes | Show video status |
+| POST | `/videos/{videoId}/thumbnail` | POST_videos-videoId-thumbnail | `videoId`*, body: video-thumbnail-upload-payload | video |  | Upload a thumbnail |
+| PATCH | `/videos/{videoId}/thumbnail` | PATCH_videos-videoId-thumbnail | `videoId`*, body: video-thumbnail-pick-payload | video |  | Pick a thumbnail |
+| GET | `/webhooks` | LIST-webhooks | `events`, `currentPage`, `pageSize` | webhooks-list-response | yes | List all webhooks |
+| POST | `/webhooks` | POST-webhooks | body: webhooks-create-payload | webhook |  | Create Webhook |
+| GET | `/webhooks/{webhookId}` | GET-Webhook | `webhookId`* | webhook | yes | Show Webhook details |
+| DELETE | `/webhooks/{webhookId}` | DELETE-webhook | `webhookId`* | — |  | Delete a Webhook |

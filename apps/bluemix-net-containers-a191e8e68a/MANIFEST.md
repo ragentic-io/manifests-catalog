@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_IBMCloud_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `44fe0040fbabbefcb4c0d6727e98008e8c9ff9c2c702528306835cf23005efe8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,52 +34,54 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_IBMCloud_profile_im
 
 37 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/build` | post /build | Build a Docker image from a Dockerfile |
-| POST | `/containers/create` | post /containers/create | Create and start a single container |
-| GET | `/containers/floating-ips` | get /containers/floating-ips | List available public IP addresses in a space |
-| POST | `/containers/floating-ips/request` | post /containers/floating-ips/request | Request a public IP address for a space |
-| POST | `/containers/floating-ips/{ip}/release` | post /containers/floating-ips/{ip}/release | Release public IP address |
-| GET | `/containers/groups` | get /containers/groups | List all container groups in a space |
-| POST | `/containers/groups` | post /containers/groups | Create and start a container group. |
-| DELETE | `/containers/groups/{name_or_id}` | delete /containers/groups/{name_or_id} | Stop and delete all container instances in a container group. |
-| GET | `/containers/groups/{name_or_id}` | get /containers/groups/{name_or_id} | Inspect a container group. |
-| PATCH | `/containers/groups/{name_or_id}` | patch /containers/groups/{name_or_id} | Update a container group. |
-| POST | `/containers/groups/{name_or_id}/maproute` | post /containers/groups/{name_or_id}/maproute | Map a public route to a container group. |
-| POST | `/containers/groups/{name_or_id}/unmaproute` | post /containers/groups/{name_or_id}/unmaproute | Unmap a public route from a container group |
-| GET | `/containers/json` | get /containers/json | List single containers in a space. |
-| GET | `/containers/messages` | get /containers/messages | List messages for the user |
-| GET | `/containers/quota` | get /containers/quota | Retrieve organization and space specific quota |
-| PUT | `/containers/quota` | put /containers/quota | Update space quota |
-| GET | `/containers/usage` | get /containers/usage | List container sizes and quota limits |
-| GET | `/containers/version` | get /containers/version | List latest API version |
-| GET | `/containers/{id}/status` | get /containers/{id}/status | List the current state of a container. |
-| DELETE | `/containers/{name_or_id}` | delete /containers/{name_or_id} | Remove a single container |
-| POST | `/containers/{name_or_id}/floating-ips/{ip}/bind` | post /containers/{name_or_id}/floating-ips/{ip}/bind | Bind a public IP address to a single container |
-| POST | `/containers/{name_or_id}/floating-ips/{ip}/unbind` | post /containers/{name_or_id}/floating-ips/{ip}/unbind | Unbind a public IP address from a container |
-| GET | `/containers/{name_or_id}/json` | get /containers/{name_or_id}/json | Inspect a single container |
-| POST | `/containers/{name_or_id}/pause` | post /containers/{name_or_id}/pause | Pause a single container |
-| POST | `/containers/{name_or_id}/rename` | post /containers/{name_or_id}/rename | Rename a single container |
-| POST | `/containers/{name_or_id}/restart` | post /containers/{name_or_id}/restart | Restart a single container |
-| POST | `/containers/{name_or_id}/start` | post /containers/{name_or_id}/start | Start a single container |
-| POST | `/containers/{name_or_id}/stop` | post /containers/{name_or_id}/stop | Stop a single container |
-| POST | `/containers/{name_or_id}/unpause` | post /containers/{name_or_id}/unpause | Unpause a single container |
-| GET | `/images/json` | get /images/json | List all Docker images that are available in your private Bluemix registry. |
-| DELETE | `/images/{id}` | delete /images/{id} | Remove a Docker image. |
-| GET | `/images/{name_or_id}/json` | get /images/{name_or_id}/json | Inspect a Docker image in private Bluemix registry |
-| GET | `/registry/namespaces` | get /registry/namespaces | Retrieve the namespace of an organization. |
-| GET | `/registry/namespaces/{namespace}` | get /registry/namespaces/{namespace} | Check the availability of a namespace |
-| PUT | `/registry/namespaces/{namespace}` | put /registry/namespaces/{namespace} | Set a namespace for your private Bluemix registry. |
-| GET | `/tlskey` | get /tlskey | Retrieve the TLS Certificate |
-| PUT | `/tlskey/refresh` | put /tlskey/refresh | Refresh the TLS Certificate |
-| POST | `/volumes/create` | post /volumes/create | Create a volume in a space |
-| POST | `/volumes/fs/create` | post /volumes/fs/create | Create a file share in a space |
-| GET | `/volumes/fs/flavors/json` | get /volumes/fs/flavors/json | List available file share sizes |
-| GET | `/volumes/fs/json` | get /volumes/fs/json | List available file shares in a space |
-| DELETE | `/volumes/fs/{name}` | delete /volumes/fs/{name} | Delete a file share |
-| GET | `/volumes/fs/{name}/json` | get /volumes/fs/{name}/json | Inspect a file share |
-| GET | `/volumes/json` | get /volumes/json | List all volumes for a space |
-| DELETE | `/volumes/{name}` | delete /volumes/{name} | Delete a volume |
-| POST | `/volumes/{name}` | post /volumes/{name} | Share a volume with another space |
-| GET | `/volumes/{name}/json` | get /volumes/{name}/json | Retrieve detailed information about a volume. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/build` | post /build | `X-Auth-Token`*, `X-Auth-Project-Id`*, `t`*, `q`, `nocache`, `pull`, body*: string:binary | — |  | Build a Docker image from a Dockerfile |
+| POST | `/containers/create` | post /containers/create | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name`, body*: CreateContainer | ContainerId |  | Create and start a single container |
+| GET | `/containers/floating-ips` | get /containers/floating-ips | `X-Auth-Token`*, `X-Auth-Project-Id`*, `all` | FloatingIP[] | yes | List available public IP addresses in a space |
+| POST | `/containers/floating-ips/request` | post /containers/floating-ips/request | `X-Auth-Token`*, `X-Auth-Project-Id`* | string |  | Request a public IP address for a space |
+| POST | `/containers/floating-ips/{ip}/release` | post /containers/floating-ips/{ip}/release | `X-Auth-Token`*, `X-Auth-Project-Id`*, `ip`* | — |  | Release public IP address |
+| GET | `/containers/groups` | get /containers/groups | `X-Auth-Token`*, `X-Auth-Project-Id`* | ContainersGroupsGetListItem[] | yes | List all container groups in a space |
+| POST | `/containers/groups` | post /containers/groups | `X-Auth-Token`*, `X-Auth-Project-Id`*, body*: ContainersGroupsPostRequiredAttributes | ContainersGroupsPostCreatedInfo |  | Create and start a container group. |
+| GET | `/containers/groups/{name_or_id}` | get /containers/groups/{name_or_id} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`* | ContainersGroupsNameOrIdGetDetails | yes | Inspect a container group. |
+| DELETE | `/containers/groups/{name_or_id}` | delete /containers/groups/{name_or_id} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, `force` | — |  | Stop and delete all container instances in a container group. |
+| PATCH | `/containers/groups/{name_or_id}` | patch /containers/groups/{name_or_id} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, body*: ContainersGroupsNameOrIdPatchUpdatedInfo | — |  | Update a container group. |
+| POST | `/containers/groups/{name_or_id}/maproute` | post /containers/groups/{name_or_id}/maproute | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, body*: Route | ContainersGroupsNameOrIdMaproutePostInfo |  | Map a public route to a container group. |
+| POST | `/containers/groups/{name_or_id}/unmaproute` | post /containers/groups/{name_or_id}/unmaproute | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, body*: Route | ContainersGroupsNameOrIdMaproutePostInfo |  | Unmap a public route from a container group |
+| GET | `/containers/json` | get /containers/json | `X-Auth-Token`*, `X-Auth-Project-Id`*, `all`, `filters` | Container[] | yes | List single containers in a space. |
+| GET | `/containers/messages` | get /containers/messages | `X-Auth-Token`*, `X-Auth-Project-Id`* | object | yes | List messages for the user |
+| GET | `/containers/quota` | get /containers/quota | `X-Auth-Token`*, `X-Auth-Project-Id`* | ContainersQuotaInfo | yes | Retrieve organization and space specific quota |
+| PUT | `/containers/quota` | put /containers/quota | `X-Auth-Token`*, `X-Auth-Project-Id`*, body*: ContainersQuotaList | — |  | Update space quota |
+| GET | `/containers/usage` | get /containers/usage | `X-Auth-Token`*, `X-Auth-Project-Id`* | ContainersUsageInfo | yes | List container sizes and quota limits |
+| GET | `/containers/version` | get /containers/version | — | ContainersVersionGetInfo | yes | List latest API version |
+| GET | `/containers/{id}/status` | get /containers/{id}/status | `X-Auth-Token`*, `X-Auth-Project-Id`*, `id`* | getContainerStatus | yes | List the current state of a container. |
+| DELETE | `/containers/{name_or_id}` | delete /containers/{name_or_id} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, `force` | — |  | Remove a single container |
+| POST | `/containers/{name_or_id}/floating-ips/{ip}/bind` | post /containers/{name_or_id}/floating-ips/{ip}/bind | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, `ip`* | — |  | Bind a public IP address to a single container |
+| POST | `/containers/{name_or_id}/floating-ips/{ip}/unbind` | post /containers/{name_or_id}/floating-ips/{ip}/unbind | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, `ip`* | — |  | Unbind a public IP address from a container |
+| GET | `/containers/{name_or_id}/json` | get /containers/{name_or_id}/json | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`* | ContainerInfo | yes | Inspect a single container |
+| POST | `/containers/{name_or_id}/pause` | post /containers/{name_or_id}/pause | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`* | — |  | Pause a single container |
+| POST | `/containers/{name_or_id}/rename` | post /containers/{name_or_id}/rename | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, `name`* | — |  | Rename a single container |
+| POST | `/containers/{name_or_id}/restart` | post /containers/{name_or_id}/restart | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, `t` | — |  | Restart a single container |
+| POST | `/containers/{name_or_id}/start` | post /containers/{name_or_id}/start | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`* | — |  | Start a single container |
+| POST | `/containers/{name_or_id}/stop` | post /containers/{name_or_id}/stop | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`*, `t` | — |  | Stop a single container |
+| POST | `/containers/{name_or_id}/unpause` | post /containers/{name_or_id}/unpause | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`* | — |  | Unpause a single container |
+| GET | `/images/json` | get /images/json | `X-Auth-Token`*, `X-Auth-Project-Id`* | ImageInfo | yes | List all Docker images that are available in your private Bluemix registry. |
+| DELETE | `/images/{id}` | delete /images/{id} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `id`* | — |  | Remove a Docker image. |
+| GET | `/images/{name_or_id}/json` | get /images/{name_or_id}/json | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name_or_id`* | ImageDetail | yes | Inspect a Docker image in private Bluemix registry |
+| GET | `/registry/namespaces` | get /registry/namespaces | `X-Auth-Token`*, `X-Auth-Project-Id`* | Namespace | yes | Retrieve the namespace of an organization. |
+| GET | `/registry/namespaces/{namespace}` | get /registry/namespaces/{namespace} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `namespace`* | Namespace | yes | Check the availability of a namespace |
+| PUT | `/registry/namespaces/{namespace}` | put /registry/namespaces/{namespace} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `namespace`* | Namespace |  | Set a namespace for your private Bluemix registry. |
+| GET | `/tlskey` | get /tlskey | `X-Auth-Token`*, `X-Auth-Project-Id`* | Certificate | yes | Retrieve the TLS Certificate |
+| PUT | `/tlskey/refresh` | put /tlskey/refresh | `X-Auth-Token`*, `X-Auth-Project-Id`* | CertificateRefresh |  | Refresh the TLS Certificate |
+| POST | `/volumes/create` | post /volumes/create | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name`*, `fsName` | Volume |  | Create a volume in a space |
+| POST | `/volumes/fs/create` | post /volumes/fs/create | `X-Auth-Token`*, `X-Auth-Project-Id`*, body*: FileshareParam | — |  | Create a file share in a space |
+| GET | `/volumes/fs/flavors/json` | get /volumes/fs/flavors/json | `X-Auth-Token`*, `X-Auth-Project-Id`* | integer[] | yes | List available file share sizes |
+| GET | `/volumes/fs/json` | get /volumes/fs/json | `X-Auth-Token`*, `X-Auth-Project-Id`* | Fileshare[] | yes | List available file shares in a space |
+| DELETE | `/volumes/fs/{name}` | delete /volumes/fs/{name} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name`* | — |  | Delete a file share |
+| GET | `/volumes/fs/{name}/json` | get /volumes/fs/{name}/json | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name`* | GetFileshareDetails[] | yes | Inspect a file share |
+| GET | `/volumes/json` | get /volumes/json | `X-Auth-Token`*, `X-Auth-Project-Id`* | Volume[] | yes | List all volumes for a space |
+| POST | `/volumes/{name}` | post /volumes/{name} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name`*, body*: UpdateVolume | Volume |  | Share a volume with another space |
+| DELETE | `/volumes/{name}` | delete /volumes/{name} | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name`* | — |  | Delete a volume |
+| GET | `/volumes/{name}/json` | get /volumes/{name}/json | `X-Auth-Token`*, `X-Auth-Project-Id`*, `name`* | Volume | yes | Retrieve detailed information about a volume. |

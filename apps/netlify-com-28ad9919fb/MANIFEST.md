@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Netlify_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `ebf0cdcde1d71f12583d8f19ef2ed9ff26a8c8f85e5e6e1d5a659deb003f1b4e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,125 +34,127 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Netlify_profile_ima
 
 61 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounts` | listAccountsForUser | — |
-| POST | `/accounts` | createAccount | — |
-| GET | `/accounts/types` | listAccountTypesForUser | — |
-| DELETE | `/accounts/{account_id}` | cancelAccount | — |
-| GET | `/accounts/{account_id}` | getAccount | — |
-| PUT | `/accounts/{account_id}` | updateAccount | — |
-| GET | `/accounts/{account_id}/audit` | listAccountAuditEvents | — |
-| GET | `/accounts/{account_id}/env` | getEnvVars | — |
-| POST | `/accounts/{account_id}/env` | createEnvVars | — |
-| DELETE | `/accounts/{account_id}/env/{key}` | deleteEnvVar | — |
-| GET | `/accounts/{account_id}/env/{key}` | getEnvVar | — |
-| PATCH | `/accounts/{account_id}/env/{key}` | setEnvVarValue | — |
-| PUT | `/accounts/{account_id}/env/{key}` | updateEnvVar | — |
-| DELETE | `/accounts/{account_id}/env/{key}/value/{id}` | deleteEnvVarValue | — |
-| GET | `/billing/payment_methods` | listPaymentMethodsForUser | — |
-| GET | `/builds/{build_id}` | getSiteBuild | — |
-| POST | `/builds/{build_id}/log` | updateSiteBuildLog | — |
-| POST | `/builds/{build_id}/start` | notifyBuildStart | — |
-| GET | `/deploy_keys` | listDeployKeys | — |
-| POST | `/deploy_keys` | createDeployKey | — |
-| DELETE | `/deploy_keys/{key_id}` | deleteDeployKey | — |
-| GET | `/deploy_keys/{key_id}` | getDeployKey | — |
-| DELETE | `/deploys/{deploy_id}` | deleteDeploy | — |
-| GET | `/deploys/{deploy_id}` | getDeploy | — |
-| POST | `/deploys/{deploy_id}/cancel` | cancelSiteDeploy | — |
-| PUT | `/deploys/{deploy_id}/files/{path}` | uploadDeployFile | — |
-| PUT | `/deploys/{deploy_id}/functions/{name}` | uploadDeployFunction | — |
-| POST | `/deploys/{deploy_id}/lock` | lockDeploy | — |
-| POST | `/deploys/{deploy_id}/plugin_runs` | createPluginRun | — |
-| POST | `/deploys/{deploy_id}/unlock` | unlockDeploy | — |
-| GET | `/dns_zones` | getDnsZones | — |
-| POST | `/dns_zones` | createDnsZone | — |
-| DELETE | `/dns_zones/{zone_id}` | deleteDnsZone | — |
-| GET | `/dns_zones/{zone_id}` | getDnsZone | — |
-| GET | `/dns_zones/{zone_id}/dns_records` | getDnsRecords | — |
-| POST | `/dns_zones/{zone_id}/dns_records` | createDnsRecord | — |
-| DELETE | `/dns_zones/{zone_id}/dns_records/{dns_record_id}` | deleteDnsRecord | — |
-| GET | `/dns_zones/{zone_id}/dns_records/{dns_record_id}` | getIndividualDnsRecord | — |
-| PUT | `/dns_zones/{zone_id}/transfer` | transferDnsZone | — |
-| GET | `/forms/{form_id}/submissions` | listFormSubmissions | — |
-| GET | `/hooks` | listHooksBySiteId | — |
-| POST | `/hooks` | createHookBySiteId | — |
-| GET | `/hooks/types` | listHookTypes | — |
-| DELETE | `/hooks/{hook_id}` | deleteHook | — |
-| GET | `/hooks/{hook_id}` | getHook | — |
-| PUT | `/hooks/{hook_id}` | updateHook | — |
-| POST | `/hooks/{hook_id}/enable` | enableHook | — |
-| POST | `/oauth/tickets` | createTicket | — |
-| GET | `/oauth/tickets/{ticket_id}` | showTicket | — |
-| POST | `/oauth/tickets/{ticket_id}/exchange` | exchangeTicket | — |
-| GET | `/services/` | getServices | — |
-| GET | `/services/{addonName}` | showService | — |
-| GET | `/services/{addonName}/manifest` | showServiceManifest | — |
-| GET | `/sites` | listSites | — |
-| POST | `/sites` | createSite | — |
-| DELETE | `/sites/{site_id}` | deleteSite | — |
-| GET | `/sites/{site_id}` | getSite | — |
-| PATCH | `/sites/{site_id}` | updateSite | — |
-| GET | `/sites/{site_id}/assets` | listSiteAssets | — |
-| POST | `/sites/{site_id}/assets` | createSiteAsset | — |
-| DELETE | `/sites/{site_id}/assets/{asset_id}` | deleteSiteAsset | — |
-| GET | `/sites/{site_id}/assets/{asset_id}` | getSiteAssetInfo | — |
-| PUT | `/sites/{site_id}/assets/{asset_id}` | updateSiteAsset | — |
-| GET | `/sites/{site_id}/assets/{asset_id}/public_signature` | getSiteAssetPublicSignature | — |
-| GET | `/sites/{site_id}/build_hooks` | listSiteBuildHooks | — |
-| POST | `/sites/{site_id}/build_hooks` | createSiteBuildHook | — |
-| DELETE | `/sites/{site_id}/build_hooks/{id}` | deleteSiteBuildHook | — |
-| GET | `/sites/{site_id}/build_hooks/{id}` | getSiteBuildHook | — |
-| PUT | `/sites/{site_id}/build_hooks/{id}` | updateSiteBuildHook | — |
-| GET | `/sites/{site_id}/builds` | listSiteBuilds | — |
-| POST | `/sites/{site_id}/builds` | createSiteBuild | — |
-| GET | `/sites/{site_id}/deployed-branches` | listSiteDeployedBranches | — |
-| GET | `/sites/{site_id}/deploys` | listSiteDeploys | — |
-| POST | `/sites/{site_id}/deploys` | createSiteDeploy | — |
-| DELETE | `/sites/{site_id}/deploys/{deploy_id}` | deleteSiteDeploy | — |
-| GET | `/sites/{site_id}/deploys/{deploy_id}` | getSiteDeploy | — |
-| PUT | `/sites/{site_id}/deploys/{deploy_id}` | updateSiteDeploy | — |
-| POST | `/sites/{site_id}/deploys/{deploy_id}/restore` | restoreSiteDeploy | — |
-| GET | `/sites/{site_id}/dns` | getDNSForSite | — |
-| PUT | `/sites/{site_id}/dns` | configureDNSForSite | — |
-| GET | `/sites/{site_id}/files` | listSiteFiles | — |
-| GET | `/sites/{site_id}/files/{file_path}` | getSiteFileByPathName | — |
-| GET | `/sites/{site_id}/forms` | listSiteForms | — |
-| DELETE | `/sites/{site_id}/forms/{form_id}` | deleteSiteForm | — |
-| GET | `/sites/{site_id}/metadata` | getSiteMetadata | — |
-| PUT | `/sites/{site_id}/metadata` | updateSiteMetadata | — |
-| GET | `/sites/{site_id}/plugin_runs/latest` | getLatestPluginRuns | — |
-| PUT | `/sites/{site_id}/plugins/{package}` | updatePlugin | — |
-| PUT | `/sites/{site_id}/rollback` | rollbackSiteDeploy | — |
-| GET | `/sites/{site_id}/service-instances` | listServiceInstancesForSite | — |
-| POST | `/sites/{site_id}/services/{addon}/instances` | createServiceInstance | — |
-| DELETE | `/sites/{site_id}/services/{addon}/instances/{instance_id}` | deleteServiceInstance | — |
-| GET | `/sites/{site_id}/services/{addon}/instances/{instance_id}` | showServiceInstance | — |
-| PUT | `/sites/{site_id}/services/{addon}/instances/{instance_id}` | updateServiceInstance | — |
-| GET | `/sites/{site_id}/snippets` | listSiteSnippets | — |
-| POST | `/sites/{site_id}/snippets` | createSiteSnippet | — |
-| DELETE | `/sites/{site_id}/snippets/{snippet_id}` | deleteSiteSnippet | — |
-| GET | `/sites/{site_id}/snippets/{snippet_id}` | getSiteSnippet | — |
-| PUT | `/sites/{site_id}/snippets/{snippet_id}` | updateSiteSnippet | — |
-| GET | `/sites/{site_id}/ssl` | showSiteTLSCertificate | — |
-| POST | `/sites/{site_id}/ssl` | provisionSiteTLSCertificate | — |
-| GET | `/sites/{site_id}/submissions` | listSiteSubmissions | — |
-| GET | `/sites/{site_id}/traffic_splits` | getSplitTests | — |
-| POST | `/sites/{site_id}/traffic_splits` | createSplitTest | — |
-| GET | `/sites/{site_id}/traffic_splits/{split_test_id}` | getSplitTest | — |
-| PUT | `/sites/{site_id}/traffic_splits/{split_test_id}` | updateSplitTest | — |
-| POST | `/sites/{site_id}/traffic_splits/{split_test_id}/publish` | enableSplitTest | — |
-| POST | `/sites/{site_id}/traffic_splits/{split_test_id}/unpublish` | disableSplitTest | — |
-| PUT | `/sites/{site_id}/unlink_repo` | unlinkSiteRepo | — |
-| DELETE | `/submissions/{submission_id}` | deleteSubmission | — |
-| GET | `/submissions/{submission_id}` | listFormSubmission | — |
-| GET | `/user` | getCurrentUser | — |
-| GET | `/{account_id}/builds/status` | getAccountBuildStatus | — |
-| GET | `/{account_slug}/members` | listMembersForAccount | — |
-| POST | `/{account_slug}/members` | addMemberToAccount | — |
-| DELETE | `/{account_slug}/members/{member_id}` | removeAccountMember | — |
-| GET | `/{account_slug}/members/{member_id}` | getAccountMember | — |
-| PUT | `/{account_slug}/members/{member_id}` | updateAccountMember | — |
-| GET | `/{account_slug}/sites` | listSitesForAccount | — |
-| POST | `/{account_slug}/sites` | createSiteInTeam | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts` | listAccountsForUser | — | accountMembership[] | yes | — |
+| POST | `/accounts` | createAccount | body*: accountSetup | accountMembership |  | — |
+| GET | `/accounts/types` | listAccountTypesForUser | — | accountType[] | yes | — |
+| GET | `/accounts/{account_id}` | getAccount | `account_id`* | accountMembership[] | yes | — |
+| PUT | `/accounts/{account_id}` | updateAccount | `account_id`*, body: accountUpdateSetup | accountMembership |  | — |
+| DELETE | `/accounts/{account_id}` | cancelAccount | `account_id`* | — |  | — |
+| GET | `/accounts/{account_id}/audit` | listAccountAuditEvents | `account_id`*, `query`, `log_type`, `page`, `per_page` | auditLog[] | yes | — |
+| GET | `/accounts/{account_id}/env` | getEnvVars | `account_id`*, `context_name`, `scope`, `site_id` | envVar[] | yes | — |
+| POST | `/accounts/{account_id}/env` | createEnvVars | `account_id`*, `site_id`, body: object[] | envVar[] |  | — |
+| GET | `/accounts/{account_id}/env/{key}` | getEnvVar | `account_id`*, `key`*, `site_id` | envVar | yes | — |
+| PUT | `/accounts/{account_id}/env/{key}` | updateEnvVar | `account_id`*, `key`*, `site_id`, body: object | envVar |  | — |
+| DELETE | `/accounts/{account_id}/env/{key}` | deleteEnvVar | `account_id`*, `key`*, `site_id` | — |  | — |
+| PATCH | `/accounts/{account_id}/env/{key}` | setEnvVarValue | `account_id`*, `key`*, `site_id`, body: object | envVar |  | — |
+| DELETE | `/accounts/{account_id}/env/{key}/value/{id}` | deleteEnvVarValue | `account_id`*, `id`*, `key`*, `site_id` | — |  | — |
+| GET | `/billing/payment_methods` | listPaymentMethodsForUser | — | paymentMethod[] | yes | — |
+| GET | `/builds/{build_id}` | getSiteBuild | `build_id`* | build | yes | — |
+| POST | `/builds/{build_id}/log` | updateSiteBuildLog | `build_id`*, body*: buildLogMsg | — |  | — |
+| POST | `/builds/{build_id}/start` | notifyBuildStart | `build_id`* | — |  | — |
+| GET | `/deploy_keys` | listDeployKeys | — | deployKey[] | yes | — |
+| POST | `/deploy_keys` | createDeployKey | — | deployKey |  | — |
+| GET | `/deploy_keys/{key_id}` | getDeployKey | `key_id`* | deployKey | yes | — |
+| DELETE | `/deploy_keys/{key_id}` | deleteDeployKey | `key_id`* | — |  | — |
+| GET | `/deploys/{deploy_id}` | getDeploy | `deploy_id`* | deploy | yes | — |
+| DELETE | `/deploys/{deploy_id}` | deleteDeploy | `deploy_id`* | — |  | — |
+| POST | `/deploys/{deploy_id}/cancel` | cancelSiteDeploy | `deploy_id`* | deploy |  | — |
+| PUT | `/deploys/{deploy_id}/files/{path}` | uploadDeployFile | `deploy_id`*, `path`*, `size`, body*: string:binary | file |  | — |
+| PUT | `/deploys/{deploy_id}/functions/{name}` | uploadDeployFunction | `deploy_id`*, `name`*, `runtime`, `size`, `X-Nf-Retry-Count`, body*: string:binary | function |  | — |
+| POST | `/deploys/{deploy_id}/lock` | lockDeploy | `deploy_id`* | deploy |  | — |
+| POST | `/deploys/{deploy_id}/plugin_runs` | createPluginRun | `deploy_id`*, body: pluginRunData | pluginRun |  | — |
+| POST | `/deploys/{deploy_id}/unlock` | unlockDeploy | `deploy_id`* | deploy |  | — |
+| GET | `/dns_zones` | getDnsZones | `account_slug` | dnsZones | yes | — |
+| POST | `/dns_zones` | createDnsZone | body*: dnsZoneSetup | dnsZone |  | — |
+| GET | `/dns_zones/{zone_id}` | getDnsZone | `zone_id`* | dnsZone | yes | — |
+| DELETE | `/dns_zones/{zone_id}` | deleteDnsZone | `zone_id`* | — |  | — |
+| GET | `/dns_zones/{zone_id}/dns_records` | getDnsRecords | `zone_id`* | dnsRecords | yes | — |
+| POST | `/dns_zones/{zone_id}/dns_records` | createDnsRecord | `zone_id`*, body*: dnsRecordCreate | dnsRecord |  | — |
+| GET | `/dns_zones/{zone_id}/dns_records/{dns_record_id}` | getIndividualDnsRecord | `zone_id`*, `dns_record_id`* | dnsRecord | yes | — |
+| DELETE | `/dns_zones/{zone_id}/dns_records/{dns_record_id}` | deleteDnsRecord | `zone_id`*, `dns_record_id`* | — |  | — |
+| PUT | `/dns_zones/{zone_id}/transfer` | transferDnsZone | `zone_id`*, `account_id`*, `transfer_account_id`*, `transfer_user_id`* | dnsZone |  | — |
+| GET | `/forms/{form_id}/submissions` | listFormSubmissions | `form_id`*, `page`, `per_page` | submission[] | yes | — |
+| GET | `/hooks` | listHooksBySiteId | `site_id`* | hook[] | yes | — |
+| POST | `/hooks` | createHookBySiteId | `site_id`*, body*: hook | hook |  | — |
+| GET | `/hooks/types` | listHookTypes | — | hookType[] | yes | — |
+| GET | `/hooks/{hook_id}` | getHook | `hook_id`* | hook | yes | — |
+| PUT | `/hooks/{hook_id}` | updateHook | `hook_id`*, body*: hook | hook |  | — |
+| DELETE | `/hooks/{hook_id}` | deleteHook | `hook_id`* | — |  | — |
+| POST | `/hooks/{hook_id}/enable` | enableHook | `hook_id`* | hook |  | — |
+| POST | `/oauth/tickets` | createTicket | `client_id`* | ticket |  | — |
+| GET | `/oauth/tickets/{ticket_id}` | showTicket | `ticket_id`* | ticket | yes | — |
+| POST | `/oauth/tickets/{ticket_id}/exchange` | exchangeTicket | `ticket_id`* | accessToken |  | — |
+| GET | `/services/` | getServices | `search` | service[] | yes | — |
+| GET | `/services/{addonName}` | showService | `addonName`* | service | yes | — |
+| GET | `/services/{addonName}/manifest` | showServiceManifest | `addonName`* | object | yes | — |
+| GET | `/sites` | listSites | `name`, `filter`, `page`, `per_page` | site[] | yes | — |
+| POST | `/sites` | createSite | `configure_dns`, body*: siteSetup | site |  | — |
+| GET | `/sites/{site_id}` | getSite | `site_id`* | site | yes | — |
+| DELETE | `/sites/{site_id}` | deleteSite | `site_id`* | — |  | — |
+| PATCH | `/sites/{site_id}` | updateSite | `site_id`*, body*: siteSetup | site |  | — |
+| GET | `/sites/{site_id}/assets` | listSiteAssets | `site_id`* | asset[] | yes | — |
+| POST | `/sites/{site_id}/assets` | createSiteAsset | `site_id`*, `name`*, `size`*, `content_type`*, `visibility` | assetSignature |  | — |
+| GET | `/sites/{site_id}/assets/{asset_id}` | getSiteAssetInfo | `site_id`*, `asset_id`* | asset | yes | — |
+| PUT | `/sites/{site_id}/assets/{asset_id}` | updateSiteAsset | `site_id`*, `asset_id`*, `state`* | asset |  | — |
+| DELETE | `/sites/{site_id}/assets/{asset_id}` | deleteSiteAsset | `site_id`*, `asset_id`* | — |  | — |
+| GET | `/sites/{site_id}/assets/{asset_id}/public_signature` | getSiteAssetPublicSignature | `site_id`*, `asset_id`* | assetPublicSignature | yes | — |
+| GET | `/sites/{site_id}/build_hooks` | listSiteBuildHooks | `site_id`* | buildHook[] | yes | — |
+| POST | `/sites/{site_id}/build_hooks` | createSiteBuildHook | `site_id`*, body*: buildHookSetup | buildHook |  | — |
+| GET | `/sites/{site_id}/build_hooks/{id}` | getSiteBuildHook | `site_id`*, `id`* | buildHook | yes | — |
+| PUT | `/sites/{site_id}/build_hooks/{id}` | updateSiteBuildHook | `site_id`*, `id`*, body*: buildHookSetup | — |  | — |
+| DELETE | `/sites/{site_id}/build_hooks/{id}` | deleteSiteBuildHook | `site_id`*, `id`* | — |  | — |
+| GET | `/sites/{site_id}/builds` | listSiteBuilds | `site_id`*, `page`, `per_page` | build[] | yes | — |
+| POST | `/sites/{site_id}/builds` | createSiteBuild | `site_id`*, body: buildSetup | build |  | — |
+| GET | `/sites/{site_id}/deployed-branches` | listSiteDeployedBranches | `site_id`* | deployedBranch[] | yes | — |
+| GET | `/sites/{site_id}/deploys` | listSiteDeploys | `site_id`*, `deploy-previews`, `production`, `state`, `branch`, `latest-published`, `page`, `per_page` | deploy[] | yes | — |
+| POST | `/sites/{site_id}/deploys` | createSiteDeploy | `site_id`*, `deploy-previews`, `production`, `state`, `branch`, `latest-published`, `title`, body*: deployFiles | deploy |  | — |
+| GET | `/sites/{site_id}/deploys/{deploy_id}` | getSiteDeploy | `site_id`*, `deploy_id`* | deploy | yes | — |
+| PUT | `/sites/{site_id}/deploys/{deploy_id}` | updateSiteDeploy | `site_id`*, `deploy_id`*, body*: deployFiles | deploy |  | — |
+| DELETE | `/sites/{site_id}/deploys/{deploy_id}` | deleteSiteDeploy | `deploy_id`*, `site_id`* | — |  | — |
+| POST | `/sites/{site_id}/deploys/{deploy_id}/restore` | restoreSiteDeploy | `site_id`*, `deploy_id`* | deploy |  | — |
+| GET | `/sites/{site_id}/dns` | getDNSForSite | `site_id`* | dnsZone[] | yes | — |
+| PUT | `/sites/{site_id}/dns` | configureDNSForSite | `site_id`* | dnsZone[] |  | — |
+| GET | `/sites/{site_id}/files` | listSiteFiles | `site_id`* | file[] | yes | — |
+| GET | `/sites/{site_id}/files/{file_path}` | getSiteFileByPathName | `site_id`*, `file_path`* | file | yes | — |
+| GET | `/sites/{site_id}/forms` | listSiteForms | `site_id`* | form[] | yes | — |
+| DELETE | `/sites/{site_id}/forms/{form_id}` | deleteSiteForm | `site_id`*, `form_id`* | — |  | — |
+| GET | `/sites/{site_id}/metadata` | getSiteMetadata | `site_id`* | metadata | yes | — |
+| PUT | `/sites/{site_id}/metadata` | updateSiteMetadata | `site_id`*, body*: metadata | — |  | — |
+| GET | `/sites/{site_id}/plugin_runs/latest` | getLatestPluginRuns | `site_id`*, `packages`*, `state` | pluginRun[] | yes | — |
+| PUT | `/sites/{site_id}/plugins/{package}` | updatePlugin | `site_id`*, `package`*, body: pluginParams | plugin |  | — |
+| PUT | `/sites/{site_id}/rollback` | rollbackSiteDeploy | `site_id`* | — |  | — |
+| GET | `/sites/{site_id}/service-instances` | listServiceInstancesForSite | `site_id`* | serviceInstance[] | yes | — |
+| POST | `/sites/{site_id}/services/{addon}/instances` | createServiceInstance | `site_id`*, `addon`*, body*: object | serviceInstance |  | — |
+| GET | `/sites/{site_id}/services/{addon}/instances/{instance_id}` | showServiceInstance | `site_id`*, `addon`*, `instance_id`* | serviceInstance | yes | — |
+| PUT | `/sites/{site_id}/services/{addon}/instances/{instance_id}` | updateServiceInstance | `site_id`*, `addon`*, `instance_id`*, body*: object | — |  | — |
+| DELETE | `/sites/{site_id}/services/{addon}/instances/{instance_id}` | deleteServiceInstance | `site_id`*, `addon`*, `instance_id`* | — |  | — |
+| GET | `/sites/{site_id}/snippets` | listSiteSnippets | `site_id`* | snippet[] | yes | — |
+| POST | `/sites/{site_id}/snippets` | createSiteSnippet | `site_id`*, body*: snippet | snippet |  | — |
+| GET | `/sites/{site_id}/snippets/{snippet_id}` | getSiteSnippet | `site_id`*, `snippet_id`* | snippet | yes | — |
+| PUT | `/sites/{site_id}/snippets/{snippet_id}` | updateSiteSnippet | `site_id`*, `snippet_id`*, body*: snippet | — |  | — |
+| DELETE | `/sites/{site_id}/snippets/{snippet_id}` | deleteSiteSnippet | `site_id`*, `snippet_id`* | — |  | — |
+| GET | `/sites/{site_id}/ssl` | showSiteTLSCertificate | `site_id`* | sniCertificate | yes | — |
+| POST | `/sites/{site_id}/ssl` | provisionSiteTLSCertificate | `site_id`*, `certificate`, `key`, `ca_certificates` | sniCertificate |  | — |
+| GET | `/sites/{site_id}/submissions` | listSiteSubmissions | `site_id`*, `page`, `per_page` | submission[] | yes | — |
+| GET | `/sites/{site_id}/traffic_splits` | getSplitTests | `site_id`* | splitTests | yes | — |
+| POST | `/sites/{site_id}/traffic_splits` | createSplitTest | `site_id`*, body*: splitTestSetup | splitTest |  | — |
+| GET | `/sites/{site_id}/traffic_splits/{split_test_id}` | getSplitTest | `site_id`*, `split_test_id`* | splitTest | yes | — |
+| PUT | `/sites/{site_id}/traffic_splits/{split_test_id}` | updateSplitTest | `site_id`*, `split_test_id`*, body*: splitTestSetup | splitTest |  | — |
+| POST | `/sites/{site_id}/traffic_splits/{split_test_id}/publish` | enableSplitTest | `site_id`*, `split_test_id`* | — |  | — |
+| POST | `/sites/{site_id}/traffic_splits/{split_test_id}/unpublish` | disableSplitTest | `site_id`*, `split_test_id`* | — |  | — |
+| PUT | `/sites/{site_id}/unlink_repo` | unlinkSiteRepo | `site_id`* | site |  | — |
+| GET | `/submissions/{submission_id}` | listFormSubmission | `submission_id`*, `query`, `page`, `per_page` | submission[] | yes | — |
+| DELETE | `/submissions/{submission_id}` | deleteSubmission | `submission_id`* | — |  | — |
+| GET | `/user` | getCurrentUser | — | user[] | yes | — |
+| GET | `/{account_id}/builds/status` | getAccountBuildStatus | `account_id`* | buildStatus[] | yes | — |
+| GET | `/{account_slug}/members` | listMembersForAccount | `account_slug`* | member[] | yes | — |
+| POST | `/{account_slug}/members` | addMemberToAccount | `account_slug`*, body*: accountAddMemberSetup | member[] |  | — |
+| GET | `/{account_slug}/members/{member_id}` | getAccountMember | `account_slug`*, `member_id`* | member | yes | — |
+| PUT | `/{account_slug}/members/{member_id}` | updateAccountMember | `account_slug`*, `member_id`*, body*: accountUpdateMemberSetup | member |  | — |
+| DELETE | `/{account_slug}/members/{member_id}` | removeAccountMember | `account_slug`*, `member_id`* | — |  | — |
+| GET | `/{account_slug}/sites` | listSitesForAccount | `name`, `account_slug`*, `page`, `per_page` | site[] | yes | — |
+| POST | `/{account_slug}/sites` | createSiteInTeam | `configure_dns`, `account_slug`*, body: siteSetup | site |  | — |

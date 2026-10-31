@@ -53,6 +53,91 @@
         "from": "logoraisr-com-61f17073dd",
         "kind": "EXPOSES",
         "to": "operation:post:/uploads/"
+      },
+      {
+        "from": "operation:get:/previews/{file_id}/",
+        "kind": "RETURNS",
+        "to": "schema:PreviewResponse"
+      },
+      {
+        "from": "operation:get:/processes/",
+        "kind": "RETURNS",
+        "to": "schema:Process"
+      },
+      {
+        "from": "operation:get:/projects/",
+        "kind": "RETURNS",
+        "to": "schema:Project"
+      },
+      {
+        "from": "operation:post:/projects/",
+        "kind": "ACCEPTS",
+        "to": "schema:ProjectRequest"
+      },
+      {
+        "from": "operation:post:/projects/",
+        "kind": "RETURNS",
+        "to": "schema:ProjectResponse"
+      },
+      {
+        "from": "operation:get:/projects/{project_number}/",
+        "kind": "RETURNS",
+        "to": "schema:Project"
+      },
+      {
+        "from": "operation:get:/reports/",
+        "kind": "RETURNS",
+        "to": "schema:Report"
+      },
+      {
+        "from": "operation:post:/reports/",
+        "kind": "ACCEPTS",
+        "to": "schema:ReportRequest"
+      },
+      {
+        "from": "operation:post:/reports/",
+        "kind": "RETURNS",
+        "to": "schema:ReportResponse"
+      },
+      {
+        "from": "operation:get:/reports/{report_number}/",
+        "kind": "RETURNS",
+        "to": "schema:Report"
+      },
+      {
+        "from": "operation:get:/results/{result_file_id}/",
+        "kind": "RETURNS",
+        "to": "schema:ResultResponse"
+      },
+      {
+        "from": "operation:post:/uploads/",
+        "kind": "RETURNS",
+        "to": "schema:FileResponse"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:Process"
+      },
+      {
+        "from": "schema:ProjectRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Process"
+      },
+      {
+        "from": "schema:Report",
+        "kind": "REFERENCES",
+        "to": "schema:Result"
+      },
+      {
+        "from": "schema:ReportResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Result"
+      },
+      {
+        "from": "schema:Result",
+        "kind": "REFERENCES",
+        "to": "schema:Color"
       }
     ],
     "nodes": [
@@ -62,213 +147,448 @@
       },
       {
         "deprecated": false,
+        "description": "This GET-Method returns the URL where the preview image of uploaded file can downloaded from.",
         "id": "operation:get:/previews/{file_id}/",
         "kind": "operation",
         "method": "get",
         "name": "previews_read",
+        "parameters": [
+          {
+            "description": "Id of the file for which the preview_img_url is generated.",
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/previews/{file_id}/",
         "pointer": "#/paths/~1previews~1{file_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PreviewResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Get preview image of uploaded file"
+        "summary": "Get preview image of uploaded file",
+        "tags": [
+          "previews"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This GET-Method lists all on logoraisr available processes.",
         "id": "operation:get:/processes/",
         "kind": "operation",
         "method": "get",
         "name": "processes_list",
         "path": "/processes/",
         "pointer": "#/paths/~1processes~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Process"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Get process list."
+        "summary": "Get process list.",
+        "tags": [
+          "processes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This GET-Method lists the user's projects.",
         "id": "operation:get:/projects/",
         "kind": "operation",
         "method": "get",
         "name": "projects_list",
         "path": "/projects/",
         "pointer": "#/paths/~1projects~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Project"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Get user project list."
+        "summary": "Get user project list.",
+        "tags": [
+          "projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This POST-Method creates a new project.",
         "id": "operation:post:/projects/",
         "kind": "operation",
         "method": "post",
         "name": "projects_create",
         "path": "/projects/",
         "pointer": "#/paths/~1projects~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProjectRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ProjectResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Create a new project."
+        "summary": "Create a new project.",
+        "tags": [
+          "projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This GET-Method returns a specific project.",
         "id": "operation:get:/projects/{project_number}/",
         "kind": "operation",
         "method": "get",
         "name": "projects_read",
+        "parameters": [
+          {
+            "description": "Number of the project.",
+            "in": "path",
+            "name": "project_number",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{project_number}/",
         "pointer": "#/paths/~1projects~1{project_number}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Project"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Get project details."
+        "summary": "Get project details.",
+        "tags": [
+          "projects"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This GET method lists the user's reports.",
         "id": "operation:get:/reports/",
         "kind": "operation",
         "method": "get",
         "name": "reports_list",
         "path": "/reports/",
         "pointer": "#/paths/~1reports~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Get user report list."
+        "summary": "Get user report list.",
+        "tags": [
+          "reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This POST-Method creates a new report.",
         "id": "operation:post:/reports/",
         "kind": "operation",
         "method": "post",
         "name": "reports_create",
         "path": "/reports/",
         "pointer": "#/paths/~1reports~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ReportRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ReportResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Create a new report."
+        "summary": "Create a new report.",
+        "tags": [
+          "reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This GET-Method returns the details of a specific report.",
         "id": "operation:get:/reports/{report_number}/",
         "kind": "operation",
         "method": "get",
         "name": "reports_read",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "report_number",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reports/{report_number}/",
         "pointer": "#/paths/~1reports~1{report_number}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Get report details."
+        "summary": "Get report details.",
+        "tags": [
+          "reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This GET-Method returns the URL where the result can downloaded from.",
         "id": "operation:get:/results/{result_file_id}/",
         "kind": "operation",
         "method": "get",
         "name": "results_read",
+        "parameters": [
+          {
+            "description": "Id of the result_file for which the result_file_url is generated.",
+            "in": "path",
+            "name": "result_file_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/results/{result_file_id}/",
         "pointer": "#/paths/~1results~1{result_file_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResultResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Get the result from image processing"
+        "summary": "Get the result from image processing",
+        "tags": [
+          "results"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This POST-Method uploads a new file on the server.",
         "id": "operation:post:/uploads/",
         "kind": "operation",
         "method": "post",
         "name": "uploads_create",
         "path": "/uploads/",
         "pointer": "#/paths/~1uploads~1/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "FileResponse"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Token": []
           }
         ],
-        "summary": "Upload a new image"
+        "summary": "Upload a new image",
+        "tags": [
+          "uploads"
+        ]
       },
       {
         "id": "schema:Color",
         "kind": "schema",
-        "name": "Color"
+        "name": "Color",
+        "type": "object"
       },
       {
         "id": "schema:FileResponse",
         "kind": "schema",
-        "name": "FileResponse"
+        "name": "FileResponse",
+        "type": "object"
       },
       {
         "id": "schema:PreviewResponse",
         "kind": "schema",
-        "name": "PreviewResponse"
+        "name": "PreviewResponse",
+        "type": "object"
       },
       {
         "id": "schema:Process",
         "kind": "schema",
-        "name": "Process"
+        "name": "Process",
+        "type": "object"
       },
       {
         "id": "schema:Project",
         "kind": "schema",
-        "name": "Project"
+        "name": "Project",
+        "type": "object"
       },
       {
         "id": "schema:ProjectRequest",
         "kind": "schema",
-        "name": "ProjectRequest"
+        "name": "ProjectRequest",
+        "type": "object"
       },
       {
         "id": "schema:ProjectResponse",
         "kind": "schema",
-        "name": "ProjectResponse"
+        "name": "ProjectResponse",
+        "type": "object"
       },
       {
         "id": "schema:Report",
         "kind": "schema",
-        "name": "Report"
+        "name": "Report",
+        "type": "object"
       },
       {
         "id": "schema:ReportRequest",
         "kind": "schema",
-        "name": "ReportRequest"
+        "name": "ReportRequest",
+        "type": "object"
       },
       {
         "id": "schema:ReportResponse",
         "kind": "schema",
-        "name": "ReportResponse"
+        "name": "ReportResponse",
+        "type": "object"
       },
       {
         "id": "schema:Result",
         "kind": "schema",
-        "name": "Result"
+        "name": "Result",
+        "type": "object"
       },
       {
         "id": "schema:ResultResponse",
         "kind": "schema",
-        "name": "ResultResponse"
+        "name": "ResultResponse",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `4cb21ba4b1e80f381517d244b5f0e91c0efaa94fae587f637c598dcf7c158925` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,28 +34,30 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 52 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v3/{account}/hotels:setLiveOnGoogle` | travelpartner.accounts.hotels.setLiveOnGoogle | — |
-| DELETE | `/v3/{name}` | travelpartner.accounts.accountLinks.delete | — |
-| GET | `/v3/{name}` | travelpartner.accounts.reconciliationReports.get | — |
-| PATCH | `/v3/{name}` | travelpartner.accounts.brands.patch | — |
-| GET | `/v3/{name}/freeBookingLinksReportViews:query` | travelpartner.accounts.freeBookingLinksReportViews.query | — |
-| GET | `/v3/{name}/participationReportViews:query` | travelpartner.accounts.participationReportViews.query | — |
-| GET | `/v3/{name}/propertyPerformanceReportViews:query` | travelpartner.accounts.propertyPerformanceReportViews.query | — |
-| GET | `/v3/{parent}/accountLinks` | travelpartner.accounts.accountLinks.list | — |
-| POST | `/v3/{parent}/accountLinks` | travelpartner.accounts.accountLinks.create | — |
-| GET | `/v3/{parent}/brands` | travelpartner.accounts.brands.list | — |
-| POST | `/v3/{parent}/brands` | travelpartner.accounts.brands.create | — |
-| GET | `/v3/{parent}/hotelViews` | travelpartner.accounts.hotelViews.list | — |
-| GET | `/v3/{parent}/hotelViews:summarize` | travelpartner.accounts.hotelViews.summarize | — |
-| GET | `/v3/{parent}/icons` | travelpartner.accounts.icons.list | — |
-| POST | `/v3/{parent}/icons` | travelpartner.accounts.icons.create | — |
-| POST | `/v3/{parent}/listings:verify` | travelpartner.accounts.listings.verify | — |
-| GET | `/v3/{parent}/priceAccuracyViews` | travelpartner.accounts.priceAccuracyViews.list | — |
-| GET | `/v3/{parent}/priceAccuracyViews:summarize` | travelpartner.accounts.priceAccuracyViews.summarize | — |
-| GET | `/v3/{parent}/priceCoverageViews` | travelpartner.accounts.priceCoverageViews.list | — |
-| GET | `/v3/{parent}/priceCoverageViews:latest` | travelpartner.accounts.priceCoverageViews.getLatest | — |
-| GET | `/v3/{parent}/reconciliationReports` | travelpartner.accounts.reconciliationReports.list | — |
-| POST | `/v3/{parent}/reconciliationReports` | travelpartner.accounts.reconciliationReports.create | — |
-| POST | `/v3/{parent}/reconciliationReports:validate` | travelpartner.accounts.reconciliationReports.validate | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v3/{account}/hotels:setLiveOnGoogle` | travelpartner.accounts.hotels.setLiveOnGoogle | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `account`*, body: SetLiveOnGoogleRequest | SetLiveOnGoogleResponse |  | — |
+| GET | `/v3/{name}` | travelpartner.accounts.reconciliationReports.get | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `name`*, `includeMatchedPrices`, `includeNonScoring`, `includePixels` | ReconciliationReport | yes | — |
+| DELETE | `/v3/{name}` | travelpartner.accounts.accountLinks.delete | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `name`* | Empty |  | — |
+| PATCH | `/v3/{name}` | travelpartner.accounts.brands.patch | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `name`*, `allowMissing`, `updateMask`, body: Brand | Brand |  | — |
+| GET | `/v3/{name}/freeBookingLinksReportViews:query` | travelpartner.accounts.freeBookingLinksReportViews.query | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `name`*, `aggregateBy`, `filter`, `pageSize`, `pageToken` | QueryFreeBookingLinksReportResponse | yes | — |
+| GET | `/v3/{name}/participationReportViews:query` | travelpartner.accounts.participationReportViews.query | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `name`*, `aggregateBy`, `filter`, `pageSize`, `pageToken` | QueryParticipationReportResponse | yes | — |
+| GET | `/v3/{name}/propertyPerformanceReportViews:query` | travelpartner.accounts.propertyPerformanceReportViews.query | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `name`*, `aggregateBy`, `filter`, `pageSize`, `pageToken` | QueryPropertyPerformanceReportResponse | yes | — |
+| GET | `/v3/{parent}/accountLinks` | travelpartner.accounts.accountLinks.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`* | ListAccountLinksResponse | yes | — |
+| POST | `/v3/{parent}/accountLinks` | travelpartner.accounts.accountLinks.create | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`*, body: AccountLink | AccountLink |  | — |
+| GET | `/v3/{parent}/brands` | travelpartner.accounts.brands.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`* | ListBrandsResponse | yes | — |
+| POST | `/v3/{parent}/brands` | travelpartner.accounts.brands.create | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`*, `brandId`, body: Brand | Brand |  | — |
+| GET | `/v3/{parent}/hotelViews` | travelpartner.accounts.hotelViews.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`*, `filter`, `pageSize`, `pageToken` | ListHotelViewsResponse | yes | — |
+| GET | `/v3/{parent}/hotelViews:summarize` | travelpartner.accounts.hotelViews.summarize | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`* | SummarizeHotelViewsResponse | yes | — |
+| GET | `/v3/{parent}/icons` | travelpartner.accounts.icons.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`* | ListIconsResponse | yes | — |
+| POST | `/v3/{parent}/icons` | travelpartner.accounts.icons.create | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`*, body: Icon | Icon |  | — |
+| POST | `/v3/{parent}/listings:verify` | travelpartner.accounts.listings.verify | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`*, body: VerifyListingsRequest | VerifyListingsResponse |  | — |
+| GET | `/v3/{parent}/priceAccuracyViews` | travelpartner.accounts.priceAccuracyViews.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`* | ListPriceAccuracyViewsResponse | yes | — |
+| GET | `/v3/{parent}/priceAccuracyViews:summarize` | travelpartner.accounts.priceAccuracyViews.summarize | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`* | SummarizePriceAccuracyResponse | yes | — |
+| GET | `/v3/{parent}/priceCoverageViews` | travelpartner.accounts.priceCoverageViews.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`* | ListPriceCoverageViewsResponse | yes | — |
+| GET | `/v3/{parent}/priceCoverageViews:latest` | travelpartner.accounts.priceCoverageViews.getLatest | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`* | PriceCoverageView | yes | — |
+| GET | `/v3/{parent}/reconciliationReports` | travelpartner.accounts.reconciliationReports.list | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`*, `endDate`, `startDate` | ListReconciliationReportsResponse | yes | — |
+| POST | `/v3/{parent}/reconciliationReports` | travelpartner.accounts.reconciliationReports.create | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`*, body: ReconciliationReport | CreateReconciliationReportResponse |  | — |
+| POST | `/v3/{parent}/reconciliationReports:validate` | travelpartner.accounts.reconciliationReports.validate | `$.xgafv`, `access_token`, `alt`, `callback`, `fields`, `key`, `oauth_token`, `prettyPrint`, `quotaUser`, `upload_protocol`, `uploadType`, `parent`*, body: ReconciliationReport | ValidateReconciliationReportResponse |  | — |

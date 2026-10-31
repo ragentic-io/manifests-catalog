@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.vonage.com_content_dam_vona
 
 | | |
 | --- | --- |
-| Signed bundle | `f051fe79b092a0e42c7de6ace0d94c6ee1cc5f88966f7333743a6560149e0bf4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,13 +34,15 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.vonage.com_content_dam_vona
 
 15 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account/get-balance` | getAccountBalance | Get Account Balance |
-| POST | `/account/register-sender` | registerSender | Register an email sender |
-| POST | `/account/settings` | changeAccountSettings | Change Account Settings |
-| POST | `/account/top-up` | topUpAccountBalance | Top Up Account Balance |
-| GET | `/accounts/{api_key}/secrets` | retrieveAPISecrets | Retrieve API Secrets |
-| POST | `/accounts/{api_key}/secrets` | createAPISecret | Create API Secret |
-| DELETE | `/accounts/{api_key}/secrets/{secret_id}` | revokeAPISecret | Revoke an API Secret |
-| GET | `/accounts/{api_key}/secrets/{secret_id}` | retrieveAPISecret | Retrieve one API Secret |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account/get-balance` | getAccountBalance | `api_key`*, `api_secret`* | accountBalance | yes | Get Account Balance |
+| POST | `/account/register-sender` | registerSender | `api_key`*, `api_secret`*, body*: registerEmailRequest | registerEmailResponse |  | Register an email sender |
+| POST | `/account/settings` | changeAccountSettings | `api_key`*, `api_secret`*, body: accountSettingsRequest | accountSettings |  | Change Account Settings |
+| POST | `/account/top-up` | topUpAccountBalance | `api_key`*, `api_secret`*, body*: topupRequest | success |  | Top Up Account Balance |
+| GET | `/accounts/{api_key}/secrets` | retrieveAPISecrets | `api_key`* | object | yes | Retrieve API Secrets |
+| POST | `/accounts/{api_key}/secrets` | createAPISecret | `api_key`*, body*: createSecretRequest | secretInfo |  | Create API Secret |
+| GET | `/accounts/{api_key}/secrets/{secret_id}` | retrieveAPISecret | `api_key`*, `secret_id`* | secretInfo | yes | Retrieve one API Secret |
+| DELETE | `/accounts/{api_key}/secrets/{secret_id}` | revokeAPISecret | `api_key`*, `secret_id`* | — |  | Revoke an API Secret |

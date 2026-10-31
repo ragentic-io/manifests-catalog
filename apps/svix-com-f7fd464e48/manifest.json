@@ -17,17 +17,17 @@
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/app/{app_id}/"
-      },
-      {
-        "from": "svix-com-f7fd464e48",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/app/{app_id}/"
       },
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
         "to": "operation:put:/api/v1/app/{app_id}/"
+      },
+      {
+        "from": "svix-com-f7fd464e48",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/app/{app_id}/"
       },
       {
         "from": "svix-com-f7fd464e48",
@@ -52,11 +52,6 @@
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/app/{app_id}/endpoint/{endpoint_id}/"
-      },
-      {
-        "from": "svix-com-f7fd464e48",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/"
       },
       {
@@ -67,17 +62,22 @@
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/app/{app_id}/endpoint/{endpoint_id}/"
+      },
+      {
+        "from": "svix-com-f7fd464e48",
+        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/"
       },
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
-        "to": "operation:patch:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/"
+        "to": "operation:put:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/"
       },
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/"
+        "to": "operation:patch:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/"
       },
       {
         "from": "svix-com-f7fd464e48",
@@ -132,17 +132,17 @@
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/app/{app_id}/integration/{integ_id}/"
-      },
-      {
-        "from": "svix-com-f7fd464e48",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/app/{app_id}/integration/{integ_id}/"
       },
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
         "to": "operation:put:/api/v1/app/{app_id}/integration/{integ_id}/"
+      },
+      {
+        "from": "svix-com-f7fd464e48",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/app/{app_id}/integration/{integ_id}/"
       },
       {
         "from": "svix-com-f7fd464e48",
@@ -247,11 +247,6 @@
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/event-type/{event_type_name}/"
-      },
-      {
-        "from": "svix-com-f7fd464e48",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/event-type/{event_type_name}/"
       },
       {
@@ -262,7 +257,487 @@
       {
         "from": "svix-com-f7fd464e48",
         "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/event-type/{event_type_name}/"
+      },
+      {
+        "from": "svix-com-f7fd464e48",
+        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/health/"
+      },
+      {
+        "from": "operation:get:/api/v1/app/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_ApplicationOut_"
+      },
+      {
+        "from": "operation:post:/api/v1/app/",
+        "kind": "ACCEPTS",
+        "to": "schema:ApplicationIn"
+      },
+      {
+        "from": "operation:post:/api/v1/app/",
+        "kind": "RETURNS",
+        "to": "schema:ApplicationOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/",
+        "kind": "RETURNS",
+        "to": "schema:ApplicationOut"
+      },
+      {
+        "from": "operation:put:/api/v1/app/{app_id}/",
+        "kind": "ACCEPTS",
+        "to": "schema:ApplicationIn"
+      },
+      {
+        "from": "operation:put:/api/v1/app/{app_id}/",
+        "kind": "RETURNS",
+        "to": "schema:ApplicationOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/attempt/endpoint/{endpoint_id}/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_MessageAttemptOut_"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/attempt/msg/{msg_id}/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_MessageAttemptOut_"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/endpoint/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_EndpointOut_"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/endpoint/",
+        "kind": "ACCEPTS",
+        "to": "schema:EndpointIn"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/endpoint/",
+        "kind": "RETURNS",
+        "to": "schema:EndpointOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
+        "kind": "RETURNS",
+        "to": "schema:EndpointOut"
+      },
+      {
+        "from": "operation:put:/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
+        "kind": "ACCEPTS",
+        "to": "schema:EndpointUpdate"
+      },
+      {
+        "from": "operation:put:/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
+        "kind": "RETURNS",
+        "to": "schema:EndpointOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
+        "kind": "RETURNS",
+        "to": "schema:EndpointHeadersOut"
+      },
+      {
+        "from": "operation:put:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
+        "kind": "ACCEPTS",
+        "to": "schema:EndpointHeadersIn"
+      },
+      {
+        "from": "operation:patch:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
+        "kind": "ACCEPTS",
+        "to": "schema:EndpointHeadersPatchIn"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/msg/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_EndpointMessageOut_"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/endpoint/{endpoint_id}/recover/",
+        "kind": "ACCEPTS",
+        "to": "schema:RecoverIn"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/endpoint/{endpoint_id}/recover/",
+        "kind": "RETURNS",
+        "to": "schema:RecoverOut"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/endpoint/{endpoint_id}/replay-missing/",
+        "kind": "ACCEPTS",
+        "to": "schema:ReplayIn"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/endpoint/{endpoint_id}/replay-missing/",
+        "kind": "RETURNS",
+        "to": "schema:ReplayOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/",
+        "kind": "RETURNS",
+        "to": "schema:EndpointSecretOut"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/rotate/",
+        "kind": "ACCEPTS",
+        "to": "schema:EndpointSecretRotateIn"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/stats/",
+        "kind": "RETURNS",
+        "to": "schema:EndpointStats"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/",
+        "kind": "RETURNS",
+        "to": "schema:EndpointTransformationOut"
+      },
+      {
+        "from": "operation:patch:/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/",
+        "kind": "ACCEPTS",
+        "to": "schema:EndpointTransformationIn"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/integration/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_IntegrationOut_"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/integration/",
+        "kind": "ACCEPTS",
+        "to": "schema:IntegrationIn"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/integration/",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/integration/{integ_id}/",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationOut"
+      },
+      {
+        "from": "operation:put:/api/v1/app/{app_id}/integration/{integ_id}/",
+        "kind": "ACCEPTS",
+        "to": "schema:IntegrationUpdate"
+      },
+      {
+        "from": "operation:put:/api/v1/app/{app_id}/integration/{integ_id}/",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/integration/{integ_id}/key/",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationKeyOut"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/integration/{integ_id}/key/rotate/",
+        "kind": "RETURNS",
+        "to": "schema:IntegrationKeyOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/msg/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_MessageOut_"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/msg/",
+        "kind": "ACCEPTS",
+        "to": "schema:MessageIn"
+      },
+      {
+        "from": "operation:post:/api/v1/app/{app_id}/msg/",
+        "kind": "RETURNS",
+        "to": "schema:MessageOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/",
+        "kind": "RETURNS",
+        "to": "schema:MessageOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/attempt/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_MessageAttemptOut_"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/",
+        "kind": "RETURNS",
+        "to": "schema:MessageAttemptOut"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/endpoint/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_MessageEndpointOut_"
+      },
+      {
+        "from": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/attempt/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_MessageAttemptEndpointOut_"
+      },
+      {
+        "from": "operation:post:/api/v1/auth/app-portal-access/{app_id}/",
+        "kind": "ACCEPTS",
+        "to": "schema:AppPortalAccessIn"
+      },
+      {
+        "from": "operation:post:/api/v1/auth/app-portal-access/{app_id}/",
+        "kind": "RETURNS",
+        "to": "schema:AppPortalAccessOut"
+      },
+      {
+        "from": "operation:post:/api/v1/auth/app/{app_id}/expire-all/",
+        "kind": "ACCEPTS",
+        "to": "schema:ApplicationTokenExpireIn"
+      },
+      {
+        "from": "operation:post:/api/v1/auth/dashboard-access/{app_id}/",
+        "kind": "RETURNS",
+        "to": "schema:DashboardAccessOut"
+      },
+      {
+        "from": "operation:get:/api/v1/background-task/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_BackgroundTaskOut_"
+      },
+      {
+        "from": "operation:get:/api/v1/background-task/{task_id}/",
+        "kind": "RETURNS",
+        "to": "schema:BackgroundTaskOut"
+      },
+      {
+        "from": "operation:get:/api/v1/event-type/",
+        "kind": "RETURNS",
+        "to": "schema:ListResponse_EventTypeOut_"
+      },
+      {
+        "from": "operation:post:/api/v1/event-type/",
+        "kind": "ACCEPTS",
+        "to": "schema:EventTypeIn"
+      },
+      {
+        "from": "operation:post:/api/v1/event-type/",
+        "kind": "RETURNS",
+        "to": "schema:EventTypeOut"
+      },
+      {
+        "from": "operation:get:/api/v1/event-type/{event_type_name}/",
+        "kind": "RETURNS",
+        "to": "schema:EventTypeOut"
+      },
+      {
+        "from": "operation:put:/api/v1/event-type/{event_type_name}/",
+        "kind": "ACCEPTS",
+        "to": "schema:EventTypeUpdate"
+      },
+      {
+        "from": "operation:put:/api/v1/event-type/{event_type_name}/",
+        "kind": "RETURNS",
+        "to": "schema:EventTypeOut"
+      },
+      {
+        "from": "schema:BackgroundTaskFinishedEvent",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundTaskFinishedEventData"
+      },
+      {
+        "from": "schema:BackgroundTaskFinishedEventData",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundTaskOpWebhookStatus"
+      },
+      {
+        "from": "schema:BackgroundTaskFinishedEventData",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundTaskOpWebhookType"
+      },
+      {
+        "from": "schema:BackgroundTaskOut",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundTaskStatus"
+      },
+      {
+        "from": "schema:BackgroundTaskOut",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundTaskType"
+      },
+      {
+        "from": "schema:EndpointCreatedEvent",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointCreatedEventData"
+      },
+      {
+        "from": "schema:EndpointDeletedEvent",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointDeletedEventData"
+      },
+      {
+        "from": "schema:EndpointDisabledEvent",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointDisabledEventData"
+      },
+      {
+        "from": "schema:EndpointMessageOut",
+        "kind": "REFERENCES",
+        "to": "schema:MessageStatus"
+      },
+      {
+        "from": "schema:EndpointUpdatedEvent",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointUpdatedEventData"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:ListResponse_ApplicationOut_",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationOut"
+      },
+      {
+        "from": "schema:ListResponse_BackgroundTaskOut_",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundTaskOut"
+      },
+      {
+        "from": "schema:ListResponse_EndpointMessageOut_",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointMessageOut"
+      },
+      {
+        "from": "schema:ListResponse_EndpointOut_",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointOut"
+      },
+      {
+        "from": "schema:ListResponse_EventTypeOut_",
+        "kind": "REFERENCES",
+        "to": "schema:EventTypeOut"
+      },
+      {
+        "from": "schema:ListResponse_IntegrationOut_",
+        "kind": "REFERENCES",
+        "to": "schema:IntegrationOut"
+      },
+      {
+        "from": "schema:ListResponse_MessageAttemptEndpointOut_",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptEndpointOut"
+      },
+      {
+        "from": "schema:ListResponse_MessageAttemptOut_",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptOut"
+      },
+      {
+        "from": "schema:ListResponse_MessageEndpointOut_",
+        "kind": "REFERENCES",
+        "to": "schema:MessageEndpointOut"
+      },
+      {
+        "from": "schema:ListResponse_MessageOut_",
+        "kind": "REFERENCES",
+        "to": "schema:MessageOut"
+      },
+      {
+        "from": "schema:MessageAttemptEndpointOut",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptTriggerType"
+      },
+      {
+        "from": "schema:MessageAttemptEndpointOut",
+        "kind": "REFERENCES",
+        "to": "schema:MessageStatus"
+      },
+      {
+        "from": "schema:MessageAttemptExhaustedEvent",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptExhaustedEventData"
+      },
+      {
+        "from": "schema:MessageAttemptExhaustedEventData",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptFailedData"
+      },
+      {
+        "from": "schema:MessageAttemptFailingEvent",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptFailingEventData"
+      },
+      {
+        "from": "schema:MessageAttemptFailingEventData",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptFailedData"
+      },
+      {
+        "from": "schema:MessageAttemptOut",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptTriggerType"
+      },
+      {
+        "from": "schema:MessageAttemptOut",
+        "kind": "REFERENCES",
+        "to": "schema:MessageStatus"
+      },
+      {
+        "from": "schema:MessageEndpointOut",
+        "kind": "REFERENCES",
+        "to": "schema:MessageStatus"
+      },
+      {
+        "from": "schema:MessageIn",
+        "kind": "REFERENCES",
+        "to": "schema:ApplicationIn"
+      },
+      {
+        "from": "schema:RecoverOut",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundTaskStatus"
+      },
+      {
+        "from": "schema:ReplayOut",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundTaskStatus"
+      },
+      {
+        "from": "schema:WebhookTypes",
+        "kind": "REFERENCES",
+        "to": "schema:BackgroundTaskFinishedEvent"
+      },
+      {
+        "from": "schema:WebhookTypes",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointCreatedEvent"
+      },
+      {
+        "from": "schema:WebhookTypes",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointDeletedEvent"
+      },
+      {
+        "from": "schema:WebhookTypes",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointDisabledEvent"
+      },
+      {
+        "from": "schema:WebhookTypes",
+        "kind": "REFERENCES",
+        "to": "schema:EndpointUpdatedEvent"
+      },
+      {
+        "from": "schema:WebhookTypes",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptExhaustedEvent"
+      },
+      {
+        "from": "schema:WebhookTypes",
+        "kind": "REFERENCES",
+        "to": "schema:MessageAttemptFailingEvent"
       }
     ],
     "nodes": [
@@ -272,1131 +747,4506 @@
       },
       {
         "deprecated": false,
+        "description": "List of all the organization's applications.",
         "id": "operation:get:/api/v1/app/",
         "kind": "operation",
         "method": "get",
         "name": "list_applications_api_v1_app__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "descending",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "Ordering"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/",
         "pointer": "#/paths/~1api~1v1~1app~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_ApplicationOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Applications"
+        "summary": "List Applications",
+        "tags": [
+          "Application"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new application.",
         "id": "operation:post:/api/v1/app/",
         "kind": "operation",
         "method": "post",
         "name": "create_application_api_v1_app__post",
+        "parameters": [
+          {
+            "default": false,
+            "description": "Get an existing application, or create a new one if doesn't exist.",
+            "in": "query",
+            "name": "get_if_exists",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/",
         "pointer": "#/paths/~1api~1v1~1app~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApplicationIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApplicationOut"
+          },
+          {
+            "status": "201",
+            "type": "ApplicationOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Create Application"
+        "summary": "Create Application",
+        "tags": [
+          "Application"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/app/{app_id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_application_api_v1_app__app_id___delete",
-        "path": "/api/v1/app/{app_id}/",
-        "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Delete Application"
-      },
-      {
-        "deprecated": false,
+        "description": "Get an application.",
         "id": "operation:get:/api/v1/app/{app_id}/",
         "kind": "operation",
         "method": "get",
         "name": "get_application_api_v1_app__app_id___get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApplicationOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Application"
+        "summary": "Get Application",
+        "tags": [
+          "Application"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an application.",
         "id": "operation:put:/api/v1/app/{app_id}/",
         "kind": "operation",
         "method": "put",
         "name": "update_application_api_v1_app__app_id___put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApplicationIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApplicationOut"
+          },
+          {
+            "status": "201",
+            "type": "ApplicationOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Update Application"
+        "summary": "Update Application",
+        "tags": [
+          "Application"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an application.",
+        "id": "operation:delete:/api/v1/app/{app_id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_application_api_v1_app__app_id___delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/app/{app_id}/",
+        "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Application",
+        "tags": [
+          "Application"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "List attempts by endpoint id",
         "id": "operation:get:/api/v1/app/{app_id}/attempt/endpoint/{endpoint_id}/",
         "kind": "operation",
         "method": "get",
         "name": "list_attempts_by_endpoint_api_v1_app__app_id__attempt_endpoint__endpoint_id___get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "MessageStatus"
+          },
+          {
+            "in": "query",
+            "name": "status_code_class",
+            "required": false,
+            "type": "StatusCodeClass"
+          },
+          {
+            "in": "query",
+            "name": "event_types",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/attempt/endpoint/{endpoint_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1attempt~1endpoint~1{endpoint_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_MessageAttemptOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Attempts By Endpoint"
+        "summary": "List Attempts By Endpoint",
+        "tags": [
+          "Message Attempt"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List attempts by message id",
         "id": "operation:get:/api/v1/app/{app_id}/attempt/msg/{msg_id}/",
         "kind": "operation",
         "method": "get",
         "name": "list_attempts_by_msg_api_v1_app__app_id__attempt_msg__msg_id___get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endpoint_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "MessageStatus"
+          },
+          {
+            "in": "query",
+            "name": "status_code_class",
+            "required": false,
+            "type": "StatusCodeClass"
+          },
+          {
+            "in": "query",
+            "name": "event_types",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/attempt/msg/{msg_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1attempt~1msg~1{msg_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_MessageAttemptOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Attempts By Msg"
+        "summary": "List Attempts By Msg",
+        "tags": [
+          "Message Attempt"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List the application's endpoints.",
         "id": "operation:get:/api/v1/app/{app_id}/endpoint/",
         "kind": "operation",
         "method": "get",
         "name": "list_endpoints_api_v1_app__app_id__endpoint__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "descending",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "Ordering"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_EndpointOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Endpoints"
+        "summary": "List Endpoints",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new endpoint for the application.",
         "id": "operation:post:/api/v1/app/{app_id}/endpoint/",
         "kind": "operation",
         "method": "post",
         "name": "create_endpoint_api_v1_app__app_id__endpoint__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EndpointIn"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "EndpointOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Create Endpoint"
+        "summary": "Create Endpoint",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_endpoint_api_v1_app__app_id__endpoint__endpoint_id___delete",
-        "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
-        "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Delete Endpoint"
-      },
-      {
-        "deprecated": false,
+        "description": "Get an application.",
         "id": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
         "kind": "operation",
         "method": "get",
         "name": "get_endpoint_api_v1_app__app_id__endpoint__endpoint_id___get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EndpointOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Endpoint"
+        "summary": "Get Endpoint",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an endpoint.",
         "id": "operation:put:/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
         "kind": "operation",
         "method": "put",
         "name": "update_endpoint_api_v1_app__app_id__endpoint__endpoint_id___put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EndpointUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EndpointOut"
+          },
+          {
+            "status": "201",
+            "type": "EndpointOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Update Endpoint"
+        "summary": "Update Endpoint",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an endpoint.",
+        "id": "operation:delete:/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_endpoint_api_v1_app__app_id__endpoint__endpoint_id___delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/",
+        "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Endpoint",
+        "tags": [
+          "Endpoint"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get the additional headers to be sent with the webhook",
         "id": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
         "kind": "operation",
         "method": "get",
         "name": "get_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1headers~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EndpointHeadersOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Endpoint Headers"
+        "summary": "Get Endpoint Headers",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__patch",
-        "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
-        "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1headers~1/patch",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Patch Endpoint Headers"
-      },
-      {
-        "deprecated": false,
+        "description": "Set the additional headers to be sent with the webhook",
         "id": "operation:put:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
         "kind": "operation",
         "method": "put",
         "name": "update_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1headers~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EndpointHeadersIn"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Update Endpoint Headers"
+        "summary": "Update Endpoint Headers",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Partially set the additional headers to be sent with the webhook",
+        "id": "operation:patch:/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/",
+        "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1headers~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EndpointHeadersPatchIn"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Patch Endpoint Headers",
+        "tags": [
+          "Endpoint"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "List messages for a particular endpoint.",
         "id": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/msg/",
         "kind": "operation",
         "method": "get",
         "name": "list_attempted_messages_api_v1_app__app_id__endpoint__endpoint_id__msg__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "MessageStatus"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/msg/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1msg~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_EndpointMessageOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Attempted Messages"
+        "summary": "List Attempted Messages",
+        "tags": [
+          "Message Attempt"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resend all failed messages since a given time.",
         "id": "operation:post:/api/v1/app/{app_id}/endpoint/{endpoint_id}/recover/",
         "kind": "operation",
         "method": "post",
         "name": "recover_failed_webhooks_api_v1_app__app_id__endpoint__endpoint_id__recover__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/recover/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1recover~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "RecoverIn"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "RecoverOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Recover Failed Webhooks"
+        "summary": "Recover Failed Webhooks",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Replays messages to the endpoint.",
         "id": "operation:post:/api/v1/app/{app_id}/endpoint/{endpoint_id}/replay-missing/",
         "kind": "operation",
         "method": "post",
         "name": "replay_missing_webhooks_api_v1_app__app_id__endpoint__endpoint_id__replay_missing__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/replay-missing/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1replay-missing~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ReplayIn"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "ReplayOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Replay Missing Webhooks"
+        "summary": "Replay Missing Webhooks",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the endpoint's signing secret.",
         "id": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/",
         "kind": "operation",
         "method": "get",
         "name": "get_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1secret~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EndpointSecretOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Endpoint Secret"
+        "summary": "Get Endpoint Secret",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Rotates the endpoint's signing secret.",
         "id": "operation:post:/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/rotate/",
         "kind": "operation",
         "method": "post",
         "name": "rotate_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret_rotate__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/rotate/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1secret~1rotate~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EndpointSecretRotateIn"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Rotate Endpoint Secret"
+        "summary": "Rotate Endpoint Secret",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get basic statistics for the endpoint.",
         "id": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/stats/",
         "kind": "operation",
         "method": "get",
         "name": "get_endpoint_stats_api_v1_app__app_id__endpoint__endpoint_id__stats__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "until",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/stats/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1stats~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EndpointStats"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Endpoint Stats"
+        "summary": "Get Endpoint Stats",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the transformation code associated with this endpoint",
         "id": "operation:get:/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/",
         "kind": "operation",
         "method": "get",
         "name": "get_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1transformation~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EndpointTransformationOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Endpoint Transformation"
+        "summary": "Get Endpoint Transformation",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set or unset the transformation code associated with this endpoint",
         "id": "operation:patch:/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/",
         "kind": "operation",
         "method": "patch",
         "name": "set_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1endpoint~1{endpoint_id}~1transformation~1/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EndpointTransformationIn"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Set Endpoint Transformation"
+        "summary": "Set Endpoint Transformation",
+        "tags": [
+          "Endpoint"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List the application's integrations.",
         "id": "operation:get:/api/v1/app/{app_id}/integration/",
         "kind": "operation",
         "method": "get",
         "name": "list_integrations_api_v1_app__app_id__integration__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/integration/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1integration~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_IntegrationOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Integrations"
+        "summary": "List Integrations",
+        "tags": [
+          "Integration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create an integration.",
         "id": "operation:post:/api/v1/app/{app_id}/integration/",
         "kind": "operation",
         "method": "post",
         "name": "create_integration_api_v1_app__app_id__integration__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/integration/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1integration~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "IntegrationIn"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "IntegrationOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Create Integration"
+        "summary": "Create Integration",
+        "tags": [
+          "Integration"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/app/{app_id}/integration/{integ_id}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_integration_api_v1_app__app_id__integration__integ_id___delete",
-        "path": "/api/v1/app/{app_id}/integration/{integ_id}/",
-        "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1integration~1{integ_id}~1/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Delete Integration"
-      },
-      {
-        "deprecated": false,
+        "description": "Get an integration.",
         "id": "operation:get:/api/v1/app/{app_id}/integration/{integ_id}/",
         "kind": "operation",
         "method": "get",
         "name": "get_integration_api_v1_app__app_id__integration__integ_id___get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "integ_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/integration/{integ_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1integration~1{integ_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntegrationOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Integration"
+        "summary": "Get Integration",
+        "tags": [
+          "Integration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an integration.",
         "id": "operation:put:/api/v1/app/{app_id}/integration/{integ_id}/",
         "kind": "operation",
         "method": "put",
         "name": "update_integration_api_v1_app__app_id__integration__integ_id___put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "integ_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/integration/{integ_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1integration~1{integ_id}~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "IntegrationUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntegrationOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Update Integration"
+        "summary": "Update Integration",
+        "tags": [
+          "Integration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an integration and revoke it's key.",
+        "id": "operation:delete:/api/v1/app/{app_id}/integration/{integ_id}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_integration_api_v1_app__app_id__integration__integ_id___delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "integ_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/app/{app_id}/integration/{integ_id}/",
+        "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1integration~1{integ_id}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Integration",
+        "tags": [
+          "Integration"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get an integration's key.",
         "id": "operation:get:/api/v1/app/{app_id}/integration/{integ_id}/key/",
         "kind": "operation",
         "method": "get",
         "name": "get_integration_key_api_v1_app__app_id__integration__integ_id__key__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "integ_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/integration/{integ_id}/key/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1integration~1{integ_id}~1key~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntegrationKeyOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Integration Key"
+        "summary": "Get Integration Key",
+        "tags": [
+          "Integration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Rotate the integration's key.",
         "id": "operation:post:/api/v1/app/{app_id}/integration/{integ_id}/key/rotate/",
         "kind": "operation",
         "method": "post",
         "name": "rotate_integration_key_api_v1_app__app_id__integration__integ_id__key_rotate__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "integ_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/integration/{integ_id}/key/rotate/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1integration~1{integ_id}~1key~1rotate~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IntegrationKeyOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Rotate Integration Key"
+        "summary": "Rotate Integration Key",
+        "tags": [
+          "Integration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all of the application's messages.",
         "id": "operation:get:/api/v1/app/{app_id}/msg/",
         "kind": "operation",
         "method": "get",
         "name": "list_messages_api_v1_app__app_id__msg__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "event_types",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_MessageOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Messages"
+        "summary": "List Messages",
+        "tags": [
+          "Message"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new message and dispatches it to all of the application's endpoints.",
         "id": "operation:post:/api/v1/app/{app_id}/msg/",
         "kind": "operation",
         "method": "post",
         "name": "create_message_api_v1_app__app_id__msg__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "in": "query",
+            "name": "with_content",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "MessageIn"
+        },
+        "responses": [
+          {
+            "status": "202",
+            "type": "MessageOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "413",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Create Message"
+        "summary": "Create Message",
+        "tags": [
+          "Message"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a message by its ID or eventID.",
         "id": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/",
         "kind": "operation",
         "method": "get",
         "name": "get_message_api_v1_app__app_id__msg__msg_id___get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/{msg_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1{msg_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Message"
+        "summary": "Get Message",
+        "tags": [
+          "Message"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Deprecated: Please use \"List Attempts by Endpoint\" and \"List Attempts by Msg\" instead.",
         "id": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/attempt/",
         "kind": "operation",
         "method": "get",
         "name": "list_attempts_api_v1_app__app_id__msg__msg_id__attempt__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "endpoint_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "event_types",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "MessageStatus"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/{msg_id}/attempt/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1{msg_id}~1attempt~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_MessageAttemptOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Attempts"
+        "summary": "List Attempts",
+        "tags": [
+          "Message Attempt"
+        ]
       },
       {
         "deprecated": false,
+        "description": "`msg_id`: Use a message id or a message `eventId`",
         "id": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/",
         "kind": "operation",
         "method": "get",
         "name": "get_attempt_api_v1_app__app_id__msg__msg_id__attempt__attempt_id___get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "attempt_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1{msg_id}~1attempt~1{attempt_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageAttemptOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Attempt"
+        "summary": "Get Attempt",
+        "tags": [
+          "Message Attempt"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the given attempt's response body.",
         "id": "operation:delete:/api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/content/",
         "kind": "operation",
         "method": "delete",
         "name": "expunge_attempt_content_api_v1_app__app_id__msg__msg_id__attempt__attempt_id__content__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "attempt_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/content/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1{msg_id}~1attempt~1{attempt_id}~1content~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Delete attempt response body"
+        "summary": "Delete attempt response body",
+        "tags": [
+          "Message Attempt"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete the given message's payload.",
         "id": "operation:delete:/api/v1/app/{app_id}/msg/{msg_id}/content/",
         "kind": "operation",
         "method": "delete",
         "name": "expunge_message_payload_api_v1_app__app_id__msg__msg_id__content__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/{msg_id}/content/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1{msg_id}~1content~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Delete message payload"
+        "summary": "Delete message payload",
+        "tags": [
+          "Message"
+        ]
       },
       {
         "deprecated": false,
+        "description": "`msg_id`: Use a message id or a message `eventId`",
         "id": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/endpoint/",
         "kind": "operation",
         "method": "get",
         "name": "list_attempted_destinations_api_v1_app__app_id__msg__msg_id__endpoint__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/{msg_id}/endpoint/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1{msg_id}~1endpoint~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_MessageEndpointOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Attempted Destinations"
+        "summary": "List Attempted Destinations",
+        "tags": [
+          "Message Attempt"
+        ]
       },
       {
         "deprecated": true,
+        "description": "DEPRECATED: please use list_attempts with endpoint_id as a query parameter instead.",
         "id": "operation:get:/api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/attempt/",
         "kind": "operation",
         "method": "get",
         "name": "list_attempts_for_endpoint_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__attempt__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "event_types",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "MessageStatus"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/attempt/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1{msg_id}~1endpoint~1{endpoint_id}~1attempt~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_MessageAttemptEndpointOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Attempts For Endpoint"
+        "summary": "List Attempts For Endpoint",
+        "tags": [
+          "Message Attempt"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resend a message to the specified endpoint.",
         "id": "operation:post:/api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/resend/",
         "kind": "operation",
         "method": "post",
         "name": "resend_webhook_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__resend__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "endpoint_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "msg_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/resend/",
         "pointer": "#/paths/~1api~1v1~1app~1{app_id}~1msg~1{msg_id}~1endpoint~1{endpoint_id}~1resend~1/post",
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Resend Webhook"
+        "summary": "Resend Webhook",
+        "tags": [
+          "Message Attempt"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this function to get magic links (and authentication codes) for connecting your users to the Consumer Application Portal.",
         "id": "operation:post:/api/v1/auth/app-portal-access/{app_id}/",
         "kind": "operation",
         "method": "post",
         "name": "get_app_portal_access_api_v1_auth_app_portal_access__app_id___post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/auth/app-portal-access/{app_id}/",
         "pointer": "#/paths/~1api~1v1~1auth~1app-portal-access~1{app_id}~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AppPortalAccessIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AppPortalAccessOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Consumer App Portal Access"
+        "summary": "Get Consumer App Portal Access",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Expire all of the tokens associated with a specific Application",
         "id": "operation:post:/api/v1/auth/app/{app_id}/expire-all/",
         "kind": "operation",
         "method": "post",
         "name": "expire_all_api_v1_auth_app__app_id__expire_all__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/auth/app/{app_id}/expire-all/",
         "pointer": "#/paths/~1api~1v1~1auth~1app~1{app_id}~1expire-all~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ApplicationTokenExpireIn"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Expire All"
+        "summary": "Expire All",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": true,
+        "description": "DEPRECATED: Please use `app-portal-access` instead.",
         "id": "operation:post:/api/v1/auth/dashboard-access/{app_id}/",
         "kind": "operation",
         "method": "post",
         "name": "get_dashboard_access_api_v1_auth_dashboard_access__app_id___post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/auth/dashboard-access/{app_id}/",
         "pointer": "#/paths/~1api~1v1~1auth~1dashboard-access~1{app_id}~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DashboardAccessOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Dashboard Access"
+        "summary": "Get Dashboard Access",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Logout an app token.",
         "id": "operation:post:/api/v1/auth/logout/",
         "kind": "operation",
         "method": "post",
         "name": "logout_api_v1_auth_logout__post",
+        "parameters": [
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/auth/logout/",
         "pointer": "#/paths/~1api~1v1~1auth~1logout~1/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Logout"
+        "summary": "Logout",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List background tasks executed in the past 90 days.",
         "id": "operation:get:/api/v1/background-task/",
         "kind": "operation",
         "method": "get",
         "name": "list_background_tasks_api_v1_background_task__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "descending",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "Ordering"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/background-task/",
         "pointer": "#/paths/~1api~1v1~1background-task~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_BackgroundTaskOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List Background Tasks"
+        "summary": "List Background Tasks",
+        "tags": [
+          "Background Tasks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a background task by ID.",
         "id": "operation:get:/api/v1/background-task/{task_id}/",
         "kind": "operation",
         "method": "get",
         "name": "get_background_task_api_v1_background_task__task_id___get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/background-task/{task_id}/",
         "pointer": "#/paths/~1api~1v1~1background-task~1{task_id}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BackgroundTaskOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Background Task"
+        "summary": "Get Background Task",
+        "tags": [
+          "Background Tasks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the list of event types.",
         "id": "operation:get:/api/v1/event-type/",
         "kind": "operation",
         "method": "get",
         "name": "list_event_types_api_v1_event_type__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "iterator",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "with_content",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "include_archived",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/event-type/",
         "pointer": "#/paths/~1api~1v1~1event-type~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListResponse_EventTypeOut_"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "List Event Types"
+        "summary": "List Event Types",
+        "tags": [
+          "Event Type"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create new or unarchive existing event type.",
         "id": "operation:post:/api/v1/event-type/",
         "kind": "operation",
         "method": "post",
         "name": "create_event_type_api_v1_event_type__post",
+        "parameters": [
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/event-type/",
         "pointer": "#/paths/~1api~1v1~1event-type~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EventTypeIn"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "EventTypeOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Create Event Type"
+        "summary": "Create Event Type",
+        "tags": [
+          "Event Type"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/event-type/{event_type_name}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_event_type_api_v1_event_type__event_type_name___delete",
-        "path": "/api/v1/event-type/{event_type_name}/",
-        "pointer": "#/paths/~1api~1v1~1event-type~1{event_type_name}~1/delete",
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ],
-        "summary": "Archive Event Type"
-      },
-      {
-        "deprecated": false,
+        "description": "Get an event type.",
         "id": "operation:get:/api/v1/event-type/{event_type_name}/",
         "kind": "operation",
         "method": "get",
         "name": "get_event_type_api_v1_event_type__event_type_name___get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_type_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/event-type/{event_type_name}/",
         "pointer": "#/paths/~1api~1v1~1event-type~1{event_type_name}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventTypeOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Get Event Type"
+        "summary": "Get Event Type",
+        "tags": [
+          "Event Type"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an event type.",
         "id": "operation:put:/api/v1/event-type/{event_type_name}/",
         "kind": "operation",
         "method": "put",
         "name": "update_event_type_api_v1_event_type__event_type_name___put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_type_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/event-type/{event_type_name}/",
         "pointer": "#/paths/~1api~1v1~1event-type~1{event_type_name}~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EventTypeUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventTypeOut"
+          },
+          {
+            "status": "201",
+            "type": "EventTypeOut"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "HTTPBearer": []
           }
         ],
-        "summary": "Update Event Type"
+        "summary": "Update Event Type",
+        "tags": [
+          "Event Type"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Archive an event type.",
+        "id": "operation:delete:/api/v1/event-type/{event_type_name}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_event_type_api_v1_event_type__event_type_name___delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_type_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "expunge",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/event-type/{event_type_name}/",
+        "pointer": "#/paths/~1api~1v1~1event-type~1{event_type_name}~1/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "403",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "404",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "409",
+            "type": "HttpErrorOut"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429",
+            "type": "HttpErrorOut"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Archive Event Type",
+        "tags": [
+          "Event Type"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Verify the API server is up and running.",
         "id": "operation:get:/api/v1/health/",
         "kind": "operation",
         "method": "get",
         "name": "health_api_v1_health__get",
+        "parameters": [
+          {
+            "description": "The request's idempotency key",
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/health/",
         "pointer": "#/paths/~1api~1v1~1health~1/get",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Health"
+        "summary": "Health",
+        "tags": [
+          "Health"
+        ]
       },
       {
         "id": "schema:AppPortalAccessIn",
         "kind": "schema",
-        "name": "AppPortalAccessIn"
+        "name": "AppPortalAccessIn",
+        "type": "object"
       },
       {
         "id": "schema:AppPortalAccessOut",
         "kind": "schema",
-        "name": "AppPortalAccessOut"
+        "name": "AppPortalAccessOut",
+        "type": "object"
       },
       {
         "id": "schema:ApplicationIn",
         "kind": "schema",
-        "name": "ApplicationIn"
+        "name": "ApplicationIn",
+        "type": "object"
       },
       {
         "id": "schema:ApplicationOut",
         "kind": "schema",
-        "name": "ApplicationOut"
+        "name": "ApplicationOut",
+        "type": "object"
       },
       {
         "id": "schema:ApplicationTokenExpireIn",
         "kind": "schema",
-        "name": "ApplicationTokenExpireIn"
+        "name": "ApplicationTokenExpireIn",
+        "type": "object"
       },
       {
+        "description": "Sent when a background task finishes.",
         "id": "schema:BackgroundTaskFinishedEvent",
         "kind": "schema",
-        "name": "BackgroundTaskFinishedEvent"
+        "name": "BackgroundTaskFinishedEvent",
+        "type": "object"
       },
       {
         "id": "schema:BackgroundTaskFinishedEventData",
         "kind": "schema",
-        "name": "BackgroundTaskFinishedEventData"
+        "name": "BackgroundTaskFinishedEventData",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:BackgroundTaskOpWebhookStatus",
         "kind": "schema",
-        "name": "BackgroundTaskOpWebhookStatus"
+        "name": "BackgroundTaskOpWebhookStatus",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:BackgroundTaskOpWebhookType",
         "kind": "schema",
-        "name": "BackgroundTaskOpWebhookType"
+        "name": "BackgroundTaskOpWebhookType",
+        "type": "string"
       },
       {
         "id": "schema:BackgroundTaskOut",
         "kind": "schema",
-        "name": "BackgroundTaskOut"
+        "name": "BackgroundTaskOut",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:BackgroundTaskStatus",
         "kind": "schema",
-        "name": "BackgroundTaskStatus"
+        "name": "BackgroundTaskStatus",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:BackgroundTaskType",
         "kind": "schema",
-        "name": "BackgroundTaskType"
+        "name": "BackgroundTaskType",
+        "type": "string"
       },
       {
         "id": "schema:DashboardAccessOut",
         "kind": "schema",
-        "name": "DashboardAccessOut"
+        "name": "DashboardAccessOut",
+        "type": "object"
       },
       {
+        "description": "Sent when an endpoint is created.",
         "id": "schema:EndpointCreatedEvent",
         "kind": "schema",
-        "name": "EndpointCreatedEvent"
+        "name": "EndpointCreatedEvent",
+        "type": "object"
       },
       {
         "id": "schema:EndpointCreatedEventData",
         "kind": "schema",
-        "name": "EndpointCreatedEventData"
+        "name": "EndpointCreatedEventData",
+        "type": "object"
       },
       {
+        "description": "Sent when an endpoint is deleted.",
         "id": "schema:EndpointDeletedEvent",
         "kind": "schema",
-        "name": "EndpointDeletedEvent"
+        "name": "EndpointDeletedEvent",
+        "type": "object"
       },
       {
         "id": "schema:EndpointDeletedEventData",
         "kind": "schema",
-        "name": "EndpointDeletedEventData"
+        "name": "EndpointDeletedEventData",
+        "type": "object"
       },
       {
+        "description": "Sent when an endpoint has been automatically disabled after continuous failures.",
         "id": "schema:EndpointDisabledEvent",
         "kind": "schema",
-        "name": "EndpointDisabledEvent"
+        "name": "EndpointDisabledEvent",
+        "type": "object"
       },
       {
         "id": "schema:EndpointDisabledEventData",
         "kind": "schema",
-        "name": "EndpointDisabledEventData"
+        "name": "EndpointDisabledEventData",
+        "type": "object"
       },
       {
         "id": "schema:EndpointHeadersIn",
         "kind": "schema",
-        "name": "EndpointHeadersIn"
+        "name": "EndpointHeadersIn",
+        "type": "object"
       },
       {
+        "description": "The value of the headers is returned in the `headers` field.",
         "id": "schema:EndpointHeadersOut",
         "kind": "schema",
-        "name": "EndpointHeadersOut"
+        "name": "EndpointHeadersOut",
+        "type": "object"
       },
       {
         "id": "schema:EndpointHeadersPatchIn",
         "kind": "schema",
-        "name": "EndpointHeadersPatchIn"
+        "name": "EndpointHeadersPatchIn",
+        "type": "object"
       },
       {
         "id": "schema:EndpointIn",
         "kind": "schema",
-        "name": "EndpointIn"
+        "name": "EndpointIn",
+        "type": "object"
       },
       {
         "id": "schema:EndpointMessageOut",
         "kind": "schema",
-        "name": "EndpointMessageOut"
+        "name": "EndpointMessageOut",
+        "type": "object"
       },
       {
         "id": "schema:EndpointOut",
         "kind": "schema",
-        "name": "EndpointOut"
+        "name": "EndpointOut",
+        "type": "object"
       },
       {
         "id": "schema:EndpointSecretOut",
         "kind": "schema",
-        "name": "EndpointSecretOut"
+        "name": "EndpointSecretOut",
+        "type": "object"
       },
       {
         "id": "schema:EndpointSecretRotateIn",
         "kind": "schema",
-        "name": "EndpointSecretRotateIn"
+        "name": "EndpointSecretRotateIn",
+        "type": "object"
       },
       {
         "id": "schema:EndpointStats",
         "kind": "schema",
-        "name": "EndpointStats"
+        "name": "EndpointStats",
+        "type": "object"
       },
       {
         "id": "schema:EndpointTransformationIn",
         "kind": "schema",
-        "name": "EndpointTransformationIn"
+        "name": "EndpointTransformationIn",
+        "type": "object"
       },
       {
         "id": "schema:EndpointTransformationOut",
         "kind": "schema",
-        "name": "EndpointTransformationOut"
+        "name": "EndpointTransformationOut",
+        "type": "object"
       },
       {
         "id": "schema:EndpointUpdate",
         "kind": "schema",
-        "name": "EndpointUpdate"
+        "name": "EndpointUpdate",
+        "type": "object"
       },
       {
+        "description": "Sent when an endpoint is updated.",
         "id": "schema:EndpointUpdatedEvent",
         "kind": "schema",
-        "name": "EndpointUpdatedEvent"
+        "name": "EndpointUpdatedEvent",
+        "type": "object"
       },
       {
         "id": "schema:EndpointUpdatedEventData",
         "kind": "schema",
-        "name": "EndpointUpdatedEventData"
+        "name": "EndpointUpdatedEventData",
+        "type": "object"
       },
       {
         "id": "schema:EventTypeIn",
         "kind": "schema",
-        "name": "EventTypeIn"
+        "name": "EventTypeIn",
+        "type": "object"
       },
       {
         "id": "schema:EventTypeOut",
         "kind": "schema",
-        "name": "EventTypeOut"
+        "name": "EventTypeOut",
+        "type": "object"
       },
       {
         "id": "schema:EventTypeUpdate",
         "kind": "schema",
-        "name": "EventTypeUpdate"
+        "name": "EventTypeUpdate",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:HttpErrorOut",
         "kind": "schema",
-        "name": "HttpErrorOut"
+        "name": "HttpErrorOut",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationIn",
         "kind": "schema",
-        "name": "IntegrationIn"
+        "name": "IntegrationIn",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationKeyOut",
         "kind": "schema",
-        "name": "IntegrationKeyOut"
+        "name": "IntegrationKeyOut",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationOut",
         "kind": "schema",
-        "name": "IntegrationOut"
+        "name": "IntegrationOut",
+        "type": "object"
       },
       {
         "id": "schema:IntegrationUpdate",
         "kind": "schema",
-        "name": "IntegrationUpdate"
+        "name": "IntegrationUpdate",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_ApplicationOut_",
         "kind": "schema",
-        "name": "ListResponse_ApplicationOut_"
+        "name": "ListResponse_ApplicationOut_",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_BackgroundTaskOut_",
         "kind": "schema",
-        "name": "ListResponse_BackgroundTaskOut_"
+        "name": "ListResponse_BackgroundTaskOut_",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_EndpointMessageOut_",
         "kind": "schema",
-        "name": "ListResponse_EndpointMessageOut_"
+        "name": "ListResponse_EndpointMessageOut_",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_EndpointOut_",
         "kind": "schema",
-        "name": "ListResponse_EndpointOut_"
+        "name": "ListResponse_EndpointOut_",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_EventTypeOut_",
         "kind": "schema",
-        "name": "ListResponse_EventTypeOut_"
+        "name": "ListResponse_EventTypeOut_",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_IntegrationOut_",
         "kind": "schema",
-        "name": "ListResponse_IntegrationOut_"
+        "name": "ListResponse_IntegrationOut_",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_MessageAttemptEndpointOut_",
         "kind": "schema",
-        "name": "ListResponse_MessageAttemptEndpointOut_"
+        "name": "ListResponse_MessageAttemptEndpointOut_",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_MessageAttemptOut_",
         "kind": "schema",
-        "name": "ListResponse_MessageAttemptOut_"
+        "name": "ListResponse_MessageAttemptOut_",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_MessageEndpointOut_",
         "kind": "schema",
-        "name": "ListResponse_MessageEndpointOut_"
+        "name": "ListResponse_MessageEndpointOut_",
+        "type": "object"
       },
       {
         "id": "schema:ListResponse_MessageOut_",
         "kind": "schema",
-        "name": "ListResponse_MessageOut_"
+        "name": "ListResponse_MessageOut_",
+        "type": "object"
       },
       {
         "id": "schema:MessageAttemptEndpointOut",
         "kind": "schema",
-        "name": "MessageAttemptEndpointOut"
+        "name": "MessageAttemptEndpointOut",
+        "type": "object"
       },
       {
+        "description": "Sent when a message delivery has failed (all of the retry attempts have been exhausted).",
         "id": "schema:MessageAttemptExhaustedEvent",
         "kind": "schema",
-        "name": "MessageAttemptExhaustedEvent"
+        "name": "MessageAttemptExhaustedEvent",
+        "type": "object"
       },
       {
         "id": "schema:MessageAttemptExhaustedEventData",
         "kind": "schema",
-        "name": "MessageAttemptExhaustedEventData"
+        "name": "MessageAttemptExhaustedEventData",
+        "type": "object"
       },
       {
         "id": "schema:MessageAttemptFailedData",
         "kind": "schema",
-        "name": "MessageAttemptFailedData"
+        "name": "MessageAttemptFailedData",
+        "type": "object"
       },
       {
+        "description": "Sent after a message has been failing for a few times.",
         "id": "schema:MessageAttemptFailingEvent",
         "kind": "schema",
-        "name": "MessageAttemptFailingEvent"
+        "name": "MessageAttemptFailingEvent",
+        "type": "object"
       },
       {
         "id": "schema:MessageAttemptFailingEventData",
         "kind": "schema",
-        "name": "MessageAttemptFailingEventData"
+        "name": "MessageAttemptFailingEventData",
+        "type": "object"
       },
       {
         "id": "schema:MessageAttemptOut",
         "kind": "schema",
-        "name": "MessageAttemptOut"
+        "name": "MessageAttemptOut",
+        "type": "object"
       },
       {
+        "description": "The reason an attempt was made: - Scheduled = 0 - Manual = 1",
         "id": "schema:MessageAttemptTriggerType",
         "kind": "schema",
-        "name": "MessageAttemptTriggerType"
+        "name": "MessageAttemptTriggerType",
+        "type": "integer"
       },
       {
         "id": "schema:MessageEndpointOut",
         "kind": "schema",
-        "name": "MessageEndpointOut"
+        "name": "MessageEndpointOut",
+        "type": "object"
       },
       {
         "id": "schema:MessageIn",
         "kind": "schema",
-        "name": "MessageIn"
+        "name": "MessageIn",
+        "type": "object"
       },
       {
         "id": "schema:MessageOut",
         "kind": "schema",
-        "name": "MessageOut"
+        "name": "MessageOut",
+        "type": "object"
       },
       {
+        "description": "The sending status of the message: - Success = 0 - Pending = 1 - Fail = 2 - Sending = 3",
         "id": "schema:MessageStatus",
         "kind": "schema",
-        "name": "MessageStatus"
+        "name": "MessageStatus",
+        "type": "integer"
       },
       {
+        "description": "Defines the ordering in a listing of results.",
         "id": "schema:Ordering",
         "kind": "schema",
-        "name": "Ordering"
+        "name": "Ordering",
+        "type": "string"
       },
       {
         "id": "schema:RecoverIn",
         "kind": "schema",
-        "name": "RecoverIn"
+        "name": "RecoverIn",
+        "type": "object"
       },
       {
         "id": "schema:RecoverOut",
         "kind": "schema",
-        "name": "RecoverOut"
+        "name": "RecoverOut",
+        "type": "object"
       },
       {
         "id": "schema:ReplayIn",
         "kind": "schema",
-        "name": "ReplayIn"
+        "name": "ReplayIn",
+        "type": "object"
       },
       {
         "id": "schema:ReplayOut",
         "kind": "schema",
-        "name": "ReplayOut"
+        "name": "ReplayOut",
+        "type": "object"
       },
       {
+        "description": "The different classes of HTTP status codes: - CodeNone = 0 - Code1xx = 100 - Code2xx = 200 - Code3xx = 300 - Code4xx = 400 - Code5xx = 500",
         "id": "schema:StatusCodeClass",
         "kind": "schema",
-        "name": "StatusCodeClass"
+        "name": "StatusCodeClass",
+        "type": "integer"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
+        "description": "All of the webhook types that we support",
         "id": "schema:WebhookTypes",
         "kind": "schema",
-        "name": "WebhookTypes"
+        "name": "WebhookTypes",
+        "type": "object"
       }
     ]
   },

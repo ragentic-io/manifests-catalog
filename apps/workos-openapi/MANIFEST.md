@@ -12,7 +12,7 @@ Independent connector for WorkOS API. Not affiliated with or endorsed by WorkOS.
 
 | | |
 | --- | --- |
-| Signed bundle | `81e2565f11eebc0c2ea47a9364156b88286a149f48b6d0d928a2864528e520e1` in `bundles/`, expires 2027-01-28 01:47 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | `https://api.workos.com` |
 | Credential | static_bearer |
 | Connection test | GET `https://api.workos.com/organizations` |
@@ -39,273 +39,275 @@ Independent connector for WorkOS API. Not affiliated with or endorsed by WorkOS.
 
 252 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/agents/blueprints` | AgentBlueprintsController_list | List agent blueprints |
-| POST | `/agents/blueprints` | AgentBlueprintsController_create | Create an agent blueprint |
-| DELETE | `/agents/blueprints/{agent_blueprint_id}` | AgentBlueprintsController_delete | Delete an agent blueprint |
-| GET | `/agents/blueprints/{agent_blueprint_id}` | AgentBlueprintsController_get | Get an agent blueprint |
-| PATCH | `/agents/blueprints/{agent_blueprint_id}` | AgentBlueprintsController_update | Update an agent blueprint |
-| POST | `/agents/blueprints/{agent_blueprint_id}/tokens` | AgentBlueprintsTokenController_mintToken | Mint an agent token |
-| POST | `/agents/blueprints/{agent_blueprint_id}/tokens/validate` | AgentBlueprintsTokenController_validateToken | Validate an agent token |
-| PATCH | `/agents/claims/attempts` | AgentAdminController_linkClaimAttemptToExternalUser | Link a claim attempt to an external user |
-| POST | `/agents/credentials/validate` | AgentAdminController_validateCredential | Validate an agent credential |
-| GET | `/agents/instances` | AgentInstancesController_list | List agent instances |
-| DELETE | `/agents/instances/{agent_instance_id}` | AgentInstancesController_delete | Delete an agent instance |
-| GET | `/agents/instances/{agent_instance_id}` | AgentInstancesController_get | Get an agent instance |
-| GET | `/agents/registrations/{id}` | AgentAdminController_getRegistration | Get an agent registration |
-| POST | `/agents/registrations/{id}/revoke` | AgentAdminController_revokeRegistration | Revoke an agent registration |
-| GET | `/agents/sessions` | AgentInstanceSessionsController_list | List agent instance sessions |
-| GET | `/agents/sessions/{agent_instance_session_id}` | AgentInstanceSessionsController_get | Get an agent instance session |
-| POST | `/agents/sessions/{agent_instance_session_id}/revoke` | AgentInstanceSessionsController_revoke | Revoke an agent instance session |
-| POST | `/api_keys/validations` | ApiKeysController_validateApiKey | Validate API key |
-| DELETE | `/api_keys/{id}` | ApiKeysController_delete | Delete an API key |
-| POST | `/api_keys/{id}/expire` | ApiKeysController_expire | Expire an API key |
-| GET | `/audit_logs/actions` | AuditLogValidatorsController_list | List Actions |
-| GET | `/audit_logs/actions/{actionName}/schemas` | AuditLogValidatorVersionsController_schemas | List Schemas |
-| POST | `/audit_logs/actions/{actionName}/schemas` | AuditLogValidatorVersionsController_create | Create Schema |
-| POST | `/audit_logs/events` | AuditLogEventsController_create | Create Event |
-| POST | `/audit_logs/exports` | AuditLogExportsController_exports | Create Export |
-| GET | `/audit_logs/exports/{auditLogExportId}` | AuditLogExportsController_export | Get Export |
-| POST | `/auth/challenges/{id}/verify` | AuthenticationChallengesController_verify | Verify Challenge |
-| POST | `/auth/factors/enroll` | AuthenticationFactorsController_create | Enroll Factor |
-| DELETE | `/auth/factors/{id}` | AuthenticationFactorsController_delete | Delete Factor |
-| GET | `/auth/factors/{id}` | AuthenticationFactorsController_get | Get Factor |
-| POST | `/auth/factors/{id}/challenge` | AuthenticationFactorsController_challenge | Challenge Factor |
-| POST | `/authkit/oauth2/complete` | ExternalAuthController_completeLogin | Complete external authentication |
-| DELETE | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_removeGroupRoleAssignments | Remove group role assignments by criteria |
-| GET | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_list | List role assignments for a group |
-| PATCH | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_patchGroupRoleAssignments | Update role assignments for a group |
-| POST | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_create | Assign a role to a group |
-| PUT | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_replaceGroupRoleAssignments | Replace all role assignments for a group |
-| DELETE | `/authorization/groups/{group_id}/role_assignments/{role_assignment_id}` | AuthorizationGroupRoleAssignmentsController_removeGroupRoleAssignment | Remove a group role assignment |
-| GET | `/authorization/groups/{group_id}/role_assignments/{role_assignment_id}` | AuthorizationGroupRoleAssignmentsController_get | Get a group role assignment |
-| POST | `/authorization/organization_memberships/{organization_membership_id}/check` | AuthorizationController_check | Check authorization |
-| GET | `/authorization/organization_memberships/{organization_membership_id}/resources` | AuthorizationController_listResourcesForMembership | List resources for organization membership |
-| GET | `/authorization/organization_memberships/{organization_membership_id}/resources/{resource_id}/permissions` | AuthorizationController_listEffectivePermissions | List effective permissions for an organization membership on a resource |
-| GET | `/authorization/organization_memberships/{organization_membership_id}/resources/{resource_type_slug}/{external_id}/permissions` | AuthorizationController_listEffectivePermissionsByExternalId | List effective permissions for an organization membership on a resource by external ID |
-| DELETE | `/authorization/organization_memberships/{organization_membership_id}/role_assignments` | AuthorizationRoleAssignmentsController_removeRoleByCriteria | Remove a role assignment |
-| GET | `/authorization/organization_memberships/{organization_membership_id}/role_assignments` | AuthorizationRoleAssignmentsController_listRoleAssignments | List role assignments |
-| POST | `/authorization/organization_memberships/{organization_membership_id}/role_assignments` | AuthorizationRoleAssignmentsController_assignRole | Assign a role |
-| DELETE | `/authorization/organization_memberships/{organization_membership_id}/role_assignments/{role_assignment_id}` | AuthorizationRoleAssignmentsController_removeRoleById | Remove a role assignment by ID |
-| GET | `/authorization/organizations/{organizationId}/roles` | AuthorizationOrganizationRolesController_list | List custom roles |
-| POST | `/authorization/organizations/{organizationId}/roles` | AuthorizationOrganizationRolesController_create | Create a custom role |
-| DELETE | `/authorization/organizations/{organizationId}/roles/{slug}` | AuthorizationOrganizationRolesController_delete | Delete a custom role |
-| GET | `/authorization/organizations/{organizationId}/roles/{slug}` | AuthorizationOrganizationRolesController_get | Get a custom role |
-| PATCH | `/authorization/organizations/{organizationId}/roles/{slug}` | AuthorizationOrganizationRolesController_update | Update a custom role |
-| POST | `/authorization/organizations/{organizationId}/roles/{slug}/permissions` | AuthorizationOrganizationRolePermissionsController_addPermission | Add a permission to a custom role |
-| PUT | `/authorization/organizations/{organizationId}/roles/{slug}/permissions` | AuthorizationOrganizationRolePermissionsController_setPermissions | Set permissions for a custom role |
-| DELETE | `/authorization/organizations/{organizationId}/roles/{slug}/permissions/{permissionSlug}` | AuthorizationOrganizationRolePermissionsController_removePermission | Remove a permission from a custom role |
-| DELETE | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}` | AuthorizationResourcesByExternalIdController_deleteByExternalId | Delete an authorization resource by external ID |
-| GET | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}` | AuthorizationResourcesByExternalIdController_getByExternalId | Get a resource by external ID |
-| PATCH | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}` | AuthorizationResourcesByExternalIdController_updateByExternalId | Update a resource by external ID |
-| GET | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}/organization_memberships` | AuthorizationResourcesByExternalIdController_listOrganizationMembershipsForResourceByExternalId | List memberships for a resource by external ID |
-| GET | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}/role_assignments` | AuthorizationRoleAssignmentsController_listRoleAssignmentsForResourceByExternalId | List role assignments for a resource by external ID |
-| GET | `/authorization/permissions` | AuthorizationPermissionsController_list | List permissions |
-| POST | `/authorization/permissions` | AuthorizationPermissionsController_create | Create a permission |
-| DELETE | `/authorization/permissions/{slug}` | AuthorizationPermissionsController_delete | Delete a permission |
-| GET | `/authorization/permissions/{slug}` | AuthorizationPermissionsController_find | Get a permission |
-| PATCH | `/authorization/permissions/{slug}` | AuthorizationPermissionsController_update | Update a permission |
-| GET | `/authorization/resources` | AuthorizationResourcesController_list | List resources |
-| POST | `/authorization/resources` | AuthorizationResourcesController_create | Create an authorization resource |
-| DELETE | `/authorization/resources/{resource_id}` | AuthorizationResourcesController_delete | Delete an authorization resource |
-| GET | `/authorization/resources/{resource_id}` | AuthorizationResourcesController_findById | Get a resource |
-| PATCH | `/authorization/resources/{resource_id}` | AuthorizationResourcesController_update | Update a resource |
-| GET | `/authorization/resources/{resource_id}/organization_memberships` | AuthorizationResourcesController_listOrganizationMembershipsForResource | List organization memberships for resource |
-| GET | `/authorization/resources/{resource_id}/role_assignments` | AuthorizationRoleAssignmentsController_listRoleAssignmentsForResource | List role assignments for a resource |
-| GET | `/authorization/roles` | AuthorizationRolesController_list | List environment roles |
-| POST | `/authorization/roles` | AuthorizationRolesController_create | Create an environment role |
-| GET | `/authorization/roles/{slug}` | AuthorizationRolesController_get | Get an environment role |
-| PATCH | `/authorization/roles/{slug}` | AuthorizationRolesController_update | Update an environment role |
-| POST | `/authorization/roles/{slug}/permissions` | AuthorizationRolePermissionsController_addPermission | Add a permission to an environment role |
-| PUT | `/authorization/roles/{slug}/permissions` | AuthorizationRolePermissionsController_setPermissions | Set permissions for an environment role |
-| POST | `/client/token` | ClientApiTokenController_issueClientApiToken | Generate a Client API token |
-| GET | `/connect/applications` | ApplicationsController_list | List Connect Applications |
-| POST | `/connect/applications` | ApplicationsController_create | Create a Connect Application |
-| DELETE | `/connect/applications/{id}` | ApplicationsController_delete | Delete a Connect Application |
-| GET | `/connect/applications/{id}` | ApplicationsController_find | Get a Connect Application |
-| PUT | `/connect/applications/{id}` | ApplicationsController_update | Update a Connect Application |
-| GET | `/connect/applications/{id}/client_secrets` | ApplicationCredentialsController_list | List Client Secrets for a Connect Application |
-| POST | `/connect/applications/{id}/client_secrets` | ApplicationCredentialsController_create | Create a new client secret for a Connect Application |
-| DELETE | `/connect/client_secrets/{id}` | ApplicationCredentialsController_delete | Delete a Client Secret |
-| GET | `/connections` | ConnectionsController_list | List Connections |
-| POST | `/connections` | ConnectionsController_create | Create a Connection |
-| GET | `/connections/{connectionId}/saml_idp_signing_certs` | SamlIdpSigningCertificatesController_list | List IdP signing certificates |
-| POST | `/connections/{connectionId}/saml_idp_signing_certs` | SamlIdpSigningCertificatesController_create | Create an IdP signing certificate |
-| DELETE | `/connections/{connectionId}/saml_idp_signing_certs/{certificateId}` | SamlIdpSigningCertificatesController_delete | Delete an IdP signing certificate |
-| GET | `/connections/{connectionId}/saml_sp_encryption_certs` | SamlSpEncryptionCertificatesController_list | List SP encryption certificates |
-| POST | `/connections/{connectionId}/saml_sp_encryption_certs` | SamlSpEncryptionCertificatesController_create | Create an SP encryption certificate |
-| DELETE | `/connections/{connectionId}/saml_sp_encryption_certs/{certificateId}` | SamlSpEncryptionCertificatesController_delete | Delete an SP encryption certificate |
-| GET | `/connections/{connectionId}/saml_sp_signing_cert` | SamlSpSigningCertificatesController_get | Get the SP signing certificate |
-| POST | `/connections/{connectionId}/saml_sp_signing_cert` | SamlSpSigningCertificatesController_create | Create an SP signing certificate |
-| DELETE | `/connections/{connectionId}/saml_sp_signing_cert/{certificateId}` | SamlSpSigningCertificatesController_delete | Delete the SP signing certificate |
-| DELETE | `/connections/{id}` | ConnectionsController_delete | Delete a Connection |
-| GET | `/connections/{id}` | ConnectionsController_find | Get a Connection |
-| PATCH | `/connections/{id}` | ConnectionsController_patch | Update a Connection |
-| GET | `/data-integrations` | DataIntegrationsManagementController_listDataIntegrations | List data integrations |
-| POST | `/data-integrations` | DataIntegrationsManagementController_createDataIntegration | Create a data integration |
-| POST | `/data-integrations/finish` | DataIntegrationsController_finishConnection | Finish connection |
-| DELETE | `/data-integrations/{slug}` | DataIntegrationsManagementController_deleteDataIntegration | Delete a data integration |
-| GET | `/data-integrations/{slug}` | DataIntegrationsManagementController_getDataIntegration | Get a data integration |
-| PUT | `/data-integrations/{slug}` | DataIntegrationsManagementController_updateDataIntegration | Update a data integration |
-| POST | `/data-integrations/{slug}/api-key` | DataIntegrationsController_createApiKeyConnection | Create another API key connected account |
-| PUT | `/data-integrations/{slug}/api-key` | DataIntegrationsController_upsertApiKey | Upsert an API key for a connected account |
-| POST | `/data-integrations/{slug}/authorize` | DataIntegrationsController_getDataIntegrationAuthorizeUrl | Get authorization URL |
-| POST | `/data-integrations/{slug}/client-credentials` | DataIntegrationsController_createClientCredentialsConnection | Create another client credentials connected account |
-| PUT | `/data-integrations/{slug}/client-credentials` | DataIntegrationsController_upsertClientCredentials | Upsert client credentials for a connected account |
-| POST | `/data-integrations/{slug}/credentials` | DataIntegrationsController_vendCredentials | Vend credentials for a connected account |
-| DELETE | `/data-integrations/{slug}/organization` | DataIntegrationsManagementController_deleteOrganizationDataIntegration | Delete an organization-owned data integration |
-| GET | `/data-integrations/{slug}/organization` | DataIntegrationsManagementController_getOrganizationDataIntegration | Get an organization-owned data integration |
-| PUT | `/data-integrations/{slug}/organization` | DataIntegrationsManagementController_updateOrganizationDataIntegration | Update an organization-owned data integration |
-| POST | `/data-integrations/{slug}/token` | DataIntegrationsController_getUserlandUserToken | Get an access token for a connected account |
-| GET | `/directories` | DirectoriesController_list | List Directories |
-| DELETE | `/directories/{id}` | DirectoriesController_deleteDirectory | Delete a Directory |
-| GET | `/directories/{id}` | DirectoriesController_find | Get a Directory |
-| POST | `/directories/{id}/sync` | DirectoriesController_syncDirectory | Sync a Directory |
-| GET | `/directory_groups` | DirectoryGroupsController_list | List Directory Groups |
-| GET | `/directory_groups/{id}` | DirectoryGroupsController_find | Get a Directory Group |
-| GET | `/directory_users` | DirectoryUsersController_list | List Directory Users |
-| GET | `/directory_users/{id}` | DirectoryUsersController_find | Get a Directory User |
-| GET | `/events` | EventsController_list | List events |
-| GET | `/feature-flags` | FeatureFlagsController_list | List feature flags |
-| GET | `/feature-flags/{slug}` | FeatureFlagsController_findBySlug | Get a feature flag |
-| PUT | `/feature-flags/{slug}/disable` | FeatureFlagsController_disableFlag | Disable a feature flag |
-| PUT | `/feature-flags/{slug}/enable` | FeatureFlagsController_enableFlag | Enable a feature flag |
-| DELETE | `/feature-flags/{slug}/targets/{resourceId}` | FlagTargetsController_deleteTarget | Remove a feature flag target |
-| POST | `/feature-flags/{slug}/targets/{resourceId}` | FlagTargetsController_createTarget | Add a feature flag target |
-| POST | `/organization_domains` | OrganizationDomainsController_create | Create an Organization Domain |
-| DELETE | `/organization_domains/{id}` | OrganizationDomainsController_delete | Delete an Organization Domain |
-| GET | `/organization_domains/{id}` | OrganizationDomainsController_get | Get an Organization Domain |
-| POST | `/organization_domains/{id}/verify` | OrganizationDomainsController_verify | Verify an Organization Domain |
-| GET | `/organizations` | OrganizationsController_list | List Organizations |
-| POST | `/organizations` | OrganizationsController_create | Create an Organization |
-| GET | `/organizations/external_id/{external_id}` | OrganizationsController_getByExternalId | Get an Organization by External ID |
-| DELETE | `/organizations/{id}` | OrganizationsController_deleteOrganization | Delete an Organization |
-| GET | `/organizations/{id}` | OrganizationsController_find | Get an Organization |
-| PUT | `/organizations/{id}` | OrganizationsController_updateOrganization | Update an Organization |
-| GET | `/organizations/{id}/audit_log_configuration` | OrganizationsController_getAuditLogConfiguration | Get Audit Log Configuration |
-| GET | `/organizations/{id}/audit_logs_retention` | AuditLogsRetentionController_auditLogsRetention | Get Retention |
-| PUT | `/organizations/{id}/audit_logs_retention` | AuditLogsRetentionController_updateAuditLogsRetention | Set Retention |
-| GET | `/organizations/{organizationId}/api_keys` | OrganizationApiKeysController_list | List API keys for an organization |
-| POST | `/organizations/{organizationId}/api_keys` | OrganizationApiKeysController_create | Create an API key for an organization |
-| GET | `/organizations/{organizationId}/data_integration_configurations` | ProviderController_listForOrganization | List providers for an organization |
-| PUT | `/organizations/{organizationId}/data_integration_configurations/{slug}` | ProviderController_configure | Configure a provider for an organization |
-| GET | `/organizations/{organizationId}/feature-flags` | OrganizationFeatureFlagsController_list | List enabled feature flags for an organization |
-| GET | `/organizations/{organizationId}/groups` | GroupsController_list | List groups |
-| POST | `/organizations/{organizationId}/groups` | GroupsController_create | Create a group |
-| DELETE | `/organizations/{organizationId}/groups/{groupId}` | GroupsController_delete | Delete a group |
-| GET | `/organizations/{organizationId}/groups/{groupId}` | GroupsController_get | Get a group |
-| PATCH | `/organizations/{organizationId}/groups/{groupId}` | GroupsController_update | Update a group |
-| GET | `/organizations/{organizationId}/groups/{groupId}/organization-memberships` | GroupMembershipsController_listMembers | List Group members |
-| POST | `/organizations/{organizationId}/groups/{groupId}/organization-memberships` | GroupMembershipsController_addMember | Add a member to a Group |
-| DELETE | `/organizations/{organizationId}/groups/{groupId}/organization-memberships/{omId}` | GroupMembershipsController_removeMember | Remove a member from a Group |
-| GET | `/organizations/{organization_id}/authorized_applications` | OrganizationAuthorizedApplicationsController_list | List authorized applications |
-| DELETE | `/organizations/{organization_id}/connected_accounts/{slug}` | DataIntegrationsOrganizationController_deleteOrganizationDataInstallation | Delete an organization connected account |
-| GET | `/organizations/{organization_id}/connected_accounts/{slug}` | DataIntegrationsOrganizationController_getOrganizationDataInstallation | Get an organization connected account |
-| POST | `/organizations/{organization_id}/connected_accounts/{slug}` | DataIntegrationsOrganizationController_createOrganizationDataInstallation | Import an organization connected account |
-| PUT | `/organizations/{organization_id}/connected_accounts/{slug}` | DataIntegrationsOrganizationController_updateOrganizationDataInstallation | Update an organization connected account |
-| GET | `/organizations/{organization_id}/data_providers` | DataIntegrationsOrganizationController_getOrganizationDataIntegrations | List providers for an organization |
-| GET | `/organizations/{organization_id}/it_contacts` | ItContactsController_list | List IT contacts |
-| POST | `/organizations/{organization_id}/it_contacts` | ItContactsController_create | Create an IT contact |
-| DELETE | `/organizations/{organization_id}/it_contacts/{contact_id}` | ItContactsController_delete | Delete an IT contact |
-| POST | `/organizations/{organization_id}/it_contacts/{contact_id}/invite` | ItContactsController_invite | Invite an IT contact |
-| POST | `/organizations/{organization_id}/it_contacts/{contact_id}/revoke` | ItContactsController_revoke | Revoke an IT contact's invitation |
-| POST | `/platform/teams` | TeamsController_createTeam | Create a team |
-| GET | `/platform/teams/{team_id}` | TeamsController_getTeam | Get a team |
-| POST | `/portal/generate_link` | PortalSessionsController_create | Generate a Portal Link |
-| POST | `/portal/revoke_link` | PortalSessionsController_revokeLink | Revoke a Portal Link |
-| POST | `/radar/attempts` | RadarStandaloneController_assess | Create an attempt |
-| PUT | `/radar/attempts/{id}` | RadarStandaloneController_updateRadarAttempt | Update a Radar attempt |
-| DELETE | `/radar/lists/{type}/{action}` | RadarStandaloneController_deleteRadarListEntry | Remove an entry from a Radar list |
-| POST | `/radar/lists/{type}/{action}` | RadarStandaloneController_updateRadarList | Add an entry to a Radar list |
-| GET | `/sso/authorize` | SsoController_authorize | Initiate SSO |
-| GET | `/sso/jwks/{clientId}` | SsoController_jsonWebKeySet | Get JWKS |
-| GET | `/sso/logout` | SsoController_logout | Logout Redirect |
-| POST | `/sso/logout/authorize` | SsoController_logoutAuthorize | Logout Authorize |
-| GET | `/sso/profile` | SsoController_getProfile | Get a User Profile |
-| POST | `/sso/token` | SsoController_token | Get a Profile and Token |
-| POST | `/user_management/authenticate` | UserlandSessionsController_authenticate[0] | Authenticate |
-| GET | `/user_management/authkit_oauth_resources` | AuthkitOauthResourcesController_list | List MCP resource indicators |
-| POST | `/user_management/authkit_oauth_resources` | AuthkitOauthResourcesController_create | Create an MCP resource indicator |
-| DELETE | `/user_management/authkit_oauth_resources/{id}` | AuthkitOauthResourcesController_delete | Delete an MCP resource indicator |
-| GET | `/user_management/authorize` | UserlandSsoController_authorize | Get an authorization URL |
-| POST | `/user_management/authorize/device` | UserlandSsoController_deviceAuthorization | Get device authorization URL |
-| GET | `/user_management/cors_origins` | CorsOriginsController_list | List CORS origins |
-| POST | `/user_management/cors_origins` | CorsOriginsController_createCorsOrigin | Create a CORS origin |
-| GET | `/user_management/email_verification/{id}` | UserlandUsersController_getEmailVerification | Get an email verification code |
-| GET | `/user_management/invitations` | UserlandUserInvitesController_list | List invitations |
-| POST | `/user_management/invitations` | UserlandUserInvitesController_create | Send an invitation |
-| GET | `/user_management/invitations/by_token/{token}` | UserlandUserInvitesController_getByToken | Find an invitation by token |
-| GET | `/user_management/invitations/{id}` | UserlandUserInvitesController_get | Get an invitation |
-| POST | `/user_management/invitations/{id}/accept` | UserlandUserInvitesController_accept | Accept an invitation |
-| POST | `/user_management/invitations/{id}/resend` | UserlandUserInvitesController_resend | Resend an invitation |
-| POST | `/user_management/invitations/{id}/revoke` | UserlandUserInvitesController_revoke | Revoke an invitation |
-| GET | `/user_management/jwt_template` | JwtTemplatesController_getJwtTemplate | Get JWT template |
-| PUT | `/user_management/jwt_template` | JwtTemplatesController_updateJwtTemplate | Update JWT template |
-| POST | `/user_management/magic_auth` | UserlandMagicAuthController_sendMagicAuthCodeAndReturn | Create a Magic Auth code |
-| GET | `/user_management/magic_auth/{id}` | UserlandMagicAuthController_get | Get Magic Auth code details |
-| GET | `/user_management/organization_memberships` | UserlandUserOrganizationMembershipsController_list | List organization memberships |
-| POST | `/user_management/organization_memberships` | UserlandUserOrganizationMembershipsController_create | Create an organization membership |
-| DELETE | `/user_management/organization_memberships/{id}` | UserlandUserOrganizationMembershipsController_delete | Delete an organization membership |
-| GET | `/user_management/organization_memberships/{id}` | UserlandUserOrganizationMembershipsController_get | Get an organization membership |
-| PUT | `/user_management/organization_memberships/{id}` | UserlandUserOrganizationMembershipsController_update | Update an organization membership |
-| PUT | `/user_management/organization_memberships/{id}/deactivate` | UserlandUserOrganizationMembershipsController_deactivate | Deactivate an organization membership |
-| PUT | `/user_management/organization_memberships/{id}/reactivate` | UserlandUserOrganizationMembershipsController_reactivate | Reactivate an organization membership |
-| GET | `/user_management/organization_memberships/{omId}/groups` | OrganizationMembershipGroupsController_listGroups | List groups |
-| POST | `/user_management/password_reset` | UserlandUsersController_createPasswordResetToken | Create a password reset token |
-| POST | `/user_management/password_reset/confirm` | UserlandUsersController_resetPassword[0] | Reset the password |
-| GET | `/user_management/password_reset/{id}` | UserlandUsersController_getPasswordReset | Get a password reset token |
-| POST | `/user_management/radar_challenges` | PublicRadarChallengesController_sendRadarSmsChallenge | Send a Radar SMS challenge |
-| GET | `/user_management/radar_challenges/{id}` | PublicRadarChallengesController_get | Get Radar Challenge details |
-| GET | `/user_management/redirect_uris` | RedirectUrisController_list | List redirect URIs |
-| POST | `/user_management/redirect_uris` | RedirectUrisController_create | Create a redirect URI |
-| DELETE | `/user_management/redirect_uris/{id}` | RedirectUrisController_delete | Delete a redirect URI |
-| GET | `/user_management/sessions/logout` | UserlandSessionsController_logout | Logout |
-| POST | `/user_management/sessions/revoke` | UserlandSessionsController_revokeSession | Revoke Session |
-| GET | `/user_management/users` | UserlandUsersController_list[0] | List users |
-| POST | `/user_management/users` | UserlandUsersController_create[0] | Create a user |
-| GET | `/user_management/users/external_id/{external_id}` | UserlandUsersController_getByExternalId | Get a user by external ID |
-| DELETE | `/user_management/users/{id}` | UserlandUsersController_delete[0] | Delete a user |
-| GET | `/user_management/users/{id}` | UserlandUsersController_get[0] | Get a user |
-| PUT | `/user_management/users/{id}` | UserlandUsersController_update[0] | Update a user |
-| POST | `/user_management/users/{id}/email_change/confirm` | UserlandUsersController_confirmEmailChange | Confirm email change |
-| POST | `/user_management/users/{id}/email_change/send` | UserlandUsersController_sendEmailChange | Send email change code |
-| POST | `/user_management/users/{id}/email_verification/confirm` | UserlandUsersController_emailVerification[0] | Verify email |
-| POST | `/user_management/users/{id}/email_verification/send` | UserlandUsersController_sendVerificationEmail[0] | Send verification email |
-| GET | `/user_management/users/{id}/identities` | UserlandUserIdentitiesController_get | Get user identities |
-| GET | `/user_management/users/{id}/sessions` | UserlandUserSessionsController_list | List sessions |
-| GET | `/user_management/users/{userId}/api_keys` | UserApiKeysController_list | List API keys for a user |
-| POST | `/user_management/users/{userId}/api_keys` | UserApiKeysController_create | Create an API key for a user |
-| GET | `/user_management/users/{userId}/feature-flags` | UserlandUserFeatureFlagsController_list | List enabled feature flags for a user |
-| GET | `/user_management/users/{user_id}/authorized_applications` | AuthorizedApplicationsController_list | List authorized applications |
-| DELETE | `/user_management/users/{user_id}/authorized_applications/{application_id}` | AuthorizedApplicationsController_delete | Delete an authorized application |
-| DELETE | `/user_management/users/{user_id}/connected_accounts/{slug}` | DataIntegrationsUserManagementController_deleteUserDataInstallation | Delete a connected account |
-| GET | `/user_management/users/{user_id}/connected_accounts/{slug}` | DataIntegrationsUserManagementController_getUserDataInstallation | Get a connected account |
-| POST | `/user_management/users/{user_id}/connected_accounts/{slug}` | DataIntegrationsUserManagementController_createUserDataInstallation | Import a connected account |
-| PUT | `/user_management/users/{user_id}/connected_accounts/{slug}` | DataIntegrationsUserManagementController_updateUserDataInstallation | Update a connected account |
-| GET | `/user_management/users/{user_id}/data_providers` | DataIntegrationsUserManagementController_getUserDataIntegrations | List providers for a user |
-| GET | `/user_management/users/{userlandUserId}/auth_factors` | UserlandUserAuthenticationFactorsController_list[0] | List authentication factors |
-| POST | `/user_management/users/{userlandUserId}/auth_factors` | UserlandUserAuthenticationFactorsController_create[0] | Enroll an authentication factor |
-| DELETE | `/user_management/waitlist_entries/{id}` | WaitlistEntriesController_delete | Delete a waitlist entry |
-| POST | `/user_management/waitlist_entries/{id}/approve` | WaitlistEntriesController_approve | Approve a waitlist entry |
-| POST | `/user_management/waitlist_entries/{id}/deny` | WaitlistEntriesController_deny | Deny a waitlist entry |
-| GET | `/user_management/waitlists` | WaitlistsController_list | List waitlists |
-| GET | `/user_management/waitlists/{id}` | WaitlistsController_find | Get a waitlist |
-| GET | `/user_management/waitlists/{id}/entries` | WaitlistsController_listEntries | List waitlist entries |
-| POST | `/user_management/waitlists/{id}/entries` | WaitlistsController_createEntry | Create a waitlist entry |
-| POST | `/vault/v1/keys/data-key` | JumpWireWeb.KeyController.create_data_key | Create a data key |
-| POST | `/vault/v1/keys/decrypt` | JumpWireWeb.KeyController.decrypt | Decrypt a data key |
-| POST | `/vault/v1/keys/rekey` | JumpWireWeb.KeyController.rekey | Re-encrypt a data key |
-| GET | `/vault/v1/kv` | JumpWireWeb.DataVaultController.index | List objects |
-| POST | `/vault/v1/kv` | JumpWireWeb.DataVaultController.create | Create an object |
-| GET | `/vault/v1/kv/name/{name}` | JumpWireWeb.DataVaultController.show_by_name | Read an object by name |
-| DELETE | `/vault/v1/kv/{id}` | JumpWireWeb.DataVaultController.delete | Delete an object |
-| GET | `/vault/v1/kv/{id}` | JumpWireWeb.DataVaultController.show_by_id | Read an object by ID |
-| PUT | `/vault/v1/kv/{id}` | JumpWireWeb.DataVaultController.update | Update an object |
-| GET | `/vault/v1/kv/{id}/metadata` | JumpWireWeb.DataVaultController.describe | Describe an object |
-| GET | `/vault/v1/kv/{id}/versions` | JumpWireWeb.DataVaultController.versions | List object versions |
-| GET | `/webhook_endpoints` | WebhookEndpointsController_list | List Webhook Endpoints |
-| POST | `/webhook_endpoints` | WebhookEndpointsController_create | Create a Webhook Endpoint |
-| DELETE | `/webhook_endpoints/{id}` | WebhookEndpointsController_delete | Delete a Webhook Endpoint |
-| PATCH | `/webhook_endpoints/{id}` | WebhookEndpointsController_update | Update a Webhook Endpoint |
-| POST | `/widgets/token` | WidgetsPublicController_issueWidgetSessionToken | Generate a widget token |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/agents/blueprints` | AgentBlueprintsController_list | `before`, `after`, `limit`, `order` | object | yes | List agent blueprints |
+| POST | `/agents/blueprints` | AgentBlueprintsController_create | body*: object | AgentBlueprint |  | Create an agent blueprint |
+| GET | `/agents/blueprints/{agent_blueprint_id}` | AgentBlueprintsController_get | `agent_blueprint_id`* | AgentBlueprint | yes | Get an agent blueprint |
+| DELETE | `/agents/blueprints/{agent_blueprint_id}` | AgentBlueprintsController_delete | `agent_blueprint_id`* | — |  | Delete an agent blueprint |
+| PATCH | `/agents/blueprints/{agent_blueprint_id}` | AgentBlueprintsController_update | `agent_blueprint_id`*, body*: object | AgentBlueprint |  | Update an agent blueprint |
+| POST | `/agents/blueprints/{agent_blueprint_id}/tokens` | AgentBlueprintsTokenController_mintToken | `agent_blueprint_id`*, body*: object | AgentToken |  | Mint an agent token |
+| POST | `/agents/blueprints/{agent_blueprint_id}/tokens/validate` | AgentBlueprintsTokenController_validateToken | `agent_blueprint_id`*, body*: object | AgentTokenValidation |  | Validate an agent token |
+| PATCH | `/agents/claims/attempts` | AgentAdminController_linkClaimAttemptToExternalUser | body*: object | ClaimViewResponse |  | Link a claim attempt to an external user |
+| POST | `/agents/credentials/validate` | AgentAdminController_validateCredential | body*: object | AgentCredentialValidation |  | Validate an agent credential |
+| GET | `/agents/instances` | AgentInstancesController_list | `before`, `after`, `limit`, `order`, `organization_id`, `agent_blueprint_id` | object | yes | List agent instances |
+| GET | `/agents/instances/{agent_instance_id}` | AgentInstancesController_get | `agent_instance_id`* | AgentInstance | yes | Get an agent instance |
+| DELETE | `/agents/instances/{agent_instance_id}` | AgentInstancesController_delete | `agent_instance_id`* | — |  | Delete an agent instance |
+| GET | `/agents/registrations/{id}` | AgentAdminController_getRegistration | `id`* | AgentRegistration | yes | Get an agent registration |
+| POST | `/agents/registrations/{id}/revoke` | AgentAdminController_revokeRegistration | `id`* | AgentRegistration |  | Revoke an agent registration |
+| GET | `/agents/sessions` | AgentInstanceSessionsController_list | `before`, `after`, `limit`, `order`, `organization_id`, `agent_blueprint_id`, `agent_instance_id` | object | yes | List agent instance sessions |
+| GET | `/agents/sessions/{agent_instance_session_id}` | AgentInstanceSessionsController_get | `agent_instance_session_id`* | AgentInstanceSession | yes | Get an agent instance session |
+| POST | `/agents/sessions/{agent_instance_session_id}/revoke` | AgentInstanceSessionsController_revoke | `agent_instance_session_id`* | AgentInstanceSession |  | Revoke an agent instance session |
+| POST | `/api_keys/validations` | ApiKeysController_validateApiKey | body*: ValidateApiKeyDto | ApiKeyValidationResponse |  | Validate API key |
+| DELETE | `/api_keys/{id}` | ApiKeysController_delete | `id`* | — |  | Delete an API key |
+| POST | `/api_keys/{id}/expire` | ApiKeysController_expire | `id`*, body: ExpireApiKeyDto | ApiKey |  | Expire an API key |
+| GET | `/audit_logs/actions` | AuditLogValidatorsController_list | `before`, `after`, `limit`, `order` | object | yes | List Actions |
+| GET | `/audit_logs/actions/{actionName}/schemas` | AuditLogValidatorVersionsController_schemas | `actionName`*, `before`, `after`, `limit`, `order` | object | yes | List Schemas |
+| POST | `/audit_logs/actions/{actionName}/schemas` | AuditLogValidatorVersionsController_create | `actionName`*, body*: AuditLogSchemaDto | AuditLogSchemaJson |  | Create Schema |
+| POST | `/audit_logs/events` | AuditLogEventsController_create | `idempotency-key`, body*: AuditLogEventIngestionDto | AuditLogEventCreateResponse |  | Create Event |
+| POST | `/audit_logs/exports` | AuditLogExportsController_exports | body*: AuditLogExportCreationDto | AuditLogExportJson |  | Create Export |
+| GET | `/audit_logs/exports/{auditLogExportId}` | AuditLogExportsController_export | `auditLogExportId`* | AuditLogExportJson | yes | Get Export |
+| POST | `/auth/challenges/{id}/verify` | AuthenticationChallengesController_verify | `id`*, body*: object | AuthenticationChallengeVerifyResponse |  | Verify Challenge |
+| POST | `/auth/factors/enroll` | AuthenticationFactorsController_create | body*: object | AuthenticationFactorEnrolled |  | Enroll Factor |
+| GET | `/auth/factors/{id}` | AuthenticationFactorsController_get | `id`* | AuthenticationFactor | yes | Get Factor |
+| DELETE | `/auth/factors/{id}` | AuthenticationFactorsController_delete | `id`* | — |  | Delete Factor |
+| POST | `/auth/factors/{id}/challenge` | AuthenticationFactorsController_challenge | `id`*, body*: ChallengeAuthenticationFactorDto | AuthenticationChallenge |  | Challenge Factor |
+| POST | `/authkit/oauth2/complete` | ExternalAuthController_completeLogin | body*: UserManagementLoginRequest | ExternalAuthCompleteResponse |  | Complete external authentication |
+| GET | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_list | `group_id`*, `before`, `after`, `limit`, `order` | GroupRoleAssignmentList | yes | List role assignments for a group |
+| PUT | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_replaceGroupRoleAssignments | `group_id`*, body*: ReplaceGroupRoleAssignmentsDto | GroupRoleAssignmentList |  | Replace all role assignments for a group |
+| POST | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_create | `group_id`*, body*: CreateGroupRoleAssignmentDto | GroupRoleAssignment |  | Assign a role to a group |
+| DELETE | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_removeGroupRoleAssignments | `group_id`*, body*: DeleteGroupRoleAssignmentsByCriteriaDto | — |  | Remove group role assignments by criteria |
+| PATCH | `/authorization/groups/{group_id}/role_assignments` | AuthorizationGroupRoleAssignmentsController_patchGroupRoleAssignments | `group_id`*, body*: PatchGroupRoleAssignmentsDto | — |  | Update role assignments for a group |
+| GET | `/authorization/groups/{group_id}/role_assignments/{role_assignment_id}` | AuthorizationGroupRoleAssignmentsController_get | `group_id`*, `role_assignment_id`* | GroupRoleAssignment | yes | Get a group role assignment |
+| DELETE | `/authorization/groups/{group_id}/role_assignments/{role_assignment_id}` | AuthorizationGroupRoleAssignmentsController_removeGroupRoleAssignment | `group_id`*, `role_assignment_id`* | — |  | Remove a group role assignment |
+| POST | `/authorization/organization_memberships/{organization_membership_id}/check` | AuthorizationController_check | `organization_membership_id`*, body*: CheckAuthorizationDto | AuthorizationCheck |  | Check authorization |
+| GET | `/authorization/organization_memberships/{organization_membership_id}/resources` | AuthorizationController_listResourcesForMembership | `organization_membership_id`*, `before`, `after`, `limit`, `order`, `permission_slug`*, `parent_resource_id`, `parent_resource_type_slug`, `parent_resource_external_id` | AuthorizationResourceList | yes | List resources for organization membership |
+| GET | `/authorization/organization_memberships/{organization_membership_id}/resources/{resource_id}/permissions` | AuthorizationController_listEffectivePermissions | `organization_membership_id`*, `resource_id`*, `before`, `after`, `limit`, `order` | AuthorizationPermissionList | yes | List effective permissions for an organization membership on a resource |
+| GET | `/authorization/organization_memberships/{organization_membership_id}/resources/{resource_type_slug}/{external_id}/permissions` | AuthorizationController_listEffectivePermissionsByExternalId | `organization_membership_id`*, `resource_type_slug`*, `external_id`*, `before`, `after`, `limit`, `order` | AuthorizationPermissionList | yes | List effective permissions for an organization membership on a resource by external ID |
+| GET | `/authorization/organization_memberships/{organization_membership_id}/role_assignments` | AuthorizationRoleAssignmentsController_listRoleAssignments | `organization_membership_id`*, `before`, `after`, `limit`, `order`, `resource_id`, `resource_external_id`, `resource_type_slug` | UserRoleAssignmentList | yes | List role assignments |
+| POST | `/authorization/organization_memberships/{organization_membership_id}/role_assignments` | AuthorizationRoleAssignmentsController_assignRole | `organization_membership_id`*, body*: AssignRoleDto | UserRoleAssignment |  | Assign a role |
+| DELETE | `/authorization/organization_memberships/{organization_membership_id}/role_assignments` | AuthorizationRoleAssignmentsController_removeRoleByCriteria | `organization_membership_id`*, body*: RemoveRoleDto | — |  | Remove a role assignment |
+| DELETE | `/authorization/organization_memberships/{organization_membership_id}/role_assignments/{role_assignment_id}` | AuthorizationRoleAssignmentsController_removeRoleById | `organization_membership_id`*, `role_assignment_id`* | — |  | Remove a role assignment by ID |
+| GET | `/authorization/organizations/{organizationId}/roles` | AuthorizationOrganizationRolesController_list | `organizationId`* | RoleList | yes | List custom roles |
+| POST | `/authorization/organizations/{organizationId}/roles` | AuthorizationOrganizationRolesController_create | `organizationId`*, body*: CreateOrganizationRoleDto | object |  | Create a custom role |
+| GET | `/authorization/organizations/{organizationId}/roles/{slug}` | AuthorizationOrganizationRolesController_get | `organizationId`*, `slug`* | object | yes | Get a custom role |
+| DELETE | `/authorization/organizations/{organizationId}/roles/{slug}` | AuthorizationOrganizationRolesController_delete | `organizationId`*, `slug`* | — |  | Delete a custom role |
+| PATCH | `/authorization/organizations/{organizationId}/roles/{slug}` | AuthorizationOrganizationRolesController_update | `organizationId`*, `slug`*, body*: UpdateOrganizationRoleDto | object |  | Update a custom role |
+| PUT | `/authorization/organizations/{organizationId}/roles/{slug}/permissions` | AuthorizationOrganizationRolePermissionsController_setPermissions | `organizationId`*, `slug`*, body*: SetRolePermissionsDto | object |  | Set permissions for a custom role |
+| POST | `/authorization/organizations/{organizationId}/roles/{slug}/permissions` | AuthorizationOrganizationRolePermissionsController_addPermission | `organizationId`*, `slug`*, body*: AddRolePermissionDto | object |  | Add a permission to a custom role |
+| DELETE | `/authorization/organizations/{organizationId}/roles/{slug}/permissions/{permissionSlug}` | AuthorizationOrganizationRolePermissionsController_removePermission | `organizationId`*, `slug`*, `permissionSlug`* | Role |  | Remove a permission from a custom role |
+| GET | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}` | AuthorizationResourcesByExternalIdController_getByExternalId | `organization_id`*, `resource_type_slug`*, `external_id`* | AuthorizationResource | yes | Get a resource by external ID |
+| DELETE | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}` | AuthorizationResourcesByExternalIdController_deleteByExternalId | `organization_id`*, `resource_type_slug`*, `external_id`*, `cascade_delete` | — |  | Delete an authorization resource by external ID |
+| PATCH | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}` | AuthorizationResourcesByExternalIdController_updateByExternalId | `organization_id`*, `resource_type_slug`*, `external_id`*, body*: UpdateAuthorizationResourceDto | object |  | Update a resource by external ID |
+| GET | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}/organization_memberships` | AuthorizationResourcesByExternalIdController_listOrganizationMembershipsForResourceByExternalId | `organization_id`*, `resource_type_slug`*, `external_id`*, `before`, `after`, `limit`, `order`, `permission_slug`*, `assignment` | UserlandUserOrganizationMembershipBaseWithUserList | yes | List memberships for a resource by external ID |
+| GET | `/authorization/organizations/{organization_id}/resources/{resource_type_slug}/{external_id}/role_assignments` | AuthorizationRoleAssignmentsController_listRoleAssignmentsForResourceByExternalId | `organization_id`*, `resource_type_slug`*, `external_id`*, `before`, `after`, `limit`, `order`, `role_slug` | UserRoleAssignmentList | yes | List role assignments for a resource by external ID |
+| GET | `/authorization/permissions` | AuthorizationPermissionsController_list | `before`, `after`, `limit`, `order` | AuthorizationPermissionList | yes | List permissions |
+| POST | `/authorization/permissions` | AuthorizationPermissionsController_create | body*: CreateAuthorizationPermissionDto | object |  | Create a permission |
+| GET | `/authorization/permissions/{slug}` | AuthorizationPermissionsController_find | `slug`* | AuthorizationPermission | yes | Get a permission |
+| DELETE | `/authorization/permissions/{slug}` | AuthorizationPermissionsController_delete | `slug`* | — |  | Delete a permission |
+| PATCH | `/authorization/permissions/{slug}` | AuthorizationPermissionsController_update | `slug`*, body*: UpdateAuthorizationPermissionDto | AuthorizationPermission |  | Update a permission |
+| GET | `/authorization/resources` | AuthorizationResourcesController_list | `before`, `after`, `limit`, `order`, `organization_id`, `resource_type_slug`, `resource_external_id`, `parent_resource_id`, `parent_resource_type_slug`, `parent_external_id` | AuthorizationResourceList | yes | List resources |
+| POST | `/authorization/resources` | AuthorizationResourcesController_create | body*: CreateAuthorizationResourceDto | object |  | Create an authorization resource |
+| GET | `/authorization/resources/{resource_id}` | AuthorizationResourcesController_findById | `resource_id`* | AuthorizationResource | yes | Get a resource |
+| DELETE | `/authorization/resources/{resource_id}` | AuthorizationResourcesController_delete | `resource_id`*, `cascade_delete` | — |  | Delete an authorization resource |
+| PATCH | `/authorization/resources/{resource_id}` | AuthorizationResourcesController_update | `resource_id`*, body*: UpdateAuthorizationResourceDto | object |  | Update a resource |
+| GET | `/authorization/resources/{resource_id}/organization_memberships` | AuthorizationResourcesController_listOrganizationMembershipsForResource | `resource_id`*, `before`, `after`, `limit`, `order`, `permission_slug`*, `assignment` | UserlandUserOrganizationMembershipBaseWithUserList | yes | List organization memberships for resource |
+| GET | `/authorization/resources/{resource_id}/role_assignments` | AuthorizationRoleAssignmentsController_listRoleAssignmentsForResource | `resource_id`*, `before`, `after`, `limit`, `order`, `role_slug` | UserRoleAssignmentList | yes | List role assignments for a resource |
+| GET | `/authorization/roles` | AuthorizationRolesController_list | — | RoleList | yes | List environment roles |
+| POST | `/authorization/roles` | AuthorizationRolesController_create | body*: CreateRoleDto | object |  | Create an environment role |
+| GET | `/authorization/roles/{slug}` | AuthorizationRolesController_get | `slug`* | Role | yes | Get an environment role |
+| PATCH | `/authorization/roles/{slug}` | AuthorizationRolesController_update | `slug`*, body*: UpdateRoleDto | object |  | Update an environment role |
+| PUT | `/authorization/roles/{slug}/permissions` | AuthorizationRolePermissionsController_setPermissions | `slug`*, body*: SetRolePermissionsDto | object |  | Set permissions for an environment role |
+| POST | `/authorization/roles/{slug}/permissions` | AuthorizationRolePermissionsController_addPermission | `slug`*, body*: AddRolePermissionDto | object |  | Add a permission to an environment role |
+| POST | `/client/token` | ClientApiTokenController_issueClientApiToken | body*: ClientApiTokenDto | ClientApiTokenResponse |  | Generate a Client API token |
+| GET | `/connect/applications` | ApplicationsController_list | `before`, `after`, `limit`, `order`, `registration_types`, `organization_id` | ConnectApplicationList | yes | List Connect Applications |
+| POST | `/connect/applications` | ApplicationsController_create | body*: CreateOAuthApplicationDto\|CreateM2MApplicationDto | ConnectApplication |  | Create a Connect Application |
+| GET | `/connect/applications/{id}` | ApplicationsController_find | `id`* | ConnectApplication | yes | Get a Connect Application |
+| PUT | `/connect/applications/{id}` | ApplicationsController_update | `id`*, body*: UpdateOAuthApplicationDto | ConnectApplication |  | Update a Connect Application |
+| DELETE | `/connect/applications/{id}` | ApplicationsController_delete | `id`* | — |  | Delete a Connect Application |
+| GET | `/connect/applications/{id}/client_secrets` | ApplicationCredentialsController_list | `id`* | object[] | yes | List Client Secrets for a Connect Application |
+| POST | `/connect/applications/{id}/client_secrets` | ApplicationCredentialsController_create | `id`*, body*: CreateApplicationSecretDto | NewConnectApplicationSecret |  | Create a new client secret for a Connect Application |
+| DELETE | `/connect/client_secrets/{id}` | ApplicationCredentialsController_delete | `id`* | — |  | Delete a Client Secret |
+| GET | `/connections` | ConnectionsController_list | `before`, `after`, `limit`, `order`, `connection_type`, `domain`, `organization_id`, `search` | ConnectionList | yes | List Connections |
+| POST | `/connections` | ConnectionsController_create | body*: CreateConnectionDto | Connection |  | Create a Connection |
+| GET | `/connections/{connectionId}/saml_idp_signing_certs` | SamlIdpSigningCertificatesController_list | `connectionId`* | SamlIdpSigningCertificateList | yes | List IdP signing certificates |
+| POST | `/connections/{connectionId}/saml_idp_signing_certs` | SamlIdpSigningCertificatesController_create | `connectionId`*, body*: CreateSamlIdpSigningCertificateDto | SamlIdpSigningCertificate |  | Create an IdP signing certificate |
+| DELETE | `/connections/{connectionId}/saml_idp_signing_certs/{certificateId}` | SamlIdpSigningCertificatesController_delete | `connectionId`*, `certificateId`* | — |  | Delete an IdP signing certificate |
+| GET | `/connections/{connectionId}/saml_sp_encryption_certs` | SamlSpEncryptionCertificatesController_list | `connectionId`* | SamlSpEncryptionCertificateList | yes | List SP encryption certificates |
+| POST | `/connections/{connectionId}/saml_sp_encryption_certs` | SamlSpEncryptionCertificatesController_create | `connectionId`* | SamlSpEncryptionCertificate |  | Create an SP encryption certificate |
+| DELETE | `/connections/{connectionId}/saml_sp_encryption_certs/{certificateId}` | SamlSpEncryptionCertificatesController_delete | `connectionId`*, `certificateId`* | — |  | Delete an SP encryption certificate |
+| GET | `/connections/{connectionId}/saml_sp_signing_cert` | SamlSpSigningCertificatesController_get | `connectionId`* | SamlSpSigningCertificate | yes | Get the SP signing certificate |
+| POST | `/connections/{connectionId}/saml_sp_signing_cert` | SamlSpSigningCertificatesController_create | `connectionId`* | SamlSpSigningCertificate |  | Create an SP signing certificate |
+| DELETE | `/connections/{connectionId}/saml_sp_signing_cert/{certificateId}` | SamlSpSigningCertificatesController_delete | `connectionId`*, `certificateId`* | — |  | Delete the SP signing certificate |
+| GET | `/connections/{id}` | ConnectionsController_find | `id`* | Connection | yes | Get a Connection |
+| DELETE | `/connections/{id}` | ConnectionsController_delete | `id`* | — |  | Delete a Connection |
+| PATCH | `/connections/{id}` | ConnectionsController_patch | `id`*, body*: PatchConnectionDto | Connection |  | Update a Connection |
+| GET | `/data-integrations` | DataIntegrationsManagementController_listDataIntegrations | `before`, `after`, `limit`, `order`, `ownership` | DataIntegrationList | yes | List data integrations |
+| POST | `/data-integrations` | DataIntegrationsManagementController_createDataIntegration | body*: CreateDataIntegrationDto | DataIntegration |  | Create a data integration |
+| POST | `/data-integrations/finish` | DataIntegrationsController_finishConnection | body*: object | DataIntegrationFinishConnectionResponse |  | Finish connection |
+| GET | `/data-integrations/{slug}` | DataIntegrationsManagementController_getDataIntegration | `slug`* | DataIntegration | yes | Get a data integration |
+| PUT | `/data-integrations/{slug}` | DataIntegrationsManagementController_updateDataIntegration | `slug`*, body*: UpdateDataIntegrationDto | DataIntegration |  | Update a data integration |
+| DELETE | `/data-integrations/{slug}` | DataIntegrationsManagementController_deleteDataIntegration | `slug`* | — |  | Delete a data integration |
+| PUT | `/data-integrations/{slug}/api-key` | DataIntegrationsController_upsertApiKey | `slug`*, body*: object | ConnectedAccount |  | Upsert an API key for a connected account |
+| POST | `/data-integrations/{slug}/api-key` | DataIntegrationsController_createApiKeyConnection | `slug`*, `idempotency-key`, body*: object | ConnectedAccount |  | Create another API key connected account |
+| POST | `/data-integrations/{slug}/authorize` | DataIntegrationsController_getDataIntegrationAuthorizeUrl | `slug`*, body*: object | DataIntegrationAuthorizeUrlResponse |  | Get authorization URL |
+| PUT | `/data-integrations/{slug}/client-credentials` | DataIntegrationsController_upsertClientCredentials | `slug`*, body*: object | ConnectedAccount |  | Upsert client credentials for a connected account |
+| POST | `/data-integrations/{slug}/client-credentials` | DataIntegrationsController_createClientCredentialsConnection | `slug`*, `idempotency-key`, body*: object | ConnectedAccount |  | Create another client credentials connected account |
+| POST | `/data-integrations/{slug}/credentials` | DataIntegrationsController_vendCredentials | `slug`*, body*: object | DataIntegrationCredentialsResponse |  | Vend credentials for a connected account |
+| GET | `/data-integrations/{slug}/organization` | DataIntegrationsManagementController_getOrganizationDataIntegration | `slug`* | DataIntegration | yes | Get an organization-owned data integration |
+| PUT | `/data-integrations/{slug}/organization` | DataIntegrationsManagementController_updateOrganizationDataIntegration | `slug`*, body*: UpdateDataIntegrationDto | DataIntegration |  | Update an organization-owned data integration |
+| DELETE | `/data-integrations/{slug}/organization` | DataIntegrationsManagementController_deleteOrganizationDataIntegration | `slug`* | — |  | Delete an organization-owned data integration |
+| POST | `/data-integrations/{slug}/token` | DataIntegrationsController_getUserlandUserToken | `slug`*, body*: object | DataIntegrationAccessTokenResponse |  | Get an access token for a connected account |
+| GET | `/directories` | DirectoriesController_list | `before`, `after`, `limit`, `order`, `organization_id`, `search`, `domain` | DirectoryList | yes | List Directories |
+| GET | `/directories/{id}` | DirectoriesController_find | `id`* | Directory | yes | Get a Directory |
+| DELETE | `/directories/{id}` | DirectoriesController_deleteDirectory | `id`* | — |  | Delete a Directory |
+| POST | `/directories/{id}/sync` | DirectoriesController_syncDirectory | `id`* | DirectorySyncResponse |  | Sync a Directory |
+| GET | `/directory_groups` | DirectoryGroupsController_list | `before`, `after`, `limit`, `order`, `directory`, `user` | DirectoryGroupList | yes | List Directory Groups |
+| GET | `/directory_groups/{id}` | DirectoryGroupsController_find | `id`* | DirectoryGroup | yes | Get a Directory Group |
+| GET | `/directory_users` | DirectoryUsersController_list | `before`, `after`, `limit`, `order`, `directory`, `group`, `idp_id`, `email` | DirectoryUserList | yes | List Directory Users |
+| GET | `/directory_users/{id}` | DirectoryUsersController_find | `id`* | DirectoryUserWithGroups | yes | Get a Directory User |
+| GET | `/events` | EventsController_list | `before`, `after`, `limit`, `order`, `events`*, `range_start`, `range_end`, `organization_id` | EventList | yes | List events |
+| GET | `/feature-flags` | FeatureFlagsController_list | `before`, `after`, `limit`, `order` | FlagList | yes | List feature flags |
+| GET | `/feature-flags/{slug}` | FeatureFlagsController_findBySlug | `slug`* | Flag | yes | Get a feature flag |
+| PUT | `/feature-flags/{slug}/disable` | FeatureFlagsController_disableFlag | `slug`* | object |  | Disable a feature flag |
+| PUT | `/feature-flags/{slug}/enable` | FeatureFlagsController_enableFlag | `slug`* | object |  | Enable a feature flag |
+| POST | `/feature-flags/{slug}/targets/{resourceId}` | FlagTargetsController_createTarget | `resourceId`*, `slug`* | — |  | Add a feature flag target |
+| DELETE | `/feature-flags/{slug}/targets/{resourceId}` | FlagTargetsController_deleteTarget | `resourceId`*, `slug`* | — |  | Remove a feature flag target |
+| POST | `/organization_domains` | OrganizationDomainsController_create | body*: CreateOrganizationDomainDto | object |  | Create an Organization Domain |
+| GET | `/organization_domains/{id}` | OrganizationDomainsController_get | `id`* | OrganizationDomainStandAlone | yes | Get an Organization Domain |
+| DELETE | `/organization_domains/{id}` | OrganizationDomainsController_delete | `id`* | — |  | Delete an Organization Domain |
+| POST | `/organization_domains/{id}/verify` | OrganizationDomainsController_verify | `id`* | OrganizationDomainStandAlone |  | Verify an Organization Domain |
+| GET | `/organizations` | OrganizationsController_list | `before`, `after`, `limit`, `order`, `domains`, `search` | OrganizationList | yes | List Organizations |
+| POST | `/organizations` | OrganizationsController_create | body*: OrganizationDto | Organization |  | Create an Organization |
+| GET | `/organizations/external_id/{external_id}` | OrganizationsController_getByExternalId | `external_id`* | Organization | yes | Get an Organization by External ID |
+| GET | `/organizations/{id}` | OrganizationsController_find | `id`* | Organization | yes | Get an Organization |
+| PUT | `/organizations/{id}` | OrganizationsController_updateOrganization | `id`*, body*: UpdateOrganizationDto | Organization |  | Update an Organization |
+| DELETE | `/organizations/{id}` | OrganizationsController_deleteOrganization | `id`* | — |  | Delete an Organization |
+| GET | `/organizations/{id}/audit_log_configuration` | OrganizationsController_getAuditLogConfiguration | `id`* | AuditLogConfiguration | yes | Get Audit Log Configuration |
+| GET | `/organizations/{id}/audit_logs_retention` | AuditLogsRetentionController_auditLogsRetention | `id`* | AuditLogsRetentionJson | yes | Get Retention |
+| PUT | `/organizations/{id}/audit_logs_retention` | AuditLogsRetentionController_updateAuditLogsRetention | `id`*, body*: UpdateAuditLogsRetentionDto | AuditLogsRetentionJson |  | Set Retention |
+| GET | `/organizations/{organizationId}/api_keys` | OrganizationApiKeysController_list | `organizationId`*, `before`, `after`, `limit`, `order` | OrganizationApiKeyList | yes | List API keys for an organization |
+| POST | `/organizations/{organizationId}/api_keys` | OrganizationApiKeysController_create | `organizationId`*, body*: CreateOrganizationApiKeyDto | OrganizationApiKeyWithValue |  | Create an API key for an organization |
+| GET | `/organizations/{organizationId}/data_integration_configurations` | ProviderController_listForOrganization | `organizationId`* | DataIntegrationConfigurationListResponse | yes | List providers for an organization |
+| PUT | `/organizations/{organizationId}/data_integration_configurations/{slug}` | ProviderController_configure | `organizationId`*, `slug`*, body*: ConfigureDataIntegrationBody | DataIntegrationConfigurationResponse |  | Configure a provider for an organization |
+| GET | `/organizations/{organizationId}/feature-flags` | OrganizationFeatureFlagsController_list | `organizationId`*, `before`, `after`, `limit`, `order` | FlagList | yes | List enabled feature flags for an organization |
+| GET | `/organizations/{organizationId}/groups` | GroupsController_list | `organizationId`*, `before`, `after`, `limit`, `order`, `search` | GroupList | yes | List groups |
+| POST | `/organizations/{organizationId}/groups` | GroupsController_create | `organizationId`*, body*: CreateGroupDto | Group |  | Create a group |
+| GET | `/organizations/{organizationId}/groups/{groupId}` | GroupsController_get | `organizationId`*, `groupId`* | Group | yes | Get a group |
+| DELETE | `/organizations/{organizationId}/groups/{groupId}` | GroupsController_delete | `organizationId`*, `groupId`* | — |  | Delete a group |
+| PATCH | `/organizations/{organizationId}/groups/{groupId}` | GroupsController_update | `organizationId`*, `groupId`*, body*: UpdateGroupDto | Group |  | Update a group |
+| GET | `/organizations/{organizationId}/groups/{groupId}/organization-memberships` | GroupMembershipsController_listMembers | `organizationId`*, `groupId`*, `before`, `after`, `limit`, `order` | UserlandUserOrganizationMembershipBaseList | yes | List Group members |
+| POST | `/organizations/{organizationId}/groups/{groupId}/organization-memberships` | GroupMembershipsController_addMember | `organizationId`*, `groupId`*, body*: CreateGroupMembershipDto | Group |  | Add a member to a Group |
+| DELETE | `/organizations/{organizationId}/groups/{groupId}/organization-memberships/{omId}` | GroupMembershipsController_removeMember | `organizationId`*, `groupId`*, `omId`* | — |  | Remove a member from a Group |
+| GET | `/organizations/{organization_id}/authorized_applications` | OrganizationAuthorizedApplicationsController_list | `organization_id`*, `before`, `after`, `limit`, `order` | OrganizationAuthorizedConnectApplicationList | yes | List authorized applications |
+| GET | `/organizations/{organization_id}/connected_accounts/{slug}` | DataIntegrationsOrganizationController_getOrganizationDataInstallation | `organization_id`*, `slug`*, `supports_multiple_connections`, `connected_account_id` | ConnectedAccount | yes | Get an organization connected account |
+| PUT | `/organizations/{organization_id}/connected_accounts/{slug}` | DataIntegrationsOrganizationController_updateOrganizationDataInstallation | `organization_id`*, `slug`*, `supports_multiple_connections`, `connected_account_id`, `connection_intent`, body*: OrganizationConnectedAccountDto | ConnectedAccount |  | Update an organization connected account |
+| POST | `/organizations/{organization_id}/connected_accounts/{slug}` | DataIntegrationsOrganizationController_createOrganizationDataInstallation | `organization_id`*, `slug`*, `idempotency-key`, body*: CreateOrganizationConnectedAccountDto | ConnectedAccount |  | Import an organization connected account |
+| DELETE | `/organizations/{organization_id}/connected_accounts/{slug}` | DataIntegrationsOrganizationController_deleteOrganizationDataInstallation | `organization_id`*, `slug`*, `supports_multiple_connections`, `connected_account_id` | — |  | Delete an organization connected account |
+| GET | `/organizations/{organization_id}/data_providers` | DataIntegrationsOrganizationController_getOrganizationDataIntegrations | `organization_id`*, `supports_multiple_connections` | DataIntegrationsListResponse | yes | List providers for an organization |
+| GET | `/organizations/{organization_id}/it_contacts` | ItContactsController_list | `organization_id`* | ItContactList | yes | List IT contacts |
+| POST | `/organizations/{organization_id}/it_contacts` | ItContactsController_create | `organization_id`*, body*: CreateItContactDto | ItContact |  | Create an IT contact |
+| DELETE | `/organizations/{organization_id}/it_contacts/{contact_id}` | ItContactsController_delete | `organization_id`*, `contact_id`* | — |  | Delete an IT contact |
+| POST | `/organizations/{organization_id}/it_contacts/{contact_id}/invite` | ItContactsController_invite | `organization_id`*, `contact_id`*, body*: InviteItContactDto | — |  | Invite an IT contact |
+| POST | `/organizations/{organization_id}/it_contacts/{contact_id}/revoke` | ItContactsController_revoke | `organization_id`*, `contact_id`* | — |  | Revoke an IT contact's invitation |
+| POST | `/platform/teams` | TeamsController_createTeam | body*: CreateTeamDto | Team |  | Create a team |
+| GET | `/platform/teams/{team_id}` | TeamsController_getTeam | `team_id`* | Team | yes | Get a team |
+| POST | `/portal/generate_link` | PortalSessionsController_create | body*: GenerateLinkDto | PortalLinkResponse |  | Generate a Portal Link |
+| POST | `/portal/revoke_link` | PortalSessionsController_revokeLink | body*: RevokeLinkDto | — |  | Revoke a Portal Link |
+| POST | `/radar/attempts` | RadarStandaloneController_assess | body*: object | RadarStandaloneResponse |  | Create an attempt |
+| PUT | `/radar/attempts/{id}` | RadarStandaloneController_updateRadarAttempt | `id`*, body*: object | — |  | Update a Radar attempt |
+| POST | `/radar/lists/{type}/{action}` | RadarStandaloneController_updateRadarList | `type`*, `action`*, body*: object | RadarListEntryAlreadyPresentResponse |  | Add an entry to a Radar list |
+| DELETE | `/radar/lists/{type}/{action}` | RadarStandaloneController_deleteRadarListEntry | `type`*, `action`*, body*: object | — |  | Remove an entry from a Radar list |
+| GET | `/sso/authorize` | SsoController_authorize | `provider_scopes`, `provider_query_params`, `client_id`*, `domain`, `provider`, `redirect_uri`*, `response_type`*, `state`, `connection`, `organization`, `domain_hint`, `login_hint`, `nonce`, `prompt` | SsoAuthorizeUrlResponse | yes | Initiate SSO |
+| GET | `/sso/jwks/{clientId}` | SsoController_jsonWebKeySet | `clientId`* | JwksResponse | yes | Get JWKS |
+| GET | `/sso/logout` | SsoController_logout | `token`* | — | yes | Logout Redirect |
+| POST | `/sso/logout/authorize` | SsoController_logoutAuthorize | body*: object | SsoLogoutAuthorizeResponse |  | Logout Authorize |
+| GET | `/sso/profile` | SsoController_getProfile | — | Profile | yes | Get a User Profile |
+| POST | `/sso/token` | SsoController_token | `client_id`*, `client_secret`*, `code`, `grant_type`*, body*: TokenQueryDto | SsoTokenResponse |  | Get a Profile and Token |
+| POST | `/user_management/authenticate` | UserlandSessionsController_authenticate[0] | body*: object | UserlandAuthenticateResponse |  | Authenticate |
+| GET | `/user_management/authkit_oauth_resources` | AuthkitOauthResourcesController_list | `before`, `after`, `limit`, `order` | object | yes | List MCP resource indicators |
+| POST | `/user_management/authkit_oauth_resources` | AuthkitOauthResourcesController_create | body*: CreateAuthkitOauthResourceDto | AuthkitOauthResource |  | Create an MCP resource indicator |
+| DELETE | `/user_management/authkit_oauth_resources/{id}` | AuthkitOauthResourcesController_delete | `id`* | — |  | Delete an MCP resource indicator |
+| GET | `/user_management/authorize` | UserlandSsoController_authorize | `code_challenge_method`, `code_challenge`, `domain_hint`, `connection_id`, `provider_query_params`, `provider_scopes`, `invitation_token`, `max_age`, `screen_hint`, `login_hint`, `provider`, `prompt`, `state`, `organization_id`, `response_type`*, `redirect_uri`*, `client_id`* | — | yes | Get an authorization URL |
+| POST | `/user_management/authorize/device` | UserlandSsoController_deviceAuthorization | body*: object | DeviceAuthorizationResponse |  | Get device authorization URL |
+| GET | `/user_management/cors_origins` | CorsOriginsController_list | `before`, `after`, `limit`, `order` | object | yes | List CORS origins |
+| POST | `/user_management/cors_origins` | CorsOriginsController_createCorsOrigin | body*: CreateCorsOriginDto | CorsOriginResponse |  | Create a CORS origin |
+| GET | `/user_management/email_verification/{id}` | UserlandUsersController_getEmailVerification | `id`* | EmailVerification | yes | Get an email verification code |
+| GET | `/user_management/invitations` | UserlandUserInvitesController_list | `before`, `after`, `limit`, `order`, `organization_id`, `email` | UserlandUserInviteList | yes | List invitations |
+| POST | `/user_management/invitations` | UserlandUserInvitesController_create | body*: CreateUserlandUserInviteOptionsDto | UserlandUserInvite |  | Send an invitation |
+| GET | `/user_management/invitations/by_token/{token}` | UserlandUserInvitesController_getByToken | `token`* | UserlandUserInvite | yes | Find an invitation by token |
+| GET | `/user_management/invitations/{id}` | UserlandUserInvitesController_get | `id`* | UserlandUserInvite | yes | Get an invitation |
+| POST | `/user_management/invitations/{id}/accept` | UserlandUserInvitesController_accept | `id`* | object |  | Accept an invitation |
+| POST | `/user_management/invitations/{id}/resend` | UserlandUserInvitesController_resend | `id`*, body*: ResendUserlandUserInviteOptionsDto | UserlandUserInvite |  | Resend an invitation |
+| POST | `/user_management/invitations/{id}/revoke` | UserlandUserInvitesController_revoke | `id`* | object |  | Revoke an invitation |
+| GET | `/user_management/jwt_template` | JwtTemplatesController_getJwtTemplate | — | JwtTemplate | yes | Get JWT template |
+| PUT | `/user_management/jwt_template` | JwtTemplatesController_updateJwtTemplate | body*: UpdateJwtTemplateDto | JwtTemplate |  | Update JWT template |
+| POST | `/user_management/magic_auth` | UserlandMagicAuthController_sendMagicAuthCodeAndReturn | body*: CreateUserlandMagicCodeAndReturnDto | MagicAuth\|object |  | Create a Magic Auth code |
+| GET | `/user_management/magic_auth/{id}` | UserlandMagicAuthController_get | `id`* | MagicAuth | yes | Get Magic Auth code details |
+| GET | `/user_management/organization_memberships` | UserlandUserOrganizationMembershipsController_list | `before`, `after`, `limit`, `order`, `organization_id`, `statuses`, `user_id` | UserlandUserOrganizationMembershipList | yes | List organization memberships |
+| POST | `/user_management/organization_memberships` | UserlandUserOrganizationMembershipsController_create | body*: CreateUserlandUserOrganizationMembershipDto | object |  | Create an organization membership |
+| GET | `/user_management/organization_memberships/{id}` | UserlandUserOrganizationMembershipsController_get | `id`* | UserlandUserOrganizationMembership | yes | Get an organization membership |
+| PUT | `/user_management/organization_memberships/{id}` | UserlandUserOrganizationMembershipsController_update | `id`*, body*: UpdateUserlandUserOrganizationMembershipDto | UserlandUserOrganizationMembership |  | Update an organization membership |
+| DELETE | `/user_management/organization_memberships/{id}` | UserlandUserOrganizationMembershipsController_delete | `id`* | — |  | Delete an organization membership |
+| PUT | `/user_management/organization_memberships/{id}/deactivate` | UserlandUserOrganizationMembershipsController_deactivate | `id`* | object |  | Deactivate an organization membership |
+| PUT | `/user_management/organization_memberships/{id}/reactivate` | UserlandUserOrganizationMembershipsController_reactivate | `id`* | UserlandUserOrganizationMembership |  | Reactivate an organization membership |
+| GET | `/user_management/organization_memberships/{omId}/groups` | OrganizationMembershipGroupsController_listGroups | `omId`*, `before`, `after`, `limit`, `order` | GroupList | yes | List groups |
+| POST | `/user_management/password_reset` | UserlandUsersController_createPasswordResetToken | body*: CreatePasswordResetTokenDto | PasswordReset |  | Create a password reset token |
+| POST | `/user_management/password_reset/confirm` | UserlandUsersController_resetPassword[0] | body*: CreatePasswordResetDto | ResetPasswordResponse |  | Reset the password |
+| GET | `/user_management/password_reset/{id}` | UserlandUsersController_getPasswordReset | `id`* | PasswordReset | yes | Get a password reset token |
+| POST | `/user_management/radar_challenges` | PublicRadarChallengesController_sendRadarSmsChallenge | body*: SendRadarSmsChallengeDto | SendRadarSmsChallengeResponse |  | Send a Radar SMS challenge |
+| GET | `/user_management/radar_challenges/{id}` | PublicRadarChallengesController_get | `id`* | RadarChallenge | yes | Get Radar Challenge details |
+| GET | `/user_management/redirect_uris` | RedirectUrisController_list | `before`, `after`, `limit`, `order` | object | yes | List redirect URIs |
+| POST | `/user_management/redirect_uris` | RedirectUrisController_create | body*: CreateRedirectUriDto | RedirectUri |  | Create a redirect URI |
+| DELETE | `/user_management/redirect_uris/{id}` | RedirectUrisController_delete | `id`* | — |  | Delete a redirect URI |
+| GET | `/user_management/sessions/logout` | UserlandSessionsController_logout | `session_id`*, `return_to` | — | yes | Logout |
+| POST | `/user_management/sessions/revoke` | UserlandSessionsController_revokeSession | body*: UserlandRevokeSessionDto | — |  | Revoke Session |
+| GET | `/user_management/users` | UserlandUsersController_list[0] | `before`, `after`, `limit`, `order`, `organization`, `organization_id`, `email` | UserlandUserList | yes | List users |
+| POST | `/user_management/users` | UserlandUsersController_create[0] | body*: CreateUserlandUserDto | UserlandUser\|object |  | Create a user |
+| GET | `/user_management/users/external_id/{external_id}` | UserlandUsersController_getByExternalId | `external_id`* | UserlandUser | yes | Get a user by external ID |
+| GET | `/user_management/users/{id}` | UserlandUsersController_get[0] | `id`* | UserlandUser | yes | Get a user |
+| PUT | `/user_management/users/{id}` | UserlandUsersController_update[0] | `id`*, body*: UpdateUserlandUserDto | UserlandUser |  | Update a user |
+| DELETE | `/user_management/users/{id}` | UserlandUsersController_delete[0] | `id`* | — |  | Delete a user |
+| POST | `/user_management/users/{id}/email_change/confirm` | UserlandUsersController_confirmEmailChange | `id`*, body*: ConfirmEmailChangeDto | object |  | Confirm email change |
+| POST | `/user_management/users/{id}/email_change/send` | UserlandUsersController_sendEmailChange | `id`*, body*: SendEmailChangeDto | EmailChange |  | Send email change code |
+| POST | `/user_management/users/{id}/email_verification/confirm` | UserlandUsersController_emailVerification[0] | `id`*, body*: VerifyEmailAddressDto | VerifyEmailResponse |  | Verify email |
+| POST | `/user_management/users/{id}/email_verification/send` | UserlandUsersController_sendVerificationEmail[0] | `id`*, body: SendVerificationEmailDto | SendVerificationEmailResponse |  | Send verification email |
+| GET | `/user_management/users/{id}/identities` | UserlandUserIdentitiesController_get | `id`* | object[] | yes | Get user identities |
+| GET | `/user_management/users/{id}/sessions` | UserlandUserSessionsController_list | `id`*, `before`, `after`, `limit`, `order` | object | yes | List sessions |
+| GET | `/user_management/users/{userId}/api_keys` | UserApiKeysController_list | `userId`*, `before`, `after`, `limit`, `order`, `organization_id` | UserApiKeyList | yes | List API keys for a user |
+| POST | `/user_management/users/{userId}/api_keys` | UserApiKeysController_create | `userId`*, body*: CreateUserApiKeyDto | UserApiKeyWithValue |  | Create an API key for a user |
+| GET | `/user_management/users/{userId}/feature-flags` | UserlandUserFeatureFlagsController_list | `userId`*, `before`, `after`, `limit`, `order` | FlagList | yes | List enabled feature flags for a user |
+| GET | `/user_management/users/{user_id}/authorized_applications` | AuthorizedApplicationsController_list | `user_id`*, `before`, `after`, `limit`, `order` | AuthorizedConnectApplicationList | yes | List authorized applications |
+| DELETE | `/user_management/users/{user_id}/authorized_applications/{application_id}` | AuthorizedApplicationsController_delete | `application_id`*, `user_id`* | — |  | Delete an authorized application |
+| GET | `/user_management/users/{user_id}/connected_accounts/{slug}` | DataIntegrationsUserManagementController_getUserDataInstallation | `user_id`*, `slug`*, `organization_id`, `supports_multiple_connections`, `connected_account_id` | ConnectedAccount | yes | Get a connected account |
+| PUT | `/user_management/users/{user_id}/connected_accounts/{slug}` | DataIntegrationsUserManagementController_updateUserDataInstallation | `user_id`*, `slug`*, `organization_id`, `supports_multiple_connections`, `connected_account_id`, `connection_intent`, body*: ConnectedAccountDto | ConnectedAccount |  | Update a connected account |
+| POST | `/user_management/users/{user_id}/connected_accounts/{slug}` | DataIntegrationsUserManagementController_createUserDataInstallation | `user_id`*, `slug`*, `organization_id`, `idempotency-key`, body*: CreateConnectedAccountDto | ConnectedAccount |  | Import a connected account |
+| DELETE | `/user_management/users/{user_id}/connected_accounts/{slug}` | DataIntegrationsUserManagementController_deleteUserDataInstallation | `user_id`*, `slug`*, `organization_id`, `supports_multiple_connections`, `connected_account_id` | — |  | Delete a connected account |
+| GET | `/user_management/users/{user_id}/data_providers` | DataIntegrationsUserManagementController_getUserDataIntegrations | `user_id`*, `organization_id`, `supports_multiple_connections` | DataIntegrationsListResponse | yes | List providers for a user |
+| GET | `/user_management/users/{userlandUserId}/auth_factors` | UserlandUserAuthenticationFactorsController_list[0] | `userlandUserId`*, `before`, `after`, `limit`, `order` | UserlandUserAuthenticationFactorList | yes | List authentication factors |
+| POST | `/user_management/users/{userlandUserId}/auth_factors` | UserlandUserAuthenticationFactorsController_create[0] | `userlandUserId`*, body*: EnrollUserlandUserAuthenticationFactorDto | UserlandUserAuthenticationFactorEnrollResponse |  | Enroll an authentication factor |
+| DELETE | `/user_management/waitlist_entries/{id}` | WaitlistEntriesController_delete | `id`* | — |  | Delete a waitlist entry |
+| POST | `/user_management/waitlist_entries/{id}/approve` | WaitlistEntriesController_approve | `id`* | object |  | Approve a waitlist entry |
+| POST | `/user_management/waitlist_entries/{id}/deny` | WaitlistEntriesController_deny | `id`* | object |  | Deny a waitlist entry |
+| GET | `/user_management/waitlists` | WaitlistsController_list | — | object | yes | List waitlists |
+| GET | `/user_management/waitlists/{id}` | WaitlistsController_find | `id`* | Waitlist | yes | Get a waitlist |
+| GET | `/user_management/waitlists/{id}/entries` | WaitlistsController_listEntries | `id`*, `before`, `after`, `limit`, `order`, `state`, `email` | object | yes | List waitlist entries |
+| POST | `/user_management/waitlists/{id}/entries` | WaitlistsController_createEntry | `id`*, body*: CreateWaitlistEntryDto | WaitlistEntry |  | Create a waitlist entry |
+| POST | `/vault/v1/keys/data-key` | JumpWireWeb.KeyController.create_data_key | body*: CreateDataKeyRequest | CreateDataKeyResponse |  | Create a data key |
+| POST | `/vault/v1/keys/decrypt` | JumpWireWeb.KeyController.decrypt | body*: DecryptRequest | DecryptResponse |  | Decrypt a data key |
+| POST | `/vault/v1/keys/rekey` | JumpWireWeb.KeyController.rekey | body*: RekeyRequest | CreateDataKeyResponse |  | Re-encrypt a data key |
+| GET | `/vault/v1/kv` | JumpWireWeb.DataVaultController.index | `limit`, `before`, `after`, `order`, `search`, `updatedAfter` | ObjectListResponse | yes | List objects |
+| POST | `/vault/v1/kv` | JumpWireWeb.DataVaultController.create | body*: CreateObjectRequest | ObjectMetadata |  | Create an object |
+| GET | `/vault/v1/kv/name/{name}` | JumpWireWeb.DataVaultController.show_by_name | `name`* | Object | yes | Read an object by name |
+| GET | `/vault/v1/kv/{id}` | JumpWireWeb.DataVaultController.show_by_id | `id`* | Object | yes | Read an object by ID |
+| PUT | `/vault/v1/kv/{id}` | JumpWireWeb.DataVaultController.update | `id`*, body*: UpdateObjectRequest | ObjectWithoutValue |  | Update an object |
+| DELETE | `/vault/v1/kv/{id}` | JumpWireWeb.DataVaultController.delete | `id`*, `version_check` | DeleteObjectResponse |  | Delete an object |
+| GET | `/vault/v1/kv/{id}/metadata` | JumpWireWeb.DataVaultController.describe | `id`* | ObjectWithoutValue | yes | Describe an object |
+| GET | `/vault/v1/kv/{id}/versions` | JumpWireWeb.DataVaultController.versions | `id`* | VersionListResponse | yes | List object versions |
+| GET | `/webhook_endpoints` | WebhookEndpointsController_list | `before`, `after`, `limit`, `order` | WebhookEndpointList | yes | List Webhook Endpoints |
+| POST | `/webhook_endpoints` | WebhookEndpointsController_create | body*: CreateWebhookEndpointDto | WebhookEndpointJson |  | Create a Webhook Endpoint |
+| DELETE | `/webhook_endpoints/{id}` | WebhookEndpointsController_delete | `id`* | — |  | Delete a Webhook Endpoint |
+| PATCH | `/webhook_endpoints/{id}` | WebhookEndpointsController_update | `id`*, body*: UpdateWebhookEndpointDto | WebhookEndpointJson |  | Update a Webhook Endpoint |
+| POST | `/widgets/token` | WidgetsPublicController_issueWidgetSessionToken | body*: WidgetSessionTokenDto | WidgetSessionTokenResponse |  | Generate a widget token |

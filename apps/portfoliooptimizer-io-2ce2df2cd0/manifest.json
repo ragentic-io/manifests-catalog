@@ -427,1248 +427,2742 @@
       },
       {
         "deprecated": false,
+        "description": "Compute the absorption ratio associated to a universe of assets.",
         "id": "operation:post:/assets/analysis/absorption-ratio",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/analysis/absorption-ratio",
         "path": "/assets/analysis/absorption-ratio",
         "pointer": "#/paths/~1assets~1analysis~1absorption-ratio/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Absorption Ratio"
+        "summary": "Absorption Ratio",
+        "tags": [
+          "Assets / Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the turbulence index associated to a universe of assets.",
         "id": "operation:post:/assets/analysis/turbulence-index",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/analysis/turbulence-index",
         "path": "/assets/analysis/turbulence-index",
         "pointer": "#/paths/~1assets~1analysis~1turbulence-index/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Turbulence Index"
+        "summary": "Turbulence Index",
+        "tags": [
+          "Assets / Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the Pearson asset correlation matrix from either: * The asset returns * The asset covariance matrix References * [Wikipedia, Correlation and Dependence…",
         "id": "operation:post:/assets/correlation/matrix",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix",
         "path": "/assets/correlation/matrix",
         "pointer": "#/paths/~1assets~1correlation~1matrix/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Correlation Matrix"
+        "summary": "Correlation Matrix",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the lower bounds and the upper bounds of an asset correlation matrix associated to a given group of assets.",
         "id": "operation:post:/assets/correlation/matrix/bounds",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/bounds",
         "path": "/assets/correlation/matrix/bounds",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1bounds/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Correlation Matrix Bounds"
+        "summary": "Correlation Matrix Bounds",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute a denoised asset correlation matrix, using one of the following methods: * The eigenvalues clipping method, described in the first reference, which is…",
         "id": "operation:post:/assets/correlation/matrix/denoised",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/denoised",
         "path": "/assets/correlation/matrix/denoised",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1denoised/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Denoised Correlation Matrix"
+        "summary": "Denoised Correlation Matrix",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the distance between an asset correlation matrix and a reference correlation matrix, using one of the following distance metrics: * Euclidean distance…",
         "id": "operation:post:/assets/correlation/matrix/distance",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/distance",
         "path": "/assets/correlation/matrix/distance",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1distance/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Correlation Matrix Distance"
+        "summary": "Correlation Matrix Distance",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the effective rank of an asset correlation matrix.",
         "id": "operation:post:/assets/correlation/matrix/effective-rank",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/effective-rank",
         "path": "/assets/correlation/matrix/effective-rank",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1effective-rank/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Correlation Matrix Effective Rank"
+        "summary": "Correlation Matrix Effective Rank",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the informativeness of an asset correlation matrix, using one of the following distance metrics: * Euclidean distance (default), which is the distance…",
         "id": "operation:post:/assets/correlation/matrix/informativeness",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/informativeness",
         "path": "/assets/correlation/matrix/informativeness",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1informativeness/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Correlation Matrix Informativeness"
+        "summary": "Correlation Matrix Informativeness",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the _closest_ - in terms of [the Frobenius norm](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm) - asset correlation matrix to an approximate…",
         "id": "operation:post:/assets/correlation/matrix/nearest",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/nearest",
         "path": "/assets/correlation/matrix/nearest",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1nearest/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Nearest Correlation Matrix"
+        "summary": "Nearest Correlation Matrix",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate an asset correlation matrix uniformly at random over the space of positive definite correlation matrices.",
         "id": "operation:post:/assets/correlation/matrix/random",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/random",
         "path": "/assets/correlation/matrix/random",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1random/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Random Correlation Matrix"
+        "summary": "Random Correlation Matrix",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute an asset correlation matrix as a convex linear combination of an asset correlation matrix and a target correlation matrix, the target correlation matri…",
         "id": "operation:post:/assets/correlation/matrix/shrinkage",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/shrinkage",
         "path": "/assets/correlation/matrix/shrinkage",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1shrinkage/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Correlation Matrix Shrinkage"
+        "summary": "Correlation Matrix Shrinkage",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the theory-implied asset correlation matrix associated with: * A hierarchical classification of a universe of assets * An asset correlation matrix Refe…",
         "id": "operation:post:/assets/correlation/matrix/theory-implied",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/theory-implied",
         "path": "/assets/correlation/matrix/theory-implied",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1theory-implied/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Theory-Implied Correlation Matrix"
+        "summary": "Theory-Implied Correlation Matrix",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Validate whether a matrix is an asset correlation matrix.",
         "id": "operation:post:/assets/correlation/matrix/validation",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/correlation/matrix/validation",
         "path": "/assets/correlation/matrix/validation",
         "pointer": "#/paths/~1assets~1correlation~1matrix~1validation/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Correlation Matrix Validation"
+        "summary": "Correlation Matrix Validation",
+        "tags": [
+          "Assets / Correlation Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the covariance matrix of assets from either: * The asset correlation matrix and their volatilities (i.e., standard deviations) * The asset correlation…",
         "id": "operation:post:/assets/covariance/matrix",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/covariance/matrix",
         "path": "/assets/covariance/matrix",
         "pointer": "#/paths/~1assets~1covariance~1matrix/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Covariance Matrix"
+        "summary": "Covariance Matrix",
+        "tags": [
+          "Assets / Covariance Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the effective rank of an asset covariance matrix.",
         "id": "operation:post:/assets/covariance/matrix/effective-rank",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/covariance/matrix/effective-rank",
         "path": "/assets/covariance/matrix/effective-rank",
         "pointer": "#/paths/~1assets~1covariance~1matrix~1effective-rank/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Covariance Matrix Effective Rank"
+        "summary": "Covariance Matrix Effective Rank",
+        "tags": [
+          "Assets / Covariance Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute an exponentially weighted covariance matrix of assets returns.",
         "id": "operation:post:/assets/covariance/matrix/exponentially-weighted",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/covariance/matrix/exponentially-weighted",
         "path": "/assets/covariance/matrix/exponentially-weighted",
         "pointer": "#/paths/~1assets~1covariance~1matrix~1exponentially-weighted/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Exponentially Weighted Covariance Matrix"
+        "summary": "Exponentially Weighted Covariance Matrix",
+        "tags": [
+          "Assets / Covariance Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Validate whether a matrix is a covariance matrix.",
         "id": "operation:post:/assets/covariance/matrix/validation",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/covariance/matrix/validation",
         "path": "/assets/covariance/matrix/validation",
         "pointer": "#/paths/~1assets~1covariance~1matrix~1validation/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Covariance Matrix Validation"
+        "summary": "Covariance Matrix Validation",
+        "tags": [
+          "Assets / Covariance Matrix"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the kurtosis of one or several asset(s), from the asset returns.",
         "id": "operation:post:/assets/kurtosis",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/kurtosis",
         "path": "/assets/kurtosis",
         "pointer": "#/paths/~1assets~1kurtosis/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Kurtosis"
+        "summary": "Kurtosis",
+        "tags": [
+          "Assets / Kurtosis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the backward-adjusted prices of one or several asset(s) for one or several date(s) from: * Unadjusted prices * Capital distributions, like stock divide…",
         "id": "operation:post:/assets/prices/adjusted",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/prices/adjusted",
         "path": "/assets/prices/adjusted",
         "pointer": "#/paths/~1assets~1prices~1adjusted/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Adjusted Prices"
+        "summary": "Adjusted Prices",
+        "tags": [
+          "Assets / Prices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the forward-adjusted prices of one or several asset(s) for one or several date(s) from: * Unadjusted prices * Capital distributions, like stock dividen…",
         "id": "operation:post:/assets/prices/adjusted/forward",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/prices/adjusted/forward",
         "path": "/assets/prices/adjusted/forward",
         "pointer": "#/paths/~1assets~1prices~1adjusted~1forward/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Forward-Adjusted Prices"
+        "summary": "Forward-Adjusted Prices",
+        "tags": [
+          "Assets / Prices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the arithmetic return(s) of one or several asset(s) for one or several time period(s).",
         "id": "operation:post:/assets/returns",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/returns",
         "path": "/assets/returns",
         "pointer": "#/paths/~1assets~1returns/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Arithmetic Returns"
+        "summary": "Arithmetic Returns",
+        "tags": [
+          "Assets / Returns"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the arithmetic average of the return(s) of one or several asset(s).",
         "id": "operation:post:/assets/returns/average",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/returns/average",
         "path": "/assets/returns/average",
         "pointer": "#/paths/~1assets~1returns~1average/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Arithmetic Average Return"
+        "summary": "Arithmetic Average Return",
+        "tags": [
+          "Assets / Returns"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Simulate the return(s) of one or several asset(s) for one or several time period(s) using a bootstrap method.",
         "id": "operation:post:/assets/returns/simulation/bootstrap",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/returns/simulation/bootstrap",
         "path": "/assets/returns/simulation/bootstrap",
         "pointer": "#/paths/~1assets~1returns~1simulation~1bootstrap/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Bootstrap"
+        "summary": "Bootstrap",
+        "tags": [
+          "Assets / Returns Simulation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the skewness of one or several asset(s), from the asset returns.",
         "id": "operation:post:/assets/skewness",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/skewness",
         "path": "/assets/skewness",
         "pointer": "#/paths/~1assets~1skewness/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Skewness"
+        "summary": "Skewness",
+        "tags": [
+          "Assets / Skewness"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the variance of one or several asset(s) from either: * The asset returns * The asset covariance matrix * The asset volatility(ies) References * [Wikipe…",
         "id": "operation:post:/assets/variance",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/variance",
         "path": "/assets/variance",
         "pointer": "#/paths/~1assets~1variance/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Variance"
+        "summary": "Variance",
+        "tags": [
+          "Assets / Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the volatility (i.e., standard deviation) of one or several asset(s) from either: * The asset returns * The asset covariance matrix * The asset varianc…",
         "id": "operation:post:/assets/volatility",
         "kind": "operation",
         "method": "post",
         "name": "post /assets/volatility",
         "path": "/assets/volatility",
         "pointer": "#/paths/~1assets~1volatility/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Volatility"
+        "summary": "Volatility",
+        "tags": [
+          "Assets / Volatility"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the residuals of a factor against a set of factors, using a returns-based linear regression analysis.",
         "id": "operation:post:/factors/residualization",
         "kind": "operation",
         "method": "post",
         "name": "post /factors/residualization",
         "path": "/factors/residualization",
         "pointer": "#/paths/~1factors~1residualization/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Residualization"
+        "summary": "Residualization",
+        "tags": [
+          "Factors"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the Jensen’s alpha of one or several portfolio(s) in the Capital Asset Pricing Model (CAPM).",
         "id": "operation:post:/portfolio/analysis/alpha",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/alpha",
         "path": "/portfolio/analysis/alpha",
         "pointer": "#/paths/~1portfolio~1analysis~1alpha/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Alpha"
+        "summary": "Alpha",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the beta of one or several portfolio(s) in the Capital Asset Pricing Model (CAPM).",
         "id": "operation:post:/portfolio/analysis/beta",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/beta",
         "path": "/portfolio/analysis/beta",
         "pointer": "#/paths/~1portfolio~1analysis~1beta/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Beta"
+        "summary": "Beta",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the conditional value at risk of one or several portfolio(s) from portfolio values.",
         "id": "operation:post:/portfolio/analysis/conditional-value-at-risk",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/conditional-value-at-risk",
         "path": "/portfolio/analysis/conditional-value-at-risk",
         "pointer": "#/paths/~1portfolio~1analysis~1conditional-value-at-risk/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Conditional Value At Risk"
+        "summary": "Conditional Value At Risk",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Perform a return contribution analysis of one or several portfolio(s), optionally using groups of assets.",
         "id": "operation:post:/portfolio/analysis/contributions/return",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/contributions/return",
         "path": "/portfolio/analysis/contributions/return",
         "pointer": "#/paths/~1portfolio~1analysis~1contributions~1return/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Return Contributions"
+        "summary": "Return Contributions",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Perform a risk contribution analysis of one or several portfolio(s), optionally using groups of assets.",
         "id": "operation:post:/portfolio/analysis/contributions/risk",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/contributions/risk",
         "path": "/portfolio/analysis/contributions/risk",
         "pointer": "#/paths/~1portfolio~1analysis~1contributions~1risk/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Risk Contributions"
+        "summary": "Risk Contributions",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the correlation spectrum of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/correlation-spectrum",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/correlation-spectrum",
         "path": "/portfolio/analysis/correlation-spectrum",
         "pointer": "#/paths/~1portfolio~1analysis~1correlation-spectrum/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Correlation Spectrum"
+        "summary": "Correlation Spectrum",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the diversification ratio of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/diversification-ratio",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/diversification-ratio",
         "path": "/portfolio/analysis/diversification-ratio",
         "pointer": "#/paths/~1portfolio~1analysis~1diversification-ratio/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Diversification Ratio"
+        "summary": "Diversification Ratio",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the drawdown function - also called the underwater equity curve -, as well as the worst 10 drawdowns of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/drawdowns",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/drawdowns",
         "path": "/portfolio/analysis/drawdowns",
         "pointer": "#/paths/~1portfolio~1analysis~1drawdowns/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Drawdowns"
+        "summary": "Drawdowns",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the effective number of bets of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/effective-number-of-bets",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/effective-number-of-bets",
         "path": "/portfolio/analysis/effective-number-of-bets",
         "pointer": "#/paths/~1portfolio~1analysis~1effective-number-of-bets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Effective Number of Bets"
+        "summary": "Effective Number of Bets",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the exposures of one or several portfolio(s) to a set of factors, using a returns-based linear regression analysis.",
         "id": "operation:post:/portfolio/analysis/factors/exposures",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/factors/exposures",
         "path": "/portfolio/analysis/factors/exposures",
         "pointer": "#/paths/~1portfolio~1analysis~1factors~1exposures/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Factor Exposures"
+        "summary": "Factor Exposures",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the discretized mean-variance efficient frontier associated to a list of assets, optionally subject to: * Minimum and maximum weights constraints * Max…",
         "id": "operation:post:/portfolio/analysis/mean-variance/efficient-frontier",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/mean-variance/efficient-frontier",
         "path": "/portfolio/analysis/mean-variance/efficient-frontier",
         "pointer": "#/paths/~1portfolio~1analysis~1mean-variance~1efficient-frontier/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Mean-Variance Efficient Frontier"
+        "summary": "Mean-Variance Efficient Frontier",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the discretized mean-variance minimum variance frontier associated to a list of assets, optionally subject to: * Minimum and maximum weights constraint…",
         "id": "operation:post:/portfolio/analysis/mean-variance/minimum-variance-frontier",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/mean-variance/minimum-variance-frontier",
         "path": "/portfolio/analysis/mean-variance/minimum-variance-frontier",
         "pointer": "#/paths/~1portfolio~1analysis~1mean-variance~1minimum-variance-frontier/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Mean-Variance Minimum Variance Frontier"
+        "summary": "Mean-Variance Minimum Variance Frontier",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the arithmetic return of one or several portfolio(s) from either: * Portfolio assets arithmetic returns * Portfolio values References * [Wikipedia, Rat…",
         "id": "operation:post:/portfolio/analysis/return",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/return",
         "path": "/portfolio/analysis/return",
         "pointer": "#/paths/~1portfolio~1analysis~1return/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Arithmetic Return"
+        "summary": "Arithmetic Return",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the arithmetic average of the arithmetic return(s) of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/returns/average",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/returns/average",
         "path": "/portfolio/analysis/returns/average",
         "pointer": "#/paths/~1portfolio~1analysis~1returns~1average/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Arithmetic Average Return"
+        "summary": "Arithmetic Average Return",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the Sharpe ratio of one or several portfolio(s) from either: * Portfolio assets arithmetic returns and assets covariance matrix * Portfolio values Refe…",
         "id": "operation:post:/portfolio/analysis/sharpe-ratio",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/sharpe-ratio",
         "path": "/portfolio/analysis/sharpe-ratio",
         "pointer": "#/paths/~1portfolio~1analysis~1sharpe-ratio/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Sharpe Ratio"
+        "summary": "Sharpe Ratio",
+        "tags": [
+          "Portfolio Analysis / Sharpe ratio"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the Sharpe ratio of one or several portfolio(s), adjusted for small sample bias.",
         "id": "operation:post:/portfolio/analysis/sharpe-ratio/bias-adjusted",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/sharpe-ratio/bias-adjusted",
         "path": "/portfolio/analysis/sharpe-ratio/bias-adjusted",
         "pointer": "#/paths/~1portfolio~1analysis~1sharpe-ratio~1bias-adjusted/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Bias-Adjusted Sharpe Ratio"
+        "summary": "Bias-Adjusted Sharpe Ratio",
+        "tags": [
+          "Portfolio Analysis / Sharpe ratio"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Build a confidence interval for the Sharpe ratio of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/sharpe-ratio/confidence-interval",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/sharpe-ratio/confidence-interval",
         "path": "/portfolio/analysis/sharpe-ratio/confidence-interval",
         "pointer": "#/paths/~1portfolio~1analysis~1sharpe-ratio~1confidence-interval/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Sharpe Ratio Confidence Interval"
+        "summary": "Sharpe Ratio Confidence Interval",
+        "tags": [
+          "Portfolio Analysis / Sharpe ratio"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the probabilistic Sharpe ratio of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/sharpe-ratio/probabilistic",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/sharpe-ratio/probabilistic",
         "path": "/portfolio/analysis/sharpe-ratio/probabilistic",
         "pointer": "#/paths/~1portfolio~1analysis~1sharpe-ratio~1probabilistic/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Probabilistic Sharpe Ratio"
+        "summary": "Probabilistic Sharpe Ratio",
+        "tags": [
+          "Portfolio Analysis / Sharpe ratio"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the minimum track record length of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/sharpe-ratio/probabilistic/minimum-track-record-length",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/sharpe-ratio/probabilistic/minimum-track-record-length",
         "path": "/portfolio/analysis/sharpe-ratio/probabilistic/minimum-track-record-length",
         "pointer": "#/paths/~1portfolio~1analysis~1sharpe-ratio~1probabilistic~1minimum-track-record-length/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Minimum Track Record Length"
+        "summary": "Minimum Track Record Length",
+        "tags": [
+          "Portfolio Analysis / Sharpe ratio"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the tracking error between a benchmark and one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/tracking-error",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/tracking-error",
         "path": "/portfolio/analysis/tracking-error",
         "pointer": "#/paths/~1portfolio~1analysis~1tracking-error/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Tracking Error"
+        "summary": "Tracking Error",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the Ulcer Index of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/ulcer-index",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/ulcer-index",
         "path": "/portfolio/analysis/ulcer-index",
         "pointer": "#/paths/~1portfolio~1analysis~1ulcer-index/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Ulcer Index"
+        "summary": "Ulcer Index",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the Ulcer Performance Index of one or several portfolio(s).",
         "id": "operation:post:/portfolio/analysis/ulcer-performance-index",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/ulcer-performance-index",
         "path": "/portfolio/analysis/ulcer-performance-index",
         "pointer": "#/paths/~1portfolio~1analysis~1ulcer-performance-index/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Ulcer Performance Index"
+        "summary": "Ulcer Performance Index",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the value at risk of one or several portfolio(s) from portfolio values.",
         "id": "operation:post:/portfolio/analysis/value-at-risk",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/value-at-risk",
         "path": "/portfolio/analysis/value-at-risk",
         "pointer": "#/paths/~1portfolio~1analysis~1value-at-risk/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Value At Risk"
+        "summary": "Value At Risk",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the volatility (i.e., standard deviation) of one or several portfolio(s) from either: * Portfolio assets covariance matrix * Portfolio values Reference…",
         "id": "operation:post:/portfolio/analysis/volatility",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/analysis/volatility",
         "path": "/portfolio/analysis/volatility",
         "pointer": "#/paths/~1portfolio~1analysis~1volatility/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Volatility"
+        "summary": "Volatility",
+        "tags": [
+          "Portfolio Analysis"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute an investable portfolio as close as possible, in terms of assets weights, to a desired portfolio, taking into account: * The desired assets weights * T…",
         "id": "operation:post:/portfolio/construction/investable",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/construction/investable",
         "path": "/portfolio/construction/investable",
         "pointer": "#/paths/~1portfolio~1construction~1investable/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Investable Portfolio"
+        "summary": "Investable Portfolio",
+        "tags": [
+          "Portfolio Construction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Construct a portfolio as close as possible, in terms of returns, to a benchmark, optionally subject to: * Minimum and maximum weights constraints * Maximum gro…",
         "id": "operation:post:/portfolio/construction/mimicking",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/construction/mimicking",
         "path": "/portfolio/construction/mimicking",
         "pointer": "#/paths/~1portfolio~1construction~1mimicking/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Mimicking Portfolio"
+        "summary": "Mimicking Portfolio",
+        "tags": [
+          "Portfolio Construction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Construct one or several random portfolio(s), optionally subject to: * Minimum and maximum weights constraints * Minimum and maximum portfolio exposure constra…",
         "id": "operation:post:/portfolio/construction/random",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/construction/random",
         "path": "/portfolio/construction/random",
         "pointer": "#/paths/~1portfolio~1construction~1random/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Random Portfolio"
+        "summary": "Random Portfolio",
+        "tags": [
+          "Portfolio Construction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the equal risk contributions portfolio, optionally subject to: * Minimum and maximum weights constraints References * [Richard, Je…",
         "id": "operation:post:/portfolio/optimization/equal-risk-contributions",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/equal-risk-contributions",
         "path": "/portfolio/optimization/equal-risk-contributions",
         "pointer": "#/paths/~1portfolio~1optimization~1equal-risk-contributions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Equal Risk Contributions Portfolio"
+        "summary": "Equal Risk Contributions Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the equal Sharpe Ratio contributions portfolio.",
         "id": "operation:post:/portfolio/optimization/equal-sharpe-ratio-contributions",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/equal-sharpe-ratio-contributions",
         "path": "/portfolio/optimization/equal-sharpe-ratio-contributions",
         "pointer": "#/paths/~1portfolio~1optimization~1equal-sharpe-ratio-contributions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Equal Sharpe Ratio Contributions Portfolio"
+        "summary": "Equal Sharpe Ratio Contributions Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the equal volatility-weighted portfolio.",
         "id": "operation:post:/portfolio/optimization/equal-volatility-weighted",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/equal-volatility-weighted",
         "path": "/portfolio/optimization/equal-volatility-weighted",
         "pointer": "#/paths/~1portfolio~1optimization~1equal-volatility-weighted/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Equal Volatility Weighted Portfolio"
+        "summary": "Equal Volatility Weighted Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the equal-weighted portfolio.",
         "id": "operation:post:/portfolio/optimization/equal-weighted",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/equal-weighted",
         "path": "/portfolio/optimization/equal-weighted",
         "pointer": "#/paths/~1portfolio~1optimization~1equal-weighted/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Equal Weighted Portfolio"
+        "summary": "Equal Weighted Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the hierarchical risk parity portfolio, optionally subject to: * Minimum and maximum weights constraints * Minimum and maximum por…",
         "id": "operation:post:/portfolio/optimization/hierarchical-risk-parity",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/hierarchical-risk-parity",
         "path": "/portfolio/optimization/hierarchical-risk-parity",
         "pointer": "#/paths/~1portfolio~1optimization~1hierarchical-risk-parity/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Hierarchical Risk Parity Portfolio"
+        "summary": "Hierarchical Risk Parity Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the hierarchical clustering-based risk parity portfolio, optionally subject to: * Minimum and maximum weights constraints * Minimu…",
         "id": "operation:post:/portfolio/optimization/hierarchical-risk-parity/clustering-based",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/hierarchical-risk-parity/clustering-based",
         "path": "/portfolio/optimization/hierarchical-risk-parity/clustering-based",
         "pointer": "#/paths/~1portfolio~1optimization~1hierarchical-risk-parity~1clustering-based/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Hierarchical Clustering-Based Risk Parity Portfolio"
+        "summary": "Hierarchical Clustering-Based Risk Parity Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the inverse variance-weighted portfolio.",
         "id": "operation:post:/portfolio/optimization/inverse-variance-weighted",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/inverse-variance-weighted",
         "path": "/portfolio/optimization/inverse-variance-weighted",
         "pointer": "#/paths/~1portfolio~1optimization~1inverse-variance-weighted/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Inverse Variance Weighted Portfolio"
+        "summary": "Inverse Variance Weighted Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the inverse volatility-weighted portfolio.",
         "id": "operation:post:/portfolio/optimization/inverse-volatility-weighted",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/inverse-volatility-weighted",
         "path": "/portfolio/optimization/inverse-volatility-weighted",
         "pointer": "#/paths/~1portfolio~1optimization~1inverse-volatility-weighted/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Inverse Volatility Weighted Portfolio"
+        "summary": "Inverse Volatility Weighted Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the market capitalization-weighted portfolio.",
         "id": "operation:post:/portfolio/optimization/market-capitalization-weighted",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/market-capitalization-weighted",
         "path": "/portfolio/optimization/market-capitalization-weighted",
         "pointer": "#/paths/~1portfolio~1optimization~1market-capitalization-weighted/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Market Capitalization Weighted Portfolio"
+        "summary": "Market Capitalization Weighted Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the maximum decorrelation portfolio, optionally subject to: * Minimum and maximum weights constraints * Maximum group weights cons…",
         "id": "operation:post:/portfolio/optimization/maximum-decorrelation",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/maximum-decorrelation",
         "path": "/portfolio/optimization/maximum-decorrelation",
         "pointer": "#/paths/~1portfolio~1optimization~1maximum-decorrelation/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Maximum Decorrelation Portfolio"
+        "summary": "Maximum Decorrelation Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the maximum return portfolio, optionally subject to: * Minimum and maximum weights constraints * Maximum group weights constraints…",
         "id": "operation:post:/portfolio/optimization/maximum-return",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/maximum-return",
         "path": "/portfolio/optimization/maximum-return",
         "pointer": "#/paths/~1portfolio~1optimization~1maximum-return/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Maximum Return Portfolio"
+        "summary": "Maximum Return Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the diversified maximum return portfolio, as defined in the first reference, optionally subject to: * Minimum and maximum weights…",
         "id": "operation:post:/portfolio/optimization/maximum-return/diversified",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/maximum-return/diversified",
         "path": "/portfolio/optimization/maximum-return/diversified",
         "pointer": "#/paths/~1portfolio~1optimization~1maximum-return~1diversified/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Diversified Maximum Return Portfolio"
+        "summary": "Diversified Maximum Return Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the subset resampling-based maximum return portfolio, following the methodology described in the first and the second references,…",
         "id": "operation:post:/portfolio/optimization/maximum-return/subset-resampling-based",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/maximum-return/subset-resampling-based",
         "path": "/portfolio/optimization/maximum-return/subset-resampling-based",
         "pointer": "#/paths/~1portfolio~1optimization~1maximum-return~1subset-resampling-based/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Subset Resampling-Based Maximum Return Portfolio"
+        "summary": "Subset Resampling-Based Maximum Return Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the maximum Sharpe ratio portfolio, optionally subject to: * Minimum and maximum weights constraints * Maximum group weights const…",
         "id": "operation:post:/portfolio/optimization/maximum-sharpe-ratio",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/maximum-sharpe-ratio",
         "path": "/portfolio/optimization/maximum-sharpe-ratio",
         "pointer": "#/paths/~1portfolio~1optimization~1maximum-sharpe-ratio/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Maximum Sharpe Ratio Portfolio"
+        "summary": "Maximum Sharpe Ratio Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the diversified maximum Sharpe ratio portfolio, as defined in the first reference, optionally subject to: * Minimum and maximum we…",
         "id": "operation:post:/portfolio/optimization/maximum-sharpe-ratio/diversified",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/maximum-sharpe-ratio/diversified",
         "path": "/portfolio/optimization/maximum-sharpe-ratio/diversified",
         "pointer": "#/paths/~1portfolio~1optimization~1maximum-sharpe-ratio~1diversified/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Diversified Maximum Sharpe Ratio Portfolio"
+        "summary": "Diversified Maximum Sharpe Ratio Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the susbet resampling-based maximum Sharpe ratio portfolio, following the methodology described in the first and the second refere…",
         "id": "operation:post:/portfolio/optimization/maximum-sharpe-ratio/subset-resampling-based",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/maximum-sharpe-ratio/subset-resampling-based",
         "path": "/portfolio/optimization/maximum-sharpe-ratio/subset-resampling-based",
         "pointer": "#/paths/~1portfolio~1optimization~1maximum-sharpe-ratio~1subset-resampling-based/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Subset Resampling-Based Maximum Sharpe Ratio Portfolio"
+        "summary": "Subset Resampling-Based Maximum Sharpe Ratio Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the maximum Ulcer Performance Index portfolio, optionally subject to: * Minimum and maximum weights constraints * Maximum group we…",
         "id": "operation:post:/portfolio/optimization/maximum-ulcer-performance-index",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/maximum-ulcer-performance-index",
         "path": "/portfolio/optimization/maximum-ulcer-performance-index",
         "pointer": "#/paths/~1portfolio~1optimization~1maximum-ulcer-performance-index/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Maximum Ulcer Performance Index Portfolio"
+        "summary": "Maximum Ulcer Performance Index Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of a mean-variance efficient portfolio, optionally subject to: * Minimum and maximum weights constraints * Maximum group weights cons…",
         "id": "operation:post:/portfolio/optimization/mean-variance-efficient",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/mean-variance-efficient",
         "path": "/portfolio/optimization/mean-variance-efficient",
         "pointer": "#/paths/~1portfolio~1optimization~1mean-variance-efficient/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Mean-Variance Efficient Portfolio"
+        "summary": "Mean-Variance Efficient Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of a diversified mean-variance efficient portfolio, as defined in the first reference, optionally subject to: * Minimum and maximum w…",
         "id": "operation:post:/portfolio/optimization/mean-variance-efficient/diversified",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/mean-variance-efficient/diversified",
         "path": "/portfolio/optimization/mean-variance-efficient/diversified",
         "pointer": "#/paths/~1portfolio~1optimization~1mean-variance-efficient~1diversified/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Diversified Mean-Variance Efficient Portfolio"
+        "summary": "Diversified Mean-Variance Efficient Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of a subset resampling-based mean-variance efficient portfolio, following the methodology described in the first and the second refer…",
         "id": "operation:post:/portfolio/optimization/mean-variance-efficient/subset-resampling-based",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/mean-variance-efficient/subset-resampling-based",
         "path": "/portfolio/optimization/mean-variance-efficient/subset-resampling-based",
         "pointer": "#/paths/~1portfolio~1optimization~1mean-variance-efficient~1subset-resampling-based/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Subset Resampling-Based Mean-Variance Efficient Portfolio"
+        "summary": "Subset Resampling-Based Mean-Variance Efficient Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the (heuristic) minimum correlation portfolio, which is a portfolio built using the Minimum Correlation Algorithm discovered by [D…",
         "id": "operation:post:/portfolio/optimization/minimum-correlation",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/minimum-correlation",
         "path": "/portfolio/optimization/minimum-correlation",
         "pointer": "#/paths/~1portfolio~1optimization~1minimum-correlation/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Minimum Correlation Portfolio"
+        "summary": "Minimum Correlation Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the minimum Ulcer Index portfolio, optionally subject to: * Minimum and maximum weights constraints * Maximum group weights constr…",
         "id": "operation:post:/portfolio/optimization/minimum-ulcer-index",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/minimum-ulcer-index",
         "path": "/portfolio/optimization/minimum-ulcer-index",
         "pointer": "#/paths/~1portfolio~1optimization~1minimum-ulcer-index/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Minimum Ulcer Index Portfolio"
+        "summary": "Minimum Ulcer Index Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the minimum variance portfolio, optionally subject to: * Minimum and maximum weights constraints * Maximum group weights constrain…",
         "id": "operation:post:/portfolio/optimization/minimum-variance",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/minimum-variance",
         "path": "/portfolio/optimization/minimum-variance",
         "pointer": "#/paths/~1portfolio~1optimization~1minimum-variance/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Minimum Variance Portfolio"
+        "summary": "Minimum Variance Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the diversified minimum variance portfolio, as defined in the first reference, optionally subject to: * Minimum and maximum weight…",
         "id": "operation:post:/portfolio/optimization/minimum-variance/diversified",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/minimum-variance/diversified",
         "path": "/portfolio/optimization/minimum-variance/diversified",
         "pointer": "#/paths/~1portfolio~1optimization~1minimum-variance~1diversified/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Diversified Minimum Variance Portfolio"
+        "summary": "Diversified Minimum Variance Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the subset resampling-based minimum variance portfolio, following the methodology described in the first and the second references…",
         "id": "operation:post:/portfolio/optimization/minimum-variance/subset-resampling-based",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/minimum-variance/subset-resampling-based",
         "path": "/portfolio/optimization/minimum-variance/subset-resampling-based",
         "pointer": "#/paths/~1portfolio~1optimization~1minimum-variance~1subset-resampling-based/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Subset Resampling-Based Minimum Variance Portfolio"
+        "summary": "Subset Resampling-Based Minimum Variance Portfolio",
+        "tags": [
+          "Portfolio Optimization / Mean-Variance"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Compute the asset weights of the most diversified portfolio, optionally subject to: * Minimum and maximum weights constraints * Maximum group weights constrain…",
         "id": "operation:post:/portfolio/optimization/most-diversified",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/optimization/most-diversified",
         "path": "/portfolio/optimization/most-diversified",
         "pointer": "#/paths/~1portfolio~1optimization~1most-diversified/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Most Diversified Portfolio"
+        "summary": "Most Diversified Portfolio",
+        "tags": [
+          "Portfolio Optimization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Simulate the evolution of one or several portfolio(s) over one or several time period(s), the portfolio(s) being never rebalanced (a.k.a.",
         "id": "operation:post:/portfolio/simulation/rebalancing/drift-weight",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/simulation/rebalancing/drift-weight",
         "path": "/portfolio/simulation/rebalancing/drift-weight",
         "pointer": "#/paths/~1portfolio~1simulation~1rebalancing~1drift-weight/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Drift-weight Portfolio Rebalancing"
+        "summary": "Drift-weight Portfolio Rebalancing",
+        "tags": [
+          "Portfolio Simulation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Simulate the evolution of one or several portfolio(s) over one or several time period(s), the portfolio(s) being rebalanced toward fixed weights at the beginni…",
         "id": "operation:post:/portfolio/simulation/rebalancing/fixed-weight",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/simulation/rebalancing/fixed-weight",
         "path": "/portfolio/simulation/rebalancing/fixed-weight",
         "pointer": "#/paths/~1portfolio~1simulation~1rebalancing~1fixed-weight/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Fixed-weight Portfolio Rebalancing"
+        "summary": "Fixed-weight Portfolio Rebalancing",
+        "tags": [
+          "Portfolio Simulation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Simulate the evolution of one or several portfolio(s) over one or several time period(s), the portfolio(s) being rebalanced toward random weights at the beginn…",
         "id": "operation:post:/portfolio/simulation/rebalancing/random-weight",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/simulation/rebalancing/random-weight",
         "path": "/portfolio/simulation/rebalancing/random-weight",
         "pointer": "#/paths/~1portfolio~1simulation~1rebalancing~1random-weight/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Random-weight Portfolio Rebalancing"
+        "summary": "Random-weight Portfolio Rebalancing",
+        "tags": [
+          "Portfolio Simulation"
+        ]
       }
     ]
   },

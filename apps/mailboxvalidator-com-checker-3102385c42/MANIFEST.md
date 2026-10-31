@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_MailBoxV_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `ca85d98b1f6e6b51f46acbe5129e1b145c765d88c746510e80b115bc6ab1fd61` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,6 +32,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_MailBoxV_profile_im
 
 ## Operations (1)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/email/free` | get /v1/email/free | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/email/free` | get /v1/email/free | `format`, `email`*, `key`* | string | yes | — |

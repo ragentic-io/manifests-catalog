@@ -17,12 +17,29 @@
       },
       {
         "deprecated": false,
+        "description": "Provides a list of available .at domain names related to the given input term or domain",
         "id": "operation:get:/api/v1/suggest",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/suggest",
+        "parameters": [
+          {
+            "description": "Domainname/term to obtain suggestions for",
+            "in": "query",
+            "name": "term",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/suggest",
         "pointer": "#/paths/~1api~1v1~1suggest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get .at domain name suggestions"
       }

@@ -137,17 +137,17 @@
       {
         "from": "dev-to-48023251c6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/pages/{id}"
-      },
-      {
-        "from": "dev-to-48023251c6",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/pages/{id}"
       },
       {
         "from": "dev-to-48023251c6",
         "kind": "EXPOSES",
         "to": "operation:put:/api/pages/{id}"
+      },
+      {
+        "from": "dev-to-48023251c6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/pages/{id}"
       },
       {
         "from": "dev-to-48023251c6",
@@ -203,6 +203,136 @@
         "from": "dev-to-48023251c6",
         "kind": "EXPOSES",
         "to": "operation:get:/api/videos"
+      },
+      {
+        "from": "operation:post:/api/admin/users",
+        "kind": "ACCEPTS",
+        "to": "schema:UserInviteParam"
+      },
+      {
+        "from": "operation:get:/api/articles",
+        "kind": "RETURNS",
+        "to": "schema:ArticleIndex"
+      },
+      {
+        "from": "operation:post:/api/articles",
+        "kind": "ACCEPTS",
+        "to": "schema:Article"
+      },
+      {
+        "from": "operation:get:/api/articles/latest",
+        "kind": "RETURNS",
+        "to": "schema:ArticleIndex"
+      },
+      {
+        "from": "operation:get:/api/articles/me",
+        "kind": "RETURNS",
+        "to": "schema:ArticleIndex"
+      },
+      {
+        "from": "operation:get:/api/articles/me/all",
+        "kind": "RETURNS",
+        "to": "schema:ArticleIndex"
+      },
+      {
+        "from": "operation:get:/api/articles/me/published",
+        "kind": "RETURNS",
+        "to": "schema:ArticleIndex"
+      },
+      {
+        "from": "operation:get:/api/articles/me/unpublished",
+        "kind": "RETURNS",
+        "to": "schema:ArticleIndex"
+      },
+      {
+        "from": "operation:put:/api/articles/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Article"
+      },
+      {
+        "from": "operation:get:/api/comments",
+        "kind": "RETURNS",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "operation:get:/api/follows/tags",
+        "kind": "RETURNS",
+        "to": "schema:FollowedTag"
+      },
+      {
+        "from": "operation:get:/api/organizations/{username}/articles",
+        "kind": "RETURNS",
+        "to": "schema:ArticleIndex"
+      },
+      {
+        "from": "operation:get:/api/organizations/{username}/users",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:get:/api/pages",
+        "kind": "RETURNS",
+        "to": "schema:Page"
+      },
+      {
+        "from": "operation:get:/api/pages/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Page"
+      },
+      {
+        "from": "operation:put:/api/pages/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Page"
+      },
+      {
+        "from": "operation:put:/api/pages/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Page"
+      },
+      {
+        "from": "operation:delete:/api/pages/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Page"
+      },
+      {
+        "from": "operation:get:/api/podcast_episodes",
+        "kind": "RETURNS",
+        "to": "schema:PodcastEpisodeIndex"
+      },
+      {
+        "from": "operation:get:/api/readinglist",
+        "kind": "RETURNS",
+        "to": "schema:ArticleIndex"
+      },
+      {
+        "from": "operation:get:/api/tags",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:get:/api/videos",
+        "kind": "RETURNS",
+        "to": "schema:VideoArticle"
+      },
+      {
+        "from": "schema:ArticleIndex",
+        "kind": "REFERENCES",
+        "to": "schema:ArticleFlareTag"
+      },
+      {
+        "from": "schema:ArticleIndex",
+        "kind": "REFERENCES",
+        "to": "schema:SharedOrganization"
+      },
+      {
+        "from": "schema:ArticleIndex",
+        "kind": "REFERENCES",
+        "to": "schema:SharedUser"
+      },
+      {
+        "from": "schema:PodcastEpisodeIndex",
+        "kind": "REFERENCES",
+        "to": "schema:SharedPodcast"
       }
     ],
     "nodes": [
@@ -212,627 +342,1829 @@
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to trigger an invitation to the provided email address.",
         "id": "operation:post:/api/admin/users",
         "kind": "operation",
         "method": "post",
         "name": "postAdminUsersCreate",
         "path": "/api/admin/users",
         "pointer": "#/paths/~1api~1admin~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UserInviteParam"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "Invite a User"
+        "summary": "Invite a User",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of articles.",
         "id": "operation:get:/api/articles",
         "kind": "operation",
         "method": "get",
         "name": "getArticles",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Using this parameter will retrieve articles that contain the requested tag.",
+            "in": "query",
+            "name": "tag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Using this parameter will retrieve articles with any of the comma-separated tags.",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Using this parameter will retrieve articles that do _not_ contain _any_ of comma-separated tags.",
+            "in": "query",
+            "name": "tags_exclude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Using this parameter will retrieve articles belonging to a User or Organization ordered by descending publication date.",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Using this parameter will allow the client to check which articles are fresh or rising.",
+            "enum": [
+              "fresh",
+              "rising",
+              "all"
+            ],
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Using this parameter will allow the client to return the most popular articles in the last `N` days.",
+            "in": "query",
+            "name": "top",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Adding this will allow the client to return the list of articles belonging to the requested collection, ordered by ascending publication date.",
+            "in": "query",
+            "name": "collection_id",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/articles",
         "pointer": "#/paths/~1api~1articles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArticleIndex[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Published articles"
+        "summary": "Published articles",
+        "tags": [
+          "articles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to create a new article.",
         "id": "operation:post:/api/articles",
         "kind": "operation",
         "method": "post",
         "name": "createArticle",
         "path": "/api/articles",
         "pointer": "#/paths/~1api~1articles/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Article"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "Publish article"
+        "summary": "Publish article",
+        "tags": [
+          "articles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of articles.",
         "id": "operation:get:/api/articles/latest",
         "kind": "operation",
         "method": "get",
         "name": "getLatestArticles",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/articles/latest",
         "pointer": "#/paths/~1api~1articles~1latest/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArticleIndex[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Published articles sorted by published date"
+        "summary": "Published articles sorted by published date",
+        "tags": [
+          "articles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.",
         "id": "operation:get:/api/articles/me",
         "kind": "operation",
         "method": "get",
         "name": "getUserArticles",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/articles/me",
         "pointer": "#/paths/~1api~1articles~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArticleIndex[]"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "User's articles"
+        "summary": "User's articles",
+        "tags": [
+          "articles",
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of all articles on behalf of an authenticated user.",
         "id": "operation:get:/api/articles/me/all",
         "kind": "operation",
         "method": "get",
         "name": "getUserAllArticles",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/articles/me/all",
         "pointer": "#/paths/~1api~1articles~1me~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArticleIndex[]"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "User's all articles"
+        "summary": "User's all articles",
+        "tags": [
+          "articles",
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.",
         "id": "operation:get:/api/articles/me/published",
         "kind": "operation",
         "method": "get",
         "name": "getUserPublishedArticles",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/articles/me/published",
         "pointer": "#/paths/~1api~1articles~1me~1published/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArticleIndex[]"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "User's published articles"
+        "summary": "User's published articles",
+        "tags": [
+          "articles",
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of unpublished articles on behalf of an authenticated user.",
         "id": "operation:get:/api/articles/me/unpublished",
         "kind": "operation",
         "method": "get",
         "name": "getUserUnpublishedArticles",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/articles/me/unpublished",
         "pointer": "#/paths/~1api~1articles~1me~1unpublished/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArticleIndex[]"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "User's unpublished articles"
+        "summary": "User's unpublished articles",
+        "tags": [
+          "articles",
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a single published article given its `id`.",
         "id": "operation:get:/api/articles/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getArticleById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/api/articles/{id}",
         "pointer": "#/paths/~1api~1articles~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Published article by id"
+        "summary": "Published article by id",
+        "tags": [
+          "articles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to update an existing article.",
         "id": "operation:put:/api/articles/{id}",
         "kind": "operation",
         "method": "put",
         "name": "updateArticle",
+        "parameters": [
+          {
+            "description": "The ID of the user to unpublish.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/articles/{id}",
         "pointer": "#/paths/~1api~1articles~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Article"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "Update an article by id"
+        "summary": "Update an article by id",
+        "tags": [
+          "articles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to unpublish an article.",
         "id": "operation:put:/api/articles/{id}/unpublish",
         "kind": "operation",
         "method": "put",
         "name": "unpublishArticle",
+        "parameters": [
+          {
+            "description": "The ID of the article to unpublish.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Content for the note that's created along with unpublishing",
+            "in": "query",
+            "name": "note",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/articles/{id}/unpublish",
         "pointer": "#/paths/~1api~1articles~1{id}~1unpublish/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "Unpublish an article"
+        "summary": "Unpublish an article",
+        "tags": [
+          "articles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a single published article given its `path`.",
         "id": "operation:get:/api/articles/{username}/{slug}",
         "kind": "operation",
         "method": "get",
         "name": "getArticleByPath",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/articles/{username}/{slug}",
         "pointer": "#/paths/~1api~1articles~1{username}~1{slug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Published article by path"
+        "summary": "Published article by path",
+        "tags": [
+          "articles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.",
         "id": "operation:get:/api/comments",
         "kind": "operation",
         "method": "get",
         "name": "getCommentsByArticleId",
+        "parameters": [
+          {
+            "description": "Article identifier.",
+            "in": "query",
+            "name": "a_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Podcast Episode identifier.",
+            "in": "query",
+            "name": "p_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/comments",
         "pointer": "#/paths/~1api~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Comment[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Comments"
+        "summary": "Comments",
+        "tags": [
+          "comments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a comment as well as his descendants comments.",
         "id": "operation:get:/api/comments/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getCommentById",
+        "parameters": [
+          {
+            "description": "Comment identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/api/comments/{id}",
         "pointer": "#/paths/~1api~1comments~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Comment by id"
+        "summary": "Comment by id",
+        "tags": [
+          "comments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of all display ads.",
         "id": "operation:get:/api/display_ads",
         "kind": "operation",
         "method": "get",
         "name": "get /api/display_ads",
         "path": "/api/display_ads",
         "pointer": "#/paths/~1api~1display_ads/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "display ads"
+        "summary": "display ads",
+        "tags": [
+          "display ads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to create a new display ad.",
         "id": "operation:post:/api/display_ads",
         "kind": "operation",
         "method": "post",
         "name": "post /api/display_ads",
         "path": "/api/display_ads",
         "pointer": "#/paths/~1api~1display_ads/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "display ads"
+        "summary": "display ads",
+        "tags": [
+          "display ads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a single display ad, via its id.",
         "id": "operation:get:/api/display_ads/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/display_ads/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the user to unpublish.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/display_ads/{id}",
         "pointer": "#/paths/~1api~1display_ads~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "display ad"
+        "summary": "display ad",
+        "tags": [
+          "display ads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to update the attributes of a single display ad, via its id.",
         "id": "operation:put:/api/display_ads/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /api/display_ads/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the user to unpublish.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/display_ads/{id}",
         "pointer": "#/paths/~1api~1display_ads~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "display ads"
+        "summary": "display ads",
+        "tags": [
+          "display ads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to remove a display ad from rotation by un-publishing it.",
         "id": "operation:put:/api/display_ads/{id}/unpublish",
         "kind": "operation",
         "method": "put",
         "name": "put /api/display_ads/{id}/unpublish",
+        "parameters": [
+          {
+            "description": "The ID of the user to unpublish.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/display_ads/{id}/unpublish",
         "pointer": "#/paths/~1api~1display_ads~1{id}~1unpublish/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "unpublish"
+        "summary": "unpublish",
+        "tags": [
+          "display ads"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of the followers they have.",
         "id": "operation:get:/api/followers/users",
         "kind": "operation",
         "method": "get",
         "name": "getFollowers",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Default is 'created_at'.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/followers/users",
         "pointer": "#/paths/~1api~1followers~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "Followers"
+        "summary": "Followers",
+        "tags": [
+          "followers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of the tags they follow.",
         "id": "operation:get:/api/follows/tags",
         "kind": "operation",
         "method": "get",
         "name": "getFollowedTags",
         "path": "/api/follows/tags",
         "pointer": "#/paths/~1api~1follows~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FollowedTag[]"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "Followed Tags"
+        "summary": "Followed Tags",
+        "tags": [
+          "followed_tags",
+          "tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a single organization by their username",
         "id": "operation:get:/api/organizations/{username}",
         "kind": "operation",
         "method": "get",
         "name": "getOrganization",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/organizations/{username}",
         "pointer": "#/paths/~1api~1organizations~1{username}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "An organization"
+        "summary": "An organization",
+        "tags": [
+          "organizations"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of Articles belonging to the organization It supports pagination, each page will contain `30` users by defau…",
         "id": "operation:get:/api/organizations/{username}/articles",
         "kind": "operation",
         "method": "get",
         "name": "getOrgArticles",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/organizations/{username}/articles",
         "pointer": "#/paths/~1api~1organizations~1{username}~1articles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArticleIndex[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Organization's Articles"
+        "summary": "Organization's Articles",
+        "tags": [
+          "organizations",
+          "articles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of users belonging to the organization It supports pagination, each page will contain `30` users by default.",
         "id": "operation:get:/api/organizations/{username}/users",
         "kind": "operation",
         "method": "get",
         "name": "getOrgUsers",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/organizations/{username}/users",
         "pointer": "#/paths/~1api~1organizations~1{username}~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Organization's users"
+        "summary": "Organization's users",
+        "tags": [
+          "organizations",
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve details for all Page objects.",
         "id": "operation:get:/api/pages",
         "kind": "operation",
         "method": "get",
         "name": "get /api/pages",
         "path": "/api/pages",
         "pointer": "#/paths/~1api~1pages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Page[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "show details for all pages"
+        "summary": "show details for all pages",
+        "tags": [
+          "pages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to create a new page.",
         "id": "operation:post:/api/pages",
         "kind": "operation",
         "method": "post",
         "name": "post /api/pages",
         "path": "/api/pages",
         "pointer": "#/paths/~1api~1pages/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "pages"
+        "summary": "pages",
+        "tags": [
+          "pages"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/pages/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/pages/{id}",
-        "path": "/api/pages/{id}",
-        "pointer": "#/paths/~1api~1pages~1{id}/delete",
-        "security": [
-          {
-            "api-key": []
-          }
-        ],
-        "summary": "remove a page"
-      },
-      {
-        "deprecated": false,
+        "description": "This endpoint allows the client to retrieve details for a single Page object, specified by ID.",
         "id": "operation:get:/api/pages/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/pages/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the page.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/pages/{id}",
         "pointer": "#/paths/~1api~1pages~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Page"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "show details for a page"
+        "summary": "show details for a page",
+        "tags": [
+          "pages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve details for a single Page object, specified by ID.",
         "id": "operation:put:/api/pages/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /api/pages/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the page.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/pages/{id}",
         "pointer": "#/paths/~1api~1pages~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Page"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Page"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "update details for a page"
+        "summary": "update details for a page",
+        "tags": [
+          "pages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to delete a single Page object, specified by ID.",
+        "id": "operation:delete:/api/pages/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/pages/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the page.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/api/pages/{id}",
+        "pointer": "#/paths/~1api~1pages~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Page"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api-key": []
+          }
+        ],
+        "summary": "remove a page",
+        "tags": [
+          "pages"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of podcast episodes.",
         "id": "operation:get:/api/podcast_episodes",
         "kind": "operation",
         "method": "get",
         "name": "getPodcastEpisodes",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Using this parameter will retrieve episodes belonging to a specific podcast.",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/podcast_episodes",
         "pointer": "#/paths/~1api~1podcast_episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastEpisodeIndex[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Podcast Episodes"
+        "summary": "Podcast Episodes",
+        "tags": [
+          "podcast_episodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a user or organization profile image information by its corresponding username.",
         "id": "operation:get:/api/profile_images/{username}",
         "kind": "operation",
         "method": "get",
         "name": "getProfileImage",
+        "parameters": [
+          {
+            "description": "The parameter is the username of the user or the username of the organization.",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/profile_images/{username}",
         "pointer": "#/paths/~1api~1profile_images~1{username}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "A Users or organizations profile image"
+        "summary": "A Users or organizations profile image",
+        "tags": [
+          "profile images"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to create a reaction to a specified reactable (eg, Article, Comment, or User).",
         "id": "operation:post:/api/reactions",
         "kind": "operation",
         "method": "post",
         "name": "post /api/reactions",
+        "parameters": [
+          {
+            "enum": [
+              "like",
+              "unicorn",
+              "exploding_head",
+              "raised_hands",
+              "fire"
+            ],
+            "in": "query",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "reactable_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "enum": [
+              "Comment",
+              "Article",
+              "User"
+            ],
+            "in": "query",
+            "name": "reactable_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/reactions",
         "pointer": "#/paths/~1api~1reactions/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "create reaction"
+        "summary": "create reaction",
+        "tags": [
+          "reactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User).",
         "id": "operation:post:/api/reactions/toggle",
         "kind": "operation",
         "method": "post",
         "name": "post /api/reactions/toggle",
+        "parameters": [
+          {
+            "enum": [
+              "like",
+              "unicorn",
+              "exploding_head",
+              "raised_hands",
+              "fire"
+            ],
+            "in": "query",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "reactable_id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "enum": [
+              "Comment",
+              "Article",
+              "User"
+            ],
+            "in": "query",
+            "name": "reactable_type",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/reactions/toggle",
         "pointer": "#/paths/~1api~1reactions~1toggle/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "toggle reaction"
+        "summary": "toggle reaction",
+        "tags": [
+          "reactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of articles that were saved to a Users readinglist.",
         "id": "operation:get:/api/readinglist",
         "kind": "operation",
         "method": "get",
         "name": "getReadinglist",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 30,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/readinglist",
         "pointer": "#/paths/~1api~1readinglist/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArticleIndex[]"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "Readinglist"
+        "summary": "Readinglist",
+        "tags": [
+          "readinglist"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of tags that can be used to tag articles.",
         "id": "operation:get:/api/tags",
         "kind": "operation",
         "method": "get",
         "name": "getTags",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/tags",
         "pointer": "#/paths/~1api~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tag[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Tags"
+        "summary": "Tags",
+        "tags": [
+          "tags"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve information about the authenticated user",
         "id": "operation:get:/api/users/me",
         "kind": "operation",
         "method": "get",
         "name": "getUserMe",
         "path": "/api/users/me",
         "pointer": "#/paths/~1api~1users~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "The authenticated user"
+        "summary": "The authenticated user",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a single user, either by id or by the user's username.",
         "id": "operation:get:/api/users/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/users/{id}",
         "pointer": "#/paths/~1api~1users~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "A User"
+        "summary": "A User",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to suspend a user.",
         "id": "operation:put:/api/users/{id}/suspend",
         "kind": "operation",
         "method": "put",
         "name": "suspendUser",
+        "parameters": [
+          {
+            "description": "The ID of the user to suspend.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/users/{id}/suspend",
         "pointer": "#/paths/~1api~1users~1{id}~1suspend/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "Suspend a User"
+        "summary": "Suspend a User",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to unpublish all of the articles and comments created by a user.",
         "id": "operation:put:/api/users/{id}/unpublish",
         "kind": "operation",
         "method": "put",
         "name": "unpublishUser",
+        "parameters": [
+          {
+            "description": "The ID of the user to unpublish.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/users/{id}/unpublish",
         "pointer": "#/paths/~1api~1users~1{id}~1unpublish/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api-key": []
           }
         ],
-        "summary": "Unpublish a User's Articles and Comments"
+        "summary": "Unpublish a User's Articles and Comments",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows the client to retrieve a list of articles that are uploaded with a video.",
         "id": "operation:get:/api/videos",
         "kind": "operation",
         "method": "get",
         "name": "videos",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "Pagination page",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 24,
+            "description": "Page size (the number of items to return per page).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/videos",
         "pointer": "#/paths/~1api~1videos/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VideoArticle[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Articles with a video"
+        "summary": "Articles with a video",
+        "tags": [
+          "videos",
+          "articles"
+        ]
       },
       {
+        "description": "Representation of an Article to be created/updated",
         "id": "schema:Article",
         "kind": "schema",
-        "name": "Article"
+        "name": "Article",
+        "type": "object"
       },
       {
+        "description": "Flare tag of the article",
         "id": "schema:ArticleFlareTag",
         "kind": "schema",
-        "name": "ArticleFlareTag"
+        "name": "ArticleFlareTag",
+        "type": "object"
       },
       {
+        "description": "Representation of an article or post returned in a list",
         "id": "schema:ArticleIndex",
         "kind": "schema",
-        "name": "ArticleIndex"
+        "name": "ArticleIndex",
+        "type": "object"
       },
       {
+        "description": "A Comment on an Article or Podcast Episode",
         "id": "schema:Comment",
         "kind": "schema",
-        "name": "Comment"
+        "name": "Comment",
+        "type": "object"
       },
       {
+        "description": "Representation of a followed tag",
         "id": "schema:FollowedTag",
         "kind": "schema",
-        "name": "FollowedTag"
+        "name": "FollowedTag",
+        "type": "object"
       },
       {
+        "description": "Representation of an Organization",
         "id": "schema:Organization",
         "kind": "schema",
-        "name": "Organization"
+        "name": "Organization",
+        "type": "object"
       },
       {
+        "description": "Representation of a page object",
         "id": "schema:Page",
         "kind": "schema",
-        "name": "Page"
+        "name": "Page",
+        "type": "object"
       },
       {
+        "description": "Representation of a podcast episode returned in a list",
         "id": "schema:PodcastEpisodeIndex",
         "kind": "schema",
-        "name": "PodcastEpisodeIndex"
+        "name": "PodcastEpisodeIndex",
+        "type": "object"
       },
       {
+        "description": "A profile image object",
         "id": "schema:ProfileImage",
         "kind": "schema",
-        "name": "ProfileImage"
+        "name": "ProfileImage",
+        "type": "object"
       },
       {
+        "description": "The organization the resource belongs to",
         "id": "schema:SharedOrganization",
         "kind": "schema",
-        "name": "SharedOrganization"
+        "name": "SharedOrganization",
+        "type": "object"
       },
       {
+        "description": "The podcast that the resource belongs to",
         "id": "schema:SharedPodcast",
         "kind": "schema",
-        "name": "SharedPodcast"
+        "name": "SharedPodcast",
+        "type": "object"
       },
       {
+        "description": "The resource creator",
         "id": "schema:SharedUser",
         "kind": "schema",
-        "name": "SharedUser"
+        "name": "SharedUser",
+        "type": "object"
       },
       {
+        "description": "Representation of a tag",
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
+        "description": "The representation of a user",
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
+        "description": "User invite parameters",
         "id": "schema:UserInviteParam",
         "kind": "schema",
-        "name": "UserInviteParam"
+        "name": "UserInviteParam",
+        "type": "object"
       },
       {
+        "description": "Representation of an Article with video",
         "id": "schema:VideoArticle",
         "kind": "schema",
-        "name": "VideoArticle"
+        "name": "VideoArticle",
+        "type": "object"
       }
     ]
   },

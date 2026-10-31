@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `5903cabaa42fe93a29eb5f56933b43ba806c6a637d43cb64610e53b248a4b097` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 6 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/gen/clients` | clientOptions | Gets languages supported by the client generator |
-| GET | `/api/gen/clients/{language}` | getClientOptions | Returns options for a client library |
-| POST | `/api/gen/clients/{language}` | generateClient | Generates a client library |
-| GET | `/api/gen/download/{fileId}` | downloadFile | Downloads a pre-generated file |
-| GET | `/api/gen/servers` | serverOptions | Gets languages supported by the server generator |
-| GET | `/api/gen/servers/{framework}` | getServerOptions | Returns options for a server framework |
-| POST | `/api/gen/servers/{framework}` | generateServerForLanguage | Generates a server library |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/gen/clients` | clientOptions | — | string[] | yes | Gets languages supported by the client generator |
+| GET | `/api/gen/clients/{language}` | getClientOptions | `language`* | object | yes | Returns options for a client library |
+| POST | `/api/gen/clients/{language}` | generateClient | `language`*, body*: GeneratorInput | ResponseCode |  | Generates a client library |
+| GET | `/api/gen/download/{fileId}` | downloadFile | `fileId`* | string:binary | yes | Downloads a pre-generated file |
+| GET | `/api/gen/servers` | serverOptions | — | string[] | yes | Gets languages supported by the server generator |
+| GET | `/api/gen/servers/{framework}` | getServerOptions | `framework`* | object | yes | Returns options for a server framework |
+| POST | `/api/gen/servers/{framework}` | generateServerForLanguage | `framework`*, body*: GeneratorInput | ResponseCode |  | Generates a server library |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `30f62dfb7675c9919a9fa91b00c87691c2b56145f109f8d7d3120671a4fbe8b9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,11 +32,13 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (6)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/auxiliar/estados` | get_estados_auxiliar_resource | Endpoint para retorno dos dados de estados utilizados na filtragem de focos |
-| GET | `/auxiliar/municipios` | get_municipios_auxiliar_resource | Endpoint para retorno dos dados de municípios utilizados na filtragem de focos |
-| GET | `/auxiliar/paises` | get_paises_auxiliar_resource | Endpoint para retorno dos dados de países utilizados na filtragem de focos |
-| GET | `/auxiliar/satelites` | get_satelite_auxiliar_resource | Endpoint para retorno dos dados de satélites utilizados na filtragem de focos |
-| GET | `/focos/` | get_focos_resource | Endpoint para retorno dos dados de focos de calor |
-| GET | `/focos/count` | get_focos_count_resource | Endpoint para retorno da contagem dos focos de calor |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/auxiliar/estados` | get_estados_auxiliar_resource | `pais_id` | — | yes | Endpoint para retorno dos dados de estados utilizados na filtragem de focos |
+| GET | `/auxiliar/municipios` | get_municipios_auxiliar_resource | `pais_id`*, `estado_id` | — | yes | Endpoint para retorno dos dados de municípios utilizados na filtragem de focos |
+| GET | `/auxiliar/paises` | get_paises_auxiliar_resource | — | — | yes | Endpoint para retorno dos dados de países utilizados na filtragem de focos |
+| GET | `/auxiliar/satelites` | get_satelite_auxiliar_resource | — | — | yes | Endpoint para retorno dos dados de satélites utilizados na filtragem de focos |
+| GET | `/focos/` | get_focos_resource | `pais_id`, `estado_id`, `municipio_id`, `satelite`, `X-Fields` | — | yes | Endpoint para retorno dos dados de focos de calor |
+| GET | `/focos/count` | get_focos_count_resource | `pais_id`, `estado_id`, `municipio_id`, `satelite` | — | yes | Endpoint para retorno da contagem dos focos de calor |

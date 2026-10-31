@@ -28,6 +28,26 @@
         "from": "mercure-local-d0b0cbfe99",
         "kind": "EXPOSES",
         "to": "operation:get:/.well-known/mercure/subscriptions/{topic}/{subscriber}"
+      },
+      {
+        "from": "operation:get:/.well-known/mercure/subscriptions",
+        "kind": "RETURNS",
+        "to": "schema:Subscriptions"
+      },
+      {
+        "from": "operation:get:/.well-known/mercure/subscriptions/{topic}",
+        "kind": "RETURNS",
+        "to": "schema:Subscriptions"
+      },
+      {
+        "from": "operation:get:/.well-known/mercure/subscriptions/{topic}/{subscriber}",
+        "kind": "RETURNS",
+        "to": "schema:Subscriptions"
+      },
+      {
+        "from": "schema:Subscriptions",
+        "kind": "REFERENCES",
+        "to": "schema:Subscription"
       }
     ],
     "nodes": [
@@ -41,8 +61,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /.well-known/mercure",
+        "parameters": [
+          {
+            "description": "The topic to get updates from, can be a URI template (RFC6570).",
+            "in": "query",
+            "name": "topic",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "The last received event id, to retrieve missed events.",
+            "in": "query",
+            "name": "Last-Event-ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The last received event id, to retrieve missed events, takes precedence over the query parameter.",
+            "in": "header",
+            "name": "Last-Event-ID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/.well-known/mercure",
         "pointer": "#/paths/~1.well-known~1mercure/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
@@ -61,6 +116,25 @@
         "name": "post /.well-known/mercure",
         "path": "/.well-known/mercure",
         "pointer": "#/paths/~1.well-known~1mercure/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
@@ -79,6 +153,16 @@
         "name": "get /.well-known/mercure/subscriptions",
         "path": "/.well-known/mercure/subscriptions",
         "pointer": "#/paths/~1.well-known~1mercure~1subscriptions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Subscriptions"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
@@ -95,8 +179,26 @@
         "kind": "operation",
         "method": "get",
         "name": "get /.well-known/mercure/subscriptions/{topic}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "topic",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/.well-known/mercure/subscriptions/{topic}",
         "pointer": "#/paths/~1.well-known~1mercure~1subscriptions~1{topic}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Subscriptions"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
@@ -113,8 +215,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /.well-known/mercure/subscriptions/{topic}/{subscriber}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "topic",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "subscriber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/.well-known/mercure/subscriptions/{topic}/{subscriber}",
         "pointer": "#/paths/~1.well-known~1mercure~1subscriptions~1{topic}~1{subscriber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Subscriptions"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Bearer": []
@@ -128,12 +254,14 @@
       {
         "id": "schema:Subscription",
         "kind": "schema",
-        "name": "Subscription"
+        "name": "Subscription",
+        "type": "object"
       },
       {
         "id": "schema:Subscriptions",
         "kind": "schema",
-        "name": "Subscriptions"
+        "name": "Subscriptions",
+        "type": "object"
       }
     ]
   },

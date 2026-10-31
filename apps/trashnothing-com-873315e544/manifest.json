@@ -162,11 +162,6 @@
       {
         "from": "trashnothing-com-873315e544",
         "kind": "EXPOSES",
-        "to": "operation:delete:/posts/{post_id}"
-      },
-      {
-        "from": "trashnothing-com-873315e544",
-        "kind": "EXPOSES",
         "to": "operation:get:/posts/{post_id}"
       },
       {
@@ -177,12 +172,17 @@
       {
         "from": "trashnothing-com-873315e544",
         "kind": "EXPOSES",
-        "to": "operation:delete:/posts/{post_id}/bookmark"
+        "to": "operation:delete:/posts/{post_id}"
       },
       {
         "from": "trashnothing-com-873315e544",
         "kind": "EXPOSES",
         "to": "operation:put:/posts/{post_id}/bookmark"
+      },
+      {
+        "from": "trashnothing-com-873315e544",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/posts/{post_id}/bookmark"
       },
       {
         "from": "trashnothing-com-873315e544",
@@ -362,12 +362,12 @@
       {
         "from": "trashnothing-com-873315e544",
         "kind": "EXPOSES",
-        "to": "operation:delete:/users/{user_id}/feedback"
+        "to": "operation:post:/users/{user_id}/feedback"
       },
       {
         "from": "trashnothing-com-873315e544",
         "kind": "EXPOSES",
-        "to": "operation:post:/users/{user_id}/feedback"
+        "to": "operation:delete:/users/{user_id}/feedback"
       },
       {
         "from": "trashnothing-com-873315e544",
@@ -383,6 +383,186 @@
         "from": "trashnothing-com-873315e544",
         "kind": "EXPOSES",
         "to": "operation:get:/users/{user_id}/profile-image"
+      },
+      {
+        "from": "operation:post:/conversations/{conversation_id}/reply",
+        "kind": "RETURNS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:get:/groups/multiple",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:get:/groups/{group_id}",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/groups/{group_id}/answers",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/groups/{group_id}/unsubscribe",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/photos",
+        "kind": "RETURNS",
+        "to": "schema:PhotoResult"
+      },
+      {
+        "from": "operation:get:/photos/multiple",
+        "kind": "RETURNS",
+        "to": "schema:PhotoResult"
+      },
+      {
+        "from": "operation:post:/photos/{photo_id}/rotate",
+        "kind": "RETURNS",
+        "to": "schema:PhotoResult"
+      },
+      {
+        "from": "operation:get:/posts/{post_id}",
+        "kind": "RETURNS",
+        "to": "schema:Post"
+      },
+      {
+        "from": "operation:put:/posts/{post_id}/promise",
+        "kind": "RETURNS",
+        "to": "schema:Post"
+      },
+      {
+        "from": "operation:put:/posts/{post_id}/satisfy",
+        "kind": "RETURNS",
+        "to": "schema:Post"
+      },
+      {
+        "from": "operation:put:/posts/{post_id}/unpromise",
+        "kind": "RETURNS",
+        "to": "schema:Post"
+      },
+      {
+        "from": "operation:put:/posts/{post_id}/withdraw",
+        "kind": "RETURNS",
+        "to": "schema:Post"
+      },
+      {
+        "from": "operation:post:/stories",
+        "kind": "RETURNS",
+        "to": "schema:Story"
+      },
+      {
+        "from": "operation:get:/stories/{story_id}",
+        "kind": "RETURNS",
+        "to": "schema:Story"
+      },
+      {
+        "from": "operation:put:/stories/{story_id}/like",
+        "kind": "RETURNS",
+        "to": "schema:Story"
+      },
+      {
+        "from": "operation:put:/stories/{story_id}/unlike",
+        "kind": "RETURNS",
+        "to": "schema:Story"
+      },
+      {
+        "from": "operation:get:/users/me",
+        "kind": "RETURNS",
+        "to": "schema:CurrentUser"
+      },
+      {
+        "from": "operation:put:/users/me",
+        "kind": "RETURNS",
+        "to": "schema:CurrentUser"
+      },
+      {
+        "from": "operation:get:/users/me/alerts",
+        "kind": "RETURNS",
+        "to": "schema:Alert"
+      },
+      {
+        "from": "operation:put:/users/me/alerts",
+        "kind": "RETURNS",
+        "to": "schema:Alert"
+      },
+      {
+        "from": "operation:put:/users/me/email/not-bouncing",
+        "kind": "RETURNS",
+        "to": "schema:CurrentUser"
+      },
+      {
+        "from": "operation:get:/users/me/groups",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:put:/users/me/location",
+        "kind": "RETURNS",
+        "to": "schema:CurrentUser"
+      },
+      {
+        "from": "operation:get:/users/me/notices",
+        "kind": "RETURNS",
+        "to": "schema:GroupNotice"
+      },
+      {
+        "from": "operation:get:/users/{user_id}",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:CurrentUser",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:GeolocateBounds",
+        "kind": "REFERENCES",
+        "to": "schema:BoundingBox"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:Photo"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:Post",
+        "kind": "REFERENCES",
+        "to": "schema:Photo"
+      },
+      {
+        "from": "schema:PostSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:Story",
+        "kind": "REFERENCES",
+        "to": "schema:Photo"
+      },
+      {
+        "from": "schema:Story",
+        "kind": "REFERENCES",
+        "to": "schema:User"
       }
     ],
     "nodes": [
@@ -396,8 +576,68 @@
         "kind": "operation",
         "method": "get",
         "name": "get_conversations",
+        "parameters": [
+          {
+            "default": "inbox",
+            "description": "Used to filter messases by category.",
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page of conversations to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "The number of conversations to return per page (must be >= 1 and <= 30).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "The number of recent messages to return with each conversation.",
+            "in": "query",
+            "name": "num_messages",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "If set to 1, the num_unread field in the response will be set to the count of the total number of conversations that have unread messages.",
+            "in": "query",
+            "name": "include_num_unread",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/conversations",
         "pointer": "#/paths/~1conversations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -410,7 +650,10 @@
             ]
           }
         ],
-        "summary": "List conversations"
+        "summary": "List conversations",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -420,6 +663,22 @@
         "name": "archive_all_conversations",
         "path": "/conversations/archive-all",
         "pointer": "#/paths/~1conversations~1archive-all/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -432,7 +691,10 @@
             ]
           }
         ],
-        "summary": "Archive all conversations"
+        "summary": "Archive all conversations",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -442,6 +704,22 @@
         "name": "mark_all_conversations_read",
         "path": "/conversations/mark-all-read",
         "pointer": "#/paths/~1conversations~1mark-all-read/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -454,16 +732,63 @@
             ]
           }
         ],
-        "summary": "Mark all conversations as read"
+        "summary": "Mark all conversations as read",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Searches all conversations except blocked conversations.",
         "id": "operation:get:/conversations/search",
         "kind": "operation",
         "method": "get",
         "name": "search_conversations",
+        "parameters": [
+          {
+            "description": "The search query used to find conversations and messages.",
+            "in": "query",
+            "name": "search",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page of conversations to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "The number of conversations to return per page (must be >= 1 and <= 30).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/conversations/search",
         "pointer": "#/paths/~1conversations~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -476,7 +801,10 @@
             ]
           }
         ],
-        "summary": "Search conversations"
+        "summary": "Search conversations",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -484,8 +812,39 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete_conversation",
+        "parameters": [
+          {
+            "description": "The ID of the conversation to delete.",
+            "in": "path",
+            "name": "conversation_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the newest message in the conversation that the client has downloaded.",
+            "in": "query",
+            "name": "message_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/conversations/{conversation_id}",
         "pointer": "#/paths/~1conversations~1{conversation_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -498,7 +857,10 @@
             ]
           }
         ],
-        "summary": "Delete conversation"
+        "summary": "Delete conversation",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -506,8 +868,29 @@
         "kind": "operation",
         "method": "put",
         "name": "archive_conversation",
+        "parameters": [
+          {
+            "description": "The ID of the conversation to archive.",
+            "in": "path",
+            "name": "conversation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/conversations/{conversation_id}/archive",
         "pointer": "#/paths/~1conversations~1{conversation_id}~1archive/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -520,7 +903,10 @@
             ]
           }
         ],
-        "summary": "Archive conversation"
+        "summary": "Archive conversation",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -528,8 +914,32 @@
         "kind": "operation",
         "method": "put",
         "name": "block_conversation",
+        "parameters": [
+          {
+            "description": "The ID of the conversation to block.",
+            "in": "path",
+            "name": "conversation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/conversations/{conversation_id}/block",
         "pointer": "#/paths/~1conversations~1{conversation_id}~1block/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -542,7 +952,10 @@
             ]
           }
         ],
-        "summary": "Block conversation"
+        "summary": "Block conversation",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -550,8 +963,39 @@
         "kind": "operation",
         "method": "put",
         "name": "mark_conversation_read",
+        "parameters": [
+          {
+            "description": "The ID of the conversation to mark as read.",
+            "in": "path",
+            "name": "conversation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/conversations/{conversation_id}/mark-read",
         "pointer": "#/paths/~1conversations~1{conversation_id}~1mark-read/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -564,7 +1008,10 @@
             ]
           }
         ],
-        "summary": "Mark conversation as read"
+        "summary": "Mark conversation as read",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -572,8 +1019,65 @@
         "kind": "operation",
         "method": "get",
         "name": "get_conversation_messages",
+        "parameters": [
+          {
+            "description": "The ID of the conversation to return messages from.",
+            "in": "path",
+            "name": "conversation_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page of messages to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "The number of messages to return per page (must be >= 1 and <= 30).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0,
+            "description": "If set to 1, the conversation will be returned along with the messages.",
+            "in": "query",
+            "name": "include_conversation",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/conversations/{conversation_id}/messages",
         "pointer": "#/paths/~1conversations~1{conversation_id}~1messages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -586,7 +1090,10 @@
             ]
           }
         ],
-        "summary": "List conversation messages"
+        "summary": "List conversation messages",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -594,8 +1101,40 @@
         "kind": "operation",
         "method": "post",
         "name": "reply_to_conversation",
+        "parameters": [
+          {
+            "description": "The ID of the conversation to reply to.",
+            "in": "path",
+            "name": "conversation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/conversations/{conversation_id}/reply",
         "pointer": "#/paths/~1conversations~1{conversation_id}~1reply/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Message"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -608,7 +1147,10 @@
             ]
           }
         ],
-        "summary": "Reply to conversation"
+        "summary": "Reply to conversation",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -616,8 +1158,39 @@
         "kind": "operation",
         "method": "post",
         "name": "report_conversation",
+        "parameters": [
+          {
+            "description": "The ID of the conversation to report.",
+            "in": "path",
+            "name": "conversation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/conversations/{conversation_id}/report",
         "pointer": "#/paths/~1conversations~1{conversation_id}~1report/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -630,7 +1203,10 @@
             ]
           }
         ],
-        "summary": "Report conversation"
+        "summary": "Report conversation",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -638,8 +1214,29 @@
         "kind": "operation",
         "method": "put",
         "name": "unarchive_conversation",
+        "parameters": [
+          {
+            "description": "The ID of the conversation to unarchive.",
+            "in": "path",
+            "name": "conversation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/conversations/{conversation_id}/unarchive",
         "pointer": "#/paths/~1conversations~1{conversation_id}~1unarchive/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -652,7 +1249,10 @@
             ]
           }
         ],
-        "summary": "Unarchive conversation"
+        "summary": "Unarchive conversation",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
@@ -660,8 +1260,29 @@
         "kind": "operation",
         "method": "put",
         "name": "unblock_conversation",
+        "parameters": [
+          {
+            "description": "The ID of the conversation to unblock.",
+            "in": "path",
+            "name": "conversation_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/conversations/{conversation_id}/unblock",
         "pointer": "#/paths/~1conversations~1{conversation_id}~1unblock/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -674,16 +1295,33 @@
             ]
           }
         ],
-        "summary": "Unblock conversation"
+        "summary": "Unblock conversation",
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows users to send feedback about the trashnothing.com site or apps.",
         "id": "operation:post:/feedback",
         "kind": "operation",
         "method": "post",
         "name": "send_feedback",
         "path": "/feedback",
         "pointer": "#/paths/~1feedback/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -696,7 +1334,10 @@
             ]
           }
         ],
-        "summary": "Send feedback"
+        "summary": "Send feedback",
+        "tags": [
+          "misc"
+        ]
       },
       {
         "deprecated": false,
@@ -704,8 +1345,86 @@
         "kind": "operation",
         "method": "get",
         "name": "search_groups",
+        "parameters": [
+          {
+            "description": "Find groups that have the given text somewhere in their name (case insensitive).",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find groups near the given latitude and longitude.",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Find groups near the given latitude and longitude.",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 100,
+            "description": "When latitude and longitude are passed, distance can optionally be passed to only return groups within a certain distance (in kilometers) from the point specif…",
+            "in": "query",
+            "name": "distance",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Find groups in the given country where country is a 2 letter country code for the country (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 ).",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "For countries with regions (AU, CA, GB, US), search groups in a specific region as specified by the region abbreviation.",
+            "in": "query",
+            "name": "region",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find groups in the given postal code.",
+            "in": "query",
+            "name": "postal_code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "The page of groups to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "The number of groups to return per page (must be >= 1 and <= 100).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/groups",
         "pointer": "#/paths/~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -721,7 +1440,10 @@
             "api_key": []
           }
         ],
-        "summary": "Search groups"
+        "summary": "Search groups",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -729,8 +1451,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get_groups_by_ids",
+        "parameters": [
+          {
+            "description": "The IDs of the groups to retrieve.",
+            "in": "query",
+            "name": "group_ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/groups/multiple",
         "pointer": "#/paths/~1groups~1multiple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -746,16 +1487,40 @@
             "api_key": []
           }
         ],
-        "summary": "Retrieve multiple groups"
+        "summary": "Retrieve multiple groups",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Request membership to one or more groups.",
         "id": "operation:post:/groups/subscribe",
         "kind": "operation",
         "method": "post",
         "name": "join_groups",
         "path": "/groups/subscribe",
         "pointer": "#/paths/~1groups~1subscribe/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -768,7 +1533,10 @@
             ]
           }
         ],
-        "summary": "Join groups"
+        "summary": "Join groups",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -776,8 +1544,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get_group",
+        "parameters": [
+          {
+            "description": "The ID of the group to retrieve.",
+            "in": "path",
+            "name": "group_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{group_id}",
         "pointer": "#/paths/~1groups~1{group_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -793,16 +1580,49 @@
             "api_key": []
           }
         ],
-        "summary": "Retrieve a group"
+        "summary": "Retrieve a group",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Submits answers to a groups' membership questionnaire.",
         "id": "operation:post:/groups/{group_id}/answers",
         "kind": "operation",
         "method": "post",
         "name": "submit_answers",
+        "parameters": [
+          {
+            "description": "The group ID of the group that the user is submitting answers for.",
+            "in": "path",
+            "name": "group_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{group_id}/answers",
         "pointer": "#/paths/~1groups~1{group_id}~1answers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -815,7 +1635,10 @@
             ]
           }
         ],
-        "summary": "Submit group answers"
+        "summary": "Submit group answers",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -823,8 +1646,36 @@
         "kind": "operation",
         "method": "post",
         "name": "contact_moderators",
+        "parameters": [
+          {
+            "description": "The group ID of the group whose moderators will be contacted.",
+            "in": "path",
+            "name": "group_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{group_id}/contact",
         "pointer": "#/paths/~1groups~1{group_id}~1contact/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -837,7 +1688,10 @@
             ]
           }
         ],
-        "summary": "Contact group moderators"
+        "summary": "Contact group moderators",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -845,8 +1699,30 @@
         "kind": "operation",
         "method": "post",
         "name": "leave_group",
+        "parameters": [
+          {
+            "description": "The ID of the group to leave.",
+            "in": "path",
+            "name": "group_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{group_id}/unsubscribe",
         "pointer": "#/paths/~1groups~1{group_id}~1unsubscribe/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -859,7 +1735,10 @@
             ]
           }
         ],
-        "summary": "Leave a group"
+        "summary": "Leave a group",
+        "tags": [
+          "groups"
+        ]
       },
       {
         "deprecated": false,
@@ -869,6 +1748,23 @@
         "name": "upload_photo",
         "path": "/photos",
         "pointer": "#/paths/~1photos/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PhotoResult"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -881,7 +1777,10 @@
             ]
           }
         ],
-        "summary": "Create a photo"
+        "summary": "Create a photo",
+        "tags": [
+          "photos"
+        ]
       },
       {
         "deprecated": false,
@@ -889,8 +1788,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get_photos_by_ids",
+        "parameters": [
+          {
+            "description": "The IDs of the photos to retrieve.",
+            "in": "query",
+            "name": "photo_ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/photos/multiple",
         "pointer": "#/paths/~1photos~1multiple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PhotoResult[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -903,7 +1829,10 @@
             ]
           }
         ],
-        "summary": "Retrieve multiple photos"
+        "summary": "Retrieve multiple photos",
+        "tags": [
+          "photos"
+        ]
       },
       {
         "deprecated": false,
@@ -911,8 +1840,31 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete_photo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/photos/{photo_id}",
         "pointer": "#/paths/~1photos~1{photo_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -925,7 +1877,10 @@
             ]
           }
         ],
-        "summary": "Delete a photo"
+        "summary": "Delete a photo",
+        "tags": [
+          "photos"
+        ]
       },
       {
         "deprecated": false,
@@ -933,8 +1888,47 @@
         "kind": "operation",
         "method": "post",
         "name": "rotate_photo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "photo_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Rotation in degrees - currently only 90, 180 and 270 are supported which correspond to rotate left, rotate upside down and rotate right.",
+            "in": "query",
+            "name": "degrees",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/photos/{photo_id}/rotate",
         "pointer": "#/paths/~1photos~1{photo_id}~1rotate/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PhotoResult"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -947,16 +1941,143 @@
             ]
           }
         ],
-        "summary": "Rotate a photo"
+        "summary": "Rotate a photo",
+        "tags": [
+          "photos"
+        ]
       },
       {
         "deprecated": false,
+        "description": "NOTE: When paging through the posts returned by this endpoint, there will be at most 1,000 posts that can be returned (eg.",
         "id": "operation:get:/posts",
         "kind": "operation",
         "method": "get",
         "name": "get_posts",
+        "parameters": [
+          {
+            "default": "date",
+            "description": "How to sort the posts that are returned.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post types to return.",
+            "in": "query",
+            "name": "types",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post sources to retrieve posts from.",
+            "in": "query",
+            "name": "sources",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "The group IDs of every group the current user is a member of.",
+            "description": "A comma separated list of the group IDs to retrieve posts from.",
+            "in": "query",
+            "name": "group_ids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "The number of posts to return per page (must be >= 1 and <= 100).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The page of posts to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The latitude of a point around which to return posts.",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The longitude of a point around which to return posts.",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The radius in meters of a circle centered at the point defined by the latitude and longitude parameters.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Only posts newer than or equal to this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_min",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Only posts older than this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_max",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "A comma separated list of the post outcomes to return.",
+            "in": "query",
+            "name": "outcomes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If user_state is set, only posts matching the state specified will be returned.",
+            "in": "query",
+            "name": "user_state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "If set to 1 (the default), posts that are reposts will be included.",
+            "in": "query",
+            "name": "include_reposts",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/posts",
         "pointer": "#/paths/~1posts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -972,16 +2093,37 @@
             "api_key": []
           }
         ],
-        "summary": "List posts"
+        "summary": "List posts",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Submits a new post.",
         "id": "operation:post:/posts",
         "kind": "operation",
         "method": "post",
         "name": "submit_post",
         "path": "/posts",
         "pointer": "#/paths/~1posts/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -994,16 +2136,77 @@
             ]
           }
         ],
-        "summary": "Submit a post"
+        "summary": "Submit a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint provides an easy way to get a feed of all the publicly published posts on trash nothing.",
         "id": "operation:get:/posts/all",
         "kind": "operation",
         "method": "get",
         "name": "get_all_posts",
+        "parameters": [
+          {
+            "description": "A comma separated list of the post types to return.",
+            "in": "query",
+            "name": "types",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only posts newer than or equal to this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_min",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Only posts older than this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_max",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "default": 20,
+            "description": "The number of posts to return per page (must be >= 1 and <= 50).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The page of posts to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/posts/all",
         "pointer": "#/paths/~1posts~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1019,16 +2222,62 @@
             "api_key": []
           }
         ],
-        "summary": "List all posts"
+        "summary": "List all posts",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint provides an easy way to get a feed of all the changes that have been made to publicly published posts on trash nothing.",
         "id": "operation:get:/posts/all/changes",
         "kind": "operation",
         "method": "get",
         "name": "get_all_posts_changes",
+        "parameters": [
+          {
+            "description": "Only changes newer than or equal to this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_min",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Only changes older than this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_max",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "default": 20,
+            "description": "The number of changes to return per page (must be >= 1 and <= 50).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The page of changes to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/posts/all/changes",
         "pointer": "#/paths/~1posts~1all~1changes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1044,7 +2293,10 @@
             "api_key": []
           }
         ],
-        "summary": "List all post changes"
+        "summary": "List all post changes",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
@@ -1052,8 +2304,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get_posts_by_ids",
+        "parameters": [
+          {
+            "description": "A comma separated list of the post IDs.",
+            "in": "query",
+            "name": "post_ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/multiple",
         "pointer": "#/paths/~1posts~1multiple/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1069,16 +2337,150 @@
             "api_key": []
           }
         ],
-        "summary": "Retrieve multiple posts"
+        "summary": "Retrieve multiple posts",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Searching posts takes the same arguments as listing posts except for the addition of the search and sort_by parameters.",
         "id": "operation:get:/posts/search",
         "kind": "operation",
         "method": "get",
         "name": "search_posts",
+        "parameters": [
+          {
+            "description": "The search query used to find posts.",
+            "in": "query",
+            "name": "search",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "relevance",
+            "description": "How to sort the posts that are returned.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post types to return.",
+            "in": "query",
+            "name": "types",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post sources to retrieve posts from.",
+            "in": "query",
+            "name": "sources",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "The group IDs of every group the current user is a member of.",
+            "description": "A comma separated list of the group IDs to retrieve posts from.",
+            "in": "query",
+            "name": "group_ids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "The number of posts to return per page (must be >= 1 and <= 100).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The page of posts to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The latitude of a point around which to return posts.",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The longitude of a point around which to return posts.",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The radius in meters of a circle centered at the point defined by the latitude and longitude parameters.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Only posts newer than or equal to this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_min",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Only posts older than this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_max",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "A comma separated list of the post outcomes to return.",
+            "in": "query",
+            "name": "outcomes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If user_state is set, only posts matching the state specified will be returned.",
+            "in": "query",
+            "name": "user_state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "If set to 1 (the default), posts that are reposts will be included.",
+            "in": "query",
+            "name": "include_reposts",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/posts/search",
         "pointer": "#/paths/~1posts~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1094,29 +2496,10 @@
             "api_key": []
           }
         ],
-        "summary": "Search posts"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/posts/{post_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_post",
-        "path": "/posts/{post_id}",
-        "pointer": "#/paths/~1posts~1{post_id}/delete",
-        "security": [
-          {
-            "oauth2_implicit": [
-              "basic"
-            ]
-          },
-          {
-            "oauth2_code": [
-              "basic"
-            ]
-          }
-        ],
-        "summary": "Delete a post"
+        "summary": "Search posts",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
@@ -1124,8 +2507,30 @@
         "kind": "operation",
         "method": "get",
         "name": "get_post",
+        "parameters": [
+          {
+            "description": "The ID of the post to retrieve.",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}",
         "pointer": "#/paths/~1posts~1{post_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Post"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1141,16 +2546,52 @@
             "api_key": []
           }
         ],
-        "summary": "Retrieve a post"
+        "summary": "Retrieve a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Users can update posts to fix mistakes with their post, add photos, or add more details about the items.",
         "id": "operation:put:/posts/{post_id}",
         "kind": "operation",
         "method": "put",
         "name": "update_post",
+        "parameters": [
+          {
+            "description": "The ID of the post to update.",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}",
         "pointer": "#/paths/~1posts~1{post_id}/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1163,16 +2604,43 @@
             ]
           }
         ],
-        "summary": "Update a post"
+        "summary": "Update a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/posts/{post_id}/bookmark",
+        "description": "Users can delete posts they have made that have been satisfied or withdrawn or that have expired.",
+        "id": "operation:delete:/posts/{post_id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete_bookmark",
-        "path": "/posts/{post_id}/bookmark",
-        "pointer": "#/paths/~1posts~1{post_id}~1bookmark/delete",
+        "name": "delete_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/posts/{post_id}",
+        "pointer": "#/paths/~1posts~1{post_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1185,7 +2653,10 @@
             ]
           }
         ],
-        "summary": "Delete a post bookmark"
+        "summary": "Delete a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
@@ -1193,8 +2664,28 @@
         "kind": "operation",
         "method": "put",
         "name": "bookmark_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}/bookmark",
         "pointer": "#/paths/~1posts~1{post_id}~1bookmark/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1207,16 +2698,84 @@
             ]
           }
         ],
-        "summary": "Bookmark a post"
+        "summary": "Bookmark a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/posts/{post_id}/bookmark",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_bookmark",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/posts/{post_id}/bookmark",
+        "pointer": "#/paths/~1posts~1{post_id}~1bookmark/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2_implicit": [
+              "basic"
+            ]
+          },
+          {
+            "oauth2_code": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Delete a post bookmark",
+        "tags": [
+          "posts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieve a post and other data related to the post that is useful for displaying the post such as data about the user who posted the post and the groups the po…",
         "id": "operation:get:/posts/{post_id}/display",
         "kind": "operation",
         "method": "get",
         "name": "get_post_and_related_data",
+        "parameters": [
+          {
+            "description": "The ID of the post to retrieve.",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}/display",
         "pointer": "#/paths/~1posts~1{post_id}~1display/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1232,16 +2791,45 @@
             "api_key": []
           }
         ],
-        "summary": "Retrieve post display data"
+        "summary": "Retrieve post display data",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Mark an offer by the current user as promised to someone.",
         "id": "operation:put:/posts/{post_id}/promise",
         "kind": "operation",
         "method": "put",
         "name": "promise_post",
+        "parameters": [
+          {
+            "description": "The ID of the post to promise.",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}/promise",
         "pointer": "#/paths/~1posts~1{post_id}~1promise/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Post"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1254,16 +2842,51 @@
             ]
           }
         ],
-        "summary": "Promise an offer post"
+        "summary": "Promise an offer post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Send a reply to a post from the current user to the post author.",
         "id": "operation:post:/posts/{post_id}/reply",
         "kind": "operation",
         "method": "post",
         "name": "reply_to_post",
+        "parameters": [
+          {
+            "description": "The ID of the post to reply to.",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}/reply",
         "pointer": "#/paths/~1posts~1{post_id}~1reply/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1276,16 +2899,47 @@
             ]
           }
         ],
-        "summary": "Reply to a post"
+        "summary": "Reply to a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Reports a post to be reviewed by the moderators.",
         "id": "operation:post:/posts/{post_id}/report",
         "kind": "operation",
         "method": "post",
         "name": "report_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}/report",
         "pointer": "#/paths/~1posts~1{post_id}~1report/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1298,16 +2952,45 @@
             ]
           }
         ],
-        "summary": "Report a post"
+        "summary": "Report a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Mark an offer or wanted post by the current user as satisfied (eg.",
         "id": "operation:put:/posts/{post_id}/satisfy",
         "kind": "operation",
         "method": "put",
         "name": "satisfy_post",
+        "parameters": [
+          {
+            "description": "The ID of the post to satisfy.",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}/satisfy",
         "pointer": "#/paths/~1posts~1{post_id}~1satisfy/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Post"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1320,16 +3003,41 @@
             ]
           }
         ],
-        "summary": "Satisfy a post"
+        "summary": "Satisfy a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Forwards a copy of the post to the current user so that they can forward it to friends.",
         "id": "operation:post:/posts/{post_id}/share",
         "kind": "operation",
         "method": "post",
         "name": "share_post",
+        "parameters": [
+          {
+            "description": "The ID of the post to share.",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}/share",
         "pointer": "#/paths/~1posts~1{post_id}~1share/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1342,16 +3050,45 @@
             ]
           }
         ],
-        "summary": "Share a post"
+        "summary": "Share a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Mark an offer by the current user as unpromised.",
         "id": "operation:put:/posts/{post_id}/unpromise",
         "kind": "operation",
         "method": "put",
         "name": "unpromise_post",
+        "parameters": [
+          {
+            "description": "The ID of the post to unpromise.",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}/unpromise",
         "pointer": "#/paths/~1posts~1{post_id}~1unpromise/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Post"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1364,16 +3101,45 @@
             ]
           }
         ],
-        "summary": "Unpromise an offer post"
+        "summary": "Unpromise an offer post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Mark an offer or wanted post by the current user as withdrawn.",
         "id": "operation:put:/posts/{post_id}/withdraw",
         "kind": "operation",
         "method": "put",
         "name": "withdraw_post",
+        "parameters": [
+          {
+            "description": "The ID of the post to withdraw.",
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/posts/{post_id}/withdraw",
         "pointer": "#/paths/~1posts~1{post_id}~1withdraw/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Post"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1386,7 +3152,10 @@
             ]
           }
         ],
-        "summary": "Withdraw a post"
+        "summary": "Withdraw a post",
+        "tags": [
+          "posts"
+        ]
       },
       {
         "deprecated": false,
@@ -1394,8 +3163,66 @@
         "kind": "operation",
         "method": "get",
         "name": "get_stories",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "The page of stories to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "The number of stories to return per page (must be >= 1 and <= 50).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "date",
+            "description": "How to sort the stories that are returned.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find groups near the given latitude and longitude.",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Find groups near the given latitude and longitude.",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/stories",
         "pointer": "#/paths/~1stories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1411,7 +3238,10 @@
             "api_key": []
           }
         ],
-        "summary": "List stories"
+        "summary": "List stories",
+        "tags": [
+          "stories"
+        ]
       },
       {
         "deprecated": false,
@@ -1421,6 +3251,23 @@
         "name": "submit_story",
         "path": "/stories",
         "pointer": "#/paths/~1stories/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Story"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1433,7 +3280,10 @@
             ]
           }
         ],
-        "summary": "Submit a story"
+        "summary": "Submit a story",
+        "tags": [
+          "stories"
+        ]
       },
       {
         "deprecated": false,
@@ -1441,8 +3291,38 @@
         "kind": "operation",
         "method": "get",
         "name": "get_story",
+        "parameters": [
+          {
+            "description": "The ID of the story to retrieve.",
+            "in": "path",
+            "name": "story_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/stories/{story_id}",
         "pointer": "#/paths/~1stories~1{story_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Story"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1458,7 +3338,10 @@
             "api_key": []
           }
         ],
-        "summary": "Retrieve a story"
+        "summary": "Retrieve a story",
+        "tags": [
+          "stories"
+        ]
       },
       {
         "deprecated": false,
@@ -1466,8 +3349,35 @@
         "kind": "operation",
         "method": "put",
         "name": "like_story",
+        "parameters": [
+          {
+            "description": "The ID of the story to like.",
+            "in": "path",
+            "name": "story_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/stories/{story_id}/like",
         "pointer": "#/paths/~1stories~1{story_id}~1like/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Story"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1480,7 +3390,10 @@
             ]
           }
         ],
-        "summary": "Like a story"
+        "summary": "Like a story",
+        "tags": [
+          "stories"
+        ]
       },
       {
         "deprecated": false,
@@ -1488,8 +3401,35 @@
         "kind": "operation",
         "method": "put",
         "name": "unlike_story",
+        "parameters": [
+          {
+            "description": "The ID of the story to unlike.",
+            "in": "path",
+            "name": "story_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/stories/{story_id}/unlike",
         "pointer": "#/paths/~1stories~1{story_id}~1unlike/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Story"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1502,16 +3442,38 @@
             ]
           }
         ],
-        "summary": "Unlike a story"
+        "summary": "Unlike a story",
+        "tags": [
+          "stories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Records every time a user views the full story (and not just a preview or snippet),",
         "id": "operation:post:/stories/{story_id}/viewed",
         "kind": "operation",
         "method": "post",
         "name": "viewed_story",
+        "parameters": [
+          {
+            "description": "The ID of the story viewed.",
+            "in": "path",
+            "name": "story_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stories/{story_id}/viewed",
         "pointer": "#/paths/~1stories~1{story_id}~1viewed/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1527,7 +3489,10 @@
             "api_key": []
           }
         ],
-        "summary": "Record story viewed"
+        "summary": "Record story viewed",
+        "tags": [
+          "stories"
+        ]
       },
       {
         "deprecated": false,
@@ -1537,6 +3502,16 @@
         "name": "get_current_user",
         "path": "/users/me",
         "pointer": "#/paths/~1users~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentUser"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1549,16 +3524,37 @@
             ]
           }
         ],
-        "summary": "Retrieve current user"
+        "summary": "Retrieve current user",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the current user.",
         "id": "operation:put:/users/me",
         "kind": "operation",
         "method": "put",
         "name": "update_current_user",
         "path": "/users/me",
         "pointer": "#/paths/~1users~1me/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentUser"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1571,7 +3567,10 @@
             ]
           }
         ],
-        "summary": "Update current user"
+        "summary": "Update current user",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1581,6 +3580,13 @@
         "name": "get_alerts",
         "path": "/users/me/alerts",
         "pointer": "#/paths/~1users~1me~1alerts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Alert[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1593,7 +3599,10 @@
             ]
           }
         ],
-        "summary": "List current users' email alerts"
+        "summary": "List current users' email alerts",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1603,6 +3612,23 @@
         "name": "create_alert",
         "path": "/users/me/alerts",
         "pointer": "#/paths/~1users~1me~1alerts/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Alert"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1615,7 +3641,10 @@
             ]
           }
         ],
-        "summary": "Create an email alert"
+        "summary": "Create an email alert",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1623,8 +3652,29 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete_alert",
+        "parameters": [
+          {
+            "description": "The ID of the email alert to delete.",
+            "in": "path",
+            "name": "alert_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/me/alerts/{alert_id}",
         "pointer": "#/paths/~1users~1me~1alerts~1{alert_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1637,16 +3687,36 @@
             ]
           }
         ],
-        "summary": "Delete an email alert"
+        "summary": "Delete an email alert",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Change the users' current email address.",
         "id": "operation:post:/users/me/email",
         "kind": "operation",
         "method": "post",
         "name": "change_email",
         "path": "/users/me/email",
         "pointer": "#/paths/~1users~1me~1email/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1659,16 +3729,30 @@
             ]
           }
         ],
-        "summary": "Change email address"
+        "summary": "Change email address",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resets an email address bouncing state to false.",
         "id": "operation:put:/users/me/email/not-bouncing",
         "kind": "operation",
         "method": "put",
         "name": "set_email_not_bouncing",
         "path": "/users/me/email/not-bouncing",
         "pointer": "#/paths/~1users~1me~1email~1not-bouncing/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentUser"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1681,7 +3765,10 @@
             ]
           }
         ],
-        "summary": "Set users' email address as not bouncing"
+        "summary": "Set users' email address as not bouncing",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1689,8 +3776,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get_current_user_groups",
+        "parameters": [
+          {
+            "description": "Set the membership parameter to only return certain groups.",
+            "in": "query",
+            "name": "membership",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/me/groups",
         "pointer": "#/paths/~1users~1me~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1703,16 +3809,37 @@
             ]
           }
         ],
-        "summary": "List current users' groups"
+        "summary": "List current users' groups",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the current users' location.",
         "id": "operation:put:/users/me/location",
         "kind": "operation",
         "method": "put",
         "name": "update_location",
         "path": "/users/me/location",
         "pointer": "#/paths/~1users~1me~1location/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentUser"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1725,7 +3852,10 @@
             ]
           }
         ],
-        "summary": "Update location"
+        "summary": "Update location",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1733,8 +3863,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get_user_group_notices",
+        "parameters": [
+          {
+            "description": "A comma separated list of group IDs to return notices for.",
+            "in": "query",
+            "name": "group_ids",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/me/notices",
         "pointer": "#/paths/~1users~1me~1notices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GroupNotice[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1747,16 +3896,27 @@
             ]
           }
         ],
-        "summary": "List current users' group notices"
+        "summary": "List current users' group notices",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Only the most recent 3 post locations are returned.",
         "id": "operation:get:/users/me/post-locations",
         "kind": "operation",
         "method": "get",
         "name": "get_post_locations",
         "path": "/users/me/post-locations",
         "pointer": "#/paths/~1users~1me~1post-locations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1769,16 +3929,34 @@
             ]
           }
         ],
-        "summary": "List current users' post locations"
+        "summary": "List current users' post locations",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates or updates a post location for the current user.",
         "id": "operation:put:/users/me/post-locations",
         "kind": "operation",
         "method": "put",
         "name": "save_post_location",
         "path": "/users/me/post-locations",
         "pointer": "#/paths/~1users~1me~1post-locations/put",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1791,16 +3969,143 @@
             ]
           }
         ],
-        "summary": "Save a post location for the current user"
+        "summary": "Save a post location for the current user",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "NOTE: In order to make it easier to see all a users&#39; posts, the current users&#39; location preferences are not applied when listing or searching posts fro…",
         "id": "operation:get:/users/me/posts",
         "kind": "operation",
         "method": "get",
         "name": "get_current_user_posts",
+        "parameters": [
+          {
+            "default": "date",
+            "description": "How to sort the posts that are returned.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post types to return.",
+            "in": "query",
+            "name": "types",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post sources to retrieve posts from.",
+            "in": "query",
+            "name": "sources",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "The group IDs of every group the current user is a member of.",
+            "description": "A comma separated list of the group IDs to retrieve posts from.",
+            "in": "query",
+            "name": "group_ids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "The number of posts to return per page (must be >= 1 and <= 100).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The page of posts to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The latitude of a point around which to return posts.",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The longitude of a point around which to return posts.",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The radius in meters of a circle centered at the point defined by the latitude and longitude parameters.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Only posts newer than or equal to this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_min",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Only posts older than this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_max",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "A comma separated list of the post outcomes to return.",
+            "in": "query",
+            "name": "outcomes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If user_state is set, only posts matching the state specified will be returned.",
+            "in": "query",
+            "name": "user_state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "If set to 1 (the default), posts that are reposts will be included.",
+            "in": "query",
+            "name": "include_reposts",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/users/me/posts",
         "pointer": "#/paths/~1users~1me~1posts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1813,16 +4118,150 @@
             ]
           }
         ],
-        "summary": "List current users' posts"
+        "summary": "List current users' posts",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Searching posts takes the same arguments as listing posts except for the addition of the search and sort_by parameters.",
         "id": "operation:get:/users/me/posts/search",
         "kind": "operation",
         "method": "get",
         "name": "search_current_user_posts",
+        "parameters": [
+          {
+            "description": "The search query used to find posts.",
+            "in": "query",
+            "name": "search",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "relevance",
+            "description": "How to sort the posts that are returned.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post types to return.",
+            "in": "query",
+            "name": "types",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post sources to retrieve posts from.",
+            "in": "query",
+            "name": "sources",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "The group IDs of every group the current user is a member of.",
+            "description": "A comma separated list of the group IDs to retrieve posts from.",
+            "in": "query",
+            "name": "group_ids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "The number of posts to return per page (must be >= 1 and <= 100).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The page of posts to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The latitude of a point around which to return posts.",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The longitude of a point around which to return posts.",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The radius in meters of a circle centered at the point defined by the latitude and longitude parameters.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Only posts newer than or equal to this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_min",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Only posts older than this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_max",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "A comma separated list of the post outcomes to return.",
+            "in": "query",
+            "name": "outcomes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If user_state is set, only posts matching the state specified will be returned.",
+            "in": "query",
+            "name": "user_state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "If set to 1 (the default), posts that are reposts will be included.",
+            "in": "query",
+            "name": "include_reposts",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/users/me/posts/search",
         "pointer": "#/paths/~1users~1me~1posts~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1835,16 +4274,37 @@
             ]
           }
         ],
-        "summary": "Search current users' posts"
+        "summary": "Search current users' posts",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Profile images must be at least 90 pixels wide and tall.",
         "id": "operation:post:/users/me/profile-image",
         "kind": "operation",
         "method": "post",
         "name": "set_profile_image",
         "path": "/users/me/profile-image",
         "pointer": "#/paths/~1users~1me~1profile-image/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1857,7 +4317,10 @@
             ]
           }
         ],
-        "summary": "Set a profile image"
+        "summary": "Set a profile image",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1867,6 +4330,13 @@
         "name": "get_profile_images",
         "path": "/users/me/profile-images",
         "pointer": "#/paths/~1users~1me~1profile-images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1879,7 +4349,10 @@
             ]
           }
         ],
-        "summary": "List current users' profile images"
+        "summary": "List current users' profile images",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1889,6 +4362,15 @@
         "name": "resend_account_verification_email",
         "path": "/users/me/resend-verification",
         "pointer": "#/paths/~1users~1me~1resend-verification/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1901,7 +4383,10 @@
             ]
           }
         ],
-        "summary": "Resend account verification email"
+        "summary": "Resend account verification email",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1911,6 +4396,12 @@
         "name": "send_password_reset_email",
         "path": "/users/me/reset-password",
         "pointer": "#/paths/~1users~1me~1reset-password/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1923,7 +4414,10 @@
             ]
           }
         ],
-        "summary": "Send password reset email"
+        "summary": "Send password reset email",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1933,6 +4427,25 @@
         "name": "report_user",
         "path": "/users/report",
         "pointer": "#/paths/~1users~1report/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -1945,7 +4458,10 @@
             ]
           }
         ],
-        "summary": "Report a user"
+        "summary": "Report a user",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
@@ -1953,8 +4469,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get_user",
+        "parameters": [
+          {
+            "description": "A user ID.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}",
         "pointer": "#/paths/~1users~1{user_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1967,16 +4502,39 @@
             ]
           }
         ],
-        "summary": "Retrieve a user"
+        "summary": "Retrieve a user",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a user and information related to the user (eg.",
         "id": "operation:get:/users/{user_id}/display",
         "kind": "operation",
         "method": "get",
         "name": "get_user_and_related_data",
+        "parameters": [
+          {
+            "description": "A user ID.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/display",
         "pointer": "#/paths/~1users~1{user_id}~1display/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -1989,38 +4547,49 @@
             ]
           }
         ],
-        "summary": "Retrieve user display info"
+        "summary": "Retrieve user display info",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/users/{user_id}/feedback",
-        "kind": "operation",
-        "method": "delete",
-        "name": "remove_user_feedback",
-        "path": "/users/{user_id}/feedback",
-        "pointer": "#/paths/~1users~1{user_id}~1feedback/delete",
-        "security": [
-          {
-            "oauth2_implicit": [
-              "basic"
-            ]
-          },
-          {
-            "oauth2_code": [
-              "basic"
-            ]
-          }
-        ],
-        "summary": "Remove feedback on a user"
-      },
-      {
-        "deprecated": false,
+        "description": "Allows the current user to submit feedback on a user.",
         "id": "operation:post:/users/{user_id}/feedback",
         "kind": "operation",
         "method": "post",
         "name": "submit_user_feedback",
+        "parameters": [
+          {
+            "description": "A user ID.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/feedback",
         "pointer": "#/paths/~1users~1{user_id}~1feedback/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2_implicit": [
@@ -2033,16 +4602,191 @@
             ]
           }
         ],
-        "summary": "Submit feedback on a user"
+        "summary": "Submit feedback on a user",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows the current user to remove feedback that they left on a user.",
+        "id": "operation:delete:/users/{user_id}/feedback",
+        "kind": "operation",
+        "method": "delete",
+        "name": "remove_user_feedback",
+        "parameters": [
+          {
+            "description": "A user ID.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/users/{user_id}/feedback",
+        "pointer": "#/paths/~1users~1{user_id}~1feedback/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2_implicit": [
+              "basic"
+            ]
+          },
+          {
+            "oauth2_code": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Remove feedback on a user",
+        "tags": [
+          "users"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "NOTE: In order to make it easier to see all a users&#39; posts, the current users&#39; location preferences are not applied when listing or searching posts fro…",
         "id": "operation:get:/users/{user_id}/posts",
         "kind": "operation",
         "method": "get",
         "name": "get_user_posts",
+        "parameters": [
+          {
+            "description": "The user ID of the user whose posts will be retrieved.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "date",
+            "description": "How to sort the posts that are returned.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post types to return.",
+            "in": "query",
+            "name": "types",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post sources to retrieve posts from.",
+            "in": "query",
+            "name": "sources",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "The group IDs of every group the current user is a member of.",
+            "description": "A comma separated list of the group IDs to retrieve posts from.",
+            "in": "query",
+            "name": "group_ids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "The number of posts to return per page (must be >= 1 and <= 100).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The page of posts to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The latitude of a point around which to return posts.",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The longitude of a point around which to return posts.",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The radius in meters of a circle centered at the point defined by the latitude and longitude parameters.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Only posts newer than or equal to this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_min",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Only posts older than this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_max",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "A comma separated list of the post outcomes to return.",
+            "in": "query",
+            "name": "outcomes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "If set to 1 (the default), posts that are reposts will be included.",
+            "in": "query",
+            "name": "include_reposts",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{user_id}/posts",
         "pointer": "#/paths/~1users~1{user_id}~1posts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -2058,16 +4802,150 @@
             "api_key": []
           }
         ],
-        "summary": "List posts by a user"
+        "summary": "List posts by a user",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Searching posts takes the same arguments as listing posts except for the addition of the search and sort_by parameters.",
         "id": "operation:get:/users/{user_id}/posts/search",
         "kind": "operation",
         "method": "get",
         "name": "search_user_posts",
+        "parameters": [
+          {
+            "description": "The user ID of the user whose posts will be retrieved.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The search query used to find posts.",
+            "in": "query",
+            "name": "search",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "relevance",
+            "description": "How to sort the posts that are returned.",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post types to return.",
+            "in": "query",
+            "name": "types",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma separated list of the post sources to retrieve posts from.",
+            "in": "query",
+            "name": "sources",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "The group IDs of every group the current user is a member of.",
+            "description": "A comma separated list of the group IDs to retrieve posts from.",
+            "in": "query",
+            "name": "group_ids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "The number of posts to return per page (must be >= 1 and <= 100).",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "The page of posts to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Client device pixel ratio used to determine thumbnail size (default 1.0).",
+            "in": "query",
+            "name": "device_pixel_ratio",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The latitude of a point around which to return posts.",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The longitude of a point around which to return posts.",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The radius in meters of a circle centered at the point defined by the latitude and longitude parameters.",
+            "in": "query",
+            "name": "radius",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Only posts newer than or equal to this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_min",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Only posts older than this UTC date and time will be returned.",
+            "in": "query",
+            "name": "date_max",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "A comma separated list of the post outcomes to return.",
+            "in": "query",
+            "name": "outcomes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "If set to 1 (the default), posts that are reposts will be included.",
+            "in": "query",
+            "name": "include_reposts",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{user_id}/posts/search",
         "pointer": "#/paths/~1users~1{user_id}~1posts~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -2083,16 +4961,45 @@
             "api_key": []
           }
         ],
-        "summary": "Search posts by a user"
+        "summary": "Search posts by a user",
+        "tags": [
+          "users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is designed to be used as the src attribute of an HTML &lt;img&gt; tag to show the profile image of the given user.",
         "id": "operation:get:/users/{user_id}/profile-image",
         "kind": "operation",
         "method": "get",
         "name": "get_profile_image_file",
+        "parameters": [
+          {
+            "description": "The user ID of the user to return the profile image of.",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A default image URL to use when the user has no profile image.",
+            "in": "query",
+            "name": "default",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/profile-image",
         "pointer": "#/paths/~1users~1{user_id}~1profile-image/get",
+        "responses": [
+          {
+            "status": "302"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2_implicit": [
@@ -2105,82 +5012,110 @@
             ]
           }
         ],
-        "summary": "Retrieve a users' profile image"
+        "summary": "Retrieve a users' profile image",
+        "tags": [
+          "users"
+        ]
       },
       {
+        "description": "A search alert that the user has created so that they can be notified when new posts match the search query specified by the alert.",
         "id": "schema:Alert",
         "kind": "schema",
-        "name": "Alert"
+        "name": "Alert",
+        "type": "object"
       },
       {
+        "description": "A geographic bounding box defined by its southwest and northeast points.",
         "id": "schema:BoundingBox",
         "kind": "schema",
-        "name": "BoundingBox"
+        "name": "BoundingBox",
+        "type": "object"
       },
       {
+        "description": "A conversation between the current user and another user.",
         "id": "schema:Conversation",
         "kind": "schema",
-        "name": "Conversation"
+        "name": "Conversation",
+        "type": "object"
       },
       {
         "id": "schema:CurrentUser",
         "kind": "schema",
-        "name": "CurrentUser"
+        "name": "CurrentUser",
+        "type": "User|object"
       },
       {
         "id": "schema:Feedback",
         "kind": "schema",
-        "name": "Feedback"
+        "name": "Feedback",
+        "type": "object"
       },
       {
+        "description": "Two bounding boxes that make using Google Maps' geocoder easier.",
         "id": "schema:GeolocateBounds",
         "kind": "schema",
-        "name": "GeolocateBounds"
+        "name": "GeolocateBounds",
+        "type": "object"
       },
       {
+        "description": "Groups are run by volunteer moderators and provide a way to group activity in a specific location.",
         "id": "schema:Group",
         "kind": "schema",
-        "name": "Group"
+        "name": "Group",
+        "type": "object"
       },
       {
+        "description": "Group notices are created by group moderators in order to provide useful information to the group members (eg.",
         "id": "schema:GroupNotice",
         "kind": "schema",
-        "name": "GroupNotice"
+        "name": "GroupNotice",
+        "type": "object"
       },
       {
+        "description": "A message between two users.",
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
         "id": "schema:Photo",
         "kind": "schema",
-        "name": "Photo"
+        "name": "Photo",
+        "type": "object"
       },
       {
+        "description": "The result of uploading or editing a photo.",
         "id": "schema:PhotoResult",
         "kind": "schema",
-        "name": "PhotoResult"
+        "name": "PhotoResult",
+        "type": "object"
       },
       {
+        "description": "An offer, wanted, admin, taken or received post.",
         "id": "schema:Post",
         "kind": "schema",
-        "name": "Post"
+        "name": "Post",
+        "type": "object"
       },
       {
         "id": "schema:PostSearchResult",
         "kind": "schema",
-        "name": "PostSearchResult"
+        "name": "PostSearchResult",
+        "type": "Post|object"
       },
       {
+        "description": "A user story",
         "id": "schema:Story",
         "kind": "schema",
-        "name": "Story"
+        "name": "Story",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       }
     ]
   },

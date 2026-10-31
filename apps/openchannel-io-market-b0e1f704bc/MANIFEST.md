@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `196003ed7e8fbdf041efcbd5fae8ae0a74901a0a13caac458ed95fe5ac0a8ba6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,77 +34,79 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 49 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/apps` | get /apps | Returns a paginated list of APPROVED or SUSPENDED apps |
-| POST | `/apps` | post /apps | Adds a new app for this developer |
-| GET | `/apps/bySafeName/{safeName}` | get /apps/bySafeName/{safeName} | Returns a single APPROVED or SUSPENDED app |
-| GET | `/apps/textSearch` | get /apps/textSearch | Searches through the text of fields to find APPROVED or SUSPENDED apps |
-| GET | `/apps/versions` | get /apps/versions | Returns a paginated list of AppVersions |
-| DELETE | `/apps/{appId}` | delete /apps/{appId} | Removes app and all versions |
-| GET | `/apps/{appId}` | get /apps/{appId} | Returns a single APPROVED or SUSPENDED app |
-| POST | `/apps/{appId}/live` | post /apps/{appId}/live | Change the live app to another, previously approved version |
-| POST | `/apps/{appId}/publish` | post /apps/{appId}/publish | Publishes the current working version of the app to the marketplace |
-| DELETE | `/apps/{appId}/versions/{version}` | delete /apps/{appId}/versions/{version} | Removes AppVersion |
-| GET | `/apps/{appId}/versions/{version}` | get /apps/{appId}/versions/{version} | Returns a single AppVersion |
-| PATCH | `/apps/{appId}/versions/{version}` | patch /apps/{appId}/versions/{version} | Updates the app fields or creates a new version |
-| POST | `/apps/{appId}/versions/{version}` | post /apps/{appId}/versions/{version} | Updates the app or creates a new version |
-| POST | `/apps/{appId}/versions/{version}/status` | post /apps/{appId}/versions/{version}/status | Allows a developer or administrator to change the status of apps |
-| POST | `/custom-gateway/payment/{ownershipId}` | post /custom-gateway/payment/{ownershipId} | Adds a payment for an app on behalf of a user |
-| POST | `/custom-gateway/refund/{ownershipId}` | post /custom-gateway/refund/{ownershipId} | Fully or partially refund payment for an app on behalf of a user |
-| GET | `/developerAccounts` | get /developerAccounts | Returns a paginated list of developerAccounts |
-| DELETE | `/developerAccounts/{developerAccountId}` | delete /developerAccounts/{developerAccountId} | Removes the developer account |
-| GET | `/developerAccounts/{developerAccountId}` | get /developerAccounts/{developerAccountId} | Returns a single developer account |
-| PATCH | `/developerAccounts/{developerAccountId}` | patch /developerAccounts/{developerAccountId} | Updates the developer account fields |
-| POST | `/developerAccounts/{developerAccountId}` | post /developerAccounts/{developerAccountId} | Updates the developer account or adds the developer account if it doesn't exist |
-| GET | `/developers` | get /developers | Returns a paginated list of developers |
-| DELETE | `/developers/{developerId}` | delete /developers/{developerId} | Removes a single developer |
-| GET | `/developers/{developerId}` | get /developers/{developerId} | Returns a single developer |
-| PATCH | `/developers/{developerId}` | patch /developers/{developerId} | Updates the developer fields |
-| POST | `/developers/{developerId}` | post /developers/{developerId} | Updates the developer record or adds the developer if it doesn't exist |
-| GET | `/events/{eventId}` | get /events/{eventId} | Returns an event |
-| GET | `/files` | get /files | Returns a paginated list of files |
-| POST | `/files` | post /files | Uploads a file. |
-| GET | `/files/byIdOrUrl` | get /files/byIdOrUrl | Get the details for a file. |
-| GET | `/files/download` | get /files/download | A signed URL for downloading a private file can be returned by providing the fileId. |
-| POST | `/files/url` | post /files/url | Uploads a file from a URL |
-| GET | `/markets/this` | get /markets/this | Returns the current marketplace |
-| GET | `/ownership` | get /ownership | Returns a paginated list of app licenses |
-| POST | `/ownership/install` | post /ownership/install | Aquires an app license for a user (installs app) |
-| POST | `/ownership/uninstall/{ownershipId}` | post /ownership/uninstall/{ownershipId} | Uninstalls a license for a particular user and app (uninstalls app) |
-| GET | `/ownership/{ownershipId}` | get /ownership/{ownershipId} | Returns an ownership record |
-| PATCH | `/ownership/{ownershipId}` | patch /ownership/{ownershipId} | Updates ownership fields |
-| POST | `/ownership/{ownershipId}` | post /ownership/{ownershipId} | Updates an ownership record |
-| DELETE | `/permission/apps/{appId}` | delete /permission/apps/{appId} | Removes permission that allows the app to access this user's data |
-| GET | `/permission/apps/{appId}` | get /permission/apps/{appId} | Returns permission that allows the app to access this user's data |
-| POST | `/permission/apps/{appId}` | post /permission/apps/{appId} | Adds permission to allow the app to access this user's data |
-| GET | `/reviews` | get /reviews | Find reviews for a particular App and marketplace. Results are automatically paginated when limit is set |
-| POST | `/reviews` | post /reviews | Post a review from a User and returns the new post |
-| DELETE | `/reviews/{reviewId}` | delete /reviews/{reviewId} | Remove a review |
-| GET | `/reviews/{reviewId}` | get /reviews/{reviewId} | Find a Review within a particular App and marketplace |
-| PATCH | `/reviews/{reviewId}` | patch /reviews/{reviewId} | Update a review fields |
-| POST | `/reviews/{reviewId}` | post /reviews/{reviewId} | Update a review from a User and returns the new post |
-| POST | `/stats/increment/{field}` | post /stats/increment/{field} | Increments a statistics field |
-| GET | `/stats/series/{period}/{fields}` | get /stats/series/{period}/{fields} | Return a timeseries for a particular field |
-| GET | `/stats/total` | get /stats/total | Returns the total number of events for a particular field. |
-| GET | `/stripe-gateway/developer/{developerId}/accounts` | get /stripe-gateway/developer/{developerId}/accounts | Returns a developers connected Stripe accounts |
-| POST | `/stripe-gateway/developer/{developerId}/accounts` | post /stripe-gateway/developer/{developerId}/accounts | Generate a temporary URL to allow a developer to connect their Stripe account |
-| DELETE | `/stripe-gateway/developer/{developerId}/accounts/{stripeId}` | delete /stripe-gateway/developer/{developerId}/accounts/{stripeId} | Disconnects a developer's Stripe account |
-| GET | `/stripe-gateway/user/{userId}/cards` | get /stripe-gateway/user/{userId}/cards | Returns credit cards for this user |
-| POST | `/stripe-gateway/user/{userId}/cards` | post /stripe-gateway/user/{userId}/cards | Adds credit card for this user |
-| DELETE | `/stripe-gateway/user/{userId}/cards/{cardId}` | delete /stripe-gateway/user/{userId}/cards/{cardId} | Removes a credit card for a user |
-| POST | `/stripe-gateway/user/{userId}/cards/{cardId}` | post /stripe-gateway/user/{userId}/cards/{cardId} | Updates a credit card for this user |
-| GET | `/transactions` | get /transactions | Returns a paginated list of transactions |
-| DELETE | `/transactions/{transactionId}` | delete /transactions/{transactionId} | Deleted a transaction |
-| GET | `/transactions/{transactionId}` | get /transactions/{transactionId} | Returns a transaction |
-| POST | `/transactions/{transactionId}` | post /transactions/{transactionId} | Updates a transaction |
-| GET | `/userAccounts` | get /userAccounts | Returns a paginated list of userAccounts |
-| DELETE | `/userAccounts/{userAccountId}` | delete /userAccounts/{userAccountId} | Removes the user account |
-| GET | `/userAccounts/{userAccountId}` | get /userAccounts/{userAccountId} | Returns a single user account |
-| PATCH | `/userAccounts/{userAccountId}` | patch /userAccounts/{userAccountId} | Updates the user account fields |
-| POST | `/userAccounts/{userAccountId}` | post /userAccounts/{userAccountId} | Updates the user account or adds the user account if it doesn't exist |
-| GET | `/users` | get /users | Returns a paginated list of users |
-| DELETE | `/users/{userId}` | delete /users/{userId} | Removes a single user |
-| GET | `/users/{userId}` | get /users/{userId} | Return a single user |
-| PATCH | `/users/{userId}` | patch /users/{userId} | Updates user fields |
-| POST | `/users/{userId}` | post /users/{userId} | Updates a single user or adds the user if they don't exist |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/apps` | get /apps | `query`, `sort`, `pageNumber`, `limit`, `userId`, `isOwner` | — | yes | Returns a paginated list of APPROVED or SUSPENDED apps |
+| POST | `/apps` | post /apps | `developerId`*, `name`*, `type`, `model`, `customData`, `attributes`, `restrict`, `allow`, `access` | — |  | Adds a new app for this developer |
+| GET | `/apps/bySafeName/{safeName}` | get /apps/bySafeName/{safeName} | `safeName`*, `userId`, `trackViews` | — | yes | Returns a single APPROVED or SUSPENDED app |
+| GET | `/apps/textSearch` | get /apps/textSearch | `query`, `text`*, `fields`*, `pageNumber`, `limit`, `userId`, `isOwned` | — | yes | Searches through the text of fields to find APPROVED or SUSPENDED apps |
+| GET | `/apps/versions` | get /apps/versions | `query`, `sort`, `pageNumber`, `limit`, `developerId` | — | yes | Returns a paginated list of AppVersions |
+| GET | `/apps/{appId}` | get /apps/{appId} | `appId`*, `userId`, `trackViews` | — | yes | Returns a single APPROVED or SUSPENDED app |
+| DELETE | `/apps/{appId}` | delete /apps/{appId} | `appId`*, `developerId`* | — |  | Removes app and all versions |
+| POST | `/apps/{appId}/live` | post /apps/{appId}/live | `appId`*, `developerId`*, `version`* | — |  | Change the live app to another, previously approved version |
+| POST | `/apps/{appId}/publish` | post /apps/{appId}/publish | `appId`*, `developerId`*, `version`*, `autoApprove` | — |  | Publishes the current working version of the app to the marketplace |
+| GET | `/apps/{appId}/versions/{version}` | get /apps/{appId}/versions/{version} | `appId`*, `version`*, `developerId` | — | yes | Returns a single AppVersion |
+| POST | `/apps/{appId}/versions/{version}` | post /apps/{appId}/versions/{version} | `appId`*, `version`*, `developerId`*, `name`, `type`, `model`, `customData`, `attributes`, `restrict`, `allow`, `access`, `approvalRequired` | — |  | Updates the app or creates a new version |
+| DELETE | `/apps/{appId}/versions/{version}` | delete /apps/{appId}/versions/{version} | `appId`*, `version`*, `developerId`* | — |  | Removes AppVersion |
+| PATCH | `/apps/{appId}/versions/{version}` | patch /apps/{appId}/versions/{version} | `appId`*, `version`*, `developerId`*, `name`, `type`, `model`, `customData`, `attributes`, `restrict`, `allow`, `access`, `approvalRequired` | — |  | Updates the app fields or creates a new version |
+| POST | `/apps/{appId}/versions/{version}/status` | post /apps/{appId}/versions/{version}/status | `appId`*, `version`*, `developerId`, `status`, `modifiedBy`, `reason` | — |  | Allows a developer or administrator to change the status of apps |
+| POST | `/custom-gateway/payment/{ownershipId}` | post /custom-gateway/payment/{ownershipId} | `ownershipId`*, `amount`*, `date`, `feeAmount`, `marketplaceAmount`, `developerAmount`, `customData` | — |  | Adds a payment for an app on behalf of a user |
+| POST | `/custom-gateway/refund/{ownershipId}` | post /custom-gateway/refund/{ownershipId} | `ownershipId`*, `amount`*, `date`, `feeAmount`, `marketplaceAmount`, `developerAmount`, `customData` | — |  | Fully or partially refund payment for an app on behalf of a user |
+| GET | `/developerAccounts` | get /developerAccounts | `query`, `sort`, `pageNumber`, `limit` | — | yes | Returns a paginated list of developerAccounts |
+| GET | `/developerAccounts/{developerAccountId}` | get /developerAccounts/{developerAccountId} | `developerAccountId`* | — | yes | Returns a single developer account |
+| POST | `/developerAccounts/{developerAccountId}` | post /developerAccounts/{developerAccountId} | `developerAccountId`*, `developerId`*, `email`, `name`, `customData` | — |  | Updates the developer account or adds the developer account if it doesn't exist |
+| DELETE | `/developerAccounts/{developerAccountId}` | delete /developerAccounts/{developerAccountId} | `developerAccountId`* | — |  | Removes the developer account |
+| PATCH | `/developerAccounts/{developerAccountId}` | patch /developerAccounts/{developerAccountId} | `developerAccountId`*, `developerId`*, `email`, `name`, `customData` | — |  | Updates the developer account fields |
+| GET | `/developers` | get /developers | `query`, `sort`, `pageNumber`, `limit` | — | yes | Returns a paginated list of developers |
+| GET | `/developers/{developerId}` | get /developers/{developerId} | `developerId`* | — | yes | Returns a single developer |
+| POST | `/developers/{developerId}` | post /developers/{developerId} | `developerId`*, `type`, `email`, `username`, `name`, `customData` | — |  | Updates the developer record or adds the developer if it doesn't exist |
+| DELETE | `/developers/{developerId}` | delete /developers/{developerId} | `developerId`* | — |  | Removes a single developer |
+| PATCH | `/developers/{developerId}` | patch /developers/{developerId} | `developerId`*, `type`, `email`, `username`, `name`, `customData` | — |  | Updates the developer fields |
+| GET | `/events/{eventId}` | get /events/{eventId} | `eventId`* | — | yes | Returns an event |
+| GET | `/files` | get /files | `query`, `sort`, `pageNumber`, `limit` | — | yes | Returns a paginated list of files |
+| POST | `/files` | post /files | `isPrivate`, `hash`, body*: object | — |  | Uploads a file. |
+| GET | `/files/byIdOrUrl` | get /files/byIdOrUrl | `fileIdOrUrl`* | — | yes | Get the details for a file. |
+| GET | `/files/download` | get /files/download | `fileId`*, `validSeconds` | — | yes | A signed URL for downloading a private file can be returned by providing the fileId. |
+| POST | `/files/url` | post /files/url | `url`*, `isPrivate` | — |  | Uploads a file from a URL |
+| GET | `/markets/this` | get /markets/this | — | — | yes | Returns the current marketplace |
+| GET | `/ownership` | get /ownership | `query`, `sort`, `pageNumber`, `limit` | — | yes | Returns a paginated list of app licenses |
+| POST | `/ownership/install` | post /ownership/install | `appId`*, `userId`*, `modelId`, `model`, `customData` | — |  | Aquires an app license for a user (installs app) |
+| POST | `/ownership/uninstall/{ownershipId}` | post /ownership/uninstall/{ownershipId} | `ownershipId`*, `userId`*, `cancelOwnership`, `customData` | — |  | Uninstalls a license for a particular user and app (uninstalls app) |
+| GET | `/ownership/{ownershipId}` | get /ownership/{ownershipId} | `ownershipId`* | — | yes | Returns an ownership record |
+| POST | `/ownership/{ownershipId}` | post /ownership/{ownershipId} | `ownershipId`*, `customData`, `expires` | — |  | Updates an ownership record |
+| PATCH | `/ownership/{ownershipId}` | patch /ownership/{ownershipId} | `ownershipId`*, `customData`, `expires` | — |  | Updates ownership fields |
+| GET | `/permission/apps/{appId}` | get /permission/apps/{appId} | `appId`*, `userId`* | — | yes | Returns permission that allows the app to access this user's data |
+| POST | `/permission/apps/{appId}` | post /permission/apps/{appId} | `appId`*, `userId`*, `date`, `ip` | — |  | Adds permission to allow the app to access this user's data |
+| DELETE | `/permission/apps/{appId}` | delete /permission/apps/{appId} | `appId`*, `userId`* | — |  | Removes permission that allows the app to access this user's data |
+| GET | `/reviews` | get /reviews | `query`, `sort`, `pageNumber`, `limit` | — | yes | Find reviews for a particular App and marketplace. Results are automatically paginated when limit is set |
+| POST | `/reviews` | post /reviews | `appId`*, `userId`*, `userAccountId`, `headline`*, `rating`*, `description`*, `type`, `mustOwnApp`, `autoApprove`, `customData` | — |  | Post a review from a User and returns the new post |
+| GET | `/reviews/{reviewId}` | get /reviews/{reviewId} | `reviewId`* | — | yes | Find a Review within a particular App and marketplace |
+| POST | `/reviews/{reviewId}` | post /reviews/{reviewId} | `reviewId`*, `userId`*, `userAccountId`*, `headline`*, `rating`*, `description`*, `customData` | — |  | Update a review from a User and returns the new post |
+| DELETE | `/reviews/{reviewId}` | delete /reviews/{reviewId} | `reviewId`*, `userId`*, `userAccountId` | — |  | Remove a review |
+| PATCH | `/reviews/{reviewId}` | patch /reviews/{reviewId} | `reviewId`*, `userId`*, `userAccountId`, `headline`, `rating`, `description`, `customData` | — |  | Update a review fields |
+| POST | `/stats/increment/{field}` | post /stats/increment/{field} | `field`*, `appId`*, `userId`, `value`, `date` | — |  | Increments a statistics field |
+| GET | `/stats/series/{period}/{fields}` | get /stats/series/{period}/{fields} | `period`*, `fields`*, `start`, `end`, `query` | — | yes | Return a timeseries for a particular field |
+| GET | `/stats/total` | get /stats/total | `fields`*, `query`, `start`, `end` | — | yes | Returns the total number of events for a particular field. |
+| GET | `/stripe-gateway/developer/{developerId}/accounts` | get /stripe-gateway/developer/{developerId}/accounts | `developerId`* | — | yes | Returns a developers connected Stripe accounts |
+| POST | `/stripe-gateway/developer/{developerId}/accounts` | post /stripe-gateway/developer/{developerId}/accounts | `developerId`*, `redirectUrl`* | — |  | Generate a temporary URL to allow a developer to connect their Stripe account |
+| DELETE | `/stripe-gateway/developer/{developerId}/accounts/{stripeId}` | delete /stripe-gateway/developer/{developerId}/accounts/{stripeId} | `developerId`*, `stripeId`* | — |  | Disconnects a developer's Stripe account |
+| GET | `/stripe-gateway/user/{userId}/cards` | get /stripe-gateway/user/{userId}/cards | `userId`* | — | yes | Returns credit cards for this user |
+| POST | `/stripe-gateway/user/{userId}/cards` | post /stripe-gateway/user/{userId}/cards | `userId`*, `token`*, `isDefault` | — |  | Adds credit card for this user |
+| POST | `/stripe-gateway/user/{userId}/cards/{cardId}` | post /stripe-gateway/user/{userId}/cards/{cardId} | `userId`*, `cardId`*, `isDefault`, `address_city`, `address_country`, `address_line1`, `address_line2`, `address_state`, `address_zip` | — |  | Updates a credit card for this user |
+| DELETE | `/stripe-gateway/user/{userId}/cards/{cardId}` | delete /stripe-gateway/user/{userId}/cards/{cardId} | `userId`*, `cardId`* | — |  | Removes a credit card for a user |
+| GET | `/transactions` | get /transactions | `query`, `sort`, `pageNumber`, `limit` | — | yes | Returns a paginated list of transactions |
+| GET | `/transactions/{transactionId}` | get /transactions/{transactionId} | `transactionId`* | — | yes | Returns a transaction |
+| POST | `/transactions/{transactionId}` | post /transactions/{transactionId} | `transactionId`*, `customData` | — |  | Updates a transaction |
+| DELETE | `/transactions/{transactionId}` | delete /transactions/{transactionId} | `transactionId`* | — |  | Deleted a transaction |
+| GET | `/userAccounts` | get /userAccounts | `query`, `sort`, `pageNumber`, `limit` | — | yes | Returns a paginated list of userAccounts |
+| GET | `/userAccounts/{userAccountId}` | get /userAccounts/{userAccountId} | `userAccountId`* | — | yes | Returns a single user account |
+| POST | `/userAccounts/{userAccountId}` | post /userAccounts/{userAccountId} | `userAccountId`*, `userId`*, `email`, `name`, `customData` | — |  | Updates the user account or adds the user account if it doesn't exist |
+| DELETE | `/userAccounts/{userAccountId}` | delete /userAccounts/{userAccountId} | `userAccountId`* | — |  | Removes the user account |
+| PATCH | `/userAccounts/{userAccountId}` | patch /userAccounts/{userAccountId} | `userAccountId`*, `userId`*, `email`, `name`, `customData` | — |  | Updates the user account fields |
+| GET | `/users` | get /users | `query`, `sort`, `pageNumber`, `limit` | — | yes | Returns a paginated list of users |
+| GET | `/users/{userId}` | get /users/{userId} | `userId`* | — | yes | Return a single user |
+| POST | `/users/{userId}` | post /users/{userId} | `userId`*, `type`, `email`, `username`, `name`, `customData` | — |  | Updates a single user or adds the user if they don't exist |
+| DELETE | `/users/{userId}` | delete /users/{userId} | `userId`* | — |  | Removes a single user |
+| PATCH | `/users/{userId}` | patch /users/{userId} | `userId`*, `type`, `email`, `username`, `name`, `customData` | — |  | Updates user fields |

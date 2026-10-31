@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NeblioTeam_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `4715ac743e5d7512c407a905d089d81741c19614b94a54736f35b395524ab3bf` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,55 +34,57 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_NeblioTeam_profile_
 
 31 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/` | json_rpc | Send a JSON-RPC call to a localhost neblio-Qt or nebliod node |
-| GET | `/ins/addr/{address}` | getAddress | Returns address object |
-| GET | `/ins/addr/{address}/balance` | getAddressBalance | Returns address balance in sats |
-| GET | `/ins/addr/{address}/totalReceived` | getAddressTotalReceived | Returns total received by address in sats |
-| GET | `/ins/addr/{address}/totalSent` | getAddressTotalSent | Returns total sent by address in sats |
-| GET | `/ins/addr/{address}/unconfirmedBalance` | getAddressUnconfirmedBalance | Returns address unconfirmed balance in sats |
-| GET | `/ins/addr/{address}/utxo` | getAddressUtxos | Returns all UTXOs at a given address |
-| GET | `/ins/block-index/{blockindex}` | getBlockIndex | Returns block hash of block |
-| GET | `/ins/block/{blockhash}` | getBlock | Returns information regarding a Neblio block |
-| GET | `/ins/rawtx/{txid}` | getRawTx | Returns raw transaction hex |
-| GET | `/ins/status` | getStatus | Utility API for calling several blockchain node functions |
-| GET | `/ins/sync` | getSync | Get node sync status |
-| POST | `/ins/tx/send` | sendTx | Broadcasts a signed raw transaction to the network (not NTP1 specific) |
-| GET | `/ins/tx/{txid}` | getTx | Returns transaction object |
-| GET | `/ins/txs` | getTxs | Get transactions by block or address |
-| GET | `/ntp1/addressinfo/{address}` | getAddressInfo | Information On a Neblio Address |
-| POST | `/ntp1/broadcast` | broadcastTx | Broadcasts a signed raw transaction to the network |
-| POST | `/ntp1/burntoken` | burnToken | Builds a transaction that burns an NTP1 Token |
-| POST | `/ntp1/issue` | issueToken | Builds a transaction that issues a new NTP1 Token |
-| POST | `/ntp1/sendtoken` | sendToken | Builds a transaction that sends an NTP1 Token |
-| GET | `/ntp1/stakeholders/{tokenid}` | getTokenHolders | Get Addresses Holding a Token |
-| GET | `/ntp1/tokenid/{tokensymbol}` | getTokenId | Returns the tokenId representing a token |
-| GET | `/ntp1/tokenmetadata/{tokenid}` | getTokenMetadata | Get Metadata of Token |
-| GET | `/ntp1/tokenmetadata/{tokenid}/{utxo}` | getTokenMetadataOfUtxo | Get UTXO Metadata of Token |
-| GET | `/ntp1/transactioninfo/{txid}` | getTransactionInfo | Information On an NTP1 Transaction |
-| GET | `/testnet/faucet` | testnet_getFaucet | Withdraws testnet NEBL to the specified address |
-| GET | `/testnet/ins/addr/{address}` | testnet_getAddress | Returns address object |
-| GET | `/testnet/ins/addr/{address}/balance` | testnet_getAddressBalance | Returns address balance in sats |
-| GET | `/testnet/ins/addr/{address}/totalReceived` | testnet_getAddressTotalReceived | Returns total received by address in sats |
-| GET | `/testnet/ins/addr/{address}/totalSent` | testnet_getAddressTotalSent | Returns total sent by address in sats |
-| GET | `/testnet/ins/addr/{address}/unconfirmedBalance` | testnet_getAddressUnconfirmedBalance | Returns address unconfirmed balance in sats |
-| GET | `/testnet/ins/addr/{address}/utxo` | testnet_getAddressUtxos | Returns all UTXOs at a given address |
-| GET | `/testnet/ins/block-index/{blockindex}` | testnet_getBlockIndex | Returns block hash of block |
-| GET | `/testnet/ins/block/{blockhash}` | testnet_getBlock | Returns information regarding a Neblio block |
-| GET | `/testnet/ins/rawtx/{txid}` | testnet_getRawTx | Returns raw transaction hex |
-| GET | `/testnet/ins/status` | testnet_getStatus | Utility API for calling several blockchain node functions |
-| GET | `/testnet/ins/sync` | testnet_getSync | Get node sync status |
-| POST | `/testnet/ins/tx/send` | testnet_sendTx | Broadcasts a signed raw transaction to the network (not NTP1 specific) |
-| GET | `/testnet/ins/tx/{txid}` | testnet_getTx | Returns transaction object |
-| GET | `/testnet/ins/txs` | testnet_getTxs | Get transactions by block or address |
-| GET | `/testnet/ntp1/addressinfo/{address}` | testnet_getAddressInfo | Information On a Neblio Address |
-| POST | `/testnet/ntp1/broadcast` | testnet_broadcastTx | Broadcasts a signed raw transaction to the network |
-| POST | `/testnet/ntp1/burntoken` | testnet_burnToken | Builds a transaction that burns an NTP1 Token |
-| POST | `/testnet/ntp1/issue` | testnet_issueToken | Builds a transaction that issues a new NTP1 Token |
-| POST | `/testnet/ntp1/sendtoken` | testnet_sendToken | Builds a transaction that sends an NTP1 Token |
-| GET | `/testnet/ntp1/stakeholders/{tokenid}` | testnet_getTokenHolders | Get Addresses Holding a Token |
-| GET | `/testnet/ntp1/tokenid/{tokensymbol}` | testnet_getTokenId | Returns the tokenId representing a token |
-| GET | `/testnet/ntp1/tokenmetadata/{tokenid}` | testnet_getTokenMetadata | Get Metadata of Token |
-| GET | `/testnet/ntp1/tokenmetadata/{tokenid}/{utxo}` | testnet_getTokenMetadataOfUtxo | Get UTXO Metadata of Token |
-| GET | `/testnet/ntp1/transactioninfo/{txid}` | testnet_getTransactionInfo | Information On an NTP1 Transaction |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/` | json_rpc | body*: rpcRequest | rpcResponse |  | Send a JSON-RPC call to a localhost neblio-Qt or nebliod node |
+| GET | `/ins/addr/{address}` | getAddress | `address`* | getAddressResponse | yes | Returns address object |
+| GET | `/ins/addr/{address}/balance` | getAddressBalance | `address`* | getAddressBalanceResponse | yes | Returns address balance in sats |
+| GET | `/ins/addr/{address}/totalReceived` | getAddressTotalReceived | `address`* | getAddressTotalReceivedResponse | yes | Returns total received by address in sats |
+| GET | `/ins/addr/{address}/totalSent` | getAddressTotalSent | `address`* | getAddressTotalSentResponse | yes | Returns total sent by address in sats |
+| GET | `/ins/addr/{address}/unconfirmedBalance` | getAddressUnconfirmedBalance | `address`* | getAddressUnconfirmedBalanceResponse | yes | Returns address unconfirmed balance in sats |
+| GET | `/ins/addr/{address}/utxo` | getAddressUtxos | `address`* | getAddressUtxosResponse | yes | Returns all UTXOs at a given address |
+| GET | `/ins/block-index/{blockindex}` | getBlockIndex | `blockindex`* | getBlockIndexResponse | yes | Returns block hash of block |
+| GET | `/ins/block/{blockhash}` | getBlock | `blockhash`* | getBlockResponse | yes | Returns information regarding a Neblio block |
+| GET | `/ins/rawtx/{txid}` | getRawTx | `txid`* | getRawTxResponse | yes | Returns raw transaction hex |
+| GET | `/ins/status` | getStatus | `q` | getStatusResponse | yes | Utility API for calling several blockchain node functions |
+| GET | `/ins/sync` | getSync | — | getSyncResponse | yes | Get node sync status |
+| POST | `/ins/tx/send` | sendTx | body*: sendTxRequest | broadcastTxResponse |  | Broadcasts a signed raw transaction to the network (not NTP1 specific) |
+| GET | `/ins/tx/{txid}` | getTx | `txid`* | getTxResponse | yes | Returns transaction object |
+| GET | `/ins/txs` | getTxs | `address`, `block`, `pageNum` | getTxsResponse | yes | Get transactions by block or address |
+| GET | `/ntp1/addressinfo/{address}` | getAddressInfo | `address`* | getAddressInfoResponse | yes | Information On a Neblio Address |
+| POST | `/ntp1/broadcast` | broadcastTx | body*: broadcastTxRequest | broadcastTxResponse |  | Broadcasts a signed raw transaction to the network |
+| POST | `/ntp1/burntoken` | burnToken | body*: burnTokenRequest | burnTokenResponse |  | Builds a transaction that burns an NTP1 Token |
+| POST | `/ntp1/issue` | issueToken | body*: issueTokenRequest | issueTokenResponse |  | Builds a transaction that issues a new NTP1 Token |
+| POST | `/ntp1/sendtoken` | sendToken | body*: sendTokenRequest | sendTokenResponse |  | Builds a transaction that sends an NTP1 Token |
+| GET | `/ntp1/stakeholders/{tokenid}` | getTokenHolders | `tokenid`* | getTokenHoldersResponse | yes | Get Addresses Holding a Token |
+| GET | `/ntp1/tokenid/{tokensymbol}` | getTokenId | `tokensymbol`* | getTokenIdResponse | yes | Returns the tokenId representing a token |
+| GET | `/ntp1/tokenmetadata/{tokenid}` | getTokenMetadata | `tokenid`*, `verbosity` | getTokenMetadataResponse | yes | Get Metadata of Token |
+| GET | `/ntp1/tokenmetadata/{tokenid}/{utxo}` | getTokenMetadataOfUtxo | `tokenid`*, `utxo`*, `verbosity` | getTokenMetadataResponse | yes | Get UTXO Metadata of Token |
+| GET | `/ntp1/transactioninfo/{txid}` | getTransactionInfo | `txid`* | getTransactionInfoResponse | yes | Information On an NTP1 Transaction |
+| GET | `/testnet/faucet` | testnet_getFaucet | `address`*, `amount` | getFaucetResponse | yes | Withdraws testnet NEBL to the specified address |
+| GET | `/testnet/ins/addr/{address}` | testnet_getAddress | `address`* | getAddressResponse | yes | Returns address object |
+| GET | `/testnet/ins/addr/{address}/balance` | testnet_getAddressBalance | `address`* | getAddressBalanceResponse | yes | Returns address balance in sats |
+| GET | `/testnet/ins/addr/{address}/totalReceived` | testnet_getAddressTotalReceived | `address`* | getAddressTotalReceivedResponse | yes | Returns total received by address in sats |
+| GET | `/testnet/ins/addr/{address}/totalSent` | testnet_getAddressTotalSent | `address`* | getAddressTotalSentResponse | yes | Returns total sent by address in sats |
+| GET | `/testnet/ins/addr/{address}/unconfirmedBalance` | testnet_getAddressUnconfirmedBalance | `address`* | getAddressUnconfirmedBalanceResponse | yes | Returns address unconfirmed balance in sats |
+| GET | `/testnet/ins/addr/{address}/utxo` | testnet_getAddressUtxos | `address`* | getAddressUtxosResponse | yes | Returns all UTXOs at a given address |
+| GET | `/testnet/ins/block-index/{blockindex}` | testnet_getBlockIndex | `blockindex`* | getBlockIndexResponse | yes | Returns block hash of block |
+| GET | `/testnet/ins/block/{blockhash}` | testnet_getBlock | `blockhash`* | getBlockResponse | yes | Returns information regarding a Neblio block |
+| GET | `/testnet/ins/rawtx/{txid}` | testnet_getRawTx | `txid`* | getRawTxResponse | yes | Returns raw transaction hex |
+| GET | `/testnet/ins/status` | testnet_getStatus | `q` | getStatusResponse | yes | Utility API for calling several blockchain node functions |
+| GET | `/testnet/ins/sync` | testnet_getSync | — | getSyncResponse | yes | Get node sync status |
+| POST | `/testnet/ins/tx/send` | testnet_sendTx | body*: sendTxRequest | broadcastTxResponse |  | Broadcasts a signed raw transaction to the network (not NTP1 specific) |
+| GET | `/testnet/ins/tx/{txid}` | testnet_getTx | `txid`* | getTxResponse | yes | Returns transaction object |
+| GET | `/testnet/ins/txs` | testnet_getTxs | `address`, `block`, `pageNum` | getTxsResponse | yes | Get transactions by block or address |
+| GET | `/testnet/ntp1/addressinfo/{address}` | testnet_getAddressInfo | `address`* | getAddressInfoResponse | yes | Information On a Neblio Address |
+| POST | `/testnet/ntp1/broadcast` | testnet_broadcastTx | body*: broadcastTxRequest | broadcastTxResponse |  | Broadcasts a signed raw transaction to the network |
+| POST | `/testnet/ntp1/burntoken` | testnet_burnToken | body*: burnTokenRequest | burnTokenResponse |  | Builds a transaction that burns an NTP1 Token |
+| POST | `/testnet/ntp1/issue` | testnet_issueToken | body*: issueTokenRequest | issueTokenResponse |  | Builds a transaction that issues a new NTP1 Token |
+| POST | `/testnet/ntp1/sendtoken` | testnet_sendToken | body*: sendTokenRequest | sendTokenResponse |  | Builds a transaction that sends an NTP1 Token |
+| GET | `/testnet/ntp1/stakeholders/{tokenid}` | testnet_getTokenHolders | `tokenid`* | getTokenHoldersResponse | yes | Get Addresses Holding a Token |
+| GET | `/testnet/ntp1/tokenid/{tokensymbol}` | testnet_getTokenId | `tokensymbol`* | getTokenIdResponse | yes | Returns the tokenId representing a token |
+| GET | `/testnet/ntp1/tokenmetadata/{tokenid}` | testnet_getTokenMetadata | `tokenid`*, `verbosity` | getTokenMetadataResponse | yes | Get Metadata of Token |
+| GET | `/testnet/ntp1/tokenmetadata/{tokenid}/{utxo}` | testnet_getTokenMetadataOfUtxo | `tokenid`*, `utxo`*, `verbosity` | getTokenMetadataResponse | yes | Get UTXO Metadata of Token |
+| GET | `/testnet/ntp1/transactioninfo/{txid}` | testnet_getTransactionInfo | `txid`* | getTransactionInfoResponse | yes | Information On an NTP1 Transaction |

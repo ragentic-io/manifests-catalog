@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_ablyrealtime_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `8988aaef2c36d4493f46f91b8fb01c2ab1fba8a683ca3573e414555532ef2540` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,27 +34,29 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_ablyrealtime_profil
 
 57 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounts/{account_id}/apps` | get /accounts/{account_id}/apps | Lists apps |
-| POST | `/accounts/{account_id}/apps` | post /accounts/{account_id}/apps | Creates an app |
-| GET | `/apps/{app_id}/keys` | get /apps/{app_id}/keys | Lists app keys |
-| POST | `/apps/{app_id}/keys` | post /apps/{app_id}/keys | Creates a key |
-| PATCH | `/apps/{app_id}/keys/{key_id}` | patch /apps/{app_id}/keys/{key_id} | Updates a key |
-| POST | `/apps/{app_id}/keys/{key_id}/revoke` | post /apps/{app_id}/keys/{key_id}/revoke | Revokes a key |
-| GET | `/apps/{app_id}/namespaces` | get /apps/{app_id}/namespaces | Lists namespaces |
-| POST | `/apps/{app_id}/namespaces` | post /apps/{app_id}/namespaces | Creates a namespace |
-| DELETE | `/apps/{app_id}/namespaces/{namespace_id}` | delete /apps/{app_id}/namespaces/{namespace_id} | Deletes a namespace |
-| PATCH | `/apps/{app_id}/namespaces/{namespace_id}` | patch /apps/{app_id}/namespaces/{namespace_id} | Updates a namespace |
-| GET | `/apps/{app_id}/queues` | get /apps/{app_id}/queues | Lists queues |
-| POST | `/apps/{app_id}/queues` | post /apps/{app_id}/queues | Creates a queue |
-| DELETE | `/apps/{app_id}/queues/{queue_id}` | delete /apps/{app_id}/queues/{queue_id} | Deletes a queue |
-| GET | `/apps/{app_id}/rules` | get /apps/{app_id}/rules | Lists Reactor rules |
-| POST | `/apps/{app_id}/rules` | post /apps/{app_id}/rules | Creates a Reactor rule |
-| DELETE | `/apps/{app_id}/rules/{rule_id}` | delete /apps/{app_id}/rules/{rule_id} | Deletes a Reactor rule |
-| GET | `/apps/{app_id}/rules/{rule_id}` | get /apps/{app_id}/rules/{rule_id} | Gets a reactor rule by rule ID |
-| PATCH | `/apps/{app_id}/rules/{rule_id}` | patch /apps/{app_id}/rules/{rule_id} | Updates a Reactor rule |
-| DELETE | `/apps/{id}` | delete /apps/{id} | Deletes an app |
-| PATCH | `/apps/{id}` | patch /apps/{id} | Updates an app |
-| POST | `/apps/{id}/pkcs12` | post /apps/{id}/pkcs12 | Updates app's APNs info from a `.p12` file |
-| GET | `/me` | get /me | Get token details |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts/{account_id}/apps` | get /accounts/{account_id}/apps | `account_id`* | app_response[] | yes | Lists apps |
+| POST | `/accounts/{account_id}/apps` | post /accounts/{account_id}/apps | `account_id`*, body: app_post | app_response |  | Creates an app |
+| GET | `/apps/{app_id}/keys` | get /apps/{app_id}/keys | `app_id`* | key_response[] | yes | Lists app keys |
+| POST | `/apps/{app_id}/keys` | post /apps/{app_id}/keys | `app_id`*, body: key_post | key_response |  | Creates a key |
+| PATCH | `/apps/{app_id}/keys/{key_id}` | patch /apps/{app_id}/keys/{key_id} | `app_id`*, `key_id`*, body: key_patch | key_response |  | Updates a key |
+| POST | `/apps/{app_id}/keys/{key_id}/revoke` | post /apps/{app_id}/keys/{key_id}/revoke | `app_id`*, `key_id`* | — |  | Revokes a key |
+| GET | `/apps/{app_id}/namespaces` | get /apps/{app_id}/namespaces | `app_id`* | namespace_response[] | yes | Lists namespaces |
+| POST | `/apps/{app_id}/namespaces` | post /apps/{app_id}/namespaces | `app_id`*, body: namespace_post | namespace_response |  | Creates a namespace |
+| DELETE | `/apps/{app_id}/namespaces/{namespace_id}` | delete /apps/{app_id}/namespaces/{namespace_id} | `app_id`*, `namespace_id`* | — |  | Deletes a namespace |
+| PATCH | `/apps/{app_id}/namespaces/{namespace_id}` | patch /apps/{app_id}/namespaces/{namespace_id} | `app_id`*, `namespace_id`*, body: namespace_patch | namespace_response |  | Updates a namespace |
+| GET | `/apps/{app_id}/queues` | get /apps/{app_id}/queues | `app_id`* | queue_response[] | yes | Lists queues |
+| POST | `/apps/{app_id}/queues` | post /apps/{app_id}/queues | `app_id`*, body: queue | queue_response |  | Creates a queue |
+| DELETE | `/apps/{app_id}/queues/{queue_id}` | delete /apps/{app_id}/queues/{queue_id} | `app_id`*, `queue_id`* | — |  | Deletes a queue |
+| GET | `/apps/{app_id}/rules` | get /apps/{app_id}/rules | `app_id`* | rule_response[] | yes | Lists Reactor rules |
+| POST | `/apps/{app_id}/rules` | post /apps/{app_id}/rules | `app_id`*, body: rule_post | rule_response |  | Creates a Reactor rule |
+| GET | `/apps/{app_id}/rules/{rule_id}` | get /apps/{app_id}/rules/{rule_id} | `app_id`*, `rule_id`* | rule_response | yes | Gets a reactor rule by rule ID |
+| DELETE | `/apps/{app_id}/rules/{rule_id}` | delete /apps/{app_id}/rules/{rule_id} | `app_id`*, `rule_id`* | — |  | Deletes a Reactor rule |
+| PATCH | `/apps/{app_id}/rules/{rule_id}` | patch /apps/{app_id}/rules/{rule_id} | `app_id`*, `rule_id`*, body: rule_patch | rule_response |  | Updates a Reactor rule |
+| DELETE | `/apps/{id}` | delete /apps/{id} | `id`* | — |  | Deletes an app |
+| PATCH | `/apps/{id}` | patch /apps/{id} | `id`*, body: app_patch | app_response |  | Updates an app |
+| POST | `/apps/{id}/pkcs12` | post /apps/{id}/pkcs12 | `id`*, body: app_pkcs12 | app_response |  | Updates app's APNs info from a `.p12` file |
+| GET | `/me` | get /me | — | me | yes | Get token details |

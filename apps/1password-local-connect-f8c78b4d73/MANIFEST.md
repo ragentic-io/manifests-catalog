@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload_wikimedia_org_wikipedia_
 
 | | |
 | --- | --- |
-| Signed bundle | `794da12593b2e11638a2c1fa889dd19642d653db2958c65e89c06f4deb15b082` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,20 +34,22 @@ logo: "https://api.apis.guru/v2/cache/logo/https_upload_wikimedia_org_wikipedia_
 
 10 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/activity` | GetApiActivity | Retrieve a list of API Requests that have been made. |
-| GET | `/health` | GetServerHealth | Get state of the server and its dependencies. |
-| GET | `/heartbeat` | GetHeartbeat | Ping the server for liveness |
-| GET | `/metrics` | GetPrometheusMetrics | Query server for exposed Prometheus metrics |
-| GET | `/vaults` | GetVaults | Get all Vaults |
-| GET | `/vaults/{vaultUuid}` | GetVaultById | Get Vault details and metadata |
-| GET | `/vaults/{vaultUuid}/items` | GetVaultItems | Get all items for inside a Vault |
-| POST | `/vaults/{vaultUuid}/items` | CreateVaultItem | Create a new Item |
-| DELETE | `/vaults/{vaultUuid}/items/{itemUuid}` | DeleteVaultItem | Delete an Item |
-| GET | `/vaults/{vaultUuid}/items/{itemUuid}` | GetVaultItemById | Get the details of an Item |
-| PATCH | `/vaults/{vaultUuid}/items/{itemUuid}` | PatchVaultItem | Update a subset of Item attributes |
-| PUT | `/vaults/{vaultUuid}/items/{itemUuid}` | UpdateVaultItem | Update an Item |
-| GET | `/vaults/{vaultUuid}/items/{itemUuid}/files` | GetItemFiles | Get all the files inside an Item |
-| GET | `/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}` | GetDetailsOfFileById | Get the details of a File |
-| GET | `/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}/content` | DownloadFileByID | Get the content of a File |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/activity` | GetApiActivity | `limit`, `offset` | APIRequest[] | yes | Retrieve a list of API Requests that have been made. |
+| GET | `/health` | GetServerHealth | — | object | yes | Get state of the server and its dependencies. |
+| GET | `/heartbeat` | GetHeartbeat | — | string | yes | Ping the server for liveness |
+| GET | `/metrics` | GetPrometheusMetrics | — | string | yes | Query server for exposed Prometheus metrics |
+| GET | `/vaults` | GetVaults | `filter` | Vault[] | yes | Get all Vaults |
+| GET | `/vaults/{vaultUuid}` | GetVaultById | `vaultUuid`* | Vault | yes | Get Vault details and metadata |
+| GET | `/vaults/{vaultUuid}/items` | GetVaultItems | `vaultUuid`*, `filter` | Item[] | yes | Get all items for inside a Vault |
+| POST | `/vaults/{vaultUuid}/items` | CreateVaultItem | `vaultUuid`*, body: FullItem | FullItem |  | Create a new Item |
+| GET | `/vaults/{vaultUuid}/items/{itemUuid}` | GetVaultItemById | `vaultUuid`*, `itemUuid`* | FullItem | yes | Get the details of an Item |
+| PUT | `/vaults/{vaultUuid}/items/{itemUuid}` | UpdateVaultItem | `vaultUuid`*, `itemUuid`*, body: FullItem | FullItem |  | Update an Item |
+| DELETE | `/vaults/{vaultUuid}/items/{itemUuid}` | DeleteVaultItem | `vaultUuid`*, `itemUuid`* | — |  | Delete an Item |
+| PATCH | `/vaults/{vaultUuid}/items/{itemUuid}` | PatchVaultItem | `vaultUuid`*, `itemUuid`*, body: Patch | FullItem |  | Update a subset of Item attributes |
+| GET | `/vaults/{vaultUuid}/items/{itemUuid}/files` | GetItemFiles | `vaultUuid`*, `itemUuid`*, `inline_files` | File[] | yes | Get all the files inside an Item |
+| GET | `/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}` | GetDetailsOfFileById | `vaultUuid`*, `itemUuid`*, `fileUuid`*, `inline_files` | File | yes | Get the details of a File |
+| GET | `/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}/content` | DownloadFileByID | `vaultUuid`*, `itemUuid`*, `fileUuid`* | string:binary | yes | Get the content of a File |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_12
 
 | | |
 | --- | --- |
-| Signed bundle | `ddfd3d1f1ff2bec69708cc9c341f32c718402b979624a76b36989a53bb539675` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,118 +34,120 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_12
 
 12 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/edge-config` | getEdgeConfigs | Get Edge Configs |
-| POST | `/edge-config` | createEdgeConfig | Create an Edge Config |
-| DELETE | `/edge-config/{edgeConfigId}` | deleteEdgeConfig | Delete an Edge Config |
-| GET | `/edge-config/{edgeConfigId}` | getEdgeConfig | Get an Edge Config |
-| PUT | `/edge-config/{edgeConfigId}` | updateEdgeConfig | Update an Edge Config |
-| GET | `/edge-config/{edgeConfigId}/item/{edgeConfigItemKey}` | getEdgeConfigItem | Get an Edge Config item |
-| GET | `/edge-config/{edgeConfigId}/items` | getEdgeConfigItems | Get Edge Config items |
-| PATCH | `/edge-config/{edgeConfigId}/items` | patchtEdgeConfigItems | Update Edge Config items in batch |
-| POST | `/edge-config/{edgeConfigId}/token` | createEdgeConfigToken | Create an Edge Config token |
-| GET | `/edge-config/{edgeConfigId}/token/{token}` | getEdgeConfigToken | Get Edge Config token meta data |
-| DELETE | `/edge-config/{edgeConfigId}/tokens` | deleteEdgeConfigTokens | Delete one or more Edge Config tokens |
-| GET | `/edge-config/{edgeConfigId}/tokens` | getEdgeConfigTokens | Get all tokens of an Edge Config |
-| POST | `/registration` | emailLogin | Login with email |
-| GET | `/registration/verify` | verifyToken | Verify a login request to get an authentication token |
-| GET | `/v1/deployments/{deploymentId}/checks` | getAllChecks | Retrieve a list of all checks |
-| POST | `/v1/deployments/{deploymentId}/checks` | createCheck | Creates a new Check |
-| GET | `/v1/deployments/{deploymentId}/checks/{checkId}` | getCheck | Get a single check |
-| PATCH | `/v1/deployments/{deploymentId}/checks/{checkId}` | updateCheck | Update a check |
-| POST | `/v1/deployments/{deploymentId}/checks/{checkId}/rerequest` | rerequestCheck | Rerequest a check |
-| PATCH | `/v1/domains/records/{recordId}` | updateRecord | Update an existing DNS record |
-| DELETE | `/v1/integrations/configuration/{id}` | deleteConfiguration | Delete an integration configuration |
-| GET | `/v1/integrations/configuration/{id}` | getConfiguration | Retrieve an integration configuration |
-| GET | `/v1/integrations/configurations` | getConfigurations | Get configurations for the authenticated user or team |
-| GET | `/v1/integrations/git-namespaces` | gitNamespaces | List git namespaces by provider |
-| DELETE | `/v1/integrations/log-drains/{id}` | deleteIntegrationLogDrain | Deletes the Integration log drain with the provided `id` |
-| GET | `/v1/integrations/search-repo` | get /v1/integrations/search-repo | List git repositories linked to namespace by provider |
-| GET | `/v1/log-drains` | getConfigurableLogDrains | Retrieves a list of Configurable Log Drains |
-| POST | `/v1/log-drains` | createConfigurableLogDrain | Creates a Configurable Log Drain |
-| DELETE | `/v1/log-drains/{id}` | deleteConfigurableLogDrain | Deletes a Configurable Log Drain |
-| GET | `/v1/log-drains/{id}` | getConfigurableLogDrain | Retrieves a Configurable Log Drain |
-| GET | `/v1/projects/{idOrName}/env/{id}` | getProjectEnv | Retrieve the decrypted value of an environment variable of a project by id |
-| POST | `/v1/teams` | createTeam | Create a Team |
-| DELETE | `/v1/teams/{teamId}` | deleteTeam | Delete a Team |
-| DELETE | `/v1/teams/{teamId}/invites/{inviteId}` | deleteTeamInviteCode | Delete a Team invite code |
-| POST | `/v1/teams/{teamId}/members` | inviteUserToTeam | Invite a user |
-| POST | `/v1/teams/{teamId}/members/teams/join` | joinTeam | Join a team |
-| DELETE | `/v1/teams/{teamId}/members/{uid}` | removeTeamMember | Remove a Team Member |
-| PATCH | `/v1/teams/{teamId}/members/{uid}` | updateTeamMember | Update a Team Member |
-| POST | `/v1/teams/{teamId}/request` | requestAccessToTeam | Request access to a team |
-| GET | `/v1/teams/{teamId}/request/{userId}` | getTeamAccessRequest | Get access request status |
-| DELETE | `/v1/user` | requestDelete | Delete User Account |
-| GET | `/v1/webhooks` | getWebhooks | Get a list of webhooks |
-| POST | `/v1/webhooks` | createWebhook | Creates a webhook |
-| DELETE | `/v1/webhooks/{id}` | deleteWebhook | Deletes a webhook |
-| GET | `/v1/webhooks/{id}` | getWebhook | Get a webhook |
-| POST | `/v10/projects/{idOrName}/env` | createProjectEnv | Create one or more environment variables |
-| GET | `/v11/deployments/{deploymentId}/builds` | listDeploymentBuilds | List Deployment Builds |
-| PATCH | `/v12/deployments/{id}/cancel` | cancelDeployment | Cancel a deployment |
-| POST | `/v13/deployments` | createDeployment | Create a new deployment |
-| GET | `/v13/deployments/{idOrUrl}` | getDeployment | Get a deployment by ID or URL |
-| DELETE | `/v13/deployments/{id}` | deleteDeployment | Delete a Deployment |
-| DELETE | `/v2/aliases/{aliasId}` | deleteAlias | Delete an Alias |
-| GET | `/v2/deployments/{idOrUrl}/events` | getDeploymentEvents | Get deployment events |
-| GET | `/v2/deployments/{id}/aliases` | listDeploymentAliases | List Deployment Aliases |
-| POST | `/v2/deployments/{id}/aliases` | assignAlias | Assign an Alias |
-| POST | `/v2/domains/{domain}/records` | createRecord | Create a DNS record |
-| DELETE | `/v2/domains/{domain}/records/{recordId}` | removeRecord | Delete a DNS record |
-| POST | `/v2/files` | uploadFile | Upload Deployment Files |
-| GET | `/v2/integrations/log-drains` | getIntegrationLogDrains | Retrieves a list of Integration log drains |
-| POST | `/v2/integrations/log-drains` | createLogDrain | Creates a new Integration Log Drain |
-| DELETE | `/v2/secrets/{idOrName}` | deleteSecret | Delete a secret |
-| PATCH | `/v2/secrets/{name}` | renameSecret | Change secret name |
-| POST | `/v2/secrets/{name}` | createSecret | Create a new secret |
-| GET | `/v2/teams` | getTeams | List all teams |
-| GET | `/v2/teams/{teamId}` | getTeam | Get a Team |
-| PATCH | `/v2/teams/{teamId}` | patchTeam | Update a Team |
-| GET | `/v2/teams/{teamId}/members` | getTeamMembers | List team members |
-| GET | `/v2/user` | getAuthUser | Get the User |
-| GET | `/v3/events` | listUserEvents | List User Events |
-| GET | `/v3/secrets` | getSecrets | List secrets |
-| GET | `/v3/secrets/{idOrName}` | getSecret | Get a single secret |
-| POST | `/v3/user/tokens` | createAuthToken | Create an Auth Token |
-| DELETE | `/v3/user/tokens/{tokenId}` | deleteAuthToken | Delete an authentication token |
-| GET | `/v4/aliases` | listAliases | List aliases |
-| GET | `/v4/aliases/{idOrAlias}` | getAlias | Get an Alias |
-| POST | `/v4/domains` | createOrTransferDomain | Register or transfer-in a new Domain |
-| POST | `/v4/domains/buy` | buyDomain | Purchase a domain |
-| GET | `/v4/domains/price` | checkDomainPrice | Check the price for a domain |
-| GET | `/v4/domains/status` | checkDomainStatus | Check a Domain Availability |
-| GET | `/v4/domains/{domain}/records` | getRecords | List existing DNS records |
-| GET | `/v5/domains` | getDomains | List all the domains |
-| GET | `/v5/domains/{domain}` | getDomain | Get Information for a Single Domain |
-| GET | `/v5/user/tokens` | listAuthTokens | List Auth Tokens |
-| GET | `/v5/user/tokens/{tokenId}` | getAuthToken | Get Auth Token Metadata |
-| GET | `/v6/deployments` | getDeployments | List deployments |
-| GET | `/v6/deployments/{id}/files` | listDeploymentFiles | List Deployment Files |
-| GET | `/v6/deployments/{id}/files/{fileId}` | getDeploymentFileContents | Get Deployment File Contents |
-| DELETE | `/v6/domains/{domain}` | deleteDomain | Remove a domain by name |
-| GET | `/v6/domains/{domain}/config` | getDomainConfig | Get a Domain's configuration |
-| POST | `/v7/certs` | issueCert | Issue a new cert |
-| PUT | `/v7/certs` | uploadCert | Upload a cert |
-| DELETE | `/v7/certs/{id}` | removeCert | Remove cert |
-| GET | `/v7/certs/{id}` | getCertById | Get cert by id |
-| POST | `/v8/artifacts` | artifactQuery | Query information about an artifact |
-| POST | `/v8/artifacts/events` | recordEvents | Record an artifacts cache usage event |
-| GET | `/v8/artifacts/status` | status | Get status of Remote Caching for this principal |
-| GET | `/v8/artifacts/{hash}` | downloadArtifact | Download a cache artifact |
-| HEAD | `/v8/artifacts/{hash}` | artifactExists | Check if a cache artifact exists |
-| PUT | `/v8/artifacts/{hash}` | uploadArtifact | Upload a cache artifact |
-| GET | `/v9/projects` | getProjects | Retrieve a list of projects |
-| POST | `/v9/projects` | createProject | Create a new project |
-| DELETE | `/v9/projects/{idOrName}` | deleteProject | Delete a Project |
-| GET | `/v9/projects/{idOrName}` | getProject | Find a project by id or name |
-| PATCH | `/v9/projects/{idOrName}` | updateProject | Update an existing project |
-| GET | `/v9/projects/{idOrName}/domains` | getProjectDomains | Retrieve project domains by project by id or name |
-| POST | `/v9/projects/{idOrName}/domains` | addProjectDomain | Add a domain to a project |
-| DELETE | `/v9/projects/{idOrName}/domains/{domain}` | removeProjectDomain | Remove a domain from a project |
-| GET | `/v9/projects/{idOrName}/domains/{domain}` | getProjectDomain | Get a project domain |
-| PATCH | `/v9/projects/{idOrName}/domains/{domain}` | updateProjectDomain | Update a project domain |
-| POST | `/v9/projects/{idOrName}/domains/{domain}/verify` | verifyProjectDomain | Verify project domain |
-| GET | `/v9/projects/{idOrName}/env` | filterProjectEnvs | Retrieve the environment variables of a project by id or name |
-| DELETE | `/v9/projects/{idOrName}/env/{id}` | removeProjectEnv | Remove an environment variable |
-| PATCH | `/v9/projects/{idOrName}/env/{id}` | editProjectEnv | Edit an environment variable |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/edge-config` | getEdgeConfigs | `teamId` | object | yes | Get Edge Configs |
+| POST | `/edge-config` | createEdgeConfig | `teamId`, body: object | object |  | Create an Edge Config |
+| GET | `/edge-config/{edgeConfigId}` | getEdgeConfig | `edgeConfigId`*, `teamId` | object | yes | Get an Edge Config |
+| PUT | `/edge-config/{edgeConfigId}` | updateEdgeConfig | `edgeConfigId`*, `teamId`, body: object | object |  | Update an Edge Config |
+| DELETE | `/edge-config/{edgeConfigId}` | deleteEdgeConfig | `edgeConfigId`*, `teamId` | — |  | Delete an Edge Config |
+| GET | `/edge-config/{edgeConfigId}/item/{edgeConfigItemKey}` | getEdgeConfigItem | `edgeConfigId`*, `edgeConfigItemKey`*, `teamId` | EdgeConfigItem | yes | Get an Edge Config item |
+| GET | `/edge-config/{edgeConfigId}/items` | getEdgeConfigItems | `edgeConfigId`*, `teamId` | EdgeConfigItem | yes | Get Edge Config items |
+| PATCH | `/edge-config/{edgeConfigId}/items` | patchtEdgeConfigItems | `edgeConfigId`*, `teamId`, body: object | object |  | Update Edge Config items in batch |
+| POST | `/edge-config/{edgeConfigId}/token` | createEdgeConfigToken | `edgeConfigId`*, `teamId`, body: object | object |  | Create an Edge Config token |
+| GET | `/edge-config/{edgeConfigId}/token/{token}` | getEdgeConfigToken | `edgeConfigId`*, `token`*, `teamId` | EdgeConfigToken | yes | Get Edge Config token meta data |
+| GET | `/edge-config/{edgeConfigId}/tokens` | getEdgeConfigTokens | `edgeConfigId`*, `teamId` | EdgeConfigToken | yes | Get all tokens of an Edge Config |
+| DELETE | `/edge-config/{edgeConfigId}/tokens` | deleteEdgeConfigTokens | `edgeConfigId`*, `teamId`, body: object | — |  | Delete one or more Edge Config tokens |
+| POST | `/registration` | emailLogin | body: object | object |  | Login with email |
+| GET | `/registration/verify` | verifyToken | `email`, `token`*, `tokenName`, `ssoUserId` | object | yes | Verify a login request to get an authentication token |
+| GET | `/v1/deployments/{deploymentId}/checks` | getAllChecks | `deploymentId`*, `teamId` | object | yes | Retrieve a list of all checks |
+| POST | `/v1/deployments/{deploymentId}/checks` | createCheck | `deploymentId`*, `teamId`, body: object | object |  | Creates a new Check |
+| GET | `/v1/deployments/{deploymentId}/checks/{checkId}` | getCheck | `deploymentId`*, `checkId`*, `teamId` | object | yes | Get a single check |
+| PATCH | `/v1/deployments/{deploymentId}/checks/{checkId}` | updateCheck | `deploymentId`*, `checkId`*, `teamId`, body: object | object |  | Update a check |
+| POST | `/v1/deployments/{deploymentId}/checks/{checkId}/rerequest` | rerequestCheck | `deploymentId`*, `checkId`*, `teamId` | object |  | Rerequest a check |
+| PATCH | `/v1/domains/records/{recordId}` | updateRecord | `recordId`*, `teamId`, body: object | object |  | Update an existing DNS record |
+| GET | `/v1/integrations/configuration/{id}` | getConfiguration | `id`*, `teamId` | object | yes | Retrieve an integration configuration |
+| DELETE | `/v1/integrations/configuration/{id}` | deleteConfiguration | `id`*, `teamId` | — |  | Delete an integration configuration |
+| GET | `/v1/integrations/configurations` | getConfigurations | `view`*, `teamId` | object[] | yes | Get configurations for the authenticated user or team |
+| GET | `/v1/integrations/git-namespaces` | gitNamespaces | `provider`, `teamId` | object[] | yes | List git namespaces by provider |
+| DELETE | `/v1/integrations/log-drains/{id}` | deleteIntegrationLogDrain | `id`*, `teamId` | — |  | Deletes the Integration log drain with the provided `id` |
+| GET | `/v1/integrations/search-repo` | get /v1/integrations/search-repo | `query`, `namespaceId`, `provider`, `installationId`, `teamId` | object | yes | List git repositories linked to namespace by provider |
+| GET | `/v1/log-drains` | getConfigurableLogDrains | `projectId`, `teamId` | object[] | yes | Retrieves a list of Configurable Log Drains |
+| POST | `/v1/log-drains` | createConfigurableLogDrain | `teamId`, body: object | object |  | Creates a Configurable Log Drain |
+| GET | `/v1/log-drains/{id}` | getConfigurableLogDrain | `id`*, `teamId` | object | yes | Retrieves a Configurable Log Drain |
+| DELETE | `/v1/log-drains/{id}` | deleteConfigurableLogDrain | `id`*, `teamId` | — |  | Deletes a Configurable Log Drain |
+| GET | `/v1/projects/{idOrName}/env/{id}` | getProjectEnv | `idOrName`*, `id`*, `teamId` | object | yes | Retrieve the decrypted value of an environment variable of a project by id |
+| POST | `/v1/teams` | createTeam | body: object | object |  | Create a Team |
+| DELETE | `/v1/teams/{teamId}` | deleteTeam | `teamId`*, body: object | object |  | Delete a Team |
+| DELETE | `/v1/teams/{teamId}/invites/{inviteId}` | deleteTeamInviteCode | `inviteId`*, `teamId`* | object |  | Delete a Team invite code |
+| POST | `/v1/teams/{teamId}/members` | inviteUserToTeam | `teamId`*, body: object | object |  | Invite a user |
+| POST | `/v1/teams/{teamId}/members/teams/join` | joinTeam | `teamId`*, body: object | object |  | Join a team |
+| DELETE | `/v1/teams/{teamId}/members/{uid}` | removeTeamMember | `uid`*, `teamId`* | object |  | Remove a Team Member |
+| PATCH | `/v1/teams/{teamId}/members/{uid}` | updateTeamMember | `uid`*, `teamId`*, body: object | object |  | Update a Team Member |
+| POST | `/v1/teams/{teamId}/request` | requestAccessToTeam | `teamId`*, body: object | object |  | Request access to a team |
+| GET | `/v1/teams/{teamId}/request/{userId}` | getTeamAccessRequest | `userId`*, `teamId`* | object | yes | Get access request status |
+| DELETE | `/v1/user` | requestDelete | body: object | object |  | Delete User Account |
+| GET | `/v1/webhooks` | getWebhooks | `projectId`, `teamId` | object[] | yes | Get a list of webhooks |
+| POST | `/v1/webhooks` | createWebhook | `teamId`, body: object | object |  | Creates a webhook |
+| GET | `/v1/webhooks/{id}` | getWebhook | `id`*, `teamId` | object | yes | Get a webhook |
+| DELETE | `/v1/webhooks/{id}` | deleteWebhook | `id`*, `teamId` | — |  | Deletes a webhook |
+| POST | `/v10/projects/{idOrName}/env` | createProjectEnv | `idOrName`*, `teamId`, body: object\|object[] | object[]\|object, object |  | Create one or more environment variables |
+| GET | `/v11/deployments/{deploymentId}/builds` | listDeploymentBuilds | `deploymentId`*, `teamId` | object | yes | List Deployment Builds |
+| PATCH | `/v12/deployments/{id}/cancel` | cancelDeployment | `id`*, `teamId` | object |  | Cancel a deployment |
+| POST | `/v13/deployments` | createDeployment | `forceNew`, `skipAutoDetectionConfirmation`, `teamId`, body: object | object |  | Create a new deployment |
+| GET | `/v13/deployments/{idOrUrl}` | getDeployment | `idOrUrl`*, `withGitRepoInfo`, `teamId` | object | yes | Get a deployment by ID or URL |
+| DELETE | `/v13/deployments/{id}` | deleteDeployment | `id`*, `url`, `teamId` | object |  | Delete a Deployment |
+| DELETE | `/v2/aliases/{aliasId}` | deleteAlias | `aliasId`*, `teamId` | object |  | Delete an Alias |
+| GET | `/v2/deployments/{idOrUrl}/events` | getDeploymentEvents | `idOrUrl`*, `direction`, `follow`, `limit`, `name`, `since`, `until`, `statusCode`, `delimiter`, `builds`, `teamId` | object[] | yes | Get deployment events |
+| GET | `/v2/deployments/{id}/aliases` | listDeploymentAliases | `id`*, `teamId` | object | yes | List Deployment Aliases |
+| POST | `/v2/deployments/{id}/aliases` | assignAlias | `id`*, `teamId`, body: object | object |  | Assign an Alias |
+| POST | `/v2/domains/{domain}/records` | createRecord | `domain`*, `teamId`, body: object | object |  | Create a DNS record |
+| DELETE | `/v2/domains/{domain}/records/{recordId}` | removeRecord | `domain`*, `recordId`*, `teamId` | object |  | Delete a DNS record |
+| POST | `/v2/files` | uploadFile | `Content-Length`, `x-vercel-digest`, `x-now-digest`, `x-now-size`, `teamId` | object |  | Upload Deployment Files |
+| GET | `/v2/integrations/log-drains` | getIntegrationLogDrains | `teamId` | object[] | yes | Retrieves a list of Integration log drains |
+| POST | `/v2/integrations/log-drains` | createLogDrain | `teamId`, body: object | object |  | Creates a new Integration Log Drain |
+| DELETE | `/v2/secrets/{idOrName}` | deleteSecret | `idOrName`*, `teamId` | object |  | Delete a secret |
+| POST | `/v2/secrets/{name}` | createSecret | `teamId`, `name`*, body: object | object |  | Create a new secret |
+| PATCH | `/v2/secrets/{name}` | renameSecret | `name`*, `teamId`, body: object | object |  | Change secret name |
+| GET | `/v2/teams` | getTeams | `limit`, `since`, `until` | object | yes | List all teams |
+| GET | `/v2/teams/{teamId}` | getTeam | `slug`, `teamId`* | Team | yes | Get a Team |
+| PATCH | `/v2/teams/{teamId}` | patchTeam | `teamId`*, body: object | Team |  | Update a Team |
+| GET | `/v2/teams/{teamId}/members` | getTeamMembers | `limit`, `since`, `until`, `search`, `role`, `excludeProject`, `teamId`* | object | yes | List team members |
+| GET | `/v2/user` | getAuthUser | — | object | yes | Get the User |
+| GET | `/v3/events` | listUserEvents | `limit`, `since`, `until`, `types`, `userId`, `teamId` | object | yes | List User Events |
+| GET | `/v3/secrets` | getSecrets | `id`, `projectId`, `teamId` | object | yes | List secrets |
+| GET | `/v3/secrets/{idOrName}` | getSecret | `idOrName`*, `decrypt`, `teamId` | object | yes | Get a single secret |
+| POST | `/v3/user/tokens` | createAuthToken | `teamId`, body: object | object |  | Create an Auth Token |
+| DELETE | `/v3/user/tokens/{tokenId}` | deleteAuthToken | `tokenId`* | object |  | Delete an authentication token |
+| GET | `/v4/aliases` | listAliases | `domain`, `from`, `limit`, `projectId`, `since`, `until`, `rollbackDeploymentId`, `teamId` | object | yes | List aliases |
+| GET | `/v4/aliases/{idOrAlias}` | getAlias | `from`, `idOrAlias`*, `projectId`, `since`, `until`, `teamId` | object | yes | Get an Alias |
+| POST | `/v4/domains` | createOrTransferDomain | `teamId`, body: object | object |  | Register or transfer-in a new Domain |
+| POST | `/v4/domains/buy` | buyDomain | `teamId`, body: object | object |  | Purchase a domain |
+| GET | `/v4/domains/price` | checkDomainPrice | `name`*, `type`, `teamId` | object | yes | Check the price for a domain |
+| GET | `/v4/domains/status` | checkDomainStatus | `name`*, `teamId` | object | yes | Check a Domain Availability |
+| GET | `/v4/domains/{domain}/records` | getRecords | `domain`*, `limit`, `since`, `until`, `teamId` | string\|object | yes | List existing DNS records |
+| GET | `/v5/domains` | getDomains | `limit`, `since`, `until`, `teamId` | object | yes | List all the domains |
+| GET | `/v5/domains/{domain}` | getDomain | `domain`*, `teamId` | object | yes | Get Information for a Single Domain |
+| GET | `/v5/user/tokens` | listAuthTokens | — | object | yes | List Auth Tokens |
+| GET | `/v5/user/tokens/{tokenId}` | getAuthToken | `tokenId`* | object | yes | Get Auth Token Metadata |
+| GET | `/v6/deployments` | getDeployments | `app`, `from`, `limit`, `projectId`, `target`, `to`, `users`, `since`, `until`, `state`, `rollbackCandidate`, `teamId` | object | yes | List deployments |
+| GET | `/v6/deployments/{id}/files` | listDeploymentFiles | `id`*, `teamId` | FileTree[] | yes | List Deployment Files |
+| GET | `/v6/deployments/{id}/files/{fileId}` | getDeploymentFileContents | `id`*, `fileId`*, `teamId` | — | yes | Get Deployment File Contents |
+| DELETE | `/v6/domains/{domain}` | deleteDomain | `domain`*, `teamId` | object |  | Remove a domain by name |
+| GET | `/v6/domains/{domain}/config` | getDomainConfig | `domain`*, `teamId` | object | yes | Get a Domain's configuration |
+| PUT | `/v7/certs` | uploadCert | `teamId`, body: object | object |  | Upload a cert |
+| POST | `/v7/certs` | issueCert | `teamId`, body: object | object |  | Issue a new cert |
+| GET | `/v7/certs/{id}` | getCertById | `id`*, `teamId` | object | yes | Get cert by id |
+| DELETE | `/v7/certs/{id}` | removeCert | `id`*, `teamId` | object |  | Remove cert |
+| POST | `/v8/artifacts` | artifactQuery | `teamId`, body: object | object |  | Query information about an artifact |
+| POST | `/v8/artifacts/events` | recordEvents | `x-artifact-client-ci`, `x-artifact-client-interactive`, `teamId`, body: object[] | — |  | Record an artifacts cache usage event |
+| GET | `/v8/artifacts/status` | status | `teamId` | object | yes | Get status of Remote Caching for this principal |
+| GET | `/v8/artifacts/{hash}` | downloadArtifact | `x-artifact-client-ci`, `x-artifact-client-interactive`, `hash`*, `teamId` | — | yes | Download a cache artifact |
+| PUT | `/v8/artifacts/{hash}` | uploadArtifact | `Content-Length`*, `x-artifact-duration`, `x-artifact-client-ci`, `x-artifact-client-interactive`, `x-artifact-tag`, `hash`*, `teamId`, body: — | object |  | Upload a cache artifact |
+| HEAD | `/v8/artifacts/{hash}` | artifactExists | `hash`*, `teamId` | — | yes | Check if a cache artifact exists |
+| GET | `/v9/projects` | getProjects | `from`, `gitForkProtection`, `limit`, `search`, `repo`, `repoId`, `repoUrl`, `excludeRepos`, `edgeConfigId`, `edgeConfigTokenId`, `connectConfigurationId`, `teamId` | object | yes | Retrieve a list of projects |
+| POST | `/v9/projects` | createProject | `teamId`, body: object | object |  | Create a new project |
+| GET | `/v9/projects/{idOrName}` | getProject | `idOrName`*, `teamId` | object | yes | Find a project by id or name |
+| DELETE | `/v9/projects/{idOrName}` | deleteProject | `idOrName`*, `teamId` | — |  | Delete a Project |
+| PATCH | `/v9/projects/{idOrName}` | updateProject | `idOrName`*, `teamId`, body: object | object |  | Update an existing project |
+| GET | `/v9/projects/{idOrName}/domains` | getProjectDomains | `idOrName`*, `production`, `gitBranch`, `redirects`, `redirect`, `verified`, `limit`, `since`, `until`, `order`, `teamId` | object | yes | Retrieve project domains by project by id or name |
+| POST | `/v9/projects/{idOrName}/domains` | addProjectDomain | `idOrName`*, `teamId`, body: object | object |  | Add a domain to a project |
+| GET | `/v9/projects/{idOrName}/domains/{domain}` | getProjectDomain | `idOrName`*, `domain`*, `teamId` | object | yes | Get a project domain |
+| DELETE | `/v9/projects/{idOrName}/domains/{domain}` | removeProjectDomain | `idOrName`*, `domain`*, `teamId` | object |  | Remove a domain from a project |
+| PATCH | `/v9/projects/{idOrName}/domains/{domain}` | updateProjectDomain | `idOrName`*, `domain`*, `teamId`, body: object | object |  | Update a project domain |
+| POST | `/v9/projects/{idOrName}/domains/{domain}/verify` | verifyProjectDomain | `idOrName`*, `domain`*, `teamId` | object |  | Verify project domain |
+| GET | `/v9/projects/{idOrName}/env` | filterProjectEnvs | `idOrName`*, `gitBranch`, `decrypt`, `source`, `teamId` | object | yes | Retrieve the environment variables of a project by id or name |
+| DELETE | `/v9/projects/{idOrName}/env/{id}` | removeProjectEnv | `idOrName`*, `id`*, `teamId` | object[]\|object |  | Remove an environment variable |
+| PATCH | `/v9/projects/{idOrName}/env/{id}` | editProjectEnv | `idOrName`*, `id`*, `teamId`, body: object | object |  | Edit an environment variable |

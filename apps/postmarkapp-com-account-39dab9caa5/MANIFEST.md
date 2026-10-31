@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_87
 
 | | |
 | --- | --- |
-| Signed bundle | `6aefc9e553cd4ad0b0e423548e9c0969ad5bfcfe40389ac12a6698283a99da9a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,28 +34,30 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_87
 
 19 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/domains` | listDomains | List Domains |
-| POST | `/domains` | createDomain | Create a Domain |
-| DELETE | `/domains/{domainid}` | deleteDomain | Delete a Domain |
-| GET | `/domains/{domainid}` | getDomain | Get a Domain |
-| PUT | `/domains/{domainid}` | editDomain | Update a Domain |
-| POST | `/domains/{domainid}/rotatedkim` | rotateDKIMKeyForDomain | Rotate DKIM Key |
-| PUT | `/domains/{domainid}/verifydkim` | requestDkimVerificationForDomain | Request DNS Verification for DKIM |
-| PUT | `/domains/{domainid}/verifyreturnpath` | requestReturnPathVerificationForDomain | Request DNS Verification for Return-Path |
-| POST | `/domains/{domainid}/verifyspf` | requestSPFVerificationForDomain | Request DNS Verification for SPF |
-| GET | `/senders` | listSenderSignatures | List Sender Signatures |
-| POST | `/senders` | createSenderSignature | Create a Sender Signature |
-| DELETE | `/senders/{signatureid}` | deleteSenderSignature | Delete a Sender Signature |
-| GET | `/senders/{signatureid}` | getSenderSignature | Get a Sender Signature |
-| PUT | `/senders/{signatureid}` | editSenderSignature | Update a Sender Signature |
-| POST | `/senders/{signatureid}/requestnewdkim` | requestNewDKIMKeyForSenderSignature | Request a new DKIM Key |
-| POST | `/senders/{signatureid}/resend` | resendSenderSignatureConfirmationEmail | Resend Signature Confirmation Email |
-| POST | `/senders/{signatureid}/verifyspf` | requestSPFVerificationForSenderSignature | Request DNS Verification for SPF |
-| GET | `/servers` | listServers | List servers |
-| POST | `/servers` | createServer | Create a Server |
-| DELETE | `/servers/{serverid}` | deleteServer | Delete a Server |
-| GET | `/servers/{serverid}` | getServerInformation | Get a Server |
-| PUT | `/servers/{serverid}` | editServerInformation | Edit a Server |
-| PUT | `/templates/push` | pushTemplates | Push templates from one server to another |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/domains` | listDomains | `X-Postmark-Account-Token`*, `count`*, `offset`* | DomainListingResults | yes | List Domains |
+| POST | `/domains` | createDomain | `X-Postmark-Account-Token`*, body: DomainCreationModel | DomainExtendedInformation |  | Create a Domain |
+| GET | `/domains/{domainid}` | getDomain | `X-Postmark-Account-Token`*, `domainid`* | DomainExtendedInformation | yes | Get a Domain |
+| PUT | `/domains/{domainid}` | editDomain | `X-Postmark-Account-Token`*, `domainid`*, body: DomainEditingModel | DomainExtendedInformation |  | Update a Domain |
+| DELETE | `/domains/{domainid}` | deleteDomain | `X-Postmark-Account-Token`*, `domainid`* | StandardPostmarkResponse |  | Delete a Domain |
+| POST | `/domains/{domainid}/rotatedkim` | rotateDKIMKeyForDomain | `X-Postmark-Account-Token`*, `domainid`* | DKIMRotationResponse |  | Rotate DKIM Key |
+| PUT | `/domains/{domainid}/verifydkim` | requestDkimVerificationForDomain | `X-Postmark-Account-Token`*, `domainid`* | DomainExtendedInformation |  | Request DNS Verification for DKIM |
+| PUT | `/domains/{domainid}/verifyreturnpath` | requestReturnPathVerificationForDomain | `X-Postmark-Account-Token`*, `domainid`* | DomainExtendedInformation |  | Request DNS Verification for Return-Path |
+| POST | `/domains/{domainid}/verifyspf` | requestSPFVerificationForDomain | `X-Postmark-Account-Token`*, `domainid`* | DomainSPFResult |  | Request DNS Verification for SPF |
+| GET | `/senders` | listSenderSignatures | `X-Postmark-Account-Token`*, `count`*, `offset`* | SenderListingResults | yes | List Sender Signatures |
+| POST | `/senders` | createSenderSignature | `X-Postmark-Account-Token`*, body: SenderSignatureCreationModel | SenderSignatureExtendedInformation |  | Create a Sender Signature |
+| GET | `/senders/{signatureid}` | getSenderSignature | `X-Postmark-Account-Token`*, `signatureid`* | SenderSignatureExtendedInformation | yes | Get a Sender Signature |
+| PUT | `/senders/{signatureid}` | editSenderSignature | `X-Postmark-Account-Token`*, `signatureid`*, body: SenderSignatureEditingModel | SenderSignatureExtendedInformation |  | Update a Sender Signature |
+| DELETE | `/senders/{signatureid}` | deleteSenderSignature | `X-Postmark-Account-Token`*, `signatureid`* | StandardPostmarkResponse |  | Delete a Sender Signature |
+| POST | `/senders/{signatureid}/requestnewdkim` | requestNewDKIMKeyForSenderSignature | `X-Postmark-Account-Token`*, `signatureid`* | StandardPostmarkResponse |  | Request a new DKIM Key |
+| POST | `/senders/{signatureid}/resend` | resendSenderSignatureConfirmationEmail | `X-Postmark-Account-Token`*, `signatureid`* | StandardPostmarkResponse |  | Resend Signature Confirmation Email |
+| POST | `/senders/{signatureid}/verifyspf` | requestSPFVerificationForSenderSignature | `X-Postmark-Account-Token`*, `signatureid`* | SenderSignatureExtendedInformation |  | Request DNS Verification for SPF |
+| GET | `/servers` | listServers | `X-Postmark-Account-Token`*, `count`*, `offset`*, `name` | ServerListingResponse | yes | List servers |
+| POST | `/servers` | createServer | `X-Postmark-Account-Token`*, body: CreateServerPayload | ExtendedServerInfo |  | Create a Server |
+| GET | `/servers/{serverid}` | getServerInformation | `X-Postmark-Account-Token`*, `serverid`* | ExtendedServerInfo | yes | Get a Server |
+| PUT | `/servers/{serverid}` | editServerInformation | `X-Postmark-Account-Token`*, `serverid`*, body: EditServerPayload | ExtendedServerInfo |  | Edit a Server |
+| DELETE | `/servers/{serverid}` | deleteServer | `X-Postmark-Account-Token`*, `serverid`* | — |  | Delete a Server |
+| PUT | `/templates/push` | pushTemplates | `X-Postmark-Account-Token`*, body*: TemplatesPushModel | TemplatesPushResponse |  | Push templates from one server to another |

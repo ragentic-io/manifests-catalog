@@ -72,12 +72,12 @@
       {
         "from": "listennotes-com-dcc1252509",
         "kind": "EXPOSES",
-        "to": "operation:delete:/podcasts/{id}"
+        "to": "operation:get:/podcasts/{id}"
       },
       {
         "from": "listennotes-com-dcc1252509",
         "kind": "EXPOSES",
-        "to": "operation:get:/podcasts/{id}"
+        "to": "operation:delete:/podcasts/{id}"
       },
       {
         "from": "listennotes-com-dcc1252509",
@@ -118,6 +118,1266 @@
         "from": "listennotes-com-dcc1252509",
         "kind": "EXPOSES",
         "to": "operation:get:/typeahead"
+      },
+      {
+        "from": "operation:get:/best_podcasts",
+        "kind": "RETURNS",
+        "to": "schema:BestPodcastsResponse"
+      },
+      {
+        "from": "operation:get:/curated_podcasts",
+        "kind": "RETURNS",
+        "to": "schema:GetCuratedPodcastsResponse"
+      },
+      {
+        "from": "operation:get:/curated_podcasts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:CuratedListFull"
+      },
+      {
+        "from": "operation:post:/episodes",
+        "kind": "ACCEPTS",
+        "to": "schema:GetEpisodesInBatchForm"
+      },
+      {
+        "from": "operation:post:/episodes",
+        "kind": "RETURNS",
+        "to": "schema:GetEpisodesInBatchResponse"
+      },
+      {
+        "from": "operation:get:/episodes/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EpisodeFull"
+      },
+      {
+        "from": "operation:get:/episodes/{id}/recommendations",
+        "kind": "RETURNS",
+        "to": "schema:GetEpisodeRecommendationsResponse"
+      },
+      {
+        "from": "operation:get:/genres",
+        "kind": "RETURNS",
+        "to": "schema:GetGenresResponse"
+      },
+      {
+        "from": "operation:get:/just_listen",
+        "kind": "RETURNS",
+        "to": "schema:EpisodeSimple"
+      },
+      {
+        "from": "operation:get:/languages",
+        "kind": "RETURNS",
+        "to": "schema:GetLanguagesResponse"
+      },
+      {
+        "from": "operation:get:/playlists",
+        "kind": "RETURNS",
+        "to": "schema:PlaylistsResponse"
+      },
+      {
+        "from": "operation:get:/playlists/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PlaylistResponse"
+      },
+      {
+        "from": "operation:post:/podcasts",
+        "kind": "ACCEPTS",
+        "to": "schema:GetPodcastsInBatchForm"
+      },
+      {
+        "from": "operation:post:/podcasts",
+        "kind": "RETURNS",
+        "to": "schema:GetPodcastsInBatchResponse"
+      },
+      {
+        "from": "operation:post:/podcasts/submit",
+        "kind": "ACCEPTS",
+        "to": "schema:SubmitPodcastForm"
+      },
+      {
+        "from": "operation:post:/podcasts/submit",
+        "kind": "RETURNS",
+        "to": "schema:SubmitPodcastResponse"
+      },
+      {
+        "from": "operation:get:/podcasts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:PodcastFull"
+      },
+      {
+        "from": "operation:delete:/podcasts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:DeletePodcastResponse"
+      },
+      {
+        "from": "operation:get:/podcasts/{id}/audience",
+        "kind": "RETURNS",
+        "to": "schema:PodcastAudienceResponse"
+      },
+      {
+        "from": "operation:get:/podcasts/{id}/recommendations",
+        "kind": "RETURNS",
+        "to": "schema:GetPodcastRecommendationsResponse"
+      },
+      {
+        "from": "operation:get:/regions",
+        "kind": "RETURNS",
+        "to": "schema:GetRegionsResponse"
+      },
+      {
+        "from": "operation:get:/related_searches",
+        "kind": "RETURNS",
+        "to": "schema:RelatedSearchesResponse"
+      },
+      {
+        "from": "operation:get:/search",
+        "kind": "RETURNS",
+        "to": "schema:SearchResponse"
+      },
+      {
+        "from": "operation:get:/spellcheck",
+        "kind": "RETURNS",
+        "to": "schema:SpellCheckResponse"
+      },
+      {
+        "from": "operation:get:/trending_searches",
+        "kind": "RETURNS",
+        "to": "schema:TrendingSearchesResponse"
+      },
+      {
+        "from": "operation:get:/typeahead",
+        "kind": "RETURNS",
+        "to": "schema:TypeaheadResponse"
+      },
+      {
+        "from": "schema:BestPodcastsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BestPodcastsLNUrlField"
+      },
+      {
+        "from": "schema:BestPodcastsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastSimple"
+      },
+      {
+        "from": "schema:CuratedListFull",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedDescriptionField"
+      },
+      {
+        "from": "schema:CuratedListFull",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedIdField"
+      },
+      {
+        "from": "schema:CuratedListFull",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedLNUrlField"
+      },
+      {
+        "from": "schema:CuratedListFull",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedNameField"
+      },
+      {
+        "from": "schema:CuratedListFull",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedPubDateMsField"
+      },
+      {
+        "from": "schema:CuratedListFull",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedSourceDomainField"
+      },
+      {
+        "from": "schema:CuratedListFull",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedSourceUrlField"
+      },
+      {
+        "from": "schema:CuratedListFull",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedTotalPodcastsField"
+      },
+      {
+        "from": "schema:CuratedListFull",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastSimple"
+      },
+      {
+        "from": "schema:CuratedListSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedIdField"
+      },
+      {
+        "from": "schema:CuratedListSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedLNUrlField"
+      },
+      {
+        "from": "schema:CuratedListSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedPubDateMsField"
+      },
+      {
+        "from": "schema:CuratedListSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedSourceDomainField"
+      },
+      {
+        "from": "schema:CuratedListSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedSourceUrlField"
+      },
+      {
+        "from": "schema:CuratedListSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedTotalPodcastsField"
+      },
+      {
+        "from": "schema:CuratedListSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastMinimum"
+      },
+      {
+        "from": "schema:CuratedListSimple",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedDescriptionField"
+      },
+      {
+        "from": "schema:CuratedListSimple",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedIdField"
+      },
+      {
+        "from": "schema:CuratedListSimple",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedLNUrlField"
+      },
+      {
+        "from": "schema:CuratedListSimple",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedNameField"
+      },
+      {
+        "from": "schema:CuratedListSimple",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedPubDateMsField"
+      },
+      {
+        "from": "schema:CuratedListSimple",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedSourceDomainField"
+      },
+      {
+        "from": "schema:CuratedListSimple",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedSourceUrlField"
+      },
+      {
+        "from": "schema:CuratedListSimple",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedTotalPodcastsField"
+      },
+      {
+        "from": "schema:CuratedListSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastMinimum"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:AudioField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:AudioLengthSecField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeDescriptionField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeIdField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeImageField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeLNEditUrlField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeLNUrlField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeNameField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodePubDateMsField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeThumbnailField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:ExplicitField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:LinkField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:MaybeAudioInvalidField"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastSimple"
+      },
+      {
+        "from": "schema:EpisodeFull",
+        "kind": "REFERENCES",
+        "to": "schema:TranscriptField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:AudioField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:AudioLengthSecField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeDescriptionField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeIdField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeLNEditUrlField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeLNUrlField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeNameField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodePubDateMsField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:ExplicitField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:LinkField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:MaybeAudioInvalidField"
+      },
+      {
+        "from": "schema:EpisodeMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:ThumbnailField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:AudioField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:AudioLengthSecField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeIdField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeImageField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeLNUrlField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodePubDateMsField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeThumbnailField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ExplicitField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:GenreIdsField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:LinkField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreGlobalRankField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastIdField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastLNUrlField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastTitleHighlightedField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastTitleOriginalField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherHighlightedField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherOriginalField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:RssField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ThumbnailField"
+      },
+      {
+        "from": "schema:EpisodeSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:iTunesIdField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:AudioField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:AudioLengthSecField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeDescriptionField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeIdField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeImageField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeLNEditUrlField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeLNUrlField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeNameField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodePubDateMsField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeThumbnailField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:ExplicitField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:LinkField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:MaybeAudioInvalidField"
+      },
+      {
+        "from": "schema:EpisodeSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastMinimum"
+      },
+      {
+        "from": "schema:GetCuratedPodcastsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedListSimple"
+      },
+      {
+        "from": "schema:GetEpisodeRecommendationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeSimple"
+      },
+      {
+        "from": "schema:GetEpisodesInBatchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeSimple"
+      },
+      {
+        "from": "schema:GetGenresResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Genre"
+      },
+      {
+        "from": "schema:GetPodcastRecommendationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastSimple"
+      },
+      {
+        "from": "schema:GetPodcastsInBatchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeSimple"
+      },
+      {
+        "from": "schema:GetPodcastsInBatchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastSimple"
+      },
+      {
+        "from": "schema:PlaylistItem",
+        "kind": "REFERENCES",
+        "to": "schema:CustomAudio"
+      },
+      {
+        "from": "schema:PlaylistItem",
+        "kind": "REFERENCES",
+        "to": "schema:DeletedItem"
+      },
+      {
+        "from": "schema:PlaylistItem",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeSimple"
+      },
+      {
+        "from": "schema:PlaylistItem",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastSimple"
+      },
+      {
+        "from": "schema:PlaylistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistDescriptionField"
+      },
+      {
+        "from": "schema:PlaylistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistIdField"
+      },
+      {
+        "from": "schema:PlaylistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistImageField"
+      },
+      {
+        "from": "schema:PlaylistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistItem"
+      },
+      {
+        "from": "schema:PlaylistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistLastTimestampMsField"
+      },
+      {
+        "from": "schema:PlaylistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistListennotesUrlField"
+      },
+      {
+        "from": "schema:PlaylistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistNameField"
+      },
+      {
+        "from": "schema:PlaylistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistThumbnailField"
+      },
+      {
+        "from": "schema:PlaylistResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistVisibilityField"
+      },
+      {
+        "from": "schema:PlaylistsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistDescriptionField"
+      },
+      {
+        "from": "schema:PlaylistsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistIdField"
+      },
+      {
+        "from": "schema:PlaylistsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistImageField"
+      },
+      {
+        "from": "schema:PlaylistsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistLastTimestampMsField"
+      },
+      {
+        "from": "schema:PlaylistsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistListennotesUrlField"
+      },
+      {
+        "from": "schema:PlaylistsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistNameField"
+      },
+      {
+        "from": "schema:PlaylistsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistThumbnailField"
+      },
+      {
+        "from": "schema:PlaylistsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistVisibilityField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:AvgAudioLengthSecField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:CountryField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:EarliestPubDateMsField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:EmailField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeMinimum"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:ExplicitField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:GenreIdsField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:IsClaimedField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:LanguageField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:LatestEpisodeIdField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:LatestPubDateMsField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreGlobalRankField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:NextEpisodePubDateField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastDescriptionField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastExtraField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastIdField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastLNUrlField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastLookingForField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastNameField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastTypeField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:RssField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:ThumbnailField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:TotalEpisodesField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateFrequencyHoursField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:WebsiteField"
+      },
+      {
+        "from": "schema:PodcastFull",
+        "kind": "REFERENCES",
+        "to": "schema:iTunesIdField"
+      },
+      {
+        "from": "schema:PodcastMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:PodcastMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreField"
+      },
+      {
+        "from": "schema:PodcastMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreGlobalRankField"
+      },
+      {
+        "from": "schema:PodcastMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastIdField"
+      },
+      {
+        "from": "schema:PodcastMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastLNUrlField"
+      },
+      {
+        "from": "schema:PodcastMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastNameField"
+      },
+      {
+        "from": "schema:PodcastMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherField"
+      },
+      {
+        "from": "schema:PodcastMinimum",
+        "kind": "REFERENCES",
+        "to": "schema:ThumbnailField"
+      },
+      {
+        "from": "schema:PodcastMinimumRss",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:PodcastMinimumRss",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastIdField"
+      },
+      {
+        "from": "schema:PodcastMinimumRss",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastLNUrlField"
+      },
+      {
+        "from": "schema:PodcastMinimumRss",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastNameField"
+      },
+      {
+        "from": "schema:PodcastMinimumRss",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherField"
+      },
+      {
+        "from": "schema:PodcastMinimumRss",
+        "kind": "REFERENCES",
+        "to": "schema:RssField"
+      },
+      {
+        "from": "schema:PodcastMinimumRss",
+        "kind": "REFERENCES",
+        "to": "schema:ThumbnailField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:AvgAudioLengthSecField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:EarliestPubDateMsField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:EmailField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ExplicitField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:GenreIdsField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:LatestEpisodeIdField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:LatestPubDateMsField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreGlobalRankField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastIdField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastLNUrlField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastTitleHighlightedField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastTitleOriginalField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherHighlightedField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherOriginalField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:RssField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:ThumbnailField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:TotalEpisodesField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateFrequencyHoursField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:WebsiteField"
+      },
+      {
+        "from": "schema:PodcastSearchResult",
+        "kind": "REFERENCES",
+        "to": "schema:iTunesIdField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:AvgAudioLengthSecField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:CountryField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EarliestPubDateMsField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:EmailField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:ExplicitField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:GenreIdsField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:IsClaimedField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:LanguageField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:LatestEpisodeIdField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:LatestPubDateMsField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:ListenScoreGlobalRankField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastDescriptionField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastExtraField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastIdField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastLNUrlField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastLookingForField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastNameField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastTypeField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:RssField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:ThumbnailField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:TotalEpisodesField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:UpdateFrequencyHoursField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:WebsiteField"
+      },
+      {
+        "from": "schema:PodcastSimple",
+        "kind": "REFERENCES",
+        "to": "schema:iTunesIdField"
+      },
+      {
+        "from": "schema:PodcastTypeaheadResult",
+        "kind": "REFERENCES",
+        "to": "schema:ExplicitField"
+      },
+      {
+        "from": "schema:PodcastTypeaheadResult",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:PodcastTypeaheadResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastIdField"
+      },
+      {
+        "from": "schema:PodcastTypeaheadResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastTitleHighlightedField"
+      },
+      {
+        "from": "schema:PodcastTypeaheadResult",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastTitleOriginalField"
+      },
+      {
+        "from": "schema:PodcastTypeaheadResult",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherHighlightedField"
+      },
+      {
+        "from": "schema:PodcastTypeaheadResult",
+        "kind": "REFERENCES",
+        "to": "schema:PublisherOriginalField"
+      },
+      {
+        "from": "schema:PodcastTypeaheadResult",
+        "kind": "REFERENCES",
+        "to": "schema:ThumbnailField"
+      },
+      {
+        "from": "schema:SearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CuratedListSearchResult"
+      },
+      {
+        "from": "schema:SearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeSearchResult"
+      },
+      {
+        "from": "schema:SearchResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastSearchResult"
+      },
+      {
+        "from": "schema:SubmitPodcastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastMinimum"
+      },
+      {
+        "from": "schema:TypeaheadResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Genre"
+      },
+      {
+        "from": "schema:TypeaheadResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PodcastTypeaheadResult"
       }
     ],
     "nodes": [
@@ -127,761 +1387,2135 @@
       },
       {
         "deprecated": false,
+        "description": "Get a list of curated best podcasts by genre, which are curated by Listen Notes staffs based on various signals from the Internet, e.g., top charts on other po…",
         "id": "operation:get:/best_podcasts",
         "kind": "operation",
         "method": "get",
         "name": "getBestPodcasts",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "You can get the id from `GET /genres`.",
+            "in": "query",
+            "name": "genre_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Page number of those podcasts in this genre.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "us",
+            "description": "Filter best podcasts by country/region.",
+            "in": "query",
+            "name": "region",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter best podcasts by the publisher's country/region.",
+            "in": "query",
+            "name": "publisher_region",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter best podcasts by language.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "recent_added_first",
+            "description": "How do you want to sort these podcasts?",
+            "enum": [
+              "recent_added_first",
+              "oldest_added_first",
+              "recent_published_first",
+              "oldest_published_first",
+              "listen_score"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Whether or not to exclude podcasts with explicit language.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "safe_mode",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/best_podcasts",
         "pointer": "#/paths/~1best_podcasts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BestPodcastsResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch a list of best podcasts by genre"
+        "summary": "Fetch a list of best podcasts by genre",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A bunch of curated lists from online media.",
         "id": "operation:get:/curated_podcasts",
         "kind": "operation",
         "method": "get",
         "name": "getCuratedPodcasts",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Page number of curated lists.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/curated_podcasts",
         "pointer": "#/paths/~1curated_podcasts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetCuratedPodcastsResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch curated lists of podcasts"
+        "summary": "Fetch curated lists of podcasts",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get detailed meta data of all podcasts in a specific curated list.",
         "id": "operation:get:/curated_podcasts/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getCuratedPodcastById",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id for a specific curated list of podcasts.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/curated_podcasts/{id}",
         "pointer": "#/paths/~1curated_podcasts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CuratedListFull"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch a curated list of podcasts by id"
+        "summary": "Fetch a curated list of podcasts by id",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Batch fetch basic meta data for up to 10 episodes.",
         "id": "operation:post:/episodes",
         "kind": "operation",
         "method": "post",
         "name": "getEpisodesInBatch",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/episodes",
         "pointer": "#/paths/~1episodes/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "GetEpisodesInBatchForm"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetEpisodesInBatchResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Batch fetch basic meta data for episodes"
+        "summary": "Batch fetch basic meta data for episodes",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch detailed meta data for a specific episode.",
         "id": "operation:get:/episodes/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getEpisodeById",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "id for a specific episode.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "To include the transcript of this episode or not?",
+            "in": "query",
+            "name": "show_transcript",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/episodes/{id}",
         "pointer": "#/paths/~1episodes~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EpisodeFull"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch detailed meta data for an episode by id"
+        "summary": "Fetch detailed meta data for an episode by id",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch up to 8 episode recommendations based on the given episode id.",
         "id": "operation:get:/episodes/{id}/recommendations",
         "kind": "operation",
         "method": "get",
         "name": "getEpisodeRecommendations",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Episode id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Whether or not to exclude podcasts with explicit language.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "safe_mode",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/episodes/{id}/recommendations",
         "pointer": "#/paths/~1episodes~1{id}~1recommendations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetEpisodeRecommendationsResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch recommendations for an episode"
+        "summary": "Fetch recommendations for an episode",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of podcast genres that are supported in Listen Notes.",
         "id": "operation:get:/genres",
         "kind": "operation",
         "method": "get",
         "name": "getGenres",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Just show top level genres?",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "top_level_only",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/genres",
         "pointer": "#/paths/~1genres/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetGenresResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch a list of podcast genres"
+        "summary": "Fetch a list of podcast genres",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Recently published episodes are more likely to be fetched.",
         "id": "operation:get:/just_listen",
         "kind": "operation",
         "method": "get",
         "name": "justListen",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/just_listen",
         "pointer": "#/paths/~1just_listen/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EpisodeSimple"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch a random podcast episode"
+        "summary": "Fetch a random podcast episode",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of languages that are supported in Listen Notes database.",
         "id": "operation:get:/languages",
         "kind": "operation",
         "method": "get",
         "name": "getLanguages",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/languages",
         "pointer": "#/paths/~1languages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetLanguagesResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch a list of supported languages for podcasts"
+        "summary": "Fetch a list of supported languages for podcasts",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns same data as listennotes.com/listen under your account.",
         "id": "operation:get:/playlists",
         "kind": "operation",
         "method": "get",
         "name": "getPlaylists",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "recent_added_first",
+            "description": "How do you want to sort playlists?",
+            "enum": [
+              "recent_added_first",
+              "oldest_added_first",
+              "name_a_to_z",
+              "name_z_to_a"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Page number of playlists.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/playlists",
         "pointer": "#/paths/~1playlists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlaylistsResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch a list of your playlists."
+        "summary": "Fetch a list of your playlists.",
+        "tags": [
+          "Playlist API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A playlist can be an episode list (i.e., all items are episodes) or a podcast list (i.e., all items are podcasts), which is essentially the same as those creat…",
         "id": "operation:get:/playlists/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getPlaylistById",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Playlist id (always 11 characters, e.g., m1pe7z60bsw).",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "episode_list",
+            "description": "The type of this playlist, which should be either **episode_list** or **podcast_list**.",
+            "enum": [
+              "episode_list",
+              "podcast_list"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "For playlist items pagination.",
+            "in": "query",
+            "name": "last_timestamp_ms",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "recent_added_first",
+            "description": "How do you want to sort playlist items?",
+            "enum": [
+              "recent_added_first",
+              "oldest_added_first",
+              "recent_published_first",
+              "oldest_published_first"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/playlists/{id}",
         "pointer": "#/paths/~1playlists~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlaylistResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch a playlist's info and items (i.e., episodes or podcasts)."
+        "summary": "Fetch a playlist's info and items (i.e., episodes or podcasts).",
+        "tags": [
+          "Playlist API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Batch fetch basic meta data for up to 10 podcasts.",
         "id": "operation:post:/podcasts",
         "kind": "operation",
         "method": "post",
         "name": "getPodcastsInBatch",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/podcasts",
         "pointer": "#/paths/~1podcasts/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "GetPodcastsInBatchForm"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetPodcastsInBatchResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Batch fetch basic meta data for podcasts"
+        "summary": "Batch fetch basic meta data for podcasts",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Podcast hosting services can use this endpoint to help your users directly submit a new podcast to Listen Notes database.",
         "id": "operation:post:/podcasts/submit",
         "kind": "operation",
         "method": "post",
         "name": "submitPodcast",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/podcasts/submit",
         "pointer": "#/paths/~1podcasts~1submit/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "SubmitPodcastForm"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubmitPodcastResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Submit a podcast to Listen Notes database"
+        "summary": "Submit a podcast to Listen Notes database",
+        "tags": [
+          "Podcaster API"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/podcasts/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deletePodcastById",
-        "path": "/podcasts/{id}",
-        "pointer": "#/paths/~1podcasts~1{id}/delete",
-        "security": [],
-        "summary": "Request to delete a podcast"
-      },
-      {
-        "deprecated": false,
+        "description": "Fetch detailed meta data and episodes for a specific podcast (up to 10 episodes each time).",
         "id": "operation:get:/podcasts/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getPodcastById",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Podcast id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "For episodes pagination.",
+            "in": "query",
+            "name": "next_episode_pub_date",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "recent_first",
+            "description": "How do you want to sort the episodes of this podcast?",
+            "enum": [
+              "recent_first",
+              "oldest_first"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/podcasts/{id}",
         "pointer": "#/paths/~1podcasts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastFull"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch detailed meta data and episodes for a podcast by id"
+        "summary": "Fetch detailed meta data and episodes for a podcast by id",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Podcast hosting services can use this endpoint to streamline the process of podcast deletion on behave of their users (podcasters).",
+        "id": "operation:delete:/podcasts/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deletePodcastById",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Podcast id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The reason why this podcast should be deleted, e.g., copyright violation, the podcaster wants to delete it...",
+            "in": "query",
+            "name": "reason",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/podcasts/{id}",
+        "pointer": "#/paths/~1podcasts~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeletePodcastResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Request to delete a podcast",
+        "tags": [
+          "Podcaster API"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Fetch audience demographics for a podcast - 1) directly measured on the Listen Notes platform; 2) only supports audience breakdown by regions for now; 3) not e…",
         "id": "operation:get:/podcasts/{id}/audience",
         "kind": "operation",
         "method": "get",
         "name": "getPodcastAudience",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Podcast id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/podcasts/{id}/audience",
         "pointer": "#/paths/~1podcasts~1{id}~1audience/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PodcastAudienceResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch audience demographics for a podcast"
+        "summary": "Fetch audience demographics for a podcast",
+        "tags": [
+          "Insights API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch up to 8 podcast recommendations based on the given podcast id.",
         "id": "operation:get:/podcasts/{id}/recommendations",
         "kind": "operation",
         "method": "get",
         "name": "getPodcastRecommendations",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Podcast id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Whether or not to exclude podcasts with explicit language.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "safe_mode",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/podcasts/{id}/recommendations",
         "pointer": "#/paths/~1podcasts~1{id}~1recommendations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetPodcastRecommendationsResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch recommendations for a podcast"
+        "summary": "Fetch recommendations for a podcast",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "It returns a dictionary of country codes (e.g., us, gb...) & country names (United States, United Kingdom...).",
         "id": "operation:get:/regions",
         "kind": "operation",
         "method": "get",
         "name": "getRegions",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/regions",
         "pointer": "#/paths/~1regions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetRegionsResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch a list of supported countries/regions for best podcasts"
+        "summary": "Fetch a list of supported countries/regions for best podcasts",
+        "tags": [
+          "Directory API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Suggest related search terms.",
         "id": "operation:get:/related_searches",
         "kind": "operation",
         "method": "get",
         "name": "getRelatedSearches",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Search term, e.g., person, place, topic...",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/related_searches",
         "pointer": "#/paths/~1related_searches/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RelatedSearchesResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch related search terms"
+        "summary": "Fetch related search terms",
+        "tags": [
+          "Search API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Full-text search on episodes, podcasts, or curated lists of podcasts.",
         "id": "operation:get:/search",
         "kind": "operation",
         "method": "get",
         "name": "search",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Search term, e.g., person, place, topic...",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Sort by date or not?",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "sort_by_date",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "episode",
+            "description": "What type of contents do you want to search for?",
+            "enum": [
+              "episode",
+              "podcast",
+              "curated"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Offset for search results, for pagination.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Minimum audio length in minutes.",
+            "in": "query",
+            "name": "len_min",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum audio length in minutes.",
+            "in": "query",
+            "name": "len_max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Minimum number of episodes.",
+            "in": "query",
+            "name": "episode_count_min",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum number of episodes.",
+            "in": "query",
+            "name": "episode_count_max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Minimum update frequency in hours (how frequently does a podcast release a new episode).",
+            "in": "query",
+            "name": "update_freq_min",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum update frequency in hours (how frequently does a podcast release a new episode).",
+            "in": "query",
+            "name": "update_freq_max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A comma-delimited string of a list of genre ids.",
+            "in": "query",
+            "name": "genre_ids",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only show episodes/podcasts/curated lists published before this timestamp (in milliseconds).",
+            "in": "query",
+            "name": "published_before",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Only show episodes/podcasts/curated lists published after this timestamp (in milliseconds).",
+            "in": "query",
+            "name": "published_after",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "title,description,author,audio",
+            "description": "A comma-delimited string to search only in specific fields.",
+            "in": "query",
+            "name": "only_in",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit search results to a specific language.",
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit search results to a specific region (e.g., us, gb, in...).",
+            "in": "query",
+            "name": "region",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma-delimited string of podcast ids (up to 5 podcasts) - you can get a podcast id from the **podcast_id** field in response.",
+            "in": "query",
+            "name": "ocid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A comma-delimited string of podcast ids (up to 5 podcasts) - you can get a podcast id from the **podcast_id** field in response.",
+            "in": "query",
+            "name": "ncid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Whether or not to exclude podcasts/episodes with explicit language.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "safe_mode",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Whether or not to keep only one episode per podcast in search results.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "unique_podcasts",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SearchResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Full-text search"
+        "summary": "Full-text search",
+        "tags": [
+          "Search API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Suggest a list of words that correct the spelling errors of a search term.",
         "id": "operation:get:/spellcheck",
         "kind": "operation",
         "method": "get",
         "name": "spellcheck",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Search term, e.g., person, place, topic...",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/spellcheck",
         "pointer": "#/paths/~1spellcheck/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SpellCheckResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Spell check on a search term"
+        "summary": "Spell check on a search term",
+        "tags": [
+          "Search API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fetch up to 10 most recent trending search terms on the Listen Notes platform.",
         "id": "operation:get:/trending_searches",
         "kind": "operation",
         "method": "get",
         "name": "getTrendingSearches",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/trending_searches",
         "pointer": "#/paths/~1trending_searches/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TrendingSearchesResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Fetch trending search terms"
+        "summary": "Fetch trending search terms",
+        "tags": [
+          "Search API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Suggest search terms, podcast genres, and podcasts.",
         "id": "operation:get:/typeahead",
         "kind": "operation",
         "method": "get",
         "name": "typeahead",
+        "parameters": [
+          {
+            "description": "Get API Key on listennotes.com/api",
+            "in": "header",
+            "name": "X-ListenAPI-Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Search term, e.g., person, place, topic...",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Autosuggest podcasts.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "show_podcasts",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Whether or not to autosuggest genres.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "show_genres",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Whether or not to exclude podcasts/episodes with explicit language.",
+            "enum": [
+              0,
+              1
+            ],
+            "in": "query",
+            "name": "safe_mode",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/typeahead",
         "pointer": "#/paths/~1typeahead/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TypeaheadResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Typeahead search"
+        "summary": "Typeahead search",
+        "tags": [
+          "Search API"
+        ]
       },
       {
+        "description": "Audio url of this episode, which can be played directly.",
         "id": "schema:AudioField",
         "kind": "schema",
-        "name": "AudioField"
+        "name": "AudioField",
+        "type": "string"
       },
       {
+        "description": "Audio length of this episode.",
         "id": "schema:AudioLengthSecField",
         "kind": "schema",
-        "name": "AudioLengthSecField"
+        "name": "AudioLengthSecField",
+        "type": "integer"
       },
       {
+        "description": "Average audio length of all episodes of this podcast.",
         "id": "schema:AvgAudioLengthSecField",
         "kind": "schema",
-        "name": "AvgAudioLengthSecField"
+        "name": "AvgAudioLengthSecField",
+        "type": "integer"
       },
       {
+        "description": "Url of the list of best podcasts on [ListenNotes.com](https://www.ListenNotes.com).",
         "id": "schema:BestPodcastsLNUrlField",
         "kind": "schema",
-        "name": "BestPodcastsLNUrlField"
+        "name": "BestPodcastsLNUrlField",
+        "type": "string"
       },
       {
         "id": "schema:BestPodcastsResponse",
         "kind": "schema",
-        "name": "BestPodcastsResponse"
+        "name": "BestPodcastsResponse",
+        "type": "object"
       },
       {
+        "description": "The country where this podcast is produced.",
         "id": "schema:CountryField",
         "kind": "schema",
-        "name": "CountryField"
+        "name": "CountryField",
+        "type": "string"
       },
       {
+        "description": "This curated list's description.",
         "id": "schema:CuratedDescriptionField",
         "kind": "schema",
-        "name": "CuratedDescriptionField"
+        "name": "CuratedDescriptionField",
+        "type": "string"
       },
       {
+        "description": "Curated list id, which can be used to further fetch detailed curated list metadata via `GET /curated_podcasts/{id}`.",
         "id": "schema:CuratedIdField",
         "kind": "schema",
-        "name": "CuratedIdField"
+        "name": "CuratedIdField",
+        "type": "string"
       },
       {
+        "description": "The url of this curated list on [ListenNotes.com](https://www.ListenNotes.com).",
         "id": "schema:CuratedLNUrlField",
         "kind": "schema",
-        "name": "CuratedLNUrlField"
+        "name": "CuratedLNUrlField",
+        "type": "string"
       },
       {
         "id": "schema:CuratedListFull",
         "kind": "schema",
-        "name": "CuratedListFull"
+        "name": "CuratedListFull",
+        "type": "object"
       },
       {
+        "description": "When **type** is *curated*.",
         "id": "schema:CuratedListSearchResult",
         "kind": "schema",
-        "name": "CuratedListSearchResult"
+        "name": "CuratedListSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:CuratedListSimple",
         "kind": "schema",
-        "name": "CuratedListSimple"
+        "name": "CuratedListSimple",
+        "type": "object"
       },
       {
+        "description": "Curated list name.",
         "id": "schema:CuratedNameField",
         "kind": "schema",
-        "name": "CuratedNameField"
+        "name": "CuratedNameField",
+        "type": "string"
       },
       {
+        "description": "Published date of this curated list.",
         "id": "schema:CuratedPubDateMsField",
         "kind": "schema",
-        "name": "CuratedPubDateMsField"
+        "name": "CuratedPubDateMsField",
+        "type": "integer"
       },
       {
+        "description": "The domain name of the source of this curated list.",
         "id": "schema:CuratedSourceDomainField",
         "kind": "schema",
-        "name": "CuratedSourceDomainField"
+        "name": "CuratedSourceDomainField",
+        "type": "string"
       },
       {
+        "description": "Url of the source of this curated list.",
         "id": "schema:CuratedSourceUrlField",
         "kind": "schema",
-        "name": "CuratedSourceUrlField"
+        "name": "CuratedSourceUrlField",
+        "type": "string"
       },
       {
+        "description": "The total number of podcasts in this curated list.",
         "id": "schema:CuratedTotalPodcastsField",
         "kind": "schema",
-        "name": "CuratedTotalPodcastsField"
+        "name": "CuratedTotalPodcastsField",
+        "type": "integer"
       },
       {
+        "description": "A custom audio in a playlist, which is a type of playlist item.",
         "id": "schema:CustomAudio",
         "kind": "schema",
-        "name": "CustomAudio"
+        "name": "CustomAudio",
+        "type": "object"
       },
       {
         "id": "schema:DeletePodcastResponse",
         "kind": "schema",
-        "name": "DeletePodcastResponse"
+        "name": "DeletePodcastResponse",
+        "type": "object"
       },
       {
+        "description": "A deleted episode or podcast.",
         "id": "schema:DeletedItem",
         "kind": "schema",
-        "name": "DeletedItem"
+        "name": "DeletedItem",
+        "type": "object"
       },
       {
+        "description": "The published date of the oldest episode of this podcast.",
         "id": "schema:EarliestPubDateMsField",
         "kind": "schema",
-        "name": "EarliestPubDateMsField"
+        "name": "EarliestPubDateMsField",
+        "type": "integer"
       },
       {
+        "description": "The email of this podcast's producer.",
         "id": "schema:EmailField",
         "kind": "schema",
-        "name": "EmailField"
+        "name": "EmailField",
+        "type": "string"
       },
       {
+        "description": "Html of this episode's full description",
         "id": "schema:EpisodeDescriptionField",
         "kind": "schema",
-        "name": "EpisodeDescriptionField"
+        "name": "EpisodeDescriptionField",
+        "type": "string"
       },
       {
         "id": "schema:EpisodeFull",
         "kind": "schema",
-        "name": "EpisodeFull"
+        "name": "EpisodeFull",
+        "type": "object"
       },
       {
+        "description": "Episode id, which can be used to further fetch detailed episode metadata via `GET /episodes/{id}`.",
         "id": "schema:EpisodeIdField",
         "kind": "schema",
-        "name": "EpisodeIdField"
+        "name": "EpisodeIdField",
+        "type": "string"
       },
       {
+        "description": "Image url for this episode.",
         "id": "schema:EpisodeImageField",
         "kind": "schema",
-        "name": "EpisodeImageField"
+        "name": "EpisodeImageField",
+        "type": "string"
       },
       {
+        "description": "Edit url of this episode where you can update the audio url if you find the audio is broken.",
         "id": "schema:EpisodeLNEditUrlField",
         "kind": "schema",
-        "name": "EpisodeLNEditUrlField"
+        "name": "EpisodeLNEditUrlField",
+        "type": "string"
       },
       {
+        "description": "The url of this episode on [ListenNotes.com](https://www.ListenNotes.com).",
         "id": "schema:EpisodeLNUrlField",
         "kind": "schema",
-        "name": "EpisodeLNUrlField"
+        "name": "EpisodeLNUrlField",
+        "type": "string"
       },
       {
         "id": "schema:EpisodeMinimum",
         "kind": "schema",
-        "name": "EpisodeMinimum"
+        "name": "EpisodeMinimum",
+        "type": "object"
       },
       {
+        "description": "Episode name.",
         "id": "schema:EpisodeNameField",
         "kind": "schema",
-        "name": "EpisodeNameField"
+        "name": "EpisodeNameField",
+        "type": "string"
       },
       {
+        "description": "Published date for this episode.",
         "id": "schema:EpisodePubDateMsField",
         "kind": "schema",
-        "name": "EpisodePubDateMsField"
+        "name": "EpisodePubDateMsField",
+        "type": "integer"
       },
       {
+        "description": "When **type** is *episode*.",
         "id": "schema:EpisodeSearchResult",
         "kind": "schema",
-        "name": "EpisodeSearchResult"
+        "name": "EpisodeSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:EpisodeSimple",
         "kind": "schema",
-        "name": "EpisodeSimple"
+        "name": "EpisodeSimple",
+        "type": "object"
       },
       {
+        "description": "Thumbnail image (300x300) url for this episode.",
         "id": "schema:EpisodeThumbnailField",
         "kind": "schema",
-        "name": "EpisodeThumbnailField"
+        "name": "EpisodeThumbnailField",
+        "type": "string"
       },
       {
+        "description": "Whether this podcast contains explicit language.",
         "id": "schema:ExplicitField",
         "kind": "schema",
-        "name": "ExplicitField"
+        "name": "ExplicitField",
+        "type": "boolean"
       },
       {
         "id": "schema:Genre",
         "kind": "schema",
-        "name": "Genre"
+        "name": "Genre",
+        "type": "object"
       },
       {
         "id": "schema:GenreIdsField",
         "kind": "schema",
-        "name": "GenreIdsField"
+        "name": "GenreIdsField",
+        "type": "integer[]"
       },
       {
         "id": "schema:GetCuratedPodcastsResponse",
         "kind": "schema",
-        "name": "GetCuratedPodcastsResponse"
+        "name": "GetCuratedPodcastsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetEpisodeRecommendationsResponse",
         "kind": "schema",
-        "name": "GetEpisodeRecommendationsResponse"
+        "name": "GetEpisodeRecommendationsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetEpisodesInBatchForm",
         "kind": "schema",
-        "name": "GetEpisodesInBatchForm"
+        "name": "GetEpisodesInBatchForm",
+        "type": "object"
       },
       {
         "id": "schema:GetEpisodesInBatchResponse",
         "kind": "schema",
-        "name": "GetEpisodesInBatchResponse"
+        "name": "GetEpisodesInBatchResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetGenresResponse",
         "kind": "schema",
-        "name": "GetGenresResponse"
+        "name": "GetGenresResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetLanguagesResponse",
         "kind": "schema",
-        "name": "GetLanguagesResponse"
+        "name": "GetLanguagesResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetPodcastRecommendationsResponse",
         "kind": "schema",
-        "name": "GetPodcastRecommendationsResponse"
+        "name": "GetPodcastRecommendationsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetPodcastsInBatchForm",
         "kind": "schema",
-        "name": "GetPodcastsInBatchForm"
+        "name": "GetPodcastsInBatchForm",
+        "type": "object"
       },
       {
         "id": "schema:GetPodcastsInBatchResponse",
         "kind": "schema",
-        "name": "GetPodcastsInBatchResponse"
+        "name": "GetPodcastsInBatchResponse",
+        "type": "object"
       },
       {
         "id": "schema:GetRegionsResponse",
         "kind": "schema",
-        "name": "GetRegionsResponse"
+        "name": "GetRegionsResponse",
+        "type": "object"
       },
       {
+        "description": "Image url for this podcast's artwork.",
         "id": "schema:ImageField",
         "kind": "schema",
-        "name": "ImageField"
+        "name": "ImageField",
+        "type": "string"
       },
       {
+        "description": "Whether this podcast is claimed by its producer on [ListenNotes.com](https://www.ListenNotes.com).",
         "id": "schema:IsClaimedField",
         "kind": "schema",
-        "name": "IsClaimedField"
+        "name": "IsClaimedField",
+        "type": "boolean"
       },
       {
+        "description": "The language of this podcast.",
         "id": "schema:LanguageField",
         "kind": "schema",
-        "name": "LanguageField"
+        "name": "LanguageField",
+        "type": "string"
       },
       {
+        "description": "The id of the most recently published episode of this podcast, which can be used to further fetch detailed episode metadata via `GET /episodes/{id}`.",
         "id": "schema:LatestEpisodeIdField",
         "kind": "schema",
-        "name": "LatestEpisodeIdField"
+        "name": "LatestEpisodeIdField",
+        "type": "string"
       },
       {
+        "description": "The published date of the latest episode of this podcast.",
         "id": "schema:LatestPubDateMsField",
         "kind": "schema",
-        "name": "LatestPubDateMsField"
+        "name": "LatestPubDateMsField",
+        "type": "integer"
       },
       {
+        "description": "Web link of this episode.",
         "id": "schema:LinkField",
         "kind": "schema",
-        "name": "LinkField"
+        "name": "LinkField",
+        "type": "string"
       },
       {
+        "description": "The estimated popularity score of a podcast compared to all other rss-based public podcasts in the world on a scale from 0 to 100.",
         "id": "schema:ListenScoreField",
         "kind": "schema",
-        "name": "ListenScoreField"
+        "name": "ListenScoreField",
+        "type": "integer"
       },
       {
+        "description": "The estimated popularity ranking of a podcast compared to all other rss-based public podcasts in the world.",
         "id": "schema:ListenScoreGlobalRankField",
         "kind": "schema",
-        "name": "ListenScoreGlobalRankField"
+        "name": "ListenScoreGlobalRankField",
+        "type": "string"
       },
       {
+        "description": "Whether or not this episode's audio is invalid.",
         "id": "schema:MaybeAudioInvalidField",
         "kind": "schema",
-        "name": "MaybeAudioInvalidField"
+        "name": "MaybeAudioInvalidField",
+        "type": "boolean"
       },
       {
+        "description": "Passed to the **next_episode_pub_date** parameter of `GET /podcasts/{id}` to paginate through episodes of that podcast.",
         "id": "schema:NextEpisodePubDateField",
         "kind": "schema",
-        "name": "NextEpisodePubDateField"
+        "name": "NextEpisodePubDateField",
+        "type": "integer"
       },
       {
+        "description": "Playlist description.",
         "id": "schema:PlaylistDescriptionField",
         "kind": "schema",
-        "name": "PlaylistDescriptionField"
+        "name": "PlaylistDescriptionField",
+        "type": "string"
       },
       {
+        "description": "A 11-character playlist id, which can be used to further fetch detailed playlist metadata via `GET /playlists/{id}`.",
         "id": "schema:PlaylistIdField",
         "kind": "schema",
-        "name": "PlaylistIdField"
+        "name": "PlaylistIdField",
+        "type": "string"
       },
       {
+        "description": "High resolution image url of the playlist.",
         "id": "schema:PlaylistImageField",
         "kind": "schema",
-        "name": "PlaylistImageField"
+        "name": "PlaylistImageField",
+        "type": "string"
       },
       {
+        "description": "An item in a playlist",
         "id": "schema:PlaylistItem",
         "kind": "schema",
-        "name": "PlaylistItem"
+        "name": "PlaylistItem",
+        "type": "object"
       },
       {
+        "description": "Passed to the **last_timestamp_ms** parameter of `GET /playlists/{id}` to paginate through items of that playlist.",
         "id": "schema:PlaylistLastTimestampMsField",
         "kind": "schema",
-        "name": "PlaylistLastTimestampMsField"
+        "name": "PlaylistLastTimestampMsField",
+        "type": "integer"
       },
       {
+        "description": "The url of this playlist on ListenNotes.com.",
         "id": "schema:PlaylistListennotesUrlField",
         "kind": "schema",
-        "name": "PlaylistListennotesUrlField"
+        "name": "PlaylistListennotesUrlField",
+        "type": "string"
       },
       {
+        "description": "Playlist name.",
         "id": "schema:PlaylistNameField",
         "kind": "schema",
-        "name": "PlaylistNameField"
+        "name": "PlaylistNameField",
+        "type": "string"
       },
       {
         "id": "schema:PlaylistResponse",
         "kind": "schema",
-        "name": "PlaylistResponse"
+        "name": "PlaylistResponse",
+        "type": "object"
       },
       {
+        "description": "Low resolution image url of the playlist.",
         "id": "schema:PlaylistThumbnailField",
         "kind": "schema",
-        "name": "PlaylistThumbnailField"
+        "name": "PlaylistThumbnailField",
+        "type": "string"
       },
       {
+        "description": "Visibility of this playlist.",
         "id": "schema:PlaylistVisibilityField",
         "kind": "schema",
-        "name": "PlaylistVisibilityField"
+        "name": "PlaylistVisibilityField",
+        "type": "string"
       },
       {
         "id": "schema:PlaylistsResponse",
         "kind": "schema",
-        "name": "PlaylistsResponse"
+        "name": "PlaylistsResponse",
+        "type": "object"
       },
       {
         "id": "schema:PodcastAudienceResponse",
         "kind": "schema",
-        "name": "PodcastAudienceResponse"
+        "name": "PodcastAudienceResponse",
+        "type": "object"
       },
       {
+        "description": "Html of this episode's full description",
         "id": "schema:PodcastDescriptionField",
         "kind": "schema",
-        "name": "PodcastDescriptionField"
+        "name": "PodcastDescriptionField",
+        "type": "string"
       },
       {
         "id": "schema:PodcastExtraField",
         "kind": "schema",
-        "name": "PodcastExtraField"
+        "name": "PodcastExtraField",
+        "type": "object"
       },
       {
         "id": "schema:PodcastFull",
         "kind": "schema",
-        "name": "PodcastFull"
+        "name": "PodcastFull",
+        "type": "object"
       },
       {
+        "description": "Podcast id, which can be used to further fetch detailed podcast metadata via `GET /podcasts/{id}`.",
         "id": "schema:PodcastIdField",
         "kind": "schema",
-        "name": "PodcastIdField"
+        "name": "PodcastIdField",
+        "type": "string"
       },
       {
+        "description": "The url of this podcast on [ListenNotes.com](https://www.ListenNotes.com).",
         "id": "schema:PodcastLNUrlField",
         "kind": "schema",
-        "name": "PodcastLNUrlField"
+        "name": "PodcastLNUrlField",
+        "type": "string"
       },
       {
         "id": "schema:PodcastLookingForField",
         "kind": "schema",
-        "name": "PodcastLookingForField"
+        "name": "PodcastLookingForField",
+        "type": "object"
       },
       {
         "id": "schema:PodcastMinimum",
         "kind": "schema",
-        "name": "PodcastMinimum"
+        "name": "PodcastMinimum",
+        "type": "object"
       },
       {
         "id": "schema:PodcastMinimumRss",
         "kind": "schema",
-        "name": "PodcastMinimumRss"
+        "name": "PodcastMinimumRss",
+        "type": "object"
       },
       {
+        "description": "Podcast name.",
         "id": "schema:PodcastNameField",
         "kind": "schema",
-        "name": "PodcastNameField"
+        "name": "PodcastNameField",
+        "type": "string"
       },
       {
+        "description": "When **type** is *podcast*.",
         "id": "schema:PodcastSearchResult",
         "kind": "schema",
-        "name": "PodcastSearchResult"
+        "name": "PodcastSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:PodcastSimple",
         "kind": "schema",
-        "name": "PodcastSimple"
+        "name": "PodcastSimple",
+        "type": "object"
       },
       {
+        "description": "Highlighted segment of podcast name.",
         "id": "schema:PodcastTitleHighlightedField",
         "kind": "schema",
-        "name": "PodcastTitleHighlightedField"
+        "name": "PodcastTitleHighlightedField",
+        "type": "string"
       },
       {
+        "description": "Plain text of podcast name.",
         "id": "schema:PodcastTitleOriginalField",
         "kind": "schema",
-        "name": "PodcastTitleOriginalField"
+        "name": "PodcastTitleOriginalField",
+        "type": "string"
       },
       {
+        "description": "The type of this podcast - episodic or serial.",
         "id": "schema:PodcastTypeField",
         "kind": "schema",
-        "name": "PodcastTypeField"
+        "name": "PodcastTypeField",
+        "type": "string"
       },
       {
         "id": "schema:PodcastTypeaheadResult",
         "kind": "schema",
-        "name": "PodcastTypeaheadResult"
+        "name": "PodcastTypeaheadResult",
+        "type": "object"
       },
       {
+        "description": "Podcast publisher name.",
         "id": "schema:PublisherField",
         "kind": "schema",
-        "name": "PublisherField"
+        "name": "PublisherField",
+        "type": "string"
       },
       {
+        "description": "Highlighted segment of this podcast's publisher name.",
         "id": "schema:PublisherHighlightedField",
         "kind": "schema",
-        "name": "PublisherHighlightedField"
+        "name": "PublisherHighlightedField",
+        "type": "string"
       },
       {
+        "description": "Plain text of this podcast's publisher name.",
         "id": "schema:PublisherOriginalField",
         "kind": "schema",
-        "name": "PublisherOriginalField"
+        "name": "PublisherOriginalField",
+        "type": "string"
       },
       {
         "id": "schema:RelatedSearchesResponse",
         "kind": "schema",
-        "name": "RelatedSearchesResponse"
+        "name": "RelatedSearchesResponse",
+        "type": "object"
       },
       {
+        "description": "RSS url of this podcast.",
         "id": "schema:RssField",
         "kind": "schema",
-        "name": "RssField"
+        "name": "RssField",
+        "type": "string"
       },
       {
         "id": "schema:SearchResponse",
         "kind": "schema",
-        "name": "SearchResponse"
+        "name": "SearchResponse",
+        "type": "object"
       },
       {
         "id": "schema:SpellCheckResponse",
         "kind": "schema",
-        "name": "SpellCheckResponse"
+        "name": "SpellCheckResponse",
+        "type": "object"
       },
       {
         "id": "schema:SubmitPodcastForm",
         "kind": "schema",
-        "name": "SubmitPodcastForm"
+        "name": "SubmitPodcastForm",
+        "type": "object"
       },
       {
         "id": "schema:SubmitPodcastResponse",
         "kind": "schema",
-        "name": "SubmitPodcastResponse"
+        "name": "SubmitPodcastResponse",
+        "type": "object"
       },
       {
+        "description": "Thumbnail image url for this podcast's artwork (300x300).",
         "id": "schema:ThumbnailField",
         "kind": "schema",
-        "name": "ThumbnailField"
+        "name": "ThumbnailField",
+        "type": "string"
       },
       {
+        "description": "Total number of episodes in this podcast.",
         "id": "schema:TotalEpisodesField",
         "kind": "schema",
-        "name": "TotalEpisodesField"
+        "name": "TotalEpisodesField",
+        "type": "integer"
       },
       {
+        "description": "The transcript of this episode, in plain text (with the newline character \\n).",
         "id": "schema:TranscriptField",
         "kind": "schema",
-        "name": "TranscriptField"
+        "name": "TranscriptField",
+        "type": "string"
       },
       {
         "id": "schema:TrendingSearchesResponse",
         "kind": "schema",
-        "name": "TrendingSearchesResponse"
+        "name": "TrendingSearchesResponse",
+        "type": "object"
       },
       {
         "id": "schema:TypeaheadResponse",
         "kind": "schema",
-        "name": "TypeaheadResponse"
+        "name": "TypeaheadResponse",
+        "type": "object"
       },
       {
+        "description": "How frequently does this podcast release a new episode?",
         "id": "schema:UpdateFrequencyHoursField",
         "kind": "schema",
-        "name": "UpdateFrequencyHoursField"
+        "name": "UpdateFrequencyHoursField",
+        "type": "integer"
       },
       {
+        "description": "Website url of this podcast.",
         "id": "schema:WebsiteField",
         "kind": "schema",
-        "name": "WebsiteField"
+        "name": "WebsiteField",
+        "type": "string"
       },
       {
+        "description": "iTunes id for this podcast.",
         "id": "schema:iTunesIdField",
         "kind": "schema",
-        "name": "iTunesIdField"
+        "name": "iTunesIdField",
+        "type": "integer"
       }
     ]
   },

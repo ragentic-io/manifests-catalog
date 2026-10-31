@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_winsms1_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `ea8064c2c730cc761f5db5ecb8893793f5530cafe53af293c9461e0f3b368bc5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,16 +34,18 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_winsms1_profile_ima
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/credits/balance` | getCreditBalance | Get your current WinSMS credit balance |
-| POST | `/credits/transfer` | transferCredits | Transfer credits between main and sub accounts. |
-| GET | `/shortcode/incoming` | getShortCodeMessages | Get a list of incoming short/long code messages |
-| GET | `/sms/incoming` | getIncomingMessages | Get a list of incoming SMS messages |
-| GET | `/sms/incoming/optout` | getOptoutMessages | Get a list of incoming opt-out SMS messages |
-| POST | `/sms/outgoing/send` | smsSend | Send SMS messages |
-| POST | `/sms/outgoing/sendmulti` | smsSendBatch | Send multiple different SMS messages |
-| POST | `/sms/outgoing/status` | smsStatus | Get SMS delivery statuses |
-| GET | `/sms/scheduled` | getScheduledMessages | Get a list of scheduled SMS messages |
-| POST | `/sms/scheduled/delete` | deleteScheduledMessages | Delete scheduled SMS messages and refund credits |
-| GET | `/subaccounts` | getSubAccounts | Get a list of all Sub Accounts. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/credits/balance` | getCreditBalance | — | object | yes | Get your current WinSMS credit balance |
+| POST | `/credits/transfer` | transferCredits | body*: object | object |  | Transfer credits between main and sub accounts. |
+| GET | `/shortcode/incoming` | getShortCodeMessages | `offset`, `limit` | object | yes | Get a list of incoming short/long code messages |
+| GET | `/sms/incoming` | getIncomingMessages | `offset`, `limit` | object | yes | Get a list of incoming SMS messages |
+| GET | `/sms/incoming/optout` | getOptoutMessages | — | object | yes | Get a list of incoming opt-out SMS messages |
+| POST | `/sms/outgoing/send` | smsSend | body*: object | object |  | Send SMS messages |
+| POST | `/sms/outgoing/sendmulti` | smsSendBatch | body*: object | object |  | Send multiple different SMS messages |
+| POST | `/sms/outgoing/status` | smsStatus | body*: integer[] | object |  | Get SMS delivery statuses |
+| GET | `/sms/scheduled` | getScheduledMessages | `offset`, `limit` | object | yes | Get a list of scheduled SMS messages |
+| POST | `/sms/scheduled/delete` | deleteScheduledMessages | body*: integer[] | object |  | Delete scheduled SMS messages and refund credits |
+| GET | `/subaccounts` | getSubAccounts | — | object | yes | Get a list of all Sub Accounts. |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_0.gravatar.com_blavatar_6531667
 
 | | |
 | --- | --- |
-| Signed bundle | `52c0b9517335f0df1b47949d37b2ba7375c2feae88d4a832fc871ebd20bf4278` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,29 +34,31 @@ logo: "https://api.apis.guru/v2/cache/logo/https_0.gravatar.com_blavatar_6531667
 
 50 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/us/v1/aerodromes/distance-query` | aerodromes_by_distance_us_v1_aerodromes_distance_query_post | Retrieve aerodromes within given distance of location. |
-| POST | `/us/v1/aerodromes/polygon-query` | aerodromes_by_poly_us_v1_aerodromes_polygon_query_post | Retrieve aerodromes located within given area. |
-| POST | `/us/v1/aerodromes/route-query` | aerodromes_by_route_us_v1_aerodromes_route_query_post | Retrieve aerodromes found along a route. |
-| POST | `/us/v1/airspace/distance-query` | asp_by_distance_us_v1_airspace_distance_query_post | Retrieve all requested types of airspace located within given distance of location. |
-| POST | `/us/v1/airspace/polygon-query` | asp_by_poly_us_v1_airspace_polygon_query_post | Retrieve all requested types of airspace located within given GeoJSON Polygon. |
-| POST | `/us/v1/airspace/route-query` | asp_by_route_us_v1_airspace_route_query_post | Retrieve all requested types of airspace traversed by route. |
-| POST | `/us/v1/obstacles/distance-query` | obstacles_by_distance_us_v1_obstacles_distance_query_post | Retrieve obstacles within given distance of location. |
-| POST | `/us/v1/obstacles/polygon-query` | obstacles_by_poly_us_v1_obstacles_polygon_query_post | Retrieve obstacles located within given area. |
-| POST | `/us/v1/obstacles/route-query` | obstacles_by_route_us_v1_obstacles_route_query_post | Retrieve obstacles found along a route. |
-| POST | `/us/v1/restrictions/distance-query` | tfr_by_distance_us_v1_restrictions_distance_query_post | Retrieve flight restrictions applicable within given distance of location. |
-| POST | `/us/v1/restrictions/polygon-query` | tfr_by_poly_us_v1_restrictions_polygon_query_post | Retrieve flight restrictions applicable within given area. |
-| POST | `/us/v1/restrictions/route-query` | tfr_by_route_us_v1_restrictions_route_query_post | Retrieve flight restrictions applicable along route. |
-| POST | `/us/v1/ssa/distance-query` | ssa_by_distance_us_v1_ssa_distance_query_post | Retrieve all special security areas located within given distance of location. |
-| POST | `/us/v1/ssa/polygon-query` | ssa_by_poly_us_v1_ssa_polygon_query_post | Retrieve all special security areas located within given GeoJSON Polygon. |
-| POST | `/us/v1/ssa/route-query` | ssa_by_route_us_v1_ssa_route_query_post | Retrieve all special security areas traversed by route. |
-| POST | `/us/v1/uoa/distance-query` | uoa_by_distance_us_v1_uoa_distance_query_post | Retrieve UAS Operating Areas (UOAs) found within given distance of location. |
-| POST | `/us/v1/uoa/polygon-query` | uoa_by_poly_us_v1_uoa_polygon_query_post | Retrieve UAS Operating Areas (UOAs) found within given area. |
-| POST | `/us/v1/uoa/route-query` | uoa_by_route_us_v1_uoa_route_query_post | Retrieve UAS Operating Areas (UOAs) found along route. |
-| POST | `/us/v1/venues/distance-query` | ven_by_distance_us_v1_venues_distance_query_post | Retrieve all restricted public venues located within given distance of location. |
-| POST | `/us/v1/venues/polygon-query` | ven_by_poly_us_v1_venues_polygon_query_post | Retrieve all restricted public venues located within given GeoJSON Polygon. |
-| POST | `/us/v1/venues/route-query` | ven_by_route_us_v1_venues_route_query_post | Retrieve all restricted public venues traversed by route. |
-| POST | `/us/v1/wx-forecast/distance-query` | wx_by_distance_us_v1_wx_forecast_distance_query_post | Retrieve forecast values within given distance of location for all requested weather elements and time periods. |
-| POST | `/us/v1/wx-forecast/polygon-query` | wx_by_poly_us_v1_wx_forecast_polygon_query_post | Retrieve forecast values within given GeoJSON polygon for all requested weather elements and time periods. |
-| POST | `/us/v1/wx-forecast/route-query` | wx_by_route_us_v1_wx_forecast_route_query_post | Retrieve forecast values along a route for all requested weather elements and time periods. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/us/v1/aerodromes/distance-query` | aerodromes_by_distance_us_v1_aerodromes_distance_query_post | `x-api-key`, body*: AerodromesByDistance | AerodromeDistanceResponse |  | Retrieve aerodromes within given distance of location. |
+| POST | `/us/v1/aerodromes/polygon-query` | aerodromes_by_poly_us_v1_aerodromes_polygon_query_post | `x-api-key`, body*: AerodromesByPolygon | AerodromePolyResponse |  | Retrieve aerodromes located within given area. |
+| POST | `/us/v1/aerodromes/route-query` | aerodromes_by_route_us_v1_aerodromes_route_query_post | `x-api-key`, body*: AerodromesByRoute | AerodromeRouteResponse |  | Retrieve aerodromes found along a route. |
+| POST | `/us/v1/airspace/distance-query` | asp_by_distance_us_v1_airspace_distance_query_post | `x-api-key`, body*: AirspaceByDistance | AirspaceDistanceResponse |  | Retrieve all requested types of airspace located within given distance of location. |
+| POST | `/us/v1/airspace/polygon-query` | asp_by_poly_us_v1_airspace_polygon_query_post | `x-api-key`, body*: AirspaceByPolygon | AirspacePolyResponse |  | Retrieve all requested types of airspace located within given GeoJSON Polygon. |
+| POST | `/us/v1/airspace/route-query` | asp_by_route_us_v1_airspace_route_query_post | `x-api-key`, body*: AirspaceByRoute | AirspaceRouteResponse |  | Retrieve all requested types of airspace traversed by route. |
+| POST | `/us/v1/obstacles/distance-query` | obstacles_by_distance_us_v1_obstacles_distance_query_post | `x-api-key`, body*: ObstaclesByDistance | ObstacleDistanceResponse |  | Retrieve obstacles within given distance of location. |
+| POST | `/us/v1/obstacles/polygon-query` | obstacles_by_poly_us_v1_obstacles_polygon_query_post | `x-api-key`, body*: ObstaclesByPolygon | ObstaclePolyResponse |  | Retrieve obstacles located within given area. |
+| POST | `/us/v1/obstacles/route-query` | obstacles_by_route_us_v1_obstacles_route_query_post | `x-api-key`, body*: ObstaclesByRoute | ObstacleRouteResponse |  | Retrieve obstacles found along a route. |
+| POST | `/us/v1/restrictions/distance-query` | tfr_by_distance_us_v1_restrictions_distance_query_post | `x-api-key`, body*: NOTAMsByDistance | NOTAMsDistanceResponse |  | Retrieve flight restrictions applicable within given distance of location. |
+| POST | `/us/v1/restrictions/polygon-query` | tfr_by_poly_us_v1_restrictions_polygon_query_post | `x-api-key`, body*: NOTAMsByPolygon | NOTAMsPolyResponse |  | Retrieve flight restrictions applicable within given area. |
+| POST | `/us/v1/restrictions/route-query` | tfr_by_route_us_v1_restrictions_route_query_post | `x-api-key`, body*: NOTAMsByRoute | NOTAMsRouteResponse |  | Retrieve flight restrictions applicable along route. |
+| POST | `/us/v1/ssa/distance-query` | ssa_by_distance_us_v1_ssa_distance_query_post | `x-api-key`, body*: SSAByDistance | SSADistanceResponse |  | Retrieve all special security areas located within given distance of location. |
+| POST | `/us/v1/ssa/polygon-query` | ssa_by_poly_us_v1_ssa_polygon_query_post | `x-api-key`, body*: SSAByPolygon | SSAPolyResponse |  | Retrieve all special security areas located within given GeoJSON Polygon. |
+| POST | `/us/v1/ssa/route-query` | ssa_by_route_us_v1_ssa_route_query_post | `x-api-key`, body*: SSAByRoute | SSARouteResponse |  | Retrieve all special security areas traversed by route. |
+| POST | `/us/v1/uoa/distance-query` | uoa_by_distance_us_v1_uoa_distance_query_post | `x-api-key`, body*: UOAsByDistance | UOAsDistanceResponse |  | Retrieve UAS Operating Areas (UOAs) found within given distance of location. |
+| POST | `/us/v1/uoa/polygon-query` | uoa_by_poly_us_v1_uoa_polygon_query_post | `x-api-key`, body*: UOAsByPolygon | UOAsPolyResponse |  | Retrieve UAS Operating Areas (UOAs) found within given area. |
+| POST | `/us/v1/uoa/route-query` | uoa_by_route_us_v1_uoa_route_query_post | `x-api-key`, body*: UOAsByRoute | UOAsRouteResponse |  | Retrieve UAS Operating Areas (UOAs) found along route. |
+| POST | `/us/v1/venues/distance-query` | ven_by_distance_us_v1_venues_distance_query_post | `x-api-key`, body*: VenuesByDistance | VenueDistanceResponse |  | Retrieve all restricted public venues located within given distance of location. |
+| POST | `/us/v1/venues/polygon-query` | ven_by_poly_us_v1_venues_polygon_query_post | `x-api-key`, body*: VenuesByPolygon | VenuePolyResponse |  | Retrieve all restricted public venues located within given GeoJSON Polygon. |
+| POST | `/us/v1/venues/route-query` | ven_by_route_us_v1_venues_route_query_post | `x-api-key`, body*: VenuesByRoute | VenueRouteResponse |  | Retrieve all restricted public venues traversed by route. |
+| POST | `/us/v1/wx-forecast/distance-query` | wx_by_distance_us_v1_wx_forecast_distance_query_post | `x-api-key`, body*: WxByDistance | WxDistanceResponse |  | Retrieve forecast values within given distance of location for all requested weather elements and time periods. |
+| POST | `/us/v1/wx-forecast/polygon-query` | wx_by_poly_us_v1_wx_forecast_polygon_query_post | `x-api-key`, body*: WxByPolygon | WxPolyResponse |  | Retrieve forecast values within given GeoJSON polygon for all requested weather elements and time periods. |
+| POST | `/us/v1/wx-forecast/route-query` | wx_by_route_us_v1_wx_forecast_route_query_post | `x-api-key`, body*: WxByRoute | WxRouteResponse |  | Retrieve forecast values along a route for all requested weather elements and time periods. |

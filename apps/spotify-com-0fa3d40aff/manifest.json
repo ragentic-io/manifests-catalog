@@ -132,11 +132,6 @@
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/me/albums"
-      },
-      {
-        "from": "spotify-com-0fa3d40aff",
-        "kind": "EXPOSES",
         "to": "operation:get:/me/albums"
       },
       {
@@ -147,12 +142,12 @@
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:get:/me/albums/contains"
+        "to": "operation:delete:/me/albums"
       },
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/me/audiobooks"
+        "to": "operation:get:/me/albums/contains"
       },
       {
         "from": "spotify-com-0fa3d40aff",
@@ -167,12 +162,12 @@
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:get:/me/audiobooks/contains"
+        "to": "operation:delete:/me/audiobooks"
       },
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/me/episodes"
+        "to": "operation:get:/me/audiobooks/contains"
       },
       {
         "from": "spotify-com-0fa3d40aff",
@@ -187,12 +182,12 @@
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:get:/me/episodes/contains"
+        "to": "operation:delete:/me/episodes"
       },
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/me/following"
+        "to": "operation:get:/me/episodes/contains"
       },
       {
         "from": "spotify-com-0fa3d40aff",
@@ -203,6 +198,11 @@
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
         "to": "operation:put:/me/following"
+      },
+      {
+        "from": "spotify-com-0fa3d40aff",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/me/following"
       },
       {
         "from": "spotify-com-0fa3d40aff",
@@ -292,17 +292,17 @@
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/me/shows"
-      },
-      {
-        "from": "spotify-com-0fa3d40aff",
-        "kind": "EXPOSES",
         "to": "operation:get:/me/shows"
       },
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
         "to": "operation:put:/me/shows"
+      },
+      {
+        "from": "spotify-com-0fa3d40aff",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/me/shows"
       },
       {
         "from": "spotify-com-0fa3d40aff",
@@ -317,17 +317,17 @@
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/me/tracks"
-      },
-      {
-        "from": "spotify-com-0fa3d40aff",
-        "kind": "EXPOSES",
         "to": "operation:get:/me/tracks"
       },
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
         "to": "operation:put:/me/tracks"
+      },
+      {
+        "from": "spotify-com-0fa3d40aff",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/me/tracks"
       },
       {
         "from": "spotify-com-0fa3d40aff",
@@ -347,12 +347,12 @@
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/playlists/{playlist_id}/followers"
+        "to": "operation:put:/playlists/{playlist_id}/followers"
       },
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:put:/playlists/{playlist_id}/followers"
+        "to": "operation:delete:/playlists/{playlist_id}/followers"
       },
       {
         "from": "spotify-com-0fa3d40aff",
@@ -372,12 +372,12 @@
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:delete:/playlists/{playlist_id}/tracks"
+        "to": "operation:get:/playlists/{playlist_id}/tracks"
       },
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:get:/playlists/{playlist_id}/tracks"
+        "to": "operation:put:/playlists/{playlist_id}/tracks"
       },
       {
         "from": "spotify-com-0fa3d40aff",
@@ -387,7 +387,7 @@
       {
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
-        "to": "operation:put:/playlists/{playlist_id}/tracks"
+        "to": "operation:delete:/playlists/{playlist_id}/tracks"
       },
       {
         "from": "spotify-com-0fa3d40aff",
@@ -443,6 +443,936 @@
         "from": "spotify-com-0fa3d40aff",
         "kind": "EXPOSES",
         "to": "operation:post:/users/{user_id}/playlists"
+      },
+      {
+        "from": "operation:get:/albums/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AlbumObject"
+      },
+      {
+        "from": "operation:get:/albums/{id}/tracks",
+        "kind": "RETURNS",
+        "to": "schema:PagingSimplifiedTrackObject"
+      },
+      {
+        "from": "operation:get:/artists/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ArtistObject"
+      },
+      {
+        "from": "operation:get:/artists/{id}/albums",
+        "kind": "RETURNS",
+        "to": "schema:PagingSimplifiedAlbumObject"
+      },
+      {
+        "from": "operation:get:/audio-analysis/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AudioAnalysisObject"
+      },
+      {
+        "from": "operation:get:/audio-features/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AudioFeaturesObject"
+      },
+      {
+        "from": "operation:get:/audiobooks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AudiobookObject"
+      },
+      {
+        "from": "operation:get:/audiobooks/{id}/chapters",
+        "kind": "RETURNS",
+        "to": "schema:PagingSimplifiedChapterObject"
+      },
+      {
+        "from": "operation:get:/browse/categories/{category_id}",
+        "kind": "RETURNS",
+        "to": "schema:CategoryObject"
+      },
+      {
+        "from": "operation:get:/browse/categories/{category_id}/playlists",
+        "kind": "RETURNS",
+        "to": "schema:PagingFeaturedPlaylistObject"
+      },
+      {
+        "from": "operation:get:/browse/featured-playlists",
+        "kind": "RETURNS",
+        "to": "schema:PagingFeaturedPlaylistObject"
+      },
+      {
+        "from": "operation:get:/chapters/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ChapterObject"
+      },
+      {
+        "from": "operation:get:/episodes/{id}",
+        "kind": "RETURNS",
+        "to": "schema:EpisodeObject"
+      },
+      {
+        "from": "operation:get:/me",
+        "kind": "RETURNS",
+        "to": "schema:PrivateUserObject"
+      },
+      {
+        "from": "operation:get:/me/albums",
+        "kind": "RETURNS",
+        "to": "schema:PagingSavedAlbumObject"
+      },
+      {
+        "from": "operation:get:/me/audiobooks",
+        "kind": "RETURNS",
+        "to": "schema:PagingSimplifiedAudiobookObject"
+      },
+      {
+        "from": "operation:get:/me/episodes",
+        "kind": "RETURNS",
+        "to": "schema:PagingSavedEpisodeObject"
+      },
+      {
+        "from": "operation:get:/me/player",
+        "kind": "RETURNS",
+        "to": "schema:CurrentlyPlayingContextObject"
+      },
+      {
+        "from": "operation:get:/me/player/currently-playing",
+        "kind": "RETURNS",
+        "to": "schema:CurrentlyPlayingContextObject"
+      },
+      {
+        "from": "operation:get:/me/player/queue",
+        "kind": "RETURNS",
+        "to": "schema:QueueObject"
+      },
+      {
+        "from": "operation:get:/me/player/recently-played",
+        "kind": "RETURNS",
+        "to": "schema:CursorPagingPlayHistoryObject"
+      },
+      {
+        "from": "operation:get:/me/playlists",
+        "kind": "RETURNS",
+        "to": "schema:PagingPlaylistObject"
+      },
+      {
+        "from": "operation:get:/me/shows",
+        "kind": "RETURNS",
+        "to": "schema:PagingSavedShowObject"
+      },
+      {
+        "from": "operation:get:/me/top/{type}",
+        "kind": "RETURNS",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "operation:get:/me/tracks",
+        "kind": "RETURNS",
+        "to": "schema:PagingSavedTrackObject"
+      },
+      {
+        "from": "operation:get:/playlists/{playlist_id}",
+        "kind": "RETURNS",
+        "to": "schema:PlaylistObject"
+      },
+      {
+        "from": "operation:get:/playlists/{playlist_id}/images",
+        "kind": "RETURNS",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "operation:get:/playlists/{playlist_id}/tracks",
+        "kind": "RETURNS",
+        "to": "schema:PagingPlaylistTrackObject"
+      },
+      {
+        "from": "operation:get:/recommendations",
+        "kind": "RETURNS",
+        "to": "schema:RecommendationsObject"
+      },
+      {
+        "from": "operation:get:/shows/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ShowObject"
+      },
+      {
+        "from": "operation:get:/shows/{id}/episodes",
+        "kind": "RETURNS",
+        "to": "schema:PagingSimplifiedEpisodeObject"
+      },
+      {
+        "from": "operation:get:/tracks/{id}",
+        "kind": "RETURNS",
+        "to": "schema:TrackObject"
+      },
+      {
+        "from": "operation:get:/users/{user_id}",
+        "kind": "RETURNS",
+        "to": "schema:PublicUserObject"
+      },
+      {
+        "from": "operation:get:/users/{user_id}/playlists",
+        "kind": "RETURNS",
+        "to": "schema:PagingPlaylistObject"
+      },
+      {
+        "from": "operation:post:/users/{user_id}/playlists",
+        "kind": "RETURNS",
+        "to": "schema:PlaylistObject"
+      },
+      {
+        "from": "schema:AlbumBase",
+        "kind": "REFERENCES",
+        "to": "schema:AlbumRestrictionObject"
+      },
+      {
+        "from": "schema:AlbumBase",
+        "kind": "REFERENCES",
+        "to": "schema:CopyrightObject"
+      },
+      {
+        "from": "schema:AlbumBase",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalIdObject"
+      },
+      {
+        "from": "schema:AlbumBase",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:AlbumBase",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:AlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:AlbumBase"
+      },
+      {
+        "from": "schema:AlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:ArtistObject"
+      },
+      {
+        "from": "schema:AlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingSimplifiedTrackObject"
+      },
+      {
+        "from": "schema:ArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:ArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:FollowersObject"
+      },
+      {
+        "from": "schema:ArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:AudioAnalysisObject",
+        "kind": "REFERENCES",
+        "to": "schema:Key"
+      },
+      {
+        "from": "schema:AudioAnalysisObject",
+        "kind": "REFERENCES",
+        "to": "schema:Loudness"
+      },
+      {
+        "from": "schema:AudioAnalysisObject",
+        "kind": "REFERENCES",
+        "to": "schema:Mode"
+      },
+      {
+        "from": "schema:AudioAnalysisObject",
+        "kind": "REFERENCES",
+        "to": "schema:SectionObject"
+      },
+      {
+        "from": "schema:AudioAnalysisObject",
+        "kind": "REFERENCES",
+        "to": "schema:SegmentObject"
+      },
+      {
+        "from": "schema:AudioAnalysisObject",
+        "kind": "REFERENCES",
+        "to": "schema:Tempo"
+      },
+      {
+        "from": "schema:AudioAnalysisObject",
+        "kind": "REFERENCES",
+        "to": "schema:TimeIntervalObject"
+      },
+      {
+        "from": "schema:AudioAnalysisObject",
+        "kind": "REFERENCES",
+        "to": "schema:TimeSignature"
+      },
+      {
+        "from": "schema:AudioFeaturesObject",
+        "kind": "REFERENCES",
+        "to": "schema:Key"
+      },
+      {
+        "from": "schema:AudioFeaturesObject",
+        "kind": "REFERENCES",
+        "to": "schema:Loudness"
+      },
+      {
+        "from": "schema:AudioFeaturesObject",
+        "kind": "REFERENCES",
+        "to": "schema:Mode"
+      },
+      {
+        "from": "schema:AudioFeaturesObject",
+        "kind": "REFERENCES",
+        "to": "schema:Tempo"
+      },
+      {
+        "from": "schema:AudioFeaturesObject",
+        "kind": "REFERENCES",
+        "to": "schema:TimeSignature"
+      },
+      {
+        "from": "schema:AudiobookBase",
+        "kind": "REFERENCES",
+        "to": "schema:AuthorObject"
+      },
+      {
+        "from": "schema:AudiobookBase",
+        "kind": "REFERENCES",
+        "to": "schema:CopyrightObject"
+      },
+      {
+        "from": "schema:AudiobookBase",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:AudiobookBase",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:AudiobookBase",
+        "kind": "REFERENCES",
+        "to": "schema:NarratorObject"
+      },
+      {
+        "from": "schema:AudiobookObject",
+        "kind": "REFERENCES",
+        "to": "schema:AudiobookBase"
+      },
+      {
+        "from": "schema:AudiobookObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingSimplifiedChapterObject"
+      },
+      {
+        "from": "schema:CategoryObject",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:ChapterBase",
+        "kind": "REFERENCES",
+        "to": "schema:ChapterRestrictionObject"
+      },
+      {
+        "from": "schema:ChapterBase",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:ChapterBase",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:ChapterBase",
+        "kind": "REFERENCES",
+        "to": "schema:ResumePointObject"
+      },
+      {
+        "from": "schema:ChapterObject",
+        "kind": "REFERENCES",
+        "to": "schema:ChapterBase"
+      },
+      {
+        "from": "schema:ChapterObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedAudiobookObject"
+      },
+      {
+        "from": "schema:ContextObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:CurrentlyPlayingContextObject",
+        "kind": "REFERENCES",
+        "to": "schema:ContextObject"
+      },
+      {
+        "from": "schema:CurrentlyPlayingContextObject",
+        "kind": "REFERENCES",
+        "to": "schema:DeviceObject"
+      },
+      {
+        "from": "schema:CurrentlyPlayingContextObject",
+        "kind": "REFERENCES",
+        "to": "schema:DisallowsObject"
+      },
+      {
+        "from": "schema:CurrentlyPlayingContextObject",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeObject"
+      },
+      {
+        "from": "schema:CurrentlyPlayingContextObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackObject"
+      },
+      {
+        "from": "schema:CurrentlyPlayingObject",
+        "kind": "REFERENCES",
+        "to": "schema:ContextObject"
+      },
+      {
+        "from": "schema:CurrentlyPlayingObject",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeObject"
+      },
+      {
+        "from": "schema:CurrentlyPlayingObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackObject"
+      },
+      {
+        "from": "schema:CursorPagingObject",
+        "kind": "REFERENCES",
+        "to": "schema:CursorObject"
+      },
+      {
+        "from": "schema:CursorPagingPlayHistoryObject",
+        "kind": "REFERENCES",
+        "to": "schema:CursorPagingObject"
+      },
+      {
+        "from": "schema:CursorPagingPlayHistoryObject",
+        "kind": "REFERENCES",
+        "to": "schema:PlayHistoryObject"
+      },
+      {
+        "from": "schema:CursorPagingSimplifiedArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:ArtistObject"
+      },
+      {
+        "from": "schema:CursorPagingSimplifiedArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:CursorPagingObject"
+      },
+      {
+        "from": "schema:DevicesObject",
+        "kind": "REFERENCES",
+        "to": "schema:DeviceObject"
+      },
+      {
+        "from": "schema:EpisodeBase",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeRestrictionObject"
+      },
+      {
+        "from": "schema:EpisodeBase",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:EpisodeBase",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:EpisodeBase",
+        "kind": "REFERENCES",
+        "to": "schema:ResumePointObject"
+      },
+      {
+        "from": "schema:EpisodeObject",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeBase"
+      },
+      {
+        "from": "schema:EpisodeObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedShowObject"
+      },
+      {
+        "from": "schema:LinkedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:PagingArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:ArtistObject"
+      },
+      {
+        "from": "schema:PagingArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingFeaturedPlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingPlaylistObject"
+      },
+      {
+        "from": "schema:PagingPlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingPlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedPlaylistObject"
+      },
+      {
+        "from": "schema:PagingPlaylistTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingPlaylistTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistTrackObject"
+      },
+      {
+        "from": "schema:PagingSavedAlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSavedAlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:SavedAlbumObject"
+      },
+      {
+        "from": "schema:PagingSavedEpisodeObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSavedEpisodeObject",
+        "kind": "REFERENCES",
+        "to": "schema:SavedEpisodeObject"
+      },
+      {
+        "from": "schema:PagingSavedShowObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSavedShowObject",
+        "kind": "REFERENCES",
+        "to": "schema:SavedShowObject"
+      },
+      {
+        "from": "schema:PagingSavedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSavedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:SavedTrackObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedAlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedAlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedAlbumObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedArtistObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedAudiobookObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedAudiobookObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedAudiobookObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedChapterObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedChapterObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedChapterObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedEpisodeObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedEpisodeObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedEpisodeObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedShowObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedShowObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedShowObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingSimplifiedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedTrackObject"
+      },
+      {
+        "from": "schema:PagingTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingObject"
+      },
+      {
+        "from": "schema:PagingTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackObject"
+      },
+      {
+        "from": "schema:PlayHistoryObject",
+        "kind": "REFERENCES",
+        "to": "schema:ContextObject"
+      },
+      {
+        "from": "schema:PlayHistoryObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackObject"
+      },
+      {
+        "from": "schema:PlayerErrorObject",
+        "kind": "REFERENCES",
+        "to": "schema:PlayerErrorReasons"
+      },
+      {
+        "from": "schema:PlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:PlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:FollowersObject"
+      },
+      {
+        "from": "schema:PlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:PlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingPlaylistTrackObject"
+      },
+      {
+        "from": "schema:PlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistOwnerObject"
+      },
+      {
+        "from": "schema:PlaylistOwnerObject",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistUserObject"
+      },
+      {
+        "from": "schema:PlaylistTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeObject"
+      },
+      {
+        "from": "schema:PlaylistTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistUserObject"
+      },
+      {
+        "from": "schema:PlaylistTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackObject"
+      },
+      {
+        "from": "schema:PlaylistUserObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:PlaylistUserObject",
+        "kind": "REFERENCES",
+        "to": "schema:FollowersObject"
+      },
+      {
+        "from": "schema:PrivateUserObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExplicitContentSettingsObject"
+      },
+      {
+        "from": "schema:PrivateUserObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:PrivateUserObject",
+        "kind": "REFERENCES",
+        "to": "schema:FollowersObject"
+      },
+      {
+        "from": "schema:PrivateUserObject",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:PublicUserObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:PublicUserObject",
+        "kind": "REFERENCES",
+        "to": "schema:FollowersObject"
+      },
+      {
+        "from": "schema:PublicUserObject",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:QueueObject",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeObject"
+      },
+      {
+        "from": "schema:QueueObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackObject"
+      },
+      {
+        "from": "schema:RecommendationsObject",
+        "kind": "REFERENCES",
+        "to": "schema:RecommendationSeedObject"
+      },
+      {
+        "from": "schema:RecommendationsObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackObject"
+      },
+      {
+        "from": "schema:SavedAlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:AlbumObject"
+      },
+      {
+        "from": "schema:SavedEpisodeObject",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeObject"
+      },
+      {
+        "from": "schema:SavedShowObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedShowObject"
+      },
+      {
+        "from": "schema:SavedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackObject"
+      },
+      {
+        "from": "schema:SectionObject",
+        "kind": "REFERENCES",
+        "to": "schema:TimeSignature"
+      },
+      {
+        "from": "schema:ShowBase",
+        "kind": "REFERENCES",
+        "to": "schema:CopyrightObject"
+      },
+      {
+        "from": "schema:ShowBase",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:ShowBase",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:ShowObject",
+        "kind": "REFERENCES",
+        "to": "schema:PagingSimplifiedEpisodeObject"
+      },
+      {
+        "from": "schema:ShowObject",
+        "kind": "REFERENCES",
+        "to": "schema:ShowBase"
+      },
+      {
+        "from": "schema:SimplifiedAlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:AlbumBase"
+      },
+      {
+        "from": "schema:SimplifiedAlbumObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedArtistObject"
+      },
+      {
+        "from": "schema:SimplifiedArtistObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:SimplifiedAudiobookObject",
+        "kind": "REFERENCES",
+        "to": "schema:AudiobookBase"
+      },
+      {
+        "from": "schema:SimplifiedChapterObject",
+        "kind": "REFERENCES",
+        "to": "schema:ChapterBase"
+      },
+      {
+        "from": "schema:SimplifiedEpisodeObject",
+        "kind": "REFERENCES",
+        "to": "schema:EpisodeBase"
+      },
+      {
+        "from": "schema:SimplifiedPlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:SimplifiedPlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:ImageObject"
+      },
+      {
+        "from": "schema:SimplifiedPlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistOwnerObject"
+      },
+      {
+        "from": "schema:SimplifiedPlaylistObject",
+        "kind": "REFERENCES",
+        "to": "schema:PlaylistTracksRefObject"
+      },
+      {
+        "from": "schema:SimplifiedShowObject",
+        "kind": "REFERENCES",
+        "to": "schema:ShowBase"
+      },
+      {
+        "from": "schema:SimplifiedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:SimplifiedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:LinkedTrackObject"
+      },
+      {
+        "from": "schema:SimplifiedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedArtistObject"
+      },
+      {
+        "from": "schema:SimplifiedTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackRestrictionObject"
+      },
+      {
+        "from": "schema:TrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:ArtistObject"
+      },
+      {
+        "from": "schema:TrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalIdObject"
+      },
+      {
+        "from": "schema:TrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:ExternalUrlObject"
+      },
+      {
+        "from": "schema:TrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:SimplifiedAlbumObject"
+      },
+      {
+        "from": "schema:TrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:TrackRestrictionObject"
+      },
+      {
+        "from": "schema:TuneableTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:Key"
+      },
+      {
+        "from": "schema:TuneableTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:Loudness"
+      },
+      {
+        "from": "schema:TuneableTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:Mode"
+      },
+      {
+        "from": "schema:TuneableTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:Tempo"
+      },
+      {
+        "from": "schema:TuneableTrackObject",
+        "kind": "REFERENCES",
+        "to": "schema:TimeSignature"
       }
     ],
     "nodes": [
@@ -452,327 +1382,1217 @@
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for multiple albums identified by their Spotify IDs.",
         "id": "operation:get:/albums",
         "kind": "operation",
         "method": "get",
         "name": "get-multiple-albums",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/albums",
         "pointer": "#/paths/~1albums/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Several Albums\n"
+        "summary": "Get Several Albums\n",
+        "tags": [
+          "Albums"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for a single album.",
         "id": "operation:get:/albums/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get-an-album",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/albums/{id}",
         "pointer": "#/paths/~1albums~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AlbumObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Album\n"
+        "summary": "Get Album\n",
+        "tags": [
+          "Albums"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information about an album’s tracks.",
         "id": "operation:get:/albums/{id}/tracks",
         "kind": "operation",
         "method": "get",
         "name": "get-an-albums-tracks",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/albums/{id}/tracks",
         "pointer": "#/paths/~1albums~1{id}~1tracks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingSimplifiedTrackObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Album Tracks\n"
+        "summary": "Get Album Tracks\n",
+        "tags": [
+          "Albums",
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for several artists based on their Spotify IDs.",
         "id": "operation:get:/artists",
         "kind": "operation",
         "method": "get",
         "name": "get-multiple-artists",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/artists",
         "pointer": "#/paths/~1artists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Several Artists\n"
+        "summary": "Get Several Artists\n",
+        "tags": [
+          "Artists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for a single artist identified by their unique Spotify ID.",
         "id": "operation:get:/artists/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get-an-artist",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/artists/{id}",
         "pointer": "#/paths/~1artists~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtistObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Artist\n"
+        "summary": "Get Artist\n",
+        "tags": [
+          "Artists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information about an artist's albums.",
         "id": "operation:get:/artists/{id}/albums",
         "kind": "operation",
         "method": "get",
         "name": "get-an-artists-albums",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include_groups",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/artists/{id}/albums",
         "pointer": "#/paths/~1artists~1{id}~1albums/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingSimplifiedAlbumObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Artist's Albums\n"
+        "summary": "Get Artist's Albums\n",
+        "tags": [
+          "Artists",
+          "Albums"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information about artists similar to a given artist.",
         "id": "operation:get:/artists/{id}/related-artists",
         "kind": "operation",
         "method": "get",
         "name": "get-an-artists-related-artists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/artists/{id}/related-artists",
         "pointer": "#/paths/~1artists~1{id}~1related-artists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Artist's Related Artists\n"
+        "summary": "Get Artist's Related Artists\n",
+        "tags": [
+          "Artists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information about an artist's top tracks by country.",
         "id": "operation:get:/artists/{id}/top-tracks",
         "kind": "operation",
         "method": "get",
         "name": "get-an-artists-top-tracks",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/artists/{id}/top-tracks",
         "pointer": "#/paths/~1artists~1{id}~1top-tracks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Artist's Top Tracks\n"
+        "summary": "Get Artist's Top Tracks\n",
+        "tags": [
+          "Artists",
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a low-level audio analysis for a track in the Spotify catalog.",
         "id": "operation:get:/audio-analysis/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get-audio-analysis",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/audio-analysis/{id}",
         "pointer": "#/paths/~1audio-analysis~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AudioAnalysisObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Track's Audio Analysis\n"
+        "summary": "Get Track's Audio Analysis\n",
+        "tags": [
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get audio features for multiple tracks based on their Spotify IDs.",
         "id": "operation:get:/audio-features",
         "kind": "operation",
         "method": "get",
         "name": "get-several-audio-features",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/audio-features",
         "pointer": "#/paths/~1audio-features/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Tracks' Audio Features\n"
+        "summary": "Get Tracks' Audio Features\n",
+        "tags": [
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get audio feature information for a single track identified by its unique Spotify ID.",
         "id": "operation:get:/audio-features/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get-audio-features",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/audio-features/{id}",
         "pointer": "#/paths/~1audio-features~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AudioFeaturesObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Track's Audio Features\n"
+        "summary": "Get Track's Audio Features\n",
+        "tags": [
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for several audiobooks identified by their Spotify IDs.<br /> **Note: Audiobooks are only available for the US, UK, Ireland, Ne…",
         "id": "operation:get:/audiobooks",
         "kind": "operation",
         "method": "get",
         "name": "get-multiple-audiobooks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/audiobooks",
         "pointer": "#/paths/~1audiobooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Several Audiobooks\n"
+        "summary": "Get Several Audiobooks\n",
+        "tags": [
+          "Audiobooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for a single audiobook.<br /> **Note: Audiobooks are only available for the US, UK, Ireland, New Zealand and Australia markets.…",
         "id": "operation:get:/audiobooks/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get-an-audiobook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/audiobooks/{id}",
         "pointer": "#/paths/~1audiobooks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AudiobookObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get an Audiobook\n"
+        "summary": "Get an Audiobook\n",
+        "tags": [
+          "Audiobooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information about an audiobook's chapters.<br /> **Note: Audiobooks are only available for the US, UK, Ireland, New Zealand and Australia m…",
         "id": "operation:get:/audiobooks/{id}/chapters",
         "kind": "operation",
         "method": "get",
         "name": "get-audiobook-chapters",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/audiobooks/{id}/chapters",
         "pointer": "#/paths/~1audiobooks~1{id}~1chapters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingSimplifiedChapterObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Audiobook Chapters\n"
+        "summary": "Get Audiobook Chapters\n",
+        "tags": [
+          "Audiobooks",
+          "Chapters"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of categories used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).",
         "id": "operation:get:/browse/categories",
         "kind": "operation",
         "method": "get",
         "name": "get-categories",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "locale",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/browse/categories",
         "pointer": "#/paths/~1browse~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Several Browse Categories\n"
+        "summary": "Get Several Browse Categories\n",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a single category used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).",
         "id": "operation:get:/browse/categories/{category_id}",
         "kind": "operation",
         "method": "get",
         "name": "get-a-category",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "category_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "locale",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/browse/categories/{category_id}",
         "pointer": "#/paths/~1browse~1categories~1{category_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CategoryObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Single Browse Category\n"
+        "summary": "Get Single Browse Category\n",
+        "tags": [
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of Spotify playlists tagged with a particular category.",
         "id": "operation:get:/browse/categories/{category_id}/playlists",
         "kind": "operation",
         "method": "get",
         "name": "get-a-categories-playlists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "category_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/browse/categories/{category_id}/playlists",
         "pointer": "#/paths/~1browse~1categories~1{category_id}~1playlists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingFeaturedPlaylistObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Category's Playlists\n"
+        "summary": "Get Category's Playlists\n",
+        "tags": [
+          "Playlists",
+          "Categories"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of Spotify featured playlists (shown, for example, on a Spotify player's 'Browse' tab).",
         "id": "operation:get:/browse/featured-playlists",
         "kind": "operation",
         "method": "get",
         "name": "get-featured-playlists",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "locale",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "timestamp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/browse/featured-playlists",
         "pointer": "#/paths/~1browse~1featured-playlists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingFeaturedPlaylistObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Featured Playlists\n"
+        "summary": "Get Featured Playlists\n",
+        "tags": [
+          "Playlists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of new album releases featured in Spotify (shown, for example, on a Spotify player’s “Browse” tab).",
         "id": "operation:get:/browse/new-releases",
         "kind": "operation",
         "method": "get",
         "name": "get-new-releases",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/browse/new-releases",
         "pointer": "#/paths/~1browse~1new-releases/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get New Releases\n"
+        "summary": "Get New Releases\n",
+        "tags": [
+          "Albums"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for several chapters identified by their Spotify IDs.<br /> **Note: Chapters are only available for the US, UK, Ireland, New Ze…",
         "id": "operation:get:/chapters",
         "kind": "operation",
         "method": "get",
         "name": "get-several-chapters",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/chapters",
         "pointer": "#/paths/~1chapters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Several Chapters\n"
+        "summary": "Get Several Chapters\n",
+        "tags": [
+          "Chapters"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for a single chapter.<br /> **Note: Chapters are only available for the US, UK, Ireland, New Zealand and Australia markets.**",
         "id": "operation:get:/chapters/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get-a-chapter",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/chapters/{id}",
         "pointer": "#/paths/~1chapters~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ChapterObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get a Chapter\n"
+        "summary": "Get a Chapter\n",
+        "tags": [
+          "Chapters"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for several episodes based on their Spotify IDs.",
         "id": "operation:get:/episodes",
         "kind": "operation",
         "method": "get",
         "name": "get-multiple-episodes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/episodes",
         "pointer": "#/paths/~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -780,16 +2600,53 @@
             ]
           }
         ],
-        "summary": "Get Several Episodes\n"
+        "summary": "Get Several Episodes\n",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for a single episode identified by its unique Spotify ID.",
         "id": "operation:get:/episodes/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get-an-episode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/episodes/{id}",
         "pointer": "#/paths/~1episodes~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EpisodeObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -797,31 +2654,77 @@
             ]
           }
         ],
-        "summary": "Get Episode\n"
+        "summary": "Get Episode\n",
+        "tags": [
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of markets where Spotify is available.",
         "id": "operation:get:/markets",
         "kind": "operation",
         "method": "get",
         "name": "get-available-markets",
         "path": "/markets",
         "pointer": "#/paths/~1markets/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Available Markets\n"
+        "summary": "Get Available Markets\n",
+        "tags": [
+          "Markets"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get detailed profile information about the current user (including the current user's username).",
         "id": "operation:get:/me",
         "kind": "operation",
         "method": "get",
         "name": "get-current-users-profile",
         "path": "/me",
         "pointer": "#/paths/~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PrivateUserObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -830,33 +2733,61 @@
             ]
           }
         ],
-        "summary": "Get Current User's Profile\n"
+        "summary": "Get Current User's Profile\n",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/me/albums",
-        "kind": "operation",
-        "method": "delete",
-        "name": "remove-albums-user",
-        "path": "/me/albums",
-        "pointer": "#/paths/~1me~1albums/delete",
-        "security": [
-          {
-            "oauth_2_0": [
-              "user-library-modify"
-            ]
-          }
-        ],
-        "summary": "Remove Users' Saved Albums\n"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a list of the albums saved in the current Spotify user's 'Your Music' library.",
         "id": "operation:get:/me/albums",
         "kind": "operation",
         "method": "get",
         "name": "get-users-saved-albums",
+        "parameters": [
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/albums",
         "pointer": "#/paths/~1me~1albums/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingSavedAlbumObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -864,16 +2795,54 @@
             ]
           }
         ],
-        "summary": "Get User's Saved Albums\n"
+        "summary": "Get User's Saved Albums\n",
+        "tags": [
+          "Albums",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Save one or more albums to the current user's 'Your Music' library.",
         "id": "operation:put:/me/albums",
         "kind": "operation",
         "method": "put",
         "name": "save-albums-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/albums",
         "pointer": "#/paths/~1me~1albums/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -881,16 +2850,103 @@
             ]
           }
         ],
-        "summary": "Save Albums for Current User\n"
+        "summary": "Save Albums for Current User\n",
+        "tags": [
+          "Albums",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove one or more albums from the current user's 'Your Music' library.",
+        "id": "operation:delete:/me/albums",
+        "kind": "operation",
+        "method": "delete",
+        "name": "remove-albums-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/me/albums",
+        "pointer": "#/paths/~1me~1albums/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth_2_0": [
+              "user-library-modify"
+            ]
+          }
+        ],
+        "summary": "Remove Users' Saved Albums\n",
+        "tags": [
+          "Albums",
+          "Library"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Check if one or more albums is already saved in the current Spotify user's 'Your Music' library.",
         "id": "operation:get:/me/albums/contains",
         "kind": "operation",
         "method": "get",
         "name": "check-users-saved-albums",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/albums/contains",
         "pointer": "#/paths/~1me~1albums~1contains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean[]"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -898,33 +2954,56 @@
             ]
           }
         ],
-        "summary": "Check User's Saved Albums\n"
+        "summary": "Check User's Saved Albums\n",
+        "tags": [
+          "Albums",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/me/audiobooks",
-        "kind": "operation",
-        "method": "delete",
-        "name": "remove-audiobooks-user",
-        "path": "/me/audiobooks",
-        "pointer": "#/paths/~1me~1audiobooks/delete",
-        "security": [
-          {
-            "oauth_2_0": [
-              "user-library-modify"
-            ]
-          }
-        ],
-        "summary": "Remove User's Saved Audiobooks\n"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a list of the audiobooks saved in the current Spotify user's 'Your Music' library.",
         "id": "operation:get:/me/audiobooks",
         "kind": "operation",
         "method": "get",
         "name": "get-users-saved-audiobooks",
+        "parameters": [
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/me/audiobooks",
         "pointer": "#/paths/~1me~1audiobooks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingSimplifiedAudiobookObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -932,16 +3011,47 @@
             ]
           }
         ],
-        "summary": "Get User's Saved Audiobooks\n"
+        "summary": "Get User's Saved Audiobooks\n",
+        "tags": [
+          "Audiobooks",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Save one or more audiobooks to the current Spotify user's library.",
         "id": "operation:put:/me/audiobooks",
         "kind": "operation",
         "method": "put",
         "name": "save-audiobooks-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/audiobooks",
         "pointer": "#/paths/~1me~1audiobooks/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -949,16 +3059,96 @@
             ]
           }
         ],
-        "summary": "Save Audiobooks for Current User\n"
+        "summary": "Save Audiobooks for Current User\n",
+        "tags": [
+          "Audiobooks",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove one or more audiobooks from the Spotify user's library.",
+        "id": "operation:delete:/me/audiobooks",
+        "kind": "operation",
+        "method": "delete",
+        "name": "remove-audiobooks-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/me/audiobooks",
+        "pointer": "#/paths/~1me~1audiobooks/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth_2_0": [
+              "user-library-modify"
+            ]
+          }
+        ],
+        "summary": "Remove User's Saved Audiobooks\n",
+        "tags": [
+          "Audiobooks",
+          "Library"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Check if one or more audiobooks are already saved in the current Spotify user's library.",
         "id": "operation:get:/me/audiobooks/contains",
         "kind": "operation",
         "method": "get",
         "name": "check-users-saved-audiobooks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/audiobooks/contains",
         "pointer": "#/paths/~1me~1audiobooks~1contains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean[]"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -966,33 +3156,62 @@
             ]
           }
         ],
-        "summary": "Check User's Saved Audiobooks\n"
+        "summary": "Check User's Saved Audiobooks\n",
+        "tags": [
+          "Audiobooks",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/me/episodes",
-        "kind": "operation",
-        "method": "delete",
-        "name": "remove-episodes-user",
-        "path": "/me/episodes",
-        "pointer": "#/paths/~1me~1episodes/delete",
-        "security": [
-          {
-            "oauth_2_0": [
-              "user-library-modify"
-            ]
-          }
-        ],
-        "summary": "Remove User's Saved Episodes\n"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a list of the episodes saved in the current Spotify user's library.",
         "id": "operation:get:/me/episodes",
         "kind": "operation",
         "method": "get",
         "name": "get-users-saved-episodes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/me/episodes",
         "pointer": "#/paths/~1me~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingSavedEpisodeObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1001,16 +3220,54 @@
             ]
           }
         ],
-        "summary": "Get User's Saved Episodes\n"
+        "summary": "Get User's Saved Episodes\n",
+        "tags": [
+          "Episodes",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Save one or more episodes to the current user's library.",
         "id": "operation:put:/me/episodes",
         "kind": "operation",
         "method": "put",
         "name": "save-episodes-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/episodes",
         "pointer": "#/paths/~1me~1episodes/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1018,16 +3275,103 @@
             ]
           }
         ],
-        "summary": "Save Episodes for Current User\n"
+        "summary": "Save Episodes for Current User\n",
+        "tags": [
+          "Episodes",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove one or more episodes from the current user's library.",
+        "id": "operation:delete:/me/episodes",
+        "kind": "operation",
+        "method": "delete",
+        "name": "remove-episodes-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/me/episodes",
+        "pointer": "#/paths/~1me~1episodes/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth_2_0": [
+              "user-library-modify"
+            ]
+          }
+        ],
+        "summary": "Remove User's Saved Episodes\n",
+        "tags": [
+          "Episodes",
+          "Library"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Check if one or more episodes is already saved in the current Spotify user's 'Your Episodes' library.",
         "id": "operation:get:/me/episodes/contains",
         "kind": "operation",
         "method": "get",
         "name": "check-users-saved-episodes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/episodes/contains",
         "pointer": "#/paths/~1me~1episodes~1contains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean[]"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1035,33 +3379,64 @@
             ]
           }
         ],
-        "summary": "Check User's Saved Episodes\n"
+        "summary": "Check User's Saved Episodes\n",
+        "tags": [
+          "Episodes",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/me/following",
-        "kind": "operation",
-        "method": "delete",
-        "name": "unfollow-artists-users",
-        "path": "/me/following",
-        "pointer": "#/paths/~1me~1following/delete",
-        "security": [
-          {
-            "oauth_2_0": [
-              "user-follow-modify"
-            ]
-          }
-        ],
-        "summary": "Unfollow Artists or Users\n"
-      },
-      {
-        "deprecated": false,
+        "description": "Get the current user's followed artists.",
         "id": "operation:get:/me/following",
         "kind": "operation",
         "method": "get",
         "name": "get-followed",
+        "parameters": [
+          {
+            "enum": [
+              "artist"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/me/following",
         "pointer": "#/paths/~1me~1following/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1069,16 +3444,65 @@
             ]
           }
         ],
-        "summary": "Get Followed Artists\n"
+        "summary": "Get Followed Artists\n",
+        "tags": [
+          "Users",
+          "Library",
+          "Artists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add the current user as a follower of one or more artists or other Spotify users.",
         "id": "operation:put:/me/following",
         "kind": "operation",
         "method": "put",
         "name": "follow-artists-users",
+        "parameters": [
+          {
+            "enum": [
+              "artist",
+              "user"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/following",
         "pointer": "#/paths/~1me~1following/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1086,16 +3510,125 @@
             ]
           }
         ],
-        "summary": "Follow Artists or Users\n"
+        "summary": "Follow Artists or Users\n",
+        "tags": [
+          "Users",
+          "Artists",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove the current user as a follower of one or more artists or other Spotify users.",
+        "id": "operation:delete:/me/following",
+        "kind": "operation",
+        "method": "delete",
+        "name": "unfollow-artists-users",
+        "parameters": [
+          {
+            "enum": [
+              "artist",
+              "user"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/me/following",
+        "pointer": "#/paths/~1me~1following/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth_2_0": [
+              "user-follow-modify"
+            ]
+          }
+        ],
+        "summary": "Unfollow Artists or Users\n",
+        "tags": [
+          "Users",
+          "Artists",
+          "Library"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Check to see if the current user is following one or more artists or other Spotify users.",
         "id": "operation:get:/me/following/contains",
         "kind": "operation",
         "method": "get",
         "name": "check-current-user-follows",
+        "parameters": [
+          {
+            "enum": [
+              "artist",
+              "user"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/following/contains",
         "pointer": "#/paths/~1me~1following~1contains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean[]"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1103,16 +3636,58 @@
             ]
           }
         ],
-        "summary": "Check If User Follows Artists or Users\n"
+        "summary": "Check If User Follows Artists or Users\n",
+        "tags": [
+          "Users",
+          "Artists",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get information about the user’s current playback state, including track or episode, progress, and active device.",
         "id": "operation:get:/me/player",
         "kind": "operation",
         "method": "get",
         "name": "get-information-about-the-users-current-playback",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "additional_types",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player",
         "pointer": "#/paths/~1me~1player/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentlyPlayingContextObject"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1120,16 +3695,45 @@
             ]
           }
         ],
-        "summary": "Get Playback State\n"
+        "summary": "Get Playback State\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Transfer playback to a new device and determine if it should start playing.",
         "id": "operation:put:/me/player",
         "kind": "operation",
         "method": "put",
         "name": "transfer-a-users-playback",
         "path": "/me/player",
         "pointer": "#/paths/~1me~1player/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1137,16 +3741,53 @@
             ]
           }
         ],
-        "summary": "Transfer Playback\n"
+        "summary": "Transfer Playback\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the object currently being played on the user's Spotify account.",
         "id": "operation:get:/me/player/currently-playing",
         "kind": "operation",
         "method": "get",
         "name": "get-the-users-currently-playing-track",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "additional_types",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/currently-playing",
         "pointer": "#/paths/~1me~1player~1currently-playing/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrentlyPlayingContextObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1154,16 +3795,39 @@
             ]
           }
         ],
-        "summary": "Get Currently Playing Track\n"
+        "summary": "Get Currently Playing Track\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get information about a user’s available devices.",
         "id": "operation:get:/me/player/devices",
         "kind": "operation",
         "method": "get",
         "name": "get-a-users-available-devices",
         "path": "/me/player/devices",
         "pointer": "#/paths/~1me~1player~1devices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1171,16 +3835,46 @@
             ]
           }
         ],
-        "summary": "Get Available Devices\n"
+        "summary": "Get Available Devices\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Skips to next track in the user’s queue.",
         "id": "operation:post:/me/player/next",
         "kind": "operation",
         "method": "post",
         "name": "skip-users-playback-to-next-track",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/next",
         "pointer": "#/paths/~1me~1player~1next/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1188,16 +3882,46 @@
             ]
           }
         ],
-        "summary": "Skip To Next\n"
+        "summary": "Skip To Next\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Pause playback on the user's account.",
         "id": "operation:put:/me/player/pause",
         "kind": "operation",
         "method": "put",
         "name": "pause-a-users-playback",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/pause",
         "pointer": "#/paths/~1me~1player~1pause/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1205,16 +3929,53 @@
             ]
           }
         ],
-        "summary": "Pause Playback\n"
+        "summary": "Pause Playback\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Start a new context or resume current playback on the user's active device.",
         "id": "operation:put:/me/player/play",
         "kind": "operation",
         "method": "put",
         "name": "start-a-users-playback",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/play",
         "pointer": "#/paths/~1me~1player~1play/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1222,16 +3983,46 @@
             ]
           }
         ],
-        "summary": "Start/Resume Playback\n"
+        "summary": "Start/Resume Playback\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Skips to previous track in the user’s queue.",
         "id": "operation:post:/me/player/previous",
         "kind": "operation",
         "method": "post",
         "name": "skip-users-playback-to-previous-track",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/previous",
         "pointer": "#/paths/~1me~1player~1previous/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1239,16 +4030,39 @@
             ]
           }
         ],
-        "summary": "Skip To Previous\n"
+        "summary": "Skip To Previous\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of objects that make up the user's queue.",
         "id": "operation:get:/me/player/queue",
         "kind": "operation",
         "method": "get",
         "name": "get-queue",
         "path": "/me/player/queue",
         "pointer": "#/paths/~1me~1player~1queue/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QueueObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1256,16 +4070,52 @@
             ]
           }
         ],
-        "summary": "Get the User's Queue\n"
+        "summary": "Get the User's Queue\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add an item to the end of the user's current playback queue.",
         "id": "operation:post:/me/player/queue",
         "kind": "operation",
         "method": "post",
         "name": "add-to-queue",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "uri",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/queue",
         "pointer": "#/paths/~1me~1player~1queue/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1273,16 +4123,60 @@
             ]
           }
         ],
-        "summary": "Add Item to Playback Queue\n"
+        "summary": "Add Item to Playback Queue\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get tracks from the current user's recently played tracks.",
         "id": "operation:get:/me/player/recently-played",
         "kind": "operation",
         "method": "get",
         "name": "get-recently-played",
+        "parameters": [
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/me/player/recently-played",
         "pointer": "#/paths/~1me~1player~1recently-played/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CursorPagingPlayHistoryObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1290,16 +4184,52 @@
             ]
           }
         ],
-        "summary": "Get Recently Played Tracks\n"
+        "summary": "Get Recently Played Tracks\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set the repeat mode for the user's playback.",
         "id": "operation:put:/me/player/repeat",
         "kind": "operation",
         "method": "put",
         "name": "set-repeat-mode-on-users-playback",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/repeat",
         "pointer": "#/paths/~1me~1player~1repeat/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1307,16 +4237,52 @@
             ]
           }
         ],
-        "summary": "Set Repeat Mode\n"
+        "summary": "Set Repeat Mode\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Seeks to the given position in the user’s currently playing track.",
         "id": "operation:put:/me/player/seek",
         "kind": "operation",
         "method": "put",
         "name": "seek-to-position-in-currently-playing-track",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "position_ms",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/seek",
         "pointer": "#/paths/~1me~1player~1seek/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1324,16 +4290,52 @@
             ]
           }
         ],
-        "summary": "Seek To Position\n"
+        "summary": "Seek To Position\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Toggle shuffle on or off for user’s playback.",
         "id": "operation:put:/me/player/shuffle",
         "kind": "operation",
         "method": "put",
         "name": "toggle-shuffle-for-users-playback",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/shuffle",
         "pointer": "#/paths/~1me~1player~1shuffle/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1341,16 +4343,52 @@
             ]
           }
         ],
-        "summary": "Toggle Playback Shuffle\n"
+        "summary": "Toggle Playback Shuffle\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set the volume for the user’s current playback device.",
         "id": "operation:put:/me/player/volume",
         "kind": "operation",
         "method": "put",
         "name": "set-volume-for-users-playback",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "volume_percent",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/me/player/volume",
         "pointer": "#/paths/~1me~1player~1volume/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1358,16 +4396,55 @@
             ]
           }
         ],
-        "summary": "Set Playback Volume\n"
+        "summary": "Set Playback Volume\n",
+        "tags": [
+          "Player"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of the playlists owned or followed by the current Spotify user.",
         "id": "operation:get:/me/playlists",
         "kind": "operation",
         "method": "get",
         "name": "get-a-list-of-current-users-playlists",
+        "parameters": [
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/me/playlists",
         "pointer": "#/paths/~1me~1playlists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingPlaylistObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1375,33 +4452,56 @@
             ]
           }
         ],
-        "summary": "Get Current User's Playlists\n"
+        "summary": "Get Current User's Playlists\n",
+        "tags": [
+          "Playlists",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/me/shows",
-        "kind": "operation",
-        "method": "delete",
-        "name": "remove-shows-user",
-        "path": "/me/shows",
-        "pointer": "#/paths/~1me~1shows/delete",
-        "security": [
-          {
-            "oauth_2_0": [
-              "user-library-modify"
-            ]
-          }
-        ],
-        "summary": "Remove User's Saved Shows\n"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a list of shows saved in the current Spotify user's library.",
         "id": "operation:get:/me/shows",
         "kind": "operation",
         "method": "get",
         "name": "get-users-saved-shows",
+        "parameters": [
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/me/shows",
         "pointer": "#/paths/~1me~1shows/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingSavedShowObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1409,16 +4509,47 @@
             ]
           }
         ],
-        "summary": "Get User's Saved Shows\n"
+        "summary": "Get User's Saved Shows\n",
+        "tags": [
+          "Shows",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Save one or more shows to current Spotify user's library.",
         "id": "operation:put:/me/shows",
         "kind": "operation",
         "method": "put",
         "name": "save-shows-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/shows",
         "pointer": "#/paths/~1me~1shows/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1426,16 +4557,102 @@
             ]
           }
         ],
-        "summary": "Save Shows for Current User\n"
+        "summary": "Save Shows for Current User\n",
+        "tags": [
+          "Shows",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete one or more shows from current Spotify user's library.",
+        "id": "operation:delete:/me/shows",
+        "kind": "operation",
+        "method": "delete",
+        "name": "remove-shows-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/me/shows",
+        "pointer": "#/paths/~1me~1shows/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth_2_0": [
+              "user-library-modify"
+            ]
+          }
+        ],
+        "summary": "Remove User's Saved Shows\n",
+        "tags": [
+          "Shows",
+          "Library"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Check if one or more shows is already saved in the current Spotify user's library.",
         "id": "operation:get:/me/shows/contains",
         "kind": "operation",
         "method": "get",
         "name": "check-users-saved-shows",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/shows/contains",
         "pointer": "#/paths/~1me~1shows~1contains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean[]"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1443,16 +4660,73 @@
             ]
           }
         ],
-        "summary": "Check User's Saved Shows\n"
+        "summary": "Check User's Saved Shows\n",
+        "tags": [
+          "Shows",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the current user's top artists or tracks based on calculated affinity.",
         "id": "operation:get:/me/top/{type}",
         "kind": "operation",
         "method": "get",
         "name": "get-users-top-artists-and-tracks",
+        "parameters": [
+          {
+            "enum": [
+              "artists",
+              "tracks"
+            ],
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "medium_term",
+            "in": "query",
+            "name": "time_range",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/me/top/{type}",
         "pointer": "#/paths/~1me~1top~1{type}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingObject|object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1460,33 +4734,63 @@
             ]
           }
         ],
-        "summary": "Get User's Top Items\n"
+        "summary": "Get User's Top Items\n",
+        "tags": [
+          "Users",
+          "Tracks",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/me/tracks",
-        "kind": "operation",
-        "method": "delete",
-        "name": "remove-tracks-user",
-        "path": "/me/tracks",
-        "pointer": "#/paths/~1me~1tracks/delete",
-        "security": [
-          {
-            "oauth_2_0": [
-              "user-library-modify"
-            ]
-          }
-        ],
-        "summary": "Remove User's Saved Tracks\n"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a list of the songs saved in the current Spotify user's 'Your Music' library.",
         "id": "operation:get:/me/tracks",
         "kind": "operation",
         "method": "get",
         "name": "get-users-saved-tracks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/me/tracks",
         "pointer": "#/paths/~1me~1tracks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingSavedTrackObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1494,16 +4798,54 @@
             ]
           }
         ],
-        "summary": "Get User's Saved Tracks\n"
+        "summary": "Get User's Saved Tracks\n",
+        "tags": [
+          "Tracks",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Save one or more tracks to the current user's 'Your Music' library.",
         "id": "operation:put:/me/tracks",
         "kind": "operation",
         "method": "put",
         "name": "save-tracks-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/tracks",
         "pointer": "#/paths/~1me~1tracks/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1511,16 +4853,103 @@
             ]
           }
         ],
-        "summary": "Save Tracks for Current User\n"
+        "summary": "Save Tracks for Current User\n",
+        "tags": [
+          "Tracks",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove one or more tracks from the current user's 'Your Music' library.",
+        "id": "operation:delete:/me/tracks",
+        "kind": "operation",
+        "method": "delete",
+        "name": "remove-tracks-user",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/me/tracks",
+        "pointer": "#/paths/~1me~1tracks/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth_2_0": [
+              "user-library-modify"
+            ]
+          }
+        ],
+        "summary": "Remove User's Saved Tracks\n",
+        "tags": [
+          "Tracks",
+          "Library"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Check if one or more tracks is already saved in the current Spotify user's 'Your Music' library.",
         "id": "operation:get:/me/tracks/contains",
         "kind": "operation",
         "method": "get",
         "name": "check-users-saved-tracks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/me/tracks/contains",
         "pointer": "#/paths/~1me~1tracks~1contains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean[]"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1528,31 +4957,118 @@
             ]
           }
         ],
-        "summary": "Check User's Saved Tracks\n"
+        "summary": "Check User's Saved Tracks\n",
+        "tags": [
+          "Tracks",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a playlist owned by a Spotify user.",
         "id": "operation:get:/playlists/{playlist_id}",
         "kind": "operation",
         "method": "get",
         "name": "get-playlist",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "additional_types",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/playlists/{playlist_id}",
         "pointer": "#/paths/~1playlists~1{playlist_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlaylistObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Playlist\n"
+        "summary": "Get Playlist\n",
+        "tags": [
+          "Playlists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Change a playlist's name and public/private state.",
         "id": "operation:put:/playlists/{playlist_id}",
         "kind": "operation",
         "method": "put",
         "name": "change-playlist-details",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/playlists/{playlist_id}",
         "pointer": "#/paths/~1playlists~1{playlist_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1561,34 +5077,54 @@
             ]
           }
         ],
-        "summary": "Change Playlist Details\n"
+        "summary": "Change Playlist Details\n",
+        "tags": [
+          "Playlists",
+          "Library"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/playlists/{playlist_id}/followers",
-        "kind": "operation",
-        "method": "delete",
-        "name": "unfollow-playlist",
-        "path": "/playlists/{playlist_id}/followers",
-        "pointer": "#/paths/~1playlists~1{playlist_id}~1followers/delete",
-        "security": [
-          {
-            "oauth_2_0": [
-              "playlist-modify-public",
-              "playlist-modify-private"
-            ]
-          }
-        ],
-        "summary": "Unfollow Playlist\n"
-      },
-      {
-        "deprecated": false,
+        "description": "Add the current user as a follower of a playlist.",
         "id": "operation:put:/playlists/{playlist_id}/followers",
         "kind": "operation",
         "method": "put",
         "name": "follow-playlist",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/playlists/{playlist_id}/followers",
         "pointer": "#/paths/~1playlists~1{playlist_id}~1followers/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1597,46 +5133,195 @@
             ]
           }
         ],
-        "summary": "Follow Playlist\n"
+        "summary": "Follow Playlist\n",
+        "tags": [
+          "Users",
+          "Playlists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove the current user as a follower of a playlist.",
+        "id": "operation:delete:/playlists/{playlist_id}/followers",
+        "kind": "operation",
+        "method": "delete",
+        "name": "unfollow-playlist",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/playlists/{playlist_id}/followers",
+        "pointer": "#/paths/~1playlists~1{playlist_id}~1followers/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth_2_0": [
+              "playlist-modify-public",
+              "playlist-modify-private"
+            ]
+          }
+        ],
+        "summary": "Unfollow Playlist\n",
+        "tags": [
+          "Users",
+          "Playlists"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Check to see if one or more Spotify users are following a specified playlist.",
         "id": "operation:get:/playlists/{playlist_id}/followers/contains",
         "kind": "operation",
         "method": "get",
         "name": "check-if-user-follows-playlist",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/playlists/{playlist_id}/followers/contains",
         "pointer": "#/paths/~1playlists~1{playlist_id}~1followers~1contains/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean[]"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Check if Users Follow Playlist\n"
+        "summary": "Check if Users Follow Playlist\n",
+        "tags": [
+          "Users",
+          "Playlists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the current image associated with a specific playlist.",
         "id": "operation:get:/playlists/{playlist_id}/images",
         "kind": "operation",
         "method": "get",
         "name": "get-playlist-cover",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/playlists/{playlist_id}/images",
         "pointer": "#/paths/~1playlists~1{playlist_id}~1images/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImageObject[]"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Playlist Cover Image\n"
+        "summary": "Get Playlist Cover Image\n",
+        "tags": [
+          "Playlists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Replace the image used to represent a specific playlist.",
         "id": "operation:put:/playlists/{playlist_id}/images",
         "kind": "operation",
         "method": "put",
         "name": "upload-custom-playlist-cover",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/playlists/{playlist_id}/images",
         "pointer": "#/paths/~1playlists~1{playlist_id}~1images/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1646,34 +5331,79 @@
             ]
           }
         ],
-        "summary": "Add Custom Playlist Cover Image\n"
+        "summary": "Add Custom Playlist Cover Image\n",
+        "tags": [
+          "Playlists"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/playlists/{playlist_id}/tracks",
-        "kind": "operation",
-        "method": "delete",
-        "name": "remove-tracks-playlist",
-        "path": "/playlists/{playlist_id}/tracks",
-        "pointer": "#/paths/~1playlists~1{playlist_id}~1tracks/delete",
-        "security": [
-          {
-            "oauth_2_0": [
-              "playlist-modify-public",
-              "playlist-modify-private"
-            ]
-          }
-        ],
-        "summary": "Remove Playlist Items\n"
-      },
-      {
-        "deprecated": false,
+        "description": "Get full details of the items of a playlist owned by a Spotify user.",
         "id": "operation:get:/playlists/{playlist_id}/tracks",
         "kind": "operation",
         "method": "get",
         "name": "get-playlists-tracks",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "additional_types",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/playlists/{playlist_id}/tracks",
         "pointer": "#/paths/~1playlists~1{playlist_id}~1tracks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingPlaylistTrackObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1681,34 +5411,61 @@
             ]
           }
         ],
-        "summary": "Get Playlist Items\n"
+        "summary": "Get Playlist Items\n",
+        "tags": [
+          "Playlists",
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/playlists/{playlist_id}/tracks",
-        "kind": "operation",
-        "method": "post",
-        "name": "add-tracks-to-playlist",
-        "path": "/playlists/{playlist_id}/tracks",
-        "pointer": "#/paths/~1playlists~1{playlist_id}~1tracks/post",
-        "security": [
-          {
-            "oauth_2_0": [
-              "playlist-modify-public",
-              "playlist-modify-private"
-            ]
-          }
-        ],
-        "summary": "Add Items to Playlist\n"
-      },
-      {
-        "deprecated": false,
+        "description": "Either reorder or replace items in a playlist depending on the request's parameters.",
         "id": "operation:put:/playlists/{playlist_id}/tracks",
         "kind": "operation",
         "method": "put",
         "name": "reorder-or-replace-playlists-tracks",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "uris",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/playlists/{playlist_id}/tracks",
         "pointer": "#/paths/~1playlists~1{playlist_id}~1tracks/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1717,76 +5474,674 @@
             ]
           }
         ],
-        "summary": "Update Playlist Items\n"
+        "summary": "Update Playlist Items\n",
+        "tags": [
+          "Playlists",
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add one or more items to a user's playlist.",
+        "id": "operation:post:/playlists/{playlist_id}/tracks",
+        "kind": "operation",
+        "method": "post",
+        "name": "add-tracks-to-playlist",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "position",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "uris",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/playlists/{playlist_id}/tracks",
+        "pointer": "#/paths/~1playlists~1{playlist_id}~1tracks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth_2_0": [
+              "playlist-modify-public",
+              "playlist-modify-private"
+            ]
+          }
+        ],
+        "summary": "Add Items to Playlist\n",
+        "tags": [
+          "Playlists",
+          "Tracks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Remove one or more items from a user's playlist.",
+        "id": "operation:delete:/playlists/{playlist_id}/tracks",
+        "kind": "operation",
+        "method": "delete",
+        "name": "remove-tracks-playlist",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "playlist_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/playlists/{playlist_id}/tracks",
+        "pointer": "#/paths/~1playlists~1{playlist_id}~1tracks/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth_2_0": [
+              "playlist-modify-public",
+              "playlist-modify-private"
+            ]
+          }
+        ],
+        "summary": "Remove Playlist Items\n",
+        "tags": [
+          "Playlists",
+          "Tracks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Recommendations are generated based on the available information for a given seed entity and matched against similar artists and tracks.",
         "id": "operation:get:/recommendations",
         "kind": "operation",
         "method": "get",
         "name": "get-recommendations",
+        "parameters": [
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "seed_artists",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "seed_genres",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "seed_tracks",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "min_acousticness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_acousticness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "target_acousticness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_danceability",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_danceability",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "target_danceability",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_duration_ms",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "max_duration_ms",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "target_duration_ms",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "min_energy",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_energy",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "target_energy",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_instrumentalness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_instrumentalness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "target_instrumentalness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_key",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "max_key",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "target_key",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "min_liveness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_liveness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "target_liveness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_loudness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_loudness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "target_loudness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_mode",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "max_mode",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "target_mode",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "min_popularity",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "max_popularity",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "target_popularity",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "min_speechiness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_speechiness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "target_speechiness",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_tempo",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_tempo",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "target_tempo",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "min_time_signature",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "max_time_signature",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "target_time_signature",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "min_valence",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "max_valence",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "target_valence",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/recommendations",
         "pointer": "#/paths/~1recommendations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RecommendationsObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Recommendations\n"
+        "summary": "Get Recommendations\n",
+        "tags": [
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of available genres seed parameter values for [recommendations](/documentation/web-api/reference/#/operations/get-recommendations).",
         "id": "operation:get:/recommendations/available-genre-seeds",
         "kind": "operation",
         "method": "get",
         "name": "get-recommendation-genres",
         "path": "/recommendations/available-genre-seeds",
         "pointer": "#/paths/~1recommendations~1available-genre-seeds/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Available Genre Seeds\n"
+        "summary": "Get Available Genre Seeds\n",
+        "tags": [
+          "Genres"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooks that match a keyword string.<br /> **Note: Audiobooks a…",
         "id": "operation:get:/search",
         "kind": "operation",
         "method": "get",
         "name": "search",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "enum": [
+              "audio"
+            ],
+            "in": "query",
+            "name": "include_external",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Search for Item\n"
+        "summary": "Search for Item\n",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for several shows based on their Spotify IDs.",
         "id": "operation:get:/shows",
         "kind": "operation",
         "method": "get",
         "name": "get-multiple-shows",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/shows",
         "pointer": "#/paths/~1shows/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Several Shows\n"
+        "summary": "Get Several Shows\n",
+        "tags": [
+          "Shows"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for a single show identified by its unique Spotify ID.",
         "id": "operation:get:/shows/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get-a-show",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/shows/{id}",
         "pointer": "#/paths/~1shows~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShowObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1794,16 +6149,67 @@
             ]
           }
         ],
-        "summary": "Get Show\n"
+        "summary": "Get Show\n",
+        "tags": [
+          "Shows"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information about an show’s episodes.",
         "id": "operation:get:/shows/{id}/episodes",
         "kind": "operation",
         "method": "get",
         "name": "get-a-shows-episodes",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/shows/{id}/episodes",
         "pointer": "#/paths/~1shows~1{id}~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingSimplifiedEpisodeObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1811,61 +6217,212 @@
             ]
           }
         ],
-        "summary": "Get Show Episodes\n"
+        "summary": "Get Show Episodes\n",
+        "tags": [
+          "Shows",
+          "Episodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for multiple tracks based on their Spotify IDs.",
         "id": "operation:get:/tracks",
         "kind": "operation",
         "method": "get",
         "name": "get-several-tracks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/tracks",
         "pointer": "#/paths/~1tracks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Several Tracks\n"
+        "summary": "Get Several Tracks\n",
+        "tags": [
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Spotify catalog information for a single track identified by its unique Spotify ID.",
         "id": "operation:get:/tracks/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get-track",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "market",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/tracks/{id}",
         "pointer": "#/paths/~1tracks~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TrackObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get Track\n"
+        "summary": "Get Track\n",
+        "tags": [
+          "Tracks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get public profile information about a Spotify user.",
         "id": "operation:get:/users/{user_id}",
         "kind": "operation",
         "method": "get",
         "name": "get-users-profile",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}",
         "pointer": "#/paths/~1users~1{user_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PublicUserObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": []
           }
         ],
-        "summary": "Get User's Profile\n"
+        "summary": "Get User's Profile\n",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of the playlists owned or followed by a Spotify user.",
         "id": "operation:get:/users/{user_id}/playlists",
         "kind": "operation",
         "method": "get",
         "name": "get-list-users-playlists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{user_id}/playlists",
         "pointer": "#/paths/~1users~1{user_id}~1playlists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PagingPlaylistObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth_2_0": [
@@ -1874,16 +6431,55 @@
             ]
           }
         ],
-        "summary": "Get User's Playlists\n"
+        "summary": "Get User's Playlists\n",
+        "tags": [
+          "Playlists",
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a playlist for a Spotify user.",
         "id": "operation:post:/users/{user_id}/playlists",
         "kind": "operation",
         "method": "post",
         "name": "create-playlist",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/playlists",
         "pointer": "#/paths/~1users~1{user_id}~1playlists/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "PlaylistObject"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth_2_0": [
@@ -1892,462 +6488,563 @@
             ]
           }
         ],
-        "summary": "Create Playlist\n"
+        "summary": "Create Playlist\n",
+        "tags": [
+          "Playlists",
+          "Library"
+        ]
       },
       {
         "id": "schema:AlbumBase",
         "kind": "schema",
-        "name": "AlbumBase"
+        "name": "AlbumBase",
+        "type": "object"
       },
       {
         "id": "schema:AlbumObject",
         "kind": "schema",
-        "name": "AlbumObject"
+        "name": "AlbumObject",
+        "type": "AlbumBase|object"
       },
       {
         "id": "schema:AlbumRestrictionObject",
         "kind": "schema",
-        "name": "AlbumRestrictionObject"
+        "name": "AlbumRestrictionObject",
+        "type": "object"
       },
       {
         "id": "schema:ArtistObject",
         "kind": "schema",
-        "name": "ArtistObject"
+        "name": "ArtistObject",
+        "type": "object"
       },
       {
         "id": "schema:AudioAnalysisObject",
         "kind": "schema",
-        "name": "AudioAnalysisObject"
+        "name": "AudioAnalysisObject",
+        "type": "object"
       },
       {
         "id": "schema:AudioFeaturesObject",
         "kind": "schema",
-        "name": "AudioFeaturesObject"
+        "name": "AudioFeaturesObject",
+        "type": "object"
       },
       {
         "id": "schema:AudiobookBase",
         "kind": "schema",
-        "name": "AudiobookBase"
+        "name": "AudiobookBase",
+        "type": "object"
       },
       {
         "id": "schema:AudiobookObject",
         "kind": "schema",
-        "name": "AudiobookObject"
+        "name": "AudiobookObject",
+        "type": "AudiobookBase|object"
       },
       {
         "id": "schema:AuthorObject",
         "kind": "schema",
-        "name": "AuthorObject"
+        "name": "AuthorObject",
+        "type": "object"
       },
       {
         "id": "schema:CategoryObject",
         "kind": "schema",
-        "name": "CategoryObject"
+        "name": "CategoryObject",
+        "type": "object"
       },
       {
         "id": "schema:ChapterBase",
         "kind": "schema",
-        "name": "ChapterBase"
+        "name": "ChapterBase",
+        "type": "object"
       },
       {
         "id": "schema:ChapterObject",
         "kind": "schema",
-        "name": "ChapterObject"
+        "name": "ChapterObject",
+        "type": "ChapterBase|object"
       },
       {
         "id": "schema:ChapterRestrictionObject",
         "kind": "schema",
-        "name": "ChapterRestrictionObject"
+        "name": "ChapterRestrictionObject",
+        "type": "object"
       },
       {
         "id": "schema:ContextObject",
         "kind": "schema",
-        "name": "ContextObject"
+        "name": "ContextObject",
+        "type": "object"
       },
       {
         "id": "schema:CopyrightObject",
         "kind": "schema",
-        "name": "CopyrightObject"
+        "name": "CopyrightObject",
+        "type": "object"
       },
       {
         "id": "schema:CurrentlyPlayingContextObject",
         "kind": "schema",
-        "name": "CurrentlyPlayingContextObject"
+        "name": "CurrentlyPlayingContextObject",
+        "type": "object"
       },
       {
         "id": "schema:CurrentlyPlayingObject",
         "kind": "schema",
-        "name": "CurrentlyPlayingObject"
+        "name": "CurrentlyPlayingObject",
+        "type": "object"
       },
       {
         "id": "schema:CursorObject",
         "kind": "schema",
-        "name": "CursorObject"
+        "name": "CursorObject",
+        "type": "object"
       },
       {
         "id": "schema:CursorPagingObject",
         "kind": "schema",
-        "name": "CursorPagingObject"
+        "name": "CursorPagingObject",
+        "type": "object"
       },
       {
         "id": "schema:CursorPagingPlayHistoryObject",
         "kind": "schema",
-        "name": "CursorPagingPlayHistoryObject"
+        "name": "CursorPagingPlayHistoryObject",
+        "type": "CursorPagingObject|object"
       },
       {
         "id": "schema:CursorPagingSimplifiedArtistObject",
         "kind": "schema",
-        "name": "CursorPagingSimplifiedArtistObject"
+        "name": "CursorPagingSimplifiedArtistObject",
+        "type": "CursorPagingObject|object"
       },
       {
         "id": "schema:DeviceObject",
         "kind": "schema",
-        "name": "DeviceObject"
+        "name": "DeviceObject",
+        "type": "object"
       },
       {
         "id": "schema:DevicesObject",
         "kind": "schema",
-        "name": "DevicesObject"
+        "name": "DevicesObject",
+        "type": "object"
       },
       {
         "id": "schema:DisallowsObject",
         "kind": "schema",
-        "name": "DisallowsObject"
+        "name": "DisallowsObject",
+        "type": "object"
       },
       {
         "id": "schema:EpisodeBase",
         "kind": "schema",
-        "name": "EpisodeBase"
+        "name": "EpisodeBase",
+        "type": "object"
       },
       {
         "id": "schema:EpisodeObject",
         "kind": "schema",
-        "name": "EpisodeObject"
+        "name": "EpisodeObject",
+        "type": "EpisodeBase|object"
       },
       {
         "id": "schema:EpisodeRestrictionObject",
         "kind": "schema",
-        "name": "EpisodeRestrictionObject"
+        "name": "EpisodeRestrictionObject",
+        "type": "object"
       },
       {
         "id": "schema:ErrorObject",
         "kind": "schema",
-        "name": "ErrorObject"
+        "name": "ErrorObject",
+        "type": "object"
       },
       {
         "id": "schema:ExplicitContentSettingsObject",
         "kind": "schema",
-        "name": "ExplicitContentSettingsObject"
+        "name": "ExplicitContentSettingsObject",
+        "type": "object"
       },
       {
         "id": "schema:ExternalIdObject",
         "kind": "schema",
-        "name": "ExternalIdObject"
+        "name": "ExternalIdObject",
+        "type": "object"
       },
       {
         "id": "schema:ExternalUrlObject",
         "kind": "schema",
-        "name": "ExternalUrlObject"
+        "name": "ExternalUrlObject",
+        "type": "object"
       },
       {
         "id": "schema:FollowersObject",
         "kind": "schema",
-        "name": "FollowersObject"
+        "name": "FollowersObject",
+        "type": "object"
       },
       {
         "id": "schema:ImageObject",
         "kind": "schema",
-        "name": "ImageObject"
+        "name": "ImageObject",
+        "type": "object"
       },
       {
+        "description": "The key the track is in.",
         "id": "schema:Key",
         "kind": "schema",
-        "name": "Key"
+        "name": "Key",
+        "type": "integer"
       },
       {
         "id": "schema:LinkedTrackObject",
         "kind": "schema",
-        "name": "LinkedTrackObject"
+        "name": "LinkedTrackObject",
+        "type": "object"
       },
       {
+        "description": "The overall loudness of a track in decibels (dB).",
         "id": "schema:Loudness",
         "kind": "schema",
-        "name": "Loudness"
+        "name": "Loudness",
+        "type": "number:float"
       },
       {
+        "description": "Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived.",
         "id": "schema:Mode",
         "kind": "schema",
-        "name": "Mode"
+        "name": "Mode",
+        "type": "integer"
       },
       {
         "id": "schema:NarratorObject",
         "kind": "schema",
-        "name": "NarratorObject"
+        "name": "NarratorObject",
+        "type": "object"
       },
       {
         "id": "schema:PagingArtistObject",
         "kind": "schema",
-        "name": "PagingArtistObject"
+        "name": "PagingArtistObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingFeaturedPlaylistObject",
         "kind": "schema",
-        "name": "PagingFeaturedPlaylistObject"
+        "name": "PagingFeaturedPlaylistObject",
+        "type": "object"
       },
       {
         "id": "schema:PagingObject",
         "kind": "schema",
-        "name": "PagingObject"
+        "name": "PagingObject",
+        "type": "object"
       },
       {
         "id": "schema:PagingPlaylistObject",
         "kind": "schema",
-        "name": "PagingPlaylistObject"
+        "name": "PagingPlaylistObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingPlaylistTrackObject",
         "kind": "schema",
-        "name": "PagingPlaylistTrackObject"
+        "name": "PagingPlaylistTrackObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSavedAlbumObject",
         "kind": "schema",
-        "name": "PagingSavedAlbumObject"
+        "name": "PagingSavedAlbumObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSavedEpisodeObject",
         "kind": "schema",
-        "name": "PagingSavedEpisodeObject"
+        "name": "PagingSavedEpisodeObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSavedShowObject",
         "kind": "schema",
-        "name": "PagingSavedShowObject"
+        "name": "PagingSavedShowObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSavedTrackObject",
         "kind": "schema",
-        "name": "PagingSavedTrackObject"
+        "name": "PagingSavedTrackObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSimplifiedAlbumObject",
         "kind": "schema",
-        "name": "PagingSimplifiedAlbumObject"
+        "name": "PagingSimplifiedAlbumObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSimplifiedArtistObject",
         "kind": "schema",
-        "name": "PagingSimplifiedArtistObject"
+        "name": "PagingSimplifiedArtistObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSimplifiedAudiobookObject",
         "kind": "schema",
-        "name": "PagingSimplifiedAudiobookObject"
+        "name": "PagingSimplifiedAudiobookObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSimplifiedChapterObject",
         "kind": "schema",
-        "name": "PagingSimplifiedChapterObject"
+        "name": "PagingSimplifiedChapterObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSimplifiedEpisodeObject",
         "kind": "schema",
-        "name": "PagingSimplifiedEpisodeObject"
+        "name": "PagingSimplifiedEpisodeObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSimplifiedShowObject",
         "kind": "schema",
-        "name": "PagingSimplifiedShowObject"
+        "name": "PagingSimplifiedShowObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingSimplifiedTrackObject",
         "kind": "schema",
-        "name": "PagingSimplifiedTrackObject"
+        "name": "PagingSimplifiedTrackObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PagingTrackObject",
         "kind": "schema",
-        "name": "PagingTrackObject"
+        "name": "PagingTrackObject",
+        "type": "PagingObject|object"
       },
       {
         "id": "schema:PlayHistoryObject",
         "kind": "schema",
-        "name": "PlayHistoryObject"
+        "name": "PlayHistoryObject",
+        "type": "object"
       },
       {
         "id": "schema:PlayerErrorObject",
         "kind": "schema",
-        "name": "PlayerErrorObject"
+        "name": "PlayerErrorObject",
+        "type": "object"
       },
       {
+        "description": "* `NO_PREV_TRACK` - The command requires a previous track, but there is none in the context.",
         "id": "schema:PlayerErrorReasons",
         "kind": "schema",
-        "name": "PlayerErrorReasons"
+        "name": "PlayerErrorReasons",
+        "type": "string"
       },
       {
         "id": "schema:PlaylistObject",
         "kind": "schema",
-        "name": "PlaylistObject"
+        "name": "PlaylistObject",
+        "type": "object"
       },
       {
         "id": "schema:PlaylistOwnerObject",
         "kind": "schema",
-        "name": "PlaylistOwnerObject"
+        "name": "PlaylistOwnerObject",
+        "type": "PlaylistUserObject|object"
       },
       {
         "id": "schema:PlaylistTrackObject",
         "kind": "schema",
-        "name": "PlaylistTrackObject"
+        "name": "PlaylistTrackObject",
+        "type": "object"
       },
       {
         "id": "schema:PlaylistTracksRefObject",
         "kind": "schema",
-        "name": "PlaylistTracksRefObject"
+        "name": "PlaylistTracksRefObject",
+        "type": "object"
       },
       {
         "id": "schema:PlaylistUserObject",
         "kind": "schema",
-        "name": "PlaylistUserObject"
+        "name": "PlaylistUserObject",
+        "type": "object"
       },
       {
         "id": "schema:PrivateUserObject",
         "kind": "schema",
-        "name": "PrivateUserObject"
+        "name": "PrivateUserObject",
+        "type": "object"
       },
       {
         "id": "schema:PublicUserObject",
         "kind": "schema",
-        "name": "PublicUserObject"
+        "name": "PublicUserObject",
+        "type": "object"
       },
       {
         "id": "schema:QueueObject",
         "kind": "schema",
-        "name": "QueueObject"
+        "name": "QueueObject",
+        "type": "object"
       },
       {
         "id": "schema:RecommendationSeedObject",
         "kind": "schema",
-        "name": "RecommendationSeedObject"
+        "name": "RecommendationSeedObject",
+        "type": "object"
       },
       {
         "id": "schema:RecommendationsObject",
         "kind": "schema",
-        "name": "RecommendationsObject"
+        "name": "RecommendationsObject",
+        "type": "object"
       },
       {
         "id": "schema:ResumePointObject",
         "kind": "schema",
-        "name": "ResumePointObject"
+        "name": "ResumePointObject",
+        "type": "object"
       },
       {
         "id": "schema:SavedAlbumObject",
         "kind": "schema",
-        "name": "SavedAlbumObject"
+        "name": "SavedAlbumObject",
+        "type": "object"
       },
       {
         "id": "schema:SavedEpisodeObject",
         "kind": "schema",
-        "name": "SavedEpisodeObject"
+        "name": "SavedEpisodeObject",
+        "type": "object"
       },
       {
         "id": "schema:SavedShowObject",
         "kind": "schema",
-        "name": "SavedShowObject"
+        "name": "SavedShowObject",
+        "type": "object"
       },
       {
         "id": "schema:SavedTrackObject",
         "kind": "schema",
-        "name": "SavedTrackObject"
+        "name": "SavedTrackObject",
+        "type": "object"
       },
       {
         "id": "schema:SectionObject",
         "kind": "schema",
-        "name": "SectionObject"
+        "name": "SectionObject",
+        "type": "object"
       },
       {
         "id": "schema:SegmentObject",
         "kind": "schema",
-        "name": "SegmentObject"
+        "name": "SegmentObject",
+        "type": "object"
       },
       {
         "id": "schema:ShowBase",
         "kind": "schema",
-        "name": "ShowBase"
+        "name": "ShowBase",
+        "type": "object"
       },
       {
         "id": "schema:ShowObject",
         "kind": "schema",
-        "name": "ShowObject"
+        "name": "ShowObject",
+        "type": "ShowBase|object"
       },
       {
         "id": "schema:SimplifiedAlbumObject",
         "kind": "schema",
-        "name": "SimplifiedAlbumObject"
+        "name": "SimplifiedAlbumObject",
+        "type": "AlbumBase|object"
       },
       {
         "id": "schema:SimplifiedArtistObject",
         "kind": "schema",
-        "name": "SimplifiedArtistObject"
+        "name": "SimplifiedArtistObject",
+        "type": "object"
       },
       {
         "id": "schema:SimplifiedAudiobookObject",
         "kind": "schema",
-        "name": "SimplifiedAudiobookObject"
+        "name": "SimplifiedAudiobookObject",
+        "type": "AudiobookBase|object"
       },
       {
         "id": "schema:SimplifiedChapterObject",
         "kind": "schema",
-        "name": "SimplifiedChapterObject"
+        "name": "SimplifiedChapterObject",
+        "type": "ChapterBase|object"
       },
       {
         "id": "schema:SimplifiedEpisodeObject",
         "kind": "schema",
-        "name": "SimplifiedEpisodeObject"
+        "name": "SimplifiedEpisodeObject",
+        "type": "EpisodeBase|object"
       },
       {
         "id": "schema:SimplifiedPlaylistObject",
         "kind": "schema",
-        "name": "SimplifiedPlaylistObject"
+        "name": "SimplifiedPlaylistObject",
+        "type": "object"
       },
       {
         "id": "schema:SimplifiedShowObject",
         "kind": "schema",
-        "name": "SimplifiedShowObject"
+        "name": "SimplifiedShowObject",
+        "type": "ShowBase|object"
       },
       {
         "id": "schema:SimplifiedTrackObject",
         "kind": "schema",
-        "name": "SimplifiedTrackObject"
+        "name": "SimplifiedTrackObject",
+        "type": "object"
       },
       {
+        "description": "The overall estimated tempo of a track in beats per minute (BPM).",
         "id": "schema:Tempo",
         "kind": "schema",
-        "name": "Tempo"
+        "name": "Tempo",
+        "type": "number:float"
       },
       {
         "id": "schema:TimeIntervalObject",
         "kind": "schema",
-        "name": "TimeIntervalObject"
+        "name": "TimeIntervalObject",
+        "type": "object"
       },
       {
+        "description": "An estimated time signature.",
         "id": "schema:TimeSignature",
         "kind": "schema",
-        "name": "TimeSignature"
+        "name": "TimeSignature",
+        "type": "integer"
       },
       {
         "id": "schema:TrackObject",
         "kind": "schema",
-        "name": "TrackObject"
+        "name": "TrackObject",
+        "type": "object"
       },
       {
         "id": "schema:TrackRestrictionObject",
         "kind": "schema",
-        "name": "TrackRestrictionObject"
+        "name": "TrackRestrictionObject",
+        "type": "object"
       },
       {
         "id": "schema:TuneableTrackObject",
         "kind": "schema",
-        "name": "TuneableTrackObject"
+        "name": "TuneableTrackObject",
+        "type": "object"
       }
     ]
   },

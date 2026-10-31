@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `0b312bbda47263477d757d1c01fa553caab63f1d608510a17964142f6a53f2bf` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 6 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/orders` | get /orders | List `orders` |
-| GET | `/orders/{orderId}` | get /orders/{orderId} | Get an `order` |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/orders` | get /orders | `orderStatus`, `offset`, `limit` | ListOfOrders | yes | List `orders` |
+| GET | `/orders/{orderId}` | get /orders/{orderId} | `orderId`* | GetOrder | yes | Get an `order` |

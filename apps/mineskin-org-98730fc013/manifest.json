@@ -48,6 +48,66 @@
         "from": "mineskin-org-98730fc013",
         "kind": "EXPOSES",
         "to": "operation:get:/validate/uuid/{uuid}"
+      },
+      {
+        "from": "operation:post:/generate/upload",
+        "kind": "ACCEPTS",
+        "to": "schema:GenerateOptions"
+      },
+      {
+        "from": "operation:post:/generate/upload",
+        "kind": "RETURNS",
+        "to": "schema:SkinInfo"
+      },
+      {
+        "from": "operation:post:/generate/url",
+        "kind": "ACCEPTS",
+        "to": "schema:GenerateOptions"
+      },
+      {
+        "from": "operation:post:/generate/url",
+        "kind": "RETURNS",
+        "to": "schema:SkinInfo"
+      },
+      {
+        "from": "operation:post:/generate/user",
+        "kind": "ACCEPTS",
+        "to": "schema:GenerateOptions"
+      },
+      {
+        "from": "operation:post:/generate/user",
+        "kind": "RETURNS",
+        "to": "schema:SkinInfo"
+      },
+      {
+        "from": "operation:get:/get/id/{id}",
+        "kind": "RETURNS",
+        "to": "schema:SkinInfo"
+      },
+      {
+        "from": "operation:get:/get/uuid/{uuid}",
+        "kind": "RETURNS",
+        "to": "schema:SkinInfo"
+      },
+      {
+        "from": "operation:get:/validate/name/{name}",
+        "kind": "RETURNS",
+        "to": "schema:UserValidation"
+      },
+      {
+        "from": "operation:get:/validate/uuid/{uuid}",
+        "kind": "RETURNS",
+        "to": "schema:UserValidation"
+      },
+      {
+        "from": "schema:SkinData",
+        "kind": "REFERENCES",
+        "to": "schema:TextureInfo"
+      },
+      {
+        "from": "schema:SkinInfo",
+        "kind": "REFERENCES",
+        "to": "schema:SkinData"
       }
     ],
     "nodes": [
@@ -61,15 +121,53 @@
         "kind": "operation",
         "method": "post",
         "name": "post /generate/upload",
+        "parameters": [
+          {
+            "description": "Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples",
+            "in": "header",
+            "name": "User-Agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/generate/upload",
         "pointer": "#/paths/~1generate~1upload/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "GenerateOptions|object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SkinInfo|object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": [],
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "generate"
+        ]
       },
       {
         "deprecated": false,
@@ -77,15 +175,53 @@
         "kind": "operation",
         "method": "post",
         "name": "post /generate/url",
+        "parameters": [
+          {
+            "description": "Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples",
+            "in": "header",
+            "name": "User-Agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/generate/url",
         "pointer": "#/paths/~1generate~1url/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "GenerateOptions|object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SkinInfo|object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": [],
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "generate"
+        ]
       },
       {
         "deprecated": false,
@@ -93,15 +229,53 @@
         "kind": "operation",
         "method": "post",
         "name": "post /generate/user",
+        "parameters": [
+          {
+            "description": "Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples",
+            "in": "header",
+            "name": "User-Agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/generate/user",
         "pointer": "#/paths/~1generate~1user/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "GenerateOptions|object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SkinInfo|object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKey": [],
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "generate"
+        ]
       },
       {
         "deprecated": false,
@@ -109,26 +283,71 @@
         "kind": "operation",
         "method": "get",
         "name": "get /get/delay",
+        "parameters": [
+          {
+            "description": "Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples",
+            "in": "header",
+            "name": "User-Agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/get/delay",
         "pointer": "#/paths/~1get~1delay/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKey": [],
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "get"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deprecated.",
         "id": "operation:get:/get/id/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /get/id/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number:integer"
+          },
+          {
+            "description": "Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples",
+            "in": "header",
+            "name": "User-Agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/get/id/{id}",
         "pointer": "#/paths/~1get~1id~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SkinInfo"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "get"
+        ]
       },
       {
         "deprecated": false,
@@ -136,10 +355,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /get/list/{page}",
+        "parameters": [
+          {
+            "description": "For reference pagination, the uuid of the last skin in the previous page.",
+            "in": "path",
+            "name": "page",
+            "required": true,
+            "type": "number:integer"
+          },
+          {
+            "description": "Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples",
+            "in": "header",
+            "name": "User-Agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/get/list/{page}",
         "pointer": "#/paths/~1get~1list~1{page}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "get"
+        ]
       },
       {
         "deprecated": false,
@@ -147,10 +392,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /get/uuid/{uuid}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples",
+            "in": "header",
+            "name": "User-Agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/get/uuid/{uuid}",
         "pointer": "#/paths/~1get~1uuid~1{uuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SkinInfo"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "get"
+        ]
       },
       {
         "deprecated": false,
@@ -158,10 +428,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /validate/name/{name}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples",
+            "in": "header",
+            "name": "User-Agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/validate/name/{name}",
         "pointer": "#/paths/~1validate~1name~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserValidation"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "util"
+        ]
       },
       {
         "deprecated": false,
@@ -169,45 +464,77 @@
         "kind": "operation",
         "method": "get",
         "name": "get /validate/uuid/{uuid}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples",
+            "in": "header",
+            "name": "User-Agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/validate/uuid/{uuid}",
         "pointer": "#/paths/~1validate~1uuid~1{uuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserValidation"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "util"
+        ]
       },
       {
         "id": "schema:GenerateOptions",
         "kind": "schema",
-        "name": "GenerateOptions"
+        "name": "GenerateOptions",
+        "type": "object"
       },
       {
         "id": "schema:PartialSkinInfo",
         "kind": "schema",
-        "name": "PartialSkinInfo"
+        "name": "PartialSkinInfo",
+        "type": "object"
       },
       {
         "id": "schema:SkinData",
         "kind": "schema",
-        "name": "SkinData"
+        "name": "SkinData",
+        "type": "object"
       },
       {
         "id": "schema:SkinInfo",
         "kind": "schema",
-        "name": "SkinInfo"
+        "name": "SkinInfo",
+        "type": "object"
       },
       {
         "id": "schema:Stats",
         "kind": "schema",
-        "name": "Stats"
+        "name": "Stats",
+        "type": "object"
       },
       {
         "id": "schema:TextureInfo",
         "kind": "schema",
-        "name": "TextureInfo"
+        "name": "TextureInfo",
+        "type": "object"
       },
       {
         "id": "schema:UserValidation",
         "kind": "schema",
-        "name": "UserValidation"
+        "name": "UserValidation",
+        "type": "object"
       }
     ]
   },

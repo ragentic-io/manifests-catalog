@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_advicement.io_images_logo_Advic
 
 | | |
 | --- | --- |
-| Signed bundle | `d2e57bed57a8549fcf4e3f8aa9a72730832387de1bca8fc9d415989b7514c649` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,6 +32,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_advicement.io_images_logo_Advic
 
 ## Operations (1)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/templates/{template-token}/compile` | compile | Compile New Document PDF |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/templates/{template-token}/compile` | compile | `template-token`*, `Content-Type`*, `doc-url-expires-in`, `latex-compiler`, `latex-runs`, `main-file-name`, `doc-file-name`, body: object | object |  | Compile New Document PDF |

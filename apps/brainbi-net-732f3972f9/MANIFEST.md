@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `9791650d94bb727c0319d2f5ad50d3b3e20d14a3e68d578bec7af42c7f88dced` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,19 +32,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (14)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/analyze/pricing` | [beta]ScrapeProductCopy | [BETA] Scrape Product Copy |
-| GET | `/api/customers` | customers | Customers |
-| POST | `/api/login` | loginAndGetBearerToken | Login and get bearer token |
-| POST | `/api/logout` | logout | Logout |
-| GET | `/api/orders` | orders | Orders |
-| DELETE | `/api/orders/1137` | orders1 | Orders |
-| GET | `/api/products` | products | Products |
-| DELETE | `/api/products/1137` | products1 | Products |
-| POST | `/api/register` | register | Register |
-| POST | `/api/register_woocommerce` | registerAndCreateStoreConnectionForWooCommerce | Register and Create Store Connection for WooCommerce |
-| GET | `/api/rule` | rules | Rules |
-| GET | `/api/rule/ruleData/1` | ruleData | Rule Data |
-| GET | `/api/rule/ruleData/1/latest` | ruleDataLatest | Rule Data Latest |
-| GET | `/api/seo/ranking/latest` | seoLatestRankings | SEO Latest Rankings |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/analyze/pricing` | [beta]ScrapeProductCopy | `url`, body: — | — | yes | [BETA] Scrape Product Copy |
+| GET | `/api/customers` | customers | `—` | — | yes | Customers |
+| POST | `/api/login` | loginAndGetBearerToken | `email`, `password` | — |  | Login and get bearer token |
+| POST | `/api/logout` | logout | `email` | — |  | Logout |
+| GET | `/api/orders` | orders | `—` | — | yes | Orders |
+| DELETE | `/api/orders/1137` | orders1 | `—`, body: — | — |  | Orders |
+| GET | `/api/products` | products | `—` | — | yes | Products |
+| DELETE | `/api/products/1137` | products1 | `—`, body: — | — |  | Products |
+| POST | `/api/register` | register | `first_name`, `last_name`, `company_name`, `shop_url`, `email`, `store_name`, `store_url`, `password`, `fromuser` | — |  | Register |
+| POST | `/api/register_woocommerce` | registerAndCreateStoreConnectionForWooCommerce | `first_name`, `last_name`, `company_name`, `shop_url`, `email`, `store_name`, `store_url`, `password`, `fromuser`, `api_url`, `consumer_key`, `consumer_secret` | — |  | Register and Create Store Connection for WooCommerce |
+| GET | `/api/rule` | rules | `—` | — | yes | Rules |
+| GET | `/api/rule/ruleData/1` | ruleData | `—` | — | yes | Rule Data |
+| GET | `/api/rule/ruleData/1/latest` | ruleDataLatest | `—` | — | yes | Rule Data Latest |
+| GET | `/api/seo/ranking/latest` | seoLatestRankings | `—` | — | yes | SEO Latest Rankings |

@@ -18,6 +18,56 @@
         "from": "crossbrowsertesting-com-f5b404ed74",
         "kind": "EXPOSES",
         "to": "operation:get:/screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id}"
+      },
+      {
+        "from": "operation:get:/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/parallel/{base_version_id}",
+        "kind": "RETURNS",
+        "to": "schema:single_comparison_test"
+      },
+      {
+        "from": "operation:get:/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/{base_result_id}",
+        "kind": "RETURNS",
+        "to": "schema:full_comparison_test"
+      },
+      {
+        "from": "operation:get:/screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id}",
+        "kind": "RETURNS",
+        "to": "schema:single_comparison_test"
+      },
+      {
+        "from": "schema:comparison",
+        "kind": "REFERENCES",
+        "to": "schema:element"
+      },
+      {
+        "from": "schema:full_comparison_test",
+        "kind": "REFERENCES",
+        "to": "schema:screenshot"
+      },
+      {
+        "from": "schema:full_comparison_test",
+        "kind": "REFERENCES",
+        "to": "schema:target"
+      },
+      {
+        "from": "schema:single_comparison_test",
+        "kind": "REFERENCES",
+        "to": "schema:screenshot"
+      },
+      {
+        "from": "schema:single_comparison_test",
+        "kind": "REFERENCES",
+        "to": "schema:target"
+      },
+      {
+        "from": "schema:target",
+        "kind": "REFERENCES",
+        "to": "schema:comparison"
+      },
+      {
+        "from": "schema:target",
+        "kind": "REFERENCES",
+        "to": "schema:screenshot"
       }
     ],
     "nodes": [
@@ -27,12 +77,66 @@
       },
       {
         "deprecated": false,
+        "description": "Get comparison results for all browsers in target screenshot test against the same browser in the base screenshot test.",
         "id": "operation:get:/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/parallel/{base_version_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/parallel/{base_version_id}",
+        "parameters": [
+          {
+            "description": "test id of the target Screenshot Test",
+            "in": "path",
+            "name": "target_screenshot_test_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "version id of the target Screenshot Test",
+            "in": "path",
+            "name": "target_version_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "version id of the base Screenshot Test",
+            "in": "path",
+            "name": "base_version_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": "json",
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of callback method for JSONP requests.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 30,
+            "description": "Used as the basis for detecting box model differences in element positioning and dimensions that should be flagged and reported back to the comparison results.",
+            "in": "query",
+            "name": "tolerance",
+            "required": false,
+            "type": "number:integer 0-100"
+          }
+        ],
         "path": "/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/parallel/{base_version_id}",
         "pointer": "#/paths/~1screenshots~1{target_screenshot_test_id}~1{target_version_id}~1comparison~1parallel~1{base_version_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "single_comparison_test[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -42,12 +146,66 @@
       },
       {
         "deprecated": false,
+        "description": "Get comparison results for all browsers in target screenshot test against a base screenshot result.",
         "id": "operation:get:/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/{base_result_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/{base_result_id}",
+        "parameters": [
+          {
+            "description": "test id of the target Screenshot Test",
+            "in": "path",
+            "name": "target_screenshot_test_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "version id of the target Screenshot Test",
+            "in": "path",
+            "name": "target_version_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "result id of the base Screenshot Test",
+            "in": "path",
+            "name": "base_result_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": "json",
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of callback method for JSONP requests.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 30,
+            "description": "Used as the basis for detecting box model differences in element positioning and dimensions that should be flagged and reported back to the comparison results.",
+            "in": "query",
+            "name": "tolerance",
+            "required": false,
+            "type": "number:integer 0-100"
+          }
+        ],
         "path": "/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/{base_result_id}",
         "pointer": "#/paths/~1screenshots~1{target_screenshot_test_id}~1{target_version_id}~1comparison~1{base_result_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "full_comparison_test"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -57,12 +215,73 @@
       },
       {
         "deprecated": false,
+        "description": "Get comparison results for a single target screenshot result against a base screenshot result.",
         "id": "operation:get:/screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id}",
+        "parameters": [
+          {
+            "description": "test id of the target Screenshot Test",
+            "in": "path",
+            "name": "target_screenshot_test_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "version id of the target Screenshot Test",
+            "in": "path",
+            "name": "target_version_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "result id of the target Screenshot Test",
+            "in": "path",
+            "name": "target_result_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "result id of the base Screenshot Test",
+            "in": "path",
+            "name": "base_result_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": "json",
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of callback method for JSONP requests.",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 30,
+            "description": "Used as the basis for detecting box model differences in element positioning and dimensions that should be flagged and reported back to the comparison results.",
+            "in": "query",
+            "name": "tolerance",
+            "required": false,
+            "type": "number:integer 0-100"
+          }
+        ],
         "path": "/screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id}",
         "pointer": "#/paths/~1screenshots~1{target_screenshot_test_id}~1{target_version_id}~1{target_result_id}~1comparison~1{base_result_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "single_comparison_test"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
@@ -73,32 +292,38 @@
       {
         "id": "schema:comparison",
         "kind": "schema",
-        "name": "comparison"
+        "name": "comparison",
+        "type": "object"
       },
       {
         "id": "schema:element",
         "kind": "schema",
-        "name": "element"
+        "name": "element",
+        "type": "object"
       },
       {
         "id": "schema:full_comparison_test",
         "kind": "schema",
-        "name": "full_comparison_test"
+        "name": "full_comparison_test",
+        "type": "object"
       },
       {
         "id": "schema:screenshot",
         "kind": "schema",
-        "name": "screenshot"
+        "name": "screenshot",
+        "type": "object"
       },
       {
         "id": "schema:single_comparison_test",
         "kind": "schema",
-        "name": "single_comparison_test"
+        "name": "single_comparison_test",
+        "type": "object"
       },
       {
         "id": "schema:target",
         "kind": "schema",
-        "name": "target"
+        "name": "target",
+        "type": "object"
       }
     ]
   },

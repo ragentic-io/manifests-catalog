@@ -27,12 +27,12 @@
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:post:/builds"
+        "to": "operation:put:/builds"
       },
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:put:/builds"
+        "to": "operation:post:/builds"
       },
       {
         "from": "appveyor-com-d1bbef2745",
@@ -52,12 +52,12 @@
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:delete:/collaborators/{userId}"
+        "to": "operation:get:/collaborators/{userId}"
       },
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:get:/collaborators/{userId}"
+        "to": "operation:delete:/collaborators/{userId}"
       },
       {
         "from": "appveyor-com-d1bbef2745",
@@ -82,12 +82,12 @@
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:post:/environments"
+        "to": "operation:put:/environments"
       },
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:put:/environments"
+        "to": "operation:post:/environments"
       },
       {
         "from": "appveyor-com-d1bbef2745",
@@ -112,12 +112,12 @@
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:post:/projects"
+        "to": "operation:put:/projects"
       },
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:put:/projects"
+        "to": "operation:post:/projects"
       },
       {
         "from": "appveyor-com-d1bbef2745",
@@ -137,12 +137,12 @@
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:delete:/projects/{accountName}/{projectSlug}"
+        "to": "operation:get:/projects/{accountName}/{projectSlug}"
       },
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:get:/projects/{accountName}/{projectSlug}"
+        "to": "operation:delete:/projects/{accountName}/{projectSlug}"
       },
       {
         "from": "appveyor-com-d1bbef2745",
@@ -212,22 +212,22 @@
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:post:/roles"
-      },
-      {
-        "from": "appveyor-com-d1bbef2745",
-        "kind": "EXPOSES",
         "to": "operation:put:/roles"
       },
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:delete:/roles/{roleId}"
+        "to": "operation:post:/roles"
       },
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
         "to": "operation:get:/roles/{roleId}"
+      },
+      {
+        "from": "appveyor-com-d1bbef2745",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/roles/{roleId}"
       },
       {
         "from": "appveyor-com-d1bbef2745",
@@ -262,12 +262,847 @@
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:delete:/users/{userId}"
+        "to": "operation:get:/users/{userId}"
       },
       {
         "from": "appveyor-com-d1bbef2745",
         "kind": "EXPOSES",
-        "to": "operation:get:/users/{userId}"
+        "to": "operation:delete:/users/{userId}"
+      },
+      {
+        "from": "operation:post:/account/encrypt",
+        "kind": "ACCEPTS",
+        "to": "schema:EncryptRequest"
+      },
+      {
+        "from": "operation:get:/buildjobs/{jobId}/artifacts",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactModel"
+      },
+      {
+        "from": "operation:put:/builds",
+        "kind": "ACCEPTS",
+        "to": "schema:ReRunBuildRequest"
+      },
+      {
+        "from": "operation:put:/builds",
+        "kind": "RETURNS",
+        "to": "schema:Build"
+      },
+      {
+        "from": "operation:post:/builds",
+        "kind": "ACCEPTS",
+        "to": "schema:BuildStartRequest"
+      },
+      {
+        "from": "operation:post:/builds",
+        "kind": "RETURNS",
+        "to": "schema:Build"
+      },
+      {
+        "from": "operation:get:/collaborators",
+        "kind": "RETURNS",
+        "to": "schema:UserAccount"
+      },
+      {
+        "from": "operation:put:/collaborators",
+        "kind": "ACCEPTS",
+        "to": "schema:CollaboratorUpdate"
+      },
+      {
+        "from": "operation:get:/collaborators/{userId}",
+        "kind": "RETURNS",
+        "to": "schema:UserAccountRolesResults"
+      },
+      {
+        "from": "operation:post:/deployments",
+        "kind": "ACCEPTS",
+        "to": "schema:DeploymentStartRequest"
+      },
+      {
+        "from": "operation:post:/deployments",
+        "kind": "RETURNS",
+        "to": "schema:Deployment"
+      },
+      {
+        "from": "operation:put:/deployments/stop",
+        "kind": "ACCEPTS",
+        "to": "schema:DeploymentCancellation"
+      },
+      {
+        "from": "operation:get:/deployments/{deploymentId}",
+        "kind": "RETURNS",
+        "to": "schema:ProjectDeployment"
+      },
+      {
+        "from": "operation:get:/environments",
+        "kind": "RETURNS",
+        "to": "schema:DeploymentEnvironmentLookupModel"
+      },
+      {
+        "from": "operation:put:/environments",
+        "kind": "ACCEPTS",
+        "to": "schema:DeploymentEnvironmentWithSettings"
+      },
+      {
+        "from": "operation:put:/environments",
+        "kind": "RETURNS",
+        "to": "schema:DeploymentEnvironmentWithSettings"
+      },
+      {
+        "from": "operation:post:/environments",
+        "kind": "ACCEPTS",
+        "to": "schema:DeploymentEnvironmentAddition"
+      },
+      {
+        "from": "operation:post:/environments",
+        "kind": "RETURNS",
+        "to": "schema:DeploymentEnvironmentWithSettings"
+      },
+      {
+        "from": "operation:get:/environments/{deploymentEnvironmentId}/deployments",
+        "kind": "RETURNS",
+        "to": "schema:DeploymentEnvironmentDeploymentsResults"
+      },
+      {
+        "from": "operation:get:/environments/{deploymentEnvironmentId}/settings",
+        "kind": "RETURNS",
+        "to": "schema:DeploymentEnvironmentSettingsResults"
+      },
+      {
+        "from": "operation:get:/projects",
+        "kind": "RETURNS",
+        "to": "schema:Project"
+      },
+      {
+        "from": "operation:put:/projects",
+        "kind": "ACCEPTS",
+        "to": "schema:ProjectWithConfiguration"
+      },
+      {
+        "from": "operation:post:/projects",
+        "kind": "ACCEPTS",
+        "to": "schema:ProjectAddition"
+      },
+      {
+        "from": "operation:post:/projects",
+        "kind": "RETURNS",
+        "to": "schema:Project"
+      },
+      {
+        "from": "operation:get:/projects/{accountName}/{projectSlug}",
+        "kind": "RETURNS",
+        "to": "schema:ProjectBuildResults"
+      },
+      {
+        "from": "operation:get:/projects/{accountName}/{projectSlug}/branch/{buildBranch}",
+        "kind": "RETURNS",
+        "to": "schema:ProjectBuildResults"
+      },
+      {
+        "from": "operation:get:/projects/{accountName}/{projectSlug}/build/{buildVersion}",
+        "kind": "RETURNS",
+        "to": "schema:ProjectBuildResults"
+      },
+      {
+        "from": "operation:get:/projects/{accountName}/{projectSlug}/deployments",
+        "kind": "RETURNS",
+        "to": "schema:ProjectDeploymentsResults"
+      },
+      {
+        "from": "operation:get:/projects/{accountName}/{projectSlug}/history",
+        "kind": "RETURNS",
+        "to": "schema:ProjectHistory"
+      },
+      {
+        "from": "operation:get:/projects/{accountName}/{projectSlug}/settings",
+        "kind": "RETURNS",
+        "to": "schema:ProjectSettingsResults"
+      },
+      {
+        "from": "operation:put:/projects/{accountName}/{projectSlug}/settings/build-number",
+        "kind": "ACCEPTS",
+        "to": "schema:ProjectBuildNumberUpdate"
+      },
+      {
+        "from": "operation:get:/projects/{accountName}/{projectSlug}/settings/environment-variables",
+        "kind": "RETURNS",
+        "to": "schema:StoredNameValue"
+      },
+      {
+        "from": "operation:put:/projects/{accountName}/{projectSlug}/settings/environment-variables",
+        "kind": "ACCEPTS",
+        "to": "schema:StoredNameValue"
+      },
+      {
+        "from": "operation:get:/roles",
+        "kind": "RETURNS",
+        "to": "schema:Role"
+      },
+      {
+        "from": "operation:put:/roles",
+        "kind": "ACCEPTS",
+        "to": "schema:RoleWithGroups"
+      },
+      {
+        "from": "operation:put:/roles",
+        "kind": "RETURNS",
+        "to": "schema:RoleWithGroups"
+      },
+      {
+        "from": "operation:post:/roles",
+        "kind": "ACCEPTS",
+        "to": "schema:RoleAddition"
+      },
+      {
+        "from": "operation:post:/roles",
+        "kind": "RETURNS",
+        "to": "schema:RoleWithGroups"
+      },
+      {
+        "from": "operation:get:/roles/{roleId}",
+        "kind": "RETURNS",
+        "to": "schema:RoleWithGroups"
+      },
+      {
+        "from": "operation:put:/user/join-account",
+        "kind": "ACCEPTS",
+        "to": "schema:JoinAccountRequest"
+      },
+      {
+        "from": "operation:put:/user/join-account",
+        "kind": "RETURNS",
+        "to": "schema:SessionModel"
+      },
+      {
+        "from": "operation:get:/users",
+        "kind": "RETURNS",
+        "to": "schema:UserAccount"
+      },
+      {
+        "from": "operation:put:/users",
+        "kind": "ACCEPTS",
+        "to": "schema:UserAccount"
+      },
+      {
+        "from": "operation:get:/users/invitations",
+        "kind": "RETURNS",
+        "to": "schema:UserInvitationModel"
+      },
+      {
+        "from": "operation:post:/users/invitations",
+        "kind": "ACCEPTS",
+        "to": "schema:InviteUserRequest"
+      },
+      {
+        "from": "operation:get:/users/{userId}",
+        "kind": "RETURNS",
+        "to": "schema:UserAccountRolesResults"
+      },
+      {
+        "from": "schema:AceAccessRight",
+        "kind": "REFERENCES",
+        "to": "schema:AccessRightName"
+      },
+      {
+        "from": "schema:AceAccessRightDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:AccessRightName"
+      },
+      {
+        "from": "schema:Artifact",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactType"
+      },
+      {
+        "from": "schema:ArtifactModel",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactType"
+      },
+      {
+        "from": "schema:Build",
+        "kind": "REFERENCES",
+        "to": "schema:BuildJob"
+      },
+      {
+        "from": "schema:Build",
+        "kind": "REFERENCES",
+        "to": "schema:BuildLookupModel"
+      },
+      {
+        "from": "schema:Build",
+        "kind": "REFERENCES",
+        "to": "schema:BuildMessage"
+      },
+      {
+        "from": "schema:Build",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Build",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:BuildJob",
+        "kind": "REFERENCES",
+        "to": "schema:Job"
+      },
+      {
+        "from": "schema:BuildJob",
+        "kind": "REFERENCES",
+        "to": "schema:OSType"
+      },
+      {
+        "from": "schema:BuildMessage",
+        "kind": "REFERENCES",
+        "to": "schema:BuildMessageCategory"
+      },
+      {
+        "from": "schema:BuildWorkerImage",
+        "kind": "REFERENCES",
+        "to": "schema:BuildCloudName"
+      },
+      {
+        "from": "schema:BuildWorkerImage",
+        "kind": "REFERENCES",
+        "to": "schema:BuildWorkerImageName"
+      },
+      {
+        "from": "schema:BuildWorkerImage",
+        "kind": "REFERENCES",
+        "to": "schema:OSType"
+      },
+      {
+        "from": "schema:Deployment",
+        "kind": "REFERENCES",
+        "to": "schema:Build"
+      },
+      {
+        "from": "schema:Deployment",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentEnvironment"
+      },
+      {
+        "from": "schema:Deployment",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentJob"
+      },
+      {
+        "from": "schema:Deployment",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentLookupModel"
+      },
+      {
+        "from": "schema:Deployment",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:DeploymentEnvironment",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentEnvironmentLookupModel"
+      },
+      {
+        "from": "schema:DeploymentEnvironment",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentProjectSelectionMode"
+      },
+      {
+        "from": "schema:DeploymentEnvironment",
+        "kind": "REFERENCES",
+        "to": "schema:SecurityDescriptor"
+      },
+      {
+        "from": "schema:DeploymentEnvironment",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentAddition",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentEnvironmentSettings"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentAddition",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentProviderType"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentDeploymentsResults",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentEnvironment"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentDeploymentsResults",
+        "kind": "REFERENCES",
+        "to": "schema:EnvironmentDeploymentModel"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentLookupModel",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentProviderType"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentSettings",
+        "kind": "REFERENCES",
+        "to": "schema:NotificationProviderSettings"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentSettings",
+        "kind": "REFERENCES",
+        "to": "schema:StoredNameValue"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentSettingsResults",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentEnvironmentWithSettings"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentWithSettings",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentEnvironment"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentWithSettings",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentEnvironmentProject"
+      },
+      {
+        "from": "schema:DeploymentEnvironmentWithSettings",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentEnvironmentSettings"
+      },
+      {
+        "from": "schema:DeploymentJob",
+        "kind": "REFERENCES",
+        "to": "schema:Job"
+      },
+      {
+        "from": "schema:DeploymentLookupModel",
+        "kind": "REFERENCES",
+        "to": "schema:BuildLookupModel"
+      },
+      {
+        "from": "schema:DeploymentLookupModel",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:DeploymentProvider",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentProviderType"
+      },
+      {
+        "from": "schema:DeploymentProvider",
+        "kind": "REFERENCES",
+        "to": "schema:StoredNameValue"
+      },
+      {
+        "from": "schema:DeploymentProvider",
+        "kind": "REFERENCES",
+        "to": "schema:StringValueObject"
+      },
+      {
+        "from": "schema:EnvironmentDeploymentModel",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentLookupModel"
+      },
+      {
+        "from": "schema:EnvironmentDeploymentModel",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectLookupModel"
+      },
+      {
+        "from": "schema:GroupPermissions",
+        "kind": "REFERENCES",
+        "to": "schema:GroupName"
+      },
+      {
+        "from": "schema:GroupPermissions",
+        "kind": "REFERENCES",
+        "to": "schema:PermissionState"
+      },
+      {
+        "from": "schema:Job",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Job",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:NotificationProviderSettings",
+        "kind": "REFERENCES",
+        "to": "schema:NotificationProviderType"
+      },
+      {
+        "from": "schema:NotificationProviderSettings",
+        "kind": "REFERENCES",
+        "to": "schema:NotificationSettings"
+      },
+      {
+        "from": "schema:NotificationSettings",
+        "kind": "REFERENCES",
+        "to": "schema:HttpMethodRestricted"
+      },
+      {
+        "from": "schema:NotificationSettings",
+        "kind": "REFERENCES",
+        "to": "schema:NotificationSettingsType"
+      },
+      {
+        "from": "schema:NotificationSettings",
+        "kind": "REFERENCES",
+        "to": "schema:StoredNameValue"
+      },
+      {
+        "from": "schema:NotificationSettings",
+        "kind": "REFERENCES",
+        "to": "schema:StoredValue"
+      },
+      {
+        "from": "schema:NotificationSettings",
+        "kind": "REFERENCES",
+        "to": "schema:StringValueObject"
+      },
+      {
+        "from": "schema:NuGetFeed",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:PermissionState",
+        "kind": "REFERENCES",
+        "to": "schema:PermissionName"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:Build"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:NuGetFeed"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectLookupModel"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:RepositoryProvider"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:RepositoryScm"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:SecurityDescriptor"
+      },
+      {
+        "from": "schema:Project",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:ProjectAddition",
+        "kind": "REFERENCES",
+        "to": "schema:RepositoryAuthenticationType"
+      },
+      {
+        "from": "schema:ProjectAddition",
+        "kind": "REFERENCES",
+        "to": "schema:RepositoryProvider"
+      },
+      {
+        "from": "schema:ProjectBuildResults",
+        "kind": "REFERENCES",
+        "to": "schema:Build"
+      },
+      {
+        "from": "schema:ProjectBuildResults",
+        "kind": "REFERENCES",
+        "to": "schema:Project"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:Artifact"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:BuildMode"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:BuildWorkerImageName"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:DeployMode"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentProvider"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:HostEntry"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:MSBuildVerbosity"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:NotificationProviderSettings"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:OSServiceName"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:PlatformName"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectBranchesMode"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:Script"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:StoredNameValue"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:StoredNameValueMatrix"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:StringValueObject"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:TestMode"
+      },
+      {
+        "from": "schema:ProjectConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:UnknownType"
+      },
+      {
+        "from": "schema:ProjectDeployment",
+        "kind": "REFERENCES",
+        "to": "schema:Deployment"
+      },
+      {
+        "from": "schema:ProjectDeployment",
+        "kind": "REFERENCES",
+        "to": "schema:Project"
+      },
+      {
+        "from": "schema:ProjectDeploymentModel",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentEnvironmentLookupModel"
+      },
+      {
+        "from": "schema:ProjectDeploymentModel",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentLookupModel"
+      },
+      {
+        "from": "schema:ProjectDeploymentsResults",
+        "kind": "REFERENCES",
+        "to": "schema:Project"
+      },
+      {
+        "from": "schema:ProjectDeploymentsResults",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectDeploymentModel"
+      },
+      {
+        "from": "schema:ProjectHistory",
+        "kind": "REFERENCES",
+        "to": "schema:Build"
+      },
+      {
+        "from": "schema:ProjectHistory",
+        "kind": "REFERENCES",
+        "to": "schema:Project"
+      },
+      {
+        "from": "schema:ProjectSettingsResults",
+        "kind": "REFERENCES",
+        "to": "schema:BuildWorkerImage"
+      },
+      {
+        "from": "schema:ProjectSettingsResults",
+        "kind": "REFERENCES",
+        "to": "schema:Project"
+      },
+      {
+        "from": "schema:ProjectSettingsResults",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectWithConfiguration"
+      },
+      {
+        "from": "schema:ProjectSettingsResults",
+        "kind": "REFERENCES",
+        "to": "schema:StringValueObject"
+      },
+      {
+        "from": "schema:ProjectWithConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:Project"
+      },
+      {
+        "from": "schema:ProjectWithConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectConfiguration"
+      },
+      {
+        "from": "schema:ProjectWithConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:RepositoryAuthenticationType"
+      },
+      {
+        "from": "schema:Role",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:RoleAce",
+        "kind": "REFERENCES",
+        "to": "schema:AceAccessRight"
+      },
+      {
+        "from": "schema:RoleWithGroups",
+        "kind": "REFERENCES",
+        "to": "schema:GroupPermissions"
+      },
+      {
+        "from": "schema:RoleWithGroups",
+        "kind": "REFERENCES",
+        "to": "schema:Role"
+      },
+      {
+        "from": "schema:Script",
+        "kind": "REFERENCES",
+        "to": "schema:ScriptLanguage"
+      },
+      {
+        "from": "schema:SecurityDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:AceAccessRightDefinition"
+      },
+      {
+        "from": "schema:SecurityDescriptor",
+        "kind": "REFERENCES",
+        "to": "schema:RoleAce"
+      },
+      {
+        "from": "schema:SessionModel",
+        "kind": "REFERENCES",
+        "to": "schema:SessionUserAccountModel"
+      },
+      {
+        "from": "schema:SessionModel",
+        "kind": "REFERENCES",
+        "to": "schema:SessionUserModel"
+      },
+      {
+        "from": "schema:SessionUserAccountModel",
+        "kind": "REFERENCES",
+        "to": "schema:FeatureFlags"
+      },
+      {
+        "from": "schema:SessionUserAccountModel",
+        "kind": "REFERENCES",
+        "to": "schema:PermissionName"
+      },
+      {
+        "from": "schema:SessionUserAccountModel",
+        "kind": "REFERENCES",
+        "to": "schema:PlanName"
+      },
+      {
+        "from": "schema:SessionUserAccountModel",
+        "kind": "REFERENCES",
+        "to": "schema:PlanStatus"
+      },
+      {
+        "from": "schema:SessionUserAccountModel",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:SessionUserModel",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:StoredNameValue",
+        "kind": "REFERENCES",
+        "to": "schema:StoredValue"
+      },
+      {
+        "from": "schema:StoredNameValueMatrix",
+        "kind": "REFERENCES",
+        "to": "schema:StoredNameValue"
+      },
+      {
+        "from": "schema:UserAccount",
+        "kind": "REFERENCES",
+        "to": "schema:Timestamped"
+      },
+      {
+        "from": "schema:UserAccountRolesResults",
+        "kind": "REFERENCES",
+        "to": "schema:Role"
+      },
+      {
+        "from": "schema:UserAccountRolesResults",
+        "kind": "REFERENCES",
+        "to": "schema:UserAccount"
+      },
+      {
+        "from": "schema:UserAccountSettings",
+        "kind": "REFERENCES",
+        "to": "schema:BuildNotificationFrequency"
+      },
+      {
+        "from": "schema:UserAccountSettings",
+        "kind": "REFERENCES",
+        "to": "schema:DeploymentNotificationFrequency"
       }
     ],
     "nodes": [
@@ -283,12 +1118,33 @@
         "name": "encryptValue",
         "path": "/account/encrypt",
         "pointer": "#/paths/~1account~1encrypt/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EncryptRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Encrypt a value for use in StoredValue."
+        "summary": "Encrypt a value for use in StoredValue.",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -296,10 +1152,33 @@
         "kind": "operation",
         "method": "get",
         "name": "getBuildArtifacts",
+        "parameters": [
+          {
+            "description": "Build ID (`jobId` property of `BuildJob`)",
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buildjobs/{jobId}/artifacts",
         "pointer": "#/paths/~1buildjobs~1{jobId}~1artifacts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactModel[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get build artifacts"
+        "summary": "Get build artifacts",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -307,10 +1186,40 @@
         "kind": "operation",
         "method": "get",
         "name": "getBuildArtifact",
+        "parameters": [
+          {
+            "description": "Build ID (`jobId` property of `BuildJob`)",
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "File name (or path) of a build artifact file.",
+            "in": "path",
+            "name": "artifactFileName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buildjobs/{jobId}/artifacts/{artifactFileName}",
         "pointer": "#/paths/~1buildjobs~1{jobId}~1artifacts~1{artifactFileName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Download build artifact"
+        "summary": "Download build artifact",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -318,10 +1227,70 @@
         "kind": "operation",
         "method": "get",
         "name": "getBuildLog",
+        "parameters": [
+          {
+            "description": "Build ID (`jobId` property of `BuildJob`)",
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/buildjobs/{jobId}/log",
         "pointer": "#/paths/~1buildjobs~1{jobId}~1log/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Download build log"
+        "summary": "Download build log",
+        "tags": [
+          "Build"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "If `reRunIncomplete` is `true` and all jobs in the referenced build completed successfully, a 500 Internal Server Error is returned with the message \"No failed…",
+        "id": "operation:put:/builds",
+        "kind": "operation",
+        "method": "put",
+        "name": "reRunBuild",
+        "path": "/builds",
+        "pointer": "#/paths/~1builds/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ReRunBuildRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Build"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "summary": "Re-run build",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -331,27 +1300,33 @@
         "name": "startBuild",
         "path": "/builds",
         "pointer": "#/paths/~1builds/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BuildStartRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Build"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Start build of branch most recent commit"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:put:/builds",
-        "kind": "operation",
-        "method": "put",
-        "name": "reRunBuild",
-        "path": "/builds",
-        "pointer": "#/paths/~1builds/put",
-        "security": [
-          {
-            "apiToken": []
-          }
-        ],
-        "summary": "Re-run build"
+        "summary": "Start build of branch most recent commit",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -359,14 +1334,50 @@
         "kind": "operation",
         "method": "delete",
         "name": "cancelBuild",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Build Version (`version` property of `Build`)",
+            "in": "path",
+            "name": "buildVersion",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/builds/{accountName}/{projectSlug}/{buildVersion}",
         "pointer": "#/paths/~1builds~1{accountName}~1{projectSlug}~1{buildVersion}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Cancel build"
+        "summary": "Cancel build",
+        "tags": [
+          "Build"
+        ]
       },
       {
         "deprecated": false,
@@ -376,12 +1387,26 @@
         "name": "getCollaborators",
         "path": "/collaborators",
         "pointer": "#/paths/~1collaborators/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserAccount[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get collaborators"
+        "summary": "Get collaborators",
+        "tags": [
+          "Collaborator"
+        ]
       },
       {
         "deprecated": false,
@@ -391,27 +1416,32 @@
         "name": "updateCollaborator",
         "path": "/collaborators",
         "pointer": "#/paths/~1collaborators/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CollaboratorUpdate"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Update collaborator"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/collaborators/{userId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteCollaborator",
-        "path": "/collaborators/{userId}",
-        "pointer": "#/paths/~1collaborators~1{userId}/delete",
-        "security": [
-          {
-            "apiToken": []
-          }
-        ],
-        "summary": "Delete collaborator"
+        "summary": "Update collaborator",
+        "tags": [
+          "Collaborator"
+        ]
       },
       {
         "deprecated": false,
@@ -419,14 +1449,74 @@
         "kind": "operation",
         "method": "get",
         "name": "getCollaborator",
+        "parameters": [
+          {
+            "description": "User ID",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/collaborators/{userId}",
         "pointer": "#/paths/~1collaborators~1{userId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserAccountRolesResults"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get collaborator"
+        "summary": "Get collaborator",
+        "tags": [
+          "Collaborator"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/collaborators/{userId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteCollaborator",
+        "parameters": [
+          {
+            "description": "User ID",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/collaborators/{userId}",
+        "pointer": "#/paths/~1collaborators~1{userId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "summary": "Delete collaborator",
+        "tags": [
+          "Collaborator"
+        ]
       },
       {
         "deprecated": false,
@@ -436,12 +1526,33 @@
         "name": "startDeployment",
         "path": "/deployments",
         "pointer": "#/paths/~1deployments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DeploymentStartRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Deployment"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Start deployment"
+        "summary": "Start deployment",
+        "tags": [
+          "Deployment"
+        ]
       },
       {
         "deprecated": false,
@@ -451,12 +1562,32 @@
         "name": "cancelDeployment",
         "path": "/deployments/stop",
         "pointer": "#/paths/~1deployments~1stop/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DeploymentCancellation"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Cancel deployment"
+        "summary": "Cancel deployment",
+        "tags": [
+          "Deployment"
+        ]
       },
       {
         "deprecated": false,
@@ -464,14 +1595,37 @@
         "kind": "operation",
         "method": "get",
         "name": "getDeployment",
+        "parameters": [
+          {
+            "description": "Deployment ID (`deploymentId` property of `Deployment`)",
+            "in": "path",
+            "name": "deploymentId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/deployments/{deploymentId}",
         "pointer": "#/paths/~1deployments~1{deploymentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectDeployment"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get deployment"
+        "summary": "Get deployment",
+        "tags": [
+          "Deployment"
+        ]
       },
       {
         "deprecated": false,
@@ -481,27 +1635,26 @@
         "name": "getEnvironments",
         "path": "/environments",
         "pointer": "#/paths/~1environments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeploymentEnvironmentLookupModel[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get environments"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/environments",
-        "kind": "operation",
-        "method": "post",
-        "name": "addEnvironment",
-        "path": "/environments",
-        "pointer": "#/paths/~1environments/post",
-        "security": [
-          {
-            "apiToken": []
-          }
-        ],
-        "summary": "Add environment"
+        "summary": "Get environments",
+        "tags": [
+          "Environment"
+        ]
       },
       {
         "deprecated": false,
@@ -511,12 +1664,69 @@
         "name": "updateEnvironment",
         "path": "/environments",
         "pointer": "#/paths/~1environments/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DeploymentEnvironmentWithSettings"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeploymentEnvironmentWithSettings"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Update environment"
+        "summary": "Update environment",
+        "tags": [
+          "Environment"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/environments",
+        "kind": "operation",
+        "method": "post",
+        "name": "addEnvironment",
+        "path": "/environments",
+        "pointer": "#/paths/~1environments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DeploymentEnvironmentAddition"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeploymentEnvironmentWithSettings"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "summary": "Add environment",
+        "tags": [
+          "Environment"
+        ]
       },
       {
         "deprecated": false,
@@ -524,14 +1734,36 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteEnvironment",
+        "parameters": [
+          {
+            "description": "Deployment Environment ID (`deploymentEnvironmentId` property of `DeploymentEnvironment`)",
+            "in": "path",
+            "name": "deploymentEnvironmentId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/environments/{deploymentEnvironmentId}",
         "pointer": "#/paths/~1environments~1{deploymentEnvironmentId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Delete environment"
+        "summary": "Delete environment",
+        "tags": [
+          "Environment"
+        ]
       },
       {
         "deprecated": false,
@@ -539,14 +1771,37 @@
         "kind": "operation",
         "method": "get",
         "name": "getEnvironmentDeployments",
+        "parameters": [
+          {
+            "description": "Deployment Environment ID (`deploymentEnvironmentId` property of `DeploymentEnvironment`)",
+            "in": "path",
+            "name": "deploymentEnvironmentId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/environments/{deploymentEnvironmentId}/deployments",
         "pointer": "#/paths/~1environments~1{deploymentEnvironmentId}~1deployments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeploymentEnvironmentDeploymentsResults"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get environment deployments"
+        "summary": "Get environment deployments",
+        "tags": [
+          "Environment"
+        ]
       },
       {
         "deprecated": false,
@@ -554,14 +1809,37 @@
         "kind": "operation",
         "method": "get",
         "name": "getEnvironmentSettings",
+        "parameters": [
+          {
+            "description": "Deployment Environment ID (`deploymentEnvironmentId` property of `DeploymentEnvironment`)",
+            "in": "path",
+            "name": "deploymentEnvironmentId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/environments/{deploymentEnvironmentId}/settings",
         "pointer": "#/paths/~1environments~1{deploymentEnvironmentId}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeploymentEnvironmentSettingsResults"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get environment settings"
+        "summary": "Get environment settings",
+        "tags": [
+          "Environment"
+        ]
       },
       {
         "deprecated": false,
@@ -571,27 +1849,26 @@
         "name": "getProjects",
         "path": "/projects",
         "pointer": "#/paths/~1projects/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Project[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get projects"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/projects",
-        "kind": "operation",
-        "method": "post",
-        "name": "addProject",
-        "path": "/projects",
-        "pointer": "#/paths/~1projects/post",
-        "security": [
-          {
-            "apiToken": []
-          }
-        ],
-        "summary": "Add project"
+        "summary": "Get projects",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -601,12 +1878,68 @@
         "name": "updateProject",
         "path": "/projects",
         "pointer": "#/paths/~1projects/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProjectWithConfiguration"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Update project"
+        "summary": "Update project",
+        "tags": [
+          "Project"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/projects",
+        "kind": "operation",
+        "method": "post",
+        "name": "addProject",
+        "path": "/projects",
+        "pointer": "#/paths/~1projects/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProjectAddition"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Project"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "summary": "Add project",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -614,10 +1947,95 @@
         "kind": "operation",
         "method": "get",
         "name": "getPublicProjectStatusBadge",
+        "parameters": [
+          {
+            "description": "Repository provider supported for badges",
+            "enum": [
+              "bitBucket",
+              "gitHub"
+            ],
+            "in": "path",
+            "name": "badgeRepoProvider",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Account name with repository provider",
+            "in": "path",
+            "name": "repoAccountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Slug (URL component) of repository.",
+            "in": "path",
+            "name": "repoSlug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Repository Branch",
+            "in": "query",
+            "name": "branch",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Return an SVG image instead of PNG?",
+            "in": "query",
+            "name": "svg",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Return a larger image suitable for retina displays?",
+            "in": "query",
+            "name": "retina",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Text to show in badge when build is passing.",
+            "in": "query",
+            "name": "passingText",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Text to show in badge when build is failing.",
+            "in": "query",
+            "name": "failingText",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Text to show in badge when build is pending.",
+            "in": "query",
+            "name": "pendingText",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/projects/status/{badgeRepoProvider}/{repoAccountName}/{repoSlug}",
         "pointer": "#/paths/~1projects~1status~1{badgeRepoProvider}~1{repoAccountName}~1{repoSlug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get status badge image for a project with a public repository"
+        "summary": "Get status badge image for a project with a public repository",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -625,10 +2043,70 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectStatusBadge",
+        "parameters": [
+          {
+            "description": "ID of the status badge (`statusBadgeId` from `ProjectWithConfiguration`).",
+            "in": "path",
+            "name": "statusBadgeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Return an SVG image instead of PNG?",
+            "in": "query",
+            "name": "svg",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Return a larger image suitable for retina displays?",
+            "in": "query",
+            "name": "retina",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Text to show in badge when build is passing.",
+            "in": "query",
+            "name": "passingText",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Text to show in badge when build is failing.",
+            "in": "query",
+            "name": "failingText",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Text to show in badge when build is pending.",
+            "in": "query",
+            "name": "pendingText",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/projects/status/{statusBadgeId}",
         "pointer": "#/paths/~1projects~1status~1{statusBadgeId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get project status badge image"
+        "summary": "Get project status badge image",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -636,25 +2114,77 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectBranchStatusBadge",
-        "path": "/projects/status/{statusBadgeId}/branch/{buildBranch}",
-        "pointer": "#/paths/~1projects~1status~1{statusBadgeId}~1branch~1{buildBranch}/get",
-        "security": [],
-        "summary": "Get project branch status badge image"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/projects/{accountName}/{projectSlug}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteProject",
-        "path": "/projects/{accountName}/{projectSlug}",
-        "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}/delete",
-        "security": [
+        "parameters": [
           {
-            "apiToken": []
+            "description": "ID of the status badge (`statusBadgeId` from `ProjectWithConfiguration`).",
+            "in": "path",
+            "name": "statusBadgeId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Build Branch",
+            "in": "path",
+            "name": "buildBranch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Return an SVG image instead of PNG?",
+            "in": "query",
+            "name": "svg",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Return a larger image suitable for retina displays?",
+            "in": "query",
+            "name": "retina",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Text to show in badge when build is passing.",
+            "in": "query",
+            "name": "passingText",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Text to show in badge when build is failing.",
+            "in": "query",
+            "name": "failingText",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Text to show in badge when build is pending.",
+            "in": "query",
+            "name": "pendingText",
+            "required": false,
+            "type": "string"
           }
         ],
-        "summary": "Delete project"
+        "path": "/projects/status/{statusBadgeId}/branch/{buildBranch}",
+        "pointer": "#/paths/~1projects~1status~1{statusBadgeId}~1branch~1{buildBranch}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": "Get project branch status badge image",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -662,21 +2192,169 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectLastBuild",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectBuildResults"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get project last build"
+        "summary": "Get project last build",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/projects/{accountName}/{projectSlug}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteProject",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/projects/{accountName}/{projectSlug}",
+        "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "summary": "Delete project",
+        "tags": [
+          "Project"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The `job` parameter is mandatory if the build contains multiple jobs.",
         "id": "operation:get:/projects/{accountName}/{projectSlug}/artifacts/{artifactFileName}",
         "kind": "operation",
         "method": "get",
         "name": "getProjectArtifact",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "File name (or path) of a build artifact file.",
+            "in": "path",
+            "name": "artifactFileName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Repository Branch",
+            "in": "query",
+            "name": "branch",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A git (or other VCS) tag",
+            "in": "query",
+            "name": "tag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Name of the build job.",
+            "in": "query",
+            "name": "job",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Include not only `successful`, but also jobs with `failed`, and `cancelled` status.",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Include PR builds in the search results?",
+            "in": "query",
+            "name": "pr",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/artifacts/{artifactFileName}",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1artifacts~1{artifactFileName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get last successful build artifact"
+        "summary": "Get last successful build artifact",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -684,10 +2362,47 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectLastBuildBranch",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Build Branch",
+            "in": "path",
+            "name": "buildBranch",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/branch/{buildBranch}",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1branch~1{buildBranch}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectBuildResults"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get project last branch build"
+        "summary": "Get project last branch build",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -695,10 +2410,47 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectBuildByVersion",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Build Version (`version` property of `Build`)",
+            "in": "path",
+            "name": "buildVersion",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/build/{buildVersion}",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1build~1{buildVersion}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectBuildResults"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get project build by version"
+        "summary": "Get project build by version",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -706,14 +2458,43 @@
         "kind": "operation",
         "method": "delete",
         "name": "deleteProjectBuildCache",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/buildcache",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1buildcache/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Delete project build cache"
+        "summary": "Delete project build cache",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -721,14 +2502,51 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectDeployments",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of results to include in the response.",
+            "in": "query",
+            "name": "recordsNumber",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/deployments",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1deployments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectDeploymentsResults"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get project deployments"
+        "summary": "Get project deployments",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -736,10 +2554,61 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectHistory",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Number of results to include in the response.",
+            "in": "query",
+            "name": "recordsNumber",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum `buildId` to include in the results (exclusive).",
+            "in": "query",
+            "name": "startBuildId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Repository Branch",
+            "in": "query",
+            "name": "branch",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/history",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1history/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectHistory"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get project history"
+        "summary": "Get project history",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -747,14 +2616,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectSettings",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/settings",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectSettingsResults"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get project settings"
+        "summary": "Get project settings",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -762,14 +2661,50 @@
         "kind": "operation",
         "method": "put",
         "name": "updateProjectBuildNumber",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/settings/build-number",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1settings~1build-number/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ProjectBuildNumberUpdate"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Update project build number"
+        "summary": "Update project build number",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -777,14 +2712,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectEnvironmentVariables",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/settings/environment-variables",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1settings~1environment-variables/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "StoredNameValue[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get project environment variables"
+        "summary": "Get project environment variables",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -792,14 +2757,50 @@
         "kind": "operation",
         "method": "put",
         "name": "updateProjectEnvironmentVariables",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/settings/environment-variables",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1settings~1environment-variables/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "StoredNameValue[]"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Update project environment variables"
+        "summary": "Update project environment variables",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -807,14 +2808,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getProjectSettingsYaml",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/settings/yaml",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1settings~1yaml/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get project settings in YAML"
+        "summary": "Get project settings in YAML",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -822,14 +2853,50 @@
         "kind": "operation",
         "method": "put",
         "name": "updateProjectSettingsYaml",
+        "parameters": [
+          {
+            "description": "AppVeyor account name on which to operate.",
+            "in": "path",
+            "name": "accountName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Project Slug",
+            "in": "path",
+            "name": "projectSlug",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/projects/{accountName}/{projectSlug}/settings/yaml",
         "pointer": "#/paths/~1projects~1{accountName}~1{projectSlug}~1settings~1yaml/put",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": true,
+          "type": "string:binary"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Update project settings in YAML"
+        "summary": "Update project settings in YAML",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -839,27 +2906,26 @@
         "name": "getRoles",
         "path": "/roles",
         "pointer": "#/paths/~1roles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Role[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get roles"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/roles",
-        "kind": "operation",
-        "method": "post",
-        "name": "addRole",
-        "path": "/roles",
-        "pointer": "#/paths/~1roles/post",
-        "security": [
-          {
-            "apiToken": []
-          }
-        ],
-        "summary": "Add role"
+        "summary": "Get roles",
+        "tags": [
+          "Role"
+        ]
       },
       {
         "deprecated": false,
@@ -869,27 +2935,69 @@
         "name": "updateRole",
         "path": "/roles",
         "pointer": "#/paths/~1roles/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "RoleWithGroups"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "RoleWithGroups"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Update role"
+        "summary": "Update role",
+        "tags": [
+          "Role"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/roles/{roleId}",
+        "id": "operation:post:/roles",
         "kind": "operation",
-        "method": "delete",
-        "name": "deleteRole",
-        "path": "/roles/{roleId}",
-        "pointer": "#/paths/~1roles~1{roleId}/delete",
+        "method": "post",
+        "name": "addRole",
+        "path": "/roles",
+        "pointer": "#/paths/~1roles/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "RoleAddition"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "RoleWithGroups"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Delete role"
+        "summary": "Add role",
+        "tags": [
+          "Role"
+        ]
       },
       {
         "deprecated": false,
@@ -897,14 +3005,74 @@
         "kind": "operation",
         "method": "get",
         "name": "getRole",
+        "parameters": [
+          {
+            "description": "Role ID",
+            "in": "path",
+            "name": "roleId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/roles/{roleId}",
         "pointer": "#/paths/~1roles~1{roleId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RoleWithGroups"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get role"
+        "summary": "Get role",
+        "tags": [
+          "Role"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/roles/{roleId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteRole",
+        "parameters": [
+          {
+            "description": "Role ID",
+            "in": "path",
+            "name": "roleId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/roles/{roleId}",
+        "pointer": "#/paths/~1roles~1{roleId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "summary": "Delete role",
+        "tags": [
+          "Role"
+        ]
       },
       {
         "deprecated": false,
@@ -914,12 +3082,33 @@
         "name": "joinAccount",
         "path": "/user/join-account",
         "pointer": "#/paths/~1user~1join-account/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "JoinAccountRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SessionModel"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Join Account"
+        "summary": "Join Account",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -929,12 +3118,26 @@
         "name": "getUsers",
         "path": "/users",
         "pointer": "#/paths/~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserAccount[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get users"
+        "summary": "Get users",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -944,12 +3147,32 @@
         "name": "updateUser",
         "path": "/users",
         "pointer": "#/paths/~1users/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UserAccount"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Update user"
+        "summary": "Update user",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -959,12 +3182,26 @@
         "name": "getUserInvitations",
         "path": "/users/invitations",
         "pointer": "#/paths/~1users~1invitations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserInvitationModel[]"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get user invitations"
+        "summary": "Get user invitations",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -974,12 +3211,32 @@
         "name": "inviteUser",
         "path": "/users/invitations",
         "pointer": "#/paths/~1users~1invitations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "InviteUserRequest"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Invite user"
+        "summary": "Invite user",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -987,29 +3244,36 @@
         "kind": "operation",
         "method": "delete",
         "name": "cancelUserInvitation",
+        "parameters": [
+          {
+            "description": "User Invitation ID",
+            "in": "path",
+            "name": "userInvitationId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/invitations/{userInvitationId}",
         "pointer": "#/paths/~1users~1invitations~1{userInvitationId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Cancel user invitation"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/users/{userId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteUser",
-        "path": "/users/{userId}",
-        "pointer": "#/paths/~1users~1{userId}/delete",
-        "security": [
-          {
-            "apiToken": []
-          }
-        ],
-        "summary": "Delete user"
+        "summary": "Cancel user invitation",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -1017,509 +3281,679 @@
         "kind": "operation",
         "method": "get",
         "name": "getUser",
+        "parameters": [
+          {
+            "description": "User ID",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{userId}",
         "pointer": "#/paths/~1users~1{userId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserAccountRolesResults"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiToken": []
           }
         ],
-        "summary": "Get user"
+        "summary": "Get user",
+        "tags": [
+          "User"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/users/{userId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteUser",
+        "parameters": [
+          {
+            "description": "User ID",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/users/{userId}",
+        "pointer": "#/paths/~1users~1{userId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apiToken": []
+          }
+        ],
+        "summary": "Delete user",
+        "tags": [
+          "User"
+        ]
       },
       {
         "id": "schema:AccessRightName",
         "kind": "schema",
-        "name": "AccessRightName"
+        "name": "AccessRightName",
+        "type": "string"
       },
       {
         "id": "schema:AceAccessRight",
         "kind": "schema",
-        "name": "AceAccessRight"
+        "name": "AceAccessRight",
+        "type": "object"
       },
       {
         "id": "schema:AceAccessRightDefinition",
         "kind": "schema",
-        "name": "AceAccessRightDefinition"
+        "name": "AceAccessRightDefinition",
+        "type": "object"
       },
       {
         "id": "schema:Artifact",
         "kind": "schema",
-        "name": "Artifact"
+        "name": "Artifact",
+        "type": "object"
       },
       {
         "id": "schema:ArtifactModel",
         "kind": "schema",
-        "name": "ArtifactModel"
+        "name": "ArtifactModel",
+        "type": "object"
       },
       {
+        "description": "Possible values from `Push-AppveyorArtifact` cmdlet `-Type` parameter.",
         "id": "schema:ArtifactType",
         "kind": "schema",
-        "name": "ArtifactType"
+        "name": "ArtifactType",
+        "type": "string"
       },
       {
         "id": "schema:Build",
         "kind": "schema",
-        "name": "Build"
+        "name": "Build",
+        "type": "BuildLookupModel|Timestamped|object"
       },
       {
         "id": "schema:BuildCloudName",
         "kind": "schema",
-        "name": "BuildCloudName"
+        "name": "BuildCloudName",
+        "type": "string"
       },
       {
         "id": "schema:BuildJob",
         "kind": "schema",
-        "name": "BuildJob"
+        "name": "BuildJob",
+        "type": "Job|object"
       },
       {
         "id": "schema:BuildLookupModel",
         "kind": "schema",
-        "name": "BuildLookupModel"
+        "name": "BuildLookupModel",
+        "type": "object"
       },
       {
         "id": "schema:BuildMessage",
         "kind": "schema",
-        "name": "BuildMessage"
+        "name": "BuildMessage",
+        "type": "object"
       },
       {
         "id": "schema:BuildMessageCategory",
         "kind": "schema",
-        "name": "BuildMessageCategory"
+        "name": "BuildMessageCategory",
+        "type": "string"
       },
       {
         "id": "schema:BuildMode",
         "kind": "schema",
-        "name": "BuildMode"
+        "name": "BuildMode",
+        "type": "string"
       },
       {
         "id": "schema:BuildNotificationFrequency",
         "kind": "schema",
-        "name": "BuildNotificationFrequency"
+        "name": "BuildNotificationFrequency",
+        "type": "string"
       },
       {
         "id": "schema:BuildStartRequest",
         "kind": "schema",
-        "name": "BuildStartRequest"
+        "name": "BuildStartRequest",
+        "type": "object"
       },
       {
         "id": "schema:BuildWorkerImage",
         "kind": "schema",
-        "name": "BuildWorkerImage"
+        "name": "BuildWorkerImage",
+        "type": "object"
       },
       {
+        "description": "Defines the available build worker image templates used to provision a virtual machine for a build.",
         "id": "schema:BuildWorkerImageName",
         "kind": "schema",
-        "name": "BuildWorkerImageName"
+        "name": "BuildWorkerImageName",
+        "type": "string"
       },
       {
+        "description": "Technically `userId` and `roleId` have default value 0 and are not required, but since user 0 and role 0 never exist it would always cause a 404 response.",
         "id": "schema:CollaboratorUpdate",
         "kind": "schema",
-        "name": "CollaboratorUpdate"
+        "name": "CollaboratorUpdate",
+        "type": "object"
       },
       {
         "id": "schema:DeployMode",
         "kind": "schema",
-        "name": "DeployMode"
+        "name": "DeployMode",
+        "type": "string"
       },
       {
         "id": "schema:Deployment",
         "kind": "schema",
-        "name": "Deployment"
+        "name": "Deployment",
+        "type": "DeploymentLookupModel|Timestamped|object"
       },
       {
         "id": "schema:DeploymentCancellation",
         "kind": "schema",
-        "name": "DeploymentCancellation"
+        "name": "DeploymentCancellation",
+        "type": "object"
       },
       {
         "id": "schema:DeploymentEnvironment",
         "kind": "schema",
-        "name": "DeploymentEnvironment"
+        "name": "DeploymentEnvironment",
+        "type": "DeploymentEnvironmentLookupModel|Timestamped|object"
       },
       {
         "id": "schema:DeploymentEnvironmentAddition",
         "kind": "schema",
-        "name": "DeploymentEnvironmentAddition"
+        "name": "DeploymentEnvironmentAddition",
+        "type": "object"
       },
       {
         "id": "schema:DeploymentEnvironmentDeploymentsResults",
         "kind": "schema",
-        "name": "DeploymentEnvironmentDeploymentsResults"
+        "name": "DeploymentEnvironmentDeploymentsResults",
+        "type": "object"
       },
       {
         "id": "schema:DeploymentEnvironmentLookupModel",
         "kind": "schema",
-        "name": "DeploymentEnvironmentLookupModel"
+        "name": "DeploymentEnvironmentLookupModel",
+        "type": "object"
       },
       {
         "id": "schema:DeploymentEnvironmentProject",
         "kind": "schema",
-        "name": "DeploymentEnvironmentProject"
+        "name": "DeploymentEnvironmentProject",
+        "type": "object"
       },
       {
         "id": "schema:DeploymentEnvironmentSettings",
         "kind": "schema",
-        "name": "DeploymentEnvironmentSettings"
+        "name": "DeploymentEnvironmentSettings",
+        "type": "object"
       },
       {
         "id": "schema:DeploymentEnvironmentSettingsResults",
         "kind": "schema",
-        "name": "DeploymentEnvironmentSettingsResults"
+        "name": "DeploymentEnvironmentSettingsResults",
+        "type": "object"
       },
       {
         "id": "schema:DeploymentEnvironmentWithSettings",
         "kind": "schema",
-        "name": "DeploymentEnvironmentWithSettings"
+        "name": "DeploymentEnvironmentWithSettings",
+        "type": "DeploymentEnvironment|object"
       },
       {
         "id": "schema:DeploymentJob",
         "kind": "schema",
-        "name": "DeploymentJob"
+        "name": "DeploymentJob",
+        "type": "Job|object"
       },
       {
         "id": "schema:DeploymentLookupModel",
         "kind": "schema",
-        "name": "DeploymentLookupModel"
+        "name": "DeploymentLookupModel",
+        "type": "object"
       },
       {
         "id": "schema:DeploymentNotificationFrequency",
         "kind": "schema",
-        "name": "DeploymentNotificationFrequency"
+        "name": "DeploymentNotificationFrequency",
+        "type": "string"
       },
       {
+        "description": "Project selection mode for deployment environments.",
         "id": "schema:DeploymentProjectSelectionMode",
         "kind": "schema",
-        "name": "DeploymentProjectSelectionMode"
+        "name": "DeploymentProjectSelectionMode",
+        "type": "integer"
       },
       {
         "id": "schema:DeploymentProvider",
         "kind": "schema",
-        "name": "DeploymentProvider"
+        "name": "DeploymentProvider",
+        "type": "object"
       },
       {
         "id": "schema:DeploymentProviderType",
         "kind": "schema",
-        "name": "DeploymentProviderType"
+        "name": "DeploymentProviderType",
+        "type": "string"
       },
       {
         "id": "schema:DeploymentStartRequest",
         "kind": "schema",
-        "name": "DeploymentStartRequest"
+        "name": "DeploymentStartRequest",
+        "type": "object"
       },
       {
         "id": "schema:EncryptRequest",
         "kind": "schema",
-        "name": "EncryptRequest"
+        "name": "EncryptRequest",
+        "type": "object"
       },
       {
         "id": "schema:EnvironmentDeploymentModel",
         "kind": "schema",
-        "name": "EnvironmentDeploymentModel"
+        "name": "EnvironmentDeploymentModel",
+        "type": "DeploymentLookupModel|object"
       },
       {
+        "description": "Schema of object returned in 4XX and 5XX responses.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:FeatureFlags",
         "kind": "schema",
-        "name": "FeatureFlags"
+        "name": "FeatureFlags",
+        "type": "string"
       },
       {
         "id": "schema:GroupName",
         "kind": "schema",
-        "name": "GroupName"
+        "name": "GroupName",
+        "type": "string"
       },
       {
         "id": "schema:GroupPermissions",
         "kind": "schema",
-        "name": "GroupPermissions"
+        "name": "GroupPermissions",
+        "type": "object"
       },
       {
         "id": "schema:HostEntry",
         "kind": "schema",
-        "name": "HostEntry"
+        "name": "HostEntry",
+        "type": "object"
       },
       {
         "id": "schema:HttpMethodRestricted",
         "kind": "schema",
-        "name": "HttpMethodRestricted"
+        "name": "HttpMethodRestricted",
+        "type": "string"
       },
       {
         "id": "schema:InviteUserRequest",
         "kind": "schema",
-        "name": "InviteUserRequest"
+        "name": "InviteUserRequest",
+        "type": "object"
       },
       {
         "id": "schema:Job",
         "kind": "schema",
-        "name": "Job"
+        "name": "Job",
+        "type": "Timestamped|object"
       },
       {
         "id": "schema:JoinAccountRequest",
         "kind": "schema",
-        "name": "JoinAccountRequest"
+        "name": "JoinAccountRequest",
+        "type": "object"
       },
       {
         "id": "schema:MSBuildVerbosity",
         "kind": "schema",
-        "name": "MSBuildVerbosity"
+        "name": "MSBuildVerbosity",
+        "type": "string"
       },
       {
         "id": "schema:NotificationProviderSettings",
         "kind": "schema",
-        "name": "NotificationProviderSettings"
+        "name": "NotificationProviderSettings",
+        "type": "object"
       },
       {
         "id": "schema:NotificationProviderType",
         "kind": "schema",
-        "name": "NotificationProviderType"
+        "name": "NotificationProviderType",
+        "type": "string"
       },
       {
+        "description": "This type is the union of the settings types for each of the various notification types supported by the API.",
         "id": "schema:NotificationSettings",
         "kind": "schema",
-        "name": "NotificationSettings"
+        "name": "NotificationSettings",
+        "type": "object"
       },
       {
         "id": "schema:NotificationSettingsType",
         "kind": "schema",
-        "name": "NotificationSettingsType"
+        "name": "NotificationSettingsType",
+        "type": "string"
       },
       {
         "id": "schema:NuGetFeed",
         "kind": "schema",
-        "name": "NuGetFeed"
+        "name": "NuGetFeed",
+        "type": "Timestamped|object"
       },
       {
         "id": "schema:OSServiceName",
         "kind": "schema",
-        "name": "OSServiceName"
+        "name": "OSServiceName",
+        "type": "string"
       },
       {
         "id": "schema:OSType",
         "kind": "schema",
-        "name": "OSType"
+        "name": "OSType",
+        "type": "string"
       },
       {
+        "description": "Available permission names.",
         "id": "schema:PermissionName",
         "kind": "schema",
-        "name": "PermissionName"
+        "name": "PermissionName",
+        "type": "string"
       },
       {
         "id": "schema:PermissionState",
         "kind": "schema",
-        "name": "PermissionState"
+        "name": "PermissionState",
+        "type": "object"
       },
       {
         "id": "schema:PlanName",
         "kind": "schema",
-        "name": "PlanName"
+        "name": "PlanName",
+        "type": "string"
       },
       {
         "id": "schema:PlanStatus",
         "kind": "schema",
-        "name": "PlanStatus"
+        "name": "PlanStatus",
+        "type": "string"
       },
       {
         "id": "schema:PlatformName",
         "kind": "schema",
-        "name": "PlatformName"
+        "name": "PlatformName",
+        "type": "string"
       },
       {
         "id": "schema:Project",
         "kind": "schema",
-        "name": "Project"
+        "name": "Project",
+        "type": "ProjectLookupModel|Timestamped|object"
       },
       {
+        "description": "`repositoryAuthentication` is only used for git, mercurial, subversion `repositoryProvider`.",
         "id": "schema:ProjectAddition",
         "kind": "schema",
-        "name": "ProjectAddition"
+        "name": "ProjectAddition",
+        "type": "object"
       },
       {
         "id": "schema:ProjectBranchesMode",
         "kind": "schema",
-        "name": "ProjectBranchesMode"
+        "name": "ProjectBranchesMode",
+        "type": "string"
       },
       {
         "id": "schema:ProjectBuildNumberUpdate",
         "kind": "schema",
-        "name": "ProjectBuildNumberUpdate"
+        "name": "ProjectBuildNumberUpdate",
+        "type": "object"
       },
       {
         "id": "schema:ProjectBuildResults",
         "kind": "schema",
-        "name": "ProjectBuildResults"
+        "name": "ProjectBuildResults",
+        "type": "object"
       },
       {
         "id": "schema:ProjectConfiguration",
         "kind": "schema",
-        "name": "ProjectConfiguration"
+        "name": "ProjectConfiguration",
+        "type": "object"
       },
       {
         "id": "schema:ProjectDeployment",
         "kind": "schema",
-        "name": "ProjectDeployment"
+        "name": "ProjectDeployment",
+        "type": "object"
       },
       {
         "id": "schema:ProjectDeploymentModel",
         "kind": "schema",
-        "name": "ProjectDeploymentModel"
+        "name": "ProjectDeploymentModel",
+        "type": "DeploymentLookupModel|object"
       },
       {
         "id": "schema:ProjectDeploymentsResults",
         "kind": "schema",
-        "name": "ProjectDeploymentsResults"
+        "name": "ProjectDeploymentsResults",
+        "type": "object"
       },
       {
         "id": "schema:ProjectHistory",
         "kind": "schema",
-        "name": "ProjectHistory"
+        "name": "ProjectHistory",
+        "type": "object"
       },
       {
         "id": "schema:ProjectLookupModel",
         "kind": "schema",
-        "name": "ProjectLookupModel"
+        "name": "ProjectLookupModel",
+        "type": "object"
       },
       {
         "id": "schema:ProjectSettingsResults",
         "kind": "schema",
-        "name": "ProjectSettingsResults"
+        "name": "ProjectSettingsResults",
+        "type": "object"
       },
       {
         "id": "schema:ProjectWithConfiguration",
         "kind": "schema",
-        "name": "ProjectWithConfiguration"
+        "name": "ProjectWithConfiguration",
+        "type": "Project|object"
       },
       {
         "id": "schema:ReRunBuildRequest",
         "kind": "schema",
-        "name": "ReRunBuildRequest"
+        "name": "ReRunBuildRequest",
+        "type": "object"
       },
       {
         "id": "schema:RepositoryAuthenticationType",
         "kind": "schema",
-        "name": "RepositoryAuthenticationType"
+        "name": "RepositoryAuthenticationType",
+        "type": "string"
       },
       {
         "id": "schema:RepositoryProvider",
         "kind": "schema",
-        "name": "RepositoryProvider"
+        "name": "RepositoryProvider",
+        "type": "string"
       },
       {
         "id": "schema:RepositoryScm",
         "kind": "schema",
-        "name": "RepositoryScm"
+        "name": "RepositoryScm",
+        "type": "string"
       },
       {
+        "description": "Technically `roleId` has default value 0 and is not required, but since role 0 never exists it would always cause a 404 response.",
         "id": "schema:Role",
         "kind": "schema",
-        "name": "Role"
+        "name": "Role",
+        "type": "Timestamped|object"
       },
       {
         "id": "schema:RoleAce",
         "kind": "schema",
-        "name": "RoleAce"
+        "name": "RoleAce",
+        "type": "object"
       },
       {
         "id": "schema:RoleAddition",
         "kind": "schema",
-        "name": "RoleAddition"
+        "name": "RoleAddition",
+        "type": "object"
       },
       {
         "id": "schema:RoleWithGroups",
         "kind": "schema",
-        "name": "RoleWithGroups"
+        "name": "RoleWithGroups",
+        "type": "Role|object"
       },
       {
         "id": "schema:Script",
         "kind": "schema",
-        "name": "Script"
+        "name": "Script",
+        "type": "object"
       },
       {
         "id": "schema:ScriptLanguage",
         "kind": "schema",
-        "name": "ScriptLanguage"
+        "name": "ScriptLanguage",
+        "type": "string"
       },
       {
         "id": "schema:SecurityDescriptor",
         "kind": "schema",
-        "name": "SecurityDescriptor"
+        "name": "SecurityDescriptor",
+        "type": "object"
       },
       {
         "id": "schema:SessionModel",
         "kind": "schema",
-        "name": "SessionModel"
+        "name": "SessionModel",
+        "type": "object"
       },
       {
         "id": "schema:SessionUserAccountModel",
         "kind": "schema",
-        "name": "SessionUserAccountModel"
+        "name": "SessionUserAccountModel",
+        "type": "Timestamped|object"
       },
       {
         "id": "schema:SessionUserModel",
         "kind": "schema",
-        "name": "SessionUserModel"
+        "name": "SessionUserModel",
+        "type": "Timestamped|object"
       },
       {
         "id": "schema:Status",
         "kind": "schema",
-        "name": "Status"
+        "name": "Status",
+        "type": "string"
       },
       {
         "id": "schema:StoredNameValue",
         "kind": "schema",
-        "name": "StoredNameValue"
+        "name": "StoredNameValue",
+        "type": "object"
       },
       {
         "id": "schema:StoredNameValueMatrix",
         "kind": "schema",
-        "name": "StoredNameValueMatrix"
+        "name": "StoredNameValueMatrix",
+        "type": "object"
       },
       {
         "id": "schema:StoredValue",
         "kind": "schema",
-        "name": "StoredValue"
+        "name": "StoredValue",
+        "type": "object"
       },
       {
         "id": "schema:StringValueObject",
         "kind": "schema",
-        "name": "StringValueObject"
+        "name": "StringValueObject",
+        "type": "object"
       },
       {
         "id": "schema:TestMode",
         "kind": "schema",
-        "name": "TestMode"
+        "name": "TestMode",
+        "type": "string"
       },
       {
         "id": "schema:Timestamped",
         "kind": "schema",
-        "name": "Timestamped"
+        "name": "Timestamped",
+        "type": "object"
       },
       {
+        "description": "A schema for values which have an undocumented/unknown type.",
         "id": "schema:UnknownType",
         "kind": "schema",
-        "name": "UnknownType"
+        "name": "UnknownType",
+        "type": "string"
       },
       {
         "id": "schema:UserAccount",
         "kind": "schema",
-        "name": "UserAccount"
+        "name": "UserAccount",
+        "type": "Timestamped|object"
       },
       {
+        "description": "The roles property contains all roles, not only the role for which the user is a member.",
         "id": "schema:UserAccountRolesResults",
         "kind": "schema",
-        "name": "UserAccountRolesResults"
+        "name": "UserAccountRolesResults",
+        "type": "object"
       },
       {
         "id": "schema:UserAccountSettings",
         "kind": "schema",
-        "name": "UserAccountSettings"
+        "name": "UserAccountSettings",
+        "type": "object"
       },
       {
         "id": "schema:UserInvitationModel",
         "kind": "schema",
-        "name": "UserInvitationModel"
+        "name": "UserInvitationModel",
+        "type": "object"
       }
     ]
   },

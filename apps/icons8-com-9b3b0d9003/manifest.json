@@ -43,6 +43,11 @@
         "from": "icons8-com-9b3b0d9003",
         "kind": "EXPOSES",
         "to": "operation:post:/api/task/web-font/icons"
+      },
+      {
+        "from": "schema:IconV3Item",
+        "kind": "REFERENCES",
+        "to": "schema:CompactIconV3Item"
       }
     ],
     "nodes": [
@@ -52,12 +57,55 @@
       },
       {
         "deprecated": false,
+        "description": "The operation will not return the categories that have less than 10 icons.",
         "id": "operation:get:/api/iconsets/v3/categories?platform={platform}&language={language}",
         "kind": "operation",
         "method": "get",
         "name": "Categories",
+        "parameters": [
+          {
+            "description": "the platform that we are searching icons for",
+            "enum": [
+              "ios7",
+              "win8",
+              "win10",
+              "android",
+              "androidL",
+              "color",
+              "office"
+            ],
+            "in": "path",
+            "name": "platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the language code to get localized result",
+            "enum": [
+              "en-US",
+              "fr-FR",
+              "de-DE",
+              "it-IT",
+              "pt-BR",
+              "pl-PL",
+              "ru-RU",
+              "es-ES"
+            ],
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/iconsets/v3/categories?platform={platform}&language={language}",
         "pointer": "#/paths/~1api~1iconsets~1v3~1categories?platform={platform}&language={language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Categories"
       },
@@ -67,8 +115,79 @@
         "kind": "operation",
         "method": "get",
         "name": "By Category",
+        "parameters": [
+          {
+            "description": "the code of category",
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the code of subcategory",
+            "in": "path",
+            "name": "subcategory",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "the maximum number of icons which you'd like to receive",
+            "in": "path",
+            "name": "amount",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "the offset from the first received result",
+            "in": "path",
+            "name": "offset",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "the style of the icons",
+            "enum": [
+              "ios7",
+              "win8",
+              "win10",
+              "android",
+              "androidL",
+              "color",
+              "office"
+            ],
+            "in": "path",
+            "name": "platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the language code to get localized result",
+            "enum": [
+              "en-US",
+              "fr-FR",
+              "de-DE",
+              "it-IT",
+              "pt-BR",
+              "pl-PL",
+              "ru-RU",
+              "es-ES"
+            ],
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/iconsets/v3/category?category={category}&subcategory={subcategory}&amount={amount}&offset={offset}&platform={platform}&language={language}",
         "pointer": "#/paths/~1api~1iconsets~1v3~1category?category={category}&subcategory={subcategory}&amount={amount}&offset={offset}&platform={platform}&language={language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "By Category"
       },
@@ -78,8 +197,65 @@
         "kind": "operation",
         "method": "get",
         "name": "Latest",
+        "parameters": [
+          {
+            "default": 25,
+            "description": "the maximum number of icons which you'd like to receive",
+            "in": "path",
+            "name": "amount",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "the offset from the first received result",
+            "in": "path",
+            "name": "offset",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "the style of the icons",
+            "enum": [
+              "ios7",
+              "win8",
+              "win10",
+              "android",
+              "androidL",
+              "color",
+              "office"
+            ],
+            "in": "path",
+            "name": "platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the language code to get localized result",
+            "enum": [
+              "en-US",
+              "fr-FR",
+              "de-DE",
+              "it-IT",
+              "pt-BR",
+              "pl-PL",
+              "ru-RU",
+              "es-ES"
+            ],
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/iconsets/v3/latest?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}",
         "pointer": "#/paths/~1api~1iconsets~1v3~1latest?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Latest"
       },
@@ -89,8 +265,79 @@
         "kind": "operation",
         "method": "get",
         "name": "By Keyword v3",
+        "parameters": [
+          {
+            "description": "the name or tag of the icon or any other phrase.",
+            "in": "path",
+            "name": "term",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "the maximum number of icons which you'd like to receive (will be multiplied by platforms count, if you didn't specify the platform and didn't set the 'exact_am…",
+            "in": "path",
+            "name": "amount",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "set it to 'true' if you'd like to receive the exact amount of icons, not multiplied by platforms count",
+            "in": "path",
+            "name": "exact_amount",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "description": "the offset from the first received result",
+            "in": "path",
+            "name": "offset",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "the style of the icons",
+            "enum": [
+              "ios7",
+              "win8",
+              "win10",
+              "android",
+              "androidL",
+              "color",
+              "office"
+            ],
+            "in": "path",
+            "name": "platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the language code to get localized result",
+            "enum": [
+              "en-US",
+              "fr-FR",
+              "de-DE",
+              "it-IT",
+              "pt-BR",
+              "pl-PL",
+              "ru-RU",
+              "es-ES"
+            ],
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/iconsets/v3/search?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}&exact_amount={exact_amount}",
         "pointer": "#/paths/~1api~1iconsets~1v3~1search?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}&exact_amount={exact_amount}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "By Keyword v3"
       },
@@ -100,8 +347,24 @@
         "kind": "operation",
         "method": "get",
         "name": "Totals",
+        "parameters": [
+          {
+            "description": "the optional date to calculate the total number of icons that were created after it.",
+            "in": "path",
+            "name": "since",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/iconsets/v3/total?since={since}",
         "pointer": "#/paths/~1api~1iconsets~1v3~1total?since={since}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Totals"
       },
@@ -111,8 +374,87 @@
         "kind": "operation",
         "method": "get",
         "name": "By Keyword v4",
+        "parameters": [
+          {
+            "description": "the name or tag of the icon or any other phrase.",
+            "in": "path",
+            "name": "term",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "the maximum number of icons which you'd like to receive (will be multiplied by platforms count, if you didn't specify the platform and didn't set the 'exact_am…",
+            "in": "path",
+            "name": "amount",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "the offset from the first received result",
+            "in": "path",
+            "name": "offset",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "default": "all",
+            "description": "the style of the icons",
+            "enum": [
+              "all",
+              "ios7",
+              "ios11",
+              "win8",
+              "win10",
+              "android",
+              "androidL",
+              "color",
+              "office",
+              "ultraviolet",
+              "nolan",
+              "p1em",
+              "dotty",
+              "dusk",
+              "Dusk_Wired",
+              "cotton",
+              "doodle",
+              "flat_round"
+            ],
+            "in": "path",
+            "name": "platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "en-US",
+            "description": "the language code to get localized result",
+            "enum": [
+              "en-US",
+              "fr-FR",
+              "de-DE",
+              "it-IT",
+              "pt-BR",
+              "pl-PL",
+              "ru-RU",
+              "es-ES",
+              "zh-CN",
+              "ja-JP"
+            ],
+            "in": "path",
+            "name": "language",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/iconsets/v4/search?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}&exact_amount={exact_amount}",
         "pointer": "#/paths/~1api~1iconsets~1v4~1search?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}&exact_amount={exact_amount}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "By Keyword v4"
       },
@@ -124,6 +466,20 @@
         "name": "From a Collection",
         "path": "/api/task/web-font/collection",
         "pointer": "#/paths/~1api~1task~1web-font~1collection/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "From a Collection"
       },
@@ -135,38 +491,58 @@
         "name": "From Separate Icons",
         "path": "/api/task/web-font/icons",
         "pointer": "#/paths/~1api~1task~1web-font~1icons/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "From Separate Icons"
       },
       {
         "id": "schema:AuthArgument",
         "kind": "schema",
-        "name": "AuthArgument"
+        "name": "AuthArgument",
+        "type": "object"
       },
       {
         "id": "schema:CategoryV3Item",
         "kind": "schema",
-        "name": "CategoryV3Item"
+        "name": "CategoryV3Item",
+        "type": "object"
       },
       {
         "id": "schema:CollectionWebFontTaskArguments",
         "kind": "schema",
-        "name": "CollectionWebFontTaskArguments"
+        "name": "CollectionWebFontTaskArguments",
+        "type": "object"
       },
       {
         "id": "schema:CompactCategoryV3Item",
         "kind": "schema",
-        "name": "CompactCategoryV3Item"
+        "name": "CompactCategoryV3Item",
+        "type": "object"
       },
       {
         "id": "schema:CompactIconV3Item",
         "kind": "schema",
-        "name": "CompactIconV3Item"
+        "name": "CompactIconV3Item",
+        "type": "object"
       },
       {
         "id": "schema:IconV3Item",
         "kind": "schema",
-        "name": "IconV3Item"
+        "name": "IconV3Item",
+        "type": "CompactIconV3Item|object"
       },
       {
         "id": "schema:Meta",
@@ -181,17 +557,20 @@
       {
         "id": "schema:TaskError",
         "kind": "schema",
-        "name": "TaskError"
+        "name": "TaskError",
+        "type": "object"
       },
       {
         "id": "schema:TaskResult",
         "kind": "schema",
-        "name": "TaskResult"
+        "name": "TaskResult",
+        "type": "object"
       },
       {
         "id": "schema:TotalV3Item",
         "kind": "schema",
-        "name": "TotalV3Item"
+        "name": "TotalV3Item",
+        "type": "object"
       },
       {
         "id": "schema:Web_Fonts",

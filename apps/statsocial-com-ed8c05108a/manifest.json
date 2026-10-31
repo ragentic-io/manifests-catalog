@@ -88,6 +88,191 @@
         "from": "statsocial-com-ed8c05108a",
         "kind": "EXPOSES",
         "to": "operation:post:/reports/twitter/create/"
+      },
+      {
+        "from": "operation:get:/applications/status/",
+        "kind": "RETURNS",
+        "to": "schema:Application_Status"
+      },
+      {
+        "from": "operation:get:/reports/",
+        "kind": "RETURNS",
+        "to": "schema:Report_Success"
+      },
+      {
+        "from": "operation:post:/reports/",
+        "kind": "RETURNS",
+        "to": "schema:Report_Success"
+      },
+      {
+        "from": "operation:get:/reports/custom/create/",
+        "kind": "RETURNS",
+        "to": "schema:Custom_Create"
+      },
+      {
+        "from": "operation:post:/reports/custom/create/",
+        "kind": "RETURNS",
+        "to": "schema:Custom_Create"
+      },
+      {
+        "from": "operation:get:/reports/custom/generate/",
+        "kind": "RETURNS",
+        "to": "schema:Custom_Generate"
+      },
+      {
+        "from": "operation:post:/reports/custom/generate/",
+        "kind": "RETURNS",
+        "to": "schema:Custom_Generate"
+      },
+      {
+        "from": "operation:get:/reports/custom/insert/",
+        "kind": "RETURNS",
+        "to": "schema:Custom_Insert"
+      },
+      {
+        "from": "operation:post:/reports/custom/insert/",
+        "kind": "RETURNS",
+        "to": "schema:Custom_Insert"
+      },
+      {
+        "from": "operation:get:/reports/dates/",
+        "kind": "RETURNS",
+        "to": "schema:Report_Dates"
+      },
+      {
+        "from": "operation:post:/reports/dates/",
+        "kind": "RETURNS",
+        "to": "schema:Report_Dates"
+      },
+      {
+        "from": "operation:get:/reports/status/",
+        "kind": "RETURNS",
+        "to": "schema:Report_Status"
+      },
+      {
+        "from": "operation:post:/reports/status/",
+        "kind": "RETURNS",
+        "to": "schema:Report_Status"
+      },
+      {
+        "from": "operation:get:/reports/tweet/create/",
+        "kind": "RETURNS",
+        "to": "schema:Create_Tweet"
+      },
+      {
+        "from": "operation:post:/reports/tweet/create/",
+        "kind": "RETURNS",
+        "to": "schema:Create_Tweet"
+      },
+      {
+        "from": "operation:get:/reports/twitter/create/",
+        "kind": "RETURNS",
+        "to": "schema:Create_Twitter"
+      },
+      {
+        "from": "operation:post:/reports/twitter/create/",
+        "kind": "RETURNS",
+        "to": "schema:Create_Twitter"
+      },
+      {
+        "from": "schema:18_24",
+        "kind": "REFERENCES",
+        "to": "schema:statistical_info_18"
+      },
+      {
+        "from": "schema:25_34",
+        "kind": "REFERENCES",
+        "to": "schema:statistical_info_25"
+      },
+      {
+        "from": "schema:35_44",
+        "kind": "REFERENCES",
+        "to": "schema:statistical_info_35"
+      },
+      {
+        "from": "schema:Application_Status",
+        "kind": "REFERENCES",
+        "to": "schema:application_response"
+      },
+      {
+        "from": "schema:Combined_Age",
+        "kind": "REFERENCES",
+        "to": "schema:18_24"
+      },
+      {
+        "from": "schema:Combined_Age",
+        "kind": "REFERENCES",
+        "to": "schema:25_34"
+      },
+      {
+        "from": "schema:Combined_Age",
+        "kind": "REFERENCES",
+        "to": "schema:35_44"
+      },
+      {
+        "from": "schema:Create_Tweet",
+        "kind": "REFERENCES",
+        "to": "schema:create_tweet_response"
+      },
+      {
+        "from": "schema:Create_Twitter",
+        "kind": "REFERENCES",
+        "to": "schema:follower_create_response"
+      },
+      {
+        "from": "schema:Custom_Create",
+        "kind": "REFERENCES",
+        "to": "schema:custom_create_response"
+      },
+      {
+        "from": "schema:Custom_Generate",
+        "kind": "REFERENCES",
+        "to": "schema:custom_generate_response"
+      },
+      {
+        "from": "schema:Custom_Insert",
+        "kind": "REFERENCES",
+        "to": "schema:custom_insert_response"
+      },
+      {
+        "from": "schema:Female",
+        "kind": "REFERENCES",
+        "to": "schema:statistical_info_f"
+      },
+      {
+        "from": "schema:Male",
+        "kind": "REFERENCES",
+        "to": "schema:statistical_info_m"
+      },
+      {
+        "from": "schema:Report_Success",
+        "kind": "REFERENCES",
+        "to": "schema:report_response"
+      },
+      {
+        "from": "schema:Sex",
+        "kind": "REFERENCES",
+        "to": "schema:Female"
+      },
+      {
+        "from": "schema:Sex",
+        "kind": "REFERENCES",
+        "to": "schema:Male"
+      },
+      {
+        "from": "schema:application_response",
+        "kind": "REFERENCES",
+        "to": "schema:report_info"
+      },
+      {
+        "from": "schema:report_response",
+        "kind": "REFERENCES",
+        "to": "schema:Combined_Age"
+      },
+      {
+        "from": "schema:report_response",
+        "kind": "REFERENCES",
+        "to": "schema:Sex"
       }
     ],
     "nodes": [
@@ -97,428 +282,1262 @@
       },
       {
         "deprecated": false,
+        "description": "Remaining window and remaining count details, also returns reports that have been generated by this account.",
         "id": "operation:get:/applications/status/",
         "kind": "operation",
         "method": "get",
         "name": "get /applications/status/",
+        "parameters": [
+          {
+            "description": "User application key",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/applications/status/",
         "pointer": "#/paths/~1applications~1status~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Application_Status"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Used to understand API usage"
+        "summary": "Used to understand API usage",
+        "tags": [
+          "Application"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Output is ordered by Demographic and followed by Affinity information.",
         "id": "operation:get:/reports/",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/",
+        "parameters": [
+          {
+            "description": "Unique report hash",
+            "in": "query",
+            "name": "report_hash",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Default value will be 'world'",
+            "in": "query",
+            "name": "baseline",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "report_date represents a Unix timestamp of when the report was generated.",
+            "in": "query",
+            "name": "report_date",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Sample report indicator",
+            "in": "query",
+            "name": "sample",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/reports/",
         "pointer": "#/paths/~1reports~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report_Success"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "404",
+            "type": "404_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Obtain report output"
+        "summary": "Obtain report output",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Output is ordered by Demographic and followed by Affinity information.",
         "id": "operation:post:/reports/",
         "kind": "operation",
         "method": "post",
         "name": "post /reports/",
+        "parameters": [
+          {
+            "description": "Unique report hash",
+            "in": "query",
+            "name": "report_hash",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Default value will be 'world'",
+            "in": "query",
+            "name": "baseline",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "report_date represents a Unix timestamp of when the report was generated.",
+            "in": "query",
+            "name": "report_date",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Sample report indicator",
+            "in": "query",
+            "name": "sample",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/reports/",
         "pointer": "#/paths/~1reports~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report_Success"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "404",
+            "type": "404_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Obtain report output"
+        "summary": "Obtain report output",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to create a custom report.",
         "id": "operation:get:/reports/custom/create/",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/custom/create/",
+        "parameters": [
+          {
+            "description": "Upload hash to be used for inserting handles",
+            "in": "query",
+            "name": "upload_hash",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filtering options to be used when creating a filtered report.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reports/custom/create/",
         "pointer": "#/paths/~1reports~1custom~1create~1/get",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Custom_Create"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "404",
+            "type": "404_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Step 3 of executing custom report"
+        "summary": "Step 3 of executing custom report",
+        "tags": [
+          "Custom Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to create a custom report.",
         "id": "operation:post:/reports/custom/create/",
         "kind": "operation",
         "method": "post",
         "name": "post /reports/custom/create/",
+        "parameters": [
+          {
+            "description": "Upload hash to be used for inserting handles",
+            "in": "query",
+            "name": "upload_hash",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filtering options to be used when creating a filtered report.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reports/custom/create/",
         "pointer": "#/paths/~1reports~1custom~1create~1/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Custom_Create"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "404",
+            "type": "404_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Step 3 of executing custom report"
+        "summary": "Step 3 of executing custom report",
+        "tags": [
+          "Custom Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to create a custom report.",
         "id": "operation:get:/reports/custom/generate/",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/custom/generate/",
+        "parameters": [
+          {
+            "description": "Name of the report",
+            "in": "query",
+            "name": "report_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reports/custom/generate/",
         "pointer": "#/paths/~1reports~1custom~1generate~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Custom_Generate"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Step 1 of executing custom report"
+        "summary": "Step 1 of executing custom report",
+        "tags": [
+          "Custom Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Used to create a custom report.",
         "id": "operation:post:/reports/custom/generate/",
         "kind": "operation",
         "method": "post",
         "name": "post /reports/custom/generate/",
+        "parameters": [
+          {
+            "description": "Name of the report",
+            "in": "query",
+            "name": "report_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reports/custom/generate/",
         "pointer": "#/paths/~1reports~1custom~1generate~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Custom_Generate"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Step 1 of executing custom report"
+        "summary": "Step 1 of executing custom report",
+        "tags": [
+          "Custom Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Inserting twitter ids or handles into a custom report.",
         "id": "operation:get:/reports/custom/insert/",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/custom/insert/",
+        "parameters": [
+          {
+            "description": "Upload hash to be used for inserting handles",
+            "in": "query",
+            "name": "upload_hash",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of twitter ids, separated by commas, to be inserted into report.",
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "array"
+          }
+        ],
         "path": "/reports/custom/insert/",
         "pointer": "#/paths/~1reports~1custom~1insert~1/get",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Custom_Insert"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "404",
+            "type": "404_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Step 2 of executing custom report"
+        "summary": "Step 2 of executing custom report",
+        "tags": [
+          "Custom Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Inserting twitter ids or handles into a custom report.",
         "id": "operation:post:/reports/custom/insert/",
         "kind": "operation",
         "method": "post",
         "name": "post /reports/custom/insert/",
+        "parameters": [
+          {
+            "description": "Upload hash to be used for inserting handles",
+            "in": "query",
+            "name": "upload_hash",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of twitter ids, separated by commas, to be inserted into report.",
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "array"
+          }
+        ],
         "path": "/reports/custom/insert/",
         "pointer": "#/paths/~1reports~1custom~1insert~1/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Custom_Insert"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "404",
+            "type": "404_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Step 2 of executing custom report"
+        "summary": "Step 2 of executing custom report",
+        "tags": [
+          "Custom Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get report dates available for a specific report.",
         "id": "operation:get:/reports/dates/",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/dates/",
+        "parameters": [
+          {
+            "description": "Unique report hash",
+            "in": "query",
+            "name": "report_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reports/dates/",
         "pointer": "#/paths/~1reports~1dates~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report_Dates"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "404",
+            "type": "404_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get report dates available for a specific report"
+        "summary": "Get report dates available for a specific report",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get report dates available for a specific report.",
         "id": "operation:post:/reports/dates/",
         "kind": "operation",
         "method": "post",
         "name": "post /reports/dates/",
+        "parameters": [
+          {
+            "description": "Unique report hash",
+            "in": "query",
+            "name": "report_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reports/dates/",
         "pointer": "#/paths/~1reports~1dates~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report_Dates"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "404",
+            "type": "404_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get report dates available for a specific report"
+        "summary": "Get report dates available for a specific report",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of custom reports generated by user (report name to upload hash etc).",
         "id": "operation:get:/reports/status/",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/status/",
+        "parameters": [
+          {
+            "description": "Unique hash belonging to report",
+            "in": "query",
+            "name": "report_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reports/status/",
         "pointer": "#/paths/~1reports~1status~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report_Status"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get list of generated reports"
+        "summary": "Get list of generated reports",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of custom reports generated by user (report name to upload hash etc).",
         "id": "operation:post:/reports/status/",
         "kind": "operation",
         "method": "post",
         "name": "post /reports/status/",
+        "parameters": [
+          {
+            "description": "Unique hash belonging to report",
+            "in": "query",
+            "name": "report_hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reports/status/",
         "pointer": "#/paths/~1reports~1status~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report_Status"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get list of generated reports"
+        "summary": "Get list of generated reports",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This report details the audience of the users who have tweeted content that matches what was provided in the keywords.",
         "id": "operation:get:/reports/tweet/create/",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/tweet/create/",
+        "parameters": [
+          {
+            "description": "Name of report",
+            "in": "query",
+            "name": "report_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unix timestamp.",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "A unix timestamp.",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "If you are tracking a single term, then the keyword itself is suffice otherwise, tracking multiple terms must be in JSON form, example '[{\"operator\":\"\",\"word\":…",
+            "in": "query",
+            "name": "terms",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filtering options to be used when creating a filtered report.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reports/tweet/create/",
         "pointer": "#/paths/~1reports~1tweet~1create~1/get",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Create_Tweet"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Used to create tweet reports"
+        "summary": "Used to create tweet reports",
+        "tags": [
+          "Tweet Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This report details the audience of the users who have tweeted content that matches what was provided in the keywords.",
         "id": "operation:post:/reports/tweet/create/",
         "kind": "operation",
         "method": "post",
         "name": "post /reports/tweet/create/",
+        "parameters": [
+          {
+            "description": "Name of report",
+            "in": "query",
+            "name": "report_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A unix timestamp.",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "A unix timestamp.",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "If you are tracking a single term, then the keyword itself is suffice otherwise, tracking multiple terms must be in JSON form, example '[{\"operator\":\"\",\"word\":…",
+            "in": "query",
+            "name": "terms",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filtering options to be used when creating a filtered report.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reports/tweet/create/",
         "pointer": "#/paths/~1reports~1tweet~1create~1/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Create_Tweet"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Used to create tweet reports"
+        "summary": "Used to create tweet reports",
+        "tags": [
+          "Tweet Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This report uses the twitter followers as the audience.",
         "id": "operation:get:/reports/twitter/create/",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/twitter/create/",
+        "parameters": [
+          {
+            "description": "(required if twitter_handle is not supplied) twitter_id must be sent with all client requests.",
+            "in": "query",
+            "name": "twitter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "(required if twitter_id is not supplied) twitter_handle must be sent with all client requests.",
+            "in": "query",
+            "name": "twitter_handle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filtering options to be used when creating a filtered report.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reports/twitter/create/",
         "pointer": "#/paths/~1reports~1twitter~1create~1/get",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Create_Twitter"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Used to create twitter follower report"
+        "summary": "Used to create twitter follower report",
+        "tags": [
+          "Follower Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This report uses the twitter followers as the audience.",
         "id": "operation:post:/reports/twitter/create/",
         "kind": "operation",
         "method": "post",
         "name": "post /reports/twitter/create/",
+        "parameters": [
+          {
+            "description": "(required if twitter_handle is not supplied) twitter_id must be sent with all client requests.",
+            "in": "query",
+            "name": "twitter_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "(required if twitter_id is not supplied) twitter_handle must be sent with all client requests.",
+            "in": "query",
+            "name": "twitter_handle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filtering options to be used when creating a filtered report.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reports/twitter/create/",
         "pointer": "#/paths/~1reports~1twitter~1create~1/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Create_Twitter"
+          },
+          {
+            "status": "400",
+            "type": "400_Error"
+          },
+          {
+            "status": "401",
+            "type": "401_Error"
+          },
+          {
+            "status": "403",
+            "type": "403_Error"
+          },
+          {
+            "status": "500",
+            "type": "500_Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Used to create twitter follower report"
+        "summary": "Used to create twitter follower report",
+        "tags": [
+          "Follower Reports"
+        ]
       },
       {
         "id": "schema:18_24",
         "kind": "schema",
-        "name": "18_24"
+        "name": "18_24",
+        "type": "object"
       },
       {
         "id": "schema:25_34",
         "kind": "schema",
-        "name": "25_34"
+        "name": "25_34",
+        "type": "object"
       },
       {
         "id": "schema:35_44",
         "kind": "schema",
-        "name": "35_44"
+        "name": "35_44",
+        "type": "object"
       },
       {
         "id": "schema:400_Error",
         "kind": "schema",
-        "name": "400_Error"
+        "name": "400_Error",
+        "type": "object"
       },
       {
         "id": "schema:401_Error",
         "kind": "schema",
-        "name": "401_Error"
+        "name": "401_Error",
+        "type": "object"
       },
       {
         "id": "schema:403_Error",
         "kind": "schema",
-        "name": "403_Error"
+        "name": "403_Error",
+        "type": "object"
       },
       {
         "id": "schema:404_Error",
         "kind": "schema",
-        "name": "404_Error"
+        "name": "404_Error",
+        "type": "object"
       },
       {
         "id": "schema:500_Error",
         "kind": "schema",
-        "name": "500_Error"
+        "name": "500_Error",
+        "type": "object"
       },
       {
         "id": "schema:Application_Status",
         "kind": "schema",
-        "name": "Application_Status"
+        "name": "Application_Status",
+        "type": "object"
       },
       {
         "id": "schema:Combined_Age",
         "kind": "schema",
-        "name": "Combined_Age"
+        "name": "Combined_Age",
+        "type": "object"
       },
       {
         "id": "schema:Create_Tweet",
         "kind": "schema",
-        "name": "Create_Tweet"
+        "name": "Create_Tweet",
+        "type": "object"
       },
       {
         "id": "schema:Create_Twitter",
         "kind": "schema",
-        "name": "Create_Twitter"
+        "name": "Create_Twitter",
+        "type": "object"
       },
       {
         "id": "schema:Custom_Create",
         "kind": "schema",
-        "name": "Custom_Create"
+        "name": "Custom_Create",
+        "type": "object"
       },
       {
         "id": "schema:Custom_Generate",
         "kind": "schema",
-        "name": "Custom_Generate"
+        "name": "Custom_Generate",
+        "type": "object"
       },
       {
         "id": "schema:Custom_Insert",
         "kind": "schema",
-        "name": "Custom_Insert"
+        "name": "Custom_Insert",
+        "type": "object"
       },
       {
         "id": "schema:Female",
         "kind": "schema",
-        "name": "Female"
+        "name": "Female",
+        "type": "object"
       },
       {
         "id": "schema:Male",
         "kind": "schema",
-        "name": "Male"
+        "name": "Male",
+        "type": "object"
       },
       {
         "id": "schema:Report_Dates",
         "kind": "schema",
-        "name": "Report_Dates"
+        "name": "Report_Dates",
+        "type": "object"
       },
       {
         "id": "schema:Report_Status",
         "kind": "schema",
-        "name": "Report_Status"
+        "name": "Report_Status",
+        "type": "object"
       },
       {
         "id": "schema:Report_Success",
         "kind": "schema",
-        "name": "Report_Success"
+        "name": "Report_Success",
+        "type": "object"
       },
       {
         "id": "schema:Sex",
         "kind": "schema",
-        "name": "Sex"
+        "name": "Sex",
+        "type": "object"
       },
       {
         "id": "schema:application_response",
         "kind": "schema",
-        "name": "application_response"
+        "name": "application_response",
+        "type": "object"
       },
       {
         "id": "schema:create_tweet_response",
         "kind": "schema",
-        "name": "create_tweet_response"
+        "name": "create_tweet_response",
+        "type": "object"
       },
       {
         "id": "schema:custom_create_response",
         "kind": "schema",
-        "name": "custom_create_response"
+        "name": "custom_create_response",
+        "type": "object"
       },
       {
         "id": "schema:custom_generate_response",
         "kind": "schema",
-        "name": "custom_generate_response"
+        "name": "custom_generate_response",
+        "type": "object"
       },
       {
         "id": "schema:custom_insert_response",
         "kind": "schema",
-        "name": "custom_insert_response"
+        "name": "custom_insert_response",
+        "type": "object"
       },
       {
         "id": "schema:follower_create_response",
         "kind": "schema",
-        "name": "follower_create_response"
+        "name": "follower_create_response",
+        "type": "object"
       },
       {
         "id": "schema:report_info",
         "kind": "schema",
-        "name": "report_info"
+        "name": "report_info",
+        "type": "object"
       },
       {
         "id": "schema:report_response",
         "kind": "schema",
-        "name": "report_response"
+        "name": "report_response",
+        "type": "object"
       },
       {
         "id": "schema:statistical_info_18",
         "kind": "schema",
-        "name": "statistical_info_18"
+        "name": "statistical_info_18",
+        "type": "object"
       },
       {
         "id": "schema:statistical_info_25",
         "kind": "schema",
-        "name": "statistical_info_25"
+        "name": "statistical_info_25",
+        "type": "object"
       },
       {
         "id": "schema:statistical_info_35",
         "kind": "schema",
-        "name": "statistical_info_35"
+        "name": "statistical_info_35",
+        "type": "object"
       },
       {
         "id": "schema:statistical_info_f",
         "kind": "schema",
-        "name": "statistical_info_f"
+        "name": "statistical_info_f",
+        "type": "object"
       },
       {
         "id": "schema:statistical_info_m",
         "kind": "schema",
-        "name": "statistical_info_m"
+        "name": "statistical_info_m",
+        "type": "object"
       }
     ]
   },

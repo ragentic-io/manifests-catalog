@@ -13,6 +13,26 @@
         "from": "koomalooma-com-27e3ebc477",
         "kind": "EXPOSES",
         "to": "operation:post:/users/{user_id}/commitments"
+      },
+      {
+        "from": "operation:post:/users",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:post:/users/{user_id}/commitments",
+        "kind": "ACCEPTS",
+        "to": "schema:CommitmentRequest"
+      },
+      {
+        "from": "operation:post:/users/{user_id}/commitments",
+        "kind": "RETURNS",
+        "to": "schema:Commitment"
+      },
+      {
+        "from": "schema:Commitment",
+        "kind": "REFERENCES",
+        "to": "schema:Goal"
       }
     ],
     "nodes": [
@@ -28,6 +48,19 @@
         "name": "post /users",
         "path": "/users",
         "pointer": "#/paths/~1users/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "User"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -41,8 +74,37 @@
         "kind": "operation",
         "method": "post",
         "name": "post /users/{user_id}/commitments",
+        "parameters": [
+          {
+            "description": "user_id of the user to assign points to",
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user_id}/commitments",
         "pointer": "#/paths/~1users~1{user_id}~1commitments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CommitmentRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Commitment"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -53,22 +115,26 @@
       {
         "id": "schema:Commitment",
         "kind": "schema",
-        "name": "Commitment"
+        "name": "Commitment",
+        "type": "object"
       },
       {
         "id": "schema:CommitmentRequest",
         "kind": "schema",
-        "name": "CommitmentRequest"
+        "name": "CommitmentRequest",
+        "type": "object"
       },
       {
         "id": "schema:Goal",
         "kind": "schema",
-        "name": "Goal"
+        "name": "Goal",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       }
     ]
   },

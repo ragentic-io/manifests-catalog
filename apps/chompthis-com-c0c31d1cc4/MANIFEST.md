@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_chomp_this__profile
 
 | | |
 | --- | --- |
-| Signed bundle | `1ba03529af01ad003bcef9d5d067250ee473c4d76df1e45926480dcd72bb189a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_chomp_this__profile
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/food/branded/barcode.php` | get /food/branded/barcode.php | Get a branded food item using a barcode |
-| GET | `/food/branded/name.php` | get /food/branded/name.php | Get a branded food item by name |
-| GET | `/food/branded/search.php` | get /food/branded/search.php | Get data for branded food items using various search parameters |
-| GET | `/food/ingredient/search.php` | get /food/ingredient/search.php | Get raw/generic food ingredient item(s) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/food/branded/barcode.php` | get /food/branded/barcode.php | `code`* | BrandedFoodObject | yes | Get a branded food item using a barcode |
+| GET | `/food/branded/name.php` | get /food/branded/name.php | `name`*, `limit`, `page` | BrandedFoodObject | yes | Get a branded food item by name |
+| GET | `/food/branded/search.php` | get /food/branded/search.php | `allergen`, `brand`, `category`, `country`, `diet`, `ingredient`, `keyword`, `mineral`, `nutrient`, `palm_oil`, `trace`, `vitamin`, `limit`, `page` | BrandedFoodObject | yes | Get data for branded food items using various search parameters |
+| GET | `/food/ingredient/search.php` | get /food/ingredient/search.php | `find`*, `limit` | IngredientObject | yes | Get raw/generic food ingredient item(s) |

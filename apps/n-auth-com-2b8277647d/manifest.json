@@ -17,12 +17,12 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/attributes/"
+        "to": "operation:get:/attributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:get:/attributes/"
+        "to": "operation:put:/attributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
@@ -32,7 +32,7 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:put:/attributes/"
+        "to": "operation:delete:/attributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
@@ -67,17 +67,17 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{serverid}/accounts/{accountid}/"
-      },
-      {
-        "from": "n-auth-com-2b8277647d",
-        "kind": "EXPOSES",
         "to": "operation:get:/servers/{serverid}/accounts/{accountid}/"
       },
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
         "to": "operation:put:/servers/{serverid}/accounts/{accountid}/"
+      },
+      {
+        "from": "n-auth-com-2b8277647d",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/servers/{serverid}/accounts/{accountid}/"
       },
       {
         "from": "n-auth-com-2b8277647d",
@@ -92,12 +92,12 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{serverid}/attributes/"
+        "to": "operation:get:/servers/{serverid}/attributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:get:/servers/{serverid}/attributes/"
+        "to": "operation:put:/servers/{serverid}/attributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
@@ -107,7 +107,7 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:put:/servers/{serverid}/attributes/"
+        "to": "operation:delete:/servers/{serverid}/attributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
@@ -122,11 +122,6 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{serverid}/permissions/{roleid}"
-      },
-      {
-        "from": "n-auth-com-2b8277647d",
-        "kind": "EXPOSES",
         "to": "operation:get:/servers/{serverid}/permissions/{roleid}"
       },
       {
@@ -137,7 +132,7 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{serverid}/privilegedattributes/"
+        "to": "operation:delete:/servers/{serverid}/permissions/{roleid}"
       },
       {
         "from": "n-auth-com-2b8277647d",
@@ -147,12 +142,17 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
+        "to": "operation:put:/servers/{serverid}/privilegedattributes/"
+      },
+      {
+        "from": "n-auth-com-2b8277647d",
+        "kind": "EXPOSES",
         "to": "operation:post:/servers/{serverid}/privilegedattributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:put:/servers/{serverid}/privilegedattributes/"
+        "to": "operation:delete:/servers/{serverid}/privilegedattributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
@@ -227,17 +227,12 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{serverid}/users/{userid}/accounts"
-      },
-      {
-        "from": "n-auth-com-2b8277647d",
-        "kind": "EXPOSES",
         "to": "operation:get:/servers/{serverid}/users/{userid}/accounts"
       },
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:delete:/servers/{serverid}/users/{userid}/attributes/"
+        "to": "operation:delete:/servers/{serverid}/users/{userid}/accounts"
       },
       {
         "from": "n-auth-com-2b8277647d",
@@ -247,12 +242,17 @@
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
+        "to": "operation:put:/servers/{serverid}/users/{userid}/attributes/"
+      },
+      {
+        "from": "n-auth-com-2b8277647d",
+        "kind": "EXPOSES",
         "to": "operation:post:/servers/{serverid}/users/{userid}/attributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
-        "to": "operation:put:/servers/{serverid}/users/{userid}/attributes/"
+        "to": "operation:delete:/servers/{serverid}/users/{userid}/attributes/"
       },
       {
         "from": "n-auth-com-2b8277647d",
@@ -278,6 +278,176 @@
         "from": "n-auth-com-2b8277647d",
         "kind": "EXPOSES",
         "to": "operation:get:/servers/{serverid}/vash"
+      },
+      {
+        "from": "operation:get:/apikeys/",
+        "kind": "RETURNS",
+        "to": "schema:ApiKeys"
+      },
+      {
+        "from": "operation:post:/apikeys/",
+        "kind": "RETURNS",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "operation:get:/servers/",
+        "kind": "RETURNS",
+        "to": "schema:Servers"
+      },
+      {
+        "from": "operation:post:/servers/",
+        "kind": "ACCEPTS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:post:/servers/",
+        "kind": "RETURNS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/",
+        "kind": "RETURNS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:put:/servers/{serverid}/",
+        "kind": "ACCEPTS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:put:/servers/{serverid}/",
+        "kind": "RETURNS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/accounts/",
+        "kind": "RETURNS",
+        "to": "schema:Accounts"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/accounts/{accountid}/",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:put:/servers/{serverid}/accounts/{accountid}/",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:post:/servers/{serverid}/accounts/{accountid}/provokelogin",
+        "kind": "ACCEPTS",
+        "to": "schema:UserContext"
+      },
+      {
+        "from": "operation:put:/servers/{serverid}/accounts/{accountid}/user",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/permissions/",
+        "kind": "RETURNS",
+        "to": "schema:Permissions"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/permissions/{roleid}",
+        "kind": "RETURNS",
+        "to": "schema:Permissions"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/sessions/",
+        "kind": "RETURNS",
+        "to": "schema:LoginStatus"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/sessions/html/footer",
+        "kind": "ACCEPTS",
+        "to": "schema:HtmlFooterBody"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/sessions/html/login",
+        "kind": "ACCEPTS",
+        "to": "schema:UserContext"
+      },
+      {
+        "from": "operation:post:/servers/{serverid}/sessions/provokelogin",
+        "kind": "ACCEPTS",
+        "to": "schema:UserContext"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/sessions/qr/login",
+        "kind": "ACCEPTS",
+        "to": "schema:UserContext"
+      },
+      {
+        "from": "operation:post:/servers/{serverid}/sessions/transactions",
+        "kind": "ACCEPTS",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "operation:post:/servers/{serverid}/sessions/transactions",
+        "kind": "RETURNS",
+        "to": "schema:TransactionId"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/transactions/{transactionid}",
+        "kind": "RETURNS",
+        "to": "schema:TransactionResult"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/users/",
+        "kind": "RETURNS",
+        "to": "schema:Users"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/users/{userid}/accounts",
+        "kind": "RETURNS",
+        "to": "schema:Accounts"
+      },
+      {
+        "from": "operation:post:/servers/{serverid}/users/{userid}/provokelogin",
+        "kind": "ACCEPTS",
+        "to": "schema:UserContext"
+      },
+      {
+        "from": "operation:get:/servers/{serverid}/users/{userid}/role/",
+        "kind": "RETURNS",
+        "to": "schema:Role"
+      },
+      {
+        "from": "schema:Accounts",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:ApiKeys",
+        "kind": "REFERENCES",
+        "to": "schema:ApiKey"
+      },
+      {
+        "from": "schema:HtmlFooterBody",
+        "kind": "REFERENCES",
+        "to": "schema:ServerSession"
+      },
+      {
+        "from": "schema:Permissions",
+        "kind": "REFERENCES",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "schema:Servers",
+        "kind": "REFERENCES",
+        "to": "schema:Server"
+      },
+      {
+        "from": "schema:UserContext",
+        "kind": "REFERENCES",
+        "to": "schema:SessionInfo"
+      },
+      {
+        "from": "schema:Users",
+        "kind": "REFERENCES",
+        "to": "schema:User"
       }
     ],
     "nodes": [
@@ -287,12 +457,20 @@
       },
       {
         "deprecated": false,
+        "description": "Get all API keys generated by the current role.",
         "id": "operation:get:/apikeys/",
         "kind": "operation",
         "method": "get",
         "name": "getApiKeys",
         "path": "/apikeys/",
         "pointer": "#/paths/~1apikeys~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKeys"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -302,7 +480,10 @@
             "role_id": []
           }
         ],
-        "summary": "Get all API keys."
+        "summary": "Get all API keys.",
+        "tags": [
+          "Management"
+        ]
       },
       {
         "deprecated": false,
@@ -310,8 +491,24 @@
         "kind": "operation",
         "method": "post",
         "name": "createApiKey",
+        "parameters": [
+          {
+            "description": "Description for the new role",
+            "in": "query",
+            "name": "description",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apikeys/",
         "pointer": "#/paths/~1apikeys~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ApiKey"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -321,35 +518,27 @@
             "role_id": []
           }
         ],
-        "summary": "Create a new API key."
+        "summary": "Create a new API key.",
+        "tags": [
+          "Management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/attributes/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteGlobalAttributes",
-        "path": "/attributes/",
-        "pointer": "#/paths/~1attributes~1/delete",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Delete all global attributes"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns an array containing all global attributes.",
         "id": "operation:get:/attributes/",
         "kind": "operation",
         "method": "get",
         "name": "getGlobalAttributes",
         "path": "/attributes/",
         "pointer": "#/paths/~1attributes~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -359,35 +548,33 @@
             "role_id": []
           }
         ],
-        "summary": "Get all global attributes"
+        "summary": "Get all global attributes",
+        "tags": [
+          "Global"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/attributes/",
-        "kind": "operation",
-        "method": "post",
-        "name": "setGlobalAttributes",
-        "path": "/attributes/",
-        "pointer": "#/paths/~1attributes~1/post",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Set all global attributes"
-      },
-      {
-        "deprecated": false,
+        "description": "Update the specified global attributes.",
         "id": "operation:put:/attributes/",
         "kind": "operation",
         "method": "put",
         "name": "updateGlobalAttributes",
         "path": "/attributes/",
         "pointer": "#/paths/~1attributes~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -397,16 +584,100 @@
             "role_id": []
           }
         ],
-        "summary": "Update specified global attributes"
+        "summary": "Update specified global attributes",
+        "tags": [
+          "Global"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set the global attributes.",
+        "id": "operation:post:/attributes/",
+        "kind": "operation",
+        "method": "post",
+        "name": "setGlobalAttributes",
+        "path": "/attributes/",
+        "pointer": "#/paths/~1attributes~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Set all global attributes",
+        "tags": [
+          "Global"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete all global attributes.",
+        "id": "operation:delete:/attributes/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteGlobalAttributes",
+        "path": "/attributes/",
+        "pointer": "#/paths/~1attributes~1/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Delete all global attributes",
+        "tags": [
+          "Global"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete global attribute with the specified key.",
         "id": "operation:delete:/attributes/{attributekey}",
         "kind": "operation",
         "method": "delete",
         "name": "deleteGlobalAttribute",
+        "parameters": [
+          {
+            "description": "Key of the attribute",
+            "in": "path",
+            "name": "attributekey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/attributes/{attributekey}",
         "pointer": "#/paths/~1attributes~1{attributekey}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -416,16 +687,43 @@
             "role_id": []
           }
         ],
-        "summary": "Delete specific global attribute"
+        "summary": "Delete specific global attribute",
+        "tags": [
+          "Global"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all the servers you have the permissions for.",
         "id": "operation:get:/servers/",
         "kind": "operation",
         "method": "get",
         "name": "getServers",
+        "parameters": [
+          {
+            "description": "Limit the number of results",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset in the result list",
+            "in": "query",
+            "name": "marker",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/servers/",
         "pointer": "#/paths/~1servers~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Servers"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -435,16 +733,34 @@
             "role_id": []
           }
         ],
-        "summary": "List all your servers"
+        "summary": "List all your servers",
+        "tags": [
+          "Servers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new server.",
         "id": "operation:post:/servers/",
         "kind": "operation",
         "method": "post",
         "name": "createServer",
         "path": "/servers/",
         "pointer": "#/paths/~1servers~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Server"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Server"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -454,16 +770,39 @@
             "role_id": []
           }
         ],
-        "summary": "Create a new server"
+        "summary": "Create a new server",
+        "tags": [
+          "Servers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the configuration of a specific server.",
         "id": "operation:get:/servers/{serverid}/",
         "kind": "operation",
         "method": "get",
         "name": "getServer",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/",
         "pointer": "#/paths/~1servers~1{serverid}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Server"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -473,16 +812,46 @@
             "role_id": []
           }
         ],
-        "summary": "Configuration of a specific server"
+        "summary": "Configuration of a specific server",
+        "tags": [
+          "Servers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the configuration of a specific server.",
         "id": "operation:put:/servers/{serverid}/",
         "kind": "operation",
         "method": "put",
         "name": "updateServer",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/",
         "pointer": "#/paths/~1servers~1{serverid}~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Server"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Server"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -492,16 +861,64 @@
             "role_id": []
           }
         ],
-        "summary": "Update configuration of a specific server"
+        "summary": "Update configuration of a specific server",
+        "tags": [
+          "Servers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all account.",
         "id": "operation:get:/servers/{serverid}/accounts/",
         "kind": "operation",
         "method": "get",
         "name": "getAllAccounts",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter users based on an attribute.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the number of results",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset in the result list",
+            "in": "query",
+            "name": "marker",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort the results by column.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/accounts/",
         "pointer": "#/paths/~1servers~1{serverid}~1accounts~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Accounts"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -511,35 +928,46 @@
             "role_id": []
           }
         ],
-        "summary": "Get all accounts"
+        "summary": "Get all accounts",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/servers/{serverid}/accounts/{accountid}/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteAccount",
-        "path": "/servers/{serverid}/accounts/{accountid}/",
-        "pointer": "#/paths/~1servers~1{serverid}~1accounts~1{accountid}~1/delete",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Delete specific account"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns the account.",
         "id": "operation:get:/servers/{serverid}/accounts/{accountid}/",
         "kind": "operation",
         "method": "get",
         "name": "getAccount",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Account id",
+            "in": "path",
+            "name": "accountid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/servers/{serverid}/accounts/{accountid}/",
         "pointer": "#/paths/~1servers~1{serverid}~1accounts~1{accountid}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -549,16 +977,53 @@
             "role_id": []
           }
         ],
-        "summary": "Get specific account"
+        "summary": "Get specific account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an account.",
         "id": "operation:put:/servers/{serverid}/accounts/{accountid}/",
         "kind": "operation",
         "method": "put",
         "name": "updateAccount",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Account id",
+            "in": "path",
+            "name": "accountid",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "True if the account is blocked",
+            "in": "query",
+            "name": "blocked",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
         "path": "/servers/{serverid}/accounts/{accountid}/",
         "pointer": "#/paths/~1servers~1{serverid}~1accounts~1{accountid}~1/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -568,16 +1033,104 @@
             "role_id": []
           }
         ],
-        "summary": "Update specific account"
+        "summary": "Update specific account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an account.",
+        "id": "operation:delete:/servers/{serverid}/accounts/{accountid}/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteAccount",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Account id",
+            "in": "path",
+            "name": "accountid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/servers/{serverid}/accounts/{accountid}/",
+        "pointer": "#/paths/~1servers~1{serverid}~1accounts~1{accountid}~1/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Delete specific account",
+        "tags": [
+          "Accounts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Push a login to the nextAuth app for the user to confirm, based on the given account (app instance).",
         "id": "operation:post:/servers/{serverid}/accounts/{accountid}/provokelogin",
         "kind": "operation",
         "method": "post",
         "name": "provokeLoginOnAccount",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Base64 encoded nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Account id",
+            "in": "path",
+            "name": "accountid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/servers/{serverid}/accounts/{accountid}/provokelogin",
         "pointer": "#/paths/~1servers~1{serverid}~1accounts~1{accountid}~1provokelogin/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UserContext"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -587,16 +1140,56 @@
             "role_id": []
           }
         ],
-        "summary": "Push a login confirmation to the user's app"
+        "summary": "Push a login confirmation to the user's app",
+        "tags": [
+          "Sessions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the user of the given account.",
         "id": "operation:put:/servers/{serverid}/accounts/{accountid}/user",
         "kind": "operation",
         "method": "put",
         "name": "updateAccountUser",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Account id",
+            "in": "path",
+            "name": "accountid",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "User name",
+            "in": "query",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/accounts/{accountid}/user",
         "pointer": "#/paths/~1servers~1{serverid}~1accounts~1{accountid}~1user/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -606,35 +1199,40 @@
             "role_id": []
           }
         ],
-        "summary": "Update user of the given account."
+        "summary": "Update user of the given account.",
+        "tags": [
+          "Accounts",
+          "Registration"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/servers/{serverid}/attributes/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteServerAttributes",
-        "path": "/servers/{serverid}/attributes/",
-        "pointer": "#/paths/~1servers~1{serverid}~1attributes~1/delete",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Delete all attributes of a specific server"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns an array containing all attributes corresponding to this server.",
         "id": "operation:get:/servers/{serverid}/attributes/",
         "kind": "operation",
         "method": "get",
         "name": "getServerAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/attributes/",
         "pointer": "#/paths/~1servers~1{serverid}~1attributes~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -644,35 +1242,45 @@
             "role_id": []
           }
         ],
-        "summary": "Get all attributes of a specific server"
+        "summary": "Get all attributes of a specific server",
+        "tags": [
+          "Servers"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/servers/{serverid}/attributes/",
-        "kind": "operation",
-        "method": "post",
-        "name": "setServerAttributes",
-        "path": "/servers/{serverid}/attributes/",
-        "pointer": "#/paths/~1servers~1{serverid}~1attributes~1/post",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Set all attributes of a specific server"
-      },
-      {
-        "deprecated": false,
+        "description": "Update the specified attributes of a specific server.",
         "id": "operation:put:/servers/{serverid}/attributes/",
         "kind": "operation",
         "method": "put",
         "name": "updateServerAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/attributes/",
         "pointer": "#/paths/~1servers~1{serverid}~1attributes~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -682,16 +1290,134 @@
             "role_id": []
           }
         ],
-        "summary": "Update specified attributes of a specific server"
+        "summary": "Update specified attributes of a specific server",
+        "tags": [
+          "Servers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set the attributes of a specific server.",
+        "id": "operation:post:/servers/{serverid}/attributes/",
+        "kind": "operation",
+        "method": "post",
+        "name": "setServerAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{serverid}/attributes/",
+        "pointer": "#/paths/~1servers~1{serverid}~1attributes~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Set all attributes of a specific server",
+        "tags": [
+          "Servers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete all attributes of a specific server.",
+        "id": "operation:delete:/servers/{serverid}/attributes/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteServerAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{serverid}/attributes/",
+        "pointer": "#/paths/~1servers~1{serverid}~1attributes~1/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Delete all attributes of a specific server",
+        "tags": [
+          "Servers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete attribute with the specified key of a specific server.",
         "id": "operation:delete:/servers/{serverid}/attributes/{attributekey}",
         "kind": "operation",
         "method": "delete",
         "name": "deleteServerAttribute",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Key of the attribute",
+            "in": "path",
+            "name": "attributekey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/attributes/{attributekey}",
         "pointer": "#/paths/~1servers~1{serverid}~1attributes~1{attributekey}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -701,16 +1427,39 @@
             "role_id": []
           }
         ],
-        "summary": "Delete specific attribute of a specific server"
+        "summary": "Delete specific attribute of a specific server",
+        "tags": [
+          "Servers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all permissions.",
         "id": "operation:get:/servers/{serverid}/permissions/",
         "kind": "operation",
         "method": "get",
         "name": "getAllPermissions",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/permissions/",
         "pointer": "#/paths/~1servers~1{serverid}~1permissions~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Permissions"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -720,7 +1469,114 @@
             "role_id": []
           }
         ],
-        "summary": "Get all permissions for the specified server."
+        "summary": "Get all permissions for the specified server.",
+        "tags": [
+          "Management"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns all permissions.",
+        "id": "operation:get:/servers/{serverid}/permissions/{roleid}",
+        "kind": "operation",
+        "method": "get",
+        "name": "getPermissions",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Base64 encoded role id",
+            "in": "path",
+            "name": "roleid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{serverid}/permissions/{roleid}",
+        "pointer": "#/paths/~1servers~1{serverid}~1permissions~1{roleid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Permissions"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Get all permissions for the specified server and role.",
+        "tags": [
+          "Management"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Set new permissions for the specified role on a server.",
+        "id": "operation:post:/servers/{serverid}/permissions/{roleid}",
+        "kind": "operation",
+        "method": "post",
+        "name": "grantPermissions",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Base64 encoded role id",
+            "in": "path",
+            "name": "roleid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{serverid}/permissions/{roleid}",
+        "pointer": "#/paths/~1servers~1{serverid}~1permissions~1{roleid}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string[]"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Set new permissions for the specified role on a server",
+        "tags": [
+          "Management"
+        ]
       },
       {
         "deprecated": false,
@@ -728,8 +1584,33 @@
         "kind": "operation",
         "method": "delete",
         "name": "revokePermissions",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Base64 encoded role id",
+            "in": "path",
+            "name": "roleid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/permissions/{roleid}",
         "pointer": "#/paths/~1servers~1{serverid}~1permissions~1{roleid}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -739,73 +1620,39 @@
             "role_id": []
           }
         ],
-        "summary": "Revoke all permissions for the specified server and role."
+        "summary": "Revoke all permissions for the specified server and role.",
+        "tags": [
+          "Management"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:get:/servers/{serverid}/permissions/{roleid}",
-        "kind": "operation",
-        "method": "get",
-        "name": "getPermissions",
-        "path": "/servers/{serverid}/permissions/{roleid}",
-        "pointer": "#/paths/~1servers~1{serverid}~1permissions~1{roleid}/get",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Get all permissions for the specified server and role."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/servers/{serverid}/permissions/{roleid}",
-        "kind": "operation",
-        "method": "post",
-        "name": "grantPermissions",
-        "path": "/servers/{serverid}/permissions/{roleid}",
-        "pointer": "#/paths/~1servers~1{serverid}~1permissions~1{roleid}/post",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Set new permissions for the specified role on a server"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/servers/{serverid}/privilegedattributes/",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteServerPrivilegedAttributes",
-        "path": "/servers/{serverid}/privilegedattributes/",
-        "pointer": "#/paths/~1servers~1{serverid}~1privilegedattributes~1/delete",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Delete all privileged attributes of a specific server"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns an array containing all privileged attributes corresponding to this server.",
         "id": "operation:get:/servers/{serverid}/privilegedattributes/",
         "kind": "operation",
         "method": "get",
         "name": "getServerPrivilegedAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/privilegedattributes/",
         "pointer": "#/paths/~1servers~1{serverid}~1privilegedattributes~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -815,35 +1662,45 @@
             "role_id": []
           }
         ],
-        "summary": "Get all privileged attributes of a specific server"
+        "summary": "Get all privileged attributes of a specific server",
+        "tags": [
+          "Global"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/servers/{serverid}/privilegedattributes/",
-        "kind": "operation",
-        "method": "post",
-        "name": "setServerPrivilegedAttributes",
-        "path": "/servers/{serverid}/privilegedattributes/",
-        "pointer": "#/paths/~1servers~1{serverid}~1privilegedattributes~1/post",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Set all privileged attributes of a specific server"
-      },
-      {
-        "deprecated": false,
+        "description": "Update the specified privileged attributes of a specific server.",
         "id": "operation:put:/servers/{serverid}/privilegedattributes/",
         "kind": "operation",
         "method": "put",
         "name": "updateServerPrivilegedAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/privilegedattributes/",
         "pointer": "#/paths/~1servers~1{serverid}~1privilegedattributes~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -853,16 +1710,134 @@
             "role_id": []
           }
         ],
-        "summary": "Update privileged specified attributes of a specific server"
+        "summary": "Update privileged specified attributes of a specific server",
+        "tags": [
+          "Global"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set the privileged attributes of a specific server.",
+        "id": "operation:post:/servers/{serverid}/privilegedattributes/",
+        "kind": "operation",
+        "method": "post",
+        "name": "setServerPrivilegedAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{serverid}/privilegedattributes/",
+        "pointer": "#/paths/~1servers~1{serverid}~1privilegedattributes~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Set all privileged attributes of a specific server",
+        "tags": [
+          "Global"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete all privileged attributes of a specific server.",
+        "id": "operation:delete:/servers/{serverid}/privilegedattributes/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteServerPrivilegedAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{serverid}/privilegedattributes/",
+        "pointer": "#/paths/~1servers~1{serverid}~1privilegedattributes~1/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Delete all privileged attributes of a specific server",
+        "tags": [
+          "Global"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete privileged attribute with the specified key of a specific server.",
         "id": "operation:delete:/servers/{serverid}/privilegedattributes/{attributekey}",
         "kind": "operation",
         "method": "delete",
         "name": "deleteServerPrivilegedAttribute",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Key of the attribute",
+            "in": "path",
+            "name": "attributekey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/privilegedattributes/{attributekey}",
         "pointer": "#/paths/~1servers~1{serverid}~1privilegedattributes~1{attributekey}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -872,16 +1847,43 @@
             "role_id": []
           }
         ],
-        "summary": "Delete specific privileged attribute of a specific server"
+        "summary": "Delete specific privileged attribute of a specific server",
+        "tags": [
+          "Global"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Based on the browser/webserver session identifier, check if the user is logged in and return the associated username.",
         "id": "operation:get:/servers/{serverid}/sessions/",
         "kind": "operation",
         "method": "get",
         "name": "getSession",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LoginStatus"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -891,16 +1893,58 @@
             "role_id": []
           }
         ],
-        "summary": "Check if the user is logged in"
+        "summary": "Check if the user is logged in",
+        "tags": [
+          "Sessions",
+          "HTML"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate HTML to enrol a new user.",
         "id": "operation:get:/servers/{serverid}/sessions/html/enrol",
         "kind": "operation",
         "method": "get",
         "name": "getHtmlEnrol",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name to forward to the nextAuth app for this account",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "User name to register this user under",
+            "in": "query",
+            "name": "userid",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/html/enrol",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1html~1enrol/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -910,16 +1954,50 @@
             "role_id": []
           }
         ],
-        "summary": "Generate HTML to enrol a new user"
+        "summary": "Generate HTML to enrol a new user",
+        "tags": [
+          "HTML"
+        ]
       },
       {
         "deprecated": false,
+        "description": "HTML to add to footer of HTML page.",
         "id": "operation:get:/servers/{serverid}/sessions/html/footer",
         "kind": "operation",
         "method": "get",
         "name": "getHtmlFooter",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/html/footer",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1html~1footer/get",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "HtmlFooterBody"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -929,16 +2007,50 @@
             "role_id": []
           }
         ],
-        "summary": "Generic HTML to add to footer. Required for login/logout/enrol functionality."
+        "summary": "Generic HTML to add to footer. Required for login/logout/enrol functionality.",
+        "tags": [
+          "HTML"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generate HTML for the login block.",
         "id": "operation:get:/servers/{serverid}/sessions/html/login",
         "kind": "operation",
         "method": "get",
         "name": "getHtmlLogin",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/html/login",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1html~1login/get",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UserContext"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -948,16 +2060,42 @@
             "role_id": []
           }
         ],
-        "summary": "Generate HTML for the login block"
+        "summary": "Generate HTML for the login block",
+        "tags": [
+          "HTML"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Force a logout on the given session.",
         "id": "operation:post:/servers/{serverid}/sessions/logout",
         "kind": "operation",
         "method": "post",
         "name": "logout",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/logout",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1logout/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -967,16 +2105,50 @@
             "role_id": []
           }
         ],
-        "summary": "Force a logout on the given session"
+        "summary": "Force a logout on the given session",
+        "tags": [
+          "Sessions",
+          "HTML"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Push a login to the nextAuth app for the user to confirm, based on last account that successfully logged in for the given session.",
         "id": "operation:post:/servers/{serverid}/sessions/provokelogin",
         "kind": "operation",
         "method": "post",
         "name": "provokeLogin",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/provokelogin",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1provokelogin/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UserContext"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -986,16 +2158,71 @@
             "role_id": []
           }
         ],
-        "summary": "Push a login confirmation to the user's app"
+        "summary": "Push a login confirmation to the user's app",
+        "tags": [
+          "Sessions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the data for an enrol qr code.",
         "id": "operation:get:/servers/{serverid}/sessions/qr/enrol",
         "kind": "operation",
         "method": "get",
         "name": "getQrEnrol",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name to forward to the nextAuth app for this account",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name to register this user under",
+            "in": "query",
+            "name": "userid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "'png' for a PNG image, not set for raw data in the qr code",
+            "in": "query",
+            "name": "img",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "size in pixels of the qr code, defaults to 500",
+            "in": "query",
+            "name": "s",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/qr/enrol",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1qr~1enrol/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -1005,16 +2232,64 @@
             "role_id": []
           }
         ],
-        "summary": "Generate data for an enrol qr code"
+        "summary": "Generate data for an enrol qr code",
+        "tags": [
+          "Registration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the data for a login qr code.",
         "id": "operation:get:/servers/{serverid}/sessions/qr/login",
         "kind": "operation",
         "method": "get",
         "name": "getQrLogin",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "\"png\" for a PNG image, not set for raw data in the qr code",
+            "in": "query",
+            "name": "img",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "size in pixels of the qr code, defaults to 500",
+            "in": "query",
+            "name": "s",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/qr/login",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1qr~1login/get",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UserContext"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -1024,16 +2299,49 @@
             "role_id": []
           }
         ],
-        "summary": "Generate data for a login qr code"
+        "summary": "Generate data for a login qr code",
+        "tags": [
+          "Sessions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Register a user for the currently logged in account.",
         "id": "operation:post:/servers/{serverid}/sessions/registeruser",
         "kind": "operation",
         "method": "post",
         "name": "registerUser",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Username to register",
+            "in": "query",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/registeruser",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1registeruser/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -1043,16 +2351,54 @@
             "role_id": []
           }
         ],
-        "summary": "Register a userid for the currently logged in account."
+        "summary": "Register a userid for the currently logged in account.",
+        "tags": [
+          "Users",
+          "Registration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a transaction for approval within the current session.",
         "id": "operation:post:/servers/{serverid}/sessions/transactions",
         "kind": "operation",
         "method": "post",
         "name": "createTransaction",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/sessions/transactions",
         "pointer": "#/paths/~1servers~1{serverid}~1sessions~1transactions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Transaction"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionId"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -1062,16 +2408,46 @@
             "role_id": []
           }
         ],
-        "summary": "Create a transaction to be approved within the current session."
+        "summary": "Create a transaction to be approved within the current session.",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get transaction result for a given transaction id.",
         "id": "operation:get:/servers/{serverid}/transactions/{transactionid}",
         "kind": "operation",
         "method": "get",
         "name": "getTransactionResult",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Base64 encoded transaction id",
+            "in": "path",
+            "name": "transactionid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/transactions/{transactionid}",
         "pointer": "#/paths/~1servers~1{serverid}~1transactions~1{transactionid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TransactionResult"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -1081,16 +2457,71 @@
             "role_id": []
           }
         ],
-        "summary": "Get transaction result for a given transaction."
+        "summary": "Get transaction result for a given transaction.",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of arrays containing all accounts corresponding to all users.",
         "id": "operation:get:/servers/{serverid}/users/",
         "kind": "operation",
         "method": "get",
         "name": "getUsers",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter users based on an attribute.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search for a username LIKE %search%",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit the number of results",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset in the result list",
+            "in": "query",
+            "name": "marker",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort the results by column.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/users/",
         "pointer": "#/paths/~1servers~1{serverid}~1users~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Users"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -1100,16 +2531,45 @@
             "role_id": []
           }
         ],
-        "summary": "Get all users"
+        "summary": "Get all users",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a user.",
         "id": "operation:delete:/servers/{serverid}/users/{userid}/",
         "kind": "operation",
         "method": "delete",
         "name": "deleteUser",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/users/{userid}/",
         "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -1119,35 +2579,64 @@
             "role_id": []
           }
         ],
-        "summary": "Delete a specific user"
+        "summary": "Delete a specific user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/servers/{serverid}/users/{userid}/accounts",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteUserAccounts",
-        "path": "/servers/{serverid}/users/{userid}/accounts",
-        "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1accounts/delete",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Delete all accounts of a specific user"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns an array containing all accounts corresponding to this user.",
         "id": "operation:get:/servers/{serverid}/users/{userid}/accounts",
         "kind": "operation",
         "method": "get",
         "name": "getUser",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Limit the number of results",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset in the result list",
+            "in": "query",
+            "name": "marker",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort the results by column.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/users/{userid}/accounts",
         "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Accounts"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -1157,16 +2646,43 @@
             "role_id": []
           }
         ],
-        "summary": "Get all accounts of a specific user"
+        "summary": "Get all accounts of a specific user",
+        "tags": [
+          "Users",
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/servers/{serverid}/users/{userid}/attributes/",
+        "description": "Delete all accounts corresponding to this user.",
+        "id": "operation:delete:/servers/{serverid}/users/{userid}/accounts",
         "kind": "operation",
         "method": "delete",
-        "name": "deleteUserAttributes",
-        "path": "/servers/{serverid}/users/{userid}/attributes/",
-        "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1attributes~1/delete",
+        "name": "deleteUserAccounts",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{serverid}/users/{userid}/accounts",
+        "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1accounts/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -1176,16 +2692,47 @@
             "role_id": []
           }
         ],
-        "summary": "Delete all attributes of a specific user"
+        "summary": "Delete all accounts of a specific user",
+        "tags": [
+          "Users",
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array containing all attributes corresponding to this user.",
         "id": "operation:get:/servers/{serverid}/users/{userid}/attributes/",
         "kind": "operation",
         "method": "get",
         "name": "getUserAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/users/{userid}/attributes/",
         "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1attributes~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -1195,35 +2742,52 @@
             "role_id": []
           }
         ],
-        "summary": "Get all attributes of a specific user"
+        "summary": "Get all attributes of a specific user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/servers/{serverid}/users/{userid}/attributes/",
-        "kind": "operation",
-        "method": "post",
-        "name": "setUserAttributes",
-        "path": "/servers/{serverid}/users/{userid}/attributes/",
-        "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1attributes~1/post",
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "api_key": [],
-            "role_id": []
-          }
-        ],
-        "summary": "Set all attributes of a specific user"
-      },
-      {
-        "deprecated": false,
+        "description": "Update the specified attributes of a specific user.",
         "id": "operation:put:/servers/{serverid}/users/{userid}/attributes/",
         "kind": "operation",
         "method": "put",
         "name": "updateUserAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/users/{userid}/attributes/",
         "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1attributes~1/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -1233,16 +2797,152 @@
             "role_id": []
           }
         ],
-        "summary": "Update specified attributes of a specific user"
+        "summary": "Update specified attributes of a specific user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set the attributes of a specific user.",
+        "id": "operation:post:/servers/{serverid}/users/{userid}/attributes/",
+        "kind": "operation",
+        "method": "post",
+        "name": "setUserAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{serverid}/users/{userid}/attributes/",
+        "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1attributes~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Set all attributes of a specific user",
+        "tags": [
+          "Users"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete all attributes of a specific user.",
+        "id": "operation:delete:/servers/{serverid}/users/{userid}/attributes/",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteUserAttributes",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/servers/{serverid}/users/{userid}/attributes/",
+        "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1attributes~1/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          },
+          {
+            "api_key": [],
+            "role_id": []
+          }
+        ],
+        "summary": "Delete all attributes of a specific user",
+        "tags": [
+          "Users"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete attribute with the specified key of a specific user.",
         "id": "operation:delete:/servers/{serverid}/users/{userid}/attributes/{attributekey}",
         "kind": "operation",
         "method": "delete",
         "name": "deleteUserAttribute",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Key of the attribute",
+            "in": "path",
+            "name": "attributekey",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/users/{userid}/attributes/{attributekey}",
         "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1attributes~1{attributekey}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -1252,16 +2952,56 @@
             "role_id": []
           }
         ],
-        "summary": "Delete specific attribute of a specific user"
+        "summary": "Delete specific attribute of a specific user",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Push a login to the nextAuth app for the user to confirm, based on the given userid.",
         "id": "operation:post:/servers/{serverid}/users/{userid}/provokelogin",
         "kind": "operation",
         "method": "post",
         "name": "provokeLoginOnUser",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Nonce to identify the browser/webserver session",
+            "in": "header",
+            "name": "X-nonce",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/users/{userid}/provokelogin",
         "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1provokelogin/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UserContext"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -1271,7 +3011,10 @@
             "role_id": []
           }
         ],
-        "summary": "Push a login confirmation to the user's app"
+        "summary": "Push a login confirmation to the user's app",
+        "tags": [
+          "Sessions"
+        ]
       },
       {
         "deprecated": false,
@@ -1279,8 +3022,34 @@
         "kind": "operation",
         "method": "get",
         "name": "getUserRole",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/users/{userid}/role/",
         "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1role~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Role"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -1290,7 +3059,10 @@
             "role_id": []
           }
         ],
-        "summary": "Get role for a specific user."
+        "summary": "Get role for a specific user.",
+        "tags": [
+          "Management"
+        ]
       },
       {
         "deprecated": false,
@@ -1298,8 +3070,34 @@
         "kind": "operation",
         "method": "post",
         "name": "getOrCreateUserRole",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User name",
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/users/{userid}/role/",
         "pointer": "#/paths/~1servers~1{serverid}~1users~1{userid}~1role~1/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
@@ -1309,16 +3107,39 @@
             "role_id": []
           }
         ],
-        "summary": "Get or create a role for a specific user."
+        "summary": "Get or create a role for a specific user.",
+        "tags": [
+          "Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a PNG of the visual hash corresponding to this server.",
         "id": "operation:get:/servers/{serverid}/vash",
         "kind": "operation",
         "method": "get",
         "name": "getServerVash",
+        "parameters": [
+          {
+            "description": "Base64 encoded server id",
+            "in": "path",
+            "name": "serverid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/servers/{serverid}/vash",
         "pointer": "#/paths/~1servers~1{serverid}~1vash/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
@@ -1328,102 +3149,124 @@
             "role_id": []
           }
         ],
-        "summary": "Visual hash of this server"
+        "summary": "Visual hash of this server",
+        "tags": [
+          "Registration"
+        ]
       },
       {
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
         "id": "schema:Accounts",
         "kind": "schema",
-        "name": "Accounts"
+        "name": "Accounts",
+        "type": "object"
       },
       {
         "id": "schema:ApiKey",
         "kind": "schema",
-        "name": "ApiKey"
+        "name": "ApiKey",
+        "type": "object"
       },
       {
         "id": "schema:ApiKeys",
         "kind": "schema",
-        "name": "ApiKeys"
+        "name": "ApiKeys",
+        "type": "object"
       },
       {
         "id": "schema:HtmlFooterBody",
         "kind": "schema",
-        "name": "HtmlFooterBody"
+        "name": "HtmlFooterBody",
+        "type": "object"
       },
       {
         "id": "schema:LoginStatus",
         "kind": "schema",
-        "name": "LoginStatus"
+        "name": "LoginStatus",
+        "type": "object"
       },
       {
         "id": "schema:Permission",
         "kind": "schema",
-        "name": "Permission"
+        "name": "Permission",
+        "type": "object"
       },
       {
         "id": "schema:Permissions",
         "kind": "schema",
-        "name": "Permissions"
+        "name": "Permissions",
+        "type": "object"
       },
       {
         "id": "schema:Role",
         "kind": "schema",
-        "name": "Role"
+        "name": "Role",
+        "type": "object"
       },
       {
         "id": "schema:Server",
         "kind": "schema",
-        "name": "Server"
+        "name": "Server",
+        "type": "object"
       },
       {
         "id": "schema:ServerSession",
         "kind": "schema",
-        "name": "ServerSession"
+        "name": "ServerSession",
+        "type": "object"
       },
       {
         "id": "schema:Servers",
         "kind": "schema",
-        "name": "Servers"
+        "name": "Servers",
+        "type": "object"
       },
       {
         "id": "schema:SessionInfo",
         "kind": "schema",
-        "name": "SessionInfo"
+        "name": "SessionInfo",
+        "type": "object"
       },
       {
         "id": "schema:Transaction",
         "kind": "schema",
-        "name": "Transaction"
+        "name": "Transaction",
+        "type": "object"
       },
       {
         "id": "schema:TransactionId",
         "kind": "schema",
-        "name": "TransactionId"
+        "name": "TransactionId",
+        "type": "object"
       },
       {
         "id": "schema:TransactionResult",
         "kind": "schema",
-        "name": "TransactionResult"
+        "name": "TransactionResult",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:UserContext",
         "kind": "schema",
-        "name": "UserContext"
+        "name": "UserContext",
+        "type": "object"
       },
       {
         "id": "schema:Users",
         "kind": "schema",
-        "name": "Users"
+        "name": "Users",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `d0db3c7c39ed4ccd709aaa05510c15f28bcc660e4b9ff1c5af64092ca5e2f31e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/abuse/tickets` | getTickets | List all abuse tickets ids that match user provided filters |
-| POST | `/v1/abuse/tickets` | createTicket | Create a new abuse ticket |
-| GET | `/v1/abuse/tickets/{ticketId}` | getTicketInfo | Return the abuse ticket data for a given ticket id |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/abuse/tickets` | getTickets | `type`, `closed`, `sourceDomainOrIp`, `target`, `createdStart`, `createdEnd`, `limit`, `offset` | AbuseTicketList | yes | List all abuse tickets ids that match user provided filters |
+| POST | `/v1/abuse/tickets` | createTicket | body*: AbuseTicketCreate | AbuseTicketId |  | Create a new abuse ticket |
+| GET | `/v1/abuse/tickets/{ticketId}` | getTicketInfo | `ticketId`* | AbuseTicket | yes | Return the abuse ticket data for a given ticket id |

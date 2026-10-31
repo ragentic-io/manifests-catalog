@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.svix.com_static_img_brand-p
 
 | | |
 | --- | --- |
-| Signed bundle | `45c289a21d298c1d7b7bdc1eae9ba17ea204e537d923701b31332b30b6866eb4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,57 +34,59 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.svix.com_static_img_brand-p
 
 72 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/app/` | list_applications_api_v1_app__get | List Applications |
-| POST | `/api/v1/app/` | create_application_api_v1_app__post | Create Application |
-| DELETE | `/api/v1/app/{app_id}/` | delete_application_api_v1_app__app_id___delete | Delete Application |
-| GET | `/api/v1/app/{app_id}/` | get_application_api_v1_app__app_id___get | Get Application |
-| PUT | `/api/v1/app/{app_id}/` | update_application_api_v1_app__app_id___put | Update Application |
-| GET | `/api/v1/app/{app_id}/attempt/endpoint/{endpoint_id}/` | list_attempts_by_endpoint_api_v1_app__app_id__attempt_endpoint__endpoint_id___get | List Attempts By Endpoint |
-| GET | `/api/v1/app/{app_id}/attempt/msg/{msg_id}/` | list_attempts_by_msg_api_v1_app__app_id__attempt_msg__msg_id___get | List Attempts By Msg |
-| GET | `/api/v1/app/{app_id}/endpoint/` | list_endpoints_api_v1_app__app_id__endpoint__get | List Endpoints |
-| POST | `/api/v1/app/{app_id}/endpoint/` | create_endpoint_api_v1_app__app_id__endpoint__post | Create Endpoint |
-| DELETE | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/` | delete_endpoint_api_v1_app__app_id__endpoint__endpoint_id___delete | Delete Endpoint |
-| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/` | get_endpoint_api_v1_app__app_id__endpoint__endpoint_id___get | Get Endpoint |
-| PUT | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/` | update_endpoint_api_v1_app__app_id__endpoint__endpoint_id___put | Update Endpoint |
-| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/` | get_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__get | Get Endpoint Headers |
-| PATCH | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/` | patch_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__patch | Patch Endpoint Headers |
-| PUT | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/` | update_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__put | Update Endpoint Headers |
-| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/msg/` | list_attempted_messages_api_v1_app__app_id__endpoint__endpoint_id__msg__get | List Attempted Messages |
-| POST | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/recover/` | recover_failed_webhooks_api_v1_app__app_id__endpoint__endpoint_id__recover__post | Recover Failed Webhooks |
-| POST | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/replay-missing/` | replay_missing_webhooks_api_v1_app__app_id__endpoint__endpoint_id__replay_missing__post | Replay Missing Webhooks |
-| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/` | get_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret__get | Get Endpoint Secret |
-| POST | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/rotate/` | rotate_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret_rotate__post | Rotate Endpoint Secret |
-| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/stats/` | get_endpoint_stats_api_v1_app__app_id__endpoint__endpoint_id__stats__get | Get Endpoint Stats |
-| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/` | get_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__get | Get Endpoint Transformation |
-| PATCH | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/` | set_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__patch | Set Endpoint Transformation |
-| GET | `/api/v1/app/{app_id}/integration/` | list_integrations_api_v1_app__app_id__integration__get | List Integrations |
-| POST | `/api/v1/app/{app_id}/integration/` | create_integration_api_v1_app__app_id__integration__post | Create Integration |
-| DELETE | `/api/v1/app/{app_id}/integration/{integ_id}/` | delete_integration_api_v1_app__app_id__integration__integ_id___delete | Delete Integration |
-| GET | `/api/v1/app/{app_id}/integration/{integ_id}/` | get_integration_api_v1_app__app_id__integration__integ_id___get | Get Integration |
-| PUT | `/api/v1/app/{app_id}/integration/{integ_id}/` | update_integration_api_v1_app__app_id__integration__integ_id___put | Update Integration |
-| GET | `/api/v1/app/{app_id}/integration/{integ_id}/key/` | get_integration_key_api_v1_app__app_id__integration__integ_id__key__get | Get Integration Key |
-| POST | `/api/v1/app/{app_id}/integration/{integ_id}/key/rotate/` | rotate_integration_key_api_v1_app__app_id__integration__integ_id__key_rotate__post | Rotate Integration Key |
-| GET | `/api/v1/app/{app_id}/msg/` | list_messages_api_v1_app__app_id__msg__get | List Messages |
-| POST | `/api/v1/app/{app_id}/msg/` | create_message_api_v1_app__app_id__msg__post | Create Message |
-| GET | `/api/v1/app/{app_id}/msg/{msg_id}/` | get_message_api_v1_app__app_id__msg__msg_id___get | Get Message |
-| GET | `/api/v1/app/{app_id}/msg/{msg_id}/attempt/` | list_attempts_api_v1_app__app_id__msg__msg_id__attempt__get | List Attempts |
-| GET | `/api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/` | get_attempt_api_v1_app__app_id__msg__msg_id__attempt__attempt_id___get | Get Attempt |
-| DELETE | `/api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/content/` | expunge_attempt_content_api_v1_app__app_id__msg__msg_id__attempt__attempt_id__content__delete | Delete attempt response body |
-| DELETE | `/api/v1/app/{app_id}/msg/{msg_id}/content/` | expunge_message_payload_api_v1_app__app_id__msg__msg_id__content__delete | Delete message payload |
-| GET | `/api/v1/app/{app_id}/msg/{msg_id}/endpoint/` | list_attempted_destinations_api_v1_app__app_id__msg__msg_id__endpoint__get | List Attempted Destinations |
-| GET | `/api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/attempt/` | list_attempts_for_endpoint_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__attempt__get | List Attempts For Endpoint |
-| POST | `/api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/resend/` | resend_webhook_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__resend__post | Resend Webhook |
-| POST | `/api/v1/auth/app-portal-access/{app_id}/` | get_app_portal_access_api_v1_auth_app_portal_access__app_id___post | Get Consumer App Portal Access |
-| POST | `/api/v1/auth/app/{app_id}/expire-all/` | expire_all_api_v1_auth_app__app_id__expire_all__post | Expire All |
-| POST | `/api/v1/auth/dashboard-access/{app_id}/` | get_dashboard_access_api_v1_auth_dashboard_access__app_id___post | Get Dashboard Access |
-| POST | `/api/v1/auth/logout/` | logout_api_v1_auth_logout__post | Logout |
-| GET | `/api/v1/background-task/` | list_background_tasks_api_v1_background_task__get | List Background Tasks |
-| GET | `/api/v1/background-task/{task_id}/` | get_background_task_api_v1_background_task__task_id___get | Get Background Task |
-| GET | `/api/v1/event-type/` | list_event_types_api_v1_event_type__get | List Event Types |
-| POST | `/api/v1/event-type/` | create_event_type_api_v1_event_type__post | Create Event Type |
-| DELETE | `/api/v1/event-type/{event_type_name}/` | delete_event_type_api_v1_event_type__event_type_name___delete | Archive Event Type |
-| GET | `/api/v1/event-type/{event_type_name}/` | get_event_type_api_v1_event_type__event_type_name___get | Get Event Type |
-| PUT | `/api/v1/event-type/{event_type_name}/` | update_event_type_api_v1_event_type__event_type_name___put | Update Event Type |
-| GET | `/api/v1/health/` | health_api_v1_health__get | Health |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/app/` | list_applications_api_v1_app__get | `iterator`, `limit`, `order`, `idempotency-key` | ListResponse_ApplicationOut_ | yes | List Applications |
+| POST | `/api/v1/app/` | create_application_api_v1_app__post | `get_if_exists`, `idempotency-key`, body*: ApplicationIn | ApplicationOut |  | Create Application |
+| GET | `/api/v1/app/{app_id}/` | get_application_api_v1_app__app_id___get | `app_id`*, `idempotency-key` | ApplicationOut | yes | Get Application |
+| PUT | `/api/v1/app/{app_id}/` | update_application_api_v1_app__app_id___put | `app_id`*, `idempotency-key`, body*: ApplicationIn | ApplicationOut |  | Update Application |
+| DELETE | `/api/v1/app/{app_id}/` | delete_application_api_v1_app__app_id___delete | `app_id`*, `idempotency-key` | — |  | Delete Application |
+| GET | `/api/v1/app/{app_id}/attempt/endpoint/{endpoint_id}/` | list_attempts_by_endpoint_api_v1_app__app_id__attempt_endpoint__endpoint_id___get | `app_id`*, `endpoint_id`*, `iterator`, `limit`, `status`, `status_code_class`, `event_types`, `channel`, `before`, `after`, `idempotency-key` | ListResponse_MessageAttemptOut_ | yes | List Attempts By Endpoint |
+| GET | `/api/v1/app/{app_id}/attempt/msg/{msg_id}/` | list_attempts_by_msg_api_v1_app__app_id__attempt_msg__msg_id___get | `app_id`*, `msg_id`*, `endpoint_id`, `iterator`, `limit`, `status`, `status_code_class`, `event_types`, `channel`, `before`, `after`, `idempotency-key` | ListResponse_MessageAttemptOut_ | yes | List Attempts By Msg |
+| GET | `/api/v1/app/{app_id}/endpoint/` | list_endpoints_api_v1_app__app_id__endpoint__get | `app_id`*, `iterator`, `limit`, `order`, `idempotency-key` | ListResponse_EndpointOut_ | yes | List Endpoints |
+| POST | `/api/v1/app/{app_id}/endpoint/` | create_endpoint_api_v1_app__app_id__endpoint__post | `app_id`*, `idempotency-key`, body*: EndpointIn | EndpointOut |  | Create Endpoint |
+| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/` | get_endpoint_api_v1_app__app_id__endpoint__endpoint_id___get | `endpoint_id`*, `app_id`*, `idempotency-key` | EndpointOut | yes | Get Endpoint |
+| PUT | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/` | update_endpoint_api_v1_app__app_id__endpoint__endpoint_id___put | `endpoint_id`*, `app_id`*, `idempotency-key`, body*: EndpointUpdate | EndpointOut |  | Update Endpoint |
+| DELETE | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/` | delete_endpoint_api_v1_app__app_id__endpoint__endpoint_id___delete | `endpoint_id`*, `app_id`*, `idempotency-key` | — |  | Delete Endpoint |
+| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/` | get_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__get | `endpoint_id`*, `app_id`*, `idempotency-key` | EndpointHeadersOut | yes | Get Endpoint Headers |
+| PUT | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/` | update_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__put | `app_id`*, `endpoint_id`*, `idempotency-key`, body*: EndpointHeadersIn | — |  | Update Endpoint Headers |
+| PATCH | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/` | patch_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__patch | `app_id`*, `endpoint_id`*, `idempotency-key`, body*: EndpointHeadersPatchIn | — |  | Patch Endpoint Headers |
+| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/msg/` | list_attempted_messages_api_v1_app__app_id__endpoint__endpoint_id__msg__get | `endpoint_id`*, `app_id`*, `iterator`, `limit`, `channel`, `status`, `before`, `after`, `idempotency-key` | ListResponse_EndpointMessageOut_ | yes | List Attempted Messages |
+| POST | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/recover/` | recover_failed_webhooks_api_v1_app__app_id__endpoint__endpoint_id__recover__post | `app_id`*, `endpoint_id`*, `idempotency-key`, body*: RecoverIn | RecoverOut |  | Recover Failed Webhooks |
+| POST | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/replay-missing/` | replay_missing_webhooks_api_v1_app__app_id__endpoint__endpoint_id__replay_missing__post | `app_id`*, `endpoint_id`*, `idempotency-key`, body*: ReplayIn | ReplayOut |  | Replay Missing Webhooks |
+| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/` | get_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret__get | `endpoint_id`*, `app_id`*, `idempotency-key` | EndpointSecretOut | yes | Get Endpoint Secret |
+| POST | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/rotate/` | rotate_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret_rotate__post | `endpoint_id`*, `app_id`*, `idempotency-key`, body*: EndpointSecretRotateIn | — |  | Rotate Endpoint Secret |
+| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/stats/` | get_endpoint_stats_api_v1_app__app_id__endpoint__endpoint_id__stats__get | `endpoint_id`*, `app_id`*, `since`, `until`, `idempotency-key` | EndpointStats | yes | Get Endpoint Stats |
+| GET | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/` | get_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__get | `endpoint_id`*, `app_id`*, `idempotency-key` | EndpointTransformationOut | yes | Get Endpoint Transformation |
+| PATCH | `/api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/` | set_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__patch | `app_id`*, `endpoint_id`*, `idempotency-key`, body*: EndpointTransformationIn | — |  | Set Endpoint Transformation |
+| GET | `/api/v1/app/{app_id}/integration/` | list_integrations_api_v1_app__app_id__integration__get | `app_id`*, `iterator`, `limit`, `idempotency-key` | ListResponse_IntegrationOut_ | yes | List Integrations |
+| POST | `/api/v1/app/{app_id}/integration/` | create_integration_api_v1_app__app_id__integration__post | `app_id`*, `idempotency-key`, body*: IntegrationIn | IntegrationOut |  | Create Integration |
+| GET | `/api/v1/app/{app_id}/integration/{integ_id}/` | get_integration_api_v1_app__app_id__integration__integ_id___get | `integ_id`*, `app_id`*, `idempotency-key` | IntegrationOut | yes | Get Integration |
+| PUT | `/api/v1/app/{app_id}/integration/{integ_id}/` | update_integration_api_v1_app__app_id__integration__integ_id___put | `integ_id`*, `app_id`*, `idempotency-key`, body*: IntegrationUpdate | IntegrationOut |  | Update Integration |
+| DELETE | `/api/v1/app/{app_id}/integration/{integ_id}/` | delete_integration_api_v1_app__app_id__integration__integ_id___delete | `integ_id`*, `app_id`*, `idempotency-key` | — |  | Delete Integration |
+| GET | `/api/v1/app/{app_id}/integration/{integ_id}/key/` | get_integration_key_api_v1_app__app_id__integration__integ_id__key__get | `integ_id`*, `app_id`*, `idempotency-key` | IntegrationKeyOut | yes | Get Integration Key |
+| POST | `/api/v1/app/{app_id}/integration/{integ_id}/key/rotate/` | rotate_integration_key_api_v1_app__app_id__integration__integ_id__key_rotate__post | `integ_id`*, `app_id`*, `idempotency-key` | IntegrationKeyOut |  | Rotate Integration Key |
+| GET | `/api/v1/app/{app_id}/msg/` | list_messages_api_v1_app__app_id__msg__get | `app_id`*, `iterator`, `limit`, `event_types`, `channel`, `before`, `after`, `idempotency-key` | ListResponse_MessageOut_ | yes | List Messages |
+| POST | `/api/v1/app/{app_id}/msg/` | create_message_api_v1_app__app_id__msg__post | `app_id`*, `with_content`, `idempotency-key`, body*: MessageIn | MessageOut |  | Create Message |
+| GET | `/api/v1/app/{app_id}/msg/{msg_id}/` | get_message_api_v1_app__app_id__msg__msg_id___get | `msg_id`*, `app_id`*, `idempotency-key` | MessageOut | yes | Get Message |
+| GET | `/api/v1/app/{app_id}/msg/{msg_id}/attempt/` | list_attempts_api_v1_app__app_id__msg__msg_id__attempt__get | `app_id`*, `msg_id`*, `iterator`, `limit`, `endpoint_id`, `event_types`, `channel`, `status`, `before`, `after`, `idempotency-key` | ListResponse_MessageAttemptOut_ | yes | List Attempts |
+| GET | `/api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/` | get_attempt_api_v1_app__app_id__msg__msg_id__attempt__attempt_id___get | `attempt_id`*, `msg_id`*, `app_id`*, `idempotency-key` | MessageAttemptOut | yes | Get Attempt |
+| DELETE | `/api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/content/` | expunge_attempt_content_api_v1_app__app_id__msg__msg_id__attempt__attempt_id__content__delete | `attempt_id`*, `msg_id`*, `app_id`*, `idempotency-key` | — |  | Delete attempt response body |
+| DELETE | `/api/v1/app/{app_id}/msg/{msg_id}/content/` | expunge_message_payload_api_v1_app__app_id__msg__msg_id__content__delete | `msg_id`*, `app_id`*, `idempotency-key` | — |  | Delete message payload |
+| GET | `/api/v1/app/{app_id}/msg/{msg_id}/endpoint/` | list_attempted_destinations_api_v1_app__app_id__msg__msg_id__endpoint__get | `msg_id`*, `app_id`*, `iterator`, `limit`, `idempotency-key` | ListResponse_MessageEndpointOut_ | yes | List Attempted Destinations |
+| GET | `/api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/attempt/` | list_attempts_for_endpoint_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__attempt__get | `msg_id`*, `app_id`*, `endpoint_id`*, `iterator`, `limit`, `event_types`, `channel`, `status`, `before`, `after`, `idempotency-key` | ListResponse_MessageAttemptEndpointOut_ | yes | List Attempts For Endpoint |
+| POST | `/api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/resend/` | resend_webhook_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__resend__post | `endpoint_id`*, `msg_id`*, `app_id`*, `idempotency-key` | — |  | Resend Webhook |
+| POST | `/api/v1/auth/app-portal-access/{app_id}/` | get_app_portal_access_api_v1_auth_app_portal_access__app_id___post | `app_id`*, `idempotency-key`, body*: AppPortalAccessIn | AppPortalAccessOut |  | Get Consumer App Portal Access |
+| POST | `/api/v1/auth/app/{app_id}/expire-all/` | expire_all_api_v1_auth_app__app_id__expire_all__post | `app_id`*, `idempotency-key`, body*: ApplicationTokenExpireIn | — |  | Expire All |
+| POST | `/api/v1/auth/dashboard-access/{app_id}/` | get_dashboard_access_api_v1_auth_dashboard_access__app_id___post | `app_id`*, `idempotency-key` | DashboardAccessOut |  | Get Dashboard Access |
+| POST | `/api/v1/auth/logout/` | logout_api_v1_auth_logout__post | `idempotency-key` | — |  | Logout |
+| GET | `/api/v1/background-task/` | list_background_tasks_api_v1_background_task__get | `iterator`, `limit`, `order`, `idempotency-key` | ListResponse_BackgroundTaskOut_ | yes | List Background Tasks |
+| GET | `/api/v1/background-task/{task_id}/` | get_background_task_api_v1_background_task__task_id___get | `task_id`*, `idempotency-key` | BackgroundTaskOut | yes | Get Background Task |
+| GET | `/api/v1/event-type/` | list_event_types_api_v1_event_type__get | `iterator`, `limit`, `with_content`, `include_archived`, `idempotency-key` | ListResponse_EventTypeOut_ | yes | List Event Types |
+| POST | `/api/v1/event-type/` | create_event_type_api_v1_event_type__post | `idempotency-key`, body*: EventTypeIn | EventTypeOut |  | Create Event Type |
+| GET | `/api/v1/event-type/{event_type_name}/` | get_event_type_api_v1_event_type__event_type_name___get | `event_type_name`*, `idempotency-key` | EventTypeOut | yes | Get Event Type |
+| PUT | `/api/v1/event-type/{event_type_name}/` | update_event_type_api_v1_event_type__event_type_name___put | `event_type_name`*, `idempotency-key`, body*: EventTypeUpdate | EventTypeOut |  | Update Event Type |
+| DELETE | `/api/v1/event-type/{event_type_name}/` | delete_event_type_api_v1_event_type__event_type_name___delete | `event_type_name`*, `expunge`, `idempotency-key` | — |  | Archive Event Type |
+| GET | `/api/v1/health/` | health_api_v1_health__get | `idempotency-key` | — | yes | Health |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_GDSTeam_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `5efb1bf91b0fc0d4c7d8ff514f0bfe50ce31beb38e55bb39ccecbb25349564d7` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_GDSTeam_profile_ima
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v1/vehicles` | getVehicleDetailsByRegistrationNumber | Get vehicle details by registration number |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v1/vehicles` | getVehicleDetailsByRegistrationNumber | `x-api-key`*, `X-Correlation-Id`, body*: VehicleRequest | Vehicle |  | Get vehicle details by registration number |

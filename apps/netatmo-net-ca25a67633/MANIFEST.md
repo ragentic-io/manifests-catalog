@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_netatmo_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `f1d087a03687428dc0a285ae9abe50c98b491477d4933a36b5175922598f805a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,27 +34,29 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_netatmo_profile_ima
 
 65 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/addwebhook` | addwebhook | — |
-| POST | `/createnewschedule` | createnewschedule | — |
-| GET | `/devicelist` | devicelist | — |
-| GET | `/dropwebhook` | dropwebhook | — |
-| GET | `/getcamerapicture` | getcamerapicture | — |
-| GET | `/geteventsuntil` | geteventsuntil | — |
-| GET | `/gethomecoachsdata` | gethomecoachsdata | — |
-| GET | `/gethomedata` | gethomedata | — |
-| GET | `/getlasteventof` | getlasteventof | — |
-| GET | `/getmeasure` | getmeasure | — |
-| GET | `/getnextevents` | getnextevents | — |
-| GET | `/getpublicdata` | getpublicdata | — |
-| GET | `/getstationsdata` | getstationsdata | — |
-| GET | `/getthermostatsdata` | getthermostatsdata | — |
-| GET | `/getthermstate` | getthermstate | — |
-| GET | `/getuser` | getuser | — |
-| GET | `/partnerdevices` | partnerdevices | — |
-| POST | `/setpersonsaway` | setpersonsaway | — |
-| POST | `/setpersonshome` | setpersonshome | — |
-| POST | `/setthermpoint` | setthermpoint | — |
-| POST | `/switchschedule` | switchschedule | — |
-| POST | `/syncschedule` | syncschedule | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/addwebhook` | addwebhook | `url`*, `app_type`* | NAWelcomeWebhookResponse | yes | — |
+| POST | `/createnewschedule` | createnewschedule | `device_id`*, `module_id`*, body*: NAThermProgram | NANewScheduleResponse |  | — |
+| GET | `/devicelist` | devicelist | `app_type`, `device_id`, `get_favorites` | NADeviceListResponse | yes | — |
+| GET | `/dropwebhook` | dropwebhook | `app_type`* | NAWelcomeWebhookResponse | yes | — |
+| GET | `/getcamerapicture` | getcamerapicture | `image_id`*, `key`* | string:byte | yes | — |
+| GET | `/geteventsuntil` | geteventsuntil | `home_id`*, `event_id`* | NAWelcomeEventResponse | yes | — |
+| GET | `/gethomecoachsdata` | gethomecoachsdata | `device_id` | NAHealthyHomeCoachDataResponse | yes | — |
+| GET | `/gethomedata` | gethomedata | `home_id`, `size` | NAWelcomeHomeDataResponse | yes | — |
+| GET | `/getlasteventof` | getlasteventof | `home_id`*, `person_id`*, `offset` | NAWelcomeEventResponse | yes | — |
+| GET | `/getmeasure` | getmeasure | `device_id`*, `module_id`, `scale`*, `type`*, `date_begin`, `date_end`, `limit`, `optimize`, `real_time` | NAMeasureResponse | yes | — |
+| GET | `/getnextevents` | getnextevents | `home_id`*, `event_id`*, `size` | NAWelcomeEventResponse | yes | — |
+| GET | `/getpublicdata` | getpublicdata | `lat_ne`*, `lon_ne`*, `lat_sw`*, `lon_sw`*, `required_data`, `filter` | NAPublicDataResponse | yes | — |
+| GET | `/getstationsdata` | getstationsdata | `device_id`, `get_favorites` | NAStationDataResponse | yes | — |
+| GET | `/getthermostatsdata` | getthermostatsdata | `device_id` | NAThermostatDataResponse | yes | — |
+| GET | `/getthermstate` | getthermstate | `device_id`*, `module_id`* | NAThermStateResponse | yes | — |
+| GET | `/getuser` | getuser | — | NAUserResponse | yes | — |
+| GET | `/partnerdevices` | partnerdevices | — | NAPartnerDevicesResponse | yes | — |
+| POST | `/setpersonsaway` | setpersonsaway | `home_id`*, `person_id` | NAWelcomePersonsAwayResponse |  | — |
+| POST | `/setpersonshome` | setpersonshome | `home_id`*, `person_ids`* | NAWelcomePersonsHomeResponse |  | — |
+| POST | `/setthermpoint` | setthermpoint | `device_id`*, `module_id`*, `setpoint_mode`*, `setpoint_endtime`, `setpoint_temp` | NAOkResponse |  | — |
+| POST | `/switchschedule` | switchschedule | `device_id`*, `module_id`*, `schedule_id`* | NAOkResponse |  | — |
+| POST | `/syncschedule` | syncschedule | `device_id`*, `module_id`*, body*: NAThermProgram | NAOkResponse |  | — |

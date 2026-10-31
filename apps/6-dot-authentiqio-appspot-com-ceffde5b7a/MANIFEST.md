@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.authentiq.com_theme_images_
 
 | | |
 | --- | --- |
-| Signed bundle | `8f2977a21709a7d8ba5fc2f6205cfcc525d8eb541b707c16f8aac4460fc58c16` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,19 +34,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.authentiq.com_theme_images_
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/key` | key_revoke_nosecret | — |
-| POST | `/key` | key_register | — |
-| DELETE | `/key/{PK}` | key_revoke | — |
-| GET | `/key/{PK}` | key_retrieve | — |
-| HEAD | `/key/{PK}` | head /key/{PK} | — |
-| POST | `/key/{PK}` | key_update | — |
-| PUT | `/key/{PK}` | key_bind | — |
-| POST | `/login` | push_login_request | — |
-| POST | `/scope` | sign_request | — |
-| DELETE | `/scope/{job}` | sign_delete | — |
-| GET | `/scope/{job}` | sign_retrieve | — |
-| HEAD | `/scope/{job}` | sign_retrieve_head | — |
-| POST | `/scope/{job}` | sign_confirm | — |
-| PUT | `/scope/{job}` | sign_update | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/key` | key_register | body*: AuthentiqID | object |  | — |
+| DELETE | `/key` | key_revoke_nosecret | `email`*, `phone`*, `code` | object |  | — |
+| GET | `/key/{PK}` | key_retrieve | `PK`* | object | yes | — |
+| PUT | `/key/{PK}` | key_bind | `PK`*, body*: AuthentiqID | object |  | — |
+| POST | `/key/{PK}` | key_update | `PK`*, body*: AuthentiqID | object |  | — |
+| DELETE | `/key/{PK}` | key_revoke | `PK`*, `secret`* | object |  | — |
+| HEAD | `/key/{PK}` | head /key/{PK} | `PK`* | — | yes | — |
+| POST | `/login` | push_login_request | `callback`*, body*: PushToken | object |  | — |
+| POST | `/scope` | sign_request | `test`, body*: Claims | object |  | — |
+| GET | `/scope/{job}` | sign_retrieve | `job`* | object | yes | — |
+| PUT | `/scope/{job}` | sign_update | `job`* | object |  | — |
+| POST | `/scope/{job}` | sign_confirm | `job`* | object |  | — |
+| DELETE | `/scope/{job}` | sign_delete | `job`* | object |  | — |
+| HEAD | `/scope/{job}` | sign_retrieve_head | `job`* | — | yes | — |

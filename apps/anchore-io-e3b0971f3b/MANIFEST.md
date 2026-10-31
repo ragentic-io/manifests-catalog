@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_anchore_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `4cdd9435c907a6179f3c48946dbe6868219ae182603220ff25426a5b59838629` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,117 +34,119 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_anchore_profile_ima
 
 149 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | ping | — |
-| GET | `/account` | get_users_account | List the account for the authenticated user |
-| GET | `/accounts` | list_accounts | List user summaries. Only available to the system admin user. |
-| POST | `/accounts` | create_account | Create a new user. Only avaialble to admin user. |
-| DELETE | `/accounts/{accountname}` | delete_account | Delete the specified account, only allowed if the account is in the disabled state. All users will be deleted along with the account and all resources will be garbage collected |
-| GET | `/accounts/{accountname}` | get_account | Get info about an user. Only available to admin user. Uses the main user Id, not a username. |
-| PUT | `/accounts/{accountname}/state` | update_account_state | Update the state of an account to either enabled or disabled. For deletion use the DELETE route |
-| GET | `/accounts/{accountname}/users` | list_users | List accounts for the user |
-| POST | `/accounts/{accountname}/users` | create_user | Create a new user |
-| DELETE | `/accounts/{accountname}/users/{username}` | delete_user | Delete a specific user credential by username of the credential. Cannot be the credential used to authenticate the request. |
-| GET | `/accounts/{accountname}/users/{username}` | get_account_user | Get a specific user in the specified account |
-| DELETE | `/accounts/{accountname}/users/{username}/credentials` | delete_user_credential | Delete a credential by type |
-| GET | `/accounts/{accountname}/users/{username}/credentials` | list_user_credentials | Get current credential summary |
-| POST | `/accounts/{accountname}/users/{username}/credentials` | create_user_credential | add/replace credential |
-| GET | `/archives` | list_archives | — |
-| GET | `/archives/images` | list_analysis_archive | — |
-| POST | `/archives/images` | archive_image_analysis | — |
-| DELETE | `/archives/images/{imageDigest}` | delete_archived_analysis | — |
-| GET | `/archives/images/{imageDigest}` | get_archived_analysis | — |
-| GET | `/archives/rules` | list_analysis_archive_rules | — |
-| POST | `/archives/rules` | create_analysis_archive_rule | — |
-| DELETE | `/archives/rules/{ruleId}` | delete_analysis_archive_rule | — |
-| GET | `/archives/rules/{ruleId}` | get_analysis_archive_rule | — |
-| GET | `/event_types` | list_event_types | List Event Types |
-| DELETE | `/events` | delete_events | Delete Events |
-| GET | `/events` | list_events | List Events |
-| DELETE | `/events/{eventId}` | delete_event | Delete Event |
-| GET | `/events/{eventId}` | get_event | Get Event |
-| GET | `/health` | health_check | — |
-| DELETE | `/images` | delete_images_async | Bulk mark images for deletion |
-| GET | `/images` | list_images | List all visible images |
-| POST | `/images` | add_image | Submit a new image for analysis by the engine |
-| DELETE | `/images/by_id/{imageId}` | delete_image_by_imageId | Delete image by docker imageId |
-| GET | `/images/by_id/{imageId}` | get_image_by_imageId | Lookup image by docker imageId |
-| GET | `/images/by_id/{imageId}/check` | get_image_policy_check_by_imageId | Check policy evaluation status for image |
-| GET | `/images/by_id/{imageId}/content` | list_image_content_by_imageid | List image content types |
-| GET | `/images/by_id/{imageId}/content/files` | get_image_content_by_type_imageId_files | Get the content of an image by type files |
-| GET | `/images/by_id/{imageId}/content/java` | get_image_content_by_type_imageId_javapackage | Get the content of an image by type java |
-| GET | `/images/by_id/{imageId}/content/{ctype}` | get_image_content_by_type_imageId | Get the content of an image by type |
-| GET | `/images/by_id/{imageId}/vuln` | get_image_vulnerability_types_by_imageId | Get vulnerability types |
-| GET | `/images/by_id/{imageId}/vuln/{vtype}` | get_image_vulnerabilities_by_type_imageId | Get vulnerabilities by type |
-| DELETE | `/images/{imageDigest}` | delete_image | Delete an image analysis |
-| GET | `/images/{imageDigest}` | get_image | Get image metadata |
-| GET | `/images/{imageDigest}/artifacts/file_content_search` | list_file_content_search_results | Return a list of analyzer artifacts of the specified type |
-| GET | `/images/{imageDigest}/artifacts/retrieved_files` | list_retrieved_files | Return a list of analyzer artifacts of the specified type |
-| GET | `/images/{imageDigest}/artifacts/secret_search` | list_secret_search_results | Return a list of analyzer artifacts of the specified type |
-| GET | `/images/{imageDigest}/check` | get_image_policy_check | Check policy evaluation status for image |
-| GET | `/images/{imageDigest}/content` | list_image_content | List image content types |
-| GET | `/images/{imageDigest}/content/files` | get_image_content_by_type_files | Get the content of an image by type files |
-| GET | `/images/{imageDigest}/content/java` | get_image_content_by_type_javapackage | Get the content of an image by type java |
-| GET | `/images/{imageDigest}/content/malware` | get_image_content_by_type_malware | Get the content of an image by type malware |
-| GET | `/images/{imageDigest}/content/{ctype}` | get_image_content_by_type | Get the content of an image by type |
-| GET | `/images/{imageDigest}/metadata` | list_image_metadata | List image metadata types |
-| GET | `/images/{imageDigest}/metadata/{mtype}` | get_image_metadata_by_type | Get the metadata of an image by type |
-| GET | `/images/{imageDigest}/sboms/native` | get_image_sbom_native | Get image sbom in the native Anchore format |
-| GET | `/images/{imageDigest}/vuln` | get_image_vulnerability_types | Get vulnerability types |
-| GET | `/images/{imageDigest}/vuln/{vtype}` | get_image_vulnerabilities_by_type | Get vulnerabilities by type |
-| POST | `/import/images` | import_image_archive | Import an anchore image tar.gz archive file. This is a deprecated API replaced by the "/imports/images" route |
-| GET | `/imports/images` | list_operations | Lists in-progress imports |
-| POST | `/imports/images` | create_operation | Begin the import of an image analyzed by Syft into the system |
-| DELETE | `/imports/images/{operation_id}` | invalidate_operation | Invalidate operation ID so it can be garbage collected |
-| GET | `/imports/images/{operation_id}` | get_operation | Get detail on a single import |
-| GET | `/imports/images/{operation_id}/dockerfile` | list_import_dockerfiles | List uploaded dockerfiles |
-| POST | `/imports/images/{operation_id}/dockerfile` | import_image_dockerfile | Begin the import of an image analyzed by Syft into the system |
-| GET | `/imports/images/{operation_id}/image_config` | list_import_image_configs | List uploaded image configs |
-| POST | `/imports/images/{operation_id}/image_config` | import_image_config | Import a docker or OCI image config to associate with the image |
-| GET | `/imports/images/{operation_id}/manifest` | list_import_image_manifests | List uploaded image manifests |
-| POST | `/imports/images/{operation_id}/manifest` | import_image_manifest | Import a docker or OCI distribution manifest to associate with the image |
-| GET | `/imports/images/{operation_id}/packages` | list_import_packages | List uploaded package manifests |
-| POST | `/imports/images/{operation_id}/packages` | import_image_packages | Begin the import of an image analyzed by Syft into the system |
-| GET | `/imports/images/{operation_id}/parent_manifest` | list_import_parent_manifests | List uploaded parent manifests (manifest lists for a tag) |
-| POST | `/imports/images/{operation_id}/parent_manifest` | import_image_parent_manifest | Import a docker or OCI distribution manifest list to associate with the image |
-| POST | `/oauth/token` | get_oauth_token | — |
-| GET | `/policies` | list_policies | List policies |
-| POST | `/policies` | add_policy | Add a new policy |
-| DELETE | `/policies/{policyId}` | delete_policy | Delete policy |
-| GET | `/policies/{policyId}` | get_policy | Get specific policy |
-| PUT | `/policies/{policyId}` | update_policy | Update policy |
-| GET | `/query/images/by_package` | query_images_by_package | List of images containing given package |
-| GET | `/query/images/by_vulnerability` | query_images_by_vulnerability | List images vulnerable to the specific vulnerability ID. |
-| GET | `/query/vulnerabilities` | query_vulnerabilities | Listing information about given vulnerability |
-| GET | `/registries` | list_registries | List configured registries |
-| POST | `/registries` | create_registry | Add a new registry |
-| DELETE | `/registries/{registry}` | delete_registry | Delete a registry configuration |
-| GET | `/registries/{registry}` | get_registry | Get a specific registry configuration |
-| PUT | `/registries/{registry}` | update_registry | Update/replace a registry configuration |
-| POST | `/repositories` | add_repository | Add repository to watch |
-| GET | `/status` | get_status | Service status |
-| GET | `/subscriptions` | list_subscriptions | List all subscriptions |
-| POST | `/subscriptions` | add_subscription | Add a subscription of a specific type |
-| DELETE | `/subscriptions/{subscriptionId}` | delete_subscription | Delete subscriptions of a specific type |
-| GET | `/subscriptions/{subscriptionId}` | get_subscription | Get a specific subscription set |
-| PUT | `/subscriptions/{subscriptionId}` | update_subscription | Update an existing and specific subscription |
-| GET | `/summaries/imagetags` | list_imagetags | List all visible image digests and tags |
-| GET | `/system` | get_service_detail | System status |
-| GET | `/system/error_codes` | describe_error_codes | Describe anchore engine error codes. |
-| GET | `/system/feeds` | get_system_feeds | list feeds operations and information |
-| POST | `/system/feeds` | post_system_feeds | trigger feeds operations |
-| DELETE | `/system/feeds/{feed}` | delete_feed | — |
-| PUT | `/system/feeds/{feed}` | toggle_feed_enabled | — |
-| DELETE | `/system/feeds/{feed}/{group}` | delete_feed_group | — |
-| PUT | `/system/feeds/{feed}/{group}` | toggle_group_enabled | — |
-| GET | `/system/policy_spec` | describe_policy | Describe the policy language spec implemented by this service. |
-| GET | `/system/services` | list_services | List system services |
-| GET | `/system/services/{servicename}` | get_services_by_name | Get a service configuration and state |
-| DELETE | `/system/services/{servicename}/{hostid}` | delete_service | Delete the service config |
-| GET | `/system/services/{servicename}/{hostid}` | get_services_by_name_and_host | Get service config for a specific host |
-| POST | `/system/webhooks/{webhook_type}/test` | test_webhook | Adds the capabilities to test a webhook delivery for the given notification type |
-| GET | `/user` | get_user | List authenticated user info |
-| GET | `/user/credentials` | get_credentials | Get current credential summary |
-| POST | `/user/credentials` | add_credential | add/replace credential |
-| GET | `/version` | version_check | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | ping | — | string | yes | — |
+| GET | `/account` | get_users_account | — | Account | yes | List the account for the authenticated user |
+| GET | `/accounts` | list_accounts | `state` | AccountList | yes | List user summaries. Only available to the system admin user. |
+| POST | `/accounts` | create_account | body*: AccountCreationRequest | Account |  | Create a new user. Only avaialble to admin user. |
+| GET | `/accounts/{accountname}` | get_account | `accountname`* | Account | yes | Get info about an user. Only available to admin user. Uses the main user Id, not a username. |
+| DELETE | `/accounts/{accountname}` | delete_account | `accountname`* | — |  | Delete the specified account, only allowed if the account is in the disabled state. All users will be deleted along with the account and all resources will be garbage collected |
+| PUT | `/accounts/{accountname}/state` | update_account_state | `accountname`*, body*: AccountStatus | AccountStatus |  | Update the state of an account to either enabled or disabled. For deletion use the DELETE route |
+| GET | `/accounts/{accountname}/users` | list_users | `accountname`* | User[] | yes | List accounts for the user |
+| POST | `/accounts/{accountname}/users` | create_user | `accountname`*, body*: UserCreationRequest | User |  | Create a new user |
+| GET | `/accounts/{accountname}/users/{username}` | get_account_user | `accountname`*, `username`* | User | yes | Get a specific user in the specified account |
+| DELETE | `/accounts/{accountname}/users/{username}` | delete_user | `accountname`*, `username`* | — |  | Delete a specific user credential by username of the credential. Cannot be the credential used to authenticate the request. |
+| GET | `/accounts/{accountname}/users/{username}/credentials` | list_user_credentials | `accountname`*, `username`* | CredentialList | yes | Get current credential summary |
+| POST | `/accounts/{accountname}/users/{username}/credentials` | create_user_credential | `accountname`*, `username`*, body*: AccessCredential | User |  | add/replace credential |
+| DELETE | `/accounts/{accountname}/users/{username}/credentials` | delete_user_credential | `accountname`*, `username`*, `credential_type`* | — |  | Delete a credential by type |
+| GET | `/archives` | list_archives | — | ArchiveSummary | yes | — |
+| GET | `/archives/images` | list_analysis_archive | — | ArchivedAnalyses | yes | — |
+| POST | `/archives/images` | archive_image_analysis | body*: ImageAnalysisReferences | AddAnalysisArchiveResult |  | — |
+| GET | `/archives/images/{imageDigest}` | get_archived_analysis | `imageDigest`* | ArchivedAnalysis | yes | — |
+| DELETE | `/archives/images/{imageDigest}` | delete_archived_analysis | `imageDigest`*, `force` | — |  | — |
+| GET | `/archives/rules` | list_analysis_archive_rules | `system_global` | AnalysisArchiveRules | yes | — |
+| POST | `/archives/rules` | create_analysis_archive_rule | body*: AnalysisArchiveTransitionRule | AnalysisArchiveTransitionRule |  | — |
+| GET | `/archives/rules/{ruleId}` | get_analysis_archive_rule | `ruleId`* | AnalysisArchiveTransitionRule | yes | — |
+| DELETE | `/archives/rules/{ruleId}` | delete_analysis_archive_rule | `ruleId`* | — |  | — |
+| GET | `/event_types` | list_event_types | — | EventTypesList | yes | List Event Types |
+| GET | `/events` | list_events | `source_servicename`, `source_hostid`, `event_type`, `resource_type`, `resource_id`, `level`, `since`, `before`, `page`, `limit`, `x-anchore-account` | EventsList | yes | List Events |
+| DELETE | `/events` | delete_events | `before`, `since`, `level`, `x-anchore-account` | string[] |  | Delete Events |
+| GET | `/events/{eventId}` | get_event | `eventId`*, `x-anchore-account` | EventResponse | yes | Get Event |
+| DELETE | `/events/{eventId}` | delete_event | `eventId`*, `x-anchore-account` | — |  | Delete Event |
+| GET | `/health` | health_check | — | — | yes | — |
+| GET | `/images` | list_images | `history`, `fulltag`, `image_status`, `analysis_status`, `x-anchore-account` | AnchoreImageList | yes | List all visible images |
+| POST | `/images` | add_image | `force`, `autosubscribe`, `x-anchore-account`, body*: ImageAnalysisRequest | AnchoreImageList |  | Submit a new image for analysis by the engine |
+| DELETE | `/images` | delete_images_async | `imageDigests`*, `force`, `x-anchore-account` | DeleteImageResponseList |  | Bulk mark images for deletion |
+| GET | `/images/by_id/{imageId}` | get_image_by_imageId | `imageId`*, `x-anchore-account` | AnchoreImageList | yes | Lookup image by docker imageId |
+| DELETE | `/images/by_id/{imageId}` | delete_image_by_imageId | `imageId`*, `force`, `x-anchore-account` | DeleteImageResponse |  | Delete image by docker imageId |
+| GET | `/images/by_id/{imageId}/check` | get_image_policy_check_by_imageId | `imageId`*, `policyId`, `tag`*, `detail`, `history`, `x-anchore-account` | PolicyEvaluationList | yes | Check policy evaluation status for image |
+| GET | `/images/by_id/{imageId}/content` | list_image_content_by_imageid | `imageId`*, `x-anchore-account` | string[] | yes | List image content types |
+| GET | `/images/by_id/{imageId}/content/files` | get_image_content_by_type_imageId_files | `imageId`*, `x-anchore-account` | ContentFilesResponse | yes | Get the content of an image by type files |
+| GET | `/images/by_id/{imageId}/content/java` | get_image_content_by_type_imageId_javapackage | `imageId`*, `x-anchore-account` | ContentJAVAPackageResponse | yes | Get the content of an image by type java |
+| GET | `/images/by_id/{imageId}/content/{ctype}` | get_image_content_by_type_imageId | `imageId`*, `ctype`*, `x-anchore-account` | ContentPackageResponse | yes | Get the content of an image by type |
+| GET | `/images/by_id/{imageId}/vuln` | get_image_vulnerability_types_by_imageId | `imageId`*, `x-anchore-account` | string[] | yes | Get vulnerability types |
+| GET | `/images/by_id/{imageId}/vuln/{vtype}` | get_image_vulnerabilities_by_type_imageId | `imageId`*, `vtype`*, `x-anchore-account` | VulnerabilityResponse | yes | Get vulnerabilities by type |
+| GET | `/images/{imageDigest}` | get_image | `imageDigest`*, `x-anchore-account` | AnchoreImageList | yes | Get image metadata |
+| DELETE | `/images/{imageDigest}` | delete_image | `imageDigest`*, `force`, `x-anchore-account` | DeleteImageResponse |  | Delete an image analysis |
+| GET | `/images/{imageDigest}/artifacts/file_content_search` | list_file_content_search_results | `imageDigest`* | FileContentSearchList | yes | Return a list of analyzer artifacts of the specified type |
+| GET | `/images/{imageDigest}/artifacts/retrieved_files` | list_retrieved_files | `imageDigest`* | RetrievedFileList | yes | Return a list of analyzer artifacts of the specified type |
+| GET | `/images/{imageDigest}/artifacts/secret_search` | list_secret_search_results | `imageDigest`* | SecretSearchList | yes | Return a list of analyzer artifacts of the specified type |
+| GET | `/images/{imageDigest}/check` | get_image_policy_check | `imageDigest`*, `policyId`, `tag`*, `detail`, `history`, `interactive`, `x-anchore-account` | PolicyEvaluationList | yes | Check policy evaluation status for image |
+| GET | `/images/{imageDigest}/content` | list_image_content | `imageDigest`*, `x-anchore-account` | string[] | yes | List image content types |
+| GET | `/images/{imageDigest}/content/files` | get_image_content_by_type_files | `imageDigest`*, `x-anchore-account` | ContentFilesResponse | yes | Get the content of an image by type files |
+| GET | `/images/{imageDigest}/content/java` | get_image_content_by_type_javapackage | `imageDigest`*, `x-anchore-account` | ContentJAVAPackageResponse | yes | Get the content of an image by type java |
+| GET | `/images/{imageDigest}/content/malware` | get_image_content_by_type_malware | `imageDigest`*, `x-anchore-account` | ContentMalwareResponse | yes | Get the content of an image by type malware |
+| GET | `/images/{imageDigest}/content/{ctype}` | get_image_content_by_type | `imageDigest`*, `ctype`*, `x-anchore-account` | ContentPackageResponse | yes | Get the content of an image by type |
+| GET | `/images/{imageDigest}/metadata` | list_image_metadata | `imageDigest`*, `x-anchore-account` | string[] | yes | List image metadata types |
+| GET | `/images/{imageDigest}/metadata/{mtype}` | get_image_metadata_by_type | `imageDigest`*, `mtype`*, `x-anchore-account` | MetadataResponse | yes | Get the metadata of an image by type |
+| GET | `/images/{imageDigest}/sboms/native` | get_image_sbom_native | `imageDigest`*, `x-anchore-account` | string:binary | yes | Get image sbom in the native Anchore format |
+| GET | `/images/{imageDigest}/vuln` | get_image_vulnerability_types | `imageDigest`*, `x-anchore-account` | string[] | yes | Get vulnerability types |
+| GET | `/images/{imageDigest}/vuln/{vtype}` | get_image_vulnerabilities_by_type | `imageDigest`*, `vtype`*, `force_refresh`, `vendor_only`, `x-anchore-account` | VulnerabilityResponse | yes | Get vulnerabilities by type |
+| POST | `/import/images` | import_image_archive | body*: object | AnchoreImageList |  | Import an anchore image tar.gz archive file. This is a deprecated API replaced by the "/imports/images" route |
+| GET | `/imports/images` | list_operations | — | ImageImports | yes | Lists in-progress imports |
+| POST | `/imports/images` | create_operation | — | ImageImportOperation |  | Begin the import of an image analyzed by Syft into the system |
+| GET | `/imports/images/{operation_id}` | get_operation | `operation_id`* | ImageImportOperation | yes | Get detail on a single import |
+| DELETE | `/imports/images/{operation_id}` | invalidate_operation | `operation_id`* | ImageImportOperation |  | Invalidate operation ID so it can be garbage collected |
+| GET | `/imports/images/{operation_id}/dockerfile` | list_import_dockerfiles | `operation_id`* | ImportContentDigestList | yes | List uploaded dockerfiles |
+| POST | `/imports/images/{operation_id}/dockerfile` | import_image_dockerfile | `operation_id`*, body*: string | ImageImportContentResponse |  | Begin the import of an image analyzed by Syft into the system |
+| GET | `/imports/images/{operation_id}/image_config` | list_import_image_configs | `operation_id`* | ImportContentDigestList | yes | List uploaded image configs |
+| POST | `/imports/images/{operation_id}/image_config` | import_image_config | `operation_id`*, body*: object | ImageImportContentResponse |  | Import a docker or OCI image config to associate with the image |
+| GET | `/imports/images/{operation_id}/manifest` | list_import_image_manifests | `operation_id`* | ImportContentDigestList | yes | List uploaded image manifests |
+| POST | `/imports/images/{operation_id}/manifest` | import_image_manifest | `operation_id`*, body*: object | ImageImportContentResponse |  | Import a docker or OCI distribution manifest to associate with the image |
+| GET | `/imports/images/{operation_id}/packages` | list_import_packages | `operation_id`* | ImportContentDigestList | yes | List uploaded package manifests |
+| POST | `/imports/images/{operation_id}/packages` | import_image_packages | `operation_id`*, body*: ImagePackageManifest | ImageImportContentResponse |  | Begin the import of an image analyzed by Syft into the system |
+| GET | `/imports/images/{operation_id}/parent_manifest` | list_import_parent_manifests | `operation_id`* | ImportContentDigestList | yes | List uploaded parent manifests (manifest lists for a tag) |
+| POST | `/imports/images/{operation_id}/parent_manifest` | import_image_parent_manifest | `operation_id`*, body*: object | ImageImportContentResponse |  | Import a docker or OCI distribution manifest list to associate with the image |
+| POST | `/oauth/token` | get_oauth_token | body: object | TokenResponse |  | — |
+| GET | `/policies` | list_policies | `detail`, `x-anchore-account` | PolicyBundleList | yes | List policies |
+| POST | `/policies` | add_policy | `x-anchore-account`, body*: PolicyBundle | PolicyBundleRecord |  | Add a new policy |
+| GET | `/policies/{policyId}` | get_policy | `policyId`*, `detail`, `x-anchore-account` | PolicyBundleList | yes | Get specific policy |
+| PUT | `/policies/{policyId}` | update_policy | `policyId`*, `active`, `x-anchore-account`, body*: PolicyBundleRecord | PolicyBundleList |  | Update policy |
+| DELETE | `/policies/{policyId}` | delete_policy | `policyId`*, `x-anchore-account` | — |  | Delete policy |
+| GET | `/query/images/by_package` | query_images_by_package | `name`*, `package_type`, `version`, `page`, `limit`, `x-anchore-account` | PaginatedImageList | yes | List of images containing given package |
+| GET | `/query/images/by_vulnerability` | query_images_by_vulnerability | `vulnerability_id`*, `namespace`, `affected_package`, `severity`, `vendor_only`, `page`, `limit`, `x-anchore-account` | PaginatedVulnerableImageList | yes | List images vulnerable to the specific vulnerability ID. |
+| GET | `/query/vulnerabilities` | query_vulnerabilities | `id`*, `affected_package`, `affected_package_version`, `page`, `limit`, `namespace` | PaginatedVulnerabilityList | yes | Listing information about given vulnerability |
+| GET | `/registries` | list_registries | `x-anchore-account` | RegistryConfigurationList | yes | List configured registries |
+| POST | `/registries` | create_registry | `validate`, `x-anchore-account`, body*: RegistryConfigurationRequest | RegistryConfigurationList |  | Add a new registry |
+| GET | `/registries/{registry}` | get_registry | `registry`*, `x-anchore-account` | RegistryConfigurationList | yes | Get a specific registry configuration |
+| PUT | `/registries/{registry}` | update_registry | `registry`*, `validate`, `x-anchore-account`, body*: RegistryConfigurationRequest | RegistryConfigurationList |  | Update/replace a registry configuration |
+| DELETE | `/registries/{registry}` | delete_registry | `registry`*, `x-anchore-account` | — |  | Delete a registry configuration |
+| POST | `/repositories` | add_repository | `repository`*, `autosubscribe`, `dryrun`, `x-anchore-account` | SubscriptionList |  | Add repository to watch |
+| GET | `/status` | get_status | — | StatusResponse | yes | Service status |
+| GET | `/subscriptions` | list_subscriptions | `subscription_key`, `subscription_type`, `x-anchore-account` | SubscriptionList | yes | List all subscriptions |
+| POST | `/subscriptions` | add_subscription | `x-anchore-account`, body*: SubscriptionRequest | SubscriptionList |  | Add a subscription of a specific type |
+| GET | `/subscriptions/{subscriptionId}` | get_subscription | `subscriptionId`*, `x-anchore-account` | SubscriptionList | yes | Get a specific subscription set |
+| PUT | `/subscriptions/{subscriptionId}` | update_subscription | `subscriptionId`*, `x-anchore-account`, body*: SubscriptionUpdate | SubscriptionList |  | Update an existing and specific subscription |
+| DELETE | `/subscriptions/{subscriptionId}` | delete_subscription | `subscriptionId`*, `x-anchore-account` | — |  | Delete subscriptions of a specific type |
+| GET | `/summaries/imagetags` | list_imagetags | `image_status`, `x-anchore-account` | AnchoreImageTagSummaryList | yes | List all visible image digests and tags |
+| GET | `/system` | get_service_detail | — | SystemStatusResponse | yes | System status |
+| GET | `/system/error_codes` | describe_error_codes | — | AnchoreErrorCode[] | yes | Describe anchore engine error codes. |
+| GET | `/system/feeds` | get_system_feeds | — | FeedMetadata[] | yes | list feeds operations and information |
+| POST | `/system/feeds` | post_system_feeds | `flush`, `sync` | FeedSyncResults |  | trigger feeds operations |
+| PUT | `/system/feeds/{feed}` | toggle_feed_enabled | `feed`*, `enabled`* | FeedMetadata |  | — |
+| DELETE | `/system/feeds/{feed}` | delete_feed | `feed`* | — |  | — |
+| PUT | `/system/feeds/{feed}/{group}` | toggle_group_enabled | `feed`*, `group`*, `enabled`* | FeedMetadata[] |  | — |
+| DELETE | `/system/feeds/{feed}/{group}` | delete_feed_group | `feed`*, `group`* | — |  | — |
+| GET | `/system/policy_spec` | describe_policy | — | GateSpec[] | yes | Describe the policy language spec implemented by this service. |
+| GET | `/system/services` | list_services | — | ServiceList | yes | List system services |
+| GET | `/system/services/{servicename}` | get_services_by_name | `servicename`* | ServiceList | yes | Get a service configuration and state |
+| GET | `/system/services/{servicename}/{hostid}` | get_services_by_name_and_host | `servicename`*, `hostid`* | ServiceList | yes | Get service config for a specific host |
+| DELETE | `/system/services/{servicename}/{hostid}` | delete_service | `servicename`*, `hostid`* | — |  | Delete the service config |
+| POST | `/system/webhooks/{webhook_type}/test` | test_webhook | `webhook_type`*, `notification_type` | — |  | Adds the capabilities to test a webhook delivery for the given notification type |
+| GET | `/user` | get_user | — | User | yes | List authenticated user info |
+| GET | `/user/credentials` | get_credentials | — | CredentialList | yes | Get current credential summary |
+| POST | `/user/credentials` | add_credential | body*: AccessCredential | User |  | add/replace credential |
+| GET | `/version` | version_check | — | ServiceVersion | yes | — |

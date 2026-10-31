@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.furkot.com_img_furkot-banne
 
 | | |
 | --- | --- |
-| Signed bundle | `0c0df4ddda541b1ae5e30898c834213259bb7ff2ed8951bb44b5e487d8d21878` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.furkot.com_img_furkot-banne
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/trip` | get /trip | — |
-| GET | `/trip/{trip_id}/stop` | get /trip/{trip_id}/stop | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/trip` | get /trip | — | Trip[] | yes | — |
+| GET | `/trip/{trip_id}/stop` | get /trip/{trip_id}/stop | `trip_id`* | Step[] | yes | — |

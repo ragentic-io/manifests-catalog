@@ -12,12 +12,17 @@
       {
         "from": "extendsclass-com-json-storage-9ebbe90fb0",
         "kind": "EXPOSES",
-        "to": "operation:delete:/bin/{id}"
+        "to": "operation:get:/bin/{id}"
       },
       {
         "from": "extendsclass-com-json-storage-9ebbe90fb0",
         "kind": "EXPOSES",
-        "to": "operation:get:/bin/{id}"
+        "to": "operation:put:/bin/{id}"
+      },
+      {
+        "from": "extendsclass-com-json-storage-9ebbe90fb0",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/bin/{id}"
       },
       {
         "from": "extendsclass-com-json-storage-9ebbe90fb0",
@@ -25,9 +30,24 @@
         "to": "operation:patch:/bin/{id}"
       },
       {
-        "from": "extendsclass-com-json-storage-9ebbe90fb0",
-        "kind": "EXPOSES",
-        "to": "operation:put:/bin/{id}"
+        "from": "operation:post:/bin",
+        "kind": "RETURNS",
+        "to": "schema:CreateStatus"
+      },
+      {
+        "from": "operation:put:/bin/{id}",
+        "kind": "RETURNS",
+        "to": "schema:UpdateStatus"
+      },
+      {
+        "from": "operation:delete:/bin/{id}",
+        "kind": "RETURNS",
+        "to": "schema:DeleteStatus"
+      },
+      {
+        "from": "operation:patch:/bin/{id}",
+        "kind": "RETURNS",
+        "to": "schema:UpdateStatus"
       }
     ],
     "nodes": [
@@ -43,19 +63,23 @@
         "name": "post /bin",
         "path": "/bin",
         "pointer": "#/paths/~1bin/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateStatus"
+          },
+          {
+            "status": "413",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Create a json bin"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/bin/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /bin/{id}",
-        "path": "/bin/{id}",
-        "pointer": "#/paths/~1bin~1{id}/delete",
-        "security": [],
-        "summary": "Delete a json bin"
       },
       {
         "deprecated": false,
@@ -63,21 +87,33 @@
         "kind": "operation",
         "method": "get",
         "name": "get /bin/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/bin/{id}",
         "pointer": "#/paths/~1bin~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Return a json bin"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/bin/{id}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /bin/{id}",
-        "path": "/bin/{id}",
-        "pointer": "#/paths/~1bin~1{id}/patch",
-        "security": [],
-        "summary": "Partially update a json bin with JSON Merge Patch"
       },
       {
         "deprecated": false,
@@ -85,30 +121,145 @@
         "kind": "operation",
         "method": "put",
         "name": "put /bin/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/bin/{id}",
         "pointer": "#/paths/~1bin~1{id}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateStatus"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "413",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Update a json bin"
       },
       {
+        "deprecated": false,
+        "id": "operation:delete:/bin/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /bin/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/bin/{id}",
+        "pointer": "#/paths/~1bin~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeleteStatus"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a json bin"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/bin/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /bin/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/bin/{id}",
+        "pointer": "#/paths/~1bin~1{id}/patch",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateStatus"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "413",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Partially update a json bin with JSON Merge Patch"
+      },
+      {
         "id": "schema:CreateStatus",
         "kind": "schema",
-        "name": "CreateStatus"
+        "name": "CreateStatus",
+        "type": "object"
       },
       {
         "id": "schema:DeleteStatus",
         "kind": "schema",
-        "name": "DeleteStatus"
+        "name": "DeleteStatus",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:UpdateStatus",
         "kind": "schema",
-        "name": "UpdateStatus"
+        "name": "UpdateStatus",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_versioneye.files.wordpress.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `1655b01154ededf6f4944d242a8bb00acd859270430266aa71d49ab0899cb51a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,8 +32,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_versioneye.files.wordpress.com_
 
 ## Operations (3)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/scans` | get /api/v1/scans | Retrieves all scans |
-| GET | `/api/v1/scans/{id}` | get /api/v1/scans/{id} | Retrieves a project scan result |
-| GET | `/api/v1/scans/{id}/files/{file_id}` | get /api/v1/scans/{id}/files/{file_id} | Retrieves a file object, containing information about dependencies in the file |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/scans` | get /api/v1/scans | `name`, `per_page` | — | yes | Retrieves all scans |
+| GET | `/api/v1/scans/{id}` | get /api/v1/scans/{id} | `id`* | — | yes | Retrieves a project scan result |
+| GET | `/api/v1/scans/{id}/files/{file_id}` | get /api/v1/scans/{id}/files/{file_id} | `id`*, `file_id`*, `per_page` | — | yes | Retrieves a file object, containing information about dependencies in the file |

@@ -167,344 +167,1125 @@
       },
       {
         "deprecated": false,
+        "description": "Access api docs as served by Redoc",
         "id": "operation:get:/platform/docs",
         "kind": "operation",
         "method": "get",
         "name": "getApiDocs",
         "path": "/platform/docs",
         "pointer": "#/paths/~1platform~1docs/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Browse API documentation"
+        "summary": "Browse API documentation",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Interactive API docs using swagger-ui",
         "id": "operation:get:/platform/docs/swagger-ui",
         "kind": "operation",
         "method": "get",
         "name": "getApiSwaggerUI",
         "path": "/platform/docs/swagger-ui",
         "pointer": "#/paths/~1platform~1docs~1swagger-ui/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Browse interactive API documentation"
+        "summary": "Browse interactive API documentation",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for the closest term to autocomplete in the search box.",
         "id": "operation:get:/platform/private/autocomplete",
         "kind": "operation",
         "method": "get",
         "name": "getAutocomplete",
+        "parameters": [
+          {
+            "description": "A full text query.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Maximum amount of results to return.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/platform/private/autocomplete",
         "pointer": "#/paths/~1platform~1private~1autocomplete/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get `autocomplete` objects."
+        "summary": "Get `autocomplete` objects.",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fire the search method for multiple strings",
         "id": "operation:post:/platform/private/besthitsearch",
         "kind": "operation",
         "method": "post",
         "name": "postBestHitSearch",
         "path": "/platform/private/besthitsearch",
         "pointer": "#/paths/~1platform~1private~1besthitsearch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Find the best hit"
+        "summary": "Find the best hit",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `disease` objects.",
         "id": "operation:post:/platform/private/disease",
         "kind": "operation",
         "method": "post",
         "name": "postDiseaseById",
         "path": "/platform/private/disease",
         "pointer": "#/paths/~1platform~1private~1disease/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Find information about a list of diseases"
+        "summary": "Find information about a list of diseases",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `disease` objects.",
         "id": "operation:get:/platform/private/disease/{disease}",
         "kind": "operation",
         "method": "get",
         "name": "getDiseaseById",
+        "parameters": [
+          {
+            "description": "An EFO identifier.",
+            "in": "path",
+            "name": "disease",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/private/disease/{disease}",
         "pointer": "#/paths/~1platform~1private~1disease~1{disease}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Find information about a disease"
+        "summary": "Find information about a disease",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `drug` objects.",
         "id": "operation:get:/platform/private/drug/{DRUG_ID}",
         "kind": "operation",
         "method": "get",
         "name": "getDrugByID",
+        "parameters": [
+          {
+            "description": "An ID in the drug index.",
+            "in": "query",
+            "name": "drug_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "DRUG_ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/private/drug/{DRUG_ID}",
         "pointer": "#/paths/~1platform~1private~1drug~1{DRUG_ID}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get drug by ID"
+        "summary": "Get drug by ID",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `ECO` objects.",
         "id": "operation:get:/platform/private/eco/{ECO_ID}",
         "kind": "operation",
         "method": "get",
         "name": "getECObyID",
+        "parameters": [
+          {
+            "description": "An [evidence code ontology](http://www.ebi.ac.uk/ols/v2/browse.do?ontName=ECO) ID.",
+            "in": "path",
+            "name": "ECO_ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/private/eco/{ECO_ID}",
         "pointer": "#/paths/~1platform~1private~1eco~1{ECO_ID}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get evidence code by ID"
+        "summary": "Get evidence code by ID",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an enrichment analysis for a list of targets passed in the body",
         "id": "operation:post:/platform/private/enrichment/targets",
         "kind": "operation",
         "method": "post",
         "name": "postEnrichmentTarget",
         "path": "/platform/private/enrichment/targets",
         "pointer": "#/paths/~1platform~1private~1enrichment~1targets/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Enrichment analysis"
+        "summary": "Enrichment analysis",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `search-result` objects.",
         "id": "operation:get:/platform/private/quicksearch",
         "kind": "operation",
         "method": "get",
         "name": "getQuickSearch",
+        "parameters": [
+          {
+            "description": "A full text query.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Maximum amount of results to return.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/platform/private/quicksearch",
         "pointer": "#/paths/~1platform~1private~1quicksearch/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search most relevant results"
+        "summary": "Search most relevant results",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `relation` objects.",
         "id": "operation:post:/platform/private/relation",
         "kind": "operation",
         "method": "post",
         "name": "postRelation",
         "path": "/platform/private/relation",
         "pointer": "#/paths/~1platform~1private~1relation/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Find related entities"
+        "summary": "Find related entities",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `relation` objects starting from diseases.",
         "id": "operation:get:/platform/private/relation/disease/{disease}",
         "kind": "operation",
         "method": "get",
         "name": "getRelationByEFOID",
+        "parameters": [
+          {
+            "description": "An EFO gene identifier.",
+            "in": "path",
+            "name": "disease",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/private/relation/disease/{disease}",
         "pointer": "#/paths/~1platform~1private~1relation~1disease~1{disease}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Find related entities by disease"
+        "summary": "Find related entities by disease",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `relation` objects starting from diseases.",
         "id": "operation:get:/platform/private/relation/target/{target}",
         "kind": "operation",
         "method": "get",
         "name": "getRelationByENSGID",
+        "parameters": [
+          {
+            "description": "An Ensembl gene identifier.",
+            "in": "path",
+            "name": "target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/private/relation/target/{target}",
         "pointer": "#/paths/~1platform~1private~1relation~1target~1{target}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Find related entities by target"
+        "summary": "Find related entities by target",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `target` objects.",
         "id": "operation:post:/platform/private/target",
         "kind": "operation",
         "method": "post",
         "name": "postTargetByENSGID",
         "path": "/platform/private/target",
         "pointer": "#/paths/~1platform~1private~1target/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Find information about a list of targets"
+        "summary": "Find information about a list of targets",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `gene-expression` objects.",
         "id": "operation:get:/platform/private/target/expression",
         "kind": "operation",
         "method": "get",
         "name": "getTargetExpressionByENSGID",
+        "parameters": [
+          {
+            "description": "An Ensembl gene identifier.",
+            "in": "query",
+            "name": "gene",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/private/target/expression",
         "pointer": "#/paths/~1platform~1private~1target~1expression/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Query expression levels"
+        "summary": "Query expression levels",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `gene-expression` objects.",
         "id": "operation:post:/platform/private/target/expression",
         "kind": "operation",
         "method": "post",
         "name": "postTargetExpressionByENSGID",
         "path": "/platform/private/target/expression",
         "pointer": "#/paths/~1platform~1private~1target~1expression/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Batch query expression levels"
+        "summary": "Batch query expression levels",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get `target` objects.",
         "id": "operation:get:/platform/private/target/{target}",
         "kind": "operation",
         "method": "get",
         "name": "getTargetByENSGID",
+        "parameters": [
+          {
+            "description": "An Ensembl gene ID for the target of interest.",
+            "in": "path",
+            "name": "target",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/private/target/{target}",
         "pointer": "#/paths/~1platform~1private~1target~1{target}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Find information about a target"
+        "summary": "Find information about a target",
+        "tags": [
+          "private"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Once we integrate all evidence connecting a target to a specific disease, we compute an association score by the means of an harmonic sum.",
         "id": "operation:get:/platform/public/association",
         "kind": "operation",
         "method": "get",
         "name": "getAssociationById",
+        "parameters": [
+          {
+            "description": "An association ID usually in the form of `TARGET_ID-DISEASE_ID`.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/public/association",
         "pointer": "#/paths/~1platform~1public~1association/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get association by id"
+        "summary": "Get association by id",
+        "tags": [
+          "public",
+          "retrieve"
+        ]
       },
       {
         "deprecated": false,
+        "description": "More complex queries for associations scores and objects can be done using this method, which allows to sort in different order, restrict to a specific class o…",
         "id": "operation:get:/platform/public/association/filter",
         "kind": "operation",
         "method": "get",
         "name": "getAssociationFilter",
+        "parameters": [
+          {
+            "description": "A target identifier listed as target.id.",
+            "in": "query",
+            "name": "target",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An EFO code listed as disease.id.",
+            "in": "query",
+            "name": "disease",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An EFO code of a therapeutic area.",
+            "in": "query",
+            "name": "therapeutic_area",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data source to consider.",
+            "in": "query",
+            "name": "datasource",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data type to consider.",
+            "in": "query",
+            "name": "datatype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A Reactome pathway identifier (returning only those targets linked to the specified pathway).",
+            "in": "query",
+            "name": "pathway",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A ChEMBL target class identifier (returning only those targets belonging to the specified class).",
+            "in": "query",
+            "name": "target_class",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A UniProt keyword (meaning all the targets linked to that keyword).",
+            "in": "query",
+            "name": "uniprotkw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If `true`, it returns associations that have at least one direct evidence connecting the target and the disease.",
+            "in": "query",
+            "name": "direct",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Type of data structure to return.",
+            "in": "query",
+            "name": "datastructure",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fields you want to retrieve.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Returns facets",
+            "in": "query",
+            "name": "facets",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 0,
+            "description": "Filter by minimum score value.",
+            "in": "query",
+            "name": "scorevalue_min",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "Filter by maximum score value.",
+            "in": "query",
+            "name": "scorevalue_max",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "Score types to apply the score value min and max filters.",
+            "in": "query",
+            "name": "scorevalue_types",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Maximum amount of results to return.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "number:integer"
+          },
+          {
+            "description": "How many initial results should be skipped.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "number:integer"
+          },
+          {
+            "description": "Format to get the data back.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort by the given score type.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict the filtered results to those matching the passed string.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/platform/public/association/filter",
         "pointer": "#/paths/~1platform~1public~1association~1filter/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Filter available associations"
+        "summary": "Filter available associations",
+        "tags": [
+          "public",
+          "filter"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Complex queries and filters for association objects can also be submitted using a JSON object and the equivalent POST method.",
         "id": "operation:post:/platform/public/association/filter",
         "kind": "operation",
         "method": "post",
         "name": "postAssociationFilter",
         "path": "/platform/public/association/filter",
         "pointer": "#/paths/~1platform~1public~1association~1filter/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Batch query available associations"
+        "summary": "Batch query available associations",
+        "tags": [
+          "public",
+          "filter"
+        ]
       },
       {
         "deprecated": false,
+        "description": "We call **evidence** a unit of data that support a connection between a target and a disease.",
         "id": "operation:get:/platform/public/evidence",
         "kind": "operation",
         "method": "get",
         "name": "getEvidenceById",
+        "parameters": [
+          {
+            "description": "Internal unique ID of the evidence string to retrieve.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/platform/public/evidence",
         "pointer": "#/paths/~1platform~1public~1evidence/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get evidence by ID"
+        "summary": "Get evidence by ID",
+        "tags": [
+          "public",
+          "retrieve"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is the POST version of [/public/evidence](#!/public/get_public_evidence).",
         "id": "operation:post:/platform/public/evidence",
         "kind": "operation",
         "method": "post",
         "name": "postEvidenceById",
         "path": "/platform/public/evidence",
         "pointer": "#/paths/~1platform~1public~1evidence/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get evidence for a list of IDs"
+        "summary": "Get evidence for a list of IDs",
+        "tags": [
+          "public",
+          "retrieve"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The filter method allows to retrieve the specific data that supports a connection between targets and diseases.",
         "id": "operation:get:/platform/public/evidence/filter",
         "kind": "operation",
         "method": "get",
         "name": "getEvidenceFilter",
+        "parameters": [
+          {
+            "description": "A target identifier listed as target.id.",
+            "in": "query",
+            "name": "target",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An EFO code listed as disease.id.",
+            "in": "query",
+            "name": "disease",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data source to consider.",
+            "in": "query",
+            "name": "data source",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data type to consider.",
+            "in": "query",
+            "name": "datatype",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A pathway identifier (meaning all the targets linked to that pathway).",
+            "in": "query",
+            "name": "pathway",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A UniProt keyword (meaning all the targets linked to that keyword).",
+            "in": "query",
+            "name": "uniprotkw",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Type of data structure to return.",
+            "in": "query",
+            "name": "datastructure",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The fields you want to retrieve.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Filter by minimum score value.",
+            "in": "query",
+            "name": "scorevalue_min",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "Filter by maximum score value.",
+            "in": "query",
+            "name": "scorevalue_max",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "Sort by the given field.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Maximum amount of results to return.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "number:integer"
+          },
+          {
+            "description": "How many initial results should be skipped.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "number:integer"
+          },
+          {
+            "description": "Format to get the data back.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/platform/public/evidence/filter",
         "pointer": "#/paths/~1platform~1public~1evidence~1filter/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Filter available evidence"
+        "summary": "Filter available evidence",
+        "tags": [
+          "public",
+          "filter"
+        ]
       },
       {
         "deprecated": false,
+        "description": "POST version of [/public/evidence/filter](#!/public/get_public_evidence_filter).",
         "id": "operation:post:/platform/public/evidence/filter",
         "kind": "operation",
         "method": "post",
         "name": "postEvidenceFilter",
         "path": "/platform/public/evidence/filter",
         "pointer": "#/paths/~1platform~1public~1evidence~1filter/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Batch filter available evidence"
+        "summary": "Batch filter available evidence",
+        "tags": [
+          "public",
+          "filter"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method allows you to look for gene or diseases of interest using a free text search, replicating the functionality of the search box on our homepage.",
         "id": "operation:get:/platform/public/search",
         "kind": "operation",
         "method": "get",
         "name": "getSearch",
+        "parameters": [
+          {
+            "description": "A full text query.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Maximum amount of results to return.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "How many initial results should be skipped.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Restrict the search to the type requested.",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/platform/public/search",
         "pointer": "#/paths/~1platform~1public~1search/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search for a disease or a target"
+        "summary": "Search for a disease or a target",
+        "tags": [
+          "public",
+          "search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the metrics about associations and evidences, divided by datasource, genes and so on.",
         "id": "operation:get:/platform/public/utils/metrics",
         "kind": "operation",
         "method": "get",
         "name": "getDataMetrics",
         "path": "/platform/public/utils/metrics",
         "pointer": "#/paths/~1platform~1public~1utils~1metrics/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get metrics about the current data release"
+        "summary": "Get metrics about the current data release",
+        "tags": [
+          "public",
+          "utils"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Check if the API is up",
         "id": "operation:get:/platform/public/utils/ping",
         "kind": "operation",
         "method": "get",
         "name": "getPing",
         "path": "/platform/public/utils/ping",
         "pointer": "#/paths/~1platform~1public~1utils~1ping/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Ping service"
+        "summary": "Ping service",
+        "tags": [
+          "public",
+          "utils"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the number of associations and evidences, divided by datasource.",
         "id": "operation:get:/platform/public/utils/stats",
         "kind": "operation",
         "method": "get",
         "name": "getDataStats",
         "path": "/platform/public/utils/stats",
         "pointer": "#/paths/~1platform~1public~1utils~1stats/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get statistics about the current data release"
+        "summary": "Get statistics about the current data release",
+        "tags": [
+          "public",
+          "utils"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of therapeutic areas for the current data release",
         "id": "operation:get:/platform/public/utils/therapeuticareas",
         "kind": "operation",
         "method": "get",
         "name": "getTherapeuticAreas",
         "path": "/platform/public/utils/therapeuticareas",
         "pointer": "#/paths/~1platform~1public~1utils~1therapeuticareas/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the list of therapeutic areas about the current data release"
+        "summary": "Get the list of therapeutic areas about the current data release",
+        "tags": [
+          "public",
+          "utils"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns current API version.",
         "id": "operation:get:/platform/public/utils/version",
         "kind": "operation",
         "method": "get",
         "name": "getVersion",
         "path": "/platform/public/utils/version",
         "pointer": "#/paths/~1platform~1public~1utils~1version/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get API version"
+        "summary": "Get API version",
+        "tags": [
+          "public",
+          "utils"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get swagger.yaml specs for the API",
         "id": "operation:get:/platform/swagger",
         "kind": "operation",
         "method": "get",
         "name": "getSwagger",
         "path": "/platform/swagger",
         "pointer": "#/paths/~1platform~1swagger/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get OpenAPI schema"
+        "summary": "Get OpenAPI schema",
+        "tags": [
+          "private"
+        ]
       }
     ]
   },

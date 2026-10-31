@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_images.prismic.io_impala-v2_8d1
 
 | | |
 | --- | --- |
-| Signed bundle | `3ffc1caee235e36930bdcc7a5552145599c632348c1cf823224d428ecd000572` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_images.prismic.io_impala-v2_8d1
 
 46 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/bookings` | listBookings | List all bookings |
-| POST | `/bookings` | createBooking | Create a booking |
-| DELETE | `/bookings/{bookingId}` | cancelBooking | Cancel a booking |
-| GET | `/bookings/{bookingId}` | retrieveBooking | Retrieve a booking |
-| PUT | `/bookings/{bookingId}` | updateBooking | Change a booking |
-| PUT | `/bookings/{bookingId}/booking-contact` | updateBookingContact | Change a booking contact |
-| GET | `/hotels` | listHotels | List all hotels |
-| GET | `/hotels/{hotelId}` | retrieveHotel | Retrieve a hotel |
-| GET | `/hotels/{hotelId}/rate-plans` | listRatePlansForHotel | List all rate plans (rate calendar) for a hotel (Beta endpoint) |
-| GET | `/hotels/{hotelId}/rate-plans/{ratePlanId}` | listRatePlanForHotelForRatePlanId | List a rate plan (rate calendar) for a hotel (Beta endpoint). |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/bookings` | listBookings | `start`, `end`, `created`, `updated`, `size`, `offset`, `sortBy` | object | yes | List all bookings |
+| POST | `/bookings` | createBooking | body: bookingRequest | booking |  | Create a booking |
+| GET | `/bookings/{bookingId}` | retrieveBooking | `bookingId`* | booking | yes | Retrieve a booking |
+| PUT | `/bookings/{bookingId}` | updateBooking | `bookingId`*, body: updateBookingRequest | booking |  | Change a booking |
+| DELETE | `/bookings/{bookingId}` | cancelBooking | `bookingId`* | booking |  | Cancel a booking |
+| PUT | `/bookings/{bookingId}/booking-contact` | updateBookingContact | `bookingId`*, body: updateBookingContactRequest | booking |  | Change a booking contact |
+| GET | `/hotels` | listHotels | `name`, `starRating`, `country`, `start`, `end`, `latitude`, `longitude`, `radius`, `hotelIds`, `created`, `updated`, `size`, `offset`, `sortBy` | object | yes | List all hotels |
+| GET | `/hotels/{hotelId}` | retrieveHotel | `hotelId`*, `start`, `end` | hotelFullDetail | yes | Retrieve a hotel |
+| GET | `/hotels/{hotelId}/rate-plans` | listRatePlansForHotel | `hotelId`*, `updatedAt`, `size`, `offset`, `start`, `end`, `roomId` | object | yes | List all rate plans (rate calendar) for a hotel (Beta endpoint) |
+| GET | `/hotels/{hotelId}/rate-plans/{ratePlanId}` | listRatePlanForHotelForRatePlanId | `hotelId`*, `ratePlanId`*, `updatedAt`, `size`, `offset`, `start`, `end`, `roomTypeId` | ratePlan | yes | List a rate plan (rate calendar) for a hotel (Beta endpoint). |

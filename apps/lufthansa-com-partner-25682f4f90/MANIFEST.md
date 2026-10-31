@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars2.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `a058aed1389b85a297aef6993597e6f20473649b4886b57ea16a453351b0863b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,21 +32,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars2.githubusercontent.com_
 
 ## Operations (16)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/baggage/baggagetripandcontact/{searchID}` | Baggage Trip and Contact | Baggage Trip and Contact |
-| GET | `/offers/fares/allfares` | All Fares | All Fares |
-| GET | `/offers/fares/bestfares` | Best Fares | Best Fares |
-| GET | `/offers/fares/deeplink` | Deep Links | Deep Links |
-| GET | `/offers/fares/deeplink/ffp` | LH Deep Links - FFP | LH Deep Links - FFP |
-| GET | `/offers/fares/deeplink/itco` | LH Deep Links - ITCO | LH Deep Links - ITCO |
-| GET | `/offers/fares/fares` | Fares | Fares |
-| GET | `/offers/fares/lowestfares` | Lowest Fares | Lowest Fares |
-| GET | `/offers/fares/subscriptions` | Fares Subscriptions | Fares Subscriptions |
-| GET | `/offers/ond/route/{origin}/{destination}` | OND Route | OND Route |
-| GET | `/offers/ond/status` | OND Status | OND Status |
-| GET | `/offers/ond/top` | Top OND | Top OND |
-| GET | `/orders/orders/{orderID}/{name}` | Orders | Orders |
-| PUT | `/preflight/autocheckin/{ticketnumber}` | Auto Check-In | Auto Check-In |
-| GET | `/promotions/priceoffers/flights/ond/{origin}/{destination}` | Price Offers | Price Offers |
-| GET | `/references/seatdetails/{aircraftCode}/{cabinCode}` | Seat Details | Seat Details |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/baggage/baggagetripandcontact/{searchID}` | Baggage Trip and Contact | `searchID`*, `Accept`* | string | yes | Baggage Trip and Contact |
+| GET | `/offers/fares/allfares` | All Fares | `catalogues`*, `origin`*, `destination`*, `travel-date`*, `return-date`, `cabin-class`, `travelers`, `fare-family`, `trackingid`, `Accept` | string | yes | All Fares |
+| GET | `/offers/fares/bestfares` | Best Fares | `catalogues`*, `origin`*, `destination`*, `travel-date`*, `trip-duration`*, `range`*, `Accept`*, `cabin-class`, `country`, `trackingid`, `fare-family` | string | yes | Best Fares |
+| GET | `/offers/fares/deeplink` | Deep Links | `catalogues`*, `trackingid`*, `country`*, `lang`*, `Accept`*, `origin`, `origin-name`, `destination`, `destination-name`, `travel-date`, `return-date`, `cabin-class`, `outbound-segments`, `return-segments`, `travelers`, `fare`, `net-fare`, `fare-currency`, `partnerid`, `encryption-key` | string | yes | Deep Links |
+| GET | `/offers/fares/deeplink/ffp` | LH Deep Links - FFP | `catalogues`*, `origin`*, `destination`*, `travel-date`*, `trackingid`*, `country`*, `lang`*, `Accept`*, `return-date`, `cabin-class`, `travelers`, `partnerid`, `encryption-key` | string | yes | LH Deep Links - FFP |
+| GET | `/offers/fares/deeplink/itco` | LH Deep Links - ITCO | `catalogues`*, `origin`*, `destination`*, `travel-date`*, `outbound-segments`*, `fare`*, `fare-currency`*, `trackingid`*, `country`*, `lang`*, `Accept`*, `return-date`, `cabin-class`, `return-segments`, `travelers`, `net-fare`, `partnerid`, `encryption-key` | string | yes | LH Deep Links - ITCO |
+| GET | `/offers/fares/fares` | Fares | `catalogues`*, `segments`*, `carriers`*, `Accept`*, `travelers`, `fare-types` | string | yes | Fares |
+| GET | `/offers/fares/lowestfares` | Lowest Fares | `catalogues`*, `origin`*, `destination`*, `travel-date`*, `Accept`*, `return-date`, `cabin-class`, `travelers`, `fare-family`, `country` | string | yes | Lowest Fares |
+| GET | `/offers/fares/subscriptions` | Fares Subscriptions | `origin`*, `destination`*, `cabin-class`*, `trip-duration`*, `email`*, `lang`*, `Accept`*, `country`, `trackingid` | string | yes | Fares Subscriptions |
+| GET | `/offers/ond/route/{origin}/{destination}` | OND Route | `origin`*, `destination`*, `Accept`*, `catalogues`, `limit`, `offset` | string | yes | OND Route |
+| GET | `/offers/ond/status` | OND Status | `Accept`*, `catalogues`, `new-routes`, `old-routes` | string | yes | OND Status |
+| GET | `/offers/ond/top` | Top OND | `Accept`*, `catalogues`, `origin` | string | yes | Top OND |
+| GET | `/orders/orders/{orderID}/{name}` | Orders | `orderID`*, `Accept`*, `name`* | string | yes | Orders |
+| PUT | `/preflight/autocheckin/{ticketnumber}` | Auto Check-In | `ticketnumber`*, `emailAddress`*, `Accept`* | string |  | Auto Check-In |
+| GET | `/promotions/priceoffers/flights/ond/{origin}/{destination}` | Price Offers | `origin`*, `destination`*, `departureDate`*, `returnDate`*, `service` | string | yes | Price Offers |
+| GET | `/references/seatdetails/{aircraftCode}/{cabinCode}` | Seat Details | `aircraftCode`*, `Accept`*, `cabinCode`*, `lang` | string | yes | Seat Details |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `60f3d29ea0c04ad0c15d12028739ade181ddf8a23e04e9e27348f266837bb476` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,10 +32,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (5)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/{country}` | Tanzania-regions | Returns all regions present in Tanzania |
-| GET | `/{country}/{region}` | Districts-in-a-region | Returns all districts in region |
-| GET | `/{country}/{region}/{district}` | Wards-in-a-district | Returns all wards in a district |
-| GET | `/{country}/{region}/{district}/{ward}` | streets-in-a-ward | Returns all streets in a ward |
-| GET | `/{country}/{region}/{district}/{ward}/{street}` | neighborhood-in-a-street- | Returns all neighborhood in a street |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/{country}` | Tanzania-regions | `country`* | — | yes | Returns all regions present in Tanzania |
+| GET | `/{country}/{region}` | Districts-in-a-region | `country`*, `region`* | — | yes | Returns all districts in region |
+| GET | `/{country}/{region}/{district}` | Wards-in-a-district | `country`*, `region`*, `district`* | — | yes | Returns all wards in a district |
+| GET | `/{country}/{region}/{district}/{ward}` | streets-in-a-ward | `country`*, `region`*, `district`*, `ward`* | — | yes | Returns all streets in a ward |
+| GET | `/{country}/{region}/{district}/{ward}/{street}` | neighborhood-in-a-street- | `country`*, `region`*, `district`*, `ward`*, `street`* | — | yes | Returns all neighborhood in a street |

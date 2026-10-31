@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_ebay_profile_image.
 
 | | |
 | --- | --- |
-| Signed bundle | `a79ee557f8fe90cf16119a1d6f554c38030d33087ab02014127334b35e0961a3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,41 +34,43 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_ebay_profile_image.
 
 48 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/advertising_eligibility` | getAdvertisingEligibility | — |
-| GET | `/custom_policy/` | getCustomPolicies | — |
-| POST | `/custom_policy/` | createCustomPolicy | — |
-| GET | `/custom_policy/{custom_policy_id}` | getCustomPolicy | — |
-| PUT | `/custom_policy/{custom_policy_id}` | updateCustomPolicy | — |
-| GET | `/fulfillment_policy` | getFulfillmentPolicies | — |
-| POST | `/fulfillment_policy/` | createFulfillmentPolicy | — |
-| GET | `/fulfillment_policy/get_by_policy_name` | getFulfillmentPolicyByName | — |
-| DELETE | `/fulfillment_policy/{fulfillmentPolicyId}` | deleteFulfillmentPolicy | — |
-| GET | `/fulfillment_policy/{fulfillmentPolicyId}` | getFulfillmentPolicy | — |
-| PUT | `/fulfillment_policy/{fulfillmentPolicyId}` | updateFulfillmentPolicy | — |
-| GET | `/kyc` | getKYC | — |
-| GET | `/payment_policy` | getPaymentPolicies | — |
-| POST | `/payment_policy` | createPaymentPolicy | — |
-| GET | `/payment_policy/get_by_policy_name` | getPaymentPolicyByName | — |
-| DELETE | `/payment_policy/{payment_policy_id}` | deletePaymentPolicy | — |
-| GET | `/payment_policy/{payment_policy_id}` | getPaymentPolicy | — |
-| PUT | `/payment_policy/{payment_policy_id}` | updatePaymentPolicy | — |
-| GET | `/payments_program/{marketplace_id}/{payments_program_type}` | getPaymentsProgram | — |
-| GET | `/payments_program/{marketplace_id}/{payments_program_type}/onboarding` | getPaymentsProgramOnboarding | — |
-| GET | `/privilege` | getPrivileges | — |
-| GET | `/program/get_opted_in_programs` | getOptedInPrograms | — |
-| POST | `/program/opt_in` | optInToProgram | — |
-| POST | `/program/opt_out` | optOutOfProgram | — |
-| GET | `/rate_table` | getRateTables | — |
-| GET | `/return_policy` | getReturnPolicies | — |
-| POST | `/return_policy` | createReturnPolicy | — |
-| GET | `/return_policy/get_by_policy_name` | getReturnPolicyByName | — |
-| DELETE | `/return_policy/{return_policy_id}` | deleteReturnPolicy | — |
-| GET | `/return_policy/{return_policy_id}` | getReturnPolicy | — |
-| PUT | `/return_policy/{return_policy_id}` | updateReturnPolicy | — |
-| GET | `/sales_tax` | getSalesTaxes | — |
-| DELETE | `/sales_tax/{countryCode}/{jurisdictionId}` | deleteSalesTax | — |
-| GET | `/sales_tax/{countryCode}/{jurisdictionId}` | getSalesTax | — |
-| PUT | `/sales_tax/{countryCode}/{jurisdictionId}` | createOrReplaceSalesTax | — |
-| GET | `/subscription` | getSubscription | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/advertising_eligibility` | getAdvertisingEligibility | `program_types`, `X-EBAY-C-MARKETPLACE-ID`* | SellerEligibilityMultiProgramResponse | yes | — |
+| GET | `/custom_policy/` | getCustomPolicies | `policy_types`, `X-EBAY-C-MARKETPLACE-ID`* | CustomPolicyResponse | yes | — |
+| POST | `/custom_policy/` | createCustomPolicy | `X-EBAY-C-MARKETPLACE-ID`*, body*: CustomPolicyCreateRequest | object |  | — |
+| GET | `/custom_policy/{custom_policy_id}` | getCustomPolicy | `custom_policy_id`*, `X-EBAY-C-MARKETPLACE-ID`* | CustomPolicy | yes | — |
+| PUT | `/custom_policy/{custom_policy_id}` | updateCustomPolicy | `custom_policy_id`*, `X-EBAY-C-MARKETPLACE-ID`*, body*: CustomPolicyRequest | — |  | — |
+| GET | `/fulfillment_policy` | getFulfillmentPolicies | `marketplace_id`* | FulfillmentPolicyResponse | yes | — |
+| POST | `/fulfillment_policy/` | createFulfillmentPolicy | body*: FulfillmentPolicyRequest | SetFulfillmentPolicyResponse |  | — |
+| GET | `/fulfillment_policy/get_by_policy_name` | getFulfillmentPolicyByName | `marketplace_id`*, `name`* | FulfillmentPolicy | yes | — |
+| GET | `/fulfillment_policy/{fulfillmentPolicyId}` | getFulfillmentPolicy | `fulfillmentPolicyId`* | FulfillmentPolicy | yes | — |
+| PUT | `/fulfillment_policy/{fulfillmentPolicyId}` | updateFulfillmentPolicy | `fulfillmentPolicyId`*, body*: FulfillmentPolicyRequest | SetFulfillmentPolicyResponse |  | — |
+| DELETE | `/fulfillment_policy/{fulfillmentPolicyId}` | deleteFulfillmentPolicy | `fulfillmentPolicyId`* | — |  | — |
+| GET | `/kyc` | getKYC | — | KycResponse | yes | — |
+| GET | `/payment_policy` | getPaymentPolicies | `marketplace_id`* | PaymentPolicyResponse | yes | — |
+| POST | `/payment_policy` | createPaymentPolicy | body*: PaymentPolicyRequest | SetPaymentPolicyResponse |  | — |
+| GET | `/payment_policy/get_by_policy_name` | getPaymentPolicyByName | `marketplace_id`*, `name`* | PaymentPolicy | yes | — |
+| GET | `/payment_policy/{payment_policy_id}` | getPaymentPolicy | `payment_policy_id`* | PaymentPolicy | yes | — |
+| PUT | `/payment_policy/{payment_policy_id}` | updatePaymentPolicy | `payment_policy_id`*, body*: PaymentPolicyRequest | SetPaymentPolicyResponse |  | — |
+| DELETE | `/payment_policy/{payment_policy_id}` | deletePaymentPolicy | `payment_policy_id`* | — |  | — |
+| GET | `/payments_program/{marketplace_id}/{payments_program_type}` | getPaymentsProgram | `marketplace_id`*, `payments_program_type`* | PaymentsProgramResponse | yes | — |
+| GET | `/payments_program/{marketplace_id}/{payments_program_type}/onboarding` | getPaymentsProgramOnboarding | `marketplace_id`*, `payments_program_type`* | PaymentsProgramOnboardingResponse | yes | — |
+| GET | `/privilege` | getPrivileges | — | SellingPrivileges | yes | — |
+| GET | `/program/get_opted_in_programs` | getOptedInPrograms | — | Programs | yes | — |
+| POST | `/program/opt_in` | optInToProgram | body*: Program | object |  | — |
+| POST | `/program/opt_out` | optOutOfProgram | body*: Program | object |  | — |
+| GET | `/rate_table` | getRateTables | `country_code` | RateTableResponse | yes | — |
+| GET | `/return_policy` | getReturnPolicies | `marketplace_id`* | ReturnPolicyResponse | yes | — |
+| POST | `/return_policy` | createReturnPolicy | body*: ReturnPolicyRequest | SetReturnPolicyResponse |  | — |
+| GET | `/return_policy/get_by_policy_name` | getReturnPolicyByName | `marketplace_id`*, `name`* | ReturnPolicy | yes | — |
+| GET | `/return_policy/{return_policy_id}` | getReturnPolicy | `return_policy_id`* | ReturnPolicy | yes | — |
+| PUT | `/return_policy/{return_policy_id}` | updateReturnPolicy | `return_policy_id`*, body*: ReturnPolicyRequest | SetReturnPolicyResponse |  | — |
+| DELETE | `/return_policy/{return_policy_id}` | deleteReturnPolicy | `return_policy_id`* | — |  | — |
+| GET | `/sales_tax` | getSalesTaxes | `country_code`* | SalesTaxes | yes | — |
+| GET | `/sales_tax/{countryCode}/{jurisdictionId}` | getSalesTax | `countryCode`*, `jurisdictionId`* | SalesTax | yes | — |
+| PUT | `/sales_tax/{countryCode}/{jurisdictionId}` | createOrReplaceSalesTax | `countryCode`*, `jurisdictionId`*, body*: SalesTaxBase | — |  | — |
+| DELETE | `/sales_tax/{countryCode}/{jurisdictionId}` | deleteSalesTax | `countryCode`*, `jurisdictionId`* | — |  | — |
+| GET | `/subscription` | getSubscription | `limit`, `continuation_token` | SubscriptionResponse | yes | — |

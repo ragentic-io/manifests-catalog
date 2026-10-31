@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_flat.io_img_logo-flat.svg"
 
 | | |
 | --- | --- |
-| Signed bundle | `d370f355e98267e4d1c743e7206f2a7fb8049a8a7a061f1cdfbc2c380c7527b4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,86 +34,88 @@ logo: "https://api.apis.guru/v2/cache/logo/https_flat.io_img_logo-flat.svg"
 
 76 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/classes` | listClasses | List the classes available for the current user |
-| POST | `/classes` | createClass | Create a new class |
-| POST | `/classes/enroll/{enrollmentCode}` | enrollClass | Join a class |
-| GET | `/classes/{class}` | getClass | Get the details of a single class |
-| PUT | `/classes/{class}` | updateClass | Update the class |
-| POST | `/classes/{class}/activate` | activateClass | Activate the class |
-| DELETE | `/classes/{class}/archive` | unarchiveClass | Unarchive the class |
-| POST | `/classes/{class}/archive` | archiveClass | Archive the class |
-| GET | `/classes/{class}/assignments` | listAssignments | Assignments listing |
-| POST | `/classes/{class}/assignments` | createAssignment | Assignment creation |
-| DELETE | `/classes/{class}/assignments/{assignment}/archive` | unarchiveAssignment | Unarchive the assignment. |
-| POST | `/classes/{class}/assignments/{assignment}/archive` | archiveAssignment | Archive the assignment |
-| POST | `/classes/{class}/assignments/{assignment}/copy` | copyAssignment | Copy an assignment |
-| GET | `/classes/{class}/assignments/{assignment}/submissions` | getSubmissions | List the students' submissions |
-| PUT | `/classes/{class}/assignments/{assignment}/submissions` | createSubmission | Create or edit a submission |
-| GET | `/classes/{class}/assignments/{assignment}/submissions/csv` | exportSubmissionsReviewsAsCsv | CSV Grades exports |
-| GET | `/classes/{class}/assignments/{assignment}/submissions/excel` | exportSubmissionsReviewsAsExcel | Excel Grades exports |
-| DELETE | `/classes/{class}/assignments/{assignment}/submissions/{submission}` | deleteSubmission | Delete a submission |
-| GET | `/classes/{class}/assignments/{assignment}/submissions/{submission}` | getSubmission | Get a student submission |
-| PUT | `/classes/{class}/assignments/{assignment}/submissions/{submission}` | editSubmission | Edit a submission |
-| GET | `/classes/{class}/assignments/{assignment}/submissions/{submission}/comments` | getSubmissionComments | List the feedback comments of a submission |
-| POST | `/classes/{class}/assignments/{assignment}/submissions/{submission}/comments` | postSubmissionComment | Add a feedback comment to a submission |
-| DELETE | `/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}` | deleteSubmissionComment | Delete a feedback comment to a submission |
-| PUT | `/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}` | updateSubmissionComment | Update a feedback comment to a submission |
-| GET | `/classes/{class}/assignments/{assignment}/submissions/{submission}/history` | getSubmissionHistory | Get the history of the submission |
-| GET | `/classes/{class}/students/{user}/submissions` | listClassStudentSubmissions | List the submissions for a student |
-| DELETE | `/classes/{class}/users/{user}` | deleteClassUser | Remove a user from the class |
-| PUT | `/classes/{class}/users/{user}` | addClassUser | Add a user to the class |
-| GET | `/collections` | listCollections | List the collections |
-| POST | `/collections` | createCollection | Create a new collection |
-| DELETE | `/collections/{collection}` | deleteCollection | Delete the collection |
-| GET | `/collections/{collection}` | getCollection | Get collection details |
-| PUT | `/collections/{collection}` | editCollection | Update a collection's metadata |
-| GET | `/collections/{collection}/scores` | listCollectionScores | List the scores contained in a collection |
-| DELETE | `/collections/{collection}/scores/{score}` | deleteScoreFromCollection | Delete a score from the collection |
-| PUT | `/collections/{collection}/scores/{score}` | addScoreToCollection | Add a score to the collection |
-| POST | `/collections/{collection}/untrash` | untrashCollection | Untrash a collection |
-| GET | `/groups/{group}` | getGroupDetails | Get group information |
-| GET | `/groups/{group}/scores` | getGroupScores | List group's scores |
-| GET | `/groups/{group}/users` | listGroupUsers | List group's users |
-| GET | `/me` | getAuthenticatedUser | Get current user profile |
-| GET | `/organizations/invitations` | listOrganizationInvitations | List the organization invitations |
-| POST | `/organizations/invitations` | createOrganizationInvitation | Create a new invitation to join the organization |
-| DELETE | `/organizations/invitations/{invitation}` | removeOrganizationInvitation | Remove an organization invitation |
-| GET | `/organizations/lti/credentials` | listLtiCredentials | List LTI 1.x credentials |
-| POST | `/organizations/lti/credentials` | createLtiCredentials | Create a new couple of LTI 1.x credentials |
-| DELETE | `/organizations/lti/credentials/{credentials}` | revokeLtiCredentials | Revoke LTI 1.x credentials |
-| GET | `/organizations/users` | listOrganizationUsers | List the organization users |
-| POST | `/organizations/users` | createOrganizationUser | Create a new user account |
-| GET | `/organizations/users/count` | countOrgaUsers | Count the organization users using the provided filters |
-| DELETE | `/organizations/users/{user}` | removeOrganizationUser | Remove an account from Flat |
-| PUT | `/organizations/users/{user}` | updateOrganizationUser | Update account information |
-| POST | `/scores` | createScore | Create a new score |
-| DELETE | `/scores/{score}` | deleteScore | Delete a score |
-| GET | `/scores/{score}` | getScore | Get a score's metadata |
-| PUT | `/scores/{score}` | editScore | Edit a score's metadata |
-| GET | `/scores/{score}/collaborators` | getScoreCollaborators | List the collaborators |
-| POST | `/scores/{score}/collaborators` | addScoreCollaborator | Add a new collaborator |
-| DELETE | `/scores/{score}/collaborators/{collaborator}` | removeScoreCollaborator | Delete a collaborator |
-| GET | `/scores/{score}/collaborators/{collaborator}` | getScoreCollaborator | Get a collaborator |
-| GET | `/scores/{score}/comments` | getScoreComments | List comments |
-| POST | `/scores/{score}/comments` | postScoreComment | Post a new comment |
-| DELETE | `/scores/{score}/comments/{comment}` | deleteScoreComment | Delete a comment |
-| PUT | `/scores/{score}/comments/{comment}` | updateScoreComment | Update an existing comment |
-| DELETE | `/scores/{score}/comments/{comment}/resolved` | markScoreCommentUnresolved | Mark the comment as unresolved |
-| PUT | `/scores/{score}/comments/{comment}/resolved` | markScoreCommentResolved | Mark the comment as resolved |
-| POST | `/scores/{score}/fork` | forkScore | Fork a score |
-| GET | `/scores/{score}/revisions` | getScoreRevisions | List the revisions |
-| POST | `/scores/{score}/revisions` | createScoreRevision | Create a new revision |
-| GET | `/scores/{score}/revisions/{revision}` | getScoreRevision | Get a score revision |
-| GET | `/scores/{score}/revisions/{revision}/{format}` | getScoreRevisionData | Get a score revision data |
-| GET | `/scores/{score}/submissions` | getScoreSubmissions | List submissions related to the score |
-| GET | `/scores/{score}/tracks` | listScoreTracks | List the audio or video tracks linked to a score |
-| POST | `/scores/{score}/tracks` | addScoreTrack | Add a new video or audio track to the score |
-| DELETE | `/scores/{score}/tracks/{track}` | deleteScoreTrack | Remove an audio or video track linked to the score |
-| GET | `/scores/{score}/tracks/{track}` | getScoreTrack | Retrieve the details of an audio or video track linked to a score |
-| PUT | `/scores/{score}/tracks/{track}` | updateScoreTrack | Update an audio or video track linked to a score |
-| POST | `/scores/{score}/untrash` | untrashScore | Untrash a score |
-| GET | `/users/{user}` | getUser | Get a public user profile |
-| GET | `/users/{user}/likes` | gerUserLikes | List liked scores |
-| GET | `/users/{user}/scores` | getUserScores | List user's scores |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/classes` | listClasses | `state` | ClassDetails[] | yes | List the classes available for the current user |
+| POST | `/classes` | createClass | body*: ClassCreation | ClassDetails |  | Create a new class |
+| POST | `/classes/enroll/{enrollmentCode}` | enrollClass | `enrollmentCode`* | ClassDetails |  | Join a class |
+| GET | `/classes/{class}` | getClass | `class`* | ClassDetails | yes | Get the details of a single class |
+| PUT | `/classes/{class}` | updateClass | `class`*, body: ClassUpdate | ClassDetails |  | Update the class |
+| POST | `/classes/{class}/activate` | activateClass | `class`* | ClassDetails |  | Activate the class |
+| POST | `/classes/{class}/archive` | archiveClass | `class`* | ClassDetails |  | Archive the class |
+| DELETE | `/classes/{class}/archive` | unarchiveClass | `class`* | ClassDetails |  | Unarchive the class |
+| GET | `/classes/{class}/assignments` | listAssignments | `class`* | Assignment[] | yes | Assignments listing |
+| POST | `/classes/{class}/assignments` | createAssignment | `class`*, body: AssignmentCreation | Assignment |  | Assignment creation |
+| POST | `/classes/{class}/assignments/{assignment}/archive` | archiveAssignment | `class`*, `assignment`* | Assignment |  | Archive the assignment |
+| DELETE | `/classes/{class}/assignments/{assignment}/archive` | unarchiveAssignment | `class`*, `assignment`* | Assignment |  | Unarchive the assignment. |
+| POST | `/classes/{class}/assignments/{assignment}/copy` | copyAssignment | `class`*, `assignment`*, body*: AssignmentCopy | Assignment |  | Copy an assignment |
+| GET | `/classes/{class}/assignments/{assignment}/submissions` | getSubmissions | `class`*, `assignment`* | AssignmentSubmission[] | yes | List the students' submissions |
+| PUT | `/classes/{class}/assignments/{assignment}/submissions` | createSubmission | `class`*, `assignment`*, body*: AssignmentSubmissionUpdate | AssignmentSubmission |  | Create or edit a submission |
+| GET | `/classes/{class}/assignments/{assignment}/submissions/csv` | exportSubmissionsReviewsAsCsv | `class`*, `assignment`* | string:binary | yes | CSV Grades exports |
+| GET | `/classes/{class}/assignments/{assignment}/submissions/excel` | exportSubmissionsReviewsAsExcel | `class`*, `assignment`* | string:binary | yes | Excel Grades exports |
+| GET | `/classes/{class}/assignments/{assignment}/submissions/{submission}` | getSubmission | `class`*, `assignment`*, `submission`* | AssignmentSubmission | yes | Get a student submission |
+| PUT | `/classes/{class}/assignments/{assignment}/submissions/{submission}` | editSubmission | `class`*, `assignment`*, `submission`*, body*: AssignmentSubmissionUpdate | AssignmentSubmission |  | Edit a submission |
+| DELETE | `/classes/{class}/assignments/{assignment}/submissions/{submission}` | deleteSubmission | `class`*, `assignment`*, `submission`* | — |  | Delete a submission |
+| GET | `/classes/{class}/assignments/{assignment}/submissions/{submission}/comments` | getSubmissionComments | `class`*, `assignment`*, `submission`* | AssignmentSubmissionComment[] | yes | List the feedback comments of a submission |
+| POST | `/classes/{class}/assignments/{assignment}/submissions/{submission}/comments` | postSubmissionComment | `class`*, `assignment`*, `submission`*, body*: AssignmentSubmissionCommentCreation | AssignmentSubmissionComment |  | Add a feedback comment to a submission |
+| PUT | `/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}` | updateSubmissionComment | `class`*, `assignment`*, `submission`*, `comment`*, body*: AssignmentSubmissionCommentCreation | AssignmentSubmissionComment |  | Update a feedback comment to a submission |
+| DELETE | `/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}` | deleteSubmissionComment | `class`*, `assignment`*, `submission`*, `comment`* | — |  | Delete a feedback comment to a submission |
+| GET | `/classes/{class}/assignments/{assignment}/submissions/{submission}/history` | getSubmissionHistory | `class`*, `assignment`*, `submission`* | AssignmentSubmissionHistory[] | yes | Get the history of the submission |
+| GET | `/classes/{class}/students/{user}/submissions` | listClassStudentSubmissions | `class`*, `user`* | AssignmentSubmission[] | yes | List the submissions for a student |
+| PUT | `/classes/{class}/users/{user}` | addClassUser | `class`*, `user`* | — |  | Add a user to the class |
+| DELETE | `/classes/{class}/users/{user}` | deleteClassUser | `class`*, `user`* | — |  | Remove a user from the class |
+| GET | `/collections` | listCollections | `parent`, `sort`, `direction`, `limit`, `next`, `previous` | Collection[] | yes | List the collections |
+| POST | `/collections` | createCollection | body*: CollectionCreation | Collection |  | Create a new collection |
+| GET | `/collections/{collection}` | getCollection | `collection`*, `sharingKey` | Collection | yes | Get collection details |
+| PUT | `/collections/{collection}` | editCollection | `collection`*, body: CollectionModification | Collection |  | Update a collection's metadata |
+| DELETE | `/collections/{collection}` | deleteCollection | `collection`* | — |  | Delete the collection |
+| GET | `/collections/{collection}/scores` | listCollectionScores | `collection`*, `sharingKey`, `sort`, `direction`, `limit`, `next`, `previous` | ScoreDetails[] | yes | List the scores contained in a collection |
+| PUT | `/collections/{collection}/scores/{score}` | addScoreToCollection | `collection`*, `score`*, `sharingKey` | ScoreDetails |  | Add a score to the collection |
+| DELETE | `/collections/{collection}/scores/{score}` | deleteScoreFromCollection | `collection`*, `score`*, `sharingKey` | — |  | Delete a score from the collection |
+| POST | `/collections/{collection}/untrash` | untrashCollection | `collection`* | — |  | Untrash a collection |
+| GET | `/groups/{group}` | getGroupDetails | `group`* | GroupDetails | yes | Get group information |
+| GET | `/groups/{group}/scores` | getGroupScores | `group`*, `parent` | ScoreDetails[] | yes | List group's scores |
+| GET | `/groups/{group}/users` | listGroupUsers | `group`*, `source` | UserPublic[] | yes | List group's users |
+| GET | `/me` | getAuthenticatedUser | `onlyId` | UserDetails | yes | Get current user profile |
+| GET | `/organizations/invitations` | listOrganizationInvitations | `role`, `limit`, `next`, `previous` | OrganizationInvitation[] | yes | List the organization invitations |
+| POST | `/organizations/invitations` | createOrganizationInvitation | body: OrganizationInvitationCreation | OrganizationInvitation |  | Create a new invitation to join the organization |
+| DELETE | `/organizations/invitations/{invitation}` | removeOrganizationInvitation | `invitation`* | — |  | Remove an organization invitation |
+| GET | `/organizations/lti/credentials` | listLtiCredentials | — | LtiCredentials[] | yes | List LTI 1.x credentials |
+| POST | `/organizations/lti/credentials` | createLtiCredentials | body*: LtiCredentialsCreation | LtiCredentials |  | Create a new couple of LTI 1.x credentials |
+| DELETE | `/organizations/lti/credentials/{credentials}` | revokeLtiCredentials | `credentials`* | — |  | Revoke LTI 1.x credentials |
+| GET | `/organizations/users` | listOrganizationUsers | `sort`, `direction`, `next`, `previous`, `role`, `q`, `group`, `noActiveLicense`, `licenseExpirationDate`, `onlyIds`, `limit` | UserDetailsAdmin[] | yes | List the organization users |
+| POST | `/organizations/users` | createOrganizationUser | body: UserCreation | UserDetailsAdmin |  | Create a new user account |
+| GET | `/organizations/users/count` | countOrgaUsers | `role`, `q`, `group`, `noActiveLicense` | integer | yes | Count the organization users using the provided filters |
+| PUT | `/organizations/users/{user}` | updateOrganizationUser | `user`*, body*: UserAdminUpdate | UserDetailsAdmin |  | Update account information |
+| DELETE | `/organizations/users/{user}` | removeOrganizationUser | `user`*, `convertToIndividual` | — |  | Remove an account from Flat |
+| POST | `/scores` | createScore | body*: ScoreCreation | ScoreDetails |  | Create a new score |
+| GET | `/scores/{score}` | getScore | `score`*, `sharingKey` | ScoreDetails | yes | Get a score's metadata |
+| PUT | `/scores/{score}` | editScore | `score`*, body: ScoreModification | ScoreDetails |  | Edit a score's metadata |
+| DELETE | `/scores/{score}` | deleteScore | `score`*, `now` | — |  | Delete a score |
+| GET | `/scores/{score}/collaborators` | getScoreCollaborators | `score`*, `sharingKey` | ResourceCollaborator[] | yes | List the collaborators |
+| POST | `/scores/{score}/collaborators` | addScoreCollaborator | `score`*, body*: ResourceCollaboratorCreation | ResourceCollaborator |  | Add a new collaborator |
+| GET | `/scores/{score}/collaborators/{collaborator}` | getScoreCollaborator | `score`*, `collaborator`*, `sharingKey` | ResourceCollaborator | yes | Get a collaborator |
+| DELETE | `/scores/{score}/collaborators/{collaborator}` | removeScoreCollaborator | `score`*, `collaborator`* | — |  | Delete a collaborator |
+| GET | `/scores/{score}/comments` | getScoreComments | `score`*, `sharingKey`, `type`, `sort`, `direction` | ScoreComment[] | yes | List comments |
+| POST | `/scores/{score}/comments` | postScoreComment | `score`*, `sharingKey`, body*: ScoreCommentCreation | ScoreComment |  | Post a new comment |
+| PUT | `/scores/{score}/comments/{comment}` | updateScoreComment | `score`*, `comment`*, `sharingKey`, body*: ScoreCommentUpdate | ScoreComment |  | Update an existing comment |
+| DELETE | `/scores/{score}/comments/{comment}` | deleteScoreComment | `score`*, `comment`*, `sharingKey` | — |  | Delete a comment |
+| PUT | `/scores/{score}/comments/{comment}/resolved` | markScoreCommentResolved | `score`*, `comment`*, `sharingKey` | — |  | Mark the comment as resolved |
+| DELETE | `/scores/{score}/comments/{comment}/resolved` | markScoreCommentUnresolved | `score`*, `comment`*, `sharingKey` | — |  | Mark the comment as unresolved |
+| POST | `/scores/{score}/fork` | forkScore | `score`*, `sharingKey`, body*: ScoreFork | ScoreDetails |  | Fork a score |
+| GET | `/scores/{score}/revisions` | getScoreRevisions | `score`*, `sharingKey` | ScoreRevision[] | yes | List the revisions |
+| POST | `/scores/{score}/revisions` | createScoreRevision | `score`*, body*: ScoreRevisionCreation | ScoreRevision |  | Create a new revision |
+| GET | `/scores/{score}/revisions/{revision}` | getScoreRevision | `score`*, `revision`*, `sharingKey` | ScoreRevision | yes | Get a score revision |
+| GET | `/scores/{score}/revisions/{revision}/{format}` | getScoreRevisionData | `score`*, `revision`*, `format`*, `sharingKey`, `parts`, `onlyCached`, `url` | string:binary | yes | Get a score revision data |
+| GET | `/scores/{score}/submissions` | getScoreSubmissions | `score`* | AssignmentSubmission[] | yes | List submissions related to the score |
+| GET | `/scores/{score}/tracks` | listScoreTracks | `score`*, `sharingKey`, `assignment`, `listAutoTrack` | ScoreTrack[] | yes | List the audio or video tracks linked to a score |
+| POST | `/scores/{score}/tracks` | addScoreTrack | `score`*, body*: ScoreTrackCreation | ScoreTrack |  | Add a new video or audio track to the score |
+| GET | `/scores/{score}/tracks/{track}` | getScoreTrack | `score`*, `track`*, `sharingKey` | ScoreTrack | yes | Retrieve the details of an audio or video track linked to a score |
+| PUT | `/scores/{score}/tracks/{track}` | updateScoreTrack | `score`*, `track`*, body*: ScoreTrackUpdate | ScoreTrack |  | Update an audio or video track linked to a score |
+| DELETE | `/scores/{score}/tracks/{track}` | deleteScoreTrack | `score`*, `track`* | — |  | Remove an audio or video track linked to the score |
+| POST | `/scores/{score}/untrash` | untrashScore | `score`* | — |  | Untrash a score |
+| GET | `/users/{user}` | getUser | `user`* | UserPublic | yes | Get a public user profile |
+| GET | `/users/{user}/likes` | gerUserLikes | `user`*, `ids` | ScoreDetails[] | yes | List liked scores |
+| GET | `/users/{user}/scores` | getUserScores | `user`*, `parent` | ScoreDetails[] | yes | List user's scores |

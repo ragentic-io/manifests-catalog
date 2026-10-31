@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_43
 
 | | |
 | --- | --- |
-| Signed bundle | `0e1ed87095009cc56992f616275887c373ecf4a3d310681cb5008c3775c31bd8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,9 +32,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_43
 
 ## Operations (4)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/restrooms` | getV1Restrooms | — |
-| GET | `/v1/restrooms/by_date` | getV1RestroomsByDate | — |
-| GET | `/v1/restrooms/by_location` | getV1RestroomsByLocation | — |
-| GET | `/v1/restrooms/search` | getV1RestroomsSearch | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/restrooms` | getV1Restrooms | `page`, `per_page`, `offset`, `ada`, `unisex` | — | yes | — |
+| GET | `/v1/restrooms/by_date` | getV1RestroomsByDate | `page`, `per_page`, `offset`, `ada`, `unisex`, `updated`, `day`*, `month`*, `year`* | — | yes | — |
+| GET | `/v1/restrooms/by_location` | getV1RestroomsByLocation | `page`, `per_page`, `offset`, `ada`, `unisex`, `lat`*, `lng`* | — | yes | — |
+| GET | `/v1/restrooms/search` | getV1RestroomsSearch | `page`, `per_page`, `offset`, `ada`, `unisex`, `query`* | — | yes | — |

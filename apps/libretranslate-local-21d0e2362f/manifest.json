@@ -33,6 +33,36 @@
         "from": "libretranslate-local-21d0e2362f",
         "kind": "EXPOSES",
         "to": "operation:post:/translate_file"
+      },
+      {
+        "from": "operation:post:/detect",
+        "kind": "RETURNS",
+        "to": "schema:detections"
+      },
+      {
+        "from": "operation:get:/frontend/settings",
+        "kind": "RETURNS",
+        "to": "schema:frontend-settings"
+      },
+      {
+        "from": "operation:get:/languages",
+        "kind": "RETURNS",
+        "to": "schema:languages"
+      },
+      {
+        "from": "operation:post:/suggest",
+        "kind": "RETURNS",
+        "to": "schema:suggest-response"
+      },
+      {
+        "from": "operation:post:/translate",
+        "kind": "RETURNS",
+        "to": "schema:translate"
+      },
+      {
+        "from": "operation:post:/translate_file",
+        "kind": "RETURNS",
+        "to": "schema:translate-file"
       }
     ],
     "nodes": [
@@ -48,8 +78,41 @@
         "name": "post /detect",
         "path": "/detect",
         "pointer": "#/paths/~1detect/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "detections"
+          },
+          {
+            "status": "400",
+            "type": "error-response"
+          },
+          {
+            "status": "403",
+            "type": "error-response"
+          },
+          {
+            "status": "429",
+            "type": "error-slow-down"
+          },
+          {
+            "status": "500",
+            "type": "error-response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Detect the language of a single text"
+        "summary": "Detect the language of a single text",
+        "tags": [
+          "translate"
+        ]
       },
       {
         "deprecated": false,
@@ -59,8 +122,18 @@
         "name": "get /frontend/settings",
         "path": "/frontend/settings",
         "pointer": "#/paths/~1frontend~1settings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "frontend-settings"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve frontend specific settings"
+        "summary": "Retrieve frontend specific settings",
+        "tags": [
+          "frontend"
+        ]
       },
       {
         "deprecated": false,
@@ -70,8 +143,18 @@
         "name": "get /languages",
         "path": "/languages",
         "pointer": "#/paths/~1languages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "languages"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieve list of supported languages"
+        "summary": "Retrieve list of supported languages",
+        "tags": [
+          "translate"
+        ]
       },
       {
         "deprecated": false,
@@ -81,8 +164,29 @@
         "name": "post /suggest",
         "path": "/suggest",
         "pointer": "#/paths/~1suggest/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "suggest-response"
+          },
+          {
+            "status": "403",
+            "type": "error-response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Submit a suggestion to improve a translation"
+        "summary": "Submit a suggestion to improve a translation",
+        "tags": [
+          "feedback"
+        ]
       },
       {
         "deprecated": false,
@@ -92,8 +196,41 @@
         "name": "post /translate",
         "path": "/translate",
         "pointer": "#/paths/~1translate/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "translate"
+          },
+          {
+            "status": "400",
+            "type": "error-response"
+          },
+          {
+            "status": "403",
+            "type": "error-response"
+          },
+          {
+            "status": "429",
+            "type": "error-slow-down"
+          },
+          {
+            "status": "500",
+            "type": "error-response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate text from a language to another"
+        "summary": "Translate text from a language to another",
+        "tags": [
+          "translate"
+        ]
       },
       {
         "deprecated": false,
@@ -103,48 +240,89 @@
         "name": "post /translate_file",
         "path": "/translate_file",
         "pointer": "#/paths/~1translate_file/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "translate-file"
+          },
+          {
+            "status": "400",
+            "type": "error-response"
+          },
+          {
+            "status": "403",
+            "type": "error-response"
+          },
+          {
+            "status": "429",
+            "type": "error-slow-down"
+          },
+          {
+            "status": "500",
+            "type": "error-response"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate file from a language to another"
+        "summary": "Translate file from a language to another",
+        "tags": [
+          "translate"
+        ]
       },
       {
         "id": "schema:detections",
         "kind": "schema",
-        "name": "detections"
+        "name": "detections",
+        "type": "object[]"
       },
       {
         "id": "schema:error-response",
         "kind": "schema",
-        "name": "error-response"
+        "name": "error-response",
+        "type": "object"
       },
       {
         "id": "schema:error-slow-down",
         "kind": "schema",
-        "name": "error-slow-down"
+        "name": "error-slow-down",
+        "type": "object"
       },
       {
         "id": "schema:frontend-settings",
         "kind": "schema",
-        "name": "frontend-settings"
+        "name": "frontend-settings",
+        "type": "object"
       },
       {
         "id": "schema:languages",
         "kind": "schema",
-        "name": "languages"
+        "name": "languages",
+        "type": "object[]"
       },
       {
         "id": "schema:suggest-response",
         "kind": "schema",
-        "name": "suggest-response"
+        "name": "suggest-response",
+        "type": "object"
       },
       {
         "id": "schema:translate",
         "kind": "schema",
-        "name": "translate"
+        "name": "translate",
+        "type": "object"
       },
       {
         "id": "schema:translate-file",
         "kind": "schema",
-        "name": "translate-file"
+        "name": "translate-file",
+        "type": "object"
       }
     ]
   },

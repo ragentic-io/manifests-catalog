@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `215fc4eea4fa5f04f7e73a25f2184b64757b9aafb0d51e7e5c54be2e51b0f2e7` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,9 +32,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (4)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/net/connect` | connect | connect |
-| POST | `/net/connections` | connections | connections |
-| POST | `/net/disconnect` | disconnect | disconnect |
-| POST | `/net/status` | status | status |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/net/connect` | connect | body: object | string |  | connect |
+| POST | `/net/connections` | connections | body: object | object[] |  | connections |
+| POST | `/net/disconnect` | disconnect | body: object | string |  | disconnect |
+| POST | `/net/status` | status | body: object | object |  | status |

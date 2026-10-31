@@ -12,22 +12,7 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:delete:/anything"
-      },
-      {
-        "from": "httpbin-org-917ed08996",
-        "kind": "EXPOSES",
         "to": "operation:get:/anything"
-      },
-      {
-        "from": "httpbin-org-917ed08996",
-        "kind": "EXPOSES",
-        "to": "operation:patch:/anything"
-      },
-      {
-        "from": "httpbin-org-917ed08996",
-        "kind": "EXPOSES",
-        "to": "operation:post:/anything"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -37,12 +22,22 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:trace:/anything"
+        "to": "operation:post:/anything"
       },
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:delete:/anything/{anything}"
+        "to": "operation:delete:/anything"
+      },
+      {
+        "from": "httpbin-org-917ed08996",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/anything"
+      },
+      {
+        "from": "httpbin-org-917ed08996",
+        "kind": "EXPOSES",
+        "to": "operation:trace:/anything"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -52,7 +47,7 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:patch:/anything/{anything}"
+        "to": "operation:put:/anything/{anything}"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -62,7 +57,12 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:put:/anything/{anything}"
+        "to": "operation:delete:/anything/{anything}"
+      },
+      {
+        "from": "httpbin-org-917ed08996",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/anything/{anything}"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -132,17 +132,12 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:delete:/delay/{delay}"
-      },
-      {
-        "from": "httpbin-org-917ed08996",
-        "kind": "EXPOSES",
         "to": "operation:get:/delay/{delay}"
       },
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:patch:/delay/{delay}"
+        "to": "operation:put:/delay/{delay}"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -152,7 +147,12 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:put:/delay/{delay}"
+        "to": "operation:delete:/delay/{delay}"
+      },
+      {
+        "from": "httpbin-org-917ed08996",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/delay/{delay}"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -287,17 +287,12 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:delete:/redirect-to"
-      },
-      {
-        "from": "httpbin-org-917ed08996",
-        "kind": "EXPOSES",
         "to": "operation:get:/redirect-to"
       },
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:patch:/redirect-to"
+        "to": "operation:put:/redirect-to"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -307,7 +302,12 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:put:/redirect-to"
+        "to": "operation:delete:/redirect-to"
+      },
+      {
+        "from": "httpbin-org-917ed08996",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/redirect-to"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -342,17 +342,12 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:delete:/status/{codes}"
-      },
-      {
-        "from": "httpbin-org-917ed08996",
-        "kind": "EXPOSES",
         "to": "operation:get:/status/{codes}"
       },
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:patch:/status/{codes}"
+        "to": "operation:put:/status/{codes}"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -362,7 +357,12 @@
       {
         "from": "httpbin-org-917ed08996",
         "kind": "EXPOSES",
-        "to": "operation:put:/status/{codes}"
+        "to": "operation:delete:/status/{codes}"
+      },
+      {
+        "from": "httpbin-org-917ed08996",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/status/{codes}"
       },
       {
         "from": "httpbin-org-917ed08996",
@@ -406,21 +406,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /absolute-redirect/{n}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/absolute-redirect/{n}",
         "pointer": "#/paths/~1absolute-redirect~1{n}/get",
+        "responses": [
+          {
+            "status": "302"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Absolutely 302 Redirects n times."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/anything",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /anything",
-        "path": "/anything",
-        "pointer": "#/paths/~1anything/delete",
-        "security": [],
-        "summary": "Returns anything passed in request data."
+        "summary": "Absolutely 302 Redirects n times.",
+        "tags": [
+          "Redirects"
+        ]
       },
       {
         "deprecated": false,
@@ -430,30 +436,17 @@
         "name": "get /anything",
         "path": "/anything",
         "pointer": "#/paths/~1anything/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns anything passed in request data."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/anything",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /anything",
-        "path": "/anything",
-        "pointer": "#/paths/~1anything/patch",
-        "security": [],
-        "summary": "Returns anything passed in request data."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/anything",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /anything",
-        "path": "/anything",
-        "pointer": "#/paths/~1anything/post",
-        "security": [],
-        "summary": "Returns anything passed in request data."
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
       },
       {
         "deprecated": false,
@@ -463,8 +456,77 @@
         "name": "put /anything",
         "path": "/anything",
         "pointer": "#/paths/~1anything/put",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Returns anything passed in request data."
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/anything",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /anything",
+        "path": "/anything",
+        "pointer": "#/paths/~1anything/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/anything",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /anything",
+        "path": "/anything",
+        "pointer": "#/paths/~1anything/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/anything",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /anything",
+        "path": "/anything",
+        "pointer": "#/paths/~1anything/patch",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
       },
       {
         "deprecated": false,
@@ -474,19 +536,17 @@
         "name": "trace /anything",
         "path": "/anything",
         "pointer": "#/paths/~1anything/trace",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Returns anything passed in request data."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/anything/{anything}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /anything/{anything}",
-        "path": "/anything/{anything}",
-        "pointer": "#/paths/~1anything~1{anything}/delete",
-        "security": [],
-        "summary": "Returns anything passed in request data."
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
       },
       {
         "deprecated": false,
@@ -494,32 +554,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /anything/{anything}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "anything",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/anything/{anything}",
         "pointer": "#/paths/~1anything~1{anything}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns anything passed in request data."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/anything/{anything}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /anything/{anything}",
-        "path": "/anything/{anything}",
-        "pointer": "#/paths/~1anything~1{anything}/patch",
-        "security": [],
-        "summary": "Returns anything passed in request data."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/anything/{anything}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /anything/{anything}",
-        "path": "/anything/{anything}",
-        "pointer": "#/paths/~1anything~1{anything}/post",
-        "security": [],
-        "summary": "Returns anything passed in request data."
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
       },
       {
         "deprecated": false,
@@ -527,10 +583,115 @@
         "kind": "operation",
         "method": "put",
         "name": "put /anything/{anything}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "anything",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/anything/{anything}",
         "pointer": "#/paths/~1anything~1{anything}/put",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Returns anything passed in request data."
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/anything/{anything}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /anything/{anything}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "anything",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/anything/{anything}",
+        "pointer": "#/paths/~1anything~1{anything}/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/anything/{anything}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /anything/{anything}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "anything",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/anything/{anything}",
+        "pointer": "#/paths/~1anything~1{anything}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/anything/{anything}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /anything/{anything}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "anything",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/anything/{anything}",
+        "pointer": "#/paths/~1anything~1{anything}/patch",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
       },
       {
         "deprecated": false,
@@ -538,10 +699,28 @@
         "kind": "operation",
         "method": "trace",
         "name": "trace /anything/{anything}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "anything",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/anything/{anything}",
         "pointer": "#/paths/~1anything~1{anything}/trace",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Returns anything passed in request data."
+        "summary": "Returns anything passed in request data.",
+        "tags": [
+          "Anything"
+        ]
       },
       {
         "deprecated": false,
@@ -549,10 +728,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /base64/{value}",
+        "parameters": [
+          {
+            "default": "SFRUUEJJTiBpcyBhd2Vzb21l",
+            "in": "path",
+            "name": "value",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/base64/{value}",
         "pointer": "#/paths/~1base64~1{value}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Decodes base64url-encoded string."
+        "summary": "Decodes base64url-encoded string.",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -560,10 +757,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /basic-auth/{user}/{passwd}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "passwd",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/basic-auth/{user}/{passwd}",
         "pointer": "#/paths/~1basic-auth~1{user}~1{passwd}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Prompts the user for authorization using HTTP Basic Auth."
+        "summary": "Prompts the user for authorization using HTTP Basic Auth.",
+        "tags": [
+          "Auth"
+        ]
       },
       {
         "deprecated": false,
@@ -571,10 +794,30 @@
         "kind": "operation",
         "method": "get",
         "name": "get /bearer",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/bearer",
         "pointer": "#/paths/~1bearer/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Prompts the user for authorization using bearer authentication."
+        "summary": "Prompts the user for authorization using bearer authentication.",
+        "tags": [
+          "Auth"
+        ]
       },
       {
         "deprecated": false,
@@ -584,8 +827,17 @@
         "name": "get /brotli",
         "path": "/brotli",
         "pointer": "#/paths/~1brotli/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Brotli-encoded data."
+        "summary": "Returns Brotli-encoded data.",
+        "tags": [
+          "Response formats"
+        ]
       },
       {
         "deprecated": false,
@@ -593,10 +845,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /bytes/{n}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/bytes/{n}",
         "pointer": "#/paths/~1bytes~1{n}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns n random bytes generated with given seed"
+        "summary": "Returns n random bytes generated with given seed",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -604,10 +873,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /cache",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "If-Modified-Since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/cache",
         "pointer": "#/paths/~1cache/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "304"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a 304 if an If-Modified-Since header or If-None-Match is present. Returns the same as a GET otherwise."
+        "summary": "Returns a 304 if an If-Modified-Since header or If-None-Match is present. Returns the same as a GET otherwise.",
+        "tags": [
+          "Response inspection"
+        ]
       },
       {
         "deprecated": false,
@@ -615,10 +910,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /cache/{value}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "value",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/cache/{value}",
         "pointer": "#/paths/~1cache~1{value}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Sets a Cache-Control header for n seconds."
+        "summary": "Sets a Cache-Control header for n seconds.",
+        "tags": [
+          "Response inspection"
+        ]
       },
       {
         "deprecated": false,
@@ -628,8 +940,17 @@
         "name": "get /cookies",
         "path": "/cookies",
         "pointer": "#/paths/~1cookies/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns cookie data."
+        "summary": "Returns cookie data.",
+        "tags": [
+          "Cookies"
+        ]
       },
       {
         "deprecated": false,
@@ -637,10 +958,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /cookies/delete",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "freeform",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/cookies/delete",
         "pointer": "#/paths/~1cookies~1delete/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Deletes cookie(s) as provided by the query string and redirects to cookie list."
+        "summary": "Deletes cookie(s) as provided by the query string and redirects to cookie list.",
+        "tags": [
+          "Cookies"
+        ]
       },
       {
         "deprecated": false,
@@ -648,10 +986,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /cookies/set",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "freeform",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/cookies/set",
         "pointer": "#/paths/~1cookies~1set/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Sets cookie(s) as provided by the query string and redirects to cookie list."
+        "summary": "Sets cookie(s) as provided by the query string and redirects to cookie list.",
+        "tags": [
+          "Cookies"
+        ]
       },
       {
         "deprecated": false,
@@ -659,10 +1014,33 @@
         "kind": "operation",
         "method": "get",
         "name": "get /cookies/set/{name}/{value}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "value",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/cookies/set/{name}/{value}",
         "pointer": "#/paths/~1cookies~1set~1{name}~1{value}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Sets a cookie and redirects to cookie list."
+        "summary": "Sets a cookie and redirects to cookie list.",
+        "tags": [
+          "Cookies"
+        ]
       },
       {
         "deprecated": false,
@@ -672,19 +1050,17 @@
         "name": "get /deflate",
         "path": "/deflate",
         "pointer": "#/paths/~1deflate/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns Deflate-encoded data."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/delay/{delay}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /delay/{delay}",
-        "path": "/delay/{delay}",
-        "pointer": "#/paths/~1delay~1{delay}/delete",
-        "security": [],
-        "summary": "Returns a delayed response (max of 10 seconds)."
+        "summary": "Returns Deflate-encoded data.",
+        "tags": [
+          "Response formats"
+        ]
       },
       {
         "deprecated": false,
@@ -692,32 +1068,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /delay/{delay}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "delay",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/delay/{delay}",
         "pointer": "#/paths/~1delay~1{delay}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a delayed response (max of 10 seconds)."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/delay/{delay}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /delay/{delay}",
-        "path": "/delay/{delay}",
-        "pointer": "#/paths/~1delay~1{delay}/patch",
-        "security": [],
-        "summary": "Returns a delayed response (max of 10 seconds)."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/delay/{delay}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /delay/{delay}",
-        "path": "/delay/{delay}",
-        "pointer": "#/paths/~1delay~1{delay}/post",
-        "security": [],
-        "summary": "Returns a delayed response (max of 10 seconds)."
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -725,10 +1096,111 @@
         "kind": "operation",
         "method": "put",
         "name": "put /delay/{delay}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "delay",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/delay/{delay}",
         "pointer": "#/paths/~1delay~1{delay}/put",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Returns a delayed response (max of 10 seconds)."
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "tags": [
+          "Dynamic data"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/delay/{delay}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /delay/{delay}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "delay",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/delay/{delay}",
+        "pointer": "#/paths/~1delay~1{delay}/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "tags": [
+          "Dynamic data"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/delay/{delay}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /delay/{delay}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "delay",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/delay/{delay}",
+        "pointer": "#/paths/~1delay~1{delay}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "tags": [
+          "Dynamic data"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/delay/{delay}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /delay/{delay}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "delay",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/delay/{delay}",
+        "pointer": "#/paths/~1delay~1{delay}/patch",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -736,10 +1208,27 @@
         "kind": "operation",
         "method": "trace",
         "name": "trace /delay/{delay}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "delay",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/delay/{delay}",
         "pointer": "#/paths/~1delay~1{delay}/trace",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Returns a delayed response (max of 10 seconds)."
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -749,8 +1238,17 @@
         "name": "delete /delete",
         "path": "/delete",
         "pointer": "#/paths/~1delete/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "The request's DELETE parameters."
+        "summary": "The request's DELETE parameters.",
+        "tags": [
+          "HTTP Methods"
+        ]
       },
       {
         "deprecated": false,
@@ -760,8 +1258,17 @@
         "name": "get /deny",
         "path": "/deny",
         "pointer": "#/paths/~1deny/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns page denied by robots.txt rules."
+        "summary": "Returns page denied by robots.txt rules.",
+        "tags": [
+          "Response formats"
+        ]
       },
       {
         "deprecated": false,
@@ -769,10 +1276,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /digest-auth/{qop}/{user}/{passwd}",
+        "parameters": [
+          {
+            "description": "auth or auth-int",
+            "in": "path",
+            "name": "qop",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "passwd",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/digest-auth/{qop}/{user}/{passwd}",
         "pointer": "#/paths/~1digest-auth~1{qop}~1{user}~1{passwd}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Prompts the user for authorization using Digest Auth."
+        "summary": "Prompts the user for authorization using Digest Auth.",
+        "tags": [
+          "Auth"
+        ]
       },
       {
         "deprecated": false,
@@ -780,21 +1320,111 @@
         "kind": "operation",
         "method": "get",
         "name": "get /digest-auth/{qop}/{user}/{passwd}/{algorithm}",
+        "parameters": [
+          {
+            "description": "auth or auth-int",
+            "in": "path",
+            "name": "qop",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "passwd",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "MD5",
+            "description": "MD5, SHA-256, SHA-512",
+            "in": "path",
+            "name": "algorithm",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/digest-auth/{qop}/{user}/{passwd}/{algorithm}",
         "pointer": "#/paths/~1digest-auth~1{qop}~1{user}~1{passwd}~1{algorithm}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Prompts the user for authorization using Digest Auth + Algorithm."
+        "summary": "Prompts the user for authorization using Digest Auth + Algorithm.",
+        "tags": [
+          "Auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "allow settings the stale_after argument.",
         "id": "operation:get:/digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after}",
         "kind": "operation",
         "method": "get",
         "name": "get /digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after}",
+        "parameters": [
+          {
+            "description": "auth or auth-int",
+            "in": "path",
+            "name": "qop",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "passwd",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "MD5",
+            "description": "MD5, SHA-256, SHA-512",
+            "in": "path",
+            "name": "algorithm",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "never",
+            "in": "path",
+            "name": "stale_after",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after}",
         "pointer": "#/paths/~1digest-auth~1{qop}~1{user}~1{passwd}~1{algorithm}~1{stale_after}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Prompts the user for authorization using Digest Auth + Algorithm."
+        "summary": "Prompts the user for authorization using Digest Auth + Algorithm.",
+        "tags": [
+          "Auth"
+        ]
       },
       {
         "deprecated": false,
@@ -802,10 +1432,53 @@
         "kind": "operation",
         "method": "get",
         "name": "get /drip",
+        "parameters": [
+          {
+            "default": 2,
+            "description": "The amount of time (in seconds) over which to drip each byte",
+            "in": "query",
+            "name": "duration",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 10,
+            "description": "The number of bytes to respond with",
+            "in": "query",
+            "name": "numbytes",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 200,
+            "description": "The response code that will be returned",
+            "in": "query",
+            "name": "code",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 2,
+            "description": "The amount of time (in seconds) to delay before responding",
+            "in": "query",
+            "name": "delay",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/drip",
         "pointer": "#/paths/~1drip/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Drips data over a duration after an optional initial delay."
+        "summary": "Drips data over a duration after an optional initial delay.",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -815,8 +1488,17 @@
         "name": "get /encoding/utf8",
         "path": "/encoding/utf8",
         "pointer": "#/paths/~1encoding~1utf8/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a UTF-8 encoded body."
+        "summary": "Returns a UTF-8 encoded body.",
+        "tags": [
+          "Response formats"
+        ]
       },
       {
         "deprecated": false,
@@ -824,10 +1506,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /etag/{etag}",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "If-Match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "etag",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/etag/{etag}",
         "pointer": "#/paths/~1etag~1{etag}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "412"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Assumes the resource has the given etag and responds to If-None-Match and If-Match headers appropriately."
+        "summary": "Assumes the resource has the given etag and responds to If-None-Match and If-Match headers appropriately.",
+        "tags": [
+          "Response inspection"
+        ]
       },
       {
         "deprecated": false,
@@ -837,8 +1552,17 @@
         "name": "get /get",
         "path": "/get",
         "pointer": "#/paths/~1get/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "The request's query parameters."
+        "summary": "The request's query parameters.",
+        "tags": [
+          "HTTP Methods"
+        ]
       },
       {
         "deprecated": false,
@@ -848,8 +1572,17 @@
         "name": "get /gzip",
         "path": "/gzip",
         "pointer": "#/paths/~1gzip/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns GZip-encoded data."
+        "summary": "Returns GZip-encoded data.",
+        "tags": [
+          "Response formats"
+        ]
       },
       {
         "deprecated": false,
@@ -859,8 +1592,17 @@
         "name": "get /headers",
         "path": "/headers",
         "pointer": "#/paths/~1headers/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return the incoming request's HTTP headers."
+        "summary": "Return the incoming request's HTTP headers.",
+        "tags": [
+          "Request inspection"
+        ]
       },
       {
         "deprecated": false,
@@ -868,10 +1610,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /hidden-basic-auth/{user}/{passwd}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "passwd",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/hidden-basic-auth/{user}/{passwd}",
         "pointer": "#/paths/~1hidden-basic-auth~1{user}~1{passwd}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Prompts the user for authorization using HTTP Basic Auth."
+        "summary": "Prompts the user for authorization using HTTP Basic Auth.",
+        "tags": [
+          "Auth"
+        ]
       },
       {
         "deprecated": false,
@@ -881,8 +1649,17 @@
         "name": "get /html",
         "path": "/html",
         "pointer": "#/paths/~1html/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a simple HTML document."
+        "summary": "Returns a simple HTML document.",
+        "tags": [
+          "Response formats"
+        ]
       },
       {
         "deprecated": false,
@@ -892,8 +1669,17 @@
         "name": "get /image",
         "path": "/image",
         "pointer": "#/paths/~1image/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a simple image of the type suggest by the Accept header."
+        "summary": "Returns a simple image of the type suggest by the Accept header.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -903,8 +1689,17 @@
         "name": "get /image/jpeg",
         "path": "/image/jpeg",
         "pointer": "#/paths/~1image~1jpeg/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a simple JPEG image."
+        "summary": "Returns a simple JPEG image.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -914,8 +1709,17 @@
         "name": "get /image/png",
         "path": "/image/png",
         "pointer": "#/paths/~1image~1png/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a simple PNG image."
+        "summary": "Returns a simple PNG image.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -925,8 +1729,17 @@
         "name": "get /image/svg",
         "path": "/image/svg",
         "pointer": "#/paths/~1image~1svg/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a simple SVG image."
+        "summary": "Returns a simple SVG image.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -936,8 +1749,17 @@
         "name": "get /image/webp",
         "path": "/image/webp",
         "pointer": "#/paths/~1image~1webp/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a simple WEBP image."
+        "summary": "Returns a simple WEBP image.",
+        "tags": [
+          "Images"
+        ]
       },
       {
         "deprecated": false,
@@ -947,8 +1769,17 @@
         "name": "get /ip",
         "path": "/ip",
         "pointer": "#/paths/~1ip/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns the requester's IP Address."
+        "summary": "Returns the requester's IP Address.",
+        "tags": [
+          "Request inspection"
+        ]
       },
       {
         "deprecated": false,
@@ -958,8 +1789,17 @@
         "name": "get /json",
         "path": "/json",
         "pointer": "#/paths/~1json/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a simple JSON document."
+        "summary": "Returns a simple JSON document.",
+        "tags": [
+          "Response formats"
+        ]
       },
       {
         "deprecated": false,
@@ -967,10 +1807,33 @@
         "kind": "operation",
         "method": "get",
         "name": "get /links/{n}/{offset}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "offset",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/links/{n}/{offset}",
         "pointer": "#/paths/~1links~1{n}~1{offset}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Generate a page containing n links to other pages which do the same."
+        "summary": "Generate a page containing n links to other pages which do the same.",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -980,8 +1843,17 @@
         "name": "patch /patch",
         "path": "/patch",
         "pointer": "#/paths/~1patch/patch",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "The request's PATCH parameters."
+        "summary": "The request's PATCH parameters.",
+        "tags": [
+          "HTTP Methods"
+        ]
       },
       {
         "deprecated": false,
@@ -991,8 +1863,17 @@
         "name": "post /post",
         "path": "/post",
         "pointer": "#/paths/~1post/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "The request's POST parameters."
+        "summary": "The request's POST parameters.",
+        "tags": [
+          "HTTP Methods"
+        ]
       },
       {
         "deprecated": false,
@@ -1002,8 +1883,17 @@
         "name": "put /put",
         "path": "/put",
         "pointer": "#/paths/~1put/put",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "The request's PUT parameters."
+        "summary": "The request's PUT parameters.",
+        "tags": [
+          "HTTP Methods"
+        ]
       },
       {
         "deprecated": false,
@@ -1011,21 +1901,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /range/{numbytes}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "numbytes",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/range/{numbytes}",
         "pointer": "#/paths/~1range~1{numbytes}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Streams n random bytes generated with given seed, at given chunk size per packet."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/redirect-to",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /redirect-to",
-        "path": "/redirect-to",
-        "pointer": "#/paths/~1redirect-to/delete",
-        "security": [],
-        "summary": "302/3XX Redirects to the given URL."
+        "summary": "Streams n random bytes generated with given seed, at given chunk size per packet.",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -1033,32 +1929,33 @@
         "kind": "operation",
         "method": "get",
         "name": "get /redirect-to",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "status_code",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/redirect-to",
         "pointer": "#/paths/~1redirect-to/get",
+        "responses": [
+          {
+            "status": "302"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "302/3XX Redirects to the given URL."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/redirect-to",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /redirect-to",
-        "path": "/redirect-to",
-        "pointer": "#/paths/~1redirect-to/patch",
-        "security": [],
-        "summary": "302/3XX Redirects to the given URL."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/redirect-to",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /redirect-to",
-        "path": "/redirect-to",
-        "pointer": "#/paths/~1redirect-to/post",
-        "security": [],
-        "summary": "302/3XX Redirects to the given URL."
+        "summary": "302/3XX Redirects to the given URL.",
+        "tags": [
+          "Redirects"
+        ]
       },
       {
         "deprecated": false,
@@ -1068,8 +1965,91 @@
         "name": "put /redirect-to",
         "path": "/redirect-to",
         "pointer": "#/paths/~1redirect-to/put",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "302"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "302/3XX Redirects to the given URL."
+        "summary": "302/3XX Redirects to the given URL.",
+        "tags": [
+          "Redirects"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/redirect-to",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /redirect-to",
+        "path": "/redirect-to",
+        "pointer": "#/paths/~1redirect-to/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "302"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "302/3XX Redirects to the given URL.",
+        "tags": [
+          "Redirects"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/redirect-to",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /redirect-to",
+        "path": "/redirect-to",
+        "pointer": "#/paths/~1redirect-to/delete",
+        "responses": [
+          {
+            "status": "302"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "302/3XX Redirects to the given URL.",
+        "tags": [
+          "Redirects"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/redirect-to",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /redirect-to",
+        "path": "/redirect-to",
+        "pointer": "#/paths/~1redirect-to/patch",
+        "responses": [
+          {
+            "status": "302"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "302/3XX Redirects to the given URL.",
+        "tags": [
+          "Redirects"
+        ]
       },
       {
         "deprecated": false,
@@ -1079,8 +2059,17 @@
         "name": "trace /redirect-to",
         "path": "/redirect-to",
         "pointer": "#/paths/~1redirect-to/trace",
+        "responses": [
+          {
+            "status": "302"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "302/3XX Redirects to the given URL."
+        "summary": "302/3XX Redirects to the given URL.",
+        "tags": [
+          "Redirects"
+        ]
       },
       {
         "deprecated": false,
@@ -1088,10 +2077,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /redirect/{n}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/redirect/{n}",
         "pointer": "#/paths/~1redirect~1{n}/get",
+        "responses": [
+          {
+            "status": "302"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "302 Redirects n times."
+        "summary": "302 Redirects n times.",
+        "tags": [
+          "Redirects"
+        ]
       },
       {
         "deprecated": false,
@@ -1099,10 +2105,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /relative-redirect/{n}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/relative-redirect/{n}",
         "pointer": "#/paths/~1relative-redirect~1{n}/get",
+        "responses": [
+          {
+            "status": "302"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Relatively 302 Redirects n times."
+        "summary": "Relatively 302 Redirects n times.",
+        "tags": [
+          "Redirects"
+        ]
       },
       {
         "deprecated": false,
@@ -1110,10 +2133,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /response-headers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "freeform",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/response-headers",
         "pointer": "#/paths/~1response-headers/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a set of response headers from the query string."
+        "summary": "Returns a set of response headers from the query string.",
+        "tags": [
+          "Response inspection"
+        ]
       },
       {
         "deprecated": false,
@@ -1121,10 +2161,27 @@
         "kind": "operation",
         "method": "post",
         "name": "post /response-headers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "freeform",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/response-headers",
         "pointer": "#/paths/~1response-headers/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Returns a set of response headers from the query string."
+        "summary": "Returns a set of response headers from the query string.",
+        "tags": [
+          "Response inspection"
+        ]
       },
       {
         "deprecated": false,
@@ -1134,19 +2191,17 @@
         "name": "get /robots.txt",
         "path": "/robots.txt",
         "pointer": "#/paths/~1robots.txt/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns some robots.txt rules."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/status/{codes}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /status/{codes}",
-        "path": "/status/{codes}",
-        "pointer": "#/paths/~1status~1{codes}/delete",
-        "security": [],
-        "summary": "Return status code or random status code if more than one are given"
+        "summary": "Returns some robots.txt rules.",
+        "tags": [
+          "Response formats"
+        ]
       },
       {
         "deprecated": false,
@@ -1154,32 +2209,39 @@
         "kind": "operation",
         "method": "get",
         "name": "get /status/{codes}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "codes",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/status/{codes}",
         "pointer": "#/paths/~1status~1{codes}/get",
+        "responses": [
+          {
+            "status": "100"
+          },
+          {
+            "status": "200"
+          },
+          {
+            "status": "300"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return status code or random status code if more than one are given"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/status/{codes}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /status/{codes}",
-        "path": "/status/{codes}",
-        "pointer": "#/paths/~1status~1{codes}/patch",
-        "security": [],
-        "summary": "Return status code or random status code if more than one are given"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/status/{codes}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /status/{codes}",
-        "path": "/status/{codes}",
-        "pointer": "#/paths/~1status~1{codes}/post",
-        "security": [],
-        "summary": "Return status code or random status code if more than one are given"
+        "summary": "Return status code or random status code if more than one are given",
+        "tags": [
+          "Status codes"
+        ]
       },
       {
         "deprecated": false,
@@ -1187,10 +2249,159 @@
         "kind": "operation",
         "method": "put",
         "name": "put /status/{codes}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "codes",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/status/{codes}",
         "pointer": "#/paths/~1status~1{codes}/put",
+        "responses": [
+          {
+            "status": "100"
+          },
+          {
+            "status": "200"
+          },
+          {
+            "status": "300"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Return status code or random status code if more than one are given"
+        "summary": "Return status code or random status code if more than one are given",
+        "tags": [
+          "Status codes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/status/{codes}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /status/{codes}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "codes",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/status/{codes}",
+        "pointer": "#/paths/~1status~1{codes}/post",
+        "responses": [
+          {
+            "status": "100"
+          },
+          {
+            "status": "200"
+          },
+          {
+            "status": "300"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Return status code or random status code if more than one are given",
+        "tags": [
+          "Status codes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/status/{codes}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /status/{codes}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "codes",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/status/{codes}",
+        "pointer": "#/paths/~1status~1{codes}/delete",
+        "responses": [
+          {
+            "status": "100"
+          },
+          {
+            "status": "200"
+          },
+          {
+            "status": "300"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Return status code or random status code if more than one are given",
+        "tags": [
+          "Status codes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/status/{codes}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /status/{codes}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "codes",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/status/{codes}",
+        "pointer": "#/paths/~1status~1{codes}/patch",
+        "responses": [
+          {
+            "status": "100"
+          },
+          {
+            "status": "200"
+          },
+          {
+            "status": "300"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Return status code or random status code if more than one are given",
+        "tags": [
+          "Status codes"
+        ]
       },
       {
         "deprecated": false,
@@ -1198,10 +2409,39 @@
         "kind": "operation",
         "method": "trace",
         "name": "trace /status/{codes}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "codes",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/status/{codes}",
         "pointer": "#/paths/~1status~1{codes}/trace",
+        "responses": [
+          {
+            "status": "100"
+          },
+          {
+            "status": "200"
+          },
+          {
+            "status": "300"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Return status code or random status code if more than one are given"
+        "summary": "Return status code or random status code if more than one are given",
+        "tags": [
+          "Status codes"
+        ]
       },
       {
         "deprecated": false,
@@ -1209,10 +2449,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /stream-bytes/{n}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/stream-bytes/{n}",
         "pointer": "#/paths/~1stream-bytes~1{n}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Streams n random bytes generated with given seed, at given chunk size per packet."
+        "summary": "Streams n random bytes generated with given seed, at given chunk size per packet.",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -1220,10 +2477,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /stream/{n}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/stream/{n}",
         "pointer": "#/paths/~1stream~1{n}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Stream n JSON responses"
+        "summary": "Stream n JSON responses",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -1233,8 +2507,17 @@
         "name": "get /user-agent",
         "path": "/user-agent",
         "pointer": "#/paths/~1user-agent/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return the incoming requests's User-Agent header."
+        "summary": "Return the incoming requests's User-Agent header.",
+        "tags": [
+          "Request inspection"
+        ]
       },
       {
         "deprecated": false,
@@ -1244,8 +2527,17 @@
         "name": "get /uuid",
         "path": "/uuid",
         "pointer": "#/paths/~1uuid/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a UUID4."
+        "summary": "Return a UUID4.",
+        "tags": [
+          "Dynamic data"
+        ]
       },
       {
         "deprecated": false,
@@ -1255,8 +2547,17 @@
         "name": "get /xml",
         "path": "/xml",
         "pointer": "#/paths/~1xml/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a simple XML document."
+        "summary": "Returns a simple XML document.",
+        "tags": [
+          "Response formats"
+        ]
       }
     ]
   },

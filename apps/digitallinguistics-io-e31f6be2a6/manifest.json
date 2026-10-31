@@ -12,22 +12,22 @@
       {
         "from": "digitallinguistics-io-e31f6be2a6",
         "kind": "EXPOSES",
-        "to": "operation:post:/languages"
-      },
-      {
-        "from": "digitallinguistics-io-e31f6be2a6",
-        "kind": "EXPOSES",
         "to": "operation:put:/languages"
       },
       {
         "from": "digitallinguistics-io-e31f6be2a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/languages/{languageID}"
+        "to": "operation:post:/languages"
       },
       {
         "from": "digitallinguistics-io-e31f6be2a6",
         "kind": "EXPOSES",
         "to": "operation:get:/languages/{languageID}"
+      },
+      {
+        "from": "digitallinguistics-io-e31f6be2a6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/languages/{languageID}"
       },
       {
         "from": "digitallinguistics-io-e31f6be2a6",
@@ -42,22 +42,22 @@
       {
         "from": "digitallinguistics-io-e31f6be2a6",
         "kind": "EXPOSES",
-        "to": "operation:post:/languages/{languageID}/lexemes"
-      },
-      {
-        "from": "digitallinguistics-io-e31f6be2a6",
-        "kind": "EXPOSES",
         "to": "operation:put:/languages/{languageID}/lexemes"
       },
       {
         "from": "digitallinguistics-io-e31f6be2a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/languages/{languageID}/lexemes/{lexemeID}"
+        "to": "operation:post:/languages/{languageID}/lexemes"
       },
       {
         "from": "digitallinguistics-io-e31f6be2a6",
         "kind": "EXPOSES",
         "to": "operation:get:/languages/{languageID}/lexemes/{lexemeID}"
+      },
+      {
+        "from": "digitallinguistics-io-e31f6be2a6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/languages/{languageID}/lexemes/{lexemeID}"
       },
       {
         "from": "digitallinguistics-io-e31f6be2a6",
@@ -72,22 +72,22 @@
       {
         "from": "digitallinguistics-io-e31f6be2a6",
         "kind": "EXPOSES",
-        "to": "operation:post:/lexemes"
-      },
-      {
-        "from": "digitallinguistics-io-e31f6be2a6",
-        "kind": "EXPOSES",
         "to": "operation:put:/lexemes"
       },
       {
         "from": "digitallinguistics-io-e31f6be2a6",
         "kind": "EXPOSES",
-        "to": "operation:delete:/lexemes/{lexemeID}"
+        "to": "operation:post:/lexemes"
       },
       {
         "from": "digitallinguistics-io-e31f6be2a6",
         "kind": "EXPOSES",
         "to": "operation:get:/lexemes/{lexemeID}"
+      },
+      {
+        "from": "digitallinguistics-io-e31f6be2a6",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/lexemes/{lexemeID}"
       },
       {
         "from": "digitallinguistics-io-e31f6be2a6",
@@ -102,18 +102,108 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieves all the Languages that the authenticated user or client has permission to access.",
         "id": "operation:get:/languages",
         "kind": "operation",
         "method": "get",
         "name": "getLanguages",
+        "parameters": [
+          {
+            "description": "The `dlx-continuation` header is used to send a continuation token with the request, when retrieving the next page of results.",
+            "in": "header",
+            "name": "continuation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Setting the `deleted` option to `true` will return results that have been marked for deletion, but not yet deleted from the database.",
+            "in": "query",
+            "name": "deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The `If-Modified-Since` header is used to retrieve only results modified since a given time.",
+            "in": "header",
+            "name": "ifModifiedSince",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The `dlx-max-item-count` header is used to limit the number of results to a certain amount at a time (by default all results will be returned).",
+            "in": "header",
+            "name": "maxItemCount",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Set this parameter to `true` to include all publicly-accessible resources, not just those that the user is listed as an Owner, Contributor, or Viewer for.",
+            "in": "query",
+            "name": "public",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/languages",
         "pointer": "#/paths/~1languages/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Get all Languages"
+        "summary": "Get all Languages",
+        "tags": [
+          "Language"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Creates a Language if it does not yet exist (i.e.",
+        "id": "operation:put:/languages",
+        "kind": "operation",
+        "method": "put",
+        "name": "upsertLanguage",
+        "parameters": [
+          {
+            "description": "The `If-Match` header is used with PUT and DELETE requests to check whether you have the most up-to-date version of the resource before updating or deleting it.",
+            "in": "header",
+            "name": "ifMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/languages",
+        "pointer": "#/paths/~1languages/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Upsert (create or replace) a Language",
+        "tags": [
+          "Language"
+        ]
       },
       {
         "deprecated": false,
@@ -123,42 +213,28 @@
         "name": "addLanguage",
         "path": "/languages",
         "pointer": "#/paths/~1languages/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Add a new Language"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:put:/languages",
-        "kind": "operation",
-        "method": "put",
-        "name": "upsertLanguage",
-        "path": "/languages",
-        "pointer": "#/paths/~1languages/put",
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "summary": "Upsert (create or replace) a Language"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/languages/{languageID}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteLanguage",
-        "path": "/languages/{languageID}",
-        "pointer": "#/paths/~1languages~1{languageID}/delete",
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "summary": "Delete a Language by ID"
+        "summary": "Add a new Language",
+        "tags": [
+          "Language"
+        ]
       },
       {
         "deprecated": false,
@@ -166,29 +242,138 @@
         "kind": "operation",
         "method": "get",
         "name": "getLanguage",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "path",
+            "name": "languageID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Setting the `deleted` option to `true` will return results that have been marked for deletion, but not yet deleted from the database.",
+            "in": "query",
+            "name": "deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If `If-None-Match` header is used with GET requests to check whether you already have the most up-to-date version of the resource, and therefore do not need th…",
+            "in": "header",
+            "name": "ifNoneMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/languages/{languageID}",
         "pointer": "#/paths/~1languages~1{languageID}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "304"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Retrieve a Language by ID"
+        "summary": "Retrieve a Language by ID",
+        "tags": [
+          "Language"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/languages/{languageID}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteLanguage",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "path",
+            "name": "languageID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `If-Match` header is used with PUT and DELETE requests to check whether you have the most up-to-date version of the resource before updating or deleting it.",
+            "in": "header",
+            "name": "ifMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/languages/{languageID}",
+        "pointer": "#/paths/~1languages~1{languageID}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Delete a Language by ID",
+        "tags": [
+          "Language"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Performs a partial update the Language whose ID is specified in the URL.",
         "id": "operation:patch:/languages/{languageID}",
         "kind": "operation",
         "method": "patch",
         "name": "updateLanguage",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "path",
+            "name": "languageID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `If-Match` header is used with PUT and DELETE requests to check whether you have the most up-to-date version of the resource before updating or deleting it.",
+            "in": "header",
+            "name": "ifMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/languages/{languageID}",
         "pointer": "#/paths/~1languages~1{languageID}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Perform a partial update on a Language"
+        "summary": "Perform a partial update on a Language",
+        "tags": [
+          "Language"
+        ]
       },
       {
         "deprecated": false,
@@ -196,29 +381,70 @@
         "kind": "operation",
         "method": "get",
         "name": "getLexemesByLanguage",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "path",
+            "name": "languageID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `dlx-continuation` header is used to send a continuation token with the request, when retrieving the next page of results.",
+            "in": "header",
+            "name": "continuation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Setting the `deleted` option to `true` will return results that have been marked for deletion, but not yet deleted from the database.",
+            "in": "query",
+            "name": "deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The `If-Modified-Since` header is used to retrieve only results modified since a given time.",
+            "in": "header",
+            "name": "ifModifiedSince",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The `dlx-max-item-count` header is used to limit the number of results to a certain amount at a time (by default all results will be returned).",
+            "in": "header",
+            "name": "maxItemCount",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Set this parameter to `true` to include all publicly-accessible resources, not just those that the user is listed as an Owner, Contributor, or Viewer for.",
+            "in": "query",
+            "name": "public",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/languages/{languageID}/lexemes",
         "pointer": "#/paths/~1languages~1{languageID}~1lexemes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Get all Lexemes for a Language"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/languages/{languageID}/lexemes",
-        "kind": "operation",
-        "method": "post",
-        "name": "addLexemeByLanguage",
-        "path": "/languages/{languageID}/lexemes",
-        "pointer": "#/paths/~1languages~1{languageID}~1lexemes/post",
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "summary": "Add a new Lexeme to a Language"
+        "summary": "Get all Lexemes for a Language",
+        "tags": [
+          "Language",
+          "Lexeme"
+        ]
       },
       {
         "deprecated": false,
@@ -226,29 +452,74 @@
         "kind": "operation",
         "method": "put",
         "name": "upsertLexemeByLanguage",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "path",
+            "name": "languageID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `If-Match` header is used with PUT and DELETE requests to check whether you have the most up-to-date version of the resource before updating or deleting it.",
+            "in": "header",
+            "name": "ifMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/languages/{languageID}/lexemes",
         "pointer": "#/paths/~1languages~1{languageID}~1lexemes/put",
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Upsert (add or replace) a Lexeme"
+        "summary": "Upsert (add or replace) a Lexeme",
+        "tags": [
+          "Language",
+          "Lexeme"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/languages/{languageID}/lexemes/{lexemeID}",
+        "id": "operation:post:/languages/{languageID}/lexemes",
         "kind": "operation",
-        "method": "delete",
-        "name": "deleteLexemeByLanguage",
-        "path": "/languages/{languageID}/lexemes/{lexemeID}",
-        "pointer": "#/paths/~1languages~1{languageID}~1lexemes~1{lexemeID}/delete",
+        "method": "post",
+        "name": "addLexemeByLanguage",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "path",
+            "name": "languageID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/languages/{languageID}/lexemes",
+        "pointer": "#/paths/~1languages~1{languageID}~1lexemes/post",
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Delete a Lexeme by ID"
+        "summary": "Add a new Lexeme to a Language",
+        "tags": [
+          "Language",
+          "Lexeme"
+        ]
       },
       {
         "deprecated": false,
@@ -256,14 +527,106 @@
         "kind": "operation",
         "method": "get",
         "name": "getLexemeByLanguage",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "path",
+            "name": "languageID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the Lexeme to perform the operation on",
+            "in": "path",
+            "name": "lexemeID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Setting the `deleted` option to `true` will return results that have been marked for deletion, but not yet deleted from the database.",
+            "in": "query",
+            "name": "deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If `If-None-Match` header is used with GET requests to check whether you already have the most up-to-date version of the resource, and therefore do not need th…",
+            "in": "header",
+            "name": "ifNoneMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/languages/{languageID}/lexemes/{lexemeID}",
         "pointer": "#/paths/~1languages~1{languageID}~1lexemes~1{lexemeID}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "304"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Get a Lexeme by ID"
+        "summary": "Get a Lexeme by ID",
+        "tags": [
+          "Language",
+          "Lexeme"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/languages/{languageID}/lexemes/{lexemeID}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteLexemeByLanguage",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "path",
+            "name": "languageID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the Lexeme to perform the operation on",
+            "in": "path",
+            "name": "lexemeID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `If-Match` header is used with PUT and DELETE requests to check whether you have the most up-to-date version of the resource before updating or deleting it.",
+            "in": "header",
+            "name": "ifMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/languages/{languageID}/lexemes/{lexemeID}",
+        "pointer": "#/paths/~1languages~1{languageID}~1lexemes~1{lexemeID}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Delete a Lexeme by ID",
+        "tags": [
+          "Language",
+          "Lexeme"
+        ]
       },
       {
         "deprecated": false,
@@ -271,74 +634,192 @@
         "kind": "operation",
         "method": "patch",
         "name": "updateLexemeByLanguage",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "path",
+            "name": "languageID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the Lexeme to perform the operation on",
+            "in": "path",
+            "name": "lexemeID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `If-Match` header is used with PUT and DELETE requests to check whether you have the most up-to-date version of the resource before updating or deleting it.",
+            "in": "header",
+            "name": "ifMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/languages/{languageID}/lexemes/{lexemeID}",
         "pointer": "#/paths/~1languages~1{languageID}~1lexemes~1{lexemeID}/patch",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Perform a partial update on a Lexeme"
+        "summary": "Perform a partial update on a Lexeme",
+        "tags": [
+          "Lexeme"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all Lexemes that the authenticated user has permission to access.",
         "id": "operation:get:/lexemes",
         "kind": "operation",
         "method": "get",
         "name": "getLexemes",
+        "parameters": [
+          {
+            "description": "The `dlx-continuation` header is used to send a continuation token with the request, when retrieving the next page of results.",
+            "in": "header",
+            "name": "continuation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Setting the `deleted` option to `true` will return results that have been marked for deletion, but not yet deleted from the database.",
+            "in": "query",
+            "name": "deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The `If-Modified-Since` header is used to retrieve only results modified since a given time.",
+            "in": "header",
+            "name": "ifModifiedSince",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "query",
+            "name": "languageID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The `dlx-max-item-count` header is used to limit the number of results to a certain amount at a time (by default all results will be returned).",
+            "in": "header",
+            "name": "maxItemCount",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Set this parameter to `true` to include all publicly-accessible resources, not just those that the user is listed as an Owner, Contributor, or Viewer for.",
+            "in": "query",
+            "name": "public",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/lexemes",
         "pointer": "#/paths/~1lexemes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Get all Lexemes"
+        "summary": "Get all Lexemes",
+        "tags": [
+          "Lexeme"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/lexemes",
-        "kind": "operation",
-        "method": "post",
-        "name": "addLexeme",
-        "path": "/lexemes",
-        "pointer": "#/paths/~1lexemes/post",
-        "security": [
-          {
-            "Authorization": []
-          }
-        ],
-        "summary": "Add a new Lexeme"
-      },
-      {
-        "deprecated": false,
+        "description": "Upsert (add or replace) a Lexeme.",
         "id": "operation:put:/lexemes",
         "kind": "operation",
         "method": "put",
         "name": "upsertLexeme",
+        "parameters": [
+          {
+            "description": "The `If-Match` header is used with PUT and DELETE requests to check whether you have the most up-to-date version of the resource before updating or deleting it.",
+            "in": "header",
+            "name": "ifMatch",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "query",
+            "name": "languageID",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/lexemes",
         "pointer": "#/paths/~1lexemes/put",
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Upsert (add or replace) a Lexeme"
+        "summary": "Upsert (add or replace) a Lexeme",
+        "tags": [
+          "Lexeme"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/lexemes/{lexemeID}",
+        "description": "Add a new Lexeme.",
+        "id": "operation:post:/lexemes",
         "kind": "operation",
-        "method": "delete",
-        "name": "deleteLexeme",
-        "path": "/lexemes/{lexemeID}",
-        "pointer": "#/paths/~1lexemes~1{lexemeID}/delete",
+        "method": "post",
+        "name": "addLexeme",
+        "parameters": [
+          {
+            "description": "The ID of the Language to perform the operation on",
+            "in": "query",
+            "name": "languageID",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/lexemes",
+        "pointer": "#/paths/~1lexemes/post",
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Delete a Lexeme by ID"
+        "summary": "Add a new Lexeme",
+        "tags": [
+          "Lexeme"
+        ]
       },
       {
         "deprecated": false,
@@ -346,29 +827,131 @@
         "kind": "operation",
         "method": "get",
         "name": "getLexeme",
+        "parameters": [
+          {
+            "description": "The ID of the Lexeme to perform the operation on",
+            "in": "path",
+            "name": "lexemeID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Setting the `deleted` option to `true` will return results that have been marked for deletion, but not yet deleted from the database.",
+            "in": "query",
+            "name": "deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If `If-None-Match` header is used with GET requests to check whether you already have the most up-to-date version of the resource, and therefore do not need th…",
+            "in": "header",
+            "name": "ifNoneMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/lexemes/{lexemeID}",
         "pointer": "#/paths/~1lexemes~1{lexemeID}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "304"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Get a Lexeme by ID"
+        "summary": "Get a Lexeme by ID",
+        "tags": [
+          "Lexeme"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/lexemes/{lexemeID}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteLexeme",
+        "parameters": [
+          {
+            "description": "The ID of the Lexeme to perform the operation on",
+            "in": "path",
+            "name": "lexemeID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `If-Match` header is used with PUT and DELETE requests to check whether you have the most up-to-date version of the resource before updating or deleting it.",
+            "in": "header",
+            "name": "ifMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/lexemes/{lexemeID}",
+        "pointer": "#/paths/~1lexemes~1{lexemeID}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "summary": "Delete a Lexeme by ID",
+        "tags": [
+          "Lexeme"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Perform a partial update on a Lexeme.",
         "id": "operation:patch:/lexemes/{lexemeID}",
         "kind": "operation",
         "method": "patch",
         "name": "updateLexeme",
+        "parameters": [
+          {
+            "description": "The ID of the Lexeme to perform the operation on",
+            "in": "path",
+            "name": "lexemeID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `If-Match` header is used with PUT and DELETE requests to check whether you have the most up-to-date version of the resource before updating or deleting it.",
+            "in": "header",
+            "name": "ifMatch",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/lexemes/{lexemeID}",
         "pointer": "#/paths/~1lexemes~1{lexemeID}/patch",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization": []
           }
         ],
-        "summary": "Perform a partial update on a Lexeme"
+        "summary": "Perform a partial update on a Lexeme",
+        "tags": [
+          "Lexeme"
+        ]
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.zappy.app_510654b671e2f1ac4
 
 | | |
 | --- | --- |
-| Signed bundle | `0eded9e3b8c5e2141f280e2466c868d3af6663c488cd7ffb9dc43d9dc4f79cf6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cdn.zappy.app_510654b671e2f1ac4
 
 5 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/check/` | check | Check |
-| GET | `/api/v1/configuration-link/` | get_configuration_link | Get Configuration Link |
-| GET | `/api/v1/exposed/` | list_exposed_actions | List Exposed Actions |
-| POST | `/api/v1/exposed/{exposed_app_action_id}/execute/` | execute_app_action_endpoint | Execute App Action Endpoint |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/check/` | check | — | — | yes | Check |
+| GET | `/api/v1/configuration-link/` | get_configuration_link | — | — | yes | Get Configuration Link |
+| GET | `/api/v1/exposed/` | list_exposed_actions | — | ExposedActionResponseSchema | yes | List Exposed Actions |
+| POST | `/api/v1/exposed/{exposed_app_action_id}/execute/` | execute_app_action_endpoint | `exposed_app_action_id`*, body*: ExecuteRequest | ExecuteResponse |  | Execute App Action Endpoint |

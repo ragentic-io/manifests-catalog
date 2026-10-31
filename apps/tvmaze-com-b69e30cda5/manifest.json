@@ -47,11 +47,6 @@
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/user/episodes/{episode_id}"
-      },
-      {
-        "from": "tvmaze-com-b69e30cda5",
-        "kind": "EXPOSES",
         "to": "operation:get:/user/episodes/{episode_id}"
       },
       {
@@ -62,12 +57,12 @@
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:get:/user/follows/networks"
+        "to": "operation:delete:/user/episodes/{episode_id}"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/user/follows/networks/{network_id}"
+        "to": "operation:get:/user/follows/networks"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
@@ -82,12 +77,12 @@
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:get:/user/follows/people"
+        "to": "operation:delete:/user/follows/networks/{network_id}"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/user/follows/people/{person_id}"
+        "to": "operation:get:/user/follows/people"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
@@ -102,12 +97,12 @@
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:get:/user/follows/shows"
+        "to": "operation:delete:/user/follows/people/{person_id}"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/user/follows/shows/{show_id}"
+        "to": "operation:get:/user/follows/shows"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
@@ -122,12 +117,12 @@
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:get:/user/follows/webchannels"
+        "to": "operation:delete:/user/follows/shows/{show_id}"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/user/follows/webchannels/{webchannel_id}"
+        "to": "operation:get:/user/follows/webchannels"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
@@ -138,6 +133,11 @@
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
         "to": "operation:put:/user/follows/webchannels/{webchannel_id}"
+      },
+      {
+        "from": "tvmaze-com-b69e30cda5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/user/follows/webchannels/{webchannel_id}"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
@@ -167,22 +167,17 @@
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/user/tags/{tag_id}/shows/{show_id}"
-      },
-      {
-        "from": "tvmaze-com-b69e30cda5",
-        "kind": "EXPOSES",
         "to": "operation:put:/user/tags/{tag_id}/shows/{show_id}"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:get:/user/votes/episodes"
+        "to": "operation:delete:/user/tags/{tag_id}/shows/{show_id}"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/user/votes/episodes/{episode_id}"
+        "to": "operation:get:/user/votes/episodes"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
@@ -197,12 +192,12 @@
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:get:/user/votes/shows"
+        "to": "operation:delete:/user/votes/episodes/{episode_id}"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
-        "to": "operation:delete:/user/votes/shows/{show_id}"
+        "to": "operation:get:/user/votes/shows"
       },
       {
         "from": "tvmaze-com-b69e30cda5",
@@ -213,6 +208,226 @@
         "from": "tvmaze-com-b69e30cda5",
         "kind": "EXPOSES",
         "to": "operation:put:/user/votes/shows/{show_id}"
+      },
+      {
+        "from": "tvmaze-com-b69e30cda5",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/user/votes/shows/{show_id}"
+      },
+      {
+        "from": "operation:post:/scrobble/episodes",
+        "kind": "RETURNS",
+        "to": "schema:BulkResponse"
+      },
+      {
+        "from": "operation:put:/scrobble/episodes/{episode_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:MarkedEpisode"
+      },
+      {
+        "from": "operation:put:/scrobble/episodes/{episode_id}",
+        "kind": "RETURNS",
+        "to": "schema:MarkedEpisode"
+      },
+      {
+        "from": "operation:post:/scrobble/shows",
+        "kind": "RETURNS",
+        "to": "schema:BulkResponse"
+      },
+      {
+        "from": "operation:get:/scrobble/shows/{show_id}",
+        "kind": "RETURNS",
+        "to": "schema:MarkedEpisode"
+      },
+      {
+        "from": "operation:get:/user/episodes",
+        "kind": "RETURNS",
+        "to": "schema:MarkedEpisode"
+      },
+      {
+        "from": "operation:get:/user/episodes/{episode_id}",
+        "kind": "RETURNS",
+        "to": "schema:MarkedEpisode"
+      },
+      {
+        "from": "operation:put:/user/episodes/{episode_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:MarkedEpisode"
+      },
+      {
+        "from": "operation:put:/user/episodes/{episode_id}",
+        "kind": "RETURNS",
+        "to": "schema:MarkedEpisode"
+      },
+      {
+        "from": "operation:get:/user/follows/networks",
+        "kind": "RETURNS",
+        "to": "schema:NetworkFollow"
+      },
+      {
+        "from": "operation:get:/user/follows/networks/{network_id}",
+        "kind": "RETURNS",
+        "to": "schema:NetworkFollow"
+      },
+      {
+        "from": "operation:put:/user/follows/networks/{network_id}",
+        "kind": "RETURNS",
+        "to": "schema:NetworkFollow"
+      },
+      {
+        "from": "operation:get:/user/follows/people",
+        "kind": "RETURNS",
+        "to": "schema:PersonFollow"
+      },
+      {
+        "from": "operation:get:/user/follows/people/{person_id}",
+        "kind": "RETURNS",
+        "to": "schema:PersonFollow"
+      },
+      {
+        "from": "operation:put:/user/follows/people/{person_id}",
+        "kind": "RETURNS",
+        "to": "schema:PersonFollow"
+      },
+      {
+        "from": "operation:get:/user/follows/shows",
+        "kind": "RETURNS",
+        "to": "schema:ShowFollow"
+      },
+      {
+        "from": "operation:get:/user/follows/shows/{show_id}",
+        "kind": "RETURNS",
+        "to": "schema:ShowFollow"
+      },
+      {
+        "from": "operation:put:/user/follows/shows/{show_id}",
+        "kind": "RETURNS",
+        "to": "schema:ShowFollow"
+      },
+      {
+        "from": "operation:get:/user/follows/webchannels",
+        "kind": "RETURNS",
+        "to": "schema:WebchannelFollow"
+      },
+      {
+        "from": "operation:get:/user/follows/webchannels/{webchannel_id}",
+        "kind": "RETURNS",
+        "to": "schema:WebchannelFollow"
+      },
+      {
+        "from": "operation:put:/user/follows/webchannels/{webchannel_id}",
+        "kind": "RETURNS",
+        "to": "schema:WebchannelFollow"
+      },
+      {
+        "from": "operation:get:/user/tags",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:post:/user/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:post:/user/tags",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:patch:/user/tags/{tag_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:patch:/user/tags/{tag_id}",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "operation:get:/user/tags/{tag_id}/shows",
+        "kind": "RETURNS",
+        "to": "schema:TagInstance"
+      },
+      {
+        "from": "operation:put:/user/tags/{tag_id}/shows/{show_id}",
+        "kind": "RETURNS",
+        "to": "schema:TagInstance"
+      },
+      {
+        "from": "operation:get:/user/votes/episodes",
+        "kind": "RETURNS",
+        "to": "schema:EpisodeVote"
+      },
+      {
+        "from": "operation:get:/user/votes/episodes/{episode_id}",
+        "kind": "RETURNS",
+        "to": "schema:EpisodeVote"
+      },
+      {
+        "from": "operation:put:/user/votes/episodes/{episode_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:EpisodeVote"
+      },
+      {
+        "from": "operation:put:/user/votes/episodes/{episode_id}",
+        "kind": "RETURNS",
+        "to": "schema:EpisodeVote"
+      },
+      {
+        "from": "operation:get:/user/votes/shows",
+        "kind": "RETURNS",
+        "to": "schema:ShowVote"
+      },
+      {
+        "from": "operation:get:/user/votes/shows/{show_id}",
+        "kind": "RETURNS",
+        "to": "schema:ShowVote"
+      },
+      {
+        "from": "operation:put:/user/votes/shows/{show_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:ShowVote"
+      },
+      {
+        "from": "operation:put:/user/votes/shows/{show_id}",
+        "kind": "RETURNS",
+        "to": "schema:ShowVote"
+      },
+      {
+        "from": "schema:MarkedEpisode",
+        "kind": "REFERENCES",
+        "to": "schema:Episode"
+      },
+      {
+        "from": "schema:MarkedEpisode",
+        "kind": "REFERENCES",
+        "to": "schema:MarkType"
+      },
+      {
+        "from": "schema:NetworkFollow",
+        "kind": "REFERENCES",
+        "to": "schema:Network"
+      },
+      {
+        "from": "schema:PersonFollow",
+        "kind": "REFERENCES",
+        "to": "schema:Person"
+      },
+      {
+        "from": "schema:ShowFollow",
+        "kind": "REFERENCES",
+        "to": "schema:Show"
+      },
+      {
+        "from": "schema:TagInstance",
+        "kind": "REFERENCES",
+        "to": "schema:Show"
+      },
+      {
+        "from": "schema:WebchannelFollow",
+        "kind": "REFERENCES",
+        "to": "schema:Webchannel"
       }
     ],
     "nodes": [
@@ -222,108 +437,313 @@
       },
       {
         "deprecated": false,
+        "description": "Using the token acquired in the `start` endpoint, you can start polling this endpoint once every 10 seconds.",
         "id": "operation:post:/auth/poll",
         "kind": "operation",
         "method": "post",
         "name": "post /auth/poll",
         "path": "/auth/poll",
         "pointer": "#/paths/~1auth~1poll/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Poll whether an authentication request was confirmed"
+        "summary": "Poll whether an authentication request was confirmed",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "If you want to access the TVmaze API on behalf of a user without querying them for their password, use this endpoint.",
         "id": "operation:post:/auth/start",
         "kind": "operation",
         "method": "post",
         "name": "post /auth/start",
         "path": "/auth/start",
         "pointer": "#/paths/~1auth~1start/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Start an authentication request"
+        "summary": "Start an authentication request",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "If the credentials supplied as HTTP basic are valid, the user's level of premium - if any - is returned.",
         "id": "operation:get:/auth/validate",
         "kind": "operation",
         "method": "get",
         "name": "get /auth/validate",
         "path": "/auth/validate",
         "pointer": "#/paths/~1auth~1validate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Validate your authentication credentials"
+        "summary": "Validate your authentication credentials",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint can be used by all users, even without premium",
         "id": "operation:post:/scrobble/episodes",
         "kind": "operation",
         "method": "post",
         "name": "post /scrobble/episodes",
         "path": "/scrobble/episodes",
         "pointer": "#/paths/~1scrobble~1episodes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BulkResponse"
+          },
+          {
+            "status": "207",
+            "type": "BulkResponse"
+          },
+          {
+            "status": "422",
+            "type": "BulkResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Mark episodes as acquired or watched based on their IDs"
+        "summary": "Mark episodes as acquired or watched based on their IDs",
+        "tags": [
+          "scrobbling"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint can be used by all users, even without premium",
         "id": "operation:put:/scrobble/episodes/{episode_id}",
         "kind": "operation",
         "method": "put",
         "name": "put /scrobble/episodes/{episode_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/scrobble/episodes/{episode_id}",
         "pointer": "#/paths/~1scrobble~1episodes~1{episode_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "MarkedEpisode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MarkedEpisode"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Mark an episode as acquired or watched based on its ID"
+        "summary": "Mark an episode as acquired or watched based on its ID",
+        "tags": [
+          "scrobbling"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To specify a show, supply either `tvmaze_id`, `thetvdb_id` or `imdb_id`.",
         "id": "operation:post:/scrobble/shows",
         "kind": "operation",
         "method": "post",
         "name": "post /scrobble/shows",
+        "parameters": [
+          {
+            "description": "The show's TVmaze ID",
+            "in": "query",
+            "name": "tvmaze_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The show's TheTVDB ID",
+            "in": "query",
+            "name": "thetvdb_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The show's IMDB ID",
+            "in": "query",
+            "name": "imdb_id",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/scrobble/shows",
         "pointer": "#/paths/~1scrobble~1shows/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BulkResponse"
+          },
+          {
+            "status": "207",
+            "type": "BulkResponse"
+          },
+          {
+            "status": "422",
+            "type": "BulkResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Mark episodes within a show as acquired or watched based on their attributes"
+        "summary": "Mark episodes within a show as acquired or watched based on their attributes",
+        "tags": [
+          "scrobbling"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint can be used by all users, even without premium",
         "id": "operation:get:/scrobble/shows/{show_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /scrobble/shows/{show_id}",
+        "parameters": [
+          {
+            "description": "ID of the target show",
+            "in": "path",
+            "name": "show_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Embed full episode info",
+            "enum": [
+              "episode"
+            ],
+            "in": "query",
+            "name": "embed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scrobble/shows/{show_id}",
         "pointer": "#/paths/~1scrobble~1shows~1{show_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MarkedEpisode[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List watched and acquired episodes for a show"
+        "summary": "List watched and acquired episodes for a show",
+        "tags": [
+          "scrobbling"
+        ]
       },
       {
         "deprecated": false,
@@ -331,29 +751,33 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/episodes",
+        "parameters": [
+          {
+            "description": "Only return episodes from this specific show",
+            "in": "query",
+            "name": "show_id",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/user/episodes",
         "pointer": "#/paths/~1user~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MarkedEpisode[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List the marked episodes"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/user/episodes/{episode_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /user/episodes/{episode_id}",
-        "path": "/user/episodes/{episode_id}",
-        "pointer": "#/paths/~1user~1episodes~1{episode_id}/delete",
-        "security": [
-          {
-            "usertoken": []
-          }
-        ],
-        "summary": "Unmark an episode"
+        "summary": "List the marked episodes",
+        "tags": [
+          "marked episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -361,29 +785,117 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/episodes/{episode_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/episodes/{episode_id}",
         "pointer": "#/paths/~1user~1episodes~1{episode_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MarkedEpisode"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Check if an episode is marked"
+        "summary": "Check if an episode is marked",
+        "tags": [
+          "marked episodes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set `marked_at` to `NULL` or leave it out to use the current time.",
         "id": "operation:put:/user/episodes/{episode_id}",
         "kind": "operation",
         "method": "put",
         "name": "put /user/episodes/{episode_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/episodes/{episode_id}",
         "pointer": "#/paths/~1user~1episodes~1{episode_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "MarkedEpisode"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MarkedEpisode"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Mark an episode"
+        "summary": "Mark an episode",
+        "tags": [
+          "marked episodes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/user/episodes/{episode_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /user/episodes/{episode_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/user/episodes/{episode_id}",
+        "pointer": "#/paths/~1user~1episodes~1{episode_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "usertoken": []
+          }
+        ],
+        "summary": "Unmark an episode",
+        "tags": [
+          "marked episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -391,29 +903,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/follows/networks",
+        "parameters": [
+          {
+            "description": "Embed full network info",
+            "enum": [
+              "network"
+            ],
+            "in": "query",
+            "name": "embed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/user/follows/networks",
         "pointer": "#/paths/~1user~1follows~1networks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NetworkFollow[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List the followed networks"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/user/follows/networks/{network_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /user/follows/networks/{network_id}",
-        "path": "/user/follows/networks/{network_id}",
-        "pointer": "#/paths/~1user~1follows~1networks~1{network_id}/delete",
-        "security": [
-          {
-            "usertoken": []
-          }
-        ],
-        "summary": "Unfollow a network"
+        "summary": "List the followed networks",
+        "tags": [
+          "followed networks"
+        ]
       },
       {
         "deprecated": false,
@@ -421,14 +940,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/follows/networks/{network_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "network_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/follows/networks/{network_id}",
         "pointer": "#/paths/~1user~1follows~1networks~1{network_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NetworkFollow"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Check if a network is followed"
+        "summary": "Check if a network is followed",
+        "tags": [
+          "followed networks"
+        ]
       },
       {
         "deprecated": false,
@@ -436,14 +976,70 @@
         "kind": "operation",
         "method": "put",
         "name": "put /user/follows/networks/{network_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "network_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/follows/networks/{network_id}",
         "pointer": "#/paths/~1user~1follows~1networks~1{network_id}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NetworkFollow"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Follow a network"
+        "summary": "Follow a network",
+        "tags": [
+          "followed networks"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/user/follows/networks/{network_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /user/follows/networks/{network_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "network_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/user/follows/networks/{network_id}",
+        "pointer": "#/paths/~1user~1follows~1networks~1{network_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "usertoken": []
+          }
+        ],
+        "summary": "Unfollow a network",
+        "tags": [
+          "followed networks"
+        ]
       },
       {
         "deprecated": false,
@@ -451,29 +1047,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/follows/people",
+        "parameters": [
+          {
+            "description": "Embed full person info",
+            "enum": [
+              "person"
+            ],
+            "in": "query",
+            "name": "embed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/user/follows/people",
         "pointer": "#/paths/~1user~1follows~1people/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonFollow[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List the followed people"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/user/follows/people/{person_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /user/follows/people/{person_id}",
-        "path": "/user/follows/people/{person_id}",
-        "pointer": "#/paths/~1user~1follows~1people~1{person_id}/delete",
-        "security": [
-          {
-            "usertoken": []
-          }
-        ],
-        "summary": "Unfollow a person"
+        "summary": "List the followed people",
+        "tags": [
+          "followed people"
+        ]
       },
       {
         "deprecated": false,
@@ -481,14 +1084,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/follows/people/{person_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "person_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/follows/people/{person_id}",
         "pointer": "#/paths/~1user~1follows~1people~1{person_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonFollow"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Check if a person is followed"
+        "summary": "Check if a person is followed",
+        "tags": [
+          "followed people"
+        ]
       },
       {
         "deprecated": false,
@@ -496,14 +1120,70 @@
         "kind": "operation",
         "method": "put",
         "name": "put /user/follows/people/{person_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "person_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/follows/people/{person_id}",
         "pointer": "#/paths/~1user~1follows~1people~1{person_id}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonFollow"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Follow a person"
+        "summary": "Follow a person",
+        "tags": [
+          "followed people"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/user/follows/people/{person_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /user/follows/people/{person_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "person_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/user/follows/people/{person_id}",
+        "pointer": "#/paths/~1user~1follows~1people~1{person_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "usertoken": []
+          }
+        ],
+        "summary": "Unfollow a person",
+        "tags": [
+          "followed people"
+        ]
       },
       {
         "deprecated": false,
@@ -511,29 +1191,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/follows/shows",
+        "parameters": [
+          {
+            "description": "Embed full show info",
+            "enum": [
+              "show"
+            ],
+            "in": "query",
+            "name": "embed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/user/follows/shows",
         "pointer": "#/paths/~1user~1follows~1shows/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShowFollow[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List the followed shows"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/user/follows/shows/{show_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /user/follows/shows/{show_id}",
-        "path": "/user/follows/shows/{show_id}",
-        "pointer": "#/paths/~1user~1follows~1shows~1{show_id}/delete",
-        "security": [
-          {
-            "usertoken": []
-          }
-        ],
-        "summary": "Unfollow a show"
+        "summary": "List the followed shows",
+        "tags": [
+          "followed shows"
+        ]
       },
       {
         "deprecated": false,
@@ -541,14 +1228,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/follows/shows/{show_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "show_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/follows/shows/{show_id}",
         "pointer": "#/paths/~1user~1follows~1shows~1{show_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShowFollow"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Check if a show is followed"
+        "summary": "Check if a show is followed",
+        "tags": [
+          "followed shows"
+        ]
       },
       {
         "deprecated": false,
@@ -556,14 +1264,70 @@
         "kind": "operation",
         "method": "put",
         "name": "put /user/follows/shows/{show_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "show_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/follows/shows/{show_id}",
         "pointer": "#/paths/~1user~1follows~1shows~1{show_id}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShowFollow"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Follow a show"
+        "summary": "Follow a show",
+        "tags": [
+          "followed shows"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/user/follows/shows/{show_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /user/follows/shows/{show_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "show_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/user/follows/shows/{show_id}",
+        "pointer": "#/paths/~1user~1follows~1shows~1{show_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "usertoken": []
+          }
+        ],
+        "summary": "Unfollow a show",
+        "tags": [
+          "followed shows"
+        ]
       },
       {
         "deprecated": false,
@@ -571,29 +1335,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/follows/webchannels",
+        "parameters": [
+          {
+            "description": "Embed full webchannel info",
+            "enum": [
+              "webchannel"
+            ],
+            "in": "query",
+            "name": "embed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/user/follows/webchannels",
         "pointer": "#/paths/~1user~1follows~1webchannels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebchannelFollow[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List the followed webchannels"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/user/follows/webchannels/{webchannel_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /user/follows/webchannels/{webchannel_id}",
-        "path": "/user/follows/webchannels/{webchannel_id}",
-        "pointer": "#/paths/~1user~1follows~1webchannels~1{webchannel_id}/delete",
-        "security": [
-          {
-            "usertoken": []
-          }
-        ],
-        "summary": "Unfollow a webchannel"
+        "summary": "List the followed webchannels",
+        "tags": [
+          "followed webchannels"
+        ]
       },
       {
         "deprecated": false,
@@ -601,14 +1372,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/follows/webchannels/{webchannel_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "webchannel_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/follows/webchannels/{webchannel_id}",
         "pointer": "#/paths/~1user~1follows~1webchannels~1{webchannel_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebchannelFollow"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Check if a webchannel is followed"
+        "summary": "Check if a webchannel is followed",
+        "tags": [
+          "followed webchannels"
+        ]
       },
       {
         "deprecated": false,
@@ -616,14 +1408,70 @@
         "kind": "operation",
         "method": "put",
         "name": "put /user/follows/webchannels/{webchannel_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "webchannel_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/follows/webchannels/{webchannel_id}",
         "pointer": "#/paths/~1user~1follows~1webchannels~1{webchannel_id}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebchannelFollow"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Follow a webchannel"
+        "summary": "Follow a webchannel",
+        "tags": [
+          "followed webchannels"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/user/follows/webchannels/{webchannel_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /user/follows/webchannels/{webchannel_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "webchannel_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/user/follows/webchannels/{webchannel_id}",
+        "pointer": "#/paths/~1user~1follows~1webchannels~1{webchannel_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "usertoken": []
+          }
+        ],
+        "summary": "Unfollow a webchannel",
+        "tags": [
+          "followed webchannels"
+        ]
       },
       {
         "deprecated": false,
@@ -633,12 +1481,22 @@
         "name": "get /user/tags",
         "path": "/user/tags",
         "pointer": "#/paths/~1user~1tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tag[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List all tags"
+        "summary": "List all tags",
+        "tags": [
+          "tagged shows"
+        ]
       },
       {
         "deprecated": false,
@@ -648,12 +1506,32 @@
         "name": "post /user/tags",
         "path": "/user/tags",
         "pointer": "#/paths/~1user~1tags/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Tag"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tag"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Create a new tag"
+        "summary": "Create a new tag",
+        "tags": [
+          "tagged shows"
+        ]
       },
       {
         "deprecated": false,
@@ -661,14 +1539,34 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /user/tags/{tag_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tag_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/tags/{tag_id}",
         "pointer": "#/paths/~1user~1tags~1{tag_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Delete a specific tag"
+        "summary": "Delete a specific tag",
+        "tags": [
+          "tagged shows"
+        ]
       },
       {
         "deprecated": false,
@@ -676,14 +1574,45 @@
         "kind": "operation",
         "method": "patch",
         "name": "patch /user/tags/{tag_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tag_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/tags/{tag_id}",
         "pointer": "#/paths/~1user~1tags~1{tag_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Tag"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tag"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Update a specific tag"
+        "summary": "Update a specific tag",
+        "tags": [
+          "tagged shows"
+        ]
       },
       {
         "deprecated": false,
@@ -691,29 +1620,45 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/tags/{tag_id}/shows",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tag_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Embed full show info",
+            "enum": [
+              "show"
+            ],
+            "in": "query",
+            "name": "embed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/user/tags/{tag_id}/shows",
         "pointer": "#/paths/~1user~1tags~1{tag_id}~1shows/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagInstance[]"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List all shows under this tag"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/user/tags/{tag_id}/shows/{show_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /user/tags/{tag_id}/shows/{show_id}",
-        "path": "/user/tags/{tag_id}/shows/{show_id}",
-        "pointer": "#/paths/~1user~1tags~1{tag_id}~1shows~1{show_id}/delete",
-        "security": [
-          {
-            "usertoken": []
-          }
-        ],
-        "summary": "Untag a show"
+        "summary": "List all shows under this tag",
+        "tags": [
+          "tagged shows"
+        ]
       },
       {
         "deprecated": false,
@@ -721,14 +1666,82 @@
         "kind": "operation",
         "method": "put",
         "name": "put /user/tags/{tag_id}/shows/{show_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tag_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "show_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/tags/{tag_id}/shows/{show_id}",
         "pointer": "#/paths/~1user~1tags~1{tag_id}~1shows~1{show_id}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TagInstance"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Tag a show"
+        "summary": "Tag a show",
+        "tags": [
+          "tagged shows"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/user/tags/{tag_id}/shows/{show_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /user/tags/{tag_id}/shows/{show_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tag_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "show_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/user/tags/{tag_id}/shows/{show_id}",
+        "pointer": "#/paths/~1user~1tags~1{tag_id}~1shows~1{show_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "usertoken": []
+          }
+        ],
+        "summary": "Untag a show",
+        "tags": [
+          "tagged shows"
+        ]
       },
       {
         "deprecated": false,
@@ -738,27 +1751,22 @@
         "name": "get /user/votes/episodes",
         "path": "/user/votes/episodes",
         "pointer": "#/paths/~1user~1votes~1episodes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EpisodeVote[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List the episodes voted for"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/user/votes/episodes/{episode_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /user/votes/episodes/{episode_id}",
-        "path": "/user/votes/episodes/{episode_id}",
-        "pointer": "#/paths/~1user~1votes~1episodes~1{episode_id}/delete",
-        "security": [
-          {
-            "usertoken": []
-          }
-        ],
-        "summary": "Remove an episode vote"
+        "summary": "List the episodes voted for",
+        "tags": [
+          "voted episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -766,14 +1774,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/votes/episodes/{episode_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/votes/episodes/{episode_id}",
         "pointer": "#/paths/~1user~1votes~1episodes~1{episode_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EpisodeVote"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Check if an episode is voted for"
+        "summary": "Check if an episode is voted for",
+        "tags": [
+          "voted episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -781,14 +1810,80 @@
         "kind": "operation",
         "method": "put",
         "name": "put /user/votes/episodes/{episode_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/votes/episodes/{episode_id}",
         "pointer": "#/paths/~1user~1votes~1episodes~1{episode_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "EpisodeVote"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EpisodeVote"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Vote for an episode"
+        "summary": "Vote for an episode",
+        "tags": [
+          "voted episodes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/user/votes/episodes/{episode_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /user/votes/episodes/{episode_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/user/votes/episodes/{episode_id}",
+        "pointer": "#/paths/~1user~1votes~1episodes~1{episode_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "usertoken": []
+          }
+        ],
+        "summary": "Remove an episode vote",
+        "tags": [
+          "voted episodes"
+        ]
       },
       {
         "deprecated": false,
@@ -796,29 +1891,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/votes/shows",
+        "parameters": [
+          {
+            "description": "Embed full show info",
+            "enum": [
+              "show"
+            ],
+            "in": "query",
+            "name": "embed",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/user/votes/shows",
         "pointer": "#/paths/~1user~1votes~1shows/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShowVote[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "List the shows voted for"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/user/votes/shows/{show_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /user/votes/shows/{show_id}",
-        "path": "/user/votes/shows/{show_id}",
-        "pointer": "#/paths/~1user~1votes~1shows~1{show_id}/delete",
-        "security": [
-          {
-            "usertoken": []
-          }
-        ],
-        "summary": "Remove a show vote"
+        "summary": "List the shows voted for",
+        "tags": [
+          "voted shows"
+        ]
       },
       {
         "deprecated": false,
@@ -826,46 +1928,139 @@
         "kind": "operation",
         "method": "get",
         "name": "get /user/votes/shows/{show_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "show_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/votes/shows/{show_id}",
         "pointer": "#/paths/~1user~1votes~1shows~1{show_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShowVote"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Check if a show is voted for"
+        "summary": "Check if a show is voted for",
+        "tags": [
+          "voted shows"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set `voted_at` to `NULL` or leave it out to use the current time.",
         "id": "operation:put:/user/votes/shows/{show_id}",
         "kind": "operation",
         "method": "put",
         "name": "put /user/votes/shows/{show_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "show_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/user/votes/shows/{show_id}",
         "pointer": "#/paths/~1user~1votes~1shows~1{show_id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ShowVote"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ShowVote"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "usertoken": []
           }
         ],
-        "summary": "Vote for a show"
+        "summary": "Vote for a show",
+        "tags": [
+          "voted shows"
+        ]
       },
       {
+        "deprecated": false,
+        "id": "operation:delete:/user/votes/shows/{show_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /user/votes/shows/{show_id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "show_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/user/votes/shows/{show_id}",
+        "pointer": "#/paths/~1user~1votes~1shows~1{show_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "usertoken": []
+          }
+        ],
+        "summary": "Remove a show vote",
+        "tags": [
+          "voted shows"
+        ]
+      },
+      {
+        "description": "A list of responses to your bulk input, ordered the same as your input",
         "id": "schema:BulkResponse",
         "kind": "schema",
-        "name": "BulkResponse"
+        "name": "BulkResponse",
+        "type": "object[]"
       },
       {
         "id": "schema:Episode",
         "kind": "schema",
-        "name": "Episode"
+        "name": "Episode",
+        "type": "object"
       },
       {
         "id": "schema:EpisodeVote",
         "kind": "schema",
-        "name": "EpisodeVote"
+        "name": "EpisodeVote",
+        "type": "object"
       },
       {
+        "description": "0 for watched, 1 for acquired, 2 for skipped",
         "id": "schema:MarkType",
         "kind": "schema",
         "name": "MarkType"
@@ -873,62 +2068,74 @@
       {
         "id": "schema:MarkedEpisode",
         "kind": "schema",
-        "name": "MarkedEpisode"
+        "name": "MarkedEpisode",
+        "type": "object"
       },
       {
         "id": "schema:Network",
         "kind": "schema",
-        "name": "Network"
+        "name": "Network",
+        "type": "object"
       },
       {
         "id": "schema:NetworkFollow",
         "kind": "schema",
-        "name": "NetworkFollow"
+        "name": "NetworkFollow",
+        "type": "object"
       },
       {
         "id": "schema:Person",
         "kind": "schema",
-        "name": "Person"
+        "name": "Person",
+        "type": "object"
       },
       {
         "id": "schema:PersonFollow",
         "kind": "schema",
-        "name": "PersonFollow"
+        "name": "PersonFollow",
+        "type": "object"
       },
       {
         "id": "schema:Show",
         "kind": "schema",
-        "name": "Show"
+        "name": "Show",
+        "type": "object"
       },
       {
         "id": "schema:ShowFollow",
         "kind": "schema",
-        "name": "ShowFollow"
+        "name": "ShowFollow",
+        "type": "object"
       },
       {
         "id": "schema:ShowVote",
         "kind": "schema",
-        "name": "ShowVote"
+        "name": "ShowVote",
+        "type": "object"
       },
       {
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
         "id": "schema:TagInstance",
         "kind": "schema",
-        "name": "TagInstance"
+        "name": "TagInstance",
+        "type": "object"
       },
       {
         "id": "schema:Webchannel",
         "kind": "schema",
-        "name": "Webchannel"
+        "name": "Webchannel",
+        "type": "object"
       },
       {
         "id": "schema:WebchannelFollow",
         "kind": "schema",
-        "name": "WebchannelFollow"
+        "name": "WebchannelFollow",
+        "type": "object"
       }
     ]
   },

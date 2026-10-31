@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_i.imgur.com_9ojm4rP.jpeg"
 
 | | |
 | --- | --- |
-| Signed bundle | `8fe2ae82a556ccb9d9db28b984373be2326ee4cc266d05b11c0a8da629eacc06` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_i.imgur.com_9ojm4rP.jpeg"
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/proxy` | get /proxy | Gets a random proxy for chosen parameters. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/proxy` | get /proxy | `Token`, `Address`, `Port`, `Protocol`, `AccessType`, `ResponseTime`, `IsSsl`, `Uptime`, `Country`, `Continent`, `Timezone`, `LastTested`, `correlation_id`* | Proxy | yes | Gets a random proxy for chosen parameters. |

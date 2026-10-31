@@ -47,12 +47,12 @@
       {
         "from": "twinehealth-com-f0b7b71379",
         "kind": "EXPOSES",
-        "to": "operation:delete:/calendar_event/{id}"
+        "to": "operation:get:/calendar_event/{id}"
       },
       {
         "from": "twinehealth-com-f0b7b71379",
         "kind": "EXPOSES",
-        "to": "operation:get:/calendar_event/{id}"
+        "to": "operation:delete:/calendar_event/{id}"
       },
       {
         "from": "twinehealth-com-f0b7b71379",
@@ -167,12 +167,12 @@
       {
         "from": "twinehealth-com-f0b7b71379",
         "kind": "EXPOSES",
-        "to": "operation:post:/patient"
+        "to": "operation:put:/patient"
       },
       {
         "from": "twinehealth-com-f0b7b71379",
         "kind": "EXPOSES",
-        "to": "operation:put:/patient"
+        "to": "operation:post:/patient"
       },
       {
         "from": "twinehealth-com-f0b7b71379",
@@ -313,6 +313,1161 @@
         "from": "twinehealth-com-f0b7b71379",
         "kind": "EXPOSES",
         "to": "operation:get:/reward_program_activation/{id}"
+      },
+      {
+        "from": "operation:post:/action",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateActionRequest"
+      },
+      {
+        "from": "operation:post:/action",
+        "kind": "RETURNS",
+        "to": "schema:CreateActionResponse"
+      },
+      {
+        "from": "operation:get:/action/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchActionResponse"
+      },
+      {
+        "from": "operation:patch:/action/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateActionRequest"
+      },
+      {
+        "from": "operation:patch:/action/{id}",
+        "kind": "RETURNS",
+        "to": "schema:UpdateActionResponse"
+      },
+      {
+        "from": "operation:post:/bundle",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateBundleRequest"
+      },
+      {
+        "from": "operation:post:/bundle",
+        "kind": "RETURNS",
+        "to": "schema:CreateBundleResponse"
+      },
+      {
+        "from": "operation:get:/bundle/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchBundleResponse"
+      },
+      {
+        "from": "operation:patch:/bundle/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateBundleRequest"
+      },
+      {
+        "from": "operation:patch:/bundle/{id}",
+        "kind": "RETURNS",
+        "to": "schema:UpdateBundleResponse"
+      },
+      {
+        "from": "operation:get:/calendar_event",
+        "kind": "RETURNS",
+        "to": "schema:FetchCalendarEventsResponse"
+      },
+      {
+        "from": "operation:post:/calendar_event",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateCalendarEventRequest"
+      },
+      {
+        "from": "operation:post:/calendar_event",
+        "kind": "RETURNS",
+        "to": "schema:CreateCalendarEventResponse"
+      },
+      {
+        "from": "operation:get:/calendar_event/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchCalendarEventResponse"
+      },
+      {
+        "from": "operation:patch:/calendar_event/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateCalendarEventRequest"
+      },
+      {
+        "from": "operation:patch:/calendar_event/{id}",
+        "kind": "RETURNS",
+        "to": "schema:UpdateCalendarEventResponse"
+      },
+      {
+        "from": "operation:post:/calendar_event_response",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateCalendarEventResponseRequest"
+      },
+      {
+        "from": "operation:post:/calendar_event_response",
+        "kind": "RETURNS",
+        "to": "schema:CreateCalendarEventResponseRequest"
+      },
+      {
+        "from": "operation:get:/coach",
+        "kind": "RETURNS",
+        "to": "schema:FetchCoachesResponse"
+      },
+      {
+        "from": "operation:get:/coach/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchCoachResponse"
+      },
+      {
+        "from": "operation:get:/email_history",
+        "kind": "RETURNS",
+        "to": "schema:FetchEmailHistoriesResponse"
+      },
+      {
+        "from": "operation:get:/email_history/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchEmailHistoryResponse"
+      },
+      {
+        "from": "operation:get:/group",
+        "kind": "RETURNS",
+        "to": "schema:FetchGroupsResponse"
+      },
+      {
+        "from": "operation:post:/group",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateGroupRequest"
+      },
+      {
+        "from": "operation:post:/group",
+        "kind": "RETURNS",
+        "to": "schema:CreateGroupResponse"
+      },
+      {
+        "from": "operation:get:/group/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchGroupResponse"
+      },
+      {
+        "from": "operation:get:/health_profile",
+        "kind": "RETURNS",
+        "to": "schema:FetchHealthProfilesResponse"
+      },
+      {
+        "from": "operation:get:/health_profile/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchHealthProfileResponse"
+      },
+      {
+        "from": "operation:get:/health_profile_answer",
+        "kind": "RETURNS",
+        "to": "schema:FetchHealthProfileAnswersResponse"
+      },
+      {
+        "from": "operation:get:/health_profile_answer/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchHealthProfileAnswerResponse"
+      },
+      {
+        "from": "operation:get:/health_profile_question",
+        "kind": "RETURNS",
+        "to": "schema:FetchHealthProfileQuestionsResponse"
+      },
+      {
+        "from": "operation:get:/health_profile_question/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchHealthProfileQuestionResponse"
+      },
+      {
+        "from": "operation:get:/health_question_definition",
+        "kind": "RETURNS",
+        "to": "schema:FetchHealthQuestionDefinitionsResponse"
+      },
+      {
+        "from": "operation:get:/health_question_definition/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchHealthQuestionDefinitionResponse"
+      },
+      {
+        "from": "operation:post:/oauth/token",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateTokenRequest"
+      },
+      {
+        "from": "operation:post:/oauth/token",
+        "kind": "RETURNS",
+        "to": "schema:CreateTokenResponse"
+      },
+      {
+        "from": "operation:get:/oauth/token/{id}/groups",
+        "kind": "RETURNS",
+        "to": "schema:FetchGroupsResponse"
+      },
+      {
+        "from": "operation:get:/oauth/token/{id}/organization",
+        "kind": "RETURNS",
+        "to": "schema:FetchOrganizationResponse"
+      },
+      {
+        "from": "operation:get:/organization/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchOrganizationResponse"
+      },
+      {
+        "from": "operation:get:/patient",
+        "kind": "RETURNS",
+        "to": "schema:FetchPatientsResponse"
+      },
+      {
+        "from": "operation:put:/patient",
+        "kind": "ACCEPTS",
+        "to": "schema:UpsertPatientRequest"
+      },
+      {
+        "from": "operation:put:/patient",
+        "kind": "RETURNS",
+        "to": "schema:CreatePatientResponse"
+      },
+      {
+        "from": "operation:post:/patient",
+        "kind": "ACCEPTS",
+        "to": "schema:CreatePatientRequest"
+      },
+      {
+        "from": "operation:post:/patient",
+        "kind": "RETURNS",
+        "to": "schema:CreatePatientResponse"
+      },
+      {
+        "from": "operation:get:/patient/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchPatientResponse"
+      },
+      {
+        "from": "operation:patch:/patient/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdatePatientRequest"
+      },
+      {
+        "from": "operation:patch:/patient/{id}",
+        "kind": "RETURNS",
+        "to": "schema:UpdatePatientResponse"
+      },
+      {
+        "from": "operation:get:/patient/{id}/coaches",
+        "kind": "RETURNS",
+        "to": "schema:FetchCoachesResponse"
+      },
+      {
+        "from": "operation:get:/patient/{id}/groups",
+        "kind": "RETURNS",
+        "to": "schema:FetchGroupsResponse"
+      },
+      {
+        "from": "operation:get:/patient_health_metric",
+        "kind": "RETURNS",
+        "to": "schema:FetchPatientHealthMetricResponse"
+      },
+      {
+        "from": "operation:post:/patient_health_metric",
+        "kind": "ACCEPTS",
+        "to": "schema:CreatePatientHealthMetricRequest"
+      },
+      {
+        "from": "operation:post:/patient_health_metric",
+        "kind": "RETURNS",
+        "to": "schema:CreatePatientHealthMetricResponse"
+      },
+      {
+        "from": "operation:get:/patient_health_metric/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchPatientHealthMetricResponse"
+      },
+      {
+        "from": "operation:get:/patient_plan_summary",
+        "kind": "RETURNS",
+        "to": "schema:FetchPatientPlanSummariesResponse"
+      },
+      {
+        "from": "operation:get:/patient_plan_summary/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchPatientPlanSummaryResponse"
+      },
+      {
+        "from": "operation:patch:/patient_plan_summary/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdatePatientPlanSummaryRequest"
+      },
+      {
+        "from": "operation:patch:/patient_plan_summary/{id}",
+        "kind": "RETURNS",
+        "to": "schema:UpdatePatientPlanSummaryResponse"
+      },
+      {
+        "from": "operation:get:/result",
+        "kind": "RETURNS",
+        "to": "schema:FetchPatientHealthResultResponse"
+      },
+      {
+        "from": "operation:get:/result/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchPatientHealthResultResponse"
+      },
+      {
+        "from": "operation:get:/reward",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardsResponse"
+      },
+      {
+        "from": "operation:post:/reward",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateRewardRequest"
+      },
+      {
+        "from": "operation:post:/reward",
+        "kind": "RETURNS",
+        "to": "schema:CreateRewardResponse"
+      },
+      {
+        "from": "operation:get:/reward/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardResponse"
+      },
+      {
+        "from": "operation:get:/reward_earning",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardEarningsResponse"
+      },
+      {
+        "from": "operation:post:/reward_earning",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateRewardEarningRequest"
+      },
+      {
+        "from": "operation:post:/reward_earning",
+        "kind": "RETURNS",
+        "to": "schema:CreateRewardEarningResponse"
+      },
+      {
+        "from": "operation:get:/reward_earning/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardEarningResponse"
+      },
+      {
+        "from": "operation:get:/reward_earning_fulfillment",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardEarningFulfillmentsResponse"
+      },
+      {
+        "from": "operation:post:/reward_earning_fulfillment",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateRewardEarningFulfillmentRequest"
+      },
+      {
+        "from": "operation:post:/reward_earning_fulfillment",
+        "kind": "RETURNS",
+        "to": "schema:CreateRewardEarningFulfillmentResponse"
+      },
+      {
+        "from": "operation:get:/reward_earning_fulfillment/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardEarningFulfillmentResponse"
+      },
+      {
+        "from": "operation:get:/reward_program",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardProgramsResponse"
+      },
+      {
+        "from": "operation:post:/reward_program",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateRewardProgramRequest"
+      },
+      {
+        "from": "operation:post:/reward_program",
+        "kind": "RETURNS",
+        "to": "schema:CreateRewardProgramResponse"
+      },
+      {
+        "from": "operation:get:/reward_program/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardProgramResponse"
+      },
+      {
+        "from": "operation:get:/reward_program/{id}/group",
+        "kind": "RETURNS",
+        "to": "schema:FetchGroupsResponse"
+      },
+      {
+        "from": "operation:get:/reward_program_activation",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardProgramActivationsResponse"
+      },
+      {
+        "from": "operation:post:/reward_program_activation",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateRewardProgramActivationRequest"
+      },
+      {
+        "from": "operation:post:/reward_program_activation",
+        "kind": "RETURNS",
+        "to": "schema:CreateRewardProgramActivationResponse"
+      },
+      {
+        "from": "operation:get:/reward_program_activation/{id}",
+        "kind": "RETURNS",
+        "to": "schema:FetchRewardProgramActivationResponse"
+      },
+      {
+        "from": "schema:ActionResource",
+        "kind": "REFERENCES",
+        "to": "schema:ActionMetric"
+      },
+      {
+        "from": "schema:ActionResource",
+        "kind": "REFERENCES",
+        "to": "schema:ActionWindow"
+      },
+      {
+        "from": "schema:ActionResource",
+        "kind": "REFERENCES",
+        "to": "schema:Identifier"
+      },
+      {
+        "from": "schema:CreateActionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ActionResource"
+      },
+      {
+        "from": "schema:CreateActionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActionResource"
+      },
+      {
+        "from": "schema:CreateActionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateBundleRequest",
+        "kind": "REFERENCES",
+        "to": "schema:BundleResource"
+      },
+      {
+        "from": "schema:CreateBundleResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BundleResource"
+      },
+      {
+        "from": "schema:CreateBundleResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateCalendarEventResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CalendarEventResource"
+      },
+      {
+        "from": "schema:CreateCalendarEventResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateGroupRequest",
+        "kind": "REFERENCES",
+        "to": "schema:GroupResource"
+      },
+      {
+        "from": "schema:CreateGroupResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateGroupResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GroupResource"
+      },
+      {
+        "from": "schema:CreateOrUpdateErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateOrUpdateErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:CreatePatientHealthMetricRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientHealthMetricCreateResource"
+      },
+      {
+        "from": "schema:CreatePatientHealthMetricResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreatePatientHealthMetricResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientHealthMetricResource"
+      },
+      {
+        "from": "schema:CreatePatientRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientCreateResource"
+      },
+      {
+        "from": "schema:CreatePatientResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreatePatientResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientResource"
+      },
+      {
+        "from": "schema:CreateRewardEarningFulfillmentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:RewardEarningFulfillmentResource"
+      },
+      {
+        "from": "schema:CreateRewardEarningFulfillmentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateRewardEarningFulfillmentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardEarningFulfillmentResource"
+      },
+      {
+        "from": "schema:CreateRewardEarningRequest",
+        "kind": "REFERENCES",
+        "to": "schema:RewardEarningResource"
+      },
+      {
+        "from": "schema:CreateRewardEarningResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateRewardEarningResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardEarningResource"
+      },
+      {
+        "from": "schema:CreateRewardProgramActivationRequest",
+        "kind": "REFERENCES",
+        "to": "schema:RewardProgramActivationResource"
+      },
+      {
+        "from": "schema:CreateRewardProgramActivationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateRewardProgramActivationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardProgramActivationResource"
+      },
+      {
+        "from": "schema:CreateRewardProgramRequest",
+        "kind": "REFERENCES",
+        "to": "schema:RewardProgramResource"
+      },
+      {
+        "from": "schema:CreateRewardProgramResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateRewardProgramResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardProgramResource"
+      },
+      {
+        "from": "schema:CreateRewardRequest",
+        "kind": "REFERENCES",
+        "to": "schema:RewardResource"
+      },
+      {
+        "from": "schema:CreateRewardResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateRewardResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardResource"
+      },
+      {
+        "from": "schema:CreateTokenResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:CreateTokenResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GroupResource"
+      },
+      {
+        "from": "schema:CreateTokenResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TokenResource"
+      },
+      {
+        "from": "schema:FetchActionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActionResource"
+      },
+      {
+        "from": "schema:FetchActionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchBundleResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BundleResource"
+      },
+      {
+        "from": "schema:FetchBundleResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchCalendarEventResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CalendarEventResource"
+      },
+      {
+        "from": "schema:FetchCalendarEventResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchCalendarEventResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchCalendarEventsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CalendarEventResource"
+      },
+      {
+        "from": "schema:FetchCalendarEventsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionResponseLinks"
+      },
+      {
+        "from": "schema:FetchCalendarEventsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchCalendarEventsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchCoachResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CoachResource"
+      },
+      {
+        "from": "schema:FetchCoachResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchCoachesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CoachResource"
+      },
+      {
+        "from": "schema:FetchCoachesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchEmailHistoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EmailHistoryResource"
+      },
+      {
+        "from": "schema:FetchEmailHistoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchEmailHistoryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:EmailHistoryResource"
+      },
+      {
+        "from": "schema:FetchEmailHistoryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:FetchErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchGroupResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchGroupResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GroupResource"
+      },
+      {
+        "from": "schema:FetchGroupsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchGroupsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GroupResource"
+      },
+      {
+        "from": "schema:FetchHealthProfileAnswerResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchHealthProfileAnswerResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HealthProfileAnswerResource"
+      },
+      {
+        "from": "schema:FetchHealthProfileAnswerResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchHealthProfileAnswersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionResponseLinks"
+      },
+      {
+        "from": "schema:FetchHealthProfileAnswersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchHealthProfileAnswersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HealthProfileAnswerResource"
+      },
+      {
+        "from": "schema:FetchHealthProfileAnswersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchHealthProfileQuestionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchHealthProfileQuestionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HealthProfileQuestionResource"
+      },
+      {
+        "from": "schema:FetchHealthProfileQuestionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchHealthProfileQuestionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionResponseLinks"
+      },
+      {
+        "from": "schema:FetchHealthProfileQuestionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchHealthProfileQuestionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HealthProfileQuestionResource"
+      },
+      {
+        "from": "schema:FetchHealthProfileQuestionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchHealthProfileResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchHealthProfileResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HealthProfileResource"
+      },
+      {
+        "from": "schema:FetchHealthProfileResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchHealthProfilesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionResponseLinks"
+      },
+      {
+        "from": "schema:FetchHealthProfilesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchHealthProfilesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HealthProfileResource"
+      },
+      {
+        "from": "schema:FetchHealthProfilesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchHealthQuestionDefinitionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchHealthQuestionDefinitionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HealthQuestionDefinitionResource"
+      },
+      {
+        "from": "schema:FetchHealthQuestionDefinitionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionResponseLinks"
+      },
+      {
+        "from": "schema:FetchHealthQuestionDefinitionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchHealthQuestionDefinitionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:HealthQuestionDefinitionResource"
+      },
+      {
+        "from": "schema:FetchOrganizationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchOrganizationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OrganizationResource"
+      },
+      {
+        "from": "schema:FetchPatientHealthMetricResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionResponseLinks"
+      },
+      {
+        "from": "schema:FetchPatientHealthMetricResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchPatientHealthMetricResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientHealthMetricResource"
+      },
+      {
+        "from": "schema:FetchPatientHealthResultResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionResponseLinks"
+      },
+      {
+        "from": "schema:FetchPatientHealthResultResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchPatientHealthResultResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientHealthResultResource"
+      },
+      {
+        "from": "schema:FetchPatientPlanSummariesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchPatientPlanSummariesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientPlanSummaryResource"
+      },
+      {
+        "from": "schema:FetchPatientPlanSummariesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchPatientPlanSummaryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchPatientPlanSummaryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientPlanSummaryResource"
+      },
+      {
+        "from": "schema:FetchPatientPlanSummaryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Resource"
+      },
+      {
+        "from": "schema:FetchPatientResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchPatientResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientResource"
+      },
+      {
+        "from": "schema:FetchPatientsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionResponseLinks"
+      },
+      {
+        "from": "schema:FetchPatientsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchPatientsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientResource"
+      },
+      {
+        "from": "schema:FetchRewardEarningFulfillmentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardEarningFulfillmentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardEarningFulfillmentResource"
+      },
+      {
+        "from": "schema:FetchRewardEarningFulfillmentsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardEarningFulfillmentsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardEarningFulfillmentResource"
+      },
+      {
+        "from": "schema:FetchRewardEarningResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardEarningResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardEarningResource"
+      },
+      {
+        "from": "schema:FetchRewardEarningsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardEarningsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardEarningResource"
+      },
+      {
+        "from": "schema:FetchRewardProgramActivationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardProgramActivationResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardProgramActivationResource"
+      },
+      {
+        "from": "schema:FetchRewardProgramActivationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardProgramActivationsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardProgramActivationResource"
+      },
+      {
+        "from": "schema:FetchRewardProgramResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardProgramResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardProgramResource"
+      },
+      {
+        "from": "schema:FetchRewardProgramsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardProgramsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardProgramResource"
+      },
+      {
+        "from": "schema:FetchRewardResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardResource"
+      },
+      {
+        "from": "schema:FetchRewardsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:FetchMetaResponse"
+      },
+      {
+        "from": "schema:FetchRewardsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewardResource"
+      },
+      {
+        "from": "schema:PatientCreateResource",
+        "kind": "REFERENCES",
+        "to": "schema:PatientResource"
+      },
+      {
+        "from": "schema:PatientHealthMetricCreateResource",
+        "kind": "REFERENCES",
+        "to": "schema:PatientHealthMetricResource"
+      },
+      {
+        "from": "schema:PatientResource",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:PatientResource",
+        "kind": "REFERENCES",
+        "to": "schema:ArchiveHistory"
+      },
+      {
+        "from": "schema:PatientResource",
+        "kind": "REFERENCES",
+        "to": "schema:PatientIdentifier"
+      },
+      {
+        "from": "schema:PatientResource",
+        "kind": "REFERENCES",
+        "to": "schema:PhoneNumber"
+      },
+      {
+        "from": "schema:UpdateActionRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ActionResource"
+      },
+      {
+        "from": "schema:UpdateActionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ActionResource"
+      },
+      {
+        "from": "schema:UpdateActionResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:UpdateBundleRequest",
+        "kind": "REFERENCES",
+        "to": "schema:BundleResource"
+      },
+      {
+        "from": "schema:UpdateBundleResponse",
+        "kind": "REFERENCES",
+        "to": "schema:BundleResource"
+      },
+      {
+        "from": "schema:UpdateBundleResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:UpdateCalendarEventResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CalendarEventResource"
+      },
+      {
+        "from": "schema:UpdateCalendarEventResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:UpdatePatientPlanSummaryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientPlanSummaryResource"
+      },
+      {
+        "from": "schema:UpdatePatientPlanSummaryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:UpdatePatientPlanSummaryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientPlanSummaryResource"
+      },
+      {
+        "from": "schema:UpdatePatientRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientResource"
+      },
+      {
+        "from": "schema:UpdatePatientResponse",
+        "kind": "REFERENCES",
+        "to": "schema:CreateOrUpdateMetaResponse"
+      },
+      {
+        "from": "schema:UpdatePatientResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PatientResource"
+      },
+      {
+        "from": "schema:UpsertPatientRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PatientResource"
       }
     ],
     "nodes": [
@@ -322,309 +1477,1488 @@
       },
       {
         "deprecated": false,
+        "description": "Create a plan action",
         "id": "operation:post:/action",
         "kind": "operation",
         "method": "post",
         "name": "createAction",
         "path": "/action",
         "pointer": "#/paths/~1action/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateActionRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreateActionResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create action"
+        "summary": "Create action",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a health action from a patient's plan.",
         "id": "operation:get:/action/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchAction",
+        "parameters": [
+          {
+            "description": "Action identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/action/{id}",
         "pointer": "#/paths/~1action~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchActionResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an action"
+        "summary": "Get an action",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a health action from a patient's plan.",
         "id": "operation:patch:/action/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateAction",
+        "parameters": [
+          {
+            "description": "Action identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/action/{id}",
         "pointer": "#/paths/~1action~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "UpdateActionRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateActionResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update an action"
+        "summary": "Update an action",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a bundle in a patient's plan",
         "id": "operation:post:/bundle",
         "kind": "operation",
         "method": "post",
         "name": "createBundle",
         "path": "/bundle",
         "pointer": "#/paths/~1bundle/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateBundleRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateBundleResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create bundle"
+        "summary": "Create bundle",
+        "tags": [
+          "bundle"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a bundle from a patient's plan.",
         "id": "operation:get:/bundle/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchBundle",
+        "parameters": [
+          {
+            "description": "Bundle identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/bundle/{id}",
         "pointer": "#/paths/~1bundle~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchBundleResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a bundle"
+        "summary": "Get a bundle",
+        "tags": [
+          "bundle"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updte a bundle from a patient's plan.",
         "id": "operation:patch:/bundle/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateBundle",
+        "parameters": [
+          {
+            "description": "Bundle identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/bundle/{id}",
         "pointer": "#/paths/~1bundle~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "UpdateBundleRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateBundleResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a bundle"
+        "summary": "Update a bundle",
+        "tags": [
+          "bundle"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of calendar events",
         "id": "operation:get:/calendar_event",
         "kind": "operation",
         "method": "get",
         "name": "fetchCalendarEvents",
+        "parameters": [
+          {
+            "description": "Patient id to fetch calendar event.",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of coach or patient ids.",
+            "in": "query",
+            "name": "filter[attendees]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Calendar event type",
+            "enum": [
+              "plan-check-in",
+              "reminder",
+              "telephone-call",
+              "office-visit",
+              "video-call"
+            ],
+            "in": "query",
+            "name": "filter[type]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If not specified, return all calendar events.",
+            "in": "query",
+            "name": "filter[completed]",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`.",
+            "in": "query",
+            "name": "filter[start_at]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`.",
+            "in": "query",
+            "name": "filter[end_at]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`.",
+            "in": "query",
+            "name": "filter[completed_at]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`.",
+            "in": "query",
+            "name": "filter[created_at]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`.",
+            "in": "query",
+            "name": "filter[updated_at]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Page number",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "Page size",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 50,
+            "description": "Page limit",
+            "in": "query",
+            "name": "page[limit]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page cursor",
+            "in": "query",
+            "name": "page[cursor]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "owner"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/calendar_event",
         "pointer": "#/paths/~1calendar_event/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchCalendarEventsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List calendar events"
+        "summary": "List calendar events",
+        "tags": [
+          "calendar event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a calendar event for a patient.",
         "id": "operation:post:/calendar_event",
         "kind": "operation",
         "method": "post",
         "name": "createCalendarEvent",
         "path": "/calendar_event",
         "pointer": "#/paths/~1calendar_event/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateCalendarEventRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreateCalendarEventResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create calendar event"
+        "summary": "Create calendar event",
+        "tags": [
+          "calendar event"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/calendar_event/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteCalendarEvent",
-        "path": "/calendar_event/{id}",
-        "pointer": "#/paths/~1calendar_event~1{id}/delete",
-        "security": [],
-        "summary": "Delete a calendar event"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a calendar event by id",
         "id": "operation:get:/calendar_event/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchCalendarEvent",
+        "parameters": [
+          {
+            "description": "Calendar event identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/calendar_event/{id}",
         "pointer": "#/paths/~1calendar_event~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchCalendarEventResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a calendar event"
+        "summary": "Get a calendar event",
+        "tags": [
+          "calendar event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a calendar event by id",
+        "id": "operation:delete:/calendar_event/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteCalendarEvent",
+        "parameters": [
+          {
+            "description": "Calendar event identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/calendar_event/{id}",
+        "pointer": "#/paths/~1calendar_event~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a calendar event",
+        "tags": [
+          "calendar event"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update a calendar event for a patient.",
         "id": "operation:patch:/calendar_event/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updateCalendarEvent",
+        "parameters": [
+          {
+            "description": "Calendar event identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/calendar_event/{id}",
         "pointer": "#/paths/~1calendar_event~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "UpdateCalendarEventRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdateCalendarEventResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a calendar event"
+        "summary": "Update a calendar event",
+        "tags": [
+          "calendar event"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a calendar event response for an attendee of a calendar event, the attendee can be a coach or patient.",
         "id": "operation:post:/calendar_event_response",
         "kind": "operation",
         "method": "post",
         "name": "createCalendarEventResponse",
         "path": "/calendar_event_response",
         "pointer": "#/paths/~1calendar_event_response/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateCalendarEventResponseRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreateCalendarEventResponseRequest"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create calendar event response"
+        "summary": "Create calendar event response",
+        "tags": [
+          "calendar event response"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of coaches matching the specified filters.",
         "id": "operation:get:/coach",
         "kind": "operation",
         "method": "get",
         "name": "fetchCoaches",
+        "parameters": [
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/coach",
         "pointer": "#/paths/~1coach/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchCoachesResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List coaches"
+        "summary": "List coaches",
+        "tags": [
+          "coach"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a coach record by id.",
         "id": "operation:get:/coach/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchCoach",
+        "parameters": [
+          {
+            "description": "Coach identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/coach/{id}",
         "pointer": "#/paths/~1coach~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchCoachResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a coach"
+        "summary": "Get a coach",
+        "tags": [
+          "coach"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of email histories",
         "id": "operation:get:/email_history",
         "kind": "operation",
         "method": "get",
         "name": "fetchEmailHistories",
+        "parameters": [
+          {
+            "description": "Fitbit Plus user id of email recipient.",
+            "in": "query",
+            "name": "filter[receiver]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus user id of email sender.",
+            "in": "query",
+            "name": "filter[sender]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Type of email",
+            "in": "query",
+            "name": "filter[emailType]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "valid sorts: * send_time - ascending by send_time * -send_time - descending by send_time",
+            "enum": [
+              "send_time",
+              "-send_time"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/email_history",
         "pointer": "#/paths/~1email_history/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchEmailHistoriesResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List email histories"
+        "summary": "List email histories",
+        "tags": [
+          "email history"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get an email history by id",
         "id": "operation:get:/email_history/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchEmailHistory",
+        "parameters": [
+          {
+            "description": "Email history identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/email_history/{id}",
         "pointer": "#/paths/~1email_history~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchEmailHistoryResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an email history"
+        "summary": "Get an email history",
+        "tags": [
+          "email history"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of groups matching the specified filters.",
         "id": "operation:get:/group",
         "kind": "operation",
         "method": "get",
         "name": "fetchGroups",
+        "parameters": [
+          {
+            "description": "Organization identifier",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Group name",
+            "in": "query",
+            "name": "filter[name]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/group",
         "pointer": "#/paths/~1group/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchGroupsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List groups"
+        "summary": "List groups",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a group record.",
         "id": "operation:post:/group",
         "kind": "operation",
         "method": "post",
         "name": "createGroup",
         "path": "/group",
         "pointer": "#/paths/~1group/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateGroupRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreateGroupResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a group"
+        "summary": "Create a group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a group record by id.",
         "id": "operation:get:/group/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchGroup",
+        "parameters": [
+          {
+            "description": "Group identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/group/{id}",
         "pointer": "#/paths/~1group~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchGroupResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a group"
+        "summary": "Get a group",
+        "tags": [
+          "group"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of health profiles",
         "id": "operation:get:/health_profile",
         "kind": "operation",
         "method": "get",
         "name": "fetchHealthProfiles",
+        "parameters": [
+          {
+            "description": "Patient id to fetch health profile.",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Page number",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "Page size",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 50,
+            "description": "Page limit",
+            "in": "query",
+            "name": "page[limit]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page cursor",
+            "in": "query",
+            "name": "page[cursor]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "patient",
+              "questions"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/health_profile",
         "pointer": "#/paths/~1health_profile/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchHealthProfilesResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List health profiles"
+        "summary": "List health profiles",
+        "tags": [
+          "health profile"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a health profile by id",
         "id": "operation:get:/health_profile/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchHealthProfile",
+        "parameters": [
+          {
+            "description": "Health profile identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "patient",
+              "questions"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/health_profile/{id}",
         "pointer": "#/paths/~1health_profile~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchHealthProfileResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a health profile"
+        "summary": "Get a health profile",
+        "tags": [
+          "health profile"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of health profile answers",
         "id": "operation:get:/health_profile_answer",
         "kind": "operation",
         "method": "get",
         "name": "fetchHealthProfileAnswers",
+        "parameters": [
+          {
+            "description": "Patient id to fetch healt profile answers.",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Page number",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 50,
+            "description": "Page size",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 50,
+            "description": "Page limit",
+            "in": "query",
+            "name": "page[limit]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page cursor",
+            "in": "query",
+            "name": "page[cursor]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "patient"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/health_profile_answer",
         "pointer": "#/paths/~1health_profile_answer/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchHealthProfileAnswersResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List health profile answers"
+        "summary": "List health profile answers",
+        "tags": [
+          "health profile answer"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a health profile answer by id",
         "id": "operation:get:/health_profile_answer/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchHealthProfileAnswer",
+        "parameters": [
+          {
+            "description": "Health profile answer identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "patient"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/health_profile_answer/{id}",
         "pointer": "#/paths/~1health_profile_answer~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchHealthProfileAnswerResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a health profile answer"
+        "summary": "Get a health profile answer",
+        "tags": [
+          "health profile answer"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of health profile questions",
         "id": "operation:get:/health_profile_question",
         "kind": "operation",
         "method": "get",
         "name": "fetchHealthProfileQuestions",
+        "parameters": [
+          {
+            "description": "Patient id to fetch healt profile questions.",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "question_definition",
+              "answer"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/health_profile_question",
         "pointer": "#/paths/~1health_profile_question/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchHealthProfileQuestionsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List health profile questions"
+        "summary": "List health profile questions",
+        "tags": [
+          "health profile question"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a health profile by id",
         "id": "operation:get:/health_profile_question/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchHealthProfileQuestion",
+        "parameters": [
+          {
+            "description": "Health profile question identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "question_definition",
+              "answer"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/health_profile_question/{id}",
         "pointer": "#/paths/~1health_profile_question~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchHealthProfileQuestionResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a health profile question"
+        "summary": "Get a health profile question",
+        "tags": [
+          "health profile question"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all health question definitions",
         "id": "operation:get:/health_question_definition",
         "kind": "operation",
         "method": "get",
         "name": "fetchHealthQuestionDefinitions",
         "path": "/health_question_definition",
         "pointer": "#/paths/~1health_question_definition/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchHealthQuestionDefinitionsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List health question definitions"
+        "summary": "List health question definitions",
+        "tags": [
+          "health question definition"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a health question definition by id",
         "id": "operation:get:/health_question_definition/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchHealthQuestionDefinition",
+        "parameters": [
+          {
+            "description": "Health question definition identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/health_question_definition/{id}",
         "pointer": "#/paths/~1health_question_definition~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchHealthQuestionDefinitionResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a health question definition"
+        "summary": "Get a health question definition",
+        "tags": [
+          "health question definition"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create an OAuth 2.0 Bearer token.",
         "id": "operation:post:/oauth/token",
         "kind": "operation",
         "method": "post",
         "name": "createToken",
+        "parameters": [
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "groups",
+              "organization"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/oauth/token",
         "pointer": "#/paths/~1oauth~1token/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreateTokenResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -633,16 +2967,44 @@
             ]
           }
         ],
-        "summary": "Create an oauth token"
+        "summary": "Create an oauth token",
+        "tags": [
+          "oauth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of groups a token can be used to access.",
         "id": "operation:get:/oauth/token/{id}/groups",
         "kind": "operation",
         "method": "get",
         "name": "fetchTokenGroups",
+        "parameters": [
+          {
+            "description": "Token identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth/token/{id}/groups",
         "pointer": "#/paths/~1oauth~1token~1{id}~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchGroupsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -651,915 +3013,2295 @@
             ]
           }
         ],
-        "summary": "Get the groups for a token"
+        "summary": "Get the groups for a token",
+        "tags": [
+          "oauth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the organization a token can be used to access.",
         "id": "operation:get:/oauth/token/{id}/organization",
         "kind": "operation",
         "method": "get",
         "name": "fetchTokenOrganization",
+        "parameters": [
+          {
+            "description": "Token identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth/token/{id}/organization",
         "pointer": "#/paths/~1oauth~1token~1{id}~1organization/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchOrganizationResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the organization for a token"
+        "summary": "Get the organization for a token",
+        "tags": [
+          "oauth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get an organization record by id.",
         "id": "operation:get:/organization/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchOrganization",
+        "parameters": [
+          {
+            "description": "Organization identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/organization/{id}",
         "pointer": "#/paths/~1organization~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchOrganizationResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an organization"
+        "summary": "Get an organization",
+        "tags": [
+          "organization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of patients.",
         "id": "operation:get:/patient",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatients",
+        "parameters": [
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Identifier system (example: \"MyEHR\") - requires a \"filter[identifier][value]\" parameter",
+            "in": "query",
+            "name": "filter[identifier][system]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Identifier value (example: \"12345\") - requires a \"filter[identifier][system]\" parameter",
+            "in": "query",
+            "name": "filter[identifier][value]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If not specified, return all patients.",
+            "in": "query",
+            "name": "filter[archived]",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`.",
+            "in": "query",
+            "name": "filter[created_at]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`.",
+            "in": "query",
+            "name": "filter[updated_at]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Page number",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "Page size",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 50,
+            "description": "Page limit",
+            "in": "query",
+            "name": "page[limit]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page cursor",
+            "in": "query",
+            "name": "page[cursor]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/patient",
         "pointer": "#/paths/~1patient/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchPatientsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List patients"
+        "summary": "List patients",
+        "tags": [
+          "patient"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/patient",
-        "kind": "operation",
-        "method": "post",
-        "name": "createPatient",
-        "path": "/patient",
-        "pointer": "#/paths/~1patient/post",
-        "security": [],
-        "summary": "Create a patient"
-      },
-      {
-        "deprecated": false,
+        "description": "Create a new patient or update an existing patient",
         "id": "operation:put:/patient",
         "kind": "operation",
         "method": "put",
         "name": "upsertPatient",
         "path": "/patient",
         "pointer": "#/paths/~1patient/put",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "UpsertPatientRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreatePatientResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Upsert patient"
+        "summary": "Upsert patient",
+        "tags": [
+          "patient"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a patient record.",
+        "id": "operation:post:/patient",
+        "kind": "operation",
+        "method": "post",
+        "name": "createPatient",
+        "path": "/patient",
+        "pointer": "#/paths/~1patient/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreatePatientRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "CreatePatientResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Create a patient",
+        "tags": [
+          "patient"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Gets a patient record by id.",
         "id": "operation:get:/patient/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatient",
+        "parameters": [
+          {
+            "description": "Patient identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/patient/{id}",
         "pointer": "#/paths/~1patient~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchPatientResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a patient"
+        "summary": "Get a patient",
+        "tags": [
+          "patient"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a patient record.",
         "id": "operation:patch:/patient/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updatePatient",
+        "parameters": [
+          {
+            "description": "Patient identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/patient/{id}",
         "pointer": "#/paths/~1patient~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "UpdatePatientRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdatePatientResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a patient"
+        "summary": "Update a patient",
+        "tags": [
+          "patient"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of coaches for a patient.",
         "id": "operation:get:/patient/{id}/coaches",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatientCoaches",
+        "parameters": [
+          {
+            "description": "Patient identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/patient/{id}/coaches",
         "pointer": "#/paths/~1patient~1{id}~1coaches/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchCoachesResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List coaches for a patient"
+        "summary": "List coaches for a patient",
+        "tags": [
+          "patient"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of groups for a patient.",
         "id": "operation:get:/patient/{id}/groups",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatientGroups",
+        "parameters": [
+          {
+            "description": "Patient identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/patient/{id}/groups",
         "pointer": "#/paths/~1patient~1{id}~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchGroupsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List groups for a patient"
+        "summary": "List groups for a patient",
+        "tags": [
+          "patient"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of patient health metrics.",
         "id": "operation:get:/patient_health_metric",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatientHealthMetrics",
+        "parameters": [
+          {
+            "description": "Filter the patient health metrics for a specified patient.",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Page number",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "Page size",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 50,
+            "description": "Page limit",
+            "in": "query",
+            "name": "page[limit]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page cursor",
+            "in": "query",
+            "name": "page[cursor]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/patient_health_metric",
         "pointer": "#/paths/~1patient_health_metric/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchPatientHealthMetricResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List patient health metrics"
+        "summary": "List patient health metrics",
+        "tags": [
+          "metric"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create one or more patient health metrics.",
         "id": "operation:post:/patient_health_metric",
         "kind": "operation",
         "method": "post",
         "name": "createPatientHealthMetric",
         "path": "/patient_health_metric",
         "pointer": "#/paths/~1patient_health_metric/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreatePatientHealthMetricRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreatePatientHealthMetricResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create patient health metrics"
+        "summary": "Create patient health metrics",
+        "tags": [
+          "metric"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the plan summary for a patient.",
         "id": "operation:get:/patient_health_metric/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatientHealthMetric",
+        "parameters": [
+          {
+            "description": "Patient health metric identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/patient_health_metric/{id}",
         "pointer": "#/paths/~1patient_health_metric~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchPatientHealthMetricResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a patient health metric"
+        "summary": "Get a patient health metric",
+        "tags": [
+          "metric"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of patient plan summaries",
         "id": "operation:get:/patient_plan_summary",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatientPlanSummaries",
+        "parameters": [
+          {
+            "description": "Patient id to fetch plan summary for.",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "actions",
+              "bundles",
+              "patient",
+              "current_results"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/patient_plan_summary",
         "pointer": "#/paths/~1patient_plan_summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchPatientPlanSummariesResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List patient plan summaries"
+        "summary": "List patient plan summaries",
+        "tags": [
+          "plan"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the plan summary for a patient.",
         "id": "operation:get:/patient_plan_summary/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatientPlanSummary",
+        "parameters": [
+          {
+            "description": "Plan summary identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of related resources to include in the response",
+            "enum": [
+              "actions",
+              "bundles",
+              "patient",
+              "current_results"
+            ],
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/patient_plan_summary/{id}",
         "pointer": "#/paths/~1patient_plan_summary~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchPatientPlanSummaryResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get the plan summary for a patient"
+        "summary": "Get the plan summary for a patient",
+        "tags": [
+          "plan"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a plan summary record for a patient.",
         "id": "operation:patch:/patient_plan_summary/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "updatePatientPlanSummary",
+        "parameters": [
+          {
+            "description": "Plan summary identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/patient_plan_summary/{id}",
         "pointer": "#/paths/~1patient_plan_summary~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "UpdatePatientPlanSummaryRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UpdatePatientPlanSummaryResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a plan summary"
+        "summary": "Update a plan summary",
+        "tags": [
+          "plan"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of patient health results.",
         "id": "operation:get:/result",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatientHealthResults",
+        "parameters": [
+          {
+            "description": "Filter the patient health results for a specified patient",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma-separated list of action identifiers",
+            "in": "query",
+            "name": "filter[actions]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter results that occurred after the passed ISO date and time string",
+            "in": "query",
+            "name": "filter[start_at]",
+            "required": false,
+            "type": "string:dateTime"
+          },
+          {
+            "description": "Filter results that occurred before the passed ISO date and time string",
+            "in": "query",
+            "name": "filter[end_at]",
+            "required": false,
+            "type": "string:dateTime"
+          },
+          {
+            "description": "A comma-separated list of thread identifiers",
+            "in": "query",
+            "name": "filter[threads]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`.",
+            "in": "query",
+            "name": "filter[created_at]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The start (inclusive) and end (exclusive) dates are ISO date and time strings separated by `..`.",
+            "in": "query",
+            "name": "filter[updated_at]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Page number",
+            "in": "query",
+            "name": "page[number]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "Page size",
+            "in": "query",
+            "name": "page[size]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 50,
+            "description": "Page limit",
+            "in": "query",
+            "name": "page[limit]",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Page cursor",
+            "in": "query",
+            "name": "page[after]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/result",
         "pointer": "#/paths/~1result/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchPatientHealthResultResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List patient health results"
+        "summary": "List patient health results",
+        "tags": [
+          "result"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get patient health result by id.",
         "id": "operation:get:/result/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchPatientHealthResult",
+        "parameters": [
+          {
+            "description": "Patient health result identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/result/{id}",
         "pointer": "#/paths/~1result~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchPatientHealthResultResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a patient health result"
+        "summary": "Get a patient health result",
+        "tags": [
+          "result"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of rewards matching the specified filters.",
         "id": "operation:get:/reward",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewards",
+        "parameters": [
+          {
+            "description": "Patient identifier.",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Reward program activation identifier",
+            "in": "query",
+            "name": "filter[reward_program_activation]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Thread identifier",
+            "in": "query",
+            "name": "filter[thread]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reward",
         "pointer": "#/paths/~1reward/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List rewards"
+        "summary": "List rewards",
+        "tags": [
+          "reward"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a reward for a patient.",
         "id": "operation:post:/reward",
         "kind": "operation",
         "method": "post",
         "name": "createReward",
         "path": "/reward",
         "pointer": "#/paths/~1reward/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateRewardRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateRewardResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a reward"
+        "summary": "Create a reward",
+        "tags": [
+          "reward"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a reward record by id.",
         "id": "operation:get:/reward/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchReward",
+        "parameters": [
+          {
+            "description": "Reward identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reward/{id}",
         "pointer": "#/paths/~1reward~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a reward"
+        "summary": "Get a reward",
+        "tags": [
+          "reward"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of reward earnings matching the specified filters.",
         "id": "operation:get:/reward_earning",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewardEarnings",
+        "parameters": [
+          {
+            "description": "Group identifiers",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Patient identifier",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If true, only returns those reward earnings for which ready_for_fulfillment is true and fulfilled_at is null.",
+            "in": "query",
+            "name": "filter[ready_for_fulfillment]",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/reward_earning",
         "pointer": "#/paths/~1reward_earning/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardEarningsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List reward earnings"
+        "summary": "List reward earnings",
+        "tags": [
+          "reward earning"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a reward earning for a reward.",
         "id": "operation:post:/reward_earning",
         "kind": "operation",
         "method": "post",
         "name": "createRewardEarning",
         "path": "/reward_earning",
         "pointer": "#/paths/~1reward_earning/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateRewardEarningRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateRewardEarningResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a reward earning"
+        "summary": "Create a reward earning",
+        "tags": [
+          "reward earning"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a reward earning record by id.",
         "id": "operation:get:/reward_earning/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewardEarning",
+        "parameters": [
+          {
+            "description": "Reward earning identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reward_earning/{id}",
         "pointer": "#/paths/~1reward_earning~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardEarningResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a reward earning"
+        "summary": "Get a reward earning",
+        "tags": [
+          "reward earning"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of reward earning fulfillments matching the specified filters.",
         "id": "operation:get:/reward_earning_fulfillment",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewardEarningFulfillments",
+        "parameters": [
+          {
+            "description": "Patient identifier",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reward_earning_fulfillment",
         "pointer": "#/paths/~1reward_earning_fulfillment/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardEarningFulfillmentsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List reward earning fulfillments"
+        "summary": "List reward earning fulfillments",
+        "tags": [
+          "reward earning fulfillment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a reward earning fulfillment for a reward earning.",
         "id": "operation:post:/reward_earning_fulfillment",
         "kind": "operation",
         "method": "post",
         "name": "createRewardEarningFulfillment",
         "path": "/reward_earning_fulfillment",
         "pointer": "#/paths/~1reward_earning_fulfillment/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateRewardEarningFulfillmentRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateRewardEarningFulfillmentResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a reward earning fulfillment"
+        "summary": "Create a reward earning fulfillment",
+        "tags": [
+          "reward earning fulfillment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a reward earning fulfillment record by id.",
         "id": "operation:get:/reward_earning_fulfillment/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewardEarningFulfillment",
+        "parameters": [
+          {
+            "description": "Reward earning fulfillment identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reward_earning_fulfillment/{id}",
         "pointer": "#/paths/~1reward_earning_fulfillment~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardEarningFulfillmentResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a reward earning fulfillment"
+        "summary": "Get a reward earning fulfillment",
+        "tags": [
+          "reward earning fulfillment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of reward programs matching the specified filters.",
         "id": "operation:get:/reward_program",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewardPrograms",
+        "parameters": [
+          {
+            "description": "Comma-separated list of group identifiers.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reward_program",
         "pointer": "#/paths/~1reward_program/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardProgramsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List reward programs"
+        "summary": "List reward programs",
+        "tags": [
+          "reward program"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a reward program for a group.",
         "id": "operation:post:/reward_program",
         "kind": "operation",
         "method": "post",
         "name": "createRewardProgram",
         "path": "/reward_program",
         "pointer": "#/paths/~1reward_program/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateRewardProgramRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateRewardProgramResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a reward program"
+        "summary": "Create a reward program",
+        "tags": [
+          "reward program"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a reward program record by id.",
         "id": "operation:get:/reward_program/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewardProgram",
+        "parameters": [
+          {
+            "description": "Reward program identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reward_program/{id}",
         "pointer": "#/paths/~1reward_program~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardProgramResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a reward program"
+        "summary": "Get a reward program",
+        "tags": [
+          "reward program"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the group related to a reward program.",
         "id": "operation:get:/reward_program/{id}/group",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewardProgramGroup",
+        "parameters": [
+          {
+            "description": "Reward program identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reward_program/{id}/group",
         "pointer": "#/paths/~1reward_program~1{id}~1group/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchGroupsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get group for a reward program"
+        "summary": "Get group for a reward program",
+        "tags": [
+          "reward program"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of reward program activations matching the specified filters.",
         "id": "operation:get:/reward_program_activation",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewardProgramActivations",
+        "parameters": [
+          {
+            "description": "Patient identifier.",
+            "in": "query",
+            "name": "filter[patient]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of group ids.",
+            "in": "query",
+            "name": "filter[groups]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Fitbit Plus organization id.",
+            "in": "query",
+            "name": "filter[organization]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reward_program_activation",
         "pointer": "#/paths/~1reward_program_activation/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardProgramActivationsResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List reward program activations"
+        "summary": "List reward program activations",
+        "tags": [
+          "reward program activation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a reward program activation for a patient.",
         "id": "operation:post:/reward_program_activation",
         "kind": "operation",
         "method": "post",
         "name": "createRewardProgramActivation",
         "path": "/reward_program_activation",
         "pointer": "#/paths/~1reward_program_activation/post",
+        "request": {
+          "content_types": [
+            "application/vnd.api+json"
+          ],
+          "required": true,
+          "type": "CreateRewardProgramActivationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateRewardProgramActivationResponse"
+          },
+          {
+            "status": "401",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "CreateOrUpdateErrorResponse"
+          },
+          {
+            "status": "409",
+            "type": "CreateOrUpdateErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a reward program activation"
+        "summary": "Create a reward program activation",
+        "tags": [
+          "reward program activation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a reward program activationrecord by id.",
         "id": "operation:get:/reward_program_activation/{id}",
         "kind": "operation",
         "method": "get",
         "name": "fetchRewardProgramActivation",
+        "parameters": [
+          {
+            "description": "Reward program activation identifier",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reward_program_activation/{id}",
         "pointer": "#/paths/~1reward_program_activation~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FetchRewardProgramActivationResponse"
+          },
+          {
+            "status": "401",
+            "type": "FetchErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FetchErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a reward program activation"
+        "summary": "Get a reward program activation",
+        "tags": [
+          "reward program activation"
+        ]
       },
       {
         "id": "schema:ActionMetric",
         "kind": "schema",
-        "name": "ActionMetric"
+        "name": "ActionMetric",
+        "type": "object"
       },
       {
         "id": "schema:ActionResource",
         "kind": "schema",
-        "name": "ActionResource"
+        "name": "ActionResource",
+        "type": "object"
       },
       {
         "id": "schema:ActionWindow",
         "kind": "schema",
-        "name": "ActionWindow"
+        "name": "ActionWindow",
+        "type": "object"
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:ArchiveHistory",
         "kind": "schema",
-        "name": "ArchiveHistory"
+        "name": "ArchiveHistory",
+        "type": "object"
       },
       {
         "id": "schema:BundleResource",
         "kind": "schema",
-        "name": "BundleResource"
+        "name": "BundleResource",
+        "type": "object"
       },
       {
         "id": "schema:CalendarEventResource",
         "kind": "schema",
-        "name": "CalendarEventResource"
+        "name": "CalendarEventResource",
+        "type": "object"
       },
       {
         "id": "schema:CalendarEventResponseResource",
         "kind": "schema",
-        "name": "CalendarEventResponseResource"
+        "name": "CalendarEventResponseResource",
+        "type": "object"
       },
       {
         "id": "schema:CoachResource",
         "kind": "schema",
-        "name": "CoachResource"
+        "name": "CoachResource",
+        "type": "object"
       },
       {
         "id": "schema:CollectionResponseLinks",
         "kind": "schema",
-        "name": "CollectionResponseLinks"
+        "name": "CollectionResponseLinks",
+        "type": "object"
       },
       {
         "id": "schema:CreateActionRequest",
         "kind": "schema",
-        "name": "CreateActionRequest"
+        "name": "CreateActionRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateActionResponse",
         "kind": "schema",
-        "name": "CreateActionResponse"
+        "name": "CreateActionResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateBundleRequest",
         "kind": "schema",
-        "name": "CreateBundleRequest"
+        "name": "CreateBundleRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateBundleResponse",
         "kind": "schema",
-        "name": "CreateBundleResponse"
+        "name": "CreateBundleResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateCalendarEventRequest",
         "kind": "schema",
-        "name": "CreateCalendarEventRequest"
+        "name": "CreateCalendarEventRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateCalendarEventResponse",
         "kind": "schema",
-        "name": "CreateCalendarEventResponse"
+        "name": "CreateCalendarEventResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateCalendarEventResponseRequest",
         "kind": "schema",
-        "name": "CreateCalendarEventResponseRequest"
+        "name": "CreateCalendarEventResponseRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateGroupRequest",
         "kind": "schema",
-        "name": "CreateGroupRequest"
+        "name": "CreateGroupRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateGroupResponse",
         "kind": "schema",
-        "name": "CreateGroupResponse"
+        "name": "CreateGroupResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrUpdateErrorResponse",
         "kind": "schema",
-        "name": "CreateOrUpdateErrorResponse"
+        "name": "CreateOrUpdateErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrUpdateMetaResponse",
         "kind": "schema",
-        "name": "CreateOrUpdateMetaResponse"
+        "name": "CreateOrUpdateMetaResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreatePatientHealthMetricRequest",
         "kind": "schema",
-        "name": "CreatePatientHealthMetricRequest"
+        "name": "CreatePatientHealthMetricRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreatePatientHealthMetricResponse",
         "kind": "schema",
-        "name": "CreatePatientHealthMetricResponse"
+        "name": "CreatePatientHealthMetricResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreatePatientRequest",
         "kind": "schema",
-        "name": "CreatePatientRequest"
+        "name": "CreatePatientRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreatePatientResponse",
         "kind": "schema",
-        "name": "CreatePatientResponse"
+        "name": "CreatePatientResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardEarningFulfillmentRequest",
         "kind": "schema",
-        "name": "CreateRewardEarningFulfillmentRequest"
+        "name": "CreateRewardEarningFulfillmentRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardEarningFulfillmentResponse",
         "kind": "schema",
-        "name": "CreateRewardEarningFulfillmentResponse"
+        "name": "CreateRewardEarningFulfillmentResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardEarningRequest",
         "kind": "schema",
-        "name": "CreateRewardEarningRequest"
+        "name": "CreateRewardEarningRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardEarningResponse",
         "kind": "schema",
-        "name": "CreateRewardEarningResponse"
+        "name": "CreateRewardEarningResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardProgramActivationRequest",
         "kind": "schema",
-        "name": "CreateRewardProgramActivationRequest"
+        "name": "CreateRewardProgramActivationRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardProgramActivationResponse",
         "kind": "schema",
-        "name": "CreateRewardProgramActivationResponse"
+        "name": "CreateRewardProgramActivationResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardProgramRequest",
         "kind": "schema",
-        "name": "CreateRewardProgramRequest"
+        "name": "CreateRewardProgramRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardProgramResponse",
         "kind": "schema",
-        "name": "CreateRewardProgramResponse"
+        "name": "CreateRewardProgramResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardRequest",
         "kind": "schema",
-        "name": "CreateRewardRequest"
+        "name": "CreateRewardRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateRewardResponse",
         "kind": "schema",
-        "name": "CreateRewardResponse"
+        "name": "CreateRewardResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreateTokenRequest",
         "kind": "schema",
-        "name": "CreateTokenRequest"
+        "name": "CreateTokenRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateTokenResponse",
         "kind": "schema",
-        "name": "CreateTokenResponse"
+        "name": "CreateTokenResponse",
+        "type": "object"
       },
       {
         "id": "schema:EmailHistoryResource",
         "kind": "schema",
-        "name": "EmailHistoryResource"
+        "name": "EmailHistoryResource",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:FetchActionResponse",
         "kind": "schema",
-        "name": "FetchActionResponse"
+        "name": "FetchActionResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchBundleResponse",
         "kind": "schema",
-        "name": "FetchBundleResponse"
+        "name": "FetchBundleResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchCalendarEventResponse",
         "kind": "schema",
-        "name": "FetchCalendarEventResponse"
+        "name": "FetchCalendarEventResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchCalendarEventsResponse",
         "kind": "schema",
-        "name": "FetchCalendarEventsResponse"
+        "name": "FetchCalendarEventsResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchCoachResponse",
         "kind": "schema",
-        "name": "FetchCoachResponse"
+        "name": "FetchCoachResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchCoachesResponse",
         "kind": "schema",
-        "name": "FetchCoachesResponse"
+        "name": "FetchCoachesResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchEmailHistoriesResponse",
         "kind": "schema",
-        "name": "FetchEmailHistoriesResponse"
+        "name": "FetchEmailHistoriesResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchEmailHistoryResponse",
         "kind": "schema",
-        "name": "FetchEmailHistoryResponse"
+        "name": "FetchEmailHistoryResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchErrorResponse",
         "kind": "schema",
-        "name": "FetchErrorResponse"
+        "name": "FetchErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchGroupResponse",
         "kind": "schema",
-        "name": "FetchGroupResponse"
+        "name": "FetchGroupResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchGroupsResponse",
         "kind": "schema",
-        "name": "FetchGroupsResponse"
+        "name": "FetchGroupsResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchHealthProfileAnswerResponse",
         "kind": "schema",
-        "name": "FetchHealthProfileAnswerResponse"
+        "name": "FetchHealthProfileAnswerResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchHealthProfileAnswersResponse",
         "kind": "schema",
-        "name": "FetchHealthProfileAnswersResponse"
+        "name": "FetchHealthProfileAnswersResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchHealthProfileQuestionResponse",
         "kind": "schema",
-        "name": "FetchHealthProfileQuestionResponse"
+        "name": "FetchHealthProfileQuestionResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchHealthProfileQuestionsResponse",
         "kind": "schema",
-        "name": "FetchHealthProfileQuestionsResponse"
+        "name": "FetchHealthProfileQuestionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchHealthProfileResponse",
         "kind": "schema",
-        "name": "FetchHealthProfileResponse"
+        "name": "FetchHealthProfileResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchHealthProfilesResponse",
         "kind": "schema",
-        "name": "FetchHealthProfilesResponse"
+        "name": "FetchHealthProfilesResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchHealthQuestionDefinitionResponse",
         "kind": "schema",
-        "name": "FetchHealthQuestionDefinitionResponse"
+        "name": "FetchHealthQuestionDefinitionResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchHealthQuestionDefinitionsResponse",
         "kind": "schema",
-        "name": "FetchHealthQuestionDefinitionsResponse"
+        "name": "FetchHealthQuestionDefinitionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchMetaResponse",
         "kind": "schema",
-        "name": "FetchMetaResponse"
+        "name": "FetchMetaResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchOrganizationResponse",
         "kind": "schema",
-        "name": "FetchOrganizationResponse"
+        "name": "FetchOrganizationResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchPatientHealthMetricResponse",
         "kind": "schema",
-        "name": "FetchPatientHealthMetricResponse"
+        "name": "FetchPatientHealthMetricResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchPatientHealthResultResponse",
         "kind": "schema",
-        "name": "FetchPatientHealthResultResponse"
+        "name": "FetchPatientHealthResultResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchPatientPlanSummariesResponse",
         "kind": "schema",
-        "name": "FetchPatientPlanSummariesResponse"
+        "name": "FetchPatientPlanSummariesResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchPatientPlanSummaryResponse",
         "kind": "schema",
-        "name": "FetchPatientPlanSummaryResponse"
+        "name": "FetchPatientPlanSummaryResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchPatientResponse",
         "kind": "schema",
-        "name": "FetchPatientResponse"
+        "name": "FetchPatientResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchPatientsResponse",
         "kind": "schema",
-        "name": "FetchPatientsResponse"
+        "name": "FetchPatientsResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardEarningFulfillmentResponse",
         "kind": "schema",
-        "name": "FetchRewardEarningFulfillmentResponse"
+        "name": "FetchRewardEarningFulfillmentResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardEarningFulfillmentsResponse",
         "kind": "schema",
-        "name": "FetchRewardEarningFulfillmentsResponse"
+        "name": "FetchRewardEarningFulfillmentsResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardEarningResponse",
         "kind": "schema",
-        "name": "FetchRewardEarningResponse"
+        "name": "FetchRewardEarningResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardEarningsResponse",
         "kind": "schema",
-        "name": "FetchRewardEarningsResponse"
+        "name": "FetchRewardEarningsResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardProgramActivationResponse",
         "kind": "schema",
-        "name": "FetchRewardProgramActivationResponse"
+        "name": "FetchRewardProgramActivationResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardProgramActivationsResponse",
         "kind": "schema",
-        "name": "FetchRewardProgramActivationsResponse"
+        "name": "FetchRewardProgramActivationsResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardProgramResponse",
         "kind": "schema",
-        "name": "FetchRewardProgramResponse"
+        "name": "FetchRewardProgramResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardProgramsResponse",
         "kind": "schema",
-        "name": "FetchRewardProgramsResponse"
+        "name": "FetchRewardProgramsResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardResponse",
         "kind": "schema",
-        "name": "FetchRewardResponse"
+        "name": "FetchRewardResponse",
+        "type": "object"
       },
       {
         "id": "schema:FetchRewardsResponse",
         "kind": "schema",
-        "name": "FetchRewardsResponse"
+        "name": "FetchRewardsResponse",
+        "type": "object"
       },
       {
         "id": "schema:GroupResource",
         "kind": "schema",
-        "name": "GroupResource"
+        "name": "GroupResource",
+        "type": "object"
       },
       {
         "id": "schema:HealthProfileAnswerResource",
         "kind": "schema",
-        "name": "HealthProfileAnswerResource"
+        "name": "HealthProfileAnswerResource",
+        "type": "object"
       },
       {
         "id": "schema:HealthProfileQuestionResource",
         "kind": "schema",
-        "name": "HealthProfileQuestionResource"
+        "name": "HealthProfileQuestionResource",
+        "type": "object"
       },
       {
         "id": "schema:HealthProfileResource",
         "kind": "schema",
-        "name": "HealthProfileResource"
+        "name": "HealthProfileResource",
+        "type": "object"
       },
       {
         "id": "schema:HealthQuestionDefinitionResource",
         "kind": "schema",
-        "name": "HealthQuestionDefinitionResource"
+        "name": "HealthQuestionDefinitionResource",
+        "type": "object"
       },
       {
         "id": "schema:Identifier",
         "kind": "schema",
-        "name": "Identifier"
+        "name": "Identifier",
+        "type": "object"
       },
       {
         "id": "schema:OrganizationResource",
         "kind": "schema",
-        "name": "OrganizationResource"
+        "name": "OrganizationResource",
+        "type": "object"
       },
       {
         "id": "schema:PatientCreateResource",
         "kind": "schema",
-        "name": "PatientCreateResource"
+        "name": "PatientCreateResource",
+        "type": "PatientResource|object"
       },
       {
         "id": "schema:PatientHealthMetricCreateResource",
         "kind": "schema",
-        "name": "PatientHealthMetricCreateResource"
+        "name": "PatientHealthMetricCreateResource",
+        "type": "PatientHealthMetricResource"
       },
       {
         "id": "schema:PatientHealthMetricResource",
         "kind": "schema",
-        "name": "PatientHealthMetricResource"
+        "name": "PatientHealthMetricResource",
+        "type": "object"
       },
       {
         "id": "schema:PatientHealthResultResource",
         "kind": "schema",
-        "name": "PatientHealthResultResource"
+        "name": "PatientHealthResultResource",
+        "type": "object"
       },
       {
         "id": "schema:PatientIdentifier",
         "kind": "schema",
-        "name": "PatientIdentifier"
+        "name": "PatientIdentifier",
+        "type": "object"
       },
       {
         "id": "schema:PatientPlanSummaryResource",
         "kind": "schema",
-        "name": "PatientPlanSummaryResource"
+        "name": "PatientPlanSummaryResource",
+        "type": "object"
       },
       {
         "id": "schema:PatientResource",
         "kind": "schema",
-        "name": "PatientResource"
+        "name": "PatientResource",
+        "type": "object"
       },
       {
         "id": "schema:PhoneNumber",
         "kind": "schema",
-        "name": "PhoneNumber"
+        "name": "PhoneNumber",
+        "type": "object"
       },
       {
         "id": "schema:Resource",
         "kind": "schema",
-        "name": "Resource"
+        "name": "Resource",
+        "type": "object"
       },
       {
         "id": "schema:RewardEarningFulfillmentResource",
         "kind": "schema",
-        "name": "RewardEarningFulfillmentResource"
+        "name": "RewardEarningFulfillmentResource",
+        "type": "object"
       },
       {
         "id": "schema:RewardEarningResource",
         "kind": "schema",
-        "name": "RewardEarningResource"
+        "name": "RewardEarningResource",
+        "type": "object"
       },
       {
         "id": "schema:RewardProgramActivationResource",
         "kind": "schema",
-        "name": "RewardProgramActivationResource"
+        "name": "RewardProgramActivationResource",
+        "type": "object"
       },
       {
         "id": "schema:RewardProgramResource",
         "kind": "schema",
-        "name": "RewardProgramResource"
+        "name": "RewardProgramResource",
+        "type": "object"
       },
       {
         "id": "schema:RewardResource",
         "kind": "schema",
-        "name": "RewardResource"
+        "name": "RewardResource",
+        "type": "object"
       },
       {
         "id": "schema:TokenResource",
         "kind": "schema",
-        "name": "TokenResource"
+        "name": "TokenResource",
+        "type": "object"
       },
       {
         "id": "schema:UpdateActionRequest",
         "kind": "schema",
-        "name": "UpdateActionRequest"
+        "name": "UpdateActionRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateActionResponse",
         "kind": "schema",
-        "name": "UpdateActionResponse"
+        "name": "UpdateActionResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpdateBundleRequest",
         "kind": "schema",
-        "name": "UpdateBundleRequest"
+        "name": "UpdateBundleRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateBundleResponse",
         "kind": "schema",
-        "name": "UpdateBundleResponse"
+        "name": "UpdateBundleResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpdateCalendarEventRequest",
         "kind": "schema",
-        "name": "UpdateCalendarEventRequest"
+        "name": "UpdateCalendarEventRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdateCalendarEventResponse",
         "kind": "schema",
-        "name": "UpdateCalendarEventResponse"
+        "name": "UpdateCalendarEventResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpdatePatientPlanSummaryRequest",
         "kind": "schema",
-        "name": "UpdatePatientPlanSummaryRequest"
+        "name": "UpdatePatientPlanSummaryRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdatePatientPlanSummaryResponse",
         "kind": "schema",
-        "name": "UpdatePatientPlanSummaryResponse"
+        "name": "UpdatePatientPlanSummaryResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpdatePatientRequest",
         "kind": "schema",
-        "name": "UpdatePatientRequest"
+        "name": "UpdatePatientRequest",
+        "type": "object"
       },
       {
         "id": "schema:UpdatePatientResponse",
         "kind": "schema",
-        "name": "UpdatePatientResponse"
+        "name": "UpdatePatientResponse",
+        "type": "object"
       },
       {
         "id": "schema:UpsertPatientRequest",
         "kind": "schema",
-        "name": "UpsertPatientRequest"
+        "name": "UpsertPatientRequest",
+        "type": "object"
       }
     ]
   },

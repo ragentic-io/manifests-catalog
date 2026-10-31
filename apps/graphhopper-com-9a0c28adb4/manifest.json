@@ -83,6 +83,366 @@
         "from": "graphhopper-com-9a0c28adb4",
         "kind": "EXPOSES",
         "to": "operation:get:/vrp/solution/{jobId}"
+      },
+      {
+        "from": "operation:post:/cluster",
+        "kind": "ACCEPTS",
+        "to": "schema:ClusterRequest"
+      },
+      {
+        "from": "operation:post:/cluster",
+        "kind": "RETURNS",
+        "to": "schema:ClusterResponse"
+      },
+      {
+        "from": "operation:post:/cluster/calculate",
+        "kind": "ACCEPTS",
+        "to": "schema:ClusterRequest"
+      },
+      {
+        "from": "operation:post:/cluster/calculate",
+        "kind": "RETURNS",
+        "to": "schema:JobId"
+      },
+      {
+        "from": "operation:get:/cluster/solution/{jobId}",
+        "kind": "RETURNS",
+        "to": "schema:ClusterResponse"
+      },
+      {
+        "from": "operation:get:/geocode",
+        "kind": "RETURNS",
+        "to": "schema:GeocodingResponse"
+      },
+      {
+        "from": "operation:get:/isochrone",
+        "kind": "RETURNS",
+        "to": "schema:IsochroneResponse"
+      },
+      {
+        "from": "operation:post:/match",
+        "kind": "RETURNS",
+        "to": "schema:RouteResponse"
+      },
+      {
+        "from": "operation:get:/matrix",
+        "kind": "RETURNS",
+        "to": "schema:MatrixResponse"
+      },
+      {
+        "from": "operation:post:/matrix",
+        "kind": "ACCEPTS",
+        "to": "schema:MatrixRequest"
+      },
+      {
+        "from": "operation:post:/matrix",
+        "kind": "ACCEPTS",
+        "to": "schema:SymmetricalMatrixRequest"
+      },
+      {
+        "from": "operation:post:/matrix",
+        "kind": "RETURNS",
+        "to": "schema:MatrixResponse"
+      },
+      {
+        "from": "operation:post:/matrix/calculate",
+        "kind": "ACCEPTS",
+        "to": "schema:MatrixRequest"
+      },
+      {
+        "from": "operation:post:/matrix/calculate",
+        "kind": "ACCEPTS",
+        "to": "schema:SymmetricalMatrixRequest"
+      },
+      {
+        "from": "operation:post:/matrix/calculate",
+        "kind": "RETURNS",
+        "to": "schema:JobId"
+      },
+      {
+        "from": "operation:get:/matrix/solution/{jobId}",
+        "kind": "RETURNS",
+        "to": "schema:MatrixResponse"
+      },
+      {
+        "from": "operation:get:/route",
+        "kind": "RETURNS",
+        "to": "schema:RouteResponse"
+      },
+      {
+        "from": "operation:post:/route",
+        "kind": "ACCEPTS",
+        "to": "schema:RouteRequest"
+      },
+      {
+        "from": "operation:post:/route",
+        "kind": "RETURNS",
+        "to": "schema:RouteResponse"
+      },
+      {
+        "from": "operation:get:/route/info",
+        "kind": "RETURNS",
+        "to": "schema:InfoResponse"
+      },
+      {
+        "from": "operation:post:/vrp",
+        "kind": "ACCEPTS",
+        "to": "schema:Request"
+      },
+      {
+        "from": "operation:post:/vrp",
+        "kind": "RETURNS",
+        "to": "schema:Response"
+      },
+      {
+        "from": "operation:post:/vrp/optimize",
+        "kind": "ACCEPTS",
+        "to": "schema:Request"
+      },
+      {
+        "from": "operation:post:/vrp/optimize",
+        "kind": "RETURNS",
+        "to": "schema:JobId"
+      },
+      {
+        "from": "operation:get:/vrp/solution/{jobId}",
+        "kind": "RETURNS",
+        "to": "schema:Response"
+      },
+      {
+        "from": "schema:Activity",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseAddress"
+      },
+      {
+        "from": "schema:BadRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorMessage"
+      },
+      {
+        "from": "schema:ClusterConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:ClusterConfigurationClustering"
+      },
+      {
+        "from": "schema:ClusterConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:ClusterConfigurationRouting"
+      },
+      {
+        "from": "schema:ClusterCustomer",
+        "kind": "REFERENCES",
+        "to": "schema:ClusterCustomerAddress"
+      },
+      {
+        "from": "schema:ClusterRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ClusterConfiguration"
+      },
+      {
+        "from": "schema:ClusterRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ClusterCustomer"
+      },
+      {
+        "from": "schema:ClusterResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Cluster"
+      },
+      {
+        "from": "schema:Configuration",
+        "kind": "REFERENCES",
+        "to": "schema:Routing"
+      },
+      {
+        "from": "schema:GeocodingLocation",
+        "kind": "REFERENCES",
+        "to": "schema:GeocodingPoint"
+      },
+      {
+        "from": "schema:GeocodingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:GeocodingLocation"
+      },
+      {
+        "from": "schema:IsochroneResponse",
+        "kind": "REFERENCES",
+        "to": "schema:IsochroneResponsePolygon"
+      },
+      {
+        "from": "schema:IsochroneResponsePolygon",
+        "kind": "REFERENCES",
+        "to": "schema:Polygon"
+      },
+      {
+        "from": "schema:MatrixRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VehicleProfileId"
+      },
+      {
+        "from": "schema:MatrixResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseInfo"
+      },
+      {
+        "from": "schema:Pickup",
+        "kind": "REFERENCES",
+        "to": "schema:Stop"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:Algorithm"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:Configuration"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:CostMatrix"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:GroupRelation"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:JobRelation"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:Objective"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:Service"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:Shipment"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:Vehicle"
+      },
+      {
+        "from": "schema:Request",
+        "kind": "REFERENCES",
+        "to": "schema:VehicleType"
+      },
+      {
+        "from": "schema:Response",
+        "kind": "REFERENCES",
+        "to": "schema:Solution"
+      },
+      {
+        "from": "schema:ResponseAddress",
+        "kind": "REFERENCES",
+        "to": "schema:SnappedWaypoint"
+      },
+      {
+        "from": "schema:Route",
+        "kind": "REFERENCES",
+        "to": "schema:Activity"
+      },
+      {
+        "from": "schema:Route",
+        "kind": "REFERENCES",
+        "to": "schema:RoutePoint"
+      },
+      {
+        "from": "schema:RouteRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VehicleProfileId"
+      },
+      {
+        "from": "schema:RouteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ResponseInfo"
+      },
+      {
+        "from": "schema:RouteResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RouteResponsePath"
+      },
+      {
+        "from": "schema:RouteResponsePath",
+        "kind": "REFERENCES",
+        "to": "schema:EncodedLineString"
+      },
+      {
+        "from": "schema:RouteResponsePath",
+        "kind": "REFERENCES",
+        "to": "schema:LineString"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:Service",
+        "kind": "REFERENCES",
+        "to": "schema:TimeWindow"
+      },
+      {
+        "from": "schema:Shipment",
+        "kind": "REFERENCES",
+        "to": "schema:Stop"
+      },
+      {
+        "from": "schema:Solution",
+        "kind": "REFERENCES",
+        "to": "schema:Detail"
+      },
+      {
+        "from": "schema:Solution",
+        "kind": "REFERENCES",
+        "to": "schema:Route"
+      },
+      {
+        "from": "schema:Stop",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:Stop",
+        "kind": "REFERENCES",
+        "to": "schema:TimeWindow"
+      },
+      {
+        "from": "schema:SymmetricalMatrixRequest",
+        "kind": "REFERENCES",
+        "to": "schema:VehicleProfileId"
+      },
+      {
+        "from": "schema:Vehicle",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:Vehicle",
+        "kind": "REFERENCES",
+        "to": "schema:DriveTimeBreak"
+      },
+      {
+        "from": "schema:Vehicle",
+        "kind": "REFERENCES",
+        "to": "schema:TimeWindowBreak"
+      },
+      {
+        "from": "schema:VehicleType",
+        "kind": "REFERENCES",
+        "to": "schema:VehicleProfileId"
       }
     ],
     "nodes": [
@@ -92,408 +452,1264 @@
       },
       {
         "deprecated": false,
+        "description": "The Cluster endpoint is used with a POST request towards `https://graphhopper.com/api/1/cluster?key=<your_key>`.",
         "id": "operation:post:/cluster",
         "kind": "operation",
         "method": "post",
         "name": "solveClusteringProblem",
         "path": "/cluster",
         "pointer": "#/paths/~1cluster/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ClusterRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClusterResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequest"
+          },
+          {
+            "status": "500",
+            "type": "InternalErrorMessage"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "POST Cluster Endpoint"
+        "summary": "POST Cluster Endpoint",
+        "tags": [
+          "Cluster API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Prefer the [synchronous endpoint](#operation/solveClusteringProblem) and use this Batch Cluster endpoint for long running problems only.",
         "id": "operation:post:/cluster/calculate",
         "kind": "operation",
         "method": "post",
         "name": "asyncClusteringProblem",
         "path": "/cluster/calculate",
         "pointer": "#/paths/~1cluster~1calculate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ClusterRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "JobId"
+          },
+          {
+            "status": "400",
+            "type": "BadRequest"
+          },
+          {
+            "status": "500",
+            "type": "InternalErrorMessage"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Batch Cluster Endpoint"
+        "summary": "Batch Cluster Endpoint",
+        "tags": [
+          "Cluster API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the solution of the clustering problems submitted to the [Batch Cluster endpoint](#operation/asyncClusteringProblem).",
         "id": "operation:get:/cluster/solution/{jobId}",
         "kind": "operation",
         "method": "get",
         "name": "getClusterSolution",
+        "parameters": [
+          {
+            "description": "Request solution with jobId",
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/cluster/solution/{jobId}",
         "pointer": "#/paths/~1cluster~1solution~1{jobId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClusterResponse"
+          },
+          {
+            "status": "400",
+            "type": "BadRequest"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "GET Batch Solution Endpoint"
+        "summary": "GET Batch Solution Endpoint",
+        "tags": [
+          "Cluster API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### Introduction ![Geocoding Example](./img/geocoding-example.png) _Geocoding_ describes the process of transforming an textual address representation to a coo…",
         "id": "operation:get:/geocode",
         "kind": "operation",
         "method": "get",
         "name": "getGeocode",
+        "parameters": [
+          {
+            "description": "If you do forward geocoding, this is `required` and is a textual description of the address you are looking for.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "en",
+            "description": "Display the search results for the specified locale.",
+            "in": "query",
+            "name": "locale",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "Specify the maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "description": "It is `required` to be `true` if you want to do a reverse geocoding request.",
+            "in": "query",
+            "name": "reverse",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "If `true`, the output will be formatted.",
+            "in": "query",
+            "name": "debug",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "_Forward geocoding_: The location bias in the format 'latitude,longitude' e.g.",
+            "in": "query",
+            "name": "point",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "default",
+            "description": "The provider parameter is currently under development and can fall back to `default` at any time.",
+            "in": "query",
+            "name": "provider",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/geocode",
         "pointer": "#/paths/~1geocode/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GeocodingResponse"
+          },
+          {
+            "status": "default",
+            "type": "GHError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Geocoding Endpoint"
+        "summary": "Geocoding Endpoint",
+        "tags": [
+          "Geocoding API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### Example You can get an example response via: ``` curl \"https://graphhopper.com/api/1/isochrone?point=51.131108,12.414551&key=[YOUR_KEY]\" ``` Don't forget t…",
         "id": "operation:get:/isochrone",
         "kind": "operation",
         "method": "get",
         "name": "getIsochrone",
+        "parameters": [
+          {
+            "description": "Specify the start coordinate",
+            "in": "query",
+            "name": "point",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 600,
+            "description": "Specify which time the vehicle should travel.",
+            "in": "query",
+            "name": "time_limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Specify which distance the vehicle should travel.",
+            "in": "query",
+            "name": "distance_limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The vehicle profile for which the route should be calculated.",
+            "in": "query",
+            "name": "vehicle",
+            "required": false,
+            "type": "VehicleProfileId"
+          },
+          {
+            "default": 1,
+            "description": "Number by which to divide the given `time_limit` to create `buckets` nested isochrones of time intervals `time_limit-n*time_limit/buckets`.",
+            "in": "query",
+            "name": "buckets",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "description": "If `false` the flow goes from point to the polygon, if `true` the flow goes from the polygon \"inside\" to the point.",
+            "in": "query",
+            "name": "reverse_flow",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "fastest",
+            "description": "Use `\"shortest\"` to get an isodistance line instead of an isochrone.",
+            "enum": [
+              "fastest",
+              "shortest"
+            ],
+            "in": "query",
+            "name": "weighting",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/isochrone",
         "pointer": "#/paths/~1isochrone/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IsochroneResponse"
+          },
+          {
+            "status": "default",
+            "type": "GHError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Isochrone Endpoint"
+        "summary": "Isochrone Endpoint",
+        "tags": [
+          "Isochrone API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "### Example You get an example response for a GPX via: ``` curl -XPOST -H \"Content-Type: application/gpx+xml\" \"https://graphhopper.com/api/1/match?vehicle=car&…",
         "id": "operation:post:/match",
         "kind": "operation",
         "method": "post",
         "name": "postGPX",
+        "parameters": [
+          {
+            "description": "Specify the precision of a point, in meter",
+            "in": "query",
+            "name": "gps_accuracy",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Specify the vehicle profile like car",
+            "in": "query",
+            "name": "vehicle",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/match",
         "pointer": "#/paths/~1match/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RouteResponse"
+          },
+          {
+            "status": "default",
+            "type": "GHError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Map-match a GPX file"
+        "summary": "Map-match a GPX file",
+        "tags": [
+          "Map Matching API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "With this Matrix Endpoint you submit the points and parameters via URL parameters and is the most convenient as it works out-of-the-box in the browser.",
         "id": "operation:get:/matrix",
         "kind": "operation",
         "method": "get",
         "name": "getMatrix",
+        "parameters": [
+          {
+            "description": "Specify multiple points in `latitude,longitude` for which the weight-, route-, time- or distance-matrix should be calculated.",
+            "in": "query",
+            "name": "point",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The starting points for the routes in `latitude,longitude`.",
+            "in": "query",
+            "name": "from_point",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The destination points for the routes in `latitude,longitude`.",
+            "in": "query",
+            "name": "to_point",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Optional parameter.",
+            "in": "query",
+            "name": "point_hint",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "For the from_point parameter.",
+            "in": "query",
+            "name": "from_point_hint",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "For the to_point parameter.",
+            "in": "query",
+            "name": "to_point_hint",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Optional parameter to avoid snapping to a certain road class or road environment.",
+            "in": "query",
+            "name": "snap_prevention",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Optional parameter.",
+            "in": "query",
+            "name": "curbside",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Curbside setting for the from_point parameter.",
+            "in": "query",
+            "name": "from_curbside",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Curbside setting for the to_point parameter.",
+            "in": "query",
+            "name": "to_curbside",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Specifies which arrays should be included in the response.",
+            "in": "query",
+            "name": "out_array",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The vehicle profile for which the matrix should be calculated.",
+            "in": "query",
+            "name": "vehicle",
+            "required": false,
+            "type": "VehicleProfileId"
+          },
+          {
+            "default": true,
+            "description": "Specifies whether or not the matrix calculation should return with an error as soon as possible in case some points cannot be found or some points are not conn…",
+            "in": "query",
+            "name": "fail_fast",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Specifies if turn restrictions should be considered.",
+            "in": "query",
+            "name": "turn_costs",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/matrix",
         "pointer": "#/paths/~1matrix/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MatrixResponse"
+          },
+          {
+            "status": "default",
+            "type": "GHError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "GET Matrix Endpoint"
+        "summary": "GET Matrix Endpoint",
+        "tags": [
+          "Matrix API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The [GET endpoint](#operation/getMatrix) has an URL length limitation, which hurts for many locations per request.",
         "id": "operation:post:/matrix",
         "kind": "operation",
         "method": "post",
         "name": "postMatrix",
         "path": "/matrix",
         "pointer": "#/paths/~1matrix/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "MatrixRequest|SymmetricalMatrixRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MatrixResponse"
+          },
+          {
+            "status": "default",
+            "type": "GHError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "POST Matrix Endpoint"
+        "summary": "POST Matrix Endpoint",
+        "tags": [
+          "Matrix API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Prefer the [synchronous endpoint](#operation/postMatrix) and use this Batch endpoint for long running problems only.",
         "id": "operation:post:/matrix/calculate",
         "kind": "operation",
         "method": "post",
         "name": "calculateMatrix",
         "path": "/matrix/calculate",
         "pointer": "#/paths/~1matrix~1calculate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "MatrixRequest|SymmetricalMatrixRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "JobId"
+          },
+          {
+            "status": "default",
+            "type": "GHError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Batch Matrix Endpoint"
+        "summary": "Batch Matrix Endpoint",
+        "tags": [
+          "Matrix API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint returns the solution of a JSON submitted to the Batch Matrix endpoint.",
         "id": "operation:get:/matrix/solution/{jobId}",
         "kind": "operation",
         "method": "get",
         "name": "getMatrixSolution",
+        "parameters": [
+          {
+            "description": "Request solution with jobId",
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/matrix/solution/{jobId}",
         "pointer": "#/paths/~1matrix~1solution~1{jobId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MatrixResponse"
+          },
+          {
+            "status": "default",
+            "type": "GHError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "GET Batch Matrix Endpoint"
+        "summary": "GET Batch Matrix Endpoint",
+        "tags": [
+          "Matrix API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The GET request is the most simple one: just specify the parameter in the URL and you are done.",
         "id": "operation:get:/route",
         "kind": "operation",
         "method": "get",
         "name": "getRoute",
+        "parameters": [
+          {
+            "description": "The points for which the route should be calculated.",
+            "in": "query",
+            "name": "point",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "description": "The `point_hint` is typically a road name to which the associated `point` parameter should be snapped to.",
+            "in": "query",
+            "name": "point_hint",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Optional parameter to avoid snapping to a certain road class or road environment.",
+            "in": "query",
+            "name": "snap_prevention",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The vehicle profile for which the route should be calculated.",
+            "in": "query",
+            "name": "vehicle",
+            "required": false,
+            "type": "VehicleProfileId"
+          },
+          {
+            "description": "Optional parameter.",
+            "in": "query",
+            "name": "curbside",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": false,
+            "description": "Specifies if turn restrictions should be considered.",
+            "in": "query",
+            "name": "turn_costs",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "en",
+            "description": "The locale of the resulting turn instructions.",
+            "in": "query",
+            "name": "locale",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If `true`, a third coordinate, the altitude, is included with all positions in the response.",
+            "in": "query",
+            "name": "elevation",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Optional parameter to retrieve path details.",
+            "in": "query",
+            "name": "details",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "false",
+            "description": "Normally, the calculated route will visit the points in the order you specified them.",
+            "in": "query",
+            "name": "optimize",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "If instructions should be calculated and returned",
+            "in": "query",
+            "name": "instructions",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "If the points for the route should be calculated at all.",
+            "in": "query",
+            "name": "calc_points",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "If `true`, the output will be formatted.",
+            "in": "query",
+            "name": "debug",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": true,
+            "description": "Allows changing the encoding of location data in the response.",
+            "in": "query",
+            "name": "points_encoded",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Use this parameter in combination with one or more parameters from below.",
+            "in": "query",
+            "name": "ch.disable",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "fastest",
+            "description": "Determines the way the \"best\" route is calculated.",
+            "in": "query",
+            "name": "weighting",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Favour a heading direction for a certain point.",
+            "in": "query",
+            "name": "heading",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "default": 120,
+            "description": "Time penalty in seconds for not obeying a specified heading.",
+            "in": "query",
+            "name": "heading_penalty",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "description": "If `true`, u-turns are avoided at via-points with regard to the `heading_penalty`.",
+            "in": "query",
+            "name": "pass_through",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Block road access by specifying a point close to the road segment to be blocked, with the format `lat,lon`.",
+            "in": "query",
+            "name": "block_area",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify which road classes and environments you would like to avoid.",
+            "in": "query",
+            "name": "avoid",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Rather than looking for the shortest or fastest path, this parameter lets you solve two different problems related to routing: With `alternative_route`, we giv…",
+            "enum": [
+              "round_trip",
+              "alternative_route"
+            ],
+            "in": "query",
+            "name": "algorithm",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10000,
+            "description": "If `algorithm=round_trip`, this parameter configures approximative length of the resulting round trip.",
+            "in": "query",
+            "name": "round_trip.distance",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "If `algorithm=round_trip`, this sets the random seed.",
+            "in": "query",
+            "name": "round_trip.seed",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "default": 2,
+            "description": "If `algorithm=alternative_route`, this parameter sets the number of maximum paths which should be calculated.",
+            "in": "query",
+            "name": "alternative_route.max_paths",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1.4,
+            "description": "If `algorithm=alternative_route`, this parameter sets the factor by which the alternatives routes can be longer than the optimal route.",
+            "in": "query",
+            "name": "alternative_route.max_weight_factor",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "default": 0.6,
+            "description": "If `algorithm=alternative_route`, this parameter specifies how similar an alternative route can be to the optimal route.",
+            "in": "query",
+            "name": "alternative_route.max_share_factor",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/route",
         "pointer": "#/paths/~1route/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RouteResponse"
+          },
+          {
+            "status": "400",
+            "type": "GHError"
+          },
+          {
+            "status": "401",
+            "type": "GHError"
+          },
+          {
+            "status": "429",
+            "type": "GHError"
+          },
+          {
+            "status": "500",
+            "type": "GHError"
+          },
+          {
+            "status": "501",
+            "type": "GHError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "GET Route Endpoint"
+        "summary": "GET Route Endpoint",
+        "tags": [
+          "Routing API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Please see the [GET endpoint](#operation/getRoute) for a simpler method on how to get started.",
         "id": "operation:post:/route",
         "kind": "operation",
         "method": "post",
         "name": "postRoute",
         "path": "/route",
         "pointer": "#/paths/~1route/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RouteRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "RouteResponse"
+          },
+          {
+            "status": "400",
+            "type": "GHError"
+          },
+          {
+            "status": "401",
+            "type": "GHError"
+          },
+          {
+            "status": "429",
+            "type": "GHError"
+          },
+          {
+            "status": "500",
+            "type": "GHError"
+          },
+          {
+            "status": "501",
+            "type": "GHError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "POST Route Endpoint"
+        "summary": "POST Route Endpoint",
+        "tags": [
+          "Routing API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this to find out details about the supported vehicle profiles and features, or if you just need to ping the server.",
         "id": "operation:get:/route/info",
         "kind": "operation",
         "method": "get",
         "name": "get /route/info",
         "path": "/route/info",
         "pointer": "#/paths/~1route~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InfoResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Coverage information"
+        "summary": "Coverage information",
+        "tags": [
+          "Routing API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To get started with the Route Optimization API, please read the [introduction](#tag/Route-Optimization-API).",
         "id": "operation:post:/vrp",
         "kind": "operation",
         "method": "post",
         "name": "solveVRP",
         "path": "/vrp",
         "pointer": "#/paths/~1vrp/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Request"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Response"
+          },
+          {
+            "status": "400",
+            "type": "BadRequest"
+          },
+          {
+            "status": "500",
+            "type": "InternalErrorMessage"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "POST route optimization problem"
+        "summary": "POST route optimization problem",
+        "tags": [
+          "Route Optimization API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To solve a vehicle routing problem, perform the following steps: 1.) Make a HTTP POST to this URL ``` https://graphhopper.com/api/1/vrp/optimize?key=<your_key>…",
         "id": "operation:post:/vrp/optimize",
         "kind": "operation",
         "method": "post",
         "name": "asyncVRP",
         "path": "/vrp/optimize",
         "pointer": "#/paths/~1vrp~1optimize/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Request"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "JobId"
+          },
+          {
+            "status": "400",
+            "type": "BadRequest"
+          },
+          {
+            "status": "500",
+            "type": "InternalErrorMessage"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "POST route optimization problem (batch mode)"
+        "summary": "POST route optimization problem (batch mode)",
+        "tags": [
+          "Route Optimization API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Take the job id and fetch the solution for the vehicle routing problem from this URL: ``` https://graphhopper.com/api/1/vrp/solution/<job_id>?key=<your_key> ``…",
         "id": "operation:get:/vrp/solution/{jobId}",
         "kind": "operation",
         "method": "get",
         "name": "getSolution",
+        "parameters": [
+          {
+            "description": "Request solution with jobId",
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/vrp/solution/{jobId}",
         "pointer": "#/paths/~1vrp~1solution~1{jobId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Response"
+          },
+          {
+            "status": "400",
+            "type": "BadRequest"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "GET the solution (batch mode)"
+        "summary": "GET the solution (batch mode)",
+        "tags": [
+          "Route Optimization API"
+        ]
       },
       {
         "id": "schema:Activity",
         "kind": "schema",
-        "name": "Activity"
+        "name": "Activity",
+        "type": "object"
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
+        "description": "Use `objectives` instead.",
         "id": "schema:Algorithm",
         "kind": "schema",
-        "name": "Algorithm"
+        "name": "Algorithm",
+        "type": "object"
       },
       {
         "id": "schema:BadRequest",
         "kind": "schema",
-        "name": "BadRequest"
+        "name": "BadRequest",
+        "type": "object"
       },
       {
         "id": "schema:Cluster",
         "kind": "schema",
-        "name": "Cluster"
+        "name": "Cluster",
+        "type": "object"
       },
       {
         "id": "schema:ClusterConfiguration",
         "kind": "schema",
-        "name": "ClusterConfiguration"
+        "name": "ClusterConfiguration",
+        "type": "object"
       },
       {
         "id": "schema:ClusterConfigurationClustering",
         "kind": "schema",
-        "name": "ClusterConfigurationClustering"
+        "name": "ClusterConfigurationClustering",
+        "type": "object"
       },
       {
         "id": "schema:ClusterConfigurationRouting",
         "kind": "schema",
-        "name": "ClusterConfigurationRouting"
+        "name": "ClusterConfigurationRouting",
+        "type": "object"
       },
       {
         "id": "schema:ClusterCustomer",
         "kind": "schema",
-        "name": "ClusterCustomer"
+        "name": "ClusterCustomer",
+        "type": "object"
       },
       {
         "id": "schema:ClusterCustomerAddress",
         "kind": "schema",
-        "name": "ClusterCustomerAddress"
+        "name": "ClusterCustomerAddress",
+        "type": "object"
       },
       {
         "id": "schema:ClusterRequest",
         "kind": "schema",
-        "name": "ClusterRequest"
+        "name": "ClusterRequest",
+        "type": "object"
       },
       {
         "id": "schema:ClusterResponse",
         "kind": "schema",
-        "name": "ClusterResponse"
+        "name": "ClusterResponse",
+        "type": "object"
       },
       {
+        "description": "Specifies general configurations that are taken into account when solving the vehicle routing problem.",
         "id": "schema:Configuration",
         "kind": "schema",
-        "name": "Configuration"
+        "name": "Configuration",
+        "type": "object"
       },
       {
         "id": "schema:CostMatrix",
         "kind": "schema",
-        "name": "CostMatrix"
+        "name": "CostMatrix",
+        "type": "object"
       },
       {
         "id": "schema:Detail",
         "kind": "schema",
-        "name": "Detail"
+        "name": "Detail",
+        "type": "object"
       },
       {
         "id": "schema:DriveTimeBreak",
         "kind": "schema",
-        "name": "DriveTimeBreak"
+        "name": "DriveTimeBreak",
+        "type": "object"
       },
       {
+        "description": "A polyline-encoded list of positions.",
         "id": "schema:EncodedLineString",
         "kind": "schema",
-        "name": "EncodedLineString"
+        "name": "EncodedLineString",
+        "type": "string"
       },
       {
         "id": "schema:ErrorMessage",
         "kind": "schema",
-        "name": "ErrorMessage"
+        "name": "ErrorMessage",
+        "type": "object"
       },
       {
         "id": "schema:GHError",
         "kind": "schema",
-        "name": "GHError"
+        "name": "GHError",
+        "type": "object"
       },
       {
         "id": "schema:GeocodingLocation",
         "kind": "schema",
-        "name": "GeocodingLocation"
+        "name": "GeocodingLocation",
+        "type": "object"
       },
       {
         "id": "schema:GeocodingPoint",
         "kind": "schema",
-        "name": "GeocodingPoint"
+        "name": "GeocodingPoint",
+        "type": "object"
       },
       {
         "id": "schema:GeocodingResponse",
         "kind": "schema",
-        "name": "GeocodingResponse"
+        "name": "GeocodingResponse",
+        "type": "object"
       },
       {
         "id": "schema:GroupRelation",
         "kind": "schema",
-        "name": "GroupRelation"
+        "name": "GroupRelation",
+        "type": "object"
       },
       {
+        "description": "Information about the server and the geographical area that it covers.",
         "id": "schema:InfoResponse",
         "kind": "schema",
-        "name": "InfoResponse"
+        "name": "InfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:InternalErrorMessage",
         "kind": "schema",
-        "name": "InternalErrorMessage"
+        "name": "InternalErrorMessage",
+        "type": "object"
       },
       {
         "id": "schema:IsochroneResponse",
         "kind": "schema",
-        "name": "IsochroneResponse"
+        "name": "IsochroneResponse",
+        "type": "object"
       },
       {
+        "description": "A found path",
         "id": "schema:IsochroneResponsePolygon",
         "kind": "schema",
-        "name": "IsochroneResponsePolygon"
+        "name": "IsochroneResponsePolygon",
+        "type": "object"
       },
       {
         "id": "schema:JobId",
         "kind": "schema",
-        "name": "JobId"
+        "name": "JobId",
+        "type": "object"
       },
       {
         "id": "schema:JobRelation",
         "kind": "schema",
-        "name": "JobRelation"
+        "name": "JobRelation",
+        "type": "object"
       },
       {
         "id": "schema:LineString",
         "kind": "schema",
-        "name": "LineString"
+        "name": "LineString",
+        "type": "object"
       },
       {
         "id": "schema:MatrixRequest",
         "kind": "schema",
-        "name": "MatrixRequest"
+        "name": "MatrixRequest",
+        "type": "object"
       },
       {
         "id": "schema:MatrixResponse",
         "kind": "schema",
-        "name": "MatrixResponse"
+        "name": "MatrixResponse",
+        "type": "object"
       },
       {
         "id": "schema:Objective",
         "kind": "schema",
-        "name": "Objective"
+        "name": "Objective",
+        "type": "object"
       },
       {
         "id": "schema:Pickup",
@@ -503,112 +1719,139 @@
       {
         "id": "schema:Polygon",
         "kind": "schema",
-        "name": "Polygon"
+        "name": "Polygon",
+        "type": "object"
       },
       {
         "id": "schema:Request",
         "kind": "schema",
-        "name": "Request"
+        "name": "Request",
+        "type": "object"
       },
       {
         "id": "schema:Response",
         "kind": "schema",
-        "name": "Response"
+        "name": "Response",
+        "type": "object"
       },
       {
+        "description": "Address of activity",
         "id": "schema:ResponseAddress",
         "kind": "schema",
-        "name": "ResponseAddress"
+        "name": "ResponseAddress",
+        "type": "object"
       },
       {
+        "description": "Additional information for your request",
         "id": "schema:ResponseInfo",
         "kind": "schema",
-        "name": "ResponseInfo"
+        "name": "ResponseInfo",
+        "type": "object"
       },
       {
         "id": "schema:Route",
         "kind": "schema",
-        "name": "Route"
+        "name": "Route",
+        "type": "object"
       },
       {
         "id": "schema:RoutePoint",
         "kind": "schema",
-        "name": "RoutePoint"
+        "name": "RoutePoint",
+        "type": "object"
       },
       {
         "id": "schema:RouteRequest",
         "kind": "schema",
-        "name": "RouteRequest"
+        "name": "RouteRequest",
+        "type": "object"
       },
       {
         "id": "schema:RouteResponse",
         "kind": "schema",
-        "name": "RouteResponse"
+        "name": "RouteResponse",
+        "type": "object"
       },
       {
         "id": "schema:RouteResponsePath",
         "kind": "schema",
-        "name": "RouteResponsePath"
+        "name": "RouteResponsePath",
+        "type": "object"
       },
       {
+        "description": "This contains all routing specific configurations.",
         "id": "schema:Routing",
         "kind": "schema",
-        "name": "Routing"
+        "name": "Routing",
+        "type": "object"
       },
       {
         "id": "schema:Service",
         "kind": "schema",
-        "name": "Service"
+        "name": "Service",
+        "type": "object"
       },
       {
         "id": "schema:Shipment",
         "kind": "schema",
-        "name": "Shipment"
+        "name": "Shipment",
+        "type": "object"
       },
       {
+        "description": "Access point to the (road)network.",
         "id": "schema:SnappedWaypoint",
         "kind": "schema",
-        "name": "SnappedWaypoint"
+        "name": "SnappedWaypoint",
+        "type": "object"
       },
       {
+        "description": "Only available if status field indicates `finished`.",
         "id": "schema:Solution",
         "kind": "schema",
-        "name": "Solution"
+        "name": "Solution",
+        "type": "object"
       },
       {
         "id": "schema:Stop",
         "kind": "schema",
-        "name": "Stop"
+        "name": "Stop",
+        "type": "object"
       },
       {
         "id": "schema:SymmetricalMatrixRequest",
         "kind": "schema",
-        "name": "SymmetricalMatrixRequest"
+        "name": "SymmetricalMatrixRequest",
+        "type": "object"
       },
       {
         "id": "schema:TimeWindow",
         "kind": "schema",
-        "name": "TimeWindow"
+        "name": "TimeWindow",
+        "type": "object"
       },
       {
         "id": "schema:TimeWindowBreak",
         "kind": "schema",
-        "name": "TimeWindowBreak"
+        "name": "TimeWindowBreak",
+        "type": "object"
       },
       {
         "id": "schema:Vehicle",
         "kind": "schema",
-        "name": "Vehicle"
+        "name": "Vehicle",
+        "type": "object"
       },
       {
         "id": "schema:VehicleProfileId",
         "kind": "schema",
-        "name": "VehicleProfileId"
+        "name": "VehicleProfileId",
+        "type": "string"
       },
       {
         "id": "schema:VehicleType",
         "kind": "schema",
-        "name": "VehicleType"
+        "name": "VehicleType",
+        "type": "object"
       }
     ]
   },

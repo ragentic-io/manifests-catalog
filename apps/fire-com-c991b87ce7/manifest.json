@@ -57,17 +57,17 @@
       {
         "from": "fire-com-c991b87ce7",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/batches/{batchUuid}"
-      },
-      {
-        "from": "fire-com-c991b87ce7",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/batches/{batchUuid}"
       },
       {
         "from": "fire-com-c991b87ce7",
         "kind": "EXPOSES",
         "to": "operation:put:/v1/batches/{batchUuid}"
+      },
+      {
+        "from": "fire-com-c991b87ce7",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/v1/batches/{batchUuid}"
       },
       {
         "from": "fire-com-c991b87ce7",
@@ -207,584 +207,1453 @@
       },
       {
         "deprecated": false,
+        "description": "Returns all your fire.com Accounts.",
         "id": "operation:get:/v1/accounts",
         "kind": "operation",
         "method": "get",
         "name": "getAccounts",
         "path": "/v1/accounts",
         "pointer": "#/paths/~1v1~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List all fire.com Accounts"
+        "summary": "List all fire.com Accounts",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new fire.com account.",
         "id": "operation:post:/v1/accounts",
         "kind": "operation",
         "method": "post",
         "name": "addAccount",
         "path": "/v1/accounts",
         "pointer": "#/paths/~1v1~1accounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Add a new account"
+        "summary": "Add a new account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can retrieve the details of a fire.com Account by its `ican`.",
         "id": "operation:get:/v1/accounts/{ican}",
         "kind": "operation",
         "method": "get",
         "name": "getAccountById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ican",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/accounts/{ican}",
         "pointer": "#/paths/~1v1~1accounts~1{ican}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Retrieve the details of a fire.com Account"
+        "summary": "Retrieve the details of a fire.com Account",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Retrieve a list of transactions against an account.",
         "id": "operation:get:/v1/accounts/{ican}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "getTransactionsByIdv1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ican",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/accounts/{ican}/transactions",
         "pointer": "#/paths/~1v1~1accounts~1{ican}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List transactions for an account (v1)"
+        "summary": "List transactions for an account (v1)",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": true,
+        "description": "Retrieve a filtered list of transactions against an account.",
         "id": "operation:get:/v1/accounts/{ican}/transactions/filter",
         "kind": "operation",
         "method": "get",
         "name": "getTransactionsFilteredById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ican",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "dateRangeFrom",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "dateRangeTo",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "searchKeyword",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "transactionTypes",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/accounts/{ican}/transactions/filter",
         "pointer": "#/paths/~1v1~1accounts~1{ican}~1transactions~1filter/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Filtered list of transactions for an account (v1)"
+        "summary": "Filtered list of transactions for an account (v1)",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new API Application with specified permissions",
         "id": "operation:post:/v1/apps",
         "kind": "operation",
         "method": "post",
         "name": "createApiApplication",
         "path": "/v1/apps",
         "pointer": "#/paths/~1v1~1apps/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Create a new API Application"
+        "summary": "Create a new API Application",
+        "tags": [
+          "API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Access to the API is by Bearer Tokens.",
         "id": "operation:post:/v1/apps/accesstokens",
         "kind": "operation",
         "method": "post",
         "name": "authenticate",
         "path": "/v1/apps/accesstokens",
         "pointer": "#/paths/~1v1~1apps~1accesstokens/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Authenticate with the API."
+        "summary": "Authenticate with the API.",
+        "tags": [
+          "Authentication"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all ASPSPs (Account Servicing Payment Service Provider) / banks.",
         "id": "operation:get:/v1/aspsps",
         "kind": "operation",
         "method": "get",
         "name": "getListOfAspsps",
+        "parameters": [
+          {
+            "description": "The three letter code for the currency - either `EUR` or `GBP`.",
+            "in": "query",
+            "name": "currency",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/aspsps",
         "pointer": "#/paths/~1v1~1aspsps/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get list of ASPSPs / Banks"
+        "summary": "Get list of ASPSPs / Banks",
+        "tags": [
+          "Open Banking"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the list of batch with the specified types and statuses.",
         "id": "operation:get:/v1/batches",
         "kind": "operation",
         "method": "get",
         "name": "getBatches",
+        "parameters": [
+          {
+            "enum": [
+              "SUBMITTED",
+              "REMOVED",
+              "SUCCEEDED",
+              "FAILED"
+            ],
+            "in": "query",
+            "name": "batchStatus",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "INTERNAL_TRANSFER",
+              "BANK_TRANSFER",
+              "NEW_PAYEE"
+            ],
+            "in": "query",
+            "name": "batchTypes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "DATE"
+            ],
+            "in": "query",
+            "name": "orderBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "DESC",
+              "ASC"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/batches",
         "pointer": "#/paths/~1v1~1batches/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List batches"
+        "summary": "List batches",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The fire.com API allows businesses to automate payments between their accounts or to third parties across the UK and Europe.",
         "id": "operation:post:/v1/batches",
         "kind": "operation",
         "method": "post",
         "name": "createBatchPayment",
         "path": "/v1/batches",
         "pointer": "#/paths/~1v1~1batches/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Create a new batch of payments"
+        "summary": "Create a new batch of payments",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/batches/{batchUuid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "cancelBatchPayment",
-        "path": "/v1/batches/{batchUuid}",
-        "pointer": "#/paths/~1v1~1batches~1{batchUuid}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Cancel a batch"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns the details of the batch specified in the API endpoint - {batchUuid}.",
         "id": "operation:get:/v1/batches/{batchUuid}",
         "kind": "operation",
         "method": "get",
         "name": "getDetailsSingleBatch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/batches/{batchUuid}",
         "pointer": "#/paths/~1v1~1batches~1{batchUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get details of a single Batch"
+        "summary": "Get details of a single Batch",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Submits the Batch (for approval in the case of a **BANK_TRANSFER**).",
         "id": "operation:put:/v1/batches/{batchUuid}",
         "kind": "operation",
         "method": "put",
         "name": "submitBatch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/batches/{batchUuid}",
         "pointer": "#/paths/~1v1~1batches~1{batchUuid}/put",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Submit a batch for approval"
+        "summary": "Submit a batch for approval",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Cancels the Batch.",
+        "id": "operation:delete:/v1/batches/{batchUuid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "cancelBatchPayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/batches/{batchUuid}",
+        "pointer": "#/paths/~1v1~1batches~1{batchUuid}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Cancel a batch",
+        "tags": [
+          "Payment Batches"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of approvers for this batch.",
         "id": "operation:get:/v1/batches/{batchUuid}/approvals",
         "kind": "operation",
         "method": "get",
         "name": "getListofApproversForBatch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/batches/{batchUuid}/approvals",
         "pointer": "#/paths/~1v1~1batches~1{batchUuid}~1approvals/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List Approvers for a Batch"
+        "summary": "List Approvers for a Batch",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a paginated list of items in the specified batch.",
         "id": "operation:get:/v1/batches/{batchUuid}/banktransfers",
         "kind": "operation",
         "method": "get",
         "name": "getItemsBatchBankTransfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/batches/{batchUuid}/banktransfers",
         "pointer": "#/paths/~1v1~1batches~1{batchUuid}~1banktransfers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List items in a Batch"
+        "summary": "List items in a Batch",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "There are two ways to process bank transfers - by Payee ID (**Mode 1**) or by Payee Account Details (**Mode 2**).",
         "id": "operation:post:/v1/batches/{batchUuid}/banktransfers",
         "kind": "operation",
         "method": "post",
         "name": "addBankTransferBatchPayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/batches/{batchUuid}/banktransfers",
         "pointer": "#/paths/~1v1~1batches~1{batchUuid}~1banktransfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Add a bank transfer payment to the batch."
+        "summary": "Add a bank transfer payment to the batch.",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes a Payment from the Batch (Bank Transfers).",
         "id": "operation:delete:/v1/batches/{batchUuid}/banktransfers/{itemUuid}",
         "kind": "operation",
         "method": "delete",
         "name": "deleteBankTransferBatchPayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "itemUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/batches/{batchUuid}/banktransfers/{itemUuid}",
         "pointer": "#/paths/~1v1~1batches~1{batchUuid}~1banktransfers~1{itemUuid}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Remove a Payment from the Batch (Bank Transfers)"
+        "summary": "Remove a Payment from the Batch (Bank Transfers)",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a paginated list of items in the specified batch.",
         "id": "operation:get:/v1/batches/{batchUuid}/internaltransfers",
         "kind": "operation",
         "method": "get",
         "name": "getItemsBatchInternalTrasnfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/batches/{batchUuid}/internaltransfers",
         "pointer": "#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List items in a Batch"
+        "summary": "List items in a Batch",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Simply specify the source account, destination account, amount and a reference.",
         "id": "operation:post:/v1/batches/{batchUuid}/internaltransfers",
         "kind": "operation",
         "method": "post",
         "name": "addInternalTransferBatchPayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/batches/{batchUuid}/internaltransfers",
         "pointer": "#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Add an internal transfer payment to the batch"
+        "summary": "Add an internal transfer payment to the batch",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes a Payment from the Batch (Internal Transfer).",
         "id": "operation:delete:/v1/batches/{batchUuid}/internaltransfers/{itemUuid}",
         "kind": "operation",
         "method": "delete",
         "name": "deleteInternalTransferBatchPayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "itemUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/batches/{batchUuid}/internaltransfers/{itemUuid}",
         "pointer": "#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers~1{itemUuid}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Remove a Payment from the Batch (Internal Transfer)"
+        "summary": "Remove a Payment from the Batch (Internal Transfer)",
+        "tags": [
+          "Payment Batches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of cards related to your fire.com account.",
         "id": "operation:get:/v1/cards",
         "kind": "operation",
         "method": "get",
         "name": "getListofCards",
         "path": "/v1/cards",
         "pointer": "#/paths/~1v1~1cards/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "View List of Cards."
+        "summary": "View List of Cards.",
+        "tags": [
+          "Cards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can create multiple debit cards which can be linked to your fire.com accounts.",
         "id": "operation:post:/v1/cards",
         "kind": "operation",
         "method": "post",
         "name": "createNewCard",
         "path": "/v1/cards",
         "pointer": "#/paths/~1v1~1cards/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Create a new debit card."
+        "summary": "Create a new debit card.",
+        "tags": [
+          "Cards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates status of an existing card to block which prevents any transactions being carried out with that card.",
         "id": "operation:post:/v1/cards/{cardId}/block",
         "kind": "operation",
         "method": "post",
         "name": "blockCard",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cardId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/cards/{cardId}/block",
         "pointer": "#/paths/~1v1~1cards~1{cardId}~1block/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Block a card"
+        "summary": "Block a card",
+        "tags": [
+          "Cards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of cards transactions related to your fire.com card.",
         "id": "operation:get:/v1/cards/{cardId}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "getListofCardTransactions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cardId",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/cards/{cardId}/transactions",
         "pointer": "#/paths/~1v1~1cards~1{cardId}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List Card Transactions."
+        "summary": "List Card Transactions.",
+        "tags": [
+          "Cards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates status of an existing card to unblock which means that transactions can be carried out with that card.",
         "id": "operation:post:/v1/cards/{cardId}/unblock",
         "kind": "operation",
         "method": "post",
         "name": "unblockCard",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cardId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/cards/{cardId}/unblock",
         "pointer": "#/paths/~1v1~1cards~1{cardId}~1unblock/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Unblock a card"
+        "summary": "Unblock a card",
+        "tags": [
+          "Cards"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all direct debit payments associated with a direct debit mandate.",
         "id": "operation:get:/v1/directdebits",
         "kind": "operation",
         "method": "get",
         "name": "getDirectDebitsForMandateUuid",
+        "parameters": [
+          {
+            "description": "The mandate UUID to retrieve",
+            "in": "query",
+            "name": "mandateUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/directdebits",
         "pointer": "#/paths/~1v1~1directdebits/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get all DD payments associated with a direct debit mandate"
+        "summary": "Get all DD payments associated with a direct debit mandate",
+        "tags": [
+          "Direct Debits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all details of a single direct debit collection/payment, whether successful or not.",
         "id": "operation:get:/v1/directdebits/{directDebitUuid}",
         "kind": "operation",
         "method": "get",
         "name": "getDirectDebitByUuid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "directDebitUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/directdebits/{directDebitUuid}",
         "pointer": "#/paths/~1v1~1directdebits~1{directDebitUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get the details of a direct debit"
+        "summary": "Get the details of a direct debit",
+        "tags": [
+          "Direct Debits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to reject a direct debit payment where the status is still set to RECEIVED.",
         "id": "operation:post:/v1/directdebits/{directDebitUuid}/reject",
         "kind": "operation",
         "method": "post",
         "name": "rejectDirectDebit",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "directDebitUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/directdebits/{directDebitUuid}/reject",
         "pointer": "#/paths/~1v1~1directdebits~1{directDebitUuid}~1reject/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Reject a direct debit payment"
+        "summary": "Reject a direct debit payment",
+        "tags": [
+          "Direct Debits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The permision needed to access this endpoint is PERM_BUSINESS_GET_MANDATES",
         "id": "operation:get:/v1/mandates",
         "kind": "operation",
         "method": "get",
         "name": "getDirectDebitMandates",
         "path": "/v1/mandates",
         "pointer": "#/paths/~1v1~1mandates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List all direct debit mandates"
+        "summary": "List all direct debit mandates",
+        "tags": [
+          "Direct Debits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all details for a direct debit mandate.",
         "id": "operation:get:/v1/mandates/{mandateUuid}",
         "kind": "operation",
         "method": "get",
         "name": "getMandate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mandateUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/mandates/{mandateUuid}",
         "pointer": "#/paths/~1v1~1mandates~1{mandateUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get direct debit mandate details"
+        "summary": "Get direct debit mandate details",
+        "tags": [
+          "Direct Debits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update Direct Debit Mandate Alias The permision needed to access this endpoint is PERM_BUSINESS_PUT_MANDATE",
         "id": "operation:post:/v1/mandates/{mandateUuid}",
         "kind": "operation",
         "method": "post",
         "name": "updateMandateAlias",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mandateUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/mandates/{mandateUuid}",
         "pointer": "#/paths/~1v1~1mandates~1{mandateUuid}/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Update a direct debit mandate alias"
+        "summary": "Update a direct debit mandate alias",
+        "tags": [
+          "Direct Debits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint can only be used to activate a direct debit mandate when it is in the status REJECT_REQUESTED (even if the account has direct debits disabled).",
         "id": "operation:post:/v1/mandates/{mandateUuid}/activate",
         "kind": "operation",
         "method": "post",
         "name": "activateMandate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mandateUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/mandates/{mandateUuid}/activate",
         "pointer": "#/paths/~1v1~1mandates~1{mandateUuid}~1activate/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Activate a direct debit mandate"
+        "summary": "Activate a direct debit mandate",
+        "tags": [
+          "Direct Debits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to cancel a direct debit mandate.",
         "id": "operation:post:/v1/mandates/{mandateUuid}/cancel",
         "kind": "operation",
         "method": "post",
         "name": "cancelMandateByUuid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mandateUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/mandates/{mandateUuid}/cancel",
         "pointer": "#/paths/~1v1~1mandates~1{mandateUuid}~1cancel/post",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Cancel a direct debit mandate"
+        "summary": "Cancel a direct debit mandate",
+        "tags": [
+          "Direct Debits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns all your payee bank accounts.",
         "id": "operation:get:/v1/payees",
         "kind": "operation",
         "method": "get",
         "name": "getPayees",
         "path": "/v1/payees",
         "pointer": "#/paths/~1v1~1payees/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List all Payee Bank Accounts"
+        "summary": "List all Payee Bank Accounts",
+        "tags": [
+          "Payee Bank Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Fire Open Payments is a feature of the fire.com business account that leverages Open Banking to allow your customers to pay you via bank transfer and to reconc…",
         "id": "operation:post:/v1/paymentrequests",
         "kind": "operation",
         "method": "post",
         "name": "newPaymentRequest",
         "path": "/v1/paymentrequests",
         "pointer": "#/paths/~1v1~1paymentrequests/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Create a Fire Open Payment request"
+        "summary": "Create a Fire Open Payment request",
+        "tags": [
+          "Open Banking"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the details of a specific payment.",
         "id": "operation:get:/v1/payments/{paymentUuid}",
         "kind": "operation",
         "method": "get",
         "name": "getPaymentDetails",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "paymentUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/payments/{paymentUuid}",
         "pointer": "#/paths/~1v1~1payments~1{paymentUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Get Payment Details"
+        "summary": "Get Payment Details",
+        "tags": [
+          "Open Banking"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can retrieve the details of a specific fire.com user",
         "id": "operation:get:/v1/user/{userId}",
         "kind": "operation",
         "method": "get",
         "name": "getUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/v1/user/{userId}",
         "pointer": "#/paths/~1v1~1user~1{userId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Returns details of a specific fire.com user."
+        "summary": "Returns details of a specific fire.com user.",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can retrieve the details of all fire.com users on your acount.",
         "id": "operation:get:/v1/users",
         "kind": "operation",
         "method": "get",
         "name": "getUsers",
         "path": "/v1/users",
         "pointer": "#/paths/~1v1~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Returns list of all users on your fire.com account"
+        "summary": "Returns list of all users on your fire.com account",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of transactions against an account.",
         "id": "operation:get:/v3/accounts/{ican}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "getTransactionsByIdv3",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ican",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "dateRangeFrom",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "dateRangeTo",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "startAfter",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v3/accounts/{ican}/transactions",
         "pointer": "#/paths/~1v3~1accounts~1{ican}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "List transactions for an account (v3)"
+        "summary": "List transactions for an account (v3)",
+        "tags": [
+          "Transactions"
+        ]
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_13
 
 | | |
 | --- | --- |
-| Signed bundle | `7ed09fd58aab09c4c1d055a01707527076122403f39a152ea99eb06fe9c2ad21` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,21 +32,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_13
 
 ## Operations (16)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/estimate` | getEstimatedPrice | Get estimated price |
-| GET | `/v1/min-amount` | getTheMinimumPaymentAmount | Get the minimum payment amount |
-| GET | `/v1/payment/` | getListOfPayments | Get list of payments |
-| POST | `/v1/payment/{id}/update-merchant-estimate` | getUpdatePaymentEstimate | Get/Update payment estimate |
-| GET | `/v1/payment/{payment_id}` | getPaymentStatus | Get payment status |
-| POST | `/v1/payout/{withdrawals-id}/verify` | verifyPayout | Verify payout |
-| GET | `/v1/sub-partner` | getSubPartners | Get sub-partners |
-| GET | `/v1/sub-partner/balance/{id}` | getSubPartnerBalance | Get sub-partner balance |
-| GET | `/v1/sub-partner/transfer/{id}` | getTransfer | Get transfer |
-| GET | `/v1/sub-partner/transfers` | getAllTransfers | Get all transfers |
-| GET | `/v1/subscriptions` | getManyRecurringPayments | Get many recurring payments |
-| GET | `/v1/subscriptions/plans` | getManyPlans | Get many plans |
-| GET | `/v1/subscriptions/plans/{plan-id}` | getOnePlan | Get one plan |
-| PATCH | `/v1/subscriptions/plans/{plan-id}` | updatePlan | Update plan |
-| DELETE | `/v1/subscriptions/{sub_id}` | deleteRecurringPayment | Delete recurring payment |
-| GET | `/v1/subscriptions/{sub_id}` | getOneRecurringPayment | Get one recurring payment |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/estimate` | getEstimatedPrice | `amount`, `currency_from`, `currency_to`, `x-api-key` | object | yes | Get estimated price |
+| GET | `/v1/min-amount` | getTheMinimumPaymentAmount | `currency_from`, `currency_to`, `x-api-key` | object | yes | Get the minimum payment amount |
+| GET | `/v1/payment/` | getListOfPayments | `limit`, `page`, `sortBy`, `orderBy`, `dateFrom`, `dateTo`, `x-api-key` | object | yes | Get list of payments |
+| POST | `/v1/payment/{id}/update-merchant-estimate` | getUpdatePaymentEstimate | `id`*, `x-api-key` | object |  | Get/Update payment estimate |
+| GET | `/v1/payment/{payment_id}` | getPaymentStatus | `payment_id`*, `x-api-key` | object | yes | Get payment status |
+| POST | `/v1/payout/{withdrawals-id}/verify` | verifyPayout | `withdrawals-id`*, `x-api-key`, body: object | — |  | Verify payout |
+| GET | `/v1/sub-partner` | getSubPartners | `id`, `offset`, `limit`, `order` | — | yes | Get sub-partners |
+| GET | `/v1/sub-partner/balance/{id}` | getSubPartnerBalance | `id`*, `x-api-key` | object | yes | Get sub-partner balance |
+| GET | `/v1/sub-partner/transfer/{id}` | getTransfer | `id`* | object | yes | Get transfer |
+| GET | `/v1/sub-partner/transfers` | getAllTransfers | `id`, `status`, `limit`, `offset`, `order` | object | yes | Get all transfers |
+| GET | `/v1/subscriptions` | getManyRecurringPayments | `status`, `subscription_plan_id`, `is_active`, `limit`, `offset`, `x-api-key`, body: — | object | yes | Get many recurring payments |
+| GET | `/v1/subscriptions/plans` | getManyPlans | `limit`, `offset`, `x-api-key` | object | yes | Get many plans |
+| GET | `/v1/subscriptions/plans/{plan-id}` | getOnePlan | `plan-id`*, `x-api-key` | object | yes | Get one plan |
+| PATCH | `/v1/subscriptions/plans/{plan-id}` | updatePlan | `plan-id`*, body: object | — |  | Update plan |
+| GET | `/v1/subscriptions/{sub_id}` | getOneRecurringPayment | `sub_id`*, `x-api-key`, body: — | object | yes | Get one recurring payment |
+| DELETE | `/v1/subscriptions/{sub_id}` | deleteRecurringPayment | `sub_id`*, body: — | object |  | Delete recurring payment |

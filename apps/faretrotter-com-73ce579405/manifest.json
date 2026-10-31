@@ -13,6 +13,26 @@
         "from": "faretrotter-com-73ce579405",
         "kind": "EXPOSES",
         "to": "operation:get:/routes"
+      },
+      {
+        "from": "operation:get:/places",
+        "kind": "RETURNS",
+        "to": "schema:PlaceResponse"
+      },
+      {
+        "from": "operation:get:/routes",
+        "kind": "RETURNS",
+        "to": "schema:RoutesResponse"
+      },
+      {
+        "from": "schema:PlacesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaceResponse"
+      },
+      {
+        "from": "schema:RoutesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlaceResponse"
       }
     ],
     "nodes": [
@@ -28,6 +48,37 @@
         "name": "GET_places",
         "path": "/places",
         "pointer": "#/paths/~1places/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlaceResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "501"
+          },
+          {
+            "status": "502"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Returns possible modes of transportation between two cities."
       },
@@ -37,25 +88,85 @@
         "kind": "operation",
         "method": "get",
         "name": "GET_routes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "origin_lat",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "origin_lng",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "destination_lat",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "destination_lng",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/routes",
         "pointer": "#/paths/~1routes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RoutesResponse"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "501"
+          },
+          {
+            "status": "502"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:PlaceResponse",
         "kind": "schema",
-        "name": "PlaceResponse"
+        "name": "PlaceResponse",
+        "type": "object"
       },
       {
         "id": "schema:PlacesResponse",
         "kind": "schema",
-        "name": "PlacesResponse"
+        "name": "PlacesResponse",
+        "type": "object"
       },
       {
         "id": "schema:RoutesResponse",
         "kind": "schema",
-        "name": "RoutesResponse"
+        "name": "RoutesResponse",
+        "type": "object"
       }
     ]
   },

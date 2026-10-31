@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_d1gwm4cf8hecp4.cloudfront.net_i
 
 | | |
 | --- | --- |
-| Signed bundle | `e090140919a648b233e1696b57fa4b8f5548e7e5008affb12711f941df2472d8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,172 +34,174 @@ logo: "https://api.apis.guru/v2/cache/logo/https_d1gwm4cf8hecp4.cloudfront.net_i
 
 165 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/attachments` | getAttachmentsForObject | Get attachments from an object |
-| POST | `/attachments` | createAttachmentForObject | Upload an attachment |
-| DELETE | `/attachments/{attachment_gid}` | deleteAttachment | Delete an attachment |
-| GET | `/attachments/{attachment_gid}` | getAttachment | Get an attachment |
-| POST | `/batch` | createBatchRequest | Submit parallel requests |
-| POST | `/custom_fields` | createCustomField | Create a custom field |
-| DELETE | `/custom_fields/{custom_field_gid}` | deleteCustomField | Delete a custom field |
-| GET | `/custom_fields/{custom_field_gid}` | getCustomField | Get a custom field |
-| PUT | `/custom_fields/{custom_field_gid}` | updateCustomField | Update a custom field |
-| POST | `/custom_fields/{custom_field_gid}/enum_options` | createEnumOptionForCustomField | Create an enum option |
-| POST | `/custom_fields/{custom_field_gid}/enum_options/insert` | insertEnumOptionForCustomField | Reorder a custom field's enum |
-| PUT | `/enum_options/{enum_option_gid}` | updateEnumOption | Update an enum option |
-| GET | `/events` | getEvents | Get events on a resource |
-| GET | `/goal_relationships` | getGoalRelationships | Get goal relationships |
-| GET | `/goal_relationships/{goal_relationship_gid}` | getGoalRelationship | Get a goal relationship |
-| PUT | `/goal_relationships/{goal_relationship_gid}` | updateGoalRelationship | Update a goal relationship |
-| GET | `/goals` | getGoals | Get goals |
-| POST | `/goals` | createGoal | Create a goal |
-| DELETE | `/goals/{goal_gid}` | deleteGoal | Delete a goal |
-| GET | `/goals/{goal_gid}` | getGoal | Get a goal |
-| PUT | `/goals/{goal_gid}` | updateGoal | Update a goal |
-| POST | `/goals/{goal_gid}/addFollowers` | addFollowers | Add a collaborator to a goal |
-| POST | `/goals/{goal_gid}/addSupportingRelationship` | addSupportingRelationship | Add a supporting goal relationship |
-| GET | `/goals/{goal_gid}/parentGoals` | getParentGoalsForGoal | Get parent goals from a goal |
-| POST | `/goals/{goal_gid}/removeFollowers` | removeFollowers | Remove a collaborator from a goal |
-| POST | `/goals/{goal_gid}/removeSupportingRelationship` | removeSupportingRelationship | Removes a supporting goal relationship |
-| POST | `/goals/{goal_gid}/setMetric` | createGoalMetric | Create a goal metric |
-| POST | `/goals/{goal_gid}/setMetricCurrentValue` | updateGoalMetric | Update a goal metric |
-| GET | `/jobs/{job_gid}` | getJob | Get a job by id |
-| POST | `/organization_exports` | createOrganizationExport | Create an organization export request |
-| GET | `/organization_exports/{organization_export_gid}` | getOrganizationExport | Get details on an org export request |
-| GET | `/portfolio_memberships` | getPortfolioMemberships | Get multiple portfolio memberships |
-| GET | `/portfolio_memberships/{portfolio_membership_gid}` | getPortfolioMembership | Get a portfolio membership |
-| GET | `/portfolios` | getPortfolios | Get multiple portfolios |
-| POST | `/portfolios` | createPortfolio | Create a portfolio |
-| DELETE | `/portfolios/{portfolio_gid}` | deletePortfolio | Delete a portfolio |
-| GET | `/portfolios/{portfolio_gid}` | getPortfolio | Get a portfolio |
-| PUT | `/portfolios/{portfolio_gid}` | updatePortfolio | Update a portfolio |
-| POST | `/portfolios/{portfolio_gid}/addCustomFieldSetting` | addCustomFieldSettingForPortfolio | Add a custom field to a portfolio |
-| POST | `/portfolios/{portfolio_gid}/addItem` | addItemForPortfolio | Add a portfolio item |
-| POST | `/portfolios/{portfolio_gid}/addMembers` | addMembersForPortfolio | Add users to a portfolio |
-| GET | `/portfolios/{portfolio_gid}/custom_field_settings` | getCustomFieldSettingsForPortfolio | Get a portfolio's custom fields |
-| GET | `/portfolios/{portfolio_gid}/items` | getItemsForPortfolio | Get portfolio items |
-| GET | `/portfolios/{portfolio_gid}/portfolio_memberships` | getPortfolioMembershipsForPortfolio | Get memberships from a portfolio |
-| POST | `/portfolios/{portfolio_gid}/removeCustomFieldSetting` | removeCustomFieldSettingForPortfolio | Remove a custom field from a portfolio |
-| POST | `/portfolios/{portfolio_gid}/removeItem` | removeItemForPortfolio | Remove a portfolio item |
-| POST | `/portfolios/{portfolio_gid}/removeMembers` | removeMembersForPortfolio | Remove users from a portfolio |
-| DELETE | `/project_briefs/{project_brief_gid}` | deleteProjectBrief | Delete a project brief |
-| GET | `/project_briefs/{project_brief_gid}` | getProjectBrief | Get a project brief |
-| PUT | `/project_briefs/{project_brief_gid}` | updateProjectBrief | Update a project brief |
-| GET | `/project_memberships/{project_membership_gid}` | getProjectMembership | Get a project membership |
-| DELETE | `/project_statuses/{project_status_gid}` | deleteProjectStatus | Delete a project status |
-| GET | `/project_statuses/{project_status_gid}` | getProjectStatus | Get a project status |
-| GET | `/project_templates` | getProjectTemplates | Get multiple project templates |
-| GET | `/project_templates/{project_template_gid}` | getProjectTemplate | Get a project template |
-| POST | `/project_templates/{project_template_gid}/instantiateProject` | instantiateProject | Instantiate a project from a project template |
-| GET | `/projects` | getProjects | Get multiple projects |
-| POST | `/projects` | createProject | Create a project |
-| DELETE | `/projects/{project_gid}` | deleteProject | Delete a project |
-| GET | `/projects/{project_gid}` | getProject | Get a project |
-| PUT | `/projects/{project_gid}` | updateProject | Update a project |
-| POST | `/projects/{project_gid}/addCustomFieldSetting` | addCustomFieldSettingForProject | Add a custom field to a project |
-| POST | `/projects/{project_gid}/addFollowers` | addFollowersForProject | Add followers to a project |
-| POST | `/projects/{project_gid}/addMembers` | addMembersForProject | Add users to a project |
-| GET | `/projects/{project_gid}/custom_field_settings` | getCustomFieldSettingsForProject | Get a project's custom fields |
-| POST | `/projects/{project_gid}/duplicate` | duplicateProject | Duplicate a project |
-| POST | `/projects/{project_gid}/project_briefs` | createProjectBrief | Create a project brief |
-| GET | `/projects/{project_gid}/project_memberships` | getProjectMembershipsForProject | Get memberships from a project |
-| GET | `/projects/{project_gid}/project_statuses` | getProjectStatusesForProject | Get statuses from a project |
-| POST | `/projects/{project_gid}/project_statuses` | createProjectStatusForProject | Create a project status |
-| POST | `/projects/{project_gid}/removeCustomFieldSetting` | removeCustomFieldSettingForProject | Remove a custom field from a project |
-| POST | `/projects/{project_gid}/removeFollowers` | removeFollowersForProject | Remove followers from a project |
-| POST | `/projects/{project_gid}/removeMembers` | removeMembersForProject | Remove users from a project |
-| POST | `/projects/{project_gid}/saveAsTemplate` | projectSaveAsTemplate | Create a project template from a project |
-| GET | `/projects/{project_gid}/sections` | getSectionsForProject | Get sections in a project |
-| POST | `/projects/{project_gid}/sections` | createSectionForProject | Create a section in a project |
-| POST | `/projects/{project_gid}/sections/insert` | insertSectionForProject | Move or Insert sections |
-| GET | `/projects/{project_gid}/task_counts` | getTaskCountsForProject | Get task count of a project |
-| GET | `/projects/{project_gid}/tasks` | getTasksForProject | Get tasks from a project |
-| DELETE | `/sections/{section_gid}` | deleteSection | Delete a section |
-| GET | `/sections/{section_gid}` | getSection | Get a section |
-| PUT | `/sections/{section_gid}` | updateSection | Update a section |
-| POST | `/sections/{section_gid}/addTask` | addTaskForSection | Add task to section |
-| GET | `/sections/{section_gid}/tasks` | getTasksForSection | Get tasks from a section |
-| GET | `/status_updates` | getStatusesForObject | Get status updates from an object |
-| POST | `/status_updates` | createStatusForObject | Create a status update |
-| DELETE | `/status_updates/{status_gid}` | deleteStatus | Delete a status update |
-| GET | `/status_updates/{status_gid}` | getStatus | Get a status update |
-| DELETE | `/stories/{story_gid}` | deleteStory | Delete a story |
-| GET | `/stories/{story_gid}` | getStory | Get a story |
-| PUT | `/stories/{story_gid}` | updateStory | Update a story |
-| GET | `/tags` | getTags | Get multiple tags |
-| POST | `/tags` | createTag | Create a tag |
-| DELETE | `/tags/{tag_gid}` | deleteTag | Delete a tag |
-| GET | `/tags/{tag_gid}` | getTag | Get a tag |
-| PUT | `/tags/{tag_gid}` | updateTag | Update a tag |
-| GET | `/tags/{tag_gid}/tasks` | getTasksForTag | Get tasks from a tag |
-| GET | `/tasks` | getTasks | Get multiple tasks |
-| POST | `/tasks` | createTask | Create a task |
-| DELETE | `/tasks/{task_gid}` | deleteTask | Delete a task |
-| GET | `/tasks/{task_gid}` | getTask | Get a task |
-| PUT | `/tasks/{task_gid}` | updateTask | Update a task |
-| POST | `/tasks/{task_gid}/addDependencies` | addDependenciesForTask | Set dependencies for a task |
-| POST | `/tasks/{task_gid}/addDependents` | addDependentsForTask | Set dependents for a task |
-| POST | `/tasks/{task_gid}/addFollowers` | addFollowersForTask | Add followers to a task |
-| POST | `/tasks/{task_gid}/addProject` | addProjectForTask | Add a project to a task |
-| POST | `/tasks/{task_gid}/addTag` | addTagForTask | Add a tag to a task |
-| GET | `/tasks/{task_gid}/dependencies` | getDependenciesForTask | Get dependencies from a task |
-| GET | `/tasks/{task_gid}/dependents` | getDependentsForTask | Get dependents from a task |
-| POST | `/tasks/{task_gid}/duplicate` | duplicateTask | Duplicate a task |
-| GET | `/tasks/{task_gid}/projects` | getProjectsForTask | Get projects a task is in |
-| POST | `/tasks/{task_gid}/removeDependencies` | removeDependenciesForTask | Unlink dependencies from a task |
-| POST | `/tasks/{task_gid}/removeDependents` | removeDependentsForTask | Unlink dependents from a task |
-| POST | `/tasks/{task_gid}/removeFollowers` | removeFollowerForTask | Remove followers from a task |
-| POST | `/tasks/{task_gid}/removeProject` | removeProjectForTask | Remove a project from a task |
-| POST | `/tasks/{task_gid}/removeTag` | removeTagForTask | Remove a tag from a task |
-| POST | `/tasks/{task_gid}/setParent` | setParentForTask | Set the parent of a task |
-| GET | `/tasks/{task_gid}/stories` | getStoriesForTask | Get stories from a task |
-| POST | `/tasks/{task_gid}/stories` | createStoryForTask | Create a story on a task |
-| GET | `/tasks/{task_gid}/subtasks` | getSubtasksForTask | Get subtasks from a task |
-| POST | `/tasks/{task_gid}/subtasks` | createSubtaskForTask | Create a subtask |
-| GET | `/tasks/{task_gid}/tags` | getTagsForTask | Get a task's tags |
-| GET | `/team_memberships` | getTeamMemberships | Get team memberships |
-| GET | `/team_memberships/{team_membership_gid}` | getTeamMembership | Get a team membership |
-| POST | `/teams` | createTeam | Create a team |
-| PUT | `/teams` | updateTeam | Update a team |
-| GET | `/teams/{team_gid}` | getTeam | Get a team |
-| POST | `/teams/{team_gid}/addUser` | addUserForTeam | Add a user to a team |
-| GET | `/teams/{team_gid}/project_templates` | getProjectTemplatesForTeam | Get a team's project templates |
-| GET | `/teams/{team_gid}/projects` | getProjectsForTeam | Get a team's projects |
-| POST | `/teams/{team_gid}/projects` | createProjectForTeam | Create a project in a team |
-| POST | `/teams/{team_gid}/removeUser` | removeUserForTeam | Remove a user from a team |
-| GET | `/teams/{team_gid}/team_memberships` | getTeamMembershipsForTeam | Get memberships from a team |
-| GET | `/teams/{team_gid}/users` | getUsersForTeam | Get users in a team |
-| GET | `/time_periods` | getTimePeriods | Get time periods |
-| GET | `/time_periods/{time_period_gid}` | getTimePeriod | Get a time period |
-| GET | `/user_task_lists/{user_task_list_gid}` | getUserTaskList | Get a user task list |
-| GET | `/user_task_lists/{user_task_list_gid}/tasks` | getTasksForUserTaskList | Get tasks from a user task list |
-| GET | `/users` | getUsers | Get multiple users |
-| GET | `/users/{user_gid}` | getUser | Get a user |
-| GET | `/users/{user_gid}/favorites` | getFavoritesForUser | Get a user's favorites |
-| GET | `/users/{user_gid}/team_memberships` | getTeamMembershipsForUser | Get memberships from a user |
-| GET | `/users/{user_gid}/teams` | getTeamsForUser | Get teams for a user |
-| GET | `/users/{user_gid}/user_task_list` | getUserTaskListForUser | Get a user's task list |
-| GET | `/users/{user_gid}/workspace_memberships` | getWorkspaceMembershipsForUser | Get workspace memberships for a user |
-| GET | `/webhooks` | getWebhooks | Get multiple webhooks |
-| POST | `/webhooks` | createWebhook | Establish a webhook |
-| DELETE | `/webhooks/{webhook_gid}` | deleteWebhook | Delete a webhook |
-| GET | `/webhooks/{webhook_gid}` | getWebhook | Get a webhook |
-| PUT | `/webhooks/{webhook_gid}` | updateWebhook | Update a webhook |
-| GET | `/workspace_memberships/{workspace_membership_gid}` | getWorkspaceMembership | Get a workspace membership |
-| GET | `/workspaces` | getWorkspaces | Get multiple workspaces |
-| GET | `/workspaces/{workspace_gid}` | getWorkspace | Get a workspace |
-| PUT | `/workspaces/{workspace_gid}` | updateWorkspace | Update a workspace |
-| POST | `/workspaces/{workspace_gid}/addUser` | addUserForWorkspace | Add a user to a workspace or organization |
-| GET | `/workspaces/{workspace_gid}/audit_log_events` | getAuditLogEvents | Get audit log events |
-| GET | `/workspaces/{workspace_gid}/custom_fields` | getCustomFieldsForWorkspace | Get a workspace's custom fields |
-| GET | `/workspaces/{workspace_gid}/projects` | getProjectsForWorkspace | Get all projects in a workspace |
-| POST | `/workspaces/{workspace_gid}/projects` | createProjectForWorkspace | Create a project in a workspace |
-| POST | `/workspaces/{workspace_gid}/removeUser` | removeUserForWorkspace | Remove a user from a workspace or organization |
-| GET | `/workspaces/{workspace_gid}/tags` | getTagsForWorkspace | Get tags in a workspace |
-| POST | `/workspaces/{workspace_gid}/tags` | createTagForWorkspace | Create a tag in a workspace |
-| GET | `/workspaces/{workspace_gid}/tasks/search` | searchTasksForWorkspace | Search tasks in a workspace |
-| GET | `/workspaces/{workspace_gid}/teams` | getTeamsForWorkspace | Get teams in a workspace |
-| GET | `/workspaces/{workspace_gid}/typeahead` | typeaheadForWorkspace | Get objects via typeahead |
-| GET | `/workspaces/{workspace_gid}/users` | getUsersForWorkspace | Get users in a workspace or organization |
-| GET | `/workspaces/{workspace_gid}/workspace_memberships` | getWorkspaceMembershipsForWorkspace | Get the workspace memberships for a workspace |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/attachments` | getAttachmentsForObject | `opt_pretty`, `opt_fields`, `limit`, `offset`, `parent`* | object | yes | Get attachments from an object |
+| POST | `/attachments` | createAttachmentForObject | `opt_pretty`, `opt_fields`, body*: AttachmentRequest | object |  | Upload an attachment |
+| GET | `/attachments/{attachment_gid}` | getAttachment | `attachment_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get an attachment |
+| DELETE | `/attachments/{attachment_gid}` | deleteAttachment | `attachment_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete an attachment |
+| POST | `/batch` | createBatchRequest | `opt_pretty`, `opt_fields`, body*: object | object |  | Submit parallel requests |
+| POST | `/custom_fields` | createCustomField | `opt_pretty`, `opt_fields`, `limit`, `offset`, body: object | object |  | Create a custom field |
+| GET | `/custom_fields/{custom_field_gid}` | getCustomField | `custom_field_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a custom field |
+| PUT | `/custom_fields/{custom_field_gid}` | updateCustomField | `custom_field_gid`*, `opt_pretty`, `opt_fields`, body: object | object |  | Update a custom field |
+| DELETE | `/custom_fields/{custom_field_gid}` | deleteCustomField | `custom_field_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a custom field |
+| POST | `/custom_fields/{custom_field_gid}/enum_options` | createEnumOptionForCustomField | `custom_field_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset`, body: object | object |  | Create an enum option |
+| POST | `/custom_fields/{custom_field_gid}/enum_options/insert` | insertEnumOptionForCustomField | `custom_field_gid`*, `opt_pretty`, `opt_fields`, body: object | object |  | Reorder a custom field's enum |
+| PUT | `/enum_options/{enum_option_gid}` | updateEnumOption | `enum_option_gid`*, `opt_pretty`, `opt_fields`, body: object | object |  | Update an enum option |
+| GET | `/events` | getEvents | `resource`*, `sync`, `opt_pretty`, `opt_fields` | object | yes | Get events on a resource |
+| GET | `/goal_relationships` | getGoalRelationships | `opt_pretty`, `opt_fields`, `supported_goal`*, `resource_subtype` | object | yes | Get goal relationships |
+| GET | `/goal_relationships/{goal_relationship_gid}` | getGoalRelationship | `goal_relationship_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a goal relationship |
+| PUT | `/goal_relationships/{goal_relationship_gid}` | updateGoalRelationship | `goal_relationship_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a goal relationship |
+| GET | `/goals` | getGoals | `opt_pretty`, `opt_fields`, `limit`, `offset`, `portfolio`, `project`, `is_workspace_level`, `team`, `workspace`, `time_periods` | object | yes | Get goals |
+| POST | `/goals` | createGoal | `opt_pretty`, `opt_fields`, `limit`, `offset`, body*: object | object |  | Create a goal |
+| GET | `/goals/{goal_gid}` | getGoal | `goal_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a goal |
+| PUT | `/goals/{goal_gid}` | updateGoal | `goal_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a goal |
+| DELETE | `/goals/{goal_gid}` | deleteGoal | `goal_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a goal |
+| POST | `/goals/{goal_gid}/addFollowers` | addFollowers | `goal_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add a collaborator to a goal |
+| POST | `/goals/{goal_gid}/addSupportingRelationship` | addSupportingRelationship | `goal_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add a supporting goal relationship |
+| GET | `/goals/{goal_gid}/parentGoals` | getParentGoalsForGoal | `goal_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get parent goals from a goal |
+| POST | `/goals/{goal_gid}/removeFollowers` | removeFollowers | `goal_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove a collaborator from a goal |
+| POST | `/goals/{goal_gid}/removeSupportingRelationship` | removeSupportingRelationship | `goal_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Removes a supporting goal relationship |
+| POST | `/goals/{goal_gid}/setMetric` | createGoalMetric | `goal_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a goal metric |
+| POST | `/goals/{goal_gid}/setMetricCurrentValue` | updateGoalMetric | `goal_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a goal metric |
+| GET | `/jobs/{job_gid}` | getJob | `job_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a job by id |
+| POST | `/organization_exports` | createOrganizationExport | `opt_pretty`, `opt_fields`, `limit`, `offset`, body*: object | object |  | Create an organization export request |
+| GET | `/organization_exports/{organization_export_gid}` | getOrganizationExport | `organization_export_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get details on an org export request |
+| GET | `/portfolio_memberships` | getPortfolioMemberships | `portfolio`, `workspace`, `user`, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get multiple portfolio memberships |
+| GET | `/portfolio_memberships/{portfolio_membership_gid}` | getPortfolioMembership | `portfolio_membership_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a portfolio membership |
+| GET | `/portfolios` | getPortfolios | `opt_pretty`, `opt_fields`, `limit`, `offset`, `workspace`*, `owner`* | object | yes | Get multiple portfolios |
+| POST | `/portfolios` | createPortfolio | `opt_pretty`, `opt_fields`, body*: object | object |  | Create a portfolio |
+| GET | `/portfolios/{portfolio_gid}` | getPortfolio | `portfolio_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a portfolio |
+| PUT | `/portfolios/{portfolio_gid}` | updatePortfolio | `portfolio_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a portfolio |
+| DELETE | `/portfolios/{portfolio_gid}` | deletePortfolio | `portfolio_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a portfolio |
+| POST | `/portfolios/{portfolio_gid}/addCustomFieldSetting` | addCustomFieldSettingForPortfolio | `portfolio_gid`*, `opt_pretty`, body*: object | object |  | Add a custom field to a portfolio |
+| POST | `/portfolios/{portfolio_gid}/addItem` | addItemForPortfolio | `portfolio_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add a portfolio item |
+| POST | `/portfolios/{portfolio_gid}/addMembers` | addMembersForPortfolio | `portfolio_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add users to a portfolio |
+| GET | `/portfolios/{portfolio_gid}/custom_field_settings` | getCustomFieldSettingsForPortfolio | `portfolio_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get a portfolio's custom fields |
+| GET | `/portfolios/{portfolio_gid}/items` | getItemsForPortfolio | `portfolio_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get portfolio items |
+| GET | `/portfolios/{portfolio_gid}/portfolio_memberships` | getPortfolioMembershipsForPortfolio | `portfolio_gid`*, `user`, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get memberships from a portfolio |
+| POST | `/portfolios/{portfolio_gid}/removeCustomFieldSetting` | removeCustomFieldSettingForPortfolio | `portfolio_gid`*, `opt_pretty`, body*: object | object |  | Remove a custom field from a portfolio |
+| POST | `/portfolios/{portfolio_gid}/removeItem` | removeItemForPortfolio | `portfolio_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove a portfolio item |
+| POST | `/portfolios/{portfolio_gid}/removeMembers` | removeMembersForPortfolio | `portfolio_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove users from a portfolio |
+| GET | `/project_briefs/{project_brief_gid}` | getProjectBrief | `project_brief_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a project brief |
+| PUT | `/project_briefs/{project_brief_gid}` | updateProjectBrief | `project_brief_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a project brief |
+| DELETE | `/project_briefs/{project_brief_gid}` | deleteProjectBrief | `project_brief_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a project brief |
+| GET | `/project_memberships/{project_membership_gid}` | getProjectMembership | `project_membership_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a project membership |
+| GET | `/project_statuses/{project_status_gid}` | getProjectStatus | `project_status_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a project status |
+| DELETE | `/project_statuses/{project_status_gid}` | deleteProjectStatus | `project_status_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a project status |
+| GET | `/project_templates` | getProjectTemplates | `opt_pretty`, `opt_fields`, `workspace`, `team`, `limit`, `offset` | object | yes | Get multiple project templates |
+| GET | `/project_templates/{project_template_gid}` | getProjectTemplate | `project_template_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a project template |
+| POST | `/project_templates/{project_template_gid}/instantiateProject` | instantiateProject | `project_template_gid`*, `opt_pretty`, `opt_fields`, body: object | object |  | Instantiate a project from a project template |
+| GET | `/projects` | getProjects | `opt_pretty`, `opt_fields`, `limit`, `offset`, `workspace`, `team`, `archived` | object | yes | Get multiple projects |
+| POST | `/projects` | createProject | `opt_pretty`, `opt_fields`, body*: object | object |  | Create a project |
+| GET | `/projects/{project_gid}` | getProject | `project_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a project |
+| PUT | `/projects/{project_gid}` | updateProject | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a project |
+| DELETE | `/projects/{project_gid}` | deleteProject | `project_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a project |
+| POST | `/projects/{project_gid}/addCustomFieldSetting` | addCustomFieldSettingForProject | `project_gid`*, `opt_pretty`, body*: object | object |  | Add a custom field to a project |
+| POST | `/projects/{project_gid}/addFollowers` | addFollowersForProject | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add followers to a project |
+| POST | `/projects/{project_gid}/addMembers` | addMembersForProject | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add users to a project |
+| GET | `/projects/{project_gid}/custom_field_settings` | getCustomFieldSettingsForProject | `project_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get a project's custom fields |
+| POST | `/projects/{project_gid}/duplicate` | duplicateProject | `project_gid`*, `opt_pretty`, `opt_fields`, body: object | object |  | Duplicate a project |
+| POST | `/projects/{project_gid}/project_briefs` | createProjectBrief | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a project brief |
+| GET | `/projects/{project_gid}/project_memberships` | getProjectMembershipsForProject | `project_gid`*, `user`, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get memberships from a project |
+| GET | `/projects/{project_gid}/project_statuses` | getProjectStatusesForProject | `project_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get statuses from a project |
+| POST | `/projects/{project_gid}/project_statuses` | createProjectStatusForProject | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a project status |
+| POST | `/projects/{project_gid}/removeCustomFieldSetting` | removeCustomFieldSettingForProject | `project_gid`*, `opt_pretty`, body*: object | object |  | Remove a custom field from a project |
+| POST | `/projects/{project_gid}/removeFollowers` | removeFollowersForProject | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove followers from a project |
+| POST | `/projects/{project_gid}/removeMembers` | removeMembersForProject | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove users from a project |
+| POST | `/projects/{project_gid}/saveAsTemplate` | projectSaveAsTemplate | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a project template from a project |
+| GET | `/projects/{project_gid}/sections` | getSectionsForProject | `project_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get sections in a project |
+| POST | `/projects/{project_gid}/sections` | createSectionForProject | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a section in a project |
+| POST | `/projects/{project_gid}/sections/insert` | insertSectionForProject | `project_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Move or Insert sections |
+| GET | `/projects/{project_gid}/task_counts` | getTaskCountsForProject | `project_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get task count of a project |
+| GET | `/projects/{project_gid}/tasks` | getTasksForProject | `completed_since`, `project_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get tasks from a project |
+| GET | `/sections/{section_gid}` | getSection | `section_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a section |
+| PUT | `/sections/{section_gid}` | updateSection | `section_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a section |
+| DELETE | `/sections/{section_gid}` | deleteSection | `section_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a section |
+| POST | `/sections/{section_gid}/addTask` | addTaskForSection | `section_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add task to section |
+| GET | `/sections/{section_gid}/tasks` | getTasksForSection | `section_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get tasks from a section |
+| GET | `/status_updates` | getStatusesForObject | `opt_pretty`, `opt_fields`, `limit`, `offset`, `parent`*, `created_since` | object | yes | Get status updates from an object |
+| POST | `/status_updates` | createStatusForObject | `opt_pretty`, `opt_fields`, `limit`, `offset`, body*: object | object |  | Create a status update |
+| GET | `/status_updates/{status_gid}` | getStatus | `status_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a status update |
+| DELETE | `/status_updates/{status_gid}` | deleteStatus | `status_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a status update |
+| GET | `/stories/{story_gid}` | getStory | `story_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get a story |
+| PUT | `/stories/{story_gid}` | updateStory | `story_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a story |
+| DELETE | `/stories/{story_gid}` | deleteStory | `story_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a story |
+| GET | `/tags` | getTags | `opt_pretty`, `opt_fields`, `limit`, `offset`, `workspace` | object | yes | Get multiple tags |
+| POST | `/tags` | createTag | `opt_pretty`, `opt_fields`, body*: object | object |  | Create a tag |
+| GET | `/tags/{tag_gid}` | getTag | `tag_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get a tag |
+| PUT | `/tags/{tag_gid}` | updateTag | `tag_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object |  | Update a tag |
+| DELETE | `/tags/{tag_gid}` | deleteTag | `tag_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object |  | Delete a tag |
+| GET | `/tags/{tag_gid}/tasks` | getTasksForTag | `tag_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get tasks from a tag |
+| GET | `/tasks` | getTasks | `opt_pretty`, `opt_fields`, `limit`, `offset`, `assignee`, `project`, `section`, `workspace`, `completed_since`, `modified_since` | object | yes | Get multiple tasks |
+| POST | `/tasks` | createTask | `opt_pretty`, `opt_fields`, body*: object | object |  | Create a task |
+| GET | `/tasks/{task_gid}` | getTask | `task_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a task |
+| PUT | `/tasks/{task_gid}` | updateTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a task |
+| DELETE | `/tasks/{task_gid}` | deleteTask | `task_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a task |
+| POST | `/tasks/{task_gid}/addDependencies` | addDependenciesForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Set dependencies for a task |
+| POST | `/tasks/{task_gid}/addDependents` | addDependentsForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Set dependents for a task |
+| POST | `/tasks/{task_gid}/addFollowers` | addFollowersForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add followers to a task |
+| POST | `/tasks/{task_gid}/addProject` | addProjectForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add a project to a task |
+| POST | `/tasks/{task_gid}/addTag` | addTagForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add a tag to a task |
+| GET | `/tasks/{task_gid}/dependencies` | getDependenciesForTask | `task_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get dependencies from a task |
+| GET | `/tasks/{task_gid}/dependents` | getDependentsForTask | `task_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get dependents from a task |
+| POST | `/tasks/{task_gid}/duplicate` | duplicateTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Duplicate a task |
+| GET | `/tasks/{task_gid}/projects` | getProjectsForTask | `task_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get projects a task is in |
+| POST | `/tasks/{task_gid}/removeDependencies` | removeDependenciesForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Unlink dependencies from a task |
+| POST | `/tasks/{task_gid}/removeDependents` | removeDependentsForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Unlink dependents from a task |
+| POST | `/tasks/{task_gid}/removeFollowers` | removeFollowerForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove followers from a task |
+| POST | `/tasks/{task_gid}/removeProject` | removeProjectForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove a project from a task |
+| POST | `/tasks/{task_gid}/removeTag` | removeTagForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove a tag from a task |
+| POST | `/tasks/{task_gid}/setParent` | setParentForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Set the parent of a task |
+| GET | `/tasks/{task_gid}/stories` | getStoriesForTask | `task_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get stories from a task |
+| POST | `/tasks/{task_gid}/stories` | createStoryForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a story on a task |
+| GET | `/tasks/{task_gid}/subtasks` | getSubtasksForTask | `task_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get subtasks from a task |
+| POST | `/tasks/{task_gid}/subtasks` | createSubtaskForTask | `task_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a subtask |
+| GET | `/tasks/{task_gid}/tags` | getTagsForTask | `task_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get a task's tags |
+| GET | `/team_memberships` | getTeamMemberships | `opt_pretty`, `opt_fields`, `limit`, `offset`, `team`, `user`, `workspace` | object | yes | Get team memberships |
+| GET | `/team_memberships/{team_membership_gid}` | getTeamMembership | `team_membership_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a team membership |
+| PUT | `/teams` | updateTeam | `opt_pretty`, `opt_fields`, `limit`, `offset`, body*: object | object |  | Update a team |
+| POST | `/teams` | createTeam | `opt_pretty`, `opt_fields`, `limit`, `offset`, body*: object | object |  | Create a team |
+| GET | `/teams/{team_gid}` | getTeam | `team_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get a team |
+| POST | `/teams/{team_gid}/addUser` | addUserForTeam | `team_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add a user to a team |
+| GET | `/teams/{team_gid}/project_templates` | getProjectTemplatesForTeam | `team_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get a team's project templates |
+| GET | `/teams/{team_gid}/projects` | getProjectsForTeam | `team_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset`, `archived` | object | yes | Get a team's projects |
+| POST | `/teams/{team_gid}/projects` | createProjectForTeam | `team_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a project in a team |
+| POST | `/teams/{team_gid}/removeUser` | removeUserForTeam | `team_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove a user from a team |
+| GET | `/teams/{team_gid}/team_memberships` | getTeamMembershipsForTeam | `team_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get memberships from a team |
+| GET | `/teams/{team_gid}/users` | getUsersForTeam | `team_gid`*, `opt_pretty`, `opt_fields`, `offset` | object | yes | Get users in a team |
+| GET | `/time_periods` | getTimePeriods | `opt_pretty`, `opt_fields`, `limit`, `offset`, `start_on`, `end_on`, `workspace`* | object | yes | Get time periods |
+| GET | `/time_periods/{time_period_gid}` | getTimePeriod | `time_period_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a time period |
+| GET | `/user_task_lists/{user_task_list_gid}` | getUserTaskList | `user_task_list_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a user task list |
+| GET | `/user_task_lists/{user_task_list_gid}/tasks` | getTasksForUserTaskList | `completed_since`, `user_task_list_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get tasks from a user task list |
+| GET | `/users` | getUsers | `workspace`, `team`, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get multiple users |
+| GET | `/users/{user_gid}` | getUser | `user_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a user |
+| GET | `/users/{user_gid}/favorites` | getFavoritesForUser | `user_gid`*, `opt_pretty`, `opt_fields`, `resource_type`*, `workspace`* | object | yes | Get a user's favorites |
+| GET | `/users/{user_gid}/team_memberships` | getTeamMembershipsForUser | `user_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset`, `workspace`* | object | yes | Get memberships from a user |
+| GET | `/users/{user_gid}/teams` | getTeamsForUser | `user_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset`, `organization`* | object | yes | Get teams for a user |
+| GET | `/users/{user_gid}/user_task_list` | getUserTaskListForUser | `user_gid`*, `opt_pretty`, `opt_fields`, `workspace`* | object | yes | Get a user's task list |
+| GET | `/users/{user_gid}/workspace_memberships` | getWorkspaceMembershipsForUser | `user_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get workspace memberships for a user |
+| GET | `/webhooks` | getWebhooks | `opt_pretty`, `opt_fields`, `limit`, `offset`, `workspace`*, `resource` | object | yes | Get multiple webhooks |
+| POST | `/webhooks` | createWebhook | `opt_pretty`, `opt_fields`, body*: object | object |  | Establish a webhook |
+| GET | `/webhooks/{webhook_gid}` | getWebhook | `webhook_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a webhook |
+| PUT | `/webhooks/{webhook_gid}` | updateWebhook | `webhook_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a webhook |
+| DELETE | `/webhooks/{webhook_gid}` | deleteWebhook | `webhook_gid`*, `opt_pretty`, `opt_fields` | object |  | Delete a webhook |
+| GET | `/workspace_memberships/{workspace_membership_gid}` | getWorkspaceMembership | `workspace_membership_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a workspace membership |
+| GET | `/workspaces` | getWorkspaces | `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get multiple workspaces |
+| GET | `/workspaces/{workspace_gid}` | getWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields` | object | yes | Get a workspace |
+| PUT | `/workspaces/{workspace_gid}` | updateWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Update a workspace |
+| POST | `/workspaces/{workspace_gid}/addUser` | addUserForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Add a user to a workspace or organization |
+| GET | `/workspaces/{workspace_gid}/audit_log_events` | getAuditLogEvents | `workspace_gid`*, `start_at`, `end_at`, `event_type`, `actor_type`, `actor_gid`, `resource_gid`, `limit`, `offset` | object | yes | Get audit log events |
+| GET | `/workspaces/{workspace_gid}/custom_fields` | getCustomFieldsForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get a workspace's custom fields |
+| GET | `/workspaces/{workspace_gid}/projects` | getProjectsForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset`, `archived` | object | yes | Get all projects in a workspace |
+| POST | `/workspaces/{workspace_gid}/projects` | createProjectForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a project in a workspace |
+| POST | `/workspaces/{workspace_gid}/removeUser` | removeUserForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Remove a user from a workspace or organization |
+| GET | `/workspaces/{workspace_gid}/tags` | getTagsForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get tags in a workspace |
+| POST | `/workspaces/{workspace_gid}/tags` | createTagForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, body*: object | object |  | Create a tag in a workspace |
+| GET | `/workspaces/{workspace_gid}/tasks/search` | searchTasksForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, `text`, `resource_subtype`, `assignee.any`, `assignee.not`, `portfolios.any`, `projects.any`, `projects.not`, `projects.all`, `sections.any`, `sections.not`, `sections.all`, `tags.any`, `tags.not`, `tags.all`, `teams.any`, `followers.not`, `created_by.any`, `created_by.not`, `assigned_by.any`, `assigned_by.not`, `liked_by.not`, `commented_on_by.not`, `due_on.before`, `due_on.after`, `due_on`, `due_at.before`, `due_at.after`, `start_on.before`, `start_on.after`, `start_on`, `created_on.before`, `created_on.after`, `created_on`, `created_at.before`, `created_at.after`, `completed_on.before`, `completed_on.after`, `completed_on`, `completed_at.before`, `completed_at.after`, `modified_on.before`, `modified_on.after`, `modified_on`, `modified_at.before`, `modified_at.after`, `is_blocking`, `is_blocked`, `has_attachment`, `completed`, `is_subtask`, `sort_by`, `sort_ascending` | object | yes | Search tasks in a workspace |
+| GET | `/workspaces/{workspace_gid}/teams` | getTeamsForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get teams in a workspace |
+| GET | `/workspaces/{workspace_gid}/typeahead` | typeaheadForWorkspace | `workspace_gid`*, `resource_type`*, `type`, `query`, `count`, `opt_pretty`, `opt_fields` | object | yes | Get objects via typeahead |
+| GET | `/workspaces/{workspace_gid}/users` | getUsersForWorkspace | `workspace_gid`*, `opt_pretty`, `opt_fields`, `offset` | object | yes | Get users in a workspace or organization |
+| GET | `/workspaces/{workspace_gid}/workspace_memberships` | getWorkspaceMembershipsForWorkspace | `workspace_gid`*, `user`, `opt_pretty`, `opt_fields`, `limit`, `offset` | object | yes | Get the workspace memberships for a workspace |

@@ -32,22 +32,7 @@
       {
         "from": "openpolicy-local-cdf95308f7",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/data/{path}"
-      },
-      {
-        "from": "openpolicy-local-cdf95308f7",
-        "kind": "EXPOSES",
         "to": "operation:get:/v1/data/{path}"
-      },
-      {
-        "from": "openpolicy-local-cdf95308f7",
-        "kind": "EXPOSES",
-        "to": "operation:patch:/v1/data/{path}"
-      },
-      {
-        "from": "openpolicy-local-cdf95308f7",
-        "kind": "EXPOSES",
-        "to": "operation:post:/v1/data/{path}"
       },
       {
         "from": "openpolicy-local-cdf95308f7",
@@ -57,12 +42,22 @@
       {
         "from": "openpolicy-local-cdf95308f7",
         "kind": "EXPOSES",
-        "to": "operation:get:/v1/policies"
+        "to": "operation:post:/v1/data/{path}"
       },
       {
         "from": "openpolicy-local-cdf95308f7",
         "kind": "EXPOSES",
-        "to": "operation:delete:/v1/policies/{id}"
+        "to": "operation:delete:/v1/data/{path}"
+      },
+      {
+        "from": "openpolicy-local-cdf95308f7",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/v1/data/{path}"
+      },
+      {
+        "from": "openpolicy-local-cdf95308f7",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v1/policies"
       },
       {
         "from": "openpolicy-local-cdf95308f7",
@@ -77,12 +72,197 @@
       {
         "from": "openpolicy-local-cdf95308f7",
         "kind": "EXPOSES",
+        "to": "operation:delete:/v1/policies/{id}"
+      },
+      {
+        "from": "openpolicy-local-cdf95308f7",
+        "kind": "EXPOSES",
         "to": "operation:get:/v1/query"
       },
       {
         "from": "openpolicy-local-cdf95308f7",
         "kind": "EXPOSES",
         "to": "operation:post:/v1/query"
+      },
+      {
+        "from": "operation:post:/",
+        "kind": "ACCEPTS",
+        "to": "schema:queryInputSchema"
+      },
+      {
+        "from": "operation:post:/v0/data/{path}",
+        "kind": "ACCEPTS",
+        "to": "schema:webhookInputSchema"
+      },
+      {
+        "from": "operation:post:/v0/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Explanations"
+      },
+      {
+        "from": "operation:post:/v0/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Metrics"
+      },
+      {
+        "from": "operation:post:/v0/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Provenance"
+      },
+      {
+        "from": "operation:post:/v0/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
+      },
+      {
+        "from": "operation:post:/v1/compile",
+        "kind": "ACCEPTS",
+        "to": "schema:partialQuerySchema"
+      },
+      {
+        "from": "operation:post:/v1/compile",
+        "kind": "RETURNS",
+        "to": "schema:200Explanations"
+      },
+      {
+        "from": "operation:post:/v1/compile",
+        "kind": "RETURNS",
+        "to": "schema:200Metrics"
+      },
+      {
+        "from": "operation:post:/v1/compile",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
+      },
+      {
+        "from": "operation:get:/v1/config",
+        "kind": "RETURNS",
+        "to": "schema:200SingleResult"
+      },
+      {
+        "from": "operation:get:/v1/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Explanations"
+      },
+      {
+        "from": "operation:get:/v1/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Metrics"
+      },
+      {
+        "from": "operation:get:/v1/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Provenance"
+      },
+      {
+        "from": "operation:get:/v1/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
+      },
+      {
+        "from": "operation:put:/v1/data/{path}",
+        "kind": "ACCEPTS",
+        "to": "schema:dataSchema"
+      },
+      {
+        "from": "operation:post:/v1/data/{path}",
+        "kind": "ACCEPTS",
+        "to": "schema:inputSchema"
+      },
+      {
+        "from": "operation:post:/v1/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Explanations"
+      },
+      {
+        "from": "operation:post:/v1/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Metrics"
+      },
+      {
+        "from": "operation:post:/v1/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Provenance"
+      },
+      {
+        "from": "operation:post:/v1/data/{path}",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
+      },
+      {
+        "from": "operation:patch:/v1/data/{path}",
+        "kind": "ACCEPTS",
+        "to": "schema:patchesSchema"
+      },
+      {
+        "from": "operation:get:/v1/policies",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
+      },
+      {
+        "from": "operation:get:/v1/policies/{id}",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
+      },
+      {
+        "from": "operation:put:/v1/policies/{id}",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
+      },
+      {
+        "from": "operation:delete:/v1/policies/{id}",
+        "kind": "RETURNS",
+        "to": "schema:200Explanations"
+      },
+      {
+        "from": "operation:delete:/v1/policies/{id}",
+        "kind": "RETURNS",
+        "to": "schema:200Metrics"
+      },
+      {
+        "from": "operation:delete:/v1/policies/{id}",
+        "kind": "RETURNS",
+        "to": "schema:200Provenance"
+      },
+      {
+        "from": "operation:delete:/v1/policies/{id}",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
+      },
+      {
+        "from": "operation:get:/v1/query",
+        "kind": "RETURNS",
+        "to": "schema:200Explanations"
+      },
+      {
+        "from": "operation:get:/v1/query",
+        "kind": "RETURNS",
+        "to": "schema:200Metrics"
+      },
+      {
+        "from": "operation:get:/v1/query",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
+      },
+      {
+        "from": "operation:post:/v1/query",
+        "kind": "ACCEPTS",
+        "to": "schema:qSchema"
+      },
+      {
+        "from": "operation:post:/v1/query",
+        "kind": "RETURNS",
+        "to": "schema:200Explanations"
+      },
+      {
+        "from": "operation:post:/v1/query",
+        "kind": "RETURNS",
+        "to": "schema:200Metrics"
+      },
+      {
+        "from": "operation:post:/v1/query",
+        "kind": "RETURNS",
+        "to": "schema:200Result"
       }
     ],
     "nodes": [
@@ -92,214 +272,915 @@
       },
       {
         "deprecated": false,
+        "description": "This API queries the document at */data/system/main* by default (however, you can [configure OPA](https://www.openpolicyagent.org/docs/latest/configuration/) t…",
         "id": "operation:post:/",
         "kind": "operation",
         "method": "post",
         "name": "postSimpleQuery",
+        "parameters": [
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/",
         "pointer": "#/paths/~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "queryInputSchema"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "404",
+            "type": "404"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Execute a simple query"
+        "summary": "Execute a simple query",
+        "tags": [
+          "Query API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API endpoint verifies that the server is operational.",
         "id": "operation:get:/health",
         "kind": "operation",
         "method": "get",
         "name": "getHealth",
+        "parameters": [
+          {
+            "description": "Reports on bundle activation status (useful for 'ready' checks at startup).",
+            "in": "query",
+            "name": "bundles",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Reports on plugin status",
+            "in": "query",
+            "name": "plugins",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/health",
         "pointer": "#/paths/~1health/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Health"
+        "summary": "Health",
+        "tags": [
+          "Health API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The example given here assumes you have created a policy (with `PUT /v1/policies/{path}`), such as: ```yaml package opa.examples import input.example.flag allo…",
         "id": "operation:post:/v0/data/{path}",
         "kind": "operation",
         "method": "post",
         "name": "getDocumentWithWebHook",
+        "parameters": [
+          {
+            "description": "A backslash (/) delimited path to access values inside object and array documents.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v0/data/{path}",
         "pointer": "#/paths/~1v0~1data~1{path}/post",
+        "request": {
+          "content_types": [
+            "application/x-yaml"
+          ],
+          "required": true,
+          "type": "webhookInputSchema"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result|200Provenance|200Metrics|200Explanations"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "404",
+            "type": "404"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get a document (with webhook)"
+        "summary": "Get a document (with webhook)",
+        "tags": [
+          "Data API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API endpoint allows you to partially evaluate Rego queries and obtain a simplified version of the policy.",
         "id": "operation:post:/v1/compile",
         "kind": "operation",
         "method": "post",
         "name": "postCompile",
+        "parameters": [
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If set to *full*, response will include query explanations in addition to the result.",
+            "in": "query",
+            "name": "explain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If true, compiler performance metrics will be returned in the response.",
+            "in": "query",
+            "name": "metrics",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If true, response will return additional performance metrics in addition to the result and the standard metrics.",
+            "in": "query",
+            "name": "instrument",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/compile",
         "pointer": "#/paths/~1v1~1compile/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "partialQuerySchema"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result|200Metrics|200Explanations"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Compile"
+        "summary": "Compile",
+        "tags": [
+          "Compile API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API endpoint responds with active configuration (result response) --- **Note** The `credentials` field in the `services` configuration and The `private_ke…",
         "id": "operation:get:/v1/config",
         "kind": "operation",
         "method": "get",
         "name": "getConfig",
+        "parameters": [
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/config",
         "pointer": "#/paths/~1v1~1config/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "200SingleResult"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get configurations"
+        "summary": "Get configurations",
+        "tags": [
+          "Config API"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/data/{path}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteDocument",
-        "path": "/v1/data/{path}",
-        "pointer": "#/paths/~1v1~1data~1{path}/delete",
-        "security": [],
-        "summary": "Delete a document"
-      },
-      {
-        "deprecated": false,
+        "description": "This API endpoint returns the document specified by `path`.",
         "id": "operation:get:/v1/data/{path}",
         "kind": "operation",
         "method": "get",
         "name": "getDocument",
+        "parameters": [
+          {
+            "description": "A backslash (/) delimited path to access values inside object and array documents.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Provide the text for an [input document](https://www.openpolicyagent.org/docs/latest/kubernetes-primer/#input-document) in JSON format",
+            "in": "query",
+            "name": "input",
+            "required": false,
+            "type": "object"
+          },
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If true, response will include build and version information in addition to the result.",
+            "in": "query",
+            "name": "provenance",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If set to *full*, response will include query explanations in addition to the result.",
+            "in": "query",
+            "name": "explain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If true, compiler performance metrics will be returned in the response.",
+            "in": "query",
+            "name": "metrics",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If true, response will return additional performance metrics in addition to the result and the standard metrics.",
+            "in": "query",
+            "name": "instrument",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/data/{path}",
         "pointer": "#/paths/~1v1~1data~1{path}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result|200Provenance|200Metrics|200Explanations"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a document"
+        "summary": "Get a document",
+        "tags": [
+          "Data API"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/v1/data/{path}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patchDocument",
-        "path": "/v1/data/{path}",
-        "pointer": "#/paths/~1v1~1data~1{path}/patch",
-        "security": [],
-        "summary": "Update a document"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/v1/data/{path}",
-        "kind": "operation",
-        "method": "post",
-        "name": "getDocumentWithPath",
-        "path": "/v1/data/{path}",
-        "pointer": "#/paths/~1v1~1data~1{path}/post",
-        "security": [],
-        "summary": "Get a document (with input)"
-      },
-      {
-        "deprecated": false,
+        "description": "If the path does not refer to an existing document (for example *us-west/servers*), the server will attempt to create all the necessary containing documents.",
         "id": "operation:put:/v1/data/{path}",
         "kind": "operation",
         "method": "put",
         "name": "putDocument",
+        "parameters": [
+          {
+            "description": "A backslash (/) delimited path to access values inside object and array documents.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The server will respect the If-None-Match header if it is set to * (in other words, it will not overwrite an existing document located at the specified `path`).",
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/data/{path}",
         "pointer": "#/paths/~1v1~1data~1{path}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "dataSchema"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "304"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "404",
+            "type": "404"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create or overwrite a document"
+        "summary": "Create or overwrite a document",
+        "tags": [
+          "Data API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The server will return a *bad request* (400) response if either: - The query requires an input document and you do not provide it - You provided an input docum…",
+        "id": "operation:post:/v1/data/{path}",
+        "kind": "operation",
+        "method": "post",
+        "name": "getDocumentWithPath",
+        "parameters": [
+          {
+            "description": "A backslash (/) delimited path to access values inside object and array documents.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If true, response will include build and version information in addition to the result.",
+            "in": "query",
+            "name": "provenance",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If set to *full*, response will include query explanations in addition to the result.",
+            "in": "query",
+            "name": "explain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If true, compiler performance metrics will be returned in the response.",
+            "in": "query",
+            "name": "metrics",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If true, response will return additional performance metrics in addition to the result and the standard metrics.",
+            "in": "query",
+            "name": "instrument",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/v1/data/{path}",
+        "pointer": "#/paths/~1v1~1data~1{path}/post",
+        "request": {
+          "content_types": [
+            "application/x-yaml"
+          ],
+          "required": true,
+          "type": "inputSchema"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result|200Provenance|200Metrics|200Explanations"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Get a document (with input)",
+        "tags": [
+          "Data API"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This API endpoint deletes an existing document from the server",
+        "id": "operation:delete:/v1/data/{path}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteDocument",
+        "parameters": [
+          {
+            "description": "A backslash (/) delimited path to access values inside object and array documents.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/data/{path}",
+        "pointer": "#/paths/~1v1~1data~1{path}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "404"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a document",
+        "tags": [
+          "Data API"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This API endpoint updates an existing document on the server by describing the changes required (using [JSON patch operations](http://jsonpatch.com/))",
+        "id": "operation:patch:/v1/data/{path}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patchDocument",
+        "parameters": [
+          {
+            "description": "A backslash (/) delimited path to access values inside object and array documents.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/v1/data/{path}",
+        "pointer": "#/paths/~1v1~1data~1{path}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "patchesSchema"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "404",
+            "type": "404"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Update a document",
+        "tags": [
+          "Data API"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This API endpoint responds with a list of all policy modules on the server (result response)",
         "id": "operation:get:/v1/policies",
         "kind": "operation",
         "method": "get",
         "name": "getPolicies",
+        "parameters": [
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/policies",
         "pointer": "#/paths/~1v1~1policies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List policies"
+        "summary": "List policies",
+        "tags": [
+          "Policy API"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/v1/policies/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deletePolicyModule",
-        "path": "/v1/policies/{id}",
-        "pointer": "#/paths/~1v1~1policies~1{id}/delete",
-        "security": [],
-        "summary": "Delete a policy module"
-      },
-      {
-        "deprecated": false,
+        "description": "This API endpoint returns the details of the specified policy module (`{id}`)",
         "id": "operation:get:/v1/policies/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getPolicyModule",
+        "parameters": [
+          {
+            "description": "The name of a policy module",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/policies/{id}",
         "pointer": "#/paths/~1v1~1policies~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result"
+          },
+          {
+            "status": "404",
+            "type": "404"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a policy module"
+        "summary": "Get a policy module",
+        "tags": [
+          "Policy API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- If the policy module does not exist, it is created.",
         "id": "operation:put:/v1/policies/{id}",
         "kind": "operation",
         "method": "put",
         "name": "putPolicyModule",
+        "parameters": [
+          {
+            "description": "The name of a policy module",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If true, compiler performance metrics will be returned in the response.",
+            "in": "query",
+            "name": "metrics",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/policies/{id}",
         "pointer": "#/paths/~1v1~1policies~1{id}/put",
+        "request": {
+          "content_types": [
+            "text/plain"
+          ],
+          "required": true,
+          "type": "string"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create or update a policy module"
+        "summary": "Create or update a policy module",
+        "tags": [
+          "Policy API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API endpoint removes an existing policy module from the server",
+        "id": "operation:delete:/v1/policies/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deletePolicyModule",
+        "parameters": [
+          {
+            "description": "The name of a policy module",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/v1/policies/{id}",
+        "pointer": "#/paths/~1v1~1policies~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result|200Provenance|200Metrics|200Explanations"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "404",
+            "type": "404"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete a policy module",
+        "tags": [
+          "Policy API"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This API endpoint returns bindings for the variables in the query.",
         "id": "operation:get:/v1/query",
         "kind": "operation",
         "method": "get",
         "name": "getQuery",
+        "parameters": [
+          {
+            "description": "The [URL-encoded](https://www.w3schools.com/tags/ref_urlencode.ASP) ad-hoc query to execute.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If set to *full*, response will include query explanations in addition to the result.",
+            "in": "query",
+            "name": "explain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If true, compiler performance metrics will be returned in the response.",
+            "in": "query",
+            "name": "metrics",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/query",
         "pointer": "#/paths/~1v1~1query/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result|200Metrics|200Explanations"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Execute an ad-hoc query (simple)"
+        "summary": "Execute an ad-hoc query (simple)",
+        "tags": [
+          "Query API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API endpoint returns bindings for the variables in the query.",
         "id": "operation:post:/v1/query",
         "kind": "operation",
         "method": "post",
         "name": "postQuery",
+        "parameters": [
+          {
+            "description": "If true, response will be in a human-readable format.",
+            "in": "query",
+            "name": "pretty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If set to *full*, response will include query explanations in addition to the result.",
+            "in": "query",
+            "name": "explain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If true, compiler performance metrics will be returned in the response.",
+            "in": "query",
+            "name": "metrics",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/query",
         "pointer": "#/paths/~1v1~1query/post",
+        "request": {
+          "content_types": [
+            "application/x-yaml"
+          ],
+          "required": true,
+          "type": "qSchema"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "200Result|200Metrics|200Explanations"
+          },
+          {
+            "status": "400",
+            "type": "400"
+          },
+          {
+            "status": "500",
+            "type": "400"
+          },
+          {
+            "status": "501"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Execute an ad-hoc query (complex)"
+        "summary": "Execute an ad-hoc query (complex)",
+        "tags": [
+          "Query API"
+        ]
       },
       {
         "id": "schema:200Explanations",
         "kind": "schema",
-        "name": "200Explanations"
+        "name": "200Explanations",
+        "type": "object"
       },
       {
         "id": "schema:200Metrics",
         "kind": "schema",
-        "name": "200Metrics"
+        "name": "200Metrics",
+        "type": "object"
       },
       {
         "id": "schema:200Provenance",
         "kind": "schema",
-        "name": "200Provenance"
+        "name": "200Provenance",
+        "type": "object"
       },
       {
         "id": "schema:200Result",
         "kind": "schema",
-        "name": "200Result"
+        "name": "200Result",
+        "type": "object"
       },
       {
         "id": "schema:200SingleResult",
         "kind": "schema",
-        "name": "200SingleResult"
+        "name": "200SingleResult",
+        "type": "object"
       },
       {
         "id": "schema:400",
         "kind": "schema",
-        "name": "400"
+        "name": "400",
+        "type": "object"
       },
       {
         "id": "schema:404",
         "kind": "schema",
-        "name": "404"
+        "name": "404",
+        "type": "object"
       },
       {
         "id": "schema:dataSchema",
@@ -309,32 +1190,39 @@
       {
         "id": "schema:inputSchema",
         "kind": "schema",
-        "name": "inputSchema"
+        "name": "inputSchema",
+        "type": "object"
       },
       {
         "id": "schema:partialQuerySchema",
         "kind": "schema",
-        "name": "partialQuerySchema"
+        "name": "partialQuerySchema",
+        "type": "object"
       },
       {
+        "description": "A list of one or more [JSON patch operations](http://jsonpatch.com/)",
         "id": "schema:patchesSchema",
         "kind": "schema",
-        "name": "patchesSchema"
+        "name": "patchesSchema",
+        "type": "object[]"
       },
       {
         "id": "schema:qSchema",
         "kind": "schema",
-        "name": "qSchema"
+        "name": "qSchema",
+        "type": "object"
       },
       {
         "id": "schema:queryInputSchema",
         "kind": "schema",
-        "name": "queryInputSchema"
+        "name": "queryInputSchema",
+        "type": "object"
       },
       {
         "id": "schema:webhookInputSchema",
         "kind": "schema",
-        "name": "webhookInputSchema"
+        "name": "webhookInputSchema",
+        "type": "object"
       }
     ]
   },

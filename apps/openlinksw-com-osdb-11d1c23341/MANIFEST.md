@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_OpenLink_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `0708353324e9f711c2fb8926330c1dd29c981afa9c23418a1fc948e0c4250e49` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_OpenLink_profile_im
 
 14 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/actions/{serviceId}` | listActions | List actions |
-| GET | `/api/v1/actions/{serviceId}/{actionId}` | describeAction | Describe action |
-| POST | `/api/v1/actions/{serviceId}/{actionId}/exec` | executeAction | Execute action |
-| GET | `/api/v1/actions/{serviceId}/{actionId}/help` | actionHelp | Action help |
-| GET | `/api/v1/login` | login | Login |
-| GET | `/api/v1/logout` | logout | Logout |
-| GET | `/api/v1/services` | listServices | List services |
-| POST | `/api/v1/services` | loadService | Load service |
-| DELETE | `/api/v1/services/{serviceId}` | unloadService | Unload service |
-| GET | `/api/v1/services/{serviceId}` | describeService | Describe service |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/actions/{serviceId}` | listActions | `serviceId`* | ListActionsResponse | yes | List actions |
+| GET | `/api/v1/actions/{serviceId}/{actionId}` | describeAction | `serviceId`*, `actionId`* | DescribeActionResponse | yes | Describe action |
+| POST | `/api/v1/actions/{serviceId}/{actionId}/exec` | executeAction | `serviceId`*, `actionId`*, body: ExecBody | — |  | Execute action |
+| GET | `/api/v1/actions/{serviceId}/{actionId}/help` | actionHelp | `serviceId`*, `actionId`* | ActionHelpResponse | yes | Action help |
+| GET | `/api/v1/login` | login | — | LoginResponse | yes | Login |
+| GET | `/api/v1/logout` | logout | — | LogoutResponse | yes | Logout |
+| GET | `/api/v1/services` | listServices | — | ListServicesResponse | yes | List services |
+| POST | `/api/v1/services` | loadService | body: object | object |  | Load service |
+| GET | `/api/v1/services/{serviceId}` | describeService | `serviceId`* | DescribeServiceResponse | yes | Describe service |
+| DELETE | `/api/v1/services/{serviceId}` | unloadService | `serviceId`* | object |  | Unload service |

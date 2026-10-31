@@ -12,12 +12,12 @@
       {
         "from": "nbg-gr-5fdc9d2f20",
         "kind": "EXPOSES",
-        "to": "operation:delete:/account-access-consents/{consentId}"
+        "to": "operation:get:/account-access-consents/{consentId}"
       },
       {
         "from": "nbg-gr-5fdc9d2f20",
         "kind": "EXPOSES",
-        "to": "operation:get:/account-access-consents/{consentId}"
+        "to": "operation:delete:/account-access-consents/{consentId}"
       },
       {
         "from": "nbg-gr-5fdc9d2f20",
@@ -92,12 +92,17 @@
       {
         "from": "nbg-gr-5fdc9d2f20",
         "kind": "EXPOSES",
+        "to": "operation:put:/sandbox"
+      },
+      {
+        "from": "nbg-gr-5fdc9d2f20",
+        "kind": "EXPOSES",
         "to": "operation:post:/sandbox"
       },
       {
         "from": "nbg-gr-5fdc9d2f20",
         "kind": "EXPOSES",
-        "to": "operation:put:/sandbox"
+        "to": "operation:get:/sandbox/{sandboxId}"
       },
       {
         "from": "nbg-gr-5fdc9d2f20",
@@ -105,9 +110,554 @@
         "to": "operation:delete:/sandbox/{sandboxId}"
       },
       {
-        "from": "nbg-gr-5fdc9d2f20",
-        "kind": "EXPOSES",
-        "to": "operation:get:/sandbox/{sandboxId}"
+        "from": "operation:post:/account-access-consents",
+        "kind": "ACCEPTS",
+        "to": "schema:OBReadConsent1"
+      },
+      {
+        "from": "operation:post:/account-access-consents",
+        "kind": "RETURNS",
+        "to": "schema:OBReadConsentResponse1"
+      },
+      {
+        "from": "operation:get:/account-access-consents/{consentId}",
+        "kind": "RETURNS",
+        "to": "schema:OBReadConsentResponse1"
+      },
+      {
+        "from": "operation:get:/accounts",
+        "kind": "RETURNS",
+        "to": "schema:OBReadAccount5"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}",
+        "kind": "RETURNS",
+        "to": "schema:OBReadAccount5"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/balances",
+        "kind": "RETURNS",
+        "to": "schema:OBReadBalance1"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/beneficiaries",
+        "kind": "RETURNS",
+        "to": "schema:OBReadBeneficiary5"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/parties",
+        "kind": "RETURNS",
+        "to": "schema:OBReadParty3"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/party",
+        "kind": "RETURNS",
+        "to": "schema:OBReadParty2"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/scheduled-payments",
+        "kind": "RETURNS",
+        "to": "schema:OBReadScheduledPayment3"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/standing-orders",
+        "kind": "RETURNS",
+        "to": "schema:OBReadStandingOrder6"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/statements",
+        "kind": "RETURNS",
+        "to": "schema:OBReadStatement2"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/statements/{statementId}",
+        "kind": "RETURNS",
+        "to": "schema:OBReadStatement2"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/statements/{statementId}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:OBReadTransaction6"
+      },
+      {
+        "from": "operation:get:/accounts/{accountId}/transactions",
+        "kind": "RETURNS",
+        "to": "schema:OBReadTransaction6"
+      },
+      {
+        "from": "operation:get:/party",
+        "kind": "RETURNS",
+        "to": "schema:OBReadParty2"
+      },
+      {
+        "from": "operation:put:/sandbox",
+        "kind": "ACCEPTS",
+        "to": "schema:Sandbox"
+      },
+      {
+        "from": "operation:post:/sandbox",
+        "kind": "ACCEPTS",
+        "to": "schema:SandboxRequest"
+      },
+      {
+        "from": "operation:post:/sandbox",
+        "kind": "RETURNS",
+        "to": "schema:Sandbox"
+      },
+      {
+        "from": "operation:get:/sandbox/{sandboxId}",
+        "kind": "RETURNS",
+        "to": "schema:Sandbox"
+      },
+      {
+        "from": "schema:OBAccount6",
+        "kind": "REFERENCES",
+        "to": "schema:OBBranchAndFinancialInstitutionIdentification5"
+      },
+      {
+        "from": "schema:OBAccount6",
+        "kind": "REFERENCES",
+        "to": "schema:OBCashAccount5"
+      },
+      {
+        "from": "schema:OBAccount6",
+        "kind": "REFERENCES",
+        "to": "schema:OBExternalAccountSubType1Code"
+      },
+      {
+        "from": "schema:OBAccount6",
+        "kind": "REFERENCES",
+        "to": "schema:OBExternalAccountType1Code"
+      },
+      {
+        "from": "schema:OBBeneficiary5",
+        "kind": "REFERENCES",
+        "to": "schema:OBBeneficiaryType1Code"
+      },
+      {
+        "from": "schema:OBBeneficiary5",
+        "kind": "REFERENCES",
+        "to": "schema:OBCashAccount5"
+      },
+      {
+        "from": "schema:OBCashBalance1",
+        "kind": "REFERENCES",
+        "to": "schema:OBActiveOrHistoricCurrencyAndAmount"
+      },
+      {
+        "from": "schema:OBCashBalance1",
+        "kind": "REFERENCES",
+        "to": "schema:OBBalanceType1Code"
+      },
+      {
+        "from": "schema:OBCashBalance1",
+        "kind": "REFERENCES",
+        "to": "schema:OBCreditDebitCode"
+      },
+      {
+        "from": "schema:OBCashBalance1",
+        "kind": "REFERENCES",
+        "to": "schema:OBCreditLine1"
+      },
+      {
+        "from": "schema:OBCreditLine1",
+        "kind": "REFERENCES",
+        "to": "schema:OBActiveOrHistoricCurrencyAndAmount"
+      },
+      {
+        "from": "schema:OBCreditLine1",
+        "kind": "REFERENCES",
+        "to": "schema:OBExternalLimitType1Code"
+      },
+      {
+        "from": "schema:OBError1",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorCode"
+      },
+      {
+        "from": "schema:OBErrorResponse1",
+        "kind": "REFERENCES",
+        "to": "schema:OBError1"
+      },
+      {
+        "from": "schema:OBReadAccount5",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadAccount5",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadAccount5",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataAccount5"
+      },
+      {
+        "from": "schema:OBReadBalance1",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadBalance1",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadBalance1",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataBalance1"
+      },
+      {
+        "from": "schema:OBReadBeneficiary5",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadBeneficiary5",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadBeneficiary5",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataBeneficiary5"
+      },
+      {
+        "from": "schema:OBReadConsent1",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadData1"
+      },
+      {
+        "from": "schema:OBReadConsent1",
+        "kind": "REFERENCES",
+        "to": "schema:OBRisk2"
+      },
+      {
+        "from": "schema:OBReadConsentResponse1",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadConsentResponse1",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadConsentResponse1",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataConsentResponse1"
+      },
+      {
+        "from": "schema:OBReadConsentResponse1",
+        "kind": "REFERENCES",
+        "to": "schema:OBRisk2"
+      },
+      {
+        "from": "schema:OBReadData1",
+        "kind": "REFERENCES",
+        "to": "schema:OBExternalPermissions1Code"
+      },
+      {
+        "from": "schema:OBReadDataAccount5",
+        "kind": "REFERENCES",
+        "to": "schema:OBAccount6"
+      },
+      {
+        "from": "schema:OBReadDataBalance1",
+        "kind": "REFERENCES",
+        "to": "schema:OBCashBalance1"
+      },
+      {
+        "from": "schema:OBReadDataBeneficiary5",
+        "kind": "REFERENCES",
+        "to": "schema:OBBeneficiary5"
+      },
+      {
+        "from": "schema:OBReadDataConsentResponse1",
+        "kind": "REFERENCES",
+        "to": "schema:OBExternalPermissions1Code"
+      },
+      {
+        "from": "schema:OBReadDataConsentResponse1",
+        "kind": "REFERENCES",
+        "to": "schema:OBExternalRequestStatus1Code"
+      },
+      {
+        "from": "schema:OBReadDataParty2",
+        "kind": "REFERENCES",
+        "to": "schema:OBParty2"
+      },
+      {
+        "from": "schema:OBReadDataParty3",
+        "kind": "REFERENCES",
+        "to": "schema:OBParty2"
+      },
+      {
+        "from": "schema:OBReadDataScheduledPayment3",
+        "kind": "REFERENCES",
+        "to": "schema:OBScheduledPayment3"
+      },
+      {
+        "from": "schema:OBReadDataStandingOrder5",
+        "kind": "REFERENCES",
+        "to": "schema:OBStandingOrder5"
+      },
+      {
+        "from": "schema:OBReadDataStatement2",
+        "kind": "REFERENCES",
+        "to": "schema:OBStatement2"
+      },
+      {
+        "from": "schema:OBReadDataTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:OBTransaction6"
+      },
+      {
+        "from": "schema:OBReadParty2",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadParty2",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadParty2",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataParty2"
+      },
+      {
+        "from": "schema:OBReadParty3",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadParty3",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadParty3",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataParty3"
+      },
+      {
+        "from": "schema:OBReadScheduledPayment3",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadScheduledPayment3",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadScheduledPayment3",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataScheduledPayment3"
+      },
+      {
+        "from": "schema:OBReadStandingOrder6",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadStandingOrder6",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadStandingOrder6",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataStandingOrder5"
+      },
+      {
+        "from": "schema:OBReadStatement2",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadStatement2",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadStatement2",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataStatement2"
+      },
+      {
+        "from": "schema:OBReadTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:Links"
+      },
+      {
+        "from": "schema:OBReadTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:Meta"
+      },
+      {
+        "from": "schema:OBReadTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:OBReadDataTransaction6"
+      },
+      {
+        "from": "schema:OBScheduledPayment3",
+        "kind": "REFERENCES",
+        "to": "schema:OBActiveOrHistoricCurrencyAndAmount"
+      },
+      {
+        "from": "schema:OBScheduledPayment3",
+        "kind": "REFERENCES",
+        "to": "schema:OBCashAccount5"
+      },
+      {
+        "from": "schema:OBScheduledPayment3",
+        "kind": "REFERENCES",
+        "to": "schema:OBExternalScheduleType1Code"
+      },
+      {
+        "from": "schema:OBStandingOrder5",
+        "kind": "REFERENCES",
+        "to": "schema:OBActiveOrHistoricCurrencyAndAmount"
+      },
+      {
+        "from": "schema:OBStandingOrder5",
+        "kind": "REFERENCES",
+        "to": "schema:OBCashAccount5"
+      },
+      {
+        "from": "schema:OBStandingOrder5",
+        "kind": "REFERENCES",
+        "to": "schema:OBExternalStandingOrderStatus1Code"
+      },
+      {
+        "from": "schema:OBStatement2",
+        "kind": "REFERENCES",
+        "to": "schema:OBExternalStatementType1Code"
+      },
+      {
+        "from": "schema:OBTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:OBActiveOrHistoricCurrencyAndAmount"
+      },
+      {
+        "from": "schema:OBTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:OBCashAccount6"
+      },
+      {
+        "from": "schema:OBTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:OBCreditDebitCode"
+      },
+      {
+        "from": "schema:OBTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:OBEntryStatus1Code"
+      },
+      {
+        "from": "schema:OBTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:OBTransactionCashBalance"
+      },
+      {
+        "from": "schema:OBTransaction6",
+        "kind": "REFERENCES",
+        "to": "schema:ProprietaryBankTransactionCodeStructure1"
+      },
+      {
+        "from": "schema:OBTransactionCashBalance",
+        "kind": "REFERENCES",
+        "to": "schema:OBActiveOrHistoricCurrencyAndAmount"
+      },
+      {
+        "from": "schema:OBTransactionCashBalance",
+        "kind": "REFERENCES",
+        "to": "schema:OBBalanceType1Code"
+      },
+      {
+        "from": "schema:OBTransactionCashBalance",
+        "kind": "REFERENCES",
+        "to": "schema:OBCreditDebitCode"
+      },
+      {
+        "from": "schema:Sandbox",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxUser"
+      },
+      {
+        "from": "schema:SandboxBankAccount",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxBankAccountInfo"
+      },
+      {
+        "from": "schema:SandboxBankAccount",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxBeneficiary"
+      },
+      {
+        "from": "schema:SandboxBankAccount",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxParty"
+      },
+      {
+        "from": "schema:SandboxBankAccount",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxScheduledPayment"
+      },
+      {
+        "from": "schema:SandboxBankAccount",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxStandingOrder"
+      },
+      {
+        "from": "schema:SandboxBankAccount",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxStatement"
+      },
+      {
+        "from": "schema:SandboxBankAccount",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxTransaction"
+      },
+      {
+        "from": "schema:SandboxCard",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxCardInfo"
+      },
+      {
+        "from": "schema:SandboxCard",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxParty"
+      },
+      {
+        "from": "schema:SandboxCard",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxStatement"
+      },
+      {
+        "from": "schema:SandboxCard",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxTransaction"
+      },
+      {
+        "from": "schema:SandboxUser",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxBankAccount"
+      },
+      {
+        "from": "schema:SandboxUser",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxCard"
+      },
+      {
+        "from": "schema:SandboxUser",
+        "kind": "REFERENCES",
+        "to": "schema:SandboxRetryCacheEntry"
       }
     ],
     "nodes": [
@@ -121,8 +671,87 @@
         "kind": "operation",
         "method": "post",
         "name": "post /account-access-consents",
+        "parameters": [
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account-access-consents",
         "pointer": "#/paths/~1account-access-consents/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/json; charset=utf-8"
+          ],
+          "required": false,
+          "type": "OBReadConsent1"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "OBReadConsentResponse1"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Client-Credentials-Token": [
@@ -132,35 +761,95 @@
             "Client-Id": []
           }
         ],
-        "summary": "Create Account Access Consents"
+        "summary": "Create Account Access Consents",
+        "tags": [
+          "AccountAccess"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/account-access-consents/{consentId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /account-access-consents/{consentId}",
-        "path": "/account-access-consents/{consentId}",
-        "pointer": "#/paths/~1account-access-consents~1{consentId}/delete",
-        "security": [
-          {
-            "Client-Credentials-Token": [
-              "sandbox-uk-account-info-api-v1",
-              "accounts"
-            ],
-            "Client-Id": []
-          }
-        ],
-        "summary": "Delete Account Access Consents"
-      },
-      {
-        "deprecated": false,
+        "description": "Get Account Access Consents by Consent ID",
         "id": "operation:get:/account-access-consents/{consentId}",
         "kind": "operation",
         "method": "get",
         "name": "get /account-access-consents/{consentId}",
+        "parameters": [
+          {
+            "description": "ConsentId",
+            "in": "path",
+            "name": "consentId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account-access-consents/{consentId}",
         "pointer": "#/paths/~1account-access-consents~1{consentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadConsentResponse1"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Client-Credentials-Token": [
@@ -170,7 +859,107 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Account Access Consents"
+        "summary": "Get Account Access Consents",
+        "tags": [
+          "AccountAccess"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Delete Account Access Consents by Consent ID",
+        "id": "operation:delete:/account-access-consents/{consentId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /account-access-consents/{consentId}",
+        "parameters": [
+          {
+            "description": "ConsentId",
+            "in": "path",
+            "name": "consentId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/account-access-consents/{consentId}",
+        "pointer": "#/paths/~1account-access-consents~1{consentId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Client-Credentials-Token": [
+              "sandbox-uk-account-info-api-v1",
+              "accounts"
+            ],
+            "Client-Id": []
+          }
+        ],
+        "summary": "Delete Account Access Consents",
+        "tags": [
+          "AccountAccess"
+        ]
       },
       {
         "deprecated": false,
@@ -178,8 +967,76 @@
         "kind": "operation",
         "method": "get",
         "name": "get /accounts",
+        "parameters": [
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadAccount5"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -189,16 +1046,95 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Accounts"
+        "summary": "Get Accounts",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Accounts by Account ID",
         "id": "operation:get:/accounts/{accountId}",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}",
         "pointer": "#/paths/~1accounts~1{accountId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadAccount5"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -208,16 +1144,95 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Accounts"
+        "summary": "Get Accounts",
+        "tags": [
+          "Accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Balances by Account ID",
         "id": "operation:get:/accounts/{accountId}/balances",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/balances",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/balances",
         "pointer": "#/paths/~1accounts~1{accountId}~1balances/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadBalance1"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -227,16 +1242,95 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Balances"
+        "summary": "Get Balances",
+        "tags": [
+          "Balances"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Beneficiaries by Account ID",
         "id": "operation:get:/accounts/{accountId}/beneficiaries",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/beneficiaries",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/beneficiaries",
         "pointer": "#/paths/~1accounts~1{accountId}~1beneficiaries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadBeneficiary5"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -246,16 +1340,95 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Beneficiaries"
+        "summary": "Get Beneficiaries",
+        "tags": [
+          "Beneficiaries"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Parties by Account ID",
         "id": "operation:get:/accounts/{accountId}/parties",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/parties",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/parties",
         "pointer": "#/paths/~1accounts~1{accountId}~1parties/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadParty3"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -265,16 +1438,95 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Parties"
+        "summary": "Get Parties",
+        "tags": [
+          "Parties"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Party by Account ID",
         "id": "operation:get:/accounts/{accountId}/party",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/party",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/party",
         "pointer": "#/paths/~1accounts~1{accountId}~1party/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadParty2"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -284,16 +1536,95 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Party"
+        "summary": "Get Party",
+        "tags": [
+          "Parties"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Scheduled Payments by Account ID",
         "id": "operation:get:/accounts/{accountId}/scheduled-payments",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/scheduled-payments",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/scheduled-payments",
         "pointer": "#/paths/~1accounts~1{accountId}~1scheduled-payments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadScheduledPayment3"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -303,16 +1634,95 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Scheduled Payments"
+        "summary": "Get Scheduled Payments",
+        "tags": [
+          "ScheduledPayments"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Standing Orders by Account ID",
         "id": "operation:get:/accounts/{accountId}/standing-orders",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/standing-orders",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/standing-orders",
         "pointer": "#/paths/~1accounts~1{accountId}~1standing-orders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadStandingOrder6"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -322,16 +1732,109 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Standing Orders"
+        "summary": "Get Standing Orders",
+        "tags": [
+          "StandingOrders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Statements by Account ID",
         "id": "operation:get:/accounts/{accountId}/statements",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/statements",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UTC ISO 8601 Date Time to filter statements FROM NB Time component is optional - set to 00:00:00 for just Date.",
+            "in": "query",
+            "name": "fromStatementDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The UTC ISO 8601 Date Time to filter statements TO NB Time component is optional - set to 00:00:00 for just Date.",
+            "in": "query",
+            "name": "toStatementDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/statements",
         "pointer": "#/paths/~1accounts~1{accountId}~1statements/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadStatement2"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -341,16 +1844,102 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Statements"
+        "summary": "Get Statements",
+        "tags": [
+          "Statements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Statements by Account ID and Statement ID",
         "id": "operation:get:/accounts/{accountId}/statements/{statementId}",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/statements/{statementId}",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "StatementId",
+            "in": "path",
+            "name": "statementId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/statements/{statementId}",
         "pointer": "#/paths/~1accounts~1{accountId}~1statements~1{statementId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadStatement2"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -360,16 +1949,102 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Statements"
+        "summary": "Get Statements",
+        "tags": [
+          "Statements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Statement PDF File by Account ID and Statement ID",
         "id": "operation:get:/accounts/{accountId}/statements/{statementId}/file",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/statements/{statementId}/file",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "StatementId",
+            "in": "path",
+            "name": "statementId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/statements/{statementId}/file",
         "pointer": "#/paths/~1accounts~1{accountId}~1statements~1{statementId}~1file/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -379,16 +2054,102 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Statements"
+        "summary": "Get Statements",
+        "tags": [
+          "Statements"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Transactions by Account ID and Statement ID",
         "id": "operation:get:/accounts/{accountId}/statements/{statementId}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/statements/{statementId}/transactions",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "StatementId",
+            "in": "path",
+            "name": "statementId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/statements/{statementId}/transactions",
         "pointer": "#/paths/~1accounts~1{accountId}~1statements~1{statementId}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadTransaction6"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -398,16 +2159,109 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Transactions"
+        "summary": "Get Transactions",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get Transactions by Account ID",
         "id": "operation:get:/accounts/{accountId}/transactions",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{accountId}/transactions",
+        "parameters": [
+          {
+            "description": "AccountId",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The UTC ISO 8601 Date Time to filter transactions FROM NB Time component is optional - set to 00:00:00 for just Date.",
+            "in": "query",
+            "name": "fromBookingDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The UTC ISO 8601 Date Time to filter transactions TO NB Time component is optional - set to 00:00:00 for just Date.",
+            "in": "query",
+            "name": "toBookingDateTime",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{accountId}/transactions",
         "pointer": "#/paths/~1accounts~1{accountId}~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadTransaction6"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -417,7 +2271,10 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Transactions"
+        "summary": "Get Transactions",
+        "tags": [
+          "Transactions"
+        ]
       },
       {
         "deprecated": false,
@@ -425,8 +2282,76 @@
         "kind": "operation",
         "method": "get",
         "name": "get /party",
+        "parameters": [
+          {
+            "description": "The time when the PSU last logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-auth-date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The PSU's IP address if the PSU is currently logged in with the TPP.",
+            "in": "header",
+            "name": "x-fapi-customer-ip-address",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "in": "header",
+            "name": "x-fapi-interaction-id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Indicates the user-agent that the PSU is using.",
+            "in": "header",
+            "name": "x-customer-user-agent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the sandbox to be used",
+            "in": "header",
+            "name": "sandbox-id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/party",
         "pointer": "#/paths/~1party/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OBReadParty2"
+          },
+          {
+            "status": "400",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403",
+            "type": "OBErrorResponse1"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "OBErrorResponse1"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -436,26 +2361,10 @@
             "Client-Id": []
           }
         ],
-        "summary": "Get Party"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/sandbox",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /sandbox",
-        "path": "/sandbox",
-        "pointer": "#/paths/~1sandbox/post",
-        "security": [
-          {
-            "Authorization-Code-Token": [
-              "sandbox-uk-account-info-api-v1 offline_access",
-              "accounts offline_access"
-            ],
-            "Client-Id": []
-          }
-        ],
-        "summary": "Create Sandbox"
+        "summary": "Get Party",
+        "tags": [
+          "Parties"
+        ]
       },
       {
         "deprecated": false,
@@ -465,6 +2374,46 @@
         "name": "put /sandbox",
         "path": "/sandbox",
         "pointer": "#/paths/~1sandbox/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/json; charset=utf-8"
+          ],
+          "required": false,
+          "type": "Sandbox"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -474,16 +2423,60 @@
             "Client-Id": []
           }
         ],
-        "summary": "Import Sandbox"
+        "summary": "Import Sandbox",
+        "tags": [
+          "Sandbox"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/sandbox/{sandboxId}",
+        "id": "operation:post:/sandbox",
         "kind": "operation",
-        "method": "delete",
-        "name": "delete /sandbox/{sandboxId}",
-        "path": "/sandbox/{sandboxId}",
-        "pointer": "#/paths/~1sandbox~1{sandboxId}/delete",
+        "method": "post",
+        "name": "post /sandbox",
+        "path": "/sandbox",
+        "pointer": "#/paths/~1sandbox/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/json; charset=utf-8"
+          ],
+          "required": false,
+          "type": "SandboxRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Sandbox"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -493,7 +2486,10 @@
             "Client-Id": []
           }
         ],
-        "summary": "Delete Sandbox"
+        "summary": "Create Sandbox",
+        "tags": [
+          "Sandbox"
+        ]
       },
       {
         "deprecated": false,
@@ -501,8 +2497,47 @@
         "kind": "operation",
         "method": "get",
         "name": "get /sandbox/{sandboxId}",
+        "parameters": [
+          {
+            "description": "Sandbox Id",
+            "in": "path",
+            "name": "sandboxId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sandbox/{sandboxId}",
         "pointer": "#/paths/~1sandbox~1{sandboxId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Sandbox"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Authorization-Code-Token": [
@@ -512,357 +2547,519 @@
             "Client-Id": []
           }
         ],
-        "summary": "Export Sandbox"
+        "summary": "Export Sandbox",
+        "tags": [
+          "Sandbox"
+        ]
       },
       {
+        "deprecated": false,
+        "id": "operation:delete:/sandbox/{sandboxId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /sandbox/{sandboxId}",
+        "parameters": [
+          {
+            "description": "Sandbox Id",
+            "in": "path",
+            "name": "sandboxId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/sandbox/{sandboxId}",
+        "pointer": "#/paths/~1sandbox~1{sandboxId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResponse"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          },
+          {
+            "status": "406"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Authorization-Code-Token": [
+              "sandbox-uk-account-info-api-v1 offline_access",
+              "accounts offline_access"
+            ],
+            "Client-Id": []
+          }
+        ],
+        "summary": "Delete Sandbox",
+        "tags": [
+          "Sandbox"
+        ]
+      },
+      {
+        "description": "This is Data Type gives a low level textual error code to help categorise an error response.",
         "id": "schema:ErrorCode",
         "kind": "schema",
-        "name": "ErrorCode"
+        "name": "ErrorCode",
+        "type": "string"
       },
       {
         "id": "schema:ErrorResponse",
         "kind": "schema",
-        "name": "ErrorResponse"
+        "name": "ErrorResponse",
+        "type": "object"
       },
       {
+        "description": "Links relevant to the payload",
         "id": "schema:Links",
         "kind": "schema",
-        "name": "Links"
+        "name": "Links",
+        "type": "object"
       },
       {
+        "description": "Meta Data relevant to the payload",
         "id": "schema:Meta",
         "kind": "schema",
-        "name": "Meta"
+        "name": "Meta",
+        "type": "object"
       },
       {
+        "description": "Unambiguous identification of the account to which credit and debit entries are made.",
         "id": "schema:OBAccount6",
         "kind": "schema",
-        "name": "OBAccount6"
+        "name": "OBAccount6",
+        "type": "object"
       },
       {
         "id": "schema:OBActiveOrHistoricCurrencyAndAmount",
         "kind": "schema",
-        "name": "OBActiveOrHistoricCurrencyAndAmount"
+        "name": "OBActiveOrHistoricCurrencyAndAmount",
+        "type": "object"
       },
       {
         "id": "schema:OBBalanceType1Code",
         "kind": "schema",
-        "name": "OBBalanceType1Code"
+        "name": "OBBalanceType1Code",
+        "type": "string"
       },
       {
         "id": "schema:OBBeneficiary5",
         "kind": "schema",
-        "name": "OBBeneficiary5"
+        "name": "OBBeneficiary5",
+        "type": "object"
       },
       {
+        "description": "Specifies the Beneficiary Type.",
         "id": "schema:OBBeneficiaryType1Code",
         "kind": "schema",
-        "name": "OBBeneficiaryType1Code"
+        "name": "OBBeneficiaryType1Code",
+        "type": "string"
       },
       {
         "id": "schema:OBBranchAndFinancialInstitutionIdentification5",
         "kind": "schema",
-        "name": "OBBranchAndFinancialInstitutionIdentification5"
+        "name": "OBBranchAndFinancialInstitutionIdentification5",
+        "type": "object"
       },
       {
         "id": "schema:OBCashAccount5",
         "kind": "schema",
-        "name": "OBCashAccount5"
+        "name": "OBCashAccount5",
+        "type": "object"
       },
       {
+        "description": "Unambiguous identification of the account of the creditor, in the case of a debit transaction.",
         "id": "schema:OBCashAccount6",
         "kind": "schema",
-        "name": "OBCashAccount6"
+        "name": "OBCashAccount6",
+        "type": "object"
       },
       {
+        "description": "Set of elements used to define the balance details.",
         "id": "schema:OBCashBalance1",
         "kind": "schema",
-        "name": "OBCashBalance1"
+        "name": "OBCashBalance1",
+        "type": "object"
       },
       {
         "id": "schema:OBCreditDebitCode",
         "kind": "schema",
-        "name": "OBCreditDebitCode"
+        "name": "OBCreditDebitCode",
+        "type": "string"
       },
       {
         "id": "schema:OBCreditLine1",
         "kind": "schema",
-        "name": "OBCreditLine1"
+        "name": "OBCreditLine1",
+        "type": "object"
       },
       {
         "id": "schema:OBEntryStatus1Code",
         "kind": "schema",
-        "name": "OBEntryStatus1Code"
+        "name": "OBEntryStatus1Code",
+        "type": "string"
       },
       {
         "id": "schema:OBError1",
         "kind": "schema",
-        "name": "OBError1"
+        "name": "OBError1",
+        "type": "object"
       },
       {
+        "description": "An array of detail error codes, and messages, and URLs to documentation to help remediation.",
         "id": "schema:OBErrorResponse1",
         "kind": "schema",
-        "name": "OBErrorResponse1"
+        "name": "OBErrorResponse1",
+        "type": "object"
       },
       {
         "id": "schema:OBExternalAccountSubType1Code",
         "kind": "schema",
-        "name": "OBExternalAccountSubType1Code"
+        "name": "OBExternalAccountSubType1Code",
+        "type": "string"
       },
       {
         "id": "schema:OBExternalAccountType1Code",
         "kind": "schema",
-        "name": "OBExternalAccountType1Code"
+        "name": "OBExternalAccountType1Code",
+        "type": "string"
       },
       {
         "id": "schema:OBExternalLimitType1Code",
         "kind": "schema",
-        "name": "OBExternalLimitType1Code"
+        "name": "OBExternalLimitType1Code",
+        "type": "string"
       },
       {
+        "description": "Specifies the Open Banking account access data types.",
         "id": "schema:OBExternalPermissions1Code",
         "kind": "schema",
-        "name": "OBExternalPermissions1Code"
+        "name": "OBExternalPermissions1Code",
+        "type": "string"
       },
       {
+        "description": "Specifies the status of consent resource in code form.",
         "id": "schema:OBExternalRequestStatus1Code",
         "kind": "schema",
-        "name": "OBExternalRequestStatus1Code"
+        "name": "OBExternalRequestStatus1Code",
+        "type": "string"
       },
       {
         "id": "schema:OBExternalScheduleType1Code",
         "kind": "schema",
-        "name": "OBExternalScheduleType1Code"
+        "name": "OBExternalScheduleType1Code",
+        "type": "string"
       },
       {
         "id": "schema:OBExternalStandingOrderStatus1Code",
         "kind": "schema",
-        "name": "OBExternalStandingOrderStatus1Code"
+        "name": "OBExternalStandingOrderStatus1Code",
+        "type": "string"
       },
       {
         "id": "schema:OBExternalStatementType1Code",
         "kind": "schema",
-        "name": "OBExternalStatementType1Code"
+        "name": "OBExternalStatementType1Code",
+        "type": "string"
       },
       {
         "id": "schema:OBParty2",
         "kind": "schema",
-        "name": "OBParty2"
+        "name": "OBParty2",
+        "type": "object"
       },
       {
         "id": "schema:OBReadAccount5",
         "kind": "schema",
-        "name": "OBReadAccount5"
+        "name": "OBReadAccount5",
+        "type": "object"
       },
       {
         "id": "schema:OBReadBalance1",
         "kind": "schema",
-        "name": "OBReadBalance1"
+        "name": "OBReadBalance1",
+        "type": "object"
       },
       {
         "id": "schema:OBReadBeneficiary5",
         "kind": "schema",
-        "name": "OBReadBeneficiary5"
+        "name": "OBReadBeneficiary5",
+        "type": "object"
       },
       {
         "id": "schema:OBReadConsent1",
         "kind": "schema",
-        "name": "OBReadConsent1"
+        "name": "OBReadConsent1",
+        "type": "object"
       },
       {
         "id": "schema:OBReadConsentResponse1",
         "kind": "schema",
-        "name": "OBReadConsentResponse1"
+        "name": "OBReadConsentResponse1",
+        "type": "object"
       },
       {
         "id": "schema:OBReadData1",
         "kind": "schema",
-        "name": "OBReadData1"
+        "name": "OBReadData1",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataAccount5",
         "kind": "schema",
-        "name": "OBReadDataAccount5"
+        "name": "OBReadDataAccount5",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataBalance1",
         "kind": "schema",
-        "name": "OBReadDataBalance1"
+        "name": "OBReadDataBalance1",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataBeneficiary5",
         "kind": "schema",
-        "name": "OBReadDataBeneficiary5"
+        "name": "OBReadDataBeneficiary5",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataConsentResponse1",
         "kind": "schema",
-        "name": "OBReadDataConsentResponse1"
+        "name": "OBReadDataConsentResponse1",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataParty2",
         "kind": "schema",
-        "name": "OBReadDataParty2"
+        "name": "OBReadDataParty2",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataParty3",
         "kind": "schema",
-        "name": "OBReadDataParty3"
+        "name": "OBReadDataParty3",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataScheduledPayment3",
         "kind": "schema",
-        "name": "OBReadDataScheduledPayment3"
+        "name": "OBReadDataScheduledPayment3",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataStandingOrder5",
         "kind": "schema",
-        "name": "OBReadDataStandingOrder5"
+        "name": "OBReadDataStandingOrder5",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataStatement2",
         "kind": "schema",
-        "name": "OBReadDataStatement2"
+        "name": "OBReadDataStatement2",
+        "type": "object"
       },
       {
         "id": "schema:OBReadDataTransaction6",
         "kind": "schema",
-        "name": "OBReadDataTransaction6"
+        "name": "OBReadDataTransaction6",
+        "type": "object"
       },
       {
         "id": "schema:OBReadParty2",
         "kind": "schema",
-        "name": "OBReadParty2"
+        "name": "OBReadParty2",
+        "type": "object"
       },
       {
         "id": "schema:OBReadParty3",
         "kind": "schema",
-        "name": "OBReadParty3"
+        "name": "OBReadParty3",
+        "type": "object"
       },
       {
         "id": "schema:OBReadScheduledPayment3",
         "kind": "schema",
-        "name": "OBReadScheduledPayment3"
+        "name": "OBReadScheduledPayment3",
+        "type": "object"
       },
       {
         "id": "schema:OBReadStandingOrder6",
         "kind": "schema",
-        "name": "OBReadStandingOrder6"
+        "name": "OBReadStandingOrder6",
+        "type": "object"
       },
       {
         "id": "schema:OBReadStatement2",
         "kind": "schema",
-        "name": "OBReadStatement2"
+        "name": "OBReadStatement2",
+        "type": "object"
       },
       {
         "id": "schema:OBReadTransaction6",
         "kind": "schema",
-        "name": "OBReadTransaction6"
+        "name": "OBReadTransaction6",
+        "type": "object"
       },
       {
+        "description": "The Risk section is sent by the initiating party to the ASPSP.",
         "id": "schema:OBRisk2",
         "kind": "schema",
-        "name": "OBRisk2"
+        "name": "OBRisk2",
+        "type": "object"
       },
       {
         "id": "schema:OBScheduledPayment3",
         "kind": "schema",
-        "name": "OBScheduledPayment3"
+        "name": "OBScheduledPayment3",
+        "type": "object"
       },
       {
         "id": "schema:OBStandingOrder5",
         "kind": "schema",
-        "name": "OBStandingOrder5"
+        "name": "OBStandingOrder5",
+        "type": "object"
       },
       {
+        "description": "Provides further details on a statement resource.",
         "id": "schema:OBStatement2",
         "kind": "schema",
-        "name": "OBStatement2"
+        "name": "OBStatement2",
+        "type": "object"
       },
       {
+        "description": "Provides further details on an entry in the report.",
         "id": "schema:OBTransaction6",
         "kind": "schema",
-        "name": "OBTransaction6"
+        "name": "OBTransaction6",
+        "type": "object"
       },
       {
+        "description": "Set of elements used to define the balance as a numerical representation of the net increases and decreases in an account after a transaction entry is applied…",
         "id": "schema:OBTransactionCashBalance",
         "kind": "schema",
-        "name": "OBTransactionCashBalance"
+        "name": "OBTransactionCashBalance",
+        "type": "object"
       },
       {
+        "description": "Set of elements to fully identify a proprietary bank transaction code.",
         "id": "schema:ProprietaryBankTransactionCodeStructure1",
         "kind": "schema",
-        "name": "ProprietaryBankTransactionCodeStructure1"
+        "name": "ProprietaryBankTransactionCodeStructure1",
+        "type": "object"
       },
       {
+        "description": "Sandbox model",
         "id": "schema:Sandbox",
         "kind": "schema",
-        "name": "Sandbox"
+        "name": "Sandbox",
+        "type": "object"
       },
       {
+        "description": "Sandbox bank account",
         "id": "schema:SandboxBankAccount",
         "kind": "schema",
-        "name": "SandboxBankAccount"
+        "name": "SandboxBankAccount",
+        "type": "object"
       },
       {
+        "description": "General account information",
         "id": "schema:SandboxBankAccountInfo",
         "kind": "schema",
-        "name": "SandboxBankAccountInfo"
+        "name": "SandboxBankAccountInfo",
+        "type": "object"
       },
       {
+        "description": "Beneficiary information",
         "id": "schema:SandboxBeneficiary",
         "kind": "schema",
-        "name": "SandboxBeneficiary"
+        "name": "SandboxBeneficiary",
+        "type": "object"
       },
       {
+        "description": "Sandbox card",
         "id": "schema:SandboxCard",
         "kind": "schema",
-        "name": "SandboxCard"
+        "name": "SandboxCard",
+        "type": "object"
       },
       {
+        "description": "Sandbox card information",
         "id": "schema:SandboxCardInfo",
         "kind": "schema",
-        "name": "SandboxCardInfo"
+        "name": "SandboxCardInfo",
+        "type": "object"
       },
       {
+        "description": "Connected party information",
         "id": "schema:SandboxParty",
         "kind": "schema",
-        "name": "SandboxParty"
+        "name": "SandboxParty",
+        "type": "object"
       },
       {
+        "description": "Request to create a new sandbox",
         "id": "schema:SandboxRequest",
         "kind": "schema",
-        "name": "SandboxRequest"
+        "name": "SandboxRequest",
+        "type": "object"
       },
       {
+        "description": "Keeps the number of calls without x-fapi-customer-ip-address header present",
         "id": "schema:SandboxRetryCacheEntry",
         "kind": "schema",
-        "name": "SandboxRetryCacheEntry"
+        "name": "SandboxRetryCacheEntry",
+        "type": "object"
       },
       {
+        "description": "Scheduled payment information",
         "id": "schema:SandboxScheduledPayment",
         "kind": "schema",
-        "name": "SandboxScheduledPayment"
+        "name": "SandboxScheduledPayment",
+        "type": "object"
       },
       {
+        "description": "Standing order information",
         "id": "schema:SandboxStandingOrder",
         "kind": "schema",
-        "name": "SandboxStandingOrder"
+        "name": "SandboxStandingOrder",
+        "type": "object"
       },
       {
+        "description": "Statement information",
         "id": "schema:SandboxStatement",
         "kind": "schema",
-        "name": "SandboxStatement"
+        "name": "SandboxStatement",
+        "type": "object"
       },
       {
+        "description": "Transaction information",
         "id": "schema:SandboxTransaction",
         "kind": "schema",
-        "name": "SandboxTransaction"
+        "name": "SandboxTransaction",
+        "type": "object"
       },
       {
+        "description": "User data",
         "id": "schema:SandboxUser",
         "kind": "schema",
-        "name": "SandboxUser"
+        "name": "SandboxUser",
+        "type": "object"
       }
     ]
   },

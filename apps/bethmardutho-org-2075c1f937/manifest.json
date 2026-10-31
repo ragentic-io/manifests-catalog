@@ -22,25 +22,65 @@
       },
       {
         "deprecated": false,
+        "description": "Returns linguistic information for a Syriac lexeme.",
         "id": "operation:get:/lexeme/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /lexeme/{id}",
+        "parameters": [
+          {
+            "description": "The Id of a lexeme from the Sedra database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/lexeme/{id}",
         "pointer": "#/paths/~1lexeme~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Syriac lexeme."
+        "summary": "Get Syriac lexeme.",
+        "tags": [
+          "API"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an array of linguistic information for every word that matches the Syriac word.",
         "id": "operation:get:/word/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /word/{id}",
+        "parameters": [
+          {
+            "description": "The id parameters must contain either the Id of a word from the Sedra database or a Syriac word in the unicode character set.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/word/{id}",
         "pointer": "#/paths/~1word~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Syriac word."
+        "summary": "Get Syriac word.",
+        "tags": [
+          "API"
+        ]
       }
     ]
   },

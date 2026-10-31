@@ -51,10 +51,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /content/{aspectId}",
+        "parameters": [
+          {
+            "default": "complete",
+            "description": "The identifier of the 'aspect' (content group) to search",
+            "enum": [
+              "complete",
+              "corpreg",
+              "bcgaz1",
+              "bcgaz2",
+              "oic",
+              "psl",
+              "ecb",
+              "hscr",
+              "arch_oic"
+            ],
+            "in": "path",
+            "name": "aspectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/content/{aspectId}",
         "pointer": "#/paths/~1content~1{aspectId}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Describes the documents and directories available within a specific 'aspect' (content group) of the BCLaws library"
+        "summary": "Describes the documents and directories available within a specific 'aspect' (content group) of the BCLaws library",
+        "tags": [
+          "content"
+        ]
       },
       {
         "deprecated": false,
@@ -62,54 +92,296 @@
         "kind": "operation",
         "method": "get",
         "name": "get /content/{aspectId}/{civixDocumentId}",
+        "parameters": [
+          {
+            "default": "complete",
+            "description": "The identifier of the 'aspect' (content group) to search",
+            "enum": [
+              "complete",
+              "corpreg",
+              "bcgaz1",
+              "bcgaz2",
+              "oic",
+              "psl",
+              "ecb",
+              "hscr",
+              "arch_oic"
+            ],
+            "in": "path",
+            "name": "aspectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "statreg",
+            "description": "The document identification code for an index or directory",
+            "in": "path",
+            "name": "civixDocumentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/content/{aspectId}/{civixDocumentId}",
         "pointer": "#/paths/~1content~1{aspectId}~1{civixDocumentId}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Lists the metadata available for the specified index or directory from the BCLaws legislative respository"
+        "summary": "Lists the metadata available for the specified index or directory from the BCLaws legislative respository",
+        "tags": [
+          "content"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The /document API allows you to retrieve actual documents from the BCLaws legislative repository.",
         "id": "operation:get:/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}",
         "kind": "operation",
         "method": "get",
         "name": "get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}",
+        "parameters": [
+          {
+            "default": "complete",
+            "description": "The identifier of the 'aspect' (content group) to search",
+            "enum": [
+              "complete",
+              "corpreg",
+              "bcgaz1",
+              "bcgaz2",
+              "oic",
+              "psl",
+              "ecb",
+              "hscr",
+              "arch_oic"
+            ],
+            "in": "path",
+            "name": "aspectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "statreg",
+            "description": "Index identification code",
+            "in": "path",
+            "name": "civixIndexId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "01009_01",
+            "description": "The document identification code for an index or directory",
+            "in": "path",
+            "name": "civixDocumentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}",
         "pointer": "#/paths/~1document~1id~1{aspectId}~1{civixIndexId}~1{civixDocumentId}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves a specific document from the BCLaws legislative repository (HTML format)"
+        "summary": "Retrieves a specific document from the BCLaws legislative repository (HTML format)",
+        "tags": [
+          "document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The /document API allows you to retrieve actual documents from the BCLaws legislative repository.",
         "id": "operation:get:/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/search/{searchString}",
         "kind": "operation",
         "method": "get",
         "name": "get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/search/{searchString}",
+        "parameters": [
+          {
+            "default": "complete",
+            "description": "The identifier of the 'aspect' (content group) to search",
+            "enum": [
+              "complete",
+              "corpreg",
+              "bcgaz1",
+              "bcgaz2",
+              "oic",
+              "psl",
+              "ecb",
+              "hscr",
+              "arch_oic"
+            ],
+            "in": "path",
+            "name": "aspectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "statreg",
+            "description": "Index identification code",
+            "in": "path",
+            "name": "civixIndexId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "01009_01",
+            "description": "The document identification code for an index or directory",
+            "in": "path",
+            "name": "civixDocumentId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "water",
+            "description": "The text to search for within the document",
+            "in": "path",
+            "name": "searchString",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/search/{searchString}",
         "pointer": "#/paths/~1document~1id~1{aspectId}~1{civixIndexId}~1{civixDocumentId}~1search~1{searchString}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves a specific document from the BCLaws legislative repository with search text highlighted (HTML format)"
+        "summary": "Retrieves a specific document from the BCLaws legislative repository with search text highlighted (HTML format)",
+        "tags": [
+          "document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The /document API allows you to retrieve actual documents from the BCLaws legislative repository.",
         "id": "operation:get:/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml",
         "kind": "operation",
         "method": "get",
         "name": "get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml",
+        "parameters": [
+          {
+            "default": "complete",
+            "description": "The identifier of the 'aspect' (content group) to search",
+            "enum": [
+              "complete",
+              "corpreg",
+              "bcgaz1",
+              "bcgaz2",
+              "oic",
+              "psl",
+              "ecb",
+              "hscr",
+              "arch_oic"
+            ],
+            "in": "path",
+            "name": "aspectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "statreg",
+            "description": "Index identification code",
+            "in": "path",
+            "name": "civixIndexId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "01009_01",
+            "description": "The document identification code for an index or directory",
+            "in": "path",
+            "name": "civixDocumentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml",
         "pointer": "#/paths/~1document~1id~1{aspectId}~1{civixIndexId}~1{civixDocumentId}~1xml/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves a specific document from the BCLaws legislative repository (XML format)"
+        "summary": "Retrieves a specific document from the BCLaws legislative repository (XML format)",
+        "tags": [
+          "document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The /document API allows you to retrieve actual documents from the BCLaws legislative repository.",
         "id": "operation:get:/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml/search/{searchString}",
         "kind": "operation",
         "method": "get",
         "name": "get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml/search/{searchString}",
+        "parameters": [
+          {
+            "default": "complete",
+            "description": "The identifier of the 'aspect' (content group) to search",
+            "enum": [
+              "complete",
+              "corpreg",
+              "bcgaz1",
+              "bcgaz2",
+              "oic",
+              "psl",
+              "ecb",
+              "hscr",
+              "arch_oic"
+            ],
+            "in": "path",
+            "name": "aspectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "statreg",
+            "description": "Index identification code",
+            "in": "path",
+            "name": "civixIndexId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "01009_01",
+            "description": "The document identification code for an index or directory",
+            "in": "path",
+            "name": "civixDocumentId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "water",
+            "description": "The text to search for within the document",
+            "in": "path",
+            "name": "searchString",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml/search/{searchString}",
         "pointer": "#/paths/~1document~1id~1{aspectId}~1{civixIndexId}~1{civixDocumentId}~1xml~1search~1{searchString}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Retrieves a specific document from the BCLaws legislative repository with search text highlighted (XML format)"
+        "summary": "Retrieves a specific document from the BCLaws legislative repository with search text highlighted (XML format)",
+        "tags": [
+          "document"
+        ]
       },
       {
         "deprecated": false,
@@ -117,10 +389,80 @@
         "kind": "operation",
         "method": "get",
         "name": "get /search/{aspectId}/fullsearch",
+        "parameters": [
+          {
+            "default": "complete",
+            "description": "The identifier of the 'aspect' (content group) to search",
+            "enum": [
+              "complete",
+              "corpreg",
+              "bcgaz1",
+              "bcgaz2",
+              "oic",
+              "psl",
+              "ecb",
+              "hscr",
+              "arch_oic"
+            ],
+            "in": "path",
+            "name": "aspectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "water",
+            "description": "query term",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "0",
+            "description": "first hit (start index)",
+            "in": "query",
+            "name": "s",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "last hit (end index)",
+            "in": "query",
+            "name": "e",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 5,
+            "description": "number of fragment snippets to return (< 10)",
+            "in": "query",
+            "name": "nFrag",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "length of fragment snippets (< 200)",
+            "in": "query",
+            "name": "lFrag",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/search/{aspectId}/fullsearch",
         "pointer": "#/paths/~1search~1{aspectId}~1fullsearch/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "A listing of metadata available for the specified aspect and search term from the BCLaws legislative repository"
+        "summary": "A listing of metadata available for the specified aspect and search term from the BCLaws legislative repository",
+        "tags": [
+          "search"
+        ]
       }
     ]
   },

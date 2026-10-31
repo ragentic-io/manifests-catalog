@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `8e77e76aeb71dcf049e699d0ced042edea7c290a6933080c52a01ee906da0a99` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 5 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/forecast` | get /forecast | — |
-| GET | `/protection` | get /protection | — |
-| GET | `/uv` | get /uv | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/forecast` | get /forecast | `lat`*, `lng`*, `alt`, `ozone`, `dt`, `x-access-token`* | forecastResult[] | yes | — |
+| GET | `/protection` | get /protection | `lat`*, `lng`*, `from`*, `to`*, `alt`, `ozone`, `x-access-token`* | protectionResult | yes | — |
+| GET | `/uv` | get /uv | `lat`*, `lng`*, `alt`, `ozone`, `dt`, `x-access-token`* | uvIndexResult | yes | — |

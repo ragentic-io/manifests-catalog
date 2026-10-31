@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_quickchart.io_android-chrome-51
 
 | | |
 | --- | --- |
-| Signed bundle | `5e7d0c6bb6d697dc156776f66790a14603836fab28ec81120759d59f2e847f34` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,9 +32,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_quickchart.io_android-chrome-51
 
 ## Operations (4)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/chart` | get /chart | Generate a chart (GET) |
-| POST | `/chart` | post /chart | Generate a chart (POST) |
-| GET | `/qr` | get /qr | Generate a QR code (GET) |
-| POST | `/qr` | post /qr | Generate a QR code (POST) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/chart` | get /chart | `chart`, `width`, `height`, `format`, `backgroundColor` | string:binary | yes | Generate a chart (GET) |
+| POST | `/chart` | post /chart | body*: object | string:binary |  | Generate a chart (POST) |
+| GET | `/qr` | get /qr | `text`, `width`, `height`, `format`, `margin` | string:binary | yes | Generate a QR code (GET) |
+| POST | `/qr` | post /qr | body*: object | string:binary |  | Generate a QR code (POST) |

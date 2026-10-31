@@ -46,10 +46,31 @@
         "kind": "operation",
         "method": "get",
         "name": "get_estados_auxiliar_resource",
+        "parameters": [
+          {
+            "description": "Código do país pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "pais_id",
+            "required": false,
+            "type": "integer[]"
+          }
+        ],
         "path": "/auxiliar/estados",
         "pointer": "#/paths/~1auxiliar~1estados/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Endpoint para retorno dos dados de estados utilizados na filtragem de focos"
+        "summary": "Endpoint para retorno dos dados de estados utilizados na filtragem de focos",
+        "tags": [
+          "auxiliar"
+        ]
       },
       {
         "deprecated": false,
@@ -57,10 +78,38 @@
         "kind": "operation",
         "method": "get",
         "name": "get_municipios_auxiliar_resource",
+        "parameters": [
+          {
+            "description": "Código do país pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "pais_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Código do estado pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "estado_id",
+            "required": false,
+            "type": "integer[]"
+          }
+        ],
         "path": "/auxiliar/municipios",
         "pointer": "#/paths/~1auxiliar~1municipios/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Endpoint para retorno dos dados de municípios utilizados na filtragem de focos"
+        "summary": "Endpoint para retorno dos dados de municípios utilizados na filtragem de focos",
+        "tags": [
+          "auxiliar"
+        ]
       },
       {
         "deprecated": false,
@@ -70,8 +119,17 @@
         "name": "get_paises_auxiliar_resource",
         "path": "/auxiliar/paises",
         "pointer": "#/paths/~1auxiliar~1paises/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Endpoint para retorno dos dados de países utilizados na filtragem de focos"
+        "summary": "Endpoint para retorno dos dados de países utilizados na filtragem de focos",
+        "tags": [
+          "auxiliar"
+        ]
       },
       {
         "deprecated": false,
@@ -81,8 +139,17 @@
         "name": "get_satelite_auxiliar_resource",
         "path": "/auxiliar/satelites",
         "pointer": "#/paths/~1auxiliar~1satelites/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Endpoint para retorno dos dados de satélites utilizados na filtragem de focos"
+        "summary": "Endpoint para retorno dos dados de satélites utilizados na filtragem de focos",
+        "tags": [
+          "auxiliar"
+        ]
       },
       {
         "deprecated": false,
@@ -90,10 +157,59 @@
         "kind": "operation",
         "method": "get",
         "name": "get_focos_resource",
+        "parameters": [
+          {
+            "description": "Código do país pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "pais_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Código do estado pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "estado_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Código do município pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "municipio_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Nome do satélte pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "satelite",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "An optional fields mask",
+            "in": "header",
+            "name": "X-Fields",
+            "required": false,
+            "type": "string:mask"
+          }
+        ],
         "path": "/focos/",
         "pointer": "#/paths/~1focos~1/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Endpoint para retorno dos dados de focos de calor"
+        "summary": "Endpoint para retorno dos dados de focos de calor",
+        "tags": [
+          "focos"
+        ]
       },
       {
         "deprecated": false,
@@ -101,10 +217,52 @@
         "kind": "operation",
         "method": "get",
         "name": "get_focos_count_resource",
+        "parameters": [
+          {
+            "description": "Código do país pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "pais_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Código do estado pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "estado_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Código do município pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "municipio_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Nome do satélte pelo qual será filtrado o resultado.",
+            "in": "query",
+            "name": "satelite",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/focos/count",
         "pointer": "#/paths/~1focos~1count/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Endpoint para retorno da contagem dos focos de calor"
+        "summary": "Endpoint para retorno da contagem dos focos de calor",
+        "tags": [
+          "focos"
+        ]
       }
     ]
   },

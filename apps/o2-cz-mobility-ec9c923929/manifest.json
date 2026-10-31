@@ -13,6 +13,16 @@
         "from": "o2-cz-mobility-ec9c923929",
         "kind": "EXPOSES",
         "to": "operation:get:/transit/{from}/{to}"
+      },
+      {
+        "from": "operation:get:/info",
+        "kind": "RETURNS",
+        "to": "schema:InfoResult"
+      },
+      {
+        "from": "operation:get:/transit/{from}/{to}",
+        "kind": "RETURNS",
+        "to": "schema:CountResult"
       }
     ],
     "nodes": [
@@ -28,34 +38,109 @@
         "name": "getInfo",
         "path": "/info",
         "pointer": "#/paths/~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InfoResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Information about versions of application and data."
+        "summary": "Information about versions of application and data.",
+        "tags": [
+          "info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get count of objects that were moving between basic residential units or objects that were visiting these basic residential units.",
         "id": "operation:get:/transit/{from}/{to}",
         "kind": "operation",
         "method": "get",
         "name": "transit",
+        "parameters": [
+          {
+            "description": "source basic residential unit",
+            "in": "path",
+            "name": "from",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "destination basic residential unit",
+            "in": "path",
+            "name": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "occurence type in the source basic residential unit (1 - transit, 2 - visit, 0 - both)",
+            "in": "query",
+            "name": "fromType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "occurence type in the destination basic residential unit (1 - transit, 2 - visit, 0 - both)",
+            "in": "query",
+            "name": "toType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "all or only uniques (0 - all, 1 - uniques)",
+            "in": "query",
+            "name": "uniques",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transit/{from}/{to}",
         "pointer": "#/paths/~1transit~1{from}~1{to}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CountResult"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ErrorResult"
+          },
+          {
+            "status": "500",
+            "type": "ErrorResult"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Transit between basic residential units"
+        "summary": "Transit between basic residential units",
+        "tags": [
+          "transit"
+        ]
       },
       {
+        "description": "Response with the result",
         "id": "schema:CountResult",
         "kind": "schema",
-        "name": "CountResult"
+        "name": "CountResult",
+        "type": "object"
       },
       {
+        "description": "Response with error message",
         "id": "schema:ErrorResult",
         "kind": "schema",
-        "name": "ErrorResult"
+        "name": "ErrorResult",
+        "type": "object"
       },
       {
+        "description": "Response to the info request",
         "id": "schema:InfoResult",
         "kind": "schema",
-        "name": "InfoResult"
+        "name": "InfoResult",
+        "type": "object"
       }
     ]
   },

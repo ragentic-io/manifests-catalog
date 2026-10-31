@@ -83,6 +83,96 @@
         "from": "wordnik-com-8111655317",
         "kind": "EXPOSES",
         "to": "operation:get:/words.json/wordOfTheDay"
+      },
+      {
+        "from": "operation:get:/word.json/{word}/audio",
+        "kind": "RETURNS",
+        "to": "schema:AudioFile"
+      },
+      {
+        "from": "operation:get:/word.json/{word}/definitions",
+        "kind": "RETURNS",
+        "to": "schema:Definition"
+      },
+      {
+        "from": "operation:get:/word.json/{word}/examples",
+        "kind": "RETURNS",
+        "to": "schema:ExampleSearchResults"
+      },
+      {
+        "from": "operation:get:/word.json/{word}/frequency",
+        "kind": "RETURNS",
+        "to": "schema:FrequencySummary"
+      },
+      {
+        "from": "operation:get:/word.json/{word}/hyphenation",
+        "kind": "RETURNS",
+        "to": "schema:Syllable"
+      },
+      {
+        "from": "operation:get:/word.json/{word}/phrases",
+        "kind": "RETURNS",
+        "to": "schema:Bigram"
+      },
+      {
+        "from": "operation:get:/word.json/{word}/pronunciations",
+        "kind": "RETURNS",
+        "to": "schema:TextPron"
+      },
+      {
+        "from": "operation:get:/word.json/{word}/relatedWords",
+        "kind": "RETURNS",
+        "to": "schema:Related"
+      },
+      {
+        "from": "operation:get:/word.json/{word}/topExample",
+        "kind": "RETURNS",
+        "to": "schema:Example"
+      },
+      {
+        "from": "operation:get:/words.json/randomWord",
+        "kind": "RETURNS",
+        "to": "schema:WordObject"
+      },
+      {
+        "from": "operation:get:/words.json/randomWords",
+        "kind": "RETURNS",
+        "to": "schema:WordObject"
+      },
+      {
+        "from": "operation:get:/words.json/reverseDictionary",
+        "kind": "RETURNS",
+        "to": "schema:DefinitionSearchResults"
+      },
+      {
+        "from": "operation:get:/words.json/search/{query}",
+        "kind": "RETURNS",
+        "to": "schema:WordSearchResults"
+      },
+      {
+        "from": "operation:get:/words.json/wordOfTheDay",
+        "kind": "RETURNS",
+        "to": "schema:WordOfTheDay"
+      },
+      {
+        "from": "schema:Example",
+        "kind": "REFERENCES",
+        "to": "schema:ContentProvider"
+      },
+      {
+        "from": "schema:Example",
+        "kind": "REFERENCES",
+        "to": "schema:ScoredWord"
+      },
+      {
+        "from": "schema:Example",
+        "kind": "REFERENCES",
+        "to": "schema:Sentence"
+      },
+      {
+        "from": "schema:WordOfTheDay",
+        "kind": "REFERENCES",
+        "to": "schema:ContentProvider"
       }
     ],
     "nodes": [
@@ -92,16 +182,56 @@
       },
       {
         "deprecated": false,
+        "description": "The metadata includes a time-expiring fileUrl which allows reading the audio file directly from the API.",
         "id": "operation:get:/word.json/{word}/audio",
         "kind": "operation",
         "method": "get",
         "name": "getAudio",
+        "parameters": [
+          {
+            "description": "Word to get audio for.",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return the correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/word.json/{word}/audio",
         "pointer": "#/paths/~1word.json~1{word}~1audio/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AudioFile[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Fetches audio metadata for a word."
+        "summary": "Fetches audio metadata for a word.",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -109,12 +239,120 @@
         "kind": "operation",
         "method": "get",
         "name": "getDefinitions",
+        "parameters": [
+          {
+            "description": "Word to return definitions for",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 200,
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "CSV list of part-of-speech types",
+            "enum": [
+              "noun",
+              "adjective",
+              "verb",
+              "adverb",
+              "interjection",
+              "pronoun",
+              "preposition",
+              "abbreviation",
+              "affix",
+              "article",
+              "auxiliary-verb",
+              "conjunction",
+              "definite-article",
+              "family-name",
+              "given-name",
+              "idiom",
+              "imperative",
+              "noun-plural",
+              "noun-posessive",
+              "past-participle",
+              "phrasal-prefix",
+              "proper-noun",
+              "proper-noun-plural",
+              "proper-noun-posessive",
+              "suffix"
+            ],
+            "in": "query",
+            "name": "partOfSpeech",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Return related words with definitions",
+            "in": "query",
+            "name": "includeRelated",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Source dictionary to return definitions from.",
+            "enum": [
+              "all",
+              "ahd-5",
+              "century",
+              "wiktionary",
+              "webster",
+              "wordnet"
+            ],
+            "in": "query",
+            "name": "sourceDictionaries",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return the correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Return a closed set of XML tags in response",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "includeTags",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/word.json/{word}/definitions",
         "pointer": "#/paths/~1word.json~1{word}~1definitions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Definition[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Return definitions for a word"
+        "summary": "Return definitions for a word",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -122,12 +360,43 @@
         "kind": "operation",
         "method": "get",
         "name": "getEtymologies",
+        "parameters": [
+          {
+            "description": "Word to return",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return the correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/word.json/{word}/etymologies",
         "pointer": "#/paths/~1word.json~1{word}~1etymologies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Fetches etymology data"
+        "summary": "Fetches etymology data",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -135,12 +404,71 @@
         "kind": "operation",
         "method": "get",
         "name": "getExamples",
+        "parameters": [
+          {
+            "description": "Word to return examples for",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Show duplicate examples from different sources",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "includeDuplicates",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return the correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Results to skip",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 5,
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/word.json/{word}/examples",
         "pointer": "#/paths/~1word.json~1{word}~1examples/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExampleSearchResults"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Returns examples for a word"
+        "summary": "Returns examples for a word",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -148,12 +476,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getWordFrequency",
+        "parameters": [
+          {
+            "description": "Word to return",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return the correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1800,
+            "description": "Starting Year",
+            "in": "query",
+            "name": "startYear",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 2012,
+            "description": "Ending Year",
+            "in": "query",
+            "name": "endYear",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/word.json/{word}/frequency",
         "pointer": "#/paths/~1word.json~1{word}~1frequency/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FrequencySummary"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Returns word usage over time"
+        "summary": "Returns word usage over time",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -161,12 +536,65 @@
         "kind": "operation",
         "method": "get",
         "name": "getHyphenation",
+        "parameters": [
+          {
+            "description": "Word to get syllables for",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return a correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Get from a single dictionary.",
+            "enum": [
+              "ahd-5",
+              "century",
+              "wiktionary",
+              "webster",
+              "wordnet"
+            ],
+            "in": "query",
+            "name": "sourceDictionary",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/word.json/{word}/hyphenation",
         "pointer": "#/paths/~1word.json~1{word}~1hyphenation/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Syllable[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Returns syllable information for a word"
+        "summary": "Returns syllable information for a word",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -174,12 +602,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getPhrases",
+        "parameters": [
+          {
+            "description": "Word to fetch phrases for",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 5,
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Minimum WLMI for the phrase",
+            "in": "query",
+            "name": "wlmi",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return the correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/word.json/{word}/phrases",
         "pointer": "#/paths/~1word.json~1{word}~1phrases/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Bigram[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Fetches bi-gram phrases for a word"
+        "summary": "Fetches bi-gram phrases for a word",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -187,12 +662,80 @@
         "kind": "operation",
         "method": "get",
         "name": "getTextPronunciations",
+        "parameters": [
+          {
+            "description": "Word to get pronunciations for",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return a correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Get from a single dictionary",
+            "enum": [
+              "ahd-5",
+              "century",
+              "cmu",
+              "macmillan",
+              "wiktionary",
+              "webster",
+              "wordnet"
+            ],
+            "in": "query",
+            "name": "sourceDictionary",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Text pronunciation type",
+            "enum": [
+              "ahd-5",
+              "arpabet",
+              "gcide-diacritical",
+              "IPA"
+            ],
+            "in": "query",
+            "name": "typeFormat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/word.json/{word}/pronunciations",
         "pointer": "#/paths/~1word.json~1{word}~1pronunciations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TextPron[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Returns text pronunciations for a given word"
+        "summary": "Returns text pronunciations for a given word",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -200,12 +743,77 @@
         "kind": "operation",
         "method": "get",
         "name": "getRelatedWords",
+        "parameters": [
+          {
+            "description": "Word to fetch relationships for",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return the correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limits the total results per type of relationship type",
+            "enum": [
+              "synonym",
+              "antonym",
+              "variant",
+              "equivalent",
+              "cross-reference",
+              "related-word",
+              "rhyme",
+              "form",
+              "etymologically-related-term",
+              "hypernym",
+              "hyponym",
+              "inflected-form",
+              "primary",
+              "same-context",
+              "verb-form",
+              "verb-stem",
+              "has_topic"
+            ],
+            "in": "query",
+            "name": "relationshipTypes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "Restrict to the supplied relationship types",
+            "in": "query",
+            "name": "limitPerRelationshipType",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/word.json/{word}/relatedWords",
         "pointer": "#/paths/~1word.json~1{word}~1relatedWords/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Related[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Given a word as a string, returns relationships from the Word Graph"
+        "summary": "Given a word as a string, returns relationships from the Word Graph",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -213,12 +821,31 @@
         "kind": "operation",
         "method": "get",
         "name": "getScrabbleScore",
+        "parameters": [
+          {
+            "description": "Word to get scrabble score for.",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/word.json/{word}/scrabbleScore",
         "pointer": "#/paths/~1word.json~1{word}~1scrabbleScore/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int64"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Returns the Scrabble score for a word"
+        "summary": "Returns the Scrabble score for a word",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -226,12 +853,43 @@
         "kind": "operation",
         "method": "get",
         "name": "getTopExample",
+        "parameters": [
+          {
+            "description": "Word to fetch examples for",
+            "in": "path",
+            "name": "word",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "If true will try to return the correct word root ('cats' -> 'cat').",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "useCanonical",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/word.json/{word}/topExample",
         "pointer": "#/paths/~1word.json~1{word}~1topExample/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Example"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Returns a top example for a word"
+        "summary": "Returns a top example for a word",
+        "tags": [
+          "word"
+        ]
       },
       {
         "deprecated": false,
@@ -239,12 +897,94 @@
         "kind": "operation",
         "method": "get",
         "name": "getRandomWord",
+        "parameters": [
+          {
+            "default": "true",
+            "description": "Only return words with dictionary definitions",
+            "in": "query",
+            "name": "hasDictionaryDef",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CSV part-of-speech values to include (allowable values are noun, adjective, verb, adverb, interjection, pronoun, preposition, abbreviation, affix, article, aux…",
+            "in": "query",
+            "name": "includePartOfSpeech",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CSV part-of-speech values to exclude (allowable values are noun, adjective, verb, adverb, interjection, pronoun, preposition, abbreviation, affix, article, aux…",
+            "in": "query",
+            "name": "excludePartOfSpeech",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Minimum corpus frequency for terms",
+            "in": "query",
+            "name": "minCorpusCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum corpus frequency for terms",
+            "in": "query",
+            "name": "maxCorpusCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "Minimum dictionary count",
+            "in": "query",
+            "name": "minDictionaryCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum dictionary count",
+            "in": "query",
+            "name": "maxDictionaryCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 5,
+            "description": "Minimum word length",
+            "in": "query",
+            "name": "minLength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum word length",
+            "in": "query",
+            "name": "maxLength",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/words.json/randomWord",
         "pointer": "#/paths/~1words.json~1randomWord/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WordObject"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Returns a single random WordObject"
+        "summary": "Returns a single random WordObject",
+        "tags": [
+          "words"
+        ]
       },
       {
         "deprecated": false,
@@ -252,12 +992,124 @@
         "kind": "operation",
         "method": "get",
         "name": "getRandomWords",
+        "parameters": [
+          {
+            "default": "true",
+            "description": "Only return words with dictionary definitions",
+            "in": "query",
+            "name": "hasDictionaryDef",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CSV part-of-speech values to include (allowable values are noun, adjective, verb, adverb, interjection, pronoun, preposition, abbreviation, affix, article, aux…",
+            "in": "query",
+            "name": "includePartOfSpeech",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "CSV part-of-speech values to exclude (allowable values are noun, adjective, verb, adverb, interjection, pronoun, preposition, abbreviation, affix, article, aux…",
+            "in": "query",
+            "name": "excludePartOfSpeech",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Minimum corpus frequency for terms",
+            "in": "query",
+            "name": "minCorpusCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum corpus frequency for terms",
+            "in": "query",
+            "name": "maxCorpusCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "Minimum dictionary count",
+            "in": "query",
+            "name": "minDictionaryCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum dictionary count",
+            "in": "query",
+            "name": "maxDictionaryCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 5,
+            "description": "Minimum word length",
+            "in": "query",
+            "name": "minLength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum word length",
+            "in": "query",
+            "name": "maxLength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Attribute to sort by",
+            "enum": [
+              "alpha",
+              "count"
+            ],
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/words.json/randomWords",
         "pointer": "#/paths/~1words.json~1randomWords/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WordObject[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Returns an array of random WordObjects"
+        "summary": "Returns an array of random WordObjects",
+        "tags": [
+          "words"
+        ]
       },
       {
         "deprecated": false,
@@ -265,12 +1117,173 @@
         "kind": "operation",
         "method": "get",
         "name": "reverseDictionary",
+        "parameters": [
+          {
+            "description": "Search term",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Restricts words and finds closest sense",
+            "in": "query",
+            "name": "findSenseForWord",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only include these comma-delimited source dictionaries",
+            "enum": [
+              "ahd-5",
+              "century",
+              "cmu",
+              "macmillan",
+              "wiktionary",
+              "webster",
+              "wordnet"
+            ],
+            "in": "query",
+            "name": "includeSourceDictionaries",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Exclude these comma-delimited source dictionaries",
+            "enum": [
+              "ahd-5",
+              "century",
+              "cmu",
+              "macmillan",
+              "wiktionary",
+              "webster",
+              "wordnet"
+            ],
+            "in": "query",
+            "name": "excludeSourceDictionaries",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only include these comma-delimited parts of speech (allowable values are noun, adjective, verb, adverb, interjection, pronoun, preposition, abbreviation, affix…",
+            "in": "query",
+            "name": "includePartOfSpeech",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Exclude these comma-delimited parts of speech (allowable values are noun, adjective, verb, adverb, interjection, pronoun, preposition, abbreviation, affix, art…",
+            "in": "query",
+            "name": "excludePartOfSpeech",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 5,
+            "description": "Minimum corpus frequency for terms",
+            "in": "query",
+            "name": "minCorpusCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum corpus frequency for terms",
+            "in": "query",
+            "name": "maxCorpusCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "Minimum word length",
+            "in": "query",
+            "name": "minLength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum word length",
+            "in": "query",
+            "name": "maxLength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Expand terms",
+            "in": "query",
+            "name": "expandTerms",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "false",
+            "description": "Return a closed set of XML tags in response",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "in": "query",
+            "name": "includeTags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Attribute to sort by",
+            "enum": [
+              "alpha",
+              "count"
+            ],
+            "in": "query",
+            "name": "sortBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "0",
+            "description": "Results to skip",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/words.json/reverseDictionary",
         "pointer": "#/paths/~1words.json~1reverseDictionary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DefinitionSearchResults"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Reverse dictionary search"
+        "summary": "Reverse dictionary search",
+        "tags": [
+          "words"
+        ]
       },
       {
         "deprecated": false,
@@ -278,12 +1291,125 @@
         "kind": "operation",
         "method": "get",
         "name": "searchWords",
+        "parameters": [
+          {
+            "default": "false",
+            "description": "Search term is a Regular Expression",
+            "in": "query",
+            "name": "allowRegex",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search query",
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "true",
+            "description": "Search case sensitive",
+            "in": "query",
+            "name": "caseSensitive",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only include these comma-delimited parts of speech (allowable values are noun, adjective, verb, adverb, interjection, pronoun, preposition, abbreviation, affix…",
+            "in": "query",
+            "name": "includePartOfSpeech",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Exclude these comma-delimited parts of speech (allowable values are noun, adjective, verb, adverb, interjection, pronoun, preposition, abbreviation, affix, art…",
+            "in": "query",
+            "name": "excludePartOfSpeech",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 5,
+            "description": "Minimum corpus frequency for terms",
+            "in": "query",
+            "name": "minCorpusCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum corpus frequency for terms",
+            "in": "query",
+            "name": "maxCorpusCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "Minimum number of dictionary entries for words returned",
+            "in": "query",
+            "name": "minDictionaryCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum dictionary definition count",
+            "in": "query",
+            "name": "maxDictionaryCount",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "Minimum word length",
+            "in": "query",
+            "name": "minLength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": -1,
+            "description": "Maximum word length",
+            "in": "query",
+            "name": "maxLength",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Results to skip",
+            "in": "query",
+            "name": "skip",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 10,
+            "description": "Maximum number of results to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/words.json/search/{query}",
         "pointer": "#/paths/~1words.json~1search~1{query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WordSearchResults"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Searches words"
+        "summary": "Searches words",
+        "tags": [
+          "words"
+        ]
       },
       {
         "deprecated": false,
@@ -291,197 +1417,253 @@
         "kind": "operation",
         "method": "get",
         "name": "getWordOfTheDay",
+        "parameters": [
+          {
+            "description": "Fetches by date in yyyy-MM-dd",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/words.json/wordOfTheDay",
         "pointer": "#/paths/~1words.json~1wordOfTheDay/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WordOfTheDay"
+          }
+        ],
+        "safe": true,
         "security": [
           {}
         ],
-        "summary": "Returns a specific WordOfTheDay"
+        "summary": "Returns a specific WordOfTheDay",
+        "tags": [
+          "words"
+        ]
       },
       {
         "id": "schema:ApiTokenStatus",
         "kind": "schema",
-        "name": "ApiTokenStatus"
+        "name": "ApiTokenStatus",
+        "type": "object"
       },
       {
         "id": "schema:AudioFile",
         "kind": "schema",
-        "name": "AudioFile"
+        "name": "AudioFile",
+        "type": "object"
       },
       {
         "id": "schema:AudioType",
         "kind": "schema",
-        "name": "AudioType"
+        "name": "AudioType",
+        "type": "object"
       },
       {
         "id": "schema:AuthenticationToken",
         "kind": "schema",
-        "name": "AuthenticationToken"
+        "name": "AuthenticationToken",
+        "type": "object"
       },
       {
         "id": "schema:Bigram",
         "kind": "schema",
-        "name": "Bigram"
+        "name": "Bigram",
+        "type": "object"
       },
       {
         "id": "schema:Category",
         "kind": "schema",
-        "name": "Category"
+        "name": "Category",
+        "type": "object"
       },
       {
         "id": "schema:Citation",
         "kind": "schema",
-        "name": "Citation"
+        "name": "Citation",
+        "type": "object"
       },
       {
         "id": "schema:ContentProvider",
         "kind": "schema",
-        "name": "ContentProvider"
+        "name": "ContentProvider",
+        "type": "object"
       },
       {
         "id": "schema:Definition",
         "kind": "schema",
-        "name": "Definition"
+        "name": "Definition",
+        "type": "object"
       },
       {
         "id": "schema:DefinitionSearchResults",
         "kind": "schema",
-        "name": "DefinitionSearchResults"
+        "name": "DefinitionSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:Example",
         "kind": "schema",
-        "name": "Example"
+        "name": "Example",
+        "type": "object"
       },
       {
         "id": "schema:ExampleSearchResults",
         "kind": "schema",
-        "name": "ExampleSearchResults"
+        "name": "ExampleSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:ExampleUsage",
         "kind": "schema",
-        "name": "ExampleUsage"
+        "name": "ExampleUsage",
+        "type": "object"
       },
       {
         "id": "schema:Facet",
         "kind": "schema",
-        "name": "Facet"
+        "name": "Facet",
+        "type": "object"
       },
       {
         "id": "schema:FacetValue",
         "kind": "schema",
-        "name": "FacetValue"
+        "name": "FacetValue",
+        "type": "object"
       },
       {
         "id": "schema:Frequency",
         "kind": "schema",
-        "name": "Frequency"
+        "name": "Frequency",
+        "type": "object"
       },
       {
         "id": "schema:FrequencySummary",
         "kind": "schema",
-        "name": "FrequencySummary"
+        "name": "FrequencySummary",
+        "type": "object"
       },
       {
         "id": "schema:Label",
         "kind": "schema",
-        "name": "Label"
+        "name": "Label",
+        "type": "object"
       },
       {
         "id": "schema:Long",
         "kind": "schema",
-        "name": "Long"
+        "name": "Long",
+        "type": "object"
       },
       {
         "id": "schema:Note",
         "kind": "schema",
-        "name": "Note"
+        "name": "Note",
+        "type": "object"
       },
       {
         "id": "schema:PartOfSpeech",
         "kind": "schema",
-        "name": "PartOfSpeech"
+        "name": "PartOfSpeech",
+        "type": "object"
       },
       {
         "id": "schema:Related",
         "kind": "schema",
-        "name": "Related"
+        "name": "Related",
+        "type": "object"
       },
       {
         "id": "schema:Root",
         "kind": "schema",
-        "name": "Root"
+        "name": "Root",
+        "type": "object"
       },
       {
         "id": "schema:ScoredWord",
         "kind": "schema",
-        "name": "ScoredWord"
+        "name": "ScoredWord",
+        "type": "object"
       },
       {
         "id": "schema:Sentence",
         "kind": "schema",
-        "name": "Sentence"
+        "name": "Sentence",
+        "type": "object"
       },
       {
         "id": "schema:SimpleDefinition",
         "kind": "schema",
-        "name": "SimpleDefinition"
+        "name": "SimpleDefinition",
+        "type": "object"
       },
       {
         "id": "schema:SimpleExample",
         "kind": "schema",
-        "name": "SimpleExample"
+        "name": "SimpleExample",
+        "type": "object"
       },
       {
         "id": "schema:StringValue",
         "kind": "schema",
-        "name": "StringValue"
+        "name": "StringValue",
+        "type": "object"
       },
       {
         "id": "schema:Syllable",
         "kind": "schema",
-        "name": "Syllable"
+        "name": "Syllable",
+        "type": "object"
       },
       {
         "id": "schema:TextPron",
         "kind": "schema",
-        "name": "TextPron"
+        "name": "TextPron",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:WordList",
         "kind": "schema",
-        "name": "WordList"
+        "name": "WordList",
+        "type": "object"
       },
       {
         "id": "schema:WordListWord",
         "kind": "schema",
-        "name": "WordListWord"
+        "name": "WordListWord",
+        "type": "object"
       },
       {
         "id": "schema:WordObject",
         "kind": "schema",
-        "name": "WordObject"
+        "name": "WordObject",
+        "type": "object"
       },
       {
         "id": "schema:WordOfTheDay",
         "kind": "schema",
-        "name": "WordOfTheDay"
+        "name": "WordOfTheDay",
+        "type": "object"
       },
       {
         "id": "schema:WordSearchResult",
         "kind": "schema",
-        "name": "WordSearchResult"
+        "name": "WordSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:WordSearchResults",
         "kind": "schema",
-        "name": "WordSearchResults"
+        "name": "WordSearchResults",
+        "type": "object"
       }
     ]
   },

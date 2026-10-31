@@ -12,12 +12,12 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/account"
+        "to": "operation:post:/account"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/account"
+        "to": "operation:options:/account"
       },
       {
         "from": "apidapp-com-e898718cf9",
@@ -92,12 +92,12 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/contract"
+        "to": "operation:post:/contract"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/contract"
+        "to": "operation:options:/contract"
       },
       {
         "from": "apidapp-com-e898718cf9",
@@ -107,12 +107,12 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/contract/{id}"
+        "to": "operation:post:/contract/{id}"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/contract/{id}"
+        "to": "operation:options:/contract/{id}"
       },
       {
         "from": "apidapp-com-e898718cf9",
@@ -127,12 +127,12 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/erc20"
+        "to": "operation:post:/erc20"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/erc20"
+        "to": "operation:options:/erc20"
       },
       {
         "from": "apidapp-com-e898718cf9",
@@ -142,12 +142,12 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/erc20/{address}"
+        "to": "operation:post:/erc20/{address}"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/erc20/{address}"
+        "to": "operation:options:/erc20/{address}"
       },
       {
         "from": "apidapp-com-e898718cf9",
@@ -157,12 +157,12 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/key"
+        "to": "operation:post:/key"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/key"
+        "to": "operation:options:/key"
       },
       {
         "from": "apidapp-com-e898718cf9",
@@ -177,12 +177,12 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/transaction"
+        "to": "operation:post:/transaction"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/transaction"
+        "to": "operation:options:/transaction"
       },
       {
         "from": "apidapp-com-e898718cf9",
@@ -222,12 +222,12 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/wallet"
+        "to": "operation:post:/wallet"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/wallet"
+        "to": "operation:options:/wallet"
       },
       {
         "from": "apidapp-com-e898718cf9",
@@ -237,12 +237,12 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/wallet/account"
+        "to": "operation:post:/wallet/account"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/wallet/account"
+        "to": "operation:options:/wallet/account"
       },
       {
         "from": "apidapp-com-e898718cf9",
@@ -267,12 +267,282 @@
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:options:/wallet/account/{id}/pay"
+        "to": "operation:post:/wallet/account/{id}/pay"
       },
       {
         "from": "apidapp-com-e898718cf9",
         "kind": "EXPOSES",
-        "to": "operation:post:/wallet/account/{id}/pay"
+        "to": "operation:options:/wallet/account/{id}/pay"
+      },
+      {
+        "from": "operation:options:/",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/account",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/account",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/account/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/account/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/block",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/block",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/block/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/block/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/block/{id}/transaction",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/block/{id}/transaction",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/block/{id}/transaction/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/block/{id}/transaction/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/blockchain",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/blockchain",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/blockchain/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/blockchain/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/contract",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/contract",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/contract/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/contract/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/contract/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/echo",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/erc20",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/erc20",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/erc20",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/erc20/{address}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/erc20/{address}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/erc20/{address}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/key",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/key",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/key",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:delete:/key/{key}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/key/{key}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/transaction",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/transaction",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/transaction/{hash}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/transaction/{hash}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/transaction/{hash}/receipt",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/transaction/{hash}/receipt",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/version",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/version",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/wallet",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/wallet",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/wallet",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/wallet/account",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/wallet/account",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/wallet/account",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:get:/wallet/account/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/wallet/account/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/wallet/account/{id}/contract",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/wallet/account/{id}/erc20",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:post:/wallet/account/{id}/pay",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
+      },
+      {
+        "from": "operation:options:/wallet/account/{id}/pay",
+        "kind": "RETURNS",
+        "to": "schema:Empty"
       }
     ],
     "nodes": [
@@ -288,7 +558,37 @@
         "name": "options /",
         "path": "/",
         "pointer": "#/paths/~1/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Create new account",
+        "id": "operation:post:/account",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /account",
+        "path": "/account",
+        "pointer": "#/paths/~1account/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Key2": []
+          }
+        ],
         "summary": null
       },
       {
@@ -299,32 +599,40 @@
         "name": "options /account",
         "path": "/account",
         "pointer": "#/paths/~1account/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
-        "id": "operation:post:/account",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /account",
-        "path": "/account",
-        "pointer": "#/paths/~1account/post",
-        "security": [
-          {
-            "Key2": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Get account balance",
         "id": "operation:get:/account/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /account/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account/{id}",
         "pointer": "#/paths/~1account~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Key2": []
@@ -338,19 +646,43 @@
         "kind": "operation",
         "method": "options",
         "name": "options /account/{id}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account/{id}",
         "pointer": "#/paths/~1account~1{id}/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Access detailed block information",
         "id": "operation:get:/block",
         "kind": "operation",
         "method": "get",
         "name": "get /block",
         "path": "/block",
         "pointer": "#/paths/~1block/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Key2": []
@@ -366,17 +698,40 @@
         "name": "options /block",
         "path": "/block",
         "pointer": "#/paths/~1block/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get information about particular block",
         "id": "operation:get:/block/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /block/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/block/{id}",
         "pointer": "#/paths/~1block~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Key2": []
@@ -390,19 +745,51 @@
         "kind": "operation",
         "method": "options",
         "name": "options /block/{id}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/block/{id}",
         "pointer": "#/paths/~1block~1{id}/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get transaction count within block",
         "id": "operation:get:/block/{id}/transaction",
         "kind": "operation",
         "method": "get",
         "name": "get /block/{id}/transaction",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/block/{id}/transaction",
         "pointer": "#/paths/~1block~1{id}~1transaction/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Key2": []
@@ -416,19 +803,57 @@
         "kind": "operation",
         "method": "options",
         "name": "options /block/{id}/transaction",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/block/{id}/transaction",
         "pointer": "#/paths/~1block~1{id}~1transaction/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get information about particular transaction within block",
         "id": "operation:get:/block/{id}/transaction/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /block/{id}/transaction/{index}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/block/{id}/transaction/{index}",
         "pointer": "#/paths/~1block~1{id}~1transaction~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Key2": []
@@ -442,19 +867,50 @@
         "kind": "operation",
         "method": "options",
         "name": "options /block/{id}/transaction/{index}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/block/{id}/transaction/{index}",
         "pointer": "#/paths/~1block~1{id}~1transaction~1{index}/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get a list of supported blockchains",
         "id": "operation:get:/blockchain",
         "kind": "operation",
         "method": "get",
         "name": "get /blockchain",
         "path": "/blockchain",
         "pointer": "#/paths/~1blockchain/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Key2": []
@@ -470,17 +926,40 @@
         "name": "options /blockchain",
         "path": "/blockchain",
         "pointer": "#/paths/~1blockchain/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get information about blockchain woth given id",
         "id": "operation:get:/blockchain/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /blockchain/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/blockchain/{id}",
         "pointer": "#/paths/~1blockchain~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Key2": []
@@ -494,8 +973,43 @@
         "kind": "operation",
         "method": "options",
         "name": "options /blockchain/{id}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/blockchain/{id}",
         "pointer": "#/paths/~1blockchain~1{id}/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Create a new smart contract",
+        "id": "operation:post:/contract",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /contract",
+        "path": "/contract",
+        "pointer": "#/paths/~1contract/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
@@ -507,28 +1021,71 @@
         "name": "options /contract",
         "path": "/contract",
         "pointer": "#/paths/~1contract/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
-        "id": "operation:post:/contract",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /contract",
-        "path": "/contract",
-        "pointer": "#/paths/~1contract/post",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Get contract balance",
         "id": "operation:get:/contract/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /contract/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/contract/{id}",
         "pointer": "#/paths/~1contract~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "Key2": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Call the contract",
+        "id": "operation:post:/contract/{id}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /contract/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/contract/{id}",
+        "pointer": "#/paths/~1contract~1{id}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Key2": []
@@ -542,24 +1099,25 @@
         "kind": "operation",
         "method": "options",
         "name": "options /contract/{id}",
-        "path": "/contract/{id}",
-        "pointer": "#/paths/~1contract~1{id}/options",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/contract/{id}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /contract/{id}",
-        "path": "/contract/{id}",
-        "pointer": "#/paths/~1contract~1{id}/post",
-        "security": [
+        "parameters": [
           {
-            "Key2": []
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
           }
         ],
+        "path": "/contract/{id}",
+        "pointer": "#/paths/~1contract~1{id}/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
+        "security": [],
         "summary": null
       },
       {
@@ -570,28 +1128,32 @@
         "name": "options /echo",
         "path": "/echo",
         "pointer": "#/paths/~1echo/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get token information such as name, total amount in circulation, etc",
         "id": "operation:get:/erc20",
         "kind": "operation",
         "method": "get",
         "name": "get /erc20",
         "path": "/erc20",
         "pointer": "#/paths/~1erc20/get",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:options:/erc20",
-        "kind": "operation",
-        "method": "options",
-        "name": "options /erc20",
-        "path": "/erc20",
-        "pointer": "#/paths/~1erc20/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -603,17 +1165,85 @@
         "name": "post /erc20",
         "path": "/erc20",
         "pointer": "#/paths/~1erc20/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "id": "operation:options:/erc20",
+        "kind": "operation",
+        "method": "options",
+        "name": "options /erc20",
+        "path": "/erc20",
+        "pointer": "#/paths/~1erc20/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Get information amout token balance in the account",
         "id": "operation:get:/erc20/{address}",
         "kind": "operation",
         "method": "get",
         "name": "get /erc20/{address}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/erc20/{address}",
         "pointer": "#/paths/~1erc20~1{address}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Transfer tokens to another account",
+        "id": "operation:post:/erc20/{address}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /erc20/{address}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/erc20/{address}",
+        "pointer": "#/paths/~1erc20~1{address}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
@@ -623,19 +1253,24 @@
         "kind": "operation",
         "method": "options",
         "name": "options /erc20/{address}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/erc20/{address}",
         "pointer": "#/paths/~1erc20~1{address}/options",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/erc20/{address}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /erc20/{address}",
-        "path": "/erc20/{address}",
-        "pointer": "#/paths/~1erc20~1{address}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -645,19 +1280,23 @@
         "kind": "operation",
         "method": "get",
         "name": "get /key",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/key",
         "pointer": "#/paths/~1key/get",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:options:/key",
-        "kind": "operation",
-        "method": "options",
-        "name": "options /key",
-        "path": "/key",
-        "pointer": "#/paths/~1key/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -669,6 +1308,31 @@
         "name": "post /key",
         "path": "/key",
         "pointer": "#/paths/~1key/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:options:/key",
+        "kind": "operation",
+        "method": "options",
+        "name": "options /key",
+        "path": "/key",
+        "pointer": "#/paths/~1key/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -678,8 +1342,23 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /key/{key}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/key/{key}",
         "pointer": "#/paths/~1key~1{key}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
@@ -689,9 +1368,48 @@
         "kind": "operation",
         "method": "options",
         "name": "options /key/{key}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/key/{key}",
         "pointer": "#/paths/~1key~1{key}/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Create a new transaction.",
+        "id": "operation:post:/transaction",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /transaction",
+        "path": "/transaction",
+        "pointer": "#/paths/~1transaction/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "Key2": []
+          }
+        ],
         "summary": null
       },
       {
@@ -702,32 +1420,40 @@
         "name": "options /transaction",
         "path": "/transaction",
         "pointer": "#/paths/~1transaction/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
-        "id": "operation:post:/transaction",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /transaction",
-        "path": "/transaction",
-        "pointer": "#/paths/~1transaction/post",
-        "security": [
-          {
-            "Key2": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Get information about transaction by the transaction hash value",
         "id": "operation:get:/transaction/{hash}",
         "kind": "operation",
         "method": "get",
         "name": "get /transaction/{hash}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transaction/{hash}",
         "pointer": "#/paths/~1transaction~1{hash}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Key2": []
@@ -741,19 +1467,51 @@
         "kind": "operation",
         "method": "options",
         "name": "options /transaction/{hash}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transaction/{hash}",
         "pointer": "#/paths/~1transaction~1{hash}/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get receipt detail information",
         "id": "operation:get:/transaction/{hash}/receipt",
         "kind": "operation",
         "method": "get",
         "name": "get /transaction/{hash}/receipt",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transaction/{hash}/receipt",
         "pointer": "#/paths/~1transaction~1{hash}~1receipt/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Key2": []
@@ -767,19 +1525,43 @@
         "kind": "operation",
         "method": "options",
         "name": "options /transaction/{hash}/receipt",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "hash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transaction/{hash}/receipt",
         "pointer": "#/paths/~1transaction~1{hash}~1receipt/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get API version info",
         "id": "operation:get:/version",
         "kind": "operation",
         "method": "get",
         "name": "get /version",
         "path": "/version",
         "pointer": "#/paths/~1version/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -791,17 +1573,51 @@
         "name": "options /version",
         "path": "/version",
         "pointer": "#/paths/~1version/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get current account balance",
         "id": "operation:get:/wallet",
         "kind": "operation",
         "method": "get",
         "name": "get /wallet",
         "path": "/wallet",
         "pointer": "#/paths/~1wallet/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Create personal wallet",
+        "id": "operation:post:/wallet",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /wallet",
+        "path": "/wallet",
+        "pointer": "#/paths/~1wallet/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
@@ -813,17 +1629,13 @@
         "name": "options /wallet",
         "path": "/wallet",
         "pointer": "#/paths/~1wallet/options",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/wallet",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /wallet",
-        "path": "/wallet",
-        "pointer": "#/paths/~1wallet/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -835,17 +1647,13 @@
         "name": "get /wallet/account",
         "path": "/wallet/account",
         "pointer": "#/paths/~1wallet~1account/get",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:options:/wallet/account",
-        "kind": "operation",
-        "method": "options",
-        "name": "options /wallet/account",
-        "path": "/wallet/account",
-        "pointer": "#/paths/~1wallet~1account/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -857,17 +1665,58 @@
         "name": "post /wallet/account",
         "path": "/wallet/account",
         "pointer": "#/paths/~1wallet~1account/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "id": "operation:options:/wallet/account",
+        "kind": "operation",
+        "method": "options",
+        "name": "options /wallet/account",
+        "path": "/wallet/account",
+        "pointer": "#/paths/~1wallet~1account/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Get account balance",
         "id": "operation:get:/wallet/account/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /wallet/account/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wallet/account/{id}",
         "pointer": "#/paths/~1wallet~1account~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -877,8 +1726,24 @@
         "kind": "operation",
         "method": "options",
         "name": "options /wallet/account/{id}",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wallet/account/{id}",
         "pointer": "#/paths/~1wallet~1account~1{id}/options",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
@@ -888,8 +1753,23 @@
         "kind": "operation",
         "method": "post",
         "name": "post /wallet/account/{id}/contract",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wallet/account/{id}/contract",
         "pointer": "#/paths/~1wallet~1account~1{id}~1contract/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
@@ -899,8 +1779,50 @@
         "kind": "operation",
         "method": "post",
         "name": "post /wallet/account/{id}/erc20",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wallet/account/{id}/erc20",
         "pointer": "#/paths/~1wallet~1account~1{id}~1erc20/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Send payment from the account held within the wallet",
+        "id": "operation:post:/wallet/account/{id}/pay",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /wallet/account/{id}/pay",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/wallet/account/{id}/pay",
+        "pointer": "#/paths/~1wallet~1account~1{id}~1pay/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": null
       },
@@ -910,26 +1832,32 @@
         "kind": "operation",
         "method": "options",
         "name": "options /wallet/account/{id}/pay",
+        "parameters": [
+          {
+            "description": "Automatically added",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wallet/account/{id}/pay",
         "pointer": "#/paths/~1wallet~1account~1{id}~1pay/options",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/wallet/account/{id}/pay",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /wallet/account/{id}/pay",
-        "path": "/wallet/account/{id}/pay",
-        "pointer": "#/paths/~1wallet~1account~1{id}~1pay/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Empty"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:Empty",
         "kind": "schema",
-        "name": "Empty"
+        "name": "Empty",
+        "type": "object"
       }
     ]
   },

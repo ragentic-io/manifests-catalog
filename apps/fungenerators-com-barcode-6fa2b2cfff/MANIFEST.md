@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `c95215cf9c990c698651f4422b315c7b29f34f83b07948e954735c80d0d3855f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,9 +32,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (4)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/barcode/decode` | post /barcode/decode | — |
-| GET | `/barcode/decode/types` | get /barcode/decode/types | — |
-| GET | `/barcode/encode` | get /barcode/encode | — |
-| GET | `/barcode/encode/types` | get /barcode/encode/types | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/barcode/decode` | post /barcode/decode | body: object | — |  | — |
+| GET | `/barcode/decode/types` | get /barcode/decode/types | — | — | yes | — |
+| GET | `/barcode/encode` | get /barcode/encode | `number`*, `barcodeformat`, `outputformat`, `widthfactor`, `totalheight` | — | yes | — |
+| GET | `/barcode/encode/types` | get /barcode/encode/types | — | — | yes | — |

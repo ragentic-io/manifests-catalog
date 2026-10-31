@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cenit.io_images_logo.png"
 
 | | |
 | --- | --- |
-| Signed bundle | `729d10d20e56f5b4a3d64328451d9fa44a44ef85c4d5e36c4bf865895b836f39` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,45 +34,47 @@ logo: "https://api.apis.guru/v2/cache/logo/https_cenit.io_images_logo.png"
 
 10 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/setup/connection` | get /setup/connection | Returns a list of connections |
-| POST | `/setup/connection` | post /setup/connection | Create or update a connection |
-| DELETE | `/setup/connection/{id}` | delete /setup/connection/{id} | Delete a connection |
-| GET | `/setup/connection/{id}` | get /setup/connection/{id} | Retrieve an existing connection |
-| GET | `/setup/connection_role` | get /setup/connection_role | Returns a list of connection roles |
-| POST | `/setup/connection_role` | post /setup/connection_role | Create or update a connection role |
-| DELETE | `/setup/connection_role/{id}` | delete /setup/connection_role/{id} | Delete a connection role. |
-| GET | `/setup/connection_role/{id}` | get /setup/connection_role/{id} | Return a connection role |
-| GET | `/setup/data_type/` | get /setup/data_type/ | Returns a list of data types |
-| POST | `/setup/data_type/` | post /setup/data_type/ | Create or update a data type |
-| DELETE | `/setup/data_type/{id}` | delete /setup/data_type/{id} | Delete a data type |
-| GET | `/setup/data_type/{id}` | get /setup/data_type/{id} | Retrieve a data type |
-| GET | `/setup/flow/` | get /setup/flow/ | Returns a list of flows |
-| POST | `/setup/flow/` | post /setup/flow/ | Create or update a flow |
-| DELETE | `/setup/flow/{id}` | delete /setup/flow/{id} | Delete a flow. |
-| GET | `/setup/flow/{id}` | get /setup/flow/{id} | Retrieve an existing flow |
-| GET | `/setup/namespace/` | get /setup/namespace/ | Returns a list of namespaces |
-| POST | `/setup/namespace/` | post /setup/namespace/ | Create or update a namespace |
-| DELETE | `/setup/namespace/{id}` | delete /setup/namespace/{id} | Delete a namespace |
-| GET | `/setup/namespace/{id}` | get /setup/namespace/{id} | Retrieve an existing namespace |
-| GET | `/setup/observer/` | get /setup/observer/ | Returns a list of events |
-| POST | `/setup/observer/` | post /setup/observer/ | Create or update an event |
-| DELETE | `/setup/observer/{id}` | delete /setup/observer/{id} | Delete an event |
-| GET | `/setup/observer/{id}` | get /setup/observer/{id} | Retrieve an existing event |
-| GET | `/setup/scheduler/` | get /setup/scheduler/ | Returns a list of schedulers |
-| POST | `/setup/scheduler/` | post /setup/scheduler/ | Create or update an scheduler |
-| DELETE | `/setup/scheduler/{id}` | delete /setup/scheduler/{id} | Delete an schedule |
-| GET | `/setup/scheduler/{id}` | get /setup/scheduler/{id} | Retrieve an existing schedule |
-| GET | `/setup/schema/` | get /setup/schema/ | Returns a list of schemas |
-| POST | `/setup/schema/` | post /setup/schema/ | Create or update an schema |
-| DELETE | `/setup/schema/{id}` | delete /setup/schema/{id} | Delete an schema. |
-| GET | `/setup/schema/{id}` | get /setup/schema/{id} | Retrieve an existing schema |
-| GET | `/setup/translator/` | get /setup/translator/ | Returns a list of translators |
-| POST | `/setup/translator/` | post /setup/translator/ | Create or update a translator |
-| DELETE | `/setup/translator/{id}` | delete /setup/translator/{id} | Delete a translator |
-| GET | `/setup/translator/{id}` | get /setup/translator/{id} | Retrieve an existing translator |
-| GET | `/setup/webhook/` | get /setup/webhook/ | Returns a list of webhooks |
-| POST | `/setup/webhook/` | post /setup/webhook/ | Create or update a webhook |
-| DELETE | `/setup/webhook/{id}` | delete /setup/webhook/{id} | Delete a webhook |
-| GET | `/setup/webhook/{id}` | get /setup/webhook/{id} | Retrieve an existing webhook |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/setup/connection` | get /setup/connection | — | connection[] | yes | Returns a list of connections |
+| POST | `/setup/connection` | post /setup/connection | — | connection |  | Create or update a connection |
+| GET | `/setup/connection/{id}` | get /setup/connection/{id} | `id`* | connection | yes | Retrieve an existing connection |
+| DELETE | `/setup/connection/{id}` | delete /setup/connection/{id} | `id`* | — |  | Delete a connection |
+| GET | `/setup/connection_role` | get /setup/connection_role | — | connection_role[] | yes | Returns a list of connection roles |
+| POST | `/setup/connection_role` | post /setup/connection_role | — | connection_role |  | Create or update a connection role |
+| GET | `/setup/connection_role/{id}` | get /setup/connection_role/{id} | `id`* | connection_role | yes | Return a connection role |
+| DELETE | `/setup/connection_role/{id}` | delete /setup/connection_role/{id} | `id`* | — |  | Delete a connection role. |
+| GET | `/setup/data_type/` | get /setup/data_type/ | — | data_type[] | yes | Returns a list of data types |
+| POST | `/setup/data_type/` | post /setup/data_type/ | — | data_type |  | Create or update a data type |
+| GET | `/setup/data_type/{id}` | get /setup/data_type/{id} | `id`* | data_type | yes | Retrieve a data type |
+| DELETE | `/setup/data_type/{id}` | delete /setup/data_type/{id} | `id`* | — |  | Delete a data type |
+| GET | `/setup/flow/` | get /setup/flow/ | — | flow[] | yes | Returns a list of flows |
+| POST | `/setup/flow/` | post /setup/flow/ | — | flow |  | Create or update a flow |
+| GET | `/setup/flow/{id}` | get /setup/flow/{id} | `id`* | flow | yes | Retrieve an existing flow |
+| DELETE | `/setup/flow/{id}` | delete /setup/flow/{id} | `id`* | — |  | Delete a flow. |
+| GET | `/setup/namespace/` | get /setup/namespace/ | — | namespace[] | yes | Returns a list of namespaces |
+| POST | `/setup/namespace/` | post /setup/namespace/ | — | namespace |  | Create or update a namespace |
+| GET | `/setup/namespace/{id}` | get /setup/namespace/{id} | `id`* | namespace | yes | Retrieve an existing namespace |
+| DELETE | `/setup/namespace/{id}` | delete /setup/namespace/{id} | `id`* | — |  | Delete a namespace |
+| GET | `/setup/observer/` | get /setup/observer/ | — | observer[] | yes | Returns a list of events |
+| POST | `/setup/observer/` | post /setup/observer/ | — | observer |  | Create or update an event |
+| GET | `/setup/observer/{id}` | get /setup/observer/{id} | `id`* | observer | yes | Retrieve an existing event |
+| DELETE | `/setup/observer/{id}` | delete /setup/observer/{id} | `id`* | — |  | Delete an event |
+| GET | `/setup/scheduler/` | get /setup/scheduler/ | — | scheduler[] | yes | Returns a list of schedulers |
+| POST | `/setup/scheduler/` | post /setup/scheduler/ | — | scheduler |  | Create or update an scheduler |
+| GET | `/setup/scheduler/{id}` | get /setup/scheduler/{id} | `id`* | scheduler | yes | Retrieve an existing schedule |
+| DELETE | `/setup/scheduler/{id}` | delete /setup/scheduler/{id} | `id`* | — |  | Delete an schedule |
+| GET | `/setup/schema/` | get /setup/schema/ | — | schema[] | yes | Returns a list of schemas |
+| POST | `/setup/schema/` | post /setup/schema/ | — | schema |  | Create or update an schema |
+| GET | `/setup/schema/{id}` | get /setup/schema/{id} | `id`* | schema | yes | Retrieve an existing schema |
+| DELETE | `/setup/schema/{id}` | delete /setup/schema/{id} | `id`* | — |  | Delete an schema. |
+| GET | `/setup/translator/` | get /setup/translator/ | — | translator[] | yes | Returns a list of translators |
+| POST | `/setup/translator/` | post /setup/translator/ | — | translator |  | Create or update a translator |
+| GET | `/setup/translator/{id}` | get /setup/translator/{id} | `id`* | translator | yes | Retrieve an existing translator |
+| DELETE | `/setup/translator/{id}` | delete /setup/translator/{id} | `id`* | — |  | Delete a translator |
+| GET | `/setup/webhook/` | get /setup/webhook/ | — | webhook[] | yes | Returns a list of webhooks |
+| POST | `/setup/webhook/` | post /setup/webhook/ | — | webhook |  | Create or update a webhook |
+| GET | `/setup/webhook/{id}` | get /setup/webhook/{id} | `id`* | webhook | yes | Retrieve an existing webhook |
+| DELETE | `/setup/webhook/{id}` | delete /setup/webhook/{id} | `id`* | — |  | Delete a webhook |

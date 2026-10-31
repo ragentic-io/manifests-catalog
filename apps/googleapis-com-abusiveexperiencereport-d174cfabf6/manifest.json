@@ -13,6 +13,21 @@
         "from": "googleapis-com-abusiveexperiencereport-d174cfabf6",
         "kind": "EXPOSES",
         "to": "operation:get:/v1/{name}"
+      },
+      {
+        "from": "operation:get:/v1/violatingSites",
+        "kind": "RETURNS",
+        "to": "schema:ViolatingSitesResponse"
+      },
+      {
+        "from": "operation:get:/v1/{name}",
+        "kind": "RETURNS",
+        "to": "schema:SiteSummaryResponse"
+      },
+      {
+        "from": "schema:ViolatingSitesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:SiteSummaryResponse"
       }
     ],
     "nodes": [
@@ -22,35 +37,244 @@
       },
       {
         "deprecated": false,
+        "description": "Lists sites that are failing in the Abusive Experience Report.",
         "id": "operation:get:/v1/violatingSites",
         "kind": "operation",
         "method": "get",
         "name": "abusiveexperiencereport.violatingSites.list",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/violatingSites",
         "pointer": "#/paths/~1v1~1violatingSites/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ViolatingSitesResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "violatingSites"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a site's Abusive Experience Report summary.",
         "id": "operation:get:/v1/{name}",
         "kind": "operation",
         "method": "get",
         "name": "abusiveexperiencereport.sites.get",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/{name}",
         "pointer": "#/paths/~1v1~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SiteSummaryResponse"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sites"
+        ]
       },
       {
+        "description": "Response message for GetSiteSummary.",
         "id": "schema:SiteSummaryResponse",
         "kind": "schema",
-        "name": "SiteSummaryResponse"
+        "name": "SiteSummaryResponse",
+        "type": "object"
       },
       {
+        "description": "Response message for ListViolatingSites.",
         "id": "schema:ViolatingSitesResponse",
         "kind": "schema",
-        "name": "ViolatingSitesResponse"
+        "name": "ViolatingSitesResponse",
+        "type": "object"
       }
     ]
   },

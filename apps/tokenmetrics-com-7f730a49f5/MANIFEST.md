@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_files.readme.io_53cd56d-2d5efc7
 
 | | |
 | --- | --- |
-| Signed bundle | `97229962d9875c635ddf7fa2cfe0e75ecb502dba11cec7e0d1ff6992c02f35f5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,19 +32,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_files.readme.io_53cd56d-2d5efc7
 
 ## Operations (14)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/correlation` | correlation | Correlation |
-| GET | `/v1/indices` | indices | Indices |
-| GET | `/v1/investor-grades` | investorGrades | Investor Grades |
-| GET | `/v1/market-indicator` | marketIndicator | Market Indicator |
-| GET | `/v1/price` | price | Price |
-| GET | `/v1/price-prediction` | pricePrediction | Price Prediction |
-| GET | `/v1/quantmetrics-tier-1` | quantmetricsTier1 | Quantmetrics Tier 1 |
-| GET | `/v1/quantmetrics-tier-2` | quantmetricsTier2 | Quantmetrics Tier 2 |
-| GET | `/v1/resistance-support` | resistanceSupport | Resistance & Support |
-| GET | `/v1/scenario-analysis` | scenarioAnalysis | Scenario Analysis |
-| GET | `/v1/sentiments` | sentiments | Sentiments |
-| GET | `/v1/tokens` | tokens | Tokens |
-| GET | `/v1/trader-grades` | traderGrades | Trader Grades |
-| GET | `/v1/trading-indicator` | tradingIndicator | Trading Indicator |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/correlation` | correlation | `tokens`, `limit` | — | yes | Correlation |
+| GET | `/v1/indices` | indices | `exchanges`, `timeHorizon`, `lowCap`, `startDate`, `endDate`, `limit` | — | yes | Indices |
+| GET | `/v1/investor-grades` | investorGrades | `tokens`, `startDate`, `endDate`, `limit` | — | yes | Investor Grades |
+| GET | `/v1/market-indicator` | marketIndicator | `startDate`, `endDate`, `limit` | — | yes | Market Indicator |
+| GET | `/v1/price` | price | `tokens`, `startDate`, `endDate`, `limit`, `page` | — | yes | Price |
+| GET | `/v1/price-prediction` | pricePrediction | `tokens`, `date`, `limit` | — | yes | Price Prediction |
+| GET | `/v1/quantmetrics-tier-1` | quantmetricsTier1 | `tokens`, `date`, `limit` | — | yes | Quantmetrics Tier 1 |
+| GET | `/v1/quantmetrics-tier-2` | quantmetricsTier2 | `tokens`, `date`, `limit` | — | yes | Quantmetrics Tier 2 |
+| GET | `/v1/resistance-support` | resistanceSupport | `tokens`, `startDate`, `endDate`, `limit` | — | yes | Resistance & Support |
+| GET | `/v1/scenario-analysis` | scenarioAnalysis | `tokens`, `limit` | — | yes | Scenario Analysis |
+| GET | `/v1/sentiments` | sentiments | `tokens`, `startDate`, `endDate`, `limit` | — | yes | Sentiments |
+| GET | `/v1/tokens` | tokens | `token_ids`, `token_names`, `token_symbols` | — | yes | Tokens |
+| GET | `/v1/trader-grades` | traderGrades | `tokens`, `startDate`, `endDate`, `limit` | — | yes | Trader Grades |
+| GET | `/v1/trading-indicator` | tradingIndicator | `tokens`, `limit` | — | yes | Trading Indicator |

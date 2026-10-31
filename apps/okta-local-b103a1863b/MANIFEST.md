@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `46f1977f46f0817e2dd131c05e792ef4b572fc7387ab32746fa2b307ed4cbd19` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,24 +32,26 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (19)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/users` | findUser | Find User |
-| POST | `/api/v1/users` | createUserInGroup | Create User in Group |
-| GET | `/api/v1/users/me` | getCurrentUser | Get Current User |
-| GET | `/api/v1/users/{userId}` | getUser | Get User |
-| PUT | `/api/v1/users/{userId}` | setRecoveryCredential | Set Recovery Credential |
-| GET | `/api/v1/users/{userId}/appLinks` | getAssignedAppLinks | Get Assigned App Links |
-| POST | `/api/v1/users/{userId}/credentials/change_password` | changePassword | Change Password |
-| POST | `/api/v1/users/{userId}/credentials/change_recovery_question` | changeRecoveryQuestion | Change Recovery Question |
-| POST | `/api/v1/users/{userId}/credentials/forgot_password` | forgotPassword(oneTimeCode) | Forgot Password (One Time Code) |
-| GET | `/api/v1/users/{userId}/groups` | getGroupsForUser | Get Groups for User |
-| POST | `/api/v1/users/{userId}/lifecycle/activate` | activateUser | Activate User |
-| POST | `/api/v1/users/{userId}/lifecycle/deactivate` | deactivateUser | Deactivate User |
-| POST | `/api/v1/users/{userId}/lifecycle/expire_password` | setTempPassword | Set Temp Password |
-| POST | `/api/v1/users/{userId}/lifecycle/reset_factors` | resetFactors | Reset Factors |
-| POST | `/api/v1/users/{userId}/lifecycle/reset_password` | resetPassword | Reset Password |
-| POST | `/api/v1/users/{userId}/lifecycle/suspend` | suspendUser | Suspend User |
-| POST | `/api/v1/users/{userId}/lifecycle/unlock` | unlockUser | Unlock User |
-| POST | `/api/v1/users/{userId}/lifecycle/unsuspend` | unsuspendUser | Unsuspend User |
-| DELETE | `/api/v1/users/{userId}/sessions` | clearUserSessions | Clear User Sessions |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/users` | findUser | `q`, body: — | — | yes | Find User |
+| POST | `/api/v1/users` | createUserInGroup | `activate`, body: object | — |  | Create User in Group |
+| GET | `/api/v1/users/me` | getCurrentUser | body: — | — | yes | Get Current User |
+| GET | `/api/v1/users/{userId}` | getUser | `userId`*, body: — | — | yes | Get User |
+| PUT | `/api/v1/users/{userId}` | setRecoveryCredential | `userId`*, body: object | — |  | Set Recovery Credential |
+| GET | `/api/v1/users/{userId}/appLinks` | getAssignedAppLinks | `userId`*, body: — | — | yes | Get Assigned App Links |
+| POST | `/api/v1/users/{userId}/credentials/change_password` | changePassword | `userId`*, body: object | — |  | Change Password |
+| POST | `/api/v1/users/{userId}/credentials/change_recovery_question` | changeRecoveryQuestion | `userId`*, body: object | — |  | Change Recovery Question |
+| POST | `/api/v1/users/{userId}/credentials/forgot_password` | forgotPassword(oneTimeCode) | `userId`*, `sendEmail`, body: — | — |  | Forgot Password (One Time Code) |
+| GET | `/api/v1/users/{userId}/groups` | getGroupsForUser | `userId`*, body: — | — | yes | Get Groups for User |
+| POST | `/api/v1/users/{userId}/lifecycle/activate` | activateUser | `userId`*, `sendEmail`, body: — | — |  | Activate User |
+| POST | `/api/v1/users/{userId}/lifecycle/deactivate` | deactivateUser | `userId`*, body: — | — |  | Deactivate User |
+| POST | `/api/v1/users/{userId}/lifecycle/expire_password` | setTempPassword | `userId`*, `tempPassword`, body: — | — |  | Set Temp Password |
+| POST | `/api/v1/users/{userId}/lifecycle/reset_factors` | resetFactors | `userId`*, body: — | — |  | Reset Factors |
+| POST | `/api/v1/users/{userId}/lifecycle/reset_password` | resetPassword | `userId`*, `sendEmail`, body: — | — |  | Reset Password |
+| POST | `/api/v1/users/{userId}/lifecycle/suspend` | suspendUser | `userId`*, body: — | — |  | Suspend User |
+| POST | `/api/v1/users/{userId}/lifecycle/unlock` | unlockUser | `userId`*, body: — | — |  | Unlock User |
+| POST | `/api/v1/users/{userId}/lifecycle/unsuspend` | unsuspendUser | `userId`*, body: — | — |  | Unsuspend User |
+| DELETE | `/api/v1/users/{userId}/sessions` | clearUserSessions | `userId`*, body: — | — |  | Clear User Sessions |

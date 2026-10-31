@@ -22,17 +22,17 @@
       {
         "from": "doqs-dev-2471eafdc4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/designer/templates/{id}"
-      },
-      {
-        "from": "doqs-dev-2471eafdc4",
-        "kind": "EXPOSES",
         "to": "operation:get:/designer/templates/{id}"
       },
       {
         "from": "doqs-dev-2471eafdc4",
         "kind": "EXPOSES",
         "to": "operation:put:/designer/templates/{id}"
+      },
+      {
+        "from": "doqs-dev-2471eafdc4",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/designer/templates/{id}"
       },
       {
         "from": "doqs-dev-2471eafdc4",
@@ -52,11 +52,6 @@
       {
         "from": "doqs-dev-2471eafdc4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/templates/{id}"
-      },
-      {
-        "from": "doqs-dev-2471eafdc4",
-        "kind": "EXPOSES",
         "to": "operation:get:/templates/{id}"
       },
       {
@@ -67,12 +62,252 @@
       {
         "from": "doqs-dev-2471eafdc4",
         "kind": "EXPOSES",
+        "to": "operation:delete:/templates/{id}"
+      },
+      {
+        "from": "doqs-dev-2471eafdc4",
+        "kind": "EXPOSES",
         "to": "operation:get:/templates/{id}/file"
       },
       {
         "from": "doqs-dev-2471eafdc4",
         "kind": "EXPOSES",
         "to": "operation:post:/templates/{id}/fill"
+      },
+      {
+        "from": "operation:get:/designer/templates/",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_List_fillr.entities.designer_template.DesignerTemplate__"
+      },
+      {
+        "from": "operation:post:/designer/templates/",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateOrUpdateTemplateRequest"
+      },
+      {
+        "from": "operation:post:/designer/templates/",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_DesignerTemplate_"
+      },
+      {
+        "from": "operation:post:/designer/templates/preview",
+        "kind": "ACCEPTS",
+        "to": "schema:PreviewModel"
+      },
+      {
+        "from": "operation:post:/designer/templates/preview",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_PreviewResponse_"
+      },
+      {
+        "from": "operation:get:/designer/templates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_DesignerTemplate_"
+      },
+      {
+        "from": "operation:put:/designer/templates/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateOrUpdateTemplateRequest"
+      },
+      {
+        "from": "operation:put:/designer/templates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_DesignerTemplate_"
+      },
+      {
+        "from": "operation:delete:/designer/templates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_NoneType_"
+      },
+      {
+        "from": "operation:post:/designer/templates/{id}/generate",
+        "kind": "ACCEPTS",
+        "to": "schema:GeneratePDFPayload"
+      },
+      {
+        "from": "operation:get:/templates",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_List_apps.api.routes_templates.Template__"
+      },
+      {
+        "from": "operation:post:/templates",
+        "kind": "ACCEPTS",
+        "to": "schema:Body_create"
+      },
+      {
+        "from": "operation:post:/templates",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_Template_"
+      },
+      {
+        "from": "operation:get:/templates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_Template_"
+      },
+      {
+        "from": "operation:put:/templates/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTemplateRequest"
+      },
+      {
+        "from": "operation:put:/templates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_Template_"
+      },
+      {
+        "from": "operation:delete:/templates/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_NoneType_"
+      },
+      {
+        "from": "operation:get:/templates/{id}/file",
+        "kind": "RETURNS",
+        "to": "schema:ResponseOk_HttpUrl_"
+      },
+      {
+        "from": "operation:post:/templates/{id}/fill",
+        "kind": "ACCEPTS",
+        "to": "schema:FillTemplateRequest"
+      },
+      {
+        "from": "schema:CheckBoxField",
+        "kind": "REFERENCES",
+        "to": "schema:BoundingBox"
+      },
+      {
+        "from": "schema:CreateOrUpdateTemplateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Format"
+      },
+      {
+        "from": "schema:CreateOrUpdateTemplateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Orientation"
+      },
+      {
+        "from": "schema:DateField",
+        "kind": "REFERENCES",
+        "to": "schema:BoundingBox"
+      },
+      {
+        "from": "schema:DateField",
+        "kind": "REFERENCES",
+        "to": "schema:Font"
+      },
+      {
+        "from": "schema:DateField",
+        "kind": "REFERENCES",
+        "to": "schema:HorizontalAlign"
+      },
+      {
+        "from": "schema:DateField",
+        "kind": "REFERENCES",
+        "to": "schema:VerticalAlign"
+      },
+      {
+        "from": "schema:DesignerTemplate",
+        "kind": "REFERENCES",
+        "to": "schema:Format"
+      },
+      {
+        "from": "schema:DesignerTemplate",
+        "kind": "REFERENCES",
+        "to": "schema:Orientation"
+      },
+      {
+        "from": "schema:ImageField",
+        "kind": "REFERENCES",
+        "to": "schema:BoundingBox"
+      },
+      {
+        "from": "schema:ImageField",
+        "kind": "REFERENCES",
+        "to": "schema:ImageAnchor"
+      },
+      {
+        "from": "schema:ResponseOk_DesignerTemplate_",
+        "kind": "REFERENCES",
+        "to": "schema:DesignerTemplate"
+      },
+      {
+        "from": "schema:ResponseOk_List_apps.api.routes_templates.Template__",
+        "kind": "REFERENCES",
+        "to": "schema:Template"
+      },
+      {
+        "from": "schema:ResponseOk_List_fillr.entities.designer_template.DesignerTemplate__",
+        "kind": "REFERENCES",
+        "to": "schema:DesignerTemplate"
+      },
+      {
+        "from": "schema:ResponseOk_PreviewResponse_",
+        "kind": "REFERENCES",
+        "to": "schema:PreviewResponse"
+      },
+      {
+        "from": "schema:ResponseOk_Template_",
+        "kind": "REFERENCES",
+        "to": "schema:Template"
+      },
+      {
+        "from": "schema:Template",
+        "kind": "REFERENCES",
+        "to": "schema:CheckBoxField"
+      },
+      {
+        "from": "schema:Template",
+        "kind": "REFERENCES",
+        "to": "schema:DateField"
+      },
+      {
+        "from": "schema:Template",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:Template",
+        "kind": "REFERENCES",
+        "to": "schema:TextField"
+      },
+      {
+        "from": "schema:TextField",
+        "kind": "REFERENCES",
+        "to": "schema:BoundingBox"
+      },
+      {
+        "from": "schema:TextField",
+        "kind": "REFERENCES",
+        "to": "schema:Font"
+      },
+      {
+        "from": "schema:TextField",
+        "kind": "REFERENCES",
+        "to": "schema:HorizontalAlign"
+      },
+      {
+        "from": "schema:TextField",
+        "kind": "REFERENCES",
+        "to": "schema:VerticalAlign"
+      },
+      {
+        "from": "schema:UpdateTemplateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:CheckBoxField"
+      },
+      {
+        "from": "schema:UpdateTemplateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:DateField"
+      },
+      {
+        "from": "schema:UpdateTemplateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ImageField"
+      },
+      {
+        "from": "schema:UpdateTemplateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:TextField"
       }
     ],
     "nodes": [
@@ -86,8 +321,39 @@
         "kind": "operation",
         "method": "get",
         "name": "list_templates_designer_templates__get",
+        "parameters": [
+          {
+            "default": 100,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/designer/templates/",
         "pointer": "#/paths/~1designer~1templates~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_List_fillr.entities.designer_template.DesignerTemplate__"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyAuth": []
@@ -103,6 +369,28 @@
         "name": "create_template_designer_templates__post",
         "path": "/designer/templates/",
         "pointer": "#/paths/~1designer~1templates~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateOrUpdateTemplateRequest"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ResponseOk_DesignerTemplate_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyAuth": []
@@ -118,6 +406,28 @@
         "name": "preview_designer_templates_preview_post",
         "path": "/designer/templates/preview",
         "pointer": "#/paths/~1designer~1templates~1preview/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PreviewModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_PreviewResponse_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyAuth": []
@@ -127,27 +437,35 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/designer/templates/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete_designer_templates__id__delete",
-        "path": "/designer/templates/{id}",
-        "pointer": "#/paths/~1designer~1templates~1{id}/delete",
-        "security": [
-          {
-            "apiKeyAuth": []
-          }
-        ],
-        "summary": "Delete"
-      },
-      {
-        "deprecated": false,
         "id": "operation:get:/designer/templates/{id}",
         "kind": "operation",
         "method": "get",
         "name": "list_templates_designer_templates__id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/designer/templates/{id}",
         "pointer": "#/paths/~1designer~1templates~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_DesignerTemplate_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyAuth": []
@@ -161,8 +479,38 @@
         "kind": "operation",
         "method": "put",
         "name": "update_template_designer_templates__id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/designer/templates/{id}",
         "pointer": "#/paths/~1designer~1templates~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateOrUpdateTemplateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_DesignerTemplate_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyAuth": []
@@ -172,12 +520,79 @@
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/designer/templates/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete_designer_templates__id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/designer/templates/{id}",
+        "pointer": "#/paths/~1designer~1templates~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_NoneType_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "summary": "Delete"
+      },
+      {
+        "deprecated": false,
         "id": "operation:post:/designer/templates/{id}/generate",
         "kind": "operation",
         "method": "post",
         "name": "generate_pdf_designer_templates__id__generate_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/designer/templates/{id}/generate",
         "pointer": "#/paths/~1designer~1templates~1{id}~1generate/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "GeneratePDFPayload"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyAuth": []
@@ -191,14 +606,48 @@
         "kind": "operation",
         "method": "get",
         "name": "list",
+        "parameters": [
+          {
+            "default": 100,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/templates",
         "pointer": "#/paths/~1templates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_List_apps.api.routes_templates.Template__"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyAuth": []
           }
         ],
-        "summary": "List "
+        "summary": "List ",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -208,27 +657,37 @@
         "name": "create",
         "path": "/templates",
         "pointer": "#/paths/~1templates/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "Body_create"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ResponseOk_Template_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyAuth": []
           }
         ],
-        "summary": "Create"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/templates/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete__templates__id__delete",
-        "path": "/templates/{id}",
-        "pointer": "#/paths/~1templates~1{id}/delete",
-        "security": [
-          {
-            "apiKeyAuth": []
-          }
-        ],
-        "summary": "Delete "
+        "summary": "Create",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -236,14 +695,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{id}",
         "pointer": "#/paths/~1templates~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_Template_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyAuth": []
           }
         ],
-        "summary": "Get Template"
+        "summary": "Get Template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -251,14 +736,88 @@
         "kind": "operation",
         "method": "put",
         "name": "update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{id}",
         "pointer": "#/paths/~1templates~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateTemplateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_Template_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyAuth": []
           }
         ],
-        "summary": "Update"
+        "summary": "Update",
+        "tags": [
+          "Templates"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/templates/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete__templates__id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/templates/{id}",
+        "pointer": "#/paths/~1templates~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_NoneType_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "summary": "Delete ",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -266,14 +825,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get_file_templates__id__file_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{id}/file",
         "pointer": "#/paths/~1templates~1{id}~1file/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResponseOk_HttpUrl_"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apiKeyAuth": []
           }
         ],
-        "summary": "Get File"
+        "summary": "Get File",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
@@ -281,154 +866,220 @@
         "kind": "operation",
         "method": "post",
         "name": "fill",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/templates/{id}/fill",
         "pointer": "#/paths/~1templates~1{id}~1fill/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "FillTemplateRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "4XX",
+            "type": "ResponseError"
+          },
+          {
+            "status": "5XX",
+            "type": "ResponseError"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apiKeyAuth": []
           }
         ],
-        "summary": "Fill"
+        "summary": "Fill",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "id": "schema:Body_create",
         "kind": "schema",
-        "name": "Body_create"
+        "name": "Body_create",
+        "type": "object"
       },
       {
         "id": "schema:BoundingBox",
         "kind": "schema",
-        "name": "BoundingBox"
+        "name": "BoundingBox",
+        "type": "object"
       },
       {
         "id": "schema:CheckBoxField",
         "kind": "schema",
-        "name": "CheckBoxField"
+        "name": "CheckBoxField",
+        "type": "object"
       },
       {
         "id": "schema:CreateOrUpdateTemplateRequest",
         "kind": "schema",
-        "name": "CreateOrUpdateTemplateRequest"
+        "name": "CreateOrUpdateTemplateRequest",
+        "type": "object"
       },
       {
         "id": "schema:DateField",
         "kind": "schema",
-        "name": "DateField"
+        "name": "DateField",
+        "type": "object"
       },
       {
         "id": "schema:DesignerTemplate",
         "kind": "schema",
-        "name": "DesignerTemplate"
+        "name": "DesignerTemplate",
+        "type": "object"
       },
       {
         "id": "schema:FillTemplateRequest",
         "kind": "schema",
-        "name": "FillTemplateRequest"
+        "name": "FillTemplateRequest",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Font",
         "kind": "schema",
-        "name": "Font"
+        "name": "Font",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Format",
         "kind": "schema",
-        "name": "Format"
+        "name": "Format",
+        "type": "string"
       },
       {
         "id": "schema:GeneratePDFPayload",
         "kind": "schema",
-        "name": "GeneratePDFPayload"
+        "name": "GeneratePDFPayload",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:HorizontalAlign",
         "kind": "schema",
-        "name": "HorizontalAlign"
+        "name": "HorizontalAlign",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:ImageAnchor",
         "kind": "schema",
-        "name": "ImageAnchor"
+        "name": "ImageAnchor",
+        "type": "string"
       },
       {
         "id": "schema:ImageField",
         "kind": "schema",
-        "name": "ImageField"
+        "name": "ImageField",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:Orientation",
         "kind": "schema",
-        "name": "Orientation"
+        "name": "Orientation",
+        "type": "string"
       },
       {
         "id": "schema:PreviewModel",
         "kind": "schema",
-        "name": "PreviewModel"
+        "name": "PreviewModel",
+        "type": "object"
       },
       {
         "id": "schema:PreviewResponse",
         "kind": "schema",
-        "name": "PreviewResponse"
+        "name": "PreviewResponse",
+        "type": "object"
       },
       {
         "id": "schema:ResponseError",
         "kind": "schema",
-        "name": "ResponseError"
+        "name": "ResponseError",
+        "type": "object"
       },
       {
         "id": "schema:ResponseOk_DesignerTemplate_",
         "kind": "schema",
-        "name": "ResponseOk_DesignerTemplate_"
+        "name": "ResponseOk_DesignerTemplate_",
+        "type": "object"
       },
       {
         "id": "schema:ResponseOk_HttpUrl_",
         "kind": "schema",
-        "name": "ResponseOk_HttpUrl_"
+        "name": "ResponseOk_HttpUrl_",
+        "type": "object"
       },
       {
         "id": "schema:ResponseOk_List_apps.api.routes_templates.Template__",
         "kind": "schema",
-        "name": "ResponseOk_List_apps.api.routes_templates.Template__"
+        "name": "ResponseOk_List_apps.api.routes_templates.Template__",
+        "type": "object"
       },
       {
         "id": "schema:ResponseOk_List_fillr.entities.designer_template.DesignerTemplate__",
         "kind": "schema",
-        "name": "ResponseOk_List_fillr.entities.designer_template.DesignerTemplate__"
+        "name": "ResponseOk_List_fillr.entities.designer_template.DesignerTemplate__",
+        "type": "object"
       },
       {
         "id": "schema:ResponseOk_NoneType_",
         "kind": "schema",
-        "name": "ResponseOk_NoneType_"
+        "name": "ResponseOk_NoneType_",
+        "type": "object"
       },
       {
         "id": "schema:ResponseOk_PreviewResponse_",
         "kind": "schema",
-        "name": "ResponseOk_PreviewResponse_"
+        "name": "ResponseOk_PreviewResponse_",
+        "type": "object"
       },
       {
         "id": "schema:ResponseOk_Template_",
         "kind": "schema",
-        "name": "ResponseOk_Template_"
+        "name": "ResponseOk_Template_",
+        "type": "object"
       },
       {
         "id": "schema:Template",
         "kind": "schema",
-        "name": "Template"
+        "name": "Template",
+        "type": "object"
       },
       {
         "id": "schema:TextField",
         "kind": "schema",
-        "name": "TextField"
+        "name": "TextField",
+        "type": "object"
       },
       {
         "id": "schema:UpdateTemplateRequest",
         "kind": "schema",
-        "name": "UpdateTemplateRequest"
+        "name": "UpdateTemplateRequest",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:VerticalAlign",
         "kind": "schema",
-        "name": "VerticalAlign"
+        "name": "VerticalAlign",
+        "type": "string"
       }
     ]
   },

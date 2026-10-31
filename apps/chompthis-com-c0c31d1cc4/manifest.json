@@ -23,6 +23,26 @@
         "from": "chompthis-com-c0c31d1cc4",
         "kind": "EXPOSES",
         "to": "operation:get:/food/ingredient/search.php"
+      },
+      {
+        "from": "operation:get:/food/branded/barcode.php",
+        "kind": "RETURNS",
+        "to": "schema:BrandedFoodObject"
+      },
+      {
+        "from": "operation:get:/food/branded/name.php",
+        "kind": "RETURNS",
+        "to": "schema:BrandedFoodObject"
+      },
+      {
+        "from": "operation:get:/food/branded/search.php",
+        "kind": "RETURNS",
+        "to": "schema:BrandedFoodObject"
+      },
+      {
+        "from": "operation:get:/food/ingredient/search.php",
+        "kind": "RETURNS",
+        "to": "schema:IngredientObject"
       }
     ],
     "nodes": [
@@ -32,12 +52,41 @@
       },
       {
         "deprecated": false,
+        "description": "## Get data for a branded food using the food's UPC/EAN barcode.",
         "id": "operation:get:/food/branded/barcode.php",
         "kind": "operation",
         "method": "get",
         "name": "get /food/branded/barcode.php",
+        "parameters": [
+          {
+            "description": "#### UPC/EAN barcode **Example** > ```&code=0842234000988```",
+            "in": "query",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/food/branded/barcode.php",
         "pointer": "#/paths/~1food~1branded~1barcode.php/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BrandedFoodObject"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -47,12 +96,67 @@
       },
       {
         "deprecated": false,
+        "description": "## Search for branded food items by name.",
         "id": "operation:get:/food/branded/name.php",
         "kind": "operation",
         "method": "get",
         "name": "get /food/branded/name.php",
+        "parameters": [
+          {
+            "description": "#### Search for branded food items using a general food name keyword.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "#### Set maximum number of records you want the API to return.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "#### This is how you paginate the search result.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/food/branded/name.php",
         "pointer": "#/paths/~1food~1branded~1name.php/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BrandedFoodObject"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -62,12 +166,149 @@
       },
       {
         "deprecated": false,
+        "description": "## Search for branded food items using various parameters.",
         "id": "operation:get:/food/branded/search.php",
         "kind": "operation",
         "method": "get",
         "name": "get /food/branded/search.php",
+        "parameters": [
+          {
+            "description": "#### Filter the search to only include branded foods that contain a specific allergen.",
+            "in": "query",
+            "name": "allergen",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods that are owned by a specific brand.",
+            "in": "query",
+            "name": "brand",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods from a specific category.",
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods that are sold in a specific country.",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods that are considered compatible with a specific diet.",
+            "enum": [
+              "Vegan",
+              "Vegetarian",
+              "Gluten Free"
+            ],
+            "in": "query",
+            "name": "diet",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods that contain a specific ingredient.",
+            "in": "query",
+            "name": "ingredient",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods that are associated with a specific keyword.",
+            "in": "query",
+            "name": "keyword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods that contain a specific mineral.",
+            "in": "query",
+            "name": "mineral",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods that contain a specific nutrient.",
+            "in": "query",
+            "name": "nutrient",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods that contain a specific ingredient made using palm oil.",
+            "in": "query",
+            "name": "palm_oil",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "### Filter the search to only include branded foods that contain a specific trace ingredient.",
+            "in": "query",
+            "name": "trace",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Filter the search to only include branded foods that contain a specific vitamin.",
+            "in": "query",
+            "name": "vitamin",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "#### Set maximum number of records you want the API to return.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "#### This is how you paginate the search result.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/food/branded/search.php",
         "pointer": "#/paths/~1food~1branded~1search.php/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BrandedFoodObject"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -77,12 +318,53 @@
       },
       {
         "deprecated": false,
+        "description": "## Get data for a specific ingredient or a specific set of ingredients.",
         "id": "operation:get:/food/ingredient/search.php",
         "kind": "operation",
         "method": "get",
         "name": "get /food/ingredient/search.php",
+        "parameters": [
+          {
+            "description": "Search our database for a single ingredient or a specific set of ingredients.",
+            "in": "query",
+            "name": "find",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "#### Set maximum number of records you want the API to return, per search term.",
+            "enum": [
+              1,
+              2,
+              3
+            ],
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/food/ingredient/search.php",
         "pointer": "#/paths/~1food~1ingredient~1search.php/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IngredientObject"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -91,14 +373,18 @@
         "summary": "Get raw/generic food ingredient item(s)"
       },
       {
+        "description": "Please read the description of each field in this API response object example.",
         "id": "schema:BrandedFoodObject",
         "kind": "schema",
-        "name": "BrandedFoodObject"
+        "name": "BrandedFoodObject",
+        "type": "object"
       },
       {
+        "description": "Please read the description of each field in this API response object example.",
         "id": "schema:IngredientObject",
         "kind": "schema",
-        "name": "IngredientObject"
+        "name": "IngredientObject",
+        "type": "object"
       }
     ]
   },

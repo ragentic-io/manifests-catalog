@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `ee3e2d7e934398aeb0119f7c7f8591944c393c68cc709b4fc8093e178668c92b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,61 +34,63 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 18 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/accounts/{id}` | delete /accounts/{id} | Delete account |
-| GET | `/accounts/{id}` | get /accounts/{id} | Get account |
-| PUT | `/accounts/{id}` | put /accounts/{id} | Update account |
-| GET | `/accounts/{id}/transactions` | get /accounts/{id}/transactions | List transactions in account |
-| DELETE | `/attachments/{id}` | delete /attachments/{id} | Delete attachment |
-| GET | `/attachments/{id}` | get /attachments/{id} | Get attachment |
-| PUT | `/attachments/{id}` | put /attachments/{id} | Update attachment |
-| DELETE | `/categories/{id}` | delete /categories/{id} | Delete category |
-| GET | `/categories/{id}` | get /categories/{id} | Get category |
-| PUT | `/categories/{id}` | put /categories/{id} | Update category |
-| POST | `/categories/{id}/category_rules` | post /categories/{id}/category_rules | Create category rule in category |
-| GET | `/categories/{id}/transactions` | get /categories/{id}/transactions | List transactions in categories |
-| GET | `/currencies` | get /currencies | List currencies |
-| GET | `/currencies/{id}` | get /currencies/{id} | Get currency |
-| DELETE | `/events/{id}` | delete /events/{id} | Delete event |
-| GET | `/events/{id}` | get /events/{id} | Get event |
-| PUT | `/events/{id}` | put /events/{id} | Update event |
-| DELETE | `/institutions/{id}` | delete /institutions/{id} | Delete institution |
-| GET | `/institutions/{id}` | get /institutions/{id} | Get institution |
-| PUT | `/institutions/{id}` | put /institutions/{id} | Update institution |
-| GET | `/institutions/{id}/accounts` | get /institutions/{id}/accounts | List accounts in institution |
-| GET | `/me` | get /me | Get the authorised user |
-| GET | `/scenarios/{id}/events` | get /scenarios/{id}/events | List events in scenario. |
-| POST | `/scenarios/{id}/events` | post /scenarios/{id}/events | Create event in scenario |
-| GET | `/time_zones` | get /time_zones | List time zones |
-| GET | `/transaction_accounts/{id}` | get /transaction_accounts/{id} | Get transaction account |
-| PUT | `/transaction_accounts/{id}` | put /transaction_accounts/{id} | Update transaction account |
-| GET | `/transaction_accounts/{id}/transactions` | get /transaction_accounts/{id}/transactions | List transactions in transaction account |
-| POST | `/transaction_accounts/{id}/transactions` | post /transaction_accounts/{id}/transactions | Create a transaction in transaction account |
-| DELETE | `/transactions/{id}` | delete /transactions/{id} | Delete transaction |
-| GET | `/transactions/{id}` | get /transactions/{id} | Get a transaction |
-| PUT | `/transactions/{id}` | put /transactions/{id} | Update a transaction |
-| GET | `/transactions/{id}/attachments` | get /transactions/{id}/attachments | List attachments in transaction |
-| POST | `/transactions/{id}/attachments` | post /transactions/{id}/attachments | Assigns attachment to transaction |
-| DELETE | `/transactions/{transaction_id}/attachments/{attachment_id}` | delete /transactions/{transaction_id}/attachments/{attachment_id} | Unassigns attachment in transaction |
-| GET | `/users/{id}` | get /users/{id} | Get user |
-| PUT | `/users/{id}` | put /users/{id} | Update user |
-| GET | `/users/{id}/accounts` | get /users/{id}/accounts | List accounts in user |
-| POST | `/users/{id}/accounts` | post /users/{id}/accounts | Create an account in user |
-| PUT | `/users/{id}/accounts` | put /users/{id}/accounts | Update the display order of accounts in user |
-| GET | `/users/{id}/attachments` | get /users/{id}/attachments | Lists attachments in user |
-| POST | `/users/{id}/attachments` | post /users/{id}/attachments | Create attachment in user |
-| GET | `/users/{id}/budget` | get /users/{id}/budget | List budget for user |
-| GET | `/users/{id}/budget_summary` | get /users/{id}/budget_summary | Get budget summary for user |
-| GET | `/users/{id}/categories` | get /users/{id}/categories | List categories in user |
-| POST | `/users/{id}/categories` | post /users/{id}/categories | Create category in user |
-| GET | `/users/{id}/category_rules` | get /users/{id}/category_rules | List category rules in user |
-| GET | `/users/{id}/events` | get /users/{id}/events | List events in user. |
-| DELETE | `/users/{id}/forecast_cache` | delete /users/{id}/forecast_cache | Delete forecast cache for user |
-| GET | `/users/{id}/institutions` | get /users/{id}/institutions | List institutions in user |
-| POST | `/users/{id}/institutions` | post /users/{id}/institutions | Create institution in user |
-| GET | `/users/{id}/labels` | get /users/{id}/labels | List labels in user |
-| GET | `/users/{id}/saved_searches` | get /users/{id}/saved_searches | List saved searches in user |
-| GET | `/users/{id}/transaction_accounts` | get /users/{id}/transaction_accounts | List transaction accounts in user |
-| GET | `/users/{id}/transactions` | get /users/{id}/transactions | List transactions in user |
-| GET | `/users/{id}/trend_analysis` | get /users/{id}/trend_analysis | Get trend analysis for user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounts/{id}` | get /accounts/{id} | `id`* | Account | yes | Get account |
+| PUT | `/accounts/{id}` | put /accounts/{id} | `id`*, body: object | Account |  | Update account |
+| DELETE | `/accounts/{id}` | delete /accounts/{id} | `id`* | — |  | Delete account |
+| GET | `/accounts/{id}/transactions` | get /accounts/{id}/transactions | `id`*, `start_date`, `end_date`, `updated_since`, `uncategorised`, `type`, `needs_review`, `search`, `page` | Transaction[] | yes | List transactions in account |
+| GET | `/attachments/{id}` | get /attachments/{id} | `id`* | Attachment | yes | Get attachment |
+| PUT | `/attachments/{id}` | put /attachments/{id} | `id`*, body: object | Attachment |  | Update attachment |
+| DELETE | `/attachments/{id}` | delete /attachments/{id} | `id`* | — |  | Delete attachment |
+| GET | `/categories/{id}` | get /categories/{id} | `id`* | Category | yes | Get category |
+| PUT | `/categories/{id}` | put /categories/{id} | `id`*, body: object | Category |  | Update category |
+| DELETE | `/categories/{id}` | delete /categories/{id} | `id`* | — |  | Delete category |
+| POST | `/categories/{id}/category_rules` | post /categories/{id}/category_rules | `id`*, body: object | CategoryRule |  | Create category rule in category |
+| GET | `/categories/{id}/transactions` | get /categories/{id}/transactions | `id`*, `start_date`, `end_date`, `updated_since`, `uncategorised`, `type`, `needs_review`, `search`, `page` | Transaction[] | yes | List transactions in categories |
+| GET | `/currencies` | get /currencies | — | Currency[] | yes | List currencies |
+| GET | `/currencies/{id}` | get /currencies/{id} | `id`* | Currency | yes | Get currency |
+| GET | `/events/{id}` | get /events/{id} | `id`* | Event | yes | Get event |
+| PUT | `/events/{id}` | put /events/{id} | `id`*, body: object | Event |  | Update event |
+| DELETE | `/events/{id}` | delete /events/{id} | `id`*, `behaviour`* | — |  | Delete event |
+| GET | `/institutions/{id}` | get /institutions/{id} | `id`* | Institution | yes | Get institution |
+| PUT | `/institutions/{id}` | put /institutions/{id} | `id`*, body: object | Institution |  | Update institution |
+| DELETE | `/institutions/{id}` | delete /institutions/{id} | `id`*, `merge_into_institution_id` | — |  | Delete institution |
+| GET | `/institutions/{id}/accounts` | get /institutions/{id}/accounts | `id`* | Account[] | yes | List accounts in institution |
+| GET | `/me` | get /me | — | User | yes | Get the authorised user |
+| GET | `/scenarios/{id}/events` | get /scenarios/{id}/events | `id`*, `start_date`*, `end_date`* | Event[] | yes | List events in scenario. |
+| POST | `/scenarios/{id}/events` | post /scenarios/{id}/events | `id`*, body: object | Event |  | Create event in scenario |
+| GET | `/time_zones` | get /time_zones | — | TimeZone[] | yes | List time zones |
+| GET | `/transaction_accounts/{id}` | get /transaction_accounts/{id} | `id`* | TransactionAccount | yes | Get transaction account |
+| PUT | `/transaction_accounts/{id}` | put /transaction_accounts/{id} | `id`*, body: object | TransactionAccount |  | Update transaction account |
+| GET | `/transaction_accounts/{id}/transactions` | get /transaction_accounts/{id}/transactions | `id`*, `start_date`, `end_date`, `updated_since`, `uncategorised`, `type`, `needs_review`, `search`, `page` | Transaction[] | yes | List transactions in transaction account |
+| POST | `/transaction_accounts/{id}/transactions` | post /transaction_accounts/{id}/transactions | `id`*, body: object | Transaction |  | Create a transaction in transaction account |
+| GET | `/transactions/{id}` | get /transactions/{id} | `id`* | Transaction | yes | Get a transaction |
+| PUT | `/transactions/{id}` | put /transactions/{id} | `id`*, body: object | Transaction |  | Update a transaction |
+| DELETE | `/transactions/{id}` | delete /transactions/{id} | `id`* | — |  | Delete transaction |
+| GET | `/transactions/{id}/attachments` | get /transactions/{id}/attachments | `id`* | Attachment[] | yes | List attachments in transaction |
+| POST | `/transactions/{id}/attachments` | post /transactions/{id}/attachments | `id`*, body: object | Attachment |  | Assigns attachment to transaction |
+| DELETE | `/transactions/{transaction_id}/attachments/{attachment_id}` | delete /transactions/{transaction_id}/attachments/{attachment_id} | `transaction_id`*, `attachment_id`* | — |  | Unassigns attachment in transaction |
+| GET | `/users/{id}` | get /users/{id} | `id`* | User | yes | Get user |
+| PUT | `/users/{id}` | put /users/{id} | `id`*, body: object | User |  | Update user |
+| GET | `/users/{id}/accounts` | get /users/{id}/accounts | `id`* | Account[] | yes | List accounts in user |
+| PUT | `/users/{id}/accounts` | put /users/{id}/accounts | `id`*, body: object | Account[] |  | Update the display order of accounts in user |
+| POST | `/users/{id}/accounts` | post /users/{id}/accounts | `id`*, body: object | Account |  | Create an account in user |
+| GET | `/users/{id}/attachments` | get /users/{id}/attachments | `id`*, `unassigned` | Attachment[] | yes | Lists attachments in user |
+| POST | `/users/{id}/attachments` | post /users/{id}/attachments | `id`*, body: object | Attachment |  | Create attachment in user |
+| GET | `/users/{id}/budget` | get /users/{id}/budget | `id`*, `roll_up` | BudgetAnalysisPackage[] | yes | List budget for user |
+| GET | `/users/{id}/budget_summary` | get /users/{id}/budget_summary | `id`*, `period`*, `interval`*, `start_date`*, `end_date`* | BudgetAnalysisPackage[] | yes | Get budget summary for user |
+| GET | `/users/{id}/categories` | get /users/{id}/categories | `id`* | Category[] | yes | List categories in user |
+| POST | `/users/{id}/categories` | post /users/{id}/categories | `id`*, body: object | Category |  | Create category in user |
+| GET | `/users/{id}/category_rules` | get /users/{id}/category_rules | `id`* | CategoryRule[] | yes | List category rules in user |
+| GET | `/users/{id}/events` | get /users/{id}/events | `id`*, `start_date`*, `end_date`* | Event[] | yes | List events in user. |
+| DELETE | `/users/{id}/forecast_cache` | delete /users/{id}/forecast_cache | `id`* | — |  | Delete forecast cache for user |
+| GET | `/users/{id}/institutions` | get /users/{id}/institutions | `id`* | Institution[] | yes | List institutions in user |
+| POST | `/users/{id}/institutions` | post /users/{id}/institutions | `id`*, body: object | Institution |  | Create institution in user |
+| GET | `/users/{id}/labels` | get /users/{id}/labels | `id`* | string[] | yes | List labels in user |
+| GET | `/users/{id}/saved_searches` | get /users/{id}/saved_searches | `id`* | SavedSearch[] | yes | List saved searches in user |
+| GET | `/users/{id}/transaction_accounts` | get /users/{id}/transaction_accounts | `id`* | TransactionAccount[] | yes | List transaction accounts in user |
+| GET | `/users/{id}/transactions` | get /users/{id}/transactions | `id`*, `start_date`, `end_date`, `updated_since`, `uncategorised`, `type`, `needs_review`, `search`, `page` | Transaction[] | yes | List transactions in user |
+| GET | `/users/{id}/trend_analysis` | get /users/{id}/trend_analysis | `id`*, `period`*, `interval`*, `start_date`*, `end_date`*, `categories`*, `scenarios`* | BudgetAnalysisPackage[] | yes | Get trend analysis for user |

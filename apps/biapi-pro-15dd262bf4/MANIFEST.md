@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `dba0d97e86ed0aa2cd5e3c382a9f4eada1ad8226e7d96e4cced5cf834af57039` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,172 +34,174 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 56 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account_types` | get /account_types | Get account types |
-| GET | `/account_types/{id_account_type}` | get /account_types/{id_account_type} | Get an account type |
-| POST | `/admin/jwt` | post /admin/jwt | Generate a jwt manage token |
-| POST | `/auth/init` | post /auth/init | Create a new anonymous user |
-| POST | `/auth/jwt` | post /auth/jwt | Generate a user jwt token |
-| POST | `/auth/renew` | post /auth/renew | Get a new access token given an user id and client credentials |
-| DELETE | `/auth/token` | delete /auth/token | Remove user access |
-| POST | `/auth/token` | post /auth/token | Login to API with credentials |
-| POST | `/auth/token/access` | post /auth/token/access | Transform a temporary code to a access_token |
-| GET | `/auth/token/code` | get /auth/token/code | Generate a user temporary token |
-| GET | `/banks` | get /banks | Get list of connectors |
-| POST | `/banks/categories` | post /banks/categories | Create bank categories |
-| DELETE | `/banks/categories/{id_category}` | delete /banks/categories/{id_category} | Delete the supplied category |
-| POST | `/banks/categories/{id_category}` | post /banks/categories/{id_category} | Edit a bank categories |
-| GET | `/banks/{id_bank}` | get /banks/{id_bank} | Get a connector |
-| GET | `/banks/{id_connector}/connections` | get /banks/{id_connector}/connections | Get a subset of id_connection for a given bank. Different selection methode are possible |
-| GET | `/banks/{id_connector}/logos` | get /banks/{id_connector}/logos | Get all links to the files associated with this connector. |
-| GET | `/banks/{id_connector}/logos/main` | get /banks/{id_connector}/logos/main | Get all links to the files associated with this connector. |
-| GET | `/banks/{id_connector}/logos/thumbnail` | get /banks/{id_connector}/logos/thumbnail | Get all links to the files associated with this connector. |
-| GET | `/banks/{id_connector}/sources` | get /banks/{id_connector}/sources | Get list of connector sources |
-| GET | `/banks/{id_connector}/sources/{id_connector_source}/fields` | get /banks/{id_connector}/sources/{id_connector_source}/fields | Get fields specific to a domain and a source |
-| GET | `/banks/{id_connector}/sources/{id_source}` | get /banks/{id_connector}/sources/{id_source} | Get the connector source |
-| GET | `/categories` | get /categories | Get all categories |
-| POST | `/categories/keywords` | post /categories/keywords | Add a new keyword associated with a category in the database. |
-| DELETE | `/categories/keywords/{id_keyword}` | delete /categories/keywords/{id_keyword} | Delete a particular key-value pair on a transaction. |
-| POST | `/categorize` | post /categorize | categorize transactions without storing them |
-| GET | `/certificate/{type}` | get /certificate/{type} | Get the latest certificate of a type |
-| GET | `/clients` | get /clients | List clients |
-| POST | `/clients` | post /clients | Create a client |
-| DELETE | `/clients/{id_client}` | delete /clients/{id_client} | Delete a client |
-| GET | `/clients/{id_client}` | get /clients/{id_client} | Get information about a client |
-| PUT | `/clients/{id_client}` | put /clients/{id_client} | Update a client |
-| DELETE | `/clients/{id_client}/logo` | delete /clients/{id_client}/logo | Delete the client logo |
-| POST | `/clients/{id_client}/logo` | post /clients/{id_client}/logo | Update the client logo |
-| GET | `/config` | get /config | Get configuration of the API. |
-| POST | `/config` | post /config | Insert/update configuration key(s)/value(s) on the API. |
-| GET | `/config/logs` | get /config/logs | Get configuration change history of the API. |
-| GET | `/connections` | get /connections | Get connections without a user |
-| GET | `/connections/{id_connection}/logs` | get /connections/{id_connection}/logs | Get connection logs |
-| GET | `/connections/{id_connection}/sources` | get /connections/{id_connection}/sources | Get connection sources |
-| DELETE | `/connections/{id_connection}/sources/{id_source}` | delete /connections/{id_connection}/sources/{id_source} | Disable a connection source |
-| POST | `/connections/{id_connection}/sources/{id_source}` | post /connections/{id_connection}/sources/{id_source} | " |
-| PUT | `/connections/{id_connection}/sources/{id_source}` | put /connections/{id_connection}/sources/{id_source} | Update connection source |
-| GET | `/connectors` | get /connectors | Get list of connectors |
-| POST | `/connectors` | post /connectors | Request a new connector |
-| PUT | `/connectors` | put /connectors | Enable/disable several connectors |
-| GET | `/connectors/{id_connector}` | get /connectors/{id_connector} | Get a connector |
-| PUT | `/connectors/{id_connector}` | put /connectors/{id_connector} | Edit the provided connector |
-| GET | `/connectors/{id_connector}/logos` | get /connectors/{id_connector}/logos | Get all links to the files associated with this connector. |
-| POST | `/connectors/{id_connector}/logos` | post /connectors/{id_connector}/logos | Create a connector Logo |
-| PUT | `/connectors/{id_connector}/logos` | put /connectors/{id_connector}/logos | Create or Update a connector Logo |
-| GET | `/connectors/{id_connector}/logos/main` | get /connectors/{id_connector}/logos/main | Get all links to the files associated with this connector. |
-| GET | `/connectors/{id_connector}/logos/thumbnail` | get /connectors/{id_connector}/logos/thumbnail | Get all links to the files associated with this connector. |
-| DELETE | `/connectors/{id_connector}/logos/{id_logo}` | delete /connectors/{id_connector}/logos/{id_logo} | Delete a single Logo object. |
-| PUT | `/connectors/{id_connector}/logos/{id_logo}` | put /connectors/{id_connector}/logos/{id_logo} | Create or Update a connector Logo. |
-| GET | `/connectors/{id_connector}/sources` | get /connectors/{id_connector}/sources | Get list of connector sources |
-| PUT | `/connectors/{id_connector}/sources` | put /connectors/{id_connector}/sources | Edit several connector sources |
-| GET | `/connectors/{id_connector}/sources/{id_connector_source}/fields` | get /connectors/{id_connector}/sources/{id_connector_source}/fields | Get fields specific to a domain and a source |
-| GET | `/connectors/{id_connector}/sources/{id_source}` | get /connectors/{id_connector}/sources/{id_source} | Get the connector source |
-| PUT | `/connectors/{id_connector}/sources/{id_source}` | put /connectors/{id_connector}/sources/{id_source} | Edit the provided connector source |
-| GET | `/incidents` | get /incidents | Get incidents logs. |
-| GET | `/invoicing` | get /invoicing | Get invoicing data for a given period (default is the current month). |
-| GET | `/logs` | get /logs | Get connection logs |
-| GET | `/monitoring` | get /monitoring | get performances stats on this instance |
-| GET | `/providers` | get /providers | Get list of connectors |
-| GET | `/providers/{id_connector}/connections` | get /providers/{id_connector}/connections | Get a random subset of provider's id_connection |
-| GET | `/providers/{id_connector}/logos` | get /providers/{id_connector}/logos | Get all links to the files associated with this connector. |
-| GET | `/providers/{id_connector}/logos/main` | get /providers/{id_connector}/logos/main | Get all links to the files associated with this connector. |
-| GET | `/providers/{id_connector}/logos/thumbnail` | get /providers/{id_connector}/logos/thumbnail | Get all links to the files associated with this connector. |
-| GET | `/providers/{id_connector}/sources` | get /providers/{id_connector}/sources | Get list of connector sources |
-| GET | `/providers/{id_connector}/sources/{id_connector_source}/fields` | get /providers/{id_connector}/sources/{id_connector_source}/fields | Get fields specific to a domain and a source |
-| GET | `/providers/{id_connector}/sources/{id_source}` | get /providers/{id_connector}/sources/{id_source} | Get the connector source |
-| GET | `/providers/{id_provider}` | get /providers/{id_provider} | Get a connector |
-| GET | `/psd2-registrations` | get /psd2-registrations | Get details on all psd2 registrations |
-| GET | `/psd2-registrations/{id_psd2-registration}` | get /psd2-registrations/{id_psd2-registration} | Get details for a given psd2 registration |
-| GET | `/psd2-registrations/{id_psd2registration}/logs` | get /psd2-registrations/{id_psd2registration}/logs | Get psd2 registration logs. |
-| GET | `/publickey` | get /publickey | Get public encryption key of the API. |
-| POST | `/test/sync` | post /test/sync | Test synchronization on a random connection. |
-| POST | `/test/webhooks` | post /test/webhooks | Test synchronization on a random connection. |
-| GET | `/users` | get /users | Get users |
-| DELETE | `/users/{id_user}` | delete /users/{id_user} | Delete the user |
-| GET | `/users/{id_user}` | get /users/{id_user} | Get a user |
-| GET | `/users/{id_user}/account_types` | get /users/{id_user}/account_types | Get account types |
-| GET | `/users/{id_user}/account_types/{id_account_type}` | get /users/{id_user}/account_types/{id_account_type} | Get an account type |
-| GET | `/users/{id_user}/accounts/{id_account}/categories` | get /users/{id_user}/accounts/{id_account}/categories | Get the category |
-| GET | `/users/{id_user}/accounts/{id_account}/transactionsclusters` | get /users/{id_user}/accounts/{id_account}/transactionsclusters | Get clustered transactions |
-| POST | `/users/{id_user}/accounts/{id_account}/transactionsclusters` | post /users/{id_user}/accounts/{id_account}/transactionsclusters | Create clustered transaction |
-| DELETE | `/users/{id_user}/accounts/{id_account}/transactionsclusters/{id_transactionscluster}` | delete /users/{id_user}/accounts/{id_account}/transactionsclusters/{id_transactionscluster} | Delete a clustered transaction |
-| PUT | `/users/{id_user}/accounts/{id_account}/transactionsclusters/{id_transactionscluster}` | put /users/{id_user}/accounts/{id_account}/transactionsclusters/{id_transactionscluster} | Edit a clustered transaction |
-| GET | `/users/{id_user}/alerts` | get /users/{id_user}/alerts | Get alerts |
-| GET | `/users/{id_user}/categories` | get /users/{id_user}/categories | Get the category |
-| GET | `/users/{id_user}/categories/full` | get /users/{id_user}/categories/full | Get the category |
-| POST | `/users/{id_user}/categories/full` | post /users/{id_user}/categories/full | Create a new transaction category |
-| DELETE | `/users/{id_user}/categories/full/{id_full}` | delete /users/{id_user}/categories/full/{id_full} | Delete a user-created transaction category |
-| PUT | `/users/{id_user}/categories/full/{id_full}` | put /users/{id_user}/categories/full/{id_full} | Modify a user-created category |
-| DELETE | `/users/{id_user}/config` | delete /users/{id_user}/config | Delete the given user configurations. deletions on keys prefixed by 'biapi.' (except callback_url) are ignored |
-| GET | `/users/{id_user}/config` | get /users/{id_user}/config | Get configuration of a user. |
-| POST | `/users/{id_user}/config` | post /users/{id_user}/config | Change configuration of a user. modifications on keys prefixed by 'biapi.' (except callback_url) are ignored |
-| DELETE | `/users/{id_user}/connections` | delete /users/{id_user}/connections | Delete all connections |
-| GET | `/users/{id_user}/connections` | get /users/{id_user}/connections | Get connections |
-| POST | `/users/{id_user}/connections` | post /users/{id_user}/connections | Add a new connection. |
-| DELETE | `/users/{id_user}/connections/{id_connection}` | delete /users/{id_user}/connections/{id_connection} | Delete a connection. |
-| POST | `/users/{id_user}/connections/{id_connection}` | post /users/{id_user}/connections/{id_connection} | Update a connection. |
-| PUT | `/users/{id_user}/connections/{id_connection}` | put /users/{id_user}/connections/{id_connection} | Force synchronisation of a connection. |
-| DELETE | `/users/{id_user}/connections/{id_connection}/accounts` | delete /users/{id_user}/connections/{id_connection}/accounts | Delete all accounts |
-| GET | `/users/{id_user}/connections/{id_connection}/accounts` | get /users/{id_user}/connections/{id_connection}/accounts | Get accounts list. |
-| POST | `/users/{id_user}/connections/{id_connection}/accounts` | post /users/{id_user}/connections/{id_connection}/accounts | Create an account |
-| PUT | `/users/{id_user}/connections/{id_connection}/accounts` | put /users/{id_user}/connections/{id_connection}/accounts | Update many accounts at once |
-| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account} | Delete an account. |
-| PUT | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}` | put /users/{id_user}/connections/{id_connection}/accounts/{id_account} | Update an account |
-| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/categories` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/categories | Get the category |
-| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/delta` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/delta | Get deltas of accounts |
-| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/logs` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/logs | Get accounts logs. |
-| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/sources` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/sources | Get account sources |
-| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions | Delete transactions |
-| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions | Get transactions |
-| POST | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions` | post /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions | Create transactions |
-| PUT | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}` | put /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction} | Edit a transaction meta-data |
-| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations | Delete all arbitrary key-value pairs of a transaction |
-| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations | List all arbitrary key-value pairs on a transaction |
-| PUT | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations` | put /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations | Add or edit transaction arbitrary key-value pairs |
-| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations/{id_information}` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations/{id_information} | Delete a particular key-value pair on a transaction. |
-| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations/{id_information}` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations/{id_information} | Get a particular arbitrary key-value pair on a transaction |
-| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters | Get clustered transactions |
-| POST | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters` | post /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters | Create clustered transaction |
-| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters/{id_transactionscluster}` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters/{id_transactionscluster} | Delete a clustered transaction |
-| PUT | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters/{id_transactionscluster}` | put /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters/{id_transactionscluster} | Edit a clustered transaction |
-| GET | `/users/{id_user}/connections/{id_connection}/informations` | get /users/{id_user}/connections/{id_connection}/informations | Get connection additionnal informations |
-| GET | `/users/{id_user}/connections/{id_connection}/logs` | get /users/{id_user}/connections/{id_connection}/logs | Get connection logs |
-| GET | `/users/{id_user}/connections/{id_connection}/sources` | get /users/{id_user}/connections/{id_connection}/sources | Get connection sources |
-| DELETE | `/users/{id_user}/connections/{id_connection}/sources/{id_source}` | delete /users/{id_user}/connections/{id_connection}/sources/{id_source} | Disable a connection source |
-| POST | `/users/{id_user}/connections/{id_connection}/sources/{id_source}` | post /users/{id_user}/connections/{id_connection}/sources/{id_source} | " |
-| PUT | `/users/{id_user}/connections/{id_connection}/sources/{id_source}` | put /users/{id_user}/connections/{id_connection}/sources/{id_source} | Update connection source |
-| GET | `/users/{id_user}/connections/{id_connection}/transactionsclusters` | get /users/{id_user}/connections/{id_connection}/transactionsclusters | Get clustered transactions |
-| POST | `/users/{id_user}/connections/{id_connection}/transactionsclusters` | post /users/{id_user}/connections/{id_connection}/transactionsclusters | Create clustered transaction |
-| DELETE | `/users/{id_user}/connections/{id_connection}/transactionsclusters/{id_transactionscluster}` | delete /users/{id_user}/connections/{id_connection}/transactionsclusters/{id_transactionscluster} | Delete a clustered transaction |
-| PUT | `/users/{id_user}/connections/{id_connection}/transactionsclusters/{id_transactionscluster}` | put /users/{id_user}/connections/{id_connection}/transactionsclusters/{id_transactionscluster} | Edit a clustered transaction |
-| GET | `/users/{id_user}/forecast` | get /users/{id_user}/forecast | Get forecast |
-| GET | `/users/{id_user}/logs` | get /users/{id_user}/logs | Get connection logs |
-| GET | `/users/{id_user}/profiles` | get /users/{id_user}/profiles | Get profiles |
-| GET | `/users/{id_user}/profiles/main` | get /users/{id_user}/profiles/main | Get the main profile |
-| GET | `/users/{id_user}/profiles/{id_profile}` | get /users/{id_user}/profiles/{id_profile} | Get a profile |
-| POST | `/users/{id_user}/token` | post /users/{id_user}/token | Create a token |
-| GET | `/users/{id_user}/transactionsclusters` | get /users/{id_user}/transactionsclusters | Get clustered transactions |
-| POST | `/users/{id_user}/transactionsclusters` | post /users/{id_user}/transactionsclusters | Create clustered transaction |
-| DELETE | `/users/{id_user}/transactionsclusters/{id_transactionscluster}` | delete /users/{id_user}/transactionsclusters/{id_transactionscluster} | Delete a clustered transaction |
-| PUT | `/users/{id_user}/transactionsclusters/{id_transactionscluster}` | put /users/{id_user}/transactionsclusters/{id_transactionscluster} | Edit a clustered transaction |
-| GET | `/webauth` | get /webauth | First step to establish an oAuth2 connection. |
-| DELETE | `/webhooks` | delete /webhooks | Deletes all webhooks |
-| GET | `/webhooks` | get /webhooks | Get webhooks |
-| POST | `/webhooks` | post /webhooks | Adds a new webhook |
-| DELETE | `/webhooks/auth` | delete /webhooks/auth | Deletes all webhook authentication types |
-| GET | `/webhooks/auth` | get /webhooks/auth | Get webhooks authentication types |
-| POST | `/webhooks/auth` | post /webhooks/auth | Adds a new webhook authentication type |
-| DELETE | `/webhooks/auth/{id_auth}` | delete /webhooks/auth/{id_auth} | Deletes the webhook authentication type |
-| POST | `/webhooks/auth/{id_auth}` | post /webhooks/auth/{id_auth} | Updates the webhook authentication type |
-| PUT | `/webhooks/auth/{id_auth}` | put /webhooks/auth/{id_auth} | Updates the webhook authentication type |
-| DELETE | `/webhooks/{id_webhook}` | delete /webhooks/{id_webhook} | Deletes a webhook |
-| POST | `/webhooks/{id_webhook}` | post /webhooks/{id_webhook} | Updates a webhook |
-| PUT | `/webhooks/{id_webhook}` | put /webhooks/{id_webhook} | Updates a webhook |
-| DELETE | `/webhooks/{id_webhook}/add_to_data` | delete /webhooks/{id_webhook}/add_to_data | delete all entries |
-| GET | `/webhooks/{id_webhook}/add_to_data` | get /webhooks/{id_webhook}/add_to_data | retrieve the list of the value to add in webhooks when sending the requested webhook |
-| POST | `/webhooks/{id_webhook}/add_to_data` | post /webhooks/{id_webhook}/add_to_data | Setup a field to store in user config when calling the endpoint |
-| DELETE | `/webhooks/{id_webhook}/add_to_data/{key}` | delete /webhooks/{id_webhook}/add_to_data/{key} | delete the requested entry |
-| GET | `/webhooks/{id_webhook}/add_to_data/{key}` | get /webhooks/{id_webhook}/add_to_data/{key} | retrieve the value to add in the requested webhook for the requested name |
-| POST | `/webhooks/{id_webhook}/add_to_data/{key}` | post /webhooks/{id_webhook}/add_to_data/{key} | upate the requested field to store in user config when calling the endpoint |
-| GET | `/webhooks/{id_webhook}/logs` | get /webhooks/{id_webhook}/logs | Get webhooks logs. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account_types` | get /account_types | `expand` | object | yes | Get account types |
+| GET | `/account_types/{id_account_type}` | get /account_types/{id_account_type} | `id_account_type`*, `expand` | AccountType | yes | Get an account type |
+| POST | `/admin/jwt` | post /admin/jwt | body: object | object |  | Generate a jwt manage token |
+| POST | `/auth/init` | post /auth/init | body: object | object |  | Create a new anonymous user |
+| POST | `/auth/jwt` | post /auth/jwt | body: object | object |  | Generate a user jwt token |
+| POST | `/auth/renew` | post /auth/renew | body: object | object |  | Get a new access token given an user id and client credentials |
+| POST | `/auth/token` | post /auth/token | body: object | object |  | Login to API with credentials |
+| DELETE | `/auth/token` | delete /auth/token | — | — |  | Remove user access |
+| POST | `/auth/token/access` | post /auth/token/access | body: object | object |  | Transform a temporary code to a access_token |
+| GET | `/auth/token/code` | get /auth/token/code | — | object | yes | Generate a user temporary token |
+| GET | `/banks` | get /banks | `expand` | object | yes | Get list of connectors |
+| POST | `/banks/categories` | post /banks/categories | `expand`, body*: object | ConnectorCategory |  | Create bank categories |
+| POST | `/banks/categories/{id_category}` | post /banks/categories/{id_category} | `id_category`*, `expand`, body*: object | ConnectorCategory |  | Edit a bank categories |
+| DELETE | `/banks/categories/{id_category}` | delete /banks/categories/{id_category} | `id_category`*, `expand` | ConnectorCategory |  | Delete the supplied category |
+| GET | `/banks/{id_bank}` | get /banks/{id_bank} | `id_bank`*, `expand` | Connector | yes | Get a connector |
+| GET | `/banks/{id_connector}/connections` | get /banks/{id_connector}/connections | `id_connector`*, `method`, `n`, `type`, `occurences`, `source`, `minutes_without_sync`, `expand` | object | yes | Get a subset of id_connection for a given bank. Different selection methode are possible |
+| GET | `/banks/{id_connector}/logos` | get /banks/{id_connector}/logos | `id_connector`*, `expand` | object | yes | Get all links to the files associated with this connector. |
+| GET | `/banks/{id_connector}/logos/main` | get /banks/{id_connector}/logos/main | `id_connector`*, `expand` | object | yes | Get all links to the files associated with this connector. |
+| GET | `/banks/{id_connector}/logos/thumbnail` | get /banks/{id_connector}/logos/thumbnail | `id_connector`*, `expand` | object | yes | Get all links to the files associated with this connector. |
+| GET | `/banks/{id_connector}/sources` | get /banks/{id_connector}/sources | `id_connector`*, `expand` | object | yes | Get list of connector sources |
+| GET | `/banks/{id_connector}/sources/{id_connector_source}/fields` | get /banks/{id_connector}/sources/{id_connector_source}/fields | `id_connector`*, `id_connector_source`*, `expand` | object | yes | Get fields specific to a domain and a source |
+| GET | `/banks/{id_connector}/sources/{id_source}` | get /banks/{id_connector}/sources/{id_source} | `id_connector`*, `id_source`*, `expand` | ConnectorSource | yes | Get the connector source |
+| GET | `/categories` | get /categories | `expand` | object | yes | Get all categories |
+| POST | `/categories/keywords` | post /categories/keywords | `expand` | Keyword |  | Add a new keyword associated with a category in the database. |
+| DELETE | `/categories/keywords/{id_keyword}` | delete /categories/keywords/{id_keyword} | `id_keyword`*, `expand` | Keyword |  | Delete a particular key-value pair on a transaction. |
+| POST | `/categorize` | post /categorize | body*: object | object |  | categorize transactions without storing them |
+| GET | `/certificate/{type}` | get /certificate/{type} | `type`*, `expand` | Certificate | yes | Get the latest certificate of a type |
+| GET | `/clients` | get /clients | `expand` | object | yes | List clients |
+| POST | `/clients` | post /clients | `expand`, body: object | Client |  | Create a client |
+| GET | `/clients/{id_client}` | get /clients/{id_client} | `id_client`*, `expand` | Client | yes | Get information about a client |
+| PUT | `/clients/{id_client}` | put /clients/{id_client} | `id_client`*, `expand`, body: object | Client |  | Update a client |
+| DELETE | `/clients/{id_client}` | delete /clients/{id_client} | `id_client`*, `expand` | Client |  | Delete a client |
+| POST | `/clients/{id_client}/logo` | post /clients/{id_client}/logo | `id_client`*, `expand` | File |  | Update the client logo |
+| DELETE | `/clients/{id_client}/logo` | delete /clients/{id_client}/logo | `id_client`*, `expand` | File |  | Delete the client logo |
+| GET | `/config` | get /config | `search` | — | yes | Get configuration of the API. |
+| POST | `/config` | post /config | — | — |  | Insert/update configuration key(s)/value(s) on the API. |
+| GET | `/config/logs` | get /config/logs | `search`, `type`, `min_date`, `max_date`, `expand` | object | yes | Get configuration change history of the API. |
+| GET | `/connections` | get /connections | `expand` | object | yes | Get connections without a user |
+| GET | `/connections/{id_connection}/logs` | get /connections/{id_connection}/logs | `id_connection`*, `limit`, `offset`, `min_date`, `max_date`, `period`, `id_user`, `id_connection`, `id_connector`, `connector_uuid`, `error`, `id_source`, `id_max`, `expand` | object | yes | Get connection logs |
+| GET | `/connections/{id_connection}/sources` | get /connections/{id_connection}/sources | `id_connection`*, `expand` | object | yes | Get connection sources |
+| PUT | `/connections/{id_connection}/sources/{id_source}` | put /connections/{id_connection}/sources/{id_source} | `id_connection`*, `id_source`*, `background`, `expand`, body: object | ConnectionSource |  | Update connection source |
+| POST | `/connections/{id_connection}/sources/{id_source}` | post /connections/{id_connection}/sources/{id_source} | `id_connection`*, `id_source`*, `background`, `expand`, body: object | ConnectionSource |  | " |
+| DELETE | `/connections/{id_connection}/sources/{id_source}` | delete /connections/{id_connection}/sources/{id_source} | `id_connection`*, `id_source`*, `expand` | ConnectionSource |  | Disable a connection source |
+| GET | `/connectors` | get /connectors | `expand` | object | yes | Get list of connectors |
+| PUT | `/connectors` | put /connectors | `expand`, body: object | Connector |  | Enable/disable several connectors |
+| POST | `/connectors` | post /connectors | `expand`, body*: object | Connector |  | Request a new connector |
+| GET | `/connectors/{id_connector}` | get /connectors/{id_connector} | `id_connector`*, `expand` | Connector | yes | Get a connector |
+| PUT | `/connectors/{id_connector}` | put /connectors/{id_connector} | `id_connector`*, `expand`, body: object | Connector |  | Edit the provided connector |
+| GET | `/connectors/{id_connector}/logos` | get /connectors/{id_connector}/logos | `id_connector`*, `expand` | object | yes | Get all links to the files associated with this connector. |
+| PUT | `/connectors/{id_connector}/logos` | put /connectors/{id_connector}/logos | `id_connector`*, `expand` | ConnectorLogo |  | Create or Update a connector Logo |
+| POST | `/connectors/{id_connector}/logos` | post /connectors/{id_connector}/logos | `id_connector`*, `expand` | ConnectorLogo |  | Create a connector Logo |
+| GET | `/connectors/{id_connector}/logos/main` | get /connectors/{id_connector}/logos/main | `id_connector`*, `expand` | object | yes | Get all links to the files associated with this connector. |
+| GET | `/connectors/{id_connector}/logos/thumbnail` | get /connectors/{id_connector}/logos/thumbnail | `id_connector`*, `expand` | object | yes | Get all links to the files associated with this connector. |
+| PUT | `/connectors/{id_connector}/logos/{id_logo}` | put /connectors/{id_connector}/logos/{id_logo} | `id_connector`*, `id_logo`*, `expand` | ConnectorLogo |  | Create or Update a connector Logo. |
+| DELETE | `/connectors/{id_connector}/logos/{id_logo}` | delete /connectors/{id_connector}/logos/{id_logo} | `id_connector`*, `id_logo`*, `expand` | ConnectorLogo |  | Delete a single Logo object. |
+| GET | `/connectors/{id_connector}/sources` | get /connectors/{id_connector}/sources | `id_connector`*, `expand` | object | yes | Get list of connector sources |
+| PUT | `/connectors/{id_connector}/sources` | put /connectors/{id_connector}/sources | `id_connector`*, `expand`, body: object | ConnectorSource |  | Edit several connector sources |
+| GET | `/connectors/{id_connector}/sources/{id_connector_source}/fields` | get /connectors/{id_connector}/sources/{id_connector_source}/fields | `id_connector`*, `id_connector_source`*, `expand` | object | yes | Get fields specific to a domain and a source |
+| GET | `/connectors/{id_connector}/sources/{id_source}` | get /connectors/{id_connector}/sources/{id_source} | `id_connector`*, `id_source`*, `expand` | ConnectorSource | yes | Get the connector source |
+| PUT | `/connectors/{id_connector}/sources/{id_source}` | put /connectors/{id_connector}/sources/{id_source} | `id_connector`*, `id_source`*, `expand`, body: object | ConnectorSource |  | Edit the provided connector source |
+| GET | `/incidents` | get /incidents | `state`, `id`, `weboob_id`, `start_date`, `end_date`, `page`, `size` | — | yes | Get incidents logs. |
+| GET | `/invoicing` | get /invoicing | `min_date`, `max_date`, `users_synced`, `users_bank`, `users_bill`, `accounts_synced`, `subscriptions_synced`, `connections_synced`, `connections_account`, `transfers_synced`, `payments_synced`, `all`, `detail` | — | yes | Get invoicing data for a given period (default is the current month). |
+| GET | `/logs` | get /logs | `limit`, `offset`, `min_date`, `max_date`, `period`, `id_user`, `id_connection`, `id_connector`, `connector_uuid`, `error`, `id_source`, `id_max`, `expand` | object | yes | Get connection logs |
+| GET | `/monitoring` | get /monitoring | `period` | — | yes | get performances stats on this instance |
+| GET | `/providers` | get /providers | `expand` | object | yes | Get list of connectors |
+| GET | `/providers/{id_connector}/connections` | get /providers/{id_connector}/connections | `id_connector`*, `range`, `expand` | object | yes | Get a random subset of provider's id_connection |
+| GET | `/providers/{id_connector}/logos` | get /providers/{id_connector}/logos | `id_connector`*, `expand` | object | yes | Get all links to the files associated with this connector. |
+| GET | `/providers/{id_connector}/logos/main` | get /providers/{id_connector}/logos/main | `id_connector`*, `expand` | object | yes | Get all links to the files associated with this connector. |
+| GET | `/providers/{id_connector}/logos/thumbnail` | get /providers/{id_connector}/logos/thumbnail | `id_connector`*, `expand` | object | yes | Get all links to the files associated with this connector. |
+| GET | `/providers/{id_connector}/sources` | get /providers/{id_connector}/sources | `id_connector`*, `expand` | object | yes | Get list of connector sources |
+| GET | `/providers/{id_connector}/sources/{id_connector_source}/fields` | get /providers/{id_connector}/sources/{id_connector_source}/fields | `id_connector`*, `id_connector_source`*, `expand` | object | yes | Get fields specific to a domain and a source |
+| GET | `/providers/{id_connector}/sources/{id_source}` | get /providers/{id_connector}/sources/{id_source} | `id_connector`*, `id_source`*, `expand` | ConnectorSource | yes | Get the connector source |
+| GET | `/providers/{id_provider}` | get /providers/{id_provider} | `id_provider`*, `expand` | Connector | yes | Get a connector |
+| GET | `/psd2-registrations` | get /psd2-registrations | `expand` | object | yes | Get details on all psd2 registrations |
+| GET | `/psd2-registrations/{id_psd2-registration}` | get /psd2-registrations/{id_psd2-registration} | `id_psd2-registration`*, `expand` | Psd2Registration | yes | Get details for a given psd2 registration |
+| GET | `/psd2-registrations/{id_psd2registration}/logs` | get /psd2-registrations/{id_psd2registration}/logs | `id_psd2registration`*, `limit`, `offset`, `min_date`, `max_date`, `expand` | object | yes | Get psd2 registration logs. |
+| GET | `/publickey` | get /publickey | — | — | yes | Get public encryption key of the API. |
+| POST | `/test/sync` | post /test/sync | — | — |  | Test synchronization on a random connection. |
+| POST | `/test/webhooks` | post /test/webhooks | — | — |  | Test synchronization on a random connection. |
+| GET | `/users` | get /users | `search`, `expand` | object | yes | Get users |
+| GET | `/users/{id_user}` | get /users/{id_user} | `id_user`*, `expand` | User | yes | Get a user |
+| DELETE | `/users/{id_user}` | delete /users/{id_user} | `id_user`*, `expand` | User |  | Delete the user |
+| GET | `/users/{id_user}/account_types` | get /users/{id_user}/account_types | `id_user`*, `expand` | object | yes | Get account types |
+| GET | `/users/{id_user}/account_types/{id_account_type}` | get /users/{id_user}/account_types/{id_account_type} | `id_user`*, `id_account_type`*, `expand` | AccountType | yes | Get an account type |
+| GET | `/users/{id_user}/accounts/{id_account}/categories` | get /users/{id_user}/accounts/{id_account}/categories | `id_user`*, `id_account`* | — | yes | Get the category |
+| GET | `/users/{id_user}/accounts/{id_account}/transactionsclusters` | get /users/{id_user}/accounts/{id_account}/transactionsclusters | `id_user`*, `id_account`*, `expand` | object | yes | Get clustered transactions |
+| POST | `/users/{id_user}/accounts/{id_account}/transactionsclusters` | post /users/{id_user}/accounts/{id_account}/transactionsclusters | `id_user`*, `id_account`*, `expand` | TransactionsCluster |  | Create clustered transaction |
+| PUT | `/users/{id_user}/accounts/{id_account}/transactionsclusters/{id_transactionscluster}` | put /users/{id_user}/accounts/{id_account}/transactionsclusters/{id_transactionscluster} | `id_user`*, `id_account`*, `id_transactionscluster`*, `expand` | TransactionsCluster |  | Edit a clustered transaction |
+| DELETE | `/users/{id_user}/accounts/{id_account}/transactionsclusters/{id_transactionscluster}` | delete /users/{id_user}/accounts/{id_account}/transactionsclusters/{id_transactionscluster} | `id_user`*, `id_account`*, `id_transactionscluster`*, `expand` | TransactionsCluster |  | Delete a clustered transaction |
+| GET | `/users/{id_user}/alerts` | get /users/{id_user}/alerts | `id_user`*, `expand` | object | yes | Get alerts |
+| GET | `/users/{id_user}/categories` | get /users/{id_user}/categories | `id_user`* | — | yes | Get the category |
+| GET | `/users/{id_user}/categories/full` | get /users/{id_user}/categories/full | `id_user`*, `expand` | object | yes | Get the category |
+| POST | `/users/{id_user}/categories/full` | post /users/{id_user}/categories/full | `id_user`*, `expand`, body: object | Category |  | Create a new transaction category |
+| PUT | `/users/{id_user}/categories/full/{id_full}` | put /users/{id_user}/categories/full/{id_full} | `id_user`*, `id_full`*, `expand`, body: object | Category |  | Modify a user-created category |
+| DELETE | `/users/{id_user}/categories/full/{id_full}` | delete /users/{id_user}/categories/full/{id_full} | `id_user`*, `id_full`*, `expand` | Category |  | Delete a user-created transaction category |
+| GET | `/users/{id_user}/config` | get /users/{id_user}/config | `id_user`* | object | yes | Get configuration of a user. |
+| POST | `/users/{id_user}/config` | post /users/{id_user}/config | `id_user`* | — |  | Change configuration of a user. modifications on keys prefixed by 'biapi.' (except callback_url) are ignored |
+| DELETE | `/users/{id_user}/config` | delete /users/{id_user}/config | `id_user`* | — |  | Delete the given user configurations. deletions on keys prefixed by 'biapi.' (except callback_url) are ignored |
+| GET | `/users/{id_user}/connections` | get /users/{id_user}/connections | `id_user`*, `expand` | object | yes | Get connections |
+| POST | `/users/{id_user}/connections` | post /users/{id_user}/connections | `id_user`*, `source`, `expand`, body: object | Connection |  | Add a new connection. |
+| DELETE | `/users/{id_user}/connections` | delete /users/{id_user}/connections | `id_user`*, `expand` | Connection |  | Delete all connections |
+| PUT | `/users/{id_user}/connections/{id_connection}` | put /users/{id_user}/connections/{id_connection} | `id_user`*, `id_connection`*, `last_update`, `background`, `psu_requested`, `expand` | Connection |  | Force synchronisation of a connection. |
+| POST | `/users/{id_user}/connections/{id_connection}` | post /users/{id_user}/connections/{id_connection} | `id_user`*, `id_connection`*, `background`, `psu_requested`, `refresh_psd2_auth`, `expand`, body: object | Connection |  | Update a connection. |
+| DELETE | `/users/{id_user}/connections/{id_connection}` | delete /users/{id_user}/connections/{id_connection} | `id_user`*, `id_connection`*, `expand` | Connection |  | Delete a connection. |
+| GET | `/users/{id_user}/connections/{id_connection}/accounts` | get /users/{id_user}/connections/{id_connection}/accounts | `id_user`*, `id_connection`*, `expand` | object | yes | Get accounts list. |
+| PUT | `/users/{id_user}/connections/{id_connection}/accounts` | put /users/{id_user}/connections/{id_connection}/accounts | `id_user`*, `id_connection`*, `expand` | Account |  | Update many accounts at once |
+| POST | `/users/{id_user}/connections/{id_connection}/accounts` | post /users/{id_user}/connections/{id_connection}/accounts | `id_user`*, `id_connection`*, `expand`, body*: object | Account |  | Create an account |
+| DELETE | `/users/{id_user}/connections/{id_connection}/accounts` | delete /users/{id_user}/connections/{id_connection}/accounts | `id_user`*, `id_connection`*, `expand` | Account |  | Delete all accounts |
+| PUT | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}` | put /users/{id_user}/connections/{id_connection}/accounts/{id_account} | `id_user`*, `id_connection`*, `id_account`*, `expand`, body: object | Account |  | Update an account |
+| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account} | `id_user`*, `id_connection`*, `id_account`*, `expand` | Account |  | Delete an account. |
+| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/categories` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/categories | `id_user`*, `id_connection`*, `id_account`* | — | yes | Get the category |
+| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/delta` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/delta | `id_user`*, `id_connection`*, `id_account`*, `min_date`, `max_date`, `period` | — | yes | Get deltas of accounts |
+| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/logs` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/logs | `id_user`*, `id_connection`*, `id_account`*, `limit`, `offset`, `min_date`, `max_date`, `expand` | object | yes | Get accounts logs. |
+| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/sources` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/sources | `id_user`*, `id_connection`*, `id_account`*, `expand` | object | yes | Get account sources |
+| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions | `id_user`*, `id_connection`*, `id_account`*, `limit`, `offset`, `min_date`, `max_date`, `income`, `deleted`, `all`, `last_update`, `wording`, `min_value`, `max_value`, `search`, `value`, `id_category`, `expand` | object | yes | Get transactions |
+| POST | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions` | post /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions | `id_user`*, `id_connection`*, `id_account`*, `expand`, body*: object | Transaction |  | Create transactions |
+| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions | `id_user`*, `id_connection`*, `id_account`*, `expand` | Transaction |  | Delete transactions |
+| PUT | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}` | put /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction} | `id_user`*, `id_connection`*, `id_account`*, `id_transaction`*, `expand`, body: object | Transaction |  | Edit a transaction meta-data |
+| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations | `id_user`*, `id_connection`*, `id_account`*, `id_transaction`*, `expand` | object | yes | List all arbitrary key-value pairs on a transaction |
+| PUT | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations` | put /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations | `id_user`*, `id_connection`*, `id_account`*, `id_transaction`*, `expand` | TransactionInformation |  | Add or edit transaction arbitrary key-value pairs |
+| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations | `id_user`*, `id_connection`*, `id_account`*, `id_transaction`*, `expand` | TransactionInformation |  | Delete all arbitrary key-value pairs of a transaction |
+| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations/{id_information}` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations/{id_information} | `id_user`*, `id_connection`*, `id_account`*, `id_transaction`*, `id_information`*, `expand` | TransactionInformation | yes | Get a particular arbitrary key-value pair on a transaction |
+| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations/{id_information}` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactions/{id_transaction}/informations/{id_information} | `id_user`*, `id_connection`*, `id_account`*, `id_transaction`*, `id_information`*, `expand` | TransactionInformation |  | Delete a particular key-value pair on a transaction. |
+| GET | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters` | get /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters | `id_user`*, `id_connection`*, `id_account`*, `expand` | object | yes | Get clustered transactions |
+| POST | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters` | post /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters | `id_user`*, `id_connection`*, `id_account`*, `expand` | TransactionsCluster |  | Create clustered transaction |
+| PUT | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters/{id_transactionscluster}` | put /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters/{id_transactionscluster} | `id_user`*, `id_connection`*, `id_account`*, `id_transactionscluster`*, `expand` | TransactionsCluster |  | Edit a clustered transaction |
+| DELETE | `/users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters/{id_transactionscluster}` | delete /users/{id_user}/connections/{id_connection}/accounts/{id_account}/transactionsclusters/{id_transactionscluster} | `id_user`*, `id_connection`*, `id_account`*, `id_transactionscluster`*, `expand` | TransactionsCluster |  | Delete a clustered transaction |
+| GET | `/users/{id_user}/connections/{id_connection}/informations` | get /users/{id_user}/connections/{id_connection}/informations | `id_user`*, `id_connection`*, `expand` | object | yes | Get connection additionnal informations |
+| GET | `/users/{id_user}/connections/{id_connection}/logs` | get /users/{id_user}/connections/{id_connection}/logs | `id_user`*, `id_connection`*, `limit`, `offset`, `min_date`, `max_date`, `period`, `id_user`, `id_connection`, `id_connector`, `connector_uuid`, `error`, `id_source`, `id_max`, `expand` | object | yes | Get connection logs |
+| GET | `/users/{id_user}/connections/{id_connection}/sources` | get /users/{id_user}/connections/{id_connection}/sources | `id_user`*, `id_connection`*, `expand` | object | yes | Get connection sources |
+| PUT | `/users/{id_user}/connections/{id_connection}/sources/{id_source}` | put /users/{id_user}/connections/{id_connection}/sources/{id_source} | `id_user`*, `id_connection`*, `id_source`*, `background`, `expand`, body: object | ConnectionSource |  | Update connection source |
+| POST | `/users/{id_user}/connections/{id_connection}/sources/{id_source}` | post /users/{id_user}/connections/{id_connection}/sources/{id_source} | `id_user`*, `id_connection`*, `id_source`*, `background`, `expand`, body: object | ConnectionSource |  | " |
+| DELETE | `/users/{id_user}/connections/{id_connection}/sources/{id_source}` | delete /users/{id_user}/connections/{id_connection}/sources/{id_source} | `id_user`*, `id_connection`*, `id_source`*, `expand` | ConnectionSource |  | Disable a connection source |
+| GET | `/users/{id_user}/connections/{id_connection}/transactionsclusters` | get /users/{id_user}/connections/{id_connection}/transactionsclusters | `id_user`*, `id_connection`*, `expand` | object | yes | Get clustered transactions |
+| POST | `/users/{id_user}/connections/{id_connection}/transactionsclusters` | post /users/{id_user}/connections/{id_connection}/transactionsclusters | `id_user`*, `id_connection`*, `expand` | TransactionsCluster |  | Create clustered transaction |
+| PUT | `/users/{id_user}/connections/{id_connection}/transactionsclusters/{id_transactionscluster}` | put /users/{id_user}/connections/{id_connection}/transactionsclusters/{id_transactionscluster} | `id_user`*, `id_connection`*, `id_transactionscluster`*, `expand` | TransactionsCluster |  | Edit a clustered transaction |
+| DELETE | `/users/{id_user}/connections/{id_connection}/transactionsclusters/{id_transactionscluster}` | delete /users/{id_user}/connections/{id_connection}/transactionsclusters/{id_transactionscluster} | `id_user`*, `id_connection`*, `id_transactionscluster`*, `expand` | TransactionsCluster |  | Delete a clustered transaction |
+| GET | `/users/{id_user}/forecast` | get /users/{id_user}/forecast | `id_user`* | — | yes | Get forecast |
+| GET | `/users/{id_user}/logs` | get /users/{id_user}/logs | `id_user`*, `limit`, `offset`, `min_date`, `max_date`, `period`, `id_user`, `id_connection`, `id_connector`, `connector_uuid`, `error`, `id_source`, `id_max`, `expand` | object | yes | Get connection logs |
+| GET | `/users/{id_user}/profiles` | get /users/{id_user}/profiles | `id_user`*, `expand` | object | yes | Get profiles |
+| GET | `/users/{id_user}/profiles/main` | get /users/{id_user}/profiles/main | `id_user`*, `expand` | Profile | yes | Get the main profile |
+| GET | `/users/{id_user}/profiles/{id_profile}` | get /users/{id_user}/profiles/{id_profile} | `id_user`*, `id_profile`*, `expand` | Profile | yes | Get a profile |
+| POST | `/users/{id_user}/token` | post /users/{id_user}/token | `id_user`*, body*: object | object |  | Create a token |
+| GET | `/users/{id_user}/transactionsclusters` | get /users/{id_user}/transactionsclusters | `id_user`*, `expand` | object | yes | Get clustered transactions |
+| POST | `/users/{id_user}/transactionsclusters` | post /users/{id_user}/transactionsclusters | `id_user`*, `expand` | TransactionsCluster |  | Create clustered transaction |
+| PUT | `/users/{id_user}/transactionsclusters/{id_transactionscluster}` | put /users/{id_user}/transactionsclusters/{id_transactionscluster} | `id_user`*, `id_transactionscluster`*, `expand` | TransactionsCluster |  | Edit a clustered transaction |
+| DELETE | `/users/{id_user}/transactionsclusters/{id_transactionscluster}` | delete /users/{id_user}/transactionsclusters/{id_transactionscluster} | `id_user`*, `id_transactionscluster`*, `expand` | TransactionsCluster |  | Delete a clustered transaction |
+| GET | `/webauth` | get /webauth | body: object | — | yes | First step to establish an oAuth2 connection. |
+| GET | `/webhooks` | get /webhooks | `expand` | object | yes | Get webhooks |
+| POST | `/webhooks` | post /webhooks | `expand`, body: object | Webhook |  | Adds a new webhook |
+| DELETE | `/webhooks` | delete /webhooks | `expand` | Webhook |  | Deletes all webhooks |
+| GET | `/webhooks/auth` | get /webhooks/auth | `expand` | object | yes | Get webhooks authentication types |
+| POST | `/webhooks/auth` | post /webhooks/auth | `expand`, body*: object | AuthProvider |  | Adds a new webhook authentication type |
+| DELETE | `/webhooks/auth` | delete /webhooks/auth | `expand` | AuthProvider |  | Deletes all webhook authentication types |
+| PUT | `/webhooks/auth/{id_auth}` | put /webhooks/auth/{id_auth} | `id_auth`*, `expand`, body*: object | AuthProvider |  | Updates the webhook authentication type |
+| POST | `/webhooks/auth/{id_auth}` | post /webhooks/auth/{id_auth} | `id_auth`*, `expand`, body*: object | AuthProvider |  | Updates the webhook authentication type |
+| DELETE | `/webhooks/auth/{id_auth}` | delete /webhooks/auth/{id_auth} | `id_auth`*, `expand` | AuthProvider |  | Deletes the webhook authentication type |
+| PUT | `/webhooks/{id_webhook}` | put /webhooks/{id_webhook} | `id_webhook`*, `expand`, body: object | Webhook |  | Updates a webhook |
+| POST | `/webhooks/{id_webhook}` | post /webhooks/{id_webhook} | `id_webhook`*, `expand`, body: object | Webhook |  | Updates a webhook |
+| DELETE | `/webhooks/{id_webhook}` | delete /webhooks/{id_webhook} | `id_webhook`*, `expand` | Webhook |  | Deletes a webhook |
+| GET | `/webhooks/{id_webhook}/add_to_data` | get /webhooks/{id_webhook}/add_to_data | `id_webhook`*, `expand` | object | yes | retrieve the list of the value to add in webhooks when sending the requested webhook |
+| POST | `/webhooks/{id_webhook}/add_to_data` | post /webhooks/{id_webhook}/add_to_data | `id_webhook`*, `expand` | Webhook |  | Setup a field to store in user config when calling the endpoint |
+| DELETE | `/webhooks/{id_webhook}/add_to_data` | delete /webhooks/{id_webhook}/add_to_data | `id_webhook`*, `expand` | Webhook |  | delete all entries |
+| GET | `/webhooks/{id_webhook}/add_to_data/{key}` | get /webhooks/{id_webhook}/add_to_data/{key} | `id_webhook`*, `key`*, `expand` | Webhook | yes | retrieve the value to add in the requested webhook for the requested name |
+| POST | `/webhooks/{id_webhook}/add_to_data/{key}` | post /webhooks/{id_webhook}/add_to_data/{key} | `id_webhook`*, `key`*, `expand` | Webhook |  | upate the requested field to store in user config when calling the endpoint |
+| DELETE | `/webhooks/{id_webhook}/add_to_data/{key}` | delete /webhooks/{id_webhook}/add_to_data/{key} | `id_webhook`*, `key`*, `expand` | Webhook |  | delete the requested entry |
+| GET | `/webhooks/{id_webhook}/logs` | get /webhooks/{id_webhook}/logs | `id_webhook`*, `id_user`, `limit`, `offset`, `min_date`, `max_date`, `expand` | object | yes | Get webhooks logs. |

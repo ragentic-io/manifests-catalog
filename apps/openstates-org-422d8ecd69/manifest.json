@@ -63,6 +63,401 @@
         "from": "openstates-org-422d8ecd69",
         "kind": "EXPOSES",
         "to": "operation:get:/people.geo"
+      },
+      {
+        "from": "operation:get:/bills",
+        "kind": "RETURNS",
+        "to": "schema:BillList"
+      },
+      {
+        "from": "operation:get:/bills/ocd-bill/{openstates_bill_id}",
+        "kind": "RETURNS",
+        "to": "schema:Bill"
+      },
+      {
+        "from": "operation:get:/bills/{jurisdiction}/{session}/{bill_id}",
+        "kind": "RETURNS",
+        "to": "schema:Bill"
+      },
+      {
+        "from": "operation:get:/committees",
+        "kind": "RETURNS",
+        "to": "schema:CommitteeList"
+      },
+      {
+        "from": "operation:get:/committees/{committee_id}",
+        "kind": "RETURNS",
+        "to": "schema:Committee"
+      },
+      {
+        "from": "operation:get:/events",
+        "kind": "RETURNS",
+        "to": "schema:EventList"
+      },
+      {
+        "from": "operation:get:/events/{event_id}",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/jurisdictions",
+        "kind": "RETURNS",
+        "to": "schema:JurisdictionList"
+      },
+      {
+        "from": "operation:get:/jurisdictions/{jurisdiction_id}",
+        "kind": "RETURNS",
+        "to": "schema:Jurisdiction"
+      },
+      {
+        "from": "operation:get:/people",
+        "kind": "RETURNS",
+        "to": "schema:PersonList"
+      },
+      {
+        "from": "operation:get:/people.geo",
+        "kind": "RETURNS",
+        "to": "schema:PersonList"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillAbstract"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillAction"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillDocumentOrVersion"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillIdentifier"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillSponsorship"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillTitle"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:CompactJurisdiction"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:RelatedBill"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:VoteEvent"
+      },
+      {
+        "from": "schema:BillAction",
+        "kind": "REFERENCES",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "schema:BillDocumentOrVersion",
+        "kind": "REFERENCES",
+        "to": "schema:BillDocumentLink"
+      },
+      {
+        "from": "schema:BillList",
+        "kind": "REFERENCES",
+        "to": "schema:Bill"
+      },
+      {
+        "from": "schema:BillList",
+        "kind": "REFERENCES",
+        "to": "schema:PaginationMeta"
+      },
+      {
+        "from": "schema:BillSponsorship",
+        "kind": "REFERENCES",
+        "to": "schema:CompactPerson"
+      },
+      {
+        "from": "schema:BillSponsorship",
+        "kind": "REFERENCES",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "schema:Chamber",
+        "kind": "REFERENCES",
+        "to": "schema:Post"
+      },
+      {
+        "from": "schema:Committee",
+        "kind": "REFERENCES",
+        "to": "schema:AltName"
+      },
+      {
+        "from": "schema:Committee",
+        "kind": "REFERENCES",
+        "to": "schema:CommitteeClassification"
+      },
+      {
+        "from": "schema:Committee",
+        "kind": "REFERENCES",
+        "to": "schema:CommitteeMembership"
+      },
+      {
+        "from": "schema:Committee",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:CommitteeList",
+        "kind": "REFERENCES",
+        "to": "schema:Committee"
+      },
+      {
+        "from": "schema:CommitteeList",
+        "kind": "REFERENCES",
+        "to": "schema:PaginationMeta"
+      },
+      {
+        "from": "schema:CommitteeMembership",
+        "kind": "REFERENCES",
+        "to": "schema:CompactPerson"
+      },
+      {
+        "from": "schema:CompactJurisdiction",
+        "kind": "REFERENCES",
+        "to": "schema:JurisdictionClassification"
+      },
+      {
+        "from": "schema:CompactPerson",
+        "kind": "REFERENCES",
+        "to": "schema:CurrentRole"
+      },
+      {
+        "from": "schema:CurrentRole",
+        "kind": "REFERENCES",
+        "to": "schema:OrgClassification"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:CompactJurisdiction"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:EventAgendaItem"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:EventDocument"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:EventLocation"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:EventMedia"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:EventParticipant"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:EventAgendaItem",
+        "kind": "REFERENCES",
+        "to": "schema:EventMedia"
+      },
+      {
+        "from": "schema:EventAgendaItem",
+        "kind": "REFERENCES",
+        "to": "schema:EventRelatedEntity"
+      },
+      {
+        "from": "schema:EventDocument",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:EventList",
+        "kind": "REFERENCES",
+        "to": "schema:Event"
+      },
+      {
+        "from": "schema:EventList",
+        "kind": "REFERENCES",
+        "to": "schema:PaginationMeta"
+      },
+      {
+        "from": "schema:EventMedia",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:EventParticipant",
+        "kind": "REFERENCES",
+        "to": "schema:CompactPerson"
+      },
+      {
+        "from": "schema:EventParticipant",
+        "kind": "REFERENCES",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "schema:EventRelatedEntity",
+        "kind": "REFERENCES",
+        "to": "schema:CompactBill"
+      },
+      {
+        "from": "schema:EventRelatedEntity",
+        "kind": "REFERENCES",
+        "to": "schema:CompactPerson"
+      },
+      {
+        "from": "schema:EventRelatedEntity",
+        "kind": "REFERENCES",
+        "to": "schema:CompactVoteEvent"
+      },
+      {
+        "from": "schema:EventRelatedEntity",
+        "kind": "REFERENCES",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
+      },
+      {
+        "from": "schema:Jurisdiction",
+        "kind": "REFERENCES",
+        "to": "schema:Chamber"
+      },
+      {
+        "from": "schema:Jurisdiction",
+        "kind": "REFERENCES",
+        "to": "schema:JurisdictionClassification"
+      },
+      {
+        "from": "schema:Jurisdiction",
+        "kind": "REFERENCES",
+        "to": "schema:LegislativeSession"
+      },
+      {
+        "from": "schema:Jurisdiction",
+        "kind": "REFERENCES",
+        "to": "schema:RunPlan"
+      },
+      {
+        "from": "schema:JurisdictionList",
+        "kind": "REFERENCES",
+        "to": "schema:Jurisdiction"
+      },
+      {
+        "from": "schema:JurisdictionList",
+        "kind": "REFERENCES",
+        "to": "schema:PaginationMeta"
+      },
+      {
+        "from": "schema:LegislativeSession",
+        "kind": "REFERENCES",
+        "to": "schema:DataExport"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:AltIdentifier"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:AltName"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:CompactJurisdiction"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:CurrentRole"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "REFERENCES",
+        "to": "schema:Office"
+      },
+      {
+        "from": "schema:PersonList",
+        "kind": "REFERENCES",
+        "to": "schema:PaginationMeta"
+      },
+      {
+        "from": "schema:PersonList",
+        "kind": "REFERENCES",
+        "to": "schema:Person"
+      },
+      {
+        "from": "schema:PersonVote",
+        "kind": "REFERENCES",
+        "to": "schema:CompactPerson"
+      },
+      {
+        "from": "schema:VoteEvent",
+        "kind": "REFERENCES",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:VoteEvent",
+        "kind": "REFERENCES",
+        "to": "schema:Organization"
+      },
+      {
+        "from": "schema:VoteEvent",
+        "kind": "REFERENCES",
+        "to": "schema:PersonVote"
+      },
+      {
+        "from": "schema:VoteEvent",
+        "kind": "REFERENCES",
+        "to": "schema:VoteCount"
       }
     ],
     "nodes": [
@@ -72,36 +467,272 @@
       },
       {
         "deprecated": false,
+        "description": "Search for bills matching given criteria.",
         "id": "operation:get:/bills",
         "kind": "operation",
         "method": "get",
         "name": "bills_search_bills_get",
+        "parameters": [
+          {
+            "description": "Filter by jurisdiction name or ID.",
+            "in": "query",
+            "name": "jurisdiction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by session identifier.",
+            "in": "query",
+            "name": "session",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by chamber of origination.",
+            "in": "query",
+            "name": "chamber",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to only include bills with this identifier.",
+            "in": "query",
+            "name": "identifier",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter by classification, e.g.",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by one or more subjects.",
+            "in": "query",
+            "name": "subject",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter to only include bills with updates since a given date.",
+            "in": "query",
+            "name": "updated_since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to only include bills created since a given date.",
+            "in": "query",
+            "name": "created_since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to only include bills with an action since a given date.",
+            "in": "query",
+            "name": "action_since",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "updated_desc",
+            "description": "Desired sort order for bill results.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "BillSortOption"
+          },
+          {
+            "description": "Filter to only include bills sponsored by a given name or person ID.",
+            "in": "query",
+            "name": "sponsor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter matched sponsors to only include particular types of sponsorships.",
+            "in": "query",
+            "name": "sponsor_classification",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by full text search term.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Additional information to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "BillInclude[]"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/bills",
         "pointer": "#/paths/~1bills/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillList"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Bills Search"
+        "summary": "Bills Search",
+        "tags": [
+          "bills"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Obtain bill information by internal ID in the format ocd-bill/*uuid*.",
         "id": "operation:get:/bills/ocd-bill/{openstates_bill_id}",
         "kind": "operation",
         "method": "get",
         "name": "bill_detail_by_id_bills_ocd_bill__openstates_bill_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "openstates_bill_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "BillInclude[]"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/bills/ocd-bill/{openstates_bill_id}",
         "pointer": "#/paths/~1bills~1ocd-bill~1{openstates_bill_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Bill"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Bill Detail By Id"
+        "summary": "Bill Detail By Id",
+        "tags": [
+          "bills"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Obtain bill information based on (state, session, bill_id).",
         "id": "operation:get:/bills/{jurisdiction}/{session}/{bill_id}",
         "kind": "operation",
         "method": "get",
         "name": "bill_detail_bills__jurisdiction___session___bill_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "jurisdiction",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "session",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "bill_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "BillInclude[]"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/bills/{jurisdiction}/{session}/{bill_id}",
         "pointer": "#/paths/~1bills~1{jurisdiction}~1{session}~1{bill_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Bill"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Bill Detail"
+        "summary": "Bill Detail",
+        "tags": [
+          "bills"
+        ]
       },
       {
         "deprecated": false,
@@ -109,21 +740,139 @@
         "kind": "operation",
         "method": "get",
         "name": "committee_list_committees_get",
+        "parameters": [
+          {
+            "description": "Filter by jurisdiction name or ID.",
+            "in": "query",
+            "name": "jurisdiction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "CommitteeClassification"
+          },
+          {
+            "description": "ocd-organization ID of parent committee.",
+            "in": "query",
+            "name": "parent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Chamber of committee, generally upper or lower.",
+            "in": "query",
+            "name": "chamber",
+            "required": false,
+            "type": "OrgClassification"
+          },
+          {
+            "description": "Additional includes for the Committee response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "CommitteeInclude[]"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/committees",
         "pointer": "#/paths/~1committees/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CommitteeList"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Committee List"
+        "summary": "Committee List",
+        "tags": [
+          "committees"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get details on a single committee by ID.",
         "id": "operation:get:/committees/{committee_id}",
         "kind": "operation",
         "method": "get",
         "name": "committee_detail_committees__committee_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "committee_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Additional includes for the Committee response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "CommitteeInclude[]"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/committees/{committee_id}",
         "pointer": "#/paths/~1committees~1{committee_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Committee"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Committee Detail"
+        "summary": "Committee Detail",
+        "tags": [
+          "committees"
+        ]
       },
       {
         "deprecated": false,
@@ -131,351 +880,784 @@
         "kind": "operation",
         "method": "get",
         "name": "event_list_events_get",
+        "parameters": [
+          {
+            "description": "Filter by jurisdiction name or ID.",
+            "in": "query",
+            "name": "jurisdiction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Return events marked as deleted?",
+            "in": "query",
+            "name": "deleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Limit results to those starting before a given datetime.",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limit results to those starting before a given datetime.",
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Limit results to events with associated bills.",
+            "in": "query",
+            "name": "require_bills",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Additional includes for the Event response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "EventInclude[]"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/events",
         "pointer": "#/paths/~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventList"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Event List"
+        "summary": "Event List",
+        "tags": [
+          "events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get details on a single event by ID.",
         "id": "operation:get:/events/{event_id}",
         "kind": "operation",
         "method": "get",
         "name": "event_detail_events__event_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Additional includes for the Event response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "EventInclude[]"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/events/{event_id}",
         "pointer": "#/paths/~1events~1{event_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Event Detail"
+        "summary": "Event Detail",
+        "tags": [
+          "events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get list of supported Jurisdictions, a Jurisdiction is a state or municipality.",
         "id": "operation:get:/jurisdictions",
         "kind": "operation",
         "method": "get",
         "name": "jurisdiction_list_jurisdictions_get",
+        "parameters": [
+          {
+            "description": "Filter returned jurisdictions by type.",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "JurisdictionClassification"
+          },
+          {
+            "description": "Additional information to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "JurisdictionInclude[]"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 52,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/jurisdictions",
         "pointer": "#/paths/~1jurisdictions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "JurisdictionList"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Jurisdiction List"
+        "summary": "Jurisdiction List",
+        "tags": [
+          "jurisdictions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get details on a single Jurisdiction (e.g.",
         "id": "operation:get:/jurisdictions/{jurisdiction_id}",
         "kind": "operation",
         "method": "get",
         "name": "jurisdiction_detail_jurisdictions__jurisdiction_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "jurisdiction_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Additional includes for the Jurisdiction response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "JurisdictionInclude[]"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/jurisdictions/{jurisdiction_id}",
         "pointer": "#/paths/~1jurisdictions~1{jurisdiction_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Jurisdiction"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Jurisdiction Detail"
+        "summary": "Jurisdiction Detail",
+        "tags": [
+          "jurisdictions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Endpoint that serves Prometheus metrics.",
         "id": "operation:get:/metrics",
         "kind": "operation",
         "method": "get",
         "name": "metrics_metrics_get",
         "path": "/metrics",
         "pointer": "#/paths/~1metrics/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Metrics"
       },
       {
         "deprecated": false,
+        "description": "Get list of people matching selected criteria.",
         "id": "operation:get:/people",
         "kind": "operation",
         "method": "get",
         "name": "people_search_people_get",
+        "parameters": [
+          {
+            "description": "Filter by jurisdiction name or id.",
+            "in": "query",
+            "name": "jurisdiction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by name, case-insensitive match.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by id, can be specified multiple times for multiple people.",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter by current role.",
+            "in": "query",
+            "name": "org_classification",
+            "required": false,
+            "type": "OrgClassification"
+          },
+          {
+            "description": "Filter by district name.",
+            "in": "query",
+            "name": "district",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Additional information to include in response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "PersonInclude[]"
+          },
+          {
+            "default": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/people",
         "pointer": "#/paths/~1people/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonList"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "People Search"
+        "summary": "People Search",
+        "tags": [
+          "people"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get list of people currently representing a given location.",
         "id": "operation:get:/people.geo",
         "kind": "operation",
         "method": "get",
         "name": "people_geo_people_geo_get",
+        "parameters": [
+          {
+            "description": "Latitude of point.",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Longitude of point.",
+            "in": "query",
+            "name": "lng",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Additional information to include in the response.",
+            "in": "query",
+            "name": "include",
+            "required": false,
+            "type": "PersonInclude[]"
+          },
+          {
+            "in": "query",
+            "name": "apikey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/people.geo",
         "pointer": "#/paths/~1people.geo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonList"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "People Geo"
+        "summary": "People Geo",
+        "tags": [
+          "people"
+        ]
       },
       {
         "id": "schema:AltIdentifier",
         "kind": "schema",
-        "name": "AltIdentifier"
+        "name": "AltIdentifier",
+        "type": "object"
       },
       {
         "id": "schema:AltName",
         "kind": "schema",
-        "name": "AltName"
+        "name": "AltName",
+        "type": "object"
       },
       {
         "id": "schema:Bill",
         "kind": "schema",
-        "name": "Bill"
+        "name": "Bill",
+        "type": "object"
       },
       {
         "id": "schema:BillAbstract",
         "kind": "schema",
-        "name": "BillAbstract"
+        "name": "BillAbstract",
+        "type": "object"
       },
       {
         "id": "schema:BillAction",
         "kind": "schema",
-        "name": "BillAction"
+        "name": "BillAction",
+        "type": "object"
       },
       {
         "id": "schema:BillDocumentLink",
         "kind": "schema",
-        "name": "BillDocumentLink"
+        "name": "BillDocumentLink",
+        "type": "object"
       },
       {
         "id": "schema:BillDocumentOrVersion",
         "kind": "schema",
-        "name": "BillDocumentOrVersion"
+        "name": "BillDocumentOrVersion",
+        "type": "object"
       },
       {
         "id": "schema:BillIdentifier",
         "kind": "schema",
-        "name": "BillIdentifier"
+        "name": "BillIdentifier",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:BillInclude",
         "kind": "schema",
-        "name": "BillInclude"
+        "name": "BillInclude",
+        "type": "string"
       },
       {
         "id": "schema:BillList",
         "kind": "schema",
-        "name": "BillList"
+        "name": "BillList",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:BillSortOption",
         "kind": "schema",
-        "name": "BillSortOption"
+        "name": "BillSortOption",
+        "type": "string"
       },
       {
         "id": "schema:BillSponsorship",
         "kind": "schema",
-        "name": "BillSponsorship"
+        "name": "BillSponsorship",
+        "type": "object"
       },
       {
         "id": "schema:BillTitle",
         "kind": "schema",
-        "name": "BillTitle"
+        "name": "BillTitle",
+        "type": "object"
       },
       {
         "id": "schema:Chamber",
         "kind": "schema",
-        "name": "Chamber"
+        "name": "Chamber",
+        "type": "object"
       },
       {
         "id": "schema:Committee",
         "kind": "schema",
-        "name": "Committee"
+        "name": "Committee",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:CommitteeClassification",
         "kind": "schema",
-        "name": "CommitteeClassification"
+        "name": "CommitteeClassification",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:CommitteeInclude",
         "kind": "schema",
-        "name": "CommitteeInclude"
+        "name": "CommitteeInclude",
+        "type": "string"
       },
       {
         "id": "schema:CommitteeList",
         "kind": "schema",
-        "name": "CommitteeList"
+        "name": "CommitteeList",
+        "type": "object"
       },
       {
         "id": "schema:CommitteeMembership",
         "kind": "schema",
-        "name": "CommitteeMembership"
+        "name": "CommitteeMembership",
+        "type": "object"
       },
       {
         "id": "schema:CompactBill",
         "kind": "schema",
-        "name": "CompactBill"
+        "name": "CompactBill",
+        "type": "object"
       },
       {
         "id": "schema:CompactJurisdiction",
         "kind": "schema",
-        "name": "CompactJurisdiction"
+        "name": "CompactJurisdiction",
+        "type": "object"
       },
       {
         "id": "schema:CompactPerson",
         "kind": "schema",
-        "name": "CompactPerson"
+        "name": "CompactPerson",
+        "type": "object"
       },
       {
         "id": "schema:CompactVoteEvent",
         "kind": "schema",
-        "name": "CompactVoteEvent"
+        "name": "CompactVoteEvent",
+        "type": "object"
       },
       {
         "id": "schema:CurrentRole",
         "kind": "schema",
-        "name": "CurrentRole"
+        "name": "CurrentRole",
+        "type": "object"
       },
       {
         "id": "schema:DataExport",
         "kind": "schema",
-        "name": "DataExport"
+        "name": "DataExport",
+        "type": "object"
       },
       {
         "id": "schema:Event",
         "kind": "schema",
-        "name": "Event"
+        "name": "Event",
+        "type": "object"
       },
       {
         "id": "schema:EventAgendaItem",
         "kind": "schema",
-        "name": "EventAgendaItem"
+        "name": "EventAgendaItem",
+        "type": "object"
       },
       {
         "id": "schema:EventDocument",
         "kind": "schema",
-        "name": "EventDocument"
+        "name": "EventDocument",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:EventInclude",
         "kind": "schema",
-        "name": "EventInclude"
+        "name": "EventInclude",
+        "type": "string"
       },
       {
         "id": "schema:EventList",
         "kind": "schema",
-        "name": "EventList"
+        "name": "EventList",
+        "type": "object"
       },
       {
         "id": "schema:EventLocation",
         "kind": "schema",
-        "name": "EventLocation"
+        "name": "EventLocation",
+        "type": "object"
       },
       {
         "id": "schema:EventMedia",
         "kind": "schema",
-        "name": "EventMedia"
+        "name": "EventMedia",
+        "type": "object"
       },
       {
         "id": "schema:EventParticipant",
         "kind": "schema",
-        "name": "EventParticipant"
+        "name": "EventParticipant",
+        "type": "object"
       },
       {
         "id": "schema:EventRelatedEntity",
         "kind": "schema",
-        "name": "EventRelatedEntity"
+        "name": "EventRelatedEntity",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:Jurisdiction",
         "kind": "schema",
-        "name": "Jurisdiction"
+        "name": "Jurisdiction",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:JurisdictionClassification",
         "kind": "schema",
-        "name": "JurisdictionClassification"
+        "name": "JurisdictionClassification",
+        "type": "string"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:JurisdictionInclude",
         "kind": "schema",
-        "name": "JurisdictionInclude"
+        "name": "JurisdictionInclude",
+        "type": "string"
       },
       {
         "id": "schema:JurisdictionList",
         "kind": "schema",
-        "name": "JurisdictionList"
+        "name": "JurisdictionList",
+        "type": "object"
       },
       {
         "id": "schema:LegislativeSession",
         "kind": "schema",
-        "name": "LegislativeSession"
+        "name": "LegislativeSession",
+        "type": "object"
       },
       {
         "id": "schema:Link",
         "kind": "schema",
-        "name": "Link"
+        "name": "Link",
+        "type": "object"
       },
       {
         "id": "schema:Office",
         "kind": "schema",
-        "name": "Office"
+        "name": "Office",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:OrgClassification",
         "kind": "schema",
-        "name": "OrgClassification"
+        "name": "OrgClassification",
+        "type": "string"
       },
       {
         "id": "schema:Organization",
         "kind": "schema",
-        "name": "Organization"
+        "name": "Organization",
+        "type": "object"
       },
       {
         "id": "schema:PaginationMeta",
         "kind": "schema",
-        "name": "PaginationMeta"
+        "name": "PaginationMeta",
+        "type": "object"
       },
       {
         "id": "schema:Person",
         "kind": "schema",
-        "name": "Person"
+        "name": "Person",
+        "type": "object"
       },
       {
+        "description": "An enumeration.",
         "id": "schema:PersonInclude",
         "kind": "schema",
-        "name": "PersonInclude"
+        "name": "PersonInclude",
+        "type": "string"
       },
       {
         "id": "schema:PersonList",
         "kind": "schema",
-        "name": "PersonList"
+        "name": "PersonList",
+        "type": "object"
       },
       {
         "id": "schema:PersonVote",
         "kind": "schema",
-        "name": "PersonVote"
+        "name": "PersonVote",
+        "type": "object"
       },
       {
         "id": "schema:Post",
         "kind": "schema",
-        "name": "Post"
+        "name": "Post",
+        "type": "object"
       },
       {
         "id": "schema:RelatedBill",
         "kind": "schema",
-        "name": "RelatedBill"
+        "name": "RelatedBill",
+        "type": "object"
       },
       {
         "id": "schema:RunPlan",
         "kind": "schema",
-        "name": "RunPlan"
+        "name": "RunPlan",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:VoteCount",
         "kind": "schema",
-        "name": "VoteCount"
+        "name": "VoteCount",
+        "type": "object"
       },
       {
         "id": "schema:VoteEvent",
         "kind": "schema",
-        "name": "VoteEvent"
+        "name": "VoteEvent",
+        "type": "object"
       }
     ]
   },

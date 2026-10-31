@@ -82,12 +82,12 @@
       {
         "from": "ably-net-control-ded2e27e6e",
         "kind": "EXPOSES",
-        "to": "operation:delete:/apps/{app_id}/rules/{rule_id}"
+        "to": "operation:get:/apps/{app_id}/rules/{rule_id}"
       },
       {
         "from": "ably-net-control-ded2e27e6e",
         "kind": "EXPOSES",
-        "to": "operation:get:/apps/{app_id}/rules/{rule_id}"
+        "to": "operation:delete:/apps/{app_id}/rules/{rule_id}"
       },
       {
         "from": "ably-net-control-ded2e27e6e",
@@ -113,6 +113,571 @@
         "from": "ably-net-control-ded2e27e6e",
         "kind": "EXPOSES",
         "to": "operation:get:/me"
+      },
+      {
+        "from": "operation:get:/accounts/{account_id}/apps",
+        "kind": "RETURNS",
+        "to": "schema:app_response"
+      },
+      {
+        "from": "operation:post:/accounts/{account_id}/apps",
+        "kind": "ACCEPTS",
+        "to": "schema:app_post"
+      },
+      {
+        "from": "operation:post:/accounts/{account_id}/apps",
+        "kind": "RETURNS",
+        "to": "schema:app_response"
+      },
+      {
+        "from": "operation:get:/apps/{app_id}/keys",
+        "kind": "RETURNS",
+        "to": "schema:key_response"
+      },
+      {
+        "from": "operation:post:/apps/{app_id}/keys",
+        "kind": "ACCEPTS",
+        "to": "schema:key_post"
+      },
+      {
+        "from": "operation:post:/apps/{app_id}/keys",
+        "kind": "RETURNS",
+        "to": "schema:key_response"
+      },
+      {
+        "from": "operation:patch:/apps/{app_id}/keys/{key_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:key_patch"
+      },
+      {
+        "from": "operation:patch:/apps/{app_id}/keys/{key_id}",
+        "kind": "RETURNS",
+        "to": "schema:key_response"
+      },
+      {
+        "from": "operation:get:/apps/{app_id}/namespaces",
+        "kind": "RETURNS",
+        "to": "schema:namespace_response"
+      },
+      {
+        "from": "operation:post:/apps/{app_id}/namespaces",
+        "kind": "ACCEPTS",
+        "to": "schema:namespace_post"
+      },
+      {
+        "from": "operation:post:/apps/{app_id}/namespaces",
+        "kind": "RETURNS",
+        "to": "schema:namespace_response"
+      },
+      {
+        "from": "operation:patch:/apps/{app_id}/namespaces/{namespace_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:namespace_patch"
+      },
+      {
+        "from": "operation:patch:/apps/{app_id}/namespaces/{namespace_id}",
+        "kind": "RETURNS",
+        "to": "schema:namespace_response"
+      },
+      {
+        "from": "operation:get:/apps/{app_id}/queues",
+        "kind": "RETURNS",
+        "to": "schema:queue_response"
+      },
+      {
+        "from": "operation:post:/apps/{app_id}/queues",
+        "kind": "ACCEPTS",
+        "to": "schema:queue"
+      },
+      {
+        "from": "operation:post:/apps/{app_id}/queues",
+        "kind": "RETURNS",
+        "to": "schema:queue_response"
+      },
+      {
+        "from": "operation:get:/apps/{app_id}/rules",
+        "kind": "RETURNS",
+        "to": "schema:rule_response"
+      },
+      {
+        "from": "operation:post:/apps/{app_id}/rules",
+        "kind": "ACCEPTS",
+        "to": "schema:rule_post"
+      },
+      {
+        "from": "operation:post:/apps/{app_id}/rules",
+        "kind": "RETURNS",
+        "to": "schema:rule_response"
+      },
+      {
+        "from": "operation:get:/apps/{app_id}/rules/{rule_id}",
+        "kind": "RETURNS",
+        "to": "schema:rule_response"
+      },
+      {
+        "from": "operation:patch:/apps/{app_id}/rules/{rule_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:rule_patch"
+      },
+      {
+        "from": "operation:patch:/apps/{app_id}/rules/{rule_id}",
+        "kind": "RETURNS",
+        "to": "schema:rule_response"
+      },
+      {
+        "from": "operation:patch:/apps/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:app_patch"
+      },
+      {
+        "from": "operation:patch:/apps/{id}",
+        "kind": "RETURNS",
+        "to": "schema:app_response"
+      },
+      {
+        "from": "operation:post:/apps/{id}/pkcs12",
+        "kind": "ACCEPTS",
+        "to": "schema:app_pkcs12"
+      },
+      {
+        "from": "operation:post:/apps/{id}/pkcs12",
+        "kind": "RETURNS",
+        "to": "schema:app_response"
+      },
+      {
+        "from": "operation:get:/me",
+        "kind": "RETURNS",
+        "to": "schema:me"
+      },
+      {
+        "from": "schema:amqp_external_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:amqp_external_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:amqp_external_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:amqp_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:amqp_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:amqp_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:aws_kinesis_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:aws_access_keys"
+      },
+      {
+        "from": "schema:aws_kinesis_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:aws_assume_role"
+      },
+      {
+        "from": "schema:aws_kinesis_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:aws_kinesis_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:aws_access_keys"
+      },
+      {
+        "from": "schema:aws_kinesis_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:aws_assume_role"
+      },
+      {
+        "from": "schema:aws_kinesis_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:aws_kinesis_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:aws_access_keys_response"
+      },
+      {
+        "from": "schema:aws_kinesis_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:aws_assume_role"
+      },
+      {
+        "from": "schema:aws_kinesis_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:aws_lambda_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:aws_access_keys"
+      },
+      {
+        "from": "schema:aws_lambda_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:aws_assume_role"
+      },
+      {
+        "from": "schema:aws_lambda_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:aws_lambda_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:aws_access_keys"
+      },
+      {
+        "from": "schema:aws_lambda_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:aws_assume_role"
+      },
+      {
+        "from": "schema:aws_lambda_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:aws_lambda_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:aws_access_keys_response"
+      },
+      {
+        "from": "schema:aws_lambda_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:aws_assume_role"
+      },
+      {
+        "from": "schema:aws_lambda_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:aws_sqs_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:aws_access_keys"
+      },
+      {
+        "from": "schema:aws_sqs_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:aws_assume_role"
+      },
+      {
+        "from": "schema:aws_sqs_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:aws_sqs_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:aws_access_keys"
+      },
+      {
+        "from": "schema:aws_sqs_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:aws_assume_role"
+      },
+      {
+        "from": "schema:aws_sqs_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:aws_sqs_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:aws_access_keys_response"
+      },
+      {
+        "from": "schema:aws_sqs_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:aws_assume_role"
+      },
+      {
+        "from": "schema:aws_sqs_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:azure_function_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:azure_function_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:azure_function_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:cloudflare_worker_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:cloudflare_worker_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:cloudflare_worker_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:google_cloud_function_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:google_cloud_function_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:google_cloud_function_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:http_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:http_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:http_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:ifttt_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:ifttt_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:ifttt_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:amqp_external_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:amqp_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:aws_kinesis_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:aws_lambda_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:aws_sqs_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:azure_function_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:cloudflare_worker_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:google_cloud_function_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:http_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:ifttt_rule_patch"
+      },
+      {
+        "from": "schema:rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:zapier_rule_patch"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:amqp_external_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:amqp_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:aws_kinesis_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:aws_lambda_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:aws_sqs_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:azure_function_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:cloudflare_worker_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:google_cloud_function_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:http_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:ifttt_rule_post"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:unsupported_rule_response"
+      },
+      {
+        "from": "schema:rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:zapier_rule_post"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:amqp_external_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:amqp_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:aws_kinesis_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:aws_lambda_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:aws_sqs_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:azure_function_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:cloudflare_worker_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:google_cloud_function_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:http_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:ifttt_rule_response"
+      },
+      {
+        "from": "schema:rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:zapier_rule_response"
+      },
+      {
+        "from": "schema:unsupported_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:zapier_rule_patch",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:zapier_rule_post",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
+      },
+      {
+        "from": "schema:zapier_rule_response",
+        "kind": "REFERENCES",
+        "to": "schema:rule_source"
       }
     ],
     "nodes": [
@@ -122,228 +687,947 @@
       },
       {
         "deprecated": false,
+        "description": "List all applications for the specified account ID.",
         "id": "operation:get:/accounts/{account_id}/apps",
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{account_id}/apps",
+        "parameters": [
+          {
+            "description": "The account ID for which to retrieve the associated applications.",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}/apps",
         "pointer": "#/paths/~1accounts~1{account_id}~1apps/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "app_response[]"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Lists apps"
+        "summary": "Lists apps",
+        "tags": [
+          "apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates an application with the specified properties.",
         "id": "operation:post:/accounts/{account_id}/apps",
         "kind": "operation",
         "method": "post",
         "name": "post /accounts/{account_id}/apps",
+        "parameters": [
+          {
+            "description": "The account ID of the account in which to create the application.",
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}/apps",
         "pointer": "#/paths/~1accounts~1{account_id}~1apps/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "app_post"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "app_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Creates an app"
+        "summary": "Creates an app",
+        "tags": [
+          "apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the API keys associated with the application ID.",
         "id": "operation:get:/apps/{app_id}/keys",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/{app_id}/keys",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/keys",
         "pointer": "#/paths/~1apps~1{app_id}~1keys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "key_response[]"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Lists app keys"
+        "summary": "Lists app keys",
+        "tags": [
+          "keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates an API key for the application specified.",
         "id": "operation:post:/apps/{app_id}/keys",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{app_id}/keys",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/keys",
         "pointer": "#/paths/~1apps~1{app_id}~1keys/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "key_post"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "key_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Creates a key"
+        "summary": "Creates a key",
+        "tags": [
+          "keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the API key with the specified key ID, for the application with the specified application ID.",
         "id": "operation:patch:/apps/{app_id}/keys/{key_id}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /apps/{app_id}/keys/{key_id}",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The API key ID.",
+            "in": "path",
+            "name": "key_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/keys/{key_id}",
         "pointer": "#/paths/~1apps~1{app_id}~1keys~1{key_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "key_patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "key_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Updates a key"
+        "summary": "Updates a key",
+        "tags": [
+          "keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Revokes the API key with the specified ID, with the Application ID.",
         "id": "operation:post:/apps/{app_id}/keys/{key_id}/revoke",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{app_id}/keys/{key_id}/revoke",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The key ID.",
+            "in": "path",
+            "name": "key_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/keys/{key_id}/revoke",
         "pointer": "#/paths/~1apps~1{app_id}~1keys~1{key_id}~1revoke/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Revokes a key"
+        "summary": "Revokes a key",
+        "tags": [
+          "keys"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List the namespaces for the specified application ID.",
         "id": "operation:get:/apps/{app_id}/namespaces",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/{app_id}/namespaces",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/namespaces",
         "pointer": "#/paths/~1apps~1{app_id}~1namespaces/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "namespace_response[]"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Lists namespaces"
+        "summary": "Lists namespaces",
+        "tags": [
+          "namespaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a namespace for the specified application ID.",
         "id": "operation:post:/apps/{app_id}/namespaces",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{app_id}/namespaces",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/namespaces",
         "pointer": "#/paths/~1apps~1{app_id}~1namespaces/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "namespace_post"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "namespace_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Creates a namespace"
+        "summary": "Creates a namespace",
+        "tags": [
+          "namespaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the namespace with the specified ID, for the specified application ID.",
         "id": "operation:delete:/apps/{app_id}/namespaces/{namespace_id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /apps/{app_id}/namespaces/{namespace_id}",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The namespace ID.",
+            "in": "path",
+            "name": "namespace_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/namespaces/{namespace_id}",
         "pointer": "#/paths/~1apps~1{app_id}~1namespaces~1{namespace_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Deletes a namespace"
+        "summary": "Deletes a namespace",
+        "tags": [
+          "namespaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the namespace with the specified ID, for the application with the specified application ID.",
         "id": "operation:patch:/apps/{app_id}/namespaces/{namespace_id}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /apps/{app_id}/namespaces/{namespace_id}",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The namespace ID.",
+            "in": "path",
+            "name": "namespace_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/namespaces/{namespace_id}",
         "pointer": "#/paths/~1apps~1{app_id}~1namespaces~1{namespace_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "namespace_patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "namespace_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Updates a namespace"
+        "summary": "Updates a namespace",
+        "tags": [
+          "namespaces"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the queues associated with the specified application ID.",
         "id": "operation:get:/apps/{app_id}/queues",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/{app_id}/queues",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/queues",
         "pointer": "#/paths/~1apps~1{app_id}~1queues/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "queue_response[]"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "503",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Lists queues"
+        "summary": "Lists queues",
+        "tags": [
+          "queues"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a queue for the application specified by application ID.",
         "id": "operation:post:/apps/{app_id}/queues",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{app_id}/queues",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/queues",
         "pointer": "#/paths/~1apps~1{app_id}~1queues/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "queue"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "queue_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Creates a queue"
+        "summary": "Creates a queue",
+        "tags": [
+          "queues"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete the queue with the specified queue name, from the application with the specified application ID.",
         "id": "operation:delete:/apps/{app_id}/queues/{queue_id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /apps/{app_id}/queues/{queue_id}",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The queue ID.",
+            "in": "path",
+            "name": "queue_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/queues/{queue_id}",
         "pointer": "#/paths/~1apps~1{app_id}~1queues~1{queue_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "503",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Deletes a queue"
+        "summary": "Deletes a queue",
+        "tags": [
+          "queues"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lists the rules for the application specified by the application ID.",
         "id": "operation:get:/apps/{app_id}/rules",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/{app_id}/rules",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/rules",
         "pointer": "#/paths/~1apps~1{app_id}~1rules/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "rule_response[]"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Lists Reactor rules"
+        "summary": "Lists Reactor rules",
+        "tags": [
+          "rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a rule for the application with the specified application ID.",
         "id": "operation:post:/apps/{app_id}/rules",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{app_id}/rules",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/rules",
         "pointer": "#/paths/~1apps~1{app_id}~1rules/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "rule_post"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "rule_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Creates a Reactor rule"
+        "summary": "Creates a Reactor rule",
+        "tags": [
+          "rules"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns the rule specified by the rule ID, for the application specified by application ID.",
+        "id": "operation:get:/apps/{app_id}/rules/{rule_id}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /apps/{app_id}/rules/{rule_id}",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The rule ID.",
+            "in": "path",
+            "name": "rule_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/apps/{app_id}/rules/{rule_id}",
+        "pointer": "#/paths/~1apps~1{app_id}~1rules~1{rule_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "rule_response"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": true,
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Gets a reactor rule by rule ID",
+        "tags": [
+          "rules"
+        ]
       },
       {
         "deprecated": false,
@@ -351,29 +1635,55 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /apps/{app_id}/rules/{rule_id}",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The rule ID.",
+            "in": "path",
+            "name": "rule_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/rules/{rule_id}",
         "pointer": "#/paths/~1apps~1{app_id}~1rules~1{rule_id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Deletes a Reactor rule"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:get:/apps/{app_id}/rules/{rule_id}",
-        "kind": "operation",
-        "method": "get",
-        "name": "get /apps/{app_id}/rules/{rule_id}",
-        "path": "/apps/{app_id}/rules/{rule_id}",
-        "pointer": "#/paths/~1apps~1{app_id}~1rules~1{rule_id}/get",
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ],
-        "summary": "Gets a reactor rule by rule ID"
+        "summary": "Deletes a Reactor rule",
+        "tags": [
+          "rules"
+        ]
       },
       {
         "deprecated": false,
@@ -381,59 +1691,237 @@
         "kind": "operation",
         "method": "patch",
         "name": "patch /apps/{app_id}/rules/{rule_id}",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The rule ID.",
+            "in": "path",
+            "name": "rule_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{app_id}/rules/{rule_id}",
         "pointer": "#/paths/~1apps~1{app_id}~1rules~1{rule_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "rule_patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "rule_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          },
+          {
+            "status": "504",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Updates a Reactor rule"
+        "summary": "Updates a Reactor rule",
+        "tags": [
+          "rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the application with the specified application ID.",
         "id": "operation:delete:/apps/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /apps/{id}",
+        "parameters": [
+          {
+            "description": "The ID of the application to be deleted.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{id}",
         "pointer": "#/paths/~1apps~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Deletes an app"
+        "summary": "Deletes an app",
+        "tags": [
+          "apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the application with the specified application ID.",
         "id": "operation:patch:/apps/{id}",
         "kind": "operation",
         "method": "patch",
         "name": "patch /apps/{id}",
+        "parameters": [
+          {
+            "description": "The ID of application to be updated.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{id}",
         "pointer": "#/paths/~1apps~1{id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "app_patch"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "app_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Updates an app"
+        "summary": "Updates an app",
+        "tags": [
+          "apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the application's Apple Push Notification service (APNs) information.",
         "id": "operation:post:/apps/{id}/pkcs12",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{id}/pkcs12",
+        "parameters": [
+          {
+            "description": "The application ID.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{id}/pkcs12",
         "pointer": "#/paths/~1apps~1{id}~1pkcs12/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "app_pkcs12"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "app_response"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Updates app's APNs info from a `.p12` file"
+        "summary": "Updates app's APNs info from a `.p12` file",
+        "tags": [
+          "apps"
+        ]
       },
       {
         "deprecated": false,
@@ -443,187 +1931,240 @@
         "name": "get /me",
         "path": "/me",
         "pointer": "#/paths/~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "me"
+          },
+          {
+            "status": "401",
+            "type": "error"
+          },
+          {
+            "status": "500",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearer_auth": []
           }
         ],
-        "summary": "Get token details"
+        "summary": "Get token details",
+        "tags": [
+          "tokens"
+        ]
       },
       {
         "id": "schema:amqp_external_rule_patch",
         "kind": "schema",
-        "name": "amqp_external_rule_patch"
+        "name": "amqp_external_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:amqp_external_rule_post",
         "kind": "schema",
-        "name": "amqp_external_rule_post"
+        "name": "amqp_external_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:amqp_external_rule_response",
         "kind": "schema",
-        "name": "amqp_external_rule_response"
+        "name": "amqp_external_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:amqp_rule_patch",
         "kind": "schema",
-        "name": "amqp_rule_patch"
+        "name": "amqp_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:amqp_rule_post",
         "kind": "schema",
-        "name": "amqp_rule_post"
+        "name": "amqp_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:amqp_rule_response",
         "kind": "schema",
-        "name": "amqp_rule_response"
+        "name": "amqp_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:app_patch",
         "kind": "schema",
-        "name": "app_patch"
+        "name": "app_patch",
+        "type": "object"
       },
       {
         "id": "schema:app_pkcs12",
         "kind": "schema",
-        "name": "app_pkcs12"
+        "name": "app_pkcs12",
+        "type": "object"
       },
       {
         "id": "schema:app_post",
         "kind": "schema",
-        "name": "app_post"
+        "name": "app_post",
+        "type": "object"
       },
       {
         "id": "schema:app_response",
         "kind": "schema",
-        "name": "app_response"
+        "name": "app_response",
+        "type": "object"
       },
       {
         "id": "schema:aws_access_keys",
         "kind": "schema",
-        "name": "aws_access_keys"
+        "name": "aws_access_keys",
+        "type": "object"
       },
       {
         "id": "schema:aws_access_keys_response",
         "kind": "schema",
-        "name": "aws_access_keys_response"
+        "name": "aws_access_keys_response",
+        "type": "object"
       },
       {
         "id": "schema:aws_assume_role",
         "kind": "schema",
-        "name": "aws_assume_role"
+        "name": "aws_assume_role",
+        "type": "object"
       },
       {
         "id": "schema:aws_kinesis_rule_patch",
         "kind": "schema",
-        "name": "aws_kinesis_rule_patch"
+        "name": "aws_kinesis_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:aws_kinesis_rule_post",
         "kind": "schema",
-        "name": "aws_kinesis_rule_post"
+        "name": "aws_kinesis_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:aws_kinesis_rule_response",
         "kind": "schema",
-        "name": "aws_kinesis_rule_response"
+        "name": "aws_kinesis_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:aws_lambda_rule_patch",
         "kind": "schema",
-        "name": "aws_lambda_rule_patch"
+        "name": "aws_lambda_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:aws_lambda_rule_post",
         "kind": "schema",
-        "name": "aws_lambda_rule_post"
+        "name": "aws_lambda_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:aws_lambda_rule_response",
         "kind": "schema",
-        "name": "aws_lambda_rule_response"
+        "name": "aws_lambda_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:aws_sqs_rule_patch",
         "kind": "schema",
-        "name": "aws_sqs_rule_patch"
+        "name": "aws_sqs_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:aws_sqs_rule_post",
         "kind": "schema",
-        "name": "aws_sqs_rule_post"
+        "name": "aws_sqs_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:aws_sqs_rule_response",
         "kind": "schema",
-        "name": "aws_sqs_rule_response"
+        "name": "aws_sqs_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:azure_function_rule_patch",
         "kind": "schema",
-        "name": "azure_function_rule_patch"
+        "name": "azure_function_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:azure_function_rule_post",
         "kind": "schema",
-        "name": "azure_function_rule_post"
+        "name": "azure_function_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:azure_function_rule_response",
         "kind": "schema",
-        "name": "azure_function_rule_response"
+        "name": "azure_function_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:cloudflare_worker_rule_patch",
         "kind": "schema",
-        "name": "cloudflare_worker_rule_patch"
+        "name": "cloudflare_worker_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:cloudflare_worker_rule_post",
         "kind": "schema",
-        "name": "cloudflare_worker_rule_post"
+        "name": "cloudflare_worker_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:cloudflare_worker_rule_response",
         "kind": "schema",
-        "name": "cloudflare_worker_rule_response"
+        "name": "cloudflare_worker_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
         "id": "schema:google_cloud_function_rule_patch",
         "kind": "schema",
-        "name": "google_cloud_function_rule_patch"
+        "name": "google_cloud_function_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:google_cloud_function_rule_post",
         "kind": "schema",
-        "name": "google_cloud_function_rule_post"
+        "name": "google_cloud_function_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:google_cloud_function_rule_response",
         "kind": "schema",
-        "name": "google_cloud_function_rule_response"
+        "name": "google_cloud_function_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:http_rule_patch",
         "kind": "schema",
-        "name": "http_rule_patch"
+        "name": "http_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:http_rule_post",
         "kind": "schema",
-        "name": "http_rule_post"
+        "name": "http_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:http_rule_response",
         "kind": "schema",
-        "name": "http_rule_response"
+        "name": "http_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:ifttt_rule_patch",
@@ -633,107 +2174,128 @@
       {
         "id": "schema:ifttt_rule_post",
         "kind": "schema",
-        "name": "ifttt_rule_post"
+        "name": "ifttt_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:ifttt_rule_response",
         "kind": "schema",
-        "name": "ifttt_rule_response"
+        "name": "ifttt_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:key_patch",
         "kind": "schema",
-        "name": "key_patch"
+        "name": "key_patch",
+        "type": "object"
       },
       {
         "id": "schema:key_post",
         "kind": "schema",
-        "name": "key_post"
+        "name": "key_post",
+        "type": "object"
       },
       {
         "id": "schema:key_response",
         "kind": "schema",
-        "name": "key_response"
+        "name": "key_response",
+        "type": "object"
       },
       {
         "id": "schema:me",
         "kind": "schema",
-        "name": "me"
+        "name": "me",
+        "type": "object"
       },
       {
         "id": "schema:namespace_patch",
         "kind": "schema",
-        "name": "namespace_patch"
+        "name": "namespace_patch",
+        "type": "object"
       },
       {
         "id": "schema:namespace_post",
         "kind": "schema",
-        "name": "namespace_post"
+        "name": "namespace_post",
+        "type": "object"
       },
       {
         "id": "schema:namespace_response",
         "kind": "schema",
-        "name": "namespace_response"
+        "name": "namespace_response",
+        "type": "object"
       },
       {
         "id": "schema:queue",
         "kind": "schema",
-        "name": "queue"
+        "name": "queue",
+        "type": "object"
       },
       {
         "id": "schema:queue_response",
         "kind": "schema",
-        "name": "queue_response"
+        "name": "queue_response",
+        "type": "object"
       },
       {
         "id": "schema:rule_attributes",
         "kind": "schema",
-        "name": "rule_attributes"
+        "name": "rule_attributes",
+        "type": "object"
       },
       {
         "id": "schema:rule_patch",
         "kind": "schema",
-        "name": "rule_patch"
+        "name": "rule_patch",
+        "type": "http_rule_patch|ifttt_rule_patch|zapier_rule_patch|cloudflare_worker_rule_patch|azure_function_rule_patch|google_cloud_function_rule_patch|aws_lambda_rule_patch|aws_kinesis_rule_patch|aws_sqs_rule_patch|amqp_rule_patch|amqp_external_rule_patch"
       },
       {
         "id": "schema:rule_post",
         "kind": "schema",
-        "name": "rule_post"
+        "name": "rule_post",
+        "type": "http_rule_post|ifttt_rule_post|zapier_rule_post|cloudflare_worker_rule_post|azure_function_rule_post|google_cloud_function_rule_post|aws_lambda_rule_post|aws_kinesis_rule_post|aws_sqs_rule_post|amqp_rule_post|amqp_external_rule_post|unsupported_rule_response"
       },
       {
         "id": "schema:rule_response",
         "kind": "schema",
-        "name": "rule_response"
+        "name": "rule_response",
+        "type": "http_rule_response|ifttt_rule_response|zapier_rule_response|cloudflare_worker_rule_response|azure_function_rule_response|google_cloud_function_rule_response|aws_lambda_rule_response|aws_kinesis_rule_response|aws_sqs_rule_response|amqp_rule_response|amqp_external_rule_response"
       },
       {
         "id": "schema:rule_source",
         "kind": "schema",
-        "name": "rule_source"
+        "name": "rule_source",
+        "type": "object"
       },
       {
         "id": "schema:rule_source_patch",
         "kind": "schema",
-        "name": "rule_source_patch"
+        "name": "rule_source_patch",
+        "type": "object"
       },
       {
         "id": "schema:unsupported_rule_response",
         "kind": "schema",
-        "name": "unsupported_rule_response"
+        "name": "unsupported_rule_response",
+        "type": "object"
       },
       {
         "id": "schema:zapier_rule_patch",
         "kind": "schema",
-        "name": "zapier_rule_patch"
+        "name": "zapier_rule_patch",
+        "type": "object"
       },
       {
         "id": "schema:zapier_rule_post",
         "kind": "schema",
-        "name": "zapier_rule_post"
+        "name": "zapier_rule_post",
+        "type": "object"
       },
       {
         "id": "schema:zapier_rule_response",
         "kind": "schema",
-        "name": "zapier_rule_response"
+        "name": "zapier_rule_response",
+        "type": "object"
       }
     ]
   },

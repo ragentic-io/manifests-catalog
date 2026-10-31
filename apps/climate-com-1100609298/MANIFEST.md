@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `3e187cc8f3bbdfa2c6b5321a5c7d2bdaf465e1bce3d79cfea196d9ac07bbf368` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,31 +34,33 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 46 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v4/boundaries` | uploadBoundary | Upload a boundary |
-| POST | `/v4/boundaries/query` | fetchBoundaries | Retrieve Boundaries in batch |
-| GET | `/v4/boundaries/{boundaryId}` | fetchBoundaryById | Retrieve a Boundary by ID |
-| POST | `/v4/exports` | postExport | Initiate a new export request. |
-| GET | `/v4/exports/{exportId}/contents` | fetchExportContentsById | Retrieve the binary contents of a processed export request. |
-| GET | `/v4/exports/{exportId}/status` | fetchExportStatusById | Retrieve the status of an Export. |
-| GET | `/v4/farmOrganizations/{farmOrganizationType}/{farmOrganizationId}` | fetchFarmOrganizationByTypeAndId | Retrieve a specific farm organization by organization type and ID |
-| GET | `/v4/fields` | fetchFields | Retrieve list of Fields |
-| GET | `/v4/fields/all` | fetchAllFields | Retrieve list of all Fields the user has access to. |
-| GET | `/v4/fields/{fieldId}` | fetchFieldById | Retrieve a specific Field by ID |
-| GET | `/v4/layers/asApplied` | get /v4/layers/asApplied | Retrieve a list of application activities |
-| GET | `/v4/layers/asApplied/{activityId}/contents` | get /v4/layers/asApplied/{activityId}/contents | Retrieve the raw application activity |
-| GET | `/v4/layers/asHarvested` | get /v4/layers/asHarvested | Retrieve a list of harvest activities |
-| GET | `/v4/layers/asHarvested/{activityId}/contents` | get /v4/layers/asHarvested/{activityId}/contents | Retrieve the raw harvest activity |
-| GET | `/v4/layers/asPlanted` | get /v4/layers/asPlanted | Retrieve a list of planting activities |
-| GET | `/v4/layers/asPlanted/{activityId}/contents` | get /v4/layers/asPlanted/{activityId}/contents | Retrieve the raw planting activity |
-| GET | `/v4/layers/scoutingObservations` | get /v4/layers/scoutingObservations | Retrieve a list of scouting observations |
-| GET | `/v4/layers/scoutingObservations/{scoutingObservationId}` | get /v4/layers/scoutingObservations/{scoutingObservationId} | Retrieve individual scouting observation |
-| GET | `/v4/layers/scoutingObservations/{scoutingObservationId}/attachments` | get /v4/layers/scoutingObservations/{scoutingObservationId}/attachments | Retrieve attachments associated with a given scouting observation. |
-| GET | `/v4/layers/scoutingObservations/{scoutingObservationId}/attachments/{attachmentId}/contents` | get /v4/layers/scoutingObservations/{scoutingObservationId}/attachments/{attachmentId}/contents | Retrieve the binary contents of a scouting observation’s attachment. |
-| GET | `/v4/operations/all` | fetchOperations | Retrieve the operations accessible to a a given user. |
-| GET | `/v4/resourceOwners/{resourceOwnerId}` | getResourceOwner | Retrieve a resource owner by ID |
-| POST | `/v4/uploads` | postUpload | Initiate a new upload |
-| POST | `/v4/uploads/status/query` | fetchUploadStatuses | Retrieve Upload statuses in batch |
-| PUT | `/v4/uploads/{uploadId}` | chunkedUpload | Chunked upload of data |
-| GET | `/v4/uploads/{uploadId}/status` | fetchUploadStatusById | Retrieve Upload status |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v4/boundaries` | uploadBoundary | body: BoundaryUpload | UploadedBoundaryId |  | Upload a boundary |
+| POST | `/v4/boundaries/query` | fetchBoundaries | body: BoundariesQuery | Boundaries |  | Retrieve Boundaries in batch |
+| GET | `/v4/boundaries/{boundaryId}` | fetchBoundaryById | `boundaryId`* | Boundary | yes | Retrieve a Boundary by ID |
+| POST | `/v4/exports` | postExport | body: Export | CreatedExport |  | Initiate a new export request. |
+| GET | `/v4/exports/{exportId}/contents` | fetchExportContentsById | `Accept`*, `exportId`*, `Range`* | ExportContents | yes | Retrieve the binary contents of a processed export request. |
+| GET | `/v4/exports/{exportId}/status` | fetchExportStatusById | `exportId`* | ExportStatus | yes | Retrieve the status of an Export. |
+| GET | `/v4/farmOrganizations/{farmOrganizationType}/{farmOrganizationId}` | fetchFarmOrganizationByTypeAndId | `farmOrganizationType`*, `farmOrganizationId`* | FarmOrganization | yes | Retrieve a specific farm organization by organization type and ID |
+| GET | `/v4/fields` | fetchFields | `X-Next-Token`, `X-Limit`, `fieldName` | Fields | yes | Retrieve list of Fields |
+| GET | `/v4/fields/all` | fetchAllFields | `X-Next-Token`, `X-Limit`, `fieldName` | Fields | yes | Retrieve list of all Fields the user has access to. |
+| GET | `/v4/fields/{fieldId}` | fetchFieldById | `fieldId`* | Field | yes | Retrieve a specific Field by ID |
+| GET | `/v4/layers/asApplied` | get /v4/layers/asApplied | `Accept`*, `X-Next-Token`, `X-Limit`, `resourceOwnerId`, `occurredAfter`, `occurredBefore`, `updatedAfter` | ApplicationActivities | yes | Retrieve a list of application activities |
+| GET | `/v4/layers/asApplied/{activityId}/contents` | get /v4/layers/asApplied/{activityId}/contents | `Accept`*, `activityId`*, `Range`* | ApplicationActivityContents | yes | Retrieve the raw application activity |
+| GET | `/v4/layers/asHarvested` | get /v4/layers/asHarvested | `Accept`*, `X-Next-Token`, `X-Limit`, `resourceOwnerId`, `occurredAfter`, `occurredBefore`, `updatedAfter` | HarvestActivities | yes | Retrieve a list of harvest activities |
+| GET | `/v4/layers/asHarvested/{activityId}/contents` | get /v4/layers/asHarvested/{activityId}/contents | `Accept`*, `activityId`*, `Range`* | HarvestActivityContents | yes | Retrieve the raw harvest activity |
+| GET | `/v4/layers/asPlanted` | get /v4/layers/asPlanted | `Accept`*, `X-Next-Token`, `X-Limit`, `resourceOwnerId`, `occurredAfter`, `occurredBefore`, `updatedAfter` | PlantingActivities | yes | Retrieve a list of planting activities |
+| GET | `/v4/layers/asPlanted/{activityId}/contents` | get /v4/layers/asPlanted/{activityId}/contents | `Accept`*, `activityId`*, `Range`* | PlantingActivityContents | yes | Retrieve the raw planting activity |
+| GET | `/v4/layers/scoutingObservations` | get /v4/layers/scoutingObservations | `X-Next-Token`, `X-Limit`, `occurredAfter`, `occurredBefore` | ScoutingObservations | yes | Retrieve a list of scouting observations |
+| GET | `/v4/layers/scoutingObservations/{scoutingObservationId}` | get /v4/layers/scoutingObservations/{scoutingObservationId} | `scoutingObservationId`* | ScoutingObservation | yes | Retrieve individual scouting observation |
+| GET | `/v4/layers/scoutingObservations/{scoutingObservationId}/attachments` | get /v4/layers/scoutingObservations/{scoutingObservationId}/attachments | `scoutingObservationId`*, `X-Next-Token`, `X-Limit` | ScoutingObservationAttachments | yes | Retrieve attachments associated with a given scouting observation. |
+| GET | `/v4/layers/scoutingObservations/{scoutingObservationId}/attachments/{attachmentId}/contents` | get /v4/layers/scoutingObservations/{scoutingObservationId}/attachments/{attachmentId}/contents | `Accept`*, `scoutingObservationId`*, `attachmentId`*, `Range`* | ScoutingObservationAttachmentContents | yes | Retrieve the binary contents of a scouting observation’s attachment. |
+| GET | `/v4/operations/all` | fetchOperations | `resourceOwnerId` | Operations | yes | Retrieve the operations accessible to a a given user. |
+| GET | `/v4/resourceOwners/{resourceOwnerId}` | getResourceOwner | `resourceOwnerId`* | ResourceOwner | yes | Retrieve a resource owner by ID |
+| POST | `/v4/uploads` | postUpload | `X-Recipient-Email`, body: Upload | CreatedUpload |  | Initiate a new upload |
+| POST | `/v4/uploads/status/query` | fetchUploadStatuses | body: UploadStatusQuery | UploadStatuses |  | Retrieve Upload statuses in batch |
+| PUT | `/v4/uploads/{uploadId}` | chunkedUpload | `Content-Range`*, `uploadId`*, `Content-Type`* | — |  | Chunked upload of data |
+| GET | `/v4/uploads/{uploadId}/status` | fetchUploadStatusById | `uploadId`* | UploadStatus | yes | Retrieve Upload status |

@@ -32,12 +32,12 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/apps/{appId}"
+        "to": "operation:get:/apps/{appId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:get:/apps/{appId}"
+        "to": "operation:delete:/apps/{appId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -52,22 +52,22 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/apps/{appId}/versions/{version}"
-      },
-      {
-        "from": "openchannel-io-market-b0e1f704bc",
-        "kind": "EXPOSES",
         "to": "operation:get:/apps/{appId}/versions/{version}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:patch:/apps/{appId}/versions/{version}"
+        "to": "operation:post:/apps/{appId}/versions/{version}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:post:/apps/{appId}/versions/{version}"
+        "to": "operation:delete:/apps/{appId}/versions/{version}"
+      },
+      {
+        "from": "openchannel-io-market-b0e1f704bc",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/apps/{appId}/versions/{version}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -92,17 +92,7 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/developerAccounts/{developerAccountId}"
-      },
-      {
-        "from": "openchannel-io-market-b0e1f704bc",
-        "kind": "EXPOSES",
         "to": "operation:get:/developerAccounts/{developerAccountId}"
-      },
-      {
-        "from": "openchannel-io-market-b0e1f704bc",
-        "kind": "EXPOSES",
-        "to": "operation:patch:/developerAccounts/{developerAccountId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -112,12 +102,17 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:get:/developers"
+        "to": "operation:delete:/developerAccounts/{developerAccountId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/developers/{developerId}"
+        "to": "operation:patch:/developerAccounts/{developerAccountId}"
+      },
+      {
+        "from": "openchannel-io-market-b0e1f704bc",
+        "kind": "EXPOSES",
+        "to": "operation:get:/developers"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -127,12 +122,17 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:patch:/developers/{developerId}"
+        "to": "operation:post:/developers/{developerId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:post:/developers/{developerId}"
+        "to": "operation:delete:/developers/{developerId}"
+      },
+      {
+        "from": "openchannel-io-market-b0e1f704bc",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/developers/{developerId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -192,17 +192,12 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:patch:/ownership/{ownershipId}"
-      },
-      {
-        "from": "openchannel-io-market-b0e1f704bc",
-        "kind": "EXPOSES",
         "to": "operation:post:/ownership/{ownershipId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/permission/apps/{appId}"
+        "to": "operation:patch:/ownership/{ownershipId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -217,6 +212,11 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
+        "to": "operation:delete:/permission/apps/{appId}"
+      },
+      {
+        "from": "openchannel-io-market-b0e1f704bc",
+        "kind": "EXPOSES",
         "to": "operation:get:/reviews"
       },
       {
@@ -227,22 +227,22 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/reviews/{reviewId}"
-      },
-      {
-        "from": "openchannel-io-market-b0e1f704bc",
-        "kind": "EXPOSES",
         "to": "operation:get:/reviews/{reviewId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:patch:/reviews/{reviewId}"
+        "to": "operation:post:/reviews/{reviewId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:post:/reviews/{reviewId}"
+        "to": "operation:delete:/reviews/{reviewId}"
+      },
+      {
+        "from": "openchannel-io-market-b0e1f704bc",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/reviews/{reviewId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -287,22 +287,17 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/stripe-gateway/user/{userId}/cards/{cardId}"
-      },
-      {
-        "from": "openchannel-io-market-b0e1f704bc",
-        "kind": "EXPOSES",
         "to": "operation:post:/stripe-gateway/user/{userId}/cards/{cardId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:get:/transactions"
+        "to": "operation:delete:/stripe-gateway/user/{userId}/cards/{cardId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/transactions/{transactionId}"
+        "to": "operation:get:/transactions"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -317,12 +312,12 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:get:/userAccounts"
+        "to": "operation:delete:/transactions/{transactionId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/userAccounts/{userAccountId}"
+        "to": "operation:get:/userAccounts"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -332,12 +327,17 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:patch:/userAccounts/{userAccountId}"
+        "to": "operation:post:/userAccounts/{userAccountId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:post:/userAccounts/{userAccountId}"
+        "to": "operation:delete:/userAccounts/{userAccountId}"
+      },
+      {
+        "from": "openchannel-io-market-b0e1f704bc",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/userAccounts/{userAccountId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -347,12 +347,17 @@
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:delete:/users/{userId}"
+        "to": "operation:get:/users/{userId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
         "kind": "EXPOSES",
-        "to": "operation:get:/users/{userId}"
+        "to": "operation:post:/users/{userId}"
+      },
+      {
+        "from": "openchannel-io-market-b0e1f704bc",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/users/{userId}"
       },
       {
         "from": "openchannel-io-market-b0e1f704bc",
@@ -360,9 +365,219 @@
         "to": "operation:patch:/users/{userId}"
       },
       {
-        "from": "openchannel-io-market-b0e1f704bc",
-        "kind": "EXPOSES",
-        "to": "operation:post:/users/{userId}"
+        "from": "schema:Accounts",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:App",
+        "kind": "REFERENCES",
+        "to": "schema:Model"
+      },
+      {
+        "from": "schema:App",
+        "kind": "REFERENCES",
+        "to": "schema:Ownership"
+      },
+      {
+        "from": "schema:App",
+        "kind": "REFERENCES",
+        "to": "schema:Restrictions"
+      },
+      {
+        "from": "schema:App",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:AppPages",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:AppTotal",
+        "kind": "REFERENCES",
+        "to": "schema:DataTotal"
+      },
+      {
+        "from": "schema:AppVersion",
+        "kind": "REFERENCES",
+        "to": "schema:Model"
+      },
+      {
+        "from": "schema:AppVersion",
+        "kind": "REFERENCES",
+        "to": "schema:Parent"
+      },
+      {
+        "from": "schema:AppVersion",
+        "kind": "REFERENCES",
+        "to": "schema:Restrictions"
+      },
+      {
+        "from": "schema:AppVersion",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Cards",
+        "kind": "REFERENCES",
+        "to": "schema:Card"
+      },
+      {
+        "from": "schema:CategoryGroups",
+        "kind": "REFERENCES",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:DeveloperAccountPages",
+        "kind": "REFERENCES",
+        "to": "schema:DeveloperAccount"
+      },
+      {
+        "from": "schema:DeveloperPages",
+        "kind": "REFERENCES",
+        "to": "schema:Developer"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:Developer"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:Ownership"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:Review"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "schema:Event",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:File",
+        "kind": "REFERENCES",
+        "to": "schema:Hash"
+      },
+      {
+        "from": "schema:File",
+        "kind": "REFERENCES",
+        "to": "schema:VirusScan"
+      },
+      {
+        "from": "schema:File_Pages",
+        "kind": "REFERENCES",
+        "to": "schema:File"
+      },
+      {
+        "from": "schema:Market",
+        "kind": "REFERENCES",
+        "to": "schema:Attributes"
+      },
+      {
+        "from": "schema:Market",
+        "kind": "REFERENCES",
+        "to": "schema:CategoryGroups"
+      },
+      {
+        "from": "schema:Market_Pages",
+        "kind": "REFERENCES",
+        "to": "schema:Market"
+      },
+      {
+        "from": "schema:Ownership",
+        "kind": "REFERENCES",
+        "to": "schema:Model"
+      },
+      {
+        "from": "schema:OwnershipPages",
+        "kind": "REFERENCES",
+        "to": "schema:Ownership"
+      },
+      {
+        "from": "schema:Parent",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Review",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Review",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:Review",
+        "kind": "REFERENCES",
+        "to": "schema:UserAccount"
+      },
+      {
+        "from": "schema:ReviewPages",
+        "kind": "REFERENCES",
+        "to": "schema:Review"
+      },
+      {
+        "from": "schema:SearchPages",
+        "kind": "REFERENCES",
+        "to": "schema:App"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:Profanity"
+      },
+      {
+        "from": "schema:Total",
+        "kind": "REFERENCES",
+        "to": "schema:AppTotal"
+      },
+      {
+        "from": "schema:Total",
+        "kind": "REFERENCES",
+        "to": "schema:DataTotal"
+      },
+      {
+        "from": "schema:TransactionPages",
+        "kind": "REFERENCES",
+        "to": "schema:Transaction"
+      },
+      {
+        "from": "schema:UserAccountPages",
+        "kind": "REFERENCES",
+        "to": "schema:UserAccount"
+      },
+      {
+        "from": "schema:UserPages",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:VersionPages",
+        "kind": "REFERENCES",
+        "to": "schema:AppVersion"
+      },
+      {
+        "from": "schema:VirusScan",
+        "kind": "REFERENCES",
+        "to": "schema:FoundVirus"
       }
     ],
     "nodes": [
@@ -372,273 +587,1241 @@
       },
       {
         "deprecated": false,
+        "description": "- Results are paginated and the default is value is 1000 if no limit is provided - If no query is specified, returns all APPROVED or SUSPENDED apps within the…",
         "id": "operation:get:/apps",
         "kind": "operation",
         "method": "get",
         "name": "get /apps",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The unique id of the user requesting this resource",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Whether this result should only contain apps that are owned by this user",
+            "in": "query",
+            "name": "isOwner",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apps",
         "pointer": "#/paths/~1apps/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "AppPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a paginated list of APPROVED or SUSPENDED apps"
+        "summary": "Returns a paginated list of APPROVED or SUSPENDED apps",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- This method is called on behalf of a developer.",
         "id": "operation:post:/apps",
         "kind": "operation",
         "method": "post",
         "name": "post /apps",
+        "parameters": [
+          {
+            "description": "The unique id of the developer that is adding this app",
+            "in": "query",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the app",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The type for this app",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A JSON object representing the pricing model type for this app",
+            "in": "query",
+            "name": "model",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom set of app attributes defined by the administrator and attached to this app",
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSON object to restrict users from owning or viewing this app.",
+            "in": "query",
+            "name": "restrict",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSON object to restrict users from owning or viewing this app.",
+            "in": "query",
+            "name": "allow",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSON array of data access requirements",
+            "in": "query",
+            "name": "access",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps",
         "pointer": "#/paths/~1apps/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "default",
+            "type": "AppVersion"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Adds a new app for this developer"
+        "summary": "Adds a new app for this developer",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- A 'view' event is recorded when trackViews is set to true",
         "id": "operation:get:/apps/bySafeName/{safeName}",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/bySafeName/{safeName}",
+        "parameters": [
+          {
+            "description": "The safeName of the App to be located",
+            "in": "path",
+            "name": "safeName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the user that is requesting this resource",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Whether this call should be tracked as a 'view' for this app.",
+            "in": "query",
+            "name": "trackViews",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apps/bySafeName/{safeName}",
         "pointer": "#/paths/~1apps~1bySafeName~1{safeName}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "App"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a single APPROVED or SUSPENDED app"
+        "summary": "Returns a single APPROVED or SUSPENDED app",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:get:/apps/textSearch",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/textSearch",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The text to search for.",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A JSON array containing all the fields to be searched through.",
+            "in": "query",
+            "name": "fields",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The unique id of the user requesting this resource",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Whether this result should only contain apps that are owned by this user",
+            "in": "query",
+            "name": "isOwned",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apps/textSearch",
         "pointer": "#/paths/~1apps~1textSearch/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "SearchPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Searches through the text of fields to find APPROVED or SUSPENDED apps"
+        "summary": "Searches through the text of fields to find APPROVED or SUSPENDED apps",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are paginated when limit is set, otherwise all results are returned - If no query is specified, returns all AppVersions within the marketplace - Only…",
         "id": "operation:get:/apps/versions",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/versions",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The unique id of the developer requesting this resource",
+            "in": "query",
+            "name": "developerId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/versions",
         "pointer": "#/paths/~1apps~1versions/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "VersionPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a paginated list of AppVersions"
+        "summary": "Returns a paginated list of AppVersions",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/apps/{appId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /apps/{appId}",
-        "path": "/apps/{appId}",
-        "pointer": "#/paths/~1apps~1{appId}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Removes app and all versions"
-      },
-      {
-        "deprecated": false,
+        "description": "- A 'view' event is recorded when trackViews is set to true",
         "id": "operation:get:/apps/{appId}",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/{appId}",
+        "parameters": [
+          {
+            "description": "The id of the App to be located",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the user that is requesting this resource",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Whether this call should be tracked as a 'view' for this app.",
+            "in": "query",
+            "name": "trackViews",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apps/{appId}",
         "pointer": "#/paths/~1apps~1{appId}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "App"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a single APPROVED or SUSPENDED app"
+        "summary": "Returns a single APPROVED or SUSPENDED app",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- This method is called on behalf of a developer.",
+        "id": "operation:delete:/apps/{appId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /apps/{appId}",
+        "parameters": [
+          {
+            "description": "The id of the App to be removed",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the developer that is removing this app",
+            "in": "query",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/apps/{appId}",
+        "pointer": "#/paths/~1apps~1{appId}/delete",
+        "responses": [
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Removes app and all versions",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- This method is called on behalf of a developer.",
         "id": "operation:post:/apps/{appId}/live",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{appId}/live",
+        "parameters": [
+          {
+            "description": "The id of the App to be changed",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the developer that is changing this AppVersion",
+            "in": "query",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The new version of the live App",
+            "in": "query",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{appId}/live",
         "pointer": "#/paths/~1apps~1{appId}~1live/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Change the live app to another, previously approved version"
+        "summary": "Change the live app to another, previously approved version",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- This method is called on behalf of a developer.",
         "id": "operation:post:/apps/{appId}/publish",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{appId}/publish",
+        "parameters": [
+          {
+            "description": "The id of the app to be published",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the developer that is modifying this app",
+            "in": "query",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version of the app to be published",
+            "in": "query",
+            "name": "version",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "If true, this AppVersion is automatically approved and becomes immediately available to end users",
+            "in": "query",
+            "name": "autoApprove",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/apps/{appId}/publish",
         "pointer": "#/paths/~1apps~1{appId}~1publish/post",
+        "responses": [
+          {
+            "status": "202"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Publishes the current working version of the app to the marketplace"
+        "summary": "Publishes the current working version of the app to the marketplace",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/apps/{appId}/versions/{version}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /apps/{appId}/versions/{version}",
-        "path": "/apps/{appId}/versions/{version}",
-        "pointer": "#/paths/~1apps~1{appId}~1versions~1{version}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Removes AppVersion"
-      },
-      {
-        "deprecated": false,
+        "description": "- Only returns AppVersions owned by this developer",
         "id": "operation:get:/apps/{appId}/versions/{version}",
         "kind": "operation",
         "method": "get",
         "name": "get /apps/{appId}/versions/{version}",
+        "parameters": [
+          {
+            "description": "The id of the App to be located",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version number of the app",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The unique id of the developer that is requesting this resource",
+            "in": "query",
+            "name": "developerId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{appId}/versions/{version}",
         "pointer": "#/paths/~1apps~1{appId}~1versions~1{version}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "AppVersion"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a single AppVersion"
+        "summary": "Returns a single AppVersion",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/apps/{appId}/versions/{version}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /apps/{appId}/versions/{version}",
-        "path": "/apps/{appId}/versions/{version}",
-        "pointer": "#/paths/~1apps~1{appId}~1versions~1{version}/patch",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Updates the app fields or creates a new version"
-      },
-      {
-        "deprecated": false,
+        "description": "- This method is called on behalf of a developer.",
         "id": "operation:post:/apps/{appId}/versions/{version}",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{appId}/versions/{version}",
+        "parameters": [
+          {
+            "description": "The id of the App to be updated",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version of the App to be updated",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the developer that is updating this app",
+            "in": "query",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the app",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The type for this app",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A JSON object representing the pricing model type for this app",
+            "in": "query",
+            "name": "model",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom set of app attributes defined by the administrator and attached to this app",
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSON object to restrict users from purchasing or viewing this app.",
+            "in": "query",
+            "name": "restrict",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSON object to allow users to purchase or view this app.",
+            "in": "query",
+            "name": "allow",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSON array of data access requirements",
+            "in": "query",
+            "name": "access",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "False if updates should skip the approval process and be available immediately.",
+            "in": "query",
+            "name": "approvalRequired",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{appId}/versions/{version}",
         "pointer": "#/paths/~1apps~1{appId}~1versions~1{version}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "default",
+            "type": "AppVersion"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Updates the app or creates a new version"
+        "summary": "Updates the app or creates a new version",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- This method is called on behalf of a developer.",
+        "id": "operation:delete:/apps/{appId}/versions/{version}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /apps/{appId}/versions/{version}",
+        "parameters": [
+          {
+            "description": "The id of the App to be removed",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version of the App to be removed",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the developer that is removing this app",
+            "in": "query",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/apps/{appId}/versions/{version}",
+        "pointer": "#/paths/~1apps~1{appId}~1versions~1{version}/delete",
+        "responses": [
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Removes AppVersion",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- This method is called on behalf of a developer.",
+        "id": "operation:patch:/apps/{appId}/versions/{version}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /apps/{appId}/versions/{version}",
+        "parameters": [
+          {
+            "description": "The id of the App to be updated",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version of the App to be updated",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unique id of the developer that is updating this app",
+            "in": "query",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the app",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The type for this app",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A JSON object representing the pricing model type for this app",
+            "in": "query",
+            "name": "model",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom set of app attributes defined by the administrator and attached to this app",
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSON object to restrict users from purchasing or viewing this app.",
+            "in": "query",
+            "name": "restrict",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSON object to allow users to purchase or view this app.",
+            "in": "query",
+            "name": "allow",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSON array of data access requirements",
+            "in": "query",
+            "name": "access",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "False if updates should skip the approval process and be available immediately.",
+            "in": "query",
+            "name": "approvalRequired",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/apps/{appId}/versions/{version}",
+        "pointer": "#/paths/~1apps~1{appId}~1versions~1{version}/patch",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "default",
+            "type": "AppVersion"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Updates the app fields or creates a new version",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Only certain status changes are allowed.",
         "id": "operation:post:/apps/{appId}/versions/{version}/status",
         "kind": "operation",
         "method": "post",
         "name": "post /apps/{appId}/versions/{version}/status",
+        "parameters": [
+          {
+            "description": "The id of the App to be updated",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The version of the App to be updated",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The unique id of the developer that is modifying this app",
+            "in": "query",
+            "name": "developerId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The new status for this app.",
+            "enum": [
+              "inReview",
+              "approved",
+              "suspended",
+              "rejected"
+            ],
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "administrator",
+            "description": "The role initiating this status change.",
+            "enum": [
+              "developer",
+              "administrator"
+            ],
+            "in": "query",
+            "name": "modifiedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The reason for this status change",
+            "in": "query",
+            "name": "reason",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/{appId}/versions/{version}/status",
         "pointer": "#/paths/~1apps~1{appId}~1versions~1{version}~1status/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "412"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Allows a developer or administrator to change the status of apps"
+        "summary": "Allows a developer or administrator to change the status of apps",
+        "tags": [
+          "apps : Find and modify apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials - Payments must be enabled and 'Custom' must be selected as the gate…",
         "id": "operation:post:/custom-gateway/payment/{ownershipId}",
         "kind": "operation",
         "method": "post",
         "name": "post /custom-gateway/payment/{ownershipId}",
+        "parameters": [
+          {
+            "description": "The id of the ownership record involved in this transaction",
+            "in": "path",
+            "name": "ownershipId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The total amount paid in cents",
+            "in": "query",
+            "name": "amount",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The date (in milliseconds) of when this payment was made",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The fee (in cents) paid to a payment processors or third parties to process this payment.",
+            "in": "query",
+            "name": "feeAmount",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The amount (in cents) paid to the marketplace owner as a commission for the purchase of this app.",
+            "in": "query",
+            "name": "marketplaceAmount",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The amount (in cents) paid to the owner of the app.",
+            "in": "query",
+            "name": "developerAmount",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A custom JSON object to attach to this transaction",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/custom-gateway/payment/{ownershipId}",
         "pointer": "#/paths/~1custom-gateway~1payment~1{ownershipId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "Transaction"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Adds a payment for an app on behalf of a user"
+        "summary": "Adds a payment for an app on behalf of a user",
+        "tags": [
+          "custom-gateway : Process payments and refunds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials - Payments must be enabled and 'Custom' must be selected as the gate…",
         "id": "operation:post:/custom-gateway/refund/{ownershipId}",
         "kind": "operation",
         "method": "post",
         "name": "post /custom-gateway/refund/{ownershipId}",
+        "parameters": [
+          {
+            "description": "The id of the ownership record involved in this transaction",
+            "in": "path",
+            "name": "ownershipId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The total amount refunded in cents",
+            "in": "query",
+            "name": "amount",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The date (in milliseconds) of when this refund was made",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The fee (in cents) recovered from a payment processor or third party to process this payment.",
+            "in": "query",
+            "name": "feeAmount",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The amount (in cents) recovered from the marketplace owner as a commission refund for the purchase of this app",
+            "in": "query",
+            "name": "marketplaceAmount",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The amount (in cents) recovered from the owner of the app",
+            "in": "query",
+            "name": "developerAmount",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A custom JSON object to attach to this transaction",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/custom-gateway/refund/{ownershipId}",
         "pointer": "#/paths/~1custom-gateway~1refund~1{ownershipId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "Transaction"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fully or partially refund payment for an app on behalf of a user"
+        "summary": "Fully or partially refund payment for an app on behalf of a user",
+        "tags": [
+          "custom-gateway : Process payments and refunds"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are paginated and the default is value is 1000 if no limit is provided",
         "id": "operation:get:/developerAccounts",
         "kind": "operation",
         "method": "get",
         "name": "get /developerAccounts",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/developerAccounts",
         "pointer": "#/paths/~1developerAccounts/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "DeveloperAccountPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a paginated list of developerAccounts"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/developerAccounts/{developerAccountId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /developerAccounts/{developerAccountId}",
-        "path": "/developerAccounts/{developerAccountId}",
-        "pointer": "#/paths/~1developerAccounts~1{developerAccountId}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Removes the developer account"
+        "summary": "Returns a paginated list of developerAccounts",
+        "tags": [
+          "developerAccounts : Find and modify developer accounts"
+        ]
       },
       {
         "deprecated": false,
@@ -646,29 +1829,39 @@
         "kind": "operation",
         "method": "get",
         "name": "get /developerAccounts/{developerAccountId}",
+        "parameters": [
+          {
+            "description": "The id of the developer account to be located",
+            "in": "path",
+            "name": "developerAccountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/developerAccounts/{developerAccountId}",
         "pointer": "#/paths/~1developerAccounts~1{developerAccountId}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "DeveloperAccount"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a single developer account"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/developerAccounts/{developerAccountId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /developerAccounts/{developerAccountId}",
-        "path": "/developerAccounts/{developerAccountId}",
-        "pointer": "#/paths/~1developerAccounts~1{developerAccountId}/patch",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Updates the developer account fields"
+        "summary": "Returns a single developer account",
+        "tags": [
+          "developerAccounts : Find and modify developer accounts"
+        ]
       },
       {
         "deprecated": false,
@@ -676,44 +1869,227 @@
         "kind": "operation",
         "method": "post",
         "name": "post /developerAccounts/{developerAccountId}",
+        "parameters": [
+          {
+            "description": "The id of the developer account to be updated",
+            "in": "path",
+            "name": "developerAccountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the developer that this account belongs to",
+            "in": "query",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The contact email address",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The name for the account",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/developerAccounts/{developerAccountId}",
         "pointer": "#/paths/~1developerAccounts~1{developerAccountId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "DeveloperAccount"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Updates the developer account or adds the developer account if it doesn't exist"
+        "summary": "Updates the developer account or adds the developer account if it doesn't exist",
+        "tags": [
+          "developerAccounts : Find and modify developer accounts"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/developerAccounts/{developerAccountId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /developerAccounts/{developerAccountId}",
+        "parameters": [
+          {
+            "description": "The id of the developer account to be updated",
+            "in": "path",
+            "name": "developerAccountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/developerAccounts/{developerAccountId}",
+        "pointer": "#/paths/~1developerAccounts~1{developerAccountId}/delete",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Removes the developer account",
+        "tags": [
+          "developerAccounts : Find and modify developer accounts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/developerAccounts/{developerAccountId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /developerAccounts/{developerAccountId}",
+        "parameters": [
+          {
+            "description": "The id of the developer account to be updated",
+            "in": "path",
+            "name": "developerAccountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the developer that this account belongs to",
+            "in": "query",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The contact email address",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The name for the account",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/developerAccounts/{developerAccountId}",
+        "pointer": "#/paths/~1developerAccounts~1{developerAccountId}/patch",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "DeveloperAccount"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Updates the developer account fields",
+        "tags": [
+          "developerAccounts : Find and modify developer accounts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- Results are paginated and the default is value is 100 if no limit is provided",
         "id": "operation:get:/developers",
         "kind": "operation",
         "method": "get",
         "name": "get /developers",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/developers",
         "pointer": "#/paths/~1developers/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "DeveloperPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a paginated list of developers"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/developers/{developerId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /developers/{developerId}",
-        "path": "/developers/{developerId}",
-        "pointer": "#/paths/~1developers~1{developerId}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Removes a single developer"
+        "summary": "Returns a paginated list of developers",
+        "tags": [
+          "developers : Find and modify developers"
+        ]
       },
       {
         "deprecated": false,
@@ -721,29 +2097,39 @@
         "kind": "operation",
         "method": "get",
         "name": "get /developers/{developerId}",
+        "parameters": [
+          {
+            "description": "The id of the developer to be located",
+            "in": "path",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/developers/{developerId}",
         "pointer": "#/paths/~1developers~1{developerId}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "Developer"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a single developer"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/developers/{developerId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /developers/{developerId}",
-        "path": "/developers/{developerId}",
-        "pointer": "#/paths/~1developers~1{developerId}/patch",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Updates the developer fields"
+        "summary": "Returns a single developer",
+        "tags": [
+          "developers : Find and modify developers"
+        ]
       },
       {
         "deprecated": false,
@@ -751,29 +2137,226 @@
         "kind": "operation",
         "method": "post",
         "name": "post /developers/{developerId}",
+        "parameters": [
+          {
+            "description": "The id of the developer to be located",
+            "in": "path",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The type for this developer",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The developer's email",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The developer's username",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The developer's name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/developers/{developerId}",
         "pointer": "#/paths/~1developers~1{developerId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "Developer"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Updates the developer record or adds the developer if it doesn't exist"
+        "summary": "Updates the developer record or adds the developer if it doesn't exist",
+        "tags": [
+          "developers : Find and modify developers"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/developers/{developerId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /developers/{developerId}",
+        "parameters": [
+          {
+            "description": "The id of the developer to be removed",
+            "in": "path",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/developers/{developerId}",
+        "pointer": "#/paths/~1developers~1{developerId}/delete",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Removes a single developer",
+        "tags": [
+          "developers : Find and modify developers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/developers/{developerId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /developers/{developerId}",
+        "parameters": [
+          {
+            "description": "The id of the developer to be located",
+            "in": "path",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The type for this developer",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The developer's email",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The developer's username",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The developer's name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/developers/{developerId}",
+        "pointer": "#/paths/~1developers~1{developerId}/patch",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "Developer"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Updates the developer fields",
+        "tags": [
+          "developers : Find and modify developers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:get:/events/{eventId}",
         "kind": "operation",
         "method": "get",
         "name": "get /events/{eventId}",
+        "parameters": [
+          {
+            "description": "The id of the event",
+            "in": "path",
+            "name": "eventId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/events/{eventId}",
         "pointer": "#/paths/~1events~1{eventId}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "Event"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns an event"
+        "summary": "Returns an event",
+        "tags": [
+          "events : Find events"
+        ]
       },
       {
         "deprecated": false,
@@ -781,29 +2364,109 @@
         "kind": "operation",
         "method": "get",
         "name": "get /files",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/files",
         "pointer": "#/paths/~1files/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "File"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a paginated list of files"
+        "summary": "Returns a paginated list of files",
+        "tags": [
+          "files : Upload files "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- WARNING: File URLs or fileIds must be stored somewhere within the customData field for an app, review, developer or user.",
         "id": "operation:post:/files",
         "kind": "operation",
         "method": "post",
         "name": "post /files",
+        "parameters": [
+          {
+            "description": "If true, this file will be protected as a private file and require the generation of a signed URL in order to download using the Download File API.",
+            "in": "query",
+            "name": "isPrivate",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A comma separated list of hashes to return in order to verify file integrity.",
+            "in": "query",
+            "name": "hash",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/files",
         "pointer": "#/paths/~1files/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "File"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Uploads a file."
+        "summary": "Uploads a file.",
+        "tags": [
+          "files : Upload files "
+        ]
       },
       {
         "deprecated": false,
@@ -811,14 +2474,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /files/byIdOrUrl",
+        "parameters": [
+          {
+            "description": "The fileId or fileUrl of the file to be returned",
+            "in": "query",
+            "name": "fileIdOrUrl",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/files/byIdOrUrl",
         "pointer": "#/paths/~1files~1byIdOrUrl/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "File"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Get the details for a file."
+        "summary": "Get the details for a file.",
+        "tags": [
+          "files : Upload files "
+        ]
       },
       {
         "deprecated": false,
@@ -826,29 +2511,91 @@
         "kind": "operation",
         "method": "get",
         "name": "get /files/download",
+        "parameters": [
+          {
+            "description": "The URL of the file to be uploaded",
+            "in": "query",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of seconds that this signed URL should be valid for.",
+            "in": "query",
+            "name": "validSeconds",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/files/download",
         "pointer": "#/paths/~1files~1download/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "FileDownload"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "A signed URL for downloading a private file can be returned by providing the fileId."
+        "summary": "A signed URL for downloading a private file can be returned by providing the fileId.",
+        "tags": [
+          "files : Upload files "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- WARNING: File URLs or fileIds must be stored somewhere within the customData field for an app, review, developer or user.",
         "id": "operation:post:/files/url",
         "kind": "operation",
         "method": "post",
         "name": "post /files/url",
+        "parameters": [
+          {
+            "description": "The URL of the file to be uploaded",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If true, this file will be protected as a private file and require the generation of a signed URL in order to download using the Download File API.",
+            "in": "query",
+            "name": "isPrivate",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/files/url",
         "pointer": "#/paths/~1files~1url/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "File"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Uploads a file from a URL"
+        "summary": "Uploads a file from a URL",
+        "tags": [
+          "files : Upload files "
+        ]
       },
       {
         "deprecated": false,
@@ -858,117 +2605,372 @@
         "name": "get /markets/this",
         "path": "/markets/this",
         "pointer": "#/paths/~1markets~1this/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "Market"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns the current marketplace"
+        "summary": "Returns the current marketplace",
+        "tags": [
+          "markets : This marketplace"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:get:/ownership",
         "kind": "operation",
         "method": "get",
         "name": "get /ownership",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/ownership",
         "pointer": "#/paths/~1ownership/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "OwnershipPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a paginated list of app licenses"
+        "summary": "Returns a paginated list of app licenses",
+        "tags": [
+          "ownership : Find ownership"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- This method is called on behalf of a user - This method requires either a modelId from the app or a custom model - User data and statistics are recorded when…",
         "id": "operation:post:/ownership/install",
         "kind": "operation",
         "method": "post",
         "name": "post /ownership/install",
+        "parameters": [
+          {
+            "description": "The id of the App being owned",
+            "in": "query",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User requesting to own the App",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the model associated with this ownership request",
+            "in": "query",
+            "name": "modelId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom model that will override the app's default model for this install",
+            "in": "query",
+            "name": "model",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object to attach to this ownership record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ownership/install",
         "pointer": "#/paths/~1ownership~1install/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "Ownership"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Aquires an app license for a user (installs app)"
+        "summary": "Aquires an app license for a user (installs app)",
+        "tags": [
+          "ownership : Find ownership"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- This method is called on behalf of a user - User data and statistics are recorded when this method is called",
         "id": "operation:post:/ownership/uninstall/{ownershipId}",
         "kind": "operation",
         "method": "post",
         "name": "post /ownership/uninstall/{ownershipId}",
+        "parameters": [
+          {
+            "description": "The id of the ownership to be unintalled",
+            "in": "path",
+            "name": "ownershipId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User requesting to uninstall the App",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "True if this app will require payment to be re-installed.",
+            "in": "query",
+            "name": "cancelOwnership",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A custom JSON object to attach to this ownership record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ownership/uninstall/{ownershipId}",
         "pointer": "#/paths/~1ownership~1uninstall~1{ownershipId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "default",
+            "type": "Ownership"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Uninstalls a license for a particular user and app (uninstalls app)"
+        "summary": "Uninstalls a license for a particular user and app (uninstalls app)",
+        "tags": [
+          "ownership : Find ownership"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:get:/ownership/{ownershipId}",
         "kind": "operation",
         "method": "get",
         "name": "get /ownership/{ownershipId}",
+        "parameters": [
+          {
+            "description": "The id belonging to the ownership record",
+            "in": "path",
+            "name": "ownershipId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ownership/{ownershipId}",
         "pointer": "#/paths/~1ownership~1{ownershipId}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "Ownership"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns an ownership record"
+        "summary": "Returns an ownership record",
+        "tags": [
+          "ownership : Find ownership"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/ownership/{ownershipId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /ownership/{ownershipId}",
-        "path": "/ownership/{ownershipId}",
-        "pointer": "#/paths/~1ownership~1{ownershipId}/patch",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Updates ownership fields"
-      },
-      {
-        "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:post:/ownership/{ownershipId}",
         "kind": "operation",
         "method": "post",
         "name": "post /ownership/{ownershipId}",
+        "parameters": [
+          {
+            "description": "The id of the ownership to be updated",
+            "in": "path",
+            "name": "ownershipId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Custom JSON object that will be attached to this ownership record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The date (in millis) of when this app ownership expires",
+            "in": "query",
+            "name": "expires",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/ownership/{ownershipId}",
         "pointer": "#/paths/~1ownership~1{ownershipId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "Ownership"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Updates an ownership record"
+        "summary": "Updates an ownership record",
+        "tags": [
+          "ownership : Find ownership"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/permission/apps/{appId}",
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
+        "id": "operation:patch:/ownership/{ownershipId}",
         "kind": "operation",
-        "method": "delete",
-        "name": "delete /permission/apps/{appId}",
-        "path": "/permission/apps/{appId}",
-        "pointer": "#/paths/~1permission~1apps~1{appId}/delete",
+        "method": "patch",
+        "name": "patch /ownership/{ownershipId}",
+        "parameters": [
+          {
+            "description": "The id of the ownership to be updated",
+            "in": "path",
+            "name": "ownershipId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Custom JSON object that will be attached to this ownership record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The date (in millis) of when this app ownership expires",
+            "in": "query",
+            "name": "expires",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/ownership/{ownershipId}",
+        "pointer": "#/paths/~1ownership~1{ownershipId}/patch",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "Ownership"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Removes permission that allows the app to access this user's data"
+        "summary": "Updates ownership fields",
+        "tags": [
+          "ownership : Find ownership"
+        ]
       },
       {
         "deprecated": false,
@@ -976,14 +2978,46 @@
         "kind": "operation",
         "method": "get",
         "name": "get /permission/apps/{appId}",
+        "parameters": [
+          {
+            "description": "The id of the app",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the user",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/permission/apps/{appId}",
         "pointer": "#/paths/~1permission~1apps~1{appId}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "Access"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns permission that allows the app to access this user's data"
+        "summary": "Returns permission that allows the app to access this user's data",
+        "tags": [
+          "permission : Add and remove permissions "
+        ]
       },
       {
         "deprecated": false,
@@ -991,59 +3025,269 @@
         "kind": "operation",
         "method": "post",
         "name": "post /permission/apps/{appId}",
+        "parameters": [
+          {
+            "description": "The id of the app",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the user",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The time (in milliseconds) of when the user agreed to the access request",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The ip address of the user agreeing to the access request",
+            "in": "query",
+            "name": "ip",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/permission/apps/{appId}",
         "pointer": "#/paths/~1permission~1apps~1{appId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "Access"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Adds permission to allow the app to access this user's data"
+        "summary": "Adds permission to allow the app to access this user's data",
+        "tags": [
+          "permission : Add and remove permissions "
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/permission/apps/{appId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /permission/apps/{appId}",
+        "parameters": [
+          {
+            "description": "The id of the app",
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the user",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/permission/apps/{appId}",
+        "pointer": "#/paths/~1permission~1apps~1{appId}/delete",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Removes permission that allows the app to access this user's data",
+        "tags": [
+          "permission : Add and remove permissions "
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- Results are paginated and the default is value is 100 if no limit is provided",
         "id": "operation:get:/reviews",
         "kind": "operation",
         "method": "get",
         "name": "get /reviews",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/reviews",
         "pointer": "#/paths/~1reviews/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "ReviewPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Find reviews for a particular App and marketplace. Results are automatically paginated when limit is set"
+        "summary": "Find reviews for a particular App and marketplace. Results are automatically paginated when limit is set",
+        "tags": [
+          "reviews : Find and modify reviews "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Only authenticated users are able to post reviews - Returns the newly created review",
         "id": "operation:post:/reviews",
         "kind": "operation",
         "method": "post",
         "name": "post /reviews",
+        "parameters": [
+          {
+            "description": "The id of the App that will own this review",
+            "in": "query",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User that is posting this review",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User account that is posting this review",
+            "in": "query",
+            "name": "userAccountId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The review's headline.",
+            "in": "query",
+            "name": "headline",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The rating given within this review.",
+            "in": "query",
+            "name": "rating",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The review's description.",
+            "in": "query",
+            "name": "description",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The type for this review",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "True if a review can be created only by a user that has owned the app.",
+            "in": "query",
+            "name": "mustOwnApp",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "True if the review should be automatically approved.",
+            "in": "query",
+            "name": "autoApprove",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reviews",
         "pointer": "#/paths/~1reviews/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "default",
+            "type": "Review"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Post a review from a User and returns the new post"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/reviews/{reviewId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /reviews/{reviewId}",
-        "path": "/reviews/{reviewId}",
-        "pointer": "#/paths/~1reviews~1{reviewId}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Remove a review"
+        "summary": "Post a review from a User and returns the new post",
+        "tags": [
+          "reviews : Find and modify reviews "
+        ]
       },
       {
         "deprecated": false,
@@ -1051,74 +3295,388 @@
         "kind": "operation",
         "method": "get",
         "name": "get /reviews/{reviewId}",
+        "parameters": [
+          {
+            "description": "The id of the review to be located",
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/reviews/{reviewId}",
         "pointer": "#/paths/~1reviews~1{reviewId}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "Review"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Find a Review within a particular App and marketplace"
+        "summary": "Find a Review within a particular App and marketplace",
+        "tags": [
+          "reviews : Find and modify reviews "
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:patch:/reviews/{reviewId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /reviews/{reviewId}",
-        "path": "/reviews/{reviewId}",
-        "pointer": "#/paths/~1reviews~1{reviewId}/patch",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Update a review fields"
-      },
-      {
-        "deprecated": false,
+        "description": "- Only the review author is able to update their review - Returns the newly updated review",
         "id": "operation:post:/reviews/{reviewId}",
         "kind": "operation",
         "method": "post",
         "name": "post /reviews/{reviewId}",
+        "parameters": [
+          {
+            "description": "The id of the Review to be updated",
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User that is updating this review",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User account that is posting this review",
+            "in": "query",
+            "name": "userAccountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The review's headline.",
+            "in": "query",
+            "name": "headline",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The rating given within this review.",
+            "in": "query",
+            "name": "rating",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The review's description.",
+            "in": "query",
+            "name": "description",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/reviews/{reviewId}",
         "pointer": "#/paths/~1reviews~1{reviewId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "Review"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a review from a User and returns the new post"
+        "summary": "Update a review from a User and returns the new post",
+        "tags": [
+          "reviews : Find and modify reviews "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Only the review author is able to remove their review",
+        "id": "operation:delete:/reviews/{reviewId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /reviews/{reviewId}",
+        "parameters": [
+          {
+            "description": "The id of the Review to be updated",
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User that is removing this review",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User account that is emoving this review",
+            "in": "query",
+            "name": "userAccountId",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/reviews/{reviewId}",
+        "pointer": "#/paths/~1reviews~1{reviewId}/delete",
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Remove a review",
+        "tags": [
+          "reviews : Find and modify reviews "
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- Only the review author is able to update their review - Returns the newly updated review",
+        "id": "operation:patch:/reviews/{reviewId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /reviews/{reviewId}",
+        "parameters": [
+          {
+            "description": "The id of the Review to be updated",
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User that is updating this review",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the User account that is posting this review",
+            "in": "query",
+            "name": "userAccountId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The review's headline.",
+            "in": "query",
+            "name": "headline",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The rating given within this review.",
+            "in": "query",
+            "name": "rating",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The review's description.",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/reviews/{reviewId}",
+        "pointer": "#/paths/~1reviews~1{reviewId}/patch",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "Review"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Update a review fields",
+        "tags": [
+          "reviews : Find and modify reviews "
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "increment a statistics field",
         "id": "operation:post:/stats/increment/{field}",
         "kind": "operation",
         "method": "post",
         "name": "post /stats/increment/{field}",
+        "parameters": [
+          {
+            "description": "The field to be incremented",
+            "in": "path",
+            "name": "field",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the app associated with this statistic value",
+            "in": "query",
+            "name": "appId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the user that is performing the action",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The increment amount.",
+            "in": "query",
+            "name": "value",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The date (in millis) for when this increment occurred.",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/stats/increment/{field}",
         "pointer": "#/paths/~1stats~1increment~1{field}/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Increments a statistics field"
+        "summary": "Increments a statistics field",
+        "tags": [
+          "stats: Find marketplace statistics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a timeseries nested array containing date and value.",
         "id": "operation:get:/stats/series/{period}/{fields}",
         "kind": "operation",
         "method": "get",
         "name": "get /stats/series/{period}/{fields}",
+        "parameters": [
+          {
+            "description": "The period for the series (day or month)",
+            "enum": [
+              "day",
+              "month"
+            ],
+            "in": "path",
+            "name": "period",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The field to be graphed.",
+            "in": "path",
+            "name": "fields",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The start date for this series (in millis)",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The end date for this series (in millis)",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/stats/series/{period}/{fields}",
         "pointer": "#/paths/~1stats~1series~1{period}~1{fields}/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "object[][]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Return a timeseries for a particular field"
+        "summary": "Return a timeseries for a particular field",
+        "tags": [
+          "stats: Find marketplace statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1126,89 +3684,384 @@
         "kind": "operation",
         "method": "get",
         "name": "get /stats/total",
+        "parameters": [
+          {
+            "description": "A comma seperated list of all the fields to be returned in the total (available by default: dislikes, likes, reviews, totalSales, developerSales, marketplaceSa…",
+            "in": "query",
+            "name": "fields",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The start date for this total (in millis)",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The end date for this total (in millis)",
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/stats/total",
         "pointer": "#/paths/~1stats~1total/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "Total"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns the total number of events for a particular field."
+        "summary": "Returns the total number of events for a particular field.",
+        "tags": [
+          "stats: Find marketplace statistics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:get:/stripe-gateway/developer/{developerId}/accounts",
         "kind": "operation",
         "method": "get",
         "name": "get /stripe-gateway/developer/{developerId}/accounts",
+        "parameters": [
+          {
+            "description": "The id of the developer connecting their Stripe account",
+            "in": "path",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stripe-gateway/developer/{developerId}/accounts",
         "pointer": "#/paths/~1stripe-gateway~1developer~1{developerId}~1accounts/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "Accounts"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a developers connected Stripe accounts"
+        "summary": "Returns a developers connected Stripe accounts",
+        "tags": [
+          "stripe-gateway : Process payments and refunds "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials - The URL generated by this method is only valid for 48 hours.",
         "id": "operation:post:/stripe-gateway/developer/{developerId}/accounts",
         "kind": "operation",
         "method": "post",
         "name": "post /stripe-gateway/developer/{developerId}/accounts",
+        "parameters": [
+          {
+            "description": "The id of the developer connecting their Stripe account",
+            "in": "path",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The URL to redirect this developer after they have connected their Stripe account",
+            "in": "query",
+            "name": "redirectUrl",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stripe-gateway/developer/{developerId}/accounts",
         "pointer": "#/paths/~1stripe-gateway~1developer~1{developerId}~1accounts/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "DeveloperToken"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Generate a temporary URL to allow a developer to connect their Stripe account"
+        "summary": "Generate a temporary URL to allow a developer to connect their Stripe account",
+        "tags": [
+          "stripe-gateway : Process payments and refunds "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:delete:/stripe-gateway/developer/{developerId}/accounts/{stripeId}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /stripe-gateway/developer/{developerId}/accounts/{stripeId}",
+        "parameters": [
+          {
+            "description": "The id of the developer disconnecting their Stripe account",
+            "in": "path",
+            "name": "developerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the stripe account to disconnect",
+            "in": "path",
+            "name": "stripeId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stripe-gateway/developer/{developerId}/accounts/{stripeId}",
         "pointer": "#/paths/~1stripe-gateway~1developer~1{developerId}~1accounts~1{stripeId}/delete",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "Accounts"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Disconnects a developer's Stripe account"
+        "summary": "Disconnects a developer's Stripe account",
+        "tags": [
+          "stripe-gateway : Process payments and refunds "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:get:/stripe-gateway/user/{userId}/cards",
         "kind": "operation",
         "method": "get",
         "name": "get /stripe-gateway/user/{userId}/cards",
+        "parameters": [
+          {
+            "description": "The id of the user requesting their credit cards",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stripe-gateway/user/{userId}/cards",
         "pointer": "#/paths/~1stripe-gateway~1user~1{userId}~1cards/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "Cards"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns credit cards for this user"
+        "summary": "Returns credit cards for this user",
+        "tags": [
+          "stripe-gateway : Process payments and refunds "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:post:/stripe-gateway/user/{userId}/cards",
         "kind": "operation",
         "method": "post",
         "name": "post /stripe-gateway/user/{userId}/cards",
+        "parameters": [
+          {
+            "description": "The id of the user adding their credit card",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The Stripe token returned by the Stripe.js Stripe.card.createToken call",
+            "in": "query",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Set to true if this should be set to be the default credit card",
+            "in": "query",
+            "name": "isDefault",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/stripe-gateway/user/{userId}/cards",
         "pointer": "#/paths/~1stripe-gateway~1user~1{userId}~1cards/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "Cards"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Adds credit card for this user"
+        "summary": "Adds credit card for this user",
+        "tags": [
+          "stripe-gateway : Process payments and refunds "
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
+        "id": "operation:post:/stripe-gateway/user/{userId}/cards/{cardId}",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /stripe-gateway/user/{userId}/cards/{cardId}",
+        "parameters": [
+          {
+            "description": "The id of the user adding their credit card",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the card to be updated",
+            "in": "path",
+            "name": "cardId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Set to true if this should be set to be the default credit card",
+            "in": "query",
+            "name": "isDefault",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "The card holder's city",
+            "in": "query",
+            "name": "address_city",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The card holder's country",
+            "in": "query",
+            "name": "address_country",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The card holder's street address",
+            "in": "query",
+            "name": "address_line1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The card holder's street address",
+            "in": "query",
+            "name": "address_line2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The card holder's city state/province",
+            "in": "query",
+            "name": "address_state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The card holder's zip/postal code",
+            "in": "query",
+            "name": "address_zip",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/stripe-gateway/user/{userId}/cards/{cardId}",
+        "pointer": "#/paths/~1stripe-gateway~1user~1{userId}~1cards~1{cardId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "Cards"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Updates a credit card for this user",
+        "tags": [
+          "stripe-gateway : Process payments and refunds "
+        ]
       },
       {
         "deprecated": false,
@@ -1216,119 +4069,277 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /stripe-gateway/user/{userId}/cards/{cardId}",
+        "parameters": [
+          {
+            "description": "The id of the user removing their credit card",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The id of the credit card to remove",
+            "in": "path",
+            "name": "cardId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stripe-gateway/user/{userId}/cards/{cardId}",
         "pointer": "#/paths/~1stripe-gateway~1user~1{userId}~1cards~1{cardId}/delete",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "412"
+          },
+          {
+            "status": "default",
+            "type": "Cards"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Removes a credit card for a user"
+        "summary": "Removes a credit card for a user",
+        "tags": [
+          "stripe-gateway : Process payments and refunds "
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/stripe-gateway/user/{userId}/cards/{cardId}",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /stripe-gateway/user/{userId}/cards/{cardId}",
-        "path": "/stripe-gateway/user/{userId}/cards/{cardId}",
-        "pointer": "#/paths/~1stripe-gateway~1user~1{userId}~1cards~1{cardId}/post",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Updates a credit card for this user"
-      },
-      {
-        "deprecated": false,
+        "description": "- Results are paginated and the default is value is 100 if no limit is provided",
         "id": "operation:get:/transactions",
         "kind": "operation",
         "method": "get",
         "name": "get /transactions",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/transactions",
         "pointer": "#/paths/~1transactions/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "TransactionPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a paginated list of transactions"
+        "summary": "Returns a paginated list of transactions",
+        "tags": [
+          "transactions : Find payments and refunds "
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/transactions/{transactionId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /transactions/{transactionId}",
-        "path": "/transactions/{transactionId}",
-        "pointer": "#/paths/~1transactions~1{transactionId}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Deleted a transaction"
-      },
-      {
-        "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:get:/transactions/{transactionId}",
         "kind": "operation",
         "method": "get",
         "name": "get /transactions/{transactionId}",
+        "parameters": [
+          {
+            "description": "The id of the transaction to return",
+            "in": "path",
+            "name": "transactionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transactions/{transactionId}",
         "pointer": "#/paths/~1transactions~1{transactionId}/get",
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a transaction"
+        "summary": "Returns a transaction",
+        "tags": [
+          "transactions : Find payments and refunds "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:post:/transactions/{transactionId}",
         "kind": "operation",
         "method": "post",
         "name": "post /transactions/{transactionId}",
+        "parameters": [
+          {
+            "description": "The id of the transaction to be updated",
+            "in": "path",
+            "name": "transactionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/transactions/{transactionId}",
         "pointer": "#/paths/~1transactions~1{transactionId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "Transaction"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Updates a transaction"
+        "summary": "Updates a transaction",
+        "tags": [
+          "transactions : Find payments and refunds "
+        ]
       },
       {
         "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
+        "id": "operation:delete:/transactions/{transactionId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /transactions/{transactionId}",
+        "parameters": [
+          {
+            "description": "The id of the transaction to be deleted",
+            "in": "path",
+            "name": "transactionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/transactions/{transactionId}",
+        "pointer": "#/paths/~1transactions~1{transactionId}/delete",
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Deleted a transaction",
+        "tags": [
+          "transactions : Find payments and refunds "
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- Results are paginated and the default is value is 1000 if no limit is provided",
         "id": "operation:get:/userAccounts",
         "kind": "operation",
         "method": "get",
         "name": "get /userAccounts",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/userAccounts",
         "pointer": "#/paths/~1userAccounts/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "UserAccountPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a paginated list of userAccounts"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/userAccounts/{userAccountId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /userAccounts/{userAccountId}",
-        "path": "/userAccounts/{userAccountId}",
-        "pointer": "#/paths/~1userAccounts~1{userAccountId}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Removes the user account"
+        "summary": "Returns a paginated list of userAccounts",
+        "tags": [
+          "userAccounts : Find and modify user accounts "
+        ]
       },
       {
         "deprecated": false,
@@ -1336,29 +4347,39 @@
         "kind": "operation",
         "method": "get",
         "name": "get /userAccounts/{userAccountId}",
+        "parameters": [
+          {
+            "description": "The id of the user account to be located",
+            "in": "path",
+            "name": "userAccountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/userAccounts/{userAccountId}",
         "pointer": "#/paths/~1userAccounts~1{userAccountId}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "UserAccount"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a single user account"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/userAccounts/{userAccountId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /userAccounts/{userAccountId}",
-        "path": "/userAccounts/{userAccountId}",
-        "pointer": "#/paths/~1userAccounts~1{userAccountId}/patch",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Updates the user account fields"
+        "summary": "Returns a single user account",
+        "tags": [
+          "userAccounts : Find and modify user accounts "
+        ]
       },
       {
         "deprecated": false,
@@ -1366,74 +4387,268 @@
         "kind": "operation",
         "method": "post",
         "name": "post /userAccounts/{userAccountId}",
+        "parameters": [
+          {
+            "description": "The id of the user account to be updated",
+            "in": "path",
+            "name": "userAccountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The Id of the user that this account belongs to",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The contact email address",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user account name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/userAccounts/{userAccountId}",
         "pointer": "#/paths/~1userAccounts~1{userAccountId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "UserAccount"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Updates the user account or adds the user account if it doesn't exist"
+        "summary": "Updates the user account or adds the user account if it doesn't exist",
+        "tags": [
+          "userAccounts : Find and modify user accounts "
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/userAccounts/{userAccountId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /userAccounts/{userAccountId}",
+        "parameters": [
+          {
+            "description": "The id of the user account to be removed",
+            "in": "path",
+            "name": "userAccountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/userAccounts/{userAccountId}",
+        "pointer": "#/paths/~1userAccounts~1{userAccountId}/delete",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Removes the user account",
+        "tags": [
+          "userAccounts : Find and modify user accounts "
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/userAccounts/{userAccountId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /userAccounts/{userAccountId}",
+        "parameters": [
+          {
+            "description": "The id of the user account to be updated",
+            "in": "path",
+            "name": "userAccountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The Id of the user that this account belongs to",
+            "in": "query",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The contact email address",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user account name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/userAccounts/{userAccountId}",
+        "pointer": "#/paths/~1userAccounts~1{userAccountId}/patch",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "UserAccount"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Updates the user account fields",
+        "tags": [
+          "userAccounts : Find and modify user accounts "
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- Results are paginated and the default is value is 100 if no limit is provided",
         "id": "operation:get:/users",
         "kind": "operation",
         "method": "get",
         "name": "get /users",
+        "parameters": [
+          {
+            "description": "A query document.",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A sort document.",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The result set page number to be returned",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The maximum number of results to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/users",
         "pointer": "#/paths/~1users/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "UserPages"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Returns a paginated list of users"
+        "summary": "Returns a paginated list of users",
+        "tags": [
+          "users : Find and modify users "
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/users/{userId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /users/{userId}",
-        "path": "/users/{userId}",
-        "pointer": "#/paths/~1users~1{userId}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Removes a single user"
-      },
-      {
-        "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
         "id": "operation:get:/users/{userId}",
         "kind": "operation",
         "method": "get",
         "name": "get /users/{userId}",
+        "parameters": [
+          {
+            "description": "The id of the user to be located",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{userId}",
         "pointer": "#/paths/~1users~1{userId}/get",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "User"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Return a single user"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:patch:/users/{userId}",
-        "kind": "operation",
-        "method": "patch",
-        "name": "patch /users/{userId}",
-        "path": "/users/{userId}",
-        "pointer": "#/paths/~1users~1{userId}/patch",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Updates user fields"
+        "summary": "Return a single user",
+        "tags": [
+          "users : Find and modify users "
+        ]
       },
       {
         "deprecated": false,
@@ -1441,259 +4656,522 @@
         "kind": "operation",
         "method": "post",
         "name": "post /users/{userId}",
+        "parameters": [
+          {
+            "description": "The id of the user to be updated",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The type for this user",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user's email",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user's username",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user's name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/{userId}",
         "pointer": "#/paths/~1users~1{userId}/post",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "default",
+            "type": "User"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Updates a single user or adds the user if they don't exist"
+        "summary": "Updates a single user or adds the user if they don't exist",
+        "tags": [
+          "users : Find and modify users "
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "- Results are returned for the market provided within the basic authentication credentials",
+        "id": "operation:delete:/users/{userId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /users/{userId}",
+        "parameters": [
+          {
+            "description": "The id of the user to be removed",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/users/{userId}",
+        "pointer": "#/paths/~1users~1{userId}/delete",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Removes a single user",
+        "tags": [
+          "users : Find and modify users "
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/users/{userId}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /users/{userId}",
+        "parameters": [
+          {
+            "description": "The id of the user to be updated",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The type for this user",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user's email",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user's username",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The user's name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A custom JSON object that you can create and attach to this record",
+            "in": "query",
+            "name": "customData",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/users/{userId}",
+        "pointer": "#/paths/~1users~1{userId}/patch",
+        "responses": [
+          {
+            "status": "400"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "default",
+            "type": "User"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Updates user fields",
+        "tags": [
+          "users : Find and modify users "
+        ]
       },
       {
         "id": "schema:Access",
         "kind": "schema",
-        "name": "Access"
+        "name": "Access",
+        "type": "object"
       },
       {
+        "description": "The connected Stripe account for a developer",
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
+        "description": "A developer's connected Stripe accounts",
         "id": "schema:Accounts",
         "kind": "schema",
-        "name": "Accounts"
+        "name": "Accounts",
+        "type": "object"
       },
       {
+        "description": "An app",
         "id": "schema:App",
         "kind": "schema",
-        "name": "App"
+        "name": "App",
+        "type": "object"
       },
       {
+        "description": "Pages of app results",
         "id": "schema:AppPages",
         "kind": "schema",
-        "name": "AppPages"
+        "name": "AppPages",
+        "type": "object"
       },
       {
+        "description": "The totals for the app",
         "id": "schema:AppTotal",
         "kind": "schema",
-        "name": "AppTotal"
+        "name": "AppTotal",
+        "type": "object"
       },
       {
+        "description": "An AppVersion",
         "id": "schema:AppVersion",
         "kind": "schema",
-        "name": "AppVersion"
+        "name": "AppVersion",
+        "type": "object"
       },
       {
         "id": "schema:App_Entry",
         "kind": "schema",
-        "name": "App_Entry"
+        "name": "App_Entry",
+        "type": "object"
       },
       {
+        "description": "An app attribute",
         "id": "schema:Attributes",
         "kind": "schema",
-        "name": "Attributes"
+        "name": "Attributes",
+        "type": "object"
       },
       {
         "id": "schema:Card",
         "kind": "schema",
-        "name": "Card"
+        "name": "Card",
+        "type": "object"
       },
       {
+        "description": "A User's credit card details",
         "id": "schema:Cards",
         "kind": "schema",
-        "name": "Cards"
+        "name": "Cards",
+        "type": "object"
       },
       {
+        "description": "The category supported by this category group",
         "id": "schema:Category",
         "kind": "schema",
-        "name": "Category"
+        "name": "Category",
+        "type": "object"
       },
       {
+        "description": "The category groups supported by this marketplace",
         "id": "schema:CategoryGroups",
         "kind": "schema",
-        "name": "CategoryGroups"
+        "name": "CategoryGroups",
+        "type": "object"
       },
       {
+        "description": "The totals for the field",
         "id": "schema:DataTotal",
         "kind": "schema",
-        "name": "DataTotal"
+        "name": "DataTotal",
+        "type": "object"
       },
       {
+        "description": "A Developer",
         "id": "schema:Developer",
         "kind": "schema",
-        "name": "Developer"
+        "name": "Developer",
+        "type": "object"
       },
       {
+        "description": "A Developer Account",
         "id": "schema:DeveloperAccount",
         "kind": "schema",
-        "name": "DeveloperAccount"
+        "name": "DeveloperAccount",
+        "type": "object"
       },
       {
+        "description": "Pages of developerAccount results",
         "id": "schema:DeveloperAccountPages",
         "kind": "schema",
-        "name": "DeveloperAccountPages"
+        "name": "DeveloperAccountPages",
+        "type": "object"
       },
       {
+        "description": "Pages of developer results",
         "id": "schema:DeveloperPages",
         "kind": "schema",
-        "name": "DeveloperPages"
+        "name": "DeveloperPages",
+        "type": "object"
       },
       {
         "id": "schema:DeveloperToken",
         "kind": "schema",
-        "name": "DeveloperToken"
+        "name": "DeveloperToken",
+        "type": "object"
       },
       {
         "id": "schema:Event",
         "kind": "schema",
-        "name": "Event"
+        "name": "Event",
+        "type": "object"
       },
       {
+        "description": "The file ids of the uploaded file",
         "id": "schema:File",
         "kind": "schema",
-        "name": "File"
+        "name": "File",
+        "type": "object"
       },
       {
+        "description": "The signed URL for downloading a private file",
         "id": "schema:FileDownload",
         "kind": "schema",
-        "name": "FileDownload"
+        "name": "FileDownload",
+        "type": "object"
       },
       {
+        "description": "Pages of file results",
         "id": "schema:File_Pages",
         "kind": "schema",
-        "name": "File_Pages"
+        "name": "File_Pages",
+        "type": "object"
       },
       {
+        "description": "The virus found within this file",
         "id": "schema:FoundVirus",
         "kind": "schema",
-        "name": "FoundVirus"
+        "name": "FoundVirus",
+        "type": "object"
       },
       {
+        "description": "The hashes requested for the file.",
         "id": "schema:Hash",
         "kind": "schema",
-        "name": "Hash"
+        "name": "Hash",
+        "type": "object"
       },
       {
+        "description": "A marketplace",
         "id": "schema:Market",
         "kind": "schema",
-        "name": "Market"
+        "name": "Market",
+        "type": "object"
       },
       {
+        "description": "Pages of marketplace results",
         "id": "schema:Market_Pages",
         "kind": "schema",
-        "name": "Market_Pages"
+        "name": "Market_Pages",
+        "type": "object"
       },
       {
+        "description": "The model that describes the cost and pricing for apps",
         "id": "schema:Model",
         "kind": "schema",
-        "name": "Model"
+        "name": "Model",
+        "type": "object"
       },
       {
         "id": "schema:Ownership",
         "kind": "schema",
-        "name": "Ownership"
+        "name": "Ownership",
+        "type": "object"
       },
       {
+        "description": "Pages of ownership results",
         "id": "schema:OwnershipPages",
         "kind": "schema",
-        "name": "OwnershipPages"
+        "name": "OwnershipPages",
+        "type": "object"
       },
       {
+        "description": "Details of the live version of this app",
         "id": "schema:Parent",
         "kind": "schema",
-        "name": "Parent"
+        "name": "Parent",
+        "type": "object"
       },
       {
+        "description": "Profanity found in this review",
         "id": "schema:Profanity",
         "kind": "schema",
-        "name": "Profanity"
+        "name": "Profanity",
+        "type": "object"
       },
       {
+        "description": "Resticts users from accessing this app",
         "id": "schema:Restrictions",
         "kind": "schema",
-        "name": "Restrictions"
+        "name": "Restrictions",
+        "type": "object"
       },
       {
+        "description": "The revenue generated by this app",
         "id": "schema:Revenue",
         "kind": "schema",
-        "name": "Revenue"
+        "name": "Revenue",
+        "type": "object"
       },
       {
+        "description": "A Review",
         "id": "schema:Review",
         "kind": "schema",
-        "name": "Review"
+        "name": "Review",
+        "type": "object"
       },
       {
+        "description": "Pages of review results",
         "id": "schema:ReviewPages",
         "kind": "schema",
-        "name": "ReviewPages"
+        "name": "ReviewPages",
+        "type": "object"
       },
       {
         "id": "schema:Review_Entry",
         "kind": "schema",
-        "name": "Review_Entry"
+        "name": "Review_Entry",
+        "type": "object"
       },
       {
+        "description": "Pages of search results",
         "id": "schema:SearchPages",
         "kind": "schema",
-        "name": "SearchPages"
+        "name": "SearchPages",
+        "type": "object"
       },
       {
+        "description": "The statistic value",
         "id": "schema:Stat",
         "kind": "schema",
-        "name": "Stat"
+        "name": "Stat",
+        "type": "object"
       },
       {
+        "description": "The current status of this review",
         "id": "schema:Status",
         "kind": "schema",
-        "name": "Status"
+        "name": "Status",
+        "type": "object"
       },
       {
+        "description": "The total number of events for a particular field",
         "id": "schema:Total",
         "kind": "schema",
-        "name": "Total"
+        "name": "Total",
+        "type": "object"
       },
       {
+        "description": "A transaction for an app initiated by a user",
         "id": "schema:Transaction",
         "kind": "schema",
-        "name": "Transaction"
+        "name": "Transaction",
+        "type": "object"
       },
       {
+        "description": "Pages of transaction results",
         "id": "schema:TransactionPages",
         "kind": "schema",
-        "name": "TransactionPages"
+        "name": "TransactionPages",
+        "type": "object"
       },
       {
+        "description": "A User",
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
+        "description": "A User Account",
         "id": "schema:UserAccount",
         "kind": "schema",
-        "name": "UserAccount"
+        "name": "UserAccount",
+        "type": "object"
       },
       {
+        "description": "Pages of userAccount results",
         "id": "schema:UserAccountPages",
         "kind": "schema",
-        "name": "UserAccountPages"
+        "name": "UserAccountPages",
+        "type": "object"
       },
       {
+        "description": "Pages of user results",
         "id": "schema:UserPages",
         "kind": "schema",
-        "name": "UserPages"
+        "name": "UserPages",
+        "type": "object"
       },
       {
+        "description": "Pages of AppVersion results",
         "id": "schema:VersionPages",
         "kind": "schema",
-        "name": "VersionPages"
+        "name": "VersionPages",
+        "type": "object"
       },
       {
+        "description": "The virus scan results for this file",
         "id": "schema:VirusScan",
         "kind": "schema",
-        "name": "VirusScan"
+        "name": "VirusScan",
+        "type": "object"
       }
     ]
   },

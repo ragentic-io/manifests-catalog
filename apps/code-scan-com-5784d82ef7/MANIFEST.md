@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_CodeScanforSFDC_pro
 
 | | |
 | --- | --- |
-| Signed bundle | `8ae3f884d68ce0ea672224fadf89e76a880bb3bb1bd41c98d6c265c50a5c84cb` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_CodeScanforSFDC_pro
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/job` | get /job | Get the status of a job |
-| POST | `/job` | post /job | Queues a job |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/job` | get /job | `jobId`* | Job | yes | Get the status of a job |
+| POST | `/job` | post /job | body*: NewJob | Job |  | Queues a job |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_smart-me.com_Images_bootstrap_lo
 
 | | |
 | --- | --- |
-| Signed bundle | `d5cb684d3632d77fecd28b336c8bb5a9b096f052667f87306b071fb15f30fd9a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,69 +34,71 @@ logo: "https://api.apis.guru/v2/cache/logo/http_smart-me.com_Images_bootstrap_lo
 
 39 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| PUT | `/api/AccessToken` | AccessToken_Put | Creates a Access Token to write on a Card (e.g. NFC) |
-| GET | `/api/Account/login` | Account_Login | — |
-| POST | `/api/Account/login` | post /api/Account/login | — |
-| POST | `/api/Actions` | Actions_Post | Set an action for the specified device. |
-| GET | `/api/Actions/{id}` | Actions_Get | Gets all available Actions of a Device |
-| GET | `/api/AdditionalDeviceInformation/{id}` | AdditionalDeviceInformation_Get | Gets the additional information (e.g. Firmware Version) about a device. |
-| GET | `/api/CustomDevice` | CustomDevice_Get | Gets all Custom Devices |
-| POST | `/api/CustomDevice` | CustomDevice_Post | Creates or updates a Custom Device or updates it's values. |
-| GET | `/api/CustomDevice/{id}` | get /api/CustomDevice/{id} | Gets a Custom Device by it's ID |
-| GET | `/api/DeviceBySerial` | DeviceBySerial_Get | Gets a Device by it's Serial Number. The Serial is the part before the "-". |
-| GET | `/api/Devices` | Devices_Get | Gets all Devices |
-| POST | `/api/Devices` | Devices_Post | Creates or updates a Device or updates it's values. |
-| GET | `/api/Devices/{id}` | get /api/Devices/{id} | Gets a Device by it's ID |
-| PUT | `/api/Devices/{id}` | Devices_Put | Updates the On/Off Switch on a device. For new implementations please use the "actions" command |
-| GET | `/api/DevicesByEnergy` | DevicesByEnergy_Get | Gets all Devices for an Energy Type |
-| GET | `/api/DevicesBySubType` | DevicesBySubType_Get | Gets all Devices by it's Sub Type (e.g. E-Charging Station) |
-| GET | `/api/FastSendDeviceValues/{id}` | FastSendDeviceValues_Get | Force a device to send the data every second (if supported). This for about 30s. Don't use this call to force a device to send the data every second for a longer time. |
-| GET | `/api/Folder/{id}` | Folder_Get | Gets the Values for a folder or a meter |
-| GET | `/api/FolderMenu` | FolderMenu_Get | Gets the folder menu items (each item might contain child items) |
-| POST | `/api/FolderMenu` | FolderMenu_Post | Creates and updates the folder menu items |
-| GET | `/api/Health` | Health_Get | A method returning HTTP 200 OK when queried. It is used by Kubernetes probes to determine whether the app is healthy. |
-| POST | `/api/MBus` | MBus_Post | M-BUS API: Adds data of a M-BUS Meter to the smart-me Cloud. Just send us the M-BUS Telegram (RSP_UD) and we will do the Rest. |
-| POST | `/api/MeterFolderInformation` | MeterFolderInformation_Post | Sets the Name of a Meter or a Folder |
-| GET | `/api/MeterFolderInformation/{id}` | MeterFolderInformation_Get | Beta: Gets the General Information for a Meter or a Folder |
-| GET | `/api/MeterValues/{id}` | MeterValues_Get | Gets the Values for a Meter at a given Date. The first Value found before the given Date is returned. |
-| GET | `/api/RegisterForRealtimeApi` | RegisterForRealtimeApi_Get | Gets all registrations for the Realtime API. |
-| POST | `/api/RegisterForRealtimeApi` | RegisterForRealtimeApi_Post | Creates a new registration for the realtime API. The Realtime API sends you the data of the registred devices as soon as we have them on the cloud. More Information about the realtime API: https://www.smart-me.com/Description/api/realtimeapi.aspx |
-| DELETE | `/api/RegisterForRealtimeApi/{id}` | RegisterForRealtimeApi_Delete | Deletes a realtime API registration. |
-| POST | `/api/SmartMeDeviceConfiguration` | SmartMeDeviceConfiguration_Post | Sets the configuration of a smart-me device. The device needs to be online. |
-| GET | `/api/SmartMeDeviceConfiguration/{id}` | SmartMeDeviceConfiguration_Get | Gets the configuration of a smart-me device. |
-| POST | `/api/SubUser` | SubUser_Post | Creates or updates a subuser. To create a new user set no ID (empty) |
-| DELETE | `/api/SubUser/{id}` | SubUser_Delete | Delete a subuser |
-| GET | `/api/SubUser/{id}` | SubUser_Get | Get a sub user. The user must be assigend to the user that makes this call. |
-| DELETE | `/api/User` | User_Delete | Triggers user account deletion. |
-| GET | `/api/User` | User_Get | Gets the informations for the user. |
-| GET | `/api/Values/{id}` | Values_Get | Gets all (last) values of a device |
-| GET | `/api/ValuesInPast/{id}` | ValuesInPast_Get | Gets all (last) values of a device The first Value found before the given Date is returned. |
-| GET | `/api/ValuesInPastMultiple/{id}` | ValuesInPastMultiple_Get | Gets multiple values of a device. This call needs a smart-me professional licence. |
-| GET | `/api/VirtualBillingMeterActive` | VirtualBillingMeterActive_Get | Beta: Gets all active virtual meters |
-| POST | `/api/VirtualBillingMeterActive` | VirtualBillingMeterActive_Post | Beta: Virtual Meter API: Activates a Meter and add the Consumption to a Virtual Meter assosiated with the User. |
-| POST | `/api/VirtualBillingMeterDeactivate` | VirtualBillingMeterDeactivate_Post | Beta: Virtual Meter API: Deactivates a Virtual Meter. |
-| GET | `/api/VirtualBillingMeters` | VirtualBillingMeters_Get | Beta: Gets all Meters available to activate as a Virtual Meter. |
-| GET | `/api/VirtualMeterCalculateFormula` | VirtualMeterCalculateFormula_Get | Calculates a virtual meter from a formula. A meter is coded as ID("METERID") |
-| GET | `/api/VirtualTariff` | VirtualTariff_Get | Gets all Virtual Tariffs of a user |
-| GET | `/api/VirtualTariff/{id}` | get /api/VirtualTariff/{id} | Gets all virtual tariffs of a folder |
-| GET | `/api/VirtualTariffConsumption` | VirtualTariffConsumption_Get | Gets the consumption of a folder with a virtuall tariffs. |
-| GET | `/api/VirtualTariffsForProperty/{id}` | VirtualTariffsForProperty_Get | Gets all Virtual Tariffs for a property (folder) |
-| GET | `/api/VirtualTariffsStatusForProperty/{id}` | VirtualTariffsStatusForProperty_Get | Gets the calculation status for a virtual tariff property |
-| POST | `/api/folder/assign` | FolderAssign_Post | Assign a folder (source) or meter to another folder (target). Can be used to create a folder structure. |
-| DELETE | `/api/folder/settings/{id}` | FolderSettings_Delete | Deletes a folder |
-| GET | `/api/folder/settings/{id}` | FolderSettings_Get | Gets the settings of a folder or meter |
-| POST | `/api/folder/settings/{id}` | FolderSettings_Post | Add or edit a folder or a meter. To add a new folder use and empty ID |
-| DELETE | `/api/folder/user/assign` | UserToFolderAssign_Delete | Deletes a user to folder assignement |
-| POST | `/api/folder/user/assign` | UserToFolderAssign_Post | Assign a user to a folder |
-| GET | `/api/oauth/authorize` | OAuth_Authorize | — |
-| POST | `/api/oauth/authorize` | post /api/oauth/authorize | — |
-| GET | `/api/pico` | Pico_Get | Gets all pico charging stations for this user |
-| GET | `/api/pico/charging/{id}` | PicoCharging_Get | Gets the active charging data of a pico station |
-| GET | `/api/pico/history/{id}` | PicoChargingHistory_Get | Gets the last charging history for a pico station |
-| GET | `/api/pico/loadmanagementgroup` | get /api/pico/loadmanagementgroup | GET: api/pico/loadmanagementgroup Returns all available load management groups |
-| POST | `/api/pico/loadmanagementgroup/current/{serial}` | PicoLoadmanagementSetDynamicCurrent_Post | Sets the dynamic current of a load management group or a single station. |
-| GET | `/api/pico/loadmanagementgroup/{id}` | PicoLoadmanagementGroup_Get | GET: api/pico/loadmanagementgroup Returns a pico load management group by it's id |
-| GET | `/api/pico/settings/{id}` | PicoSettings_Get | GET: api/pico/settings Returns the settings of a pico charging station. |
-| POST | `/api/pico/tryenablecablelock/{id}` | PicoEnableFixCableLock_Post | Try to fix lock the cable of a pico. The pico must be online and a cable (without car) needs to be connected. Otherwise this will fail. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| PUT | `/api/AccessToken` | AccessToken_Put | body*: AccessTokenToPut | string |  | Creates a Access Token to write on a Card (e.g. NFC) |
+| GET | `/api/Account/login` | Account_Login | — | Object | yes | — |
+| POST | `/api/Account/login` | post /api/Account/login | — | Object |  | — |
+| POST | `/api/Actions` | Actions_Post | body*: ActionToPost | — |  | Set an action for the specified device. |
+| GET | `/api/Actions/{id}` | Actions_Get | `id`* | ActionInformation[] | yes | Gets all available Actions of a Device |
+| GET | `/api/AdditionalDeviceInformation/{id}` | AdditionalDeviceInformation_Get | `id`* | AdditionalDeviceInformation | yes | Gets the additional information (e.g. Firmware Version) about a device. |
+| GET | `/api/CustomDevice` | CustomDevice_Get | — | CustomDeviceToPost[] | yes | Gets all Custom Devices |
+| POST | `/api/CustomDevice` | CustomDevice_Post | body*: CustomDeviceToPost | CustomDeviceToPost |  | Creates or updates a Custom Device or updates it's values. |
+| GET | `/api/CustomDevice/{id}` | get /api/CustomDevice/{id} | `id`* | CustomDeviceToPost | yes | Gets a Custom Device by it's ID |
+| GET | `/api/DeviceBySerial` | DeviceBySerial_Get | `serial`* | Device | yes | Gets a Device by it's Serial Number. The Serial is the part before the "-". |
+| GET | `/api/Devices` | Devices_Get | — | Device[] | yes | Gets all Devices |
+| POST | `/api/Devices` | Devices_Post | body*: DeviceToPost | DeviceToPost |  | Creates or updates a Device or updates it's values. |
+| GET | `/api/Devices/{id}` | get /api/Devices/{id} | `id`* | Device | yes | Gets a Device by it's ID |
+| PUT | `/api/Devices/{id}` | Devices_Put | `id`*, `switchState`*, `switchNumber` | Object |  | Updates the On/Off Switch on a device. For new implementations please use the "actions" command |
+| GET | `/api/DevicesByEnergy` | DevicesByEnergy_Get | `meterEnergyType`* | Device[] | yes | Gets all Devices for an Energy Type |
+| GET | `/api/DevicesBySubType` | DevicesBySubType_Get | `meterSubType`* | Device[] | yes | Gets all Devices by it's Sub Type (e.g. E-Charging Station) |
+| GET | `/api/FastSendDeviceValues/{id}` | FastSendDeviceValues_Get | `id`* | — | yes | Force a device to send the data every second (if supported). This for about 30s. Don't use this call to force a device to send the data every second for a longer time. |
+| GET | `/api/Folder/{id}` | Folder_Get | `id`* | FolderData | yes | Gets the Values for a folder or a meter |
+| GET | `/api/FolderMenu` | FolderMenu_Get | `filter` | FolderMenuConfiguration | yes | Gets the folder menu items (each item might contain child items) |
+| POST | `/api/FolderMenu` | FolderMenu_Post | body*: FolderMenuConfiguration | — |  | Creates and updates the folder menu items |
+| GET | `/api/Health` | Health_Get | — | Object | yes | A method returning HTTP 200 OK when queried. It is used by Kubernetes probes to determine whether the app is healthy. |
+| POST | `/api/MBus` | MBus_Post | body*: MBusData | Object |  | M-BUS API: Adds data of a M-BUS Meter to the smart-me Cloud. Just send us the M-BUS Telegram (RSP_UD) and we will do the Rest. |
+| POST | `/api/MeterFolderInformation` | MeterFolderInformation_Post | body*: MeterFolderInformationToPost | — |  | Sets the Name of a Meter or a Folder |
+| GET | `/api/MeterFolderInformation/{id}` | MeterFolderInformation_Get | `id`* | MeterFolderInformation | yes | Beta: Gets the General Information for a Meter or a Folder |
+| GET | `/api/MeterValues/{id}` | MeterValues_Get | `id`*, `date`* | DeviceInPast | yes | Gets the Values for a Meter at a given Date. The first Value found before the given Date is returned. |
+| GET | `/api/RegisterForRealtimeApi` | RegisterForRealtimeApi_Get | — | RegisterRealtimeApiData[] | yes | Gets all registrations for the Realtime API. |
+| POST | `/api/RegisterForRealtimeApi` | RegisterForRealtimeApi_Post | body*: RegisterRealtimeApiData | — |  | Creates a new registration for the realtime API. The Realtime API sends you the data of the registred devices as soon as we have them on the cloud. More Information about the realtime API: https://www.smart-me.com/Description/api/realtimeapi.aspx |
+| DELETE | `/api/RegisterForRealtimeApi/{id}` | RegisterForRealtimeApi_Delete | `id`* | — |  | Deletes a realtime API registration. |
+| POST | `/api/SmartMeDeviceConfiguration` | SmartMeDeviceConfiguration_Post | body*: SmartMeDeviceConfigurationContainer | — |  | Sets the configuration of a smart-me device. The device needs to be online. |
+| GET | `/api/SmartMeDeviceConfiguration/{id}` | SmartMeDeviceConfiguration_Get | `id`* | SmartMeDeviceConfigurationContainer | yes | Gets the configuration of a smart-me device. |
+| POST | `/api/SubUser` | SubUser_Post | body*: SubUserData | — |  | Creates or updates a subuser. To create a new user set no ID (empty) |
+| GET | `/api/SubUser/{id}` | SubUser_Get | `id`* | SubUserData | yes | Get a sub user. The user must be assigend to the user that makes this call. |
+| DELETE | `/api/SubUser/{id}` | SubUser_Delete | `id`* | — |  | Delete a subuser |
+| GET | `/api/User` | User_Get | — | User | yes | Gets the informations for the user. |
+| DELETE | `/api/User` | User_Delete | — | Object |  | Triggers user account deletion. |
+| GET | `/api/Values/{id}` | Values_Get | `id`* | ValuesData | yes | Gets all (last) values of a device |
+| GET | `/api/ValuesInPast/{id}` | ValuesInPast_Get | `id`*, `date`* | ValuesData | yes | Gets all (last) values of a device The first Value found before the given Date is returned. |
+| GET | `/api/ValuesInPastMultiple/{id}` | ValuesInPastMultiple_Get | `id`*, `startDate`*, `endDate`*, `interval`* | ValuesData[] | yes | Gets multiple values of a device. This call needs a smart-me professional licence. |
+| GET | `/api/VirtualBillingMeterActive` | VirtualBillingMeterActive_Get | — | Device[] | yes | Beta: Gets all active virtual meters |
+| POST | `/api/VirtualBillingMeterActive` | VirtualBillingMeterActive_Post | body*: VMeterToActivate | Device |  | Beta: Virtual Meter API: Activates a Meter and add the Consumption to a Virtual Meter assosiated with the User. |
+| POST | `/api/VirtualBillingMeterDeactivate` | VirtualBillingMeterDeactivate_Post | body*: VMeterToDeactivate | Object |  | Beta: Virtual Meter API: Deactivates a Virtual Meter. |
+| GET | `/api/VirtualBillingMeters` | VirtualBillingMeters_Get | — | Device[] | yes | Beta: Gets all Meters available to activate as a Virtual Meter. |
+| GET | `/api/VirtualMeterCalculateFormula` | VirtualMeterCalculateFormula_Get | `formula`* | Device | yes | Calculates a virtual meter from a formula. A meter is coded as ID("METERID") |
+| GET | `/api/VirtualTariff` | VirtualTariff_Get | — | VirtualTariffsOfFolder[] | yes | Gets all Virtual Tariffs of a user |
+| GET | `/api/VirtualTariff/{id}` | get /api/VirtualTariff/{id} | `id`* | VirtualTariffsOfFolder | yes | Gets all virtual tariffs of a folder |
+| GET | `/api/VirtualTariffConsumption` | VirtualTariffConsumption_Get | `folderId`*, `startDate`*, `endDate`* | VirtualTariffConsumptionData[] | yes | Gets the consumption of a folder with a virtuall tariffs. |
+| GET | `/api/VirtualTariffsForProperty/{id}` | VirtualTariffsForProperty_Get | `id`* | VirtualTariffsOfFolder[] | yes | Gets all Virtual Tariffs for a property (folder) |
+| GET | `/api/VirtualTariffsStatusForProperty/{id}` | VirtualTariffsStatusForProperty_Get | `id`* | string | yes | Gets the calculation status for a virtual tariff property |
+| POST | `/api/folder/assign` | FolderAssign_Post | `source`*, `target`* | — |  | Assign a folder (source) or meter to another folder (target). Can be used to create a folder structure. |
+| GET | `/api/folder/settings/{id}` | FolderSettings_Get | `id`* | FolderSettings | yes | Gets the settings of a folder or meter |
+| POST | `/api/folder/settings/{id}` | FolderSettings_Post | `id`*, body*: FolderSettings | FolderMenuItem |  | Add or edit a folder or a meter. To add a new folder use and empty ID |
+| DELETE | `/api/folder/settings/{id}` | FolderSettings_Delete | `id`* | — |  | Deletes a folder |
+| POST | `/api/folder/user/assign` | UserToFolderAssign_Post | `source`*, `target`*, `oldFolder`* | — |  | Assign a user to a folder |
+| DELETE | `/api/folder/user/assign` | UserToFolderAssign_Delete | `source`*, `target`* | — |  | Deletes a user to folder assignement |
+| GET | `/api/oauth/authorize` | OAuth_Authorize | `client_id`*, `redirect_uri`*, `state`*, `scope`, `client_secret` | Object | yes | — |
+| POST | `/api/oauth/authorize` | post /api/oauth/authorize | `client_id`*, `redirect_uri`*, `state`*, `scope`, `client_secret` | Object |  | — |
+| GET | `/api/pico` | Pico_Get | — | Device[] | yes | Gets all pico charging stations for this user |
+| GET | `/api/pico/charging/{id}` | PicoCharging_Get | `id`* | PicoChargingData | yes | Gets the active charging data of a pico station |
+| GET | `/api/pico/history/{id}` | PicoChargingHistory_Get | `id`* | PicoChargingHistoryData[] | yes | Gets the last charging history for a pico station |
+| GET | `/api/pico/loadmanagementgroup` | get /api/pico/loadmanagementgroup | — | PicoLoadmanagementGroupDto[] | yes | GET: api/pico/loadmanagementgroup Returns all available load management groups |
+| POST | `/api/pico/loadmanagementgroup/current/{serial}` | PicoLoadmanagementSetDynamicCurrent_Post | `serial`*, `current`* | Object |  | Sets the dynamic current of a load management group or a single station. |
+| GET | `/api/pico/loadmanagementgroup/{id}` | PicoLoadmanagementGroup_Get | `id`* | PicoLoadmanagementGroupDto | yes | GET: api/pico/loadmanagementgroup Returns a pico load management group by it's id |
+| GET | `/api/pico/settings/{id}` | PicoSettings_Get | `id`* | PicoSettingsDto | yes | GET: api/pico/settings Returns the settings of a pico charging station. |
+| POST | `/api/pico/tryenablecablelock/{id}` | PicoEnableFixCableLock_Post | `id`* | Object |  | Try to fix lock the cable of a pico. The pico must be online and a cable (without car) needs to be connected. Otherwise this will fail. |

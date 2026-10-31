@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `2d5d155ce7a81d624a151445c1f2412d3ff9affb6c71ea897695b90e3f9f6ab1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,19 +34,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/changePassword` | post /changePassword | Used for changing your password |
-| POST | `/login` | post /login | Log in to get an API token |
-| POST | `/logout` | post /logout | Log out |
-| POST | `/requestPasswordReset` | post /requestPasswordReset | Used for requesting a password reset code |
-| POST | `/signin` | post /signin | — |
-| DELETE | `/signin/{signinId}` | delete /signin/{signinId} | Delete a signin record |
-| GET | `/signin/{signinId}` | get /signin/{signinId} | Retrieve the information associated with a signin record |
-| PUT | `/signin/{signinId}` | put /signin/{signinId} | Update a signin record |
-| GET | `/signins` | get /signins | Get signin info |
-| POST | `/user` | post /user | Create a user |
-| DELETE | `/user/{userId}` | delete /user/{userId} | Delete a team member's user record |
-| GET | `/user/{userId}` | get /user/{userId} | Retrieve the information associated with a team member's user record |
-| GET | `/users` | get /users | Retrieve the information associated with all team members' user records |
-| POST | `/verifyPasswordChange` | post /verifyPasswordChange | Used for resetting your password when you forgot it |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/changePassword` | post /changePassword | body*: object | — |  | Used for changing your password |
+| POST | `/login` | post /login | body*: object | loginResponse |  | Log in to get an API token |
+| POST | `/logout` | post /logout | — | — |  | Log out |
+| POST | `/requestPasswordReset` | post /requestPasswordReset | body*: object | requestPasswordResetResponse |  | Used for requesting a password reset code |
+| POST | `/signin` | post /signin | body: signin | signinResponse |  | — |
+| GET | `/signin/{signinId}` | get /signin/{signinId} | `signinId`* | signin | yes | Retrieve the information associated with a signin record |
+| PUT | `/signin/{signinId}` | put /signin/{signinId} | `signinId`*, body: signin | userRecord |  | Update a signin record |
+| DELETE | `/signin/{signinId}` | delete /signin/{signinId} | `signinId`* | — |  | Delete a signin record |
+| GET | `/signins` | get /signins | `less_than`, `return_count` | signin[] | yes | Get signin info |
+| POST | `/user` | post /user | body*: object | createUserResponse |  | Create a user |
+| GET | `/user/{userId}` | get /user/{userId} | `userId`* | userRecord | yes | Retrieve the information associated with a team member's user record |
+| DELETE | `/user/{userId}` | delete /user/{userId} | `userId`* | — |  | Delete a team member's user record |
+| GET | `/users` | get /users | — | userRecord[] | yes | Retrieve the information associated with all team members' user records |
+| POST | `/verifyPasswordChange` | post /verifyPasswordChange | body*: object | — |  | Used for resetting your password when you forgot it |

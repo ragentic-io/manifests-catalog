@@ -12,11 +12,6 @@
       {
         "from": "pendo-io-75e6e214e8",
         "kind": "EXPOSES",
-        "to": "operation:delete:/accounts/{id}"
-      },
-      {
-        "from": "pendo-io-75e6e214e8",
-        "kind": "EXPOSES",
         "to": "operation:get:/accounts/{id}"
       },
       {
@@ -27,7 +22,7 @@
       {
         "from": "pendo-io-75e6e214e8",
         "kind": "EXPOSES",
-        "to": "operation:delete:/accounts/{id}/tags"
+        "to": "operation:delete:/accounts/{id}"
       },
       {
         "from": "pendo-io-75e6e214e8",
@@ -38,6 +33,11 @@
         "from": "pendo-io-75e6e214e8",
         "kind": "EXPOSES",
         "to": "operation:post:/accounts/{id}/tags"
+      },
+      {
+        "from": "pendo-io-75e6e214e8",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/accounts/{id}/tags"
       },
       {
         "from": "pendo-io-75e6e214e8",
@@ -57,17 +57,17 @@
       {
         "from": "pendo-io-75e6e214e8",
         "kind": "EXPOSES",
-        "to": "operation:delete:/features/{id}/tags"
-      },
-      {
-        "from": "pendo-io-75e6e214e8",
-        "kind": "EXPOSES",
         "to": "operation:get:/features/{id}/tags"
       },
       {
         "from": "pendo-io-75e6e214e8",
         "kind": "EXPOSES",
         "to": "operation:post:/features/{id}/tags"
+      },
+      {
+        "from": "pendo-io-75e6e214e8",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/features/{id}/tags"
       },
       {
         "from": "pendo-io-75e6e214e8",
@@ -117,11 +117,6 @@
       {
         "from": "pendo-io-75e6e214e8",
         "kind": "EXPOSES",
-        "to": "operation:delete:/users/{id}"
-      },
-      {
-        "from": "pendo-io-75e6e214e8",
-        "kind": "EXPOSES",
         "to": "operation:get:/users/{id}"
       },
       {
@@ -132,7 +127,7 @@
       {
         "from": "pendo-io-75e6e214e8",
         "kind": "EXPOSES",
-        "to": "operation:delete:/users/{id}/tags"
+        "to": "operation:delete:/users/{id}"
       },
       {
         "from": "pendo-io-75e6e214e8",
@@ -143,6 +138,11 @@
         "from": "pendo-io-75e6e214e8",
         "kind": "EXPOSES",
         "to": "operation:post:/users/{id}/tags"
+      },
+      {
+        "from": "pendo-io-75e6e214e8",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/users/{id}/tags"
       },
       {
         "from": "pendo-io-75e6e214e8",
@@ -158,6 +158,121 @@
         "from": "pendo-io-75e6e214e8",
         "kind": "EXPOSES",
         "to": "operation:post:/votes"
+      },
+      {
+        "from": "operation:get:/accounts",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:delete:/accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:post:/accounts/{id}/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:Tags"
+      },
+      {
+        "from": "operation:get:/comments",
+        "kind": "RETURNS",
+        "to": "schema:Comment"
+      },
+      {
+        "from": "operation:get:/features",
+        "kind": "RETURNS",
+        "to": "schema:Feature"
+      },
+      {
+        "from": "operation:get:/features/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Feature"
+      },
+      {
+        "from": "operation:post:/features/{id}/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:Tags"
+      },
+      {
+        "from": "operation:get:/search",
+        "kind": "RETURNS",
+        "to": "schema:Feature"
+      },
+      {
+        "from": "operation:get:/users",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:post:/users",
+        "kind": "ACCEPTS",
+        "to": "schema:EndUserPing"
+      },
+      {
+        "from": "operation:get:/users/search",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:get:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:put:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:delete:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:post:/users/{id}/tags",
+        "kind": "ACCEPTS",
+        "to": "schema:Tags"
+      },
+      {
+        "from": "operation:get:/votes",
+        "kind": "RETURNS",
+        "to": "schema:Vote"
+      },
+      {
+        "from": "schema:AccountWithTags",
+        "kind": "REFERENCES",
+        "to": "schema:Tags"
+      },
+      {
+        "from": "schema:EndUserPing",
+        "kind": "REFERENCES",
+        "to": "schema:AccountWithTags"
+      },
+      {
+        "from": "schema:EndUserPing",
+        "kind": "REFERENCES",
+        "to": "schema:Products"
+      },
+      {
+        "from": "schema:EndUserPing",
+        "kind": "REFERENCES",
+        "to": "schema:Tags"
+      },
+      {
+        "from": "schema:Feature",
+        "kind": "REFERENCES",
+        "to": "schema:Tags"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:UserAccount"
       }
     ],
     "nodes": [
@@ -171,8 +286,54 @@
         "kind": "operation",
         "method": "get",
         "name": "get /accounts",
+        "parameters": [
+          {
+            "description": "Limit the number of records returned",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Offset to start at",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "order_dir",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The field to use for sort",
+            "enum": [
+              "churned",
+              "last_seen",
+              "name"
+            ],
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -181,25 +342,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Query accounts"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/accounts/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /accounts/{id}",
-        "path": "/accounts/{id}",
-        "pointer": "#/paths/~1accounts~1{id}/delete",
-        "security": [
-          {
-            "userApiKey (request header)": []
-          },
-          {
-            "userApiKey (query parameter)": []
-          }
-        ],
-        "summary": "Delete an Account"
+        "summary": "Query accounts",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
@@ -207,8 +353,27 @@
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{id}",
+        "parameters": [
+          {
+            "description": "Account ID (generated by Feedback)",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/accounts/{id}",
         "pointer": "#/paths/~1accounts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -217,7 +382,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Get an Account"
+        "summary": "Get an Account",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
@@ -225,8 +393,30 @@
         "kind": "operation",
         "method": "put",
         "name": "put /accounts/{id}",
+        "parameters": [
+          {
+            "description": "Account ID (generated by Feedback)",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/accounts/{id}",
         "pointer": "#/paths/~1accounts~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -235,16 +425,35 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Update an Account"
+        "summary": "Update an Account",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/accounts/{id}/tags",
+        "description": "This removes most traces of an Accounts existence from the system.",
+        "id": "operation:delete:/accounts/{id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /accounts/{id}/tags",
-        "path": "/accounts/{id}/tags",
-        "pointer": "#/paths/~1accounts~1{id}~1tags/delete",
+        "name": "delete /accounts/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "path": "/accounts/{id}",
+        "pointer": "#/paths/~1accounts~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -253,7 +462,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Delete custom Account tags"
+        "summary": "Delete an Account",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
@@ -261,8 +473,26 @@
         "kind": "operation",
         "method": "get",
         "name": "get /accounts/{id}/tags",
+        "parameters": [
+          {
+            "description": "Account ID (generated by Feedback)",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/accounts/{id}/tags",
         "pointer": "#/paths/~1accounts~1{id}~1tags/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -271,7 +501,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Get custom Account tags"
+        "summary": "Get custom Account tags",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
@@ -279,8 +512,33 @@
         "kind": "operation",
         "method": "post",
         "name": "post /accounts/{id}/tags",
+        "parameters": [
+          {
+            "description": "Account ID (generated by Feedback)",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/accounts/{id}/tags",
         "pointer": "#/paths/~1accounts~1{id}~1tags/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Tags"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -289,16 +547,73 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Overwrite current custom Account tags with the given tags"
+        "summary": "Overwrite current custom Account tags with the given tags",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes all custom tags associated with the Account",
+        "id": "operation:delete:/accounts/{id}/tags",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /accounts/{id}/tags",
+        "parameters": [
+          {
+            "description": "Account ID (generated by Feedback)",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "path": "/accounts/{id}/tags",
+        "pointer": "#/paths/~1accounts~1{id}~1tags/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "userApiKey (request header)": []
+          },
+          {
+            "userApiKey (query parameter)": []
+          }
+        ],
+        "summary": "Delete custom Account tags",
+        "tags": [
+          "account"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "get a list of Comment records",
         "id": "operation:get:/comments",
         "kind": "operation",
         "method": "get",
         "name": "get /comments",
+        "parameters": [
+          {
+            "description": "case_id",
+            "in": "query",
+            "name": "case_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/comments",
         "pointer": "#/paths/~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Comment[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -307,7 +622,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "fetch Comment records"
+        "summary": "fetch Comment records",
+        "tags": [
+          "comment"
+        ]
       },
       {
         "deprecated": false,
@@ -315,8 +633,88 @@
         "kind": "operation",
         "method": "get",
         "name": "get /features",
+        "parameters": [
+          {
+            "description": "Limit the number of records returned",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Offset to start at",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "The sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "order_dir",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by whether the features are shown/hidden from customer, if supplied.",
+            "in": "query",
+            "name": "is_private",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter by User ID, if supplied.",
+            "in": "query",
+            "name": "wanted_by",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The field to use for sort",
+            "enum": [
+              "title",
+              "created_at",
+              "updated_at",
+              "declined_at",
+              "developing_at",
+              "planned_at",
+              "released_at",
+              "waiting_at",
+              "deleted_at"
+            ],
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Tags to limit results by.",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Products to limit results by.",
+            "in": "query",
+            "name": "products",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/features",
         "pointer": "#/paths/~1features/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feature[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -325,7 +723,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Query features"
+        "summary": "Query features",
+        "tags": [
+          "feature"
+        ]
       },
       {
         "deprecated": false,
@@ -333,8 +734,24 @@
         "kind": "operation",
         "method": "get",
         "name": "get /features/{id}",
+        "parameters": [
+          {
+            "description": "ID of the feature",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/features/{id}",
         "pointer": "#/paths/~1features~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feature"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -343,25 +760,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Get a Feature by ID"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/features/{id}/tags",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /features/{id}/tags",
-        "path": "/features/{id}/tags",
-        "pointer": "#/paths/~1features~1{id}~1tags/delete",
-        "security": [
-          {
-            "userApiKey (request header)": []
-          },
-          {
-            "userApiKey (query parameter)": []
-          }
-        ],
-        "summary": "Delete custom Feature tags"
+        "summary": "Get a Feature by ID",
+        "tags": [
+          "feature"
+        ]
       },
       {
         "deprecated": false,
@@ -369,8 +771,26 @@
         "kind": "operation",
         "method": "get",
         "name": "get /features/{id}/tags",
+        "parameters": [
+          {
+            "description": "Account ID (generated by Feedback)",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/features/{id}/tags",
         "pointer": "#/paths/~1features~1{id}~1tags/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -379,7 +799,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Get custom Feature tags"
+        "summary": "Get custom Feature tags",
+        "tags": [
+          "feature"
+        ]
       },
       {
         "deprecated": false,
@@ -387,8 +810,33 @@
         "kind": "operation",
         "method": "post",
         "name": "post /features/{id}/tags",
+        "parameters": [
+          {
+            "description": "Feedback's Feature ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/features/{id}/tags",
         "pointer": "#/paths/~1features~1{id}~1tags/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Tags"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -397,27 +845,94 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Overwrite current custom Feature tags with the given tags"
+        "summary": "Overwrite current custom Feature tags with the given tags",
+        "tags": [
+          "feature"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes all custom tags associated with the Feature",
+        "id": "operation:delete:/features/{id}/tags",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /features/{id}/tags",
+        "parameters": [
+          {
+            "description": "Feedback's Feature ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "path": "/features/{id}/tags",
+        "pointer": "#/paths/~1features~1{id}~1tags/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "userApiKey (request header)": []
+          },
+          {
+            "userApiKey (query parameter)": []
+          }
+        ],
+        "summary": "Delete custom Feature tags",
+        "tags": [
+          "feature"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Provides a response for automatic checks that the API and load balancers are healthy",
         "id": "operation:get:/health-check/ping",
         "kind": "operation",
         "method": "get",
         "name": "get /health-check/ping",
         "path": "/health-check/ping",
         "pointer": "#/paths/~1health-check~1ping/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "503"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Health check for API"
+        "summary": "Health check for API",
+        "tags": [
+          "system"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to subscribe to webhooks.",
         "id": "operation:post:/hooks",
         "kind": "operation",
         "method": "post",
         "name": "post /hooks",
         "path": "/hooks",
         "pointer": "#/paths/~1hooks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -426,16 +941,33 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Subscribe to webhooks"
+        "summary": "Subscribe to webhooks",
+        "tags": [
+          "hooks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to unsubscribe from a webhook",
         "id": "operation:post:/hooks/unsubscribe",
         "kind": "operation",
         "method": "post",
         "name": "post /hooks/unsubscribe",
         "path": "/hooks/unsubscribe",
         "pointer": "#/paths/~1hooks~1unsubscribe/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -444,7 +976,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Unsubscribe from webhooks"
+        "summary": "Unsubscribe from webhooks",
+        "tags": [
+          "hooks"
+        ]
       },
       {
         "deprecated": false,
@@ -452,8 +987,63 @@
         "kind": "operation",
         "method": "get",
         "name": "get /search",
+        "parameters": [
+          {
+            "description": "Specifies the type of entity being searched for.",
+            "enum": [
+              "feature"
+            ],
+            "in": "query",
+            "name": "scope",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The search term.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A comma seperated list of status values to filter by, if required.",
+            "enum": [
+              "new",
+              "waiting",
+              "planned",
+              "developing",
+              "released",
+              "declined"
+            ],
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Tags to limit results by - only applies when scope is 'case' or 'feature'.",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Products to limit results by.",
+            "in": "query",
+            "name": "products",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feature[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -462,16 +1052,81 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Search features"
+        "summary": "Search features",
+        "tags": [
+          "feature"
+        ]
       },
       {
         "deprecated": false,
+        "description": "get a list of User records",
         "id": "operation:get:/users",
         "kind": "operation",
         "method": "get",
         "name": "get /users",
+        "parameters": [
+          {
+            "description": "role",
+            "enum": [
+              "endUser",
+              "vendorUser"
+            ],
+            "in": "query",
+            "name": "role",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter by Account ID, if supplied.",
+            "in": "query",
+            "name": "account",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Offset to start at",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 300,
+            "description": "Limit the number of records returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The field to use for sort",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "order_dir",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users",
         "pointer": "#/paths/~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -480,16 +1135,33 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "fetch User records"
+        "summary": "fetch User records",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Replicates much of the functionality of the widget ping, allowing callers to create or update User records for End Users.",
         "id": "operation:post:/users",
         "kind": "operation",
         "method": "post",
         "name": "post /users",
         "path": "/users",
         "pointer": "#/paths/~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EndUserPing"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -498,7 +1170,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Ping to create or update an EndUser and Account in one call"
+        "summary": "Ping to create or update an EndUser and Account in one call",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -508,6 +1183,19 @@
         "name": "post /users/invite_end_user",
         "path": "/users/invite_end_user",
         "pointer": "#/paths/~1users~1invite_end_user/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -516,7 +1204,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Invite an EndUser (customer)"
+        "summary": "Invite an EndUser (customer)",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -526,6 +1217,19 @@
         "name": "post /users/invite_vendor_user",
         "path": "/users/invite_vendor_user",
         "pointer": "#/paths/~1users~1invite_vendor_user/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -534,7 +1238,11 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Invite a VendorUser (Team member)"
+        "summary": "Invite a VendorUser (Team member)",
+        "tags": [
+          "user",
+          "team"
+        ]
       },
       {
         "deprecated": false,
@@ -542,8 +1250,45 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/search",
+        "parameters": [
+          {
+            "description": "Find using your external ID, rather than the ID generated by Feedback",
+            "in": "query",
+            "name": "external_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find user by their email address.",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Users role ('vendorUser' or 'endUser').",
+            "enum": [
+              "endUser",
+              "vendorUser"
+            ],
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/search",
         "pointer": "#/paths/~1users~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -552,25 +1297,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Find a User with a query"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/users/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /users/{id}",
-        "path": "/users/{id}",
-        "pointer": "#/paths/~1users~1{id}/delete",
-        "security": [
-          {
-            "userApiKey (request header)": []
-          },
-          {
-            "userApiKey (query parameter)": []
-          }
-        ],
-        "summary": "Delete a User"
+        "summary": "Find a User with a query",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -578,8 +1308,26 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/users/{id}",
         "pointer": "#/paths/~1users~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -588,7 +1336,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Get a User record"
+        "summary": "Get a User record",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -596,8 +1347,31 @@
         "kind": "operation",
         "method": "put",
         "name": "put /users/{id}",
+        "parameters": [
+          {
+            "description": "Feedback's User ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/users/{id}",
         "pointer": "#/paths/~1users~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -606,16 +1380,35 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Update a User"
+        "summary": "Update a User",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/users/{id}/tags",
+        "description": "This removes most traces of a User's existence from the system.",
+        "id": "operation:delete:/users/{id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /users/{id}/tags",
-        "path": "/users/{id}/tags",
-        "pointer": "#/paths/~1users~1{id}~1tags/delete",
+        "name": "delete /users/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "path": "/users/{id}",
+        "pointer": "#/paths/~1users~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -624,7 +1417,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Delete custom User tags"
+        "summary": "Delete a User",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -632,8 +1428,26 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users/{id}/tags",
+        "parameters": [
+          {
+            "description": "Feedback's User ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/users/{id}/tags",
         "pointer": "#/paths/~1users~1{id}~1tags/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -642,7 +1456,10 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Get custom User tags"
+        "summary": "Get custom User tags",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
@@ -650,8 +1467,33 @@
         "kind": "operation",
         "method": "post",
         "name": "post /users/{id}/tags",
+        "parameters": [
+          {
+            "description": "Feedback's User ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/users/{id}/tags",
         "pointer": "#/paths/~1users~1{id}~1tags/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Tags"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -660,16 +1502,70 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Overwrite current custom User tags with the given tags"
+        "summary": "Overwrite current custom User tags with the given tags",
+        "tags": [
+          "user"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes all custom tags associated with the User",
+        "id": "operation:delete:/users/{id}/tags",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /users/{id}/tags",
+        "parameters": [
+          {
+            "description": "Feedback's User ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "path": "/users/{id}/tags",
+        "pointer": "#/paths/~1users~1{id}~1tags/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "userApiKey (request header)": []
+          },
+          {
+            "userApiKey (query parameter)": []
+          }
+        ],
+        "summary": "Delete custom User tags",
+        "tags": [
+          "user"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "the POST /vendor_users is very similar to the POST /users/invite_vendor_user but /vendor_users is intended for consumers to refresh team member data periodical…",
         "id": "operation:post:/vendor_users",
         "kind": "operation",
         "method": "post",
         "name": "post /vendor_users",
         "path": "/vendor_users",
         "pointer": "#/paths/~1vendor_users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -678,7 +1574,11 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "Create or update a team member by their external_id"
+        "summary": "Create or update a team member by their external_id",
+        "tags": [
+          "user",
+          "team"
+        ]
       },
       {
         "deprecated": false,
@@ -686,8 +1586,59 @@
         "kind": "operation",
         "method": "get",
         "name": "get /votes",
+        "parameters": [
+          {
+            "description": "Include only votes by User that voted on a feature.",
+            "in": "query",
+            "name": "user_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Include only votes for Feature with this Feature ID",
+            "in": "query",
+            "name": "feature_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Include only votes that are positive",
+            "in": "query",
+            "name": "positive",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Include only votes that are negative",
+            "in": "query",
+            "name": "negative",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Offset to start at",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Limit the number of records returned",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "number"
+          }
+        ],
         "path": "/votes",
         "pointer": "#/paths/~1votes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Vote[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "userApiKey (request header)": []
@@ -696,16 +1647,33 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "votes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Automatically subscribes/unsubscribes the User to the specifed feature depending on the quantity value",
         "id": "operation:post:/votes",
         "kind": "operation",
         "method": "post",
         "name": "post /votes",
         "path": "/votes",
         "pointer": "#/paths/~1votes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "userApiKey (request header)": []
@@ -714,44 +1682,56 @@
             "userApiKey (query parameter)": []
           }
         ],
-        "summary": "update specified votes for a User"
+        "summary": "update specified votes for a User",
+        "tags": [
+          "votes"
+        ]
       },
       {
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
         "id": "schema:AccountWithTags",
         "kind": "schema",
-        "name": "AccountWithTags"
+        "name": "AccountWithTags",
+        "type": "object"
       },
       {
         "id": "schema:Comment",
         "kind": "schema",
-        "name": "Comment"
+        "name": "Comment",
+        "type": "object"
       },
       {
         "id": "schema:EndUserPing",
         "kind": "schema",
-        "name": "EndUserPing"
+        "name": "EndUserPing",
+        "type": "object"
       },
       {
         "id": "schema:Feature",
         "kind": "schema",
-        "name": "Feature"
+        "name": "Feature",
+        "type": "object"
       },
       {
         "id": "schema:FeatureVote",
         "kind": "schema",
-        "name": "FeatureVote"
+        "name": "FeatureVote",
+        "type": "object"
       },
       {
+        "description": "Supplied as an array of maps where each map describes an existing or new product e.g [{id:exising_product_id, name:existing name}, {id:new_product_id, name: ne…",
         "id": "schema:Products",
         "kind": "schema",
-        "name": "Products"
+        "name": "Products",
+        "type": "string[]"
       },
       {
+        "description": "Tags can contain simple tags or categorised tags.",
         "id": "schema:Tags",
         "kind": "schema",
         "name": "Tags"
@@ -759,17 +1739,20 @@
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       },
       {
         "id": "schema:UserAccount",
         "kind": "schema",
-        "name": "UserAccount"
+        "name": "UserAccount",
+        "type": "object"
       },
       {
         "id": "schema:Vote",
         "kind": "schema",
-        "name": "Vote"
+        "name": "Vote",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_brex.io_img_logo_brex_small.png
 
 | | |
 | --- | --- |
-| Signed bundle | `c57c5f4e2a4fc616e3a134d6be7a2ebe3fed782495842520a7b441982e38455a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,59 +32,61 @@ logo: "https://api.apis.guru/v2/cache/logo/https_brex.io_img_logo_brex_small.png
 
 ## Operations (54)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/company/announcement/{id}` | CompanyAnnouncement | Retrieves announcement data |
-| POST | `/api/v1/company/deepsearch/isin` | CompanyDeepsearchISIN | Retrieves a list of stock exchange listings |
-| GET | `/api/v1/company/deepsearch/lei/{number}` | CompanyDeepsearchLEI | Retrieves a list of companies |
-| GET | `/api/v1/company/deepsearch/name/{country}/{name}` | CompanyDeepsearchName | Retrieves a list of companies from the official business register |
-| GET | `/api/v1/company/deepsearch/number/{country}/{number}` | CompanyDeepsearchNumber | Retrieves a list of companies from the official business register |
-| GET | `/api/v1/company/monitoring/changeTypes` | CompanyMonitorChangeTypesList | Get available ChangeTypes |
-| GET | `/api/v1/company/monitoring/list` | CompanyMonitorList | Retrieves a list of registered monitors |
-| GET | `/api/v1/company/monitoring/list/{id}` | CompanyMonitorId | Get monitor status for specific company id |
-| POST | `/api/v1/company/monitoring/register/{id}` | CompanyMonitorRegister | Register a Company for monitoring |
-| POST | `/api/v1/company/monitoring/unregister/{id}` | CompanyMonitorUnregister | Deactivates an active notification |
-| GET | `/api/v1/company/notification/list` | CompanyNotificationList | Retrieves a list of registered notifications |
-| GET | `/api/v1/company/notification/list/{id}` | CompanyNotificationId | Retrieves a list of registered notifications |
-| POST | `/api/v1/company/notification/register/{id}` | CompanyNotificationRegister | Creates a new notification |
-| POST | `/api/v1/company/notification/unregister/{id}` | CompanyNotificationUnregister | Unregister a company from Monitoring |
-| GET | `/api/v1/company/search/name/{country}/{name}` | CompanySearchName | Retrieves a list of companies from the KYC API company index |
-| GET | `/api/v1/company/search/number/{country}/{number}` | CompanySearchNumber | Retrieves a list of companies from the KYC API company index |
-| POST | `/api/v1/company/search/{country}` | CompanyAlternativeSearch | Retrieves a list of companies from the KYC API company index |
-| GET | `/api/v1/company/{id}/announcements` | CompanyIdAnnouncements | Retrieves company announcements |
-| GET | `/api/v1/company/{id}/super/{country}` | CompanyIdSuper | Retrieves structured data extracted from a company document |
-| GET | `/api/v1/company/{id}/{dataset}` | CompanyIdDataset | Retrieves company details |
-| GET | `/api/v1/ein-verification/basic-check` | EinVerificationBasic | Verifies an EIN number |
-| GET | `/api/v1/ein-verification/comprehensive-check` | EinVerificationComprehensive | Verifies EIN number and retrieves company data |
-| GET | `/api/v1/ein-verification/lookup` | EinVerificationLookup | Retrieves a list of EIN numbers |
-| POST | `/api/v1/iban-verification/check-iban` | IbanBasic | Checks validity of an IBAN number |
-| POST | `/api/v1/iban-verification/comprehensive-check-iban` | IbanComprehensive | Checks validity of an IBAN number |
-| POST | `/api/v1/nif-verification/basic-check/{country}` | NifBasic | Verifies a NIF number |
-| POST | `/api/v1/nif-verification/comprehensive-check/{country}` | NifComprehensive | Verifies a NIF number and retrieves company data |
-| GET | `/api/v1/pepsanction/monitor/list` | PepMonitorList | Retrieves a list of monitor entries |
-| POST | `/api/v1/pepsanction/monitor/unregister/{id}` | PepMonitorUnregister | Deactive a pep sanction monitor |
-| POST | `/api/v1/pepsanction/monitor/update/{id}` | PepMonitorUpdate | Update details of active Pep Sanction monitor |
-| POST | `/api/v1/pepsanction/order/{type}/{search}` | PepOrder | Orders a new Pep Sanction Check Report |
-| GET | `/api/v1/pepsanction/retrieve/{id}` | PepRetrieve | Returns a json or pdf report |
-| GET | `/api/v1/product/availability/{sku}/{subjectId}` | ProductAvailability | Retrieves a document availability result |
-| GET | `/api/v1/product/catalog/{country}` | ProductCatalog | Returns a catalog of products |
-| GET | `/api/v1/product/notifier/{notifierId}` | ProductNotifier | Returns metadata for a notifier |
-| POST | `/api/v1/product/notifier/{orderId}/{type}/{uri}` | ProductNotifierCreate | Creates a notifier for an order |
-| POST | `/api/v1/product/order/concierge` | ProductOrderConcierge | Places a concierge order |
-| POST | `/api/v1/product/order/ubo` | ProductOrderUbo | Places a UBO order |
-| POST | `/api/v1/product/order/{sku}/{option}/{subjectId}` | ProductOrderWithOption | Places a product order |
-| POST | `/api/v1/product/order/{sku}/{subjectId}` | ProductOrder | Places a product order |
-| GET | `/api/v1/product/search/{subjectId}` | ProductSearch | Returns a list of products |
-| GET | `/api/v1/product/status/{orderId}` | ProductStatus | Returns metadata for a order |
-| POST | `/api/v1/product/update/{action}/{orderId}` | ProductUpdateAction | Updates metadata of an order |
-| GET | `/api/v1/product/{orderId}` | ProductRetrieve | Retrieves the result of an order |
-| GET | `/api/v1/system/countries` | SystemCountries | Returns a list of countries |
-| GET | `/api/v1/system/health` | HealthCheck | Returns the health information for the official business registers based on usage. |
-| GET | `/api/v1/system/pricelist` | SystemPricelist | Returns a list of products with prices |
-| GET | `/api/v1/tin-verification/basic-check` | TinVerificationBasicCheck | Verifies a TIN number |
-| GET | `/api/v1/tin-verification/comprehensive-check` | TinVerificationComprehensiveCheck | EIN Name Lookup with TIN number and retrieves company data |
-| GET | `/api/v1/tin-verification/name-lookup` | TinVerificationNameLookup | EIN Name Lookup with TIN number |
-| POST | `/api/v1/vat-verification/basic-check/{country}` | VatBasic | Returns a verification result |
-| POST | `/api/v1/vat-verification/comprehensive-check/{country}` | VatComprehensive | Returns a verification result and company data |
-| POST | `/api/v1/vat-verification/leveltwo-check/{country}` | VatLevelTwo | Returns a level two verification result |
-| POST | `/api/v1/vat-verification/lookup/{country}` | VatLookup | Returns a list of vat numbers with additional data |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/company/announcement/{id}` | CompanyAnnouncement | `id`* | object[] | yes | Retrieves announcement data |
+| POST | `/api/v1/company/deepsearch/isin` | CompanyDeepsearchISIN | body: object | object[] |  | Retrieves a list of stock exchange listings |
+| GET | `/api/v1/company/deepsearch/lei/{number}` | CompanyDeepsearchLEI | `number`*, `page` | object | yes | Retrieves a list of companies |
+| GET | `/api/v1/company/deepsearch/name/{country}/{name}` | CompanyDeepsearchName | `country`*, `name`* | object[] | yes | Retrieves a list of companies from the official business register |
+| GET | `/api/v1/company/deepsearch/number/{country}/{number}` | CompanyDeepsearchNumber | `country`*, `number`* | object[] | yes | Retrieves a list of companies from the official business register |
+| GET | `/api/v1/company/monitoring/changeTypes` | CompanyMonitorChangeTypesList | — | string[] | yes | Get available ChangeTypes |
+| GET | `/api/v1/company/monitoring/list` | CompanyMonitorList | — | object[] | yes | Retrieves a list of registered monitors |
+| GET | `/api/v1/company/monitoring/list/{id}` | CompanyMonitorId | `id`* | object[] | yes | Get monitor status for specific company id |
+| POST | `/api/v1/company/monitoring/register/{id}` | CompanyMonitorRegister | `id`*, body: object | object |  | Register a Company for monitoring |
+| POST | `/api/v1/company/monitoring/unregister/{id}` | CompanyMonitorUnregister | `id`* | — |  | Deactivates an active notification |
+| GET | `/api/v1/company/notification/list` | CompanyNotificationList | — | object[] | yes | Retrieves a list of registered notifications |
+| GET | `/api/v1/company/notification/list/{id}` | CompanyNotificationId | `id`* | object[] | yes | Retrieves a list of registered notifications |
+| POST | `/api/v1/company/notification/register/{id}` | CompanyNotificationRegister | `id`*, body: object | object |  | Creates a new notification |
+| POST | `/api/v1/company/notification/unregister/{id}` | CompanyNotificationUnregister | `id`* | — |  | Unregister a company from Monitoring |
+| GET | `/api/v1/company/search/name/{country}/{name}` | CompanySearchName | `country`*, `name`*, `limit` | object[] | yes | Retrieves a list of companies from the KYC API company index |
+| GET | `/api/v1/company/search/number/{country}/{number}` | CompanySearchNumber | `country`*, `number`*, `limit` | object[] | yes | Retrieves a list of companies from the KYC API company index |
+| POST | `/api/v1/company/search/{country}` | CompanyAlternativeSearch | `country`*, body: object | object[] |  | Retrieves a list of companies from the KYC API company index |
+| GET | `/api/v1/company/{id}/announcements` | CompanyIdAnnouncements | `id`*, `limit`, `offset`, `data` | object[] | yes | Retrieves company announcements |
+| GET | `/api/v1/company/{id}/super/{country}` | CompanyIdSuper | `id`*, `country`*, `lang` | object[] | yes | Retrieves structured data extracted from a company document |
+| GET | `/api/v1/company/{id}/{dataset}` | CompanyIdDataset | `id`*, `check_stock_listing`, `dataset`*, `lang` | — | yes | Retrieves company details |
+| GET | `/api/v1/ein-verification/basic-check` | EinVerificationBasic | `ein`* | object | yes | Verifies an EIN number |
+| GET | `/api/v1/ein-verification/comprehensive-check` | EinVerificationComprehensive | `ein`* | object | yes | Verifies EIN number and retrieves company data |
+| GET | `/api/v1/ein-verification/lookup` | EinVerificationLookup | `name`*, `state`, `zip`, `tight` | object | yes | Retrieves a list of EIN numbers |
+| POST | `/api/v1/iban-verification/check-iban` | IbanBasic | body*: object | object |  | Checks validity of an IBAN number |
+| POST | `/api/v1/iban-verification/comprehensive-check-iban` | IbanComprehensive | body*: object | — |  | Checks validity of an IBAN number |
+| POST | `/api/v1/nif-verification/basic-check/{country}` | NifBasic | `country`*, body*: object | object |  | Verifies a NIF number |
+| POST | `/api/v1/nif-verification/comprehensive-check/{country}` | NifComprehensive | `country`*, body*: object | object |  | Verifies a NIF number and retrieves company data |
+| GET | `/api/v1/pepsanction/monitor/list` | PepMonitorList | — | object[] | yes | Retrieves a list of monitor entries |
+| POST | `/api/v1/pepsanction/monitor/unregister/{id}` | PepMonitorUnregister | `id`* | object |  | Deactive a pep sanction monitor |
+| POST | `/api/v1/pepsanction/monitor/update/{id}` | PepMonitorUpdate | `id`*, body: object | object |  | Update details of active Pep Sanction monitor |
+| POST | `/api/v1/pepsanction/order/{type}/{search}` | PepOrder | `type`*, `search`*, body: object | object |  | Orders a new Pep Sanction Check Report |
+| GET | `/api/v1/pepsanction/retrieve/{id}` | PepRetrieve | `accept`, `id`* | object | yes | Returns a json or pdf report |
+| GET | `/api/v1/product/availability/{sku}/{subjectId}` | ProductAvailability | `sku`*, `subjectId`* | object | yes | Retrieves a document availability result |
+| GET | `/api/v1/product/catalog/{country}` | ProductCatalog | `country`* | object | yes | Returns a catalog of products |
+| GET | `/api/v1/product/notifier/{notifierId}` | ProductNotifier | `notifierId`* | object | yes | Returns metadata for a notifier |
+| POST | `/api/v1/product/notifier/{orderId}/{type}/{uri}` | ProductNotifierCreate | `orderId`*, `type`*, `uri`* | object |  | Creates a notifier for an order |
+| POST | `/api/v1/product/order/concierge` | ProductOrderConcierge | body: object | object |  | Places a concierge order |
+| POST | `/api/v1/product/order/ubo` | ProductOrderUbo | body: object | object |  | Places a UBO order |
+| POST | `/api/v1/product/order/{sku}/{option}/{subjectId}` | ProductOrderWithOption | `sku`*, `option`*, `subjectId`* | object |  | Places a product order |
+| POST | `/api/v1/product/order/{sku}/{subjectId}` | ProductOrder | `sku`*, `subjectId`* | object |  | Places a product order |
+| GET | `/api/v1/product/search/{subjectId}` | ProductSearch | `subjectId`* | object[] | yes | Returns a list of products |
+| GET | `/api/v1/product/status/{orderId}` | ProductStatus | `orderId`* | object | yes | Returns metadata for a order |
+| POST | `/api/v1/product/update/{action}/{orderId}` | ProductUpdateAction | `action`*, `orderId`*, body: object | object |  | Updates metadata of an order |
+| GET | `/api/v1/product/{orderId}` | ProductRetrieve | `orderId`* | object | yes | Retrieves the result of an order |
+| GET | `/api/v1/system/countries` | SystemCountries | — | object[] | yes | Returns a list of countries |
+| GET | `/api/v1/system/health` | HealthCheck | — | object[] | yes | Returns the health information for the official business registers based on usage. |
+| GET | `/api/v1/system/pricelist` | SystemPricelist | — | object[] | yes | Returns a list of products with prices |
+| GET | `/api/v1/tin-verification/basic-check` | TinVerificationBasicCheck | `tin`*, `name`* | object | yes | Verifies a TIN number |
+| GET | `/api/v1/tin-verification/comprehensive-check` | TinVerificationComprehensiveCheck | `tin`*, `name`*, `threshold` | object | yes | EIN Name Lookup with TIN number and retrieves company data |
+| GET | `/api/v1/tin-verification/name-lookup` | TinVerificationNameLookup | `tin`* | object | yes | EIN Name Lookup with TIN number |
+| POST | `/api/v1/vat-verification/basic-check/{country}` | VatBasic | `country`*, body*: object | object |  | Returns a verification result |
+| POST | `/api/v1/vat-verification/comprehensive-check/{country}` | VatComprehensive | `country`*, body*: object | object |  | Returns a verification result and company data |
+| POST | `/api/v1/vat-verification/leveltwo-check/{country}` | VatLevelTwo | `country`*, body*: object | object |  | Returns a level two verification result |
+| POST | `/api/v1/vat-verification/lookup/{country}` | VatLookup | `country`*, body*: object | object |  | Returns a list of vat numbers with additional data |

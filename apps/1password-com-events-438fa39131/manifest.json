@@ -18,6 +18,131 @@
         "from": "1password-com-events-438fa39131",
         "kind": "EXPOSES",
         "to": "operation:post:/api/v1/signinattempts"
+      },
+      {
+        "from": "operation:get:/api/auth/introspect",
+        "kind": "RETURNS",
+        "to": "schema:Introspection"
+      },
+      {
+        "from": "operation:post:/api/v1/itemusages",
+        "kind": "ACCEPTS",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "operation:post:/api/v1/itemusages",
+        "kind": "ACCEPTS",
+        "to": "schema:ResetCursor"
+      },
+      {
+        "from": "operation:post:/api/v1/itemusages",
+        "kind": "RETURNS",
+        "to": "schema:ItemUsageItems"
+      },
+      {
+        "from": "operation:post:/api/v1/signinattempts",
+        "kind": "ACCEPTS",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "operation:post:/api/v1/signinattempts",
+        "kind": "ACCEPTS",
+        "to": "schema:ResetCursor"
+      },
+      {
+        "from": "operation:post:/api/v1/signinattempts",
+        "kind": "RETURNS",
+        "to": "schema:SignInAttemptItems"
+      },
+      {
+        "from": "schema:CursorCollection",
+        "kind": "REFERENCES",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:Introspection",
+        "kind": "REFERENCES",
+        "to": "schema:DateTimeRFC3339"
+      },
+      {
+        "from": "schema:ItemUsage",
+        "kind": "REFERENCES",
+        "to": "schema:Action"
+      },
+      {
+        "from": "schema:ItemUsage",
+        "kind": "REFERENCES",
+        "to": "schema:Client"
+      },
+      {
+        "from": "schema:ItemUsage",
+        "kind": "REFERENCES",
+        "to": "schema:DateTimeRFC3339"
+      },
+      {
+        "from": "schema:ItemUsage",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
+      },
+      {
+        "from": "schema:ItemUsage",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:ItemUsageItems",
+        "kind": "REFERENCES",
+        "to": "schema:CursorCollection"
+      },
+      {
+        "from": "schema:ItemUsageItems",
+        "kind": "REFERENCES",
+        "to": "schema:ItemUsage"
+      },
+      {
+        "from": "schema:ResetCursor",
+        "kind": "REFERENCES",
+        "to": "schema:DateTimeRFC3339"
+      },
+      {
+        "from": "schema:SignInAttempt",
+        "kind": "REFERENCES",
+        "to": "schema:Client"
+      },
+      {
+        "from": "schema:SignInAttempt",
+        "kind": "REFERENCES",
+        "to": "schema:DateTimeRFC3339"
+      },
+      {
+        "from": "schema:SignInAttempt",
+        "kind": "REFERENCES",
+        "to": "schema:Details"
+      },
+      {
+        "from": "schema:SignInAttempt",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
+      },
+      {
+        "from": "schema:SignInAttempt",
+        "kind": "REFERENCES",
+        "to": "schema:User"
+      },
+      {
+        "from": "schema:SignInAttemptItems",
+        "kind": "REFERENCES",
+        "to": "schema:CursorCollection"
+      },
+      {
+        "from": "schema:SignInAttemptItems",
+        "kind": "REFERENCES",
+        "to": "schema:SignInAttempt"
+      },
+      {
+        "from": "schema:User",
+        "kind": "REFERENCES",
+        "to": "schema:UUID"
       }
     ],
     "nodes": [
@@ -33,42 +158,112 @@
         "name": "getAuthIntrospect",
         "path": "/api/auth/introspect",
         "pointer": "#/paths/~1api~1auth~1introspect/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Introspection"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwtsa": []
           }
         ],
-        "summary": "Performs introspection of the provided Bearer JWT token"
+        "summary": "Performs introspection of the provided Bearer JWT token",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint requires your JSON Web Token to have the *itemusages* feature.",
         "id": "operation:post:/api/v1/itemusages",
         "kind": "operation",
         "method": "post",
         "name": "getItemUsages",
         "path": "/api/v1/itemusages",
         "pointer": "#/paths/~1api~1v1~1itemusages/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Cursor|ResetCursor"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ItemUsageItems"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwtsa": []
           }
         ],
-        "summary": "Retrieves item usages"
+        "summary": "Retrieves item usages",
+        "tags": [
+          "api-v1"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint requires your JSON Web Token to have the *signinattempts* feature.",
         "id": "operation:post:/api/v1/signinattempts",
         "kind": "operation",
         "method": "post",
         "name": "getSignInAttempts",
         "path": "/api/v1/signinattempts",
         "pointer": "#/paths/~1api~1v1~1signinattempts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "Cursor|ResetCursor"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SignInAttemptItems"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwtsa": []
           }
         ],
-        "summary": "Retrieves sign-in attempts"
+        "summary": "Retrieves sign-in attempts",
+        "tags": [
+          "api-v1"
+        ]
       },
       {
         "id": "schema:Action",
@@ -76,74 +271,98 @@
         "name": "Action"
       },
       {
+        "description": "Metadata gathered about the client",
         "id": "schema:Client",
         "kind": "schema",
-        "name": "Client"
+        "name": "Client",
+        "type": "object"
       },
       {
+        "description": "Cursor",
         "id": "schema:Cursor",
         "kind": "schema",
-        "name": "Cursor"
+        "name": "Cursor",
+        "type": "object"
       },
       {
+        "description": "Common cursor properties for collection responses",
         "id": "schema:CursorCollection",
         "kind": "schema",
-        "name": "CursorCollection"
+        "name": "CursorCollection",
+        "type": "Cursor|object"
       },
       {
         "id": "schema:DateTimeRFC3339",
         "kind": "schema",
-        "name": "DateTimeRFC3339"
+        "name": "DateTimeRFC3339",
+        "type": "string:date-time"
       },
       {
+        "description": "Additional information about the sign-in attempt",
         "id": "schema:Details",
         "kind": "schema",
-        "name": "Details"
+        "name": "Details",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Introspection",
         "kind": "schema",
-        "name": "Introspection"
+        "name": "Introspection",
+        "type": "object"
       },
       {
+        "description": "A single item usage object",
         "id": "schema:ItemUsage",
         "kind": "schema",
-        "name": "ItemUsage"
+        "name": "ItemUsage",
+        "type": "object"
       },
       {
+        "description": "An object wrapping cursor properties and a list of items usages",
         "id": "schema:ItemUsageItems",
         "kind": "schema",
-        "name": "ItemUsageItems"
+        "name": "ItemUsageItems",
+        "type": "object|CursorCollection"
       },
       {
+        "description": "Reset cursor",
         "id": "schema:ResetCursor",
         "kind": "schema",
-        "name": "ResetCursor"
+        "name": "ResetCursor",
+        "type": "object"
       },
       {
+        "description": "A single sign-in attempt object",
         "id": "schema:SignInAttempt",
         "kind": "schema",
-        "name": "SignInAttempt"
+        "name": "SignInAttempt",
+        "type": "object"
       },
       {
+        "description": "An object wrapping cursor properties and a list of sign-in attempts",
         "id": "schema:SignInAttemptItems",
         "kind": "schema",
-        "name": "SignInAttemptItems"
+        "name": "SignInAttemptItems",
+        "type": "object|CursorCollection"
       },
       {
         "id": "schema:UUID",
         "kind": "schema",
-        "name": "UUID"
+        "name": "UUID",
+        "type": "string"
       },
       {
+        "description": "User object",
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       }
     ]
   },

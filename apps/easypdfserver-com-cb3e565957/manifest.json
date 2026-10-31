@@ -23,6 +23,20 @@
         "name": "post /make-pdf",
         "path": "/make-pdf",
         "pointer": "#/paths/~1make-pdf/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Generate a PDF from HTML or URL."
       }

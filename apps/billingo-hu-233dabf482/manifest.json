@@ -17,17 +17,17 @@
       {
         "from": "billingo-hu-233dabf482",
         "kind": "EXPOSES",
-        "to": "operation:delete:/bank-accounts/{id}"
-      },
-      {
-        "from": "billingo-hu-233dabf482",
-        "kind": "EXPOSES",
         "to": "operation:get:/bank-accounts/{id}"
       },
       {
         "from": "billingo-hu-233dabf482",
         "kind": "EXPOSES",
         "to": "operation:put:/bank-accounts/{id}"
+      },
+      {
+        "from": "billingo-hu-233dabf482",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/bank-accounts/{id}"
       },
       {
         "from": "billingo-hu-233dabf482",
@@ -77,17 +77,17 @@
       {
         "from": "billingo-hu-233dabf482",
         "kind": "EXPOSES",
-        "to": "operation:delete:/documents/{id}/payments"
-      },
-      {
-        "from": "billingo-hu-233dabf482",
-        "kind": "EXPOSES",
         "to": "operation:get:/documents/{id}/payments"
       },
       {
         "from": "billingo-hu-233dabf482",
         "kind": "EXPOSES",
         "to": "operation:put:/documents/{id}/payments"
+      },
+      {
+        "from": "billingo-hu-233dabf482",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/documents/{id}/payments"
       },
       {
         "from": "billingo-hu-233dabf482",
@@ -117,17 +117,17 @@
       {
         "from": "billingo-hu-233dabf482",
         "kind": "EXPOSES",
-        "to": "operation:delete:/partners/{id}"
-      },
-      {
-        "from": "billingo-hu-233dabf482",
-        "kind": "EXPOSES",
         "to": "operation:get:/partners/{id}"
       },
       {
         "from": "billingo-hu-233dabf482",
         "kind": "EXPOSES",
         "to": "operation:put:/partners/{id}"
+      },
+      {
+        "from": "billingo-hu-233dabf482",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/partners/{id}"
       },
       {
         "from": "billingo-hu-233dabf482",
@@ -142,11 +142,6 @@
       {
         "from": "billingo-hu-233dabf482",
         "kind": "EXPOSES",
-        "to": "operation:delete:/products/{id}"
-      },
-      {
-        "from": "billingo-hu-233dabf482",
-        "kind": "EXPOSES",
         "to": "operation:get:/products/{id}"
       },
       {
@@ -157,7 +152,412 @@
       {
         "from": "billingo-hu-233dabf482",
         "kind": "EXPOSES",
+        "to": "operation:delete:/products/{id}"
+      },
+      {
+        "from": "billingo-hu-233dabf482",
+        "kind": "EXPOSES",
         "to": "operation:get:/utils/convert-legacy-id/{id}"
+      },
+      {
+        "from": "operation:get:/bank-accounts",
+        "kind": "RETURNS",
+        "to": "schema:BankAccountList"
+      },
+      {
+        "from": "operation:post:/bank-accounts",
+        "kind": "ACCEPTS",
+        "to": "schema:BankAccount"
+      },
+      {
+        "from": "operation:post:/bank-accounts",
+        "kind": "RETURNS",
+        "to": "schema:BankAccount"
+      },
+      {
+        "from": "operation:get:/bank-accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:BankAccount"
+      },
+      {
+        "from": "operation:put:/bank-accounts/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:BankAccount"
+      },
+      {
+        "from": "operation:put:/bank-accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:BankAccount"
+      },
+      {
+        "from": "operation:get:/currencies",
+        "kind": "RETURNS",
+        "to": "schema:ConversationRate"
+      },
+      {
+        "from": "operation:get:/document-blocks",
+        "kind": "RETURNS",
+        "to": "schema:DocumentBlockList"
+      },
+      {
+        "from": "operation:get:/documents",
+        "kind": "RETURNS",
+        "to": "schema:DocumentList"
+      },
+      {
+        "from": "operation:post:/documents",
+        "kind": "ACCEPTS",
+        "to": "schema:DocumentInsert"
+      },
+      {
+        "from": "operation:post:/documents",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:get:/documents/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:post:/documents/{id}/cancel",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:post:/documents/{id}/create-from-proforma",
+        "kind": "RETURNS",
+        "to": "schema:Document"
+      },
+      {
+        "from": "operation:get:/documents/{id}/download",
+        "kind": "RETURNS",
+        "to": "schema:ClientError"
+      },
+      {
+        "from": "operation:get:/documents/{id}/online-szamla",
+        "kind": "RETURNS",
+        "to": "schema:OnlineSzamlaStatus"
+      },
+      {
+        "from": "operation:get:/documents/{id}/payments",
+        "kind": "RETURNS",
+        "to": "schema:PaymentHistory"
+      },
+      {
+        "from": "operation:put:/documents/{id}/payments",
+        "kind": "ACCEPTS",
+        "to": "schema:PaymentHistory"
+      },
+      {
+        "from": "operation:put:/documents/{id}/payments",
+        "kind": "RETURNS",
+        "to": "schema:PaymentHistory"
+      },
+      {
+        "from": "operation:delete:/documents/{id}/payments",
+        "kind": "RETURNS",
+        "to": "schema:PaymentHistory"
+      },
+      {
+        "from": "operation:get:/documents/{id}/public-url",
+        "kind": "RETURNS",
+        "to": "schema:DocumentPublicUrl"
+      },
+      {
+        "from": "operation:post:/documents/{id}/send",
+        "kind": "ACCEPTS",
+        "to": "schema:SendDocument"
+      },
+      {
+        "from": "operation:post:/documents/{id}/send",
+        "kind": "RETURNS",
+        "to": "schema:SendDocument"
+      },
+      {
+        "from": "operation:get:/organization",
+        "kind": "RETURNS",
+        "to": "schema:OrganizationData"
+      },
+      {
+        "from": "operation:get:/partners",
+        "kind": "RETURNS",
+        "to": "schema:PartnerList"
+      },
+      {
+        "from": "operation:post:/partners",
+        "kind": "ACCEPTS",
+        "to": "schema:PartnerUpsert"
+      },
+      {
+        "from": "operation:post:/partners",
+        "kind": "RETURNS",
+        "to": "schema:Partner"
+      },
+      {
+        "from": "operation:get:/partners/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Partner"
+      },
+      {
+        "from": "operation:put:/partners/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:PartnerUpsert"
+      },
+      {
+        "from": "operation:put:/partners/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Partner"
+      },
+      {
+        "from": "operation:get:/products",
+        "kind": "RETURNS",
+        "to": "schema:ProductList"
+      },
+      {
+        "from": "operation:post:/products",
+        "kind": "ACCEPTS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "operation:post:/products",
+        "kind": "RETURNS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "operation:get:/products/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "operation:put:/products/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "operation:put:/products/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "operation:get:/utils/convert-legacy-id/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Id"
+      },
+      {
+        "from": "schema:Address",
+        "kind": "REFERENCES",
+        "to": "schema:Country"
+      },
+      {
+        "from": "schema:BankAccount",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:BankAccountList",
+        "kind": "REFERENCES",
+        "to": "schema:BankAccount"
+      },
+      {
+        "from": "schema:ClientErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ClientError"
+      },
+      {
+        "from": "schema:ConversationRate",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentItem"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentLanguage"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentNotificationStatus"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentOrganization"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentSettings"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentSummary"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentType"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:Partner"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentMethod"
+      },
+      {
+        "from": "schema:Document",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentStatus"
+      },
+      {
+        "from": "schema:DocumentBlockList",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentBlock"
+      },
+      {
+        "from": "schema:DocumentInsert",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:DocumentInsert",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentInsertType"
+      },
+      {
+        "from": "schema:DocumentInsert",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentItemData"
+      },
+      {
+        "from": "schema:DocumentInsert",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentLanguage"
+      },
+      {
+        "from": "schema:DocumentInsert",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentProductData"
+      },
+      {
+        "from": "schema:DocumentInsert",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentSettings"
+      },
+      {
+        "from": "schema:DocumentInsert",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentMethod"
+      },
+      {
+        "from": "schema:DocumentItem",
+        "kind": "REFERENCES",
+        "to": "schema:Vat"
+      },
+      {
+        "from": "schema:DocumentList",
+        "kind": "REFERENCES",
+        "to": "schema:Document"
+      },
+      {
+        "from": "schema:DocumentOrganization",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:DocumentOrganization",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentBankAccount"
+      },
+      {
+        "from": "schema:DocumentProductData",
+        "kind": "REFERENCES",
+        "to": "schema:UnitPriceType"
+      },
+      {
+        "from": "schema:DocumentProductData",
+        "kind": "REFERENCES",
+        "to": "schema:Vat"
+      },
+      {
+        "from": "schema:DocumentSettings",
+        "kind": "REFERENCES",
+        "to": "schema:OnlinePayment"
+      },
+      {
+        "from": "schema:DocumentSettings",
+        "kind": "REFERENCES",
+        "to": "schema:Round"
+      },
+      {
+        "from": "schema:DocumentSummary",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentVatRateSummary"
+      },
+      {
+        "from": "schema:OnlineSzamlaStatus",
+        "kind": "REFERENCES",
+        "to": "schema:OnlineSzamlaStatusMessage"
+      },
+      {
+        "from": "schema:Partner",
+        "kind": "REFERENCES",
+        "to": "schema:PartnerUpsert"
+      },
+      {
+        "from": "schema:PartnerList",
+        "kind": "REFERENCES",
+        "to": "schema:Partner"
+      },
+      {
+        "from": "schema:PartnerUpsert",
+        "kind": "REFERENCES",
+        "to": "schema:Address"
+      },
+      {
+        "from": "schema:PaymentHistory",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentMethod"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "REFERENCES",
+        "to": "schema:Vat"
+      },
+      {
+        "from": "schema:ProductList",
+        "kind": "REFERENCES",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:ServerErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ServerError"
+      },
+      {
+        "from": "schema:ValidationErrorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
       }
     ],
     "nodes": [
@@ -167,703 +567,2105 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a list of your bank accounts.",
         "id": "operation:get:/bank-accounts",
         "kind": "operation",
         "method": "get",
         "name": "ListBankAccount",
+        "parameters": [
+          {
+            "default": "1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/bank-accounts",
         "pointer": "#/paths/~1bank-accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BankAccountList"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "List all bank account"
+        "summary": "List all bank account",
+        "tags": [
+          "BankAccount"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new bank account.",
         "id": "operation:post:/bank-accounts",
         "kind": "operation",
         "method": "post",
         "name": "CreateBankAccount",
         "path": "/bank-accounts",
         "pointer": "#/paths/~1bank-accounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BankAccount"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "BankAccount"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create a bank account"
+        "summary": "Create a bank account",
+        "tags": [
+          "BankAccount"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/bank-accounts/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteBankAccount",
-        "path": "/bank-accounts/{id}",
-        "pointer": "#/paths/~1bank-accounts~1{id}/delete",
-        "security": [
-          {
-            "api_key": []
-          }
-        ],
-        "summary": "Delete a bank account"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing bank account.",
         "id": "operation:get:/bank-accounts/{id}",
         "kind": "operation",
         "method": "get",
         "name": "GetBankAccount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/bank-accounts/{id}",
         "pointer": "#/paths/~1bank-accounts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BankAccount"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieve a bank account"
+        "summary": "Retrieve a bank account",
+        "tags": [
+          "BankAccount"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an existing bank accounts.",
         "id": "operation:put:/bank-accounts/{id}",
         "kind": "operation",
         "method": "put",
         "name": "UpdateBankAccount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/bank-accounts/{id}",
         "pointer": "#/paths/~1bank-accounts~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BankAccount"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BankAccount"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Update a bank account"
+        "summary": "Update a bank account",
+        "tags": [
+          "BankAccount"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an existing bank account.",
+        "id": "operation:delete:/bank-accounts/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteBankAccount",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/bank-accounts/{id}",
+        "pointer": "#/paths/~1bank-accounts~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Delete a bank account",
+        "tags": [
+          "BankAccount"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Return with the exchange value of given currencies.",
         "id": "operation:get:/currencies",
         "kind": "operation",
         "method": "get",
         "name": "GetConversionRate",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "Currency"
+          },
+          {
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "Currency"
+          }
+        ],
         "path": "/currencies",
         "pointer": "#/paths/~1currencies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConversationRate"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get currencies exchange rate."
+        "summary": "Get currencies exchange rate.",
+        "tags": [
+          "Currency"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of your document blocks.",
         "id": "operation:get:/document-blocks",
         "kind": "operation",
         "method": "get",
         "name": "ListDocumentBlock",
+        "parameters": [
+          {
+            "default": "1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/document-blocks",
         "pointer": "#/paths/~1document-blocks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DocumentBlockList"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "List all document blocks"
+        "summary": "List all document blocks",
+        "tags": [
+          "DocumentBlock"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of your documents.",
         "id": "operation:get:/documents",
         "kind": "operation",
         "method": "get",
         "name": "ListDocument",
+        "parameters": [
+          {
+            "default": "1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter documents by the identifier of your DocumentBlock.",
+            "in": "query",
+            "name": "block_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter documents by the identifier of your Partner.",
+            "in": "query",
+            "name": "partner_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter documents by PaymentMethod value.",
+            "in": "query",
+            "name": "payment_method",
+            "required": false,
+            "type": "PaymentMethod"
+          },
+          {
+            "description": "Filter documents by PaymentStatus value.",
+            "in": "query",
+            "name": "payment_status",
+            "required": false,
+            "type": "PaymentStatus"
+          },
+          {
+            "description": "Filter documents by date.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Filter documents by date.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "description": "Starting number of the document, should not contain year or any other formatting.",
+            "in": "query",
+            "name": "start_number",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Ending number of the document, should not contain year or any other formatting.",
+            "in": "query",
+            "name": "end_number",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Year for `start_number` parameter.",
+            "in": "query",
+            "name": "start_year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Year for `end_number` parameter.",
+            "in": "query",
+            "name": "end_year",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/documents",
         "pointer": "#/paths/~1documents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DocumentList"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "List all documents"
+        "summary": "List all documents",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new document.",
         "id": "operation:post:/documents",
         "kind": "operation",
         "method": "post",
         "name": "CreateDocument",
         "path": "/documents",
         "pointer": "#/paths/~1documents/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DocumentInsert"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Document"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create a document"
+        "summary": "Create a document",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of an existing document.",
         "id": "operation:get:/documents/{id}",
         "kind": "operation",
         "method": "get",
         "name": "GetDocument",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/documents/{id}",
         "pointer": "#/paths/~1documents~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Document"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieve a document"
+        "summary": "Retrieve a document",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Cancel a document.",
         "id": "operation:post:/documents/{id}/cancel",
         "kind": "operation",
         "method": "post",
         "name": "CancelDocument",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/documents/{id}/cancel",
         "pointer": "#/paths/~1documents~1{id}~1cancel/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Document"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Cancel a document"
+        "summary": "Cancel a document",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new document from proforma.",
         "id": "operation:post:/documents/{id}/create-from-proforma",
         "kind": "operation",
         "method": "post",
         "name": "CreateDocumentFromProforma",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/documents/{id}/create-from-proforma",
         "pointer": "#/paths/~1documents~1{id}~1create-from-proforma/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "Document"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create a document from proforma."
+        "summary": "Create a document from proforma.",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Download a document.",
         "id": "operation:get:/documents/{id}/download",
         "kind": "operation",
         "method": "get",
         "name": "DownloadDocument",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/documents/{id}/download",
         "pointer": "#/paths/~1documents~1{id}~1download/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "202",
+            "type": "ClientError"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Download a document in PDF format."
+        "summary": "Download a document in PDF format.",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the details of an existing document status.",
         "id": "operation:get:/documents/{id}/online-szamla",
         "kind": "operation",
         "method": "get",
         "name": "GetOnlineSzamlaStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/documents/{id}/online-szamla",
         "pointer": "#/paths/~1documents~1{id}~1online-szamla/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OnlineSzamlaStatus"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieve a document Online Számla status"
+        "summary": "Retrieve a document Online Számla status",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/documents/{id}/payments",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeletePayment",
-        "path": "/documents/{id}/payments",
-        "pointer": "#/paths/~1documents~1{id}~1payments/delete",
-        "security": [
-          {
-            "api_key": []
-          }
-        ],
-        "summary": "Delete all payment history on document"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of payment history an existing document.",
         "id": "operation:get:/documents/{id}/payments",
         "kind": "operation",
         "method": "get",
         "name": "GetPayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/documents/{id}/payments",
         "pointer": "#/paths/~1documents~1{id}~1payments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentHistory[]"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieve a payment histroy"
+        "summary": "Retrieve a payment histroy",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update payment history an existing document.",
         "id": "operation:put:/documents/{id}/payments",
         "kind": "operation",
         "method": "put",
         "name": "UpdatePayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/documents/{id}/payments",
         "pointer": "#/paths/~1documents~1{id}~1payments/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PaymentHistory[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentHistory[]"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Update payment history"
+        "summary": "Update payment history",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete all exist payment history on document.",
+        "id": "operation:delete:/documents/{id}/payments",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeletePayment",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/documents/{id}/payments",
+        "pointer": "#/paths/~1documents~1{id}~1payments/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentHistory[]"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Delete all payment history on document",
+        "tags": [
+          "Document"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieves public url to download an existing document.",
         "id": "operation:get:/documents/{id}/public-url",
         "kind": "operation",
         "method": "get",
         "name": "GetPublicUrl",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/documents/{id}/public-url",
         "pointer": "#/paths/~1documents~1{id}~1public-url/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DocumentPublicUrl"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieve a document download public url."
+        "summary": "Retrieve a document download public url.",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of emails, where the invoice is sent.",
         "id": "operation:post:/documents/{id}/send",
         "kind": "operation",
         "method": "post",
         "name": "SendDocument",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/documents/{id}/send",
         "pointer": "#/paths/~1documents~1{id}~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "SendDocument"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SendDocument"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Send invoice to given email adresses."
+        "summary": "Send invoice to given email adresses.",
+        "tags": [
+          "Document"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the data of organization.",
         "id": "operation:get:/organization",
         "kind": "operation",
         "method": "get",
         "name": "GetOrganizationData",
         "path": "/organization",
         "pointer": "#/paths/~1organization/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OrganizationData"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieve a organization data."
+        "summary": "Retrieve a organization data.",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of your partners.",
         "id": "operation:get:/partners",
         "kind": "operation",
         "method": "get",
         "name": "ListPartner",
+        "parameters": [
+          {
+            "default": "1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/partners",
         "pointer": "#/paths/~1partners/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PartnerList"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "List all partners"
+        "summary": "List all partners",
+        "tags": [
+          "Partner"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new partner.",
         "id": "operation:post:/partners",
         "kind": "operation",
         "method": "post",
         "name": "CreatePartner",
         "path": "/partners",
         "pointer": "#/paths/~1partners/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PartnerUpsert"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Partner"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create a partner"
+        "summary": "Create a partner",
+        "tags": [
+          "Partner"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/partners/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeletePartner",
-        "path": "/partners/{id}",
-        "pointer": "#/paths/~1partners~1{id}/delete",
-        "security": [
-          {
-            "api_key": []
-          }
-        ],
-        "summary": "Delete a partner"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing partner.",
         "id": "operation:get:/partners/{id}",
         "kind": "operation",
         "method": "get",
         "name": "GetPartner",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/partners/{id}",
         "pointer": "#/paths/~1partners~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Partner"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieve a partner"
+        "summary": "Retrieve a partner",
+        "tags": [
+          "Partner"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an existing partner.",
         "id": "operation:put:/partners/{id}",
         "kind": "operation",
         "method": "put",
         "name": "UpdatePartner",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/partners/{id}",
         "pointer": "#/paths/~1partners~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "PartnerUpsert"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Partner"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Update a partner"
+        "summary": "Update a partner",
+        "tags": [
+          "Partner"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an existing partner.",
+        "id": "operation:delete:/partners/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeletePartner",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/partners/{id}",
+        "pointer": "#/paths/~1partners~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Delete a partner",
+        "tags": [
+          "Partner"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of your products.",
         "id": "operation:get:/products",
         "kind": "operation",
         "method": "get",
         "name": "ListProduct",
+        "parameters": [
+          {
+            "default": "1",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/products",
         "pointer": "#/paths/~1products/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProductList"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "List all product"
+        "summary": "List all product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new product.",
         "id": "operation:post:/products",
         "kind": "operation",
         "method": "post",
         "name": "CreateProduct",
         "path": "/products",
         "pointer": "#/paths/~1products/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Product"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "Product"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Create a product"
+        "summary": "Create a product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/products/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteProduct",
-        "path": "/products/{id}",
-        "pointer": "#/paths/~1products~1{id}/delete",
-        "security": [
-          {
-            "api_key": []
-          }
-        ],
-        "summary": "Delete a product"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the details of an existing product.",
         "id": "operation:get:/products/{id}",
         "kind": "operation",
         "method": "get",
         "name": "GetProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/products/{id}",
         "pointer": "#/paths/~1products~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Product"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Retrieve a product"
+        "summary": "Retrieve a product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an existing product.",
         "id": "operation:put:/products/{id}",
         "kind": "operation",
         "method": "put",
         "name": "UpdateProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/products/{id}",
         "pointer": "#/paths/~1products~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Product"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Product"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Update a product"
+        "summary": "Update a product",
+        "tags": [
+          "Product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete an existing product.",
+        "id": "operation:delete:/products/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/products/{id}",
+        "pointer": "#/paths/~1products~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Delete a product",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieves the API v3 ID.",
         "id": "operation:get:/utils/convert-legacy-id/{id}",
         "kind": "operation",
         "method": "get",
         "name": "GetId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/utils/convert-legacy-id/{id}",
         "pointer": "#/paths/~1utils~1convert-legacy-id~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Id"
+          },
+          {
+            "status": "400",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "401",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "ClientErrorResponse"
+          },
+          {
+            "status": "422",
+            "type": "ValidationErrorResponse"
+          },
+          {
+            "status": "500",
+            "type": "ServerErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Convert legacy ID to v3 ID."
+        "summary": "Convert legacy ID to v3 ID.",
+        "tags": [
+          "Util"
+        ]
       },
       {
         "id": "schema:Address",
         "kind": "schema",
-        "name": "Address"
+        "name": "Address",
+        "type": "object"
       },
       {
         "id": "schema:BankAccount",
         "kind": "schema",
-        "name": "BankAccount"
+        "name": "BankAccount",
+        "type": "object"
       },
       {
+        "description": "A object with a data property that contains an array of up to limit bank accounts.",
         "id": "schema:BankAccountList",
         "kind": "schema",
-        "name": "BankAccountList"
+        "name": "BankAccountList",
+        "type": "object"
       },
       {
         "id": "schema:ClientError",
         "kind": "schema",
-        "name": "ClientError"
+        "name": "ClientError",
+        "type": "object"
       },
       {
         "id": "schema:ClientErrorResponse",
         "kind": "schema",
-        "name": "ClientErrorResponse"
+        "name": "ClientErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:ConversationRate",
         "kind": "schema",
-        "name": "ConversationRate"
+        "name": "ConversationRate",
+        "type": "object"
       },
       {
         "id": "schema:Country",
         "kind": "schema",
-        "name": "Country"
+        "name": "Country",
+        "type": "string"
       },
       {
         "id": "schema:Currency",
         "kind": "schema",
-        "name": "Currency"
+        "name": "Currency",
+        "type": "string"
       },
       {
+        "description": "Document object representing your invoice.",
         "id": "schema:Document",
         "kind": "schema",
-        "name": "Document"
+        "name": "Document",
+        "type": "object"
       },
       {
         "id": "schema:DocumentBankAccount",
         "kind": "schema",
-        "name": "DocumentBankAccount"
+        "name": "DocumentBankAccount",
+        "type": "object"
       },
       {
         "id": "schema:DocumentBlock",
         "kind": "schema",
-        "name": "DocumentBlock"
+        "name": "DocumentBlock",
+        "type": "object"
       },
       {
+        "description": "A object with a data property that contains an array of up to limit document blocks.",
         "id": "schema:DocumentBlockList",
         "kind": "schema",
-        "name": "DocumentBlockList"
+        "name": "DocumentBlockList",
+        "type": "object"
       },
       {
         "id": "schema:DocumentInsert",
         "kind": "schema",
-        "name": "DocumentInsert"
+        "name": "DocumentInsert",
+        "type": "object"
       },
       {
         "id": "schema:DocumentInsertType",
         "kind": "schema",
-        "name": "DocumentInsertType"
+        "name": "DocumentInsertType",
+        "type": "string"
       },
       {
         "id": "schema:DocumentItem",
         "kind": "schema",
-        "name": "DocumentItem"
+        "name": "DocumentItem",
+        "type": "object"
       },
       {
         "id": "schema:DocumentItemData",
         "kind": "schema",
-        "name": "DocumentItemData"
+        "name": "DocumentItemData",
+        "type": "object"
       },
       {
         "id": "schema:DocumentLanguage",
         "kind": "schema",
-        "name": "DocumentLanguage"
+        "name": "DocumentLanguage",
+        "type": "string"
       },
       {
+        "description": "A object with a data property that contains an array of up to limit documents.",
         "id": "schema:DocumentList",
         "kind": "schema",
-        "name": "DocumentList"
+        "name": "DocumentList",
+        "type": "object"
       },
       {
         "id": "schema:DocumentNotificationStatus",
         "kind": "schema",
-        "name": "DocumentNotificationStatus"
+        "name": "DocumentNotificationStatus",
+        "type": "string"
       },
       {
         "id": "schema:DocumentOrganization",
         "kind": "schema",
-        "name": "DocumentOrganization"
+        "name": "DocumentOrganization",
+        "type": "object"
       },
       {
         "id": "schema:DocumentProductData",
         "kind": "schema",
-        "name": "DocumentProductData"
+        "name": "DocumentProductData",
+        "type": "object"
       },
       {
         "id": "schema:DocumentPublicUrl",
         "kind": "schema",
-        "name": "DocumentPublicUrl"
+        "name": "DocumentPublicUrl",
+        "type": "object"
       },
       {
         "id": "schema:DocumentSettings",
         "kind": "schema",
-        "name": "DocumentSettings"
+        "name": "DocumentSettings",
+        "type": "object"
       },
       {
         "id": "schema:DocumentSummary",
         "kind": "schema",
-        "name": "DocumentSummary"
+        "name": "DocumentSummary",
+        "type": "object"
       },
       {
         "id": "schema:DocumentType",
         "kind": "schema",
-        "name": "DocumentType"
+        "name": "DocumentType",
+        "type": "string"
       },
       {
         "id": "schema:DocumentVatRateSummary",
         "kind": "schema",
-        "name": "DocumentVatRateSummary"
+        "name": "DocumentVatRateSummary",
+        "type": "object"
       },
       {
         "id": "schema:Id",
         "kind": "schema",
-        "name": "Id"
+        "name": "Id",
+        "type": "object"
       },
       {
         "id": "schema:OnlinePayment",
         "kind": "schema",
-        "name": "OnlinePayment"
+        "name": "OnlinePayment",
+        "type": "string"
       },
       {
         "id": "schema:OnlineSzamlaStatus",
         "kind": "schema",
-        "name": "OnlineSzamlaStatus"
+        "name": "OnlineSzamlaStatus",
+        "type": "object"
       },
       {
         "id": "schema:OnlineSzamlaStatusMessage",
         "kind": "schema",
-        "name": "OnlineSzamlaStatusMessage"
+        "name": "OnlineSzamlaStatusMessage",
+        "type": "object"
       },
       {
         "id": "schema:OrganizationData",
         "kind": "schema",
-        "name": "OrganizationData"
+        "name": "OrganizationData",
+        "type": "object"
       },
       {
         "id": "schema:Partner",
         "kind": "schema",
-        "name": "Partner"
+        "name": "Partner",
+        "type": "PartnerUpsert|object"
       },
       {
+        "description": "A object with a data property that contains an array of up to limit partners.",
         "id": "schema:PartnerList",
         "kind": "schema",
-        "name": "PartnerList"
+        "name": "PartnerList",
+        "type": "object"
       },
       {
         "id": "schema:PartnerUpsert",
         "kind": "schema",
-        "name": "PartnerUpsert"
+        "name": "PartnerUpsert",
+        "type": "object"
       },
       {
         "id": "schema:PaymentHistory",
         "kind": "schema",
-        "name": "PaymentHistory"
+        "name": "PaymentHistory",
+        "type": "object"
       },
       {
         "id": "schema:PaymentMethod",
         "kind": "schema",
-        "name": "PaymentMethod"
+        "name": "PaymentMethod",
+        "type": "string"
       },
       {
         "id": "schema:PaymentStatus",
         "kind": "schema",
-        "name": "PaymentStatus"
+        "name": "PaymentStatus",
+        "type": "string"
       },
       {
         "id": "schema:Product",
         "kind": "schema",
-        "name": "Product"
+        "name": "Product",
+        "type": "object"
       },
       {
+        "description": "A object with a data property that contains an array of up to limit products.",
         "id": "schema:ProductList",
         "kind": "schema",
-        "name": "ProductList"
+        "name": "ProductList",
+        "type": "object"
       },
       {
         "id": "schema:Round",
         "kind": "schema",
-        "name": "Round"
+        "name": "Round",
+        "type": "string"
       },
       {
         "id": "schema:SendDocument",
         "kind": "schema",
-        "name": "SendDocument"
+        "name": "SendDocument",
+        "type": "object"
       },
       {
         "id": "schema:ServerError",
         "kind": "schema",
-        "name": "ServerError"
+        "name": "ServerError",
+        "type": "object"
       },
       {
         "id": "schema:ServerErrorResponse",
         "kind": "schema",
-        "name": "ServerErrorResponse"
+        "name": "ServerErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:UnitPriceType",
         "kind": "schema",
-        "name": "UnitPriceType"
+        "name": "UnitPriceType",
+        "type": "string"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:ValidationErrorResponse",
         "kind": "schema",
-        "name": "ValidationErrorResponse"
+        "name": "ValidationErrorResponse",
+        "type": "object"
       },
       {
         "id": "schema:Vat",
         "kind": "schema",
-        "name": "Vat"
+        "name": "Vat",
+        "type": "string"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_launchdarkly_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `36738106072a2f375976e814ecf4de176218661694afecd7145681772715a08d` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,110 +34,112 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_launchdarkly_profil
 
 107 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | getRoot | — |
-| GET | `/account/relay-auto-configs` | getRelayProxyConfigs | Returns a list of relay proxy configurations in the account. |
-| POST | `/account/relay-auto-configs` | postRelayAutoConfig | Create a new relay proxy config. |
-| DELETE | `/account/relay-auto-configs/{id}` | deleteRelayProxyConfig | Delete a relay proxy configuration by ID. |
-| GET | `/account/relay-auto-configs/{id}` | getRelayProxyConfig | Get a single relay proxy configuration by ID. |
-| PATCH | `/account/relay-auto-configs/{id}` | patchRelayProxyConfig | Modify a relay proxy configuration by ID. |
-| POST | `/account/relay-auto-configs/{id}/reset` | resetRelayProxyConfig | Reset a relay proxy configuration's secret key with an optional expiry time for the old key. |
-| GET | `/auditlog` | getAuditLogEntries | Get a list of all audit log entries. The query parameters allow you to restrict the returned results by date ranges, resource specifiers, or a full-text search query. |
-| GET | `/auditlog/{resourceId}` | getAuditLogEntry | Use this endpoint to fetch a single audit log entry by its resouce ID. |
-| GET | `/destinations` | getDestinations | Returns a list of all data export destinations. |
-| POST | `/destinations/{projectKey}/{environmentKey}` | postDestination | Create a new data export destination |
-| DELETE | `/destinations/{projectKey}/{environmentKey}/{destinationId}` | deleteDestination | Get a single data export destination by ID |
-| GET | `/destinations/{projectKey}/{environmentKey}/{destinationId}` | getDestination | Get a single data export destination by ID |
-| PATCH | `/destinations/{projectKey}/{environmentKey}/{destinationId}` | patchDestination | Perform a partial update to a data export destination. |
-| GET | `/flag-status/{projectKey}/{featureFlagKey}` | getFeatureFlagStatusAcrossEnvironments | Get the status for a particular feature flag across environments |
-| GET | `/flag-statuses/{projectKey}/{environmentKey}` | getFeatureFlagStatuses | Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag. |
-| GET | `/flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey}` | getFeatureFlagStatus | Get the status for a particular feature flag. |
-| GET | `/flags/{projectKey}` | getFeatureFlags | Get a list of all features in the given project. |
-| POST | `/flags/{projectKey}` | postFeatureFlag | Creates a new feature flag. |
-| GET | `/flags/{projectKey}/{environmentKey}/{featureFlagKey}/dependent-flags` | get /flags/{projectKey}/{environmentKey}/{featureFlagKey}/dependent-flags | Get dependent flags for the flag in the environment specified in path parameters |
-| DELETE | `/flags/{projectKey}/{featureFlagKey}` | deleteFeatureFlag | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application. |
-| GET | `/flags/{projectKey}/{featureFlagKey}` | getFeatureFlag | Get a single feature flag by key. |
-| PATCH | `/flags/{projectKey}/{featureFlagKey}` | patchFeatureFlag | Perform a partial update to a feature. |
-| POST | `/flags/{projectKey}/{featureFlagKey}/copy` | copyFeatureFlag | Copies the feature flag configuration from one environment to the same feature flag in another environment. |
-| GET | `/flags/{projectKey}/{featureFlagKey}/dependent-flags` | get /flags/{projectKey}/{featureFlagKey}/dependent-flags | Get dependent flags across all environments for the flag specified in the path parameters |
-| GET | `/flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey}` | getExpiringUserTargets | Get expiring user targets for feature flag |
-| PATCH | `/flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey}` | patchExpiringUserTargets | Update, add, or delete expiring user targets on feature flag |
-| GET | `/integrations` | getIntegrations | Get a list of all configured audit log event integrations associated with this account. |
-| GET | `/integrations/{integrationKey}` | getIntegrationSubscriptions | Get a list of all configured integrations of a given kind. |
-| POST | `/integrations/{integrationKey}` | postIntegrationSubscription | Create a new integration subscription of a given kind. |
-| DELETE | `/integrations/{integrationKey}/{integrationId}` | deleteIntegrationSubscription | Delete an integration subscription by ID. |
-| GET | `/integrations/{integrationKey}/{integrationId}` | getIntegrationSubscription | Get a single integration subscription by ID. |
-| PATCH | `/integrations/{integrationKey}/{integrationId}` | patchIntegrationSubscription | Modify an integration subscription by ID. |
-| GET | `/members` | getMembers | Returns a list of all members in the account. |
-| POST | `/members` | postMembers | Invite new members. |
-| GET | `/members/me` | getMe | Get the current team member associated with the token |
-| DELETE | `/members/{memberId}` | deleteMember | Delete a team member by ID. |
-| GET | `/members/{memberId}` | getMember | Get a single team member by ID. |
-| PATCH | `/members/{memberId}` | patchMember | Modify a team member by ID. |
-| GET | `/projects` | getProjects | Returns a list of all projects in the account. |
-| POST | `/projects` | postProject | Create a new project with the given key and name. |
-| DELETE | `/projects/{projectKey}` | deleteProject | Delete a project by key. Caution-- deleting a project will delete all associated environments and feature flags. You cannot delete the last project in an account. |
-| GET | `/projects/{projectKey}` | getProject | Fetch a single project by key. |
-| PATCH | `/projects/{projectKey}` | patchProject | Modify a project by ID. |
-| POST | `/projects/{projectKey}/environments` | postEnvironment | Create a new environment in a specified project with a given name, key, and swatch color. |
-| DELETE | `/projects/{projectKey}/environments/{environmentKey}` | deleteEnvironment | Delete an environment in a specific project. |
-| GET | `/projects/{projectKey}/environments/{environmentKey}` | getEnvironment | Get an environment given a project and key. |
-| PATCH | `/projects/{projectKey}/environments/{environmentKey}` | patchEnvironment | Modify an environment by ID. If you try to patch the environment by setting both required and requiredApprovalTags, it will result in an error. Users can specify either required approvals for all flags in an environment or those with specific tags, but not both. Only customers on an Enterprise plan can require approval for flag updates with either mechanism. |
-| POST | `/projects/{projectKey}/environments/{environmentKey}/apiKey` | resetEnvironmentSDKKey | Reset an environment's SDK key with an optional expiry time for the old key. |
-| POST | `/projects/{projectKey}/environments/{environmentKey}/mobileKey` | resetEnvironmentMobileKey | Reset an environment's mobile key. The optional expiry for the old key is deprecated for this endpoint, so the old key will always expire immediately. |
-| GET | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests` | getApprovalRequests | Get all approval requests for a feature flag config |
-| DELETE | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}` | deleteApprovalRequest | Delete an approval request for a feature flag config |
-| GET | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}` | getApprovalRequest | Get a single approval request for a feature flag config |
-| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}` | postApprovalRequest | Create an approval request for a feature flag config |
-| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}/apply` | postApplyApprovalRequest | Apply approval request for a feature flag config |
-| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}/review` | postReviewApprovalRequest | Review approval request for a feature flag config |
-| GET | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes` | getFlagConfigScheduledChanges | Get all scheduled workflows for a feature flag by key. |
-| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes` | postFlagConfigScheduledChanges | Creates a new scheduled change for a feature flag. |
-| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes-conflicts` | getFlagConfigScheduledChangesConflicts | Lists conflicts between the given instructions and any existing scheduled changes for the feature flag. The actual HTTP verb should be REPORT, not POST. |
-| DELETE | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{scheduledChangeId}` | deleteFlagConfigScheduledChanges | Delete a scheduled change on a feature flag in an environment. |
-| GET | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{scheduledChangeId}` | getFlagConfigScheduledChange | Get a scheduled change on a feature flag by id. |
-| PATCH | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{scheduledChangeId}` | patchFlagConfigScheduledChange | Updates an existing scheduled-change on a feature flag in an environment. |
-| GET | `/roles` | getCustomRoles | Return a complete list of custom roles. |
-| POST | `/roles` | postCustomRole | Create a new custom role. |
-| DELETE | `/roles/{customRoleKey}` | deleteCustomRole | Delete a custom role by key. |
-| GET | `/roles/{customRoleKey}` | getCustomRole | Get one custom role by key. |
-| PATCH | `/roles/{customRoleKey}` | patchCustomRole | Modify a custom role by key. |
-| GET | `/segments/{projectKey}/{environmentKey}` | getUserSegments | Get a list of all user segments in the given project. |
-| POST | `/segments/{projectKey}/{environmentKey}` | postUserSegment | Creates a new user segment. |
-| DELETE | `/segments/{projectKey}/{environmentKey}/{userSegmentKey}` | deleteUserSegment | Delete a user segment. |
-| GET | `/segments/{projectKey}/{environmentKey}/{userSegmentKey}` | getUserSegment | Get a single user segment by key. |
-| PATCH | `/segments/{projectKey}/{environmentKey}/{userSegmentKey}` | patchUserSegment | Perform a partial update to a user segment. |
-| POST | `/segments/{projectKey}/{environmentKey}/{userSegmentKey}/users` | updateBigSegmentTargets | Update targets included or excluded in a big segment |
-| GET | `/segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey}` | getExpiringUserTargetsOnSegment | Get expiring user targets for user segment |
-| PATCH | `/segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey}` | patchExpiringUserTargetsOnSegment | Update, add, or delete expiring user targets on user segment |
-| GET | `/tokens` | getTokens | Returns a list of tokens in the account. |
-| POST | `/tokens` | postToken | Create a new token. |
-| DELETE | `/tokens/{tokenId}` | deleteToken | Delete an access token by ID. |
-| GET | `/tokens/{tokenId}` | getToken | Get a single access token by ID. |
-| PATCH | `/tokens/{tokenId}` | patchToken | Modify an access token by ID. |
-| POST | `/tokens/{tokenId}/reset` | resetToken | Reset an access token's secret key with an optional expiry time for the old key. |
-| GET | `/usage` | getUsage | Returns of the usage endpoints available. |
-| GET | `/usage/evaluations/{envId}/{flagKey}` | getEvaluations | Get events usage by event id and the feature flag key. |
-| GET | `/usage/events` | getEvents | Get events usage endpoints. |
-| GET | `/usage/events/{type}` | getEvent | Get events usage by event type. |
-| GET | `/usage/mau` | getMAU | Get monthly active user data. |
-| GET | `/usage/mau/bycategory` | getMAUByCategory | Get monthly active user data by category. |
-| GET | `/usage/streams` | getStreams | Returns a list of all streams. |
-| GET | `/usage/streams/{source}` | getStream | Get a stream endpoint and return timeseries data. |
-| GET | `/usage/streams/{source}/bysdkversion` | getStreamBySDK | Get a stream timeseries data by source show sdk version metadata. |
-| GET | `/usage/streams/{source}/sdkversions` | getStreamSDKVersion | Get a stream timeseries data by source and show all sdk version associated. |
-| GET | `/user-search/{projectKey}/{environmentKey}` | getSearchUsers | Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource. |
-| GET | `/users/{projectKey}/{environmentKey}` | getUsers | List all users in the environment. Includes the total count of users. In each page, there will be up to 'limit' users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection. |
-| DELETE | `/users/{projectKey}/{environmentKey}/{userKey}` | deleteUser | Delete a user by ID. |
-| GET | `/users/{projectKey}/{environmentKey}/{userKey}` | getUser | Get a user by key. |
-| GET | `/users/{projectKey}/{environmentKey}/{userKey}/flags` | getUserFlagSettings | Fetch a single flag setting for a user by key. |
-| GET | `/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey}` | getUserFlagSetting | Fetch a single flag setting for a user by key. |
-| PUT | `/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey}` | putFlagSetting | Specifically enable or disable a feature flag for a user based on their key. |
-| GET | `/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey}` | getExpiringUserTargetsForUser | Get expiring dates on flags for user |
-| PATCH | `/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey}` | patchExpiringUserTargetsForFlags | Update, add, or delete expiring user targets for a single user on all flags |
-| GET | `/webhooks` | getWebhooks | Fetch a list of all webhooks. |
-| POST | `/webhooks` | postWebhook | Create a webhook. |
-| DELETE | `/webhooks/{resourceId}` | deleteWebhook | Delete a webhook by ID. |
-| GET | `/webhooks/{resourceId}` | getWebhook | Get a webhook by ID. |
-| PATCH | `/webhooks/{resourceId}` | patchWebhook | Modify a webhook by ID. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | getRoot | — | Links | yes | — |
+| GET | `/account/relay-auto-configs` | getRelayProxyConfigs | — | RelayProxyConfigs | yes | Returns a list of relay proxy configurations in the account. |
+| POST | `/account/relay-auto-configs` | postRelayAutoConfig | body*: object | RelayProxyConfig |  | Create a new relay proxy config. |
+| GET | `/account/relay-auto-configs/{id}` | getRelayProxyConfig | `id`* | RelayProxyConfig | yes | Get a single relay proxy configuration by ID. |
+| DELETE | `/account/relay-auto-configs/{id}` | deleteRelayProxyConfig | `id`* | — |  | Delete a relay proxy configuration by ID. |
+| PATCH | `/account/relay-auto-configs/{id}` | patchRelayProxyConfig | `id`*, body*: PatchOperation[] | RelayProxyConfig |  | Modify a relay proxy configuration by ID. |
+| POST | `/account/relay-auto-configs/{id}/reset` | resetRelayProxyConfig | `id`*, `expiry` | RelayProxyConfig |  | Reset a relay proxy configuration's secret key with an optional expiry time for the old key. |
+| GET | `/auditlog` | getAuditLogEntries | `before`, `after`, `q`, `limit`, `spec` | AuditLogEntries | yes | Get a list of all audit log entries. The query parameters allow you to restrict the returned results by date ranges, resource specifiers, or a full-text search query. |
+| GET | `/auditlog/{resourceId}` | getAuditLogEntry | `resourceId`* | AuditLogEntry | yes | Use this endpoint to fetch a single audit log entry by its resouce ID. |
+| GET | `/destinations` | getDestinations | — | Destinations | yes | Returns a list of all data export destinations. |
+| POST | `/destinations/{projectKey}/{environmentKey}` | postDestination | `projectKey`*, `environmentKey`*, body*: object | Destination |  | Create a new data export destination |
+| GET | `/destinations/{projectKey}/{environmentKey}/{destinationId}` | getDestination | `projectKey`*, `environmentKey`*, `destinationId`* | Destination | yes | Get a single data export destination by ID |
+| DELETE | `/destinations/{projectKey}/{environmentKey}/{destinationId}` | deleteDestination | `projectKey`*, `environmentKey`*, `destinationId`* | — |  | Get a single data export destination by ID |
+| PATCH | `/destinations/{projectKey}/{environmentKey}/{destinationId}` | patchDestination | `projectKey`*, `environmentKey`*, `destinationId`*, body*: PatchOperation[] | Destination |  | Perform a partial update to a data export destination. |
+| GET | `/flag-status/{projectKey}/{featureFlagKey}` | getFeatureFlagStatusAcrossEnvironments | `projectKey`*, `featureFlagKey`* | FeatureFlagStatusAcrossEnvironments | yes | Get the status for a particular feature flag across environments |
+| GET | `/flag-statuses/{projectKey}/{environmentKey}` | getFeatureFlagStatuses | `projectKey`*, `environmentKey`* | FeatureFlagStatuses | yes | Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag. |
+| GET | `/flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey}` | getFeatureFlagStatus | `projectKey`*, `environmentKey`*, `featureFlagKey`* | FeatureFlagStatus | yes | Get the status for a particular feature flag. |
+| GET | `/flags/{projectKey}` | getFeatureFlags | `projectKey`*, `env`, `summary`, `archived`, `limit`, `offset`, `filter`, `sort`, `tag` | FeatureFlags | yes | Get a list of all features in the given project. |
+| POST | `/flags/{projectKey}` | postFeatureFlag | `projectKey`*, `clone`, body*: object | FeatureFlag |  | Creates a new feature flag. |
+| GET | `/flags/{projectKey}/{environmentKey}/{featureFlagKey}/dependent-flags` | get /flags/{projectKey}/{environmentKey}/{featureFlagKey}/dependent-flags | `projectKey`*, `environmentKey`*, `featureFlagKey`* | DependentFlagsByEnvironment | yes | Get dependent flags for the flag in the environment specified in path parameters |
+| GET | `/flags/{projectKey}/{featureFlagKey}` | getFeatureFlag | `projectKey`*, `featureFlagKey`*, `env` | FeatureFlag | yes | Get a single feature flag by key. |
+| DELETE | `/flags/{projectKey}/{featureFlagKey}` | deleteFeatureFlag | `projectKey`*, `featureFlagKey`* | — |  | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application. |
+| PATCH | `/flags/{projectKey}/{featureFlagKey}` | patchFeatureFlag | `projectKey`*, `featureFlagKey`*, body*: object | FeatureFlag |  | Perform a partial update to a feature. |
+| POST | `/flags/{projectKey}/{featureFlagKey}/copy` | copyFeatureFlag | `projectKey`*, `featureFlagKey`*, body*: object | FeatureFlag |  | Copies the feature flag configuration from one environment to the same feature flag in another environment. |
+| GET | `/flags/{projectKey}/{featureFlagKey}/dependent-flags` | get /flags/{projectKey}/{featureFlagKey}/dependent-flags | `projectKey`*, `featureFlagKey`* | MultiEnvironmentDependentFlags | yes | Get dependent flags across all environments for the flag specified in the path parameters |
+| GET | `/flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey}` | getExpiringUserTargets | `projectKey`*, `environmentKey`*, `featureFlagKey`* | UserTargetingExpirationForFlags | yes | Get expiring user targets for feature flag |
+| PATCH | `/flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey}` | patchExpiringUserTargets | `projectKey`*, `environmentKey`*, `featureFlagKey`*, body*: object | UserTargetingExpirationForFlags |  | Update, add, or delete expiring user targets on feature flag |
+| GET | `/integrations` | getIntegrations | — | Integrations | yes | Get a list of all configured audit log event integrations associated with this account. |
+| GET | `/integrations/{integrationKey}` | getIntegrationSubscriptions | `integrationKey`* | Integration | yes | Get a list of all configured integrations of a given kind. |
+| POST | `/integrations/{integrationKey}` | postIntegrationSubscription | `integrationKey`*, body*: object | IntegrationSubscription |  | Create a new integration subscription of a given kind. |
+| GET | `/integrations/{integrationKey}/{integrationId}` | getIntegrationSubscription | `integrationKey`*, `integrationId`* | IntegrationSubscription | yes | Get a single integration subscription by ID. |
+| DELETE | `/integrations/{integrationKey}/{integrationId}` | deleteIntegrationSubscription | `integrationKey`*, `integrationId`* | — |  | Delete an integration subscription by ID. |
+| PATCH | `/integrations/{integrationKey}/{integrationId}` | patchIntegrationSubscription | `integrationKey`*, `integrationId`*, body*: PatchOperation[] | IntegrationSubscription |  | Modify an integration subscription by ID. |
+| GET | `/members` | getMembers | `limit`, `offset`, `filter`, `sort` | Members | yes | Returns a list of all members in the account. |
+| POST | `/members` | postMembers | body*: object[] | Members |  | Invite new members. |
+| GET | `/members/me` | getMe | — | Member | yes | Get the current team member associated with the token |
+| GET | `/members/{memberId}` | getMember | `memberId`* | Member | yes | Get a single team member by ID. |
+| DELETE | `/members/{memberId}` | deleteMember | `memberId`* | — |  | Delete a team member by ID. |
+| PATCH | `/members/{memberId}` | patchMember | `memberId`*, body*: PatchOperation[] | Member |  | Modify a team member by ID. |
+| GET | `/projects` | getProjects | — | Projects | yes | Returns a list of all projects in the account. |
+| POST | `/projects` | postProject | body*: object | Project |  | Create a new project with the given key and name. |
+| GET | `/projects/{projectKey}` | getProject | `projectKey`* | Project | yes | Fetch a single project by key. |
+| DELETE | `/projects/{projectKey}` | deleteProject | `projectKey`* | — |  | Delete a project by key. Caution-- deleting a project will delete all associated environments and feature flags. You cannot delete the last project in an account. |
+| PATCH | `/projects/{projectKey}` | patchProject | `projectKey`*, body*: PatchOperation[] | Project |  | Modify a project by ID. |
+| POST | `/projects/{projectKey}/environments` | postEnvironment | `projectKey`*, body*: EnvironmentPost | Environment |  | Create a new environment in a specified project with a given name, key, and swatch color. |
+| GET | `/projects/{projectKey}/environments/{environmentKey}` | getEnvironment | `projectKey`*, `environmentKey`* | Environment | yes | Get an environment given a project and key. |
+| DELETE | `/projects/{projectKey}/environments/{environmentKey}` | deleteEnvironment | `projectKey`*, `environmentKey`* | — |  | Delete an environment in a specific project. |
+| PATCH | `/projects/{projectKey}/environments/{environmentKey}` | patchEnvironment | `projectKey`*, `environmentKey`*, body*: PatchOperation[] | Environment |  | Modify an environment by ID. If you try to patch the environment by setting both required and requiredApprovalTags, it will result in an error. Users can specify either required approvals for all flags in an environment or those with specific tags, but not both. Only customers on an Enterprise plan can require approval for flag updates with either mechanism. |
+| POST | `/projects/{projectKey}/environments/{environmentKey}/apiKey` | resetEnvironmentSDKKey | `projectKey`*, `environmentKey`*, `expiry` | Environment |  | Reset an environment's SDK key with an optional expiry time for the old key. |
+| POST | `/projects/{projectKey}/environments/{environmentKey}/mobileKey` | resetEnvironmentMobileKey | `projectKey`*, `environmentKey`*, `expiry` | Environment |  | Reset an environment's mobile key. The optional expiry for the old key is deprecated for this endpoint, so the old key will always expire immediately. |
+| GET | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests` | getApprovalRequests | `projectKey`*, `featureFlagKey`*, `environmentKey`* | ApprovalRequests | yes | Get all approval requests for a feature flag config |
+| GET | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}` | getApprovalRequest | `projectKey`*, `featureFlagKey`*, `environmentKey`*, `approvalRequestId`* | ApprovalRequests | yes | Get a single approval request for a feature flag config |
+| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}` | postApprovalRequest | `projectKey`*, `featureFlagKey`*, `environmentKey`*, `approvalRequestId`*, body: object | ApprovalRequest |  | Create an approval request for a feature flag config |
+| DELETE | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}` | deleteApprovalRequest | `projectKey`*, `environmentKey`*, `featureFlagKey`*, `approvalRequestId`*, body: object | — |  | Delete an approval request for a feature flag config |
+| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}/apply` | postApplyApprovalRequest | `projectKey`*, `featureFlagKey`*, `environmentKey`*, `approvalRequestId`*, body*: object | ApprovalRequests |  | Apply approval request for a feature flag config |
+| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}/review` | postReviewApprovalRequest | `projectKey`*, `featureFlagKey`*, `environmentKey`*, `approvalRequestId`*, body*: object | ApprovalRequests |  | Review approval request for a feature flag config |
+| GET | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes` | getFlagConfigScheduledChanges | `projectKey`*, `featureFlagKey`*, `environmentKey`* | FeatureFlagScheduledChanges | yes | Get all scheduled workflows for a feature flag by key. |
+| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes` | postFlagConfigScheduledChanges | `projectKey`*, `featureFlagKey`*, `environmentKey`*, body*: object | FeatureFlagScheduledChange |  | Creates a new scheduled change for a feature flag. |
+| POST | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes-conflicts` | getFlagConfigScheduledChangesConflicts | `projectKey`*, `featureFlagKey`*, `environmentKey`*, body*: object | FeatureFlagScheduledChangesConflicts |  | Lists conflicts between the given instructions and any existing scheduled changes for the feature flag. The actual HTTP verb should be REPORT, not POST. |
+| GET | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{scheduledChangeId}` | getFlagConfigScheduledChange | `projectKey`*, `featureFlagKey`*, `environmentKey`*, `scheduledChangeId`* | FeatureFlagScheduledChange | yes | Get a scheduled change on a feature flag by id. |
+| DELETE | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{scheduledChangeId}` | deleteFlagConfigScheduledChanges | `projectKey`*, `featureFlagKey`*, `environmentKey`*, `scheduledChangeId`* | — |  | Delete a scheduled change on a feature flag in an environment. |
+| PATCH | `/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{scheduledChangeId}` | patchFlagConfigScheduledChange | `projectKey`*, `featureFlagKey`*, `environmentKey`*, `scheduledChangeId`*, body*: object | FeatureFlagScheduledChange |  | Updates an existing scheduled-change on a feature flag in an environment. |
+| GET | `/roles` | getCustomRoles | — | CustomRoles | yes | Return a complete list of custom roles. |
+| POST | `/roles` | postCustomRole | body*: object | CustomRole |  | Create a new custom role. |
+| GET | `/roles/{customRoleKey}` | getCustomRole | `customRoleKey`* | CustomRole | yes | Get one custom role by key. |
+| DELETE | `/roles/{customRoleKey}` | deleteCustomRole | `customRoleKey`* | — |  | Delete a custom role by key. |
+| PATCH | `/roles/{customRoleKey}` | patchCustomRole | `customRoleKey`*, body*: PatchOperation[] | CustomRole |  | Modify a custom role by key. |
+| GET | `/segments/{projectKey}/{environmentKey}` | getUserSegments | `projectKey`*, `environmentKey`*, `tag` | UserSegments | yes | Get a list of all user segments in the given project. |
+| POST | `/segments/{projectKey}/{environmentKey}` | postUserSegment | `projectKey`*, `environmentKey`*, body*: object | UserSegment |  | Creates a new user segment. |
+| GET | `/segments/{projectKey}/{environmentKey}/{userSegmentKey}` | getUserSegment | `projectKey`*, `environmentKey`*, `userSegmentKey`* | UserSegment | yes | Get a single user segment by key. |
+| DELETE | `/segments/{projectKey}/{environmentKey}/{userSegmentKey}` | deleteUserSegment | `projectKey`*, `environmentKey`*, `userSegmentKey`* | — |  | Delete a user segment. |
+| PATCH | `/segments/{projectKey}/{environmentKey}/{userSegmentKey}` | patchUserSegment | `projectKey`*, `environmentKey`*, `userSegmentKey`*, body*: PatchOperation[] | UserSegment |  | Perform a partial update to a user segment. |
+| POST | `/segments/{projectKey}/{environmentKey}/{userSegmentKey}/users` | updateBigSegmentTargets | `projectKey`*, `environmentKey`*, `userSegmentKey`*, body*: object | — |  | Update targets included or excluded in a big segment |
+| GET | `/segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey}` | getExpiringUserTargetsOnSegment | `projectKey`*, `environmentKey`*, `userSegmentKey`* | UserTargetingExpirationForSegment | yes | Get expiring user targets for user segment |
+| PATCH | `/segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey}` | patchExpiringUserTargetsOnSegment | `projectKey`*, `environmentKey`*, `userSegmentKey`*, body*: object | UserTargetingExpirationForSegment |  | Update, add, or delete expiring user targets on user segment |
+| GET | `/tokens` | getTokens | `showAll` | Tokens | yes | Returns a list of tokens in the account. |
+| POST | `/tokens` | postToken | body*: object | Token |  | Create a new token. |
+| GET | `/tokens/{tokenId}` | getToken | `tokenId`* | Token | yes | Get a single access token by ID. |
+| DELETE | `/tokens/{tokenId}` | deleteToken | `tokenId`* | — |  | Delete an access token by ID. |
+| PATCH | `/tokens/{tokenId}` | patchToken | `tokenId`*, body*: PatchOperation[] | Token |  | Modify an access token by ID. |
+| POST | `/tokens/{tokenId}/reset` | resetToken | `tokenId`*, `expiry` | Token |  | Reset an access token's secret key with an optional expiry time for the old key. |
+| GET | `/usage` | getUsage | — | Usage | yes | Returns of the usage endpoints available. |
+| GET | `/usage/evaluations/{envId}/{flagKey}` | getEvaluations | `envId`*, `flagKey`* | StreamSDKVersion | yes | Get events usage by event id and the feature flag key. |
+| GET | `/usage/events` | getEvents | — | Events | yes | Get events usage endpoints. |
+| GET | `/usage/events/{type}` | getEvent | `type`* | StreamSDKVersion | yes | Get events usage by event type. |
+| GET | `/usage/mau` | getMAU | — | MAU | yes | Get monthly active user data. |
+| GET | `/usage/mau/bycategory` | getMAUByCategory | — | MAUbyCategory | yes | Get monthly active user data by category. |
+| GET | `/usage/streams` | getStreams | — | Streams | yes | Returns a list of all streams. |
+| GET | `/usage/streams/{source}` | getStream | `source`* | Stream | yes | Get a stream endpoint and return timeseries data. |
+| GET | `/usage/streams/{source}/bysdkversion` | getStreamBySDK | `source`* | StreamBySDK | yes | Get a stream timeseries data by source show sdk version metadata. |
+| GET | `/usage/streams/{source}/sdkversions` | getStreamSDKVersion | `source`* | StreamSDKVersion | yes | Get a stream timeseries data by source and show all sdk version associated. |
+| GET | `/user-search/{projectKey}/{environmentKey}` | getSearchUsers | `projectKey`*, `environmentKey`*, `q`, `limit`, `offset`, `after` | Users | yes | Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource. |
+| GET | `/users/{projectKey}/{environmentKey}` | getUsers | `projectKey`*, `environmentKey`*, `limit`, `h`, `scrollId` | Users | yes | List all users in the environment. Includes the total count of users. In each page, there will be up to 'limit' users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection. |
+| GET | `/users/{projectKey}/{environmentKey}/{userKey}` | getUser | `projectKey`*, `environmentKey`*, `userKey`* | UserRecord | yes | Get a user by key. |
+| DELETE | `/users/{projectKey}/{environmentKey}/{userKey}` | deleteUser | `projectKey`*, `environmentKey`*, `userKey`* | — |  | Delete a user by ID. |
+| GET | `/users/{projectKey}/{environmentKey}/{userKey}/flags` | getUserFlagSettings | `projectKey`*, `environmentKey`*, `userKey`* | UserFlagSettings | yes | Fetch a single flag setting for a user by key. |
+| GET | `/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey}` | getUserFlagSetting | `projectKey`*, `environmentKey`*, `userKey`*, `featureFlagKey`* | UserFlagSetting | yes | Fetch a single flag setting for a user by key. |
+| PUT | `/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey}` | putFlagSetting | `projectKey`*, `environmentKey`*, `userKey`*, `featureFlagKey`*, body*: object | — |  | Specifically enable or disable a feature flag for a user based on their key. |
+| GET | `/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey}` | getExpiringUserTargetsForUser | `projectKey`*, `environmentKey`*, `userKey`* | UserTargetingExpirationOnFlagsForUser | yes | Get expiring dates on flags for user |
+| PATCH | `/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey}` | patchExpiringUserTargetsForFlags | `projectKey`*, `environmentKey`*, `userKey`*, body*: object | UserTargetingExpirationOnFlagsForUser |  | Update, add, or delete expiring user targets for a single user on all flags |
+| GET | `/webhooks` | getWebhooks | — | Webhooks | yes | Fetch a list of all webhooks. |
+| POST | `/webhooks` | postWebhook | body*: object | Webhook |  | Create a webhook. |
+| GET | `/webhooks/{resourceId}` | getWebhook | `resourceId`* | Webhook | yes | Get a webhook by ID. |
+| DELETE | `/webhooks/{resourceId}` | deleteWebhook | `resourceId`* | — |  | Delete a webhook by ID. |
+| PATCH | `/webhooks/{resourceId}` | patchWebhook | `resourceId`*, body*: PatchOperation[] | Webhook |  | Modify a webhook by ID. |

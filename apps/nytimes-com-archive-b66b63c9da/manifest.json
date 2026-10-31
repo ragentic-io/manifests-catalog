@@ -17,23 +17,53 @@
       },
       {
         "deprecated": false,
+        "description": "The Archive API provides lists of NYT articles by month going back to 1851.",
         "id": "operation:get:/{year}/{month}.json",
         "kind": "operation",
         "method": "get",
         "name": "get /{year}/{month}.json",
+        "parameters": [
+          {
+            "default": "2016",
+            "description": "The year (e.g.",
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "default": "1",
+            "description": "The month number (e.g.",
+            "in": "path",
+            "name": "month",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/{year}/{month}.json",
         "pointer": "#/paths/~1{year}~1{month}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Archive API"
+        "summary": "Archive API",
+        "tags": [
+          "Archive"
+        ]
       },
       {
         "id": "schema:Doc",
         "kind": "schema",
-        "name": "Doc"
+        "name": "Doc",
+        "type": "object"
       }
     ]
   },

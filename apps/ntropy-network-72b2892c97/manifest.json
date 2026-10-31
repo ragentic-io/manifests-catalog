@@ -26,10 +26,37 @@
         "kind": "operation",
         "method": "get",
         "name": "getABatchOfBusinessTransactionClassificationResults",
+        "parameters": [
+          {
+            "description": "(Required) Batch id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classifier/business/batch/{id}",
         "pointer": "#/paths/~1classifier~1business~1batch~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a batch of business transaction classification results."
+        "summary": "Get a batch of business transaction classification results.",
+        "tags": [
+          "classifier",
+          "business",
+          "batch1"
+        ]
       },
       {
         "deprecated": false,
@@ -37,10 +64,37 @@
         "kind": "operation",
         "method": "get",
         "name": "getABatchOfConsumerTransactionClassificationResults",
+        "parameters": [
+          {
+            "description": "(Required) Batch id.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classifier/consumer/batch/{id}",
         "pointer": "#/paths/~1classifier~1consumer~1batch~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a batch of consumer transaction classification results."
+        "summary": "Get a batch of consumer transaction classification results.",
+        "tags": [
+          "classifier",
+          "consumer",
+          "batch"
+        ]
       }
     ]
   },

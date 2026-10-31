@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_developers.gettyimages.com_image
 
 | | |
 | --- | --- |
-| Signed bundle | `eeb6d6587818c0a8476725184b72adc76a0265c8a78a0fb659e98bccb073cb29` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,57 +34,59 @@ logo: "https://api.apis.guru/v2/cache/logo/http_developers.gettyimages.com_image
 
 156 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v3/affiliates/search/images` | get /v3/affiliates/search/images | — |
-| GET | `/v3/affiliates/search/videos` | get /v3/affiliates/search/videos | — |
-| GET | `/v3/artists/images` | get /v3/artists/images | Search for images by a photographer |
-| GET | `/v3/artists/videos` | get /v3/artists/videos | Search for videos by a photographer |
-| PUT | `/v3/asset-changes/change-sets` | put /v3/asset-changes/change-sets | Get asset change notifications. |
-| DELETE | `/v3/asset-changes/change-sets/{change-set-id}` | delete /v3/asset-changes/change-sets/{change-set-id} | Confirm asset change notifications. |
-| GET | `/v3/asset-changes/channels` | get /v3/asset-changes/channels | Get a list of asset change notification channels. |
-| POST | `/v3/asset-licensing/{assetId}` | post /v3/asset-licensing/{assetId} | Endpoint for acquiring extended licenses with iStock credits for an asset. |
-| GET | `/v3/asset-management/assets/send-events` | get /v3/asset-management/assets/send-events | — |
-| GET | `/v3/boards` | get /v3/boards | Get all boards that the user participates in |
-| POST | `/v3/boards` | post /v3/boards | Create a new board |
-| DELETE | `/v3/boards/{board_id}` | delete /v3/boards/{board_id} | Delete a board |
-| GET | `/v3/boards/{board_id}` | get /v3/boards/{board_id} | Get assets and metadata for a specific board |
-| PUT | `/v3/boards/{board_id}` | put /v3/boards/{board_id} | Update a board |
-| DELETE | `/v3/boards/{board_id}/assets` | delete /v3/boards/{board_id}/assets | Remove assets from a board |
-| PUT | `/v3/boards/{board_id}/assets` | put /v3/boards/{board_id}/assets | Add assets to a board |
-| DELETE | `/v3/boards/{board_id}/assets/{asset_id}` | delete /v3/boards/{board_id}/assets/{asset_id} | Remove an asset from a board |
-| PUT | `/v3/boards/{board_id}/assets/{asset_id}` | put /v3/boards/{board_id}/assets/{asset_id} | Add an asset to a board |
-| GET | `/v3/boards/{board_id}/comments` | get /v3/boards/{board_id}/comments | Get comments from a board |
-| POST | `/v3/boards/{board_id}/comments` | post /v3/boards/{board_id}/comments | Add a comment to a board |
-| DELETE | `/v3/boards/{board_id}/comments/{comment_id}` | delete /v3/boards/{board_id}/comments/{comment_id} | Delete a comment from a board |
-| GET | `/v3/collections` | get /v3/collections | Gets collections applicable for the customer. |
-| GET | `/v3/countries` | get /v3/countries | Gets countries codes and names. |
-| GET | `/v3/customers/current` | get /v3/customers/current | Returns information about the current user. |
-| GET | `/v3/downloads` | get /v3/downloads | Returns information about a customer's downloaded assets. |
-| POST | `/v3/downloads/images/{id}` | post /v3/downloads/images/{id} | Download an image |
-| POST | `/v3/downloads/videos/{id}` | post /v3/downloads/videos/{id} | Download a video |
-| GET | `/v3/events` | get /v3/events | Get metadata for multiple events |
-| GET | `/v3/events/{id}` | get /v3/events/{id} | Get metadata for a single event |
-| GET | `/v3/images` | get /v3/images | Get metadata for multiple images by supplying multiple image ids |
-| GET | `/v3/images/{id}` | get /v3/images/{id} | Get metadata for a single image by supplying one image id |
-| GET | `/v3/images/{id}/downloadhistory` | get /v3/images/{id}/downloadhistory | Returns information about a customer's download history for a specific asset |
-| GET | `/v3/images/{id}/same-series` | get /v3/images/{id}/same-series | Retrieve creative images from the same series |
-| GET | `/v3/images/{id}/similar` | get /v3/images/{id}/similar | Retrieve similar images |
-| GET | `/v3/orders/{id}` | get /v3/orders/{id} | Get order metadata |
-| GET | `/v3/products` | get /v3/products | Get Products |
-| GET | `/v3/purchased-assets` | get /v3/purchased-assets | Get Previously Purchased Images and Video |
-| PUT | `/v3/search/by-image/uploads/{file-name}` | put /v3/search/by-image/uploads/{file-name} | Upload image for use by the search creative images/videos operations |
-| GET | `/v3/search/events` | get /v3/search/events | Search for events |
-| GET | `/v3/search/images` | get /v3/search/images | Search for both creative and editorial images - *** DEPRECATED *** |
-| GET | `/v3/search/images/creative` | get /v3/search/images/creative | Search for creative images only |
-| GET | `/v3/search/images/creative/by-image` | get /v3/search/images/creative/by-image | Search for creative images based on url |
-| GET | `/v3/search/images/editorial` | get /v3/search/images/editorial | Search for editorial images only |
-| GET | `/v3/search/videos/creative` | get /v3/search/videos/creative | Search for creative videos |
-| GET | `/v3/search/videos/creative/by-image` | get /v3/search/videos/creative/by-image | Search for creative videos based on url |
-| GET | `/v3/search/videos/editorial` | get /v3/search/videos/editorial | Search for editorial videos |
-| PUT | `/v3/usage-batches/{id}` | put /v3/usage-batches/{id} | Report usage of assets via a batch format. |
-| GET | `/v3/videos` | get /v3/videos | Get metadata for multiple videos by supplying multiple video ids |
-| GET | `/v3/videos/{id}` | get /v3/videos/{id} | Get metadata for a single video by supplying one video id |
-| GET | `/v3/videos/{id}/downloadhistory` | get /v3/videos/{id}/downloadhistory | Returns information about a customer's download history for a specific asset |
-| GET | `/v3/videos/{id}/same-series` | get /v3/videos/{id}/same-series | Retrieve creative videos from the same series |
-| GET | `/v3/videos/{id}/similar` | get /v3/videos/{id}/similar | Retrieve similar videos |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v3/affiliates/search/images` | get /v3/affiliates/search/images | `Accept-Language`, `phrase`, `style` | AffiliateImageSearchResponse | yes | — |
+| GET | `/v3/affiliates/search/videos` | get /v3/affiliates/search/videos | `Accept-Language`, `phrase` | AffiliateVideoSearchResponse | yes | — |
+| GET | `/v3/artists/images` | get /v3/artists/images | `Accept-Language`, `artist_name`, `fields`, `page`, `page_size` | — | yes | Search for images by a photographer |
+| GET | `/v3/artists/videos` | get /v3/artists/videos | `Accept-Language`, `artist_name`, `fields`, `page`, `page_size` | — | yes | Search for videos by a photographer |
+| PUT | `/v3/asset-changes/change-sets` | put /v3/asset-changes/change-sets | `channel_id`, `batch_size` | AssetChanges |  | Get asset change notifications. |
+| DELETE | `/v3/asset-changes/change-sets/{change-set-id}` | delete /v3/asset-changes/change-sets/{change-set-id} | `change-set-id`* | — |  | Confirm asset change notifications. |
+| GET | `/v3/asset-changes/channels` | get /v3/asset-changes/channels | — | Channel[] | yes | Get a list of asset change notification channels. |
+| POST | `/v3/asset-licensing/{assetId}` | post /v3/asset-licensing/{assetId} | `Accept-Language`, `assetId`*, body: AcquireAssetLicensesRequest | AssetLicensingResponse |  | Endpoint for acquiring extended licenses with iStock credits for an asset. |
+| GET | `/v3/asset-management/assets/send-events` | get /v3/asset-management/assets/send-events | `Accept-Language`, `last_offset`, `event_count` | GetSendEventsResponse | yes | — |
+| GET | `/v3/boards` | get /v3/boards | `Accept-Language`, `page`, `board_relationship`, `sort_order`, `pageSize` | BoardList | yes | Get all boards that the user participates in |
+| POST | `/v3/boards` | post /v3/boards | `Accept-Language`, body: BoardInfo | BoardCreated |  | Create a new board |
+| GET | `/v3/boards/{board_id}` | get /v3/boards/{board_id} | `Accept-Language`, `board_id`* | BoardDetail | yes | Get assets and metadata for a specific board |
+| PUT | `/v3/boards/{board_id}` | put /v3/boards/{board_id} | `Accept-Language`, `board_id`*, body: BoardInfo | — |  | Update a board |
+| DELETE | `/v3/boards/{board_id}` | delete /v3/boards/{board_id} | `Accept-Language`, `board_id`* | — |  | Delete a board |
+| PUT | `/v3/boards/{board_id}/assets` | put /v3/boards/{board_id}/assets | `Accept-Language`, `board_id`*, body: BoardAsset[] | AddBoardAssetsResult |  | Add assets to a board |
+| DELETE | `/v3/boards/{board_id}/assets` | delete /v3/boards/{board_id}/assets | `Accept-Language`, `board_id`*, `asset_ids` | — |  | Remove assets from a board |
+| PUT | `/v3/boards/{board_id}/assets/{asset_id}` | put /v3/boards/{board_id}/assets/{asset_id} | `Accept-Language`, `board_id`*, `asset_id`* | — |  | Add an asset to a board |
+| DELETE | `/v3/boards/{board_id}/assets/{asset_id}` | delete /v3/boards/{board_id}/assets/{asset_id} | `Accept-Language`, `board_id`*, `asset_id`* | — |  | Remove an asset from a board |
+| GET | `/v3/boards/{board_id}/comments` | get /v3/boards/{board_id}/comments | `Accept-Language`, `board_id`* | CommentsList | yes | Get comments from a board |
+| POST | `/v3/boards/{board_id}/comments` | post /v3/boards/{board_id}/comments | `Accept-Language`, `board_id`*, body: CommentRequest | CommentCreated |  | Add a comment to a board |
+| DELETE | `/v3/boards/{board_id}/comments/{comment_id}` | delete /v3/boards/{board_id}/comments/{comment_id} | `Accept-Language`, `board_id`*, `comment_id`* | — |  | Delete a comment from a board |
+| GET | `/v3/collections` | get /v3/collections | `Accept-Language` | CollectionsList | yes | Gets collections applicable for the customer. |
+| GET | `/v3/countries` | get /v3/countries | `Accept-Language` | CountriesList | yes | Gets countries codes and names. |
+| GET | `/v3/customers/current` | get /v3/customers/current | `Accept-Language` | CustomerInfoResponse | yes | Returns information about the current user. |
+| GET | `/v3/downloads` | get /v3/downloads | `Accept-Language`, `date_from`, `date_to`, `use_time`, `page`, `page_size`, `product_type`, `company_downloads` | GetDownloadsResponse | yes | Returns information about a customer's downloaded assets. |
+| POST | `/v3/downloads/images/{id}` | post /v3/downloads/images/{id} | `Accept-Language`, `id`*, `auto_download`, `file_type`, `height`, `product_id`, `product_type`, `use_team_credits`, body: PremiumAccessDownloadData | — |  | Download an image |
+| POST | `/v3/downloads/videos/{id}` | post /v3/downloads/videos/{id} | `Accept-Language`, `id`*, `auto_download`, `size`, `product_id`, `product_type`, `use_team_credits`, body: PremiumAccessDownloadData | — |  | Download a video |
+| GET | `/v3/events` | get /v3/events | `Accept-Language`, `ids`, `fields` | — | yes | Get metadata for multiple events |
+| GET | `/v3/events/{id}` | get /v3/events/{id} | `Accept-Language`, `id`*, `fields` | — | yes | Get metadata for a single event |
+| GET | `/v3/images` | get /v3/images | `Accept-Language`, `ids`, `fields` | ImagesDetailResults | yes | Get metadata for multiple images by supplying multiple image ids |
+| GET | `/v3/images/{id}` | get /v3/images/{id} | `Accept-Language`, `id`*, `fields` | ImagesDetailResults | yes | Get metadata for a single image by supplying one image id |
+| GET | `/v3/images/{id}/downloadhistory` | get /v3/images/{id}/downloadhistory | `Accept-Language`, `id`*, `company_downloads` | AssetDownloadHistoryResults | yes | Returns information about a customer's download history for a specific asset |
+| GET | `/v3/images/{id}/same-series` | get /v3/images/{id}/same-series | `Accept-Language`, `id`*, `fields`, `page`, `page_size` | ImageSearchItemSearchResults | yes | Retrieve creative images from the same series |
+| GET | `/v3/images/{id}/similar` | get /v3/images/{id}/similar | `Accept-Language`, `id`*, `fields`, `page`, `page_size` | ImageSearchItemSearchResults | yes | Retrieve similar images |
+| GET | `/v3/orders/{id}` | get /v3/orders/{id} | `Accept-Language`, `id`* | OrderDetail | yes | Get order metadata |
+| GET | `/v3/products` | get /v3/products | `Accept-Language`, `fields` | ProductsResult | yes | Get Products |
+| GET | `/v3/purchased-assets` | get /v3/purchased-assets | `Accept-Language`, `date_to`, `page`, `page_size`, `date_from`, `company_purchases` | PreviousAssetPurchases | yes | Get Previously Purchased Images and Video |
+| PUT | `/v3/search/by-image/uploads/{file-name}` | put /v3/search/by-image/uploads/{file-name} | `file-name`*, body: string:byte | — |  | Upload image for use by the search creative images/videos operations |
+| GET | `/v3/search/events` | get /v3/search/events | `Accept-Language`, `GI-Country-Code`, `editorial_segment`, `date_from`, `date_to`, `fields`, `page`, `page_size`, `phrase`, `sort_order` | EventsSearchResult | yes | Search for events |
+| GET | `/v3/search/images` | get /v3/search/images | `Accept-Language`, `GI-Country-Code`, `age_of_people`, `artists`, `collection_codes`, `collections_filter_type`, `color`, `compositions`, `download_product`, `embed_content_only`, `event_ids`, `ethnicity`, `exclude_nudity`, `fields`, `file_types`, `graphical_styles`, `graphical_styles_filter_type`, `include_related_searches`, `keyword_ids`, `minimum_size`, `number_of_people`, `orientations`, `page`, `page_size`, `phrase`, `sort_order`, `specific_people` | ImageSearchItemSearchResults | yes | Search for both creative and editorial images - *** DEPRECATED *** |
+| GET | `/v3/search/images/creative` | get /v3/search/images/creative | `Accept-Language`, `GI-Country-Code`, `age_of_people`, `artists`, `collection_codes`, `collections_filter_type`, `color`, `compositions`, `download_product`, `embed_content_only`, `ethnicity`, `exclude_keyword_ids`, `exclude_nudity`, `exclude_editorial_use_only`, `fields`, `file_types`, `graphical_styles`, `graphical_styles_filter_type`, `include_related_searches`, `keyword_ids`, `minimum_size`, `number_of_people`, `orientations`, `page`, `page_size`, `phrase`, `safe_search`, `sort_order`, `facet_fields`, `include_facets`, `facet_max_count` | CreativeImageSearchResults | yes | Search for creative images only |
+| GET | `/v3/search/images/creative/by-image` | get /v3/search/images/creative/by-image | `Accept-Language`, `GI-Country-Code`, `asset_id`, `exclude_editorial_use_only`, `facet_fields`, `facet_max_count`, `fields`, `image_url`, `include_facets`, `page`, `page_size`, `product_types` | SearchByImageResourceResults | yes | Search for creative images based on url |
+| GET | `/v3/search/images/editorial` | get /v3/search/images/editorial | `Accept-Language`, `GI-Country-Code`, `age_of_people`, `artists`, `collection_codes`, `collections_filter_type`, `compositions`, `date_from`, `date_to`, `download_product`, `editorial_segments`, `embed_content_only`, `ethnicity`, `event_ids`, `exclude_keyword_ids`, `fields`, `file_types`, `graphical_styles`, `graphical_styles_filter_type`, `include_related_searches`, `keyword_ids`, `minimum_size`, `number_of_people`, `orientations`, `page`, `page_size`, `phrase`, `sort_order`, `specific_people`, `minimum_quality_rank`, `facet_fields`, `include_facets`, `facet_max_count` | EditorialImageSearchResults | yes | Search for editorial images only |
+| GET | `/v3/search/videos/creative` | get /v3/search/videos/creative | `Accept-Language`, `GI-Country-Code`, `age_of_people`, `artists`, `aspect_ratios`, `collection_codes`, `collections_filter_type`, `compositions`, `download_product`, `exclude_nudity`, `exclude_editorial_use_only`, `exclude_keyword_ids`, `fields`, `format_available`, `frame_rates`, `image_techniques`, `include_related_searches`, `keyword_ids`, `license_models`, `orientations`, `min_clip_length`, `max_clip_length`, `page`, `page_size`, `phrase`, `safe_search`, `sort_order`, `release_status`, `facet_fields`, `facet_max_count`, `include_facets`, `viewpoints` | CreativeVideoSearchResults | yes | Search for creative videos |
+| GET | `/v3/search/videos/creative/by-image` | get /v3/search/videos/creative/by-image | `Accept-Language`, `GI-Country-Code`, `asset_id`, `exclude_editorial_use_only`, `facet_fields`, `facet_max_count`, `fields`, `image_url`, `include_facets`, `page`, `page_size`, `product_types` | CreativeVideoSearchResults | yes | Search for creative videos based on url |
+| GET | `/v3/search/videos/editorial` | get /v3/search/videos/editorial | `Accept-Language`, `GI-Country-Code`, `age_of_people`, `artists`, `aspect_ratios`, `collection_codes`, `collections_filter_type`, `compositions`, `download_product`, `editorial_video_types`, `fields`, `format_available`, `frame_rates`, `image_techniques`, `include_related_searches`, `keyword_ids`, `min_clip_length`, `max_clip_length`, `orientations`, `page`, `page_size`, `phrase`, `sort_order`, `specific_people`, `release_status`, `facet_fields`, `include_facets`, `facet_max_count`, `viewpoints` | EditorialVideoSearchResults | yes | Search for editorial videos |
+| PUT | `/v3/usage-batches/{id}` | put /v3/usage-batches/{id} | `id`*, body: report_usage_batch_request | report_usage_batch_response |  | Report usage of assets via a batch format. |
+| GET | `/v3/videos` | get /v3/videos | `Accept-Language`, `ids`, `fields` | — | yes | Get metadata for multiple videos by supplying multiple video ids |
+| GET | `/v3/videos/{id}` | get /v3/videos/{id} | `Accept-Language`, `id`*, `fields` | — | yes | Get metadata for a single video by supplying one video id |
+| GET | `/v3/videos/{id}/downloadhistory` | get /v3/videos/{id}/downloadhistory | `Accept-Language`, `id`*, `company_downloads` | AssetDownloadHistoryResults | yes | Returns information about a customer's download history for a specific asset |
+| GET | `/v3/videos/{id}/same-series` | get /v3/videos/{id}/same-series | `Accept-Language`, `id`*, `fields`, `page`, `page_size` | — | yes | Retrieve creative videos from the same series |
+| GET | `/v3/videos/{id}/similar` | get /v3/videos/{id}/similar | `Accept-Language`, `id`*, `fields`, `page`, `page_size` | — | yes | Retrieve similar videos |

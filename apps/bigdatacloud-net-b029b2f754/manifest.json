@@ -22,23 +22,83 @@
       },
       {
         "deprecated": false,
+        "description": "This API returns additional security hazard report in addition to confidence area and locality information.",
         "id": "operation:get:/data/ip-geolocation-full",
         "kind": "operation",
         "method": "get",
         "name": "ipGeolocationWithConfidenceAreaAndHazardReportApi",
+        "parameters": [
+          {
+            "description": "IPv4 IP address in a string or numeric format.",
+            "in": "query",
+            "name": "ip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Preferred language for locality names in ISO 639-1 format, such as 'en' for English, 'es' for Spanish etc.",
+            "in": "query",
+            "name": "localityLanguage",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your API key",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/data/ip-geolocation-full",
         "pointer": "#/paths/~1data~1ip-geolocation-full/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "IP Geolocation with Confidence Area and Hazard Report API"
       },
       {
         "deprecated": false,
+        "description": "Returns list of geocoordinates which represents estimated geolocation confidence area.",
         "id": "operation:get:/data/ip-geolocation-with-confidence",
         "kind": "operation",
         "method": "get",
         "name": "ipGeolocationWithConfidenceAreaApi",
+        "parameters": [
+          {
+            "description": "IPv4 IP address in a string or numeric format.",
+            "in": "query",
+            "name": "ip",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Preferred language for locality names in ISO 639-1 format, such as 'en' for English, 'es' for Spanish etc.",
+            "in": "query",
+            "name": "localityLanguage",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Your API key",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/data/ip-geolocation-with-confidence",
         "pointer": "#/paths/~1data~1ip-geolocation-with-confidence/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "IP Geolocation with Confidence Area API"
       }

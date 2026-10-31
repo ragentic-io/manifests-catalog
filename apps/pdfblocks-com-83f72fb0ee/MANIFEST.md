@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.pdfblocks.com_assets_images
 
 | | |
 | --- | --- |
-| Signed bundle | `f662d07134decaaea0b4473be8881f422a559aa7fdaa1cf0b8df90a7f06904f2` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,17 +32,19 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.pdfblocks.com_assets_images
 
 ## Operations (12)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v1/add_password` | addPasswordV1 | Add a password to a PDF |
-| POST | `/v1/add_restrictions` | addRestrictionsV1 | Add restrictions to a PDF |
-| POST | `/v1/add_watermark/image` | addImageWatermarkV1 | Add an image watermark to a PDF |
-| POST | `/v1/add_watermark/text` | addTextWatermarkV1 | Add a text watermark to a PDF |
-| POST | `/v1/extract_pages` | extractPagesV1 | Extract pages from a PDF |
-| POST | `/v1/merge_documents` | mergeDocumentsV1 | Merge PDF documents |
-| POST | `/v1/remove_pages` | removePagesV1 | Remove pages from a PDF |
-| POST | `/v1/remove_password` | removePasswordV1 | Remove the password from a PDF |
-| POST | `/v1/remove_restrictions` | removeRestrictionsV1 | Remove the restrictions from a PDF |
-| POST | `/v1/remove_signatures` | removeSignaturesV1 | Remove the signatures from a PDF |
-| POST | `/v1/reverse_pages` | reversePagesV1 | Reverse the pages of a PDF |
-| POST | `/v1/rotate_pages` | rotatePagesV1 | Rotate pages in a PDF |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v1/add_password` | addPasswordV1 | body*: object | string:binary |  | Add a password to a PDF |
+| POST | `/v1/add_restrictions` | addRestrictionsV1 | body*: object | string:binary |  | Add restrictions to a PDF |
+| POST | `/v1/add_watermark/image` | addImageWatermarkV1 | body*: object | string:binary |  | Add an image watermark to a PDF |
+| POST | `/v1/add_watermark/text` | addTextWatermarkV1 | body*: object | string:binary |  | Add a text watermark to a PDF |
+| POST | `/v1/extract_pages` | extractPagesV1 | body*: object | string:binary |  | Extract pages from a PDF |
+| POST | `/v1/merge_documents` | mergeDocumentsV1 | body*: object | string:binary |  | Merge PDF documents |
+| POST | `/v1/remove_pages` | removePagesV1 | body*: object | string:binary |  | Remove pages from a PDF |
+| POST | `/v1/remove_password` | removePasswordV1 | body*: object | string:binary |  | Remove the password from a PDF |
+| POST | `/v1/remove_restrictions` | removeRestrictionsV1 | body*: object | string:binary |  | Remove the restrictions from a PDF |
+| POST | `/v1/remove_signatures` | removeSignaturesV1 | body*: object | string:binary |  | Remove the signatures from a PDF |
+| POST | `/v1/reverse_pages` | reversePagesV1 | body*: object | string:binary |  | Reverse the pages of a PDF |
+| POST | `/v1/rotate_pages` | rotatePagesV1 | body*: object | string:binary |  | Rotate pages in a PDF |

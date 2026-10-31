@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_enterprise-mul
 
 | | |
 | --- | --- |
-| Signed bundle | `e23f301a01df02a8a31fec428afe21406ab7639a41e47ff97584bbe4bbf52663` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,341 +34,343 @@ logo: "https://api.apis.guru/v2/cache/logo/https_s3.amazonaws.com_enterprise-mul
 
 161 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/application` | createApplicationEntity | POST for application |
-| GET | `/application/count` | getApplicationCountCollection | COUNT for application |
-| POST | `/application/entity/account` | createAccountEntity | POST for account |
-| GET | `/application/entity/account/aggregate` | getAccountAggregate | AGGREGATE for account |
-| DELETE | `/application/entity/account/bulk` | deleteAccountCollectionBulk | DELETE bulk for account |
-| POST | `/application/entity/account/bulk` | createAccountEntityBulk | POST bulk for account |
-| PUT | `/application/entity/account/bulk` | updateAccountEntityBulk | PUT bulk for account |
-| GET | `/application/entity/account/count` | getAccountCountCollection | COUNT for account |
-| GET | `/application/entity/account/describe` | getAccountDescribe | DESCRIBE for account |
-| GET | `/application/entity/account/list` | getAccountCollection | GET for account |
-| DELETE | `/application/entity/account/{account_id}` | deleteAccountEntity | DELETE for account |
-| GET | `/application/entity/account/{account_id}` | getAccountEntity | GET for account |
-| PUT | `/application/entity/account/{account_id}` | updateAccountEntity | PUT for account |
-| POST | `/application/entity/attachment` | createAttachmentEntity | POST for attachment |
-| GET | `/application/entity/attachment/aggregate` | getAttachmentAggregate | AGGREGATE for attachment |
-| DELETE | `/application/entity/attachment/bulk` | deleteAttachmentCollectionBulk | DELETE bulk for attachment |
-| POST | `/application/entity/attachment/bulk` | createAttachmentEntityBulk | POST bulk for attachment |
-| PUT | `/application/entity/attachment/bulk` | updateAttachmentEntityBulk | PUT bulk for attachment |
-| GET | `/application/entity/attachment/count` | getAttachmentCountCollection | COUNT for attachment |
-| GET | `/application/entity/attachment/describe` | getAttachmentDescribe | DESCRIBE for attachment |
-| GET | `/application/entity/attachment/list` | getAttachmentCollection | GET for attachment |
-| DELETE | `/application/entity/attachment/{attachment_id}` | deleteAttachmentEntity | DELETE for attachment |
-| GET | `/application/entity/attachment/{attachment_id}` | getAttachmentEntity | GET for attachment |
-| PUT | `/application/entity/attachment/{attachment_id}` | updateAttachmentEntity | PUT for attachment |
-| POST | `/application/entity/call` | createCallEntity | POST for call |
-| GET | `/application/entity/call/aggregate` | getCallAggregate | AGGREGATE for call |
-| DELETE | `/application/entity/call/bulk` | deleteCallCollectionBulk | DELETE bulk for call |
-| POST | `/application/entity/call/bulk` | createCallEntityBulk | POST bulk for call |
-| PUT | `/application/entity/call/bulk` | updateCallEntityBulk | PUT bulk for call |
-| GET | `/application/entity/call/count` | getCallCountCollection | COUNT for call |
-| GET | `/application/entity/call/describe` | getCallDescribe | DESCRIBE for call |
-| GET | `/application/entity/call/list` | getCallCollection | GET for call |
-| DELETE | `/application/entity/call/{call_id}` | deleteCallEntity | DELETE for call |
-| GET | `/application/entity/call/{call_id}` | getCallEntity | GET for call |
-| PUT | `/application/entity/call/{call_id}` | updateCallEntity | PUT for call |
-| POST | `/application/entity/campaign` | createCampaignEntity | POST for campaign |
-| GET | `/application/entity/campaign/aggregate` | getCampaignAggregate | AGGREGATE for campaign |
-| DELETE | `/application/entity/campaign/bulk` | deleteCampaignCollectionBulk | DELETE bulk for campaign |
-| POST | `/application/entity/campaign/bulk` | createCampaignEntityBulk | POST bulk for campaign |
-| PUT | `/application/entity/campaign/bulk` | updateCampaignEntityBulk | PUT bulk for campaign |
-| GET | `/application/entity/campaign/count` | getCampaignCountCollection | COUNT for campaign |
-| GET | `/application/entity/campaign/describe` | getCampaignDescribe | DESCRIBE for campaign |
-| GET | `/application/entity/campaign/list` | getCampaignCollection | GET for campaign |
-| DELETE | `/application/entity/campaign/{campaign_id}` | deleteCampaignEntity | DELETE for campaign |
-| GET | `/application/entity/campaign/{campaign_id}` | getCampaignEntity | GET for campaign |
-| PUT | `/application/entity/campaign/{campaign_id}` | updateCampaignEntity | PUT for campaign |
-| POST | `/application/entity/case` | createCaseEntity | POST for case |
-| GET | `/application/entity/case/aggregate` | getCaseAggregate | AGGREGATE for case |
-| DELETE | `/application/entity/case/bulk` | deleteCaseCollectionBulk | DELETE bulk for case |
-| POST | `/application/entity/case/bulk` | createCaseEntityBulk | POST bulk for case |
-| PUT | `/application/entity/case/bulk` | updateCaseEntityBulk | PUT bulk for case |
-| GET | `/application/entity/case/count` | getCaseCountCollection | COUNT for case |
-| GET | `/application/entity/case/describe` | getCaseDescribe | DESCRIBE for case |
-| GET | `/application/entity/case/list` | getCaseCollection | GET for case |
-| DELETE | `/application/entity/case/{case_id}` | deleteCaseEntity | DELETE for case |
-| GET | `/application/entity/case/{case_id}` | getCaseEntity | GET for case |
-| PUT | `/application/entity/case/{case_id}` | updateCaseEntity | PUT for case |
-| POST | `/application/entity/comment` | createCommentEntity | POST for comment |
-| GET | `/application/entity/comment/aggregate` | getCommentAggregate | AGGREGATE for comment |
-| DELETE | `/application/entity/comment/bulk` | deleteCommentCollectionBulk | DELETE bulk for comment |
-| POST | `/application/entity/comment/bulk` | createCommentEntityBulk | POST bulk for comment |
-| PUT | `/application/entity/comment/bulk` | updateCommentEntityBulk | PUT bulk for comment |
-| GET | `/application/entity/comment/count` | getCommentCountCollection | COUNT for comment |
-| GET | `/application/entity/comment/describe` | getCommentDescribe | DESCRIBE for comment |
-| GET | `/application/entity/comment/list` | getCommentCollection | GET for comment |
-| DELETE | `/application/entity/comment/{comment_id}` | deleteCommentEntity | DELETE for comment |
-| GET | `/application/entity/comment/{comment_id}` | getCommentEntity | GET for comment |
-| PUT | `/application/entity/comment/{comment_id}` | updateCommentEntity | PUT for comment |
-| POST | `/application/entity/contact` | createContactEntity | POST for contact |
-| GET | `/application/entity/contact/aggregate` | getContactAggregate | AGGREGATE for contact |
-| DELETE | `/application/entity/contact/bulk` | deleteContactCollectionBulk | DELETE bulk for contact |
-| POST | `/application/entity/contact/bulk` | createContactEntityBulk | POST bulk for contact |
-| PUT | `/application/entity/contact/bulk` | updateContactEntityBulk | PUT bulk for contact |
-| GET | `/application/entity/contact/count` | getContactCountCollection | COUNT for contact |
-| GET | `/application/entity/contact/describe` | getContactDescribe | DESCRIBE for contact |
-| GET | `/application/entity/contact/list` | getContactCollection | GET for contact |
-| DELETE | `/application/entity/contact/{contact_id}` | deleteContactEntity | DELETE for contact |
-| GET | `/application/entity/contact/{contact_id}` | getContactEntity | GET for contact |
-| PUT | `/application/entity/contact/{contact_id}` | updateContactEntity | PUT for contact |
-| GET | `/application/entity/count` | getEntityCountCollection | COUNT for entity |
-| POST | `/application/entity/email` | createEmailEntity | POST for email |
-| GET | `/application/entity/email/aggregate` | getEmailAggregate | AGGREGATE for email |
-| DELETE | `/application/entity/email/bulk` | deleteEmailCollectionBulk | DELETE bulk for email |
-| POST | `/application/entity/email/bulk` | createEmailEntityBulk | POST bulk for email |
-| PUT | `/application/entity/email/bulk` | updateEmailEntityBulk | PUT bulk for email |
-| GET | `/application/entity/email/count` | getEmailCountCollection | COUNT for email |
-| GET | `/application/entity/email/describe` | getEmailDescribe | DESCRIBE for email |
-| GET | `/application/entity/email/list` | getEmailCollection | GET for email |
-| DELETE | `/application/entity/email/{email_id}` | deleteEmailEntity | DELETE for email |
-| GET | `/application/entity/email/{email_id}` | getEmailEntity | GET for email |
-| PUT | `/application/entity/email/{email_id}` | updateEmailEntity | PUT for email |
-| POST | `/application/entity/event` | createEventEntity | POST for event |
-| GET | `/application/entity/event/aggregate` | getEventAggregate | AGGREGATE for event |
-| DELETE | `/application/entity/event/bulk` | deleteEventCollectionBulk | DELETE bulk for event |
-| POST | `/application/entity/event/bulk` | createEventEntityBulk | POST bulk for event |
-| PUT | `/application/entity/event/bulk` | updateEventEntityBulk | PUT bulk for event |
-| GET | `/application/entity/event/count` | getEventCountCollection | COUNT for event |
-| GET | `/application/entity/event/describe` | getEventDescribe | DESCRIBE for event |
-| GET | `/application/entity/event/list` | getEventCollection | GET for event |
-| DELETE | `/application/entity/event/{event_id}` | deleteEventEntity | DELETE for event |
-| GET | `/application/entity/event/{event_id}` | getEventEntity | GET for event |
-| PUT | `/application/entity/event/{event_id}` | updateEventEntity | PUT for event |
-| POST | `/application/entity/invoice` | createInvoiceEntity | POST for invoice |
-| GET | `/application/entity/invoice/aggregate` | getInvoiceAggregate | AGGREGATE for invoice |
-| DELETE | `/application/entity/invoice/bulk` | deleteInvoiceCollectionBulk | DELETE bulk for invoice |
-| POST | `/application/entity/invoice/bulk` | createInvoiceEntityBulk | POST bulk for invoice |
-| PUT | `/application/entity/invoice/bulk` | updateInvoiceEntityBulk | PUT bulk for invoice |
-| GET | `/application/entity/invoice/count` | getInvoiceCountCollection | COUNT for invoice |
-| GET | `/application/entity/invoice/describe` | getInvoiceDescribe | DESCRIBE for invoice |
-| GET | `/application/entity/invoice/list` | getInvoiceCollection | GET for invoice |
-| DELETE | `/application/entity/invoice/{invoice_id}` | deleteInvoiceEntity | DELETE for invoice |
-| GET | `/application/entity/invoice/{invoice_id}` | getInvoiceEntity | GET for invoice |
-| PUT | `/application/entity/invoice/{invoice_id}` | updateInvoiceEntity | PUT for invoice |
-| POST | `/application/entity/invoiceItem` | createInvoiceItemEntity | POST for invoiceItem |
-| GET | `/application/entity/invoiceItem/aggregate` | getInvoiceItemAggregate | AGGREGATE for invoiceItem |
-| DELETE | `/application/entity/invoiceItem/bulk` | deleteInvoiceItemCollectionBulk | DELETE bulk for invoiceItem |
-| POST | `/application/entity/invoiceItem/bulk` | createInvoiceItemEntityBulk | POST bulk for invoiceItem |
-| PUT | `/application/entity/invoiceItem/bulk` | updateInvoiceItemEntityBulk | PUT bulk for invoiceItem |
-| GET | `/application/entity/invoiceItem/count` | getInvoiceItemCountCollection | COUNT for invoiceItem |
-| GET | `/application/entity/invoiceItem/describe` | getInvoiceItemDescribe | DESCRIBE for invoiceItem |
-| GET | `/application/entity/invoiceItem/list` | getInvoiceItemCollection | GET for invoiceItem |
-| DELETE | `/application/entity/invoiceItem/{invoiceItem_id}` | deleteInvoiceItemEntity | DELETE for invoiceItem |
-| GET | `/application/entity/invoiceItem/{invoiceItem_id}` | getInvoiceItemEntity | GET for invoiceItem |
-| PUT | `/application/entity/invoiceItem/{invoiceItem_id}` | updateInvoiceItemEntity | PUT for invoiceItem |
-| POST | `/application/entity/lead` | createLeadEntity | POST for lead |
-| GET | `/application/entity/lead/aggregate` | getLeadAggregate | AGGREGATE for lead |
-| DELETE | `/application/entity/lead/bulk` | deleteLeadCollectionBulk | DELETE bulk for lead |
-| POST | `/application/entity/lead/bulk` | createLeadEntityBulk | POST bulk for lead |
-| PUT | `/application/entity/lead/bulk` | updateLeadEntityBulk | PUT bulk for lead |
-| GET | `/application/entity/lead/count` | getLeadCountCollection | COUNT for lead |
-| GET | `/application/entity/lead/describe` | getLeadDescribe | DESCRIBE for lead |
-| GET | `/application/entity/lead/list` | getLeadCollection | GET for lead |
-| DELETE | `/application/entity/lead/{lead_id}` | deleteLeadEntity | DELETE for lead |
-| GET | `/application/entity/lead/{lead_id}` | getLeadEntity | GET for lead |
-| PUT | `/application/entity/lead/{lead_id}` | updateLeadEntity | PUT for lead |
-| GET | `/application/entity/list` | getEntityCollection | GET for entity |
-| POST | `/application/entity/meeting` | createMeetingEntity | POST for meeting |
-| GET | `/application/entity/meeting/aggregate` | getMeetingAggregate | AGGREGATE for meeting |
-| DELETE | `/application/entity/meeting/bulk` | deleteMeetingCollectionBulk | DELETE bulk for meeting |
-| POST | `/application/entity/meeting/bulk` | createMeetingEntityBulk | POST bulk for meeting |
-| PUT | `/application/entity/meeting/bulk` | updateMeetingEntityBulk | PUT bulk for meeting |
-| GET | `/application/entity/meeting/count` | getMeetingCountCollection | COUNT for meeting |
-| GET | `/application/entity/meeting/describe` | getMeetingDescribe | DESCRIBE for meeting |
-| GET | `/application/entity/meeting/list` | getMeetingCollection | GET for meeting |
-| DELETE | `/application/entity/meeting/{meeting_id}` | deleteMeetingEntity | DELETE for meeting |
-| GET | `/application/entity/meeting/{meeting_id}` | getMeetingEntity | GET for meeting |
-| PUT | `/application/entity/meeting/{meeting_id}` | updateMeetingEntity | PUT for meeting |
-| POST | `/application/entity/note` | createNoteEntity | POST for note |
-| GET | `/application/entity/note/aggregate` | getNoteAggregate | AGGREGATE for note |
-| DELETE | `/application/entity/note/bulk` | deleteNoteCollectionBulk | DELETE bulk for note |
-| POST | `/application/entity/note/bulk` | createNoteEntityBulk | POST bulk for note |
-| PUT | `/application/entity/note/bulk` | updateNoteEntityBulk | PUT bulk for note |
-| GET | `/application/entity/note/count` | getNoteCountCollection | COUNT for note |
-| GET | `/application/entity/note/describe` | getNoteDescribe | DESCRIBE for note |
-| GET | `/application/entity/note/list` | getNoteCollection | GET for note |
-| DELETE | `/application/entity/note/{note_id}` | deleteNoteEntity | DELETE for note |
-| GET | `/application/entity/note/{note_id}` | getNoteEntity | GET for note |
-| PUT | `/application/entity/note/{note_id}` | updateNoteEntity | PUT for note |
-| POST | `/application/entity/opportunity` | createOpportunityEntity | POST for opportunity |
-| GET | `/application/entity/opportunity/aggregate` | getOpportunityAggregate | AGGREGATE for opportunity |
-| DELETE | `/application/entity/opportunity/bulk` | deleteOpportunityCollectionBulk | DELETE bulk for opportunity |
-| POST | `/application/entity/opportunity/bulk` | createOpportunityEntityBulk | POST bulk for opportunity |
-| PUT | `/application/entity/opportunity/bulk` | updateOpportunityEntityBulk | PUT bulk for opportunity |
-| GET | `/application/entity/opportunity/count` | getOpportunityCountCollection | COUNT for opportunity |
-| GET | `/application/entity/opportunity/describe` | getOpportunityDescribe | DESCRIBE for opportunity |
-| GET | `/application/entity/opportunity/list` | getOpportunityCollection | GET for opportunity |
-| DELETE | `/application/entity/opportunity/{opportunity_id}` | deleteOpportunityEntity | DELETE for opportunity |
-| GET | `/application/entity/opportunity/{opportunity_id}` | getOpportunityEntity | GET for opportunity |
-| PUT | `/application/entity/opportunity/{opportunity_id}` | updateOpportunityEntity | PUT for opportunity |
-| POST | `/application/entity/opportunityProduct` | createOpportunityProductEntity | POST for opportunityProduct |
-| GET | `/application/entity/opportunityProduct/aggregate` | getOpportunityProductAggregate | AGGREGATE for opportunityProduct |
-| DELETE | `/application/entity/opportunityProduct/bulk` | deleteOpportunityProductCollectionBulk | DELETE bulk for opportunityProduct |
-| POST | `/application/entity/opportunityProduct/bulk` | createOpportunityProductEntityBulk | POST bulk for opportunityProduct |
-| PUT | `/application/entity/opportunityProduct/bulk` | updateOpportunityProductEntityBulk | PUT bulk for opportunityProduct |
-| GET | `/application/entity/opportunityProduct/count` | getOpportunityProductCountCollection | COUNT for opportunityProduct |
-| GET | `/application/entity/opportunityProduct/describe` | getOpportunityProductDescribe | DESCRIBE for opportunityProduct |
-| GET | `/application/entity/opportunityProduct/list` | getOpportunityProductCollection | GET for opportunityProduct |
-| DELETE | `/application/entity/opportunityProduct/{opportunityProduct_id}` | deleteOpportunityProductEntity | DELETE for opportunityProduct |
-| GET | `/application/entity/opportunityProduct/{opportunityProduct_id}` | getOpportunityProductEntity | GET for opportunityProduct |
-| PUT | `/application/entity/opportunityProduct/{opportunityProduct_id}` | updateOpportunityProductEntity | PUT for opportunityProduct |
-| POST | `/application/entity/post` | createPostEntity | POST for post |
-| GET | `/application/entity/post/aggregate` | getPostAggregate | AGGREGATE for post |
-| DELETE | `/application/entity/post/bulk` | deletePostCollectionBulk | DELETE bulk for post |
-| POST | `/application/entity/post/bulk` | createPostEntityBulk | POST bulk for post |
-| PUT | `/application/entity/post/bulk` | updatePostEntityBulk | PUT bulk for post |
-| GET | `/application/entity/post/count` | getPostCountCollection | COUNT for post |
-| GET | `/application/entity/post/describe` | getPostDescribe | DESCRIBE for post |
-| GET | `/application/entity/post/list` | getPostCollection | GET for post |
-| DELETE | `/application/entity/post/{post_id}` | deletePostEntity | DELETE for post |
-| GET | `/application/entity/post/{post_id}` | getPostEntity | GET for post |
-| PUT | `/application/entity/post/{post_id}` | updatePostEntity | PUT for post |
-| POST | `/application/entity/priceBook` | createPriceBookEntity | POST for priceBook |
-| GET | `/application/entity/priceBook/aggregate` | getPriceBookAggregate | AGGREGATE for priceBook |
-| DELETE | `/application/entity/priceBook/bulk` | deletePriceBookCollectionBulk | DELETE bulk for priceBook |
-| POST | `/application/entity/priceBook/bulk` | createPriceBookEntityBulk | POST bulk for priceBook |
-| PUT | `/application/entity/priceBook/bulk` | updatePriceBookEntityBulk | PUT bulk for priceBook |
-| GET | `/application/entity/priceBook/count` | getPriceBookCountCollection | COUNT for priceBook |
-| GET | `/application/entity/priceBook/describe` | getPriceBookDescribe | DESCRIBE for priceBook |
-| GET | `/application/entity/priceBook/list` | getPriceBookCollection | GET for priceBook |
-| DELETE | `/application/entity/priceBook/{priceBook_id}` | deletePriceBookEntity | DELETE for priceBook |
-| GET | `/application/entity/priceBook/{priceBook_id}` | getPriceBookEntity | GET for priceBook |
-| PUT | `/application/entity/priceBook/{priceBook_id}` | updatePriceBookEntity | PUT for priceBook |
-| POST | `/application/entity/priceBookItem` | createPriceBookItemEntity | POST for priceBookItem |
-| GET | `/application/entity/priceBookItem/aggregate` | getPriceBookItemAggregate | AGGREGATE for priceBookItem |
-| DELETE | `/application/entity/priceBookItem/bulk` | deletePriceBookItemCollectionBulk | DELETE bulk for priceBookItem |
-| POST | `/application/entity/priceBookItem/bulk` | createPriceBookItemEntityBulk | POST bulk for priceBookItem |
-| PUT | `/application/entity/priceBookItem/bulk` | updatePriceBookItemEntityBulk | PUT bulk for priceBookItem |
-| GET | `/application/entity/priceBookItem/count` | getPriceBookItemCountCollection | COUNT for priceBookItem |
-| GET | `/application/entity/priceBookItem/describe` | getPriceBookItemDescribe | DESCRIBE for priceBookItem |
-| GET | `/application/entity/priceBookItem/list` | getPriceBookItemCollection | GET for priceBookItem |
-| DELETE | `/application/entity/priceBookItem/{priceBookItem_id}` | deletePriceBookItemEntity | DELETE for priceBookItem |
-| GET | `/application/entity/priceBookItem/{priceBookItem_id}` | getPriceBookItemEntity | GET for priceBookItem |
-| PUT | `/application/entity/priceBookItem/{priceBookItem_id}` | updatePriceBookItemEntity | PUT for priceBookItem |
-| POST | `/application/entity/product` | createProductEntity | POST for product |
-| GET | `/application/entity/product/aggregate` | getProductAggregate | AGGREGATE for product |
-| DELETE | `/application/entity/product/bulk` | deleteProductCollectionBulk | DELETE bulk for product |
-| POST | `/application/entity/product/bulk` | createProductEntityBulk | POST bulk for product |
-| PUT | `/application/entity/product/bulk` | updateProductEntityBulk | PUT bulk for product |
-| GET | `/application/entity/product/count` | getProductCountCollection | COUNT for product |
-| GET | `/application/entity/product/describe` | getProductDescribe | DESCRIBE for product |
-| GET | `/application/entity/product/list` | getProductCollection | GET for product |
-| DELETE | `/application/entity/product/{product_id}` | deleteProductEntity | DELETE for product |
-| GET | `/application/entity/product/{product_id}` | getProductEntity | GET for product |
-| PUT | `/application/entity/product/{product_id}` | updateProductEntity | PUT for product |
-| POST | `/application/entity/project` | createProjectEntity | POST for project |
-| GET | `/application/entity/project/aggregate` | getProjectAggregate | AGGREGATE for project |
-| DELETE | `/application/entity/project/bulk` | deleteProjectCollectionBulk | DELETE bulk for project |
-| POST | `/application/entity/project/bulk` | createProjectEntityBulk | POST bulk for project |
-| PUT | `/application/entity/project/bulk` | updateProjectEntityBulk | PUT bulk for project |
-| GET | `/application/entity/project/count` | getProjectCountCollection | COUNT for project |
-| GET | `/application/entity/project/describe` | getProjectDescribe | DESCRIBE for project |
-| GET | `/application/entity/project/list` | getProjectCollection | GET for project |
-| DELETE | `/application/entity/project/{project_id}` | deleteProjectEntity | DELETE for project |
-| GET | `/application/entity/project/{project_id}` | getProjectEntity | GET for project |
-| PUT | `/application/entity/project/{project_id}` | updateProjectEntity | PUT for project |
-| POST | `/application/entity/quote` | createQuoteEntity | POST for quote |
-| GET | `/application/entity/quote/aggregate` | getQuoteAggregate | AGGREGATE for quote |
-| DELETE | `/application/entity/quote/bulk` | deleteQuoteCollectionBulk | DELETE bulk for quote |
-| POST | `/application/entity/quote/bulk` | createQuoteEntityBulk | POST bulk for quote |
-| PUT | `/application/entity/quote/bulk` | updateQuoteEntityBulk | PUT bulk for quote |
-| GET | `/application/entity/quote/count` | getQuoteCountCollection | COUNT for quote |
-| GET | `/application/entity/quote/describe` | getQuoteDescribe | DESCRIBE for quote |
-| GET | `/application/entity/quote/list` | getQuoteCollection | GET for quote |
-| DELETE | `/application/entity/quote/{quote_id}` | deleteQuoteEntity | DELETE for quote |
-| GET | `/application/entity/quote/{quote_id}` | getQuoteEntity | GET for quote |
-| PUT | `/application/entity/quote/{quote_id}` | updateQuoteEntity | PUT for quote |
-| POST | `/application/entity/quoteItem` | createQuoteItemEntity | POST for quoteItem |
-| GET | `/application/entity/quoteItem/aggregate` | getQuoteItemAggregate | AGGREGATE for quoteItem |
-| DELETE | `/application/entity/quoteItem/bulk` | deleteQuoteItemCollectionBulk | DELETE bulk for quoteItem |
-| POST | `/application/entity/quoteItem/bulk` | createQuoteItemEntityBulk | POST bulk for quoteItem |
-| PUT | `/application/entity/quoteItem/bulk` | updateQuoteItemEntityBulk | PUT bulk for quoteItem |
-| GET | `/application/entity/quoteItem/count` | getQuoteItemCountCollection | COUNT for quoteItem |
-| GET | `/application/entity/quoteItem/describe` | getQuoteItemDescribe | DESCRIBE for quoteItem |
-| GET | `/application/entity/quoteItem/list` | getQuoteItemCollection | GET for quoteItem |
-| DELETE | `/application/entity/quoteItem/{quoteItem_id}` | deleteQuoteItemEntity | DELETE for quoteItem |
-| GET | `/application/entity/quoteItem/{quoteItem_id}` | getQuoteItemEntity | GET for quoteItem |
-| PUT | `/application/entity/quoteItem/{quoteItem_id}` | updateQuoteItemEntity | PUT for quoteItem |
-| POST | `/application/entity/tag` | createTagEntity | POST for tag |
-| GET | `/application/entity/tag/aggregate` | getTagAggregate | AGGREGATE for tag |
-| DELETE | `/application/entity/tag/bulk` | deleteTagCollectionBulk | DELETE bulk for tag |
-| POST | `/application/entity/tag/bulk` | createTagEntityBulk | POST bulk for tag |
-| PUT | `/application/entity/tag/bulk` | updateTagEntityBulk | PUT bulk for tag |
-| GET | `/application/entity/tag/count` | getTagCountCollection | COUNT for tag |
-| GET | `/application/entity/tag/describe` | getTagDescribe | DESCRIBE for tag |
-| GET | `/application/entity/tag/list` | getTagCollection | GET for tag |
-| DELETE | `/application/entity/tag/{tag_id}` | deleteTagEntity | DELETE for tag |
-| GET | `/application/entity/tag/{tag_id}` | getTagEntity | GET for tag |
-| PUT | `/application/entity/tag/{tag_id}` | updateTagEntity | PUT for tag |
-| POST | `/application/entity/task` | createTaskEntity | POST for task |
-| GET | `/application/entity/task/aggregate` | getTaskAggregate | AGGREGATE for task |
-| DELETE | `/application/entity/task/bulk` | deleteTaskCollectionBulk | DELETE bulk for task |
-| POST | `/application/entity/task/bulk` | createTaskEntityBulk | POST bulk for task |
-| PUT | `/application/entity/task/bulk` | updateTaskEntityBulk | PUT bulk for task |
-| GET | `/application/entity/task/count` | getTaskCountCollection | COUNT for task |
-| GET | `/application/entity/task/describe` | getTaskDescribe | DESCRIBE for task |
-| GET | `/application/entity/task/list` | getTaskCollection | GET for task |
-| DELETE | `/application/entity/task/{task_id}` | deleteTaskEntity | DELETE for task |
-| GET | `/application/entity/task/{task_id}` | getTaskEntity | GET for task |
-| PUT | `/application/entity/task/{task_id}` | updateTaskEntity | PUT for task |
-| POST | `/application/entity/ticket` | createTicketEntity | POST for ticket |
-| GET | `/application/entity/ticket/aggregate` | getTicketAggregate | AGGREGATE for ticket |
-| DELETE | `/application/entity/ticket/bulk` | deleteTicketCollectionBulk | DELETE bulk for ticket |
-| POST | `/application/entity/ticket/bulk` | createTicketEntityBulk | POST bulk for ticket |
-| PUT | `/application/entity/ticket/bulk` | updateTicketEntityBulk | PUT bulk for ticket |
-| GET | `/application/entity/ticket/count` | getTicketCountCollection | COUNT for ticket |
-| GET | `/application/entity/ticket/describe` | getTicketDescribe | DESCRIBE for ticket |
-| GET | `/application/entity/ticket/list` | getTicketCollection | GET for ticket |
-| DELETE | `/application/entity/ticket/{ticket_id}` | deleteTicketEntity | DELETE for ticket |
-| GET | `/application/entity/ticket/{ticket_id}` | getTicketEntity | GET for ticket |
-| PUT | `/application/entity/ticket/{ticket_id}` | updateTicketEntity | PUT for ticket |
-| POST | `/application/entity/user` | createUserEntity | POST for user |
-| GET | `/application/entity/user/aggregate` | getUserAggregate | AGGREGATE for user |
-| DELETE | `/application/entity/user/bulk` | deleteUserCollectionBulk | DELETE bulk for user |
-| POST | `/application/entity/user/bulk` | createUserEntityBulk | POST bulk for user |
-| PUT | `/application/entity/user/bulk` | updateUserEntityBulk | PUT bulk for user |
-| GET | `/application/entity/user/count` | getUserCountCollection | COUNT for user |
-| GET | `/application/entity/user/describe` | getUserDescribe | DESCRIBE for user |
-| GET | `/application/entity/user/list` | getUserCollection | GET for user |
-| DELETE | `/application/entity/user/{user_id}` | deleteUserEntity | DELETE for user |
-| GET | `/application/entity/user/{user_id}` | getUserEntity | GET for user |
-| PUT | `/application/entity/user/{user_id}` | updateUserEntity | PUT for user |
-| GET | `/application/entity/{entity_id}` | getEntityEntity | GET for entity |
-| POST | `/application/entity/{entity_id}` | createEntityItemEntity | POST for entityItem |
-| GET | `/application/entity/{entity_id}/aggregate` | getEntityItemAggregate | AGGREGATE for entityItem |
-| DELETE | `/application/entity/{entity_id}/bulk` | deleteEntityItemCollectionBulk | DELETE bulk for entityItem |
-| POST | `/application/entity/{entity_id}/bulk` | createEntityItemEntityBulk | POST bulk for entityItem |
-| PUT | `/application/entity/{entity_id}/bulk` | updateEntityItemEntityBulk | PUT bulk for entityItem |
-| GET | `/application/entity/{entity_id}/count` | getEntityItemCountCollection | COUNT for entityItem |
-| GET | `/application/entity/{entity_id}/describe` | getEntityItemDescribe | DESCRIBE for entityItem |
-| GET | `/application/entity/{entity_id}/list` | getEntityItemCollection | GET for entityItem |
-| DELETE | `/application/entity/{entity_id}/{entity_item_id}` | deleteEntityItemEntity | DELETE for entityItem |
-| GET | `/application/entity/{entity_id}/{entity_item_id}` | getEntityItemEntity | GET for entityItem |
-| PUT | `/application/entity/{entity_id}/{entity_item_id}` | updateEntityItemEntity | PUT for entityItem |
-| GET | `/application/field/count` | getFieldCountCollection | COUNT for field |
-| GET | `/application/field/list` | getFieldCollection | GET for field |
-| GET | `/application/field/{field_id}` | getFieldEntity | GET for field |
-| POST | `/application/field/{field_id}` | createFieldItemEntity | POST for fieldItem |
-| GET | `/application/field/{field_id}/count` | getFieldItemCountCollection | COUNT for fieldItem |
-| GET | `/application/field/{field_id}/describe` | getFieldItemDescribe | DESCRIBE for fieldItem |
-| GET | `/application/field/{field_id}/list` | getFieldItemCollection | GET for fieldItem |
-| DELETE | `/application/field/{field_id}/{field_item_id}` | deleteFieldItemEntity | DELETE for fieldItem |
-| GET | `/application/field/{field_id}/{field_item_id}` | getFieldItemEntity | GET for fieldItem |
-| PUT | `/application/field/{field_id}/{field_item_id}` | updateFieldItemEntity | PUT for fieldItem |
-| GET | `/application/list` | getApplicationCollection | GET for application |
-| POST | `/application/request` | createRequestEntity | POST for request |
-| DELETE | `/application/{key}` | deleteApplicationEntity | DELETE for application |
-| GET | `/application/{key}` | getApplicationEntity | GET for application |
-| PUT | `/application/{key}` | updateApplicationEntity | PUT for application |
-| GET | `/platform/list` | getPlatformCollection | GET for platform |
-| GET | `/platform/{type}` | getPlatformEntity | GET for platform |
-| POST | `/user` | createInternalUserEntity | POST for internalUser |
-| GET | `/user/count` | getInternalUserCountCollection | COUNT for internalUser |
-| GET | `/user/list` | getInternalUserCollection | GET for internalUser |
-| DELETE | `/user/{internal_user_id}` | deleteInternalUserEntity | DELETE for internalUser |
-| GET | `/user/{internal_user_id}` | getInternalUserEntity | GET for internalUser |
-| PUT | `/user/{internal_user_id}` | updateInternalUserEntity | PUT for internalUser |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/application` | createApplicationEntity | `X-API2CRM-USER-KEY`*, body*: ApplicationEntityWrite | ApplicationEntityRelation |  | POST for application |
+| GET | `/application/count` | getApplicationCountCollection | `X-API2CRM-USER-KEY`*, `filter` | Count | yes | COUNT for application |
+| POST | `/application/entity/account` | createAccountEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: AccountEntity | AccountEntityRelation |  | POST for account |
+| GET | `/application/entity/account/aggregate` | getAccountAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for account |
+| PUT | `/application/entity/account/bulk` | updateAccountEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for account |
+| POST | `/application/entity/account/bulk` | createAccountEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for account |
+| DELETE | `/application/entity/account/bulk` | deleteAccountCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for account |
+| GET | `/application/entity/account/count` | getAccountCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for account |
+| GET | `/application/entity/account/describe` | getAccountDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | AccountDescribe | yes | DESCRIBE for account |
+| GET | `/application/entity/account/list` | getAccountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | AccountEntity[] | yes | GET for account |
+| GET | `/application/entity/account/{account_id}` | getAccountEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `account_id`*, `expand`, `fields` | AccountEntity | yes | GET for account |
+| PUT | `/application/entity/account/{account_id}` | updateAccountEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `account_id`*, body*: AccountEntity | AccountEntityRelation |  | PUT for account |
+| DELETE | `/application/entity/account/{account_id}` | deleteAccountEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `account_id`* | — |  | DELETE for account |
+| POST | `/application/entity/attachment` | createAttachmentEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: AttachmentEntityWrite | AttachmentEntityRelation |  | POST for attachment |
+| GET | `/application/entity/attachment/aggregate` | getAttachmentAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for attachment |
+| PUT | `/application/entity/attachment/bulk` | updateAttachmentEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for attachment |
+| POST | `/application/entity/attachment/bulk` | createAttachmentEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for attachment |
+| DELETE | `/application/entity/attachment/bulk` | deleteAttachmentCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for attachment |
+| GET | `/application/entity/attachment/count` | getAttachmentCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for attachment |
+| GET | `/application/entity/attachment/describe` | getAttachmentDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | AttachmentDescribe | yes | DESCRIBE for attachment |
+| GET | `/application/entity/attachment/list` | getAttachmentCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | AttachmentEntityList[] | yes | GET for attachment |
+| GET | `/application/entity/attachment/{attachment_id}` | getAttachmentEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `attachment_id`*, `expand`, `fields` | AttachmentEntity | yes | GET for attachment |
+| PUT | `/application/entity/attachment/{attachment_id}` | updateAttachmentEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `attachment_id`*, body*: AttachmentEntityWrite | AttachmentEntityRelation |  | PUT for attachment |
+| DELETE | `/application/entity/attachment/{attachment_id}` | deleteAttachmentEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `attachment_id`* | — |  | DELETE for attachment |
+| POST | `/application/entity/call` | createCallEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: CallEntity | CallEntityRelation |  | POST for call |
+| GET | `/application/entity/call/aggregate` | getCallAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for call |
+| PUT | `/application/entity/call/bulk` | updateCallEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for call |
+| POST | `/application/entity/call/bulk` | createCallEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for call |
+| DELETE | `/application/entity/call/bulk` | deleteCallCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for call |
+| GET | `/application/entity/call/count` | getCallCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for call |
+| GET | `/application/entity/call/describe` | getCallDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | CallDescribe | yes | DESCRIBE for call |
+| GET | `/application/entity/call/list` | getCallCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | CallEntity[] | yes | GET for call |
+| GET | `/application/entity/call/{call_id}` | getCallEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `call_id`*, `expand`, `fields` | CallEntity | yes | GET for call |
+| PUT | `/application/entity/call/{call_id}` | updateCallEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `call_id`*, body*: CallEntity | CallEntityRelation |  | PUT for call |
+| DELETE | `/application/entity/call/{call_id}` | deleteCallEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `call_id`* | — |  | DELETE for call |
+| POST | `/application/entity/campaign` | createCampaignEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: CampaignEntity | CampaignEntityRelation |  | POST for campaign |
+| GET | `/application/entity/campaign/aggregate` | getCampaignAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for campaign |
+| PUT | `/application/entity/campaign/bulk` | updateCampaignEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for campaign |
+| POST | `/application/entity/campaign/bulk` | createCampaignEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for campaign |
+| DELETE | `/application/entity/campaign/bulk` | deleteCampaignCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for campaign |
+| GET | `/application/entity/campaign/count` | getCampaignCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for campaign |
+| GET | `/application/entity/campaign/describe` | getCampaignDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | CampaignDescribe | yes | DESCRIBE for campaign |
+| GET | `/application/entity/campaign/list` | getCampaignCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | CampaignEntity[] | yes | GET for campaign |
+| GET | `/application/entity/campaign/{campaign_id}` | getCampaignEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `campaign_id`*, `expand`, `fields` | CampaignEntity | yes | GET for campaign |
+| PUT | `/application/entity/campaign/{campaign_id}` | updateCampaignEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `campaign_id`*, body*: CampaignEntity | CampaignEntityRelation |  | PUT for campaign |
+| DELETE | `/application/entity/campaign/{campaign_id}` | deleteCampaignEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `campaign_id`* | — |  | DELETE for campaign |
+| POST | `/application/entity/case` | createCaseEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: CasesEntity | CasesEntityRelation |  | POST for case |
+| GET | `/application/entity/case/aggregate` | getCaseAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for case |
+| PUT | `/application/entity/case/bulk` | updateCaseEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for case |
+| POST | `/application/entity/case/bulk` | createCaseEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for case |
+| DELETE | `/application/entity/case/bulk` | deleteCaseCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for case |
+| GET | `/application/entity/case/count` | getCaseCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for case |
+| GET | `/application/entity/case/describe` | getCaseDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | CaseDescribe | yes | DESCRIBE for case |
+| GET | `/application/entity/case/list` | getCaseCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | CasesEntity[] | yes | GET for case |
+| GET | `/application/entity/case/{case_id}` | getCaseEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `case_id`*, `expand`, `fields` | CasesEntity | yes | GET for case |
+| PUT | `/application/entity/case/{case_id}` | updateCaseEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `case_id`*, body*: CasesEntity | CasesEntityRelation |  | PUT for case |
+| DELETE | `/application/entity/case/{case_id}` | deleteCaseEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `case_id`* | — |  | DELETE for case |
+| POST | `/application/entity/comment` | createCommentEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: CommentEntity | CommentEntityRelation |  | POST for comment |
+| GET | `/application/entity/comment/aggregate` | getCommentAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for comment |
+| PUT | `/application/entity/comment/bulk` | updateCommentEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for comment |
+| POST | `/application/entity/comment/bulk` | createCommentEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for comment |
+| DELETE | `/application/entity/comment/bulk` | deleteCommentCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for comment |
+| GET | `/application/entity/comment/count` | getCommentCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for comment |
+| GET | `/application/entity/comment/describe` | getCommentDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | CommentDescribe | yes | DESCRIBE for comment |
+| GET | `/application/entity/comment/list` | getCommentCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | CommentEntity[] | yes | GET for comment |
+| GET | `/application/entity/comment/{comment_id}` | getCommentEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `comment_id`*, `expand`, `fields` | CommentEntity | yes | GET for comment |
+| PUT | `/application/entity/comment/{comment_id}` | updateCommentEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `comment_id`*, body*: CommentEntity | CommentEntityRelation |  | PUT for comment |
+| DELETE | `/application/entity/comment/{comment_id}` | deleteCommentEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `comment_id`* | — |  | DELETE for comment |
+| POST | `/application/entity/contact` | createContactEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: ContactEntity | ContactEntityRelation |  | POST for contact |
+| GET | `/application/entity/contact/aggregate` | getContactAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for contact |
+| PUT | `/application/entity/contact/bulk` | updateContactEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for contact |
+| POST | `/application/entity/contact/bulk` | createContactEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for contact |
+| DELETE | `/application/entity/contact/bulk` | deleteContactCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for contact |
+| GET | `/application/entity/contact/count` | getContactCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for contact |
+| GET | `/application/entity/contact/describe` | getContactDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | ContactDescribe | yes | DESCRIBE for contact |
+| GET | `/application/entity/contact/list` | getContactCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | ContactEntity[] | yes | GET for contact |
+| GET | `/application/entity/contact/{contact_id}` | getContactEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `contact_id`*, `expand`, `fields` | ContactEntity | yes | GET for contact |
+| PUT | `/application/entity/contact/{contact_id}` | updateContactEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `contact_id`*, body*: ContactEntity | ContactEntityRelation |  | PUT for contact |
+| DELETE | `/application/entity/contact/{contact_id}` | deleteContactEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `contact_id`* | — |  | DELETE for contact |
+| GET | `/application/entity/count` | getEntityCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`* | Count | yes | COUNT for entity |
+| POST | `/application/entity/email` | createEmailEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: EmailEntity | EmailEntityRelation |  | POST for email |
+| GET | `/application/entity/email/aggregate` | getEmailAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for email |
+| PUT | `/application/entity/email/bulk` | updateEmailEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for email |
+| POST | `/application/entity/email/bulk` | createEmailEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for email |
+| DELETE | `/application/entity/email/bulk` | deleteEmailCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for email |
+| GET | `/application/entity/email/count` | getEmailCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for email |
+| GET | `/application/entity/email/describe` | getEmailDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | EmailDescribe | yes | DESCRIBE for email |
+| GET | `/application/entity/email/list` | getEmailCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | EmailEntity[] | yes | GET for email |
+| GET | `/application/entity/email/{email_id}` | getEmailEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `email_id`*, `expand`, `fields` | EmailEntity | yes | GET for email |
+| PUT | `/application/entity/email/{email_id}` | updateEmailEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `email_id`*, body*: EmailEntity | EmailEntityRelation |  | PUT for email |
+| DELETE | `/application/entity/email/{email_id}` | deleteEmailEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `email_id`* | — |  | DELETE for email |
+| POST | `/application/entity/event` | createEventEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: EventEntity | EventEntityRelation |  | POST for event |
+| GET | `/application/entity/event/aggregate` | getEventAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for event |
+| PUT | `/application/entity/event/bulk` | updateEventEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for event |
+| POST | `/application/entity/event/bulk` | createEventEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for event |
+| DELETE | `/application/entity/event/bulk` | deleteEventCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for event |
+| GET | `/application/entity/event/count` | getEventCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for event |
+| GET | `/application/entity/event/describe` | getEventDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | EventDescribe | yes | DESCRIBE for event |
+| GET | `/application/entity/event/list` | getEventCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | EventEntity[] | yes | GET for event |
+| GET | `/application/entity/event/{event_id}` | getEventEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `event_id`*, `expand`, `fields` | EventEntity | yes | GET for event |
+| PUT | `/application/entity/event/{event_id}` | updateEventEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `event_id`*, body*: EventEntity | EventEntityRelation |  | PUT for event |
+| DELETE | `/application/entity/event/{event_id}` | deleteEventEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `event_id`* | — |  | DELETE for event |
+| POST | `/application/entity/invoice` | createInvoiceEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: InvoiceEntity | InvoiceEntityRelation |  | POST for invoice |
+| GET | `/application/entity/invoice/aggregate` | getInvoiceAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for invoice |
+| PUT | `/application/entity/invoice/bulk` | updateInvoiceEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for invoice |
+| POST | `/application/entity/invoice/bulk` | createInvoiceEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for invoice |
+| DELETE | `/application/entity/invoice/bulk` | deleteInvoiceCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for invoice |
+| GET | `/application/entity/invoice/count` | getInvoiceCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for invoice |
+| GET | `/application/entity/invoice/describe` | getInvoiceDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | InvoiceDescribe | yes | DESCRIBE for invoice |
+| GET | `/application/entity/invoice/list` | getInvoiceCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | InvoiceEntity[] | yes | GET for invoice |
+| GET | `/application/entity/invoice/{invoice_id}` | getInvoiceEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `invoice_id`*, `expand`, `fields` | InvoiceEntity | yes | GET for invoice |
+| PUT | `/application/entity/invoice/{invoice_id}` | updateInvoiceEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `invoice_id`*, body*: InvoiceEntity | InvoiceEntityRelation |  | PUT for invoice |
+| DELETE | `/application/entity/invoice/{invoice_id}` | deleteInvoiceEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `invoice_id`* | — |  | DELETE for invoice |
+| POST | `/application/entity/invoiceItem` | createInvoiceItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: InvoiceItemEntity | InvoiceItemEntityRelation |  | POST for invoiceItem |
+| GET | `/application/entity/invoiceItem/aggregate` | getInvoiceItemAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for invoiceItem |
+| PUT | `/application/entity/invoiceItem/bulk` | updateInvoiceItemEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for invoiceItem |
+| POST | `/application/entity/invoiceItem/bulk` | createInvoiceItemEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for invoiceItem |
+| DELETE | `/application/entity/invoiceItem/bulk` | deleteInvoiceItemCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for invoiceItem |
+| GET | `/application/entity/invoiceItem/count` | getInvoiceItemCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for invoiceItem |
+| GET | `/application/entity/invoiceItem/describe` | getInvoiceItemDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | InvoiceItemDescribe | yes | DESCRIBE for invoiceItem |
+| GET | `/application/entity/invoiceItem/list` | getInvoiceItemCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | InvoiceItemEntity[] | yes | GET for invoiceItem |
+| GET | `/application/entity/invoiceItem/{invoiceItem_id}` | getInvoiceItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `invoiceItem_id`*, `expand`, `fields` | InvoiceItemEntity | yes | GET for invoiceItem |
+| PUT | `/application/entity/invoiceItem/{invoiceItem_id}` | updateInvoiceItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `invoiceItem_id`*, body*: InvoiceItemEntity | InvoiceItemEntityRelation |  | PUT for invoiceItem |
+| DELETE | `/application/entity/invoiceItem/{invoiceItem_id}` | deleteInvoiceItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `invoiceItem_id`* | — |  | DELETE for invoiceItem |
+| POST | `/application/entity/lead` | createLeadEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: LeadEntity | LeadEntityRelation |  | POST for lead |
+| GET | `/application/entity/lead/aggregate` | getLeadAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for lead |
+| PUT | `/application/entity/lead/bulk` | updateLeadEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for lead |
+| POST | `/application/entity/lead/bulk` | createLeadEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for lead |
+| DELETE | `/application/entity/lead/bulk` | deleteLeadCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for lead |
+| GET | `/application/entity/lead/count` | getLeadCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for lead |
+| GET | `/application/entity/lead/describe` | getLeadDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | LeadDescribe | yes | DESCRIBE for lead |
+| GET | `/application/entity/lead/list` | getLeadCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | LeadEntity[] | yes | GET for lead |
+| GET | `/application/entity/lead/{lead_id}` | getLeadEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `lead_id`*, `expand`, `fields` | LeadEntity | yes | GET for lead |
+| PUT | `/application/entity/lead/{lead_id}` | updateLeadEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `lead_id`*, body*: LeadEntity | LeadEntityRelation |  | PUT for lead |
+| DELETE | `/application/entity/lead/{lead_id}` | deleteLeadEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `lead_id`* | — |  | DELETE for lead |
+| GET | `/application/entity/list` | getEntityCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `fields` | EntityEntity[] | yes | GET for entity |
+| POST | `/application/entity/meeting` | createMeetingEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: MeetingEntity | MeetingEntityRelation |  | POST for meeting |
+| GET | `/application/entity/meeting/aggregate` | getMeetingAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for meeting |
+| PUT | `/application/entity/meeting/bulk` | updateMeetingEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for meeting |
+| POST | `/application/entity/meeting/bulk` | createMeetingEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for meeting |
+| DELETE | `/application/entity/meeting/bulk` | deleteMeetingCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for meeting |
+| GET | `/application/entity/meeting/count` | getMeetingCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for meeting |
+| GET | `/application/entity/meeting/describe` | getMeetingDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | MeetingDescribe | yes | DESCRIBE for meeting |
+| GET | `/application/entity/meeting/list` | getMeetingCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | MeetingEntity[] | yes | GET for meeting |
+| GET | `/application/entity/meeting/{meeting_id}` | getMeetingEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `meeting_id`*, `expand`, `fields` | MeetingEntity | yes | GET for meeting |
+| PUT | `/application/entity/meeting/{meeting_id}` | updateMeetingEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `meeting_id`*, body*: MeetingEntity | MeetingEntityRelation |  | PUT for meeting |
+| DELETE | `/application/entity/meeting/{meeting_id}` | deleteMeetingEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `meeting_id`* | — |  | DELETE for meeting |
+| POST | `/application/entity/note` | createNoteEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: NoteEntity | NoteEntityRelation |  | POST for note |
+| GET | `/application/entity/note/aggregate` | getNoteAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for note |
+| PUT | `/application/entity/note/bulk` | updateNoteEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for note |
+| POST | `/application/entity/note/bulk` | createNoteEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for note |
+| DELETE | `/application/entity/note/bulk` | deleteNoteCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for note |
+| GET | `/application/entity/note/count` | getNoteCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for note |
+| GET | `/application/entity/note/describe` | getNoteDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | NoteDescribe | yes | DESCRIBE for note |
+| GET | `/application/entity/note/list` | getNoteCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | NoteEntity[] | yes | GET for note |
+| GET | `/application/entity/note/{note_id}` | getNoteEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `note_id`*, `expand`, `fields` | NoteEntity | yes | GET for note |
+| PUT | `/application/entity/note/{note_id}` | updateNoteEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `note_id`*, body*: NoteEntity | NoteEntityRelation |  | PUT for note |
+| DELETE | `/application/entity/note/{note_id}` | deleteNoteEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `note_id`* | — |  | DELETE for note |
+| POST | `/application/entity/opportunity` | createOpportunityEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: OpportunityEntity | OpportunityEntityRelation |  | POST for opportunity |
+| GET | `/application/entity/opportunity/aggregate` | getOpportunityAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for opportunity |
+| PUT | `/application/entity/opportunity/bulk` | updateOpportunityEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for opportunity |
+| POST | `/application/entity/opportunity/bulk` | createOpportunityEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for opportunity |
+| DELETE | `/application/entity/opportunity/bulk` | deleteOpportunityCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for opportunity |
+| GET | `/application/entity/opportunity/count` | getOpportunityCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for opportunity |
+| GET | `/application/entity/opportunity/describe` | getOpportunityDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | OpportunityDescribe | yes | DESCRIBE for opportunity |
+| GET | `/application/entity/opportunity/list` | getOpportunityCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | OpportunityEntity[] | yes | GET for opportunity |
+| GET | `/application/entity/opportunity/{opportunity_id}` | getOpportunityEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `opportunity_id`*, `expand`, `fields` | OpportunityEntity | yes | GET for opportunity |
+| PUT | `/application/entity/opportunity/{opportunity_id}` | updateOpportunityEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `opportunity_id`*, body*: OpportunityEntity | OpportunityEntityRelation |  | PUT for opportunity |
+| DELETE | `/application/entity/opportunity/{opportunity_id}` | deleteOpportunityEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `opportunity_id`* | — |  | DELETE for opportunity |
+| POST | `/application/entity/opportunityProduct` | createOpportunityProductEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: OpportunityProductEntity | OpportunityProductEntityRelation |  | POST for opportunityProduct |
+| GET | `/application/entity/opportunityProduct/aggregate` | getOpportunityProductAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for opportunityProduct |
+| PUT | `/application/entity/opportunityProduct/bulk` | updateOpportunityProductEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for opportunityProduct |
+| POST | `/application/entity/opportunityProduct/bulk` | createOpportunityProductEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for opportunityProduct |
+| DELETE | `/application/entity/opportunityProduct/bulk` | deleteOpportunityProductCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for opportunityProduct |
+| GET | `/application/entity/opportunityProduct/count` | getOpportunityProductCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for opportunityProduct |
+| GET | `/application/entity/opportunityProduct/describe` | getOpportunityProductDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | OpportunityProductDescribe | yes | DESCRIBE for opportunityProduct |
+| GET | `/application/entity/opportunityProduct/list` | getOpportunityProductCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | OpportunityProductEntity[] | yes | GET for opportunityProduct |
+| GET | `/application/entity/opportunityProduct/{opportunityProduct_id}` | getOpportunityProductEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `opportunityProduct_id`*, `expand`, `fields` | OpportunityProductEntity | yes | GET for opportunityProduct |
+| PUT | `/application/entity/opportunityProduct/{opportunityProduct_id}` | updateOpportunityProductEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `opportunityProduct_id`*, body*: OpportunityProductEntity | OpportunityProductEntityRelation |  | PUT for opportunityProduct |
+| DELETE | `/application/entity/opportunityProduct/{opportunityProduct_id}` | deleteOpportunityProductEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `opportunityProduct_id`* | — |  | DELETE for opportunityProduct |
+| POST | `/application/entity/post` | createPostEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: PostEntity | PostEntityRelation |  | POST for post |
+| GET | `/application/entity/post/aggregate` | getPostAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for post |
+| PUT | `/application/entity/post/bulk` | updatePostEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for post |
+| POST | `/application/entity/post/bulk` | createPostEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for post |
+| DELETE | `/application/entity/post/bulk` | deletePostCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for post |
+| GET | `/application/entity/post/count` | getPostCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for post |
+| GET | `/application/entity/post/describe` | getPostDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | PostDescribe | yes | DESCRIBE for post |
+| GET | `/application/entity/post/list` | getPostCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | PostEntity[] | yes | GET for post |
+| GET | `/application/entity/post/{post_id}` | getPostEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `post_id`*, `expand`, `fields` | PostEntity | yes | GET for post |
+| PUT | `/application/entity/post/{post_id}` | updatePostEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `post_id`*, body*: PostEntity | PostEntityRelation |  | PUT for post |
+| DELETE | `/application/entity/post/{post_id}` | deletePostEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `post_id`* | — |  | DELETE for post |
+| POST | `/application/entity/priceBook` | createPriceBookEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: PriceBookEntity | PriceBookEntityRelation |  | POST for priceBook |
+| GET | `/application/entity/priceBook/aggregate` | getPriceBookAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for priceBook |
+| PUT | `/application/entity/priceBook/bulk` | updatePriceBookEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for priceBook |
+| POST | `/application/entity/priceBook/bulk` | createPriceBookEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for priceBook |
+| DELETE | `/application/entity/priceBook/bulk` | deletePriceBookCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for priceBook |
+| GET | `/application/entity/priceBook/count` | getPriceBookCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for priceBook |
+| GET | `/application/entity/priceBook/describe` | getPriceBookDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | PriceBookDescribe | yes | DESCRIBE for priceBook |
+| GET | `/application/entity/priceBook/list` | getPriceBookCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | PriceBookEntity[] | yes | GET for priceBook |
+| GET | `/application/entity/priceBook/{priceBook_id}` | getPriceBookEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `priceBook_id`*, `expand`, `fields` | PriceBookEntity | yes | GET for priceBook |
+| PUT | `/application/entity/priceBook/{priceBook_id}` | updatePriceBookEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `priceBook_id`*, body*: PriceBookEntity | PriceBookEntityRelation |  | PUT for priceBook |
+| DELETE | `/application/entity/priceBook/{priceBook_id}` | deletePriceBookEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `priceBook_id`* | — |  | DELETE for priceBook |
+| POST | `/application/entity/priceBookItem` | createPriceBookItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: PriceBookItemEntity | PriceBookItemEntityRelation |  | POST for priceBookItem |
+| GET | `/application/entity/priceBookItem/aggregate` | getPriceBookItemAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for priceBookItem |
+| PUT | `/application/entity/priceBookItem/bulk` | updatePriceBookItemEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for priceBookItem |
+| POST | `/application/entity/priceBookItem/bulk` | createPriceBookItemEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for priceBookItem |
+| DELETE | `/application/entity/priceBookItem/bulk` | deletePriceBookItemCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for priceBookItem |
+| GET | `/application/entity/priceBookItem/count` | getPriceBookItemCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for priceBookItem |
+| GET | `/application/entity/priceBookItem/describe` | getPriceBookItemDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | PriceBookItemDescribe | yes | DESCRIBE for priceBookItem |
+| GET | `/application/entity/priceBookItem/list` | getPriceBookItemCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | PriceBookItemEntity[] | yes | GET for priceBookItem |
+| GET | `/application/entity/priceBookItem/{priceBookItem_id}` | getPriceBookItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `priceBookItem_id`*, `expand`, `fields` | PriceBookItemEntity | yes | GET for priceBookItem |
+| PUT | `/application/entity/priceBookItem/{priceBookItem_id}` | updatePriceBookItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `priceBookItem_id`*, body*: PriceBookItemEntity | PriceBookItemEntityRelation |  | PUT for priceBookItem |
+| DELETE | `/application/entity/priceBookItem/{priceBookItem_id}` | deletePriceBookItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `priceBookItem_id`* | — |  | DELETE for priceBookItem |
+| POST | `/application/entity/product` | createProductEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: ProductEntity | ProductEntityRelation |  | POST for product |
+| GET | `/application/entity/product/aggregate` | getProductAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for product |
+| PUT | `/application/entity/product/bulk` | updateProductEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for product |
+| POST | `/application/entity/product/bulk` | createProductEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for product |
+| DELETE | `/application/entity/product/bulk` | deleteProductCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for product |
+| GET | `/application/entity/product/count` | getProductCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for product |
+| GET | `/application/entity/product/describe` | getProductDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | ProductDescribe | yes | DESCRIBE for product |
+| GET | `/application/entity/product/list` | getProductCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | ProductEntity[] | yes | GET for product |
+| GET | `/application/entity/product/{product_id}` | getProductEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `product_id`*, `expand`, `fields` | ProductEntity | yes | GET for product |
+| PUT | `/application/entity/product/{product_id}` | updateProductEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `product_id`*, body*: ProductEntity | ProductEntityRelation |  | PUT for product |
+| DELETE | `/application/entity/product/{product_id}` | deleteProductEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `product_id`* | — |  | DELETE for product |
+| POST | `/application/entity/project` | createProjectEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: ProjectEntity | ProjectEntityRelation |  | POST for project |
+| GET | `/application/entity/project/aggregate` | getProjectAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for project |
+| PUT | `/application/entity/project/bulk` | updateProjectEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for project |
+| POST | `/application/entity/project/bulk` | createProjectEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for project |
+| DELETE | `/application/entity/project/bulk` | deleteProjectCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for project |
+| GET | `/application/entity/project/count` | getProjectCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for project |
+| GET | `/application/entity/project/describe` | getProjectDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | ProjectDescribe | yes | DESCRIBE for project |
+| GET | `/application/entity/project/list` | getProjectCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | ProjectEntity[] | yes | GET for project |
+| GET | `/application/entity/project/{project_id}` | getProjectEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `project_id`*, `expand`, `fields` | ProjectEntity | yes | GET for project |
+| PUT | `/application/entity/project/{project_id}` | updateProjectEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `project_id`*, body*: ProjectEntity | ProjectEntityRelation |  | PUT for project |
+| DELETE | `/application/entity/project/{project_id}` | deleteProjectEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `project_id`* | — |  | DELETE for project |
+| POST | `/application/entity/quote` | createQuoteEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: QuoteEntity | QuoteEntityRelation |  | POST for quote |
+| GET | `/application/entity/quote/aggregate` | getQuoteAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for quote |
+| PUT | `/application/entity/quote/bulk` | updateQuoteEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for quote |
+| POST | `/application/entity/quote/bulk` | createQuoteEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for quote |
+| DELETE | `/application/entity/quote/bulk` | deleteQuoteCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for quote |
+| GET | `/application/entity/quote/count` | getQuoteCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for quote |
+| GET | `/application/entity/quote/describe` | getQuoteDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | QuoteDescribe | yes | DESCRIBE for quote |
+| GET | `/application/entity/quote/list` | getQuoteCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | QuoteEntity[] | yes | GET for quote |
+| GET | `/application/entity/quote/{quote_id}` | getQuoteEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `quote_id`*, `expand`, `fields` | QuoteEntity | yes | GET for quote |
+| PUT | `/application/entity/quote/{quote_id}` | updateQuoteEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `quote_id`*, body*: QuoteEntity | QuoteEntityRelation |  | PUT for quote |
+| DELETE | `/application/entity/quote/{quote_id}` | deleteQuoteEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `quote_id`* | — |  | DELETE for quote |
+| POST | `/application/entity/quoteItem` | createQuoteItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: QuoteItemEntity | QuoteItemEntityRelation |  | POST for quoteItem |
+| GET | `/application/entity/quoteItem/aggregate` | getQuoteItemAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for quoteItem |
+| PUT | `/application/entity/quoteItem/bulk` | updateQuoteItemEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for quoteItem |
+| POST | `/application/entity/quoteItem/bulk` | createQuoteItemEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for quoteItem |
+| DELETE | `/application/entity/quoteItem/bulk` | deleteQuoteItemCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for quoteItem |
+| GET | `/application/entity/quoteItem/count` | getQuoteItemCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for quoteItem |
+| GET | `/application/entity/quoteItem/describe` | getQuoteItemDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | QuoteItemDescribe | yes | DESCRIBE for quoteItem |
+| GET | `/application/entity/quoteItem/list` | getQuoteItemCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | QuoteItemEntity[] | yes | GET for quoteItem |
+| GET | `/application/entity/quoteItem/{quoteItem_id}` | getQuoteItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `quoteItem_id`*, `expand`, `fields` | QuoteItemEntity | yes | GET for quoteItem |
+| PUT | `/application/entity/quoteItem/{quoteItem_id}` | updateQuoteItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `quoteItem_id`*, body*: QuoteItemEntity | QuoteItemEntityRelation |  | PUT for quoteItem |
+| DELETE | `/application/entity/quoteItem/{quoteItem_id}` | deleteQuoteItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `quoteItem_id`* | — |  | DELETE for quoteItem |
+| POST | `/application/entity/tag` | createTagEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: TagEntity | TagEntityRelation |  | POST for tag |
+| GET | `/application/entity/tag/aggregate` | getTagAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for tag |
+| PUT | `/application/entity/tag/bulk` | updateTagEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for tag |
+| POST | `/application/entity/tag/bulk` | createTagEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for tag |
+| DELETE | `/application/entity/tag/bulk` | deleteTagCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for tag |
+| GET | `/application/entity/tag/count` | getTagCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for tag |
+| GET | `/application/entity/tag/describe` | getTagDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | TagDescribe | yes | DESCRIBE for tag |
+| GET | `/application/entity/tag/list` | getTagCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | TagEntity[] | yes | GET for tag |
+| GET | `/application/entity/tag/{tag_id}` | getTagEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `tag_id`*, `expand`, `fields` | TagEntity | yes | GET for tag |
+| PUT | `/application/entity/tag/{tag_id}` | updateTagEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `tag_id`*, body*: TagEntity | TagEntityRelation |  | PUT for tag |
+| DELETE | `/application/entity/tag/{tag_id}` | deleteTagEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `tag_id`* | — |  | DELETE for tag |
+| POST | `/application/entity/task` | createTaskEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: TaskEntity | TaskEntityRelation |  | POST for task |
+| GET | `/application/entity/task/aggregate` | getTaskAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for task |
+| PUT | `/application/entity/task/bulk` | updateTaskEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for task |
+| POST | `/application/entity/task/bulk` | createTaskEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for task |
+| DELETE | `/application/entity/task/bulk` | deleteTaskCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for task |
+| GET | `/application/entity/task/count` | getTaskCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for task |
+| GET | `/application/entity/task/describe` | getTaskDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | TaskDescribe | yes | DESCRIBE for task |
+| GET | `/application/entity/task/list` | getTaskCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | TaskEntity[] | yes | GET for task |
+| GET | `/application/entity/task/{task_id}` | getTaskEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `task_id`*, `expand`, `fields` | TaskEntity | yes | GET for task |
+| PUT | `/application/entity/task/{task_id}` | updateTaskEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `task_id`*, body*: TaskEntity | TaskEntityRelation |  | PUT for task |
+| DELETE | `/application/entity/task/{task_id}` | deleteTaskEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `task_id`* | — |  | DELETE for task |
+| POST | `/application/entity/ticket` | createTicketEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: TicketEntity | TicketEntityRelation |  | POST for ticket |
+| GET | `/application/entity/ticket/aggregate` | getTicketAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for ticket |
+| PUT | `/application/entity/ticket/bulk` | updateTicketEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for ticket |
+| POST | `/application/entity/ticket/bulk` | createTicketEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for ticket |
+| DELETE | `/application/entity/ticket/bulk` | deleteTicketCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for ticket |
+| GET | `/application/entity/ticket/count` | getTicketCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for ticket |
+| GET | `/application/entity/ticket/describe` | getTicketDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | TicketDescribe | yes | DESCRIBE for ticket |
+| GET | `/application/entity/ticket/list` | getTicketCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | TicketEntity[] | yes | GET for ticket |
+| GET | `/application/entity/ticket/{ticket_id}` | getTicketEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `ticket_id`*, `expand`, `fields` | TicketEntity | yes | GET for ticket |
+| PUT | `/application/entity/ticket/{ticket_id}` | updateTicketEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `ticket_id`*, body*: TicketEntity | TicketEntityRelation |  | PUT for ticket |
+| DELETE | `/application/entity/ticket/{ticket_id}` | deleteTicketEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `ticket_id`* | — |  | DELETE for ticket |
+| POST | `/application/entity/user` | createUserEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: UserEntity | UserEntityRelation |  | POST for user |
+| GET | `/application/entity/user/aggregate` | getUserAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for user |
+| PUT | `/application/entity/user/bulk` | updateUserEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for user |
+| POST | `/application/entity/user/bulk` | createUserEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, body*: BulkEntity | BulkEntityRelation |  | POST bulk for user |
+| DELETE | `/application/entity/user/bulk` | deleteUserCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for user |
+| GET | `/application/entity/user/count` | getUserCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `filter` | Count | yes | COUNT for user |
+| GET | `/application/entity/user/describe` | getUserDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME` | UserDescribe | yes | DESCRIBE for user |
+| GET | `/application/entity/user/list` | getUserCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | UserEntity[] | yes | GET for user |
+| GET | `/application/entity/user/{user_id}` | getUserEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `user_id`*, `expand`, `fields` | UserEntity | yes | GET for user |
+| PUT | `/application/entity/user/{user_id}` | updateUserEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `user_id`*, body*: UserEntity | UserEntityRelation |  | PUT for user |
+| DELETE | `/application/entity/user/{user_id}` | deleteUserEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `user_id`* | — |  | DELETE for user |
+| GET | `/application/entity/{entity_id}` | getEntityEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `entity_id`*, `fields` | EntityEntity | yes | GET for entity |
+| POST | `/application/entity/{entity_id}` | createEntityItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `entity_id`*, body*: EntityItemEntity | EntityItemEntityRelation |  | POST for entityItem |
+| GET | `/application/entity/{entity_id}/aggregate` | getEntityItemAggregate | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `entity_id`*, `filter`, `pipeline` | Aggregate | yes | AGGREGATE for entityItem |
+| PUT | `/application/entity/{entity_id}/bulk` | updateEntityItemEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `entity_id`*, body*: BulkEntity | BulkEntityRelation |  | PUT bulk for entityItem |
+| POST | `/application/entity/{entity_id}/bulk` | createEntityItemEntityBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `entity_id`*, body*: BulkEntity | BulkEntityRelation |  | POST bulk for entityItem |
+| DELETE | `/application/entity/{entity_id}/bulk` | deleteEntityItemCollectionBulk | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `entity_id`*, body*: BulkEntity | BulkEntity |  | DELETE bulk for entityItem |
+| GET | `/application/entity/{entity_id}/count` | getEntityItemCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `entity_id`*, `filter` | Count | yes | COUNT for entityItem |
+| GET | `/application/entity/{entity_id}/describe` | getEntityItemDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `entity_id`* | EntityItemDescribe | yes | DESCRIBE for entityItem |
+| GET | `/application/entity/{entity_id}/list` | getEntityItemCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `entity_id`*, `page_size`, `page`, `filter`, `expand`, `fields`, `sort`, `unique` | EntityItemEntity[] | yes | GET for entityItem |
+| GET | `/application/entity/{entity_id}/{entity_item_id}` | getEntityItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DATA-ENABLE`, `X-API2CRM-DATA-BUILD`, `X-API2CRM-DATA-IS-FINAL`, `X-API2CRM-DATA-STRATEGY`, `X-API2CRM-DATA-COHERENT-ENTITIES`, `X-API2CRM-DATA-ALWAYS-ACTUAL`, `X-API2CRM-DATA-ACTUAL-AT`, `X-API2CRM-DESCRIBE-LIFETIME`, `entity_id`*, `entity_item_id`*, `expand`, `fields` | EntityItemEntity | yes | GET for entityItem |
+| PUT | `/application/entity/{entity_id}/{entity_item_id}` | updateEntityItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-NATIVE-ENABLE`, `X-API2CRM-DESCRIBE-LIFETIME`, `entity_id`*, `entity_item_id`*, body*: EntityItemEntity | EntityItemEntityRelation |  | PUT for entityItem |
+| DELETE | `/application/entity/{entity_id}/{entity_item_id}` | deleteEntityItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `entity_id`*, `entity_item_id`* | — |  | DELETE for entityItem |
+| GET | `/application/field/count` | getFieldCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`* | Count | yes | COUNT for field |
+| GET | `/application/field/list` | getFieldCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DESCRIBE-LIFETIME`, `page_size`, `page`, `filter`, `fields` | FieldEntity[] | yes | GET for field |
+| GET | `/application/field/{field_id}` | getFieldEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DESCRIBE-LIFETIME`, `field_id`*, `fields` | FieldEntity | yes | GET for field |
+| POST | `/application/field/{field_id}` | createFieldItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DESCRIBE-LIFETIME`, `field_id`*, body*: FieldItemEntity | FieldItemEntityRelation |  | POST for fieldItem |
+| GET | `/application/field/{field_id}/count` | getFieldItemCountCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `field_id`* | Count | yes | COUNT for fieldItem |
+| GET | `/application/field/{field_id}/describe` | getFieldItemDescribe | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DESCRIBE-LIFETIME`, `field_id`* | FieldItemDescribe | yes | DESCRIBE for fieldItem |
+| GET | `/application/field/{field_id}/list` | getFieldItemCollection | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DESCRIBE-LIFETIME`, `field_id`*, `page_size`, `page`, `fields` | FieldItemEntity[] | yes | GET for fieldItem |
+| GET | `/application/field/{field_id}/{field_item_id}` | getFieldItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DESCRIBE-LIFETIME`, `field_id`*, `field_item_id`*, `fields` | FieldItemEntity | yes | GET for fieldItem |
+| PUT | `/application/field/{field_id}/{field_item_id}` | updateFieldItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `X-API2CRM-DESCRIBE-LIFETIME`, `field_id`*, `field_item_id`*, body*: FieldItemEntity | FieldItemEntityRelation |  | PUT for fieldItem |
+| DELETE | `/application/field/{field_id}/{field_item_id}` | deleteFieldItemEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, `field_id`*, `field_item_id`* | — |  | DELETE for fieldItem |
+| GET | `/application/list` | getApplicationCollection | `X-API2CRM-USER-KEY`*, `page_size`, `page`, `filter`, `fields`, `sort` | ApplicationEntityList[] | yes | GET for application |
+| POST | `/application/request` | createRequestEntity | `X-API2CRM-USER-KEY`*, `X-API2CRM-APPLICATION-KEY`*, body*: RequestEntity | RequestEntityRelation |  | POST for request |
+| GET | `/application/{key}` | getApplicationEntity | `X-API2CRM-USER-KEY`*, `key`*, `fields` | ApplicationEntity | yes | GET for application |
+| PUT | `/application/{key}` | updateApplicationEntity | `X-API2CRM-USER-KEY`*, `key`*, body*: ApplicationEntityWrite | ApplicationEntityRelation |  | PUT for application |
+| DELETE | `/application/{key}` | deleteApplicationEntity | `X-API2CRM-USER-KEY`*, `key`* | — |  | DELETE for application |
+| GET | `/platform/list` | getPlatformCollection | `X-API2CRM-USER-KEY`*, `page_size`, `page`, `fields`, `sort` | PlatformEntity[] | yes | GET for platform |
+| GET | `/platform/{type}` | getPlatformEntity | `X-API2CRM-USER-KEY`*, `type`*, `fields` | PlatformEntity | yes | GET for platform |
+| POST | `/user` | createInternalUserEntity | `X-API2CRM-USER-KEY`*, body*: InternalUserEntity | InternalUserEntityRelation |  | POST for internalUser |
+| GET | `/user/count` | getInternalUserCountCollection | `X-API2CRM-USER-KEY`*, `filter` | Count | yes | COUNT for internalUser |
+| GET | `/user/list` | getInternalUserCollection | `X-API2CRM-USER-KEY`*, `page_size`, `page`, `filter`, `fields`, `sort`, `application_request_start`, `application_request_end` | InternalUserEntity[] | yes | GET for internalUser |
+| GET | `/user/{internal_user_id}` | getInternalUserEntity | `X-API2CRM-USER-KEY`*, `internal_user_id`*, `fields`, `application_request_start`, `application_request_end` | InternalUserEntity | yes | GET for internalUser |
+| PUT | `/user/{internal_user_id}` | updateInternalUserEntity | `X-API2CRM-USER-KEY`*, `internal_user_id`*, body*: InternalUserEntity | InternalUserEntityRelation |  | PUT for internalUser |
+| DELETE | `/user/{internal_user_id}` | deleteInternalUserEntity | `X-API2CRM-USER-KEY`*, `internal_user_id`* | — |  | DELETE for internalUser |

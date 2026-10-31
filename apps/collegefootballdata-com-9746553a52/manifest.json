@@ -258,6 +258,256 @@
         "from": "collegefootballdata-com-9746553a52",
         "kind": "EXPOSES",
         "to": "operation:get:/venues"
+      },
+      {
+        "from": "operation:get:/calendar",
+        "kind": "RETURNS",
+        "to": "schema:Week"
+      },
+      {
+        "from": "operation:get:/coaches",
+        "kind": "RETURNS",
+        "to": "schema:Coach"
+      },
+      {
+        "from": "operation:get:/conferences",
+        "kind": "RETURNS",
+        "to": "schema:Conference"
+      },
+      {
+        "from": "operation:get:/draft/picks",
+        "kind": "RETURNS",
+        "to": "schema:DraftPick"
+      },
+      {
+        "from": "operation:get:/draft/positions",
+        "kind": "RETURNS",
+        "to": "schema:DraftPosition"
+      },
+      {
+        "from": "operation:get:/draft/teams",
+        "kind": "RETURNS",
+        "to": "schema:DraftTeam"
+      },
+      {
+        "from": "operation:get:/drives",
+        "kind": "RETURNS",
+        "to": "schema:Drive"
+      },
+      {
+        "from": "operation:get:/game/box/advanced",
+        "kind": "RETURNS",
+        "to": "schema:BoxScore"
+      },
+      {
+        "from": "operation:get:/games",
+        "kind": "RETURNS",
+        "to": "schema:Game"
+      },
+      {
+        "from": "operation:get:/games/media",
+        "kind": "RETURNS",
+        "to": "schema:GameMedia"
+      },
+      {
+        "from": "operation:get:/games/players",
+        "kind": "RETURNS",
+        "to": "schema:PlayerGame"
+      },
+      {
+        "from": "operation:get:/games/teams",
+        "kind": "RETURNS",
+        "to": "schema:TeamGame"
+      },
+      {
+        "from": "operation:get:/games/weather",
+        "kind": "RETURNS",
+        "to": "schema:GameWeather"
+      },
+      {
+        "from": "operation:get:/lines",
+        "kind": "RETURNS",
+        "to": "schema:GameLines"
+      },
+      {
+        "from": "operation:get:/live/plays",
+        "kind": "RETURNS",
+        "to": "schema:LivePlayByPlay"
+      },
+      {
+        "from": "operation:get:/metrics/wp",
+        "kind": "RETURNS",
+        "to": "schema:PlayWP"
+      },
+      {
+        "from": "operation:get:/metrics/wp/pregame",
+        "kind": "RETURNS",
+        "to": "schema:PregameWP"
+      },
+      {
+        "from": "operation:get:/play/stat/types",
+        "kind": "RETURNS",
+        "to": "schema:PlayStatType"
+      },
+      {
+        "from": "operation:get:/play/stats",
+        "kind": "RETURNS",
+        "to": "schema:PlayStat"
+      },
+      {
+        "from": "operation:get:/play/types",
+        "kind": "RETURNS",
+        "to": "schema:PlayType"
+      },
+      {
+        "from": "operation:get:/player/portal",
+        "kind": "RETURNS",
+        "to": "schema:PortalPlayer"
+      },
+      {
+        "from": "operation:get:/player/returning",
+        "kind": "RETURNS",
+        "to": "schema:ReturningProduction"
+      },
+      {
+        "from": "operation:get:/player/search",
+        "kind": "RETURNS",
+        "to": "schema:PlayerSearchResult"
+      },
+      {
+        "from": "operation:get:/player/usage",
+        "kind": "RETURNS",
+        "to": "schema:PlayerUsage"
+      },
+      {
+        "from": "operation:get:/plays",
+        "kind": "RETURNS",
+        "to": "schema:Play"
+      },
+      {
+        "from": "operation:get:/ppa/games",
+        "kind": "RETURNS",
+        "to": "schema:GamePPA"
+      },
+      {
+        "from": "operation:get:/ppa/players/games",
+        "kind": "RETURNS",
+        "to": "schema:PlayerGamePPA"
+      },
+      {
+        "from": "operation:get:/ppa/players/season",
+        "kind": "RETURNS",
+        "to": "schema:PlayerSeasonPPA"
+      },
+      {
+        "from": "operation:get:/ppa/predicted",
+        "kind": "RETURNS",
+        "to": "schema:PredictedPoints"
+      },
+      {
+        "from": "operation:get:/ppa/teams",
+        "kind": "RETURNS",
+        "to": "schema:TeamPPA"
+      },
+      {
+        "from": "operation:get:/rankings",
+        "kind": "RETURNS",
+        "to": "schema:RankingWeek"
+      },
+      {
+        "from": "operation:get:/ratings/elo",
+        "kind": "RETURNS",
+        "to": "schema:TeamEloRating"
+      },
+      {
+        "from": "operation:get:/ratings/sp",
+        "kind": "RETURNS",
+        "to": "schema:TeamSPRating"
+      },
+      {
+        "from": "operation:get:/ratings/sp/conferences",
+        "kind": "RETURNS",
+        "to": "schema:ConferenceSPRating"
+      },
+      {
+        "from": "operation:get:/ratings/srs",
+        "kind": "RETURNS",
+        "to": "schema:TeamSRSRating"
+      },
+      {
+        "from": "operation:get:/records",
+        "kind": "RETURNS",
+        "to": "schema:TeamRecord"
+      },
+      {
+        "from": "operation:get:/recruiting/groups",
+        "kind": "RETURNS",
+        "to": "schema:PositionGroupRecruitingRating"
+      },
+      {
+        "from": "operation:get:/recruiting/players",
+        "kind": "RETURNS",
+        "to": "schema:Recruit"
+      },
+      {
+        "from": "operation:get:/recruiting/teams",
+        "kind": "RETURNS",
+        "to": "schema:TeamRecruitingRank"
+      },
+      {
+        "from": "operation:get:/roster",
+        "kind": "RETURNS",
+        "to": "schema:Player"
+      },
+      {
+        "from": "operation:get:/scoreboard",
+        "kind": "RETURNS",
+        "to": "schema:ScoreboardGame"
+      },
+      {
+        "from": "operation:get:/stats/game/advanced",
+        "kind": "RETURNS",
+        "to": "schema:AdvancedGameStat"
+      },
+      {
+        "from": "operation:get:/stats/player/season",
+        "kind": "RETURNS",
+        "to": "schema:PlayerSeasonStat"
+      },
+      {
+        "from": "operation:get:/stats/season",
+        "kind": "RETURNS",
+        "to": "schema:TeamSeasonStat"
+      },
+      {
+        "from": "operation:get:/stats/season/advanced",
+        "kind": "RETURNS",
+        "to": "schema:AdvancedSeasonStat"
+      },
+      {
+        "from": "operation:get:/talent",
+        "kind": "RETURNS",
+        "to": "schema:TeamTalent"
+      },
+      {
+        "from": "operation:get:/teams",
+        "kind": "RETURNS",
+        "to": "schema:Team"
+      },
+      {
+        "from": "operation:get:/teams/fbs",
+        "kind": "RETURNS",
+        "to": "schema:Team"
+      },
+      {
+        "from": "operation:get:/teams/matchup",
+        "kind": "RETURNS",
+        "to": "schema:TeamMatchup"
+      },
+      {
+        "from": "operation:get:/venues",
+        "kind": "RETURNS",
+        "to": "schema:Venue"
       }
     ],
     "nodes": [
@@ -267,48 +517,140 @@
       },
       {
         "deprecated": false,
+        "description": "Get calendar of weeks by season",
         "id": "operation:get:/calendar",
         "kind": "operation",
         "method": "get",
         "name": "getCalendar",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/calendar",
         "pointer": "#/paths/~1calendar/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Week[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Season calendar"
+        "summary": "Season calendar",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Coaching history",
         "id": "operation:get:/coaches",
         "kind": "operation",
         "method": "get",
         "name": "getCoaches",
+        "parameters": [
+          {
+            "description": "First name filter",
+            "in": "query",
+            "name": "firstName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Last name filter",
+            "in": "query",
+            "name": "lastName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Team name filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Minimum year filter (inclusive)",
+            "in": "query",
+            "name": "minYear",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum year filter (inclusive)",
+            "in": "query",
+            "name": "maxYear",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/coaches",
         "pointer": "#/paths/~1coaches/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Coach[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Coaching records and history"
+        "summary": "Coaching records and history",
+        "tags": [
+          "coaches"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get conference list",
         "id": "operation:get:/conferences",
         "kind": "operation",
         "method": "get",
         "name": "getConferences",
         "path": "/conferences",
         "pointer": "#/paths/~1conferences/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Conference[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Conferences"
+        "summary": "Conferences",
+        "tags": [
+          "conferences"
+        ]
       },
       {
         "deprecated": false,
@@ -316,14 +658,64 @@
         "kind": "operation",
         "method": "get",
         "name": "getDraftPicks",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "NFL team filter",
+            "in": "query",
+            "name": "nflTeam",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Player college filter",
+            "in": "query",
+            "name": "college",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "College confrence abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "NFL position filter",
+            "in": "query",
+            "name": "position",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/draft/picks",
         "pointer": "#/paths/~1draft~1picks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DraftPick[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "List of NFL Draft picks"
+        "summary": "List of NFL Draft picks",
+        "tags": [
+          "draft"
+        ]
       },
       {
         "deprecated": false,
@@ -333,12 +725,25 @@
         "name": "getNFLPositions",
         "path": "/draft/positions",
         "pointer": "#/paths/~1draft~1positions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DraftPosition[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "List of NFL positions"
+        "summary": "List of NFL positions",
+        "tags": [
+          "draft"
+        ]
       },
       {
         "deprecated": false,
@@ -348,222 +753,938 @@
         "name": "getNFLTeams",
         "path": "/draft/teams",
         "pointer": "#/paths/~1draft~1teams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DraftTeam[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "List of NFL teams"
+        "summary": "List of NFL teams",
+        "tags": [
+          "draft"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get game drives",
         "id": "operation:get:/drives",
         "kind": "operation",
         "method": "get",
         "name": "getDrives",
+        "parameters": [
+          {
+            "default": "regular",
+            "description": "Season type filter",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Offensive team filter",
+            "in": "query",
+            "name": "offense",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Defensive team filter",
+            "in": "query",
+            "name": "defense",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Offensive conference filter",
+            "in": "query",
+            "name": "offenseConference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Defensive conference filter",
+            "in": "query",
+            "name": "defenseConference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Division classification filter (fbs/fcs/ii/iii)",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/drives",
         "pointer": "#/paths/~1drives/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Drive[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Drive data and results"
+        "summary": "Drive data and results",
+        "tags": [
+          "drives"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get advanced box score data",
         "id": "operation:get:/game/box/advanced",
         "kind": "operation",
         "method": "get",
         "name": "getAdvancedBoxScore",
+        "parameters": [
+          {
+            "description": "Game id parameters",
+            "in": "query",
+            "name": "gameId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/game/box/advanced",
         "pointer": "#/paths/~1game~1box~1advanced/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BoxScore"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Advanced box scores"
+        "summary": "Advanced box scores",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get game results",
         "id": "operation:get:/games",
         "kind": "operation",
         "method": "get",
         "name": "getGames",
+        "parameters": [
+          {
+            "description": "Year/season filter for games",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "regular",
+            "description": "Season type filter (regular or postseason)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Team",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Home team filter",
+            "in": "query",
+            "name": "home",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Away team filter",
+            "in": "query",
+            "name": "away",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Division classification filter (fbs/fcs/ii/iii)",
+            "in": "query",
+            "name": "division",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "id filter for querying a single game",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/games",
         "pointer": "#/paths/~1games/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Game[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Games and results"
+        "summary": "Games and results",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Game media information (TV, radio, etc)",
         "id": "operation:get:/games/media",
         "kind": "operation",
         "method": "get",
         "name": "getGameMedia",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Season type filter (regular, postseason, or both)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Media type filter (tv, radio, web, ppv, or mobile)",
+            "in": "query",
+            "name": "mediaType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Division classification filter (fbs/fcs/ii/iii)",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/games/media",
         "pointer": "#/paths/~1games~1media/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameMedia[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Game media information and schedules"
+        "summary": "Game media information and schedules",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Player stats broken down by game",
         "id": "operation:get:/games/players",
         "kind": "operation",
         "method": "get",
         "name": "getPlayerGameStats",
+        "parameters": [
+          {
+            "description": "Year/season filter for games",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "regular",
+            "description": "Season type filter (regular or postseason)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Category filter (e.g defensive)",
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Game id filter",
+            "in": "query",
+            "name": "gameId",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/games/players",
         "pointer": "#/paths/~1games~1players/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayerGame[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Player game stats"
+        "summary": "Player game stats",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Team stats broken down by game",
         "id": "operation:get:/games/teams",
         "kind": "operation",
         "method": "get",
         "name": "getTeamGameStats",
+        "parameters": [
+          {
+            "description": "Year/season filter for games",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "regular",
+            "description": "Season type filter (regular or postseason)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Game id filter",
+            "in": "query",
+            "name": "gameId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Division classification filter (fbs/fcs/ii/iii)",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/games/teams",
         "pointer": "#/paths/~1games~1teams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamGame[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team game stats"
+        "summary": "Team game stats",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Weather information for the hour of kickoff",
         "id": "operation:get:/games/weather",
         "kind": "operation",
         "method": "get",
         "name": "getGameWeather",
+        "parameters": [
+          {
+            "description": "Game id filter (required if no year)",
+            "in": "query",
+            "name": "gameId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Year filter (required if no game id)",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Season type filter (regular, postseason, or both)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Division classification filter (fbs/fcs/ii/iii)",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/games/weather",
         "pointer": "#/paths/~1games~1weather/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameWeather[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Game weather information (Patreon only)"
+        "summary": "Game weather information (Patreon only)",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Closing betting lines",
         "id": "operation:get:/lines",
         "kind": "operation",
         "method": "get",
         "name": "getLines",
+        "parameters": [
+          {
+            "description": "Game id filter",
+            "in": "query",
+            "name": "gameId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Year/season filter for games",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "regular",
+            "description": "Season type filter (regular or postseason)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Team",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Home team filter",
+            "in": "query",
+            "name": "home",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Away team filter",
+            "in": "query",
+            "name": "away",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/lines",
         "pointer": "#/paths/~1lines/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GameLines[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Betting lines"
+        "summary": "Betting lines",
+        "tags": [
+          "betting"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get live metrics and PBP",
         "id": "operation:get:/live/plays",
         "kind": "operation",
         "method": "get",
         "name": "getLivePlays",
+        "parameters": [
+          {
+            "description": "Game id",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/live/plays",
         "pointer": "#/paths/~1live~1plays/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LivePlayByPlay"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Live metrics and PBP (Patreon only)"
+        "summary": "Live metrics and PBP (Patreon only)",
+        "tags": [
+          "plays"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Win probability data",
         "id": "operation:get:/metrics/wp",
         "kind": "operation",
         "method": "get",
         "name": "getWinProbabilityData",
+        "parameters": [
+          {
+            "description": "Game id filter",
+            "in": "query",
+            "name": "gameId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/metrics/wp",
         "pointer": "#/paths/~1metrics~1wp/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayWP[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Win probability chart data"
+        "summary": "Win probability chart data",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Pregame win probabilities",
         "id": "operation:get:/metrics/wp/pregame",
         "kind": "operation",
         "method": "get",
         "name": "getPregameWinProbabilities",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "regular or postseason",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/metrics/wp/pregame",
         "pointer": "#/paths/~1metrics~1wp~1pregame/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PregameWP[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Pregame win probability data"
+        "summary": "Pregame win probability data",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Type of play stats",
         "id": "operation:get:/play/stat/types",
         "kind": "operation",
         "method": "get",
         "name": "getPlayStatTypes",
         "path": "/play/stat/types",
         "pointer": "#/paths/~1play~1stat~1types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayStatType[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Types of player play stats"
+        "summary": "Types of player play stats",
+        "tags": [
+          "plays"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets player stats associated by play (limit 1000)",
         "id": "operation:get:/play/stats",
         "kind": "operation",
         "method": "get",
         "name": "getPlayStats",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "gameId filter (from /games endpoint)",
+            "in": "query",
+            "name": "gameId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "athleteId filter (from /roster endpoint)",
+            "in": "query",
+            "name": "athleteId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "statTypeId filter (from /play/stat/types endpoint)",
+            "in": "query",
+            "name": "statTypeId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "regular, postseason, or both",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/play/stats",
         "pointer": "#/paths/~1play~1stats/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayStat[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Play stats by play"
+        "summary": "Play stats by play",
+        "tags": [
+          "plays"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Types of plays",
         "id": "operation:get:/play/types",
         "kind": "operation",
         "method": "get",
         "name": "getPlayTypes",
         "path": "/play/types",
         "pointer": "#/paths/~1play~1types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayType[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Play types"
+        "summary": "Play types",
+        "tags": [
+          "plays"
+        ]
       },
       {
         "deprecated": false,
@@ -571,714 +1692,2053 @@
         "kind": "operation",
         "method": "get",
         "name": "getTransferPortal",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/player/portal",
         "pointer": "#/paths/~1player~1portal/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PortalPlayer[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Transfer portal by season"
+        "summary": "Transfer portal by season",
+        "tags": [
+          "players"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returning production metrics",
         "id": "operation:get:/player/returning",
         "kind": "operation",
         "method": "get",
         "name": "getReturningProduction",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/player/returning",
         "pointer": "#/paths/~1player~1returning/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReturningProduction[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team returning production metrics"
+        "summary": "Team returning production metrics",
+        "tags": [
+          "players"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for players",
         "id": "operation:get:/player/search",
         "kind": "operation",
         "method": "get",
         "name": "playerSearch",
+        "parameters": [
+          {
+            "description": "Term to search on",
+            "in": "query",
+            "name": "searchTerm",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Position abbreviation filter",
+            "in": "query",
+            "name": "position",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/player/search",
         "pointer": "#/paths/~1player~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayerSearchResult[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Search for player information"
+        "summary": "Search for player information",
+        "tags": [
+          "players"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Player usage metrics by season",
         "id": "operation:get:/player/usage",
         "kind": "operation",
         "method": "get",
         "name": "getPlayerUsage",
+        "parameters": [
+          {
+            "default": 2022,
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Position abbreviation filter",
+            "in": "query",
+            "name": "position",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Player id filter",
+            "in": "query",
+            "name": "playerId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Filter to remove garbage time plays from calculations",
+            "in": "query",
+            "name": "excludeGarbageTime",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/player/usage",
         "pointer": "#/paths/~1player~1usage/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayerUsage[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Player usage metrics broken down by season"
+        "summary": "Player usage metrics broken down by season",
+        "tags": [
+          "players"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get play data and results",
         "id": "operation:get:/plays",
         "kind": "operation",
         "method": "get",
         "name": "getPlays",
+        "parameters": [
+          {
+            "default": "regular",
+            "description": "Season type filter",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter (required if team, offense, or defense, not specified)",
+            "in": "query",
+            "name": "week",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Offensive team filter",
+            "in": "query",
+            "name": "offense",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Defensive team filter",
+            "in": "query",
+            "name": "defense",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Offensive conference filter",
+            "in": "query",
+            "name": "offenseConference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Defensive conference filter",
+            "in": "query",
+            "name": "defenseConference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Play type filter",
+            "in": "query",
+            "name": "playType",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Division classification filter (fbs/fcs/ii/iii)",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/plays",
         "pointer": "#/paths/~1plays/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Play[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Play by play data"
+        "summary": "Play by play data",
+        "tags": [
+          "plays"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Predicted Points Added (PPA) by game",
         "id": "operation:get:/ppa/games",
         "kind": "operation",
         "method": "get",
         "name": "getGamePPA",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to remove garbage time plays from calculations",
+            "in": "query",
+            "name": "excludeGarbageTime",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "regular",
+            "description": "Season type filter (regular or postseason)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ppa/games",
         "pointer": "#/paths/~1ppa~1games/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GamePPA[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team Predicated Points Added (PPA/EPA) by game"
+        "summary": "Team Predicated Points Added (PPA/EPA) by game",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Predicted Points Added (PPA) by player game",
         "id": "operation:get:/ppa/players/games",
         "kind": "operation",
         "method": "get",
         "name": "getPlayerGamePPA",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Position abbreviation filter",
+            "in": "query",
+            "name": "position",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Player id filter",
+            "in": "query",
+            "name": "playerId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Minimum play threshold filter",
+            "in": "query",
+            "name": "threshold",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to remove garbage time plays from calculations",
+            "in": "query",
+            "name": "excludeGarbageTime",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": "regular",
+            "description": "Season type filter (regular or postseason)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ppa/players/games",
         "pointer": "#/paths/~1ppa~1players~1games/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayerGamePPA[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Player Predicated Points Added (PPA/EPA) broken down by game"
+        "summary": "Player Predicated Points Added (PPA/EPA) broken down by game",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Predicted Points Added (PPA) by player season",
         "id": "operation:get:/ppa/players/season",
         "kind": "operation",
         "method": "get",
         "name": "getPlayerSeasonPPA",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Position abbreviation filter",
+            "in": "query",
+            "name": "position",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Player id filter",
+            "in": "query",
+            "name": "playerId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Minimum play threshold filter",
+            "in": "query",
+            "name": "threshold",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to remove garbage time plays from calculations",
+            "in": "query",
+            "name": "excludeGarbageTime",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/ppa/players/season",
         "pointer": "#/paths/~1ppa~1players~1season/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayerSeasonPPA[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Player Predicated Points Added (PPA/EPA) broken down by season"
+        "summary": "Player Predicated Points Added (PPA/EPA) broken down by season",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Predicted Points",
         "id": "operation:get:/ppa/predicted",
         "kind": "operation",
         "method": "get",
         "name": "getPredictedPoints",
+        "parameters": [
+          {
+            "description": "Down filter",
+            "in": "query",
+            "name": "down",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Distance filter",
+            "in": "query",
+            "name": "distance",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/ppa/predicted",
         "pointer": "#/paths/~1ppa~1predicted/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PredictedPoints[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Predicted Points (i.e. Expected Points or EP)"
+        "summary": "Predicted Points (i.e. Expected Points or EP)",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Predicted Points Added (PPA)",
         "id": "operation:get:/ppa/teams",
         "kind": "operation",
         "method": "get",
         "name": "getTeamPPA",
+        "parameters": [
+          {
+            "description": "Year filter (required if team not specified)",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter (required if year not specified)",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to remove garbage time plays from calculations",
+            "in": "query",
+            "name": "excludeGarbageTime",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/ppa/teams",
         "pointer": "#/paths/~1ppa~1teams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamPPA[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Predicted Points Added (PPA/EPA) data by team"
+        "summary": "Predicted Points Added (PPA/EPA) data by team",
+        "tags": [
+          "metrics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Poll rankings",
         "id": "operation:get:/rankings",
         "kind": "operation",
         "method": "get",
         "name": "getRankings",
+        "parameters": [
+          {
+            "description": "Year/season filter for games",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "regular",
+            "description": "Season type filter (regular or postseason)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/rankings",
         "pointer": "#/paths/~1rankings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RankingWeek[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Historical polls and rankings"
+        "summary": "Historical polls and rankings",
+        "tags": [
+          "rankings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Elo rating data",
         "id": "operation:get:/ratings/elo",
         "kind": "operation",
         "method": "get",
         "name": "getEloRatings",
+        "parameters": [
+          {
+            "description": "Season filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ratings/elo",
         "pointer": "#/paths/~1ratings~1elo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamEloRating[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Historical Elo ratings"
+        "summary": "Historical Elo ratings",
+        "tags": [
+          "ratings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "SP+ rating data",
         "id": "operation:get:/ratings/sp",
         "kind": "operation",
         "method": "get",
         "name": "getSPRatings",
+        "parameters": [
+          {
+            "description": "Season filter (required if team not specified)",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter (required if year not specified)",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ratings/sp",
         "pointer": "#/paths/~1ratings~1sp/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamSPRating[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Historical SP+ ratings"
+        "summary": "Historical SP+ ratings",
+        "tags": [
+          "ratings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get average SP+ historical rating data by conference",
         "id": "operation:get:/ratings/sp/conferences",
         "kind": "operation",
         "method": "get",
         "name": "getConferenceSPRatings",
+        "parameters": [
+          {
+            "description": "Season filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ratings/sp/conferences",
         "pointer": "#/paths/~1ratings~1sp~1conferences/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConferenceSPRating[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Historical SP+ ratings by conference"
+        "summary": "Historical SP+ ratings by conference",
+        "tags": [
+          "ratings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "SRS rating data (requires either a year or team specified)",
         "id": "operation:get:/ratings/srs",
         "kind": "operation",
         "method": "get",
         "name": "getSRSRatings",
+        "parameters": [
+          {
+            "description": "Season filter (required if team not specified)",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter (required if year not specified)",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/ratings/srs",
         "pointer": "#/paths/~1ratings~1srs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamSRSRating[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Historical SRS ratings"
+        "summary": "Historical SRS ratings",
+        "tags": [
+          "ratings"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get team records by year",
         "id": "operation:get:/records",
         "kind": "operation",
         "method": "get",
         "name": "getTeamRecords",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/records",
         "pointer": "#/paths/~1records/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamRecord[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team records"
+        "summary": "Team records",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of aggregated statistics by team and position grouping",
         "id": "operation:get:/recruiting/groups",
         "kind": "operation",
         "method": "get",
         "name": "getRecruitingGroups",
+        "parameters": [
+          {
+            "description": "Starting year",
+            "in": "query",
+            "name": "startYear",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Ending year",
+            "in": "query",
+            "name": "endYear",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "conference filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/recruiting/groups",
         "pointer": "#/paths/~1recruiting~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PositionGroupRecruitingRating[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Recruit position group ratings"
+        "summary": "Recruit position group ratings",
+        "tags": [
+          "recruiting"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get player recruiting rankings and data.",
         "id": "operation:get:/recruiting/players",
         "kind": "operation",
         "method": "get",
         "name": "getRecruitingPlayers",
+        "parameters": [
+          {
+            "description": "Recruiting class year (required if team no specified)",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "HighSchool",
+            "description": "Type of recruit (HighSchool, JUCO, PrepSchool)",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Position abbreviation filter",
+            "in": "query",
+            "name": "position",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "State or province abbreviation filter",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Committed team filter (required if year not specified)",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/recruiting/players",
         "pointer": "#/paths/~1recruiting~1players/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Recruit[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Player recruiting ratings and rankings"
+        "summary": "Player recruiting ratings and rankings",
+        "tags": [
+          "recruiting"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Team recruiting rankings",
         "id": "operation:get:/recruiting/teams",
         "kind": "operation",
         "method": "get",
         "name": "getRecruitingTeams",
+        "parameters": [
+          {
+            "description": "Recruiting class year",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/recruiting/teams",
         "pointer": "#/paths/~1recruiting~1teams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamRecruitingRank[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team recruiting rankings and ratings"
+        "summary": "Team recruiting rankings and ratings",
+        "tags": [
+          "recruiting"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Roster data",
         "id": "operation:get:/roster",
         "kind": "operation",
         "method": "get",
         "name": "getRoster",
+        "parameters": [
+          {
+            "description": "Team name",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Season year",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/roster",
         "pointer": "#/paths/~1roster/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Player[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team rosters"
+        "summary": "Team rosters",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get live game results",
         "id": "operation:get:/scoreboard",
         "kind": "operation",
         "method": "get",
         "name": "getScoreboard",
+        "parameters": [
+          {
+            "description": "Classification filter (fbs, fcs, ii, or iii).",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter.",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scoreboard",
         "pointer": "#/paths/~1scoreboard/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreboardGame[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Live game results (Patreon only)"
+        "summary": "Live game results (Patreon only)",
+        "tags": [
+          "games"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Stat category list",
         "id": "operation:get:/stats/categories",
         "kind": "operation",
         "method": "get",
         "name": "getStatCategories",
         "path": "/stats/categories",
         "pointer": "#/paths/~1stats~1categories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team stat categories"
+        "summary": "Team stat categories",
+        "tags": [
+          "stats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Advanced team game stats",
         "id": "operation:get:/stats/game/advanced",
         "kind": "operation",
         "method": "get",
         "name": "getAdvancedTeamGameStats",
+        "parameters": [
+          {
+            "description": "Year filter (required if no team specified)",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Week filter",
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter (required if no year specified)",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Opponent filter",
+            "in": "query",
+            "name": "opponent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to remove garbage time plays from calculations",
+            "in": "query",
+            "name": "excludeGarbageTime",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Season type filter (regular, postseason, or both)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/stats/game/advanced",
         "pointer": "#/paths/~1stats~1game~1advanced/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdvancedGameStat[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Advanced team metrics by game"
+        "summary": "Advanced team metrics by game",
+        "tags": [
+          "stats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Season player stats",
         "id": "operation:get:/stats/player/season",
         "kind": "operation",
         "method": "get",
         "name": "getPlayerSeasonStats",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Start week filter",
+            "in": "query",
+            "name": "startWeek",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Start week filter",
+            "in": "query",
+            "name": "endWeek",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Season type filter (regular, postseason, or both)",
+            "in": "query",
+            "name": "seasonType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Stat category filter (e.g.",
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/stats/player/season",
         "pointer": "#/paths/~1stats~1player~1season/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlayerSeasonStat[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Player stats by season"
+        "summary": "Player stats by season",
+        "tags": [
+          "players"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Team season stats",
         "id": "operation:get:/stats/season",
         "kind": "operation",
         "method": "get",
         "name": "getTeamSeasonStats",
+        "parameters": [
+          {
+            "description": "Year filter (required if no team specified)",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter (required if no year specified)",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Starting week filter",
+            "in": "query",
+            "name": "startWeek",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Starting week filter",
+            "in": "query",
+            "name": "endWeek",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/stats/season",
         "pointer": "#/paths/~1stats~1season/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamSeasonStat[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team statistics by season"
+        "summary": "Team statistics by season",
+        "tags": [
+          "stats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Advanced team season stats",
         "id": "operation:get:/stats/season/advanced",
         "kind": "operation",
         "method": "get",
         "name": "getAdvancedTeamSeasonStats",
+        "parameters": [
+          {
+            "description": "Year filter (required if no team specified)",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Team filter (required if no year specified)",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to remove garbage time plays from calculations",
+            "in": "query",
+            "name": "excludeGarbageTime",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Starting week filter",
+            "in": "query",
+            "name": "startWeek",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Starting week filter",
+            "in": "query",
+            "name": "endWeek",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/stats/season/advanced",
         "pointer": "#/paths/~1stats~1season~1advanced/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdvancedSeasonStat[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Advanced team metrics by season"
+        "summary": "Advanced team metrics by season",
+        "tags": [
+          "stats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Team talent composite",
         "id": "operation:get:/talent",
         "kind": "operation",
         "method": "get",
         "name": "getTalent",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/talent",
         "pointer": "#/paths/~1talent/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamTalent[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team talent composite rankings"
+        "summary": "Team talent composite rankings",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get team information",
         "id": "operation:get:/teams",
         "kind": "operation",
         "method": "get",
         "name": "getTeams",
+        "parameters": [
+          {
+            "description": "Conference abbreviation filter",
+            "in": "query",
+            "name": "conference",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/teams",
         "pointer": "#/paths/~1teams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team information"
+        "summary": "Team information",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Information on major division teams",
         "id": "operation:get:/teams/fbs",
         "kind": "operation",
         "method": "get",
         "name": "getFbsTeams",
+        "parameters": [
+          {
+            "description": "Year filter",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/teams/fbs",
         "pointer": "#/paths/~1teams~1fbs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Team[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "FBS team list"
+        "summary": "FBS team list",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Matchup history",
         "id": "operation:get:/teams/matchup",
         "kind": "operation",
         "method": "get",
         "name": "getTeamMatchup",
+        "parameters": [
+          {
+            "description": "First team",
+            "in": "query",
+            "name": "team1",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Second team",
+            "in": "query",
+            "name": "team2",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Minimum year",
+            "in": "query",
+            "name": "minYear",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Maximum year",
+            "in": "query",
+            "name": "maxYear",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/teams/matchup",
         "pointer": "#/paths/~1teams~1matchup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TeamMatchup"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Team matchup history"
+        "summary": "Team matchup history",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Venues",
         "id": "operation:get:/venues",
         "kind": "operation",
         "method": "get",
         "name": "getVenues",
         "path": "/venues",
         "pointer": "#/paths/~1venues/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Venue[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Arena and venue information"
+        "summary": "Arena and venue information",
+        "tags": [
+          "venues"
+        ]
       },
       {
         "id": "schema:AdvancedGameStat",
         "kind": "schema",
-        "name": "AdvancedGameStat"
+        "name": "AdvancedGameStat",
+        "type": "object"
       },
       {
         "id": "schema:AdvancedSeasonStat",
         "kind": "schema",
-        "name": "AdvancedSeasonStat"
+        "name": "AdvancedSeasonStat",
+        "type": "object"
       },
       {
         "id": "schema:BoxScore",
         "kind": "schema",
-        "name": "BoxScore"
+        "name": "BoxScore",
+        "type": "object"
       },
       {
         "id": "schema:Coach",
         "kind": "schema",
-        "name": "Coach"
+        "name": "Coach",
+        "type": "object"
       },
       {
         "id": "schema:Conference",
         "kind": "schema",
-        "name": "Conference"
+        "name": "Conference",
+        "type": "object"
       },
       {
         "id": "schema:ConferenceSPRating",
         "kind": "schema",
-        "name": "ConferenceSPRating"
+        "name": "ConferenceSPRating",
+        "type": "object"
       },
       {
         "id": "schema:DraftPick",
         "kind": "schema",
-        "name": "DraftPick"
+        "name": "DraftPick",
+        "type": "object"
       },
       {
         "id": "schema:DraftPosition",
         "kind": "schema",
-        "name": "DraftPosition"
+        "name": "DraftPosition",
+        "type": "object"
       },
       {
         "id": "schema:DraftTeam",
         "kind": "schema",
-        "name": "DraftTeam"
+        "name": "DraftTeam",
+        "type": "object"
       },
       {
         "id": "schema:Drive",
         "kind": "schema",
-        "name": "Drive"
+        "name": "Drive",
+        "type": "object"
       },
       {
         "id": "schema:Game",
         "kind": "schema",
-        "name": "Game"
+        "name": "Game",
+        "type": "object"
       },
       {
         "id": "schema:GameLines",
         "kind": "schema",
-        "name": "GameLines"
+        "name": "GameLines",
+        "type": "object"
       },
       {
         "id": "schema:GameMedia",
         "kind": "schema",
-        "name": "GameMedia"
+        "name": "GameMedia",
+        "type": "object"
       },
       {
         "id": "schema:GamePPA",
         "kind": "schema",
-        "name": "GamePPA"
+        "name": "GamePPA",
+        "type": "object"
       },
       {
         "id": "schema:GameWeather",
         "kind": "schema",
-        "name": "GameWeather"
+        "name": "GameWeather",
+        "type": "object"
       },
       {
         "id": "schema:LivePlayByPlay",
         "kind": "schema",
-        "name": "LivePlayByPlay"
+        "name": "LivePlayByPlay",
+        "type": "object"
       },
       {
         "id": "schema:Play",
         "kind": "schema",
-        "name": "Play"
+        "name": "Play",
+        "type": "object"
       },
       {
         "id": "schema:PlayStat",
         "kind": "schema",
-        "name": "PlayStat"
+        "name": "PlayStat",
+        "type": "object"
       },
       {
         "id": "schema:PlayStatType",
         "kind": "schema",
-        "name": "PlayStatType"
+        "name": "PlayStatType",
+        "type": "object"
       },
       {
         "id": "schema:PlayType",
         "kind": "schema",
-        "name": "PlayType"
+        "name": "PlayType",
+        "type": "object"
       },
       {
         "id": "schema:PlayWP",
         "kind": "schema",
-        "name": "PlayWP"
+        "name": "PlayWP",
+        "type": "object"
       },
       {
         "id": "schema:Player",
         "kind": "schema",
-        "name": "Player"
+        "name": "Player",
+        "type": "object"
       },
       {
         "id": "schema:PlayerGame",
         "kind": "schema",
-        "name": "PlayerGame"
+        "name": "PlayerGame",
+        "type": "object"
       },
       {
         "id": "schema:PlayerGamePPA",
         "kind": "schema",
-        "name": "PlayerGamePPA"
+        "name": "PlayerGamePPA",
+        "type": "object"
       },
       {
         "id": "schema:PlayerSearchResult",
         "kind": "schema",
-        "name": "PlayerSearchResult"
+        "name": "PlayerSearchResult",
+        "type": "object"
       },
       {
         "id": "schema:PlayerSeasonPPA",
         "kind": "schema",
-        "name": "PlayerSeasonPPA"
+        "name": "PlayerSeasonPPA",
+        "type": "object"
       },
       {
         "id": "schema:PlayerSeasonStat",
         "kind": "schema",
-        "name": "PlayerSeasonStat"
+        "name": "PlayerSeasonStat",
+        "type": "object"
       },
       {
         "id": "schema:PlayerUsage",
         "kind": "schema",
-        "name": "PlayerUsage"
+        "name": "PlayerUsage",
+        "type": "object"
       },
       {
         "id": "schema:PortalPlayer",
         "kind": "schema",
-        "name": "PortalPlayer"
+        "name": "PortalPlayer",
+        "type": "object"
       },
       {
         "id": "schema:PositionGroupRecruitingRating",
         "kind": "schema",
-        "name": "PositionGroupRecruitingRating"
+        "name": "PositionGroupRecruitingRating",
+        "type": "object"
       },
       {
         "id": "schema:PredictedPoints",
         "kind": "schema",
-        "name": "PredictedPoints"
+        "name": "PredictedPoints",
+        "type": "object"
       },
       {
         "id": "schema:PregameWP",
         "kind": "schema",
-        "name": "PregameWP"
+        "name": "PregameWP",
+        "type": "object"
       },
       {
         "id": "schema:RankingWeek",
         "kind": "schema",
-        "name": "RankingWeek"
+        "name": "RankingWeek",
+        "type": "object"
       },
       {
         "id": "schema:Recruit",
         "kind": "schema",
-        "name": "Recruit"
+        "name": "Recruit",
+        "type": "object"
       },
       {
         "id": "schema:ReturningProduction",
         "kind": "schema",
-        "name": "ReturningProduction"
+        "name": "ReturningProduction",
+        "type": "object"
       },
       {
         "id": "schema:ScoreboardGame",
         "kind": "schema",
-        "name": "ScoreboardGame"
+        "name": "ScoreboardGame",
+        "type": "object"
       },
       {
         "id": "schema:Team",
         "kind": "schema",
-        "name": "Team"
+        "name": "Team",
+        "type": "object"
       },
       {
         "id": "schema:TeamEloRating",
         "kind": "schema",
-        "name": "TeamEloRating"
+        "name": "TeamEloRating",
+        "type": "object"
       },
       {
         "id": "schema:TeamGame",
         "kind": "schema",
-        "name": "TeamGame"
+        "name": "TeamGame",
+        "type": "object"
       },
       {
         "id": "schema:TeamMatchup",
         "kind": "schema",
-        "name": "TeamMatchup"
+        "name": "TeamMatchup",
+        "type": "object"
       },
       {
         "id": "schema:TeamPPA",
         "kind": "schema",
-        "name": "TeamPPA"
+        "name": "TeamPPA",
+        "type": "object"
       },
       {
         "id": "schema:TeamRecord",
         "kind": "schema",
-        "name": "TeamRecord"
+        "name": "TeamRecord",
+        "type": "object"
       },
       {
         "id": "schema:TeamRecruitingRank",
         "kind": "schema",
-        "name": "TeamRecruitingRank"
+        "name": "TeamRecruitingRank",
+        "type": "object"
       },
       {
         "id": "schema:TeamSPRating",
         "kind": "schema",
-        "name": "TeamSPRating"
+        "name": "TeamSPRating",
+        "type": "object"
       },
       {
         "id": "schema:TeamSRSRating",
         "kind": "schema",
-        "name": "TeamSRSRating"
+        "name": "TeamSRSRating",
+        "type": "object"
       },
       {
         "id": "schema:TeamSeason",
         "kind": "schema",
-        "name": "TeamSeason"
+        "name": "TeamSeason",
+        "type": "object"
       },
       {
         "id": "schema:TeamSeasonStat",
         "kind": "schema",
-        "name": "TeamSeasonStat"
+        "name": "TeamSeasonStat",
+        "type": "object"
       },
       {
         "id": "schema:TeamTalent",
         "kind": "schema",
-        "name": "TeamTalent"
+        "name": "TeamTalent",
+        "type": "object"
       },
       {
         "id": "schema:Venue",
         "kind": "schema",
-        "name": "Venue"
+        "name": "Venue",
+        "type": "object"
       },
       {
         "id": "schema:Week",
         "kind": "schema",
-        "name": "Week"
+        "name": "Week",
+        "type": "object"
       }
     ]
   },

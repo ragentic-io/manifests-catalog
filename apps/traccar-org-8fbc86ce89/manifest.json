@@ -17,12 +17,12 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/attributes/computed/{id}"
+        "to": "operation:put:/attributes/computed/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:put:/attributes/computed/{id}"
+        "to": "operation:delete:/attributes/computed/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -37,12 +37,12 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/calendars/{id}"
+        "to": "operation:put:/calendars/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:put:/calendars/{id}"
+        "to": "operation:delete:/calendars/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -72,12 +72,12 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/commands/{id}"
+        "to": "operation:put:/commands/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:put:/commands/{id}"
+        "to": "operation:delete:/commands/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -92,12 +92,12 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/devices/{id}"
+        "to": "operation:put:/devices/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:put:/devices/{id}"
+        "to": "operation:delete:/devices/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -117,12 +117,12 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/drivers/{id}"
+        "to": "operation:put:/drivers/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:put:/drivers/{id}"
+        "to": "operation:delete:/drivers/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -142,12 +142,12 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/geofences/{id}"
+        "to": "operation:put:/geofences/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:put:/geofences/{id}"
+        "to": "operation:delete:/geofences/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -162,12 +162,12 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/groups/{id}"
+        "to": "operation:put:/groups/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:put:/groups/{id}"
+        "to": "operation:delete:/groups/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -182,12 +182,12 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/maintenance/{id}"
+        "to": "operation:put:/maintenance/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:put:/maintenance/{id}"
+        "to": "operation:delete:/maintenance/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -212,22 +212,22 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/notifications/{id}"
-      },
-      {
-        "from": "traccar-org-8fbc86ce89",
-        "kind": "EXPOSES",
         "to": "operation:put:/notifications/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/permissions"
+        "to": "operation:delete:/notifications/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
         "to": "operation:post:/permissions"
+      },
+      {
+        "from": "traccar-org-8fbc86ce89",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/permissions"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -272,17 +272,17 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/session"
-      },
-      {
-        "from": "traccar-org-8fbc86ce89",
-        "kind": "EXPOSES",
         "to": "operation:get:/session"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
         "to": "operation:post:/session"
+      },
+      {
+        "from": "traccar-org-8fbc86ce89",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/session"
       },
       {
         "from": "traccar-org-8fbc86ce89",
@@ -302,12 +302,372 @@
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:delete:/users/{id}"
+        "to": "operation:put:/users/{id}"
       },
       {
         "from": "traccar-org-8fbc86ce89",
         "kind": "EXPOSES",
-        "to": "operation:put:/users/{id}"
+        "to": "operation:delete:/users/{id}"
+      },
+      {
+        "from": "operation:get:/attributes/computed",
+        "kind": "RETURNS",
+        "to": "schema:Attribute"
+      },
+      {
+        "from": "operation:post:/attributes/computed",
+        "kind": "ACCEPTS",
+        "to": "schema:Attribute"
+      },
+      {
+        "from": "operation:post:/attributes/computed",
+        "kind": "RETURNS",
+        "to": "schema:Attribute"
+      },
+      {
+        "from": "operation:put:/attributes/computed/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Attribute"
+      },
+      {
+        "from": "operation:put:/attributes/computed/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Attribute"
+      },
+      {
+        "from": "operation:get:/calendars",
+        "kind": "RETURNS",
+        "to": "schema:Calendar"
+      },
+      {
+        "from": "operation:post:/calendars",
+        "kind": "ACCEPTS",
+        "to": "schema:Calendar"
+      },
+      {
+        "from": "operation:post:/calendars",
+        "kind": "RETURNS",
+        "to": "schema:Calendar"
+      },
+      {
+        "from": "operation:put:/calendars/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Calendar"
+      },
+      {
+        "from": "operation:put:/calendars/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Calendar"
+      },
+      {
+        "from": "operation:get:/commands",
+        "kind": "RETURNS",
+        "to": "schema:Command"
+      },
+      {
+        "from": "operation:post:/commands",
+        "kind": "ACCEPTS",
+        "to": "schema:Command"
+      },
+      {
+        "from": "operation:post:/commands",
+        "kind": "RETURNS",
+        "to": "schema:Command"
+      },
+      {
+        "from": "operation:get:/commands/send",
+        "kind": "RETURNS",
+        "to": "schema:Command"
+      },
+      {
+        "from": "operation:post:/commands/send",
+        "kind": "ACCEPTS",
+        "to": "schema:Command"
+      },
+      {
+        "from": "operation:post:/commands/send",
+        "kind": "RETURNS",
+        "to": "schema:Command"
+      },
+      {
+        "from": "operation:get:/commands/types",
+        "kind": "RETURNS",
+        "to": "schema:CommandType"
+      },
+      {
+        "from": "operation:put:/commands/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Command"
+      },
+      {
+        "from": "operation:put:/commands/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Command"
+      },
+      {
+        "from": "operation:get:/devices",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:post:/devices",
+        "kind": "ACCEPTS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:post:/devices",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:put:/devices/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:put:/devices/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Device"
+      },
+      {
+        "from": "operation:put:/devices/{id}/accumulators",
+        "kind": "ACCEPTS",
+        "to": "schema:DeviceAccumulators"
+      },
+      {
+        "from": "operation:get:/drivers",
+        "kind": "RETURNS",
+        "to": "schema:Driver"
+      },
+      {
+        "from": "operation:post:/drivers",
+        "kind": "ACCEPTS",
+        "to": "schema:Driver"
+      },
+      {
+        "from": "operation:post:/drivers",
+        "kind": "RETURNS",
+        "to": "schema:Driver"
+      },
+      {
+        "from": "operation:put:/drivers/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Driver"
+      },
+      {
+        "from": "operation:put:/drivers/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Driver"
+      },
+      {
+        "from": "operation:get:/events/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/geofences",
+        "kind": "RETURNS",
+        "to": "schema:Geofence"
+      },
+      {
+        "from": "operation:post:/geofences",
+        "kind": "ACCEPTS",
+        "to": "schema:Geofence"
+      },
+      {
+        "from": "operation:post:/geofences",
+        "kind": "RETURNS",
+        "to": "schema:Geofence"
+      },
+      {
+        "from": "operation:put:/geofences/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Geofence"
+      },
+      {
+        "from": "operation:put:/geofences/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Geofence"
+      },
+      {
+        "from": "operation:get:/groups",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/groups",
+        "kind": "ACCEPTS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:post:/groups",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:put:/groups/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:put:/groups/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Group"
+      },
+      {
+        "from": "operation:get:/maintenance",
+        "kind": "RETURNS",
+        "to": "schema:Maintenance"
+      },
+      {
+        "from": "operation:post:/maintenance",
+        "kind": "ACCEPTS",
+        "to": "schema:Maintenance"
+      },
+      {
+        "from": "operation:post:/maintenance",
+        "kind": "RETURNS",
+        "to": "schema:Maintenance"
+      },
+      {
+        "from": "operation:put:/maintenance/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Maintenance"
+      },
+      {
+        "from": "operation:put:/maintenance/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Maintenance"
+      },
+      {
+        "from": "operation:get:/notifications",
+        "kind": "RETURNS",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "operation:post:/notifications",
+        "kind": "ACCEPTS",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "operation:post:/notifications",
+        "kind": "RETURNS",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "operation:get:/notifications/types",
+        "kind": "RETURNS",
+        "to": "schema:NotificationType"
+      },
+      {
+        "from": "operation:put:/notifications/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "operation:put:/notifications/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "operation:post:/permissions",
+        "kind": "ACCEPTS",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "operation:post:/permissions",
+        "kind": "RETURNS",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "operation:delete:/permissions",
+        "kind": "ACCEPTS",
+        "to": "schema:Permission"
+      },
+      {
+        "from": "operation:get:/positions",
+        "kind": "RETURNS",
+        "to": "schema:Position"
+      },
+      {
+        "from": "operation:get:/reports/events",
+        "kind": "RETURNS",
+        "to": "schema:Event"
+      },
+      {
+        "from": "operation:get:/reports/route",
+        "kind": "RETURNS",
+        "to": "schema:Position"
+      },
+      {
+        "from": "operation:get:/reports/stops",
+        "kind": "RETURNS",
+        "to": "schema:ReportStops"
+      },
+      {
+        "from": "operation:get:/reports/summary",
+        "kind": "RETURNS",
+        "to": "schema:ReportSummary"
+      },
+      {
+        "from": "operation:get:/reports/trips",
+        "kind": "RETURNS",
+        "to": "schema:ReportTrips"
+      },
+      {
+        "from": "operation:get:/server",
+        "kind": "RETURNS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:put:/server",
+        "kind": "ACCEPTS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:put:/server",
+        "kind": "RETURNS",
+        "to": "schema:Server"
+      },
+      {
+        "from": "operation:get:/session",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:post:/session",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:get:/statistics",
+        "kind": "RETURNS",
+        "to": "schema:Statistics"
+      },
+      {
+        "from": "operation:get:/users",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:post:/users",
+        "kind": "ACCEPTS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:post:/users",
+        "kind": "RETURNS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:put:/users/{id}",
+        "kind": "ACCEPTS",
+        "to": "schema:User"
+      },
+      {
+        "from": "operation:put:/users/{id}",
+        "kind": "RETURNS",
+        "to": "schema:User"
       }
     ],
     "nodes": [
@@ -317,18 +677,65 @@
       },
       {
         "deprecated": false,
+        "description": "Without params, it returns a list of Attributes the user has access to",
         "id": "operation:get:/attributes/computed",
         "kind": "operation",
         "method": "get",
         "name": "get /attributes/computed",
+        "parameters": [
+          {
+            "description": "Can only be used by admins or managers to fetch all entities",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Standard users can use this only with their own _userId_",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _deviceId_s, they have access to",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _groupId_s, they have access to",
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/attributes/computed",
         "pointer": "#/paths/~1attributes~1computed/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attribute[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Attributes"
+        "summary": "Fetch a list of Attributes",
+        "tags": [
+          "Attributes"
+        ]
       },
       {
         "deprecated": false,
@@ -338,27 +745,29 @@
         "name": "post /attributes/computed",
         "path": "/attributes/computed",
         "pointer": "#/paths/~1attributes~1computed/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Attribute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attribute"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create an Attribute"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/attributes/computed/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /attributes/computed/{id}",
-        "path": "/attributes/computed/{id}",
-        "pointer": "#/paths/~1attributes~1computed~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete an Attribute"
+        "summary": "Create an Attribute",
+        "tags": [
+          "Attributes"
+        ]
       },
       {
         "deprecated": false,
@@ -366,29 +775,113 @@
         "kind": "operation",
         "method": "put",
         "name": "put /attributes/computed/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/attributes/computed/{id}",
         "pointer": "#/paths/~1attributes~1computed~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Attribute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attribute"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update an Attribute"
+        "summary": "Update an Attribute",
+        "tags": [
+          "Attributes"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/attributes/computed/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /attributes/computed/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/attributes/computed/{id}",
+        "pointer": "#/paths/~1attributes~1computed~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete an Attribute",
+        "tags": [
+          "Attributes"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Without params, it returns a list of Calendars the user has access to",
         "id": "operation:get:/calendars",
         "kind": "operation",
         "method": "get",
         "name": "get /calendars",
+        "parameters": [
+          {
+            "description": "Can only be used by admins or managers to fetch all entities",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Standard users can use this only with their own _userId_",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/calendars",
         "pointer": "#/paths/~1calendars/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Calendar[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Calendars"
+        "summary": "Fetch a list of Calendars",
+        "tags": [
+          "Calendars"
+        ]
       },
       {
         "deprecated": false,
@@ -398,27 +891,29 @@
         "name": "post /calendars",
         "path": "/calendars",
         "pointer": "#/paths/~1calendars/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Calendar"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Calendar"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a Calendar"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/calendars/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /calendars/{id}",
-        "path": "/calendars/{id}",
-        "pointer": "#/paths/~1calendars~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a Calendar"
+        "summary": "Create a Calendar",
+        "tags": [
+          "Calendars"
+        ]
       },
       {
         "deprecated": false,
@@ -426,29 +921,133 @@
         "kind": "operation",
         "method": "put",
         "name": "put /calendars/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/calendars/{id}",
         "pointer": "#/paths/~1calendars~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Calendar"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Calendar"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a Calendar"
+        "summary": "Update a Calendar",
+        "tags": [
+          "Calendars"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/calendars/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /calendars/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/calendars/{id}",
+        "pointer": "#/paths/~1calendars~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete a Calendar",
+        "tags": [
+          "Calendars"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Without params, it returns a list of Saved Commands the user has access to",
         "id": "operation:get:/commands",
         "kind": "operation",
         "method": "get",
         "name": "get /commands",
+        "parameters": [
+          {
+            "description": "Can only be used by admins or managers to fetch all entities",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Standard users can use this only with their own _userId_",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _deviceId_s, they have access to",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _groupId_s, they have access to",
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/commands",
         "pointer": "#/paths/~1commands/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Command[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Saved Commands"
+        "summary": "Fetch a list of Saved Commands",
+        "tags": [
+          "Commands"
+        ]
       },
       {
         "deprecated": false,
@@ -458,42 +1057,107 @@
         "name": "post /commands",
         "path": "/commands",
         "pointer": "#/paths/~1commands/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Command"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Command"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a Saved Command"
+        "summary": "Create a Saved Command",
+        "tags": [
+          "Commands"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of saved commands linked to Device and its groups, filtered by current Device protocol support",
         "id": "operation:get:/commands/send",
         "kind": "operation",
         "method": "get",
         "name": "get /commands/send",
+        "parameters": [
+          {
+            "description": "Standard users can use this only with _deviceId_s, they have access to",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/commands/send",
         "pointer": "#/paths/~1commands~1send/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Command[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Saved Commands supported by Device at the moment"
+        "summary": "Fetch a list of Saved Commands supported by Device at the moment",
+        "tags": [
+          "Commands"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Dispatch a new command or Saved Command if _body.id_ set",
         "id": "operation:post:/commands/send",
         "kind": "operation",
         "method": "post",
         "name": "post /commands/send",
         "path": "/commands/send",
         "pointer": "#/paths/~1commands~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Command"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Command"
+          },
+          {
+            "status": "202",
+            "type": "Command"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Dispatch commands to device"
+        "summary": "Dispatch commands to device",
+        "tags": [
+          "Commands"
+        ]
       },
       {
         "deprecated": false,
@@ -501,29 +1165,50 @@
         "kind": "operation",
         "method": "get",
         "name": "get /commands/types",
+        "parameters": [
+          {
+            "description": "Internal device identifier.",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Protocol name.",
+            "in": "query",
+            "name": "protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When `true` return SMS commands.",
+            "in": "query",
+            "name": "textChannel",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/commands/types",
         "pointer": "#/paths/~1commands~1types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CommandType[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of available Commands for the Device or all possible Commands if Device ommited"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/commands/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /commands/{id}",
-        "path": "/commands/{id}",
-        "pointer": "#/paths/~1commands~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a Saved Command"
+        "summary": "Fetch a list of available Commands for the Device or all possible Commands if Device ommited",
+        "tags": [
+          "Commands"
+        ]
       },
       {
         "deprecated": false,
@@ -531,29 +1216,130 @@
         "kind": "operation",
         "method": "put",
         "name": "put /commands/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/commands/{id}",
         "pointer": "#/paths/~1commands~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Command"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Command"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a Saved Command"
+        "summary": "Update a Saved Command",
+        "tags": [
+          "Commands"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/commands/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /commands/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/commands/{id}",
+        "pointer": "#/paths/~1commands~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete a Saved Command",
+        "tags": [
+          "Commands"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Without any params, returns a list of the user's devices",
         "id": "operation:get:/devices",
         "kind": "operation",
         "method": "get",
         "name": "get /devices",
+        "parameters": [
+          {
+            "description": "Can only be used by admins or managers to fetch all entities",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Standard users can use this only with their own _userId_",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "To fetch one or more devices.",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "To fetch one or more devices.",
+            "in": "query",
+            "name": "uniqueId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/devices",
         "pointer": "#/paths/~1devices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Devices"
+        "summary": "Fetch a list of Devices",
+        "tags": [
+          "Devices"
+        ]
       },
       {
         "deprecated": false,
@@ -563,27 +1349,29 @@
         "name": "post /devices",
         "path": "/devices",
         "pointer": "#/paths/~1devices/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Device"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a Device"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/devices/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /devices/{id}",
-        "path": "/devices/{id}",
-        "pointer": "#/paths/~1devices~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a Device"
+        "summary": "Create a Device",
+        "tags": [
+          "Devices"
+        ]
       },
       {
         "deprecated": false,
@@ -591,14 +1379,71 @@
         "kind": "operation",
         "method": "put",
         "name": "put /devices/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/devices/{id}",
         "pointer": "#/paths/~1devices~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Device"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Device"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a Device"
+        "summary": "Update a Device",
+        "tags": [
+          "Devices"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/devices/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /devices/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/devices/{id}",
+        "pointer": "#/paths/~1devices~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete a Device",
+        "tags": [
+          "Devices"
+        ]
       },
       {
         "deprecated": false,
@@ -606,29 +1451,100 @@
         "kind": "operation",
         "method": "put",
         "name": "put /devices/{id}/accumulators",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/devices/{id}/accumulators",
         "pointer": "#/paths/~1devices~1{id}~1accumulators/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DeviceAccumulators"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update total distance and hours of the Device"
+        "summary": "Update total distance and hours of the Device",
+        "tags": [
+          "Devices"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Without params, it returns a list of Drivers the user has access to",
         "id": "operation:get:/drivers",
         "kind": "operation",
         "method": "get",
         "name": "get /drivers",
+        "parameters": [
+          {
+            "description": "Can only be used by admins or managers to fetch all entities",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Standard users can use this only with their own _userId_",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _deviceId_s, they have access to",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _groupId_s, they have access to",
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/drivers",
         "pointer": "#/paths/~1drivers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Driver[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Drivers"
+        "summary": "Fetch a list of Drivers",
+        "tags": [
+          "Drivers"
+        ]
       },
       {
         "deprecated": false,
@@ -638,27 +1554,29 @@
         "name": "post /drivers",
         "path": "/drivers",
         "pointer": "#/paths/~1drivers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Driver"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Driver"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a Driver"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/drivers/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /drivers/{id}",
-        "path": "/drivers/{id}",
-        "pointer": "#/paths/~1drivers~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a Driver"
+        "summary": "Create a Driver",
+        "tags": [
+          "Drivers"
+        ]
       },
       {
         "deprecated": false,
@@ -666,14 +1584,71 @@
         "kind": "operation",
         "method": "put",
         "name": "put /drivers/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/drivers/{id}",
         "pointer": "#/paths/~1drivers~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Driver"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Driver"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a Driver"
+        "summary": "Update a Driver",
+        "tags": [
+          "Drivers"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/drivers/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /drivers/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/drivers/{id}",
+        "pointer": "#/paths/~1drivers~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete a Driver",
+        "tags": [
+          "Drivers"
+        ]
       },
       {
         "deprecated": false,
@@ -681,29 +1656,94 @@
         "kind": "operation",
         "method": "get",
         "name": "get /events/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/events/{id}",
         "pointer": "#/paths/~1events~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Without params, it returns a list of Geofences the user has access to",
         "id": "operation:get:/geofences",
         "kind": "operation",
         "method": "get",
         "name": "get /geofences",
+        "parameters": [
+          {
+            "description": "Can only be used by admins or managers to fetch all entities",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Standard users can use this only with their own _userId_",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _deviceId_s, they have access to",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _groupId_s, they have access to",
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/geofences",
         "pointer": "#/paths/~1geofences/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Geofence[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Geofences"
+        "summary": "Fetch a list of Geofences",
+        "tags": [
+          "Geofences"
+        ]
       },
       {
         "deprecated": false,
@@ -713,27 +1753,29 @@
         "name": "post /geofences",
         "path": "/geofences",
         "pointer": "#/paths/~1geofences/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Geofence"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Geofence"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a Geofence"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/geofences/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /geofences/{id}",
-        "path": "/geofences/{id}",
-        "pointer": "#/paths/~1geofences~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a Geofence"
+        "summary": "Create a Geofence",
+        "tags": [
+          "Geofences"
+        ]
       },
       {
         "deprecated": false,
@@ -741,29 +1783,113 @@
         "kind": "operation",
         "method": "put",
         "name": "put /geofences/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/geofences/{id}",
         "pointer": "#/paths/~1geofences~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Geofence"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Geofence"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a Geofence"
+        "summary": "Update a Geofence",
+        "tags": [
+          "Geofences"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/geofences/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /geofences/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/geofences/{id}",
+        "pointer": "#/paths/~1geofences~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete a Geofence",
+        "tags": [
+          "Geofences"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Without any params, returns a list of the Groups the user belongs to",
         "id": "operation:get:/groups",
         "kind": "operation",
         "method": "get",
         "name": "get /groups",
+        "parameters": [
+          {
+            "description": "Can only be used by admins or managers to fetch all entities",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Standard users can use this only with their own _userId_",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/groups",
         "pointer": "#/paths/~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Groups"
+        "summary": "Fetch a list of Groups",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -773,27 +1899,32 @@
         "name": "post /groups",
         "path": "/groups",
         "pointer": "#/paths/~1groups/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Group"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a Group"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/groups/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /groups/{id}",
-        "path": "/groups/{id}",
-        "pointer": "#/paths/~1groups~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a Group"
+        "summary": "Create a Group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
@@ -801,29 +1932,133 @@
         "kind": "operation",
         "method": "put",
         "name": "put /groups/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/groups/{id}",
         "pointer": "#/paths/~1groups~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Group"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Group"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a Group"
+        "summary": "Update a Group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/groups/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /groups/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/groups/{id}",
+        "pointer": "#/paths/~1groups~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete a Group",
+        "tags": [
+          "Groups"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Without params, it returns a list of Maintenance the user has access to",
         "id": "operation:get:/maintenance",
         "kind": "operation",
         "method": "get",
         "name": "get /maintenance",
+        "parameters": [
+          {
+            "description": "Can only be used by admins or managers to fetch all entities",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Standard users can use this only with their own _userId_",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _deviceId_s, they have access to",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _groupId_s, they have access to",
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/maintenance",
         "pointer": "#/paths/~1maintenance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Maintenance[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Maintenance"
+        "summary": "Fetch a list of Maintenance",
+        "tags": [
+          "Maintenance"
+        ]
       },
       {
         "deprecated": false,
@@ -833,27 +2068,29 @@
         "name": "post /maintenance",
         "path": "/maintenance",
         "pointer": "#/paths/~1maintenance/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Maintenance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Maintenance"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a Maintenance"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/maintenance/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /maintenance/{id}",
-        "path": "/maintenance/{id}",
-        "pointer": "#/paths/~1maintenance~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a Maintenance"
+        "summary": "Create a Maintenance",
+        "tags": [
+          "Maintenance"
+        ]
       },
       {
         "deprecated": false,
@@ -861,29 +2098,133 @@
         "kind": "operation",
         "method": "put",
         "name": "put /maintenance/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/maintenance/{id}",
         "pointer": "#/paths/~1maintenance~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Maintenance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Maintenance"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a Maintenance"
+        "summary": "Update a Maintenance",
+        "tags": [
+          "Maintenance"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/maintenance/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /maintenance/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/maintenance/{id}",
+        "pointer": "#/paths/~1maintenance~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete a Maintenance",
+        "tags": [
+          "Maintenance"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Without params, it returns a list of Notifications the user has access to",
         "id": "operation:get:/notifications",
         "kind": "operation",
         "method": "get",
         "name": "get /notifications",
+        "parameters": [
+          {
+            "description": "Can only be used by admins or managers to fetch all entities",
+            "in": "query",
+            "name": "all",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Standard users can use this only with their own _userId_",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _deviceId_s, they have access to",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Standard users can use this only with _groupId_s, they have access to",
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/notifications",
         "pointer": "#/paths/~1notifications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Notification[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Notifications"
+        "summary": "Fetch a list of Notifications",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
@@ -893,12 +2234,29 @@
         "name": "post /notifications",
         "path": "/notifications",
         "pointer": "#/paths/~1notifications/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Notification"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Notification"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a Notification"
+        "summary": "Create a Notification",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
@@ -908,12 +2266,24 @@
         "name": "post /notifications/test",
         "path": "/notifications/test",
         "pointer": "#/paths/~1notifications~1test/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Send test notification to current user via Email and SMS"
+        "summary": "Send test notification to current user via Email and SMS",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
@@ -923,27 +2293,22 @@
         "name": "get /notifications/types",
         "path": "/notifications/types",
         "pointer": "#/paths/~1notifications~1types/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NotificationType[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of available Notification types"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/notifications/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /notifications/{id}",
-        "path": "/notifications/{id}",
-        "pointer": "#/paths/~1notifications~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a Notification"
+        "summary": "Fetch a list of available Notification types",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
@@ -951,29 +2316,71 @@
         "kind": "operation",
         "method": "put",
         "name": "put /notifications/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/notifications/{id}",
         "pointer": "#/paths/~1notifications~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Notification"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Notification"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a Notification"
+        "summary": "Update a Notification",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/permissions",
+        "id": "operation:delete:/notifications/{id}",
         "kind": "operation",
         "method": "delete",
-        "name": "delete /permissions",
-        "path": "/permissions",
-        "pointer": "#/paths/~1permissions/delete",
+        "name": "delete /notifications/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/notifications/{id}",
+        "pointer": "#/paths/~1notifications~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Unlink an Object from another Object"
+        "summary": "Delete a Notification",
+        "tags": [
+          "Notifications"
+        ]
       },
       {
         "deprecated": false,
@@ -983,102 +2390,396 @@
         "name": "post /permissions",
         "path": "/permissions",
         "pointer": "#/paths/~1permissions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Permission"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Permission"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Link an Object to another Object"
+        "summary": "Link an Object to another Object",
+        "tags": [
+          "Permissions"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/permissions",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /permissions",
+        "path": "/permissions",
+        "pointer": "#/paths/~1permissions/delete",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Permission"
+        },
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Unlink an Object from another Object",
+        "tags": [
+          "Permissions"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "We strongly recommend using [Traccar WebSocket API](https://www.traccar.org/traccar-api/) instead of periodically polling positions endpoint.",
         "id": "operation:get:/positions",
         "kind": "operation",
         "method": "get",
         "name": "get /positions",
+        "parameters": [
+          {
+            "description": "_deviceId_ is optional, but requires the _from_ and _to_ parameters when used",
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "To fetch one or more positions.",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/positions",
         "pointer": "#/paths/~1positions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Position[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetches a list of Positions"
+        "summary": "Fetches a list of Positions",
+        "tags": [
+          "Positions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "At least one _deviceId_ or one _groupId_ must be passed",
         "id": "operation:get:/reports/events",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/events",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "% can be used to return events of all types",
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/reports/events",
         "pointer": "#/paths/~1reports~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Event[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Events within the time period for the Devices or Groups"
+        "summary": "Fetch a list of Events within the time period for the Devices or Groups",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "At least one _deviceId_ or one _groupId_ must be passed",
         "id": "operation:get:/reports/route",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/route",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/reports/route",
         "pointer": "#/paths/~1reports~1route/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Position[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Positions within the time period for the Devices or Groups"
+        "summary": "Fetch a list of Positions within the time period for the Devices or Groups",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "At least one _deviceId_ or one _groupId_ must be passed",
         "id": "operation:get:/reports/stops",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/stops",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/reports/stops",
         "pointer": "#/paths/~1reports~1stops/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReportStops[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of ReportStops within the time period for the Devices or Groups"
+        "summary": "Fetch a list of ReportStops within the time period for the Devices or Groups",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "At least one _deviceId_ or one _groupId_ must be passed",
         "id": "operation:get:/reports/summary",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/summary",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/reports/summary",
         "pointer": "#/paths/~1reports~1summary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReportSummary[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of ReportSummary within the time period for the Devices or Groups"
+        "summary": "Fetch a list of ReportSummary within the time period for the Devices or Groups",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
+        "description": "At least one _deviceId_ or one _groupId_ must be passed",
         "id": "operation:get:/reports/trips",
         "kind": "operation",
         "method": "get",
         "name": "get /reports/trips",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "deviceId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "in": "query",
+            "name": "groupId",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/reports/trips",
         "pointer": "#/paths/~1reports~1trips/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ReportTrips[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of ReportTrips within the time period for the Devices or Groups"
+        "summary": "Fetch a list of ReportTrips within the time period for the Devices or Groups",
+        "tags": [
+          "Reports"
+        ]
       },
       {
         "deprecated": false,
@@ -1088,12 +2789,22 @@
         "name": "get /server",
         "path": "/server",
         "pointer": "#/paths/~1server/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Server"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch Server information"
+        "summary": "Fetch Server information",
+        "tags": [
+          "Server"
+        ]
       },
       {
         "deprecated": false,
@@ -1103,27 +2814,29 @@
         "name": "put /server",
         "path": "/server",
         "pointer": "#/paths/~1server/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Server"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Server"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update Server information"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/session",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /session",
-        "path": "/session",
-        "pointer": "#/paths/~1session/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Close the Session"
+        "summary": "Update Server information",
+        "tags": [
+          "Server"
+        ]
       },
       {
         "deprecated": false,
@@ -1131,14 +2844,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /session",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/session",
         "pointer": "#/paths/~1session/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch Session information"
+        "summary": "Fetch Session information",
+        "tags": [
+          "Session"
+        ]
       },
       {
         "deprecated": false,
@@ -1148,12 +2882,56 @@
         "name": "post /session",
         "path": "/session",
         "pointer": "#/paths/~1session/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a new Session"
+        "summary": "Create a new Session",
+        "tags": [
+          "Session"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/session",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /session",
+        "path": "/session",
+        "pointer": "#/paths/~1session/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Close the Session",
+        "tags": [
+          "Session"
+        ]
       },
       {
         "deprecated": false,
@@ -1161,14 +2939,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /statistics",
+        "parameters": [
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string:date-time"
+          },
+          {
+            "description": "in IS0 8601 format.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/statistics",
         "pointer": "#/paths/~1statistics/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Statistics[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch server Statistics"
+        "summary": "Fetch server Statistics",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1176,14 +2980,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /users",
+        "parameters": [
+          {
+            "description": "Can only be used by admin or manager users",
+            "in": "query",
+            "name": "userId",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users",
         "pointer": "#/paths/~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "User[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Fetch a list of Users"
+        "summary": "Fetch a list of Users",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
@@ -1193,27 +3019,29 @@
         "name": "post /users",
         "path": "/users",
         "pointer": "#/paths/~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "User"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Create a User"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/users/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /users/{id}",
-        "path": "/users/{id}",
-        "pointer": "#/paths/~1users~1{id}/delete",
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ],
-        "summary": "Delete a User"
+        "summary": "Create a User",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "deprecated": false,
@@ -1221,119 +3049,198 @@
         "kind": "operation",
         "method": "put",
         "name": "put /users/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/users/{id}",
         "pointer": "#/paths/~1users~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "User"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "User"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": "Update a User"
+        "summary": "Update a User",
+        "tags": [
+          "Users"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/users/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /users/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/users/{id}",
+        "pointer": "#/paths/~1users~1{id}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "summary": "Delete a User",
+        "tags": [
+          "Users"
+        ]
       },
       {
         "id": "schema:Attribute",
         "kind": "schema",
-        "name": "Attribute"
+        "name": "Attribute",
+        "type": "object"
       },
       {
         "id": "schema:Calendar",
         "kind": "schema",
-        "name": "Calendar"
+        "name": "Calendar",
+        "type": "object"
       },
       {
         "id": "schema:Command",
         "kind": "schema",
-        "name": "Command"
+        "name": "Command",
+        "type": "object"
       },
       {
         "id": "schema:CommandType",
         "kind": "schema",
-        "name": "CommandType"
+        "name": "CommandType",
+        "type": "object"
       },
       {
         "id": "schema:Device",
         "kind": "schema",
-        "name": "Device"
+        "name": "Device",
+        "type": "object"
       },
       {
         "id": "schema:DeviceAccumulators",
         "kind": "schema",
-        "name": "DeviceAccumulators"
+        "name": "DeviceAccumulators",
+        "type": "object"
       },
       {
         "id": "schema:Driver",
         "kind": "schema",
-        "name": "Driver"
+        "name": "Driver",
+        "type": "object"
       },
       {
         "id": "schema:Event",
         "kind": "schema",
-        "name": "Event"
+        "name": "Event",
+        "type": "object"
       },
       {
         "id": "schema:Geofence",
         "kind": "schema",
-        "name": "Geofence"
+        "name": "Geofence",
+        "type": "object"
       },
       {
         "id": "schema:Group",
         "kind": "schema",
-        "name": "Group"
+        "name": "Group",
+        "type": "object"
       },
       {
         "id": "schema:Maintenance",
         "kind": "schema",
-        "name": "Maintenance"
+        "name": "Maintenance",
+        "type": "object"
       },
       {
         "id": "schema:Notification",
         "kind": "schema",
-        "name": "Notification"
+        "name": "Notification",
+        "type": "object"
       },
       {
         "id": "schema:NotificationType",
         "kind": "schema",
-        "name": "NotificationType"
+        "name": "NotificationType",
+        "type": "object"
       },
       {
+        "description": "This is a permission map that contain two object indexes.",
         "id": "schema:Permission",
         "kind": "schema",
-        "name": "Permission"
+        "name": "Permission",
+        "type": "object"
       },
       {
         "id": "schema:Position",
         "kind": "schema",
-        "name": "Position"
+        "name": "Position",
+        "type": "object"
       },
       {
         "id": "schema:ReportStops",
         "kind": "schema",
-        "name": "ReportStops"
+        "name": "ReportStops",
+        "type": "object"
       },
       {
         "id": "schema:ReportSummary",
         "kind": "schema",
-        "name": "ReportSummary"
+        "name": "ReportSummary",
+        "type": "object"
       },
       {
         "id": "schema:ReportTrips",
         "kind": "schema",
-        "name": "ReportTrips"
+        "name": "ReportTrips",
+        "type": "object"
       },
       {
         "id": "schema:Server",
         "kind": "schema",
-        "name": "Server"
+        "name": "Server",
+        "type": "object"
       },
       {
         "id": "schema:Statistics",
         "kind": "schema",
-        "name": "Statistics"
+        "name": "Statistics",
+        "type": "object"
       },
       {
         "id": "schema:User",
         "kind": "schema",
-        "name": "User"
+        "name": "User",
+        "type": "object"
       }
     ]
   },

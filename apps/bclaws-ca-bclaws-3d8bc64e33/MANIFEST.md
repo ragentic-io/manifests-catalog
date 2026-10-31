@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 | | |
 | --- | --- |
-| Signed bundle | `e884260c17fa76f1858421dd33a9892104d07cb0f550c730d2712aea790c05f0` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,12 +32,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_avatars1.githubusercontent.com_
 
 ## Operations (7)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/content/{aspectId}` | get /content/{aspectId} | Describes the documents and directories available within a specific 'aspect' (content group) of the BCLaws library |
-| GET | `/content/{aspectId}/{civixDocumentId}` | get /content/{aspectId}/{civixDocumentId} | Lists the metadata available for the specified index or directory from the BCLaws legislative respository |
-| GET | `/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}` | get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId} | Retrieves a specific document from the BCLaws legislative repository (HTML format) |
-| GET | `/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/search/{searchString}` | get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/search/{searchString} | Retrieves a specific document from the BCLaws legislative repository with search text highlighted (HTML format) |
-| GET | `/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml` | get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml | Retrieves a specific document from the BCLaws legislative repository (XML format) |
-| GET | `/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml/search/{searchString}` | get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml/search/{searchString} | Retrieves a specific document from the BCLaws legislative repository with search text highlighted (XML format) |
-| GET | `/search/{aspectId}/fullsearch` | get /search/{aspectId}/fullsearch | A listing of metadata available for the specified aspect and search term from the BCLaws legislative repository |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/content/{aspectId}` | get /content/{aspectId} | `aspectId`* | — | yes | Describes the documents and directories available within a specific 'aspect' (content group) of the BCLaws library |
+| GET | `/content/{aspectId}/{civixDocumentId}` | get /content/{aspectId}/{civixDocumentId} | `aspectId`*, `civixDocumentId`* | — | yes | Lists the metadata available for the specified index or directory from the BCLaws legislative respository |
+| GET | `/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}` | get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId} | `aspectId`*, `civixIndexId`*, `civixDocumentId`* | — | yes | Retrieves a specific document from the BCLaws legislative repository (HTML format) |
+| GET | `/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/search/{searchString}` | get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/search/{searchString} | `aspectId`*, `civixIndexId`*, `civixDocumentId`*, `searchString`* | — | yes | Retrieves a specific document from the BCLaws legislative repository with search text highlighted (HTML format) |
+| GET | `/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml` | get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml | `aspectId`*, `civixIndexId`*, `civixDocumentId`* | — | yes | Retrieves a specific document from the BCLaws legislative repository (XML format) |
+| GET | `/document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml/search/{searchString}` | get /document/id/{aspectId}/{civixIndexId}/{civixDocumentId}/xml/search/{searchString} | `aspectId`*, `civixIndexId`*, `civixDocumentId`*, `searchString`* | — | yes | Retrieves a specific document from the BCLaws legislative repository with search text highlighted (XML format) |
+| GET | `/search/{aspectId}/fullsearch` | get /search/{aspectId}/fullsearch | `aspectId`*, `q`*, `s`*, `e`*, `nFrag`*, `lFrag`* | — | yes | A listing of metadata available for the specified aspect and search term from the BCLaws legislative repository |

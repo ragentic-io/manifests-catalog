@@ -8,6 +8,11 @@
         "from": "redeal-io-00133e3edb",
         "kind": "EXPOSES",
         "to": "operation:get:/events"
+      },
+      {
+        "from": "operation:get:/events",
+        "kind": "RETURNS",
+        "to": "schema:EventRecord"
       }
     ],
     "nodes": [
@@ -17,19 +22,83 @@
       },
       {
         "deprecated": false,
+        "description": "By passing in the company, site or deal Id a set of user interaction event records is returned.",
         "id": "operation:get:/events",
         "kind": "operation",
         "method": "get",
         "name": "getEvents",
+        "parameters": [
+          {
+            "description": "pass an optional company Id",
+            "in": "query",
+            "name": "company",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "pass an optional site Id",
+            "in": "query",
+            "name": "site",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "pass an optional deal Id",
+            "in": "query",
+            "name": "deal",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "type of records to return",
+            "enum": [
+              "all",
+              "clicks",
+              "contacts"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "next token to start returning records from",
+            "in": "query",
+            "name": "nexttoken",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "id of execution to get more records based on next token",
+            "in": "query",
+            "name": "queryexecutionid",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/events",
         "pointer": "#/paths/~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventRecord[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "get events for analytics"
+        "summary": "get events for analytics",
+        "tags": [
+          "developers"
+        ]
       },
       {
         "id": "schema:EventRecord",
         "kind": "schema",
-        "name": "EventRecord"
+        "name": "EventRecord",
+        "type": "object"
       }
     ]
   },

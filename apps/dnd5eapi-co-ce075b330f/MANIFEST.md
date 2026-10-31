@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `9773d1d4df139f7370a4719a583ba232a7f73d7b47cb043af060925dcc09ebd4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,52 +34,54 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 49 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api` | get /api | Get all resource URLs. |
-| GET | `/api/ability-scores/{index}` | get /api/ability-scores/{index} | Get an ability score by index. |
-| GET | `/api/alignments/{index}` | get /api/alignments/{index} | Get an alignment by index. |
-| GET | `/api/backgrounds/{index}` | get /api/backgrounds/{index} | Get a background by index. |
-| GET | `/api/classes/{index}` | get /api/classes/{index} | Get a class by index. |
-| GET | `/api/classes/{index}/features` | get /api/classes/{index}/features | Get features available for a class. |
-| GET | `/api/classes/{index}/levels` | get /api/classes/{index}/levels | Get all level resources for a class. |
-| GET | `/api/classes/{index}/levels/{class_level}` | get /api/classes/{index}/levels/{class_level} | Get level resource for a class and level. |
-| GET | `/api/classes/{index}/levels/{class_level}/features` | get /api/classes/{index}/levels/{class_level}/features | Get features available to a class at the requested level. |
-| GET | `/api/classes/{index}/levels/{spell_level}/spells` | get /api/classes/{index}/levels/{spell_level}/spells | Get spells of the requested level available to the class. |
-| GET | `/api/classes/{index}/multi-classing` | get /api/classes/{index}/multi-classing | Get multiclassing resource for a class. |
-| GET | `/api/classes/{index}/proficiencies` | get /api/classes/{index}/proficiencies | Get proficiencies available for a class. |
-| GET | `/api/classes/{index}/spellcasting` | get /api/classes/{index}/spellcasting | Get spellcasting info for a class. |
-| GET | `/api/classes/{index}/spells` | get /api/classes/{index}/spells | Get spells available for a class. |
-| GET | `/api/classes/{index}/subclasses` | get /api/classes/{index}/subclasses | Get subclasses available for a class. |
-| GET | `/api/conditions/{index}` | get /api/conditions/{index} | Get a condition by index. |
-| GET | `/api/damage-types/{index}` | get /api/damage-types/{index} | Get a damage type by index. |
-| GET | `/api/equipment-categories/{index}` | get /api/equipment-categories/{index} | Get an equipment category by index. |
-| GET | `/api/equipment/{index}` | get /api/equipment/{index} | Get an equipment item by index. |
-| GET | `/api/feats/{index}` | get /api/feats/{index} | Get a feat by index. |
-| GET | `/api/features/{index}` | get /api/features/{index} | Get a feature by index. |
-| GET | `/api/languages/{index}` | get /api/languages/{index} | Get a language by index. |
-| GET | `/api/magic-items/{index}` | get /api/magic-items/{index} | Get a magic item by index. |
-| GET | `/api/magic-schools/{index}` | get /api/magic-schools/{index} | Get a magic school by index. |
-| GET | `/api/monsters` | get /api/monsters | Get list of monsters with optional filtering |
-| GET | `/api/monsters/{index}` | get /api/monsters/{index} | Get monster by index. |
-| GET | `/api/proficiencies/{index}` | get /api/proficiencies/{index} | Get a proficiency by index. |
-| GET | `/api/races/{index}` | get /api/races/{index} | Get a race by index. |
-| GET | `/api/races/{index}/proficiencies` | get /api/races/{index}/proficiencies | Get proficiencies available for a race. |
-| GET | `/api/races/{index}/subraces` | get /api/races/{index}/subraces | Get subraces available for a race. |
-| GET | `/api/races/{index}/traits` | get /api/races/{index}/traits | Get traits available for a race. |
-| GET | `/api/rule-sections/{index}` | get /api/rule-sections/{index} | Get a rule section by index. |
-| GET | `/api/rules/{index}` | get /api/rules/{index} | Get a rule by index. |
-| GET | `/api/skills/{index}` | get /api/skills/{index} | Get a skill by index. |
-| GET | `/api/spells` | get /api/spells | Get list of spells with optional filtering. |
-| GET | `/api/spells/{index}` | get /api/spells/{index} | Get a spell by index. |
-| GET | `/api/subclasses/{index}` | get /api/subclasses/{index} | Get a subclass by index. |
-| GET | `/api/subclasses/{index}/features` | get /api/subclasses/{index}/features | Get features available for a subclass. |
-| GET | `/api/subclasses/{index}/levels` | get /api/subclasses/{index}/levels | Get all level resources for a subclass. |
-| GET | `/api/subclasses/{index}/levels/{subclass_level}` | get /api/subclasses/{index}/levels/{subclass_level} | Get level resources for a subclass and level. |
-| GET | `/api/subclasses/{index}/levels/{subclass_level}/features` | get /api/subclasses/{index}/levels/{subclass_level}/features | Get features of the requested spell level available to the class. |
-| GET | `/api/subraces/{index}` | get /api/subraces/{index} | Get a subrace by index. |
-| GET | `/api/subraces/{index}/proficiencies` | get /api/subraces/{index}/proficiencies | Get proficiences available for a subrace. |
-| GET | `/api/subraces/{index}/traits` | get /api/subraces/{index}/traits | Get traits available for a subrace. |
-| GET | `/api/traits/{index}` | get /api/traits/{index} | Get a trait by index. |
-| GET | `/api/weapon-properties/{index}` | get /api/weapon-properties/{index} | Get a weapon property by index. |
-| GET | `/api/{endpoint}` | get /api/{endpoint} | Get list of all available resources for an endpoint. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api` | get /api | — | object | yes | Get all resource URLs. |
+| GET | `/api/ability-scores/{index}` | get /api/ability-scores/{index} | `index`* | AbilityScore | yes | Get an ability score by index. |
+| GET | `/api/alignments/{index}` | get /api/alignments/{index} | `index`* | Alignment | yes | Get an alignment by index. |
+| GET | `/api/backgrounds/{index}` | get /api/backgrounds/{index} | `index`* | Background | yes | Get a background by index. |
+| GET | `/api/classes/{index}` | get /api/classes/{index} | `index`* | Class | yes | Get a class by index. |
+| GET | `/api/classes/{index}/features` | get /api/classes/{index}/features | `index`* | APIReferenceList | yes | Get features available for a class. |
+| GET | `/api/classes/{index}/levels` | get /api/classes/{index}/levels | `index`*, `subclass` | ClassLevel[] | yes | Get all level resources for a class. |
+| GET | `/api/classes/{index}/levels/{class_level}` | get /api/classes/{index}/levels/{class_level} | `index`*, `class_level`* | ClassLevel | yes | Get level resource for a class and level. |
+| GET | `/api/classes/{index}/levels/{class_level}/features` | get /api/classes/{index}/levels/{class_level}/features | `index`*, `class_level`* | APIReferenceList | yes | Get features available to a class at the requested level. |
+| GET | `/api/classes/{index}/levels/{spell_level}/spells` | get /api/classes/{index}/levels/{spell_level}/spells | `index`*, `spell_level`* | APIReferenceList | yes | Get spells of the requested level available to the class. |
+| GET | `/api/classes/{index}/multi-classing` | get /api/classes/{index}/multi-classing | `index`* | Multiclassing | yes | Get multiclassing resource for a class. |
+| GET | `/api/classes/{index}/proficiencies` | get /api/classes/{index}/proficiencies | `index`* | APIReferenceList | yes | Get proficiencies available for a class. |
+| GET | `/api/classes/{index}/spellcasting` | get /api/classes/{index}/spellcasting | `index`* | Spellcasting | yes | Get spellcasting info for a class. |
+| GET | `/api/classes/{index}/spells` | get /api/classes/{index}/spells | `index`* | APIReferenceList | yes | Get spells available for a class. |
+| GET | `/api/classes/{index}/subclasses` | get /api/classes/{index}/subclasses | `index`* | APIReferenceList | yes | Get subclasses available for a class. |
+| GET | `/api/conditions/{index}` | get /api/conditions/{index} | `index`* | Condition | yes | Get a condition by index. |
+| GET | `/api/damage-types/{index}` | get /api/damage-types/{index} | `index`* | DamageType | yes | Get a damage type by index. |
+| GET | `/api/equipment-categories/{index}` | get /api/equipment-categories/{index} | `index`* | EquipmentCategory | yes | Get an equipment category by index. |
+| GET | `/api/equipment/{index}` | get /api/equipment/{index} | `index`* | Equipment | yes | Get an equipment item by index. |
+| GET | `/api/feats/{index}` | get /api/feats/{index} | `index`* | Feat | yes | Get a feat by index. |
+| GET | `/api/features/{index}` | get /api/features/{index} | `index`* | Feature | yes | Get a feature by index. |
+| GET | `/api/languages/{index}` | get /api/languages/{index} | `index`* | Language | yes | Get a language by index. |
+| GET | `/api/magic-items/{index}` | get /api/magic-items/{index} | `index`* | MagicItem | yes | Get a magic item by index. |
+| GET | `/api/magic-schools/{index}` | get /api/magic-schools/{index} | `index`* | MagicSchool | yes | Get a magic school by index. |
+| GET | `/api/monsters` | get /api/monsters | `challenge_rating` | APIReferenceList | yes | Get list of monsters with optional filtering |
+| GET | `/api/monsters/{index}` | get /api/monsters/{index} | `index`* | Monster | yes | Get monster by index. |
+| GET | `/api/proficiencies/{index}` | get /api/proficiencies/{index} | `index`* | Proficiency | yes | Get a proficiency by index. |
+| GET | `/api/races/{index}` | get /api/races/{index} | `index`* | Race | yes | Get a race by index. |
+| GET | `/api/races/{index}/proficiencies` | get /api/races/{index}/proficiencies | `index`* | APIReferenceList | yes | Get proficiencies available for a race. |
+| GET | `/api/races/{index}/subraces` | get /api/races/{index}/subraces | `index`* | APIReferenceList | yes | Get subraces available for a race. |
+| GET | `/api/races/{index}/traits` | get /api/races/{index}/traits | `index`* | APIReferenceList | yes | Get traits available for a race. |
+| GET | `/api/rule-sections/{index}` | get /api/rule-sections/{index} | `index`* | RuleSection | yes | Get a rule section by index. |
+| GET | `/api/rules/{index}` | get /api/rules/{index} | `index`* | Rule | yes | Get a rule by index. |
+| GET | `/api/skills/{index}` | get /api/skills/{index} | `index`* | Skill | yes | Get a skill by index. |
+| GET | `/api/spells` | get /api/spells | `level`, `school` | APIReferenceList | yes | Get list of spells with optional filtering. |
+| GET | `/api/spells/{index}` | get /api/spells/{index} | `index`* | Spell | yes | Get a spell by index. |
+| GET | `/api/subclasses/{index}` | get /api/subclasses/{index} | `index`* | Subclass | yes | Get a subclass by index. |
+| GET | `/api/subclasses/{index}/features` | get /api/subclasses/{index}/features | `index`* | APIReferenceList | yes | Get features available for a subclass. |
+| GET | `/api/subclasses/{index}/levels` | get /api/subclasses/{index}/levels | `index`* | SubclassLevelResource[] | yes | Get all level resources for a subclass. |
+| GET | `/api/subclasses/{index}/levels/{subclass_level}` | get /api/subclasses/{index}/levels/{subclass_level} | `index`*, `subclass_level`* | SubclassLevel | yes | Get level resources for a subclass and level. |
+| GET | `/api/subclasses/{index}/levels/{subclass_level}/features` | get /api/subclasses/{index}/levels/{subclass_level}/features | `index`*, `subclass_level`* | APIReferenceList | yes | Get features of the requested spell level available to the class. |
+| GET | `/api/subraces/{index}` | get /api/subraces/{index} | `index`* | Subrace | yes | Get a subrace by index. |
+| GET | `/api/subraces/{index}/proficiencies` | get /api/subraces/{index}/proficiencies | `index`* | APIReferenceList | yes | Get proficiences available for a subrace. |
+| GET | `/api/subraces/{index}/traits` | get /api/subraces/{index}/traits | `index`* | APIReferenceList | yes | Get traits available for a subrace. |
+| GET | `/api/traits/{index}` | get /api/traits/{index} | `index`* | Trait | yes | Get a trait by index. |
+| GET | `/api/weapon-properties/{index}` | get /api/weapon-properties/{index} | `index`* | WeaponProperty | yes | Get a weapon property by index. |
+| GET | `/api/{endpoint}` | get /api/{endpoint} | `endpoint`* | APIReferenceList | yes | Get list of all available resources for an endpoint. |

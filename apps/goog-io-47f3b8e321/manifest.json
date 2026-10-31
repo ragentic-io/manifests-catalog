@@ -33,6 +33,16 @@
         "from": "goog-io-47f3b8e321",
         "kind": "EXPOSES",
         "to": "operation:post:/v1/serp/"
+      },
+      {
+        "from": "operation:post:/v1/serp/",
+        "kind": "ACCEPTS",
+        "to": "schema:SerpData"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
       }
     ],
     "nodes": [
@@ -42,12 +52,23 @@
       },
       {
         "deprecated": false,
+        "description": "It \"status\" == true then API is up, else the API is down",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "Get the status of the API service",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -57,12 +78,38 @@
       },
       {
         "deprecated": false,
+        "description": "Perform Google Search Parameters ---------- query : the string query to perform search.",
         "id": "operation:get:/v1/crawl/{query}",
         "kind": "operation",
         "method": "get",
         "name": "Crawl",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/crawl/{query}",
         "pointer": "#/paths/~1v1~1crawl~1{query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -72,12 +119,32 @@
       },
       {
         "deprecated": false,
+        "description": "Perform Google Image Search Parameters ---------- query : the string query to perform search.",
         "id": "operation:get:/v1/images/{query}",
         "kind": "operation",
         "method": "get",
         "name": "Images",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/images/{query}",
         "pointer": "#/paths/~1v1~1images~1{query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -87,12 +154,38 @@
       },
       {
         "deprecated": false,
+        "description": "Perform Google News Search Parameters ---------- query : the string query to perform search for Google news.",
         "id": "operation:get:/v1/news/{query}",
         "kind": "operation",
         "method": "get",
         "name": "News",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/news/{query}",
         "pointer": "#/paths/~1v1~1news~1{query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -102,12 +195,38 @@
       },
       {
         "deprecated": false,
+        "description": "Perform Google Search Parameters ---------- query : the string query to perform search.",
         "id": "operation:get:/v1/search/{query}",
         "kind": "operation",
         "method": "get",
         "name": "Search",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/search/{query}",
         "pointer": "#/paths/~1v1~1search~1{query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
@@ -117,12 +236,37 @@
       },
       {
         "deprecated": false,
+        "description": "Perform Google Search and search for website in Search Engine Results Pages (SERP) Parameters ---------- query : the string query to perform search.",
         "id": "operation:post:/v1/serp/",
         "kind": "operation",
         "method": "post",
         "name": "serp",
         "path": "/v1/serp/",
         "pointer": "#/paths/~1v1~1serp~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SerpData"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
@@ -133,17 +277,20 @@
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
         "id": "schema:SerpData",
         "kind": "schema",
-        "name": "SerpData"
+        "name": "SerpData",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       }
     ]
   },

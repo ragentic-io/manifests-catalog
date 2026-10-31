@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_faretrotter_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `3af7b56ec2a1e3ebbc5d952228418cd803c6fea1e73e3f979f54a962ac23991b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,7 +34,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_faretrotter_profile
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/places` | GET_places | Returns possible modes of transportation between two cities. |
-| GET | `/routes` | GET_routes | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/places` | GET_places | — | PlaceResponse | yes | Returns possible modes of transportation between two cities. |
+| GET | `/routes` | GET_routes | `origin_lat`*, `origin_lng`*, `destination_lat`*, `destination_lng`* | RoutesResponse | yes | — |

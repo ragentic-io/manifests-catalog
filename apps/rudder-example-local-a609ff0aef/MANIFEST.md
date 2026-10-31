@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.rudder.io_wp-content_upload
 
 | | |
 | --- | --- |
-| Signed bundle | `dfb6ce053bdc7f6d4607c24e7424376c3a36a7ca30dfd5d55c3468c22f0e2450` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,139 +34,141 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.rudder.io_wp-content_upload
 
 49 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/changeRequests` | listChangeRequests | List all change requests |
-| GET | `/archives/export` | export | Get a ZIP archive of the requested items and their dependencies |
-| POST | `/archives/import` | import | Import a ZIP archive of policies into Rudder |
-| GET | `/branding` | getBrandingConf | Get branding configuration |
-| POST | `/branding` | updateBRandingConf | Update web interface customization |
-| POST | `/branding/reload` | reloadBrandingConf | Reload branding file |
-| DELETE | `/changeRequests/{changeRequestId}` | declineChangeRequest | Decline a request details |
-| GET | `/changeRequests/{changeRequestId}` | changeRequestDetails | Get a change request details |
-| POST | `/changeRequests/{changeRequestId}` | updateChangeRequest | Update a request details |
-| POST | `/changeRequests/{changeRequestId}/accept` | acceptChangeRequest | Accept a request details |
-| GET | `/compliance` | getGlobalCompliance | Global compliance |
-| GET | `/compliance/nodes` | getNodesCompliance | Compliance details for all nodes |
-| GET | `/compliance/nodes/{nodeId}` | getNodeCompliance | Compliance details by node |
-| GET | `/compliance/rules` | getRulesCompliance | Compliance details for all rules |
-| GET | `/compliance/rules/{ruleId}` | getRuleCompliance | Compliance details by rule |
-| GET | `/cve` | getAllCve | Get all CVE details |
-| POST | `/cve/check` | checkCVE | Trigger a CVE check |
-| GET | `/cve/check/config` | getCVECheckConfiguration | Get CVE check config |
-| POST | `/cve/check/config` | updateCVECheckConfiguration | Update cve check config |
-| GET | `/cve/check/last` | getLastCVECheck | Get last CVE check result |
-| POST | `/cve/list` | getCVEList | Get a list of CVE details |
-| POST | `/cve/update/` | updateCVE | Update CVE database from remote source |
-| POST | `/cve/update/fs` | readCVEfromFS | Update CVE database from file system |
-| GET | `/datasources` | getAllDataSources | List all data sources |
-| PUT | `/datasources` | createDataSource | Create a data source |
-| POST | `/datasources/reload` | ReloadAllDatasourcesAllNodes | Update properties from data sources |
-| POST | `/datasources/reload/{datasourceId}` | ReloadOneDatasourceAllNodes | Update properties from data sources |
-| DELETE | `/datasources/{datasourceId}` | deleteDataSource | Delete a data source |
-| GET | `/datasources/{datasourceId}` | getDataSource | Get data source configuration |
-| POST | `/datasources/{datasourceId}` | updateDataSource | Update a data source configuration |
-| GET | `/directives` | listDirectives | List all directives |
-| PUT | `/directives` | createDirective | Create a directive |
-| DELETE | `/directives/{directiveId}` | deleteDirective | Delete a directive |
-| GET | `/directives/{directiveId}` | directiveDetails | Get directive details |
-| POST | `/directives/{directiveId}` | updateDirective | Update a directive details |
-| POST | `/directives/{directiveId}/check` | checkDirective | Check that update on a directive is valid |
-| GET | `/groups` | listGroups | List all groups |
-| PUT | `/groups` | createGroup | Create a group |
-| PUT | `/groups/categories` | CreateGroupCategory | Create a group category |
-| DELETE | `/groups/categories/{groupCategoryId}` | DeleteGroupCategory | Delete group category |
-| GET | `/groups/categories/{groupCategoryId}` | GetGroupCategoryDetails | Get group category details |
-| POST | `/groups/categories/{groupCategoryId}` | UpdateGroupCategory | Update group category details |
-| GET | `/groups/tree` | GetGroupTree | Get groups tree |
-| DELETE | `/groups/{groupId}` | deleteGroup | Delete a group |
-| GET | `/groups/{groupId}` | groupDetails | Get group details |
-| POST | `/groups/{groupId}` | updateGroup | Update group details |
-| POST | `/groups/{groupId}/reload` | reloadGroup | Reload a group |
-| GET | `/info` | apiGeneralInformations | List all endoints |
-| GET | `/info/details/{endpointName}` | apiInformations | Get information about one API endpoint |
-| GET | `/info/{sectionId}` | apiSubInformations | Get information on endpoint in a section |
-| GET | `/inventories/info` | queueInformation | Get information about inventory processing queue |
-| POST | `/inventories/upload` | uploadInventory | Upload an inventory for processing |
-| POST | `/inventories/watcher/restart` | fileWatcherRestart | Restart inventory watcher |
-| POST | `/inventories/watcher/start` | fileWatcherStart | Start inventory watcher |
-| POST | `/inventories/watcher/stop` | fileWatcherStop | Stop inventory watcher |
-| GET | `/methods` | methods | List methods |
-| POST | `/methods/reload` | reloadMethods | Reload methods |
-| GET | `/nodes` | listAcceptedNodes | List managed nodes |
-| PUT | `/nodes` | createNodes | Create one or several new nodes |
-| POST | `/nodes/applyPolicy` | applyPolicyAllNodes | Trigger an agent run on all nodes |
-| GET | `/nodes/pending` | listPendingNodes | List pending nodes |
-| POST | `/nodes/pending/{nodeId}` | changePendingNodeStatus | Update pending Node status |
-| GET | `/nodes/status` | getNodesStatus | Get nodes acceptation status |
-| DELETE | `/nodes/{nodeId}` | deleteNode | Delete a node |
-| GET | `/nodes/{nodeId}` | nodeDetails | Get information about a node |
-| POST | `/nodes/{nodeId}` | updateNode | Update node settings and properties |
-| POST | `/nodes/{nodeId}/applyPolicy` | applyNode | Trigger an agent run |
-| POST | `/nodes/{nodeId}/fetchData` | ReloadAllDatasourcesOneNode | Update properties for one node from all data sources |
-| POST | `/nodes/{nodeId}/fetchData/{datasourceId}` | ReloadOneDatasourceOneNode | Update properties for one node from a data source |
-| GET | `/nodes/{nodeId}/inheritedProperties` | nodeInheritedProperties | Get inherited node properties for a node |
-| GET | `/parameters` | listParameters | List all global parameters |
-| PUT | `/parameters` | createParameter | Create a new parameter |
-| DELETE | `/parameters/{parameterId}` | deleteParameter | Delete a parameter |
-| GET | `/parameters/{parameterId}` | parameterDetails | Get the value of a parameter |
-| POST | `/parameters/{parameterId}` | updateParameter | Update a parameter's value |
-| GET | `/rules` | listRules | List all rules |
-| PUT | `/rules` | createRule | Create a rule |
-| PUT | `/rules/categories` | CreateRuleCategory | Create a rule category |
-| DELETE | `/rules/categories/{ruleCategoryId}` | DeleteRuleCategory | Delete group category |
-| GET | `/rules/categories/{ruleCategoryId}` | GetRuleCategoryDetails | Get rule category details |
-| POST | `/rules/categories/{ruleCategoryId}` | UpdateRuleCategory | Update rule category details |
-| GET | `/rules/tree` | GetRuleTree | Get rules tree |
-| DELETE | `/rules/{ruleId}` | deleteRule | Delete a rule |
-| GET | `/rules/{ruleId}` | ruleDetails | Get a rule details |
-| POST | `/rules/{ruleId}` | updateRule | Update a rule details |
-| POST | `/scaleoutrelay/demote/{nodeId}` | demoteToNode | Demote a relay to simple node |
-| POST | `/scaleoutrelay/promote/{nodeId}` | promoteToRelay | Promote a node to relay |
-| GET | `/secret/` | getAllSecrets | List all secrets |
-| POST | `/secret/` | updateSecret | Update a secret |
-| PUT | `/secret/` | addSecret | Create a secret |
-| DELETE | `/secret/{name}` | deleteSecret | Delete a secret |
-| GET | `/secret/{name}` | getSecret | Get one secret |
-| GET | `/settings` | getAllSettings | List all settings |
-| GET | `/settings/allowed_networks/{nodeId}` | getAllowedNetworks | Get allowed networks for a policy server |
-| POST | `/settings/allowed_networks/{nodeId}` | setAllowedNetworks | Set allowed networks for a policy server |
-| POST | `/settings/allowed_networks/{nodeId}/diff` | modifyAllowedNetworks | Modify allowed networks for a policy server |
-| GET | `/settings/{settingId}` | getSetting | Get the value of a setting |
-| POST | `/settings/{settingId}` | modifySetting | Set the value of a setting |
-| GET | `/status` | none | Check if Rudder is alive |
-| GET | `/system/archives/{archiveKind}` | listArchives | List archives |
-| POST | `/system/archives/{archiveKind}` | createArchive | Create an archive |
-| POST | `/system/archives/{archiveKind}/restore/{archiveRestoreKind}` | restoreArchive | Restore an archive |
-| GET | `/system/archives/{archiveKind}/zip/{commitId}` | getZipArchive | Get an archive as a ZIP |
-| GET | `/system/healthcheck` | getHealthcheckResult | Get healthcheck |
-| GET | `/system/info` | getSystemInfo | Get server information |
-| POST | `/system/maintenance/purgeSoftware` | purgeSoftware | Trigger batch for cleaning unreferenced software |
-| POST | `/system/regenerate/policies` | regeneratePolicies | Trigger a new policy generation |
-| POST | `/system/reload` | reloadAll | Reload both techniques and dynamic groups |
-| POST | `/system/reload/groups` | reloadGroups | Reload dynamic groups |
-| POST | `/system/reload/techniques` | reloadTechniques | Reload techniques |
-| GET | `/system/status` | getStatus | Get server status |
-| POST | `/system/update/policies` | updatePolicies | Trigger update of policies |
-| GET | `/techniques` | listTechniques | List all techniques |
-| PUT | `/techniques` | CreateTechnique | Create technique |
-| GET | `/techniques/categories` | techniqueCategories | List categories |
-| POST | `/techniques/reload` | techniques | Reload techniques |
-| GET | `/techniques/versions` | listTechniquesVersions | List versions |
-| GET | `/techniques/{techniqueId}` | getTechniqueAllVersion | Technique metadata by ID |
-| GET | `/techniques/{techniqueId}/directives` | listTechniquesDirectives | List all directives based on a technique |
-| DELETE | `/techniques/{techniqueId}/{techniqueVersion}` | deleteTechnique | Delete technique |
-| GET | `/techniques/{techniqueId}/{techniqueVersion}` | getTechniqueAllVersionId | Technique metadata by version and ID |
-| POST | `/techniques/{techniqueId}/{techniqueVersion}` | updateTechnique | Update technique |
-| GET | `/techniques/{techniqueId}/{techniqueVersion}/directives` | listTechniqueVersionDirectives | List all directives based on a version of a technique |
-| GET | `/techniques/{techniqueId}/{techniqueVersion}/resources` | getTechniquesResources | Technique's resources |
-| GET | `/techniques/{techniqueId}/{techniqueVersion}/revisions` | techniqueRevisions | Technique's revisions |
-| POST | `/usermanagement` | addUser | Add user |
-| GET | `/usermanagement/roles` | getRole | List all roles |
-| POST | `/usermanagement/update/{username}` | updateUser | Update user's infos |
-| GET | `/usermanagement/users` | getUserInfo | List all users |
-| GET | `/usermanagement/users/reload` | reloadUserConf | Reload user |
-| DELETE | `/usermanagement/{username}` | deleteUser | Delete an user |
-| GET | `/users` | listUsers | List user |
-| POST | `/validatedUsers` | saveWorkflowUser | Update validated user list |
-| DELETE | `/validatedUsers/{username}` | removeValidatedUser | Remove an user from validated user list |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/changeRequests` | listChangeRequests | — | object | yes | List all change requests |
+| GET | `/archives/export` | export | `rules`, `directives`, `techniques`, `groups`, `include` | string:binary | yes | Get a ZIP archive of the requested items and their dependencies |
+| POST | `/archives/import` | import | body: object | object |  | Import a ZIP archive of policies into Rudder |
+| GET | `/branding` | getBrandingConf | — | object | yes | Get branding configuration |
+| POST | `/branding` | updateBRandingConf | body*: branding-conf | object |  | Update web interface customization |
+| POST | `/branding/reload` | reloadBrandingConf | — | object |  | Reload branding file |
+| GET | `/changeRequests/{changeRequestId}` | changeRequestDetails | `changeRequestId`* | object | yes | Get a change request details |
+| POST | `/changeRequests/{changeRequestId}` | updateChangeRequest | `changeRequestId`*, body*: object | object |  | Update a request details |
+| DELETE | `/changeRequests/{changeRequestId}` | declineChangeRequest | `changeRequestId`* | object |  | Decline a request details |
+| POST | `/changeRequests/{changeRequestId}/accept` | acceptChangeRequest | `changeRequestId`*, body*: object | object |  | Accept a request details |
+| GET | `/compliance` | getGlobalCompliance | `precision` | object | yes | Global compliance |
+| GET | `/compliance/nodes` | getNodesCompliance | `level`, `precision` | object | yes | Compliance details for all nodes |
+| GET | `/compliance/nodes/{nodeId}` | getNodeCompliance | `level`, `precision`, `nodeId`* | object | yes | Compliance details by node |
+| GET | `/compliance/rules` | getRulesCompliance | `level`, `precision` | object | yes | Compliance details for all rules |
+| GET | `/compliance/rules/{ruleId}` | getRuleCompliance | `level`, `precision`, `ruleId`* | object | yes | Compliance details by rule |
+| GET | `/cve` | getAllCve | — | object | yes | Get all CVE details |
+| POST | `/cve/check` | checkCVE | — | object |  | Trigger a CVE check |
+| GET | `/cve/check/config` | getCVECheckConfiguration | — | object | yes | Get CVE check config |
+| POST | `/cve/check/config` | updateCVECheckConfiguration | body: object | object |  | Update cve check config |
+| GET | `/cve/check/last` | getLastCVECheck | — | object | yes | Get last CVE check result |
+| POST | `/cve/list` | getCVEList | body: object | object |  | Get a list of CVE details |
+| POST | `/cve/update/` | updateCVE | body: object | object |  | Update CVE database from remote source |
+| POST | `/cve/update/fs` | readCVEfromFS | — | object |  | Update CVE database from file system |
+| GET | `/datasources` | getAllDataSources | — | object | yes | List all data sources |
+| PUT | `/datasources` | createDataSource | body: datasource | object |  | Create a data source |
+| POST | `/datasources/reload` | ReloadAllDatasourcesAllNodes | — | object |  | Update properties from data sources |
+| POST | `/datasources/reload/{datasourceId}` | ReloadOneDatasourceAllNodes | `datasourceId`* | object |  | Update properties from data sources |
+| GET | `/datasources/{datasourceId}` | getDataSource | `datasourceId`* | object | yes | Get data source configuration |
+| POST | `/datasources/{datasourceId}` | updateDataSource | `datasourceId`*, body: datasource | object |  | Update a data source configuration |
+| DELETE | `/datasources/{datasourceId}` | deleteDataSource | `datasourceId`* | object |  | Delete a data source |
+| GET | `/directives` | listDirectives | — | object | yes | List all directives |
+| PUT | `/directives` | createDirective | body: directive-new | object |  | Create a directive |
+| GET | `/directives/{directiveId}` | directiveDetails | `directiveId`* | object | yes | Get directive details |
+| POST | `/directives/{directiveId}` | updateDirective | `directiveId`*, body*: directive | object |  | Update a directive details |
+| DELETE | `/directives/{directiveId}` | deleteDirective | `directiveId`* | object |  | Delete a directive |
+| POST | `/directives/{directiveId}/check` | checkDirective | `directiveId`*, body*: directive | object |  | Check that update on a directive is valid |
+| GET | `/groups` | listGroups | — | object | yes | List all groups |
+| PUT | `/groups` | createGroup | body: group-new | object |  | Create a group |
+| PUT | `/groups/categories` | CreateGroupCategory | body*: group-category | object |  | Create a group category |
+| GET | `/groups/categories/{groupCategoryId}` | GetGroupCategoryDetails | `groupCategoryId`* | object | yes | Get group category details |
+| POST | `/groups/categories/{groupCategoryId}` | UpdateGroupCategory | `groupCategoryId`*, body*: group-category-update | object |  | Update group category details |
+| DELETE | `/groups/categories/{groupCategoryId}` | DeleteGroupCategory | `groupCategoryId`* | object |  | Delete group category |
+| GET | `/groups/tree` | GetGroupTree | — | object | yes | Get groups tree |
+| GET | `/groups/{groupId}` | groupDetails | `groupId`* | object | yes | Get group details |
+| POST | `/groups/{groupId}` | updateGroup | `groupId`*, body*: group-update | object |  | Update group details |
+| DELETE | `/groups/{groupId}` | deleteGroup | `groupId`* | object |  | Delete a group |
+| POST | `/groups/{groupId}/reload` | reloadGroup | `groupId`* | object |  | Reload a group |
+| GET | `/info` | apiGeneralInformations | — | object | yes | List all endoints |
+| GET | `/info/details/{endpointName}` | apiInformations | `endpointName`* | object | yes | Get information about one API endpoint |
+| GET | `/info/{sectionId}` | apiSubInformations | `sectionId`* | object | yes | Get information on endpoint in a section |
+| GET | `/inventories/info` | queueInformation | — | object | yes | Get information about inventory processing queue |
+| POST | `/inventories/upload` | uploadInventory | body: object | object |  | Upload an inventory for processing |
+| POST | `/inventories/watcher/restart` | fileWatcherRestart | — | object |  | Restart inventory watcher |
+| POST | `/inventories/watcher/start` | fileWatcherStart | — | object |  | Start inventory watcher |
+| POST | `/inventories/watcher/stop` | fileWatcherStop | — | object |  | Stop inventory watcher |
+| GET | `/methods` | methods | — | object | yes | List methods |
+| POST | `/methods/reload` | reloadMethods | — | object |  | Reload methods |
+| GET | `/nodes` | listAcceptedNodes | `include`, `query`, `where`, `composition`, `select` | object | yes | List managed nodes |
+| PUT | `/nodes` | createNodes | body*: node-add | object |  | Create one or several new nodes |
+| POST | `/nodes/applyPolicy` | applyPolicyAllNodes | — | object |  | Trigger an agent run on all nodes |
+| GET | `/nodes/pending` | listPendingNodes | `include`, `query`, `where`, `composition`, `select` | object | yes | List pending nodes |
+| POST | `/nodes/pending/{nodeId}` | changePendingNodeStatus | `nodeId`*, body: object | object |  | Update pending Node status |
+| GET | `/nodes/status` | getNodesStatus | `ids`* | object | yes | Get nodes acceptation status |
+| GET | `/nodes/{nodeId}` | nodeDetails | `nodeId`*, `include` | object | yes | Get information about a node |
+| POST | `/nodes/{nodeId}` | updateNode | `nodeId`*, body: node-settings | object |  | Update node settings and properties |
+| DELETE | `/nodes/{nodeId}` | deleteNode | `nodeId`*, `mode` | object |  | Delete a node |
+| POST | `/nodes/{nodeId}/applyPolicy` | applyNode | `nodeId`* | string |  | Trigger an agent run |
+| POST | `/nodes/{nodeId}/fetchData` | ReloadAllDatasourcesOneNode | `nodeId`* | object |  | Update properties for one node from all data sources |
+| POST | `/nodes/{nodeId}/fetchData/{datasourceId}` | ReloadOneDatasourceOneNode | `nodeId`*, `datasourceId`* | object |  | Update properties for one node from a data source |
+| GET | `/nodes/{nodeId}/inheritedProperties` | nodeInheritedProperties | `nodeId`* | object | yes | Get inherited node properties for a node |
+| GET | `/parameters` | listParameters | — | object | yes | List all global parameters |
+| PUT | `/parameters` | createParameter | body*: parameter | object |  | Create a new parameter |
+| GET | `/parameters/{parameterId}` | parameterDetails | `parameterId`* | object | yes | Get the value of a parameter |
+| POST | `/parameters/{parameterId}` | updateParameter | `parameterId`* | object |  | Update a parameter's value |
+| DELETE | `/parameters/{parameterId}` | deleteParameter | `parameterId`* | object |  | Delete a parameter |
+| GET | `/rules` | listRules | — | object | yes | List all rules |
+| PUT | `/rules` | createRule | body: rule-new | object |  | Create a rule |
+| PUT | `/rules/categories` | CreateRuleCategory | body*: rule-category | object |  | Create a rule category |
+| GET | `/rules/categories/{ruleCategoryId}` | GetRuleCategoryDetails | `ruleCategoryId`* | object | yes | Get rule category details |
+| POST | `/rules/categories/{ruleCategoryId}` | UpdateRuleCategory | `ruleCategoryId`*, body*: rule-category-update | object |  | Update rule category details |
+| DELETE | `/rules/categories/{ruleCategoryId}` | DeleteRuleCategory | `ruleCategoryId`* | object |  | Delete group category |
+| GET | `/rules/tree` | GetRuleTree | — | object | yes | Get rules tree |
+| GET | `/rules/{ruleId}` | ruleDetails | `ruleId`* | object | yes | Get a rule details |
+| POST | `/rules/{ruleId}` | updateRule | `ruleId`*, body*: rule-with-category | object |  | Update a rule details |
+| DELETE | `/rules/{ruleId}` | deleteRule | `ruleId`* | object |  | Delete a rule |
+| POST | `/scaleoutrelay/demote/{nodeId}` | demoteToNode | `nodeId`* | object |  | Demote a relay to simple node |
+| POST | `/scaleoutrelay/promote/{nodeId}` | promoteToRelay | `nodeId`* | object |  | Promote a node to relay |
+| GET | `/secret/` | getAllSecrets | — | object | yes | List all secrets |
+| PUT | `/secret/` | addSecret | body*: secrets | object |  | Create a secret |
+| POST | `/secret/` | updateSecret | body*: secrets | object |  | Update a secret |
+| GET | `/secret/{name}` | getSecret | `name`* | object | yes | Get one secret |
+| DELETE | `/secret/{name}` | deleteSecret | `name`* | object |  | Delete a secret |
+| GET | `/settings` | getAllSettings | — | object | yes | List all settings |
+| GET | `/settings/allowed_networks/{nodeId}` | getAllowedNetworks | `nodeId`* | object | yes | Get allowed networks for a policy server |
+| POST | `/settings/allowed_networks/{nodeId}` | setAllowedNetworks | `nodeId`*, body*: object | object |  | Set allowed networks for a policy server |
+| POST | `/settings/allowed_networks/{nodeId}/diff` | modifyAllowedNetworks | `nodeId`*, body*: object | object |  | Modify allowed networks for a policy server |
+| GET | `/settings/{settingId}` | getSetting | `settingId`* | object | yes | Get the value of a setting |
+| POST | `/settings/{settingId}` | modifySetting | `settingId`*, body*: object | object |  | Set the value of a setting |
+| GET | `/status` | none | — | string | yes | Check if Rudder is alive |
+| GET | `/system/archives/{archiveKind}` | listArchives | `archiveKind`* | object | yes | List archives |
+| POST | `/system/archives/{archiveKind}` | createArchive | `archiveKind`* | object |  | Create an archive |
+| POST | `/system/archives/{archiveKind}/restore/{archiveRestoreKind}` | restoreArchive | `archiveKind`*, `archiveRestoreKind`* | object |  | Restore an archive |
+| GET | `/system/archives/{archiveKind}/zip/{commitId}` | getZipArchive | `archiveKind`*, `commitId`* | string:binary | yes | Get an archive as a ZIP |
+| GET | `/system/healthcheck` | getHealthcheckResult | — | object | yes | Get healthcheck |
+| GET | `/system/info` | getSystemInfo | — | object | yes | Get server information |
+| POST | `/system/maintenance/purgeSoftware` | purgeSoftware | — | object |  | Trigger batch for cleaning unreferenced software |
+| POST | `/system/regenerate/policies` | regeneratePolicies | — | object |  | Trigger a new policy generation |
+| POST | `/system/reload` | reloadAll | — | object |  | Reload both techniques and dynamic groups |
+| POST | `/system/reload/groups` | reloadGroups | — | object |  | Reload dynamic groups |
+| POST | `/system/reload/techniques` | reloadTechniques | — | object |  | Reload techniques |
+| GET | `/system/status` | getStatus | — | object | yes | Get server status |
+| POST | `/system/update/policies` | updatePolicies | — | object |  | Trigger update of policies |
+| GET | `/techniques` | listTechniques | — | object | yes | List all techniques |
+| PUT | `/techniques` | CreateTechnique | body*: techniques | object |  | Create technique |
+| GET | `/techniques/categories` | techniqueCategories | — | object | yes | List categories |
+| POST | `/techniques/reload` | techniques | — | object |  | Reload techniques |
+| GET | `/techniques/versions` | listTechniquesVersions | — | object | yes | List versions |
+| GET | `/techniques/{techniqueId}` | getTechniqueAllVersion | `techniqueId`* | object | yes | Technique metadata by ID |
+| GET | `/techniques/{techniqueId}/directives` | listTechniquesDirectives | `techniqueId`* | object | yes | List all directives based on a technique |
+| GET | `/techniques/{techniqueId}/{techniqueVersion}` | getTechniqueAllVersionId | `techniqueId`*, `techniqueVersion`* | object | yes | Technique metadata by version and ID |
+| POST | `/techniques/{techniqueId}/{techniqueVersion}` | updateTechnique | `techniqueId`*, `techniqueVersion`*, body*: techniques | object |  | Update technique |
+| DELETE | `/techniques/{techniqueId}/{techniqueVersion}` | deleteTechnique | `techniqueId`*, `techniqueVersion`* | object |  | Delete technique |
+| GET | `/techniques/{techniqueId}/{techniqueVersion}/directives` | listTechniqueVersionDirectives | `techniqueId`*, `techniqueVersion`* | object | yes | List all directives based on a version of a technique |
+| GET | `/techniques/{techniqueId}/{techniqueVersion}/resources` | getTechniquesResources | `techniqueId`*, `techniqueVersion`* | object | yes | Technique's resources |
+| GET | `/techniques/{techniqueId}/{techniqueVersion}/revisions` | techniqueRevisions | `techniqueId`*, `techniqueVersion`* | object | yes | Technique's revisions |
+| POST | `/usermanagement` | addUser | body*: users | object |  | Add user |
+| GET | `/usermanagement/roles` | getRole | — | object | yes | List all roles |
+| POST | `/usermanagement/update/{username}` | updateUser | `username`*, body*: users | object |  | Update user's infos |
+| GET | `/usermanagement/users` | getUserInfo | — | object | yes | List all users |
+| GET | `/usermanagement/users/reload` | reloadUserConf | — | object | yes | Reload user |
+| DELETE | `/usermanagement/{username}` | deleteUser | `username`* | object |  | Delete an user |
+| GET | `/users` | listUsers | — | object | yes | List user |
+| POST | `/validatedUsers` | saveWorkflowUser | body*: object | object |  | Update validated user list |
+| DELETE | `/validatedUsers/{username}` | removeValidatedUser | `username`* | object |  | Remove an user from validated user list |

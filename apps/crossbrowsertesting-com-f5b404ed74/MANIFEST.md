@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_xbrowsertesting_pro
 
 | | |
 | --- | --- |
-| Signed bundle | `fb765b167288c0f3227f02e0fe231bfecf8f8f506aafe6fcc4cbb666ba5c732a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_xbrowsertesting_pro
 
 6 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/parallel/{base_version_id}` | get /screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/parallel/{base_version_id} | Compare Screenshot Test Versions |
-| GET | `/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/{base_result_id}` | get /screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/{base_result_id} | Compare Full Screenshot Test |
-| GET | `/screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id}` | get /screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id} | Compare Single Screenshot |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/parallel/{base_version_id}` | get /screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/parallel/{base_version_id} | `target_screenshot_test_id`*, `target_version_id`*, `base_version_id`*, `format`, `callback`, `tolerance` | single_comparison_test[] | yes | Compare Screenshot Test Versions |
+| GET | `/screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/{base_result_id}` | get /screenshots/{target_screenshot_test_id}/{target_version_id}/comparison/{base_result_id} | `target_screenshot_test_id`*, `target_version_id`*, `base_result_id`*, `format`, `callback`, `tolerance` | full_comparison_test | yes | Compare Full Screenshot Test |
+| GET | `/screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id}` | get /screenshots/{target_screenshot_test_id}/{target_version_id}/{target_result_id}/comparison/{base_result_id} | `target_screenshot_test_id`*, `target_version_id`*, `target_result_id`*, `base_result_id`*, `format`, `callback`, `tolerance` | single_comparison_test | yes | Compare Single Screenshot |

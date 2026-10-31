@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_nfusionsolution_pro
 
 | | |
 | --- | --- |
-| Signed bundle | `c199baae5c241e64d07ed2d01f3548f0f6b9c9bca49d9a8e744e14be885ae0e7` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,22 +34,24 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_nfusionsolution_pro
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/Currencies/history` | Currencies_History_GET | Get historical prices for requested currency pairs |
-| GET | `/api/v1/Currencies/history/supported` | Currencies_SupportedCurrencies_History_GET | Get list of currency pairs supported by the history endpoint |
-| GET | `/api/v1/Currencies/rate` | Currencies_Rate_GET | Get latest mid rate for requested currency pairs |
-| GET | `/api/v1/Currencies/rate/supported` | Currencies_SupportedCurrencies_Rate_GET | Get list of currencies supported by the rate endpoint |
-| GET | `/api/v1/Currencies/summary` | Currencies_Summary_GET | Get latest Summary for requested currency pairs |
-| GET | `/api/v1/Currencies/summary/supported` | Currencies_SupportedCurrencies_Summary_GET | Get list of currency pairs supported by the Summary endpoint |
-| GET | `/api/v1/Metals/benchmark/history` | Metals_BenchmarkHistory_GET | Get historical benchmark prices for requested metals |
-| GET | `/api/v1/Metals/benchmark/summary` | Metals_BenchmarkSummary_GET | Get latest Benchmark prices for requested metals |
-| GET | `/api/v1/Metals/benchmark/supported` | Metals_BenchmarkSupportedMetals_GET | Get list of symbols supported by the benchmark endpoints |
-| GET | `/api/v1/Metals/spot/history` | Metals_SpotHistory_GET | Get historical Spot prices for requested metals |
-| GET | `/api/v1/Metals/spot/performance` | Metals_SpotHistoricalPerformance_GET | Get Historical Performance for requested metals |
-| GET | `/api/v1/Metals/spot/performance/annual` | Metals_SpotAnnualHistoricalPerformance_GET | Get Historical Annual Performance for requested metals |
-| GET | `/api/v1/Metals/spot/ratio/history` | Metals_SpotRatioHistory_GET | Get historical Spot Ratio prices for requested metals |
-| GET | `/api/v1/Metals/spot/ratio/summary` | Metals_SpotRatioSummary_GET | Get latest Spot Summary for requested metal ratios |
-| GET | `/api/v1/Metals/spot/summary` | Metals_SpotSummary_GET | Get latest Spot Summary for requested metals |
-| GET | `/api/v1/Metals/spot/supported` | Metals_SpotSupportedMetals_GET | Get list of symbols supported by the spot endpoints |
-| GET | `/api/v1/Metals/supported/currency` | Metals_SupportedCurrencies_Metals_GET | Get list of currencies supported by metals endpoints for currency conversion |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/Currencies/history` | Currencies_History_GET | `pairs`*, `start`*, `end`, `interval`, `format` | IntervalCollectionResponse[] | yes | Get historical prices for requested currency pairs |
+| GET | `/api/v1/Currencies/history/supported` | Currencies_SupportedCurrencies_History_GET | `format` | string[] | yes | Get list of currency pairs supported by the history endpoint |
+| GET | `/api/v1/Currencies/rate` | Currencies_Rate_GET | `pairs`*, `format` | RateResponse[] | yes | Get latest mid rate for requested currency pairs |
+| GET | `/api/v1/Currencies/rate/supported` | Currencies_SupportedCurrencies_Rate_GET | `format` | string[] | yes | Get list of currencies supported by the rate endpoint |
+| GET | `/api/v1/Currencies/summary` | Currencies_Summary_GET | `pairs`*, `format` | SummaryResponse[] | yes | Get latest Summary for requested currency pairs |
+| GET | `/api/v1/Currencies/summary/supported` | Currencies_SupportedCurrencies_Summary_GET | `format` | string[] | yes | Get list of currency pairs supported by the Summary endpoint |
+| GET | `/api/v1/Metals/benchmark/history` | Metals_BenchmarkHistory_GET | `metals`*, `start`*, `end`, `interval`, `historicalfx`, `currency`, `unitofmeasure`, `format` | IntervalCollectionResponse[] | yes | Get historical benchmark prices for requested metals |
+| GET | `/api/v1/Metals/benchmark/summary` | Metals_BenchmarkSummary_GET | `metals`*, `currency`, `unitofmeasure`, `format` | SummaryResponse[] | yes | Get latest Benchmark prices for requested metals |
+| GET | `/api/v1/Metals/benchmark/supported` | Metals_BenchmarkSupportedMetals_GET | `format` | string[] | yes | Get list of symbols supported by the benchmark endpoints |
+| GET | `/api/v1/Metals/spot/history` | Metals_SpotHistory_GET | `metals`*, `start`*, `end`, `interval`, `historicalfx`, `currency`, `unitofmeasure`, `format` | IntervalCollectionResponse[] | yes | Get historical Spot prices for requested metals |
+| GET | `/api/v1/Metals/spot/performance` | Metals_SpotHistoricalPerformance_GET | `metals`*, `currency`, `unitofmeasure`, `format` | IntervalCollectionResponse[] | yes | Get Historical Performance for requested metals |
+| GET | `/api/v1/Metals/spot/performance/annual` | Metals_SpotAnnualHistoricalPerformance_GET | `metals`*, `currency`, `unitofmeasure`, `format`, `years` | IntervalCollectionResponse[] | yes | Get Historical Annual Performance for requested metals |
+| GET | `/api/v1/Metals/spot/ratio/history` | Metals_SpotRatioHistory_GET | `pairs`*, `start`*, `end`, `interval`, `format` | IntervalCollectionResponse[] | yes | Get historical Spot Ratio prices for requested metals |
+| GET | `/api/v1/Metals/spot/ratio/summary` | Metals_SpotRatioSummary_GET | `pairs`*, `format` | SummaryResponse[] | yes | Get latest Spot Summary for requested metal ratios |
+| GET | `/api/v1/Metals/spot/summary` | Metals_SpotSummary_GET | `metals`*, `currency`, `unitofmeasure`, `format` | SummaryResponse[] | yes | Get latest Spot Summary for requested metals |
+| GET | `/api/v1/Metals/spot/supported` | Metals_SpotSupportedMetals_GET | `format` | string[] | yes | Get list of symbols supported by the spot endpoints |
+| GET | `/api/v1/Metals/supported/currency` | Metals_SupportedCurrencies_Metals_GET | `format` | string[] | yes | Get list of currencies supported by metals endpoints for currency conversion |

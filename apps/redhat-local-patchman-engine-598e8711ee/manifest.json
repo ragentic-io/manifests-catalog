@@ -82,12 +82,12 @@
       {
         "from": "redhat-local-patchman-engine-598e8711ee",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/patch/v1/systems/{inventory_id}"
+        "to": "operation:get:/api/patch/v1/systems/{inventory_id}"
       },
       {
         "from": "redhat-local-patchman-engine-598e8711ee",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/patch/v1/systems/{inventory_id}"
+        "to": "operation:delete:/api/patch/v1/systems/{inventory_id}"
       },
       {
         "from": "redhat-local-patchman-engine-598e8711ee",
@@ -108,6 +108,286 @@
         "from": "redhat-local-patchman-engine-598e8711ee",
         "kind": "EXPOSES",
         "to": "operation:post:/api/patch/v1/views/systems/advisories"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/advisories",
+        "kind": "RETURNS",
+        "to": "schema:controllers.AdvisoriesResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/advisories/{advisory_id}",
+        "kind": "RETURNS",
+        "to": "schema:controllers.AdvisoryDetailResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/advisories/{advisory_id}/systems",
+        "kind": "RETURNS",
+        "to": "schema:controllers.AdvisorySystemsResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/export/advisories",
+        "kind": "RETURNS",
+        "to": "schema:controllers.AdvisoryInlineItem"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/export/advisories/{advisory_id}/systems",
+        "kind": "RETURNS",
+        "to": "schema:controllers.SystemInlineItem"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/export/packages",
+        "kind": "RETURNS",
+        "to": "schema:controllers.PackageItem"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/export/packages/{package_name}/systems",
+        "kind": "RETURNS",
+        "to": "schema:controllers.PackageSystemItem"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/export/systems",
+        "kind": "RETURNS",
+        "to": "schema:controllers.SystemInlineItem"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/export/systems/{inventory_id}/advisories",
+        "kind": "RETURNS",
+        "to": "schema:controllers.SystemAdvisoriesDBLookup"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/export/systems/{inventory_id}/packages",
+        "kind": "RETURNS",
+        "to": "schema:controllers.SystemPackageInline"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/packages/",
+        "kind": "RETURNS",
+        "to": "schema:controllers.PackagesResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/packages/{package_name}",
+        "kind": "RETURNS",
+        "to": "schema:controllers.PackageDetailResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/packages/{package_name}/systems",
+        "kind": "RETURNS",
+        "to": "schema:controllers.PackageSystemsResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/packages/{package_name}/versions",
+        "kind": "RETURNS",
+        "to": "schema:controllers.PackageVersionsResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/systems",
+        "kind": "RETURNS",
+        "to": "schema:controllers.SystemsResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/systems/{inventory_id}",
+        "kind": "RETURNS",
+        "to": "schema:controllers.SystemDetailResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/systems/{inventory_id}/advisories",
+        "kind": "RETURNS",
+        "to": "schema:controllers.SystemAdvisoriesResponse"
+      },
+      {
+        "from": "operation:get:/api/patch/v1/systems/{inventory_id}/packages",
+        "kind": "RETURNS",
+        "to": "schema:controllers.SystemPackageResponse"
+      },
+      {
+        "from": "operation:post:/api/patch/v1/views/advisories/systems",
+        "kind": "ACCEPTS",
+        "to": "schema:controllers.SystemsAdvisoriesRequest"
+      },
+      {
+        "from": "operation:post:/api/patch/v1/views/advisories/systems",
+        "kind": "RETURNS",
+        "to": "schema:controllers.AdvisoriesSystemsResponse"
+      },
+      {
+        "from": "operation:post:/api/patch/v1/views/systems/advisories",
+        "kind": "ACCEPTS",
+        "to": "schema:controllers.SystemsAdvisoriesRequest"
+      },
+      {
+        "from": "operation:post:/api/patch/v1/views/systems/advisories",
+        "kind": "RETURNS",
+        "to": "schema:controllers.SystemsAdvisoriesResponse"
+      },
+      {
+        "from": "schema:controllers.AdvisoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.AdvisoryItem"
+      },
+      {
+        "from": "schema:controllers.AdvisoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.Links"
+      },
+      {
+        "from": "schema:controllers.AdvisoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.ListMeta"
+      },
+      {
+        "from": "schema:controllers.AdvisoryDetailItem",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.AdvisoryDetailAttributes"
+      },
+      {
+        "from": "schema:controllers.AdvisoryDetailResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.AdvisoryDetailItem"
+      },
+      {
+        "from": "schema:controllers.AdvisoryItem",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.AdvisoryItemAttributes"
+      },
+      {
+        "from": "schema:controllers.AdvisorySystemsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.Links"
+      },
+      {
+        "from": "schema:controllers.AdvisorySystemsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.ListMeta"
+      },
+      {
+        "from": "schema:controllers.AdvisorySystemsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.SystemItem"
+      },
+      {
+        "from": "schema:controllers.ListMeta",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.FilterData"
+      },
+      {
+        "from": "schema:controllers.PackageDetailItem",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.PackageDetailAttributes"
+      },
+      {
+        "from": "schema:controllers.PackageDetailResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.PackageDetailItem"
+      },
+      {
+        "from": "schema:controllers.PackageSystemsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.Links"
+      },
+      {
+        "from": "schema:controllers.PackageSystemsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.ListMeta"
+      },
+      {
+        "from": "schema:controllers.PackageSystemsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.PackageSystemItem"
+      },
+      {
+        "from": "schema:controllers.PackageVersionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.Links"
+      },
+      {
+        "from": "schema:controllers.PackageVersionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.ListMeta"
+      },
+      {
+        "from": "schema:controllers.PackageVersionsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.PackageVersionItem"
+      },
+      {
+        "from": "schema:controllers.PackagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.Links"
+      },
+      {
+        "from": "schema:controllers.PackagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.ListMeta"
+      },
+      {
+        "from": "schema:controllers.PackagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.PackageItem"
+      },
+      {
+        "from": "schema:controllers.SystemAdvisoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.Links"
+      },
+      {
+        "from": "schema:controllers.SystemAdvisoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.ListMeta"
+      },
+      {
+        "from": "schema:controllers.SystemAdvisoriesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.SystemAdvisoryItem"
+      },
+      {
+        "from": "schema:controllers.SystemAdvisoryItem",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.SystemAdvisoryItemAttributes"
+      },
+      {
+        "from": "schema:controllers.SystemDetailResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.SystemItem"
+      },
+      {
+        "from": "schema:controllers.SystemItem",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.SystemItemAttributes"
+      },
+      {
+        "from": "schema:controllers.SystemPackageData",
+        "kind": "REFERENCES",
+        "to": "schema:models.PackageUpdate"
+      },
+      {
+        "from": "schema:controllers.SystemPackageResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.Links"
+      },
+      {
+        "from": "schema:controllers.SystemPackageResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.ListMeta"
+      },
+      {
+        "from": "schema:controllers.SystemPackageResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.SystemPackageData"
+      },
+      {
+        "from": "schema:controllers.SystemsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.Links"
+      },
+      {
+        "from": "schema:controllers.SystemsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.ListMeta"
+      },
+      {
+        "from": "schema:controllers.SystemsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:controllers.SystemItem"
       }
     ],
     "nodes": [
@@ -121,8 +401,123 @@
         "kind": "operation",
         "method": "get",
         "name": "listAdvisories",
+        "parameters": [
+          {
+            "description": "Limit for paging, set -1 to return all",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset for paging",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort field",
+            "enum": [
+              "id",
+              "name",
+              "advisory_type",
+              "synopsis",
+              "public_date",
+              "applicable_systems"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[description]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[public_date]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[synopsis]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[advisory_type]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[severity]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[applicable_systems]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Tag filter",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter only SAP systems",
+            "in": "query",
+            "name": "filter[system_profile][sap_system]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter systems by their SAP SIDs",
+            "in": "query",
+            "name": "filter[system_profile][sap_sids][in]",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/patch/v1/advisories",
         "pointer": "#/paths/~1api~1patch~1v1~1advisories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.AdvisoriesResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -136,8 +531,24 @@
         "kind": "operation",
         "method": "get",
         "name": "detailAdvisory",
+        "parameters": [
+          {
+            "description": "Advisory ID",
+            "in": "path",
+            "name": "advisory_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/patch/v1/advisories/{advisory_id}",
         "pointer": "#/paths/~1api~1patch~1v1~1advisories~1{advisory_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.AdvisoryDetailResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -151,8 +562,182 @@
         "kind": "operation",
         "method": "get",
         "name": "listAdvisorySystems",
+        "parameters": [
+          {
+            "description": "Advisory ID",
+            "in": "path",
+            "name": "advisory_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Limit for paging, set -1 to return all",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset for paging",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort field",
+            "enum": [
+              "id",
+              "display_name",
+              "last_evaluation",
+              "last_upload",
+              "rhsa_count",
+              "rhba_count",
+              "rhea_count",
+              "other_count",
+              "stale"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[insights_id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[display_name]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[last_evaluation]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[last_upload]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhsa_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhba_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhea_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[other_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[stale]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[stale_timestamp]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[stale_warning_timestamp]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[culled_timestamp]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[created]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Tag filter",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter only SAP systems",
+            "in": "query",
+            "name": "filter[system_profile][sap_system]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter systems by their SAP SIDs",
+            "in": "query",
+            "name": "filter[system_profile][sap_sids][in]",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/patch/v1/advisories/{advisory_id}/systems",
         "pointer": "#/paths/~1api~1patch~1v1~1advisories~1{advisory_id}~1systems/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.AdvisorySystemsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -166,8 +751,73 @@
         "kind": "operation",
         "method": "get",
         "name": "exportAdvisories",
+        "parameters": [
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[description]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[public_date]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[synopsis]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[advisory_type]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[severity]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[applicable_systems]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/patch/v1/export/advisories",
         "pointer": "#/paths/~1api~1patch~1v1~1export~1advisories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.AdvisoryInlineItem[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -181,8 +831,129 @@
         "kind": "operation",
         "method": "get",
         "name": "exportAdvisorySystems",
+        "parameters": [
+          {
+            "description": "Advisory ID",
+            "in": "path",
+            "name": "advisory_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[display_name]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[last_evaluation]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[last_upload]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhsa_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhba_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhea_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[other_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[stale]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[packages_installed]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[packages_updatable]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter only SAP systems",
+            "in": "query",
+            "name": "filter[system_profile][sap_system]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter systems by their SAP SIDs",
+            "in": "query",
+            "name": "filter[system_profile][sap_sids][in]",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Tag filter",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/patch/v1/export/advisories/{advisory_id}/systems",
         "pointer": "#/paths/~1api~1patch~1v1~1export~1advisories~1{advisory_id}~1systems/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.SystemInlineItem[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -196,8 +967,65 @@
         "kind": "operation",
         "method": "get",
         "name": "exportPackages",
+        "parameters": [
+          {
+            "description": "Sort field",
+            "enum": [
+              "id",
+              "name",
+              "systems_installed",
+              "systems_updatable"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[name]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[systems_installed]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[systems_updatable]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[summary]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/patch/v1/export/packages",
         "pointer": "#/paths/~1api~1patch~1v1~1export~1packages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.PackageItem[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -211,8 +1039,45 @@
         "kind": "operation",
         "method": "get",
         "name": "exportPackageSystems",
+        "parameters": [
+          {
+            "description": "Package name",
+            "in": "path",
+            "name": "package_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter only SAP systems",
+            "in": "query",
+            "name": "filter[system_profile][sap_system]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter systems by their SAP SIDs",
+            "in": "query",
+            "name": "filter[system_profile][sap_sids][in]",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Tag filter",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/patch/v1/export/packages/{package_name}/systems",
         "pointer": "#/paths/~1api~1patch~1v1~1export~1packages~1{package_name}~1systems/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.PackageSystemItem[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -226,8 +1091,122 @@
         "kind": "operation",
         "method": "get",
         "name": "exportSystems",
+        "parameters": [
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[display_name]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[last_evaluation]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[last_upload]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhsa_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhba_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhea_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[other_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[stale]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[packages_installed]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[packages_updatable]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter only SAP systems",
+            "in": "query",
+            "name": "filter[system_profile][sap_system]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter systems by their SAP SIDs",
+            "in": "query",
+            "name": "filter[system_profile][sap_sids][in]",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Tag filter",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/patch/v1/export/systems",
         "pointer": "#/paths/~1api~1patch~1v1~1export~1systems/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.SystemInlineItem[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -241,8 +1220,73 @@
         "kind": "operation",
         "method": "get",
         "name": "exportSystemAdvisories",
+        "parameters": [
+          {
+            "description": "Inventory ID",
+            "in": "path",
+            "name": "inventory_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[description]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[public_date]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[synopsis]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[advisory_type]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[severity]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/patch/v1/export/systems/{inventory_id}/advisories",
         "pointer": "#/paths/~1api~1patch~1v1~1export~1systems~1{inventory_id}~1advisories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.SystemAdvisoriesDBLookup[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -256,8 +1300,66 @@
         "kind": "operation",
         "method": "get",
         "name": "exportSystemPackages",
+        "parameters": [
+          {
+            "description": "Inventory ID",
+            "in": "path",
+            "name": "inventory_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[name]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[description]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[evra]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[summary]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[updatable]",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/patch/v1/export/systems/{inventory_id}/packages",
         "pointer": "#/paths/~1api~1patch~1v1~1export~1systems~1{inventory_id}~1packages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.SystemPackageInline[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -271,8 +1373,100 @@
         "kind": "operation",
         "method": "get",
         "name": "listPackages",
+        "parameters": [
+          {
+            "description": "Limit for paging, set -1 to return all",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset for paging",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort field",
+            "enum": [
+              "id",
+              "name",
+              "systems_installed",
+              "systems_updatable"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[name]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[systems_installed]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[systems_updatable]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[summary]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Tag filter",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter only SAP systems",
+            "in": "query",
+            "name": "filter[system_profile][sap_system]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter systems by their SAP SIDs",
+            "in": "query",
+            "name": "filter[system_profile][sap_sids][in]",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/patch/v1/packages/",
         "pointer": "#/paths/~1api~1patch~1v1~1packages~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.PackagesResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -286,8 +1480,24 @@
         "kind": "operation",
         "method": "get",
         "name": "LatestPackage",
+        "parameters": [
+          {
+            "description": "package_name - latest, nevra - exact version",
+            "in": "path",
+            "name": "package_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/patch/v1/packages/{package_name}",
         "pointer": "#/paths/~1api~1patch~1v1~1packages~1{package_name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.PackageDetailResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -301,8 +1511,59 @@
         "kind": "operation",
         "method": "get",
         "name": "packageSystems",
+        "parameters": [
+          {
+            "description": "Limit for paging, set -1 to return all",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset for paging",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Package name",
+            "in": "path",
+            "name": "package_name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Tag filter",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter only SAP systems",
+            "in": "query",
+            "name": "filter[system_profile][sap_system]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter systems by their SAP SIDs",
+            "in": "query",
+            "name": "filter[system_profile][sap_sids][in]",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/patch/v1/packages/{package_name}/systems",
         "pointer": "#/paths/~1api~1patch~1v1~1packages~1{package_name}~1systems/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.PackageSystemsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -316,8 +1577,38 @@
         "kind": "operation",
         "method": "get",
         "name": "packageVersions",
+        "parameters": [
+          {
+            "description": "Limit for paging, set -1 to return all",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset for paging",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Package name",
+            "in": "path",
+            "name": "package_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/patch/v1/packages/{package_name}/versions",
         "pointer": "#/paths/~1api~1patch~1v1~1packages~1{package_name}~1versions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.PackageVersionsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -331,8 +1622,191 @@
         "kind": "operation",
         "method": "get",
         "name": "listSystems",
+        "parameters": [
+          {
+            "description": "Limit for paging, set -1 to return all",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset for paging",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort field",
+            "enum": [
+              "id",
+              "display_name",
+              "last_evaluation",
+              "last_upload",
+              "rhsa_count",
+              "rhba_count",
+              "rhea_count",
+              "other_count",
+              "stale",
+              "packages_installed",
+              "packages_updatable"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[insights_id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[display_name]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[last_evaluation]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[last_upload]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhsa_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhba_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[rhea_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[other_count]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[stale]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[packages_installed]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[packages_updatable]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[stale_timestamp]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[stale_warning_timestamp]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[culled_timestamp]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[created]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Tag filter",
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter only SAP systems",
+            "in": "query",
+            "name": "filter[system_profile][sap_system]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter systems by their SAP SIDs",
+            "in": "query",
+            "name": "filter[system_profile][sap_sids][in]",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/patch/v1/systems",
         "pointer": "#/paths/~1api~1patch~1v1~1systems/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.SystemsResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -342,27 +1816,28 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/patch/v1/systems/{inventory_id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deletesystem",
-        "path": "/api/patch/v1/systems/{inventory_id}",
-        "pointer": "#/paths/~1api~1patch~1v1~1systems~1{inventory_id}/delete",
-        "security": [
-          {
-            "RhIdentity": []
-          }
-        ],
-        "summary": "Delete system by inventory id"
-      },
-      {
-        "deprecated": false,
         "id": "operation:get:/api/patch/v1/systems/{inventory_id}",
         "kind": "operation",
         "method": "get",
         "name": "detailSystem",
+        "parameters": [
+          {
+            "description": "Inventory ID",
+            "in": "path",
+            "name": "inventory_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/patch/v1/systems/{inventory_id}",
         "pointer": "#/paths/~1api~1patch~1v1~1systems~1{inventory_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.SystemDetailResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -372,12 +1847,135 @@
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/api/patch/v1/systems/{inventory_id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deletesystem",
+        "parameters": [
+          {
+            "description": "Inventory ID",
+            "in": "path",
+            "name": "inventory_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/patch/v1/systems/{inventory_id}",
+        "pointer": "#/paths/~1api~1patch~1v1~1systems~1{inventory_id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "RhIdentity": []
+          }
+        ],
+        "summary": "Delete system by inventory id"
+      },
+      {
+        "deprecated": false,
         "id": "operation:get:/api/patch/v1/systems/{inventory_id}/advisories",
         "kind": "operation",
         "method": "get",
         "name": "listSystemAdvisories",
+        "parameters": [
+          {
+            "description": "Inventory ID",
+            "in": "path",
+            "name": "inventory_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Limit for paging, set -1 to return all",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset for paging",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort field",
+            "enum": [
+              "id",
+              "name",
+              "type",
+              "synopsis",
+              "public_date"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[id]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[description]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[public_date]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[synopsis]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[advisory_type]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[severity]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/patch/v1/systems/{inventory_id}/advisories",
         "pointer": "#/paths/~1api~1patch~1v1~1systems~1{inventory_id}~1advisories/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.SystemAdvisoriesResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -391,8 +1989,80 @@
         "kind": "operation",
         "method": "get",
         "name": "systemPackages",
+        "parameters": [
+          {
+            "description": "Inventory ID",
+            "in": "path",
+            "name": "inventory_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Limit for paging, set -1 to return all",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Offset for paging",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Find matching text",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[name]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[description]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[evra]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[summary]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter",
+            "in": "query",
+            "name": "filter[updatable]",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/patch/v1/systems/{inventory_id}/packages",
         "pointer": "#/paths/~1api~1patch~1v1~1systems~1{inventory_id}~1packages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.SystemPackageResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "RhIdentity": []
@@ -408,6 +2078,20 @@
         "name": "viewAdvisoriesSystems",
         "path": "/api/patch/v1/views/advisories/systems",
         "pointer": "#/paths/~1api~1patch~1v1~1views~1advisories~1systems/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "controllers.SystemsAdvisoriesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.AdvisoriesSystemsResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "RhIdentity": []
@@ -423,6 +2107,20 @@
         "name": "viewSystemsAdvisories",
         "path": "/api/patch/v1/views/systems/advisories",
         "pointer": "#/paths/~1api~1patch~1v1~1views~1systems~1advisories/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "controllers.SystemsAdvisoriesRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "controllers.SystemsAdvisoriesResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "RhIdentity": []
@@ -433,182 +2131,218 @@
       {
         "id": "schema:controllers.AdvisoriesResponse",
         "kind": "schema",
-        "name": "controllers.AdvisoriesResponse"
+        "name": "controllers.AdvisoriesResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.AdvisoriesSystemsResponse",
         "kind": "schema",
-        "name": "controllers.AdvisoriesSystemsResponse"
+        "name": "controllers.AdvisoriesSystemsResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.AdvisoryDetailAttributes",
         "kind": "schema",
-        "name": "controllers.AdvisoryDetailAttributes"
+        "name": "controllers.AdvisoryDetailAttributes",
+        "type": "object"
       },
       {
         "id": "schema:controllers.AdvisoryDetailItem",
         "kind": "schema",
-        "name": "controllers.AdvisoryDetailItem"
+        "name": "controllers.AdvisoryDetailItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.AdvisoryDetailResponse",
         "kind": "schema",
-        "name": "controllers.AdvisoryDetailResponse"
+        "name": "controllers.AdvisoryDetailResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.AdvisoryInlineItem",
         "kind": "schema",
-        "name": "controllers.AdvisoryInlineItem"
+        "name": "controllers.AdvisoryInlineItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.AdvisoryItem",
         "kind": "schema",
-        "name": "controllers.AdvisoryItem"
+        "name": "controllers.AdvisoryItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.AdvisoryItemAttributes",
         "kind": "schema",
-        "name": "controllers.AdvisoryItemAttributes"
+        "name": "controllers.AdvisoryItemAttributes",
+        "type": "object"
       },
       {
         "id": "schema:controllers.AdvisorySystemsResponse",
         "kind": "schema",
-        "name": "controllers.AdvisorySystemsResponse"
+        "name": "controllers.AdvisorySystemsResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.FilterData",
         "kind": "schema",
-        "name": "controllers.FilterData"
+        "name": "controllers.FilterData",
+        "type": "object"
       },
       {
         "id": "schema:controllers.Links",
         "kind": "schema",
-        "name": "controllers.Links"
+        "name": "controllers.Links",
+        "type": "object"
       },
       {
         "id": "schema:controllers.ListMeta",
         "kind": "schema",
-        "name": "controllers.ListMeta"
+        "name": "controllers.ListMeta",
+        "type": "object"
       },
       {
         "id": "schema:controllers.PackageDetailAttributes",
         "kind": "schema",
-        "name": "controllers.PackageDetailAttributes"
+        "name": "controllers.PackageDetailAttributes",
+        "type": "object"
       },
       {
         "id": "schema:controllers.PackageDetailItem",
         "kind": "schema",
-        "name": "controllers.PackageDetailItem"
+        "name": "controllers.PackageDetailItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.PackageDetailResponse",
         "kind": "schema",
-        "name": "controllers.PackageDetailResponse"
+        "name": "controllers.PackageDetailResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.PackageItem",
         "kind": "schema",
-        "name": "controllers.PackageItem"
+        "name": "controllers.PackageItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.PackageSystemItem",
         "kind": "schema",
-        "name": "controllers.PackageSystemItem"
+        "name": "controllers.PackageSystemItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.PackageSystemsResponse",
         "kind": "schema",
-        "name": "controllers.PackageSystemsResponse"
+        "name": "controllers.PackageSystemsResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.PackageVersionItem",
         "kind": "schema",
-        "name": "controllers.PackageVersionItem"
+        "name": "controllers.PackageVersionItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.PackageVersionsResponse",
         "kind": "schema",
-        "name": "controllers.PackageVersionsResponse"
+        "name": "controllers.PackageVersionsResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.PackagesResponse",
         "kind": "schema",
-        "name": "controllers.PackagesResponse"
+        "name": "controllers.PackagesResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemAdvisoriesDBLookup",
         "kind": "schema",
-        "name": "controllers.SystemAdvisoriesDBLookup"
+        "name": "controllers.SystemAdvisoriesDBLookup",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemAdvisoriesResponse",
         "kind": "schema",
-        "name": "controllers.SystemAdvisoriesResponse"
+        "name": "controllers.SystemAdvisoriesResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemAdvisoryItem",
         "kind": "schema",
-        "name": "controllers.SystemAdvisoryItem"
+        "name": "controllers.SystemAdvisoryItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemAdvisoryItemAttributes",
         "kind": "schema",
-        "name": "controllers.SystemAdvisoryItemAttributes"
+        "name": "controllers.SystemAdvisoryItemAttributes",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemDetailResponse",
         "kind": "schema",
-        "name": "controllers.SystemDetailResponse"
+        "name": "controllers.SystemDetailResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemInlineItem",
         "kind": "schema",
-        "name": "controllers.SystemInlineItem"
+        "name": "controllers.SystemInlineItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemItem",
         "kind": "schema",
-        "name": "controllers.SystemItem"
+        "name": "controllers.SystemItem",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemItemAttributes",
         "kind": "schema",
-        "name": "controllers.SystemItemAttributes"
+        "name": "controllers.SystemItemAttributes",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemPackageData",
         "kind": "schema",
-        "name": "controllers.SystemPackageData"
+        "name": "controllers.SystemPackageData",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemPackageInline",
         "kind": "schema",
-        "name": "controllers.SystemPackageInline"
+        "name": "controllers.SystemPackageInline",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemPackageResponse",
         "kind": "schema",
-        "name": "controllers.SystemPackageResponse"
+        "name": "controllers.SystemPackageResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemsAdvisoriesRequest",
         "kind": "schema",
-        "name": "controllers.SystemsAdvisoriesRequest"
+        "name": "controllers.SystemsAdvisoriesRequest",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemsAdvisoriesResponse",
         "kind": "schema",
-        "name": "controllers.SystemsAdvisoriesResponse"
+        "name": "controllers.SystemsAdvisoriesResponse",
+        "type": "object"
       },
       {
         "id": "schema:controllers.SystemsResponse",
         "kind": "schema",
-        "name": "controllers.SystemsResponse"
+        "name": "controllers.SystemsResponse",
+        "type": "object"
       },
       {
         "id": "schema:models.PackageUpdate",
         "kind": "schema",
-        "name": "models.PackageUpdate"
+        "name": "models.PackageUpdate",
+        "type": "object"
       }
     ]
   },

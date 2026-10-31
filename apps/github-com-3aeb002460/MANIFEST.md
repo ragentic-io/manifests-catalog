@@ -11,7 +11,7 @@ logo: "https://github.com/favicon.ico"
 
 | | |
 | --- | --- |
-| Signed bundle | `7ae425c3016b7cff83f2779eaf88026feac796d967f5483797dac825ea3839e4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,850 +34,852 @@ logo: "https://github.com/favicon.ico"
 
 582 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | meta/root | GitHub API Root |
-| GET | `/app` | apps/get-authenticated | Get the authenticated app |
-| POST | `/app-manifests/{code}/conversions` | apps/create-from-manifest | Create a GitHub App from a manifest |
-| GET | `/app/hook/config` | apps/get-webhook-config-for-app | Get a webhook configuration for an app |
-| PATCH | `/app/hook/config` | apps/update-webhook-config-for-app | Update a webhook configuration for an app |
-| GET | `/app/hook/deliveries` | apps/list-webhook-deliveries | List deliveries for an app webhook |
-| GET | `/app/hook/deliveries/{delivery_id}` | apps/get-webhook-delivery | Get a delivery for an app webhook |
-| POST | `/app/hook/deliveries/{delivery_id}/attempts` | apps/redeliver-webhook-delivery | Redeliver a delivery for an app webhook |
-| GET | `/app/installations` | apps/list-installations | List installations for the authenticated app |
-| DELETE | `/app/installations/{installation_id}` | apps/delete-installation | Delete an installation for the authenticated app |
-| GET | `/app/installations/{installation_id}` | apps/get-installation | Get an installation for the authenticated app |
-| POST | `/app/installations/{installation_id}/access_tokens` | apps/create-installation-access-token | Create an installation access token for an app |
-| DELETE | `/app/installations/{installation_id}/suspended` | apps/unsuspend-installation | Unsuspend an app installation |
-| PUT | `/app/installations/{installation_id}/suspended` | apps/suspend-installation | Suspend an app installation |
-| DELETE | `/applications/{client_id}/grant` | apps/delete-authorization | Delete an app authorization |
-| DELETE | `/applications/{client_id}/token` | apps/delete-token | Delete an app token |
-| PATCH | `/applications/{client_id}/token` | apps/reset-token | Reset a token |
-| POST | `/applications/{client_id}/token` | apps/check-token | Check a token |
-| POST | `/applications/{client_id}/token/scoped` | apps/scope-token | Create a scoped access token |
-| GET | `/apps/{app_slug}` | apps/get-by-slug | Get an app |
-| GET | `/codes_of_conduct` | codes-of-conduct/get-all-codes-of-conduct | Get all codes of conduct |
-| GET | `/codes_of_conduct/{key}` | codes-of-conduct/get-conduct-code | Get a code of conduct |
-| GET | `/emojis` | emojis/get | Get emojis |
-| GET | `/enterprises/{enterprise}/dependabot/alerts` | dependabot/list-alerts-for-enterprise | List Dependabot alerts for an enterprise |
-| GET | `/enterprises/{enterprise}/secret-scanning/alerts` | secret-scanning/list-alerts-for-enterprise | List secret scanning alerts for an enterprise |
-| GET | `/events` | activity/list-public-events | List public events |
-| GET | `/feeds` | activity/get-feeds | Get feeds |
-| GET | `/gists` | gists/list | List gists for the authenticated user |
-| POST | `/gists` | gists/create | Create a gist |
-| GET | `/gists/public` | gists/list-public | List public gists |
-| GET | `/gists/starred` | gists/list-starred | List starred gists |
-| DELETE | `/gists/{gist_id}` | gists/delete | Delete a gist |
-| GET | `/gists/{gist_id}` | gists/get | Get a gist |
-| PATCH | `/gists/{gist_id}` | gists/update | Update a gist |
-| GET | `/gists/{gist_id}/comments` | gists/list-comments | List gist comments |
-| POST | `/gists/{gist_id}/comments` | gists/create-comment | Create a gist comment |
-| DELETE | `/gists/{gist_id}/comments/{comment_id}` | gists/delete-comment | Delete a gist comment |
-| GET | `/gists/{gist_id}/comments/{comment_id}` | gists/get-comment | Get a gist comment |
-| PATCH | `/gists/{gist_id}/comments/{comment_id}` | gists/update-comment | Update a gist comment |
-| GET | `/gists/{gist_id}/commits` | gists/list-commits | List gist commits |
-| GET | `/gists/{gist_id}/forks` | gists/list-forks | List gist forks |
-| POST | `/gists/{gist_id}/forks` | gists/fork | Fork a gist |
-| DELETE | `/gists/{gist_id}/star` | gists/unstar | Unstar a gist |
-| GET | `/gists/{gist_id}/star` | gists/check-is-starred | Check if a gist is starred |
-| PUT | `/gists/{gist_id}/star` | gists/star | Star a gist |
-| GET | `/gists/{gist_id}/{sha}` | gists/get-revision | Get a gist revision |
-| GET | `/gitignore/templates` | gitignore/get-all-templates | Get all gitignore templates |
-| GET | `/gitignore/templates/{name}` | gitignore/get-template | Get a gitignore template |
-| GET | `/installation/repositories` | apps/list-repos-accessible-to-installation | List repositories accessible to the app installation |
-| DELETE | `/installation/token` | apps/revoke-installation-access-token | Revoke an installation access token |
-| GET | `/issues` | issues/list | List issues assigned to the authenticated user |
-| GET | `/licenses` | licenses/get-all-commonly-used | Get all commonly used licenses |
-| GET | `/licenses/{license}` | licenses/get | Get a license |
-| POST | `/markdown` | markdown/render | Render a Markdown document |
-| POST | `/markdown/raw` | markdown/render-raw | Render a Markdown document in raw mode |
-| GET | `/marketplace_listing/accounts/{account_id}` | apps/get-subscription-plan-for-account | Get a subscription plan for an account |
-| GET | `/marketplace_listing/plans` | apps/list-plans | List plans |
-| GET | `/marketplace_listing/plans/{plan_id}/accounts` | apps/list-accounts-for-plan | List accounts for a plan |
-| GET | `/marketplace_listing/stubbed/accounts/{account_id}` | apps/get-subscription-plan-for-account-stubbed | Get a subscription plan for an account (stubbed) |
-| GET | `/marketplace_listing/stubbed/plans` | apps/list-plans-stubbed | List plans (stubbed) |
-| GET | `/marketplace_listing/stubbed/plans/{plan_id}/accounts` | apps/list-accounts-for-plan-stubbed | List accounts for a plan (stubbed) |
-| GET | `/meta` | meta/get | Get GitHub meta information |
-| GET | `/networks/{owner}/{repo}/events` | activity/list-public-events-for-repo-network | List public events for a network of repositories |
-| GET | `/notifications` | activity/list-notifications-for-authenticated-user | List notifications for the authenticated user |
-| PUT | `/notifications` | activity/mark-notifications-as-read | Mark notifications as read |
-| GET | `/notifications/threads/{thread_id}` | activity/get-thread | Get a thread |
-| PATCH | `/notifications/threads/{thread_id}` | activity/mark-thread-as-read | Mark a thread as read |
-| DELETE | `/notifications/threads/{thread_id}/subscription` | activity/delete-thread-subscription | Delete a thread subscription |
-| GET | `/notifications/threads/{thread_id}/subscription` | activity/get-thread-subscription-for-authenticated-user | Get a thread subscription for the authenticated user |
-| PUT | `/notifications/threads/{thread_id}/subscription` | activity/set-thread-subscription | Set a thread subscription |
-| GET | `/octocat` | meta/get-octocat | Get Octocat |
-| GET | `/organizations` | orgs/list | List organizations |
-| GET | `/orgs/{org}` | orgs/get | Get an organization |
-| PATCH | `/orgs/{org}` | orgs/update | Update an organization |
-| GET | `/orgs/{org}/actions/cache/usage` | actions/get-actions-cache-usage-for-org | Get GitHub Actions cache usage for an organization |
-| GET | `/orgs/{org}/actions/cache/usage-by-repository` | actions/get-actions-cache-usage-by-repo-for-org | List repositories with GitHub Actions cache usage for an organization |
-| GET | `/orgs/{org}/actions/oidc/customization/sub` | oidc/get-oidc-custom-sub-template-for-org | Get the customization template for an OIDC subject claim for an organization |
-| PUT | `/orgs/{org}/actions/oidc/customization/sub` | oidc/update-oidc-custom-sub-template-for-org | Set the customization template for an OIDC subject claim for an organization |
-| GET | `/orgs/{org}/actions/permissions` | actions/get-github-actions-permissions-organization | Get GitHub Actions permissions for an organization |
-| PUT | `/orgs/{org}/actions/permissions` | actions/set-github-actions-permissions-organization | Set GitHub Actions permissions for an organization |
-| GET | `/orgs/{org}/actions/permissions/repositories` | actions/list-selected-repositories-enabled-github-actions-organization | List selected repositories enabled for GitHub Actions in an organization |
-| PUT | `/orgs/{org}/actions/permissions/repositories` | actions/set-selected-repositories-enabled-github-actions-organization | Set selected repositories enabled for GitHub Actions in an organization |
-| DELETE | `/orgs/{org}/actions/permissions/repositories/{repository_id}` | actions/disable-selected-repository-github-actions-organization | Disable a selected repository for GitHub Actions in an organization |
-| PUT | `/orgs/{org}/actions/permissions/repositories/{repository_id}` | actions/enable-selected-repository-github-actions-organization | Enable a selected repository for GitHub Actions in an organization |
-| GET | `/orgs/{org}/actions/permissions/selected-actions` | actions/get-allowed-actions-organization | Get allowed actions and reusable workflows for an organization |
-| PUT | `/orgs/{org}/actions/permissions/selected-actions` | actions/set-allowed-actions-organization | Set allowed actions and reusable workflows for an organization |
-| GET | `/orgs/{org}/actions/permissions/workflow` | actions/get-github-actions-default-workflow-permissions-organization | Get default workflow permissions for an organization |
-| PUT | `/orgs/{org}/actions/permissions/workflow` | actions/set-github-actions-default-workflow-permissions-organization | Set default workflow permissions for an organization |
-| GET | `/orgs/{org}/actions/required_workflows` | actions/list-required-workflows | List required workflows |
-| POST | `/orgs/{org}/actions/required_workflows` | actions/create-required-workflow | Create a required workflow |
-| DELETE | `/orgs/{org}/actions/required_workflows/{required_workflow_id}` | actions/delete-required-workflow | Delete a required workflow |
-| GET | `/orgs/{org}/actions/required_workflows/{required_workflow_id}` | actions/get-required-workflow | Get a required workflow |
-| PATCH | `/orgs/{org}/actions/required_workflows/{required_workflow_id}` | actions/update-required-workflow | Update a required workflow |
-| GET | `/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories` | actions/list-selected-repositories-required-workflow | List selected repositories for a required workflow |
-| PUT | `/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories` | actions/set-selected-repos-to-required-workflow | Sets repositories for a required workflow |
-| DELETE | `/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}` | actions/remove-selected-repo-from-required-workflow | Remove a selected repository from required workflow |
-| PUT | `/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}` | actions/add-selected-repo-to-required-workflow | Add a repository to a required workflow |
-| GET | `/orgs/{org}/actions/runners` | actions/list-self-hosted-runners-for-org | List self-hosted runners for an organization |
-| GET | `/orgs/{org}/actions/runners/downloads` | actions/list-runner-applications-for-org | List runner applications for an organization |
-| POST | `/orgs/{org}/actions/runners/registration-token` | actions/create-registration-token-for-org | Create a registration token for an organization |
-| POST | `/orgs/{org}/actions/runners/remove-token` | actions/create-remove-token-for-org | Create a remove token for an organization |
-| DELETE | `/orgs/{org}/actions/runners/{runner_id}` | actions/delete-self-hosted-runner-from-org | Delete a self-hosted runner from an organization |
-| GET | `/orgs/{org}/actions/runners/{runner_id}` | actions/get-self-hosted-runner-for-org | Get a self-hosted runner for an organization |
-| DELETE | `/orgs/{org}/actions/runners/{runner_id}/labels` | actions/remove-all-custom-labels-from-self-hosted-runner-for-org | Remove all custom labels from a self-hosted runner for an organization |
-| GET | `/orgs/{org}/actions/runners/{runner_id}/labels` | actions/list-labels-for-self-hosted-runner-for-org | List labels for a self-hosted runner for an organization |
-| POST | `/orgs/{org}/actions/runners/{runner_id}/labels` | actions/add-custom-labels-to-self-hosted-runner-for-org | Add custom labels to a self-hosted runner for an organization |
-| PUT | `/orgs/{org}/actions/runners/{runner_id}/labels` | actions/set-custom-labels-for-self-hosted-runner-for-org | Set custom labels for a self-hosted runner for an organization |
-| DELETE | `/orgs/{org}/actions/runners/{runner_id}/labels/{name}` | actions/remove-custom-label-from-self-hosted-runner-for-org | Remove a custom label from a self-hosted runner for an organization |
-| GET | `/orgs/{org}/actions/secrets` | actions/list-org-secrets | List organization secrets |
-| GET | `/orgs/{org}/actions/secrets/public-key` | actions/get-org-public-key | Get an organization public key |
-| DELETE | `/orgs/{org}/actions/secrets/{secret_name}` | actions/delete-org-secret | Delete an organization secret |
-| GET | `/orgs/{org}/actions/secrets/{secret_name}` | actions/get-org-secret | Get an organization secret |
-| PUT | `/orgs/{org}/actions/secrets/{secret_name}` | actions/create-or-update-org-secret | Create or update an organization secret |
-| GET | `/orgs/{org}/actions/secrets/{secret_name}/repositories` | actions/list-selected-repos-for-org-secret | List selected repositories for an organization secret |
-| PUT | `/orgs/{org}/actions/secrets/{secret_name}/repositories` | actions/set-selected-repos-for-org-secret | Set selected repositories for an organization secret |
-| DELETE | `/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}` | actions/remove-selected-repo-from-org-secret | Remove selected repository from an organization secret |
-| PUT | `/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}` | actions/add-selected-repo-to-org-secret | Add selected repository to an organization secret |
-| GET | `/orgs/{org}/actions/variables` | actions/list-org-variables | List organization variables |
-| POST | `/orgs/{org}/actions/variables` | actions/create-org-variable | Create an organization variable |
-| DELETE | `/orgs/{org}/actions/variables/{name}` | actions/delete-org-variable | Delete an organization variable |
-| GET | `/orgs/{org}/actions/variables/{name}` | actions/get-org-variable | Get an organization variable |
-| PATCH | `/orgs/{org}/actions/variables/{name}` | actions/update-org-variable | Update an organization variable |
-| GET | `/orgs/{org}/actions/variables/{name}/repositories` | actions/list-selected-repos-for-org-variable | List selected repositories for an organization variable |
-| PUT | `/orgs/{org}/actions/variables/{name}/repositories` | actions/set-selected-repos-for-org-variable | Set selected repositories for an organization variable |
-| DELETE | `/orgs/{org}/actions/variables/{name}/repositories/{repository_id}` | actions/remove-selected-repo-from-org-variable | Remove selected repository from an organization variable |
-| PUT | `/orgs/{org}/actions/variables/{name}/repositories/{repository_id}` | actions/add-selected-repo-to-org-variable | Add selected repository to an organization variable |
-| GET | `/orgs/{org}/blocks` | orgs/list-blocked-users | List users blocked by an organization |
-| DELETE | `/orgs/{org}/blocks/{username}` | orgs/unblock-user | Unblock a user from an organization |
-| GET | `/orgs/{org}/blocks/{username}` | orgs/check-blocked-user | Check if a user is blocked by an organization |
-| PUT | `/orgs/{org}/blocks/{username}` | orgs/block-user | Block a user from an organization |
-| GET | `/orgs/{org}/code-scanning/alerts` | code-scanning/list-alerts-for-org | List code scanning alerts for an organization |
-| GET | `/orgs/{org}/codespaces` | codespaces/list-in-organization | List codespaces for the organization |
-| PUT | `/orgs/{org}/codespaces/billing` | codespaces/set-codespaces-billing | Manage access control for organization codespaces |
-| DELETE | `/orgs/{org}/codespaces/billing/selected_users` | codespaces/delete-codespaces-billing-users | Removes users from Codespaces billing for an organization |
-| POST | `/orgs/{org}/codespaces/billing/selected_users` | codespaces/set-codespaces-billing-users | Add users to Codespaces billing for an organization |
-| GET | `/orgs/{org}/codespaces/secrets` | codespaces/list-org-secrets | List organization secrets |
-| GET | `/orgs/{org}/codespaces/secrets/public-key` | codespaces/get-org-public-key | Get an organization public key |
-| DELETE | `/orgs/{org}/codespaces/secrets/{secret_name}` | codespaces/delete-org-secret | Delete an organization secret |
-| GET | `/orgs/{org}/codespaces/secrets/{secret_name}` | codespaces/get-org-secret | Get an organization secret |
-| PUT | `/orgs/{org}/codespaces/secrets/{secret_name}` | codespaces/create-or-update-org-secret | Create or update an organization secret |
-| GET | `/orgs/{org}/codespaces/secrets/{secret_name}/repositories` | codespaces/list-selected-repos-for-org-secret | List selected repositories for an organization secret |
-| PUT | `/orgs/{org}/codespaces/secrets/{secret_name}/repositories` | codespaces/set-selected-repos-for-org-secret | Set selected repositories for an organization secret |
-| DELETE | `/orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}` | codespaces/remove-selected-repo-from-org-secret | Remove selected repository from an organization secret |
-| PUT | `/orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}` | codespaces/add-selected-repo-to-org-secret | Add selected repository to an organization secret |
-| GET | `/orgs/{org}/dependabot/alerts` | dependabot/list-alerts-for-org | List Dependabot alerts for an organization |
-| GET | `/orgs/{org}/dependabot/secrets` | dependabot/list-org-secrets | List organization secrets |
-| GET | `/orgs/{org}/dependabot/secrets/public-key` | dependabot/get-org-public-key | Get an organization public key |
-| DELETE | `/orgs/{org}/dependabot/secrets/{secret_name}` | dependabot/delete-org-secret | Delete an organization secret |
-| GET | `/orgs/{org}/dependabot/secrets/{secret_name}` | dependabot/get-org-secret | Get an organization secret |
-| PUT | `/orgs/{org}/dependabot/secrets/{secret_name}` | dependabot/create-or-update-org-secret | Create or update an organization secret |
-| GET | `/orgs/{org}/dependabot/secrets/{secret_name}/repositories` | dependabot/list-selected-repos-for-org-secret | List selected repositories for an organization secret |
-| PUT | `/orgs/{org}/dependabot/secrets/{secret_name}/repositories` | dependabot/set-selected-repos-for-org-secret | Set selected repositories for an organization secret |
-| DELETE | `/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}` | dependabot/remove-selected-repo-from-org-secret | Remove selected repository from an organization secret |
-| PUT | `/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}` | dependabot/add-selected-repo-to-org-secret | Add selected repository to an organization secret |
-| GET | `/orgs/{org}/events` | activity/list-public-org-events | List public organization events |
-| GET | `/orgs/{org}/failed_invitations` | orgs/list-failed-invitations | List failed organization invitations |
-| GET | `/orgs/{org}/hooks` | orgs/list-webhooks | List organization webhooks |
-| POST | `/orgs/{org}/hooks` | orgs/create-webhook | Create an organization webhook |
-| DELETE | `/orgs/{org}/hooks/{hook_id}` | orgs/delete-webhook | Delete an organization webhook |
-| GET | `/orgs/{org}/hooks/{hook_id}` | orgs/get-webhook | Get an organization webhook |
-| PATCH | `/orgs/{org}/hooks/{hook_id}` | orgs/update-webhook | Update an organization webhook |
-| GET | `/orgs/{org}/hooks/{hook_id}/config` | orgs/get-webhook-config-for-org | Get a webhook configuration for an organization |
-| PATCH | `/orgs/{org}/hooks/{hook_id}/config` | orgs/update-webhook-config-for-org | Update a webhook configuration for an organization |
-| GET | `/orgs/{org}/hooks/{hook_id}/deliveries` | orgs/list-webhook-deliveries | List deliveries for an organization webhook |
-| GET | `/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}` | orgs/get-webhook-delivery | Get a webhook delivery for an organization webhook |
-| POST | `/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts` | orgs/redeliver-webhook-delivery | Redeliver a delivery for an organization webhook |
-| POST | `/orgs/{org}/hooks/{hook_id}/pings` | orgs/ping-webhook | Ping an organization webhook |
-| GET | `/orgs/{org}/installation` | apps/get-org-installation | Get an organization installation for the authenticated app |
-| GET | `/orgs/{org}/installations` | orgs/list-app-installations | List app installations for an organization |
-| DELETE | `/orgs/{org}/interaction-limits` | interactions/remove-restrictions-for-org | Remove interaction restrictions for an organization |
-| GET | `/orgs/{org}/interaction-limits` | interactions/get-restrictions-for-org | Get interaction restrictions for an organization |
-| PUT | `/orgs/{org}/interaction-limits` | interactions/set-restrictions-for-org | Set interaction restrictions for an organization |
-| GET | `/orgs/{org}/invitations` | orgs/list-pending-invitations | List pending organization invitations |
-| POST | `/orgs/{org}/invitations` | orgs/create-invitation | Create an organization invitation |
-| DELETE | `/orgs/{org}/invitations/{invitation_id}` | orgs/cancel-invitation | Cancel an organization invitation |
-| GET | `/orgs/{org}/invitations/{invitation_id}/teams` | orgs/list-invitation-teams | List organization invitation teams |
-| GET | `/orgs/{org}/issues` | issues/list-for-org | List organization issues assigned to the authenticated user |
-| GET | `/orgs/{org}/members` | orgs/list-members | List organization members |
-| DELETE | `/orgs/{org}/members/{username}` | orgs/remove-member | Remove an organization member |
-| GET | `/orgs/{org}/members/{username}` | orgs/check-membership-for-user | Check organization membership for a user |
-| GET | `/orgs/{org}/members/{username}/codespaces` | codespaces/get-codespaces-for-user-in-org | List codespaces for a user in organization |
-| DELETE | `/orgs/{org}/members/{username}/codespaces/{codespace_name}` | codespaces/delete-from-organization | Delete a codespace from the organization |
-| POST | `/orgs/{org}/members/{username}/codespaces/{codespace_name}/stop` | codespaces/stop-in-organization | Stop a codespace for an organization user |
-| DELETE | `/orgs/{org}/memberships/{username}` | orgs/remove-membership-for-user | Remove organization membership for a user |
-| GET | `/orgs/{org}/memberships/{username}` | orgs/get-membership-for-user | Get organization membership for a user |
-| PUT | `/orgs/{org}/memberships/{username}` | orgs/set-membership-for-user | Set organization membership for a user |
-| GET | `/orgs/{org}/migrations` | migrations/list-for-org | List organization migrations |
-| POST | `/orgs/{org}/migrations` | migrations/start-for-org | Start an organization migration |
-| GET | `/orgs/{org}/migrations/{migration_id}` | migrations/get-status-for-org | Get an organization migration status |
-| DELETE | `/orgs/{org}/migrations/{migration_id}/archive` | migrations/delete-archive-for-org | Delete an organization migration archive |
-| GET | `/orgs/{org}/migrations/{migration_id}/archive` | migrations/download-archive-for-org | Download an organization migration archive |
-| DELETE | `/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock` | migrations/unlock-repo-for-org | Unlock an organization repository |
-| GET | `/orgs/{org}/migrations/{migration_id}/repositories` | migrations/list-repos-for-org | List repositories in an organization migration |
-| GET | `/orgs/{org}/outside_collaborators` | orgs/list-outside-collaborators | List outside collaborators for an organization |
-| DELETE | `/orgs/{org}/outside_collaborators/{username}` | orgs/remove-outside-collaborator | Remove outside collaborator from an organization |
-| PUT | `/orgs/{org}/outside_collaborators/{username}` | orgs/convert-member-to-outside-collaborator | Convert an organization member to outside collaborator |
-| GET | `/orgs/{org}/packages` | packages/list-packages-for-organization | List packages for an organization |
-| DELETE | `/orgs/{org}/packages/{package_type}/{package_name}` | packages/delete-package-for-org | Delete a package for an organization |
-| GET | `/orgs/{org}/packages/{package_type}/{package_name}` | packages/get-package-for-organization | Get a package for an organization |
-| POST | `/orgs/{org}/packages/{package_type}/{package_name}/restore` | packages/restore-package-for-org | Restore a package for an organization |
-| GET | `/orgs/{org}/packages/{package_type}/{package_name}/versions` | packages/get-all-package-versions-for-package-owned-by-org | List package versions for a package owned by an organization |
-| DELETE | `/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/delete-package-version-for-org | Delete package version for an organization |
-| GET | `/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/get-package-version-for-organization | Get a package version for an organization |
-| POST | `/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore` | packages/restore-package-version-for-org | Restore package version for an organization |
-| GET | `/orgs/{org}/projects` | projects/list-for-org | List organization projects |
-| POST | `/orgs/{org}/projects` | projects/create-for-org | Create an organization project |
-| GET | `/orgs/{org}/public_members` | orgs/list-public-members | List public organization members |
-| DELETE | `/orgs/{org}/public_members/{username}` | orgs/remove-public-membership-for-authenticated-user | Remove public organization membership for the authenticated user |
-| GET | `/orgs/{org}/public_members/{username}` | orgs/check-public-membership-for-user | Check public organization membership for a user |
-| PUT | `/orgs/{org}/public_members/{username}` | orgs/set-public-membership-for-authenticated-user | Set public organization membership for the authenticated user |
-| GET | `/orgs/{org}/repos` | repos/list-for-org | List organization repositories |
-| POST | `/orgs/{org}/repos` | repos/create-in-org | Create an organization repository |
-| GET | `/orgs/{org}/secret-scanning/alerts` | secret-scanning/list-alerts-for-org | List secret scanning alerts for an organization |
-| GET | `/orgs/{org}/security-managers` | orgs/list-security-manager-teams | List security manager teams |
-| DELETE | `/orgs/{org}/security-managers/teams/{team_slug}` | orgs/remove-security-manager-team | Remove a security manager team |
-| PUT | `/orgs/{org}/security-managers/teams/{team_slug}` | orgs/add-security-manager-team | Add a security manager team |
-| GET | `/orgs/{org}/settings/billing/actions` | billing/get-github-actions-billing-org | Get GitHub Actions billing for an organization |
-| GET | `/orgs/{org}/settings/billing/packages` | billing/get-github-packages-billing-org | Get GitHub Packages billing for an organization |
-| GET | `/orgs/{org}/settings/billing/shared-storage` | billing/get-shared-storage-billing-org | Get shared storage billing for an organization |
-| GET | `/orgs/{org}/teams` | teams/list | List teams |
-| POST | `/orgs/{org}/teams` | teams/create | Create a team |
-| DELETE | `/orgs/{org}/teams/{team_slug}` | teams/delete-in-org | Delete a team |
-| GET | `/orgs/{org}/teams/{team_slug}` | teams/get-by-name | Get a team by name |
-| PATCH | `/orgs/{org}/teams/{team_slug}` | teams/update-in-org | Update a team |
-| GET | `/orgs/{org}/teams/{team_slug}/discussions` | teams/list-discussions-in-org | List discussions |
-| POST | `/orgs/{org}/teams/{team_slug}/discussions` | teams/create-discussion-in-org | Create a discussion |
-| DELETE | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}` | teams/delete-discussion-in-org | Delete a discussion |
-| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}` | teams/get-discussion-in-org | Get a discussion |
-| PATCH | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}` | teams/update-discussion-in-org | Update a discussion |
-| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments` | teams/list-discussion-comments-in-org | List discussion comments |
-| POST | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments` | teams/create-discussion-comment-in-org | Create a discussion comment |
-| DELETE | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}` | teams/delete-discussion-comment-in-org | Delete a discussion comment |
-| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}` | teams/get-discussion-comment-in-org | Get a discussion comment |
-| PATCH | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}` | teams/update-discussion-comment-in-org | Update a discussion comment |
-| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions` | reactions/list-for-team-discussion-comment-in-org | List reactions for a team discussion comment |
-| POST | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions` | reactions/create-for-team-discussion-comment-in-org | Create reaction for a team discussion comment |
-| DELETE | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}` | reactions/delete-for-team-discussion-comment | Delete team discussion comment reaction |
-| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions` | reactions/list-for-team-discussion-in-org | List reactions for a team discussion |
-| POST | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions` | reactions/create-for-team-discussion-in-org | Create reaction for a team discussion |
-| DELETE | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}` | reactions/delete-for-team-discussion | Delete team discussion reaction |
-| GET | `/orgs/{org}/teams/{team_slug}/invitations` | teams/list-pending-invitations-in-org | List pending team invitations |
-| GET | `/orgs/{org}/teams/{team_slug}/members` | teams/list-members-in-org | List team members |
-| DELETE | `/orgs/{org}/teams/{team_slug}/memberships/{username}` | teams/remove-membership-for-user-in-org | Remove team membership for a user |
-| GET | `/orgs/{org}/teams/{team_slug}/memberships/{username}` | teams/get-membership-for-user-in-org | Get team membership for a user |
-| PUT | `/orgs/{org}/teams/{team_slug}/memberships/{username}` | teams/add-or-update-membership-for-user-in-org | Add or update team membership for a user |
-| GET | `/orgs/{org}/teams/{team_slug}/projects` | teams/list-projects-in-org | List team projects |
-| DELETE | `/orgs/{org}/teams/{team_slug}/projects/{project_id}` | teams/remove-project-in-org | Remove a project from a team |
-| GET | `/orgs/{org}/teams/{team_slug}/projects/{project_id}` | teams/check-permissions-for-project-in-org | Check team permissions for a project |
-| PUT | `/orgs/{org}/teams/{team_slug}/projects/{project_id}` | teams/add-or-update-project-permissions-in-org | Add or update team project permissions |
-| GET | `/orgs/{org}/teams/{team_slug}/repos` | teams/list-repos-in-org | List team repositories |
-| DELETE | `/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}` | teams/remove-repo-in-org | Remove a repository from a team |
-| GET | `/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}` | teams/check-permissions-for-repo-in-org | Check team permissions for a repository |
-| PUT | `/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}` | teams/add-or-update-repo-permissions-in-org | Add or update team repository permissions |
-| GET | `/orgs/{org}/teams/{team_slug}/teams` | teams/list-child-in-org | List child teams |
-| POST | `/orgs/{org}/{security_product}/{enablement}` | orgs/enable-or-disable-security-product-on-all-org-repos | Enable or disable a security feature for an organization |
-| DELETE | `/projects/columns/cards/{card_id}` | projects/delete-card | Delete a project card |
-| GET | `/projects/columns/cards/{card_id}` | projects/get-card | Get a project card |
-| PATCH | `/projects/columns/cards/{card_id}` | projects/update-card | Update an existing project card |
-| POST | `/projects/columns/cards/{card_id}/moves` | projects/move-card | Move a project card |
-| DELETE | `/projects/columns/{column_id}` | projects/delete-column | Delete a project column |
-| GET | `/projects/columns/{column_id}` | projects/get-column | Get a project column |
-| PATCH | `/projects/columns/{column_id}` | projects/update-column | Update an existing project column |
-| GET | `/projects/columns/{column_id}/cards` | projects/list-cards | List project cards |
-| POST | `/projects/columns/{column_id}/cards` | projects/create-card | Create a project card |
-| POST | `/projects/columns/{column_id}/moves` | projects/move-column | Move a project column |
-| DELETE | `/projects/{project_id}` | projects/delete | Delete a project |
-| GET | `/projects/{project_id}` | projects/get | Get a project |
-| PATCH | `/projects/{project_id}` | projects/update | Update a project |
-| GET | `/projects/{project_id}/collaborators` | projects/list-collaborators | List project collaborators |
-| DELETE | `/projects/{project_id}/collaborators/{username}` | projects/remove-collaborator | Remove user as a collaborator |
-| PUT | `/projects/{project_id}/collaborators/{username}` | projects/add-collaborator | Add project collaborator |
-| GET | `/projects/{project_id}/collaborators/{username}/permission` | projects/get-permission-for-user | Get project permission for a user |
-| GET | `/projects/{project_id}/columns` | projects/list-columns | List project columns |
-| POST | `/projects/{project_id}/columns` | projects/create-column | Create a project column |
-| GET | `/rate_limit` | rate-limit/get | Get rate limit status for the authenticated user |
-| GET | `/repos/{org}/{repo}/actions/required_workflows` | actions/list-repo-required-workflows | List repository required workflows |
-| GET | `/repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}` | actions/get-repo-required-workflow | Get a required workflow entity for a repository |
-| GET | `/repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/timing` | actions/get-repo-required-workflow-usage | Get required workflow usage |
-| DELETE | `/repos/{owner}/{repo}` | repos/delete | Delete a repository |
-| GET | `/repos/{owner}/{repo}` | repos/get | Get a repository |
-| PATCH | `/repos/{owner}/{repo}` | repos/update | Update a repository |
-| GET | `/repos/{owner}/{repo}/actions/artifacts` | actions/list-artifacts-for-repo | List artifacts for a repository |
-| DELETE | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}` | actions/delete-artifact | Delete an artifact |
-| GET | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}` | actions/get-artifact | Get an artifact |
-| GET | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}` | actions/download-artifact | Download an artifact |
-| GET | `/repos/{owner}/{repo}/actions/cache/usage` | actions/get-actions-cache-usage | Get GitHub Actions cache usage for a repository |
-| DELETE | `/repos/{owner}/{repo}/actions/caches` | actions/delete-actions-cache-by-key | Delete GitHub Actions caches for a repository (using a cache key) |
-| GET | `/repos/{owner}/{repo}/actions/caches` | actions/get-actions-cache-list | List GitHub Actions caches for a repository |
-| DELETE | `/repos/{owner}/{repo}/actions/caches/{cache_id}` | actions/delete-actions-cache-by-id | Delete a GitHub Actions cache for a repository (using a cache ID) |
-| GET | `/repos/{owner}/{repo}/actions/jobs/{job_id}` | actions/get-job-for-workflow-run | Get a job for a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/jobs/{job_id}/logs` | actions/download-job-logs-for-workflow-run | Download job logs for a workflow run |
-| POST | `/repos/{owner}/{repo}/actions/jobs/{job_id}/rerun` | actions/re-run-job-for-workflow-run | Re-run a job from a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/oidc/customization/sub` | actions/get-custom-oidc-sub-claim-for-repo | Get the customization template for an OIDC subject claim for a repository |
-| PUT | `/repos/{owner}/{repo}/actions/oidc/customization/sub` | actions/set-custom-oidc-sub-claim-for-repo | Set the customization template for an OIDC subject claim for a repository |
-| GET | `/repos/{owner}/{repo}/actions/permissions` | actions/get-github-actions-permissions-repository | Get GitHub Actions permissions for a repository |
-| PUT | `/repos/{owner}/{repo}/actions/permissions` | actions/set-github-actions-permissions-repository | Set GitHub Actions permissions for a repository |
-| GET | `/repos/{owner}/{repo}/actions/permissions/access` | actions/get-workflow-access-to-repository | Get the level of access for workflows outside of the repository |
-| PUT | `/repos/{owner}/{repo}/actions/permissions/access` | actions/set-workflow-access-to-repository | Set the level of access for workflows outside of the repository |
-| GET | `/repos/{owner}/{repo}/actions/permissions/selected-actions` | actions/get-allowed-actions-repository | Get allowed actions and reusable workflows for a repository |
-| PUT | `/repos/{owner}/{repo}/actions/permissions/selected-actions` | actions/set-allowed-actions-repository | Set allowed actions and reusable workflows for a repository |
-| GET | `/repos/{owner}/{repo}/actions/permissions/workflow` | actions/get-github-actions-default-workflow-permissions-repository | Get default workflow permissions for a repository |
-| PUT | `/repos/{owner}/{repo}/actions/permissions/workflow` | actions/set-github-actions-default-workflow-permissions-repository | Set default workflow permissions for a repository |
-| GET | `/repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs` | actions/list-required-workflow-runs | List workflow runs for a required workflow |
-| GET | `/repos/{owner}/{repo}/actions/runners` | actions/list-self-hosted-runners-for-repo | List self-hosted runners for a repository |
-| GET | `/repos/{owner}/{repo}/actions/runners/downloads` | actions/list-runner-applications-for-repo | List runner applications for a repository |
-| POST | `/repos/{owner}/{repo}/actions/runners/registration-token` | actions/create-registration-token-for-repo | Create a registration token for a repository |
-| POST | `/repos/{owner}/{repo}/actions/runners/remove-token` | actions/create-remove-token-for-repo | Create a remove token for a repository |
-| DELETE | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | actions/delete-self-hosted-runner-from-repo | Delete a self-hosted runner from a repository |
-| GET | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | actions/get-self-hosted-runner-for-repo | Get a self-hosted runner for a repository |
-| DELETE | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels` | actions/remove-all-custom-labels-from-self-hosted-runner-for-repo | Remove all custom labels from a self-hosted runner for a repository |
-| GET | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels` | actions/list-labels-for-self-hosted-runner-for-repo | List labels for a self-hosted runner for a repository |
-| POST | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels` | actions/add-custom-labels-to-self-hosted-runner-for-repo | Add custom labels to a self-hosted runner for a repository |
-| PUT | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels` | actions/set-custom-labels-for-self-hosted-runner-for-repo | Set custom labels for a self-hosted runner for a repository |
-| DELETE | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}` | actions/remove-custom-label-from-self-hosted-runner-for-repo | Remove a custom label from a self-hosted runner for a repository |
-| GET | `/repos/{owner}/{repo}/actions/runs` | actions/list-workflow-runs-for-repo | List workflow runs for a repository |
-| DELETE | `/repos/{owner}/{repo}/actions/runs/{run_id}` | actions/delete-workflow-run | Delete a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}` | actions/get-workflow-run | Get a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/approvals` | actions/get-reviews-for-run | Get the review history for a workflow run |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/approve` | actions/approve-workflow-run | Approve a workflow run for a fork pull request |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts` | actions/list-workflow-run-artifacts | List workflow run artifacts |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}` | actions/get-workflow-run-attempt | Get a workflow run attempt |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs` | actions/list-jobs-for-workflow-run-attempt | List jobs for a workflow run attempt |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs` | actions/download-workflow-run-attempt-logs | Download workflow run attempt logs |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/cancel` | actions/cancel-workflow-run | Cancel a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/jobs` | actions/list-jobs-for-workflow-run | List jobs for a workflow run |
-| DELETE | `/repos/{owner}/{repo}/actions/runs/{run_id}/logs` | actions/delete-workflow-run-logs | Delete workflow run logs |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/logs` | actions/download-workflow-run-logs | Download workflow run logs |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments` | actions/get-pending-deployments-for-run | Get pending deployments for a workflow run |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments` | actions/review-pending-deployments-for-run | Review pending deployments for a workflow run |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/rerun` | actions/re-run-workflow | Re-run a workflow |
-| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs` | actions/re-run-workflow-failed-jobs | Re-run failed jobs from a workflow run |
-| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/timing` | actions/get-workflow-run-usage | Get workflow run usage |
-| GET | `/repos/{owner}/{repo}/actions/secrets` | actions/list-repo-secrets | List repository secrets |
-| GET | `/repos/{owner}/{repo}/actions/secrets/public-key` | actions/get-repo-public-key | Get a repository public key |
-| DELETE | `/repos/{owner}/{repo}/actions/secrets/{secret_name}` | actions/delete-repo-secret | Delete a repository secret |
-| GET | `/repos/{owner}/{repo}/actions/secrets/{secret_name}` | actions/get-repo-secret | Get a repository secret |
-| PUT | `/repos/{owner}/{repo}/actions/secrets/{secret_name}` | actions/create-or-update-repo-secret | Create or update a repository secret |
-| GET | `/repos/{owner}/{repo}/actions/variables` | actions/list-repo-variables | List repository variables |
-| POST | `/repos/{owner}/{repo}/actions/variables` | actions/create-repo-variable | Create a repository variable |
-| DELETE | `/repos/{owner}/{repo}/actions/variables/{name}` | actions/delete-repo-variable | Delete a repository variable |
-| GET | `/repos/{owner}/{repo}/actions/variables/{name}` | actions/get-repo-variable | Get a repository variable |
-| PATCH | `/repos/{owner}/{repo}/actions/variables/{name}` | actions/update-repo-variable | Update a repository variable |
-| GET | `/repos/{owner}/{repo}/actions/workflows` | actions/list-repo-workflows | List repository workflows |
-| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}` | actions/get-workflow | Get a workflow |
-| PUT | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable` | actions/disable-workflow | Disable a workflow |
-| POST | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches` | actions/create-workflow-dispatch | Create a workflow dispatch event |
-| PUT | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable` | actions/enable-workflow | Enable a workflow |
-| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs` | actions/list-workflow-runs | List workflow runs for a workflow |
-| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing` | actions/get-workflow-usage | Get workflow usage |
-| GET | `/repos/{owner}/{repo}/assignees` | issues/list-assignees | List assignees |
-| GET | `/repos/{owner}/{repo}/assignees/{assignee}` | issues/check-user-can-be-assigned | Check if a user can be assigned |
-| GET | `/repos/{owner}/{repo}/autolinks` | repos/list-autolinks | List all autolinks of a repository |
-| POST | `/repos/{owner}/{repo}/autolinks` | repos/create-autolink | Create an autolink reference for a repository |
-| DELETE | `/repos/{owner}/{repo}/autolinks/{autolink_id}` | repos/delete-autolink | Delete an autolink reference from a repository |
-| GET | `/repos/{owner}/{repo}/autolinks/{autolink_id}` | repos/get-autolink | Get an autolink reference of a repository |
-| DELETE | `/repos/{owner}/{repo}/automated-security-fixes` | repos/disable-automated-security-fixes | Disable automated security fixes |
-| PUT | `/repos/{owner}/{repo}/automated-security-fixes` | repos/enable-automated-security-fixes | Enable automated security fixes |
-| GET | `/repos/{owner}/{repo}/branches` | repos/list-branches | List branches |
-| GET | `/repos/{owner}/{repo}/branches/{branch}` | repos/get-branch | Get a branch |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection` | repos/delete-branch-protection | Delete branch protection |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection` | repos/get-branch-protection | Get branch protection |
-| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection` | repos/update-branch-protection | Update branch protection |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins` | repos/delete-admin-branch-protection | Delete admin branch protection |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins` | repos/get-admin-branch-protection | Get admin branch protection |
-| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins` | repos/set-admin-branch-protection | Set admin branch protection |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews` | repos/delete-pull-request-review-protection | Delete pull request review protection |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews` | repos/get-pull-request-review-protection | Get pull request review protection |
-| PATCH | `/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews` | repos/update-pull-request-review-protection | Update pull request review protection |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures` | repos/delete-commit-signature-protection | Delete commit signature protection |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures` | repos/get-commit-signature-protection | Get commit signature protection |
-| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures` | repos/create-commit-signature-protection | Create commit signature protection |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks` | repos/remove-status-check-protection | Remove status check protection |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks` | repos/get-status-checks-protection | Get status checks protection |
-| PATCH | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks` | repos/update-status-check-protection | Update status check protection |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts` | repos/remove-status-check-contexts | Remove status check contexts |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts` | repos/get-all-status-check-contexts | Get all status check contexts |
-| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts` | repos/add-status-check-contexts | Add status check contexts |
-| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts` | repos/set-status-check-contexts | Set status check contexts |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions` | repos/delete-access-restrictions | Delete access restrictions |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions` | repos/get-access-restrictions | Get access restrictions |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps` | repos/remove-app-access-restrictions | Remove app access restrictions |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps` | repos/get-apps-with-access-to-protected-branch | Get apps with access to the protected branch |
-| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps` | repos/add-app-access-restrictions | Add app access restrictions |
-| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps` | repos/set-app-access-restrictions | Set app access restrictions |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams` | repos/remove-team-access-restrictions | Remove team access restrictions |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams` | repos/get-teams-with-access-to-protected-branch | Get teams with access to the protected branch |
-| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams` | repos/add-team-access-restrictions | Add team access restrictions |
-| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams` | repos/set-team-access-restrictions | Set team access restrictions |
-| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users` | repos/remove-user-access-restrictions | Remove user access restrictions |
-| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users` | repos/get-users-with-access-to-protected-branch | Get users with access to the protected branch |
-| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users` | repos/add-user-access-restrictions | Add user access restrictions |
-| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users` | repos/set-user-access-restrictions | Set user access restrictions |
-| POST | `/repos/{owner}/{repo}/branches/{branch}/rename` | repos/rename-branch | Rename a branch |
-| POST | `/repos/{owner}/{repo}/check-runs` | checks/create | Create a check run |
-| GET | `/repos/{owner}/{repo}/check-runs/{check_run_id}` | checks/get | Get a check run |
-| PATCH | `/repos/{owner}/{repo}/check-runs/{check_run_id}` | checks/update | Update a check run |
-| GET | `/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations` | checks/list-annotations | List check run annotations |
-| POST | `/repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest` | checks/rerequest-run | Rerequest a check run |
-| POST | `/repos/{owner}/{repo}/check-suites` | checks/create-suite | Create a check suite |
-| PATCH | `/repos/{owner}/{repo}/check-suites/preferences` | checks/set-suites-preferences | Update repository preferences for check suites |
-| GET | `/repos/{owner}/{repo}/check-suites/{check_suite_id}` | checks/get-suite | Get a check suite |
-| GET | `/repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs` | checks/list-for-suite | List check runs in a check suite |
-| POST | `/repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest` | checks/rerequest-suite | Rerequest a check suite |
-| GET | `/repos/{owner}/{repo}/code-scanning/alerts` | code-scanning/list-alerts-for-repo | List code scanning alerts for a repository |
-| GET | `/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}` | code-scanning/get-alert | Get a code scanning alert |
-| PATCH | `/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}` | code-scanning/update-alert | Update a code scanning alert |
-| GET | `/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances` | code-scanning/list-alert-instances | List instances of a code scanning alert |
-| GET | `/repos/{owner}/{repo}/code-scanning/analyses` | code-scanning/list-recent-analyses | List code scanning analyses for a repository |
-| DELETE | `/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}` | code-scanning/delete-analysis | Delete a code scanning analysis from a repository |
-| GET | `/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}` | code-scanning/get-analysis | Get a code scanning analysis for a repository |
-| GET | `/repos/{owner}/{repo}/code-scanning/codeql/databases` | code-scanning/list-codeql-databases | List CodeQL databases for a repository |
-| GET | `/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}` | code-scanning/get-codeql-database | Get a CodeQL database for a repository |
-| POST | `/repos/{owner}/{repo}/code-scanning/sarifs` | code-scanning/upload-sarif | Upload an analysis as SARIF data |
-| GET | `/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}` | code-scanning/get-sarif | Get information about a SARIF upload |
-| GET | `/repos/{owner}/{repo}/codeowners/errors` | repos/codeowners-errors | List CODEOWNERS errors |
-| GET | `/repos/{owner}/{repo}/codespaces` | codespaces/list-in-repository-for-authenticated-user | List codespaces in a repository for the authenticated user |
-| POST | `/repos/{owner}/{repo}/codespaces` | codespaces/create-with-repo-for-authenticated-user | Create a codespace in a repository |
-| GET | `/repos/{owner}/{repo}/codespaces/devcontainers` | codespaces/list-devcontainers-in-repository-for-authenticated-user | List devcontainer configurations in a repository for the authenticated user |
-| GET | `/repos/{owner}/{repo}/codespaces/machines` | codespaces/repo-machines-for-authenticated-user | List available machine types for a repository |
-| GET | `/repos/{owner}/{repo}/codespaces/new` | codespaces/pre-flight-with-repo-for-authenticated-user | Get default attributes for a codespace |
-| GET | `/repos/{owner}/{repo}/codespaces/secrets` | codespaces/list-repo-secrets | List repository secrets |
-| GET | `/repos/{owner}/{repo}/codespaces/secrets/public-key` | codespaces/get-repo-public-key | Get a repository public key |
-| DELETE | `/repos/{owner}/{repo}/codespaces/secrets/{secret_name}` | codespaces/delete-repo-secret | Delete a repository secret |
-| GET | `/repos/{owner}/{repo}/codespaces/secrets/{secret_name}` | codespaces/get-repo-secret | Get a repository secret |
-| PUT | `/repos/{owner}/{repo}/codespaces/secrets/{secret_name}` | codespaces/create-or-update-repo-secret | Create or update a repository secret |
-| GET | `/repos/{owner}/{repo}/collaborators` | repos/list-collaborators | List repository collaborators |
-| DELETE | `/repos/{owner}/{repo}/collaborators/{username}` | repos/remove-collaborator | Remove a repository collaborator |
-| GET | `/repos/{owner}/{repo}/collaborators/{username}` | repos/check-collaborator | Check if a user is a repository collaborator |
-| PUT | `/repos/{owner}/{repo}/collaborators/{username}` | repos/add-collaborator | Add a repository collaborator |
-| GET | `/repos/{owner}/{repo}/collaborators/{username}/permission` | repos/get-collaborator-permission-level | Get repository permissions for a user |
-| GET | `/repos/{owner}/{repo}/comments` | repos/list-commit-comments-for-repo | List commit comments for a repository |
-| DELETE | `/repos/{owner}/{repo}/comments/{comment_id}` | repos/delete-commit-comment | Delete a commit comment |
-| GET | `/repos/{owner}/{repo}/comments/{comment_id}` | repos/get-commit-comment | Get a commit comment |
-| PATCH | `/repos/{owner}/{repo}/comments/{comment_id}` | repos/update-commit-comment | Update a commit comment |
-| GET | `/repos/{owner}/{repo}/comments/{comment_id}/reactions` | reactions/list-for-commit-comment | List reactions for a commit comment |
-| POST | `/repos/{owner}/{repo}/comments/{comment_id}/reactions` | reactions/create-for-commit-comment | Create reaction for a commit comment |
-| DELETE | `/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}` | reactions/delete-for-commit-comment | Delete a commit comment reaction |
-| GET | `/repos/{owner}/{repo}/commits` | repos/list-commits | List commits |
-| GET | `/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head` | repos/list-branches-for-head-commit | List branches for HEAD commit |
-| GET | `/repos/{owner}/{repo}/commits/{commit_sha}/comments` | repos/list-comments-for-commit | List commit comments |
-| POST | `/repos/{owner}/{repo}/commits/{commit_sha}/comments` | repos/create-commit-comment | Create a commit comment |
-| GET | `/repos/{owner}/{repo}/commits/{commit_sha}/pulls` | repos/list-pull-requests-associated-with-commit | List pull requests associated with a commit |
-| GET | `/repos/{owner}/{repo}/commits/{ref}` | repos/get-commit | Get a commit |
-| GET | `/repos/{owner}/{repo}/commits/{ref}/check-runs` | checks/list-for-ref | List check runs for a Git reference |
-| GET | `/repos/{owner}/{repo}/commits/{ref}/check-suites` | checks/list-suites-for-ref | List check suites for a Git reference |
-| GET | `/repos/{owner}/{repo}/commits/{ref}/status` | repos/get-combined-status-for-ref | Get the combined status for a specific reference |
-| GET | `/repos/{owner}/{repo}/commits/{ref}/statuses` | repos/list-commit-statuses-for-ref | List commit statuses for a reference |
-| GET | `/repos/{owner}/{repo}/community/profile` | repos/get-community-profile-metrics | Get community profile metrics |
-| GET | `/repos/{owner}/{repo}/compare/{basehead}` | repos/compare-commits | Compare two commits |
-| DELETE | `/repos/{owner}/{repo}/contents/{path}` | repos/delete-file | Delete a file |
-| GET | `/repos/{owner}/{repo}/contents/{path}` | repos/get-content | Get repository content |
-| PUT | `/repos/{owner}/{repo}/contents/{path}` | repos/create-or-update-file-contents | Create or update file contents |
-| GET | `/repos/{owner}/{repo}/contributors` | repos/list-contributors | List repository contributors |
-| GET | `/repos/{owner}/{repo}/dependabot/alerts` | dependabot/list-alerts-for-repo | List Dependabot alerts for a repository |
-| GET | `/repos/{owner}/{repo}/dependabot/alerts/{alert_number}` | dependabot/get-alert | Get a Dependabot alert |
-| PATCH | `/repos/{owner}/{repo}/dependabot/alerts/{alert_number}` | dependabot/update-alert | Update a Dependabot alert |
-| GET | `/repos/{owner}/{repo}/dependabot/secrets` | dependabot/list-repo-secrets | List repository secrets |
-| GET | `/repos/{owner}/{repo}/dependabot/secrets/public-key` | dependabot/get-repo-public-key | Get a repository public key |
-| DELETE | `/repos/{owner}/{repo}/dependabot/secrets/{secret_name}` | dependabot/delete-repo-secret | Delete a repository secret |
-| GET | `/repos/{owner}/{repo}/dependabot/secrets/{secret_name}` | dependabot/get-repo-secret | Get a repository secret |
-| PUT | `/repos/{owner}/{repo}/dependabot/secrets/{secret_name}` | dependabot/create-or-update-repo-secret | Create or update a repository secret |
-| GET | `/repos/{owner}/{repo}/dependency-graph/compare/{basehead}` | dependency-graph/diff-range | Get a diff of the dependencies between commits |
-| POST | `/repos/{owner}/{repo}/dependency-graph/snapshots` | dependency-graph/create-repository-snapshot | Create a snapshot of dependencies for a repository |
-| GET | `/repos/{owner}/{repo}/deployments` | repos/list-deployments | List deployments |
-| POST | `/repos/{owner}/{repo}/deployments` | repos/create-deployment | Create a deployment |
-| DELETE | `/repos/{owner}/{repo}/deployments/{deployment_id}` | repos/delete-deployment | Delete a deployment |
-| GET | `/repos/{owner}/{repo}/deployments/{deployment_id}` | repos/get-deployment | Get a deployment |
-| GET | `/repos/{owner}/{repo}/deployments/{deployment_id}/statuses` | repos/list-deployment-statuses | List deployment statuses |
-| POST | `/repos/{owner}/{repo}/deployments/{deployment_id}/statuses` | repos/create-deployment-status | Create a deployment status |
-| GET | `/repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}` | repos/get-deployment-status | Get a deployment status |
-| POST | `/repos/{owner}/{repo}/dispatches` | repos/create-dispatch-event | Create a repository dispatch event |
-| GET | `/repos/{owner}/{repo}/environments` | repos/get-all-environments | List environments |
-| DELETE | `/repos/{owner}/{repo}/environments/{environment_name}` | repos/delete-an-environment | Delete an environment |
-| GET | `/repos/{owner}/{repo}/environments/{environment_name}` | repos/get-environment | Get an environment |
-| PUT | `/repos/{owner}/{repo}/environments/{environment_name}` | repos/create-or-update-environment | Create or update an environment |
-| GET | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies` | repos/list-deployment-branch-policies | List deployment branch policies |
-| POST | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies` | repos/create-deployment-branch-policy | Create a deployment branch policy |
-| DELETE | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}` | repos/delete-deployment-branch-policy | Delete a deployment branch policy |
-| GET | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}` | repos/get-deployment-branch-policy | Get a deployment branch policy |
-| PUT | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}` | repos/update-deployment-branch-policy | Update a deployment branch policy |
-| GET | `/repos/{owner}/{repo}/events` | activity/list-repo-events | List repository events |
-| GET | `/repos/{owner}/{repo}/forks` | repos/list-forks | List forks |
-| POST | `/repos/{owner}/{repo}/forks` | repos/create-fork | Create a fork |
-| POST | `/repos/{owner}/{repo}/git/blobs` | git/create-blob | Create a blob |
-| GET | `/repos/{owner}/{repo}/git/blobs/{file_sha}` | git/get-blob | Get a blob |
-| POST | `/repos/{owner}/{repo}/git/commits` | git/create-commit | Create a commit |
-| GET | `/repos/{owner}/{repo}/git/commits/{commit_sha}` | git/get-commit | Get a commit |
-| GET | `/repos/{owner}/{repo}/git/matching-refs/{ref}` | git/list-matching-refs | List matching references |
-| GET | `/repos/{owner}/{repo}/git/ref/{ref}` | git/get-ref | Get a reference |
-| POST | `/repos/{owner}/{repo}/git/refs` | git/create-ref | Create a reference |
-| DELETE | `/repos/{owner}/{repo}/git/refs/{ref}` | git/delete-ref | Delete a reference |
-| PATCH | `/repos/{owner}/{repo}/git/refs/{ref}` | git/update-ref | Update a reference |
-| POST | `/repos/{owner}/{repo}/git/tags` | git/create-tag | Create a tag object |
-| GET | `/repos/{owner}/{repo}/git/tags/{tag_sha}` | git/get-tag | Get a tag |
-| POST | `/repos/{owner}/{repo}/git/trees` | git/create-tree | Create a tree |
-| GET | `/repos/{owner}/{repo}/git/trees/{tree_sha}` | git/get-tree | Get a tree |
-| GET | `/repos/{owner}/{repo}/hooks` | repos/list-webhooks | List repository webhooks |
-| POST | `/repos/{owner}/{repo}/hooks` | repos/create-webhook | Create a repository webhook |
-| DELETE | `/repos/{owner}/{repo}/hooks/{hook_id}` | repos/delete-webhook | Delete a repository webhook |
-| GET | `/repos/{owner}/{repo}/hooks/{hook_id}` | repos/get-webhook | Get a repository webhook |
-| PATCH | `/repos/{owner}/{repo}/hooks/{hook_id}` | repos/update-webhook | Update a repository webhook |
-| GET | `/repos/{owner}/{repo}/hooks/{hook_id}/config` | repos/get-webhook-config-for-repo | Get a webhook configuration for a repository |
-| PATCH | `/repos/{owner}/{repo}/hooks/{hook_id}/config` | repos/update-webhook-config-for-repo | Update a webhook configuration for a repository |
-| GET | `/repos/{owner}/{repo}/hooks/{hook_id}/deliveries` | repos/list-webhook-deliveries | List deliveries for a repository webhook |
-| GET | `/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}` | repos/get-webhook-delivery | Get a delivery for a repository webhook |
-| POST | `/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts` | repos/redeliver-webhook-delivery | Redeliver a delivery for a repository webhook |
-| POST | `/repos/{owner}/{repo}/hooks/{hook_id}/pings` | repos/ping-webhook | Ping a repository webhook |
-| POST | `/repos/{owner}/{repo}/hooks/{hook_id}/tests` | repos/test-push-webhook | Test the push repository webhook |
-| DELETE | `/repos/{owner}/{repo}/import` | migrations/cancel-import | Cancel an import |
-| GET | `/repos/{owner}/{repo}/import` | migrations/get-import-status | Get an import status |
-| PATCH | `/repos/{owner}/{repo}/import` | migrations/update-import | Update an import |
-| PUT | `/repos/{owner}/{repo}/import` | migrations/start-import | Start an import |
-| GET | `/repos/{owner}/{repo}/import/authors` | migrations/get-commit-authors | Get commit authors |
-| PATCH | `/repos/{owner}/{repo}/import/authors/{author_id}` | migrations/map-commit-author | Map a commit author |
-| GET | `/repos/{owner}/{repo}/import/large_files` | migrations/get-large-files | Get large files |
-| PATCH | `/repos/{owner}/{repo}/import/lfs` | migrations/set-lfs-preference | Update Git LFS preference |
-| GET | `/repos/{owner}/{repo}/installation` | apps/get-repo-installation | Get a repository installation for the authenticated app |
-| DELETE | `/repos/{owner}/{repo}/interaction-limits` | interactions/remove-restrictions-for-repo | Remove interaction restrictions for a repository |
-| GET | `/repos/{owner}/{repo}/interaction-limits` | interactions/get-restrictions-for-repo | Get interaction restrictions for a repository |
-| PUT | `/repos/{owner}/{repo}/interaction-limits` | interactions/set-restrictions-for-repo | Set interaction restrictions for a repository |
-| GET | `/repos/{owner}/{repo}/invitations` | repos/list-invitations | List repository invitations |
-| DELETE | `/repos/{owner}/{repo}/invitations/{invitation_id}` | repos/delete-invitation | Delete a repository invitation |
-| PATCH | `/repos/{owner}/{repo}/invitations/{invitation_id}` | repos/update-invitation | Update a repository invitation |
-| GET | `/repos/{owner}/{repo}/issues` | issues/list-for-repo | List repository issues |
-| POST | `/repos/{owner}/{repo}/issues` | issues/create | Create an issue |
-| GET | `/repos/{owner}/{repo}/issues/comments` | issues/list-comments-for-repo | List issue comments for a repository |
-| DELETE | `/repos/{owner}/{repo}/issues/comments/{comment_id}` | issues/delete-comment | Delete an issue comment |
-| GET | `/repos/{owner}/{repo}/issues/comments/{comment_id}` | issues/get-comment | Get an issue comment |
-| PATCH | `/repos/{owner}/{repo}/issues/comments/{comment_id}` | issues/update-comment | Update an issue comment |
-| GET | `/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions` | reactions/list-for-issue-comment | List reactions for an issue comment |
-| POST | `/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions` | reactions/create-for-issue-comment | Create reaction for an issue comment |
-| DELETE | `/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}` | reactions/delete-for-issue-comment | Delete an issue comment reaction |
-| GET | `/repos/{owner}/{repo}/issues/events` | issues/list-events-for-repo | List issue events for a repository |
-| GET | `/repos/{owner}/{repo}/issues/events/{event_id}` | issues/get-event | Get an issue event |
-| GET | `/repos/{owner}/{repo}/issues/{issue_number}` | issues/get | Get an issue |
-| PATCH | `/repos/{owner}/{repo}/issues/{issue_number}` | issues/update | Update an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/assignees` | issues/remove-assignees | Remove assignees from an issue |
-| POST | `/repos/{owner}/{repo}/issues/{issue_number}/assignees` | issues/add-assignees | Add assignees to an issue |
-| GET | `/repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}` | issues/check-user-can-be-assigned-to-issue | Check if a user can be assigned to a issue |
-| GET | `/repos/{owner}/{repo}/issues/{issue_number}/comments` | issues/list-comments | List issue comments |
-| POST | `/repos/{owner}/{repo}/issues/{issue_number}/comments` | issues/create-comment | Create an issue comment |
-| GET | `/repos/{owner}/{repo}/issues/{issue_number}/events` | issues/list-events | List issue events |
-| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/labels` | issues/remove-all-labels | Remove all labels from an issue |
-| GET | `/repos/{owner}/{repo}/issues/{issue_number}/labels` | issues/list-labels-on-issue | List labels for an issue |
-| POST | `/repos/{owner}/{repo}/issues/{issue_number}/labels` | issues/add-labels | Add labels to an issue |
-| PUT | `/repos/{owner}/{repo}/issues/{issue_number}/labels` | issues/set-labels | Set labels for an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}` | issues/remove-label | Remove a label from an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/lock` | issues/unlock | Unlock an issue |
-| PUT | `/repos/{owner}/{repo}/issues/{issue_number}/lock` | issues/lock | Lock an issue |
-| GET | `/repos/{owner}/{repo}/issues/{issue_number}/reactions` | reactions/list-for-issue | List reactions for an issue |
-| POST | `/repos/{owner}/{repo}/issues/{issue_number}/reactions` | reactions/create-for-issue | Create reaction for an issue |
-| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}` | reactions/delete-for-issue | Delete an issue reaction |
-| GET | `/repos/{owner}/{repo}/issues/{issue_number}/timeline` | issues/list-events-for-timeline | List timeline events for an issue |
-| GET | `/repos/{owner}/{repo}/keys` | repos/list-deploy-keys | List deploy keys |
-| POST | `/repos/{owner}/{repo}/keys` | repos/create-deploy-key | Create a deploy key |
-| DELETE | `/repos/{owner}/{repo}/keys/{key_id}` | repos/delete-deploy-key | Delete a deploy key |
-| GET | `/repos/{owner}/{repo}/keys/{key_id}` | repos/get-deploy-key | Get a deploy key |
-| GET | `/repos/{owner}/{repo}/labels` | issues/list-labels-for-repo | List labels for a repository |
-| POST | `/repos/{owner}/{repo}/labels` | issues/create-label | Create a label |
-| DELETE | `/repos/{owner}/{repo}/labels/{name}` | issues/delete-label | Delete a label |
-| GET | `/repos/{owner}/{repo}/labels/{name}` | issues/get-label | Get a label |
-| PATCH | `/repos/{owner}/{repo}/labels/{name}` | issues/update-label | Update a label |
-| GET | `/repos/{owner}/{repo}/languages` | repos/list-languages | List repository languages |
-| DELETE | `/repos/{owner}/{repo}/lfs` | repos/disable-lfs-for-repo | Disable Git LFS for a repository |
-| PUT | `/repos/{owner}/{repo}/lfs` | repos/enable-lfs-for-repo | Enable Git LFS for a repository |
-| GET | `/repos/{owner}/{repo}/license` | licenses/get-for-repo | Get the license for a repository |
-| POST | `/repos/{owner}/{repo}/merge-upstream` | repos/merge-upstream | Sync a fork branch with the upstream repository |
-| POST | `/repos/{owner}/{repo}/merges` | repos/merge | Merge a branch |
-| GET | `/repos/{owner}/{repo}/milestones` | issues/list-milestones | List milestones |
-| POST | `/repos/{owner}/{repo}/milestones` | issues/create-milestone | Create a milestone |
-| DELETE | `/repos/{owner}/{repo}/milestones/{milestone_number}` | issues/delete-milestone | Delete a milestone |
-| GET | `/repos/{owner}/{repo}/milestones/{milestone_number}` | issues/get-milestone | Get a milestone |
-| PATCH | `/repos/{owner}/{repo}/milestones/{milestone_number}` | issues/update-milestone | Update a milestone |
-| GET | `/repos/{owner}/{repo}/milestones/{milestone_number}/labels` | issues/list-labels-for-milestone | List labels for issues in a milestone |
-| GET | `/repos/{owner}/{repo}/notifications` | activity/list-repo-notifications-for-authenticated-user | List repository notifications for the authenticated user |
-| PUT | `/repos/{owner}/{repo}/notifications` | activity/mark-repo-notifications-as-read | Mark repository notifications as read |
-| DELETE | `/repos/{owner}/{repo}/pages` | repos/delete-pages-site | Delete a GitHub Pages site |
-| GET | `/repos/{owner}/{repo}/pages` | repos/get-pages | Get a GitHub Pages site |
-| POST | `/repos/{owner}/{repo}/pages` | repos/create-pages-site | Create a GitHub Pages site |
-| PUT | `/repos/{owner}/{repo}/pages` | repos/update-information-about-pages-site | Update information about a GitHub Pages site |
-| GET | `/repos/{owner}/{repo}/pages/builds` | repos/list-pages-builds | List GitHub Pages builds |
-| POST | `/repos/{owner}/{repo}/pages/builds` | repos/request-pages-build | Request a GitHub Pages build |
-| GET | `/repos/{owner}/{repo}/pages/builds/latest` | repos/get-latest-pages-build | Get latest Pages build |
-| GET | `/repos/{owner}/{repo}/pages/builds/{build_id}` | repos/get-pages-build | Get GitHub Pages build |
-| POST | `/repos/{owner}/{repo}/pages/deployment` | repos/create-pages-deployment | Create a GitHub Pages deployment |
-| GET | `/repos/{owner}/{repo}/pages/health` | repos/get-pages-health-check | Get a DNS health check for GitHub Pages |
-| GET | `/repos/{owner}/{repo}/projects` | projects/list-for-repo | List repository projects |
-| POST | `/repos/{owner}/{repo}/projects` | projects/create-for-repo | Create a repository project |
-| GET | `/repos/{owner}/{repo}/pulls` | pulls/list | List pull requests |
-| POST | `/repos/{owner}/{repo}/pulls` | pulls/create | Create a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/comments` | pulls/list-review-comments-for-repo | List review comments in a repository |
-| DELETE | `/repos/{owner}/{repo}/pulls/comments/{comment_id}` | pulls/delete-review-comment | Delete a review comment for a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/comments/{comment_id}` | pulls/get-review-comment | Get a review comment for a pull request |
-| PATCH | `/repos/{owner}/{repo}/pulls/comments/{comment_id}` | pulls/update-review-comment | Update a review comment for a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions` | reactions/list-for-pull-request-review-comment | List reactions for a pull request review comment |
-| POST | `/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions` | reactions/create-for-pull-request-review-comment | Create reaction for a pull request review comment |
-| DELETE | `/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}` | reactions/delete-for-pull-request-comment | Delete a pull request comment reaction |
-| GET | `/repos/{owner}/{repo}/pulls/{pull_number}` | pulls/get | Get a pull request |
-| PATCH | `/repos/{owner}/{repo}/pulls/{pull_number}` | pulls/update | Update a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/codespaces` | codespaces/create-with-pr-for-authenticated-user | Create a codespace from a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/comments` | pulls/list-review-comments | List review comments on a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/comments` | pulls/create-review-comment | Create a review comment for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies` | pulls/create-reply-for-review-comment | Create a reply for a review comment |
-| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/commits` | pulls/list-commits | List commits on a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/files` | pulls/list-files | List pull requests files |
-| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/merge` | pulls/check-if-merged | Check if a pull request has been merged |
-| PUT | `/repos/{owner}/{repo}/pulls/{pull_number}/merge` | pulls/merge | Merge a pull request |
-| DELETE | `/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers` | pulls/remove-requested-reviewers | Remove requested reviewers from a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers` | pulls/list-requested-reviewers | Get all requested reviewers for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers` | pulls/request-reviewers | Request reviewers for a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews` | pulls/list-reviews | List reviews for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews` | pulls/create-review | Create a review for a pull request |
-| DELETE | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}` | pulls/delete-pending-review | Delete a pending review for a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}` | pulls/get-review | Get a review for a pull request |
-| PUT | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}` | pulls/update-review | Update a review for a pull request |
-| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments` | pulls/list-comments-for-review | List comments for a pull request review |
-| PUT | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals` | pulls/dismiss-review | Dismiss a review for a pull request |
-| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events` | pulls/submit-review | Submit a review for a pull request |
-| PUT | `/repos/{owner}/{repo}/pulls/{pull_number}/update-branch` | pulls/update-branch | Update a pull request branch |
-| GET | `/repos/{owner}/{repo}/readme` | repos/get-readme | Get a repository README |
-| GET | `/repos/{owner}/{repo}/readme/{dir}` | repos/get-readme-in-directory | Get a repository README for a directory |
-| GET | `/repos/{owner}/{repo}/releases` | repos/list-releases | List releases |
-| POST | `/repos/{owner}/{repo}/releases` | repos/create-release | Create a release |
-| DELETE | `/repos/{owner}/{repo}/releases/assets/{asset_id}` | repos/delete-release-asset | Delete a release asset |
-| GET | `/repos/{owner}/{repo}/releases/assets/{asset_id}` | repos/get-release-asset | Get a release asset |
-| PATCH | `/repos/{owner}/{repo}/releases/assets/{asset_id}` | repos/update-release-asset | Update a release asset |
-| POST | `/repos/{owner}/{repo}/releases/generate-notes` | repos/generate-release-notes | Generate release notes content for a release |
-| GET | `/repos/{owner}/{repo}/releases/latest` | repos/get-latest-release | Get the latest release |
-| GET | `/repos/{owner}/{repo}/releases/tags/{tag}` | repos/get-release-by-tag | Get a release by tag name |
-| DELETE | `/repos/{owner}/{repo}/releases/{release_id}` | repos/delete-release | Delete a release |
-| GET | `/repos/{owner}/{repo}/releases/{release_id}` | repos/get-release | Get a release |
-| PATCH | `/repos/{owner}/{repo}/releases/{release_id}` | repos/update-release | Update a release |
-| GET | `/repos/{owner}/{repo}/releases/{release_id}/assets` | repos/list-release-assets | List release assets |
-| POST | `/repos/{owner}/{repo}/releases/{release_id}/assets` | repos/upload-release-asset | Upload a release asset |
-| GET | `/repos/{owner}/{repo}/releases/{release_id}/reactions` | reactions/list-for-release | List reactions for a release |
-| POST | `/repos/{owner}/{repo}/releases/{release_id}/reactions` | reactions/create-for-release | Create reaction for a release |
-| DELETE | `/repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}` | reactions/delete-for-release | Delete a release reaction |
-| GET | `/repos/{owner}/{repo}/secret-scanning/alerts` | secret-scanning/list-alerts-for-repo | List secret scanning alerts for a repository |
-| GET | `/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}` | secret-scanning/get-alert | Get a secret scanning alert |
-| PATCH | `/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}` | secret-scanning/update-alert | Update a secret scanning alert |
-| GET | `/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations` | secret-scanning/list-locations-for-alert | List locations for a secret scanning alert |
-| GET | `/repos/{owner}/{repo}/stargazers` | activity/list-stargazers-for-repo | List stargazers |
-| GET | `/repos/{owner}/{repo}/stats/code_frequency` | repos/get-code-frequency-stats | Get the weekly commit activity |
-| GET | `/repos/{owner}/{repo}/stats/commit_activity` | repos/get-commit-activity-stats | Get the last year of commit activity |
-| GET | `/repos/{owner}/{repo}/stats/contributors` | repos/get-contributors-stats | Get all contributor commit activity |
-| GET | `/repos/{owner}/{repo}/stats/participation` | repos/get-participation-stats | Get the weekly commit count |
-| GET | `/repos/{owner}/{repo}/stats/punch_card` | repos/get-punch-card-stats | Get the hourly commit count for each day |
-| POST | `/repos/{owner}/{repo}/statuses/{sha}` | repos/create-commit-status | Create a commit status |
-| GET | `/repos/{owner}/{repo}/subscribers` | activity/list-watchers-for-repo | List watchers |
-| DELETE | `/repos/{owner}/{repo}/subscription` | activity/delete-repo-subscription | Delete a repository subscription |
-| GET | `/repos/{owner}/{repo}/subscription` | activity/get-repo-subscription | Get a repository subscription |
-| PUT | `/repos/{owner}/{repo}/subscription` | activity/set-repo-subscription | Set a repository subscription |
-| GET | `/repos/{owner}/{repo}/tags` | repos/list-tags | List repository tags |
-| GET | `/repos/{owner}/{repo}/tags/protection` | repos/list-tag-protection | List tag protection states for a repository |
-| POST | `/repos/{owner}/{repo}/tags/protection` | repos/create-tag-protection | Create a tag protection state for a repository |
-| DELETE | `/repos/{owner}/{repo}/tags/protection/{tag_protection_id}` | repos/delete-tag-protection | Delete a tag protection state for a repository |
-| GET | `/repos/{owner}/{repo}/tarball/{ref}` | repos/download-tarball-archive | Download a repository archive (tar) |
-| GET | `/repos/{owner}/{repo}/teams` | repos/list-teams | List repository teams |
-| GET | `/repos/{owner}/{repo}/topics` | repos/get-all-topics | Get all repository topics |
-| PUT | `/repos/{owner}/{repo}/topics` | repos/replace-all-topics | Replace all repository topics |
-| GET | `/repos/{owner}/{repo}/traffic/clones` | repos/get-clones | Get repository clones |
-| GET | `/repos/{owner}/{repo}/traffic/popular/paths` | repos/get-top-paths | Get top referral paths |
-| GET | `/repos/{owner}/{repo}/traffic/popular/referrers` | repos/get-top-referrers | Get top referral sources |
-| GET | `/repos/{owner}/{repo}/traffic/views` | repos/get-views | Get page views |
-| POST | `/repos/{owner}/{repo}/transfer` | repos/transfer | Transfer a repository |
-| DELETE | `/repos/{owner}/{repo}/vulnerability-alerts` | repos/disable-vulnerability-alerts | Disable vulnerability alerts |
-| GET | `/repos/{owner}/{repo}/vulnerability-alerts` | repos/check-vulnerability-alerts | Check if vulnerability alerts are enabled for a repository |
-| PUT | `/repos/{owner}/{repo}/vulnerability-alerts` | repos/enable-vulnerability-alerts | Enable vulnerability alerts |
-| GET | `/repos/{owner}/{repo}/zipball/{ref}` | repos/download-zipball-archive | Download a repository archive (zip) |
-| POST | `/repos/{template_owner}/{template_repo}/generate` | repos/create-using-template | Create a repository using a template |
-| GET | `/repositories` | repos/list-public | List public repositories |
-| GET | `/repositories/{repository_id}/environments/{environment_name}/secrets` | actions/list-environment-secrets | List environment secrets |
-| GET | `/repositories/{repository_id}/environments/{environment_name}/secrets/public-key` | actions/get-environment-public-key | Get an environment public key |
-| DELETE | `/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}` | actions/delete-environment-secret | Delete an environment secret |
-| GET | `/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}` | actions/get-environment-secret | Get an environment secret |
-| PUT | `/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}` | actions/create-or-update-environment-secret | Create or update an environment secret |
-| GET | `/repositories/{repository_id}/environments/{environment_name}/variables` | actions/list-environment-variables | List environment variables |
-| POST | `/repositories/{repository_id}/environments/{environment_name}/variables` | actions/create-environment-variable | Create an environment variable |
-| DELETE | `/repositories/{repository_id}/environments/{environment_name}/variables/{name}` | actions/delete-environment-variable | Delete an environment variable |
-| GET | `/repositories/{repository_id}/environments/{environment_name}/variables/{name}` | actions/get-environment-variable | Get an environment variable |
-| PATCH | `/repositories/{repository_id}/environments/{environment_name}/variables/{name}` | actions/update-environment-variable | Update an environment variable |
-| GET | `/search/code` | search/code | Search code |
-| GET | `/search/commits` | search/commits | Search commits |
-| GET | `/search/issues` | search/issues-and-pull-requests | Search issues and pull requests |
-| GET | `/search/labels` | search/labels | Search labels |
-| GET | `/search/repositories` | search/repos | Search repositories |
-| GET | `/search/topics` | search/topics | Search topics |
-| GET | `/search/users` | search/users | Search users |
-| DELETE | `/teams/{team_id}` | teams/delete-legacy | Delete a team (Legacy) |
-| GET | `/teams/{team_id}` | teams/get-legacy | Get a team (Legacy) |
-| PATCH | `/teams/{team_id}` | teams/update-legacy | Update a team (Legacy) |
-| GET | `/teams/{team_id}/discussions` | teams/list-discussions-legacy | List discussions (Legacy) |
-| POST | `/teams/{team_id}/discussions` | teams/create-discussion-legacy | Create a discussion (Legacy) |
-| DELETE | `/teams/{team_id}/discussions/{discussion_number}` | teams/delete-discussion-legacy | Delete a discussion (Legacy) |
-| GET | `/teams/{team_id}/discussions/{discussion_number}` | teams/get-discussion-legacy | Get a discussion (Legacy) |
-| PATCH | `/teams/{team_id}/discussions/{discussion_number}` | teams/update-discussion-legacy | Update a discussion (Legacy) |
-| GET | `/teams/{team_id}/discussions/{discussion_number}/comments` | teams/list-discussion-comments-legacy | List discussion comments (Legacy) |
-| POST | `/teams/{team_id}/discussions/{discussion_number}/comments` | teams/create-discussion-comment-legacy | Create a discussion comment (Legacy) |
-| DELETE | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}` | teams/delete-discussion-comment-legacy | Delete a discussion comment (Legacy) |
-| GET | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}` | teams/get-discussion-comment-legacy | Get a discussion comment (Legacy) |
-| PATCH | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}` | teams/update-discussion-comment-legacy | Update a discussion comment (Legacy) |
-| GET | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions` | reactions/list-for-team-discussion-comment-legacy | List reactions for a team discussion comment (Legacy) |
-| POST | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions` | reactions/create-for-team-discussion-comment-legacy | Create reaction for a team discussion comment (Legacy) |
-| GET | `/teams/{team_id}/discussions/{discussion_number}/reactions` | reactions/list-for-team-discussion-legacy | List reactions for a team discussion (Legacy) |
-| POST | `/teams/{team_id}/discussions/{discussion_number}/reactions` | reactions/create-for-team-discussion-legacy | Create reaction for a team discussion (Legacy) |
-| GET | `/teams/{team_id}/invitations` | teams/list-pending-invitations-legacy | List pending team invitations (Legacy) |
-| GET | `/teams/{team_id}/members` | teams/list-members-legacy | List team members (Legacy) |
-| DELETE | `/teams/{team_id}/members/{username}` | teams/remove-member-legacy | Remove team member (Legacy) |
-| GET | `/teams/{team_id}/members/{username}` | teams/get-member-legacy | Get team member (Legacy) |
-| PUT | `/teams/{team_id}/members/{username}` | teams/add-member-legacy | Add team member (Legacy) |
-| DELETE | `/teams/{team_id}/memberships/{username}` | teams/remove-membership-for-user-legacy | Remove team membership for a user (Legacy) |
-| GET | `/teams/{team_id}/memberships/{username}` | teams/get-membership-for-user-legacy | Get team membership for a user (Legacy) |
-| PUT | `/teams/{team_id}/memberships/{username}` | teams/add-or-update-membership-for-user-legacy | Add or update team membership for a user (Legacy) |
-| GET | `/teams/{team_id}/projects` | teams/list-projects-legacy | List team projects (Legacy) |
-| DELETE | `/teams/{team_id}/projects/{project_id}` | teams/remove-project-legacy | Remove a project from a team (Legacy) |
-| GET | `/teams/{team_id}/projects/{project_id}` | teams/check-permissions-for-project-legacy | Check team permissions for a project (Legacy) |
-| PUT | `/teams/{team_id}/projects/{project_id}` | teams/add-or-update-project-permissions-legacy | Add or update team project permissions (Legacy) |
-| GET | `/teams/{team_id}/repos` | teams/list-repos-legacy | List team repositories (Legacy) |
-| DELETE | `/teams/{team_id}/repos/{owner}/{repo}` | teams/remove-repo-legacy | Remove a repository from a team (Legacy) |
-| GET | `/teams/{team_id}/repos/{owner}/{repo}` | teams/check-permissions-for-repo-legacy | Check team permissions for a repository (Legacy) |
-| PUT | `/teams/{team_id}/repos/{owner}/{repo}` | teams/add-or-update-repo-permissions-legacy | Add or update team repository permissions (Legacy) |
-| GET | `/teams/{team_id}/teams` | teams/list-child-legacy | List child teams (Legacy) |
-| GET | `/user` | users/get-authenticated | Get the authenticated user |
-| PATCH | `/user` | users/update-authenticated | Update the authenticated user |
-| GET | `/user/blocks` | users/list-blocked-by-authenticated-user | List users blocked by the authenticated user |
-| DELETE | `/user/blocks/{username}` | users/unblock | Unblock a user |
-| GET | `/user/blocks/{username}` | users/check-blocked | Check if a user is blocked by the authenticated user |
-| PUT | `/user/blocks/{username}` | users/block | Block a user |
-| GET | `/user/codespaces` | codespaces/list-for-authenticated-user | List codespaces for the authenticated user |
-| POST | `/user/codespaces` | codespaces/create-for-authenticated-user | Create a codespace for the authenticated user |
-| GET | `/user/codespaces/secrets` | codespaces/list-secrets-for-authenticated-user | List secrets for the authenticated user |
-| GET | `/user/codespaces/secrets/public-key` | codespaces/get-public-key-for-authenticated-user | Get public key for the authenticated user |
-| DELETE | `/user/codespaces/secrets/{secret_name}` | codespaces/delete-secret-for-authenticated-user | Delete a secret for the authenticated user |
-| GET | `/user/codespaces/secrets/{secret_name}` | codespaces/get-secret-for-authenticated-user | Get a secret for the authenticated user |
-| PUT | `/user/codespaces/secrets/{secret_name}` | codespaces/create-or-update-secret-for-authenticated-user | Create or update a secret for the authenticated user |
-| GET | `/user/codespaces/secrets/{secret_name}/repositories` | codespaces/list-repositories-for-secret-for-authenticated-user | List selected repositories for a user secret |
-| PUT | `/user/codespaces/secrets/{secret_name}/repositories` | codespaces/set-repositories-for-secret-for-authenticated-user | Set selected repositories for a user secret |
-| DELETE | `/user/codespaces/secrets/{secret_name}/repositories/{repository_id}` | codespaces/remove-repository-for-secret-for-authenticated-user | Remove a selected repository from a user secret |
-| PUT | `/user/codespaces/secrets/{secret_name}/repositories/{repository_id}` | codespaces/add-repository-for-secret-for-authenticated-user | Add a selected repository to a user secret |
-| DELETE | `/user/codespaces/{codespace_name}` | codespaces/delete-for-authenticated-user | Delete a codespace for the authenticated user |
-| GET | `/user/codespaces/{codespace_name}` | codespaces/get-for-authenticated-user | Get a codespace for the authenticated user |
-| PATCH | `/user/codespaces/{codespace_name}` | codespaces/update-for-authenticated-user | Update a codespace for the authenticated user |
-| POST | `/user/codespaces/{codespace_name}/exports` | codespaces/export-for-authenticated-user | Export a codespace for the authenticated user |
-| GET | `/user/codespaces/{codespace_name}/exports/{export_id}` | codespaces/get-export-details-for-authenticated-user | Get details about a codespace export |
-| GET | `/user/codespaces/{codespace_name}/machines` | codespaces/codespace-machines-for-authenticated-user | List machine types for a codespace |
-| POST | `/user/codespaces/{codespace_name}/publish` | codespaces/publish-for-authenticated-user | Create a repository from an unpublished codespace |
-| POST | `/user/codespaces/{codespace_name}/start` | codespaces/start-for-authenticated-user | Start a codespace for the authenticated user |
-| POST | `/user/codespaces/{codespace_name}/stop` | codespaces/stop-for-authenticated-user | Stop a codespace for the authenticated user |
-| PATCH | `/user/email/visibility` | users/set-primary-email-visibility-for-authenticated-user | Set primary email visibility for the authenticated user |
-| DELETE | `/user/emails` | users/delete-email-for-authenticated-user | Delete an email address for the authenticated user |
-| GET | `/user/emails` | users/list-emails-for-authenticated-user | List email addresses for the authenticated user |
-| POST | `/user/emails` | users/add-email-for-authenticated-user | Add an email address for the authenticated user |
-| GET | `/user/followers` | users/list-followers-for-authenticated-user | List followers of the authenticated user |
-| GET | `/user/following` | users/list-followed-by-authenticated-user | List the people the authenticated user follows |
-| DELETE | `/user/following/{username}` | users/unfollow | Unfollow a user |
-| GET | `/user/following/{username}` | users/check-person-is-followed-by-authenticated | Check if a person is followed by the authenticated user |
-| PUT | `/user/following/{username}` | users/follow | Follow a user |
-| GET | `/user/gpg_keys` | users/list-gpg-keys-for-authenticated-user | List GPG keys for the authenticated user |
-| POST | `/user/gpg_keys` | users/create-gpg-key-for-authenticated-user | Create a GPG key for the authenticated user |
-| DELETE | `/user/gpg_keys/{gpg_key_id}` | users/delete-gpg-key-for-authenticated-user | Delete a GPG key for the authenticated user |
-| GET | `/user/gpg_keys/{gpg_key_id}` | users/get-gpg-key-for-authenticated-user | Get a GPG key for the authenticated user |
-| GET | `/user/installations` | apps/list-installations-for-authenticated-user | List app installations accessible to the user access token |
-| GET | `/user/installations/{installation_id}/repositories` | apps/list-installation-repos-for-authenticated-user | List repositories accessible to the user access token |
-| DELETE | `/user/installations/{installation_id}/repositories/{repository_id}` | apps/remove-repo-from-installation-for-authenticated-user | Remove a repository from an app installation |
-| PUT | `/user/installations/{installation_id}/repositories/{repository_id}` | apps/add-repo-to-installation-for-authenticated-user | Add a repository to an app installation |
-| DELETE | `/user/interaction-limits` | interactions/remove-restrictions-for-authenticated-user | Remove interaction restrictions from your public repositories |
-| GET | `/user/interaction-limits` | interactions/get-restrictions-for-authenticated-user | Get interaction restrictions for your public repositories |
-| PUT | `/user/interaction-limits` | interactions/set-restrictions-for-authenticated-user | Set interaction restrictions for your public repositories |
-| GET | `/user/issues` | issues/list-for-authenticated-user | List user account issues assigned to the authenticated user |
-| GET | `/user/keys` | users/list-public-ssh-keys-for-authenticated-user | List public SSH keys for the authenticated user |
-| POST | `/user/keys` | users/create-public-ssh-key-for-authenticated-user | Create a public SSH key for the authenticated user |
-| DELETE | `/user/keys/{key_id}` | users/delete-public-ssh-key-for-authenticated-user | Delete a public SSH key for the authenticated user |
-| GET | `/user/keys/{key_id}` | users/get-public-ssh-key-for-authenticated-user | Get a public SSH key for the authenticated user |
-| GET | `/user/marketplace_purchases` | apps/list-subscriptions-for-authenticated-user | List subscriptions for the authenticated user |
-| GET | `/user/marketplace_purchases/stubbed` | apps/list-subscriptions-for-authenticated-user-stubbed | List subscriptions for the authenticated user (stubbed) |
-| GET | `/user/memberships/orgs` | orgs/list-memberships-for-authenticated-user | List organization memberships for the authenticated user |
-| GET | `/user/memberships/orgs/{org}` | orgs/get-membership-for-authenticated-user | Get an organization membership for the authenticated user |
-| PATCH | `/user/memberships/orgs/{org}` | orgs/update-membership-for-authenticated-user | Update an organization membership for the authenticated user |
-| GET | `/user/migrations` | migrations/list-for-authenticated-user | List user migrations |
-| POST | `/user/migrations` | migrations/start-for-authenticated-user | Start a user migration |
-| GET | `/user/migrations/{migration_id}` | migrations/get-status-for-authenticated-user | Get a user migration status |
-| DELETE | `/user/migrations/{migration_id}/archive` | migrations/delete-archive-for-authenticated-user | Delete a user migration archive |
-| GET | `/user/migrations/{migration_id}/archive` | migrations/get-archive-for-authenticated-user | Download a user migration archive |
-| DELETE | `/user/migrations/{migration_id}/repos/{repo_name}/lock` | migrations/unlock-repo-for-authenticated-user | Unlock a user repository |
-| GET | `/user/migrations/{migration_id}/repositories` | migrations/list-repos-for-authenticated-user | List repositories for a user migration |
-| GET | `/user/orgs` | orgs/list-for-authenticated-user | List organizations for the authenticated user |
-| GET | `/user/packages` | packages/list-packages-for-authenticated-user | List packages for the authenticated user's namespace |
-| DELETE | `/user/packages/{package_type}/{package_name}` | packages/delete-package-for-authenticated-user | Delete a package for the authenticated user |
-| GET | `/user/packages/{package_type}/{package_name}` | packages/get-package-for-authenticated-user | Get a package for the authenticated user |
-| POST | `/user/packages/{package_type}/{package_name}/restore` | packages/restore-package-for-authenticated-user | Restore a package for the authenticated user |
-| GET | `/user/packages/{package_type}/{package_name}/versions` | packages/get-all-package-versions-for-package-owned-by-authenticated-user | List package versions for a package owned by the authenticated user |
-| DELETE | `/user/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/delete-package-version-for-authenticated-user | Delete a package version for the authenticated user |
-| GET | `/user/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/get-package-version-for-authenticated-user | Get a package version for the authenticated user |
-| POST | `/user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore` | packages/restore-package-version-for-authenticated-user | Restore a package version for the authenticated user |
-| POST | `/user/projects` | projects/create-for-authenticated-user | Create a user project |
-| GET | `/user/public_emails` | users/list-public-emails-for-authenticated-user | List public email addresses for the authenticated user |
-| GET | `/user/repos` | repos/list-for-authenticated-user | List repositories for the authenticated user |
-| POST | `/user/repos` | repos/create-for-authenticated-user | Create a repository for the authenticated user |
-| GET | `/user/repository_invitations` | repos/list-invitations-for-authenticated-user | List repository invitations for the authenticated user |
-| DELETE | `/user/repository_invitations/{invitation_id}` | repos/decline-invitation-for-authenticated-user | Decline a repository invitation |
-| PATCH | `/user/repository_invitations/{invitation_id}` | repos/accept-invitation-for-authenticated-user | Accept a repository invitation |
-| GET | `/user/ssh_signing_keys` | users/list-ssh-signing-keys-for-authenticated-user | List SSH signing keys for the authenticated user |
-| POST | `/user/ssh_signing_keys` | users/create-ssh-signing-key-for-authenticated-user | Create a SSH signing key for the authenticated user |
-| DELETE | `/user/ssh_signing_keys/{ssh_signing_key_id}` | users/delete-ssh-signing-key-for-authenticated-user | Delete an SSH signing key for the authenticated user |
-| GET | `/user/ssh_signing_keys/{ssh_signing_key_id}` | users/get-ssh-signing-key-for-authenticated-user | Get an SSH signing key for the authenticated user |
-| GET | `/user/starred` | activity/list-repos-starred-by-authenticated-user | List repositories starred by the authenticated user |
-| DELETE | `/user/starred/{owner}/{repo}` | activity/unstar-repo-for-authenticated-user | Unstar a repository for the authenticated user |
-| GET | `/user/starred/{owner}/{repo}` | activity/check-repo-is-starred-by-authenticated-user | Check if a repository is starred by the authenticated user |
-| PUT | `/user/starred/{owner}/{repo}` | activity/star-repo-for-authenticated-user | Star a repository for the authenticated user |
-| GET | `/user/subscriptions` | activity/list-watched-repos-for-authenticated-user | List repositories watched by the authenticated user |
-| GET | `/user/teams` | teams/list-for-authenticated-user | List teams for the authenticated user |
-| GET | `/users` | users/list | List users |
-| GET | `/users/{username}` | users/get-by-username | Get a user |
-| GET | `/users/{username}/events` | activity/list-events-for-authenticated-user | List events for the authenticated user |
-| GET | `/users/{username}/events/orgs/{org}` | activity/list-org-events-for-authenticated-user | List organization events for the authenticated user |
-| GET | `/users/{username}/events/public` | activity/list-public-events-for-user | List public events for a user |
-| GET | `/users/{username}/followers` | users/list-followers-for-user | List followers of a user |
-| GET | `/users/{username}/following` | users/list-following-for-user | List the people a user follows |
-| GET | `/users/{username}/following/{target_user}` | users/check-following-for-user | Check if a user follows another user |
-| GET | `/users/{username}/gists` | gists/list-for-user | List gists for a user |
-| GET | `/users/{username}/gpg_keys` | users/list-gpg-keys-for-user | List GPG keys for a user |
-| GET | `/users/{username}/hovercard` | users/get-context-for-user | Get contextual information for a user |
-| GET | `/users/{username}/installation` | apps/get-user-installation | Get a user installation for the authenticated app |
-| GET | `/users/{username}/keys` | users/list-public-keys-for-user | List public keys for a user |
-| GET | `/users/{username}/orgs` | orgs/list-for-user | List organizations for a user |
-| GET | `/users/{username}/packages` | packages/list-packages-for-user | List packages for a user |
-| DELETE | `/users/{username}/packages/{package_type}/{package_name}` | packages/delete-package-for-user | Delete a package for a user |
-| GET | `/users/{username}/packages/{package_type}/{package_name}` | packages/get-package-for-user | Get a package for a user |
-| POST | `/users/{username}/packages/{package_type}/{package_name}/restore` | packages/restore-package-for-user | Restore a package for a user |
-| GET | `/users/{username}/packages/{package_type}/{package_name}/versions` | packages/get-all-package-versions-for-package-owned-by-user | List package versions for a package owned by a user |
-| DELETE | `/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/delete-package-version-for-user | Delete package version for a user |
-| GET | `/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/get-package-version-for-user | Get a package version for a user |
-| POST | `/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore` | packages/restore-package-version-for-user | Restore package version for a user |
-| GET | `/users/{username}/projects` | projects/list-for-user | List user projects |
-| GET | `/users/{username}/received_events` | activity/list-received-events-for-user | List events received by the authenticated user |
-| GET | `/users/{username}/received_events/public` | activity/list-received-public-events-for-user | List public events received by a user |
-| GET | `/users/{username}/repos` | repos/list-for-user | List repositories for a user |
-| GET | `/users/{username}/settings/billing/actions` | billing/get-github-actions-billing-user | Get GitHub Actions billing for a user |
-| GET | `/users/{username}/settings/billing/packages` | billing/get-github-packages-billing-user | Get GitHub Packages billing for a user |
-| GET | `/users/{username}/settings/billing/shared-storage` | billing/get-shared-storage-billing-user | Get shared storage billing for a user |
-| GET | `/users/{username}/ssh_signing_keys` | users/list-ssh-signing-keys-for-user | List SSH signing keys for a user |
-| GET | `/users/{username}/starred` | activity/list-repos-starred-by-user | List repositories starred by a user |
-| GET | `/users/{username}/subscriptions` | activity/list-repos-watched-by-user | List repositories watched by a user |
-| GET | `/versions` | meta/get-all-versions | Get all API versions |
-| GET | `/zen` | meta/get-zen | Get the Zen of GitHub |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | meta/root | — | root | yes | GitHub API Root |
+| GET | `/app` | apps/get-authenticated | — | integration | yes | Get the authenticated app |
+| POST | `/app-manifests/{code}/conversions` | apps/create-from-manifest | `code`* | integration\|object |  | Create a GitHub App from a manifest |
+| GET | `/app/hook/config` | apps/get-webhook-config-for-app | — | webhook-config | yes | Get a webhook configuration for an app |
+| PATCH | `/app/hook/config` | apps/update-webhook-config-for-app | body*: object | webhook-config |  | Update a webhook configuration for an app |
+| GET | `/app/hook/deliveries` | apps/list-webhook-deliveries | `per_page`, `cursor`, `redelivery` | hook-delivery-item[] | yes | List deliveries for an app webhook |
+| GET | `/app/hook/deliveries/{delivery_id}` | apps/get-webhook-delivery | `delivery_id`* | hook-delivery | yes | Get a delivery for an app webhook |
+| POST | `/app/hook/deliveries/{delivery_id}/attempts` | apps/redeliver-webhook-delivery | `delivery_id`* | object |  | Redeliver a delivery for an app webhook |
+| GET | `/app/installations` | apps/list-installations | `per_page`, `page`, `since`, `outdated` | installation[] | yes | List installations for the authenticated app |
+| GET | `/app/installations/{installation_id}` | apps/get-installation | `installation_id`* | installation | yes | Get an installation for the authenticated app |
+| DELETE | `/app/installations/{installation_id}` | apps/delete-installation | `installation_id`* | — |  | Delete an installation for the authenticated app |
+| POST | `/app/installations/{installation_id}/access_tokens` | apps/create-installation-access-token | `installation_id`*, body: object | installation-token |  | Create an installation access token for an app |
+| PUT | `/app/installations/{installation_id}/suspended` | apps/suspend-installation | `installation_id`* | — |  | Suspend an app installation |
+| DELETE | `/app/installations/{installation_id}/suspended` | apps/unsuspend-installation | `installation_id`* | — |  | Unsuspend an app installation |
+| DELETE | `/applications/{client_id}/grant` | apps/delete-authorization | `client_id`*, body*: object | — |  | Delete an app authorization |
+| POST | `/applications/{client_id}/token` | apps/check-token | `client_id`*, body*: object | authorization |  | Check a token |
+| DELETE | `/applications/{client_id}/token` | apps/delete-token | `client_id`*, body*: object | — |  | Delete an app token |
+| PATCH | `/applications/{client_id}/token` | apps/reset-token | `client_id`*, body*: object | authorization |  | Reset a token |
+| POST | `/applications/{client_id}/token/scoped` | apps/scope-token | `client_id`*, body*: object | authorization |  | Create a scoped access token |
+| GET | `/apps/{app_slug}` | apps/get-by-slug | `app_slug`* | integration | yes | Get an app |
+| GET | `/codes_of_conduct` | codes-of-conduct/get-all-codes-of-conduct | — | code-of-conduct[] | yes | Get all codes of conduct |
+| GET | `/codes_of_conduct/{key}` | codes-of-conduct/get-conduct-code | `key`* | code-of-conduct | yes | Get a code of conduct |
+| GET | `/emojis` | emojis/get | — | object | yes | Get emojis |
+| GET | `/enterprises/{enterprise}/dependabot/alerts` | dependabot/list-alerts-for-enterprise | `enterprise`*, `state`, `severity`, `ecosystem`, `package`, `scope`, `sort`, `direction`, `before`, `after`, `first`, `last`, `per_page` | dependabot-alert-with-repository[] | yes | List Dependabot alerts for an enterprise |
+| GET | `/enterprises/{enterprise}/secret-scanning/alerts` | secret-scanning/list-alerts-for-enterprise | `enterprise`*, `state`, `secret_type`, `resolution`, `sort`, `direction`, `per_page`, `before`, `after` | organization-secret-scanning-alert[] | yes | List secret scanning alerts for an enterprise |
+| GET | `/events` | activity/list-public-events | `per_page`, `page` | event[] | yes | List public events |
+| GET | `/feeds` | activity/get-feeds | — | feed | yes | Get feeds |
+| GET | `/gists` | gists/list | `since`, `per_page`, `page` | base-gist[] | yes | List gists for the authenticated user |
+| POST | `/gists` | gists/create | body*: object | gist-simple |  | Create a gist |
+| GET | `/gists/public` | gists/list-public | `since`, `per_page`, `page` | base-gist[] | yes | List public gists |
+| GET | `/gists/starred` | gists/list-starred | `since`, `per_page`, `page` | base-gist[] | yes | List starred gists |
+| GET | `/gists/{gist_id}` | gists/get | `gist_id`* | gist-simple | yes | Get a gist |
+| DELETE | `/gists/{gist_id}` | gists/delete | `gist_id`* | — |  | Delete a gist |
+| PATCH | `/gists/{gist_id}` | gists/update | `gist_id`*, body*: — | gist-simple |  | Update a gist |
+| GET | `/gists/{gist_id}/comments` | gists/list-comments | `gist_id`*, `per_page`, `page` | gist-comment[] | yes | List gist comments |
+| POST | `/gists/{gist_id}/comments` | gists/create-comment | `gist_id`*, body*: object | gist-comment |  | Create a gist comment |
+| GET | `/gists/{gist_id}/comments/{comment_id}` | gists/get-comment | `gist_id`*, `comment_id`* | gist-comment | yes | Get a gist comment |
+| DELETE | `/gists/{gist_id}/comments/{comment_id}` | gists/delete-comment | `gist_id`*, `comment_id`* | — |  | Delete a gist comment |
+| PATCH | `/gists/{gist_id}/comments/{comment_id}` | gists/update-comment | `gist_id`*, `comment_id`*, body*: object | gist-comment |  | Update a gist comment |
+| GET | `/gists/{gist_id}/commits` | gists/list-commits | `gist_id`*, `per_page`, `page` | gist-commit[] | yes | List gist commits |
+| GET | `/gists/{gist_id}/forks` | gists/list-forks | `gist_id`*, `per_page`, `page` | gist-simple[] | yes | List gist forks |
+| POST | `/gists/{gist_id}/forks` | gists/fork | `gist_id`* | base-gist |  | Fork a gist |
+| GET | `/gists/{gist_id}/star` | gists/check-is-starred | `gist_id`* | — | yes | Check if a gist is starred |
+| PUT | `/gists/{gist_id}/star` | gists/star | `gist_id`* | — |  | Star a gist |
+| DELETE | `/gists/{gist_id}/star` | gists/unstar | `gist_id`* | — |  | Unstar a gist |
+| GET | `/gists/{gist_id}/{sha}` | gists/get-revision | `gist_id`*, `sha`* | gist-simple | yes | Get a gist revision |
+| GET | `/gitignore/templates` | gitignore/get-all-templates | — | string[] | yes | Get all gitignore templates |
+| GET | `/gitignore/templates/{name}` | gitignore/get-template | `name`* | gitignore-template | yes | Get a gitignore template |
+| GET | `/installation/repositories` | apps/list-repos-accessible-to-installation | `per_page`, `page` | object | yes | List repositories accessible to the app installation |
+| DELETE | `/installation/token` | apps/revoke-installation-access-token | — | — |  | Revoke an installation access token |
+| GET | `/issues` | issues/list | `filter`, `state`, `labels`, `sort`, `direction`, `since`, `collab`, `orgs`, `owned`, `pulls`, `per_page`, `page` | issue[] | yes | List issues assigned to the authenticated user |
+| GET | `/licenses` | licenses/get-all-commonly-used | `featured`, `per_page`, `page` | license-simple[] | yes | Get all commonly used licenses |
+| GET | `/licenses/{license}` | licenses/get | `license`* | license | yes | Get a license |
+| POST | `/markdown` | markdown/render | body*: object | string |  | Render a Markdown document |
+| POST | `/markdown/raw` | markdown/render-raw | body: string | string |  | Render a Markdown document in raw mode |
+| GET | `/marketplace_listing/accounts/{account_id}` | apps/get-subscription-plan-for-account | `account_id`* | marketplace-purchase | yes | Get a subscription plan for an account |
+| GET | `/marketplace_listing/plans` | apps/list-plans | `per_page`, `page` | marketplace-listing-plan[] | yes | List plans |
+| GET | `/marketplace_listing/plans/{plan_id}/accounts` | apps/list-accounts-for-plan | `plan_id`*, `sort`, `direction`, `per_page`, `page` | marketplace-purchase[] | yes | List accounts for a plan |
+| GET | `/marketplace_listing/stubbed/accounts/{account_id}` | apps/get-subscription-plan-for-account-stubbed | `account_id`* | marketplace-purchase | yes | Get a subscription plan for an account (stubbed) |
+| GET | `/marketplace_listing/stubbed/plans` | apps/list-plans-stubbed | `per_page`, `page` | marketplace-listing-plan[] | yes | List plans (stubbed) |
+| GET | `/marketplace_listing/stubbed/plans/{plan_id}/accounts` | apps/list-accounts-for-plan-stubbed | `plan_id`*, `sort`, `direction`, `per_page`, `page` | marketplace-purchase[] | yes | List accounts for a plan (stubbed) |
+| GET | `/meta` | meta/get | — | api-overview | yes | Get GitHub meta information |
+| GET | `/networks/{owner}/{repo}/events` | activity/list-public-events-for-repo-network | `owner`*, `repo`*, `per_page`, `page` | event[] | yes | List public events for a network of repositories |
+| GET | `/notifications` | activity/list-notifications-for-authenticated-user | `all`, `participating`, `since`, `before`, `page`, `per_page` | thread[] | yes | List notifications for the authenticated user |
+| PUT | `/notifications` | activity/mark-notifications-as-read | body: object | object |  | Mark notifications as read |
+| GET | `/notifications/threads/{thread_id}` | activity/get-thread | `thread_id`* | thread | yes | Get a thread |
+| PATCH | `/notifications/threads/{thread_id}` | activity/mark-thread-as-read | `thread_id`* | — |  | Mark a thread as read |
+| GET | `/notifications/threads/{thread_id}/subscription` | activity/get-thread-subscription-for-authenticated-user | `thread_id`* | thread-subscription | yes | Get a thread subscription for the authenticated user |
+| PUT | `/notifications/threads/{thread_id}/subscription` | activity/set-thread-subscription | `thread_id`*, body: object | thread-subscription |  | Set a thread subscription |
+| DELETE | `/notifications/threads/{thread_id}/subscription` | activity/delete-thread-subscription | `thread_id`* | — |  | Delete a thread subscription |
+| GET | `/octocat` | meta/get-octocat | `s` | string | yes | Get Octocat |
+| GET | `/organizations` | orgs/list | `since`, `per_page` | organization-simple[] | yes | List organizations |
+| GET | `/orgs/{org}` | orgs/get | `org`* | organization-full | yes | Get an organization |
+| PATCH | `/orgs/{org}` | orgs/update | `org`*, body: object | organization-full |  | Update an organization |
+| GET | `/orgs/{org}/actions/cache/usage` | actions/get-actions-cache-usage-for-org | `org`* | actions-cache-usage-org-enterprise | yes | Get GitHub Actions cache usage for an organization |
+| GET | `/orgs/{org}/actions/cache/usage-by-repository` | actions/get-actions-cache-usage-by-repo-for-org | `org`*, `per_page`, `page` | object | yes | List repositories with GitHub Actions cache usage for an organization |
+| GET | `/orgs/{org}/actions/oidc/customization/sub` | oidc/get-oidc-custom-sub-template-for-org | `org`* | oidc-custom-sub | yes | Get the customization template for an OIDC subject claim for an organization |
+| PUT | `/orgs/{org}/actions/oidc/customization/sub` | oidc/update-oidc-custom-sub-template-for-org | `org`*, body*: oidc-custom-sub | empty-object |  | Set the customization template for an OIDC subject claim for an organization |
+| GET | `/orgs/{org}/actions/permissions` | actions/get-github-actions-permissions-organization | `org`* | actions-organization-permissions | yes | Get GitHub Actions permissions for an organization |
+| PUT | `/orgs/{org}/actions/permissions` | actions/set-github-actions-permissions-organization | `org`*, body*: object | — |  | Set GitHub Actions permissions for an organization |
+| GET | `/orgs/{org}/actions/permissions/repositories` | actions/list-selected-repositories-enabled-github-actions-organization | `org`*, `per_page`, `page` | object | yes | List selected repositories enabled for GitHub Actions in an organization |
+| PUT | `/orgs/{org}/actions/permissions/repositories` | actions/set-selected-repositories-enabled-github-actions-organization | `org`*, body*: object | — |  | Set selected repositories enabled for GitHub Actions in an organization |
+| PUT | `/orgs/{org}/actions/permissions/repositories/{repository_id}` | actions/enable-selected-repository-github-actions-organization | `org`*, `repository_id`* | — |  | Enable a selected repository for GitHub Actions in an organization |
+| DELETE | `/orgs/{org}/actions/permissions/repositories/{repository_id}` | actions/disable-selected-repository-github-actions-organization | `org`*, `repository_id`* | — |  | Disable a selected repository for GitHub Actions in an organization |
+| GET | `/orgs/{org}/actions/permissions/selected-actions` | actions/get-allowed-actions-organization | `org`* | selected-actions | yes | Get allowed actions and reusable workflows for an organization |
+| PUT | `/orgs/{org}/actions/permissions/selected-actions` | actions/set-allowed-actions-organization | `org`*, body: selected-actions | — |  | Set allowed actions and reusable workflows for an organization |
+| GET | `/orgs/{org}/actions/permissions/workflow` | actions/get-github-actions-default-workflow-permissions-organization | `org`* | actions-get-default-workflow-permissions | yes | Get default workflow permissions for an organization |
+| PUT | `/orgs/{org}/actions/permissions/workflow` | actions/set-github-actions-default-workflow-permissions-organization | `org`*, body: actions-set-default-workflow-permissions | — |  | Set default workflow permissions for an organization |
+| GET | `/orgs/{org}/actions/required_workflows` | actions/list-required-workflows | `org`*, `per_page`, `page` | object | yes | List required workflows |
+| POST | `/orgs/{org}/actions/required_workflows` | actions/create-required-workflow | `org`*, body*: object | required-workflow |  | Create a required workflow |
+| GET | `/orgs/{org}/actions/required_workflows/{required_workflow_id}` | actions/get-required-workflow | `org`*, `required_workflow_id`* | required-workflow | yes | Get a required workflow |
+| DELETE | `/orgs/{org}/actions/required_workflows/{required_workflow_id}` | actions/delete-required-workflow | `org`*, `required_workflow_id`* | — |  | Delete a required workflow |
+| PATCH | `/orgs/{org}/actions/required_workflows/{required_workflow_id}` | actions/update-required-workflow | `org`*, `required_workflow_id`*, body*: object | required-workflow |  | Update a required workflow |
+| GET | `/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories` | actions/list-selected-repositories-required-workflow | `org`*, `required_workflow_id`* | object | yes | List selected repositories for a required workflow |
+| PUT | `/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories` | actions/set-selected-repos-to-required-workflow | `org`*, `required_workflow_id`*, body*: object | — |  | Sets repositories for a required workflow |
+| PUT | `/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}` | actions/add-selected-repo-to-required-workflow | `org`*, `required_workflow_id`*, `repository_id`* | — |  | Add a repository to a required workflow |
+| DELETE | `/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}` | actions/remove-selected-repo-from-required-workflow | `org`*, `required_workflow_id`*, `repository_id`* | — |  | Remove a selected repository from required workflow |
+| GET | `/orgs/{org}/actions/runners` | actions/list-self-hosted-runners-for-org | `org`*, `per_page`, `page` | object | yes | List self-hosted runners for an organization |
+| GET | `/orgs/{org}/actions/runners/downloads` | actions/list-runner-applications-for-org | `org`* | runner-application[] | yes | List runner applications for an organization |
+| POST | `/orgs/{org}/actions/runners/registration-token` | actions/create-registration-token-for-org | `org`* | authentication-token |  | Create a registration token for an organization |
+| POST | `/orgs/{org}/actions/runners/remove-token` | actions/create-remove-token-for-org | `org`* | authentication-token |  | Create a remove token for an organization |
+| GET | `/orgs/{org}/actions/runners/{runner_id}` | actions/get-self-hosted-runner-for-org | `org`*, `runner_id`* | runner | yes | Get a self-hosted runner for an organization |
+| DELETE | `/orgs/{org}/actions/runners/{runner_id}` | actions/delete-self-hosted-runner-from-org | `org`*, `runner_id`* | — |  | Delete a self-hosted runner from an organization |
+| GET | `/orgs/{org}/actions/runners/{runner_id}/labels` | actions/list-labels-for-self-hosted-runner-for-org | `org`*, `runner_id`* | object | yes | List labels for a self-hosted runner for an organization |
+| PUT | `/orgs/{org}/actions/runners/{runner_id}/labels` | actions/set-custom-labels-for-self-hosted-runner-for-org | `org`*, `runner_id`*, body*: object | object |  | Set custom labels for a self-hosted runner for an organization |
+| POST | `/orgs/{org}/actions/runners/{runner_id}/labels` | actions/add-custom-labels-to-self-hosted-runner-for-org | `org`*, `runner_id`*, body*: object | object |  | Add custom labels to a self-hosted runner for an organization |
+| DELETE | `/orgs/{org}/actions/runners/{runner_id}/labels` | actions/remove-all-custom-labels-from-self-hosted-runner-for-org | `org`*, `runner_id`* | object |  | Remove all custom labels from a self-hosted runner for an organization |
+| DELETE | `/orgs/{org}/actions/runners/{runner_id}/labels/{name}` | actions/remove-custom-label-from-self-hosted-runner-for-org | `org`*, `runner_id`*, `name`* | object |  | Remove a custom label from a self-hosted runner for an organization |
+| GET | `/orgs/{org}/actions/secrets` | actions/list-org-secrets | `org`*, `per_page`, `page` | object | yes | List organization secrets |
+| GET | `/orgs/{org}/actions/secrets/public-key` | actions/get-org-public-key | `org`* | actions-public-key | yes | Get an organization public key |
+| GET | `/orgs/{org}/actions/secrets/{secret_name}` | actions/get-org-secret | `org`*, `secret_name`* | organization-actions-secret | yes | Get an organization secret |
+| PUT | `/orgs/{org}/actions/secrets/{secret_name}` | actions/create-or-update-org-secret | `org`*, `secret_name`*, body*: object | empty-object |  | Create or update an organization secret |
+| DELETE | `/orgs/{org}/actions/secrets/{secret_name}` | actions/delete-org-secret | `org`*, `secret_name`* | — |  | Delete an organization secret |
+| GET | `/orgs/{org}/actions/secrets/{secret_name}/repositories` | actions/list-selected-repos-for-org-secret | `org`*, `secret_name`*, `page`, `per_page` | object | yes | List selected repositories for an organization secret |
+| PUT | `/orgs/{org}/actions/secrets/{secret_name}/repositories` | actions/set-selected-repos-for-org-secret | `org`*, `secret_name`*, body*: object | — |  | Set selected repositories for an organization secret |
+| PUT | `/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}` | actions/add-selected-repo-to-org-secret | `org`*, `secret_name`*, `repository_id`* | — |  | Add selected repository to an organization secret |
+| DELETE | `/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}` | actions/remove-selected-repo-from-org-secret | `org`*, `secret_name`*, `repository_id`* | — |  | Remove selected repository from an organization secret |
+| GET | `/orgs/{org}/actions/variables` | actions/list-org-variables | `org`*, `per_page`, `page` | object | yes | List organization variables |
+| POST | `/orgs/{org}/actions/variables` | actions/create-org-variable | `org`*, body*: object | empty-object |  | Create an organization variable |
+| GET | `/orgs/{org}/actions/variables/{name}` | actions/get-org-variable | `org`*, `name`* | organization-actions-variable | yes | Get an organization variable |
+| DELETE | `/orgs/{org}/actions/variables/{name}` | actions/delete-org-variable | `org`*, `name`* | — |  | Delete an organization variable |
+| PATCH | `/orgs/{org}/actions/variables/{name}` | actions/update-org-variable | `org`*, `name`*, body*: object | — |  | Update an organization variable |
+| GET | `/orgs/{org}/actions/variables/{name}/repositories` | actions/list-selected-repos-for-org-variable | `org`*, `name`*, `page`, `per_page` | object | yes | List selected repositories for an organization variable |
+| PUT | `/orgs/{org}/actions/variables/{name}/repositories` | actions/set-selected-repos-for-org-variable | `org`*, `name`*, body*: object | — |  | Set selected repositories for an organization variable |
+| PUT | `/orgs/{org}/actions/variables/{name}/repositories/{repository_id}` | actions/add-selected-repo-to-org-variable | `org`*, `name`*, `repository_id`* | — |  | Add selected repository to an organization variable |
+| DELETE | `/orgs/{org}/actions/variables/{name}/repositories/{repository_id}` | actions/remove-selected-repo-from-org-variable | `org`*, `name`*, `repository_id`* | — |  | Remove selected repository from an organization variable |
+| GET | `/orgs/{org}/blocks` | orgs/list-blocked-users | `org`*, `per_page`, `page` | simple-user[] | yes | List users blocked by an organization |
+| GET | `/orgs/{org}/blocks/{username}` | orgs/check-blocked-user | `org`*, `username`* | — | yes | Check if a user is blocked by an organization |
+| PUT | `/orgs/{org}/blocks/{username}` | orgs/block-user | `org`*, `username`* | — |  | Block a user from an organization |
+| DELETE | `/orgs/{org}/blocks/{username}` | orgs/unblock-user | `org`*, `username`* | — |  | Unblock a user from an organization |
+| GET | `/orgs/{org}/code-scanning/alerts` | code-scanning/list-alerts-for-org | `org`*, `tool_name`, `tool_guid`, `before`, `after`, `page`, `per_page`, `direction`, `state`, `sort`, `severity` | code-scanning-organization-alert-items[] | yes | List code scanning alerts for an organization |
+| GET | `/orgs/{org}/codespaces` | codespaces/list-in-organization | `per_page`, `page`, `org`* | object | yes | List codespaces for the organization |
+| PUT | `/orgs/{org}/codespaces/billing` | codespaces/set-codespaces-billing | `org`*, body*: object | — |  | Manage access control for organization codespaces |
+| POST | `/orgs/{org}/codespaces/billing/selected_users` | codespaces/set-codespaces-billing-users | `org`*, body*: object | — |  | Add users to Codespaces billing for an organization |
+| DELETE | `/orgs/{org}/codespaces/billing/selected_users` | codespaces/delete-codespaces-billing-users | `org`*, body*: object | — |  | Removes users from Codespaces billing for an organization |
+| GET | `/orgs/{org}/codespaces/secrets` | codespaces/list-org-secrets | `org`*, `per_page`, `page` | object | yes | List organization secrets |
+| GET | `/orgs/{org}/codespaces/secrets/public-key` | codespaces/get-org-public-key | `org`* | codespaces-public-key | yes | Get an organization public key |
+| GET | `/orgs/{org}/codespaces/secrets/{secret_name}` | codespaces/get-org-secret | `org`*, `secret_name`* | codespaces-org-secret | yes | Get an organization secret |
+| PUT | `/orgs/{org}/codespaces/secrets/{secret_name}` | codespaces/create-or-update-org-secret | `org`*, `secret_name`*, body*: object | empty-object |  | Create or update an organization secret |
+| DELETE | `/orgs/{org}/codespaces/secrets/{secret_name}` | codespaces/delete-org-secret | `org`*, `secret_name`* | — |  | Delete an organization secret |
+| GET | `/orgs/{org}/codespaces/secrets/{secret_name}/repositories` | codespaces/list-selected-repos-for-org-secret | `org`*, `secret_name`*, `page`, `per_page` | object | yes | List selected repositories for an organization secret |
+| PUT | `/orgs/{org}/codespaces/secrets/{secret_name}/repositories` | codespaces/set-selected-repos-for-org-secret | `org`*, `secret_name`*, body*: object | — |  | Set selected repositories for an organization secret |
+| PUT | `/orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}` | codespaces/add-selected-repo-to-org-secret | `org`*, `secret_name`*, `repository_id`* | — |  | Add selected repository to an organization secret |
+| DELETE | `/orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}` | codespaces/remove-selected-repo-from-org-secret | `org`*, `secret_name`*, `repository_id`* | — |  | Remove selected repository from an organization secret |
+| GET | `/orgs/{org}/dependabot/alerts` | dependabot/list-alerts-for-org | `org`*, `state`, `severity`, `ecosystem`, `package`, `scope`, `sort`, `direction`, `before`, `after`, `first`, `last`, `per_page` | dependabot-alert-with-repository[] | yes | List Dependabot alerts for an organization |
+| GET | `/orgs/{org}/dependabot/secrets` | dependabot/list-org-secrets | `org`*, `per_page`, `page` | object | yes | List organization secrets |
+| GET | `/orgs/{org}/dependabot/secrets/public-key` | dependabot/get-org-public-key | `org`* | dependabot-public-key | yes | Get an organization public key |
+| GET | `/orgs/{org}/dependabot/secrets/{secret_name}` | dependabot/get-org-secret | `org`*, `secret_name`* | organization-dependabot-secret | yes | Get an organization secret |
+| PUT | `/orgs/{org}/dependabot/secrets/{secret_name}` | dependabot/create-or-update-org-secret | `org`*, `secret_name`*, body*: object | empty-object |  | Create or update an organization secret |
+| DELETE | `/orgs/{org}/dependabot/secrets/{secret_name}` | dependabot/delete-org-secret | `org`*, `secret_name`* | — |  | Delete an organization secret |
+| GET | `/orgs/{org}/dependabot/secrets/{secret_name}/repositories` | dependabot/list-selected-repos-for-org-secret | `org`*, `secret_name`*, `page`, `per_page` | object | yes | List selected repositories for an organization secret |
+| PUT | `/orgs/{org}/dependabot/secrets/{secret_name}/repositories` | dependabot/set-selected-repos-for-org-secret | `org`*, `secret_name`*, body*: object | — |  | Set selected repositories for an organization secret |
+| PUT | `/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}` | dependabot/add-selected-repo-to-org-secret | `org`*, `secret_name`*, `repository_id`* | — |  | Add selected repository to an organization secret |
+| DELETE | `/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}` | dependabot/remove-selected-repo-from-org-secret | `org`*, `secret_name`*, `repository_id`* | — |  | Remove selected repository from an organization secret |
+| GET | `/orgs/{org}/events` | activity/list-public-org-events | `org`*, `per_page`, `page` | event[] | yes | List public organization events |
+| GET | `/orgs/{org}/failed_invitations` | orgs/list-failed-invitations | `org`*, `per_page`, `page` | organization-invitation[] | yes | List failed organization invitations |
+| GET | `/orgs/{org}/hooks` | orgs/list-webhooks | `org`*, `per_page`, `page` | org-hook[] | yes | List organization webhooks |
+| POST | `/orgs/{org}/hooks` | orgs/create-webhook | `org`*, body*: object | org-hook |  | Create an organization webhook |
+| GET | `/orgs/{org}/hooks/{hook_id}` | orgs/get-webhook | `org`*, `hook_id`* | org-hook | yes | Get an organization webhook |
+| DELETE | `/orgs/{org}/hooks/{hook_id}` | orgs/delete-webhook | `org`*, `hook_id`* | — |  | Delete an organization webhook |
+| PATCH | `/orgs/{org}/hooks/{hook_id}` | orgs/update-webhook | `org`*, `hook_id`*, body: object | org-hook |  | Update an organization webhook |
+| GET | `/orgs/{org}/hooks/{hook_id}/config` | orgs/get-webhook-config-for-org | `org`*, `hook_id`* | webhook-config | yes | Get a webhook configuration for an organization |
+| PATCH | `/orgs/{org}/hooks/{hook_id}/config` | orgs/update-webhook-config-for-org | `org`*, `hook_id`*, body: object | webhook-config |  | Update a webhook configuration for an organization |
+| GET | `/orgs/{org}/hooks/{hook_id}/deliveries` | orgs/list-webhook-deliveries | `org`*, `hook_id`*, `per_page`, `cursor`, `redelivery` | hook-delivery-item[] | yes | List deliveries for an organization webhook |
+| GET | `/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}` | orgs/get-webhook-delivery | `org`*, `hook_id`*, `delivery_id`* | hook-delivery | yes | Get a webhook delivery for an organization webhook |
+| POST | `/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts` | orgs/redeliver-webhook-delivery | `org`*, `hook_id`*, `delivery_id`* | object |  | Redeliver a delivery for an organization webhook |
+| POST | `/orgs/{org}/hooks/{hook_id}/pings` | orgs/ping-webhook | `org`*, `hook_id`* | — |  | Ping an organization webhook |
+| GET | `/orgs/{org}/installation` | apps/get-org-installation | `org`* | installation | yes | Get an organization installation for the authenticated app |
+| GET | `/orgs/{org}/installations` | orgs/list-app-installations | `org`*, `per_page`, `page` | object | yes | List app installations for an organization |
+| GET | `/orgs/{org}/interaction-limits` | interactions/get-restrictions-for-org | `org`* | interaction-limit-response\|object | yes | Get interaction restrictions for an organization |
+| PUT | `/orgs/{org}/interaction-limits` | interactions/set-restrictions-for-org | `org`*, body*: interaction-limit | interaction-limit-response |  | Set interaction restrictions for an organization |
+| DELETE | `/orgs/{org}/interaction-limits` | interactions/remove-restrictions-for-org | `org`* | — |  | Remove interaction restrictions for an organization |
+| GET | `/orgs/{org}/invitations` | orgs/list-pending-invitations | `org`*, `per_page`, `page`, `role`, `invitation_source` | organization-invitation[] | yes | List pending organization invitations |
+| POST | `/orgs/{org}/invitations` | orgs/create-invitation | `org`*, body: object | organization-invitation |  | Create an organization invitation |
+| DELETE | `/orgs/{org}/invitations/{invitation_id}` | orgs/cancel-invitation | `org`*, `invitation_id`* | — |  | Cancel an organization invitation |
+| GET | `/orgs/{org}/invitations/{invitation_id}/teams` | orgs/list-invitation-teams | `org`*, `invitation_id`*, `per_page`, `page` | team[] | yes | List organization invitation teams |
+| GET | `/orgs/{org}/issues` | issues/list-for-org | `org`*, `filter`, `state`, `labels`, `sort`, `direction`, `since`, `per_page`, `page` | issue[] | yes | List organization issues assigned to the authenticated user |
+| GET | `/orgs/{org}/members` | orgs/list-members | `org`*, `filter`, `role`, `per_page`, `page` | simple-user[] | yes | List organization members |
+| GET | `/orgs/{org}/members/{username}` | orgs/check-membership-for-user | `org`*, `username`* | — | yes | Check organization membership for a user |
+| DELETE | `/orgs/{org}/members/{username}` | orgs/remove-member | `org`*, `username`* | — |  | Remove an organization member |
+| GET | `/orgs/{org}/members/{username}/codespaces` | codespaces/get-codespaces-for-user-in-org | `per_page`, `page`, `org`*, `username`* | object | yes | List codespaces for a user in organization |
+| DELETE | `/orgs/{org}/members/{username}/codespaces/{codespace_name}` | codespaces/delete-from-organization | `org`*, `username`*, `codespace_name`* | object |  | Delete a codespace from the organization |
+| POST | `/orgs/{org}/members/{username}/codespaces/{codespace_name}/stop` | codespaces/stop-in-organization | `org`*, `username`*, `codespace_name`* | codespace |  | Stop a codespace for an organization user |
+| GET | `/orgs/{org}/memberships/{username}` | orgs/get-membership-for-user | `org`*, `username`* | org-membership | yes | Get organization membership for a user |
+| PUT | `/orgs/{org}/memberships/{username}` | orgs/set-membership-for-user | `org`*, `username`*, body: object | org-membership |  | Set organization membership for a user |
+| DELETE | `/orgs/{org}/memberships/{username}` | orgs/remove-membership-for-user | `org`*, `username`* | — |  | Remove organization membership for a user |
+| GET | `/orgs/{org}/migrations` | migrations/list-for-org | `org`*, `per_page`, `page`, `exclude` | migration[] | yes | List organization migrations |
+| POST | `/orgs/{org}/migrations` | migrations/start-for-org | `org`*, body*: object | migration |  | Start an organization migration |
+| GET | `/orgs/{org}/migrations/{migration_id}` | migrations/get-status-for-org | `org`*, `migration_id`*, `exclude` | migration | yes | Get an organization migration status |
+| GET | `/orgs/{org}/migrations/{migration_id}/archive` | migrations/download-archive-for-org | `org`*, `migration_id`* | — | yes | Download an organization migration archive |
+| DELETE | `/orgs/{org}/migrations/{migration_id}/archive` | migrations/delete-archive-for-org | `org`*, `migration_id`* | — |  | Delete an organization migration archive |
+| DELETE | `/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock` | migrations/unlock-repo-for-org | `org`*, `migration_id`*, `repo_name`* | — |  | Unlock an organization repository |
+| GET | `/orgs/{org}/migrations/{migration_id}/repositories` | migrations/list-repos-for-org | `org`*, `migration_id`*, `per_page`, `page` | minimal-repository[] | yes | List repositories in an organization migration |
+| GET | `/orgs/{org}/outside_collaborators` | orgs/list-outside-collaborators | `org`*, `filter`, `per_page`, `page` | simple-user[] | yes | List outside collaborators for an organization |
+| PUT | `/orgs/{org}/outside_collaborators/{username}` | orgs/convert-member-to-outside-collaborator | `org`*, `username`*, body: object | object |  | Convert an organization member to outside collaborator |
+| DELETE | `/orgs/{org}/outside_collaborators/{username}` | orgs/remove-outside-collaborator | `org`*, `username`* | — |  | Remove outside collaborator from an organization |
+| GET | `/orgs/{org}/packages` | packages/list-packages-for-organization | `package_type`*, `org`*, `visibility`, `page`, `per_page` | package[] | yes | List packages for an organization |
+| GET | `/orgs/{org}/packages/{package_type}/{package_name}` | packages/get-package-for-organization | `package_type`*, `package_name`*, `org`* | package | yes | Get a package for an organization |
+| DELETE | `/orgs/{org}/packages/{package_type}/{package_name}` | packages/delete-package-for-org | `package_type`*, `package_name`*, `org`* | — |  | Delete a package for an organization |
+| POST | `/orgs/{org}/packages/{package_type}/{package_name}/restore` | packages/restore-package-for-org | `package_type`*, `package_name`*, `org`*, `token` | — |  | Restore a package for an organization |
+| GET | `/orgs/{org}/packages/{package_type}/{package_name}/versions` | packages/get-all-package-versions-for-package-owned-by-org | `package_type`*, `package_name`*, `org`*, `page`, `per_page`, `state` | package-version[] | yes | List package versions for a package owned by an organization |
+| GET | `/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/get-package-version-for-organization | `package_type`*, `package_name`*, `org`*, `package_version_id`* | package-version | yes | Get a package version for an organization |
+| DELETE | `/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/delete-package-version-for-org | `package_type`*, `package_name`*, `org`*, `package_version_id`* | — |  | Delete package version for an organization |
+| POST | `/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore` | packages/restore-package-version-for-org | `package_type`*, `package_name`*, `org`*, `package_version_id`* | — |  | Restore package version for an organization |
+| GET | `/orgs/{org}/projects` | projects/list-for-org | `org`*, `state`, `per_page`, `page` | project[] | yes | List organization projects |
+| POST | `/orgs/{org}/projects` | projects/create-for-org | `org`*, body*: object | project |  | Create an organization project |
+| GET | `/orgs/{org}/public_members` | orgs/list-public-members | `org`*, `per_page`, `page` | simple-user[] | yes | List public organization members |
+| GET | `/orgs/{org}/public_members/{username}` | orgs/check-public-membership-for-user | `org`*, `username`* | — | yes | Check public organization membership for a user |
+| PUT | `/orgs/{org}/public_members/{username}` | orgs/set-public-membership-for-authenticated-user | `org`*, `username`* | — |  | Set public organization membership for the authenticated user |
+| DELETE | `/orgs/{org}/public_members/{username}` | orgs/remove-public-membership-for-authenticated-user | `org`*, `username`* | — |  | Remove public organization membership for the authenticated user |
+| GET | `/orgs/{org}/repos` | repos/list-for-org | `org`*, `type`, `sort`, `direction`, `per_page`, `page` | minimal-repository[] | yes | List organization repositories |
+| POST | `/orgs/{org}/repos` | repos/create-in-org | `org`*, body*: object | repository |  | Create an organization repository |
+| GET | `/orgs/{org}/secret-scanning/alerts` | secret-scanning/list-alerts-for-org | `org`*, `state`, `secret_type`, `resolution`, `sort`, `direction`, `page`, `per_page`, `before`, `after` | organization-secret-scanning-alert[] | yes | List secret scanning alerts for an organization |
+| GET | `/orgs/{org}/security-managers` | orgs/list-security-manager-teams | `org`* | team-simple[] | yes | List security manager teams |
+| PUT | `/orgs/{org}/security-managers/teams/{team_slug}` | orgs/add-security-manager-team | `org`*, `team_slug`* | — |  | Add a security manager team |
+| DELETE | `/orgs/{org}/security-managers/teams/{team_slug}` | orgs/remove-security-manager-team | `org`*, `team_slug`* | — |  | Remove a security manager team |
+| GET | `/orgs/{org}/settings/billing/actions` | billing/get-github-actions-billing-org | `org`* | actions-billing-usage | yes | Get GitHub Actions billing for an organization |
+| GET | `/orgs/{org}/settings/billing/packages` | billing/get-github-packages-billing-org | `org`* | packages-billing-usage | yes | Get GitHub Packages billing for an organization |
+| GET | `/orgs/{org}/settings/billing/shared-storage` | billing/get-shared-storage-billing-org | `org`* | combined-billing-usage | yes | Get shared storage billing for an organization |
+| GET | `/orgs/{org}/teams` | teams/list | `org`*, `per_page`, `page` | team[] | yes | List teams |
+| POST | `/orgs/{org}/teams` | teams/create | `org`*, body*: object | team-full |  | Create a team |
+| GET | `/orgs/{org}/teams/{team_slug}` | teams/get-by-name | `org`*, `team_slug`* | team-full | yes | Get a team by name |
+| DELETE | `/orgs/{org}/teams/{team_slug}` | teams/delete-in-org | `org`*, `team_slug`* | — |  | Delete a team |
+| PATCH | `/orgs/{org}/teams/{team_slug}` | teams/update-in-org | `org`*, `team_slug`*, body: object | team-full |  | Update a team |
+| GET | `/orgs/{org}/teams/{team_slug}/discussions` | teams/list-discussions-in-org | `org`*, `team_slug`*, `direction`, `per_page`, `page`, `pinned` | team-discussion[] | yes | List discussions |
+| POST | `/orgs/{org}/teams/{team_slug}/discussions` | teams/create-discussion-in-org | `org`*, `team_slug`*, body*: object | team-discussion |  | Create a discussion |
+| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}` | teams/get-discussion-in-org | `org`*, `team_slug`*, `discussion_number`* | team-discussion | yes | Get a discussion |
+| DELETE | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}` | teams/delete-discussion-in-org | `org`*, `team_slug`*, `discussion_number`* | — |  | Delete a discussion |
+| PATCH | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}` | teams/update-discussion-in-org | `org`*, `team_slug`*, `discussion_number`*, body: object | team-discussion |  | Update a discussion |
+| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments` | teams/list-discussion-comments-in-org | `org`*, `team_slug`*, `discussion_number`*, `direction`, `per_page`, `page` | team-discussion-comment[] | yes | List discussion comments |
+| POST | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments` | teams/create-discussion-comment-in-org | `org`*, `team_slug`*, `discussion_number`*, body*: object | team-discussion-comment |  | Create a discussion comment |
+| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}` | teams/get-discussion-comment-in-org | `org`*, `team_slug`*, `discussion_number`*, `comment_number`* | team-discussion-comment | yes | Get a discussion comment |
+| DELETE | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}` | teams/delete-discussion-comment-in-org | `org`*, `team_slug`*, `discussion_number`*, `comment_number`* | — |  | Delete a discussion comment |
+| PATCH | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}` | teams/update-discussion-comment-in-org | `org`*, `team_slug`*, `discussion_number`*, `comment_number`*, body*: object | team-discussion-comment |  | Update a discussion comment |
+| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions` | reactions/list-for-team-discussion-comment-in-org | `org`*, `team_slug`*, `discussion_number`*, `comment_number`*, `content`, `per_page`, `page` | reaction[] | yes | List reactions for a team discussion comment |
+| POST | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions` | reactions/create-for-team-discussion-comment-in-org | `org`*, `team_slug`*, `discussion_number`*, `comment_number`*, body*: object | reaction |  | Create reaction for a team discussion comment |
+| DELETE | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}` | reactions/delete-for-team-discussion-comment | `org`*, `team_slug`*, `discussion_number`*, `comment_number`*, `reaction_id`* | — |  | Delete team discussion comment reaction |
+| GET | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions` | reactions/list-for-team-discussion-in-org | `org`*, `team_slug`*, `discussion_number`*, `content`, `per_page`, `page` | reaction[] | yes | List reactions for a team discussion |
+| POST | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions` | reactions/create-for-team-discussion-in-org | `org`*, `team_slug`*, `discussion_number`*, body*: object | reaction |  | Create reaction for a team discussion |
+| DELETE | `/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}` | reactions/delete-for-team-discussion | `org`*, `team_slug`*, `discussion_number`*, `reaction_id`* | — |  | Delete team discussion reaction |
+| GET | `/orgs/{org}/teams/{team_slug}/invitations` | teams/list-pending-invitations-in-org | `org`*, `team_slug`*, `per_page`, `page` | organization-invitation[] | yes | List pending team invitations |
+| GET | `/orgs/{org}/teams/{team_slug}/members` | teams/list-members-in-org | `org`*, `team_slug`*, `role`, `per_page`, `page` | simple-user[] | yes | List team members |
+| GET | `/orgs/{org}/teams/{team_slug}/memberships/{username}` | teams/get-membership-for-user-in-org | `org`*, `team_slug`*, `username`* | team-membership | yes | Get team membership for a user |
+| PUT | `/orgs/{org}/teams/{team_slug}/memberships/{username}` | teams/add-or-update-membership-for-user-in-org | `org`*, `team_slug`*, `username`*, body: object | team-membership |  | Add or update team membership for a user |
+| DELETE | `/orgs/{org}/teams/{team_slug}/memberships/{username}` | teams/remove-membership-for-user-in-org | `org`*, `team_slug`*, `username`* | — |  | Remove team membership for a user |
+| GET | `/orgs/{org}/teams/{team_slug}/projects` | teams/list-projects-in-org | `org`*, `team_slug`*, `per_page`, `page` | team-project[] | yes | List team projects |
+| GET | `/orgs/{org}/teams/{team_slug}/projects/{project_id}` | teams/check-permissions-for-project-in-org | `org`*, `team_slug`*, `project_id`* | team-project | yes | Check team permissions for a project |
+| PUT | `/orgs/{org}/teams/{team_slug}/projects/{project_id}` | teams/add-or-update-project-permissions-in-org | `org`*, `team_slug`*, `project_id`*, body: object | — |  | Add or update team project permissions |
+| DELETE | `/orgs/{org}/teams/{team_slug}/projects/{project_id}` | teams/remove-project-in-org | `org`*, `team_slug`*, `project_id`* | — |  | Remove a project from a team |
+| GET | `/orgs/{org}/teams/{team_slug}/repos` | teams/list-repos-in-org | `org`*, `team_slug`*, `per_page`, `page` | minimal-repository[] | yes | List team repositories |
+| GET | `/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}` | teams/check-permissions-for-repo-in-org | `org`*, `team_slug`*, `owner`*, `repo`* | team-repository | yes | Check team permissions for a repository |
+| PUT | `/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}` | teams/add-or-update-repo-permissions-in-org | `org`*, `team_slug`*, `owner`*, `repo`*, body: object | — |  | Add or update team repository permissions |
+| DELETE | `/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}` | teams/remove-repo-in-org | `org`*, `team_slug`*, `owner`*, `repo`* | — |  | Remove a repository from a team |
+| GET | `/orgs/{org}/teams/{team_slug}/teams` | teams/list-child-in-org | `org`*, `team_slug`*, `per_page`, `page` | team[] | yes | List child teams |
+| POST | `/orgs/{org}/{security_product}/{enablement}` | orgs/enable-or-disable-security-product-on-all-org-repos | `org`*, `security_product`*, `enablement`* | — |  | Enable or disable a security feature for an organization |
+| GET | `/projects/columns/cards/{card_id}` | projects/get-card | `card_id`* | project-card | yes | Get a project card |
+| DELETE | `/projects/columns/cards/{card_id}` | projects/delete-card | `card_id`* | — |  | Delete a project card |
+| PATCH | `/projects/columns/cards/{card_id}` | projects/update-card | `card_id`*, body: object | project-card |  | Update an existing project card |
+| POST | `/projects/columns/cards/{card_id}/moves` | projects/move-card | `card_id`*, body*: object | object |  | Move a project card |
+| GET | `/projects/columns/{column_id}` | projects/get-column | `column_id`* | project-column | yes | Get a project column |
+| DELETE | `/projects/columns/{column_id}` | projects/delete-column | `column_id`* | — |  | Delete a project column |
+| PATCH | `/projects/columns/{column_id}` | projects/update-column | `column_id`*, body*: object | project-column |  | Update an existing project column |
+| GET | `/projects/columns/{column_id}/cards` | projects/list-cards | `column_id`*, `archived_state`, `per_page`, `page` | project-card[] | yes | List project cards |
+| POST | `/projects/columns/{column_id}/cards` | projects/create-card | `column_id`*, body*: object | project-card |  | Create a project card |
+| POST | `/projects/columns/{column_id}/moves` | projects/move-column | `column_id`*, body*: object | object |  | Move a project column |
+| GET | `/projects/{project_id}` | projects/get | `project_id`* | project | yes | Get a project |
+| DELETE | `/projects/{project_id}` | projects/delete | `project_id`* | — |  | Delete a project |
+| PATCH | `/projects/{project_id}` | projects/update | `project_id`*, body: object | project |  | Update a project |
+| GET | `/projects/{project_id}/collaborators` | projects/list-collaborators | `project_id`*, `affiliation`, `per_page`, `page` | simple-user[] | yes | List project collaborators |
+| PUT | `/projects/{project_id}/collaborators/{username}` | projects/add-collaborator | `project_id`*, `username`*, body: object | — |  | Add project collaborator |
+| DELETE | `/projects/{project_id}/collaborators/{username}` | projects/remove-collaborator | `project_id`*, `username`* | — |  | Remove user as a collaborator |
+| GET | `/projects/{project_id}/collaborators/{username}/permission` | projects/get-permission-for-user | `project_id`*, `username`* | project-collaborator-permission | yes | Get project permission for a user |
+| GET | `/projects/{project_id}/columns` | projects/list-columns | `project_id`*, `per_page`, `page` | project-column[] | yes | List project columns |
+| POST | `/projects/{project_id}/columns` | projects/create-column | `project_id`*, body*: object | project-column |  | Create a project column |
+| GET | `/rate_limit` | rate-limit/get | — | rate-limit-overview | yes | Get rate limit status for the authenticated user |
+| GET | `/repos/{org}/{repo}/actions/required_workflows` | actions/list-repo-required-workflows | `org`*, `repo`*, `per_page`, `page` | object | yes | List repository required workflows |
+| GET | `/repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}` | actions/get-repo-required-workflow | `org`*, `repo`*, `required_workflow_id_for_repo`* | repo-required-workflow | yes | Get a required workflow entity for a repository |
+| GET | `/repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/timing` | actions/get-repo-required-workflow-usage | `org`*, `repo`*, `required_workflow_id_for_repo`* | workflow-usage | yes | Get required workflow usage |
+| GET | `/repos/{owner}/{repo}` | repos/get | `owner`*, `repo`* | full-repository | yes | Get a repository |
+| DELETE | `/repos/{owner}/{repo}` | repos/delete | `owner`*, `repo`* | — |  | Delete a repository |
+| PATCH | `/repos/{owner}/{repo}` | repos/update | `owner`*, `repo`*, body: object | full-repository |  | Update a repository |
+| GET | `/repos/{owner}/{repo}/actions/artifacts` | actions/list-artifacts-for-repo | `owner`*, `repo`*, `per_page`, `page`, `name` | object | yes | List artifacts for a repository |
+| GET | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}` | actions/get-artifact | `owner`*, `repo`*, `artifact_id`* | artifact | yes | Get an artifact |
+| DELETE | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}` | actions/delete-artifact | `owner`*, `repo`*, `artifact_id`* | — |  | Delete an artifact |
+| GET | `/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}` | actions/download-artifact | `owner`*, `repo`*, `artifact_id`*, `archive_format`* | — | yes | Download an artifact |
+| GET | `/repos/{owner}/{repo}/actions/cache/usage` | actions/get-actions-cache-usage | `owner`*, `repo`* | actions-cache-usage-by-repository | yes | Get GitHub Actions cache usage for a repository |
+| GET | `/repos/{owner}/{repo}/actions/caches` | actions/get-actions-cache-list | `owner`*, `repo`*, `per_page`, `page`, `ref`, `key`, `sort`, `direction` | actions-cache-list | yes | List GitHub Actions caches for a repository |
+| DELETE | `/repos/{owner}/{repo}/actions/caches` | actions/delete-actions-cache-by-key | `owner`*, `repo`*, `key`*, `ref` | actions-cache-list |  | Delete GitHub Actions caches for a repository (using a cache key) |
+| DELETE | `/repos/{owner}/{repo}/actions/caches/{cache_id}` | actions/delete-actions-cache-by-id | `owner`*, `repo`*, `cache_id`* | — |  | Delete a GitHub Actions cache for a repository (using a cache ID) |
+| GET | `/repos/{owner}/{repo}/actions/jobs/{job_id}` | actions/get-job-for-workflow-run | `owner`*, `repo`*, `job_id`* | job | yes | Get a job for a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/jobs/{job_id}/logs` | actions/download-job-logs-for-workflow-run | `owner`*, `repo`*, `job_id`* | — | yes | Download job logs for a workflow run |
+| POST | `/repos/{owner}/{repo}/actions/jobs/{job_id}/rerun` | actions/re-run-job-for-workflow-run | `owner`*, `repo`*, `job_id`*, body: object | empty-object |  | Re-run a job from a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/oidc/customization/sub` | actions/get-custom-oidc-sub-claim-for-repo | `owner`*, `repo`* | oidc-custom-sub-repo | yes | Get the customization template for an OIDC subject claim for a repository |
+| PUT | `/repos/{owner}/{repo}/actions/oidc/customization/sub` | actions/set-custom-oidc-sub-claim-for-repo | `owner`*, `repo`*, body*: object | empty-object |  | Set the customization template for an OIDC subject claim for a repository |
+| GET | `/repos/{owner}/{repo}/actions/permissions` | actions/get-github-actions-permissions-repository | `owner`*, `repo`* | actions-repository-permissions | yes | Get GitHub Actions permissions for a repository |
+| PUT | `/repos/{owner}/{repo}/actions/permissions` | actions/set-github-actions-permissions-repository | `owner`*, `repo`*, body*: object | — |  | Set GitHub Actions permissions for a repository |
+| GET | `/repos/{owner}/{repo}/actions/permissions/access` | actions/get-workflow-access-to-repository | `owner`*, `repo`* | actions-workflow-access-to-repository | yes | Get the level of access for workflows outside of the repository |
+| PUT | `/repos/{owner}/{repo}/actions/permissions/access` | actions/set-workflow-access-to-repository | `owner`*, `repo`*, body*: actions-workflow-access-to-repository | — |  | Set the level of access for workflows outside of the repository |
+| GET | `/repos/{owner}/{repo}/actions/permissions/selected-actions` | actions/get-allowed-actions-repository | `owner`*, `repo`* | selected-actions | yes | Get allowed actions and reusable workflows for a repository |
+| PUT | `/repos/{owner}/{repo}/actions/permissions/selected-actions` | actions/set-allowed-actions-repository | `owner`*, `repo`*, body: selected-actions | — |  | Set allowed actions and reusable workflows for a repository |
+| GET | `/repos/{owner}/{repo}/actions/permissions/workflow` | actions/get-github-actions-default-workflow-permissions-repository | `owner`*, `repo`* | actions-get-default-workflow-permissions | yes | Get default workflow permissions for a repository |
+| PUT | `/repos/{owner}/{repo}/actions/permissions/workflow` | actions/set-github-actions-default-workflow-permissions-repository | `owner`*, `repo`*, body*: actions-set-default-workflow-permissions | — |  | Set default workflow permissions for a repository |
+| GET | `/repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs` | actions/list-required-workflow-runs | `owner`*, `repo`*, `required_workflow_id_for_repo`*, `actor`, `branch`, `event`, `status`, `per_page`, `page`, `created`, `exclude_pull_requests`, `check_suite_id`, `head_sha` | object | yes | List workflow runs for a required workflow |
+| GET | `/repos/{owner}/{repo}/actions/runners` | actions/list-self-hosted-runners-for-repo | `owner`*, `repo`*, `per_page`, `page` | object | yes | List self-hosted runners for a repository |
+| GET | `/repos/{owner}/{repo}/actions/runners/downloads` | actions/list-runner-applications-for-repo | `owner`*, `repo`* | runner-application[] | yes | List runner applications for a repository |
+| POST | `/repos/{owner}/{repo}/actions/runners/registration-token` | actions/create-registration-token-for-repo | `owner`*, `repo`* | authentication-token |  | Create a registration token for a repository |
+| POST | `/repos/{owner}/{repo}/actions/runners/remove-token` | actions/create-remove-token-for-repo | `owner`*, `repo`* | authentication-token |  | Create a remove token for a repository |
+| GET | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | actions/get-self-hosted-runner-for-repo | `owner`*, `repo`*, `runner_id`* | runner | yes | Get a self-hosted runner for a repository |
+| DELETE | `/repos/{owner}/{repo}/actions/runners/{runner_id}` | actions/delete-self-hosted-runner-from-repo | `owner`*, `repo`*, `runner_id`* | — |  | Delete a self-hosted runner from a repository |
+| GET | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels` | actions/list-labels-for-self-hosted-runner-for-repo | `owner`*, `repo`*, `runner_id`* | object | yes | List labels for a self-hosted runner for a repository |
+| PUT | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels` | actions/set-custom-labels-for-self-hosted-runner-for-repo | `owner`*, `repo`*, `runner_id`*, body*: object | object |  | Set custom labels for a self-hosted runner for a repository |
+| POST | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels` | actions/add-custom-labels-to-self-hosted-runner-for-repo | `owner`*, `repo`*, `runner_id`*, body*: object | object |  | Add custom labels to a self-hosted runner for a repository |
+| DELETE | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels` | actions/remove-all-custom-labels-from-self-hosted-runner-for-repo | `owner`*, `repo`*, `runner_id`* | object |  | Remove all custom labels from a self-hosted runner for a repository |
+| DELETE | `/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}` | actions/remove-custom-label-from-self-hosted-runner-for-repo | `owner`*, `repo`*, `runner_id`*, `name`* | object |  | Remove a custom label from a self-hosted runner for a repository |
+| GET | `/repos/{owner}/{repo}/actions/runs` | actions/list-workflow-runs-for-repo | `owner`*, `repo`*, `actor`, `branch`, `event`, `status`, `per_page`, `page`, `created`, `exclude_pull_requests`, `check_suite_id`, `head_sha` | object | yes | List workflow runs for a repository |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}` | actions/get-workflow-run | `owner`*, `repo`*, `run_id`*, `exclude_pull_requests` | workflow-run | yes | Get a workflow run |
+| DELETE | `/repos/{owner}/{repo}/actions/runs/{run_id}` | actions/delete-workflow-run | `owner`*, `repo`*, `run_id`* | — |  | Delete a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/approvals` | actions/get-reviews-for-run | `owner`*, `repo`*, `run_id`* | environment-approvals[] | yes | Get the review history for a workflow run |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/approve` | actions/approve-workflow-run | `owner`*, `repo`*, `run_id`* | empty-object |  | Approve a workflow run for a fork pull request |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts` | actions/list-workflow-run-artifacts | `owner`*, `repo`*, `run_id`*, `per_page`, `page` | object | yes | List workflow run artifacts |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}` | actions/get-workflow-run-attempt | `owner`*, `repo`*, `run_id`*, `attempt_number`*, `exclude_pull_requests` | workflow-run | yes | Get a workflow run attempt |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs` | actions/list-jobs-for-workflow-run-attempt | `owner`*, `repo`*, `run_id`*, `attempt_number`*, `per_page`, `page` | object | yes | List jobs for a workflow run attempt |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs` | actions/download-workflow-run-attempt-logs | `owner`*, `repo`*, `run_id`*, `attempt_number`* | — | yes | Download workflow run attempt logs |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/cancel` | actions/cancel-workflow-run | `owner`*, `repo`*, `run_id`* | empty-object |  | Cancel a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/jobs` | actions/list-jobs-for-workflow-run | `owner`*, `repo`*, `run_id`*, `filter`, `per_page`, `page` | object | yes | List jobs for a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/logs` | actions/download-workflow-run-logs | `owner`*, `repo`*, `run_id`* | — | yes | Download workflow run logs |
+| DELETE | `/repos/{owner}/{repo}/actions/runs/{run_id}/logs` | actions/delete-workflow-run-logs | `owner`*, `repo`*, `run_id`* | — |  | Delete workflow run logs |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments` | actions/get-pending-deployments-for-run | `owner`*, `repo`*, `run_id`* | pending-deployment[] | yes | Get pending deployments for a workflow run |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments` | actions/review-pending-deployments-for-run | `owner`*, `repo`*, `run_id`*, body*: object | deployment[] |  | Review pending deployments for a workflow run |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/rerun` | actions/re-run-workflow | `owner`*, `repo`*, `run_id`*, body: object | empty-object |  | Re-run a workflow |
+| POST | `/repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs` | actions/re-run-workflow-failed-jobs | `owner`*, `repo`*, `run_id`*, body: object | empty-object |  | Re-run failed jobs from a workflow run |
+| GET | `/repos/{owner}/{repo}/actions/runs/{run_id}/timing` | actions/get-workflow-run-usage | `owner`*, `repo`*, `run_id`* | workflow-run-usage | yes | Get workflow run usage |
+| GET | `/repos/{owner}/{repo}/actions/secrets` | actions/list-repo-secrets | `owner`*, `repo`*, `per_page`, `page` | object | yes | List repository secrets |
+| GET | `/repos/{owner}/{repo}/actions/secrets/public-key` | actions/get-repo-public-key | `owner`*, `repo`* | actions-public-key | yes | Get a repository public key |
+| GET | `/repos/{owner}/{repo}/actions/secrets/{secret_name}` | actions/get-repo-secret | `owner`*, `repo`*, `secret_name`* | actions-secret | yes | Get a repository secret |
+| PUT | `/repos/{owner}/{repo}/actions/secrets/{secret_name}` | actions/create-or-update-repo-secret | `owner`*, `repo`*, `secret_name`*, body*: object | empty-object |  | Create or update a repository secret |
+| DELETE | `/repos/{owner}/{repo}/actions/secrets/{secret_name}` | actions/delete-repo-secret | `owner`*, `repo`*, `secret_name`* | — |  | Delete a repository secret |
+| GET | `/repos/{owner}/{repo}/actions/variables` | actions/list-repo-variables | `owner`*, `repo`*, `per_page`, `page` | object | yes | List repository variables |
+| POST | `/repos/{owner}/{repo}/actions/variables` | actions/create-repo-variable | `owner`*, `repo`*, body*: object | empty-object |  | Create a repository variable |
+| GET | `/repos/{owner}/{repo}/actions/variables/{name}` | actions/get-repo-variable | `owner`*, `repo`*, `name`* | actions-variable | yes | Get a repository variable |
+| DELETE | `/repos/{owner}/{repo}/actions/variables/{name}` | actions/delete-repo-variable | `owner`*, `repo`*, `name`* | — |  | Delete a repository variable |
+| PATCH | `/repos/{owner}/{repo}/actions/variables/{name}` | actions/update-repo-variable | `owner`*, `repo`*, `name`*, body*: object | — |  | Update a repository variable |
+| GET | `/repos/{owner}/{repo}/actions/workflows` | actions/list-repo-workflows | `owner`*, `repo`*, `per_page`, `page` | object | yes | List repository workflows |
+| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}` | actions/get-workflow | `owner`*, `repo`*, `workflow_id`* | workflow | yes | Get a workflow |
+| PUT | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable` | actions/disable-workflow | `owner`*, `repo`*, `workflow_id`* | — |  | Disable a workflow |
+| POST | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches` | actions/create-workflow-dispatch | `owner`*, `repo`*, `workflow_id`*, body*: object | — |  | Create a workflow dispatch event |
+| PUT | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable` | actions/enable-workflow | `owner`*, `repo`*, `workflow_id`* | — |  | Enable a workflow |
+| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs` | actions/list-workflow-runs | `owner`*, `repo`*, `workflow_id`*, `actor`, `branch`, `event`, `status`, `per_page`, `page`, `created`, `exclude_pull_requests`, `check_suite_id`, `head_sha` | object | yes | List workflow runs for a workflow |
+| GET | `/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing` | actions/get-workflow-usage | `owner`*, `repo`*, `workflow_id`* | workflow-usage | yes | Get workflow usage |
+| GET | `/repos/{owner}/{repo}/assignees` | issues/list-assignees | `owner`*, `repo`*, `per_page`, `page` | simple-user[] | yes | List assignees |
+| GET | `/repos/{owner}/{repo}/assignees/{assignee}` | issues/check-user-can-be-assigned | `owner`*, `repo`*, `assignee`* | — | yes | Check if a user can be assigned |
+| GET | `/repos/{owner}/{repo}/autolinks` | repos/list-autolinks | `owner`*, `repo`*, `page` | autolink[] | yes | List all autolinks of a repository |
+| POST | `/repos/{owner}/{repo}/autolinks` | repos/create-autolink | `owner`*, `repo`*, body*: object | autolink |  | Create an autolink reference for a repository |
+| GET | `/repos/{owner}/{repo}/autolinks/{autolink_id}` | repos/get-autolink | `owner`*, `repo`*, `autolink_id`* | autolink | yes | Get an autolink reference of a repository |
+| DELETE | `/repos/{owner}/{repo}/autolinks/{autolink_id}` | repos/delete-autolink | `owner`*, `repo`*, `autolink_id`* | — |  | Delete an autolink reference from a repository |
+| PUT | `/repos/{owner}/{repo}/automated-security-fixes` | repos/enable-automated-security-fixes | `owner`*, `repo`* | — |  | Enable automated security fixes |
+| DELETE | `/repos/{owner}/{repo}/automated-security-fixes` | repos/disable-automated-security-fixes | `owner`*, `repo`* | — |  | Disable automated security fixes |
+| GET | `/repos/{owner}/{repo}/branches` | repos/list-branches | `owner`*, `repo`*, `protected`, `per_page`, `page` | short-branch[] | yes | List branches |
+| GET | `/repos/{owner}/{repo}/branches/{branch}` | repos/get-branch | `owner`*, `repo`*, `branch`* | branch-with-protection | yes | Get a branch |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection` | repos/get-branch-protection | `owner`*, `repo`*, `branch`* | branch-protection | yes | Get branch protection |
+| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection` | repos/update-branch-protection | `owner`*, `repo`*, `branch`*, body*: object | protected-branch |  | Update branch protection |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection` | repos/delete-branch-protection | `owner`*, `repo`*, `branch`* | — |  | Delete branch protection |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins` | repos/get-admin-branch-protection | `owner`*, `repo`*, `branch`* | protected-branch-admin-enforced | yes | Get admin branch protection |
+| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins` | repos/set-admin-branch-protection | `owner`*, `repo`*, `branch`* | protected-branch-admin-enforced |  | Set admin branch protection |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins` | repos/delete-admin-branch-protection | `owner`*, `repo`*, `branch`* | — |  | Delete admin branch protection |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews` | repos/get-pull-request-review-protection | `owner`*, `repo`*, `branch`* | protected-branch-pull-request-review | yes | Get pull request review protection |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews` | repos/delete-pull-request-review-protection | `owner`*, `repo`*, `branch`* | — |  | Delete pull request review protection |
+| PATCH | `/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews` | repos/update-pull-request-review-protection | `owner`*, `repo`*, `branch`*, body: object | protected-branch-pull-request-review |  | Update pull request review protection |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures` | repos/get-commit-signature-protection | `owner`*, `repo`*, `branch`* | protected-branch-admin-enforced | yes | Get commit signature protection |
+| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures` | repos/create-commit-signature-protection | `owner`*, `repo`*, `branch`* | protected-branch-admin-enforced |  | Create commit signature protection |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures` | repos/delete-commit-signature-protection | `owner`*, `repo`*, `branch`* | — |  | Delete commit signature protection |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks` | repos/get-status-checks-protection | `owner`*, `repo`*, `branch`* | status-check-policy | yes | Get status checks protection |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks` | repos/remove-status-check-protection | `owner`*, `repo`*, `branch`* | — |  | Remove status check protection |
+| PATCH | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks` | repos/update-status-check-protection | `owner`*, `repo`*, `branch`*, body: object | status-check-policy |  | Update status check protection |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts` | repos/get-all-status-check-contexts | `owner`*, `repo`*, `branch`* | string[] | yes | Get all status check contexts |
+| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts` | repos/set-status-check-contexts | `owner`*, `repo`*, `branch`*, body: object\|string[] | string[] |  | Set status check contexts |
+| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts` | repos/add-status-check-contexts | `owner`*, `repo`*, `branch`*, body: object\|string[] | string[] |  | Add status check contexts |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts` | repos/remove-status-check-contexts | `owner`*, `repo`*, `branch`*, body: object\|string[] | string[] |  | Remove status check contexts |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions` | repos/get-access-restrictions | `owner`*, `repo`*, `branch`* | branch-restriction-policy | yes | Get access restrictions |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions` | repos/delete-access-restrictions | `owner`*, `repo`*, `branch`* | — |  | Delete access restrictions |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps` | repos/get-apps-with-access-to-protected-branch | `owner`*, `repo`*, `branch`* | integration[] | yes | Get apps with access to the protected branch |
+| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps` | repos/set-app-access-restrictions | `owner`*, `repo`*, `branch`*, body: object\|string[] | integration[] |  | Set app access restrictions |
+| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps` | repos/add-app-access-restrictions | `owner`*, `repo`*, `branch`*, body: object\|string[] | integration[] |  | Add app access restrictions |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps` | repos/remove-app-access-restrictions | `owner`*, `repo`*, `branch`*, body: object\|string[] | integration[] |  | Remove app access restrictions |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams` | repos/get-teams-with-access-to-protected-branch | `owner`*, `repo`*, `branch`* | team[] | yes | Get teams with access to the protected branch |
+| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams` | repos/set-team-access-restrictions | `owner`*, `repo`*, `branch`*, body: object\|string[] | team[] |  | Set team access restrictions |
+| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams` | repos/add-team-access-restrictions | `owner`*, `repo`*, `branch`*, body: object\|string[] | team[] |  | Add team access restrictions |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams` | repos/remove-team-access-restrictions | `owner`*, `repo`*, `branch`*, body: object\|string[] | team[] |  | Remove team access restrictions |
+| GET | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users` | repos/get-users-with-access-to-protected-branch | `owner`*, `repo`*, `branch`* | simple-user[] | yes | Get users with access to the protected branch |
+| PUT | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users` | repos/set-user-access-restrictions | `owner`*, `repo`*, `branch`*, body: object\|string[] | simple-user[] |  | Set user access restrictions |
+| POST | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users` | repos/add-user-access-restrictions | `owner`*, `repo`*, `branch`*, body: object\|string[] | simple-user[] |  | Add user access restrictions |
+| DELETE | `/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users` | repos/remove-user-access-restrictions | `owner`*, `repo`*, `branch`*, body: object\|string[] | simple-user[] |  | Remove user access restrictions |
+| POST | `/repos/{owner}/{repo}/branches/{branch}/rename` | repos/rename-branch | `owner`*, `repo`*, `branch`*, body*: object | branch-with-protection |  | Rename a branch |
+| POST | `/repos/{owner}/{repo}/check-runs` | checks/create | `owner`*, `repo`*, body*: object | check-run |  | Create a check run |
+| GET | `/repos/{owner}/{repo}/check-runs/{check_run_id}` | checks/get | `owner`*, `repo`*, `check_run_id`* | check-run | yes | Get a check run |
+| PATCH | `/repos/{owner}/{repo}/check-runs/{check_run_id}` | checks/update | `owner`*, `repo`*, `check_run_id`*, body*: object | check-run |  | Update a check run |
+| GET | `/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations` | checks/list-annotations | `owner`*, `repo`*, `check_run_id`*, `per_page`, `page` | check-annotation[] | yes | List check run annotations |
+| POST | `/repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest` | checks/rerequest-run | `owner`*, `repo`*, `check_run_id`* | empty-object |  | Rerequest a check run |
+| POST | `/repos/{owner}/{repo}/check-suites` | checks/create-suite | `owner`*, `repo`*, body*: object | check-suite |  | Create a check suite |
+| PATCH | `/repos/{owner}/{repo}/check-suites/preferences` | checks/set-suites-preferences | `owner`*, `repo`*, body*: object | check-suite-preference |  | Update repository preferences for check suites |
+| GET | `/repos/{owner}/{repo}/check-suites/{check_suite_id}` | checks/get-suite | `owner`*, `repo`*, `check_suite_id`* | check-suite | yes | Get a check suite |
+| GET | `/repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs` | checks/list-for-suite | `owner`*, `repo`*, `check_suite_id`*, `check_name`, `status`, `filter`, `per_page`, `page` | object | yes | List check runs in a check suite |
+| POST | `/repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest` | checks/rerequest-suite | `owner`*, `repo`*, `check_suite_id`* | empty-object |  | Rerequest a check suite |
+| GET | `/repos/{owner}/{repo}/code-scanning/alerts` | code-scanning/list-alerts-for-repo | `owner`*, `repo`*, `tool_name`, `tool_guid`, `page`, `per_page`, `ref`, `direction`, `sort`, `state`, `severity` | code-scanning-alert-items[] | yes | List code scanning alerts for a repository |
+| GET | `/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}` | code-scanning/get-alert | `owner`*, `repo`*, `alert_number`* | code-scanning-alert | yes | Get a code scanning alert |
+| PATCH | `/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}` | code-scanning/update-alert | `owner`*, `repo`*, `alert_number`*, body*: object | code-scanning-alert |  | Update a code scanning alert |
+| GET | `/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances` | code-scanning/list-alert-instances | `owner`*, `repo`*, `alert_number`*, `page`, `per_page`, `ref` | code-scanning-alert-instance[] | yes | List instances of a code scanning alert |
+| GET | `/repos/{owner}/{repo}/code-scanning/analyses` | code-scanning/list-recent-analyses | `owner`*, `repo`*, `tool_name`, `tool_guid`, `page`, `per_page`, `ref`, `sarif_id`, `direction`, `sort` | code-scanning-analysis[] | yes | List code scanning analyses for a repository |
+| GET | `/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}` | code-scanning/get-analysis | `owner`*, `repo`*, `analysis_id`* | code-scanning-analysis | yes | Get a code scanning analysis for a repository |
+| DELETE | `/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}` | code-scanning/delete-analysis | `owner`*, `repo`*, `analysis_id`*, `confirm_delete` | code-scanning-analysis-deletion |  | Delete a code scanning analysis from a repository |
+| GET | `/repos/{owner}/{repo}/code-scanning/codeql/databases` | code-scanning/list-codeql-databases | `owner`*, `repo`* | code-scanning-codeql-database[] | yes | List CodeQL databases for a repository |
+| GET | `/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}` | code-scanning/get-codeql-database | `owner`*, `repo`*, `language`* | code-scanning-codeql-database | yes | Get a CodeQL database for a repository |
+| POST | `/repos/{owner}/{repo}/code-scanning/sarifs` | code-scanning/upload-sarif | `owner`*, `repo`*, body*: object | code-scanning-sarifs-receipt |  | Upload an analysis as SARIF data |
+| GET | `/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}` | code-scanning/get-sarif | `owner`*, `repo`*, `sarif_id`* | code-scanning-sarifs-status | yes | Get information about a SARIF upload |
+| GET | `/repos/{owner}/{repo}/codeowners/errors` | repos/codeowners-errors | `owner`*, `repo`*, `ref` | codeowners-errors | yes | List CODEOWNERS errors |
+| GET | `/repos/{owner}/{repo}/codespaces` | codespaces/list-in-repository-for-authenticated-user | `per_page`, `page`, `owner`*, `repo`* | object | yes | List codespaces in a repository for the authenticated user |
+| POST | `/repos/{owner}/{repo}/codespaces` | codespaces/create-with-repo-for-authenticated-user | `owner`*, `repo`*, body*: object | codespace |  | Create a codespace in a repository |
+| GET | `/repos/{owner}/{repo}/codespaces/devcontainers` | codespaces/list-devcontainers-in-repository-for-authenticated-user | `per_page`, `page`, `owner`*, `repo`* | object | yes | List devcontainer configurations in a repository for the authenticated user |
+| GET | `/repos/{owner}/{repo}/codespaces/machines` | codespaces/repo-machines-for-authenticated-user | `owner`*, `repo`*, `location`, `client_ip` | object | yes | List available machine types for a repository |
+| GET | `/repos/{owner}/{repo}/codespaces/new` | codespaces/pre-flight-with-repo-for-authenticated-user | `owner`*, `repo`*, `ref`, `client_ip` | object | yes | Get default attributes for a codespace |
+| GET | `/repos/{owner}/{repo}/codespaces/secrets` | codespaces/list-repo-secrets | `owner`*, `repo`*, `per_page`, `page` | object | yes | List repository secrets |
+| GET | `/repos/{owner}/{repo}/codespaces/secrets/public-key` | codespaces/get-repo-public-key | `owner`*, `repo`* | codespaces-public-key | yes | Get a repository public key |
+| GET | `/repos/{owner}/{repo}/codespaces/secrets/{secret_name}` | codespaces/get-repo-secret | `owner`*, `repo`*, `secret_name`* | repo-codespaces-secret | yes | Get a repository secret |
+| PUT | `/repos/{owner}/{repo}/codespaces/secrets/{secret_name}` | codespaces/create-or-update-repo-secret | `owner`*, `repo`*, `secret_name`*, body*: object | empty-object |  | Create or update a repository secret |
+| DELETE | `/repos/{owner}/{repo}/codespaces/secrets/{secret_name}` | codespaces/delete-repo-secret | `owner`*, `repo`*, `secret_name`* | — |  | Delete a repository secret |
+| GET | `/repos/{owner}/{repo}/collaborators` | repos/list-collaborators | `owner`*, `repo`*, `affiliation`, `permission`, `per_page`, `page` | collaborator[] | yes | List repository collaborators |
+| GET | `/repos/{owner}/{repo}/collaborators/{username}` | repos/check-collaborator | `owner`*, `repo`*, `username`* | — | yes | Check if a user is a repository collaborator |
+| PUT | `/repos/{owner}/{repo}/collaborators/{username}` | repos/add-collaborator | `owner`*, `repo`*, `username`*, body: object | repository-invitation |  | Add a repository collaborator |
+| DELETE | `/repos/{owner}/{repo}/collaborators/{username}` | repos/remove-collaborator | `owner`*, `repo`*, `username`* | — |  | Remove a repository collaborator |
+| GET | `/repos/{owner}/{repo}/collaborators/{username}/permission` | repos/get-collaborator-permission-level | `owner`*, `repo`*, `username`* | repository-collaborator-permission | yes | Get repository permissions for a user |
+| GET | `/repos/{owner}/{repo}/comments` | repos/list-commit-comments-for-repo | `owner`*, `repo`*, `per_page`, `page` | commit-comment[] | yes | List commit comments for a repository |
+| GET | `/repos/{owner}/{repo}/comments/{comment_id}` | repos/get-commit-comment | `owner`*, `repo`*, `comment_id`* | commit-comment | yes | Get a commit comment |
+| DELETE | `/repos/{owner}/{repo}/comments/{comment_id}` | repos/delete-commit-comment | `owner`*, `repo`*, `comment_id`* | — |  | Delete a commit comment |
+| PATCH | `/repos/{owner}/{repo}/comments/{comment_id}` | repos/update-commit-comment | `owner`*, `repo`*, `comment_id`*, body*: object | commit-comment |  | Update a commit comment |
+| GET | `/repos/{owner}/{repo}/comments/{comment_id}/reactions` | reactions/list-for-commit-comment | `owner`*, `repo`*, `comment_id`*, `content`, `per_page`, `page` | reaction[] | yes | List reactions for a commit comment |
+| POST | `/repos/{owner}/{repo}/comments/{comment_id}/reactions` | reactions/create-for-commit-comment | `owner`*, `repo`*, `comment_id`*, body*: object | reaction |  | Create reaction for a commit comment |
+| DELETE | `/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}` | reactions/delete-for-commit-comment | `owner`*, `repo`*, `comment_id`*, `reaction_id`* | — |  | Delete a commit comment reaction |
+| GET | `/repos/{owner}/{repo}/commits` | repos/list-commits | `owner`*, `repo`*, `sha`, `path`, `author`, `since`, `until`, `per_page`, `page` | commit[] | yes | List commits |
+| GET | `/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head` | repos/list-branches-for-head-commit | `owner`*, `repo`*, `commit_sha`* | branch-short[] | yes | List branches for HEAD commit |
+| GET | `/repos/{owner}/{repo}/commits/{commit_sha}/comments` | repos/list-comments-for-commit | `owner`*, `repo`*, `commit_sha`*, `per_page`, `page` | commit-comment[] | yes | List commit comments |
+| POST | `/repos/{owner}/{repo}/commits/{commit_sha}/comments` | repos/create-commit-comment | `owner`*, `repo`*, `commit_sha`*, body*: object | commit-comment |  | Create a commit comment |
+| GET | `/repos/{owner}/{repo}/commits/{commit_sha}/pulls` | repos/list-pull-requests-associated-with-commit | `owner`*, `repo`*, `commit_sha`*, `per_page`, `page` | pull-request-simple[] | yes | List pull requests associated with a commit |
+| GET | `/repos/{owner}/{repo}/commits/{ref}` | repos/get-commit | `owner`*, `repo`*, `page`, `per_page`, `ref`* | commit | yes | Get a commit |
+| GET | `/repos/{owner}/{repo}/commits/{ref}/check-runs` | checks/list-for-ref | `owner`*, `repo`*, `ref`*, `check_name`, `status`, `filter`, `per_page`, `page`, `app_id` | object | yes | List check runs for a Git reference |
+| GET | `/repos/{owner}/{repo}/commits/{ref}/check-suites` | checks/list-suites-for-ref | `owner`*, `repo`*, `ref`*, `app_id`, `check_name`, `per_page`, `page` | object | yes | List check suites for a Git reference |
+| GET | `/repos/{owner}/{repo}/commits/{ref}/status` | repos/get-combined-status-for-ref | `owner`*, `repo`*, `ref`*, `per_page`, `page` | combined-commit-status | yes | Get the combined status for a specific reference |
+| GET | `/repos/{owner}/{repo}/commits/{ref}/statuses` | repos/list-commit-statuses-for-ref | `owner`*, `repo`*, `ref`*, `per_page`, `page` | status[] | yes | List commit statuses for a reference |
+| GET | `/repos/{owner}/{repo}/community/profile` | repos/get-community-profile-metrics | `owner`*, `repo`* | community-profile | yes | Get community profile metrics |
+| GET | `/repos/{owner}/{repo}/compare/{basehead}` | repos/compare-commits | `owner`*, `repo`*, `page`, `per_page`, `basehead`* | commit-comparison | yes | Compare two commits |
+| GET | `/repos/{owner}/{repo}/contents/{path}` | repos/get-content | `owner`*, `repo`*, `path`*, `ref` | content-directory\|content-file\|content-symlink\|content-submodule | yes | Get repository content |
+| PUT | `/repos/{owner}/{repo}/contents/{path}` | repos/create-or-update-file-contents | `owner`*, `repo`*, `path`*, body*: object | file-commit |  | Create or update file contents |
+| DELETE | `/repos/{owner}/{repo}/contents/{path}` | repos/delete-file | `owner`*, `repo`*, `path`*, body*: object | file-commit |  | Delete a file |
+| GET | `/repos/{owner}/{repo}/contributors` | repos/list-contributors | `owner`*, `repo`*, `anon`, `per_page`, `page` | contributor[] | yes | List repository contributors |
+| GET | `/repos/{owner}/{repo}/dependabot/alerts` | dependabot/list-alerts-for-repo | `owner`*, `repo`*, `state`, `severity`, `ecosystem`, `package`, `manifest`, `scope`, `sort`, `direction`, `page`, `per_page`, `before`, `after`, `first`, `last` | dependabot-alert[] | yes | List Dependabot alerts for a repository |
+| GET | `/repos/{owner}/{repo}/dependabot/alerts/{alert_number}` | dependabot/get-alert | `owner`*, `repo`*, `alert_number`* | dependabot-alert | yes | Get a Dependabot alert |
+| PATCH | `/repos/{owner}/{repo}/dependabot/alerts/{alert_number}` | dependabot/update-alert | `owner`*, `repo`*, `alert_number`*, body*: object | dependabot-alert |  | Update a Dependabot alert |
+| GET | `/repos/{owner}/{repo}/dependabot/secrets` | dependabot/list-repo-secrets | `owner`*, `repo`*, `per_page`, `page` | object | yes | List repository secrets |
+| GET | `/repos/{owner}/{repo}/dependabot/secrets/public-key` | dependabot/get-repo-public-key | `owner`*, `repo`* | dependabot-public-key | yes | Get a repository public key |
+| GET | `/repos/{owner}/{repo}/dependabot/secrets/{secret_name}` | dependabot/get-repo-secret | `owner`*, `repo`*, `secret_name`* | dependabot-secret | yes | Get a repository secret |
+| PUT | `/repos/{owner}/{repo}/dependabot/secrets/{secret_name}` | dependabot/create-or-update-repo-secret | `owner`*, `repo`*, `secret_name`*, body*: object | empty-object |  | Create or update a repository secret |
+| DELETE | `/repos/{owner}/{repo}/dependabot/secrets/{secret_name}` | dependabot/delete-repo-secret | `owner`*, `repo`*, `secret_name`* | — |  | Delete a repository secret |
+| GET | `/repos/{owner}/{repo}/dependency-graph/compare/{basehead}` | dependency-graph/diff-range | `owner`*, `repo`*, `basehead`*, `name` | dependency-graph-diff | yes | Get a diff of the dependencies between commits |
+| POST | `/repos/{owner}/{repo}/dependency-graph/snapshots` | dependency-graph/create-repository-snapshot | `owner`*, `repo`*, body*: snapshot | object |  | Create a snapshot of dependencies for a repository |
+| GET | `/repos/{owner}/{repo}/deployments` | repos/list-deployments | `owner`*, `repo`*, `sha`, `ref`, `task`, `environment`, `per_page`, `page` | deployment[] | yes | List deployments |
+| POST | `/repos/{owner}/{repo}/deployments` | repos/create-deployment | `owner`*, `repo`*, body*: object | deployment, object |  | Create a deployment |
+| GET | `/repos/{owner}/{repo}/deployments/{deployment_id}` | repos/get-deployment | `owner`*, `repo`*, `deployment_id`* | deployment | yes | Get a deployment |
+| DELETE | `/repos/{owner}/{repo}/deployments/{deployment_id}` | repos/delete-deployment | `owner`*, `repo`*, `deployment_id`* | — |  | Delete a deployment |
+| GET | `/repos/{owner}/{repo}/deployments/{deployment_id}/statuses` | repos/list-deployment-statuses | `owner`*, `repo`*, `deployment_id`*, `per_page`, `page` | deployment-status[] | yes | List deployment statuses |
+| POST | `/repos/{owner}/{repo}/deployments/{deployment_id}/statuses` | repos/create-deployment-status | `owner`*, `repo`*, `deployment_id`*, body*: object | deployment-status |  | Create a deployment status |
+| GET | `/repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}` | repos/get-deployment-status | `owner`*, `repo`*, `deployment_id`*, `status_id`* | deployment-status | yes | Get a deployment status |
+| POST | `/repos/{owner}/{repo}/dispatches` | repos/create-dispatch-event | `owner`*, `repo`*, body*: object | — |  | Create a repository dispatch event |
+| GET | `/repos/{owner}/{repo}/environments` | repos/get-all-environments | `owner`*, `repo`*, `per_page`, `page` | object | yes | List environments |
+| GET | `/repos/{owner}/{repo}/environments/{environment_name}` | repos/get-environment | `owner`*, `repo`*, `environment_name`* | environment | yes | Get an environment |
+| PUT | `/repos/{owner}/{repo}/environments/{environment_name}` | repos/create-or-update-environment | `owner`*, `repo`*, `environment_name`*, body: object | environment |  | Create or update an environment |
+| DELETE | `/repos/{owner}/{repo}/environments/{environment_name}` | repos/delete-an-environment | `owner`*, `repo`*, `environment_name`* | — |  | Delete an environment |
+| GET | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies` | repos/list-deployment-branch-policies | `owner`*, `repo`*, `environment_name`*, `per_page`, `page` | object | yes | List deployment branch policies |
+| POST | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies` | repos/create-deployment-branch-policy | `owner`*, `repo`*, `environment_name`*, body*: deployment-branch-policy-name-pattern | deployment-branch-policy |  | Create a deployment branch policy |
+| GET | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}` | repos/get-deployment-branch-policy | `owner`*, `repo`*, `environment_name`*, `branch_policy_id`* | deployment-branch-policy | yes | Get a deployment branch policy |
+| PUT | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}` | repos/update-deployment-branch-policy | `owner`*, `repo`*, `environment_name`*, `branch_policy_id`*, body*: deployment-branch-policy-name-pattern | deployment-branch-policy |  | Update a deployment branch policy |
+| DELETE | `/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}` | repos/delete-deployment-branch-policy | `owner`*, `repo`*, `environment_name`*, `branch_policy_id`* | — |  | Delete a deployment branch policy |
+| GET | `/repos/{owner}/{repo}/events` | activity/list-repo-events | `owner`*, `repo`*, `per_page`, `page` | event[] | yes | List repository events |
+| GET | `/repos/{owner}/{repo}/forks` | repos/list-forks | `owner`*, `repo`*, `sort`, `per_page`, `page` | minimal-repository[] | yes | List forks |
+| POST | `/repos/{owner}/{repo}/forks` | repos/create-fork | `owner`*, `repo`*, body: object | full-repository |  | Create a fork |
+| POST | `/repos/{owner}/{repo}/git/blobs` | git/create-blob | `owner`*, `repo`*, body*: object | short-blob |  | Create a blob |
+| GET | `/repos/{owner}/{repo}/git/blobs/{file_sha}` | git/get-blob | `owner`*, `repo`*, `file_sha`* | blob | yes | Get a blob |
+| POST | `/repos/{owner}/{repo}/git/commits` | git/create-commit | `owner`*, `repo`*, body*: object | git-commit |  | Create a commit |
+| GET | `/repos/{owner}/{repo}/git/commits/{commit_sha}` | git/get-commit | `owner`*, `repo`*, `commit_sha`* | git-commit | yes | Get a commit |
+| GET | `/repos/{owner}/{repo}/git/matching-refs/{ref}` | git/list-matching-refs | `owner`*, `repo`*, `ref`* | git-ref[] | yes | List matching references |
+| GET | `/repos/{owner}/{repo}/git/ref/{ref}` | git/get-ref | `owner`*, `repo`*, `ref`* | git-ref | yes | Get a reference |
+| POST | `/repos/{owner}/{repo}/git/refs` | git/create-ref | `owner`*, `repo`*, body*: object | git-ref |  | Create a reference |
+| DELETE | `/repos/{owner}/{repo}/git/refs/{ref}` | git/delete-ref | `owner`*, `repo`*, `ref`* | — |  | Delete a reference |
+| PATCH | `/repos/{owner}/{repo}/git/refs/{ref}` | git/update-ref | `owner`*, `repo`*, `ref`*, body*: object | git-ref |  | Update a reference |
+| POST | `/repos/{owner}/{repo}/git/tags` | git/create-tag | `owner`*, `repo`*, body*: object | git-tag |  | Create a tag object |
+| GET | `/repos/{owner}/{repo}/git/tags/{tag_sha}` | git/get-tag | `owner`*, `repo`*, `tag_sha`* | git-tag | yes | Get a tag |
+| POST | `/repos/{owner}/{repo}/git/trees` | git/create-tree | `owner`*, `repo`*, body*: object | git-tree |  | Create a tree |
+| GET | `/repos/{owner}/{repo}/git/trees/{tree_sha}` | git/get-tree | `owner`*, `repo`*, `tree_sha`*, `recursive` | git-tree | yes | Get a tree |
+| GET | `/repos/{owner}/{repo}/hooks` | repos/list-webhooks | `owner`*, `repo`*, `per_page`, `page` | hook[] | yes | List repository webhooks |
+| POST | `/repos/{owner}/{repo}/hooks` | repos/create-webhook | `owner`*, `repo`*, body: object | hook |  | Create a repository webhook |
+| GET | `/repos/{owner}/{repo}/hooks/{hook_id}` | repos/get-webhook | `owner`*, `repo`*, `hook_id`* | hook | yes | Get a repository webhook |
+| DELETE | `/repos/{owner}/{repo}/hooks/{hook_id}` | repos/delete-webhook | `owner`*, `repo`*, `hook_id`* | — |  | Delete a repository webhook |
+| PATCH | `/repos/{owner}/{repo}/hooks/{hook_id}` | repos/update-webhook | `owner`*, `repo`*, `hook_id`*, body*: object | hook |  | Update a repository webhook |
+| GET | `/repos/{owner}/{repo}/hooks/{hook_id}/config` | repos/get-webhook-config-for-repo | `owner`*, `repo`*, `hook_id`* | webhook-config | yes | Get a webhook configuration for a repository |
+| PATCH | `/repos/{owner}/{repo}/hooks/{hook_id}/config` | repos/update-webhook-config-for-repo | `owner`*, `repo`*, `hook_id`*, body: object | webhook-config |  | Update a webhook configuration for a repository |
+| GET | `/repos/{owner}/{repo}/hooks/{hook_id}/deliveries` | repos/list-webhook-deliveries | `owner`*, `repo`*, `hook_id`*, `per_page`, `cursor`, `redelivery` | hook-delivery-item[] | yes | List deliveries for a repository webhook |
+| GET | `/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}` | repos/get-webhook-delivery | `owner`*, `repo`*, `hook_id`*, `delivery_id`* | hook-delivery | yes | Get a delivery for a repository webhook |
+| POST | `/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts` | repos/redeliver-webhook-delivery | `owner`*, `repo`*, `hook_id`*, `delivery_id`* | object |  | Redeliver a delivery for a repository webhook |
+| POST | `/repos/{owner}/{repo}/hooks/{hook_id}/pings` | repos/ping-webhook | `owner`*, `repo`*, `hook_id`* | — |  | Ping a repository webhook |
+| POST | `/repos/{owner}/{repo}/hooks/{hook_id}/tests` | repos/test-push-webhook | `owner`*, `repo`*, `hook_id`* | — |  | Test the push repository webhook |
+| GET | `/repos/{owner}/{repo}/import` | migrations/get-import-status | `owner`*, `repo`* | import | yes | Get an import status |
+| PUT | `/repos/{owner}/{repo}/import` | migrations/start-import | `owner`*, `repo`*, body*: object | import |  | Start an import |
+| DELETE | `/repos/{owner}/{repo}/import` | migrations/cancel-import | `owner`*, `repo`* | — |  | Cancel an import |
+| PATCH | `/repos/{owner}/{repo}/import` | migrations/update-import | `owner`*, `repo`*, body: object | import |  | Update an import |
+| GET | `/repos/{owner}/{repo}/import/authors` | migrations/get-commit-authors | `owner`*, `repo`*, `since` | porter-author[] | yes | Get commit authors |
+| PATCH | `/repos/{owner}/{repo}/import/authors/{author_id}` | migrations/map-commit-author | `owner`*, `repo`*, `author_id`*, body: object | porter-author |  | Map a commit author |
+| GET | `/repos/{owner}/{repo}/import/large_files` | migrations/get-large-files | `owner`*, `repo`* | porter-large-file[] | yes | Get large files |
+| PATCH | `/repos/{owner}/{repo}/import/lfs` | migrations/set-lfs-preference | `owner`*, `repo`*, body*: object | import |  | Update Git LFS preference |
+| GET | `/repos/{owner}/{repo}/installation` | apps/get-repo-installation | `owner`*, `repo`* | installation | yes | Get a repository installation for the authenticated app |
+| GET | `/repos/{owner}/{repo}/interaction-limits` | interactions/get-restrictions-for-repo | `owner`*, `repo`* | interaction-limit-response\|object | yes | Get interaction restrictions for a repository |
+| PUT | `/repos/{owner}/{repo}/interaction-limits` | interactions/set-restrictions-for-repo | `owner`*, `repo`*, body*: interaction-limit | interaction-limit-response |  | Set interaction restrictions for a repository |
+| DELETE | `/repos/{owner}/{repo}/interaction-limits` | interactions/remove-restrictions-for-repo | `owner`*, `repo`* | — |  | Remove interaction restrictions for a repository |
+| GET | `/repos/{owner}/{repo}/invitations` | repos/list-invitations | `owner`*, `repo`*, `per_page`, `page` | repository-invitation[] | yes | List repository invitations |
+| DELETE | `/repos/{owner}/{repo}/invitations/{invitation_id}` | repos/delete-invitation | `owner`*, `repo`*, `invitation_id`* | — |  | Delete a repository invitation |
+| PATCH | `/repos/{owner}/{repo}/invitations/{invitation_id}` | repos/update-invitation | `owner`*, `repo`*, `invitation_id`*, body: object | repository-invitation |  | Update a repository invitation |
+| GET | `/repos/{owner}/{repo}/issues` | issues/list-for-repo | `owner`*, `repo`*, `milestone`, `state`, `assignee`, `creator`, `mentioned`, `labels`, `sort`, `direction`, `since`, `per_page`, `page` | issue[] | yes | List repository issues |
+| POST | `/repos/{owner}/{repo}/issues` | issues/create | `owner`*, `repo`*, body*: object | issue |  | Create an issue |
+| GET | `/repos/{owner}/{repo}/issues/comments` | issues/list-comments-for-repo | `owner`*, `repo`*, `sort`, `direction`, `since`, `per_page`, `page` | issue-comment[] | yes | List issue comments for a repository |
+| GET | `/repos/{owner}/{repo}/issues/comments/{comment_id}` | issues/get-comment | `owner`*, `repo`*, `comment_id`* | issue-comment | yes | Get an issue comment |
+| DELETE | `/repos/{owner}/{repo}/issues/comments/{comment_id}` | issues/delete-comment | `owner`*, `repo`*, `comment_id`* | — |  | Delete an issue comment |
+| PATCH | `/repos/{owner}/{repo}/issues/comments/{comment_id}` | issues/update-comment | `owner`*, `repo`*, `comment_id`*, body*: object | issue-comment |  | Update an issue comment |
+| GET | `/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions` | reactions/list-for-issue-comment | `owner`*, `repo`*, `comment_id`*, `content`, `per_page`, `page` | reaction[] | yes | List reactions for an issue comment |
+| POST | `/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions` | reactions/create-for-issue-comment | `owner`*, `repo`*, `comment_id`*, body*: object | reaction |  | Create reaction for an issue comment |
+| DELETE | `/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}` | reactions/delete-for-issue-comment | `owner`*, `repo`*, `comment_id`*, `reaction_id`* | — |  | Delete an issue comment reaction |
+| GET | `/repos/{owner}/{repo}/issues/events` | issues/list-events-for-repo | `owner`*, `repo`*, `per_page`, `page` | issue-event[] | yes | List issue events for a repository |
+| GET | `/repos/{owner}/{repo}/issues/events/{event_id}` | issues/get-event | `owner`*, `repo`*, `event_id`* | issue-event | yes | Get an issue event |
+| GET | `/repos/{owner}/{repo}/issues/{issue_number}` | issues/get | `owner`*, `repo`*, `issue_number`* | issue | yes | Get an issue |
+| PATCH | `/repos/{owner}/{repo}/issues/{issue_number}` | issues/update | `owner`*, `repo`*, `issue_number`*, body: object | issue |  | Update an issue |
+| POST | `/repos/{owner}/{repo}/issues/{issue_number}/assignees` | issues/add-assignees | `owner`*, `repo`*, `issue_number`*, body: object | issue |  | Add assignees to an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/assignees` | issues/remove-assignees | `owner`*, `repo`*, `issue_number`*, body: object | issue |  | Remove assignees from an issue |
+| GET | `/repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}` | issues/check-user-can-be-assigned-to-issue | `owner`*, `repo`*, `issue_number`*, `assignee`* | — | yes | Check if a user can be assigned to a issue |
+| GET | `/repos/{owner}/{repo}/issues/{issue_number}/comments` | issues/list-comments | `owner`*, `repo`*, `issue_number`*, `since`, `per_page`, `page` | issue-comment[] | yes | List issue comments |
+| POST | `/repos/{owner}/{repo}/issues/{issue_number}/comments` | issues/create-comment | `owner`*, `repo`*, `issue_number`*, body*: object | issue-comment |  | Create an issue comment |
+| GET | `/repos/{owner}/{repo}/issues/{issue_number}/events` | issues/list-events | `owner`*, `repo`*, `issue_number`*, `per_page`, `page` | issue-event-for-issue[] | yes | List issue events |
+| GET | `/repos/{owner}/{repo}/issues/{issue_number}/labels` | issues/list-labels-on-issue | `owner`*, `repo`*, `issue_number`*, `per_page`, `page` | label[] | yes | List labels for an issue |
+| PUT | `/repos/{owner}/{repo}/issues/{issue_number}/labels` | issues/set-labels | `owner`*, `repo`*, `issue_number`*, body: object\|string[]\|object[]\|string | label[] |  | Set labels for an issue |
+| POST | `/repos/{owner}/{repo}/issues/{issue_number}/labels` | issues/add-labels | `owner`*, `repo`*, `issue_number`*, body: object\|string[]\|object[]\|string | label[] |  | Add labels to an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/labels` | issues/remove-all-labels | `owner`*, `repo`*, `issue_number`* | — |  | Remove all labels from an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}` | issues/remove-label | `owner`*, `repo`*, `issue_number`*, `name`* | label[] |  | Remove a label from an issue |
+| PUT | `/repos/{owner}/{repo}/issues/{issue_number}/lock` | issues/lock | `owner`*, `repo`*, `issue_number`*, body: object | — |  | Lock an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/lock` | issues/unlock | `owner`*, `repo`*, `issue_number`* | — |  | Unlock an issue |
+| GET | `/repos/{owner}/{repo}/issues/{issue_number}/reactions` | reactions/list-for-issue | `owner`*, `repo`*, `issue_number`*, `content`, `per_page`, `page` | reaction[] | yes | List reactions for an issue |
+| POST | `/repos/{owner}/{repo}/issues/{issue_number}/reactions` | reactions/create-for-issue | `owner`*, `repo`*, `issue_number`*, body*: object | reaction |  | Create reaction for an issue |
+| DELETE | `/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}` | reactions/delete-for-issue | `owner`*, `repo`*, `issue_number`*, `reaction_id`* | — |  | Delete an issue reaction |
+| GET | `/repos/{owner}/{repo}/issues/{issue_number}/timeline` | issues/list-events-for-timeline | `owner`*, `repo`*, `issue_number`*, `per_page`, `page` | timeline-issue-events[] | yes | List timeline events for an issue |
+| GET | `/repos/{owner}/{repo}/keys` | repos/list-deploy-keys | `owner`*, `repo`*, `per_page`, `page` | deploy-key[] | yes | List deploy keys |
+| POST | `/repos/{owner}/{repo}/keys` | repos/create-deploy-key | `owner`*, `repo`*, body*: object | deploy-key |  | Create a deploy key |
+| GET | `/repos/{owner}/{repo}/keys/{key_id}` | repos/get-deploy-key | `owner`*, `repo`*, `key_id`* | deploy-key | yes | Get a deploy key |
+| DELETE | `/repos/{owner}/{repo}/keys/{key_id}` | repos/delete-deploy-key | `owner`*, `repo`*, `key_id`* | — |  | Delete a deploy key |
+| GET | `/repos/{owner}/{repo}/labels` | issues/list-labels-for-repo | `owner`*, `repo`*, `per_page`, `page` | label[] | yes | List labels for a repository |
+| POST | `/repos/{owner}/{repo}/labels` | issues/create-label | `owner`*, `repo`*, body*: object | label |  | Create a label |
+| GET | `/repos/{owner}/{repo}/labels/{name}` | issues/get-label | `owner`*, `repo`*, `name`* | label | yes | Get a label |
+| DELETE | `/repos/{owner}/{repo}/labels/{name}` | issues/delete-label | `owner`*, `repo`*, `name`* | — |  | Delete a label |
+| PATCH | `/repos/{owner}/{repo}/labels/{name}` | issues/update-label | `owner`*, `repo`*, `name`*, body: object | label |  | Update a label |
+| GET | `/repos/{owner}/{repo}/languages` | repos/list-languages | `owner`*, `repo`* | language | yes | List repository languages |
+| PUT | `/repos/{owner}/{repo}/lfs` | repos/enable-lfs-for-repo | `owner`*, `repo`* | object |  | Enable Git LFS for a repository |
+| DELETE | `/repos/{owner}/{repo}/lfs` | repos/disable-lfs-for-repo | `owner`*, `repo`* | — |  | Disable Git LFS for a repository |
+| GET | `/repos/{owner}/{repo}/license` | licenses/get-for-repo | `owner`*, `repo`* | license-content | yes | Get the license for a repository |
+| POST | `/repos/{owner}/{repo}/merge-upstream` | repos/merge-upstream | `owner`*, `repo`*, body*: object | merged-upstream |  | Sync a fork branch with the upstream repository |
+| POST | `/repos/{owner}/{repo}/merges` | repos/merge | `owner`*, `repo`*, body*: object | commit |  | Merge a branch |
+| GET | `/repos/{owner}/{repo}/milestones` | issues/list-milestones | `owner`*, `repo`*, `state`, `sort`, `direction`, `per_page`, `page` | milestone[] | yes | List milestones |
+| POST | `/repos/{owner}/{repo}/milestones` | issues/create-milestone | `owner`*, `repo`*, body*: object | milestone |  | Create a milestone |
+| GET | `/repos/{owner}/{repo}/milestones/{milestone_number}` | issues/get-milestone | `owner`*, `repo`*, `milestone_number`* | milestone | yes | Get a milestone |
+| DELETE | `/repos/{owner}/{repo}/milestones/{milestone_number}` | issues/delete-milestone | `owner`*, `repo`*, `milestone_number`* | — |  | Delete a milestone |
+| PATCH | `/repos/{owner}/{repo}/milestones/{milestone_number}` | issues/update-milestone | `owner`*, `repo`*, `milestone_number`*, body: object | milestone |  | Update a milestone |
+| GET | `/repos/{owner}/{repo}/milestones/{milestone_number}/labels` | issues/list-labels-for-milestone | `owner`*, `repo`*, `milestone_number`*, `per_page`, `page` | label[] | yes | List labels for issues in a milestone |
+| GET | `/repos/{owner}/{repo}/notifications` | activity/list-repo-notifications-for-authenticated-user | `owner`*, `repo`*, `all`, `participating`, `since`, `before`, `per_page`, `page` | thread[] | yes | List repository notifications for the authenticated user |
+| PUT | `/repos/{owner}/{repo}/notifications` | activity/mark-repo-notifications-as-read | `owner`*, `repo`*, body: object | object |  | Mark repository notifications as read |
+| GET | `/repos/{owner}/{repo}/pages` | repos/get-pages | `owner`*, `repo`* | page | yes | Get a GitHub Pages site |
+| PUT | `/repos/{owner}/{repo}/pages` | repos/update-information-about-pages-site | `owner`*, `repo`*, body*: — | — |  | Update information about a GitHub Pages site |
+| POST | `/repos/{owner}/{repo}/pages` | repos/create-pages-site | `owner`*, `repo`*, body*: — | page |  | Create a GitHub Pages site |
+| DELETE | `/repos/{owner}/{repo}/pages` | repos/delete-pages-site | `owner`*, `repo`* | — |  | Delete a GitHub Pages site |
+| GET | `/repos/{owner}/{repo}/pages/builds` | repos/list-pages-builds | `owner`*, `repo`*, `per_page`, `page` | page-build[] | yes | List GitHub Pages builds |
+| POST | `/repos/{owner}/{repo}/pages/builds` | repos/request-pages-build | `owner`*, `repo`* | page-build-status |  | Request a GitHub Pages build |
+| GET | `/repos/{owner}/{repo}/pages/builds/latest` | repos/get-latest-pages-build | `owner`*, `repo`* | page-build | yes | Get latest Pages build |
+| GET | `/repos/{owner}/{repo}/pages/builds/{build_id}` | repos/get-pages-build | `owner`*, `repo`*, `build_id`* | page-build | yes | Get GitHub Pages build |
+| POST | `/repos/{owner}/{repo}/pages/deployment` | repos/create-pages-deployment | `owner`*, `repo`*, body*: object | page-deployment |  | Create a GitHub Pages deployment |
+| GET | `/repos/{owner}/{repo}/pages/health` | repos/get-pages-health-check | `owner`*, `repo`* | pages-health-check, empty-object | yes | Get a DNS health check for GitHub Pages |
+| GET | `/repos/{owner}/{repo}/projects` | projects/list-for-repo | `owner`*, `repo`*, `state`, `per_page`, `page` | project[] | yes | List repository projects |
+| POST | `/repos/{owner}/{repo}/projects` | projects/create-for-repo | `owner`*, `repo`*, body*: object | project |  | Create a repository project |
+| GET | `/repos/{owner}/{repo}/pulls` | pulls/list | `owner`*, `repo`*, `state`, `head`, `base`, `sort`, `direction`, `per_page`, `page` | pull-request-simple[] | yes | List pull requests |
+| POST | `/repos/{owner}/{repo}/pulls` | pulls/create | `owner`*, `repo`*, body*: object | pull-request |  | Create a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/comments` | pulls/list-review-comments-for-repo | `owner`*, `repo`*, `sort`, `direction`, `since`, `per_page`, `page` | pull-request-review-comment[] | yes | List review comments in a repository |
+| GET | `/repos/{owner}/{repo}/pulls/comments/{comment_id}` | pulls/get-review-comment | `owner`*, `repo`*, `comment_id`* | pull-request-review-comment | yes | Get a review comment for a pull request |
+| DELETE | `/repos/{owner}/{repo}/pulls/comments/{comment_id}` | pulls/delete-review-comment | `owner`*, `repo`*, `comment_id`* | — |  | Delete a review comment for a pull request |
+| PATCH | `/repos/{owner}/{repo}/pulls/comments/{comment_id}` | pulls/update-review-comment | `owner`*, `repo`*, `comment_id`*, body*: object | pull-request-review-comment |  | Update a review comment for a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions` | reactions/list-for-pull-request-review-comment | `owner`*, `repo`*, `comment_id`*, `content`, `per_page`, `page` | reaction[] | yes | List reactions for a pull request review comment |
+| POST | `/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions` | reactions/create-for-pull-request-review-comment | `owner`*, `repo`*, `comment_id`*, body*: object | reaction |  | Create reaction for a pull request review comment |
+| DELETE | `/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}` | reactions/delete-for-pull-request-comment | `owner`*, `repo`*, `comment_id`*, `reaction_id`* | — |  | Delete a pull request comment reaction |
+| GET | `/repos/{owner}/{repo}/pulls/{pull_number}` | pulls/get | `owner`*, `repo`*, `pull_number`* | pull-request | yes | Get a pull request |
+| PATCH | `/repos/{owner}/{repo}/pulls/{pull_number}` | pulls/update | `owner`*, `repo`*, `pull_number`*, body: object | pull-request |  | Update a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/codespaces` | codespaces/create-with-pr-for-authenticated-user | `owner`*, `repo`*, `pull_number`*, body*: object | codespace |  | Create a codespace from a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/comments` | pulls/list-review-comments | `owner`*, `repo`*, `pull_number`*, `sort`, `direction`, `since`, `per_page`, `page` | pull-request-review-comment[] | yes | List review comments on a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/comments` | pulls/create-review-comment | `owner`*, `repo`*, `pull_number`*, body*: object | pull-request-review-comment |  | Create a review comment for a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies` | pulls/create-reply-for-review-comment | `owner`*, `repo`*, `pull_number`*, `comment_id`*, body*: object | pull-request-review-comment |  | Create a reply for a review comment |
+| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/commits` | pulls/list-commits | `owner`*, `repo`*, `pull_number`*, `per_page`, `page` | commit[] | yes | List commits on a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/files` | pulls/list-files | `owner`*, `repo`*, `pull_number`*, `per_page`, `page` | diff-entry[] | yes | List pull requests files |
+| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/merge` | pulls/check-if-merged | `owner`*, `repo`*, `pull_number`* | — | yes | Check if a pull request has been merged |
+| PUT | `/repos/{owner}/{repo}/pulls/{pull_number}/merge` | pulls/merge | `owner`*, `repo`*, `pull_number`*, body: object | pull-request-merge-result |  | Merge a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers` | pulls/list-requested-reviewers | `owner`*, `repo`*, `pull_number`* | pull-request-review-request | yes | Get all requested reviewers for a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers` | pulls/request-reviewers | `owner`*, `repo`*, `pull_number`*, body: — | pull-request-simple |  | Request reviewers for a pull request |
+| DELETE | `/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers` | pulls/remove-requested-reviewers | `owner`*, `repo`*, `pull_number`*, body*: object | pull-request-simple |  | Remove requested reviewers from a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews` | pulls/list-reviews | `owner`*, `repo`*, `pull_number`*, `per_page`, `page` | pull-request-review[] | yes | List reviews for a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews` | pulls/create-review | `owner`*, `repo`*, `pull_number`*, body: object | pull-request-review |  | Create a review for a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}` | pulls/get-review | `owner`*, `repo`*, `pull_number`*, `review_id`* | pull-request-review | yes | Get a review for a pull request |
+| PUT | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}` | pulls/update-review | `owner`*, `repo`*, `pull_number`*, `review_id`*, body*: object | pull-request-review |  | Update a review for a pull request |
+| DELETE | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}` | pulls/delete-pending-review | `owner`*, `repo`*, `pull_number`*, `review_id`* | pull-request-review |  | Delete a pending review for a pull request |
+| GET | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments` | pulls/list-comments-for-review | `owner`*, `repo`*, `pull_number`*, `review_id`*, `per_page`, `page` | review-comment[] | yes | List comments for a pull request review |
+| PUT | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals` | pulls/dismiss-review | `owner`*, `repo`*, `pull_number`*, `review_id`*, body*: object | pull-request-review |  | Dismiss a review for a pull request |
+| POST | `/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events` | pulls/submit-review | `owner`*, `repo`*, `pull_number`*, `review_id`*, body*: object | pull-request-review |  | Submit a review for a pull request |
+| PUT | `/repos/{owner}/{repo}/pulls/{pull_number}/update-branch` | pulls/update-branch | `owner`*, `repo`*, `pull_number`*, body: object | object |  | Update a pull request branch |
+| GET | `/repos/{owner}/{repo}/readme` | repos/get-readme | `owner`*, `repo`*, `ref` | content-file | yes | Get a repository README |
+| GET | `/repos/{owner}/{repo}/readme/{dir}` | repos/get-readme-in-directory | `owner`*, `repo`*, `dir`*, `ref` | content-file | yes | Get a repository README for a directory |
+| GET | `/repos/{owner}/{repo}/releases` | repos/list-releases | `owner`*, `repo`*, `per_page`, `page` | release[] | yes | List releases |
+| POST | `/repos/{owner}/{repo}/releases` | repos/create-release | `owner`*, `repo`*, body*: object | release |  | Create a release |
+| GET | `/repos/{owner}/{repo}/releases/assets/{asset_id}` | repos/get-release-asset | `owner`*, `repo`*, `asset_id`* | release-asset | yes | Get a release asset |
+| DELETE | `/repos/{owner}/{repo}/releases/assets/{asset_id}` | repos/delete-release-asset | `owner`*, `repo`*, `asset_id`* | — |  | Delete a release asset |
+| PATCH | `/repos/{owner}/{repo}/releases/assets/{asset_id}` | repos/update-release-asset | `owner`*, `repo`*, `asset_id`*, body: object | release-asset |  | Update a release asset |
+| POST | `/repos/{owner}/{repo}/releases/generate-notes` | repos/generate-release-notes | `owner`*, `repo`*, body*: object | release-notes-content |  | Generate release notes content for a release |
+| GET | `/repos/{owner}/{repo}/releases/latest` | repos/get-latest-release | `owner`*, `repo`* | release | yes | Get the latest release |
+| GET | `/repos/{owner}/{repo}/releases/tags/{tag}` | repos/get-release-by-tag | `owner`*, `repo`*, `tag`* | release | yes | Get a release by tag name |
+| GET | `/repos/{owner}/{repo}/releases/{release_id}` | repos/get-release | `owner`*, `repo`*, `release_id`* | release | yes | Get a release |
+| DELETE | `/repos/{owner}/{repo}/releases/{release_id}` | repos/delete-release | `owner`*, `repo`*, `release_id`* | — |  | Delete a release |
+| PATCH | `/repos/{owner}/{repo}/releases/{release_id}` | repos/update-release | `owner`*, `repo`*, `release_id`*, body: object | release |  | Update a release |
+| GET | `/repos/{owner}/{repo}/releases/{release_id}/assets` | repos/list-release-assets | `owner`*, `repo`*, `release_id`*, `per_page`, `page` | release-asset[] | yes | List release assets |
+| POST | `/repos/{owner}/{repo}/releases/{release_id}/assets` | repos/upload-release-asset | `owner`*, `repo`*, `release_id`*, `name`*, `label`, body: string:binary | release-asset |  | Upload a release asset |
+| GET | `/repos/{owner}/{repo}/releases/{release_id}/reactions` | reactions/list-for-release | `owner`*, `repo`*, `release_id`*, `content`, `per_page`, `page` | reaction[] | yes | List reactions for a release |
+| POST | `/repos/{owner}/{repo}/releases/{release_id}/reactions` | reactions/create-for-release | `owner`*, `repo`*, `release_id`*, body*: object | reaction |  | Create reaction for a release |
+| DELETE | `/repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}` | reactions/delete-for-release | `owner`*, `repo`*, `release_id`*, `reaction_id`* | — |  | Delete a release reaction |
+| GET | `/repos/{owner}/{repo}/secret-scanning/alerts` | secret-scanning/list-alerts-for-repo | `owner`*, `repo`*, `state`, `secret_type`, `resolution`, `sort`, `direction`, `page`, `per_page`, `before`, `after` | secret-scanning-alert[] | yes | List secret scanning alerts for a repository |
+| GET | `/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}` | secret-scanning/get-alert | `owner`*, `repo`*, `alert_number`* | secret-scanning-alert | yes | Get a secret scanning alert |
+| PATCH | `/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}` | secret-scanning/update-alert | `owner`*, `repo`*, `alert_number`*, body*: object | secret-scanning-alert |  | Update a secret scanning alert |
+| GET | `/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations` | secret-scanning/list-locations-for-alert | `owner`*, `repo`*, `alert_number`*, `page`, `per_page` | secret-scanning-location[] | yes | List locations for a secret scanning alert |
+| GET | `/repos/{owner}/{repo}/stargazers` | activity/list-stargazers-for-repo | `owner`*, `repo`*, `per_page`, `page` | simple-user[]\|stargazer[] | yes | List stargazers |
+| GET | `/repos/{owner}/{repo}/stats/code_frequency` | repos/get-code-frequency-stats | `owner`*, `repo`* | code-frequency-stat[], object | yes | Get the weekly commit activity |
+| GET | `/repos/{owner}/{repo}/stats/commit_activity` | repos/get-commit-activity-stats | `owner`*, `repo`* | commit-activity[], object | yes | Get the last year of commit activity |
+| GET | `/repos/{owner}/{repo}/stats/contributors` | repos/get-contributors-stats | `owner`*, `repo`* | contributor-activity[], object | yes | Get all contributor commit activity |
+| GET | `/repos/{owner}/{repo}/stats/participation` | repos/get-participation-stats | `owner`*, `repo`* | participation-stats | yes | Get the weekly commit count |
+| GET | `/repos/{owner}/{repo}/stats/punch_card` | repos/get-punch-card-stats | `owner`*, `repo`* | code-frequency-stat[] | yes | Get the hourly commit count for each day |
+| POST | `/repos/{owner}/{repo}/statuses/{sha}` | repos/create-commit-status | `owner`*, `repo`*, `sha`*, body*: object | status |  | Create a commit status |
+| GET | `/repos/{owner}/{repo}/subscribers` | activity/list-watchers-for-repo | `owner`*, `repo`*, `per_page`, `page` | simple-user[] | yes | List watchers |
+| GET | `/repos/{owner}/{repo}/subscription` | activity/get-repo-subscription | `owner`*, `repo`* | repository-subscription | yes | Get a repository subscription |
+| PUT | `/repos/{owner}/{repo}/subscription` | activity/set-repo-subscription | `owner`*, `repo`*, body: object | repository-subscription |  | Set a repository subscription |
+| DELETE | `/repos/{owner}/{repo}/subscription` | activity/delete-repo-subscription | `owner`*, `repo`* | — |  | Delete a repository subscription |
+| GET | `/repos/{owner}/{repo}/tags` | repos/list-tags | `owner`*, `repo`*, `per_page`, `page` | tag[] | yes | List repository tags |
+| GET | `/repos/{owner}/{repo}/tags/protection` | repos/list-tag-protection | `owner`*, `repo`* | tag-protection[] | yes | List tag protection states for a repository |
+| POST | `/repos/{owner}/{repo}/tags/protection` | repos/create-tag-protection | `owner`*, `repo`*, body*: object | tag-protection |  | Create a tag protection state for a repository |
+| DELETE | `/repos/{owner}/{repo}/tags/protection/{tag_protection_id}` | repos/delete-tag-protection | `owner`*, `repo`*, `tag_protection_id`* | — |  | Delete a tag protection state for a repository |
+| GET | `/repos/{owner}/{repo}/tarball/{ref}` | repos/download-tarball-archive | `owner`*, `repo`*, `ref`* | — | yes | Download a repository archive (tar) |
+| GET | `/repos/{owner}/{repo}/teams` | repos/list-teams | `owner`*, `repo`*, `per_page`, `page` | team[] | yes | List repository teams |
+| GET | `/repos/{owner}/{repo}/topics` | repos/get-all-topics | `owner`*, `repo`*, `page`, `per_page` | topic | yes | Get all repository topics |
+| PUT | `/repos/{owner}/{repo}/topics` | repos/replace-all-topics | `owner`*, `repo`*, body*: object | topic |  | Replace all repository topics |
+| GET | `/repos/{owner}/{repo}/traffic/clones` | repos/get-clones | `owner`*, `repo`*, `per` | clone-traffic | yes | Get repository clones |
+| GET | `/repos/{owner}/{repo}/traffic/popular/paths` | repos/get-top-paths | `owner`*, `repo`* | content-traffic[] | yes | Get top referral paths |
+| GET | `/repos/{owner}/{repo}/traffic/popular/referrers` | repos/get-top-referrers | `owner`*, `repo`* | referrer-traffic[] | yes | Get top referral sources |
+| GET | `/repos/{owner}/{repo}/traffic/views` | repos/get-views | `owner`*, `repo`*, `per` | view-traffic | yes | Get page views |
+| POST | `/repos/{owner}/{repo}/transfer` | repos/transfer | `owner`*, `repo`*, body*: object | minimal-repository |  | Transfer a repository |
+| GET | `/repos/{owner}/{repo}/vulnerability-alerts` | repos/check-vulnerability-alerts | `owner`*, `repo`* | — | yes | Check if vulnerability alerts are enabled for a repository |
+| PUT | `/repos/{owner}/{repo}/vulnerability-alerts` | repos/enable-vulnerability-alerts | `owner`*, `repo`* | — |  | Enable vulnerability alerts |
+| DELETE | `/repos/{owner}/{repo}/vulnerability-alerts` | repos/disable-vulnerability-alerts | `owner`*, `repo`* | — |  | Disable vulnerability alerts |
+| GET | `/repos/{owner}/{repo}/zipball/{ref}` | repos/download-zipball-archive | `owner`*, `repo`*, `ref`* | — | yes | Download a repository archive (zip) |
+| POST | `/repos/{template_owner}/{template_repo}/generate` | repos/create-using-template | `template_owner`*, `template_repo`*, body*: object | repository |  | Create a repository using a template |
+| GET | `/repositories` | repos/list-public | `since` | minimal-repository[] | yes | List public repositories |
+| GET | `/repositories/{repository_id}/environments/{environment_name}/secrets` | actions/list-environment-secrets | `repository_id`*, `environment_name`*, `per_page`, `page` | object | yes | List environment secrets |
+| GET | `/repositories/{repository_id}/environments/{environment_name}/secrets/public-key` | actions/get-environment-public-key | `repository_id`*, `environment_name`* | actions-public-key | yes | Get an environment public key |
+| GET | `/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}` | actions/get-environment-secret | `repository_id`*, `environment_name`*, `secret_name`* | actions-secret | yes | Get an environment secret |
+| PUT | `/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}` | actions/create-or-update-environment-secret | `repository_id`*, `environment_name`*, `secret_name`*, body*: object | empty-object |  | Create or update an environment secret |
+| DELETE | `/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}` | actions/delete-environment-secret | `repository_id`*, `environment_name`*, `secret_name`* | — |  | Delete an environment secret |
+| GET | `/repositories/{repository_id}/environments/{environment_name}/variables` | actions/list-environment-variables | `repository_id`*, `environment_name`*, `per_page`, `page` | object | yes | List environment variables |
+| POST | `/repositories/{repository_id}/environments/{environment_name}/variables` | actions/create-environment-variable | `repository_id`*, `environment_name`*, body*: object | empty-object |  | Create an environment variable |
+| GET | `/repositories/{repository_id}/environments/{environment_name}/variables/{name}` | actions/get-environment-variable | `repository_id`*, `environment_name`*, `name`* | actions-variable | yes | Get an environment variable |
+| DELETE | `/repositories/{repository_id}/environments/{environment_name}/variables/{name}` | actions/delete-environment-variable | `repository_id`*, `name`*, `environment_name`* | — |  | Delete an environment variable |
+| PATCH | `/repositories/{repository_id}/environments/{environment_name}/variables/{name}` | actions/update-environment-variable | `repository_id`*, `name`*, `environment_name`*, body*: object | — |  | Update an environment variable |
+| GET | `/search/code` | search/code | `q`*, `sort`, `order`, `per_page`, `page` | object | yes | Search code |
+| GET | `/search/commits` | search/commits | `q`*, `sort`, `order`, `per_page`, `page` | object | yes | Search commits |
+| GET | `/search/issues` | search/issues-and-pull-requests | `q`*, `sort`, `order`, `per_page`, `page` | object | yes | Search issues and pull requests |
+| GET | `/search/labels` | search/labels | `repository_id`*, `q`*, `sort`, `order`, `per_page`, `page` | object | yes | Search labels |
+| GET | `/search/repositories` | search/repos | `q`*, `sort`, `order`, `per_page`, `page` | object | yes | Search repositories |
+| GET | `/search/topics` | search/topics | `q`*, `per_page`, `page` | object | yes | Search topics |
+| GET | `/search/users` | search/users | `q`*, `sort`, `order`, `per_page`, `page` | object | yes | Search users |
+| GET | `/teams/{team_id}` | teams/get-legacy | `team_id`* | team-full | yes | Get a team (Legacy) |
+| DELETE | `/teams/{team_id}` | teams/delete-legacy | `team_id`* | — |  | Delete a team (Legacy) |
+| PATCH | `/teams/{team_id}` | teams/update-legacy | `team_id`*, body*: object | team-full |  | Update a team (Legacy) |
+| GET | `/teams/{team_id}/discussions` | teams/list-discussions-legacy | `team_id`*, `direction`, `per_page`, `page` | team-discussion[] | yes | List discussions (Legacy) |
+| POST | `/teams/{team_id}/discussions` | teams/create-discussion-legacy | `team_id`*, body*: object | team-discussion |  | Create a discussion (Legacy) |
+| GET | `/teams/{team_id}/discussions/{discussion_number}` | teams/get-discussion-legacy | `team_id`*, `discussion_number`* | team-discussion | yes | Get a discussion (Legacy) |
+| DELETE | `/teams/{team_id}/discussions/{discussion_number}` | teams/delete-discussion-legacy | `team_id`*, `discussion_number`* | — |  | Delete a discussion (Legacy) |
+| PATCH | `/teams/{team_id}/discussions/{discussion_number}` | teams/update-discussion-legacy | `team_id`*, `discussion_number`*, body: object | team-discussion |  | Update a discussion (Legacy) |
+| GET | `/teams/{team_id}/discussions/{discussion_number}/comments` | teams/list-discussion-comments-legacy | `team_id`*, `discussion_number`*, `direction`, `per_page`, `page` | team-discussion-comment[] | yes | List discussion comments (Legacy) |
+| POST | `/teams/{team_id}/discussions/{discussion_number}/comments` | teams/create-discussion-comment-legacy | `team_id`*, `discussion_number`*, body*: object | team-discussion-comment |  | Create a discussion comment (Legacy) |
+| GET | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}` | teams/get-discussion-comment-legacy | `team_id`*, `discussion_number`*, `comment_number`* | team-discussion-comment | yes | Get a discussion comment (Legacy) |
+| DELETE | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}` | teams/delete-discussion-comment-legacy | `team_id`*, `discussion_number`*, `comment_number`* | — |  | Delete a discussion comment (Legacy) |
+| PATCH | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}` | teams/update-discussion-comment-legacy | `team_id`*, `discussion_number`*, `comment_number`*, body*: object | team-discussion-comment |  | Update a discussion comment (Legacy) |
+| GET | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions` | reactions/list-for-team-discussion-comment-legacy | `team_id`*, `discussion_number`*, `comment_number`*, `content`, `per_page`, `page` | reaction[] | yes | List reactions for a team discussion comment (Legacy) |
+| POST | `/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions` | reactions/create-for-team-discussion-comment-legacy | `team_id`*, `discussion_number`*, `comment_number`*, body*: object | reaction |  | Create reaction for a team discussion comment (Legacy) |
+| GET | `/teams/{team_id}/discussions/{discussion_number}/reactions` | reactions/list-for-team-discussion-legacy | `team_id`*, `discussion_number`*, `content`, `per_page`, `page` | reaction[] | yes | List reactions for a team discussion (Legacy) |
+| POST | `/teams/{team_id}/discussions/{discussion_number}/reactions` | reactions/create-for-team-discussion-legacy | `team_id`*, `discussion_number`*, body*: object | reaction |  | Create reaction for a team discussion (Legacy) |
+| GET | `/teams/{team_id}/invitations` | teams/list-pending-invitations-legacy | `team_id`*, `per_page`, `page` | organization-invitation[] | yes | List pending team invitations (Legacy) |
+| GET | `/teams/{team_id}/members` | teams/list-members-legacy | `team_id`*, `role`, `per_page`, `page` | simple-user[] | yes | List team members (Legacy) |
+| GET | `/teams/{team_id}/members/{username}` | teams/get-member-legacy | `team_id`*, `username`* | — | yes | Get team member (Legacy) |
+| PUT | `/teams/{team_id}/members/{username}` | teams/add-member-legacy | `team_id`*, `username`* | — |  | Add team member (Legacy) |
+| DELETE | `/teams/{team_id}/members/{username}` | teams/remove-member-legacy | `team_id`*, `username`* | — |  | Remove team member (Legacy) |
+| GET | `/teams/{team_id}/memberships/{username}` | teams/get-membership-for-user-legacy | `team_id`*, `username`* | team-membership | yes | Get team membership for a user (Legacy) |
+| PUT | `/teams/{team_id}/memberships/{username}` | teams/add-or-update-membership-for-user-legacy | `team_id`*, `username`*, body: object | team-membership |  | Add or update team membership for a user (Legacy) |
+| DELETE | `/teams/{team_id}/memberships/{username}` | teams/remove-membership-for-user-legacy | `team_id`*, `username`* | — |  | Remove team membership for a user (Legacy) |
+| GET | `/teams/{team_id}/projects` | teams/list-projects-legacy | `team_id`*, `per_page`, `page` | team-project[] | yes | List team projects (Legacy) |
+| GET | `/teams/{team_id}/projects/{project_id}` | teams/check-permissions-for-project-legacy | `team_id`*, `project_id`* | team-project | yes | Check team permissions for a project (Legacy) |
+| PUT | `/teams/{team_id}/projects/{project_id}` | teams/add-or-update-project-permissions-legacy | `team_id`*, `project_id`*, body: object | — |  | Add or update team project permissions (Legacy) |
+| DELETE | `/teams/{team_id}/projects/{project_id}` | teams/remove-project-legacy | `team_id`*, `project_id`* | — |  | Remove a project from a team (Legacy) |
+| GET | `/teams/{team_id}/repos` | teams/list-repos-legacy | `team_id`*, `per_page`, `page` | minimal-repository[] | yes | List team repositories (Legacy) |
+| GET | `/teams/{team_id}/repos/{owner}/{repo}` | teams/check-permissions-for-repo-legacy | `team_id`*, `owner`*, `repo`* | team-repository | yes | Check team permissions for a repository (Legacy) |
+| PUT | `/teams/{team_id}/repos/{owner}/{repo}` | teams/add-or-update-repo-permissions-legacy | `team_id`*, `owner`*, `repo`*, body: object | — |  | Add or update team repository permissions (Legacy) |
+| DELETE | `/teams/{team_id}/repos/{owner}/{repo}` | teams/remove-repo-legacy | `team_id`*, `owner`*, `repo`* | — |  | Remove a repository from a team (Legacy) |
+| GET | `/teams/{team_id}/teams` | teams/list-child-legacy | `team_id`*, `per_page`, `page` | team[] | yes | List child teams (Legacy) |
+| GET | `/user` | users/get-authenticated | — | private-user\|public-user | yes | Get the authenticated user |
+| PATCH | `/user` | users/update-authenticated | body: object | private-user |  | Update the authenticated user |
+| GET | `/user/blocks` | users/list-blocked-by-authenticated-user | `per_page`, `page` | simple-user[] | yes | List users blocked by the authenticated user |
+| GET | `/user/blocks/{username}` | users/check-blocked | `username`* | — | yes | Check if a user is blocked by the authenticated user |
+| PUT | `/user/blocks/{username}` | users/block | `username`* | — |  | Block a user |
+| DELETE | `/user/blocks/{username}` | users/unblock | `username`* | — |  | Unblock a user |
+| GET | `/user/codespaces` | codespaces/list-for-authenticated-user | `per_page`, `page`, `repository_id` | object | yes | List codespaces for the authenticated user |
+| POST | `/user/codespaces` | codespaces/create-for-authenticated-user | body*: object | codespace |  | Create a codespace for the authenticated user |
+| GET | `/user/codespaces/secrets` | codespaces/list-secrets-for-authenticated-user | `per_page`, `page` | object | yes | List secrets for the authenticated user |
+| GET | `/user/codespaces/secrets/public-key` | codespaces/get-public-key-for-authenticated-user | — | codespaces-user-public-key | yes | Get public key for the authenticated user |
+| GET | `/user/codespaces/secrets/{secret_name}` | codespaces/get-secret-for-authenticated-user | `secret_name`* | codespaces-secret | yes | Get a secret for the authenticated user |
+| PUT | `/user/codespaces/secrets/{secret_name}` | codespaces/create-or-update-secret-for-authenticated-user | `secret_name`*, body*: object | empty-object |  | Create or update a secret for the authenticated user |
+| DELETE | `/user/codespaces/secrets/{secret_name}` | codespaces/delete-secret-for-authenticated-user | `secret_name`* | — |  | Delete a secret for the authenticated user |
+| GET | `/user/codespaces/secrets/{secret_name}/repositories` | codespaces/list-repositories-for-secret-for-authenticated-user | `secret_name`* | object | yes | List selected repositories for a user secret |
+| PUT | `/user/codespaces/secrets/{secret_name}/repositories` | codespaces/set-repositories-for-secret-for-authenticated-user | `secret_name`*, body*: object | — |  | Set selected repositories for a user secret |
+| PUT | `/user/codespaces/secrets/{secret_name}/repositories/{repository_id}` | codespaces/add-repository-for-secret-for-authenticated-user | `secret_name`*, `repository_id`* | — |  | Add a selected repository to a user secret |
+| DELETE | `/user/codespaces/secrets/{secret_name}/repositories/{repository_id}` | codespaces/remove-repository-for-secret-for-authenticated-user | `secret_name`*, `repository_id`* | — |  | Remove a selected repository from a user secret |
+| GET | `/user/codespaces/{codespace_name}` | codespaces/get-for-authenticated-user | `codespace_name`* | codespace | yes | Get a codespace for the authenticated user |
+| DELETE | `/user/codespaces/{codespace_name}` | codespaces/delete-for-authenticated-user | `codespace_name`* | object |  | Delete a codespace for the authenticated user |
+| PATCH | `/user/codespaces/{codespace_name}` | codespaces/update-for-authenticated-user | `codespace_name`*, body: object | codespace |  | Update a codespace for the authenticated user |
+| POST | `/user/codespaces/{codespace_name}/exports` | codespaces/export-for-authenticated-user | `codespace_name`* | codespace-export-details |  | Export a codespace for the authenticated user |
+| GET | `/user/codespaces/{codespace_name}/exports/{export_id}` | codespaces/get-export-details-for-authenticated-user | `codespace_name`*, `export_id`* | codespace-export-details | yes | Get details about a codespace export |
+| GET | `/user/codespaces/{codespace_name}/machines` | codespaces/codespace-machines-for-authenticated-user | `codespace_name`* | object | yes | List machine types for a codespace |
+| POST | `/user/codespaces/{codespace_name}/publish` | codespaces/publish-for-authenticated-user | `codespace_name`*, body*: object | codespace-with-full-repository |  | Create a repository from an unpublished codespace |
+| POST | `/user/codespaces/{codespace_name}/start` | codespaces/start-for-authenticated-user | `codespace_name`* | codespace |  | Start a codespace for the authenticated user |
+| POST | `/user/codespaces/{codespace_name}/stop` | codespaces/stop-for-authenticated-user | `codespace_name`* | codespace |  | Stop a codespace for the authenticated user |
+| PATCH | `/user/email/visibility` | users/set-primary-email-visibility-for-authenticated-user | body*: object | email[] |  | Set primary email visibility for the authenticated user |
+| GET | `/user/emails` | users/list-emails-for-authenticated-user | `per_page`, `page` | email[] | yes | List email addresses for the authenticated user |
+| POST | `/user/emails` | users/add-email-for-authenticated-user | body: object\|string[]\|string | email[] |  | Add an email address for the authenticated user |
+| DELETE | `/user/emails` | users/delete-email-for-authenticated-user | body: object\|string[]\|string | — |  | Delete an email address for the authenticated user |
+| GET | `/user/followers` | users/list-followers-for-authenticated-user | `per_page`, `page` | simple-user[] | yes | List followers of the authenticated user |
+| GET | `/user/following` | users/list-followed-by-authenticated-user | `per_page`, `page` | simple-user[] | yes | List the people the authenticated user follows |
+| GET | `/user/following/{username}` | users/check-person-is-followed-by-authenticated | `username`* | — | yes | Check if a person is followed by the authenticated user |
+| PUT | `/user/following/{username}` | users/follow | `username`* | — |  | Follow a user |
+| DELETE | `/user/following/{username}` | users/unfollow | `username`* | — |  | Unfollow a user |
+| GET | `/user/gpg_keys` | users/list-gpg-keys-for-authenticated-user | `per_page`, `page` | gpg-key[] | yes | List GPG keys for the authenticated user |
+| POST | `/user/gpg_keys` | users/create-gpg-key-for-authenticated-user | body*: object | gpg-key |  | Create a GPG key for the authenticated user |
+| GET | `/user/gpg_keys/{gpg_key_id}` | users/get-gpg-key-for-authenticated-user | `gpg_key_id`* | gpg-key | yes | Get a GPG key for the authenticated user |
+| DELETE | `/user/gpg_keys/{gpg_key_id}` | users/delete-gpg-key-for-authenticated-user | `gpg_key_id`* | — |  | Delete a GPG key for the authenticated user |
+| GET | `/user/installations` | apps/list-installations-for-authenticated-user | `per_page`, `page` | object | yes | List app installations accessible to the user access token |
+| GET | `/user/installations/{installation_id}/repositories` | apps/list-installation-repos-for-authenticated-user | `installation_id`*, `per_page`, `page` | object | yes | List repositories accessible to the user access token |
+| PUT | `/user/installations/{installation_id}/repositories/{repository_id}` | apps/add-repo-to-installation-for-authenticated-user | `installation_id`*, `repository_id`* | — |  | Add a repository to an app installation |
+| DELETE | `/user/installations/{installation_id}/repositories/{repository_id}` | apps/remove-repo-from-installation-for-authenticated-user | `installation_id`*, `repository_id`* | — |  | Remove a repository from an app installation |
+| GET | `/user/interaction-limits` | interactions/get-restrictions-for-authenticated-user | — | interaction-limit-response\|object | yes | Get interaction restrictions for your public repositories |
+| PUT | `/user/interaction-limits` | interactions/set-restrictions-for-authenticated-user | body*: interaction-limit | interaction-limit-response |  | Set interaction restrictions for your public repositories |
+| DELETE | `/user/interaction-limits` | interactions/remove-restrictions-for-authenticated-user | — | — |  | Remove interaction restrictions from your public repositories |
+| GET | `/user/issues` | issues/list-for-authenticated-user | `filter`, `state`, `labels`, `sort`, `direction`, `since`, `per_page`, `page` | issue[] | yes | List user account issues assigned to the authenticated user |
+| GET | `/user/keys` | users/list-public-ssh-keys-for-authenticated-user | `per_page`, `page` | key[] | yes | List public SSH keys for the authenticated user |
+| POST | `/user/keys` | users/create-public-ssh-key-for-authenticated-user | body*: object | key |  | Create a public SSH key for the authenticated user |
+| GET | `/user/keys/{key_id}` | users/get-public-ssh-key-for-authenticated-user | `key_id`* | key | yes | Get a public SSH key for the authenticated user |
+| DELETE | `/user/keys/{key_id}` | users/delete-public-ssh-key-for-authenticated-user | `key_id`* | — |  | Delete a public SSH key for the authenticated user |
+| GET | `/user/marketplace_purchases` | apps/list-subscriptions-for-authenticated-user | `per_page`, `page` | user-marketplace-purchase[] | yes | List subscriptions for the authenticated user |
+| GET | `/user/marketplace_purchases/stubbed` | apps/list-subscriptions-for-authenticated-user-stubbed | `per_page`, `page` | user-marketplace-purchase[] | yes | List subscriptions for the authenticated user (stubbed) |
+| GET | `/user/memberships/orgs` | orgs/list-memberships-for-authenticated-user | `state`, `per_page`, `page` | org-membership[] | yes | List organization memberships for the authenticated user |
+| GET | `/user/memberships/orgs/{org}` | orgs/get-membership-for-authenticated-user | `org`* | org-membership | yes | Get an organization membership for the authenticated user |
+| PATCH | `/user/memberships/orgs/{org}` | orgs/update-membership-for-authenticated-user | `org`*, body*: object | org-membership |  | Update an organization membership for the authenticated user |
+| GET | `/user/migrations` | migrations/list-for-authenticated-user | `per_page`, `page` | migration[] | yes | List user migrations |
+| POST | `/user/migrations` | migrations/start-for-authenticated-user | body*: object | migration |  | Start a user migration |
+| GET | `/user/migrations/{migration_id}` | migrations/get-status-for-authenticated-user | `migration_id`*, `exclude` | migration | yes | Get a user migration status |
+| GET | `/user/migrations/{migration_id}/archive` | migrations/get-archive-for-authenticated-user | `migration_id`* | — | yes | Download a user migration archive |
+| DELETE | `/user/migrations/{migration_id}/archive` | migrations/delete-archive-for-authenticated-user | `migration_id`* | — |  | Delete a user migration archive |
+| DELETE | `/user/migrations/{migration_id}/repos/{repo_name}/lock` | migrations/unlock-repo-for-authenticated-user | `migration_id`*, `repo_name`* | — |  | Unlock a user repository |
+| GET | `/user/migrations/{migration_id}/repositories` | migrations/list-repos-for-authenticated-user | `migration_id`*, `per_page`, `page` | minimal-repository[] | yes | List repositories for a user migration |
+| GET | `/user/orgs` | orgs/list-for-authenticated-user | `per_page`, `page` | organization-simple[] | yes | List organizations for the authenticated user |
+| GET | `/user/packages` | packages/list-packages-for-authenticated-user | `package_type`*, `visibility` | package[] | yes | List packages for the authenticated user's namespace |
+| GET | `/user/packages/{package_type}/{package_name}` | packages/get-package-for-authenticated-user | `package_type`*, `package_name`* | package | yes | Get a package for the authenticated user |
+| DELETE | `/user/packages/{package_type}/{package_name}` | packages/delete-package-for-authenticated-user | `package_type`*, `package_name`* | — |  | Delete a package for the authenticated user |
+| POST | `/user/packages/{package_type}/{package_name}/restore` | packages/restore-package-for-authenticated-user | `package_type`*, `package_name`*, `token` | — |  | Restore a package for the authenticated user |
+| GET | `/user/packages/{package_type}/{package_name}/versions` | packages/get-all-package-versions-for-package-owned-by-authenticated-user | `package_type`*, `package_name`*, `page`, `per_page`, `state` | package-version[] | yes | List package versions for a package owned by the authenticated user |
+| GET | `/user/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/get-package-version-for-authenticated-user | `package_type`*, `package_name`*, `package_version_id`* | package-version | yes | Get a package version for the authenticated user |
+| DELETE | `/user/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/delete-package-version-for-authenticated-user | `package_type`*, `package_name`*, `package_version_id`* | — |  | Delete a package version for the authenticated user |
+| POST | `/user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore` | packages/restore-package-version-for-authenticated-user | `package_type`*, `package_name`*, `package_version_id`* | — |  | Restore a package version for the authenticated user |
+| POST | `/user/projects` | projects/create-for-authenticated-user | body*: object | project |  | Create a user project |
+| GET | `/user/public_emails` | users/list-public-emails-for-authenticated-user | `per_page`, `page` | email[] | yes | List public email addresses for the authenticated user |
+| GET | `/user/repos` | repos/list-for-authenticated-user | `visibility`, `affiliation`, `type`, `sort`, `direction`, `per_page`, `page`, `since`, `before` | repository[] | yes | List repositories for the authenticated user |
+| POST | `/user/repos` | repos/create-for-authenticated-user | body*: object | repository |  | Create a repository for the authenticated user |
+| GET | `/user/repository_invitations` | repos/list-invitations-for-authenticated-user | `per_page`, `page` | repository-invitation[] | yes | List repository invitations for the authenticated user |
+| DELETE | `/user/repository_invitations/{invitation_id}` | repos/decline-invitation-for-authenticated-user | `invitation_id`* | — |  | Decline a repository invitation |
+| PATCH | `/user/repository_invitations/{invitation_id}` | repos/accept-invitation-for-authenticated-user | `invitation_id`* | — |  | Accept a repository invitation |
+| GET | `/user/ssh_signing_keys` | users/list-ssh-signing-keys-for-authenticated-user | `per_page`, `page` | ssh-signing-key[] | yes | List SSH signing keys for the authenticated user |
+| POST | `/user/ssh_signing_keys` | users/create-ssh-signing-key-for-authenticated-user | body*: object | ssh-signing-key |  | Create a SSH signing key for the authenticated user |
+| GET | `/user/ssh_signing_keys/{ssh_signing_key_id}` | users/get-ssh-signing-key-for-authenticated-user | `ssh_signing_key_id`* | ssh-signing-key | yes | Get an SSH signing key for the authenticated user |
+| DELETE | `/user/ssh_signing_keys/{ssh_signing_key_id}` | users/delete-ssh-signing-key-for-authenticated-user | `ssh_signing_key_id`* | — |  | Delete an SSH signing key for the authenticated user |
+| GET | `/user/starred` | activity/list-repos-starred-by-authenticated-user | `sort`, `direction`, `per_page`, `page` | repository[] | yes | List repositories starred by the authenticated user |
+| GET | `/user/starred/{owner}/{repo}` | activity/check-repo-is-starred-by-authenticated-user | `owner`*, `repo`* | — | yes | Check if a repository is starred by the authenticated user |
+| PUT | `/user/starred/{owner}/{repo}` | activity/star-repo-for-authenticated-user | `owner`*, `repo`* | — |  | Star a repository for the authenticated user |
+| DELETE | `/user/starred/{owner}/{repo}` | activity/unstar-repo-for-authenticated-user | `owner`*, `repo`* | — |  | Unstar a repository for the authenticated user |
+| GET | `/user/subscriptions` | activity/list-watched-repos-for-authenticated-user | `per_page`, `page` | minimal-repository[] | yes | List repositories watched by the authenticated user |
+| GET | `/user/teams` | teams/list-for-authenticated-user | `per_page`, `page` | team-full[] | yes | List teams for the authenticated user |
+| GET | `/users` | users/list | `since`, `per_page` | simple-user[] | yes | List users |
+| GET | `/users/{username}` | users/get-by-username | `username`* | private-user\|public-user | yes | Get a user |
+| GET | `/users/{username}/events` | activity/list-events-for-authenticated-user | `username`*, `per_page`, `page` | event[] | yes | List events for the authenticated user |
+| GET | `/users/{username}/events/orgs/{org}` | activity/list-org-events-for-authenticated-user | `username`*, `org`*, `per_page`, `page` | event[] | yes | List organization events for the authenticated user |
+| GET | `/users/{username}/events/public` | activity/list-public-events-for-user | `username`*, `per_page`, `page` | event[] | yes | List public events for a user |
+| GET | `/users/{username}/followers` | users/list-followers-for-user | `username`*, `per_page`, `page` | simple-user[] | yes | List followers of a user |
+| GET | `/users/{username}/following` | users/list-following-for-user | `username`*, `per_page`, `page` | simple-user[] | yes | List the people a user follows |
+| GET | `/users/{username}/following/{target_user}` | users/check-following-for-user | `username`*, `target_user`* | — | yes | Check if a user follows another user |
+| GET | `/users/{username}/gists` | gists/list-for-user | `username`*, `since`, `per_page`, `page` | base-gist[] | yes | List gists for a user |
+| GET | `/users/{username}/gpg_keys` | users/list-gpg-keys-for-user | `username`*, `per_page`, `page` | gpg-key[] | yes | List GPG keys for a user |
+| GET | `/users/{username}/hovercard` | users/get-context-for-user | `username`*, `subject_type`, `subject_id` | hovercard | yes | Get contextual information for a user |
+| GET | `/users/{username}/installation` | apps/get-user-installation | `username`* | installation | yes | Get a user installation for the authenticated app |
+| GET | `/users/{username}/keys` | users/list-public-keys-for-user | `username`*, `per_page`, `page` | key-simple[] | yes | List public keys for a user |
+| GET | `/users/{username}/orgs` | orgs/list-for-user | `username`*, `per_page`, `page` | organization-simple[] | yes | List organizations for a user |
+| GET | `/users/{username}/packages` | packages/list-packages-for-user | `package_type`*, `visibility`, `username`* | package[] | yes | List packages for a user |
+| GET | `/users/{username}/packages/{package_type}/{package_name}` | packages/get-package-for-user | `package_type`*, `package_name`*, `username`* | package | yes | Get a package for a user |
+| DELETE | `/users/{username}/packages/{package_type}/{package_name}` | packages/delete-package-for-user | `package_type`*, `package_name`*, `username`* | — |  | Delete a package for a user |
+| POST | `/users/{username}/packages/{package_type}/{package_name}/restore` | packages/restore-package-for-user | `package_type`*, `package_name`*, `username`*, `token` | — |  | Restore a package for a user |
+| GET | `/users/{username}/packages/{package_type}/{package_name}/versions` | packages/get-all-package-versions-for-package-owned-by-user | `package_type`*, `package_name`*, `username`* | package-version[] | yes | List package versions for a package owned by a user |
+| GET | `/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/get-package-version-for-user | `package_type`*, `package_name`*, `package_version_id`*, `username`* | package-version | yes | Get a package version for a user |
+| DELETE | `/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}` | packages/delete-package-version-for-user | `package_type`*, `package_name`*, `username`*, `package_version_id`* | — |  | Delete package version for a user |
+| POST | `/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore` | packages/restore-package-version-for-user | `package_type`*, `package_name`*, `username`*, `package_version_id`* | — |  | Restore package version for a user |
+| GET | `/users/{username}/projects` | projects/list-for-user | `username`*, `state`, `per_page`, `page` | project[] | yes | List user projects |
+| GET | `/users/{username}/received_events` | activity/list-received-events-for-user | `username`*, `per_page`, `page` | event[] | yes | List events received by the authenticated user |
+| GET | `/users/{username}/received_events/public` | activity/list-received-public-events-for-user | `username`*, `per_page`, `page` | event[] | yes | List public events received by a user |
+| GET | `/users/{username}/repos` | repos/list-for-user | `username`*, `type`, `sort`, `direction`, `per_page`, `page` | minimal-repository[] | yes | List repositories for a user |
+| GET | `/users/{username}/settings/billing/actions` | billing/get-github-actions-billing-user | `username`* | actions-billing-usage | yes | Get GitHub Actions billing for a user |
+| GET | `/users/{username}/settings/billing/packages` | billing/get-github-packages-billing-user | `username`* | packages-billing-usage | yes | Get GitHub Packages billing for a user |
+| GET | `/users/{username}/settings/billing/shared-storage` | billing/get-shared-storage-billing-user | `username`* | combined-billing-usage | yes | Get shared storage billing for a user |
+| GET | `/users/{username}/ssh_signing_keys` | users/list-ssh-signing-keys-for-user | `username`*, `per_page`, `page` | ssh-signing-key[] | yes | List SSH signing keys for a user |
+| GET | `/users/{username}/starred` | activity/list-repos-starred-by-user | `username`*, `sort`, `direction`, `per_page`, `page` | starred-repository[]\|repository[] | yes | List repositories starred by a user |
+| GET | `/users/{username}/subscriptions` | activity/list-repos-watched-by-user | `username`*, `per_page`, `page` | minimal-repository[] | yes | List repositories watched by a user |
+| GET | `/versions` | meta/get-all-versions | — | string:date[] | yes | Get all API versions |
+| GET | `/zen` | meta/get-zen | — | string | yes | Get the Zen of GitHub |

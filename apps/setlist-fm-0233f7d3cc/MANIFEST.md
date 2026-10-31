@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_setlistfm_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `b2a2224d45310123b587af9b4ef993a77e55009c874325315398d823fa51e923` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,20 +34,22 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_setlistfm_profile_i
 
 33 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/1.0/artist/{mbid}` | resource__1.0_artist__mbid__getArtist_GET | . |
-| GET | `/1.0/artist/{mbid}/setlists` | resource__1.0_artist__mbid__setlists_getArtistSetlists_GET | . |
-| GET | `/1.0/city/{geoId}` | resource__1.0_city__geoId__getCity_GET | Get a city by its unique geoId. |
-| GET | `/1.0/search/artists` | resource__1.0_search_artists_getArtists_GET | Search for artists. |
-| GET | `/1.0/search/cities` | resource__1.0_search_cities_getCities_GET | Search for a city. |
-| GET | `/1.0/search/countries` | resource__1.0_search_countries_getCountries_GET | Get a complete list of all supported countries. |
-| GET | `/1.0/search/setlists` | resource__1.0_search_setlists_getSetlists_GET | Search for setlists. |
-| GET | `/1.0/search/venues` | resource__1.0_search_venues_getVenues_GET | Search for venues. |
-| GET | `/1.0/setlist/version/{versionId}` | resource__1.0_setlist_version__versionId__getSetlistVersion_GET | . |
-| GET | `/1.0/setlist/{setlistId}` | resource__1.0_setlist__setlistId__getSetlist_GET | . |
-| GET | `/1.0/user/{userId}` | resource__1.0_user__userId__getUser_GET | Get a user by userId. |
-| GET | `/1.0/user/{userId}/attended` | resource__1.0_user__userId__attended_getUserAttendedSetlists_GET | . |
-| GET | `/1.0/user/{userId}/edited` | resource__1.0_user__userId__edited_getUserEditedSetlists_GET | . |
-| GET | `/1.0/venue/{venueId}` | resource__1.0_venue__venueId__getVenue_GET | Get a venue by its unique id. |
-| GET | `/1.0/venue/{venueId}/setlists` | resource__1.0_venue__venueId__setlists_getVenueSetlists_GET | . |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/1.0/artist/{mbid}` | resource__1.0_artist__mbid__getArtist_GET | `mbid`* | json_Artist | yes | . |
+| GET | `/1.0/artist/{mbid}/setlists` | resource__1.0_artist__mbid__setlists_getArtistSetlists_GET | `mbid`*, `p` | json_Setlists | yes | . |
+| GET | `/1.0/city/{geoId}` | resource__1.0_city__geoId__getCity_GET | `geoId`* | json_City | yes | Get a city by its unique geoId. |
+| GET | `/1.0/search/artists` | resource__1.0_search_artists_getArtists_GET | `artistMbid`, `artistName`, `artistTmid`, `p`, `sort` | json_Artists | yes | Search for artists. |
+| GET | `/1.0/search/cities` | resource__1.0_search_cities_getCities_GET | `country`, `name`, `p`, `state`, `stateCode` | json_Cities | yes | Search for a city. |
+| GET | `/1.0/search/countries` | resource__1.0_search_countries_getCountries_GET | — | json_Countries | yes | Get a complete list of all supported countries. |
+| GET | `/1.0/search/setlists` | resource__1.0_search_setlists_getSetlists_GET | `artistMbid`, `artistName`, `artistTmid`, `cityId`, `cityName`, `countryCode`, `date`, `lastFm`, `lastUpdated`, `p`, `state`, `stateCode`, `tourName`, `venueId`, `venueName`, `year` | json_Setlists | yes | Search for setlists. |
+| GET | `/1.0/search/venues` | resource__1.0_search_venues_getVenues_GET | `cityId`, `cityName`, `country`, `name`, `p`, `state`, `stateCode` | json_Venues | yes | Search for venues. |
+| GET | `/1.0/setlist/version/{versionId}` | resource__1.0_setlist_version__versionId__getSetlistVersion_GET | `versionId`* | json_Setlist | yes | . |
+| GET | `/1.0/setlist/{setlistId}` | resource__1.0_setlist__setlistId__getSetlist_GET | `setlistId`* | json_Setlist | yes | . |
+| GET | `/1.0/user/{userId}` | resource__1.0_user__userId__getUser_GET | `userId`* | json_User | yes | Get a user by userId. |
+| GET | `/1.0/user/{userId}/attended` | resource__1.0_user__userId__attended_getUserAttendedSetlists_GET | `userId`*, `p` | json_Setlists | yes | . |
+| GET | `/1.0/user/{userId}/edited` | resource__1.0_user__userId__edited_getUserEditedSetlists_GET | `userId`*, `p` | json_Setlists | yes | . |
+| GET | `/1.0/venue/{venueId}` | resource__1.0_venue__venueId__getVenue_GET | `venueId`* | json_Venue | yes | Get a venue by its unique id. |
+| GET | `/1.0/venue/{venueId}/setlists` | resource__1.0_venue__venueId__setlists_getVenueSetlists_GET | `venueId`*, `p` | json_Setlists | yes | . |

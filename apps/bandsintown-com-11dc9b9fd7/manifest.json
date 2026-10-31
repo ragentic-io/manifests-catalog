@@ -13,6 +13,26 @@
         "from": "bandsintown-com-11dc9b9fd7",
         "kind": "EXPOSES",
         "to": "operation:get:/artists/{artistname}/events"
+      },
+      {
+        "from": "operation:get:/artists/{artistname}",
+        "kind": "RETURNS",
+        "to": "schema:ArtistData"
+      },
+      {
+        "from": "operation:get:/artists/{artistname}/events",
+        "kind": "RETURNS",
+        "to": "schema:EventData"
+      },
+      {
+        "from": "schema:EventData",
+        "kind": "REFERENCES",
+        "to": "schema:OfferData"
+      },
+      {
+        "from": "schema:EventData",
+        "kind": "REFERENCES",
+        "to": "schema:VenueData"
       }
     ],
     "nodes": [
@@ -26,41 +46,105 @@
         "kind": "operation",
         "method": "get",
         "name": "artist",
+        "parameters": [
+          {
+            "description": "The name of the artist.",
+            "in": "path",
+            "name": "artistname",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The application ID assigned to you by Bandsintown",
+            "in": "query",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/artists/{artistname}",
         "pointer": "#/paths/~1artists~1{artistname}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtistData"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artist information"
+        "summary": "Get artist information",
+        "tags": [
+          "artist information"
+        ]
       },
       {
         "deprecated": false,
+        "description": "artist events",
         "id": "operation:get:/artists/{artistname}/events",
         "kind": "operation",
         "method": "get",
         "name": "artistEvents",
+        "parameters": [
+          {
+            "description": "The name of the artist.",
+            "in": "path",
+            "name": "artistname",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The application ID assigned to you by Bandsintown",
+            "in": "query",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Can be one of the following values: \"upcoming\", \"past\", \"all\", or a date range e.g.",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/artists/{artistname}/events",
         "pointer": "#/paths/~1artists~1{artistname}~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EventData[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get upcoming, past, or all artist events, or events within a date range"
+        "summary": "Get upcoming, past, or all artist events, or events within a date range",
+        "tags": [
+          "artist events"
+        ]
       },
       {
         "id": "schema:ArtistData",
         "kind": "schema",
-        "name": "ArtistData"
+        "name": "ArtistData",
+        "type": "object"
       },
       {
         "id": "schema:EventData",
         "kind": "schema",
-        "name": "EventData"
+        "name": "EventData",
+        "type": "object"
       },
       {
         "id": "schema:OfferData",
         "kind": "schema",
-        "name": "OfferData"
+        "name": "OfferData",
+        "type": "object"
       },
       {
         "id": "schema:VenueData",
         "kind": "schema",
-        "name": "VenueData"
+        "name": "VenueData",
+        "type": "object"
       }
     ]
   },

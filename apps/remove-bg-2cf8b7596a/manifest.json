@@ -18,6 +18,26 @@
         "from": "remove-bg-2cf8b7596a",
         "kind": "EXPOSES",
         "to": "operation:post:/removebg"
+      },
+      {
+        "from": "operation:post:/improve",
+        "kind": "ACCEPTS",
+        "to": "schema:ImprovementProgramJson"
+      },
+      {
+        "from": "operation:post:/improve",
+        "kind": "RETURNS",
+        "to": "schema:ImprovementProgramJsonResponse"
+      },
+      {
+        "from": "operation:post:/removebg",
+        "kind": "ACCEPTS",
+        "to": "schema:RemoveBgJson"
+      },
+      {
+        "from": "operation:post:/removebg",
+        "kind": "RETURNS",
+        "to": "schema:RemoveBgJsonResponse"
       }
     ],
     "nodes": [
@@ -27,88 +47,183 @@
       },
       {
         "deprecated": false,
+        "description": "Get the current credit balance and number of free API calls.",
         "id": "operation:get:/account",
         "kind": "operation",
         "method": "get",
         "name": "get /account",
         "path": "/account",
         "pointer": "#/paths/~1account/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "AuthFailed"
+          },
+          {
+            "status": "429",
+            "type": "RateLimit"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Fetch credit balance and free API calls."
+        "summary": "Fetch credit balance and free API calls.",
+        "tags": [
+          "Fetch account info"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Submit an image to the remove.bg Improvement program * Contribute an image that remove.bg is currently not able to remove the background from properly * Help u…",
         "id": "operation:post:/improve",
         "kind": "operation",
         "method": "post",
         "name": "post /improve",
         "path": "/improve",
         "pointer": "#/paths/~1improve/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "ImprovementProgramJson"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ImprovementProgramJsonResponse"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "AuthFailed"
+          },
+          {
+            "status": "429",
+            "type": "RateLimit"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Improvement Program"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes the background of a JPG/PNG image.",
         "id": "operation:post:/removebg",
         "kind": "operation",
         "method": "post",
         "name": "post /removebg",
         "path": "/removebg",
         "pointer": "#/paths/~1removebg/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "application/x-www-form-urlencoded",
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "RemoveBgJson"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "RemoveBgJsonResponse"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "402",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "AuthFailed"
+          },
+          {
+            "status": "429",
+            "type": "RateLimit"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Remove the background of an image"
+        "summary": "Remove the background of an image",
+        "tags": [
+          "Background Removal"
+        ]
       },
       {
         "id": "schema:AuthFailed",
         "kind": "schema",
-        "name": "AuthFailed"
+        "name": "AuthFailed",
+        "type": "object"
       },
       {
         "id": "schema:ImprovementProgramJson",
         "kind": "schema",
-        "name": "ImprovementProgramJson"
+        "name": "ImprovementProgramJson",
+        "type": "object"
       },
       {
         "id": "schema:ImprovementProgramJsonResponse",
         "kind": "schema",
-        "name": "ImprovementProgramJsonResponse"
+        "name": "ImprovementProgramJsonResponse",
+        "type": "object"
       },
       {
         "id": "schema:ImprovementProgramMultipart",
         "kind": "schema",
-        "name": "ImprovementProgramMultipart"
+        "name": "ImprovementProgramMultipart",
+        "type": "object"
       },
       {
         "id": "schema:RateLimit",
         "kind": "schema",
-        "name": "RateLimit"
+        "name": "RateLimit",
+        "type": "object"
       },
       {
         "id": "schema:RemoveBgJson",
         "kind": "schema",
-        "name": "RemoveBgJson"
+        "name": "RemoveBgJson",
+        "type": "object"
       },
       {
         "id": "schema:RemoveBgJsonResponse",
         "kind": "schema",
-        "name": "RemoveBgJsonResponse"
+        "name": "RemoveBgJsonResponse",
+        "type": "object"
       },
       {
         "id": "schema:RemoveBgMultipart",
         "kind": "schema",
-        "name": "RemoveBgMultipart"
+        "name": "RemoveBgMultipart",
+        "type": "object"
       }
     ]
   },

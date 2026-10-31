@@ -123,6 +123,251 @@
         "from": "ljaero-com-dflight-018a8d4928",
         "kind": "EXPOSES",
         "to": "operation:post:/us/v1/wx-forecast/route-query"
+      },
+      {
+        "from": "operation:post:/us/v1/aerodromes/distance-query",
+        "kind": "ACCEPTS",
+        "to": "schema:AerodromesByDistance"
+      },
+      {
+        "from": "operation:post:/us/v1/aerodromes/distance-query",
+        "kind": "RETURNS",
+        "to": "schema:AerodromeDistanceResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/aerodromes/polygon-query",
+        "kind": "ACCEPTS",
+        "to": "schema:AerodromesByPolygon"
+      },
+      {
+        "from": "operation:post:/us/v1/aerodromes/polygon-query",
+        "kind": "RETURNS",
+        "to": "schema:AerodromePolyResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/aerodromes/route-query",
+        "kind": "ACCEPTS",
+        "to": "schema:AerodromesByRoute"
+      },
+      {
+        "from": "operation:post:/us/v1/aerodromes/route-query",
+        "kind": "RETURNS",
+        "to": "schema:AerodromeRouteResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/airspace/distance-query",
+        "kind": "ACCEPTS",
+        "to": "schema:AirspaceByDistance"
+      },
+      {
+        "from": "operation:post:/us/v1/airspace/distance-query",
+        "kind": "RETURNS",
+        "to": "schema:AirspaceDistanceResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/airspace/polygon-query",
+        "kind": "ACCEPTS",
+        "to": "schema:AirspaceByPolygon"
+      },
+      {
+        "from": "operation:post:/us/v1/airspace/polygon-query",
+        "kind": "RETURNS",
+        "to": "schema:AirspacePolyResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/airspace/route-query",
+        "kind": "ACCEPTS",
+        "to": "schema:AirspaceByRoute"
+      },
+      {
+        "from": "operation:post:/us/v1/airspace/route-query",
+        "kind": "RETURNS",
+        "to": "schema:AirspaceRouteResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/obstacles/distance-query",
+        "kind": "ACCEPTS",
+        "to": "schema:ObstaclesByDistance"
+      },
+      {
+        "from": "operation:post:/us/v1/obstacles/distance-query",
+        "kind": "RETURNS",
+        "to": "schema:ObstacleDistanceResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/obstacles/polygon-query",
+        "kind": "ACCEPTS",
+        "to": "schema:ObstaclesByPolygon"
+      },
+      {
+        "from": "operation:post:/us/v1/obstacles/polygon-query",
+        "kind": "RETURNS",
+        "to": "schema:ObstaclePolyResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/obstacles/route-query",
+        "kind": "ACCEPTS",
+        "to": "schema:ObstaclesByRoute"
+      },
+      {
+        "from": "operation:post:/us/v1/obstacles/route-query",
+        "kind": "RETURNS",
+        "to": "schema:ObstacleRouteResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/restrictions/distance-query",
+        "kind": "ACCEPTS",
+        "to": "schema:NOTAMsByDistance"
+      },
+      {
+        "from": "operation:post:/us/v1/restrictions/distance-query",
+        "kind": "RETURNS",
+        "to": "schema:NOTAMsDistanceResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/restrictions/polygon-query",
+        "kind": "ACCEPTS",
+        "to": "schema:NOTAMsByPolygon"
+      },
+      {
+        "from": "operation:post:/us/v1/restrictions/polygon-query",
+        "kind": "RETURNS",
+        "to": "schema:NOTAMsPolyResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/restrictions/route-query",
+        "kind": "ACCEPTS",
+        "to": "schema:NOTAMsByRoute"
+      },
+      {
+        "from": "operation:post:/us/v1/restrictions/route-query",
+        "kind": "RETURNS",
+        "to": "schema:NOTAMsRouteResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/ssa/distance-query",
+        "kind": "ACCEPTS",
+        "to": "schema:SSAByDistance"
+      },
+      {
+        "from": "operation:post:/us/v1/ssa/distance-query",
+        "kind": "RETURNS",
+        "to": "schema:SSADistanceResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/ssa/polygon-query",
+        "kind": "ACCEPTS",
+        "to": "schema:SSAByPolygon"
+      },
+      {
+        "from": "operation:post:/us/v1/ssa/polygon-query",
+        "kind": "RETURNS",
+        "to": "schema:SSAPolyResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/ssa/route-query",
+        "kind": "ACCEPTS",
+        "to": "schema:SSAByRoute"
+      },
+      {
+        "from": "operation:post:/us/v1/ssa/route-query",
+        "kind": "RETURNS",
+        "to": "schema:SSARouteResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/uoa/distance-query",
+        "kind": "ACCEPTS",
+        "to": "schema:UOAsByDistance"
+      },
+      {
+        "from": "operation:post:/us/v1/uoa/distance-query",
+        "kind": "RETURNS",
+        "to": "schema:UOAsDistanceResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/uoa/polygon-query",
+        "kind": "ACCEPTS",
+        "to": "schema:UOAsByPolygon"
+      },
+      {
+        "from": "operation:post:/us/v1/uoa/polygon-query",
+        "kind": "RETURNS",
+        "to": "schema:UOAsPolyResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/uoa/route-query",
+        "kind": "ACCEPTS",
+        "to": "schema:UOAsByRoute"
+      },
+      {
+        "from": "operation:post:/us/v1/uoa/route-query",
+        "kind": "RETURNS",
+        "to": "schema:UOAsRouteResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/venues/distance-query",
+        "kind": "ACCEPTS",
+        "to": "schema:VenuesByDistance"
+      },
+      {
+        "from": "operation:post:/us/v1/venues/distance-query",
+        "kind": "RETURNS",
+        "to": "schema:VenueDistanceResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/venues/polygon-query",
+        "kind": "ACCEPTS",
+        "to": "schema:VenuesByPolygon"
+      },
+      {
+        "from": "operation:post:/us/v1/venues/polygon-query",
+        "kind": "RETURNS",
+        "to": "schema:VenuePolyResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/venues/route-query",
+        "kind": "ACCEPTS",
+        "to": "schema:VenuesByRoute"
+      },
+      {
+        "from": "operation:post:/us/v1/venues/route-query",
+        "kind": "RETURNS",
+        "to": "schema:VenueRouteResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/wx-forecast/distance-query",
+        "kind": "ACCEPTS",
+        "to": "schema:WxByDistance"
+      },
+      {
+        "from": "operation:post:/us/v1/wx-forecast/distance-query",
+        "kind": "RETURNS",
+        "to": "schema:WxDistanceResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/wx-forecast/polygon-query",
+        "kind": "ACCEPTS",
+        "to": "schema:WxByPolygon"
+      },
+      {
+        "from": "operation:post:/us/v1/wx-forecast/polygon-query",
+        "kind": "RETURNS",
+        "to": "schema:WxPolyResponse"
+      },
+      {
+        "from": "operation:post:/us/v1/wx-forecast/route-query",
+        "kind": "ACCEPTS",
+        "to": "schema:WxByRoute"
+      },
+      {
+        "from": "operation:post:/us/v1/wx-forecast/route-query",
+        "kind": "RETURNS",
+        "to": "schema:WxRouteResponse"
+      },
+      {
+        "from": "schema:HTTPValidationError",
+        "kind": "REFERENCES",
+        "to": "schema:ValidationError"
       }
     ],
     "nodes": [
@@ -132,14 +377,44 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieve aerodromes within given distance of a point.",
         "id": "operation:post:/us/v1/aerodromes/distance-query",
         "kind": "operation",
         "method": "post",
         "name": "aerodromes_by_distance_us_v1_aerodromes_distance_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/aerodromes/distance-query",
         "pointer": "#/paths/~1us~1v1~1aerodromes~1distance-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AerodromesByDistance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AerodromeDistanceResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve aerodromes within given distance of location."
+        "summary": "Retrieve aerodromes within given distance of location.",
+        "tags": [
+          "Aerodromes"
+        ]
       },
       {
         "deprecated": false,
@@ -147,10 +422,39 @@
         "kind": "operation",
         "method": "post",
         "name": "aerodromes_by_poly_us_v1_aerodromes_polygon_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/aerodromes/polygon-query",
         "pointer": "#/paths/~1us~1v1~1aerodromes~1polygon-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AerodromesByPolygon"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AerodromePolyResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve aerodromes located within given area."
+        "summary": "Retrieve aerodromes located within given area.",
+        "tags": [
+          "Aerodromes"
+        ]
       },
       {
         "deprecated": false,
@@ -158,54 +462,203 @@
         "kind": "operation",
         "method": "post",
         "name": "aerodromes_by_route_us_v1_aerodromes_route_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/aerodromes/route-query",
         "pointer": "#/paths/~1us~1v1~1aerodromes~1route-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AerodromesByRoute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AerodromeRouteResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve aerodromes found along a route."
+        "summary": "Retrieve aerodromes found along a route.",
+        "tags": [
+          "Aerodromes"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve selected types of airspace existing within given distance from a point.",
         "id": "operation:post:/us/v1/airspace/distance-query",
         "kind": "operation",
         "method": "post",
         "name": "asp_by_distance_us_v1_airspace_distance_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/airspace/distance-query",
         "pointer": "#/paths/~1us~1v1~1airspace~1distance-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AirspaceByDistance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AirspaceDistanceResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve all requested types of airspace located within given distance of location."
+        "summary": "Retrieve all requested types of airspace located within given distance of location.",
+        "tags": [
+          "Airspace"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve selected types of airspace located within given area.",
         "id": "operation:post:/us/v1/airspace/polygon-query",
         "kind": "operation",
         "method": "post",
         "name": "asp_by_poly_us_v1_airspace_polygon_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/airspace/polygon-query",
         "pointer": "#/paths/~1us~1v1~1airspace~1polygon-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AirspaceByPolygon"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AirspacePolyResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve all requested types of airspace located within given GeoJSON Polygon."
+        "summary": "Retrieve all requested types of airspace located within given GeoJSON Polygon.",
+        "tags": [
+          "Airspace"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve selected types of airspace traversed by route.",
         "id": "operation:post:/us/v1/airspace/route-query",
         "kind": "operation",
         "method": "post",
         "name": "asp_by_route_us_v1_airspace_route_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/airspace/route-query",
         "pointer": "#/paths/~1us~1v1~1airspace~1route-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AirspaceByRoute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AirspaceRouteResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve all requested types of airspace traversed by route."
+        "summary": "Retrieve all requested types of airspace traversed by route.",
+        "tags": [
+          "Airspace"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve obstacles within given distance of a point.",
         "id": "operation:post:/us/v1/obstacles/distance-query",
         "kind": "operation",
         "method": "post",
         "name": "obstacles_by_distance_us_v1_obstacles_distance_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/obstacles/distance-query",
         "pointer": "#/paths/~1us~1v1~1obstacles~1distance-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ObstaclesByDistance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ObstacleDistanceResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve obstacles within given distance of location."
+        "summary": "Retrieve obstacles within given distance of location.",
+        "tags": [
+          "Surface Obstacles"
+        ]
       },
       {
         "deprecated": false,
@@ -213,10 +666,39 @@
         "kind": "operation",
         "method": "post",
         "name": "obstacles_by_poly_us_v1_obstacles_polygon_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/obstacles/polygon-query",
         "pointer": "#/paths/~1us~1v1~1obstacles~1polygon-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ObstaclesByPolygon"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ObstaclePolyResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve obstacles located within given area."
+        "summary": "Retrieve obstacles located within given area.",
+        "tags": [
+          "Surface Obstacles"
+        ]
       },
       {
         "deprecated": false,
@@ -224,87 +706,326 @@
         "kind": "operation",
         "method": "post",
         "name": "obstacles_by_route_us_v1_obstacles_route_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/obstacles/route-query",
         "pointer": "#/paths/~1us~1v1~1obstacles~1route-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ObstaclesByRoute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ObstacleRouteResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve obstacles found along a route."
+        "summary": "Retrieve obstacles found along a route.",
+        "tags": [
+          "Surface Obstacles"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve Flight Restrictions applicable within given distance of a point.",
         "id": "operation:post:/us/v1/restrictions/distance-query",
         "kind": "operation",
         "method": "post",
         "name": "tfr_by_distance_us_v1_restrictions_distance_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/restrictions/distance-query",
         "pointer": "#/paths/~1us~1v1~1restrictions~1distance-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NOTAMsByDistance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "NOTAMsDistanceResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve flight restrictions applicable within given distance of location."
+        "summary": "Retrieve flight restrictions applicable within given distance of location.",
+        "tags": [
+          "Flight Restrictions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve Flight Restrictions located within given area.",
         "id": "operation:post:/us/v1/restrictions/polygon-query",
         "kind": "operation",
         "method": "post",
         "name": "tfr_by_poly_us_v1_restrictions_polygon_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/restrictions/polygon-query",
         "pointer": "#/paths/~1us~1v1~1restrictions~1polygon-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NOTAMsByPolygon"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "NOTAMsPolyResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve flight restrictions applicable within given area."
+        "summary": "Retrieve flight restrictions applicable within given area.",
+        "tags": [
+          "Flight Restrictions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve Flight Restrictions applicable along your route.",
         "id": "operation:post:/us/v1/restrictions/route-query",
         "kind": "operation",
         "method": "post",
         "name": "tfr_by_route_us_v1_restrictions_route_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/restrictions/route-query",
         "pointer": "#/paths/~1us~1v1~1restrictions~1route-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "NOTAMsByRoute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "NOTAMsRouteResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve flight restrictions applicable along route."
+        "summary": "Retrieve flight restrictions applicable along route.",
+        "tags": [
+          "Flight Restrictions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve special security areas existing within given distance from a point.",
         "id": "operation:post:/us/v1/ssa/distance-query",
         "kind": "operation",
         "method": "post",
         "name": "ssa_by_distance_us_v1_ssa_distance_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/ssa/distance-query",
         "pointer": "#/paths/~1us~1v1~1ssa~1distance-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SSAByDistance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SSADistanceResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve all special security areas located within given distance of location."
+        "summary": "Retrieve all special security areas located within given distance of location.",
+        "tags": [
+          "Special Security Areas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all special security areas located within given area.",
         "id": "operation:post:/us/v1/ssa/polygon-query",
         "kind": "operation",
         "method": "post",
         "name": "ssa_by_poly_us_v1_ssa_polygon_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/ssa/polygon-query",
         "pointer": "#/paths/~1us~1v1~1ssa~1polygon-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SSAByPolygon"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SSAPolyResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve all special security areas located within given GeoJSON Polygon."
+        "summary": "Retrieve all special security areas located within given GeoJSON Polygon.",
+        "tags": [
+          "Special Security Areas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all special security areas intersected by route.",
         "id": "operation:post:/us/v1/ssa/route-query",
         "kind": "operation",
         "method": "post",
         "name": "ssa_by_route_us_v1_ssa_route_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/ssa/route-query",
         "pointer": "#/paths/~1us~1v1~1ssa~1route-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SSAByRoute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SSARouteResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve all special security areas traversed by route."
+        "summary": "Retrieve all special security areas traversed by route.",
+        "tags": [
+          "Special Security Areas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve UAS Operating Areas (UOAs) found within given distance of a point.",
         "id": "operation:post:/us/v1/uoa/distance-query",
         "kind": "operation",
         "method": "post",
         "name": "uoa_by_distance_us_v1_uoa_distance_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/uoa/distance-query",
         "pointer": "#/paths/~1us~1v1~1uoa~1distance-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UOAsByDistance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UOAsDistanceResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve UAS Operating Areas (UOAs) found within given distance of location."
+        "summary": "Retrieve UAS Operating Areas (UOAs) found within given distance of location.",
+        "tags": [
+          "UAS Operating Areas"
+        ]
       },
       {
         "deprecated": false,
@@ -312,337 +1033,650 @@
         "kind": "operation",
         "method": "post",
         "name": "uoa_by_poly_us_v1_uoa_polygon_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/uoa/polygon-query",
         "pointer": "#/paths/~1us~1v1~1uoa~1polygon-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UOAsByPolygon"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UOAsPolyResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve UAS Operating Areas (UOAs) found within given area."
+        "summary": "Retrieve UAS Operating Areas (UOAs) found within given area.",
+        "tags": [
+          "UAS Operating Areas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve UAS Operating Areas (UOAs) found along your route.",
         "id": "operation:post:/us/v1/uoa/route-query",
         "kind": "operation",
         "method": "post",
         "name": "uoa_by_route_us_v1_uoa_route_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/uoa/route-query",
         "pointer": "#/paths/~1us~1v1~1uoa~1route-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UOAsByRoute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UOAsRouteResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve UAS Operating Areas (UOAs) found along route."
+        "summary": "Retrieve UAS Operating Areas (UOAs) found along route.",
+        "tags": [
+          "UAS Operating Areas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve venues existing within given distance from a point.",
         "id": "operation:post:/us/v1/venues/distance-query",
         "kind": "operation",
         "method": "post",
         "name": "ven_by_distance_us_v1_venues_distance_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/venues/distance-query",
         "pointer": "#/paths/~1us~1v1~1venues~1distance-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "VenuesByDistance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "VenueDistanceResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve all restricted public venues located within given distance of location."
+        "summary": "Retrieve all restricted public venues located within given distance of location.",
+        "tags": [
+          "Restricted Public Venues"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all restricted public venues located within given area.",
         "id": "operation:post:/us/v1/venues/polygon-query",
         "kind": "operation",
         "method": "post",
         "name": "ven_by_poly_us_v1_venues_polygon_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/venues/polygon-query",
         "pointer": "#/paths/~1us~1v1~1venues~1polygon-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "VenuesByPolygon"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "VenuePolyResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve all restricted public venues located within given GeoJSON Polygon."
+        "summary": "Retrieve all restricted public venues located within given GeoJSON Polygon.",
+        "tags": [
+          "Restricted Public Venues"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all restricted public venues intersected by route.",
         "id": "operation:post:/us/v1/venues/route-query",
         "kind": "operation",
         "method": "post",
         "name": "ven_by_route_us_v1_venues_route_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/venues/route-query",
         "pointer": "#/paths/~1us~1v1~1venues~1route-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "VenuesByRoute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "VenueRouteResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve all restricted public venues traversed by route."
+        "summary": "Retrieve all restricted public venues traversed by route.",
+        "tags": [
+          "Restricted Public Venues"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve forecast values for selected weather elements and time period.",
         "id": "operation:post:/us/v1/wx-forecast/distance-query",
         "kind": "operation",
         "method": "post",
         "name": "wx_by_distance_us_v1_wx_forecast_distance_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/wx-forecast/distance-query",
         "pointer": "#/paths/~1us~1v1~1wx-forecast~1distance-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "WxByDistance"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WxDistanceResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve forecast values within given distance of location for all requested weather elements and time periods."
+        "summary": "Retrieve forecast values within given distance of location for all requested weather elements and time periods.",
+        "tags": [
+          "Weather"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve forecast values located within given area for requested weather elements and time period.",
         "id": "operation:post:/us/v1/wx-forecast/polygon-query",
         "kind": "operation",
         "method": "post",
         "name": "wx_by_poly_us_v1_wx_forecast_polygon_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/wx-forecast/polygon-query",
         "pointer": "#/paths/~1us~1v1~1wx-forecast~1polygon-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "WxByPolygon"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WxPolyResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve forecast values within given GeoJSON polygon for all requested weather elements and time periods."
+        "summary": "Retrieve forecast values within given GeoJSON polygon for all requested weather elements and time periods.",
+        "tags": [
+          "Weather"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve forecast values along route for requested weather elements and time period.",
         "id": "operation:post:/us/v1/wx-forecast/route-query",
         "kind": "operation",
         "method": "post",
         "name": "wx_by_route_us_v1_wx_forecast_route_query_post",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/us/v1/wx-forecast/route-query",
         "pointer": "#/paths/~1us~1v1~1wx-forecast~1route-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "WxByRoute"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "WxRouteResponse"
+          },
+          {
+            "status": "422",
+            "type": "HTTPValidationError"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Retrieve forecast values along a route for all requested weather elements and time periods."
+        "summary": "Retrieve forecast values along a route for all requested weather elements and time periods.",
+        "tags": [
+          "Weather"
+        ]
       },
       {
         "id": "schema:AerodromeDistanceResponse",
         "kind": "schema",
-        "name": "AerodromeDistanceResponse"
+        "name": "AerodromeDistanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:AerodromePolyResponse",
         "kind": "schema",
-        "name": "AerodromePolyResponse"
+        "name": "AerodromePolyResponse",
+        "type": "object"
       },
       {
         "id": "schema:AerodromeRouteResponse",
         "kind": "schema",
-        "name": "AerodromeRouteResponse"
+        "name": "AerodromeRouteResponse",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for point/distance requests",
         "id": "schema:AerodromesByDistance",
         "kind": "schema",
-        "name": "AerodromesByDistance"
+        "name": "AerodromesByDistance",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for polygon requests",
         "id": "schema:AerodromesByPolygon",
         "kind": "schema",
-        "name": "AerodromesByPolygon"
+        "name": "AerodromesByPolygon",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for along-route requests",
         "id": "schema:AerodromesByRoute",
         "kind": "schema",
-        "name": "AerodromesByRoute"
+        "name": "AerodromesByRoute",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for point/distance requests",
         "id": "schema:AirspaceByDistance",
         "kind": "schema",
-        "name": "AirspaceByDistance"
+        "name": "AirspaceByDistance",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for polygon requests",
         "id": "schema:AirspaceByPolygon",
         "kind": "schema",
-        "name": "AirspaceByPolygon"
+        "name": "AirspaceByPolygon",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for along-route requests",
         "id": "schema:AirspaceByRoute",
         "kind": "schema",
-        "name": "AirspaceByRoute"
+        "name": "AirspaceByRoute",
+        "type": "object"
       },
       {
         "id": "schema:AirspaceDistanceResponse",
         "kind": "schema",
-        "name": "AirspaceDistanceResponse"
+        "name": "AirspaceDistanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:AirspacePolyResponse",
         "kind": "schema",
-        "name": "AirspacePolyResponse"
+        "name": "AirspacePolyResponse",
+        "type": "object"
       },
       {
         "id": "schema:AirspaceRouteResponse",
         "kind": "schema",
-        "name": "AirspaceRouteResponse"
+        "name": "AirspaceRouteResponse",
+        "type": "object"
       },
       {
         "id": "schema:HTTPValidationError",
         "kind": "schema",
-        "name": "HTTPValidationError"
+        "name": "HTTPValidationError",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for point/distance requests",
         "id": "schema:NOTAMsByDistance",
         "kind": "schema",
-        "name": "NOTAMsByDistance"
+        "name": "NOTAMsByDistance",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for polygon requests",
         "id": "schema:NOTAMsByPolygon",
         "kind": "schema",
-        "name": "NOTAMsByPolygon"
+        "name": "NOTAMsByPolygon",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for along-route requests",
         "id": "schema:NOTAMsByRoute",
         "kind": "schema",
-        "name": "NOTAMsByRoute"
+        "name": "NOTAMsByRoute",
+        "type": "object"
       },
       {
         "id": "schema:NOTAMsDistanceResponse",
         "kind": "schema",
-        "name": "NOTAMsDistanceResponse"
+        "name": "NOTAMsDistanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:NOTAMsPolyResponse",
         "kind": "schema",
-        "name": "NOTAMsPolyResponse"
+        "name": "NOTAMsPolyResponse",
+        "type": "object"
       },
       {
         "id": "schema:NOTAMsRouteResponse",
         "kind": "schema",
-        "name": "NOTAMsRouteResponse"
+        "name": "NOTAMsRouteResponse",
+        "type": "object"
       },
       {
         "id": "schema:ObstacleDistanceResponse",
         "kind": "schema",
-        "name": "ObstacleDistanceResponse"
+        "name": "ObstacleDistanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:ObstaclePolyResponse",
         "kind": "schema",
-        "name": "ObstaclePolyResponse"
+        "name": "ObstaclePolyResponse",
+        "type": "object"
       },
       {
         "id": "schema:ObstacleRouteResponse",
         "kind": "schema",
-        "name": "ObstacleRouteResponse"
+        "name": "ObstacleRouteResponse",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for point/distance requests",
         "id": "schema:ObstaclesByDistance",
         "kind": "schema",
-        "name": "ObstaclesByDistance"
+        "name": "ObstaclesByDistance",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for polygon requests",
         "id": "schema:ObstaclesByPolygon",
         "kind": "schema",
-        "name": "ObstaclesByPolygon"
+        "name": "ObstaclesByPolygon",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for along-route requests",
         "id": "schema:ObstaclesByRoute",
         "kind": "schema",
-        "name": "ObstaclesByRoute"
+        "name": "ObstaclesByRoute",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for point/distance requests",
         "id": "schema:SSAByDistance",
         "kind": "schema",
-        "name": "SSAByDistance"
+        "name": "SSAByDistance",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for polygon requests",
         "id": "schema:SSAByPolygon",
         "kind": "schema",
-        "name": "SSAByPolygon"
+        "name": "SSAByPolygon",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for along-route requests",
         "id": "schema:SSAByRoute",
         "kind": "schema",
-        "name": "SSAByRoute"
+        "name": "SSAByRoute",
+        "type": "object"
       },
       {
         "id": "schema:SSADistanceResponse",
         "kind": "schema",
-        "name": "SSADistanceResponse"
+        "name": "SSADistanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:SSAPolyResponse",
         "kind": "schema",
-        "name": "SSAPolyResponse"
+        "name": "SSAPolyResponse",
+        "type": "object"
       },
       {
         "id": "schema:SSARouteResponse",
         "kind": "schema",
-        "name": "SSARouteResponse"
+        "name": "SSARouteResponse",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for point/distance requests",
         "id": "schema:UOAsByDistance",
         "kind": "schema",
-        "name": "UOAsByDistance"
+        "name": "UOAsByDistance",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for polygon requests",
         "id": "schema:UOAsByPolygon",
         "kind": "schema",
-        "name": "UOAsByPolygon"
+        "name": "UOAsByPolygon",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for along-route requests",
         "id": "schema:UOAsByRoute",
         "kind": "schema",
-        "name": "UOAsByRoute"
+        "name": "UOAsByRoute",
+        "type": "object"
       },
       {
         "id": "schema:UOAsDistanceResponse",
         "kind": "schema",
-        "name": "UOAsDistanceResponse"
+        "name": "UOAsDistanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:UOAsPolyResponse",
         "kind": "schema",
-        "name": "UOAsPolyResponse"
+        "name": "UOAsPolyResponse",
+        "type": "object"
       },
       {
         "id": "schema:UOAsRouteResponse",
         "kind": "schema",
-        "name": "UOAsRouteResponse"
+        "name": "UOAsRouteResponse",
+        "type": "object"
       },
       {
         "id": "schema:ValidationError",
         "kind": "schema",
-        "name": "ValidationError"
+        "name": "ValidationError",
+        "type": "object"
       },
       {
         "id": "schema:VenueDistanceResponse",
         "kind": "schema",
-        "name": "VenueDistanceResponse"
+        "name": "VenueDistanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:VenuePolyResponse",
         "kind": "schema",
-        "name": "VenuePolyResponse"
+        "name": "VenuePolyResponse",
+        "type": "object"
       },
       {
         "id": "schema:VenueRouteResponse",
         "kind": "schema",
-        "name": "VenueRouteResponse"
+        "name": "VenueRouteResponse",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for point/distance requests",
         "id": "schema:VenuesByDistance",
         "kind": "schema",
-        "name": "VenuesByDistance"
+        "name": "VenuesByDistance",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for polygon requests",
         "id": "schema:VenuesByPolygon",
         "kind": "schema",
-        "name": "VenuesByPolygon"
+        "name": "VenuesByPolygon",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for along-route requests",
         "id": "schema:VenuesByRoute",
         "kind": "schema",
-        "name": "VenuesByRoute"
+        "name": "VenuesByRoute",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for point/distance requests",
         "id": "schema:WxByDistance",
         "kind": "schema",
-        "name": "WxByDistance"
+        "name": "WxByDistance",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for polygon requests",
         "id": "schema:WxByPolygon",
         "kind": "schema",
-        "name": "WxByPolygon"
+        "name": "WxByPolygon",
+        "type": "object"
       },
       {
+        "description": "Geometry-defining arguments for along-route requests",
         "id": "schema:WxByRoute",
         "kind": "schema",
-        "name": "WxByRoute"
+        "name": "WxByRoute",
+        "type": "object"
       },
       {
         "id": "schema:WxDistanceResponse",
         "kind": "schema",
-        "name": "WxDistanceResponse"
+        "name": "WxDistanceResponse",
+        "type": "object"
       },
       {
         "id": "schema:WxPolyResponse",
         "kind": "schema",
-        "name": "WxPolyResponse"
+        "name": "WxPolyResponse",
+        "type": "object"
       },
       {
         "id": "schema:WxRouteResponse",
         "kind": "schema",
-        "name": "WxRouteResponse"
+        "name": "WxRouteResponse",
+        "type": "object"
       }
     ]
   },

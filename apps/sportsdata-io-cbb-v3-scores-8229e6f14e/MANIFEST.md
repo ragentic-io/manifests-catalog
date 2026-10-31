@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_nfldata_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `a7e32d7f0a0db4196dbe6a2106c54ada01657a7b3623d502e8e684fd13a3a2e4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,21 +34,23 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_nfldata_profile_ima
 
 10 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/{format}/AreAnyGamesInProgress` | AreGamesInProgress | Are Games In Progress |
-| GET | `/{format}/CurrentSeason` | CurrentSeason | Current Season |
-| GET | `/{format}/Games/{season}` | Schedules | Schedules |
-| GET | `/{format}/GamesByDate/{date}` | GamesByDate | Games by Date |
-| GET | `/{format}/InjuredPlayers` | InjuredPlayers | Injured Players |
-| GET | `/{format}/LeagueHierarchy` | LeagueHierarchy | League Hierarchy |
-| GET | `/{format}/Player/{playerid}` | PlayerDetailsByPlayer | Player Details by Player |
-| GET | `/{format}/Players` | PlayerDetailsByActive | Player Details by Active |
-| GET | `/{format}/Players/{team}` | PlayerDetailsByTeam | Player Details by Team |
-| GET | `/{format}/Stadiums` | Stadiums | Stadiums |
-| GET | `/{format}/TeamGameStatsByDate/{date}` | TeamGameStatsByDate | Team Game Stats by Date |
-| GET | `/{format}/TeamGameStatsBySeason/{season}/{teamid}/{numberofgames}` | TeamGameLogsBySeason | Team Game Logs By Season |
-| GET | `/{format}/TeamSchedule/{season}/{team}` | TeamSchedule | Team Schedule |
-| GET | `/{format}/TeamSeasonStats/{season}` | TeamSeasonStats | Team Season Stats |
-| GET | `/{format}/Tournament/{season}` | TournamentHierarchy | Tournament Hierarchy |
-| GET | `/{format}/teams` | Teams | Teams |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/{format}/AreAnyGamesInProgress` | AreGamesInProgress | `format`* | boolean | yes | Are Games In Progress |
+| GET | `/{format}/CurrentSeason` | CurrentSeason | `format`* | Season | yes | Current Season |
+| GET | `/{format}/Games/{season}` | Schedules | `format`*, `season`* | Game[] | yes | Schedules |
+| GET | `/{format}/GamesByDate/{date}` | GamesByDate | `format`*, `date`* | Game[] | yes | Games by Date |
+| GET | `/{format}/InjuredPlayers` | InjuredPlayers | `format`* | Player[] | yes | Injured Players |
+| GET | `/{format}/LeagueHierarchy` | LeagueHierarchy | `format`* | Conference[] | yes | League Hierarchy |
+| GET | `/{format}/Player/{playerid}` | PlayerDetailsByPlayer | `format`*, `playerid`* | Player | yes | Player Details by Player |
+| GET | `/{format}/Players` | PlayerDetailsByActive | `format`* | Player[] | yes | Player Details by Active |
+| GET | `/{format}/Players/{team}` | PlayerDetailsByTeam | `format`*, `team`* | Player[] | yes | Player Details by Team |
+| GET | `/{format}/Stadiums` | Stadiums | `format`* | Stadium[] | yes | Stadiums |
+| GET | `/{format}/TeamGameStatsByDate/{date}` | TeamGameStatsByDate | `format`*, `date`* | TeamGame[] | yes | Team Game Stats by Date |
+| GET | `/{format}/TeamGameStatsBySeason/{season}/{teamid}/{numberofgames}` | TeamGameLogsBySeason | `format`*, `season`*, `teamid`*, `numberofgames`* | TeamGame[] | yes | Team Game Logs By Season |
+| GET | `/{format}/TeamSchedule/{season}/{team}` | TeamSchedule | `format`*, `season`*, `team`* | Game[] | yes | Team Schedule |
+| GET | `/{format}/TeamSeasonStats/{season}` | TeamSeasonStats | `format`*, `season`* | TeamSeason[] | yes | Team Season Stats |
+| GET | `/{format}/Tournament/{season}` | TournamentHierarchy | `format`*, `season`* | Tournament | yes | Tournament Hierarchy |
+| GET | `/{format}/teams` | Teams | `format`* | Team[] | yes | Teams |

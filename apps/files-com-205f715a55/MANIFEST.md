@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `5691341baf8afba7a9cc408ca1ceea79fde31b969c956d7be7543da680670748` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,227 +34,229 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 74 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/action_notification_export_results` | GetActionNotificationExportResults | List Action Notification Export Results |
-| POST | `/action_notification_exports` | PostActionNotificationExports | Create Action Notification Export |
-| GET | `/action_notification_exports/{id}` | GetActionNotificationExportsId | Show Action Notification Export |
-| POST | `/action_webhook_failures/{id}/retry` | PostActionWebhookFailuresIdRetry | retry Action Webhook Failure |
-| DELETE | `/api_key` | ApiKeyDeleteCurrent | Delete current API key. (Requires current API connection to be using an API key.) |
-| GET | `/api_key` | ApiKeyFindCurrent | Show information about current API key. (Requires current API connection to be using an API key.) |
-| PATCH | `/api_key` | ApiKeyUpdateCurrent | Update current API key. (Requires current API connection to be using an API key.) |
-| GET | `/api_keys` | GetApiKeys | List Api Keys |
-| POST | `/api_keys` | PostApiKeys | Create Api Key |
-| DELETE | `/api_keys/{id}` | DeleteApiKeysId | Delete Api Key |
-| GET | `/api_keys/{id}` | GetApiKeysId | Show Api Key |
-| PATCH | `/api_keys/{id}` | PatchApiKeysId | Update Api Key |
-| GET | `/apps` | GetApps | List Apps |
-| GET | `/as2_incoming_messages` | GetAs2IncomingMessages | List As2 Incoming Messages |
-| GET | `/as2_outgoing_messages` | GetAs2OutgoingMessages | List As2 Outgoing Messages |
-| GET | `/as2_partners` | GetAs2Partners | List As2 Partners |
-| POST | `/as2_partners` | PostAs2Partners | Create As2 Partner |
-| DELETE | `/as2_partners/{id}` | DeleteAs2PartnersId | Delete As2 Partner |
-| GET | `/as2_partners/{id}` | GetAs2PartnersId | Show As2 Partner |
-| PATCH | `/as2_partners/{id}` | PatchAs2PartnersId | Update As2 Partner |
-| GET | `/as2_stations` | GetAs2Stations | List As2 Stations |
-| POST | `/as2_stations` | PostAs2Stations | Create As2 Station |
-| DELETE | `/as2_stations/{id}` | DeleteAs2StationsId | Delete As2 Station |
-| GET | `/as2_stations/{id}` | GetAs2StationsId | Show As2 Station |
-| PATCH | `/as2_stations/{id}` | PatchAs2StationsId | Update As2 Station |
-| GET | `/automation_runs` | GetAutomationRuns | List Automation Runs |
-| GET | `/automation_runs/{id}` | GetAutomationRunsId | Show Automation Run |
-| GET | `/automations` | GetAutomations | List Automations |
-| POST | `/automations` | PostAutomations | Create Automation |
-| DELETE | `/automations/{id}` | DeleteAutomationsId | Delete Automation |
-| GET | `/automations/{id}` | GetAutomationsId | Show Automation |
-| PATCH | `/automations/{id}` | PatchAutomationsId | Update Automation |
-| GET | `/bandwidth_snapshots` | GetBandwidthSnapshots | List Bandwidth Snapshots |
-| GET | `/behaviors` | GetBehaviors | List Behaviors |
-| POST | `/behaviors` | PostBehaviors | Create Behavior |
-| GET | `/behaviors/folders/{path}` | BehaviorListForPath | List Behaviors by path |
-| POST | `/behaviors/webhook/test` | PostBehaviorsWebhookTest | Test webhook. |
-| DELETE | `/behaviors/{id}` | DeleteBehaviorsId | Delete Behavior |
-| GET | `/behaviors/{id}` | GetBehaviorsId | Show Behavior |
-| PATCH | `/behaviors/{id}` | PatchBehaviorsId | Update Behavior |
-| GET | `/bundle_downloads` | GetBundleDownloads | List Bundle Downloads |
-| GET | `/bundle_notifications` | GetBundleNotifications | List Bundle Notifications |
-| POST | `/bundle_notifications` | PostBundleNotifications | Create Bundle Notification |
-| DELETE | `/bundle_notifications/{id}` | DeleteBundleNotificationsId | Delete Bundle Notification |
-| GET | `/bundle_notifications/{id}` | GetBundleNotificationsId | Show Bundle Notification |
-| PATCH | `/bundle_notifications/{id}` | PatchBundleNotificationsId | Update Bundle Notification |
-| GET | `/bundle_recipients` | GetBundleRecipients | List Bundle Recipients |
-| POST | `/bundle_recipients` | PostBundleRecipients | Create Bundle Recipient |
-| GET | `/bundle_registrations` | GetBundleRegistrations | List Bundle Registrations |
-| GET | `/bundles` | GetBundles | List Bundles |
-| POST | `/bundles` | PostBundles | Create Bundle |
-| DELETE | `/bundles/{id}` | DeleteBundlesId | Delete Bundle |
-| GET | `/bundles/{id}` | GetBundlesId | Show Bundle |
-| PATCH | `/bundles/{id}` | PatchBundlesId | Update Bundle |
-| POST | `/bundles/{id}/share` | PostBundlesIdShare | Send email(s) with a link to bundle |
-| GET | `/clickwraps` | GetClickwraps | List Clickwraps |
-| POST | `/clickwraps` | PostClickwraps | Create Clickwrap |
-| DELETE | `/clickwraps/{id}` | DeleteClickwrapsId | Delete Clickwrap |
-| GET | `/clickwraps/{id}` | GetClickwrapsId | Show Clickwrap |
-| PATCH | `/clickwraps/{id}` | PatchClickwrapsId | Update Clickwrap |
-| GET | `/dns_records` | GetDnsRecords | Show site DNS configuration. |
-| GET | `/external_events` | GetExternalEvents | List External Events |
-| POST | `/external_events` | PostExternalEvents | Create External Event |
-| GET | `/external_events/{id}` | GetExternalEventsId | Show External Event |
-| POST | `/file_actions/begin_upload/{path}` | FileActionBeginUpload | Begin file upload |
-| POST | `/file_actions/copy/{path}` | FileActionCopy | Copy file/folder |
-| GET | `/file_actions/metadata/{path}` | FileActionFind | Find file/folder by path |
-| POST | `/file_actions/move/{path}` | FileActionMove | Move file/folder |
-| POST | `/file_comment_reactions` | PostFileCommentReactions | Create File Comment Reaction |
-| DELETE | `/file_comment_reactions/{id}` | DeleteFileCommentReactionsId | Delete File Comment Reaction |
-| POST | `/file_comments` | PostFileComments | Create File Comment |
-| GET | `/file_comments/files/{path}` | FileCommentListForPath | List File Comments by path |
-| DELETE | `/file_comments/{id}` | DeleteFileCommentsId | Delete File Comment |
-| PATCH | `/file_comments/{id}` | PatchFileCommentsId | Update File Comment |
-| GET | `/file_migrations/{id}` | GetFileMigrationsId | Show File Migration |
-| DELETE | `/files/{path}` | DeleteFilesPath | Delete file/folder |
-| GET | `/files/{path}` | FileDownload | Download file |
-| PATCH | `/files/{path}` | PatchFilesPath | Update file/folder metadata |
-| POST | `/files/{path}` | PostFilesPath | Upload file |
-| GET | `/folders/{path}` | FolderListForPath | List Folders by path |
-| POST | `/folders/{path}` | PostFoldersPath | Create folder |
-| GET | `/form_field_sets` | GetFormFieldSets | List Form Field Sets |
-| POST | `/form_field_sets` | PostFormFieldSets | Create Form Field Set |
-| DELETE | `/form_field_sets/{id}` | DeleteFormFieldSetsId | Delete Form Field Set |
-| GET | `/form_field_sets/{id}` | GetFormFieldSetsId | Show Form Field Set |
-| PATCH | `/form_field_sets/{id}` | PatchFormFieldSetsId | Update Form Field Set |
-| GET | `/group_users` | GetGroupUsers | List Group Users |
-| POST | `/group_users` | PostGroupUsers | Create Group User |
-| DELETE | `/group_users/{id}` | DeleteGroupUsersId | Delete Group User |
-| PATCH | `/group_users/{id}` | PatchGroupUsersId | Update Group User |
-| GET | `/groups` | GetGroups | List Groups |
-| POST | `/groups` | PostGroups | Create Group |
-| DELETE | `/groups/{group_id}/memberships/{user_id}` | DeleteGroupsGroupIdMembershipsUserId | Delete Group User |
-| PATCH | `/groups/{group_id}/memberships/{user_id}` | PatchGroupsGroupIdMembershipsUserId | Update Group User |
-| GET | `/groups/{group_id}/permissions` | GetGroupsGroupIdPermissions | List Permissions |
-| GET | `/groups/{group_id}/users` | GetGroupsGroupIdUsers | List Group Users |
-| POST | `/groups/{group_id}/users` | PostGroupsGroupIdUsers | Create User |
-| DELETE | `/groups/{id}` | DeleteGroupsId | Delete Group |
-| GET | `/groups/{id}` | GetGroupsId | Show Group |
-| PATCH | `/groups/{id}` | PatchGroupsId | Update Group |
-| GET | `/history` | HistoryList | List site full action history. |
-| GET | `/history/files/{path}` | HistoryListForFile | List history for specific file. |
-| GET | `/history/folders/{path}` | HistoryListForFolder | List history for specific folder. |
-| GET | `/history/login` | HistoryListLogins | List site login history. |
-| GET | `/history/users/{user_id}` | HistoryListForUser | List history for specific user. |
-| GET | `/history_export_results` | GetHistoryExportResults | List History Export Results |
-| POST | `/history_exports` | PostHistoryExports | Create History Export |
-| GET | `/history_exports/{id}` | GetHistoryExportsId | Show History Export |
-| GET | `/inbox_recipients` | GetInboxRecipients | List Inbox Recipients |
-| POST | `/inbox_recipients` | PostInboxRecipients | Create Inbox Recipient |
-| GET | `/inbox_registrations` | GetInboxRegistrations | List Inbox Registrations |
-| GET | `/inbox_uploads` | GetInboxUploads | List Inbox Uploads |
-| GET | `/invoices` | GetInvoices | List Invoices |
-| GET | `/invoices/{id}` | GetInvoicesId | Show Invoice |
-| GET | `/ip_addresses` | GetIpAddresses | List IP Addresses associated with the current site |
-| GET | `/ip_addresses/exavault-reserved` | GetIpAddressesExavaultReserved | List all possible public ExaVault IP addresses |
-| GET | `/ip_addresses/reserved` | GetIpAddressesReserved | List all possible public IP addresses |
-| DELETE | `/locks/{path}` | DeleteLocksPath | Delete Lock |
-| GET | `/locks/{path}` | LockListForPath | List Locks by path |
-| POST | `/locks/{path}` | PostLocksPath | Create Lock |
-| GET | `/message_comment_reactions` | GetMessageCommentReactions | List Message Comment Reactions |
-| POST | `/message_comment_reactions` | PostMessageCommentReactions | Create Message Comment Reaction |
-| DELETE | `/message_comment_reactions/{id}` | DeleteMessageCommentReactionsId | Delete Message Comment Reaction |
-| GET | `/message_comment_reactions/{id}` | GetMessageCommentReactionsId | Show Message Comment Reaction |
-| GET | `/message_comments` | GetMessageComments | List Message Comments |
-| POST | `/message_comments` | PostMessageComments | Create Message Comment |
-| DELETE | `/message_comments/{id}` | DeleteMessageCommentsId | Delete Message Comment |
-| GET | `/message_comments/{id}` | GetMessageCommentsId | Show Message Comment |
-| PATCH | `/message_comments/{id}` | PatchMessageCommentsId | Update Message Comment |
-| GET | `/message_reactions` | GetMessageReactions | List Message Reactions |
-| POST | `/message_reactions` | PostMessageReactions | Create Message Reaction |
-| DELETE | `/message_reactions/{id}` | DeleteMessageReactionsId | Delete Message Reaction |
-| GET | `/message_reactions/{id}` | GetMessageReactionsId | Show Message Reaction |
-| GET | `/messages` | GetMessages | List Messages |
-| POST | `/messages` | PostMessages | Create Message |
-| DELETE | `/messages/{id}` | DeleteMessagesId | Delete Message |
-| GET | `/messages/{id}` | GetMessagesId | Show Message |
-| PATCH | `/messages/{id}` | PatchMessagesId | Update Message |
-| GET | `/notifications` | GetNotifications | List Notifications |
-| POST | `/notifications` | PostNotifications | Create Notification |
-| DELETE | `/notifications/{id}` | DeleteNotificationsId | Delete Notification |
-| GET | `/notifications/{id}` | GetNotificationsId | Show Notification |
-| PATCH | `/notifications/{id}` | PatchNotificationsId | Update Notification |
-| GET | `/payments` | GetPayments | List Payments |
-| GET | `/payments/{id}` | GetPaymentsId | Show Payment |
-| GET | `/permissions` | GetPermissions | List Permissions |
-| POST | `/permissions` | PostPermissions | Create Permission |
-| DELETE | `/permissions/{id}` | DeletePermissionsId | Delete Permission |
-| GET | `/priorities` | GetPriorities | List Priorities |
-| GET | `/projects` | GetProjects | List Projects |
-| POST | `/projects` | PostProjects | Create Project |
-| DELETE | `/projects/{id}` | DeleteProjectsId | Delete Project |
-| GET | `/projects/{id}` | GetProjectsId | Show Project |
-| PATCH | `/projects/{id}` | PatchProjectsId | Update Project |
-| GET | `/public_keys` | GetPublicKeys | List Public Keys |
-| POST | `/public_keys` | PostPublicKeys | Create Public Key |
-| DELETE | `/public_keys/{id}` | DeletePublicKeysId | Delete Public Key |
-| GET | `/public_keys/{id}` | GetPublicKeysId | Show Public Key |
-| PATCH | `/public_keys/{id}` | PatchPublicKeysId | Update Public Key |
-| GET | `/remote_bandwidth_snapshots` | GetRemoteBandwidthSnapshots | List Remote Bandwidth Snapshots |
-| GET | `/remote_servers` | GetRemoteServers | List Remote Servers |
-| POST | `/remote_servers` | PostRemoteServers | Create Remote Server |
-| DELETE | `/remote_servers/{id}` | DeleteRemoteServersId | Delete Remote Server |
-| GET | `/remote_servers/{id}` | GetRemoteServersId | Show Remote Server |
-| PATCH | `/remote_servers/{id}` | PatchRemoteServersId | Update Remote Server |
-| GET | `/remote_servers/{id}/configuration_file` | GetRemoteServersIdConfigurationFile | Download configuration file (required for some Remote Server integrations, such as the Files.com Agent) |
-| POST | `/remote_servers/{id}/configuration_file` | PostRemoteServersIdConfigurationFile | Post local changes, check in, and download configuration file (used by some Remote Server integrations, such as the Files.com Agent) |
-| GET | `/requests` | GetRequests | List Requests |
-| POST | `/requests` | PostRequests | Create Request |
-| GET | `/requests/folders/{path}` | GetRequestsFoldersPath | List Requests |
-| DELETE | `/requests/{id}` | DeleteRequestsId | Delete Request |
-| DELETE | `/sessions` | DeleteSessions | Delete user session (log out) |
-| POST | `/sessions` | PostSessions | Create user session (log in) |
-| GET | `/settings_changes` | GetSettingsChanges | List Settings Changes |
-| GET | `/sftp_host_keys` | GetSftpHostKeys | List Sftp Host Keys |
-| POST | `/sftp_host_keys` | PostSftpHostKeys | Create Sftp Host Key |
-| DELETE | `/sftp_host_keys/{id}` | DeleteSftpHostKeysId | Delete Sftp Host Key |
-| GET | `/sftp_host_keys/{id}` | GetSftpHostKeysId | Show Sftp Host Key |
-| PATCH | `/sftp_host_keys/{id}` | PatchSftpHostKeysId | Update Sftp Host Key |
-| GET | `/site` | GetSite | Show site settings |
-| PATCH | `/site` | PatchSite | Update site settings. |
-| GET | `/site/api_keys` | GetSiteApiKeys | List Api Keys |
-| POST | `/site/api_keys` | PostSiteApiKeys | Create Api Key |
-| GET | `/site/dns_records` | GetSiteDnsRecords | Show site DNS configuration. |
-| GET | `/site/ip_addresses` | GetSiteIpAddresses | List IP Addresses associated with the current site |
-| POST | `/site/test-webhook` | PostSiteTestWebhook | Test webhook. |
-| GET | `/site/usage` | GetSiteUsage | Get the most recent usage snapshot (usage data for billing purposes) for a Site. |
-| GET | `/sso_strategies` | GetSsoStrategies | List Sso Strategies |
-| GET | `/sso_strategies/{id}` | GetSsoStrategiesId | Show Sso Strategy |
-| POST | `/sso_strategies/{id}/sync` | PostSsoStrategiesIdSync | Synchronize provisioning data with the SSO remote server. |
-| DELETE | `/styles/{path}` | DeleteStylesPath | Delete Style |
-| GET | `/styles/{path}` | GetStylesPath | Show Style |
-| PATCH | `/styles/{path}` | PatchStylesPath | Update Style |
-| GET | `/usage_daily_snapshots` | GetUsageDailySnapshots | List Usage Daily Snapshots |
-| GET | `/usage_snapshots` | GetUsageSnapshots | List Usage Snapshots |
-| PATCH | `/user` | PatchUser | Update User |
-| GET | `/user/api_keys` | GetUserApiKeys | List Api Keys |
-| POST | `/user/api_keys` | PostUserApiKeys | Create Api Key |
-| GET | `/user/groups` | GetUserGroups | List Group Users |
-| GET | `/user/public_keys` | GetUserPublicKeys | List Public Keys |
-| POST | `/user/public_keys` | PostUserPublicKeys | Create Public Key |
-| GET | `/user_cipher_uses` | GetUserCipherUses | List User Cipher Uses |
-| GET | `/user_requests` | GetUserRequests | List User Requests |
-| POST | `/user_requests` | PostUserRequests | Create User Request |
-| DELETE | `/user_requests/{id}` | DeleteUserRequestsId | Delete User Request |
-| GET | `/user_requests/{id}` | GetUserRequestsId | Show User Request |
-| GET | `/users` | GetUsers | List Users |
-| POST | `/users` | PostUsers | Create User |
-| DELETE | `/users/{id}` | DeleteUsersId | Delete User |
-| GET | `/users/{id}` | GetUsersId | Show User |
-| PATCH | `/users/{id}` | PatchUsersId | Update User |
-| POST | `/users/{id}/2fa/reset` | PostUsersId2faReset | Trigger 2FA Reset process for user who has lost access to their existing 2FA methods. |
-| POST | `/users/{id}/resend_welcome_email` | PostUsersIdResendWelcomeEmail | Resend user welcome email |
-| POST | `/users/{id}/unlock` | PostUsersIdUnlock | Unlock user who has been locked out due to failed logins. |
-| GET | `/users/{user_id}/api_keys` | GetUsersUserIdApiKeys | List Api Keys |
-| POST | `/users/{user_id}/api_keys` | PostUsersUserIdApiKeys | Create Api Key |
-| GET | `/users/{user_id}/cipher_uses` | GetUsersUserIdCipherUses | List User Cipher Uses |
-| GET | `/users/{user_id}/groups` | GetUsersUserIdGroups | List Group Users |
-| GET | `/users/{user_id}/permissions` | GetUsersUserIdPermissions | List Permissions |
-| GET | `/users/{user_id}/public_keys` | GetUsersUserIdPublicKeys | List Public Keys |
-| POST | `/users/{user_id}/public_keys` | PostUsersUserIdPublicKeys | Create Public Key |
-| POST | `/webhook_tests` | PostWebhookTests | Create Webhook Test |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/action_notification_export_results` | GetActionNotificationExportResults | `user_id`, `cursor`, `per_page`, `action_notification_export_id`* | ActionNotificationExportResultEntity[] | yes | List Action Notification Export Results |
+| POST | `/action_notification_exports` | PostActionNotificationExports | body: object | ActionNotificationExportEntity |  | Create Action Notification Export |
+| GET | `/action_notification_exports/{id}` | GetActionNotificationExportsId | `id`* | ActionNotificationExportEntity | yes | Show Action Notification Export |
+| POST | `/action_webhook_failures/{id}/retry` | PostActionWebhookFailuresIdRetry | `id`* | — |  | retry Action Webhook Failure |
+| GET | `/api_key` | ApiKeyFindCurrent | — | ApiKeyEntity | yes | Show information about current API key. (Requires current API connection to be using an API key.) |
+| DELETE | `/api_key` | ApiKeyDeleteCurrent | — | — |  | Delete current API key. (Requires current API connection to be using an API key.) |
+| PATCH | `/api_key` | ApiKeyUpdateCurrent | body: object | ApiKeyEntity |  | Update current API key. (Requires current API connection to be using an API key.) |
+| GET | `/api_keys` | GetApiKeys | `user_id`, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | ApiKeyEntity[] | yes | List Api Keys |
+| POST | `/api_keys` | PostApiKeys | body: object | ApiKeyEntity |  | Create Api Key |
+| GET | `/api_keys/{id}` | GetApiKeysId | `id`* | ApiKeyEntity | yes | Show Api Key |
+| DELETE | `/api_keys/{id}` | DeleteApiKeysId | `id`* | — |  | Delete Api Key |
+| PATCH | `/api_keys/{id}` | PatchApiKeysId | `id`*, body: object | ApiKeyEntity |  | Update Api Key |
+| GET | `/apps` | GetApps | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | AppEntity[] | yes | List Apps |
+| GET | `/as2_incoming_messages` | GetAs2IncomingMessages | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `as2_partner_id` | As2IncomingMessageEntity[] | yes | List As2 Incoming Messages |
+| GET | `/as2_outgoing_messages` | GetAs2OutgoingMessages | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `as2_partner_id` | As2OutgoingMessageEntity[] | yes | List As2 Outgoing Messages |
+| GET | `/as2_partners` | GetAs2Partners | `cursor`, `per_page` | As2PartnerEntity[] | yes | List As2 Partners |
+| POST | `/as2_partners` | PostAs2Partners | body*: object | As2PartnerEntity |  | Create As2 Partner |
+| GET | `/as2_partners/{id}` | GetAs2PartnersId | `id`* | As2PartnerEntity | yes | Show As2 Partner |
+| DELETE | `/as2_partners/{id}` | DeleteAs2PartnersId | `id`* | — |  | Delete As2 Partner |
+| PATCH | `/as2_partners/{id}` | PatchAs2PartnersId | `id`*, body: object | As2PartnerEntity |  | Update As2 Partner |
+| GET | `/as2_stations` | GetAs2Stations | `cursor`, `per_page` | As2StationEntity[] | yes | List As2 Stations |
+| POST | `/as2_stations` | PostAs2Stations | body*: object | As2StationEntity |  | Create As2 Station |
+| GET | `/as2_stations/{id}` | GetAs2StationsId | `id`* | As2StationEntity | yes | Show As2 Station |
+| DELETE | `/as2_stations/{id}` | DeleteAs2StationsId | `id`* | — |  | Delete As2 Station |
+| PATCH | `/as2_stations/{id}` | PatchAs2StationsId | `id`*, body: object | As2StationEntity |  | Update As2 Station |
+| GET | `/automation_runs` | GetAutomationRuns | `user_id`, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `automation_id`* | AutomationRunEntity[] | yes | List Automation Runs |
+| GET | `/automation_runs/{id}` | GetAutomationRunsId | `id`* | AutomationRunEntity | yes | Show Automation Run |
+| GET | `/automations` | GetAutomations | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `with_deleted`, `automation` | AutomationEntity[] | yes | List Automations |
+| POST | `/automations` | PostAutomations | body: object | AutomationEntity |  | Create Automation |
+| GET | `/automations/{id}` | GetAutomationsId | `id`* | AutomationEntity | yes | Show Automation |
+| DELETE | `/automations/{id}` | DeleteAutomationsId | `id`* | — |  | Delete Automation |
+| PATCH | `/automations/{id}` | PatchAutomationsId | `id`*, body: object | AutomationEntity |  | Update Automation |
+| GET | `/bandwidth_snapshots` | GetBandwidthSnapshots | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | BandwidthSnapshotEntity[] | yes | List Bandwidth Snapshots |
+| GET | `/behaviors` | GetBehaviors | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `behavior` | BehaviorEntity[] | yes | List Behaviors |
+| POST | `/behaviors` | PostBehaviors | body: object | BehaviorEntity |  | Create Behavior |
+| GET | `/behaviors/folders/{path}` | BehaviorListForPath | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `path`*, `recursive`, `behavior` | BehaviorEntity[] | yes | List Behaviors by path |
+| POST | `/behaviors/webhook/test` | PostBehaviorsWebhookTest | body*: object | StatusEntity |  | Test webhook. |
+| GET | `/behaviors/{id}` | GetBehaviorsId | `id`* | BehaviorEntity | yes | Show Behavior |
+| DELETE | `/behaviors/{id}` | DeleteBehaviorsId | `id`* | — |  | Delete Behavior |
+| PATCH | `/behaviors/{id}` | PatchBehaviorsId | `id`*, body: object | BehaviorEntity |  | Update Behavior |
+| GET | `/bundle_downloads` | GetBundleDownloads | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `bundle_id`, `bundle_registration_id` | BundleDownloadEntity[] | yes | List Bundle Downloads |
+| GET | `/bundle_notifications` | GetBundleNotifications | `user_id`, `cursor`, `per_page`, `bundle_id` | BundleNotificationEntity[] | yes | List Bundle Notifications |
+| POST | `/bundle_notifications` | PostBundleNotifications | body: object | BundleNotificationEntity |  | Create Bundle Notification |
+| GET | `/bundle_notifications/{id}` | GetBundleNotificationsId | `id`* | BundleNotificationEntity | yes | Show Bundle Notification |
+| DELETE | `/bundle_notifications/{id}` | DeleteBundleNotificationsId | `id`* | — |  | Delete Bundle Notification |
+| PATCH | `/bundle_notifications/{id}` | PatchBundleNotificationsId | `id`*, body: object | BundleNotificationEntity |  | Update Bundle Notification |
+| GET | `/bundle_recipients` | GetBundleRecipients | `user_id`, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `bundle_id`* | BundleRecipientEntity[] | yes | List Bundle Recipients |
+| POST | `/bundle_recipients` | PostBundleRecipients | body: object | BundleRecipientEntity |  | Create Bundle Recipient |
+| GET | `/bundle_registrations` | GetBundleRegistrations | `user_id`, `cursor`, `per_page`, `bundle_id` | BundleRegistrationEntity[] | yes | List Bundle Registrations |
+| GET | `/bundles` | GetBundles | `user_id`, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | BundleEntity[] | yes | List Bundles |
+| POST | `/bundles` | PostBundles | body: object | BundleEntity |  | Create Bundle |
+| GET | `/bundles/{id}` | GetBundlesId | `id`* | BundleEntity | yes | Show Bundle |
+| DELETE | `/bundles/{id}` | DeleteBundlesId | `id`* | — |  | Delete Bundle |
+| PATCH | `/bundles/{id}` | PatchBundlesId | `id`*, body: object | BundleEntity |  | Update Bundle |
+| POST | `/bundles/{id}/share` | PostBundlesIdShare | `id`*, body: object | — |  | Send email(s) with a link to bundle |
+| GET | `/clickwraps` | GetClickwraps | `cursor`, `per_page` | ClickwrapEntity[] | yes | List Clickwraps |
+| POST | `/clickwraps` | PostClickwraps | body: object | ClickwrapEntity |  | Create Clickwrap |
+| GET | `/clickwraps/{id}` | GetClickwrapsId | `id`* | ClickwrapEntity | yes | Show Clickwrap |
+| DELETE | `/clickwraps/{id}` | DeleteClickwrapsId | `id`* | — |  | Delete Clickwrap |
+| PATCH | `/clickwraps/{id}` | PatchClickwrapsId | `id`*, body: object | ClickwrapEntity |  | Update Clickwrap |
+| GET | `/dns_records` | GetDnsRecords | `cursor`, `per_page` | DnsRecordEntity[] | yes | Show site DNS configuration. |
+| GET | `/external_events` | GetExternalEvents | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | ExternalEventEntity[] | yes | List External Events |
+| POST | `/external_events` | PostExternalEvents | body*: object | ExternalEventEntity |  | Create External Event |
+| GET | `/external_events/{id}` | GetExternalEventsId | `id`* | ExternalEventEntity | yes | Show External Event |
+| POST | `/file_actions/begin_upload/{path}` | FileActionBeginUpload | `path`*, body: object | FileUploadPartEntity[] |  | Begin file upload |
+| POST | `/file_actions/copy/{path}` | FileActionCopy | `path`*, body*: object | FileActionEntity |  | Copy file/folder |
+| GET | `/file_actions/metadata/{path}` | FileActionFind | `path`*, `preview_size`, `with_previews`, `with_priority_color` | FileEntity | yes | Find file/folder by path |
+| POST | `/file_actions/move/{path}` | FileActionMove | `path`*, body*: object | FileActionEntity |  | Move file/folder |
+| POST | `/file_comment_reactions` | PostFileCommentReactions | body: object | FileCommentReactionEntity |  | Create File Comment Reaction |
+| DELETE | `/file_comment_reactions/{id}` | DeleteFileCommentReactionsId | `id`* | — |  | Delete File Comment Reaction |
+| POST | `/file_comments` | PostFileComments | body*: object | FileCommentEntity |  | Create File Comment |
+| GET | `/file_comments/files/{path}` | FileCommentListForPath | `cursor`, `per_page`, `path`* | FileCommentEntity[] | yes | List File Comments by path |
+| DELETE | `/file_comments/{id}` | DeleteFileCommentsId | `id`* | — |  | Delete File Comment |
+| PATCH | `/file_comments/{id}` | PatchFileCommentsId | `id`*, body*: object | FileCommentEntity |  | Update File Comment |
+| GET | `/file_migrations/{id}` | GetFileMigrationsId | `id`* | FileMigrationEntity | yes | Show File Migration |
+| GET | `/files/{path}` | FileDownload | `path`*, `action`, `preview_size`, `with_previews`, `with_priority_color` | FileEntity | yes | Download file |
+| POST | `/files/{path}` | PostFilesPath | `path`*, body: object | FileEntity |  | Upload file |
+| DELETE | `/files/{path}` | DeleteFilesPath | `path`*, `recursive` | — |  | Delete file/folder |
+| PATCH | `/files/{path}` | PatchFilesPath | `path`*, body: object | FileEntity |  | Update file/folder metadata |
+| GET | `/folders/{path}` | FolderListForPath | `cursor`, `per_page`, `path`*, `filter`, `preview_size`, `search`, `search_all`, `with_previews`, `with_priority_color` | FileEntity[] | yes | List Folders by path |
+| POST | `/folders/{path}` | PostFoldersPath | `path`*, body: object | FileEntity |  | Create folder |
+| GET | `/form_field_sets` | GetFormFieldSets | `user_id`, `cursor`, `per_page` | FormFieldSetEntity[] | yes | List Form Field Sets |
+| POST | `/form_field_sets` | PostFormFieldSets | body*: postFormFieldSets | FormFieldSetEntity |  | Create Form Field Set |
+| GET | `/form_field_sets/{id}` | GetFormFieldSetsId | `id`* | FormFieldSetEntity | yes | Show Form Field Set |
+| DELETE | `/form_field_sets/{id}` | DeleteFormFieldSetsId | `id`* | — |  | Delete Form Field Set |
+| PATCH | `/form_field_sets/{id}` | PatchFormFieldSetsId | `id`*, body*: patchFormFieldSets | FormFieldSetEntity |  | Update Form Field Set |
+| GET | `/group_users` | GetGroupUsers | `user_id`, `cursor`, `per_page`, `group_id` | GroupUserEntity[] | yes | List Group Users |
+| POST | `/group_users` | PostGroupUsers | body*: object | GroupUserEntity |  | Create Group User |
+| DELETE | `/group_users/{id}` | DeleteGroupUsersId | `id`*, `group_id`*, `user_id`* | — |  | Delete Group User |
+| PATCH | `/group_users/{id}` | PatchGroupUsersId | `id`*, body*: object | GroupUserEntity |  | Update Group User |
+| GET | `/groups` | GetGroups | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `ids` | GroupEntity[] | yes | List Groups |
+| POST | `/groups` | PostGroups | body: object | GroupEntity |  | Create Group |
+| DELETE | `/groups/{group_id}/memberships/{user_id}` | DeleteGroupsGroupIdMembershipsUserId | `group_id`*, `user_id`* | — |  | Delete Group User |
+| PATCH | `/groups/{group_id}/memberships/{user_id}` | PatchGroupsGroupIdMembershipsUserId | `group_id`*, `user_id`*, body: object | GroupUserEntity |  | Update Group User |
+| GET | `/groups/{group_id}/permissions` | GetGroupsGroupIdPermissions | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `path`, `group_id`*, `user_id`, `include_groups` | PermissionEntity[] | yes | List Permissions |
+| GET | `/groups/{group_id}/users` | GetGroupsGroupIdUsers | `user_id`, `cursor`, `per_page`, `group_id`* | GroupUserEntity[] | yes | List Group Users |
+| POST | `/groups/{group_id}/users` | PostGroupsGroupIdUsers | `group_id`*, body: object | UserEntity |  | Create User |
+| GET | `/groups/{id}` | GetGroupsId | `id`* | GroupEntity | yes | Show Group |
+| DELETE | `/groups/{id}` | DeleteGroupsId | `id`* | — |  | Delete Group |
+| PATCH | `/groups/{id}` | PatchGroupsId | `id`*, body: object | GroupEntity |  | Update Group |
+| GET | `/history` | HistoryList | `start_at`, `end_at`, `display`, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | ActionEntity[] | yes | List site full action history. |
+| GET | `/history/files/{path}` | HistoryListForFile | `start_at`, `end_at`, `display`, `cursor`, `per_page`, `sort_by`, `path`* | ActionEntity[] | yes | List history for specific file. |
+| GET | `/history/folders/{path}` | HistoryListForFolder | `start_at`, `end_at`, `display`, `cursor`, `per_page`, `sort_by`, `path`* | ActionEntity[] | yes | List history for specific folder. |
+| GET | `/history/login` | HistoryListLogins | `start_at`, `end_at`, `display`, `cursor`, `per_page`, `sort_by` | ActionEntity[] | yes | List site login history. |
+| GET | `/history/users/{user_id}` | HistoryListForUser | `start_at`, `end_at`, `display`, `cursor`, `per_page`, `sort_by`, `user_id`* | ActionEntity[] | yes | List history for specific user. |
+| GET | `/history_export_results` | GetHistoryExportResults | `user_id`, `cursor`, `per_page`, `history_export_id`* | HistoryExportResultEntity[] | yes | List History Export Results |
+| POST | `/history_exports` | PostHistoryExports | body: object | HistoryExportEntity |  | Create History Export |
+| GET | `/history_exports/{id}` | GetHistoryExportsId | `id`* | HistoryExportEntity | yes | Show History Export |
+| GET | `/inbox_recipients` | GetInboxRecipients | `user_id`, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `inbox_id`* | InboxRecipientEntity[] | yes | List Inbox Recipients |
+| POST | `/inbox_recipients` | PostInboxRecipients | body: object | InboxRecipientEntity |  | Create Inbox Recipient |
+| GET | `/inbox_registrations` | GetInboxRegistrations | `cursor`, `per_page`, `folder_behavior_id` | InboxRegistrationEntity[] | yes | List Inbox Registrations |
+| GET | `/inbox_uploads` | GetInboxUploads | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `inbox_registration_id`, `inbox_id` | InboxUploadEntity[] | yes | List Inbox Uploads |
+| GET | `/invoices` | GetInvoices | `cursor`, `per_page` | AccountLineItemEntity[] | yes | List Invoices |
+| GET | `/invoices/{id}` | GetInvoicesId | `id`* | AccountLineItemEntity | yes | Show Invoice |
+| GET | `/ip_addresses` | GetIpAddresses | `cursor`, `per_page` | IpAddressEntity[] | yes | List IP Addresses associated with the current site |
+| GET | `/ip_addresses/exavault-reserved` | GetIpAddressesExavaultReserved | `cursor`, `per_page` | PublicIpAddressEntity[] | yes | List all possible public ExaVault IP addresses |
+| GET | `/ip_addresses/reserved` | GetIpAddressesReserved | `cursor`, `per_page` | PublicIpAddressEntity[] | yes | List all possible public IP addresses |
+| GET | `/locks/{path}` | LockListForPath | `cursor`, `per_page`, `path`*, `include_children` | LockEntity[] | yes | List Locks by path |
+| POST | `/locks/{path}` | PostLocksPath | `path`*, body: object | LockEntity |  | Create Lock |
+| DELETE | `/locks/{path}` | DeleteLocksPath | `path`*, `token`* | — |  | Delete Lock |
+| GET | `/message_comment_reactions` | GetMessageCommentReactions | `user_id`, `cursor`, `per_page`, `message_comment_id`* | MessageCommentReactionEntity[] | yes | List Message Comment Reactions |
+| POST | `/message_comment_reactions` | PostMessageCommentReactions | body: object | MessageCommentReactionEntity |  | Create Message Comment Reaction |
+| GET | `/message_comment_reactions/{id}` | GetMessageCommentReactionsId | `id`* | MessageCommentReactionEntity | yes | Show Message Comment Reaction |
+| DELETE | `/message_comment_reactions/{id}` | DeleteMessageCommentReactionsId | `id`* | — |  | Delete Message Comment Reaction |
+| GET | `/message_comments` | GetMessageComments | `user_id`, `cursor`, `per_page`, `message_id`* | MessageCommentEntity[] | yes | List Message Comments |
+| POST | `/message_comments` | PostMessageComments | body: object | MessageCommentEntity |  | Create Message Comment |
+| GET | `/message_comments/{id}` | GetMessageCommentsId | `id`* | MessageCommentEntity | yes | Show Message Comment |
+| DELETE | `/message_comments/{id}` | DeleteMessageCommentsId | `id`* | — |  | Delete Message Comment |
+| PATCH | `/message_comments/{id}` | PatchMessageCommentsId | `id`*, body*: object | MessageCommentEntity |  | Update Message Comment |
+| GET | `/message_reactions` | GetMessageReactions | `user_id`, `cursor`, `per_page`, `message_id`* | MessageReactionEntity[] | yes | List Message Reactions |
+| POST | `/message_reactions` | PostMessageReactions | body: object | MessageReactionEntity |  | Create Message Reaction |
+| GET | `/message_reactions/{id}` | GetMessageReactionsId | `id`* | MessageReactionEntity | yes | Show Message Reaction |
+| DELETE | `/message_reactions/{id}` | DeleteMessageReactionsId | `id`* | — |  | Delete Message Reaction |
+| GET | `/messages` | GetMessages | `user_id`, `cursor`, `per_page`, `project_id`* | MessageEntity[] | yes | List Messages |
+| POST | `/messages` | PostMessages | body: object | MessageEntity |  | Create Message |
+| GET | `/messages/{id}` | GetMessagesId | `id`* | MessageEntity | yes | Show Message |
+| DELETE | `/messages/{id}` | DeleteMessagesId | `id`* | — |  | Delete Message |
+| PATCH | `/messages/{id}` | PatchMessagesId | `id`*, body*: object | MessageEntity |  | Update Message |
+| GET | `/notifications` | GetNotifications | `user_id`, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `group_id`, `path`, `include_ancestors` | NotificationEntity[] | yes | List Notifications |
+| POST | `/notifications` | PostNotifications | body: object | NotificationEntity |  | Create Notification |
+| GET | `/notifications/{id}` | GetNotificationsId | `id`* | NotificationEntity | yes | Show Notification |
+| DELETE | `/notifications/{id}` | DeleteNotificationsId | `id`* | — |  | Delete Notification |
+| PATCH | `/notifications/{id}` | PatchNotificationsId | `id`*, body: object | NotificationEntity |  | Update Notification |
+| GET | `/payments` | GetPayments | `cursor`, `per_page` | AccountLineItemEntity[] | yes | List Payments |
+| GET | `/payments/{id}` | GetPaymentsId | `id`* | AccountLineItemEntity | yes | Show Payment |
+| GET | `/permissions` | GetPermissions | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `path`, `group_id`, `user_id`, `include_groups` | PermissionEntity[] | yes | List Permissions |
+| POST | `/permissions` | PostPermissions | body: object | PermissionEntity |  | Create Permission |
+| DELETE | `/permissions/{id}` | DeletePermissionsId | `id`* | — |  | Delete Permission |
+| GET | `/priorities` | GetPriorities | `cursor`, `per_page`, `path`* | PriorityEntity[] | yes | List Priorities |
+| GET | `/projects` | GetProjects | `cursor`, `per_page` | ProjectEntity[] | yes | List Projects |
+| POST | `/projects` | PostProjects | body*: object | ProjectEntity |  | Create Project |
+| GET | `/projects/{id}` | GetProjectsId | `id`* | ProjectEntity | yes | Show Project |
+| DELETE | `/projects/{id}` | DeleteProjectsId | `id`* | — |  | Delete Project |
+| PATCH | `/projects/{id}` | PatchProjectsId | `id`*, body*: object | ProjectEntity |  | Update Project |
+| GET | `/public_keys` | GetPublicKeys | `user_id`, `cursor`, `per_page` | PublicKeyEntity[] | yes | List Public Keys |
+| POST | `/public_keys` | PostPublicKeys | body: object | PublicKeyEntity |  | Create Public Key |
+| GET | `/public_keys/{id}` | GetPublicKeysId | `id`* | PublicKeyEntity | yes | Show Public Key |
+| DELETE | `/public_keys/{id}` | DeletePublicKeysId | `id`* | — |  | Delete Public Key |
+| PATCH | `/public_keys/{id}` | PatchPublicKeysId | `id`*, body*: object | PublicKeyEntity |  | Update Public Key |
+| GET | `/remote_bandwidth_snapshots` | GetRemoteBandwidthSnapshots | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | RemoteBandwidthSnapshotEntity[] | yes | List Remote Bandwidth Snapshots |
+| GET | `/remote_servers` | GetRemoteServers | `cursor`, `per_page` | RemoteServerEntity[] | yes | List Remote Servers |
+| POST | `/remote_servers` | PostRemoteServers | body: object | RemoteServerEntity |  | Create Remote Server |
+| GET | `/remote_servers/{id}` | GetRemoteServersId | `id`* | RemoteServerEntity | yes | Show Remote Server |
+| DELETE | `/remote_servers/{id}` | DeleteRemoteServersId | `id`* | — |  | Delete Remote Server |
+| PATCH | `/remote_servers/{id}` | PatchRemoteServersId | `id`*, body: object | RemoteServerEntity |  | Update Remote Server |
+| GET | `/remote_servers/{id}/configuration_file` | GetRemoteServersIdConfigurationFile | `id`* | RemoteServerConfigurationFileEntity | yes | Download configuration file (required for some Remote Server integrations, such as the Files.com Agent) |
+| POST | `/remote_servers/{id}/configuration_file` | PostRemoteServersIdConfigurationFile | `id`*, body: object | RemoteServerConfigurationFileEntity |  | Post local changes, check in, and download configuration file (used by some Remote Server integrations, such as the Files.com Agent) |
+| GET | `/requests` | GetRequests | `cursor`, `per_page`, `sort_by`, `mine`, `path` | RequestEntity[] | yes | List Requests |
+| POST | `/requests` | PostRequests | body*: object | RequestEntity |  | Create Request |
+| GET | `/requests/folders/{path}` | GetRequestsFoldersPath | `cursor`, `per_page`, `sort_by`, `mine`, `path`* | RequestEntity[] | yes | List Requests |
+| DELETE | `/requests/{id}` | DeleteRequestsId | `id`* | — |  | Delete Request |
+| POST | `/sessions` | PostSessions | body: object | SessionEntity |  | Create user session (log in) |
+| DELETE | `/sessions` | DeleteSessions | — | — |  | Delete user session (log out) |
+| GET | `/settings_changes` | GetSettingsChanges | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | SettingsChangeEntity[] | yes | List Settings Changes |
+| GET | `/sftp_host_keys` | GetSftpHostKeys | `cursor`, `per_page` | SftpHostKeyEntity[] | yes | List Sftp Host Keys |
+| POST | `/sftp_host_keys` | PostSftpHostKeys | body: object | SftpHostKeyEntity |  | Create Sftp Host Key |
+| GET | `/sftp_host_keys/{id}` | GetSftpHostKeysId | `id`* | SftpHostKeyEntity | yes | Show Sftp Host Key |
+| DELETE | `/sftp_host_keys/{id}` | DeleteSftpHostKeysId | `id`* | — |  | Delete Sftp Host Key |
+| PATCH | `/sftp_host_keys/{id}` | PatchSftpHostKeysId | `id`*, body: object | SftpHostKeyEntity |  | Update Sftp Host Key |
+| GET | `/site` | GetSite | — | SiteEntity | yes | Show site settings |
+| PATCH | `/site` | PatchSite | body: object | SiteEntity |  | Update site settings. |
+| GET | `/site/api_keys` | GetSiteApiKeys | `user_id`, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | ApiKeyEntity[] | yes | List Api Keys |
+| POST | `/site/api_keys` | PostSiteApiKeys | body: object | ApiKeyEntity |  | Create Api Key |
+| GET | `/site/dns_records` | GetSiteDnsRecords | `cursor`, `per_page` | DnsRecordEntity[] | yes | Show site DNS configuration. |
+| GET | `/site/ip_addresses` | GetSiteIpAddresses | `cursor`, `per_page` | IpAddressEntity[] | yes | List IP Addresses associated with the current site |
+| POST | `/site/test-webhook` | PostSiteTestWebhook | body*: object | StatusEntity |  | Test webhook. |
+| GET | `/site/usage` | GetSiteUsage | — | UsageSnapshotEntity | yes | Get the most recent usage snapshot (usage data for billing purposes) for a Site. |
+| GET | `/sso_strategies` | GetSsoStrategies | `cursor`, `per_page` | SsoStrategyEntity[] | yes | List Sso Strategies |
+| GET | `/sso_strategies/{id}` | GetSsoStrategiesId | `id`* | SsoStrategyEntity | yes | Show Sso Strategy |
+| POST | `/sso_strategies/{id}/sync` | PostSsoStrategiesIdSync | `id`* | — |  | Synchronize provisioning data with the SSO remote server. |
+| GET | `/styles/{path}` | GetStylesPath | `path`* | StyleEntity | yes | Show Style |
+| DELETE | `/styles/{path}` | DeleteStylesPath | `path`* | — |  | Delete Style |
+| PATCH | `/styles/{path}` | PatchStylesPath | `path`*, body*: object | StyleEntity |  | Update Style |
+| GET | `/usage_daily_snapshots` | GetUsageDailySnapshots | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | UsageDailySnapshotEntity[] | yes | List Usage Daily Snapshots |
+| GET | `/usage_snapshots` | GetUsageSnapshots | `cursor`, `per_page` | UsageSnapshotEntity[] | yes | List Usage Snapshots |
+| PATCH | `/user` | PatchUser | body: object | UserEntity |  | Update User |
+| GET | `/user/api_keys` | GetUserApiKeys | `user_id`, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | ApiKeyEntity[] | yes | List Api Keys |
+| POST | `/user/api_keys` | PostUserApiKeys | body: object | ApiKeyEntity |  | Create Api Key |
+| GET | `/user/groups` | GetUserGroups | `user_id`, `cursor`, `per_page`, `group_id` | GroupUserEntity[] | yes | List Group Users |
+| GET | `/user/public_keys` | GetUserPublicKeys | `user_id`, `cursor`, `per_page` | PublicKeyEntity[] | yes | List Public Keys |
+| POST | `/user/public_keys` | PostUserPublicKeys | body: object | PublicKeyEntity |  | Create Public Key |
+| GET | `/user_cipher_uses` | GetUserCipherUses | `user_id`, `cursor`, `per_page` | UserCipherUseEntity[] | yes | List User Cipher Uses |
+| GET | `/user_requests` | GetUserRequests | `cursor`, `per_page` | UserRequestEntity[] | yes | List User Requests |
+| POST | `/user_requests` | PostUserRequests | body*: object | UserRequestEntity |  | Create User Request |
+| GET | `/user_requests/{id}` | GetUserRequestsId | `id`* | UserRequestEntity | yes | Show User Request |
+| DELETE | `/user_requests/{id}` | DeleteUserRequestsId | `id`* | — |  | Delete User Request |
+| GET | `/users` | GetUsers | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `ids`, `q[username]`, `q[email]`, `q[notes]`, `q[admin]`, `q[allowed_ips]`, `q[password_validity_days]`, `q[ssl_required]`, `search` | UserEntity[] | yes | List Users |
+| POST | `/users` | PostUsers | body: object | UserEntity |  | Create User |
+| GET | `/users/{id}` | GetUsersId | `id`* | UserEntity | yes | Show User |
+| DELETE | `/users/{id}` | DeleteUsersId | `id`* | — |  | Delete User |
+| PATCH | `/users/{id}` | PatchUsersId | `id`*, body: object | UserEntity |  | Update User |
+| POST | `/users/{id}/2fa/reset` | PostUsersId2faReset | `id`* | — |  | Trigger 2FA Reset process for user who has lost access to their existing 2FA methods. |
+| POST | `/users/{id}/resend_welcome_email` | PostUsersIdResendWelcomeEmail | `id`* | — |  | Resend user welcome email |
+| POST | `/users/{id}/unlock` | PostUsersIdUnlock | `id`* | — |  | Unlock user who has been locked out due to failed logins. |
+| GET | `/users/{user_id}/api_keys` | GetUsersUserIdApiKeys | `user_id`*, `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq` | ApiKeyEntity[] | yes | List Api Keys |
+| POST | `/users/{user_id}/api_keys` | PostUsersUserIdApiKeys | `user_id`*, body: object | ApiKeyEntity |  | Create Api Key |
+| GET | `/users/{user_id}/cipher_uses` | GetUsersUserIdCipherUses | `user_id`*, `cursor`, `per_page` | UserCipherUseEntity[] | yes | List User Cipher Uses |
+| GET | `/users/{user_id}/groups` | GetUsersUserIdGroups | `user_id`*, `cursor`, `per_page`, `group_id` | GroupUserEntity[] | yes | List Group Users |
+| GET | `/users/{user_id}/permissions` | GetUsersUserIdPermissions | `cursor`, `per_page`, `sort_by`, `filter`, `filter_gt`, `filter_gteq`, `filter_like`, `filter_lt`, `filter_lteq`, `path`, `group_id`, `user_id`*, `include_groups` | PermissionEntity[] | yes | List Permissions |
+| GET | `/users/{user_id}/public_keys` | GetUsersUserIdPublicKeys | `user_id`*, `cursor`, `per_page` | PublicKeyEntity[] | yes | List Public Keys |
+| POST | `/users/{user_id}/public_keys` | PostUsersUserIdPublicKeys | `user_id`*, body*: object | PublicKeyEntity |  | Create Public Key |
+| POST | `/webhook_tests` | PostWebhookTests | body*: object | WebhookTestEntity |  | Create Webhook Test |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets-global.website-files.com
 
 | | |
 | --- | --- |
-| Signed bundle | `6b199e71716e40c4a737149f7c34755544eb75a270f00119001fbe05bdb600a6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,126 +34,128 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets-global.website-files.com
 
 76 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/appClients` | get /appClients | — |
-| OPTIONS | `/appClients` | options /appClients | — |
-| POST | `/appClients` | post /appClients | — |
-| DELETE | `/appClients/{appClientId}` | delete /appClients/{appClientId} | — |
-| OPTIONS | `/appClients/{appClientId}` | options /appClients/{appClientId} | — |
-| PATCH | `/appClients/{appClientId}` | patch /appClients/{appClientId} | — |
-| GET | `/assets` | get /assets | — |
-| OPTIONS | `/assets` | options /assets | — |
-| POST | `/assets` | post /assets | — |
-| DELETE | `/assets/{assetId}` | delete /assets/{assetId} | — |
-| GET | `/assets/{assetId}` | get /assets/{assetId} | — |
-| OPTIONS | `/assets/{assetId}` | options /assets/{assetId} | — |
-| PATCH | `/assets/{assetId}` | patch /assets/{assetId} | — |
-| GET | `/datasets` | get /datasets | — |
-| OPTIONS | `/datasets` | options /datasets | — |
-| POST | `/datasets` | post /datasets | — |
-| DELETE | `/datasets/{datasetId}` | delete /datasets/{datasetId} | — |
-| GET | `/datasets/{datasetId}` | get /datasets/{datasetId} | — |
-| OPTIONS | `/datasets/{datasetId}` | options /datasets/{datasetId} | — |
-| PATCH | `/datasets/{datasetId}` | patch /datasets/{datasetId} | — |
-| GET | `/deploymentEnvironments` | get /deploymentEnvironments | — |
-| OPTIONS | `/deploymentEnvironments` | options /deploymentEnvironments | — |
-| GET | `/deploymentEnvironments/{deploymentEnvironmentId}` | get /deploymentEnvironments/{deploymentEnvironmentId} | — |
-| OPTIONS | `/deploymentEnvironments/{deploymentEnvironmentId}` | options /deploymentEnvironments/{deploymentEnvironmentId} | — |
-| DELETE | `/documents` | delete /documents | — |
-| GET | `/documents` | get /documents | — |
-| OPTIONS | `/documents` | options /documents | — |
-| POST | `/documents` | post /documents | — |
-| DELETE | `/documents/{documentId}` | delete /documents/{documentId} | — |
-| GET | `/documents/{documentId}` | get /documents/{documentId} | — |
-| OPTIONS | `/documents/{documentId}` | options /documents/{documentId} | — |
-| PATCH | `/documents/{documentId}` | patch /documents/{documentId} | — |
-| GET | `/logs` | get /logs | — |
-| OPTIONS | `/logs` | options /logs | — |
-| GET | `/logs/{logId}` | get /logs/{logId} | — |
-| OPTIONS | `/logs/{logId}` | options /logs/{logId} | — |
-| GET | `/models` | get /models | — |
-| OPTIONS | `/models` | options /models | — |
-| POST | `/models` | post /models | — |
-| DELETE | `/models/{modelId}` | delete /models/{modelId} | — |
-| GET | `/models/{modelId}` | get /models/{modelId} | — |
-| OPTIONS | `/models/{modelId}` | options /models/{modelId} | — |
-| PATCH | `/models/{modelId}` | patch /models/{modelId} | — |
-| GET | `/models/{modelId}/dataBundles` | get /models/{modelId}/dataBundles | — |
-| OPTIONS | `/models/{modelId}/dataBundles` | options /models/{modelId}/dataBundles | — |
-| POST | `/models/{modelId}/dataBundles` | post /models/{modelId}/dataBundles | — |
-| DELETE | `/models/{modelId}/dataBundles/{dataBundleId}` | delete /models/{modelId}/dataBundles/{dataBundleId} | — |
-| OPTIONS | `/models/{modelId}/dataBundles/{dataBundleId}` | options /models/{modelId}/dataBundles/{dataBundleId} | — |
-| PATCH | `/models/{modelId}/dataBundles/{dataBundleId}` | patch /models/{modelId}/dataBundles/{dataBundleId} | — |
-| GET | `/models/{modelId}/trainings` | get /models/{modelId}/trainings | — |
-| OPTIONS | `/models/{modelId}/trainings` | options /models/{modelId}/trainings | — |
-| POST | `/models/{modelId}/trainings` | post /models/{modelId}/trainings | — |
-| OPTIONS | `/models/{modelId}/trainings/{trainingId}` | options /models/{modelId}/trainings/{trainingId} | — |
-| PATCH | `/models/{modelId}/trainings/{trainingId}` | patch /models/{modelId}/trainings/{trainingId} | — |
-| GET | `/organizations` | get /organizations | — |
-| OPTIONS | `/organizations` | options /organizations | — |
-| POST | `/organizations` | post /organizations | — |
-| GET | `/organizations/{organizationId}` | get /organizations/{organizationId} | — |
-| OPTIONS | `/organizations/{organizationId}` | options /organizations/{organizationId} | — |
-| PATCH | `/organizations/{organizationId}` | patch /organizations/{organizationId} | — |
-| GET | `/paymentMethods` | get /paymentMethods | — |
-| OPTIONS | `/paymentMethods` | options /paymentMethods | — |
-| POST | `/paymentMethods` | post /paymentMethods | — |
-| DELETE | `/paymentMethods/{paymentMethodId}` | delete /paymentMethods/{paymentMethodId} | — |
-| GET | `/paymentMethods/{paymentMethodId}` | get /paymentMethods/{paymentMethodId} | — |
-| OPTIONS | `/paymentMethods/{paymentMethodId}` | options /paymentMethods/{paymentMethodId} | — |
-| PATCH | `/paymentMethods/{paymentMethodId}` | patch /paymentMethods/{paymentMethodId} | — |
-| GET | `/plans` | get /plans | — |
-| OPTIONS | `/plans` | options /plans | — |
-| GET | `/plans/{planId}` | get /plans/{planId} | — |
-| OPTIONS | `/plans/{planId}` | options /plans/{planId} | — |
-| GET | `/predictions` | get /predictions | — |
-| OPTIONS | `/predictions` | options /predictions | — |
-| POST | `/predictions` | post /predictions | — |
-| GET | `/profiles/{profileId}` | get /profiles/{profileId} | — |
-| OPTIONS | `/profiles/{profileId}` | options /profiles/{profileId} | — |
-| PATCH | `/profiles/{profileId}` | patch /profiles/{profileId} | — |
-| GET | `/secrets` | get /secrets | — |
-| OPTIONS | `/secrets` | options /secrets | — |
-| POST | `/secrets` | post /secrets | — |
-| DELETE | `/secrets/{secretId}` | delete /secrets/{secretId} | — |
-| OPTIONS | `/secrets/{secretId}` | options /secrets/{secretId} | — |
-| PATCH | `/secrets/{secretId}` | patch /secrets/{secretId} | — |
-| OPTIONS | `/signup` | options /signup | — |
-| POST | `/signup` | post /signup | — |
-| GET | `/transitions` | get /transitions | — |
-| OPTIONS | `/transitions` | options /transitions | — |
-| POST | `/transitions` | post /transitions | — |
-| DELETE | `/transitions/{transitionId}` | delete /transitions/{transitionId} | — |
-| GET | `/transitions/{transitionId}` | get /transitions/{transitionId} | — |
-| OPTIONS | `/transitions/{transitionId}` | options /transitions/{transitionId} | — |
-| PATCH | `/transitions/{transitionId}` | patch /transitions/{transitionId} | — |
-| GET | `/transitions/{transitionId}/executions` | get /transitions/{transitionId}/executions | — |
-| OPTIONS | `/transitions/{transitionId}/executions` | options /transitions/{transitionId}/executions | — |
-| POST | `/transitions/{transitionId}/executions` | post /transitions/{transitionId}/executions | — |
-| GET | `/transitions/{transitionId}/executions/{executionId}` | get /transitions/{transitionId}/executions/{executionId} | — |
-| OPTIONS | `/transitions/{transitionId}/executions/{executionId}` | options /transitions/{transitionId}/executions/{executionId} | — |
-| PATCH | `/transitions/{transitionId}/executions/{executionId}` | patch /transitions/{transitionId}/executions/{executionId} | — |
-| OPTIONS | `/transitions/{transitionId}/executions/{executionId}/heartbeats` | options /transitions/{transitionId}/executions/{executionId}/heartbeats | — |
-| POST | `/transitions/{transitionId}/executions/{executionId}/heartbeats` | post /transitions/{transitionId}/executions/{executionId}/heartbeats | — |
-| GET | `/users` | get /users | — |
-| OPTIONS | `/users` | options /users | — |
-| POST | `/users` | post /users | — |
-| DELETE | `/users/{userId}` | delete /users/{userId} | — |
-| GET | `/users/{userId}` | get /users/{userId} | — |
-| OPTIONS | `/users/{userId}` | options /users/{userId} | — |
-| PATCH | `/users/{userId}` | patch /users/{userId} | — |
-| GET | `/workflows` | get /workflows | — |
-| OPTIONS | `/workflows` | options /workflows | — |
-| POST | `/workflows` | post /workflows | — |
-| DELETE | `/workflows/{workflowId}` | delete /workflows/{workflowId} | — |
-| GET | `/workflows/{workflowId}` | get /workflows/{workflowId} | — |
-| OPTIONS | `/workflows/{workflowId}` | options /workflows/{workflowId} | — |
-| PATCH | `/workflows/{workflowId}` | patch /workflows/{workflowId} | — |
-| GET | `/workflows/{workflowId}/executions` | get /workflows/{workflowId}/executions | — |
-| OPTIONS | `/workflows/{workflowId}/executions` | options /workflows/{workflowId}/executions | — |
-| POST | `/workflows/{workflowId}/executions` | post /workflows/{workflowId}/executions | — |
-| DELETE | `/workflows/{workflowId}/executions/{executionId}` | delete /workflows/{workflowId}/executions/{executionId} | — |
-| GET | `/workflows/{workflowId}/executions/{executionId}` | get /workflows/{workflowId}/executions/{executionId} | — |
-| OPTIONS | `/workflows/{workflowId}/executions/{executionId}` | options /workflows/{workflowId}/executions/{executionId} | — |
-| PATCH | `/workflows/{workflowId}/executions/{executionId}` | patch /workflows/{workflowId}/executions/{executionId} | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/appClients` | get /appClients | `nextToken`, `maxResults` | AppClients | yes | — |
+| POST | `/appClients` | post /appClients | `Content-Type`*, body*: PostAppClients | AppClient |  | — |
+| OPTIONS | `/appClients` | options /appClients | body*: Empty | Empty | yes | — |
+| DELETE | `/appClients/{appClientId}` | delete /appClients/{appClientId} | `appClientId`* | AppClient |  | — |
+| OPTIONS | `/appClients/{appClientId}` | options /appClients/{appClientId} | `appClientId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/appClients/{appClientId}` | patch /appClients/{appClientId} | `appClientId`*, `Content-Type`*, body*: PatchAppClientId | AppClient |  | — |
+| GET | `/assets` | get /assets | `nextToken`, `maxResults` | Assets | yes | — |
+| POST | `/assets` | post /assets | `Content-Type`*, body*: PostAssets | Asset |  | — |
+| OPTIONS | `/assets` | options /assets | body*: Empty | Empty | yes | — |
+| GET | `/assets/{assetId}` | get /assets/{assetId} | `assetId`* | Asset | yes | — |
+| DELETE | `/assets/{assetId}` | delete /assets/{assetId} | `assetId`* | Asset |  | — |
+| OPTIONS | `/assets/{assetId}` | options /assets/{assetId} | `assetId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/assets/{assetId}` | patch /assets/{assetId} | `Content-Type`*, `assetId`*, body*: PatchAssetId | Asset |  | — |
+| GET | `/datasets` | get /datasets | `nextToken`, `maxResults` | Datasets | yes | — |
+| POST | `/datasets` | post /datasets | `Content-Type`*, body*: PostDatasets | Dataset |  | — |
+| OPTIONS | `/datasets` | options /datasets | body*: Empty | Empty | yes | — |
+| GET | `/datasets/{datasetId}` | get /datasets/{datasetId} | `datasetId`* | Dataset | yes | — |
+| DELETE | `/datasets/{datasetId}` | delete /datasets/{datasetId} | `datasetId`* | Dataset |  | — |
+| OPTIONS | `/datasets/{datasetId}` | options /datasets/{datasetId} | `datasetId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/datasets/{datasetId}` | patch /datasets/{datasetId} | `Content-Type`*, `datasetId`*, body*: PatchDatasetId | Dataset |  | — |
+| GET | `/deploymentEnvironments` | get /deploymentEnvironments | `owner`, `nextToken`, `maxResults` | DeploymentEnvironments | yes | — |
+| OPTIONS | `/deploymentEnvironments` | options /deploymentEnvironments | body*: Empty | Empty | yes | — |
+| GET | `/deploymentEnvironments/{deploymentEnvironmentId}` | get /deploymentEnvironments/{deploymentEnvironmentId} | `deploymentEnvironmentId`* | DeploymentEnvironment | yes | — |
+| OPTIONS | `/deploymentEnvironments/{deploymentEnvironmentId}` | options /deploymentEnvironments/{deploymentEnvironmentId} | `deploymentEnvironmentId`*, body*: Empty | Empty | yes | — |
+| GET | `/documents` | get /documents | `datasetId`, `nextToken`, `order`, `documentId`, `consentId`, `maxResults`, `sortBy` | Documents | yes | — |
+| POST | `/documents` | post /documents | `Content-Type`*, body*: PostDocuments | Document |  | — |
+| DELETE | `/documents` | delete /documents | `consentId`, `datasetId`, `nextToken`, `maxResults` | Documents |  | — |
+| OPTIONS | `/documents` | options /documents | body*: Empty | Empty | yes | — |
+| GET | `/documents/{documentId}` | get /documents/{documentId} | `documentId`* | Document | yes | — |
+| DELETE | `/documents/{documentId}` | delete /documents/{documentId} | `documentId`* | Document |  | — |
+| OPTIONS | `/documents/{documentId}` | options /documents/{documentId} | `documentId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/documents/{documentId}` | patch /documents/{documentId} | `Content-Type`*, `documentId`*, body*: PatchDocumentId | Document |  | — |
+| GET | `/logs` | get /logs | `workflowId`, `nextToken`, `order`, `transitionExecutionId`, `transitionId`, `maxResults`, `workflowExecutionId` | Logs | yes | — |
+| OPTIONS | `/logs` | options /logs | body*: Empty | Empty | yes | — |
+| GET | `/logs/{logId}` | get /logs/{logId} | `logId`* | Log | yes | — |
+| OPTIONS | `/logs/{logId}` | options /logs/{logId} | `logId`*, body*: Empty | Empty | yes | — |
+| GET | `/models` | get /models | `owner`, `nextToken`, `maxResults` | Models | yes | — |
+| POST | `/models` | post /models | `Content-Type`*, body*: PostModels | Model |  | — |
+| OPTIONS | `/models` | options /models | body*: Empty | Empty | yes | — |
+| GET | `/models/{modelId}` | get /models/{modelId} | `modelId`* | Model | yes | — |
+| DELETE | `/models/{modelId}` | delete /models/{modelId} | `modelId`* | Model |  | — |
+| OPTIONS | `/models/{modelId}` | options /models/{modelId} | `modelId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/models/{modelId}` | patch /models/{modelId} | `Content-Type`*, `modelId`*, body*: PatchModelId | Model |  | — |
+| GET | `/models/{modelId}/dataBundles` | get /models/{modelId}/dataBundles | `modelId`*, `status`, `nextToken`, `maxResults` | DataBundles | yes | — |
+| POST | `/models/{modelId}/dataBundles` | post /models/{modelId}/dataBundles | `Content-Type`*, `modelId`*, body*: PostDataBundles | DataBundle |  | — |
+| OPTIONS | `/models/{modelId}/dataBundles` | options /models/{modelId}/dataBundles | `modelId`*, body*: Empty | Empty | yes | — |
+| DELETE | `/models/{modelId}/dataBundles/{dataBundleId}` | delete /models/{modelId}/dataBundles/{dataBundleId} | `dataBundleId`*, `modelId`* | DataBundle |  | — |
+| OPTIONS | `/models/{modelId}/dataBundles/{dataBundleId}` | options /models/{modelId}/dataBundles/{dataBundleId} | `dataBundleId`*, `modelId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/models/{modelId}/dataBundles/{dataBundleId}` | patch /models/{modelId}/dataBundles/{dataBundleId} | `dataBundleId`*, `Content-Type`*, `modelId`*, body*: PatchDataBundleId | DataBundle |  | — |
+| GET | `/models/{modelId}/trainings` | get /models/{modelId}/trainings | `modelId`*, `status`, `nextToken`, `maxResults` | Trainings | yes | — |
+| POST | `/models/{modelId}/trainings` | post /models/{modelId}/trainings | `Content-Type`*, `modelId`*, body*: PostTrainings | Training |  | — |
+| OPTIONS | `/models/{modelId}/trainings` | options /models/{modelId}/trainings | `modelId`*, body*: Empty | Empty | yes | — |
+| OPTIONS | `/models/{modelId}/trainings/{trainingId}` | options /models/{modelId}/trainings/{trainingId} | `modelId`*, `trainingId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/models/{modelId}/trainings/{trainingId}` | patch /models/{modelId}/trainings/{trainingId} | `Content-Type`*, `modelId`*, `trainingId`*, body*: PatchTrainingId | Training |  | — |
+| GET | `/organizations` | get /organizations | `nextToken`, `maxResults` | Organizations | yes | — |
+| POST | `/organizations` | post /organizations | `Content-Type`*, body*: PostOrganizations | Organization |  | — |
+| OPTIONS | `/organizations` | options /organizations | body*: Empty | Empty | yes | — |
+| GET | `/organizations/{organizationId}` | get /organizations/{organizationId} | `organizationId`* | Organization | yes | — |
+| OPTIONS | `/organizations/{organizationId}` | options /organizations/{organizationId} | `organizationId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/organizations/{organizationId}` | patch /organizations/{organizationId} | `Content-Type`*, `organizationId`*, body*: PatchOrganizationId | Organization |  | — |
+| GET | `/paymentMethods` | get /paymentMethods | `nextToken`, `maxResults` | PaymentMethods | yes | — |
+| POST | `/paymentMethods` | post /paymentMethods | `Content-Type`*, body*: PostPaymentMethods | PaymentMethod |  | — |
+| OPTIONS | `/paymentMethods` | options /paymentMethods | body*: Empty | Empty | yes | — |
+| GET | `/paymentMethods/{paymentMethodId}` | get /paymentMethods/{paymentMethodId} | `paymentMethodId`* | PaymentMethod | yes | — |
+| DELETE | `/paymentMethods/{paymentMethodId}` | delete /paymentMethods/{paymentMethodId} | `paymentMethodId`* | PaymentMethod |  | — |
+| OPTIONS | `/paymentMethods/{paymentMethodId}` | options /paymentMethods/{paymentMethodId} | `paymentMethodId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/paymentMethods/{paymentMethodId}` | patch /paymentMethods/{paymentMethodId} | `Content-Type`*, `paymentMethodId`*, body*: PatchPaymentMethodId | PaymentMethod |  | — |
+| GET | `/plans` | get /plans | `owner`, `nextToken`, `maxResults` | Plans | yes | — |
+| OPTIONS | `/plans` | options /plans | body*: Empty | Empty | yes | — |
+| GET | `/plans/{planId}` | get /plans/{planId} | `planId`* | Plan | yes | — |
+| OPTIONS | `/plans/{planId}` | options /plans/{planId} | `planId`*, body*: Empty | Empty | yes | — |
+| GET | `/predictions` | get /predictions | `nextToken`, `maxResults`, `sortBy`, `order` | Predictions | yes | — |
+| POST | `/predictions` | post /predictions | `Content-Type`*, body*: PostPredictions | Prediction |  | — |
+| OPTIONS | `/predictions` | options /predictions | body*: Empty | Empty | yes | — |
+| GET | `/profiles/{profileId}` | get /profiles/{profileId} | `profileId`* | Profile | yes | — |
+| OPTIONS | `/profiles/{profileId}` | options /profiles/{profileId} | `profileId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/profiles/{profileId}` | patch /profiles/{profileId} | `profileId`* | Profile |  | — |
+| GET | `/secrets` | get /secrets | `nextToken`, `maxResults` | Secrets | yes | — |
+| POST | `/secrets` | post /secrets | `Content-Type`*, body*: PostSecrets | Secret |  | — |
+| OPTIONS | `/secrets` | options /secrets | body*: Empty | Empty | yes | — |
+| DELETE | `/secrets/{secretId}` | delete /secrets/{secretId} | `secretId`* | Secret |  | — |
+| OPTIONS | `/secrets/{secretId}` | options /secrets/{secretId} | `secretId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/secrets/{secretId}` | patch /secrets/{secretId} | `Content-Type`*, `secretId`*, body*: PatchSecretId | Secret |  | — |
+| POST | `/signup` | post /signup | `Content-Type`*, body*: PostSignUp | SignUp |  | — |
+| OPTIONS | `/signup` | options /signup | body*: Empty | Empty | yes | — |
+| GET | `/transitions` | get /transitions | `transitionType`, `nextToken`, `maxResults` | Transitions | yes | — |
+| POST | `/transitions` | post /transitions | `Content-Type`*, body*: PostTransitions | Transition |  | — |
+| OPTIONS | `/transitions` | options /transitions | body*: Empty | Empty | yes | — |
+| GET | `/transitions/{transitionId}` | get /transitions/{transitionId} | `transitionId`* | Transition | yes | — |
+| DELETE | `/transitions/{transitionId}` | delete /transitions/{transitionId} | `transitionId`* | Transition |  | — |
+| OPTIONS | `/transitions/{transitionId}` | options /transitions/{transitionId} | `transitionId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/transitions/{transitionId}` | patch /transitions/{transitionId} | `Content-Type`*, `transitionId`*, body*: PatchTransitionId | Transition |  | — |
+| GET | `/transitions/{transitionId}/executions` | get /transitions/{transitionId}/executions | `nextToken`, `order`, `executionId`, `transitionId`*, `status`, `maxResults`, `sortBy` | TransitionExecutions | yes | — |
+| POST | `/transitions/{transitionId}/executions` | post /transitions/{transitionId}/executions | `Content-Type`*, `transitionId`*, body*: PostTransitionExecution | TransitionExecution |  | — |
+| OPTIONS | `/transitions/{transitionId}/executions` | options /transitions/{transitionId}/executions | `transitionId`*, body*: Empty | Empty | yes | — |
+| GET | `/transitions/{transitionId}/executions/{executionId}` | get /transitions/{transitionId}/executions/{executionId} | `transitionId`*, `executionId`* | TransitionExecution | yes | — |
+| OPTIONS | `/transitions/{transitionId}/executions/{executionId}` | options /transitions/{transitionId}/executions/{executionId} | `transitionId`*, `executionId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/transitions/{transitionId}/executions/{executionId}` | patch /transitions/{transitionId}/executions/{executionId} | `Content-Type`*, `transitionId`*, `executionId`*, body*: PatchTransistionExecutionId | TransitionExecution |  | — |
+| POST | `/transitions/{transitionId}/executions/{executionId}/heartbeats` | post /transitions/{transitionId}/executions/{executionId}/heartbeats | `Content-Type`*, `transitionId`*, `executionId`*, body*: PostHeartbeats | Empty |  | — |
+| OPTIONS | `/transitions/{transitionId}/executions/{executionId}/heartbeats` | options /transitions/{transitionId}/executions/{executionId}/heartbeats | `transitionId`*, `executionId`*, body*: Empty | Empty | yes | — |
+| GET | `/users` | get /users | `nextToken`, `maxResults` | Users | yes | — |
+| POST | `/users` | post /users | `Content-Type`*, body*: PostUsers | User |  | — |
+| OPTIONS | `/users` | options /users | body*: Empty | Empty | yes | — |
+| GET | `/users/{userId}` | get /users/{userId} | `userId`* | User | yes | — |
+| DELETE | `/users/{userId}` | delete /users/{userId} | `userId`* | User |  | — |
+| OPTIONS | `/users/{userId}` | options /users/{userId} | `userId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/users/{userId}` | patch /users/{userId} | `Content-Type`*, `userId`*, body*: PatchUserId | User |  | — |
+| GET | `/workflows` | get /workflows | `nextToken`, `maxResults` | Workflows | yes | — |
+| POST | `/workflows` | post /workflows | `Content-Type`*, body*: PostWorkflows | Workflow |  | — |
+| OPTIONS | `/workflows` | options /workflows | body*: Empty | Empty | yes | — |
+| GET | `/workflows/{workflowId}` | get /workflows/{workflowId} | `workflowId`* | Workflow | yes | — |
+| DELETE | `/workflows/{workflowId}` | delete /workflows/{workflowId} | `workflowId`* | Workflow |  | — |
+| OPTIONS | `/workflows/{workflowId}` | options /workflows/{workflowId} | `workflowId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/workflows/{workflowId}` | patch /workflows/{workflowId} | `Content-Type`*, `workflowId`*, body*: PatchWorkflowId | Workflow |  | — |
+| GET | `/workflows/{workflowId}/executions` | get /workflows/{workflowId}/executions | `fromStartTime`, `toStartTime`, `workflowId`*, `nextToken`, `order`, `status`, `maxResults`, `sortBy` | WorkflowExecutions | yes | — |
+| POST | `/workflows/{workflowId}/executions` | post /workflows/{workflowId}/executions | `Content-Type`*, `workflowId`*, body*: PostWorkflowExecutions | WorkflowExecution |  | — |
+| OPTIONS | `/workflows/{workflowId}/executions` | options /workflows/{workflowId}/executions | `workflowId`*, body*: Empty | Empty | yes | — |
+| GET | `/workflows/{workflowId}/executions/{executionId}` | get /workflows/{workflowId}/executions/{executionId} | `executionId`*, `workflowId`* | WorkflowExecution | yes | — |
+| DELETE | `/workflows/{workflowId}/executions/{executionId}` | delete /workflows/{workflowId}/executions/{executionId} | `executionId`*, `workflowId`* | WorkflowExecution |  | — |
+| OPTIONS | `/workflows/{workflowId}/executions/{executionId}` | options /workflows/{workflowId}/executions/{executionId} | `executionId`*, `workflowId`*, body*: Empty | Empty | yes | — |
+| PATCH | `/workflows/{workflowId}/executions/{executionId}` | patch /workflows/{workflowId}/executions/{executionId} | `Content-Type`*, `executionId`*, `workflowId`*, body*: PatchWorkflowExecutionId | WorkflowExecution |  | — |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_icons_8_profile_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `07a6ae9e0bcd0d2897ce6df660b0b2f8f84f743dec55862461abdd99439b412a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,13 +34,15 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_icons_8_profile_ima
 
 12 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/iconsets/v3/categories?platform={platform}&language={language}` | Categories | Categories |
-| GET | `/api/iconsets/v3/category?category={category}&subcategory={subcategory}&amount={amount}&offset={offset}&platform={platform}&language={language}` | By Category | By Category |
-| GET | `/api/iconsets/v3/latest?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}` | Latest | Latest |
-| GET | `/api/iconsets/v3/search?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}&exact_amount={exact_amount}` | By Keyword v3 | By Keyword v3 |
-| GET | `/api/iconsets/v3/total?since={since}` | Totals | Totals |
-| GET | `/api/iconsets/v4/search?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}&exact_amount={exact_amount}` | By Keyword v4 | By Keyword v4 |
-| POST | `/api/task/web-font/collection` | From a Collection | From a Collection |
-| POST | `/api/task/web-font/icons` | From Separate Icons | From Separate Icons |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/iconsets/v3/categories?platform={platform}&language={language}` | Categories | `platform`*, `language`* | object | yes | Categories |
+| GET | `/api/iconsets/v3/category?category={category}&subcategory={subcategory}&amount={amount}&offset={offset}&platform={platform}&language={language}` | By Category | `category`*, `subcategory`*, `amount`*, `offset`*, `platform`*, `language`* | object | yes | By Category |
+| GET | `/api/iconsets/v3/latest?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}` | Latest | `amount`*, `offset`*, `platform`*, `language`* | object | yes | Latest |
+| GET | `/api/iconsets/v3/search?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}&exact_amount={exact_amount}` | By Keyword v3 | `term`*, `amount`*, `exact_amount`*, `offset`*, `platform`*, `language`* | object | yes | By Keyword v3 |
+| GET | `/api/iconsets/v3/total?since={since}` | Totals | `since`* | object | yes | Totals |
+| GET | `/api/iconsets/v4/search?term={term}&amount={amount}&offset={offset}&platform={platform}&language={language}&exact_amount={exact_amount}` | By Keyword v4 | `term`*, `amount`*, `offset`*, `platform`*, `language`* | object | yes | By Keyword v4 |
+| POST | `/api/task/web-font/collection` | From a Collection | body: object | object |  | From a Collection |
+| POST | `/api/task/web-font/icons` | From Separate Icons | body: object | object |  | From Separate Icons |

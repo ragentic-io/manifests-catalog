@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `6c43d2ee4c2926eab9dd248babdd2630422980905030401e96ddc800b769a103` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,45 +34,47 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/api/admin/users` | postAdminUsersCreate | Invite a User |
-| GET | `/api/articles` | getArticles | Published articles |
-| POST | `/api/articles` | createArticle | Publish article |
-| GET | `/api/articles/latest` | getLatestArticles | Published articles sorted by published date |
-| GET | `/api/articles/me` | getUserArticles | User's articles |
-| GET | `/api/articles/me/all` | getUserAllArticles | User's all articles |
-| GET | `/api/articles/me/published` | getUserPublishedArticles | User's published articles |
-| GET | `/api/articles/me/unpublished` | getUserUnpublishedArticles | User's unpublished articles |
-| GET | `/api/articles/{id}` | getArticleById | Published article by id |
-| PUT | `/api/articles/{id}` | updateArticle | Update an article by id |
-| PUT | `/api/articles/{id}/unpublish` | unpublishArticle | Unpublish an article |
-| GET | `/api/articles/{username}/{slug}` | getArticleByPath | Published article by path |
-| GET | `/api/comments` | getCommentsByArticleId | Comments |
-| GET | `/api/comments/{id}` | getCommentById | Comment by id |
-| GET | `/api/display_ads` | get /api/display_ads | display ads |
-| POST | `/api/display_ads` | post /api/display_ads | display ads |
-| GET | `/api/display_ads/{id}` | get /api/display_ads/{id} | display ad |
-| PUT | `/api/display_ads/{id}` | put /api/display_ads/{id} | display ads |
-| PUT | `/api/display_ads/{id}/unpublish` | put /api/display_ads/{id}/unpublish | unpublish |
-| GET | `/api/followers/users` | getFollowers | Followers |
-| GET | `/api/follows/tags` | getFollowedTags | Followed Tags |
-| GET | `/api/organizations/{username}` | getOrganization | An organization |
-| GET | `/api/organizations/{username}/articles` | getOrgArticles | Organization's Articles |
-| GET | `/api/organizations/{username}/users` | getOrgUsers | Organization's users |
-| GET | `/api/pages` | get /api/pages | show details for all pages |
-| POST | `/api/pages` | post /api/pages | pages |
-| DELETE | `/api/pages/{id}` | delete /api/pages/{id} | remove a page |
-| GET | `/api/pages/{id}` | get /api/pages/{id} | show details for a page |
-| PUT | `/api/pages/{id}` | put /api/pages/{id} | update details for a page |
-| GET | `/api/podcast_episodes` | getPodcastEpisodes | Podcast Episodes |
-| GET | `/api/profile_images/{username}` | getProfileImage | A Users or organizations profile image |
-| POST | `/api/reactions` | post /api/reactions | create reaction |
-| POST | `/api/reactions/toggle` | post /api/reactions/toggle | toggle reaction |
-| GET | `/api/readinglist` | getReadinglist | Readinglist |
-| GET | `/api/tags` | getTags | Tags |
-| GET | `/api/users/me` | getUserMe | The authenticated user |
-| GET | `/api/users/{id}` | getUser | A User |
-| PUT | `/api/users/{id}/suspend` | suspendUser | Suspend a User |
-| PUT | `/api/users/{id}/unpublish` | unpublishUser | Unpublish a User's Articles and Comments |
-| GET | `/api/videos` | videos | Articles with a video |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/api/admin/users` | postAdminUsersCreate | body: UserInviteParam | — |  | Invite a User |
+| GET | `/api/articles` | getArticles | `page`, `per_page`, `tag`, `tags`, `tags_exclude`, `username`, `state`, `top`, `collection_id` | ArticleIndex[] | yes | Published articles |
+| POST | `/api/articles` | createArticle | body: Article | — |  | Publish article |
+| GET | `/api/articles/latest` | getLatestArticles | `page`, `per_page` | ArticleIndex[] | yes | Published articles sorted by published date |
+| GET | `/api/articles/me` | getUserArticles | `page`, `per_page` | ArticleIndex[] | yes | User's articles |
+| GET | `/api/articles/me/all` | getUserAllArticles | `page`, `per_page` | ArticleIndex[] | yes | User's all articles |
+| GET | `/api/articles/me/published` | getUserPublishedArticles | `page`, `per_page` | ArticleIndex[] | yes | User's published articles |
+| GET | `/api/articles/me/unpublished` | getUserUnpublishedArticles | `page`, `per_page` | ArticleIndex[] | yes | User's unpublished articles |
+| GET | `/api/articles/{id}` | getArticleById | `id`* | object | yes | Published article by id |
+| PUT | `/api/articles/{id}` | updateArticle | `id`*, body: Article | — |  | Update an article by id |
+| PUT | `/api/articles/{id}/unpublish` | unpublishArticle | `id`*, `note` | — |  | Unpublish an article |
+| GET | `/api/articles/{username}/{slug}` | getArticleByPath | `username`*, `slug`* | object | yes | Published article by path |
+| GET | `/api/comments` | getCommentsByArticleId | `a_id`, `p_id` | Comment[] | yes | Comments |
+| GET | `/api/comments/{id}` | getCommentById | `id`* | — | yes | Comment by id |
+| GET | `/api/display_ads` | get /api/display_ads | — | — | yes | display ads |
+| POST | `/api/display_ads` | post /api/display_ads | body: object | — |  | display ads |
+| GET | `/api/display_ads/{id}` | get /api/display_ads/{id} | `id`* | — | yes | display ad |
+| PUT | `/api/display_ads/{id}` | put /api/display_ads/{id} | `id`*, body: object | — |  | display ads |
+| PUT | `/api/display_ads/{id}/unpublish` | put /api/display_ads/{id}/unpublish | `id`* | — |  | unpublish |
+| GET | `/api/followers/users` | getFollowers | `page`, `per_page`, `sort` | object[] | yes | Followers |
+| GET | `/api/follows/tags` | getFollowedTags | — | FollowedTag[] | yes | Followed Tags |
+| GET | `/api/organizations/{username}` | getOrganization | `username`* | object | yes | An organization |
+| GET | `/api/organizations/{username}/articles` | getOrgArticles | `username`*, `page`, `per_page` | ArticleIndex[] | yes | Organization's Articles |
+| GET | `/api/organizations/{username}/users` | getOrgUsers | `username`*, `page`, `per_page` | User[] | yes | Organization's users |
+| GET | `/api/pages` | get /api/pages | — | Page[] | yes | show details for all pages |
+| POST | `/api/pages` | post /api/pages | body: object | — |  | pages |
+| GET | `/api/pages/{id}` | get /api/pages/{id} | `id`* | Page | yes | show details for a page |
+| PUT | `/api/pages/{id}` | put /api/pages/{id} | `id`*, body: Page | Page |  | update details for a page |
+| DELETE | `/api/pages/{id}` | delete /api/pages/{id} | `id`* | Page |  | remove a page |
+| GET | `/api/podcast_episodes` | getPodcastEpisodes | `page`, `per_page`, `username` | PodcastEpisodeIndex[] | yes | Podcast Episodes |
+| GET | `/api/profile_images/{username}` | getProfileImage | `username`* | object | yes | A Users or organizations profile image |
+| POST | `/api/reactions` | post /api/reactions | `category`*, `reactable_id`*, `reactable_type`* | — |  | create reaction |
+| POST | `/api/reactions/toggle` | post /api/reactions/toggle | `category`*, `reactable_id`*, `reactable_type`* | — |  | toggle reaction |
+| GET | `/api/readinglist` | getReadinglist | `page`, `per_page` | ArticleIndex[] | yes | Readinglist |
+| GET | `/api/tags` | getTags | `page`, `per_page` | Tag[] | yes | Tags |
+| GET | `/api/users/me` | getUserMe | — | object | yes | The authenticated user |
+| GET | `/api/users/{id}` | getUser | `id`* | object | yes | A User |
+| PUT | `/api/users/{id}/suspend` | suspendUser | `id`* | — |  | Suspend a User |
+| PUT | `/api/users/{id}/unpublish` | unpublishUser | `id`* | — |  | Unpublish a User's Articles and Comments |
+| GET | `/api/videos` | videos | `page`, `per_page` | VideoArticle[] | yes | Articles with a video |

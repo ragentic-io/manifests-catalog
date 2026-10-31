@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `6fd1162120b33f86a663bca83b0f0ddd576c6f3e5c814f58685474b130ade026` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 8 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v1/payment-links` | getPaymentLinks | List all payment links. |
-| POST | `/v1/payment-links` | createPaymentLink | Create a payment link. |
-| GET | `/v1/payment-links/{linkId}` | getPaymentLink | Get payment link by id. |
-| PUT | `/v1/payment-links/{linkId}` | updatePaymentLink | Update a payment link. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v1/payment-links` | getPaymentLinks | `page`, `limit`, `merchantId`*, `accountId`*, `portalId`*, `mode`* | PageLinkResponse | yes | List all payment links. |
+| POST | `/v1/payment-links` | createPaymentLink | body: LinkCreateRequest | LinkResponse |  | Create a payment link. |
+| GET | `/v1/payment-links/{linkId}` | getPaymentLink | `linkId`* | LinkResponse | yes | Get payment link by id. |
+| PUT | `/v1/payment-links/{linkId}` | updatePaymentLink | `linkId`*, body: LinkCreateRequest | LinkResponse |  | Update a payment link. |

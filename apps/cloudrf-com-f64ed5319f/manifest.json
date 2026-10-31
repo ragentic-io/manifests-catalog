@@ -67,208 +67,501 @@
       },
       {
         "deprecated": false,
+        "description": "Warning!",
         "id": "operation:get:/archive/delete",
         "kind": "operation",
         "method": "get",
         "name": "delete",
+        "parameters": [
+          {
+            "description": "Unique calculation ID number",
+            "in": "query",
+            "name": "cid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/archive/delete",
         "pointer": "#/paths/~1archive~1delete/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Delete a calculation from the database."
+        "summary": "Delete a calculation from the database.",
+        "tags": [
+          "Manage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Warning!",
         "id": "operation:get:/archive/delete/network",
         "kind": "operation",
         "method": "get",
         "name": "deleteNetwork",
+        "parameters": [
+          {
+            "description": "Network name",
+            "in": "query",
+            "name": "nid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/archive/delete/network",
         "pointer": "#/paths/~1archive~1delete~1network/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Delete an entire network"
+        "summary": "Delete an entire network",
+        "tags": [
+          "Manage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Download your data in a format suitable for a third party viewer like Google Earth or ESRI Arcmap.",
         "id": "operation:get:/archive/export",
         "kind": "operation",
         "method": "get",
         "name": "export",
+        "parameters": [
+          {
+            "description": "Calculation file name",
+            "in": "query",
+            "name": "file",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Raster/Vector file format: KML, KMZ, SHP, GeoTIFF",
+            "enum": [
+              "kml",
+              "kml",
+              "kmzppa",
+              "shp",
+              "tiff"
+            ],
+            "in": "query",
+            "name": "fmt",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/archive/export",
         "pointer": "#/paths/~1archive~1export/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Export a calculation in a GIS file format"
+        "summary": "Export a calculation in a GIS file format",
+        "tags": [
+          "Manage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List your area and path calculations, sorted by time and limited to the last few hundred.",
         "id": "operation:get:/archive/list",
         "kind": "operation",
         "method": "get",
         "name": "list",
+        "parameters": [
+          {
+            "description": "North bounding box",
+            "in": "query",
+            "name": "n",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "East bounding box",
+            "in": "query",
+            "name": "e",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "South bounding box",
+            "in": "query",
+            "name": "s",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "description": "West bounding box",
+            "in": "query",
+            "name": "w",
+            "required": false,
+            "type": "number:float"
+          }
+        ],
         "path": "/archive/list",
         "pointer": "#/paths/~1archive~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "List calculations from your archive"
+        "summary": "List calculations from your archive",
+        "tags": [
+          "Manage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "An area coverage assumes the same receiver height at all locations out to fixed radius (maximum 300km).",
         "id": "operation:post:/area",
         "kind": "operation",
         "method": "post",
         "name": "area",
         "path": "/area",
         "pointer": "#/paths/~1area/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Create a point-to-multipoint heatmap"
+        "summary": "Create a point-to-multipoint heatmap",
+        "tags": [
+          "Create"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Upload GeoJSON lineString and polygon features to your account.",
         "id": "operation:post:/clutter/add",
         "kind": "operation",
         "method": "post",
         "name": "addClutter",
         "path": "/clutter/add",
         "pointer": "#/paths/~1clutter~1add/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Upload clutter data as GeoJSON"
+        "summary": "Upload clutter data as GeoJSON",
+        "tags": [
+          "Manage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Merge and analyse sites within a network channel to determine the best server at a given location.",
         "id": "operation:get:/interference",
         "kind": "operation",
         "method": "get",
         "name": "interference",
+        "parameters": [
+          {
+            "description": "Network name eg.",
+            "in": "query",
+            "name": "network",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Interference layer name eg.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/interference",
         "pointer": "#/paths/~1interference/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Find the best server for overlapping coverage"
+        "summary": "Find the best server for overlapping coverage",
+        "tags": [
+          "Analyse"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A merge of 'area' calculations for a network to create a single super layer.",
         "id": "operation:get:/mesh",
         "kind": "operation",
         "method": "get",
         "name": "mesh",
+        "parameters": [
+          {
+            "description": "Network name eg.",
+            "in": "query",
+            "name": "network",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Super layer name eg.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/mesh",
         "pointer": "#/paths/~1mesh/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Merge sites into a super layer."
+        "summary": "Merge sites into a super layer.",
+        "tags": [
+          "Analyse"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query your network to find the best server(s) for a given receiver/customer location.",
         "id": "operation:get:/network",
         "kind": "operation",
         "method": "get",
         "name": "network",
+        "parameters": [
+          {
+            "description": "Network name",
+            "in": "query",
+            "name": "net",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Super layer name",
+            "in": "query",
+            "name": "nam",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Latitude in decimal degrees",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number:float"
+          },
+          {
+            "description": "Longitude in decimal degrees",
+            "in": "query",
+            "name": "lon",
+            "required": true,
+            "type": "number:float"
+          },
+          {
+            "description": "Height above ground level in metres",
+            "in": "query",
+            "name": "alt",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Receiver gain in dBi",
+            "in": "query",
+            "name": "rxg",
+            "required": false,
+            "type": "number:float"
+          }
+        ],
         "path": "/network",
         "pointer": "#/paths/~1network/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Find the best server for somewhere"
+        "summary": "Find the best server for somewhere",
+        "tags": [
+          "Analyse"
+        ]
       },
       {
         "deprecated": false,
+        "description": "A path profile is a single link from A to B.",
         "id": "operation:post:/path",
         "kind": "operation",
         "method": "post",
         "name": "path",
         "path": "/path",
         "pointer": "#/paths/~1path/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Point-to-point path profile analysis (Tx to Rx)"
+        "summary": "Point-to-point path profile analysis (Tx to Rx)",
+        "tags": [
+          "Create"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The points function tests many transmitters and one receiver and is designed for route analysis.",
         "id": "operation:post:/points",
         "kind": "operation",
         "method": "post",
         "name": "points",
         "path": "/points",
         "pointer": "#/paths/~1points/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Point-to-multipoint path profile analysis (Many Tx, one Rx)"
+        "summary": "Point-to-multipoint path profile analysis (Many Tx, one Rx)",
+        "tags": [
+          "Create"
+        ]
       },
       {
         "id": "schema:Antenna",
         "kind": "schema",
-        "name": "Antenna"
+        "name": "Antenna",
+        "type": "object"
       },
       {
         "id": "schema:Environment",
         "kind": "schema",
-        "name": "Environment"
+        "name": "Environment",
+        "type": "object"
       },
       {
         "id": "schema:Feature",
         "kind": "schema",
-        "name": "Feature"
+        "name": "Feature",
+        "type": "object"
       },
       {
         "id": "schema:Model",
         "kind": "schema",
-        "name": "Model"
+        "name": "Model",
+        "type": "object"
       },
       {
         "id": "schema:Output",
         "kind": "schema",
-        "name": "Output"
+        "name": "Output",
+        "type": "object"
       },
       {
         "id": "schema:Point",
         "kind": "schema",
-        "name": "Point"
+        "name": "Point",
+        "type": "object"
       },
       {
         "id": "schema:Receiver",
         "kind": "schema",
-        "name": "Receiver"
+        "name": "Receiver",
+        "type": "object"
       },
       {
         "id": "schema:Transmitter",
         "kind": "schema",
-        "name": "Transmitter"
+        "name": "Transmitter",
+        "type": "object"
       }
     ]
   },

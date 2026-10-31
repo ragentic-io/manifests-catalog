@@ -7,12 +7,12 @@
       {
         "from": "shorten-rest-5530e0df56",
         "kind": "EXPOSES",
-        "to": "operation:delete:/aliases"
+        "to": "operation:get:/aliases"
       },
       {
         "from": "shorten-rest-5530e0df56",
         "kind": "EXPOSES",
-        "to": "operation:get:/aliases"
+        "to": "operation:put:/aliases"
       },
       {
         "from": "shorten-rest-5530e0df56",
@@ -22,7 +22,7 @@
       {
         "from": "shorten-rest-5530e0df56",
         "kind": "EXPOSES",
-        "to": "operation:put:/aliases"
+        "to": "operation:delete:/aliases"
       },
       {
         "from": "shorten-rest-5530e0df56",
@@ -38,6 +38,86 @@
         "from": "shorten-rest-5530e0df56",
         "kind": "EXPOSES",
         "to": "operation:post:/clicks/pg"
+      },
+      {
+        "from": "operation:get:/aliases",
+        "kind": "RETURNS",
+        "to": "schema:AliasModel"
+      },
+      {
+        "from": "operation:put:/aliases",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateAliasModel"
+      },
+      {
+        "from": "operation:post:/aliases",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateAliasModel"
+      },
+      {
+        "from": "operation:post:/aliases",
+        "kind": "RETURNS",
+        "to": "schema:CreateAliasResponseModel"
+      },
+      {
+        "from": "operation:get:/aliases/all",
+        "kind": "RETURNS",
+        "to": "schema:GetAliasesModel"
+      },
+      {
+        "from": "operation:get:/clicks",
+        "kind": "RETURNS",
+        "to": "schema:GetClicksModel"
+      },
+      {
+        "from": "operation:post:/clicks/pg",
+        "kind": "ACCEPTS",
+        "to": "schema:ClicksFilterModel"
+      },
+      {
+        "from": "operation:post:/clicks/pg",
+        "kind": "RETURNS",
+        "to": "schema:ClickModelPg"
+      },
+      {
+        "from": "schema:AliasModel",
+        "kind": "REFERENCES",
+        "to": "schema:DestinationModel"
+      },
+      {
+        "from": "schema:AliasModel",
+        "kind": "REFERENCES",
+        "to": "schema:MetaTagModel"
+      },
+      {
+        "from": "schema:AliasModel",
+        "kind": "REFERENCES",
+        "to": "schema:SnippetModel"
+      },
+      {
+        "from": "schema:CreateAliasModel",
+        "kind": "REFERENCES",
+        "to": "schema:DestinationModel"
+      },
+      {
+        "from": "schema:CreateAliasModel",
+        "kind": "REFERENCES",
+        "to": "schema:MetaTagModel"
+      },
+      {
+        "from": "schema:CreateAliasModel",
+        "kind": "REFERENCES",
+        "to": "schema:SnippetModel"
+      },
+      {
+        "from": "schema:GetAliasModel",
+        "kind": "REFERENCES",
+        "to": "schema:CreateAliasModel"
+      },
+      {
+        "from": "schema:GetClicksModel",
+        "kind": "REFERENCES",
+        "to": "schema:ClickModel"
       }
     ],
     "nodes": [
@@ -47,168 +127,387 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/aliases",
-        "kind": "operation",
-        "method": "delete",
-        "name": "DeleteAlias",
-        "path": "/aliases",
-        "pointer": "#/paths/~1aliases/delete",
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Delete alias"
-      },
-      {
-        "deprecated": false,
+        "description": "Get detailed information for a single alias by providing its alias and domain name",
         "id": "operation:get:/aliases",
         "kind": "operation",
         "method": "get",
         "name": "GetAlias",
+        "parameters": [
+          {
+            "default": "short.fyi",
+            "description": "domain which alias belongs to (string without `http/https` or `/`)",
+            "in": "query",
+            "name": "domainName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "alias value (without `/` at the beginning)",
+            "in": "query",
+            "name": "aliasName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/aliases",
         "pointer": "#/paths/~1aliases/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AliasModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get alias"
+        "summary": "Get alias",
+        "tags": [
+          "Alias"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/aliases",
-        "kind": "operation",
-        "method": "post",
-        "name": "CreateAlias",
-        "path": "/aliases",
-        "pointer": "#/paths/~1aliases/post",
-        "security": [
-          {
-            "ApiKeyAuth": []
-          }
-        ],
-        "summary": "Create alias"
-      },
-      {
-        "deprecated": false,
+        "description": "Update a single short URL by providing its alias and domain as a parameter, and the data you wish to update in the body of the request.",
         "id": "operation:put:/aliases",
         "kind": "operation",
         "method": "put",
         "name": "UpdateAlias",
+        "parameters": [
+          {
+            "default": "short.fyi",
+            "description": "domain which alias belongs to (string without `http/https` or `/`)",
+            "in": "query",
+            "name": "domainName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "alias (without `/` at the beginning)",
+            "in": "query",
+            "name": "aliasName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/aliases",
         "pointer": "#/paths/~1aliases/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateAliasModel"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Update alias"
+        "summary": "Update alias",
+        "tags": [
+          "Alias"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This POST method creates a new alias under a specified domain.",
+        "id": "operation:post:/aliases",
+        "kind": "operation",
+        "method": "post",
+        "name": "CreateAlias",
+        "parameters": [
+          {
+            "default": "short.fyi",
+            "description": "domain which alias will belong to (string without `http/https` or `/`)",
+            "in": "query",
+            "name": "domainName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "@rnd",
+            "description": "alias (without `/` at the beginning)",
+            "in": "query",
+            "name": "aliasName",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/aliases",
+        "pointer": "#/paths/~1aliases/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateAliasModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreateAliasResponseModel"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Create alias",
+        "tags": [
+          "Alias"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Deletes a single alias by providing alias and domain.",
+        "id": "operation:delete:/aliases",
+        "kind": "operation",
+        "method": "delete",
+        "name": "DeleteAlias",
+        "parameters": [
+          {
+            "default": "short.fyi",
+            "description": "domain which alias belongs to (string without `http/https` or `/`)",
+            "in": "query",
+            "name": "domainName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "alias (without `/` at the beginning)",
+            "in": "query",
+            "name": "aliasName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/aliases",
+        "pointer": "#/paths/~1aliases/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Delete alias",
+        "tags": [
+          "Alias"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Obtain a list of all alias names associated with your account and given domain.",
         "id": "operation:get:/aliases/all",
         "kind": "operation",
         "method": "get",
         "name": "GetAliases",
+        "parameters": [
+          {
+            "default": "short.fyi",
+            "description": "The domain name to get the aliases for (string without `http/https` or `/`)",
+            "in": "query",
+            "name": "domainName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An ID returned by a previous query to continue aliases retrieval (see lastId in response)",
+            "in": "query",
+            "name": "continueFrom",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "description": "Number of results to return per request",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/aliases/all",
         "pointer": "#/paths/~1aliases~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetAliasesModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get aliases by domain"
+        "summary": "Get aliases by domain",
+        "tags": [
+          "Alias"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the raw click data for your account.",
         "id": "operation:get:/clicks",
         "kind": "operation",
         "method": "get",
         "name": "GetClicks",
+        "parameters": [
+          {
+            "description": "An ID returned by a previous query to continue clicks retrieval (see lastId in response)",
+            "in": "query",
+            "name": "continueFrom",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1000,
+            "description": "Number of results to return per request",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/clicks",
         "pointer": "#/paths/~1clicks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetClicksModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get clicks"
+        "summary": "Get clicks",
+        "tags": [
+          "Click"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the raw click statistics for your account.",
         "id": "operation:post:/clicks/pg",
         "kind": "operation",
         "method": "post",
         "name": "GetStatistics",
         "path": "/clicks/pg",
         "pointer": "#/paths/~1clicks~1pg/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ClicksFilterModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClickModelPg"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Get clicks statistics"
+        "summary": "Get clicks statistics",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "id": "schema:AliasModel",
         "kind": "schema",
-        "name": "AliasModel"
+        "name": "AliasModel",
+        "type": "object"
       },
       {
         "id": "schema:ClickModel",
         "kind": "schema",
-        "name": "ClickModel"
+        "name": "ClickModel",
+        "type": "object"
       },
       {
         "id": "schema:ClickModelPg",
         "kind": "schema",
-        "name": "ClickModelPg"
+        "name": "ClickModelPg",
+        "type": "object"
       },
       {
         "id": "schema:ClicksFilterModel",
         "kind": "schema",
-        "name": "ClicksFilterModel"
+        "name": "ClicksFilterModel",
+        "type": "object"
       },
       {
         "id": "schema:CreateAliasModel",
         "kind": "schema",
-        "name": "CreateAliasModel"
+        "name": "CreateAliasModel",
+        "type": "object"
       },
       {
         "id": "schema:CreateAliasResponseModel",
         "kind": "schema",
-        "name": "CreateAliasResponseModel"
+        "name": "CreateAliasResponseModel",
+        "type": "object"
       },
       {
         "id": "schema:DestinationModel",
         "kind": "schema",
-        "name": "DestinationModel"
+        "name": "DestinationModel",
+        "type": "object"
       },
       {
         "id": "schema:GetAliasModel",
         "kind": "schema",
-        "name": "GetAliasModel"
+        "name": "GetAliasModel",
+        "type": "object"
       },
       {
         "id": "schema:GetAliasesModel",
         "kind": "schema",
-        "name": "GetAliasesModel"
+        "name": "GetAliasesModel",
+        "type": "object"
       },
       {
         "id": "schema:GetClicksModel",
         "kind": "schema",
-        "name": "GetClicksModel"
+        "name": "GetClicksModel",
+        "type": "object"
       },
       {
         "id": "schema:MetaTagModel",
         "kind": "schema",
-        "name": "MetaTagModel"
+        "name": "MetaTagModel",
+        "type": "object"
       },
       {
         "id": "schema:SnippetModel",
         "kind": "schema",
-        "name": "SnippetModel"
+        "name": "SnippetModel",
+        "type": "object"
       }
     ]
   },

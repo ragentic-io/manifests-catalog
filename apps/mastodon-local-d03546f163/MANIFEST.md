@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `c9afeee6b65b31341b8ca67a66acf90b7c59f301b93fc2a577114c6f5d9819d8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,132 +34,134 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 35 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/oembed` | get /api/oembed | — |
-| GET | `/api/proofs` | get /api/proofs | — |
-| POST | `/api/v1/accounts` | post /api/v1/accounts | — |
-| GET | `/api/v1/accounts/relationships` | get /api/v1/accounts/relationships | — |
-| GET | `/api/v1/accounts/search` | get /api/v1/accounts/search | — |
-| PATCH | `/api/v1/accounts/update_credentials` | patch /api/v1/accounts/update_credentials | — |
-| GET | `/api/v1/accounts/verify_credentials` | get /api/v1/accounts/verify_credentials | — |
-| GET | `/api/v1/accounts/{id}` | get /api/v1/accounts/{id} | — |
-| POST | `/api/v1/accounts/{id}/block` | post /api/v1/accounts/{id}/block | — |
-| GET | `/api/v1/accounts/{id}/featured_tags` | get /api/v1/accounts/{id}/featured_tags | — |
-| POST | `/api/v1/accounts/{id}/follow` | post /api/v1/accounts/{id}/follow | — |
-| GET | `/api/v1/accounts/{id}/followers` | get /api/v1/accounts/{id}/followers | — |
-| GET | `/api/v1/accounts/{id}/following` | get /api/v1/accounts/{id}/following | — |
-| GET | `/api/v1/accounts/{id}/identity_proofs` | get /api/v1/accounts/{id}/identity_proofs | — |
-| GET | `/api/v1/accounts/{id}/lists` | get /api/v1/accounts/{id}/lists | — |
-| POST | `/api/v1/accounts/{id}/mute` | post /api/v1/accounts/{id}/mute | — |
-| POST | `/api/v1/accounts/{id}/note` | post /api/v1/accounts/{id}/note | — |
-| POST | `/api/v1/accounts/{id}/pin` | post /api/v1/accounts/{id}/pin | — |
-| GET | `/api/v1/accounts/{id}/statuses` | get /api/v1/accounts/{id}/statuses | — |
-| POST | `/api/v1/accounts/{id}/unblock` | post /api/v1/accounts/{id}/unblock | — |
-| POST | `/api/v1/accounts/{id}/unfollow` | post /api/v1/accounts/{id}/unfollow | — |
-| POST | `/api/v1/accounts/{id}/unmute` | post /api/v1/accounts/{id}/unmute | — |
-| POST | `/api/v1/accounts/{id}/unpin` | post /api/v1/accounts/{id}/unpin | — |
-| GET | `/api/v1/admin/accounts` | get /api/v1/admin/accounts | — |
-| GET | `/api/v1/admin/accounts/{id}` | get /api/v1/admin/accounts/{id} | — |
-| POST | `/api/v1/admin/accounts/{id}/action` | post /api/v1/admin/accounts/{id}/action | — |
-| POST | `/api/v1/admin/accounts/{id}/approve` | post /api/v1/admin/accounts/{id}/approve | — |
-| POST | `/api/v1/admin/accounts/{id}/enable` | post /api/v1/admin/accounts/{id}/enable | — |
-| POST | `/api/v1/admin/accounts/{id}/reject` | post /api/v1/admin/accounts/{id}/reject | — |
-| POST | `/api/v1/admin/accounts/{id}/unsilence` | post /api/v1/admin/accounts/{id}/unsilence | — |
-| POST | `/api/v1/admin/accounts/{id}/unsuspend` | post /api/v1/admin/accounts/{id}/unsuspend | — |
-| GET | `/api/v1/admin/reports` | get /api/v1/admin/reports | — |
-| GET | `/api/v1/admin/reports/{id}` | get /api/v1/admin/reports/{id} | — |
-| POST | `/api/v1/admin/reports/{id}/assign_to_self` | post /api/v1/admin/reports/{id}/assign_to_self | — |
-| POST | `/api/v1/admin/reports/{id}/reopen` | post /api/v1/admin/reports/{id}/reopen | — |
-| POST | `/api/v1/admin/reports/{id}/resolve` | post /api/v1/admin/reports/{id}/resolve | — |
-| POST | `/api/v1/admin/reports/{id}/unassign` | post /api/v1/admin/reports/{id}/unassign | — |
-| GET | `/api/v1/announcements` | get /api/v1/announcements | — |
-| POST | `/api/v1/announcements/{id}/dismiss` | post /api/v1/announcements/{id}/dismiss | — |
-| DELETE | `/api/v1/announcements/{id}/reactions/{name}` | delete /api/v1/announcements/{id}/reactions/{name} | — |
-| PUT | `/api/v1/announcements/{id}/reactions/{name}` | put /api/v1/announcements/{id}/reactions/{name} | — |
-| POST | `/api/v1/apps` | post /api/v1/apps | — |
-| GET | `/api/v1/apps/verify_credentials` | get /api/v1/apps/verify_credentials | — |
-| GET | `/api/v1/blocks` | get /api/v1/blocks | — |
-| GET | `/api/v1/bookmarks` | get /api/v1/bookmarks | — |
-| GET | `/api/v1/conversations` | get /api/v1/conversations | — |
-| DELETE | `/api/v1/conversations/{id}` | delete /api/v1/conversations/{id} | — |
-| POST | `/api/v1/conversations/{id}/read` | post /api/v1/conversations/{id}/read | — |
-| GET | `/api/v1/custom_emojis` | get /api/v1/custom_emojis | — |
-| GET | `/api/v1/directory` | get /api/v1/directory | — |
-| DELETE | `/api/v1/domain_blocks` | delete /api/v1/domain_blocks | — |
-| GET | `/api/v1/domain_blocks` | get /api/v1/domain_blocks | — |
-| POST | `/api/v1/domain_blocks` | post /api/v1/domain_blocks | — |
-| GET | `/api/v1/endorsements` | get /api/v1/endorsements | — |
-| GET | `/api/v1/favourites` | get /api/v1/favourites | — |
-| GET | `/api/v1/featured_tags` | get /api/v1/featured_tags | — |
-| POST | `/api/v1/featured_tags` | post /api/v1/featured_tags | — |
-| GET | `/api/v1/featured_tags/suggestions` | get /api/v1/featured_tags/suggestions | — |
-| DELETE | `/api/v1/featured_tags/{id}` | delete /api/v1/featured_tags/{id} | — |
-| GET | `/api/v1/filters` | get /api/v1/filters | — |
-| POST | `/api/v1/filters` | post /api/v1/filters | — |
-| DELETE | `/api/v1/filters/{id}` | delete /api/v1/filters/{id} | — |
-| GET | `/api/v1/filters/{id}` | get /api/v1/filters/{id} | — |
-| PUT | `/api/v1/filters/{id}` | put /api/v1/filters/{id} | — |
-| GET | `/api/v1/follow_requests` | get /api/v1/follow_requests | — |
-| POST | `/api/v1/follow_requests/{id}/authorize` | post /api/v1/follow_requests/{id}/authorize | — |
-| POST | `/api/v1/follow_requests/{id}/reject` | post /api/v1/follow_requests/{id}/reject | — |
-| GET | `/api/v1/instance` | get /api/v1/instance | — |
-| GET | `/api/v1/instance/activity` | get /api/v1/instance/activity | — |
-| GET | `/api/v1/instance/peers` | get /api/v1/instance/peers | — |
-| DELETE | `/api/v1/lists` | delete /api/v1/lists | — |
-| GET | `/api/v1/lists` | get /api/v1/lists | — |
-| POST | `/api/v1/lists` | post /api/v1/lists | — |
-| PUT | `/api/v1/lists` | put /api/v1/lists | — |
-| GET | `/api/v1/lists/{id}` | get /api/v1/lists/{id} | — |
-| DELETE | `/api/v1/lists/{id}/accounts` | delete /api/v1/lists/{id}/accounts | — |
-| GET | `/api/v1/lists/{id}/accounts` | get /api/v1/lists/{id}/accounts | — |
-| POST | `/api/v1/lists/{id}/accounts` | post /api/v1/lists/{id}/accounts | — |
-| GET | `/api/v1/markers` | get /api/v1/markers | — |
-| POST | `/api/v1/markers` | post /api/v1/markers | — |
-| POST | `/api/v1/media` | post /api/v1/media | — |
-| GET | `/api/v1/media/{id}` | get /api/v1/media/{id} | — |
-| POST | `/api/v1/media/{id}` | post /api/v1/media/{id} | — |
-| GET | `/api/v1/mutes` | get /api/v1/mutes | — |
-| GET | `/api/v1/notifications` | get /api/v1/notifications | — |
-| POST | `/api/v1/notifications/clear` | post /api/v1/notifications/clear | — |
-| GET | `/api/v1/notifications/{id}` | get /api/v1/notifications/{id} | — |
-| POST | `/api/v1/notifications/{id}/dismiss` | post /api/v1/notifications/{id}/dismiss | — |
-| GET | `/api/v1/polls/{id}` | get /api/v1/polls/{id} | — |
-| POST | `/api/v1/polls/{id}` | post /api/v1/polls/{id} | — |
-| GET | `/api/v1/preferences` | get /api/v1/preferences | — |
-| DELETE | `/api/v1/push/subscription` | delete /api/v1/push/subscription | — |
-| GET | `/api/v1/push/subscription` | get /api/v1/push/subscription | — |
-| POST | `/api/v1/push/subscription` | post /api/v1/push/subscription | — |
-| PUT | `/api/v1/push/subscription` | put /api/v1/push/subscription | — |
-| POST | `/api/v1/reports` | post /api/v1/reports | — |
-| GET | `/api/v1/scheduled_statuses` | get /api/v1/scheduled_statuses | — |
-| DELETE | `/api/v1/scheduled_statuses/{id}` | delete /api/v1/scheduled_statuses/{id} | — |
-| GET | `/api/v1/scheduled_statuses/{id}` | get /api/v1/scheduled_statuses/{id} | — |
-| PUT | `/api/v1/scheduled_statuses/{id}` | put /api/v1/scheduled_statuses/{id} | — |
-| POST | `/api/v1/statuses` | post /api/v1/statuses | — |
-| DELETE | `/api/v1/statuses/{id}` | delete /api/v1/statuses/{id} | — |
-| GET | `/api/v1/statuses/{id}` | get /api/v1/statuses/{id} | — |
-| POST | `/api/v1/statuses/{id}/bookmark` | post /api/v1/statuses/{id}/bookmark | — |
-| GET | `/api/v1/statuses/{id}/context` | get /api/v1/statuses/{id}/context | — |
-| POST | `/api/v1/statuses/{id}/favourite` | post /api/v1/statuses/{id}/favourite | — |
-| GET | `/api/v1/statuses/{id}/favourited_by` | get /api/v1/statuses/{id}/favourited_by | — |
-| POST | `/api/v1/statuses/{id}/mute` | post /api/v1/statuses/{id}/mute | — |
-| POST | `/api/v1/statuses/{id}/pin` | post /api/v1/statuses/{id}/pin | — |
-| POST | `/api/v1/statuses/{id}/reblog` | post /api/v1/statuses/{id}/reblog | — |
-| GET | `/api/v1/statuses/{id}/reblogged_by` | get /api/v1/statuses/{id}/reblogged_by | — |
-| POST | `/api/v1/statuses/{id}/unbookmark` | post /api/v1/statuses/{id}/unbookmark | — |
-| POST | `/api/v1/statuses/{id}/unfavourite` | post /api/v1/statuses/{id}/unfavourite | — |
-| POST | `/api/v1/statuses/{id}/unmute` | post /api/v1/statuses/{id}/unmute | — |
-| POST | `/api/v1/statuses/{id}/unpin` | post /api/v1/statuses/{id}/unpin | — |
-| POST | `/api/v1/statuses/{id}/unreblog` | post /api/v1/statuses/{id}/unreblog | — |
-| GET | `/api/v1/suggestions` | get /api/v1/suggestions | — |
-| DELETE | `/api/v1/suggestions/{id}` | delete /api/v1/suggestions/{id} | — |
-| GET | `/api/v1/timelines/home` | get /api/v1/timelines/home | — |
-| GET | `/api/v1/timelines/list/{list_id}` | get /api/v1/timelines/list/{list_id} | — |
-| GET | `/api/v1/timelines/public` | get /api/v1/timelines/public | — |
-| GET | `/api/v1/timelines/tag/{hashtag}` | get /api/v1/timelines/tag/{hashtag} | — |
-| GET | `/api/v1/trends` | get /api/v1/trends | — |
-| GET | `/api/v2/search` | get /api/v2/search | — |
-| GET | `/oauth/authorize` | get /oauth/authorize | — |
-| POST | `/oauth/revoke` | post /oauth/revoke | — |
-| POST | `/oauth/token` | post /oauth/token | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/oembed` | get /api/oembed | `url`, `maxwidth`, `maxheight` | Card | yes | — |
+| GET | `/api/proofs` | get /api/proofs | `provider`, `username` | IdentityProof | yes | — |
+| POST | `/api/v1/accounts` | post /api/v1/accounts | body: object | — |  | — |
+| GET | `/api/v1/accounts/relationships` | get /api/v1/accounts/relationships | `id`* | Relationship[] | yes | — |
+| GET | `/api/v1/accounts/search` | get /api/v1/accounts/search | `q`*, `limit`, `resolve`, `following` | Account[] | yes | — |
+| PATCH | `/api/v1/accounts/update_credentials` | patch /api/v1/accounts/update_credentials | body: object | Account |  | — |
+| GET | `/api/v1/accounts/verify_credentials` | get /api/v1/accounts/verify_credentials | — | Account | yes | — |
+| GET | `/api/v1/accounts/{id}` | get /api/v1/accounts/{id} | `id`* | Account | yes | — |
+| POST | `/api/v1/accounts/{id}/block` | post /api/v1/accounts/{id}/block | `id`* | Relationship |  | — |
+| GET | `/api/v1/accounts/{id}/featured_tags` | get /api/v1/accounts/{id}/featured_tags | `id`* | FeaturedTag[] | yes | — |
+| POST | `/api/v1/accounts/{id}/follow` | post /api/v1/accounts/{id}/follow | `id`*, body: object | Relationship |  | — |
+| GET | `/api/v1/accounts/{id}/followers` | get /api/v1/accounts/{id}/followers | `id`*, `max_id`, `since_id`, `limit` | Account[] | yes | — |
+| GET | `/api/v1/accounts/{id}/following` | get /api/v1/accounts/{id}/following | `id`*, `max_id`, `since_id`, `limit` | Account[] | yes | — |
+| GET | `/api/v1/accounts/{id}/identity_proofs` | get /api/v1/accounts/{id}/identity_proofs | `id`* | IdentityProof[] | yes | — |
+| GET | `/api/v1/accounts/{id}/lists` | get /api/v1/accounts/{id}/lists | `id`* | List[] | yes | — |
+| POST | `/api/v1/accounts/{id}/mute` | post /api/v1/accounts/{id}/mute | `id`*, body: object | Relationship |  | — |
+| POST | `/api/v1/accounts/{id}/note` | post /api/v1/accounts/{id}/note | `id`*, body: object | Relationship |  | — |
+| POST | `/api/v1/accounts/{id}/pin` | post /api/v1/accounts/{id}/pin | `id`* | Relationship |  | — |
+| GET | `/api/v1/accounts/{id}/statuses` | get /api/v1/accounts/{id}/statuses | `id`* | Status[] | yes | — |
+| POST | `/api/v1/accounts/{id}/unblock` | post /api/v1/accounts/{id}/unblock | `id`* | Relationship |  | — |
+| POST | `/api/v1/accounts/{id}/unfollow` | post /api/v1/accounts/{id}/unfollow | `id`* | Relationship |  | — |
+| POST | `/api/v1/accounts/{id}/unmute` | post /api/v1/accounts/{id}/unmute | `id`* | Relationship |  | — |
+| POST | `/api/v1/accounts/{id}/unpin` | post /api/v1/accounts/{id}/unpin | `id`* | Relationship |  | — |
+| GET | `/api/v1/admin/accounts` | get /api/v1/admin/accounts | `local`, `remote`, `by_domain`, `active`, `pending`, `disabled`, `silenced`, `suspended`, `staff`, `username`, `display_name`, `email`, `ip` | AdminAccount[] | yes | — |
+| GET | `/api/v1/admin/accounts/{id}` | get /api/v1/admin/accounts/{id} | `id`* | AdminAccount | yes | — |
+| POST | `/api/v1/admin/accounts/{id}/action` | post /api/v1/admin/accounts/{id}/action | `id`*, body: object | — |  | — |
+| POST | `/api/v1/admin/accounts/{id}/approve` | post /api/v1/admin/accounts/{id}/approve | `id`* | — |  | — |
+| POST | `/api/v1/admin/accounts/{id}/enable` | post /api/v1/admin/accounts/{id}/enable | `id`* | — |  | — |
+| POST | `/api/v1/admin/accounts/{id}/reject` | post /api/v1/admin/accounts/{id}/reject | `id`* | — |  | — |
+| POST | `/api/v1/admin/accounts/{id}/unsilence` | post /api/v1/admin/accounts/{id}/unsilence | `id`* | — |  | — |
+| POST | `/api/v1/admin/accounts/{id}/unsuspend` | post /api/v1/admin/accounts/{id}/unsuspend | `id`* | — |  | — |
+| GET | `/api/v1/admin/reports` | get /api/v1/admin/reports | `resolved`, `account_id`, `target_account_id` | AdminReport[] | yes | — |
+| GET | `/api/v1/admin/reports/{id}` | get /api/v1/admin/reports/{id} | `id`* | AdminReport | yes | — |
+| POST | `/api/v1/admin/reports/{id}/assign_to_self` | post /api/v1/admin/reports/{id}/assign_to_self | `id`* | AdminReport |  | — |
+| POST | `/api/v1/admin/reports/{id}/reopen` | post /api/v1/admin/reports/{id}/reopen | `id`* | AdminReport |  | — |
+| POST | `/api/v1/admin/reports/{id}/resolve` | post /api/v1/admin/reports/{id}/resolve | `id`* | AdminReport |  | — |
+| POST | `/api/v1/admin/reports/{id}/unassign` | post /api/v1/admin/reports/{id}/unassign | `id`* | AdminReport |  | — |
+| GET | `/api/v1/announcements` | get /api/v1/announcements | `with_dismissed` | Announcement[] | yes | — |
+| POST | `/api/v1/announcements/{id}/dismiss` | post /api/v1/announcements/{id}/dismiss | `id`* | object |  | — |
+| PUT | `/api/v1/announcements/{id}/reactions/{name}` | put /api/v1/announcements/{id}/reactions/{name} | `id`*, `name`* | object |  | — |
+| DELETE | `/api/v1/announcements/{id}/reactions/{name}` | delete /api/v1/announcements/{id}/reactions/{name} | `id`*, `name`* | object |  | — |
+| POST | `/api/v1/apps` | post /api/v1/apps | body: object | object |  | — |
+| GET | `/api/v1/apps/verify_credentials` | get /api/v1/apps/verify_credentials | — | Application | yes | — |
+| GET | `/api/v1/blocks` | get /api/v1/blocks | `limit`, `max_id`, `since_id` | Account[] | yes | — |
+| GET | `/api/v1/bookmarks` | get /api/v1/bookmarks | `limit`, `max_id`, `since_id`, `min_id` | Status[] | yes | — |
+| GET | `/api/v1/conversations` | get /api/v1/conversations | `limit`, `max_id`, `since_id`, `min_id` | Conversation[] | yes | — |
+| DELETE | `/api/v1/conversations/{id}` | delete /api/v1/conversations/{id} | `id`* | object |  | — |
+| POST | `/api/v1/conversations/{id}/read` | post /api/v1/conversations/{id}/read | `id`* | Conversation |  | — |
+| GET | `/api/v1/custom_emojis` | get /api/v1/custom_emojis | — | Emoji[] | yes | — |
+| GET | `/api/v1/directory` | get /api/v1/directory | `limit`, `offset`, `order`, `local` | Account[] | yes | — |
+| GET | `/api/v1/domain_blocks` | get /api/v1/domain_blocks | `limit`, `max_id`, `since_id` | string[] | yes | — |
+| POST | `/api/v1/domain_blocks` | post /api/v1/domain_blocks | body: object | object |  | — |
+| DELETE | `/api/v1/domain_blocks` | delete /api/v1/domain_blocks | `domain`* | object |  | — |
+| GET | `/api/v1/endorsements` | get /api/v1/endorsements | `limit`, `max_id`, `since_id` | Account[] | yes | — |
+| GET | `/api/v1/favourites` | get /api/v1/favourites | `limit`, `max_id`, `min_id` | Status[] | yes | — |
+| GET | `/api/v1/featured_tags` | get /api/v1/featured_tags | — | FeaturedTag[] | yes | — |
+| POST | `/api/v1/featured_tags` | post /api/v1/featured_tags | body: object | FeaturedTag |  | — |
+| GET | `/api/v1/featured_tags/suggestions` | get /api/v1/featured_tags/suggestions | — | FeaturedTag[] | yes | — |
+| DELETE | `/api/v1/featured_tags/{id}` | delete /api/v1/featured_tags/{id} | `id`* | object |  | — |
+| GET | `/api/v1/filters` | get /api/v1/filters | — | Filter[] | yes | — |
+| POST | `/api/v1/filters` | post /api/v1/filters | body: object | Filter |  | — |
+| GET | `/api/v1/filters/{id}` | get /api/v1/filters/{id} | `id`* | Filter | yes | — |
+| PUT | `/api/v1/filters/{id}` | put /api/v1/filters/{id} | `id`*, body: object | Filter |  | — |
+| DELETE | `/api/v1/filters/{id}` | delete /api/v1/filters/{id} | `id`* | — |  | — |
+| GET | `/api/v1/follow_requests` | get /api/v1/follow_requests | `limit` | Account[] | yes | — |
+| POST | `/api/v1/follow_requests/{id}/authorize` | post /api/v1/follow_requests/{id}/authorize | `id`* | Relationship |  | — |
+| POST | `/api/v1/follow_requests/{id}/reject` | post /api/v1/follow_requests/{id}/reject | `id`* | Relationship |  | — |
+| GET | `/api/v1/instance` | get /api/v1/instance | — | Instance | yes | — |
+| GET | `/api/v1/instance/activity` | get /api/v1/instance/activity | — | Activity[] | yes | — |
+| GET | `/api/v1/instance/peers` | get /api/v1/instance/peers | — | string[] | yes | — |
+| GET | `/api/v1/lists` | get /api/v1/lists | — | List[] | yes | — |
+| PUT | `/api/v1/lists` | put /api/v1/lists | body: object | List |  | — |
+| POST | `/api/v1/lists` | post /api/v1/lists | body: object | List |  | — |
+| DELETE | `/api/v1/lists` | delete /api/v1/lists | — | object |  | — |
+| GET | `/api/v1/lists/{id}` | get /api/v1/lists/{id} | `id`* | List | yes | — |
+| GET | `/api/v1/lists/{id}/accounts` | get /api/v1/lists/{id}/accounts | `id`*, `limit`, `max_id`, `since_id` | Account[] | yes | — |
+| POST | `/api/v1/lists/{id}/accounts` | post /api/v1/lists/{id}/accounts | `id`*, body: object | object |  | — |
+| DELETE | `/api/v1/lists/{id}/accounts` | delete /api/v1/lists/{id}/accounts | `id`*, `account_ids`* | object |  | — |
+| GET | `/api/v1/markers` | get /api/v1/markers | `timeline`* | object | yes | — |
+| POST | `/api/v1/markers` | post /api/v1/markers | body: object | object |  | — |
+| POST | `/api/v1/media` | post /api/v1/media | body: object | Attachment |  | — |
+| GET | `/api/v1/media/{id}` | get /api/v1/media/{id} | `id`* | Attachment | yes | — |
+| POST | `/api/v1/media/{id}` | post /api/v1/media/{id} | `id`*, body: object | Attachment |  | — |
+| GET | `/api/v1/mutes` | get /api/v1/mutes | `limit`, `max_id`, `since_id` | Account[] | yes | — |
+| GET | `/api/v1/notifications` | get /api/v1/notifications | `limit`, `max_id`, `since_id`, `min_id`, `exclude_types`, `account_id` | Notification[] | yes | — |
+| POST | `/api/v1/notifications/clear` | post /api/v1/notifications/clear | — | object |  | — |
+| GET | `/api/v1/notifications/{id}` | get /api/v1/notifications/{id} | `id`* | Notification | yes | — |
+| POST | `/api/v1/notifications/{id}/dismiss` | post /api/v1/notifications/{id}/dismiss | `id`* | Notification |  | — |
+| GET | `/api/v1/polls/{id}` | get /api/v1/polls/{id} | `id`* | Poll | yes | — |
+| POST | `/api/v1/polls/{id}` | post /api/v1/polls/{id} | `id`*, body: object | Poll |  | — |
+| GET | `/api/v1/preferences` | get /api/v1/preferences | — | Preferences | yes | — |
+| GET | `/api/v1/push/subscription` | get /api/v1/push/subscription | — | PushSubscription | yes | — |
+| PUT | `/api/v1/push/subscription` | put /api/v1/push/subscription | body: object | PushSubscription |  | — |
+| POST | `/api/v1/push/subscription` | post /api/v1/push/subscription | body: object | PushSubscription |  | — |
+| DELETE | `/api/v1/push/subscription` | delete /api/v1/push/subscription | — | object |  | — |
+| POST | `/api/v1/reports` | post /api/v1/reports | body: object | Report |  | — |
+| GET | `/api/v1/scheduled_statuses` | get /api/v1/scheduled_statuses | `limit`, `max_id`, `since_id`, `min_id` | ScheduledStatus[] | yes | — |
+| GET | `/api/v1/scheduled_statuses/{id}` | get /api/v1/scheduled_statuses/{id} | `id`* | ScheduledStatus | yes | — |
+| PUT | `/api/v1/scheduled_statuses/{id}` | put /api/v1/scheduled_statuses/{id} | `id`*, body: object | ScheduledStatus |  | — |
+| DELETE | `/api/v1/scheduled_statuses/{id}` | delete /api/v1/scheduled_statuses/{id} | `id`* | object |  | — |
+| POST | `/api/v1/statuses` | post /api/v1/statuses | `Idempotency-Key`, body: object[] | Status\|ScheduledStatus |  | — |
+| GET | `/api/v1/statuses/{id}` | get /api/v1/statuses/{id} | `id`* | Status | yes | — |
+| DELETE | `/api/v1/statuses/{id}` | delete /api/v1/statuses/{id} | `id`* | Status |  | — |
+| POST | `/api/v1/statuses/{id}/bookmark` | post /api/v1/statuses/{id}/bookmark | `id`* | Status |  | — |
+| GET | `/api/v1/statuses/{id}/context` | get /api/v1/statuses/{id}/context | `id`* | Context | yes | — |
+| POST | `/api/v1/statuses/{id}/favourite` | post /api/v1/statuses/{id}/favourite | `id`* | Status |  | — |
+| GET | `/api/v1/statuses/{id}/favourited_by` | get /api/v1/statuses/{id}/favourited_by | `id`* | Account | yes | — |
+| POST | `/api/v1/statuses/{id}/mute` | post /api/v1/statuses/{id}/mute | `id`* | Status |  | — |
+| POST | `/api/v1/statuses/{id}/pin` | post /api/v1/statuses/{id}/pin | `id`* | Status |  | — |
+| POST | `/api/v1/statuses/{id}/reblog` | post /api/v1/statuses/{id}/reblog | `id`*, body: object | Status |  | — |
+| GET | `/api/v1/statuses/{id}/reblogged_by` | get /api/v1/statuses/{id}/reblogged_by | `id`* | Account | yes | — |
+| POST | `/api/v1/statuses/{id}/unbookmark` | post /api/v1/statuses/{id}/unbookmark | `id`* | Status |  | — |
+| POST | `/api/v1/statuses/{id}/unfavourite` | post /api/v1/statuses/{id}/unfavourite | `id`* | Status |  | — |
+| POST | `/api/v1/statuses/{id}/unmute` | post /api/v1/statuses/{id}/unmute | `id`* | Status |  | — |
+| POST | `/api/v1/statuses/{id}/unpin` | post /api/v1/statuses/{id}/unpin | `id`* | Status |  | — |
+| POST | `/api/v1/statuses/{id}/unreblog` | post /api/v1/statuses/{id}/unreblog | `id`* | Status |  | — |
+| GET | `/api/v1/suggestions` | get /api/v1/suggestions | `limit` | Account | yes | — |
+| DELETE | `/api/v1/suggestions/{id}` | delete /api/v1/suggestions/{id} | `id`* | object |  | — |
+| GET | `/api/v1/timelines/home` | get /api/v1/timelines/home | `local`, `limit`, `max_id`, `since_id`, `min_id` | Status[] | yes | — |
+| GET | `/api/v1/timelines/list/{list_id}` | get /api/v1/timelines/list/{list_id} | `list_id`*, `limit`, `max_id`, `since_id`, `min_id` | Status[] | yes | — |
+| GET | `/api/v1/timelines/public` | get /api/v1/timelines/public | `local`, `remote`, `only_media`, `limit`, `max_id`, `since_id`, `min_id` | Status[] | yes | — |
+| GET | `/api/v1/timelines/tag/{hashtag}` | get /api/v1/timelines/tag/{hashtag} | `hashtag`*, `local`, `remote`, `only_media`, `limit`, `max_id`, `since_id`, `min_id` | Status[] | yes | — |
+| GET | `/api/v1/trends` | get /api/v1/trends | `limit` | Tag[] | yes | — |
+| GET | `/api/v2/search` | get /api/v2/search | `q`*, `limit`, `resolve`, `following`, `account_id`, `max_id`, `min_id`, `type`, `exclude_unreviewed`, `offset` | object | yes | — |
+| GET | `/oauth/authorize` | get /oauth/authorize | `response_type`*, `client_id`*, `redirect_uri`*, `scope`, `force_login` | — | yes | — |
+| POST | `/oauth/revoke` | post /oauth/revoke | body: object | — |  | — |
+| POST | `/oauth/token` | post /oauth/token | body: object | object |  | — |

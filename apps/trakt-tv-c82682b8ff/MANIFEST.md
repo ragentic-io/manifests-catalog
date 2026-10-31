@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_walter.trakt.tv_hotlink-ok_publ
 
 | | |
 | --- | --- |
-| Signed bundle | `763884fc0c3a7afdc4ef7ee394981d8f18476644346c31b41fe0fb22af5c6ae4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,188 +34,190 @@ logo: "https://api.apis.guru/v2/cache/logo/https_walter.trakt.tv_hotlink-ok_publ
 
 108 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/calendars/all/dvd/{start_date}/{days}` | get /calendars/all/dvd/{start_date}/{days} | Get DVD releases |
-| GET | `/calendars/all/movies/{start_date}/{days}` | get /calendars/all/movies/{start_date}/{days} | Get movies |
-| GET | `/calendars/all/shows/new/{start_date}/{days}` | get /calendars/all/shows/new/{start_date}/{days} | Get new shows |
-| GET | `/calendars/all/shows/premieres/{start_date}/{days}` | get /calendars/all/shows/premieres/{start_date}/{days} | Get season premieres |
-| GET | `/calendars/all/shows/{start_date}/{days}` | get /calendars/all/shows/{start_date}/{days} | Get shows |
-| GET | `/calendars/my/dvd/{start_date}/{days}` | Get DVD releases | Get DVD releases |
-| GET | `/calendars/my/movies/{start_date}/{days}` | Get movies | Get movies |
-| GET | `/calendars/my/shows/new/{start_date}/{days}` | Get new shows | Get new shows |
-| GET | `/calendars/my/shows/premieres/{start_date}/{days}` | Get season premieres | Get season premieres |
-| GET | `/calendars/my/shows/{start_date}/{days}` | Get shows | Get shows |
-| GET | `/certifications/{type}` | Get certifications | Get certifications |
-| DELETE | `/checkin` | Delete any active checkins | Delete any active checkins |
-| POST | `/checkin` | Check into an item | Check into an item |
-| POST | `/comments` | Post a comment | Post a comment |
-| GET | `/comments/recent/{comment_type}/{type}` | Get recently created comments | Get recently created comments |
-| GET | `/comments/trending/{comment_type}/{type}` | Get trending comments | Get trending comments |
-| GET | `/comments/updates/{comment_type}/{type}` | Get recently updated comments | Get recently updated comments |
-| DELETE | `/comments/{id}` | Delete a comment or reply | Delete a comment or reply |
-| GET | `/comments/{id}` | Get a comment or reply | Get a comment or reply |
-| PUT | `/comments/{id}` | Update a comment or reply | Update a comment or reply |
-| GET | `/comments/{id}/item` | Get the attached media item | Get the attached media item |
-| DELETE | `/comments/{id}/like` | Remove like on a comment | Remove like on a comment |
-| POST | `/comments/{id}/like` | Like a comment | Like a comment |
-| GET | `/comments/{id}/likes` | Get all users who liked a comment | Get all users who liked a comment |
-| GET | `/comments/{id}/replies` | Get replies for a comment | Get replies for a comment |
-| POST | `/comments/{id}/replies` | Post a reply for a comment | Post a reply for a comment |
-| GET | `/countries/{type}` | Get countries | Get countries |
-| GET | `/genres/{type}` | Get genres | Get genres |
-| GET | `/languages/{type}` | Get languages | Get languages |
-| GET | `/lists/popular` | Get popular lists | Get popular lists |
-| GET | `/lists/trending` | Get trending lists | Get trending lists |
-| GET | `/lists/{id}` | Get list | Get list |
-| GET | `/lists/{id}/comments/{sort}` | Get all list comments | Get all list comments |
-| GET | `/lists/{id}/items/{type}` | Get items on a list | Get items on a list |
-| GET | `/lists/{id}/likes` | Get all users who liked a list | Get all users who liked a list |
-| GET | `/movies/anticipated` | Get the most anticipated movies | Get the most anticipated movies |
-| GET | `/movies/boxoffice` | Get the weekend box office | Get the weekend box office |
-| GET | `/movies/collected/{period}` | Get the most Collected movies | Get the most Collected movies |
-| GET | `/movies/played/{period}` | Get the most played movies | Get the most played movies |
-| GET | `/movies/popular` | Get popular movies | Get popular movies |
-| GET | `/movies/recommended/{period}` | Get the most recommended movies | Get the most recommended movies |
-| GET | `/movies/trending` | Get trending movies | Get trending movies |
-| GET | `/movies/updates/id/{start_date}` | Get recently updated movie Trakt IDs | Get recently updated movie Trakt IDs |
-| GET | `/movies/updates/{start_date}` | Get recently updated movies | Get recently updated movies |
-| GET | `/movies/watched/{period}` | Get the most watched movies | Get the most watched movies |
-| GET | `/movies/{id}` | Get a movie | Get a movie |
-| GET | `/movies/{id}/aliases` | Get all movie aliases | Get all movie aliases |
-| GET | `/movies/{id}/comments/{sort}` | Get all movie comments | Get all movie comments |
-| GET | `/movies/{id}/lists/{type}/{sort}` | Get lists containing this movie | Get lists containing this movie |
-| GET | `/movies/{id}/people` | Get all people for a movie | Get all people for a movie |
-| GET | `/movies/{id}/ratings` | Get movie ratings | Get movie ratings |
-| GET | `/movies/{id}/related` | Get related movies | Get related movies |
-| GET | `/movies/{id}/releases/{country}` | Get all movie releases | Get all movie releases |
-| GET | `/movies/{id}/stats` | Get movie stats | Get movie stats |
-| GET | `/movies/{id}/studios` | Get movie studios | Get movie studios |
-| GET | `/movies/{id}/translations/{language}` | Get all movie translations | Get all movie translations |
-| GET | `/movies/{id}/watching` | Get users watching right now | Get users watching right now |
-| GET | `/networks` | Get networks | Get networks |
-| GET | `/oauth/authorize` | Authorize Application | Authorize Application |
-| POST | `/oauth/device/code` | Generate new device codes | Generate new device codes |
-| POST | `/oauth/device/token` | Poll for the access_token | Poll for the access_token |
-| POST | `/oauth/revoke` | Revoke an access_token | Revoke an access_token |
-| POST | `/oauth/token` | Exchange refresh_token for access_token | Exchange refresh_token for access_token |
-| GET | `/people/updates/id/{start_date}` | Get recently updated people Trakt IDs | Get recently updated people Trakt IDs |
-| GET | `/people/updates/{start_date}` | Get recently updated people | Get recently updated people |
-| GET | `/people/{id}` | Get a single person | Get a single person |
-| GET | `/people/{id}/lists/{type}/{sort}` | Get lists containing this person | Get lists containing this person |
-| GET | `/people/{id}/movies` | Get movie credits | Get movie credits |
-| GET | `/people/{id}/shows` | Get show credits | Get show credits |
-| GET | `/recommendations/movies` | Get movie recommendations | Get movie recommendations |
-| DELETE | `/recommendations/movies/{id}` | Hide a movie recommendation | Hide a movie recommendation |
-| GET | `/recommendations/shows` | Get show recommendations | Get show recommendations |
-| DELETE | `/recommendations/shows/{id}` | Hide a show recommendation | Hide a show recommendation |
-| POST | `/scrobble/pause` | Pause watching in a media center | Pause watching in a media center |
-| POST | `/scrobble/start` | Start watching in a media center | Start watching in a media center |
-| POST | `/scrobble/stop` | Stop or finish watching in a media center | Stop or finish watching in a media center |
-| GET | `/search/{id_type}/{id}` | Get ID lookup results | Get ID lookup results |
-| GET | `/search/{type}` | Get text query results | Get text query results |
-| GET | `/shows/anticipated` | Get the most anticipated shows | Get the most anticipated shows |
-| GET | `/shows/collected/{period}` | Get the most collected shows | Get the most collected shows |
-| GET | `/shows/played/{period}` | Get the most played shows | Get the most played shows |
-| GET | `/shows/popular` | Get popular shows | Get popular shows |
-| GET | `/shows/recommended/{period}` | Get the most recommended shows | Get the most recommended shows |
-| GET | `/shows/trending` | Get trending shows | Get trending shows |
-| GET | `/shows/updates/id/{start_date}` | Get recently updated show Trakt IDs | Get recently updated show Trakt IDs |
-| GET | `/shows/updates/{start_date}` | Get recently updated shows | Get recently updated shows |
-| GET | `/shows/watched/{period}` | Get the most watched shows | Get the most watched shows |
-| GET | `/shows/{id}` | Get a single show | Get a single show |
-| GET | `/shows/{id}/aliases` | Get all show aliases | Get all show aliases |
-| GET | `/shows/{id}/certifications` | Get all show certifications | Get all show certifications |
-| GET | `/shows/{id}/comments/{sort}` | Get all show comments | Get all show comments |
-| GET | `/shows/{id}/last_episode` | Get last episode | Get last episode |
-| GET | `/shows/{id}/lists/{type}/{sort}` | Get lists containing this show | Get lists containing this show |
-| GET | `/shows/{id}/next_episode` | Get next episode | Get next episode |
-| GET | `/shows/{id}/people` | Get all people for a show | Get all people for a show |
-| GET | `/shows/{id}/progress/collection` | Get show collection progress | Get show collection progress |
-| GET | `/shows/{id}/progress/watched` | Get show watched progress | Get show watched progress |
-| DELETE | `/shows/{id}/progress/watched/reset` | Undo reset show progress | Undo reset show progress |
-| POST | `/shows/{id}/progress/watched/reset` | Reset show progress | Reset show progress |
-| GET | `/shows/{id}/ratings` | Get show ratings | Get show ratings |
-| GET | `/shows/{id}/related` | Get related shows | Get related shows |
-| GET | `/shows/{id}/seasons` | Get all seasons for a show | Get all seasons for a show |
-| GET | `/shows/{id}/seasons/{season}` | Get single season for a show | Get single season for a show |
-| GET | `/shows/{id}/seasons/{season}/comments/{sort}` | Get all season comments | Get all season comments |
-| GET | `/shows/{id}/seasons/{season}/episodes/{episode}` | Get a single episode for a show | Get a single episode for a show |
-| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/comments/{sort}` | Get all episode comments | Get all episode comments |
-| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/lists/{type}/{sort}` | Get lists containing this episode | Get lists containing this episode |
-| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/people` | Get all people for an episode | Get all people for an episode |
-| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/ratings` | Get episode ratings | Get episode ratings |
-| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/stats` | Get episode stats | Get episode stats |
-| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/translations/{language}` | Get all episode translations | Get all episode translations |
-| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/watching` | get /shows/{id}/seasons/{season}/episodes/{episode}/watching | Get users watching right now |
-| GET | `/shows/{id}/seasons/{season}/lists/{type}/{sort}` | Get lists containing this season | Get lists containing this season |
-| GET | `/shows/{id}/seasons/{season}/people` | Get all people for a season | Get all people for a season |
-| GET | `/shows/{id}/seasons/{season}/ratings` | Get season ratings | Get season ratings |
-| GET | `/shows/{id}/seasons/{season}/stats` | Get season stats | Get season stats |
-| GET | `/shows/{id}/seasons/{season}/translations/{language}` | Get all season translations | Get all season translations |
-| GET | `/shows/{id}/seasons/{season}/watching` | get /shows/{id}/seasons/{season}/watching | Get users watching right now |
-| GET | `/shows/{id}/stats` | Get show stats | Get show stats |
-| GET | `/shows/{id}/studios` | Get show studios | Get show studios |
-| GET | `/shows/{id}/translations/{language}` | Get all show translations | Get all show translations |
-| GET | `/shows/{id}/watching` | get /shows/{id}/watching | Get users watching right now |
-| POST | `/sync/collection` | Add items to collection | Add items to collection |
-| POST | `/sync/collection/remove` | Remove items from collection | Remove items from collection |
-| GET | `/sync/collection/{type}` | Get collection | Get collection |
-| POST | `/sync/history` | Add items to watched history | Add items to watched history |
-| POST | `/sync/history/remove` | Remove items from history | Remove items from history |
-| GET | `/sync/history/{type}/{id}` | Get watched history | Get watched history |
-| GET | `/sync/last_activities` | Get last activity | Get last activity |
-| DELETE | `/sync/playback/{id}` | Remove a playback item | Remove a playback item |
-| GET | `/sync/playback/{type}` | Get playback progress | Get playback progress |
-| POST | `/sync/ratings` | Add new ratings | Add new ratings |
-| POST | `/sync/ratings/remove` | Remove ratings | Remove ratings |
-| GET | `/sync/ratings/{type}/{rating}` | Get ratings | Get ratings |
-| POST | `/sync/recommendations` | Add items to personal recommendations | Add items to personal recommendations |
-| POST | `/sync/recommendations/remove` | Remove items from personal recommendations | Remove items from personal recommendations |
-| POST | `/sync/recommendations/reorder` | Reorder personally recommended items | Reorder personally recommended items |
-| GET | `/sync/recommendations/{type}/{sort}` | Get personal recommendations | Get personal recommendations |
-| GET | `/sync/watched/{type}` | Get watched | Get watched |
-| POST | `/sync/watchlist` | Add items to watchlist | Add items to watchlist |
-| POST | `/sync/watchlist/remove` | Remove items from watchlist | Remove items from watchlist |
-| POST | `/sync/watchlist/reorder` | Reorder watchlist items | Reorder watchlist items |
-| GET | `/sync/watchlist/{type}/{sort}` | Get watchlist | Get watchlist |
-| GET | `/users/hidden/{section}` | Get hidden items | Get hidden items |
-| POST | `/users/hidden/{section}` | Add hidden items | Add hidden items |
-| POST | `/users/hidden/{section}/remove` | Remove hidden items | Remove hidden items |
-| GET | `/users/requests` | Get follow requests | Get follow requests |
-| GET | `/users/requests/following` | Get pending following requests | Get pending following requests |
-| DELETE | `/users/requests/{id}` | Deny follow request | Deny follow request |
-| POST | `/users/requests/{id}` | Approve follow request | Approve follow request |
-| GET | `/users/saved_filters/{section}` | Get saved filters | Get saved filters |
-| GET | `/users/settings` | Retrieve settings | Retrieve settings |
-| GET | `/users/{id}` | Get user profile | Get user profile |
-| GET | `/users/{id}/collection/{type}` | get /users/{id}/collection/{type} | Get collection |
-| GET | `/users/{id}/comments/{comment_type}/{type}` | Get comments | Get comments |
-| DELETE | `/users/{id}/follow` | Unfollow this user | Unfollow this user |
-| POST | `/users/{id}/follow` | Follow this user | Follow this user |
-| GET | `/users/{id}/followers` | Get followers | Get followers |
-| GET | `/users/{id}/following` | Get following | Get following |
-| GET | `/users/{id}/friends` | Get friends | Get friends |
-| GET | `/users/{id}/history/{type}/{item_id}` | get /users/{id}/history/{type}/{item_id} | Get watched history |
-| GET | `/users/{id}/likes/{type}` | Get likes | Get likes |
-| GET | `/users/{id}/lists` | Get a user's personal lists | Get a user's personal lists |
-| POST | `/users/{id}/lists` | Create personal list | Create personal list |
-| GET | `/users/{id}/lists/collaborations` | Get all lists a user can collaborate on | Get all lists a user can collaborate on |
-| POST | `/users/{id}/lists/reorder` | Reorder a user's lists | Reorder a user's lists |
-| DELETE | `/users/{id}/lists/{list_id}` | Delete a user's personal list | Delete a user's personal list |
-| GET | `/users/{id}/lists/{list_id}` | Get personal list | Get personal list |
-| PUT | `/users/{id}/lists/{list_id}` | Update personal list | Update personal list |
-| GET | `/users/{id}/lists/{list_id}/comments/{sort}` | get /users/{id}/lists/{list_id}/comments/{sort} | Get all list comments |
-| POST | `/users/{id}/lists/{list_id}/items` | Add items to personal list | Add items to personal list |
-| POST | `/users/{id}/lists/{list_id}/items/remove` | Remove items from personal list | Remove items from personal list |
-| POST | `/users/{id}/lists/{list_id}/items/reorder` | Reorder items on a list | Reorder items on a list |
-| GET | `/users/{id}/lists/{list_id}/items/{type}` | Get items on a personal list | Get items on a personal list |
-| DELETE | `/users/{id}/lists/{list_id}/like` | Remove like on a list | Remove like on a list |
-| POST | `/users/{id}/lists/{list_id}/like` | Like a list | Like a list |
-| GET | `/users/{id}/lists/{list_id}/likes` | get /users/{id}/lists/{list_id}/likes | Get all users who liked a list |
-| GET | `/users/{id}/ratings/{type}/{rating}` | get /users/{id}/ratings/{type}/{rating} | Get ratings |
-| GET | `/users/{id}/recommendations/{type}/{sort}` | get /users/{id}/recommendations/{type}/{sort} | Get personal recommendations |
-| GET | `/users/{id}/stats` | Get stats | Get stats |
-| GET | `/users/{id}/watched/{type}` | get /users/{id}/watched/{type} | Get watched |
-| GET | `/users/{id}/watching` | Get watching | Get watching |
-| GET | `/users/{id}/watchlist/{type}/{sort}` | get /users/{id}/watchlist/{type}/{sort} | Get watchlist |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/calendars/all/dvd/{start_date}/{days}` | get /calendars/all/dvd/{start_date}/{days} | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get DVD releases |
+| GET | `/calendars/all/movies/{start_date}/{days}` | get /calendars/all/movies/{start_date}/{days} | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get movies |
+| GET | `/calendars/all/shows/new/{start_date}/{days}` | get /calendars/all/shows/new/{start_date}/{days} | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get new shows |
+| GET | `/calendars/all/shows/premieres/{start_date}/{days}` | get /calendars/all/shows/premieres/{start_date}/{days} | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get season premieres |
+| GET | `/calendars/all/shows/{start_date}/{days}` | get /calendars/all/shows/{start_date}/{days} | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get shows |
+| GET | `/calendars/my/dvd/{start_date}/{days}` | Get DVD releases | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get DVD releases |
+| GET | `/calendars/my/movies/{start_date}/{days}` | Get movies | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get movies |
+| GET | `/calendars/my/shows/new/{start_date}/{days}` | Get new shows | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get new shows |
+| GET | `/calendars/my/shows/premieres/{start_date}/{days}` | Get season premieres | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get season premieres |
+| GET | `/calendars/my/shows/{start_date}/{days}` | Get shows | `start_date`*, `days`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get shows |
+| GET | `/certifications/{type}` | Get certifications | `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get certifications |
+| POST | `/checkin` | Check into an item | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Check into an item |
+| DELETE | `/checkin` | Delete any active checkins | `trakt-api-version`, `trakt-api-key` | — |  | Delete any active checkins |
+| POST | `/comments` | Post a comment | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Post a comment |
+| GET | `/comments/recent/{comment_type}/{type}` | Get recently created comments | `comment_type`*, `type`*, `include_replies`, `trakt-api-version`, `trakt-api-key` | — | yes | Get recently created comments |
+| GET | `/comments/trending/{comment_type}/{type}` | Get trending comments | `comment_type`*, `type`*, `include_replies`, `trakt-api-version`, `trakt-api-key` | — | yes | Get trending comments |
+| GET | `/comments/updates/{comment_type}/{type}` | Get recently updated comments | `comment_type`*, `type`*, `include_replies`, `trakt-api-version`, `trakt-api-key` | — | yes | Get recently updated comments |
+| GET | `/comments/{id}` | Get a comment or reply | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get a comment or reply |
+| PUT | `/comments/{id}` | Update a comment or reply | `trakt-api-version`, `trakt-api-key`, `id`*, body: object | — |  | Update a comment or reply |
+| DELETE | `/comments/{id}` | Delete a comment or reply | `trakt-api-version`, `trakt-api-key`, `id`* | — |  | Delete a comment or reply |
+| GET | `/comments/{id}/item` | Get the attached media item | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get the attached media item |
+| POST | `/comments/{id}/like` | Like a comment | `id`*, `trakt-api-version`, `trakt-api-key` | — |  | Like a comment |
+| DELETE | `/comments/{id}/like` | Remove like on a comment | `trakt-api-version`, `trakt-api-key`, `id`* | — |  | Remove like on a comment |
+| GET | `/comments/{id}/likes` | Get all users who liked a comment | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all users who liked a comment |
+| GET | `/comments/{id}/replies` | Get replies for a comment | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get replies for a comment |
+| POST | `/comments/{id}/replies` | Post a reply for a comment | `trakt-api-version`, `trakt-api-key`, `id`*, body: object | — |  | Post a reply for a comment |
+| GET | `/countries/{type}` | Get countries | `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get countries |
+| GET | `/genres/{type}` | Get genres | `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get genres |
+| GET | `/languages/{type}` | Get languages | `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get languages |
+| GET | `/lists/popular` | Get popular lists | `trakt-api-version`, `trakt-api-key` | — | yes | Get popular lists |
+| GET | `/lists/trending` | Get trending lists | `trakt-api-version`, `trakt-api-key` | — | yes | Get trending lists |
+| GET | `/lists/{id}` | Get list | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get list |
+| GET | `/lists/{id}/comments/{sort}` | Get all list comments | `id`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all list comments |
+| GET | `/lists/{id}/items/{type}` | Get items on a list | `id`*, `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get items on a list |
+| GET | `/lists/{id}/likes` | Get all users who liked a list | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all users who liked a list |
+| GET | `/movies/anticipated` | Get the most anticipated movies | `trakt-api-version`, `trakt-api-key` | — | yes | Get the most anticipated movies |
+| GET | `/movies/boxoffice` | Get the weekend box office | `trakt-api-version`, `trakt-api-key` | — | yes | Get the weekend box office |
+| GET | `/movies/collected/{period}` | Get the most Collected movies | `period`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get the most Collected movies |
+| GET | `/movies/played/{period}` | Get the most played movies | `period`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get the most played movies |
+| GET | `/movies/popular` | Get popular movies | `trakt-api-version`, `trakt-api-key` | — | yes | Get popular movies |
+| GET | `/movies/recommended/{period}` | Get the most recommended movies | `period`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get the most recommended movies |
+| GET | `/movies/trending` | Get trending movies | `trakt-api-version`, `trakt-api-key` | — | yes | Get trending movies |
+| GET | `/movies/updates/id/{start_date}` | Get recently updated movie Trakt IDs | `start_date`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get recently updated movie Trakt IDs |
+| GET | `/movies/updates/{start_date}` | Get recently updated movies | `start_date`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get recently updated movies |
+| GET | `/movies/watched/{period}` | Get the most watched movies | `period`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get the most watched movies |
+| GET | `/movies/{id}` | Get a movie | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get a movie |
+| GET | `/movies/{id}/aliases` | Get all movie aliases | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all movie aliases |
+| GET | `/movies/{id}/comments/{sort}` | Get all movie comments | `id`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all movie comments |
+| GET | `/movies/{id}/lists/{type}/{sort}` | Get lists containing this movie | `id`*, `type`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get lists containing this movie |
+| GET | `/movies/{id}/people` | Get all people for a movie | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all people for a movie |
+| GET | `/movies/{id}/ratings` | Get movie ratings | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get movie ratings |
+| GET | `/movies/{id}/related` | Get related movies | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get related movies |
+| GET | `/movies/{id}/releases/{country}` | Get all movie releases | `id`*, `country`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all movie releases |
+| GET | `/movies/{id}/stats` | Get movie stats | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get movie stats |
+| GET | `/movies/{id}/studios` | Get movie studios | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get movie studios |
+| GET | `/movies/{id}/translations/{language}` | Get all movie translations | `id`*, `language`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all movie translations |
+| GET | `/movies/{id}/watching` | Get users watching right now | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get users watching right now |
+| GET | `/networks` | Get networks | `trakt-api-version`, `trakt-api-key` | — | yes | Get networks |
+| GET | `/oauth/authorize` | Authorize Application | `response_type`*, `client_id`*, `redirect_uri`*, `state`, body: string | — | yes | Authorize Application |
+| POST | `/oauth/device/code` | Generate new device codes | body: object | — |  | Generate new device codes |
+| POST | `/oauth/device/token` | Poll for the access_token | body: object | — |  | Poll for the access_token |
+| POST | `/oauth/revoke` | Revoke an access_token | body: object | — |  | Revoke an access_token |
+| POST | `/oauth/token` | Exchange refresh_token for access_token | body: object | — |  | Exchange refresh_token for access_token |
+| GET | `/people/updates/id/{start_date}` | Get recently updated people Trakt IDs | `start_date`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get recently updated people Trakt IDs |
+| GET | `/people/updates/{start_date}` | Get recently updated people | `start_date`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get recently updated people |
+| GET | `/people/{id}` | Get a single person | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get a single person |
+| GET | `/people/{id}/lists/{type}/{sort}` | Get lists containing this person | `id`*, `type`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get lists containing this person |
+| GET | `/people/{id}/movies` | Get movie credits | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get movie credits |
+| GET | `/people/{id}/shows` | Get show credits | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get show credits |
+| GET | `/recommendations/movies` | Get movie recommendations | `ignore_collected`, `ignore_watchlisted`, `trakt-api-version`, `trakt-api-key` | — | yes | Get movie recommendations |
+| DELETE | `/recommendations/movies/{id}` | Hide a movie recommendation | `id`*, `trakt-api-version`, `trakt-api-key` | — |  | Hide a movie recommendation |
+| GET | `/recommendations/shows` | Get show recommendations | `ignore_collected`, `ignore_watchlisted`, `trakt-api-version`, `trakt-api-key` | — | yes | Get show recommendations |
+| DELETE | `/recommendations/shows/{id}` | Hide a show recommendation | `id`*, `trakt-api-version`, `trakt-api-key` | — |  | Hide a show recommendation |
+| POST | `/scrobble/pause` | Pause watching in a media center | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Pause watching in a media center |
+| POST | `/scrobble/start` | Start watching in a media center | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Start watching in a media center |
+| POST | `/scrobble/stop` | Stop or finish watching in a media center | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Stop or finish watching in a media center |
+| GET | `/search/{id_type}/{id}` | Get ID lookup results | `id_type`*, `id`*, `type`, `trakt-api-version`, `trakt-api-key` | — | yes | Get ID lookup results |
+| GET | `/search/{type}` | Get text query results | `type`*, `query`*, `trakt-api-version`, `trakt-api-key`, body: string | — | yes | Get text query results |
+| GET | `/shows/anticipated` | Get the most anticipated shows | `trakt-api-version`, `trakt-api-key` | — | yes | Get the most anticipated shows |
+| GET | `/shows/collected/{period}` | Get the most collected shows | `period`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get the most collected shows |
+| GET | `/shows/played/{period}` | Get the most played shows | `period`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get the most played shows |
+| GET | `/shows/popular` | Get popular shows | `trakt-api-version`, `trakt-api-key` | — | yes | Get popular shows |
+| GET | `/shows/recommended/{period}` | Get the most recommended shows | `period`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get the most recommended shows |
+| GET | `/shows/trending` | Get trending shows | `trakt-api-version`, `trakt-api-key` | — | yes | Get trending shows |
+| GET | `/shows/updates/id/{start_date}` | Get recently updated show Trakt IDs | `start_date`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get recently updated show Trakt IDs |
+| GET | `/shows/updates/{start_date}` | Get recently updated shows | `start_date`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get recently updated shows |
+| GET | `/shows/watched/{period}` | Get the most watched shows | `period`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get the most watched shows |
+| GET | `/shows/{id}` | Get a single show | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get a single show |
+| GET | `/shows/{id}/aliases` | Get all show aliases | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all show aliases |
+| GET | `/shows/{id}/certifications` | Get all show certifications | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all show certifications |
+| GET | `/shows/{id}/comments/{sort}` | Get all show comments | `id`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all show comments |
+| GET | `/shows/{id}/last_episode` | Get last episode | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get last episode |
+| GET | `/shows/{id}/lists/{type}/{sort}` | Get lists containing this show | `id`*, `type`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get lists containing this show |
+| GET | `/shows/{id}/next_episode` | Get next episode | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get next episode |
+| GET | `/shows/{id}/people` | Get all people for a show | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all people for a show |
+| GET | `/shows/{id}/progress/collection` | Get show collection progress | `id`*, `hidden`, `specials`, `count_specials`, `trakt-api-version`, `trakt-api-key`, body*: string | — | yes | Get show collection progress |
+| GET | `/shows/{id}/progress/watched` | Get show watched progress | `id`*, `hidden`, `specials`, `count_specials`, `trakt-api-version`, `trakt-api-key`, body*: string | — | yes | Get show watched progress |
+| POST | `/shows/{id}/progress/watched/reset` | Reset show progress | `id`*, `trakt-api-version`, `trakt-api-key` | — |  | Reset show progress |
+| DELETE | `/shows/{id}/progress/watched/reset` | Undo reset show progress | `trakt-api-version`, `trakt-api-key`, `id`* | — |  | Undo reset show progress |
+| GET | `/shows/{id}/ratings` | Get show ratings | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get show ratings |
+| GET | `/shows/{id}/related` | Get related shows | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get related shows |
+| GET | `/shows/{id}/seasons` | Get all seasons for a show | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all seasons for a show |
+| GET | `/shows/{id}/seasons/{season}` | Get single season for a show | `id`*, `season`*, `translations`, `trakt-api-version`, `trakt-api-key` | — | yes | Get single season for a show |
+| GET | `/shows/{id}/seasons/{season}/comments/{sort}` | Get all season comments | `id`*, `season`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all season comments |
+| GET | `/shows/{id}/seasons/{season}/episodes/{episode}` | Get a single episode for a show | `id`*, `season`*, `episode`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get a single episode for a show |
+| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/comments/{sort}` | Get all episode comments | `id`*, `season`*, `episode`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all episode comments |
+| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/lists/{type}/{sort}` | Get lists containing this episode | `id`*, `season`*, `episode`*, `type`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get lists containing this episode |
+| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/people` | Get all people for an episode | `id`*, `season`*, `episode`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all people for an episode |
+| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/ratings` | Get episode ratings | `id`*, `season`*, `episode`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get episode ratings |
+| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/stats` | Get episode stats | `id`*, `season`*, `episode`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get episode stats |
+| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/translations/{language}` | Get all episode translations | `id`*, `season`*, `episode`*, `language`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all episode translations |
+| GET | `/shows/{id}/seasons/{season}/episodes/{episode}/watching` | get /shows/{id}/seasons/{season}/episodes/{episode}/watching | `id`*, `season`*, `episode`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get users watching right now |
+| GET | `/shows/{id}/seasons/{season}/lists/{type}/{sort}` | Get lists containing this season | `id`*, `season`*, `type`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get lists containing this season |
+| GET | `/shows/{id}/seasons/{season}/people` | Get all people for a season | `id`*, `season`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all people for a season |
+| GET | `/shows/{id}/seasons/{season}/ratings` | Get season ratings | `id`*, `season`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get season ratings |
+| GET | `/shows/{id}/seasons/{season}/stats` | Get season stats | `id`*, `season`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get season stats |
+| GET | `/shows/{id}/seasons/{season}/translations/{language}` | Get all season translations | `id`*, `season`*, `language`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all season translations |
+| GET | `/shows/{id}/seasons/{season}/watching` | get /shows/{id}/seasons/{season}/watching | `id`*, `season`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get users watching right now |
+| GET | `/shows/{id}/stats` | Get show stats | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get show stats |
+| GET | `/shows/{id}/studios` | Get show studios | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get show studios |
+| GET | `/shows/{id}/translations/{language}` | Get all show translations | `id`*, `language`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all show translations |
+| GET | `/shows/{id}/watching` | get /shows/{id}/watching | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get users watching right now |
+| POST | `/sync/collection` | Add items to collection | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Add items to collection |
+| POST | `/sync/collection/remove` | Remove items from collection | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Remove items from collection |
+| GET | `/sync/collection/{type}` | Get collection | `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get collection |
+| POST | `/sync/history` | Add items to watched history | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Add items to watched history |
+| POST | `/sync/history/remove` | Remove items from history | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Remove items from history |
+| GET | `/sync/history/{type}/{id}` | Get watched history | `type`*, `id`*, `start_at`, `end_at`, `trakt-api-version`, `trakt-api-key` | — | yes | Get watched history |
+| GET | `/sync/last_activities` | Get last activity | `trakt-api-version`, `trakt-api-key` | — | yes | Get last activity |
+| DELETE | `/sync/playback/{id}` | Remove a playback item | `id`*, `trakt-api-version`, `trakt-api-key` | — |  | Remove a playback item |
+| GET | `/sync/playback/{type}` | Get playback progress | `type`*, `start_at`, `end_at`, `trakt-api-version`, `trakt-api-key` | — | yes | Get playback progress |
+| POST | `/sync/ratings` | Add new ratings | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Add new ratings |
+| POST | `/sync/ratings/remove` | Remove ratings | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Remove ratings |
+| GET | `/sync/ratings/{type}/{rating}` | Get ratings | `type`*, `rating`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get ratings |
+| POST | `/sync/recommendations` | Add items to personal recommendations | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Add items to personal recommendations |
+| POST | `/sync/recommendations/remove` | Remove items from personal recommendations | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Remove items from personal recommendations |
+| POST | `/sync/recommendations/reorder` | Reorder personally recommended items | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Reorder personally recommended items |
+| GET | `/sync/recommendations/{type}/{sort}` | Get personal recommendations | `type`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get personal recommendations |
+| GET | `/sync/watched/{type}` | Get watched | `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get watched |
+| POST | `/sync/watchlist` | Add items to watchlist | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Add items to watchlist |
+| POST | `/sync/watchlist/remove` | Remove items from watchlist | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Remove items from watchlist |
+| POST | `/sync/watchlist/reorder` | Reorder watchlist items | `trakt-api-version`, `trakt-api-key`, body: object | — |  | Reorder watchlist items |
+| GET | `/sync/watchlist/{type}/{sort}` | Get watchlist | `type`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get watchlist |
+| GET | `/users/hidden/{section}` | Get hidden items | `section`*, `type`, `trakt-api-version`, `trakt-api-key` | — | yes | Get hidden items |
+| POST | `/users/hidden/{section}` | Add hidden items | `section`*, `trakt-api-version`, `trakt-api-key`, body: object | — |  | Add hidden items |
+| POST | `/users/hidden/{section}/remove` | Remove hidden items | `section`*, `trakt-api-version`, `trakt-api-key`, body: object | — |  | Remove hidden items |
+| GET | `/users/requests` | Get follow requests | `trakt-api-version`, `trakt-api-key` | — | yes | Get follow requests |
+| GET | `/users/requests/following` | Get pending following requests | `trakt-api-version`, `trakt-api-key` | — | yes | Get pending following requests |
+| POST | `/users/requests/{id}` | Approve follow request | `id`*, `trakt-api-version`, `trakt-api-key` | — |  | Approve follow request |
+| DELETE | `/users/requests/{id}` | Deny follow request | `trakt-api-version`, `trakt-api-key`, `id`* | — |  | Deny follow request |
+| GET | `/users/saved_filters/{section}` | Get saved filters | `section`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get saved filters |
+| GET | `/users/settings` | Retrieve settings | `trakt-api-version`, `trakt-api-key` | — | yes | Retrieve settings |
+| GET | `/users/{id}` | Get user profile | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get user profile |
+| GET | `/users/{id}/collection/{type}` | get /users/{id}/collection/{type} | `id`*, `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get collection |
+| GET | `/users/{id}/comments/{comment_type}/{type}` | Get comments | `id`*, `comment_type`*, `type`*, `include_replies`, `trakt-api-version`, `trakt-api-key` | — | yes | Get comments |
+| POST | `/users/{id}/follow` | Follow this user | `id`*, `trakt-api-version`, `trakt-api-key` | — |  | Follow this user |
+| DELETE | `/users/{id}/follow` | Unfollow this user | `trakt-api-version`, `trakt-api-key`, `id`* | — |  | Unfollow this user |
+| GET | `/users/{id}/followers` | Get followers | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get followers |
+| GET | `/users/{id}/following` | Get following | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get following |
+| GET | `/users/{id}/friends` | Get friends | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get friends |
+| GET | `/users/{id}/history/{type}/{item_id}` | get /users/{id}/history/{type}/{item_id} | `id`*, `type`*, `item_id`*, `start_at`, `end_at`, `trakt-api-version`, `trakt-api-key` | — | yes | Get watched history |
+| GET | `/users/{id}/likes/{type}` | Get likes | `id`*, `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get likes |
+| GET | `/users/{id}/lists` | Get a user's personal lists | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get a user's personal lists |
+| POST | `/users/{id}/lists` | Create personal list | `trakt-api-version`, `trakt-api-key`, `id`*, body: object | — |  | Create personal list |
+| GET | `/users/{id}/lists/collaborations` | Get all lists a user can collaborate on | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all lists a user can collaborate on |
+| POST | `/users/{id}/lists/reorder` | Reorder a user's lists | `id`*, `trakt-api-version`, `trakt-api-key`, body: object | — |  | Reorder a user's lists |
+| GET | `/users/{id}/lists/{list_id}` | Get personal list | `id`*, `list_id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get personal list |
+| PUT | `/users/{id}/lists/{list_id}` | Update personal list | `trakt-api-version`, `trakt-api-key`, `id`*, `list_id`*, body: object | — |  | Update personal list |
+| DELETE | `/users/{id}/lists/{list_id}` | Delete a user's personal list | `trakt-api-version`, `trakt-api-key`, `id`*, `list_id`* | — |  | Delete a user's personal list |
+| GET | `/users/{id}/lists/{list_id}/comments/{sort}` | get /users/{id}/lists/{list_id}/comments/{sort} | `id`*, `list_id`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all list comments |
+| POST | `/users/{id}/lists/{list_id}/items` | Add items to personal list | `id`*, `list_id`*, `trakt-api-version`, `trakt-api-key`, body: object | — |  | Add items to personal list |
+| POST | `/users/{id}/lists/{list_id}/items/remove` | Remove items from personal list | `id`*, `list_id`*, `trakt-api-version`, `trakt-api-key`, body: object | — |  | Remove items from personal list |
+| POST | `/users/{id}/lists/{list_id}/items/reorder` | Reorder items on a list | `id`*, `list_id`*, `trakt-api-version`, `trakt-api-key`, body: object | — |  | Reorder items on a list |
+| GET | `/users/{id}/lists/{list_id}/items/{type}` | Get items on a personal list | `id`*, `list_id`*, `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get items on a personal list |
+| POST | `/users/{id}/lists/{list_id}/like` | Like a list | `id`*, `list_id`*, `trakt-api-version`, `trakt-api-key` | — |  | Like a list |
+| DELETE | `/users/{id}/lists/{list_id}/like` | Remove like on a list | `trakt-api-version`, `trakt-api-key`, `id`*, `list_id`* | — |  | Remove like on a list |
+| GET | `/users/{id}/lists/{list_id}/likes` | get /users/{id}/lists/{list_id}/likes | `id`*, `list_id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get all users who liked a list |
+| GET | `/users/{id}/ratings/{type}/{rating}` | get /users/{id}/ratings/{type}/{rating} | `id`*, `type`*, `rating`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get ratings |
+| GET | `/users/{id}/recommendations/{type}/{sort}` | get /users/{id}/recommendations/{type}/{sort} | `id`*, `type`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get personal recommendations |
+| GET | `/users/{id}/stats` | Get stats | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get stats |
+| GET | `/users/{id}/watched/{type}` | get /users/{id}/watched/{type} | `id`*, `type`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get watched |
+| GET | `/users/{id}/watching` | Get watching | `id`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get watching |
+| GET | `/users/{id}/watchlist/{type}/{sort}` | get /users/{id}/watchlist/{type}/{sort} | `id`*, `type`*, `sort`*, `trakt-api-version`, `trakt-api-key` | — | yes | Get watchlist |

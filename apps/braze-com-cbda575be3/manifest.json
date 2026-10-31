@@ -167,344 +167,1443 @@
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a daily series of various stats for a campaign over time.",
         "id": "operation:get:/campaigns/data_series",
         "kind": "operation",
         "method": "get",
         "name": "campaignAnalytics",
+        "parameters": [
+          {
+            "description": "(Required) String Campaign API identifier",
+            "in": "query",
+            "name": "campaign_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required) Integer Max number of days before ending_at to include in the returned series - must be between 1 and 100 inclusive",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Date on which the data series should end - defaults to time of the request",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/campaigns/data_series",
         "pointer": "#/paths/~1campaigns~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Campaign Analytics"
+        "summary": "Campaign Analytics",
+        "tags": [
+          "Export",
+          "Campaign"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve relevant information on a specified campaign, which can be identified by the `campaign_id`.",
         "id": "operation:get:/campaigns/details",
         "kind": "operation",
         "method": "get",
         "name": "campaignDetails",
+        "parameters": [
+          {
+            "description": "(Required) String Campaign API identifier",
+            "in": "query",
+            "name": "campaign_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/campaigns/details",
         "pointer": "#/paths/~1campaigns~1details/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Campaign Details"
+        "summary": "Campaign Details",
+        "tags": [
+          "Export",
+          "Campaign"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to export a list of campaigns, each of which will include its name, Campaign API Identifier, whether it is an API Campaign, and Tags a…",
         "id": "operation:get:/campaigns/list",
         "kind": "operation",
         "method": "get",
         "name": "campaignList",
+        "parameters": [
+          {
+            "description": "(Optional) Integer The page of campaigns to return, defaults to 0 (returns the first set of up to 100)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean Whether or not to include archived campaigns, defaults to false",
+            "in": "query",
+            "name": "include_archived",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Pass in the value `desc` to sort by creation time from newest to oldest.",
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Filters the results and only returns campaigns that were edited greater than the time provided till now.",
+            "in": "query",
+            "name": "last_edit.time[gt]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/campaigns/list",
         "pointer": "#/paths/~1campaigns~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Campaign List"
+        "summary": "Campaign List",
+        "tags": [
+          "Export",
+          "Campaign"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to export time series data for a Canvas.",
         "id": "operation:get:/canvas/data_series",
         "kind": "operation",
         "method": "get",
         "name": "canvasDataSeriesAnalytics",
+        "parameters": [
+          {
+            "description": "(Required) String Canvas API Identifier",
+            "in": "query",
+            "name": "canvas_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required) DateTime (ISO 8601 string) Date on which the data export should end - defaults to time of the request",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Date on which the data export should begin (either length or starting_at are required)",
+            "in": "query",
+            "name": "starting_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Max number of days before ending_at to include in the returned series - must be between 1 and 14 inclusive (either length…",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean Whether or not to include variant stats (defaults to false)",
+            "in": "query",
+            "name": "include_variant_breakdown",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean Whether or not to include step stats (defaults to false)",
+            "in": "query",
+            "name": "include_step_breakdown",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean Whether or not to include step stats for deleted steps (defaults to false)",
+            "in": "query",
+            "name": "include_deleted_step_data",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/canvas/data_series",
         "pointer": "#/paths/~1canvas~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Canvas Data Series Analytics"
+        "summary": "Canvas Data Series Analytics",
+        "tags": [
+          "Export",
+          "Canvas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to export rollups of time series data for a Canvas, providing a concise summary of a Canvas' results.",
         "id": "operation:get:/canvas/data_summary",
         "kind": "operation",
         "method": "get",
         "name": "canvasDataAnalyticsSummary",
+        "parameters": [
+          {
+            "description": "(Required) String Canvas API identifier",
+            "in": "query",
+            "name": "canvas_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required) DateTime (ISO 8601 string) Date on which the data export should end - defaults to time of the request",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Date on which the data export should begin (either length or starting_at required)",
+            "in": "query",
+            "name": "starting_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Integer Max number of days before ending_at to include in the returned series - must be between 1 and 14 inclusive (either length or starting_at req…",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean Whether or not to include variant stats (defaults to false)",
+            "in": "query",
+            "name": "include_variant_breakdown",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean Whether or not to include step stats (defaults to false)",
+            "in": "query",
+            "name": "include_step_breakdown",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean Whether or not to include step stats for deleted steps (defaults to false)",
+            "in": "query",
+            "name": "include_deleted_step_data",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/canvas/data_summary",
         "pointer": "#/paths/~1canvas~1data_summary/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Canvas Data Analytics Summary"
+        "summary": "Canvas Data Analytics Summary",
+        "tags": [
+          "Export",
+          "Canvas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to export metadata about a Canvas, such as its name, when it was created, its current status, and more.",
         "id": "operation:get:/canvas/details",
         "kind": "operation",
         "method": "get",
         "name": "canvasDetails",
+        "parameters": [
+          {
+            "description": "(Required) String Canvas API Identifier",
+            "in": "query",
+            "name": "canvas_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/canvas/details",
         "pointer": "#/paths/~1canvas~1details/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Canvas Details"
+        "summary": "Canvas Details",
+        "tags": [
+          "Export",
+          "Canvas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to export a list of Canvases, including the name, Canvas API Identifier and associated Tags.",
         "id": "operation:get:/canvas/list",
         "kind": "operation",
         "method": "get",
         "name": "canvasList",
+        "parameters": [
+          {
+            "description": "(Optional) Integer The page of Canvases to return, defaults to `0` (returns the first set of up to 100)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean Whether or not to include archived Canvases, defaults to `false`.",
+            "in": "query",
+            "name": "include_archived",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Pass in the value `desc` to sort by creation time from newest to oldest.",
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Filters the results and only returns Canvases that were edited greater than the time provided till now.",
+            "in": "query",
+            "name": "last_edit.time[gt]",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/canvas/list",
         "pointer": "#/paths/~1canvas~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Canvas List"
+        "summary": "Canvas List",
+        "tags": [
+          "Export",
+          "Canvas"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to trigger API Triggered Canvases, which are created on the Dashboard and initiated via the API.",
         "id": "operation:post:/canvas/trigger/schedule/create",
         "kind": "operation",
         "method": "post",
         "name": "scheduleApiTriggeredCanvases",
         "path": "/canvas/trigger/schedule/create",
         "pointer": "#/paths/~1canvas~1trigger~1schedule~1create/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Schedule API Triggered Canvases"
+        "summary": "Schedule API Triggered Canvases",
+        "tags": [
+          "Messaging",
+          "Schedule Mesages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint will call information for an existing Content Block.",
         "id": "operation:get:/content_blocks/info",
         "kind": "operation",
         "method": "get",
         "name": "seeContentBlockInformation",
+        "parameters": [
+          {
+            "description": "(Required) String The Content Block ID.",
+            "in": "query",
+            "name": "content_block_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean When set to ‘true’, the API returns back the Message Variation API ID of Campaigns and Canvases where this content block is included, to be…",
+            "in": "query",
+            "name": "include_inclusion_data",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/content_blocks/info",
         "pointer": "#/paths/~1content_blocks~1info/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "See Content Block Information"
+        "summary": "See Content Block Information",
+        "tags": [
+          "Templates",
+          "Content Blocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint will list existing Content Block information.",
         "id": "operation:get:/content_blocks/list",
         "kind": "operation",
         "method": "get",
         "name": "listAvailableContentBlocks",
+        "parameters": [
+          {
+            "description": "(Optional) String in ISO 8601 Retrieve only content blocks updated at or after the given time.",
+            "in": "query",
+            "name": "modified_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String in ISO 8601 Retrieve only content blocks updated at or before the given time.",
+            "in": "query",
+            "name": "modified_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Positive Number Maximum number of content blocks to retrieve, default to 100 if not provided, maximum acceptable value is 1000.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Positive Number Number of content blocks to skip before returning rest of the templates that fit the search criteria.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/content_blocks/list",
         "pointer": "#/paths/~1content_blocks~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List Available Content Blocks"
+        "summary": "List Available Content Blocks",
+        "tags": [
+          "Templates",
+          "Content Blocks"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to pull a list of email addresses that have “hard bounced” your email messages within a certain time frame.",
         "id": "operation:get:/email/hard_bounces",
         "kind": "operation",
         "method": "get",
         "name": "queryHardBouncedEmails",
+        "parameters": [
+          {
+            "description": "(Optional*) String in YYYY-MM-DD format Start date of the range to retrieve hard bounces, must be earlier than `end_date`.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional*) String in YYYY-MM-DD format String in YYYY-MM-DD format.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Integer Optional field to limit the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Integer Optional beginning point in the list to retrieve from.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional*) String If provided, we will return whether or not the user has hard bounced.",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/email/hard_bounces",
         "pointer": "#/paths/~1email~1hard_bounces/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Query Hard Bounced Emails"
+        "summary": "Query Hard Bounced Emails",
+        "tags": [
+          "Email Lists & Addresses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the /email/unsubscribes endpoint to return emails that have unsubscribed during the time period from `start_date` to `end_date`.",
         "id": "operation:get:/email/unsubscribes",
         "kind": "operation",
         "method": "get",
         "name": "queryListOfUnsubscribedEmailAddresses",
+        "parameters": [
+          {
+            "description": "(Optional*) String in YYYY-MM-DD format Start date of the range to retrieve unsubscribes, must be earlier than end_date.",
+            "in": "query",
+            "name": "start_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional*) String in YYYY-MM-DD format End date of the range to retrieve unsubscribes.",
+            "in": "query",
+            "name": "end_date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Integer Optional field to limit the number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Integer Optional beginning point in the list to retrieve from",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Pass in the value `asc` to sort unsubscribes from oldest to newest.",
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional*) String If provided, we will return whether or not the user has unsubscribed",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/email/unsubscribes",
         "pointer": "#/paths/~1email~1unsubscribes/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Query List of Unsubscribed Email Addresses"
+        "summary": "Query List of Unsubscribed Email Addresses",
+        "tags": [
+          "Email Lists & Addresses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a series of the number of occurrences of a custom event in your app over a designated time period.",
         "id": "operation:get:/events/data_series",
         "kind": "operation",
         "method": "get",
         "name": "customEventsAnalytics",
+        "parameters": [
+          {
+            "description": "(Required) String The name of the custom event for which to return analytics",
+            "in": "query",
+            "name": "event",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required) Integer Max number of units (days or hours) before ending_at to include in the returned series - must be between 1 and 100 inclusive",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Unit of time between data points - can be \"day\" or \"hour\" (defaults to \"day\")",
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Point in time when the data series should end - defaults to time of the request",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String App API identifier retrieved from the Developer Console to limit analytics to a specific app",
+            "in": "query",
+            "name": "app_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Segment API identifier indicating the analytics enabled segment for which event analytics should be returned",
+            "in": "query",
+            "name": "segment_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/events/data_series",
         "pointer": "#/paths/~1events~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Custom Events Analytics"
+        "summary": "Custom Events Analytics",
+        "tags": [
+          "Export",
+          "Custom Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to export a list of custom events that have been recorded for your app.",
         "id": "operation:get:/events/list",
         "kind": "operation",
         "method": "get",
         "name": "customEventsList",
+        "parameters": [
+          {
+            "description": "(Optional) Integer The page of event names to return, defaults to 0 (returns the first set of up to 250)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/events/list",
         "pointer": "#/paths/~1events~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Custom Events List"
+        "summary": "Custom Events List",
+        "tags": [
+          "Export",
+          "Custom Events"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a daily series of engagement stats for a card over time.",
         "id": "operation:get:/feed/data_series",
         "kind": "operation",
         "method": "get",
         "name": "newsFeedCardAnalytics",
+        "parameters": [
+          {
+            "description": "(Required) String Card API identifier",
+            "in": "query",
+            "name": "card_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required) Integer Max number of units (days or hours) before ending_at to include in the returned series - must be between 1 and 100 inclusive",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Unit of time between data points - can be \"day\" or \"hour\" (defaults to \"day\")",
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Date on which the data series should end - defaults to time of the request",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/feed/data_series",
         "pointer": "#/paths/~1feed~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "News Feed Card Analytics"
+        "summary": "News Feed Card Analytics",
+        "tags": [
+          "Export",
+          "News Feed"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve relevant information on the card, which can be identified by the `card_id`.",
         "id": "operation:get:/feed/details",
         "kind": "operation",
         "method": "get",
         "name": "newsFeedCardsDetails",
+        "parameters": [
+          {
+            "description": "(Required) String Card API identifier",
+            "in": "query",
+            "name": "card_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/feed/details",
         "pointer": "#/paths/~1feed~1details/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "News Feed Cards Details"
+        "summary": "News Feed Cards Details",
+        "tags": [
+          "Export",
+          "News Feed"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to export a list of News Feed cards, each of which will include its name and Card API Identifier.",
         "id": "operation:get:/feed/list",
         "kind": "operation",
         "method": "get",
         "name": "newsFeedCardsList",
+        "parameters": [
+          {
+            "description": "(Optional) Integer The page of cards to return, defaults to 0 (returns the first set of up to 100)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Boolean Whether or not to include archived cards, defaults to false",
+            "in": "query",
+            "name": "include_archived",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Pass in the value `desc` to sort by creation time from newest to oldest.",
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/feed/list",
         "pointer": "#/paths/~1feed~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "News Feed Cards List"
+        "summary": "News Feed Cards List",
+        "tags": [
+          "Export",
+          "News Feed"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a daily series of the total number of unique active users on each date.",
         "id": "operation:get:/kpi/dau/data_series",
         "kind": "operation",
         "method": "get",
         "name": "dailyActiveUsersByDate",
+        "parameters": [
+          {
+            "description": "(Required) Integer Max number of days before ending_at to include in the returned series - must be between 1 and 100 inclusive",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Point in time when the data series should end - defaults to time of the request",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String App API identifier; if excluded, results for all apps in app group will be returned",
+            "in": "query",
+            "name": "app_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/kpi/dau/data_series",
         "pointer": "#/paths/~1kpi~1dau~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Daily Active Users by Date"
+        "summary": "Daily Active Users by Date",
+        "tags": [
+          "Export",
+          "KPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a daily series of the total number of unique active users over a 30-day rolling window.",
         "id": "operation:get:/kpi/mau/data_series",
         "kind": "operation",
         "method": "get",
         "name": "monthlyActiveUsersForLast30Days",
+        "parameters": [
+          {
+            "description": "(Required) Integer Max number of days before ending_at to include in the returned series - must be between 1 and 100 inclusive",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Point in time when the data series should end - defaults to time of the request",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String App API identifier; if excluded, results for all apps in app group will be returned",
+            "in": "query",
+            "name": "app_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/kpi/mau/data_series",
         "pointer": "#/paths/~1kpi~1mau~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Monthly Active Users for Last 30 Days"
+        "summary": "Monthly Active Users for Last 30 Days",
+        "tags": [
+          "Export",
+          "KPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a daily series of the total number of new users on each date.",
         "id": "operation:get:/kpi/new_users/data_series",
         "kind": "operation",
         "method": "get",
         "name": "dailyNewUsersByDate",
+        "parameters": [
+          {
+            "description": "(Required) Integer Max number of days before ending_at to include in the returned series - must be between 1 and 100 inclusive",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Point in time when the data series should end - defaults to time of the request",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String App API identifier; if excluded, results for all apps in app group will be returned",
+            "in": "query",
+            "name": "app_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/kpi/new_users/data_series",
         "pointer": "#/paths/~1kpi~1new_users~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Daily New Users by Date"
+        "summary": "Daily New Users by Date",
+        "tags": [
+          "Export",
+          "KPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a daily series of the total number of uninstalls on each date.",
         "id": "operation:get:/kpi/uninstalls/data_series",
         "kind": "operation",
         "method": "get",
         "name": "kpIsForDailyAppUninstallsByDate",
+        "parameters": [
+          {
+            "description": "(Required) Integer Max number of days before ending_at to include in the returned series - must be between 1 and 100 inclusive",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Point in time when the data series should end - defaults to time of the request",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String App API identifier; if excluded, results for all apps in app group will be returned",
+            "in": "query",
+            "name": "app_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/kpi/uninstalls/data_series",
         "pointer": "#/paths/~1kpi~1uninstalls~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "KPIs for Daily App Uninstalls by Date"
+        "summary": "KPIs for Daily App Uninstalls by Date",
+        "tags": [
+          "Export",
+          "KPI"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can view a JSON list of upcoming and scheduled Campaigns and Canvases using the following information and parameters.",
         "id": "operation:get:/messages/scheduled_broadcasts",
         "kind": "operation",
         "method": "get",
         "name": "getUpcomingScheduledCampaignsAndCanvases",
+        "parameters": [
+          {
+            "description": "(Required) String in ISO 8601 format End date of the range to retrieve upcoming scheduled Campaigns and Canvases.",
+            "in": "query",
+            "name": "end_time",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/messages/scheduled_broadcasts",
         "pointer": "#/paths/~1messages~1scheduled_broadcasts/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Upcoming Scheduled Campaigns and Canvases"
+        "summary": "Get Upcoming Scheduled Campaigns and Canvases",
+        "tags": [
+          "Messaging",
+          "Schedule Mesages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a daily series of the size of a segment over time for a segment.",
         "id": "operation:get:/segments/data_series",
         "kind": "operation",
         "method": "get",
         "name": "segmentAnalytics",
+        "parameters": [
+          {
+            "description": "(Required) String Segment API identifier.",
+            "in": "query",
+            "name": "segment_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required) Integer Max number of days before `ending_at` to include in the returned series - must be between 1 and 100 inclusive.",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Point in time when the data series should end - defaults to time of the request.",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/segments/data_series",
         "pointer": "#/paths/~1segments~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Segment Analytics"
+        "summary": "Segment Analytics",
+        "tags": [
+          "Export",
+          "Segment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve relevant information on the segment, which can be identified by the `segment_id`.",
         "id": "operation:get:/segments/details",
         "kind": "operation",
         "method": "get",
         "name": "segmentDetails",
+        "parameters": [
+          {
+            "description": "(Required) String Segment API identifier",
+            "in": "query",
+            "name": "segment_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/segments/details",
         "pointer": "#/paths/~1segments~1details/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Segment Details"
+        "summary": "Segment Details",
+        "tags": [
+          "Export",
+          "Segment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to export a list of segments, each of which will include its name, Segment API Identifier, and whether it has analytics tracking enabl…",
         "id": "operation:get:/segments/list",
         "kind": "operation",
         "method": "get",
         "name": "segmentList",
+        "parameters": [
+          {
+            "description": "(Optional) Integer The page of segments to return, defaults to 0 (returns the first set of up to 100)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Pass in the value `desc` to sort by creation time from newest to oldest.",
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/segments/list",
         "pointer": "#/paths/~1segments~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Segment List"
+        "summary": "Segment List",
+        "tags": [
+          "Export",
+          "Segment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a daily series of various stats for a tracked `send_id`.",
         "id": "operation:get:/sends/data_series",
         "kind": "operation",
         "method": "get",
         "name": "sendAnalytics",
+        "parameters": [
+          {
+            "description": "(Required) String Campaign API identifier.",
+            "in": "query",
+            "name": "campaign_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required) String Send API identifier.",
+            "in": "query",
+            "name": "send_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required) Integer Maximum number of days before `ending_at` to include in the returned series.",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Datetime ISO 8601 string Date on which the data series should end.",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sends/data_series",
         "pointer": "#/paths/~1sends~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Send Analytics"
+        "summary": "Send Analytics",
+        "tags": [
+          "Export",
+          "Campaign"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to retrieve a series of the number of sessions for your app over a designated time period.",
         "id": "operation:get:/sessions/data_series",
         "kind": "operation",
         "method": "get",
         "name": "appSessionsByTime",
+        "parameters": [
+          {
+            "description": "(Required) Integer Max number of units (days or hours) before ending_at to include in the returned series - must be between 1 and 100 inclusive.",
+            "in": "query",
+            "name": "length",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Unit of time between data points - can be \"day\" or \"hour\" (defaults to \"day\").",
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) DateTime (ISO 8601 string) Point in time when the data series should end - defaults to time of the request.",
+            "in": "query",
+            "name": "ending_at",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String App API identifier retrieved from the Developer Console to limit analytics to a specific app.",
+            "in": "query",
+            "name": "app_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String Segment API identifier indicating the analytics enabled segment for which sessions should be returned.",
+            "in": "query",
+            "name": "segment_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/sessions/data_series",
         "pointer": "#/paths/~1sessions~1data_series/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "App Sessions by Time"
+        "summary": "App Sessions by Time",
+        "tags": [
+          "Export",
+          "Session Analytics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the endpoint below to get the subscription state of a user in a subscription group.",
         "id": "operation:get:/subscription/status/get",
         "kind": "operation",
         "method": "get",
         "name": "listUser'sSubscriptionGroupStatusSms",
+        "parameters": [
+          {
+            "description": "(Required) String The `id` of your subscription group.",
+            "in": "query",
+            "name": "subscription_group_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required*) String The `external_id` of the user (must include at least one and at most 50 `external_ids`).",
+            "in": "query",
+            "name": "external_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required*) String The phone number of the user (must include at least one phone number and at most 50 phone numbers).",
+            "in": "query",
+            "name": "phone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/subscription/status/get",
         "pointer": "#/paths/~1subscription~1status~1get/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List User's  Subscription Group Status - SMS"
+        "summary": "List User's  Subscription Group Status - SMS",
+        "tags": [
+          "Subscription Groups",
+          "SMS"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the endpoint below to list and get the subscription groups of a certain user.",
         "id": "operation:get:/subscription/user/status",
         "kind": "operation",
         "method": "get",
         "name": "listUser'sSubscriptionGroupSms",
+        "parameters": [
+          {
+            "description": "(Required*) String The external_id of the user.",
+            "in": "query",
+            "name": "external_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Integer The limit on the maximum number of results returned.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Integer Number of templates to skip before returning rest of the templates that fit the search criteria.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Required*) String The phone number of the user (must include at least one phone number and at most 50 phone numbers).",
+            "in": "query",
+            "name": "phone",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/subscription/user/status",
         "pointer": "#/paths/~1subscription~1user~1status/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List User's Subscription Group - SMS"
+        "summary": "List User's Subscription Group - SMS",
+        "tags": [
+          "Subscription Groups",
+          "SMS"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use to get information on your email templates.",
         "id": "operation:get:/templates/email/info",
         "kind": "operation",
         "method": "get",
         "name": "seeEmailTemplateInformation",
+        "parameters": [
+          {
+            "description": "(Required) String Your email template's API Identifier.",
+            "in": "query",
+            "name": "email_template_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/templates/email/info",
         "pointer": "#/paths/~1templates~1email~1info/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "See Email Template Information"
+        "summary": "See Email Template Information",
+        "tags": [
+          "Templates",
+          "Email Templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to get a list of available templates in your Braze account.",
         "id": "operation:get:/templates/email/list",
         "kind": "operation",
         "method": "get",
         "name": "listAvailableEmailTemplates",
+        "parameters": [
+          {
+            "description": "(Optional) String in ISO 8601 Retrieve only templates updated at or after the given time.",
+            "in": "query",
+            "name": "modified_after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) String in ISO 8601 Retrieve only templates updated at or before the given time",
+            "in": "query",
+            "name": "modified_before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Positive Number Maximum number of templates to retrieve, default to 100 if not provided, maximum acceptable value is 1000.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "(Optional) Positive Number Number of templates to skip before returning rest of the templates that fit the search criteria.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/templates/email/list",
         "pointer": "#/paths/~1templates~1email~1list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List Available Email Templates"
+        "summary": "List Available Email Templates",
+        "tags": [
+          "Templates",
+          "Email Templates"
+        ]
       }
     ]
   },

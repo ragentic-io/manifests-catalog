@@ -7,17 +7,17 @@
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/account"
-      },
-      {
-        "from": "appwrite-io-client-848307f56a",
-        "kind": "EXPOSES",
         "to": "operation:get:/account"
       },
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
         "to": "operation:post:/account"
+      },
+      {
+        "from": "appwrite-io-client-848307f56a",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/account"
       },
       {
         "from": "appwrite-io-client-848307f56a",
@@ -57,17 +57,12 @@
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
-        "to": "operation:post:/account/recovery"
-      },
-      {
-        "from": "appwrite-io-client-848307f56a",
-        "kind": "EXPOSES",
         "to": "operation:put:/account/recovery"
       },
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/account/sessions"
+        "to": "operation:post:/account/recovery"
       },
       {
         "from": "appwrite-io-client-848307f56a",
@@ -82,6 +77,11 @@
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
+        "to": "operation:delete:/account/sessions"
+      },
+      {
+        "from": "appwrite-io-client-848307f56a",
+        "kind": "EXPOSES",
         "to": "operation:post:/account/sessions/anonymous"
       },
       {
@@ -92,22 +92,22 @@
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/account/sessions/{sessionId}"
-      },
-      {
-        "from": "appwrite-io-client-848307f56a",
-        "kind": "EXPOSES",
         "to": "operation:get:/account/sessions/{sessionId}"
       },
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
-        "to": "operation:post:/account/verification"
+        "to": "operation:delete:/account/sessions/{sessionId}"
       },
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
         "to": "operation:put:/account/verification"
+      },
+      {
+        "from": "appwrite-io-client-848307f56a",
+        "kind": "EXPOSES",
+        "to": "operation:post:/account/verification"
       },
       {
         "from": "appwrite-io-client-848307f56a",
@@ -157,12 +157,12 @@
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/database/collections/{collectionId}/documents/{documentId}"
+        "to": "operation:get:/database/collections/{collectionId}/documents/{documentId}"
       },
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
-        "to": "operation:get:/database/collections/{collectionId}/documents/{documentId}"
+        "to": "operation:delete:/database/collections/{collectionId}/documents/{documentId}"
       },
       {
         "from": "appwrite-io-client-848307f56a",
@@ -232,17 +232,17 @@
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/storage/files/{fileId}"
-      },
-      {
-        "from": "appwrite-io-client-848307f56a",
-        "kind": "EXPOSES",
         "to": "operation:get:/storage/files/{fileId}"
       },
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
         "to": "operation:put:/storage/files/{fileId}"
+      },
+      {
+        "from": "appwrite-io-client-848307f56a",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/storage/files/{fileId}"
       },
       {
         "from": "appwrite-io-client-848307f56a",
@@ -272,17 +272,17 @@
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/teams/{teamId}"
-      },
-      {
-        "from": "appwrite-io-client-848307f56a",
-        "kind": "EXPOSES",
         "to": "operation:get:/teams/{teamId}"
       },
       {
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
         "to": "operation:put:/teams/{teamId}"
+      },
+      {
+        "from": "appwrite-io-client-848307f56a",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/teams/{teamId}"
       },
       {
         "from": "appwrite-io-client-848307f56a",
@@ -308,6 +308,311 @@
         "from": "appwrite-io-client-848307f56a",
         "kind": "EXPOSES",
         "to": "operation:patch:/teams/{teamId}/memberships/{membershipId}/status"
+      },
+      {
+        "from": "operation:get:/account",
+        "kind": "RETURNS",
+        "to": "schema:user"
+      },
+      {
+        "from": "operation:post:/account",
+        "kind": "RETURNS",
+        "to": "schema:user"
+      },
+      {
+        "from": "operation:patch:/account/email",
+        "kind": "RETURNS",
+        "to": "schema:user"
+      },
+      {
+        "from": "operation:post:/account/jwt",
+        "kind": "RETURNS",
+        "to": "schema:jwt"
+      },
+      {
+        "from": "operation:get:/account/logs",
+        "kind": "RETURNS",
+        "to": "schema:logList"
+      },
+      {
+        "from": "operation:patch:/account/name",
+        "kind": "RETURNS",
+        "to": "schema:user"
+      },
+      {
+        "from": "operation:patch:/account/password",
+        "kind": "RETURNS",
+        "to": "schema:user"
+      },
+      {
+        "from": "operation:get:/account/prefs",
+        "kind": "RETURNS",
+        "to": "schema:preferences"
+      },
+      {
+        "from": "operation:patch:/account/prefs",
+        "kind": "RETURNS",
+        "to": "schema:user"
+      },
+      {
+        "from": "operation:put:/account/recovery",
+        "kind": "RETURNS",
+        "to": "schema:token"
+      },
+      {
+        "from": "operation:post:/account/recovery",
+        "kind": "RETURNS",
+        "to": "schema:token"
+      },
+      {
+        "from": "operation:get:/account/sessions",
+        "kind": "RETURNS",
+        "to": "schema:sessionList"
+      },
+      {
+        "from": "operation:post:/account/sessions",
+        "kind": "RETURNS",
+        "to": "schema:session"
+      },
+      {
+        "from": "operation:post:/account/sessions/anonymous",
+        "kind": "RETURNS",
+        "to": "schema:session"
+      },
+      {
+        "from": "operation:get:/account/sessions/{sessionId}",
+        "kind": "RETURNS",
+        "to": "schema:session"
+      },
+      {
+        "from": "operation:put:/account/verification",
+        "kind": "RETURNS",
+        "to": "schema:token"
+      },
+      {
+        "from": "operation:post:/account/verification",
+        "kind": "RETURNS",
+        "to": "schema:token"
+      },
+      {
+        "from": "operation:get:/database/collections/{collectionId}/documents",
+        "kind": "RETURNS",
+        "to": "schema:documentList"
+      },
+      {
+        "from": "operation:post:/database/collections/{collectionId}/documents",
+        "kind": "RETURNS",
+        "to": "schema:document"
+      },
+      {
+        "from": "operation:get:/database/collections/{collectionId}/documents/{documentId}",
+        "kind": "RETURNS",
+        "to": "schema:document"
+      },
+      {
+        "from": "operation:patch:/database/collections/{collectionId}/documents/{documentId}",
+        "kind": "RETURNS",
+        "to": "schema:document"
+      },
+      {
+        "from": "operation:get:/functions/{functionId}/executions",
+        "kind": "RETURNS",
+        "to": "schema:executionList"
+      },
+      {
+        "from": "operation:post:/functions/{functionId}/executions",
+        "kind": "RETURNS",
+        "to": "schema:execution"
+      },
+      {
+        "from": "operation:get:/functions/{functionId}/executions/{executionId}",
+        "kind": "RETURNS",
+        "to": "schema:execution"
+      },
+      {
+        "from": "operation:get:/locale",
+        "kind": "RETURNS",
+        "to": "schema:locale"
+      },
+      {
+        "from": "operation:get:/locale/continents",
+        "kind": "RETURNS",
+        "to": "schema:continentList"
+      },
+      {
+        "from": "operation:get:/locale/countries",
+        "kind": "RETURNS",
+        "to": "schema:countryList"
+      },
+      {
+        "from": "operation:get:/locale/countries/eu",
+        "kind": "RETURNS",
+        "to": "schema:countryList"
+      },
+      {
+        "from": "operation:get:/locale/countries/phones",
+        "kind": "RETURNS",
+        "to": "schema:phoneList"
+      },
+      {
+        "from": "operation:get:/locale/currencies",
+        "kind": "RETURNS",
+        "to": "schema:currencyList"
+      },
+      {
+        "from": "operation:get:/locale/languages",
+        "kind": "RETURNS",
+        "to": "schema:languageList"
+      },
+      {
+        "from": "operation:get:/storage/files",
+        "kind": "RETURNS",
+        "to": "schema:fileList"
+      },
+      {
+        "from": "operation:post:/storage/files",
+        "kind": "RETURNS",
+        "to": "schema:file"
+      },
+      {
+        "from": "operation:get:/storage/files/{fileId}",
+        "kind": "RETURNS",
+        "to": "schema:file"
+      },
+      {
+        "from": "operation:put:/storage/files/{fileId}",
+        "kind": "RETURNS",
+        "to": "schema:file"
+      },
+      {
+        "from": "operation:get:/teams",
+        "kind": "RETURNS",
+        "to": "schema:teamList"
+      },
+      {
+        "from": "operation:post:/teams",
+        "kind": "RETURNS",
+        "to": "schema:team"
+      },
+      {
+        "from": "operation:get:/teams/{teamId}",
+        "kind": "RETURNS",
+        "to": "schema:team"
+      },
+      {
+        "from": "operation:put:/teams/{teamId}",
+        "kind": "RETURNS",
+        "to": "schema:team"
+      },
+      {
+        "from": "operation:get:/teams/{teamId}/memberships",
+        "kind": "RETURNS",
+        "to": "schema:membershipList"
+      },
+      {
+        "from": "operation:post:/teams/{teamId}/memberships",
+        "kind": "RETURNS",
+        "to": "schema:membership"
+      },
+      {
+        "from": "operation:patch:/teams/{teamId}/memberships/{membershipId}",
+        "kind": "RETURNS",
+        "to": "schema:membership"
+      },
+      {
+        "from": "operation:patch:/teams/{teamId}/memberships/{membershipId}/status",
+        "kind": "RETURNS",
+        "to": "schema:membership"
+      },
+      {
+        "from": "schema:collection",
+        "kind": "REFERENCES",
+        "to": "schema:permissions"
+      },
+      {
+        "from": "schema:collection",
+        "kind": "REFERENCES",
+        "to": "schema:rule"
+      },
+      {
+        "from": "schema:continentList",
+        "kind": "REFERENCES",
+        "to": "schema:continent"
+      },
+      {
+        "from": "schema:countryList",
+        "kind": "REFERENCES",
+        "to": "schema:country"
+      },
+      {
+        "from": "schema:currencyList",
+        "kind": "REFERENCES",
+        "to": "schema:currency"
+      },
+      {
+        "from": "schema:document",
+        "kind": "REFERENCES",
+        "to": "schema:permissions"
+      },
+      {
+        "from": "schema:documentList",
+        "kind": "REFERENCES",
+        "to": "schema:document"
+      },
+      {
+        "from": "schema:executionList",
+        "kind": "REFERENCES",
+        "to": "schema:execution"
+      },
+      {
+        "from": "schema:file",
+        "kind": "REFERENCES",
+        "to": "schema:permissions"
+      },
+      {
+        "from": "schema:fileList",
+        "kind": "REFERENCES",
+        "to": "schema:file"
+      },
+      {
+        "from": "schema:function",
+        "kind": "REFERENCES",
+        "to": "schema:permissions"
+      },
+      {
+        "from": "schema:languageList",
+        "kind": "REFERENCES",
+        "to": "schema:language"
+      },
+      {
+        "from": "schema:logList",
+        "kind": "REFERENCES",
+        "to": "schema:log"
+      },
+      {
+        "from": "schema:membershipList",
+        "kind": "REFERENCES",
+        "to": "schema:membership"
+      },
+      {
+        "from": "schema:phoneList",
+        "kind": "REFERENCES",
+        "to": "schema:phone"
+      },
+      {
+        "from": "schema:sessionList",
+        "kind": "REFERENCES",
+        "to": "schema:session"
+      },
+      {
+        "from": "schema:teamList",
+        "kind": "REFERENCES",
+        "to": "schema:team"
+      },
+      {
+        "from": "schema:user",
+        "kind": "REFERENCES",
+        "to": "schema:preferences"
       }
     ],
     "nodes": [
@@ -317,942 +622,2435 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/account",
-        "kind": "operation",
-        "method": "delete",
-        "name": "accountDelete",
-        "path": "/account",
-        "pointer": "#/paths/~1account/delete",
-        "security": [
-          {
-            "JWT": [],
-            "Project": []
-          }
-        ],
-        "summary": "Delete Account"
-      },
-      {
-        "deprecated": false,
+        "description": "Get currently logged in user data as JSON object.",
         "id": "operation:get:/account",
         "kind": "operation",
         "method": "get",
         "name": "accountGet",
         "path": "/account",
         "pointer": "#/paths/~1account/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "user"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Account"
+        "summary": "Get Account",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to allow a new user to register a new account in your project.",
         "id": "operation:post:/account",
         "kind": "operation",
         "method": "post",
         "name": "accountCreate",
         "path": "/account",
         "pointer": "#/paths/~1account/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "user"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Project": []
           }
         ],
-        "summary": "Create Account"
+        "summary": "Create Account",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a currently logged in user account.",
+        "id": "operation:delete:/account",
+        "kind": "operation",
+        "method": "delete",
+        "name": "accountDelete",
+        "path": "/account",
+        "pointer": "#/paths/~1account/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "JWT": [],
+            "Project": []
+          }
+        ],
+        "summary": "Delete Account",
+        "tags": [
+          "account"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update currently logged in user account email address.",
         "id": "operation:patch:/account/email",
         "kind": "operation",
         "method": "patch",
         "name": "accountUpdateEmail",
         "path": "/account/email",
         "pointer": "#/paths/~1account~1email/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "user"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Update Account Email"
+        "summary": "Update Account Email",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to create a JSON Web Token.",
         "id": "operation:post:/account/jwt",
         "kind": "operation",
         "method": "post",
         "name": "accountCreateJWT",
         "path": "/account/jwt",
         "pointer": "#/paths/~1account~1jwt/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "jwt"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Project": []
           }
         ],
-        "summary": "Create Account JWT"
+        "summary": "Create Account JWT",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get currently logged in user list of latest security activity logs.",
         "id": "operation:get:/account/logs",
         "kind": "operation",
         "method": "get",
         "name": "accountGetLogs",
         "path": "/account/logs",
         "pointer": "#/paths/~1account~1logs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "logList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Account Logs"
+        "summary": "Get Account Logs",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update currently logged in user account name.",
         "id": "operation:patch:/account/name",
         "kind": "operation",
         "method": "patch",
         "name": "accountUpdateName",
         "path": "/account/name",
         "pointer": "#/paths/~1account~1name/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "user"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Update Account Name"
+        "summary": "Update Account Name",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update currently logged in user password.",
         "id": "operation:patch:/account/password",
         "kind": "operation",
         "method": "patch",
         "name": "accountUpdatePassword",
         "path": "/account/password",
         "pointer": "#/paths/~1account~1password/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "user"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Update Account Password"
+        "summary": "Update Account Password",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get currently logged in user preferences as a key-value object.",
         "id": "operation:get:/account/prefs",
         "kind": "operation",
         "method": "get",
         "name": "accountGetPrefs",
         "path": "/account/prefs",
         "pointer": "#/paths/~1account~1prefs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "preferences"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Account Preferences"
+        "summary": "Get Account Preferences",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update currently logged in user account preferences.",
         "id": "operation:patch:/account/prefs",
         "kind": "operation",
         "method": "patch",
         "name": "accountUpdatePrefs",
         "path": "/account/prefs",
         "pointer": "#/paths/~1account~1prefs/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "user"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Update Account Preferences"
+        "summary": "Update Account Preferences",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/account/recovery",
-        "kind": "operation",
-        "method": "post",
-        "name": "accountCreateRecovery",
-        "path": "/account/recovery",
-        "pointer": "#/paths/~1account~1recovery/post",
-        "security": [
-          {
-            "JWT": [],
-            "Project": []
-          }
-        ],
-        "summary": "Create Password Recovery"
-      },
-      {
-        "deprecated": false,
+        "description": "Use this endpoint to complete the user account password reset.",
         "id": "operation:put:/account/recovery",
         "kind": "operation",
         "method": "put",
         "name": "accountUpdateRecovery",
         "path": "/account/recovery",
         "pointer": "#/paths/~1account~1recovery/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "token"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Complete Password Recovery"
+        "summary": "Complete Password Recovery",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/account/sessions",
+        "description": "Sends the user an email with a temporary secret key for password reset.",
+        "id": "operation:post:/account/recovery",
         "kind": "operation",
-        "method": "delete",
-        "name": "accountDeleteSessions",
-        "path": "/account/sessions",
-        "pointer": "#/paths/~1account~1sessions/delete",
+        "method": "post",
+        "name": "accountCreateRecovery",
+        "path": "/account/recovery",
+        "pointer": "#/paths/~1account~1recovery/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "token"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Delete All Account Sessions"
+        "summary": "Create Password Recovery",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get currently logged in user list of active sessions across different devices.",
         "id": "operation:get:/account/sessions",
         "kind": "operation",
         "method": "get",
         "name": "accountGetSessions",
         "path": "/account/sessions",
         "pointer": "#/paths/~1account~1sessions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "sessionList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Account Sessions"
+        "summary": "Get Account Sessions",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allow the user to login into their account by providing a valid email and password combination.",
         "id": "operation:post:/account/sessions",
         "kind": "operation",
         "method": "post",
         "name": "accountCreateSession",
         "path": "/account/sessions",
         "pointer": "#/paths/~1account~1sessions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "session"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Project": []
           }
         ],
-        "summary": "Create Account Session"
+        "summary": "Create Account Session",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete all sessions from the user account and remove any sessions cookies from the end client.",
+        "id": "operation:delete:/account/sessions",
+        "kind": "operation",
+        "method": "delete",
+        "name": "accountDeleteSessions",
+        "path": "/account/sessions",
+        "pointer": "#/paths/~1account~1sessions/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "JWT": [],
+            "Project": []
+          }
+        ],
+        "summary": "Delete All Account Sessions",
+        "tags": [
+          "account"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this endpoint to allow a new user to register an anonymous account in your project.",
         "id": "operation:post:/account/sessions/anonymous",
         "kind": "operation",
         "method": "post",
         "name": "accountCreateAnonymousSession",
         "path": "/account/sessions/anonymous",
         "pointer": "#/paths/~1account~1sessions~1anonymous/post",
+        "responses": [
+          {
+            "status": "201",
+            "type": "session"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Project": []
           }
         ],
-        "summary": "Create Anonymous Session"
+        "summary": "Create Anonymous Session",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allow the user to login to their account using the OAuth2 provider of their choice.",
         "id": "operation:get:/account/sessions/oauth2/{provider}",
         "kind": "operation",
         "method": "get",
         "name": "accountCreateOAuth2Session",
+        "parameters": [
+          {
+            "description": "OAuth2 Provider.",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "https://appwrite.io/auth/oauth2/success",
+            "description": "URL to redirect back to your app after a successful login attempt.",
+            "in": "query",
+            "name": "success",
+            "required": false,
+            "type": "string:url"
+          },
+          {
+            "default": "https://appwrite.io/auth/oauth2/failure",
+            "description": "URL to redirect back to your app after a failed login attempt.",
+            "in": "query",
+            "name": "failure",
+            "required": false,
+            "type": "string:url"
+          },
+          {
+            "description": "A list of custom OAuth2 scopes.",
+            "in": "query",
+            "name": "scopes",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/account/sessions/oauth2/{provider}",
         "pointer": "#/paths/~1account~1sessions~1oauth2~1{provider}/get",
+        "responses": [
+          {
+            "status": "301"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "Project": []
           }
         ],
-        "summary": "Create Account Session with OAuth2"
+        "summary": "Create Account Session with OAuth2",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/account/sessions/{sessionId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "accountDeleteSession",
-        "path": "/account/sessions/{sessionId}",
-        "pointer": "#/paths/~1account~1sessions~1{sessionId}/delete",
-        "security": [
-          {
-            "JWT": [],
-            "Project": []
-          }
-        ],
-        "summary": "Delete Account Session"
-      },
-      {
-        "deprecated": false,
+        "description": "Use this endpoint to get a logged in user's session using a Session ID.",
         "id": "operation:get:/account/sessions/{sessionId}",
         "kind": "operation",
         "method": "get",
         "name": "accountGetSession",
+        "parameters": [
+          {
+            "description": "Session unique ID.",
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account/sessions/{sessionId}",
         "pointer": "#/paths/~1account~1sessions~1{sessionId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "session"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Session By ID"
+        "summary": "Get Session By ID",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/account/verification",
+        "description": "Use this endpoint to log out the currently logged in user from all their account sessions across all of their different devices.",
+        "id": "operation:delete:/account/sessions/{sessionId}",
         "kind": "operation",
-        "method": "post",
-        "name": "accountCreateVerification",
-        "path": "/account/verification",
-        "pointer": "#/paths/~1account~1verification/post",
+        "method": "delete",
+        "name": "accountDeleteSession",
+        "parameters": [
+          {
+            "description": "Session unique ID.",
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/account/sessions/{sessionId}",
+        "pointer": "#/paths/~1account~1sessions~1{sessionId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Create Email Verification"
+        "summary": "Delete Account Session",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to complete the user email verification process.",
         "id": "operation:put:/account/verification",
         "kind": "operation",
         "method": "put",
         "name": "accountUpdateVerification",
         "path": "/account/verification",
         "pointer": "#/paths/~1account~1verification/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "token"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Complete Email Verification"
+        "summary": "Complete Email Verification",
+        "tags": [
+          "account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to send a verification message to your user email address to confirm they are the valid owners of that address.",
+        "id": "operation:post:/account/verification",
+        "kind": "operation",
+        "method": "post",
+        "name": "accountCreateVerification",
+        "path": "/account/verification",
+        "pointer": "#/paths/~1account~1verification/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "token"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "JWT": [],
+            "Project": []
+          }
+        ],
+        "summary": "Create Email Verification",
+        "tags": [
+          "account"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "You can use this endpoint to show different browser icons to your users.",
         "id": "operation:get:/avatars/browsers/{code}",
         "kind": "operation",
         "method": "get",
         "name": "avatarsGetBrowser",
+        "parameters": [
+          {
+            "description": "Browser Code.",
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "Image width.",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 100,
+            "description": "Image height.",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 100,
+            "description": "Image quality.",
+            "in": "query",
+            "name": "quality",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/avatars/browsers/{code}",
         "pointer": "#/paths/~1avatars~1browsers~1{code}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Browser Icon"
+        "summary": "Get Browser Icon",
+        "tags": [
+          "avatars"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The credit card endpoint will return you the icon of the credit card provider you need.",
         "id": "operation:get:/avatars/credit-cards/{code}",
         "kind": "operation",
         "method": "get",
         "name": "avatarsGetCreditCard",
+        "parameters": [
+          {
+            "description": "Credit Card Code.",
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "Image width.",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 100,
+            "description": "Image height.",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 100,
+            "description": "Image quality.",
+            "in": "query",
+            "name": "quality",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/avatars/credit-cards/{code}",
         "pointer": "#/paths/~1avatars~1credit-cards~1{code}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Credit Card Icon"
+        "summary": "Get Credit Card Icon",
+        "tags": [
+          "avatars"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to fetch the favorite icon (AKA favicon) of any remote website URL.",
         "id": "operation:get:/avatars/favicon",
         "kind": "operation",
         "method": "get",
         "name": "avatarsGetFavicon",
+        "parameters": [
+          {
+            "description": "Website URL which you want to fetch the favicon from.",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string:url"
+          }
+        ],
         "path": "/avatars/favicon",
         "pointer": "#/paths/~1avatars~1favicon/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Favicon"
+        "summary": "Get Favicon",
+        "tags": [
+          "avatars"
+        ]
       },
       {
         "deprecated": false,
+        "description": "You can use this endpoint to show different country flags icons to your users.",
         "id": "operation:get:/avatars/flags/{code}",
         "kind": "operation",
         "method": "get",
         "name": "avatarsGetFlag",
+        "parameters": [
+          {
+            "description": "Country Code.",
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "Image width.",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 100,
+            "description": "Image height.",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 100,
+            "description": "Image quality.",
+            "in": "query",
+            "name": "quality",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/avatars/flags/{code}",
         "pointer": "#/paths/~1avatars~1flags~1{code}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Country Flag"
+        "summary": "Get Country Flag",
+        "tags": [
+          "avatars"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to fetch a remote image URL and crop it to any image size you want.",
         "id": "operation:get:/avatars/image",
         "kind": "operation",
         "method": "get",
         "name": "avatarsGetImage",
+        "parameters": [
+          {
+            "description": "Image URL which you want to crop.",
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string:url"
+          },
+          {
+            "default": 400,
+            "description": "Resize preview image width, Pass an integer between 0 to 2000.",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 400,
+            "description": "Resize preview image height, Pass an integer between 0 to 2000.",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/avatars/image",
         "pointer": "#/paths/~1avatars~1image/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Image from URL"
+        "summary": "Get Image from URL",
+        "tags": [
+          "avatars"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to show your user initials avatar icon on your website or app.",
         "id": "operation:get:/avatars/initials",
         "kind": "operation",
         "method": "get",
         "name": "avatarsGetInitials",
+        "parameters": [
+          {
+            "description": "Full Name.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 500,
+            "description": "Image width.",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 500,
+            "description": "Image height.",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Changes text color.",
+            "in": "query",
+            "name": "color",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Changes background color.",
+            "in": "query",
+            "name": "background",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/avatars/initials",
         "pointer": "#/paths/~1avatars~1initials/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get User Initials"
+        "summary": "Get User Initials",
+        "tags": [
+          "avatars"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Converts a given plain text to a QR code image.",
         "id": "operation:get:/avatars/qr",
         "kind": "operation",
         "method": "get",
         "name": "avatarsGetQR",
+        "parameters": [
+          {
+            "description": "Plain text to be converted to QR code image.",
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 400,
+            "description": "QR code size.",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "Margin from edge.",
+            "in": "query",
+            "name": "margin",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": false,
+            "description": "Return resulting image with 'Content-Disposition: attachment ' headers for the browser to start downloading it.",
+            "in": "query",
+            "name": "download",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/avatars/qr",
         "pointer": "#/paths/~1avatars~1qr/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get QR Code"
+        "summary": "Get QR Code",
+        "tags": [
+          "avatars"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the user documents.",
         "id": "operation:get:/database/collections/{collectionId}/documents",
         "kind": "operation",
         "method": "get",
         "name": "databaseListDocuments",
+        "parameters": [
+          {
+            "description": "Collection unique ID.",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Array of filter strings.",
+            "in": "query",
+            "name": "filters",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "default": 25,
+            "description": "Maximum number of documents to return in response.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Offset value.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Document field that results will be sorted by.",
+            "in": "query",
+            "name": "orderField",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "ASC",
+            "description": "Order direction.",
+            "in": "query",
+            "name": "orderType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "string",
+            "description": "Order field type casting.",
+            "in": "query",
+            "name": "orderCast",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Search query.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/database/collections/{collectionId}/documents",
         "pointer": "#/paths/~1database~1collections~1{collectionId}~1documents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "documentList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List Documents"
+        "summary": "List Documents",
+        "tags": [
+          "database"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new Document.",
         "id": "operation:post:/database/collections/{collectionId}/documents",
         "kind": "operation",
         "method": "post",
         "name": "databaseCreateDocument",
+        "parameters": [
+          {
+            "description": "Collection unique ID.",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/database/collections/{collectionId}/documents",
         "pointer": "#/paths/~1database~1collections~1{collectionId}~1documents/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "document"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Create Document"
+        "summary": "Create Document",
+        "tags": [
+          "database"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/database/collections/{collectionId}/documents/{documentId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "databaseDeleteDocument",
-        "path": "/database/collections/{collectionId}/documents/{documentId}",
-        "pointer": "#/paths/~1database~1collections~1{collectionId}~1documents~1{documentId}/delete",
-        "security": [
-          {
-            "JWT": [],
-            "Project": []
-          }
-        ],
-        "summary": "Delete Document"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a document by its unique ID.",
         "id": "operation:get:/database/collections/{collectionId}/documents/{documentId}",
         "kind": "operation",
         "method": "get",
         "name": "databaseGetDocument",
+        "parameters": [
+          {
+            "description": "Collection unique ID.",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Document unique ID.",
+            "in": "path",
+            "name": "documentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/database/collections/{collectionId}/documents/{documentId}",
         "pointer": "#/paths/~1database~1collections~1{collectionId}~1documents~1{documentId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "document"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Document"
+        "summary": "Get Document",
+        "tags": [
+          "database"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a document by its unique ID.",
+        "id": "operation:delete:/database/collections/{collectionId}/documents/{documentId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "databaseDeleteDocument",
+        "parameters": [
+          {
+            "description": "Collection unique ID.",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Document unique ID.",
+            "in": "path",
+            "name": "documentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/database/collections/{collectionId}/documents/{documentId}",
+        "pointer": "#/paths/~1database~1collections~1{collectionId}~1documents~1{documentId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "JWT": [],
+            "Project": []
+          }
+        ],
+        "summary": "Delete Document",
+        "tags": [
+          "database"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update a document by its unique ID.",
         "id": "operation:patch:/database/collections/{collectionId}/documents/{documentId}",
         "kind": "operation",
         "method": "patch",
         "name": "databaseUpdateDocument",
+        "parameters": [
+          {
+            "description": "Collection unique ID.",
+            "in": "path",
+            "name": "collectionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Document unique ID.",
+            "in": "path",
+            "name": "documentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/database/collections/{collectionId}/documents/{documentId}",
         "pointer": "#/paths/~1database~1collections~1{collectionId}~1documents~1{documentId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "document"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Update Document"
+        "summary": "Update Document",
+        "tags": [
+          "database"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the current user function execution logs.",
         "id": "operation:get:/functions/{functionId}/executions",
         "kind": "operation",
         "method": "get",
         "name": "functionsListExecutions",
+        "parameters": [
+          {
+            "description": "Function unique ID.",
+            "in": "path",
+            "name": "functionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Search term to filter your list results.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "Results limit value.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Results offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "ASC",
+            "description": "Order result by ASC or DESC order.",
+            "in": "query",
+            "name": "orderType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/functions/{functionId}/executions",
         "pointer": "#/paths/~1functions~1{functionId}~1executions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "executionList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List Executions"
+        "summary": "List Executions",
+        "tags": [
+          "functions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Trigger a function execution.",
         "id": "operation:post:/functions/{functionId}/executions",
         "kind": "operation",
         "method": "post",
         "name": "functionsCreateExecution",
+        "parameters": [
+          {
+            "description": "Function unique ID.",
+            "in": "path",
+            "name": "functionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/functions/{functionId}/executions",
         "pointer": "#/paths/~1functions~1{functionId}~1executions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "execution"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Create Execution"
+        "summary": "Create Execution",
+        "tags": [
+          "functions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a function execution log by its unique ID.",
         "id": "operation:get:/functions/{functionId}/executions/{executionId}",
         "kind": "operation",
         "method": "get",
         "name": "functionsGetExecution",
+        "parameters": [
+          {
+            "description": "Function unique ID.",
+            "in": "path",
+            "name": "functionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Execution unique ID.",
+            "in": "path",
+            "name": "executionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/functions/{functionId}/executions/{executionId}",
         "pointer": "#/paths/~1functions~1{functionId}~1executions~1{executionId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "execution"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Execution"
+        "summary": "Get Execution",
+        "tags": [
+          "functions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the current user location based on IP.",
         "id": "operation:get:/locale",
         "kind": "operation",
         "method": "get",
         "name": "localeGet",
         "path": "/locale",
         "pointer": "#/paths/~1locale/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "locale"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get User Locale"
+        "summary": "Get User Locale",
+        "tags": [
+          "locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all continents.",
         "id": "operation:get:/locale/continents",
         "kind": "operation",
         "method": "get",
         "name": "localeGetContinents",
         "path": "/locale/continents",
         "pointer": "#/paths/~1locale~1continents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "continentList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List Continents"
+        "summary": "List Continents",
+        "tags": [
+          "locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all countries.",
         "id": "operation:get:/locale/countries",
         "kind": "operation",
         "method": "get",
         "name": "localeGetCountries",
         "path": "/locale/countries",
         "pointer": "#/paths/~1locale~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "countryList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List Countries"
+        "summary": "List Countries",
+        "tags": [
+          "locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all countries that are currently members of the EU.",
         "id": "operation:get:/locale/countries/eu",
         "kind": "operation",
         "method": "get",
         "name": "localeGetCountriesEU",
         "path": "/locale/countries/eu",
         "pointer": "#/paths/~1locale~1countries~1eu/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "countryList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List EU Countries"
+        "summary": "List EU Countries",
+        "tags": [
+          "locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all countries phone codes.",
         "id": "operation:get:/locale/countries/phones",
         "kind": "operation",
         "method": "get",
         "name": "localeGetCountriesPhones",
         "path": "/locale/countries/phones",
         "pointer": "#/paths/~1locale~1countries~1phones/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "phoneList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List Countries Phone Codes"
+        "summary": "List Countries Phone Codes",
+        "tags": [
+          "locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all currencies, including currency symbol, name, plural, and decimal digits for all major and minor currencies.",
         "id": "operation:get:/locale/currencies",
         "kind": "operation",
         "method": "get",
         "name": "localeGetCurrencies",
         "path": "/locale/currencies",
         "pointer": "#/paths/~1locale~1currencies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "currencyList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List Currencies"
+        "summary": "List Currencies",
+        "tags": [
+          "locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List of all languages classified by ISO 639-1 including 2-letter code, name in English, and name in the respective language.",
         "id": "operation:get:/locale/languages",
         "kind": "operation",
         "method": "get",
         "name": "localeGetLanguages",
         "path": "/locale/languages",
         "pointer": "#/paths/~1locale~1languages/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "languageList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List Languages"
+        "summary": "List Languages",
+        "tags": [
+          "locale"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the user files.",
         "id": "operation:get:/storage/files",
         "kind": "operation",
         "method": "get",
         "name": "storageListFiles",
+        "parameters": [
+          {
+            "description": "Search term to filter your list results.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "Results limit value.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Results offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "ASC",
+            "description": "Order result by ASC or DESC order.",
+            "in": "query",
+            "name": "orderType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/storage/files",
         "pointer": "#/paths/~1storage~1files/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "fileList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List Files"
+        "summary": "List Files",
+        "tags": [
+          "storage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new file.",
         "id": "operation:post:/storage/files",
         "kind": "operation",
         "method": "post",
         "name": "storageCreateFile",
         "path": "/storage/files",
         "pointer": "#/paths/~1storage~1files/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "file"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Create File"
+        "summary": "Create File",
+        "tags": [
+          "storage"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/storage/files/{fileId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "storageDeleteFile",
-        "path": "/storage/files/{fileId}",
-        "pointer": "#/paths/~1storage~1files~1{fileId}/delete",
-        "security": [
-          {
-            "JWT": [],
-            "Project": []
-          }
-        ],
-        "summary": "Delete File"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a file by its unique ID.",
         "id": "operation:get:/storage/files/{fileId}",
         "kind": "operation",
         "method": "get",
         "name": "storageGetFile",
+        "parameters": [
+          {
+            "description": "File unique ID.",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/storage/files/{fileId}",
         "pointer": "#/paths/~1storage~1files~1{fileId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get File"
+        "summary": "Get File",
+        "tags": [
+          "storage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a file by its unique ID.",
         "id": "operation:put:/storage/files/{fileId}",
         "kind": "operation",
         "method": "put",
         "name": "storageUpdateFile",
+        "parameters": [
+          {
+            "description": "File unique ID.",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/storage/files/{fileId}",
         "pointer": "#/paths/~1storage~1files~1{fileId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Update File"
+        "summary": "Update File",
+        "tags": [
+          "storage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a file by its unique ID.",
+        "id": "operation:delete:/storage/files/{fileId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "storageDeleteFile",
+        "parameters": [
+          {
+            "description": "File unique ID.",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/storage/files/{fileId}",
+        "pointer": "#/paths/~1storage~1files~1{fileId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "JWT": [],
+            "Project": []
+          }
+        ],
+        "summary": "Delete File",
+        "tags": [
+          "storage"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get a file content by its unique ID.",
         "id": "operation:get:/storage/files/{fileId}/download",
         "kind": "operation",
         "method": "get",
         "name": "storageGetFileDownload",
+        "parameters": [
+          {
+            "description": "File unique ID.",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/storage/files/{fileId}/download",
         "pointer": "#/paths/~1storage~1files~1{fileId}~1download/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get File for Download"
+        "summary": "Get File for Download",
+        "tags": [
+          "storage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a file preview image.",
         "id": "operation:get:/storage/files/{fileId}/preview",
         "kind": "operation",
         "method": "get",
         "name": "storageGetFilePreview",
+        "parameters": [
+          {
+            "description": "File unique ID",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Resize preview image width, Pass an integer between 0 to 4000.",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Resize preview image height, Pass an integer between 0 to 4000.",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "center",
+            "description": "Image crop gravity.",
+            "in": "query",
+            "name": "gravity",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 100,
+            "description": "Preview image quality.",
+            "in": "query",
+            "name": "quality",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Preview image border in pixels.",
+            "in": "query",
+            "name": "borderWidth",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Preview image border color.",
+            "in": "query",
+            "name": "borderColor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Preview image border radius in pixels.",
+            "in": "query",
+            "name": "borderRadius",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 1,
+            "description": "Preview image opacity.",
+            "in": "query",
+            "name": "opacity",
+            "required": false,
+            "type": "number:float"
+          },
+          {
+            "default": 0,
+            "description": "Preview image rotation in degrees.",
+            "in": "query",
+            "name": "rotation",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Preview image background color.",
+            "in": "query",
+            "name": "background",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Output format type (jpeg, jpg, png, gif and webp).",
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/storage/files/{fileId}/preview",
         "pointer": "#/paths/~1storage~1files~1{fileId}~1preview/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get File Preview"
+        "summary": "Get File Preview",
+        "tags": [
+          "storage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a file content by its unique ID.",
         "id": "operation:get:/storage/files/{fileId}/view",
         "kind": "operation",
         "method": "get",
         "name": "storageGetFileView",
+        "parameters": [
+          {
+            "description": "File unique ID.",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/storage/files/{fileId}/view",
         "pointer": "#/paths/~1storage~1files~1{fileId}~1view/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get File for View"
+        "summary": "Get File for View",
+        "tags": [
+          "storage"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the current user teams.",
         "id": "operation:get:/teams",
         "kind": "operation",
         "method": "get",
         "name": "teamsList",
+        "parameters": [
+          {
+            "description": "Search term to filter your list results.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "Results limit value.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Results offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "ASC",
+            "description": "Order result by ASC or DESC order.",
+            "in": "query",
+            "name": "orderType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/teams",
         "pointer": "#/paths/~1teams/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "teamList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "List Teams"
+        "summary": "List Teams",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a new team.",
         "id": "operation:post:/teams",
         "kind": "operation",
         "method": "post",
         "name": "teamsCreate",
         "path": "/teams",
         "pointer": "#/paths/~1teams/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "team"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Create Team"
+        "summary": "Create Team",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/teams/{teamId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "teamsDelete",
-        "path": "/teams/{teamId}",
-        "pointer": "#/paths/~1teams~1{teamId}/delete",
-        "security": [
-          {
-            "JWT": [],
-            "Project": []
-          }
-        ],
-        "summary": "Delete Team"
-      },
-      {
-        "deprecated": false,
+        "description": "Get a team by its unique ID.",
         "id": "operation:get:/teams/{teamId}",
         "kind": "operation",
         "method": "get",
         "name": "teamsGet",
+        "parameters": [
+          {
+            "description": "Team unique ID.",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}",
         "pointer": "#/paths/~1teams~1{teamId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "team"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Team"
+        "summary": "Get Team",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a team by its unique ID.",
         "id": "operation:put:/teams/{teamId}",
         "kind": "operation",
         "method": "put",
         "name": "teamsUpdate",
+        "parameters": [
+          {
+            "description": "Team unique ID.",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}",
         "pointer": "#/paths/~1teams~1{teamId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "team"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Update Team"
+        "summary": "Update Team",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a team by its unique ID.",
+        "id": "operation:delete:/teams/{teamId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "teamsDelete",
+        "parameters": [
+          {
+            "description": "Team unique ID.",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/teams/{teamId}",
+        "pointer": "#/paths/~1teams~1{teamId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "JWT": [],
+            "Project": []
+          }
+        ],
+        "summary": "Delete Team",
+        "tags": [
+          "teams"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Get a team members by the team unique ID.",
         "id": "operation:get:/teams/{teamId}/memberships",
         "kind": "operation",
         "method": "get",
         "name": "teamsGetMemberships",
+        "parameters": [
+          {
+            "description": "Team unique ID.",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Search term to filter your list results.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "Results limit value.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": 0,
+            "description": "Results offset.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "default": "ASC",
+            "description": "Order result by ASC or DESC order.",
+            "in": "query",
+            "name": "orderType",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}/memberships",
         "pointer": "#/paths/~1teams~1{teamId}~1memberships/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "membershipList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Get Team Memberships"
+        "summary": "Get Team Memberships",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to invite a new member to join your team.",
         "id": "operation:post:/teams/{teamId}/memberships",
         "kind": "operation",
         "method": "post",
         "name": "teamsCreateMembership",
+        "parameters": [
+          {
+            "description": "Team unique ID.",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}/memberships",
         "pointer": "#/paths/~1teams~1{teamId}~1memberships/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "membership"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Create Team Membership"
+        "summary": "Create Team Membership",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows a user to leave a team or for a team owner to delete the membership of any other team member.",
         "id": "operation:delete:/teams/{teamId}/memberships/{membershipId}",
         "kind": "operation",
         "method": "delete",
         "name": "teamsDeleteMembership",
+        "parameters": [
+          {
+            "description": "Team unique ID.",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Membership ID.",
+            "in": "path",
+            "name": "membershipId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}/memberships/{membershipId}",
         "pointer": "#/paths/~1teams~1{teamId}~1memberships~1{membershipId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Delete Team Membership"
+        "summary": "Delete Team Membership",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
@@ -1260,206 +3058,343 @@
         "kind": "operation",
         "method": "patch",
         "name": "teamsUpdateMembershipRoles",
+        "parameters": [
+          {
+            "description": "Team unique ID.",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Membership ID.",
+            "in": "path",
+            "name": "membershipId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}/memberships/{membershipId}",
         "pointer": "#/paths/~1teams~1{teamId}~1memberships~1{membershipId}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "membership"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Update Membership Roles"
+        "summary": "Update Membership Roles",
+        "tags": [
+          "teams"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to allow a user to accept an invitation to join a team after being redirected back to your app from the invitation email recieved by the user.",
         "id": "operation:patch:/teams/{teamId}/memberships/{membershipId}/status",
         "kind": "operation",
         "method": "patch",
         "name": "teamsUpdateMembershipStatus",
+        "parameters": [
+          {
+            "description": "Team unique ID.",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Membership ID.",
+            "in": "path",
+            "name": "membershipId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/teams/{teamId}/memberships/{membershipId}/status",
         "pointer": "#/paths/~1teams~1{teamId}~1memberships~1{membershipId}~1status/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "membership"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": [],
             "Project": []
           }
         ],
-        "summary": "Update Team Membership Status"
+        "summary": "Update Team Membership Status",
+        "tags": [
+          "teams"
+        ]
       },
       {
+        "description": "Collection",
         "id": "schema:collection",
         "kind": "schema",
-        "name": "collection"
+        "name": "collection",
+        "type": "object"
       },
       {
+        "description": "Continent",
         "id": "schema:continent",
         "kind": "schema",
-        "name": "continent"
+        "name": "continent",
+        "type": "object"
       },
       {
+        "description": "Continents List",
         "id": "schema:continentList",
         "kind": "schema",
-        "name": "continentList"
+        "name": "continentList",
+        "type": "object"
       },
       {
+        "description": "Country",
         "id": "schema:country",
         "kind": "schema",
-        "name": "country"
+        "name": "country",
+        "type": "object"
       },
       {
+        "description": "Countries List",
         "id": "schema:countryList",
         "kind": "schema",
-        "name": "countryList"
+        "name": "countryList",
+        "type": "object"
       },
       {
+        "description": "Currency",
         "id": "schema:currency",
         "kind": "schema",
-        "name": "currency"
+        "name": "currency",
+        "type": "object"
       },
       {
+        "description": "Currencies List",
         "id": "schema:currencyList",
         "kind": "schema",
-        "name": "currencyList"
+        "name": "currencyList",
+        "type": "object"
       },
       {
+        "description": "Document",
         "id": "schema:document",
         "kind": "schema",
-        "name": "document"
+        "name": "document",
+        "type": "object"
       },
       {
+        "description": "Documents List",
         "id": "schema:documentList",
         "kind": "schema",
-        "name": "documentList"
+        "name": "documentList",
+        "type": "object"
       },
       {
+        "description": "Error",
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
+        "description": "Execution",
         "id": "schema:execution",
         "kind": "schema",
-        "name": "execution"
+        "name": "execution",
+        "type": "object"
       },
       {
+        "description": "Executions List",
         "id": "schema:executionList",
         "kind": "schema",
-        "name": "executionList"
+        "name": "executionList",
+        "type": "object"
       },
       {
+        "description": "File",
         "id": "schema:file",
         "kind": "schema",
-        "name": "file"
+        "name": "file",
+        "type": "object"
       },
       {
+        "description": "Files List",
         "id": "schema:fileList",
         "kind": "schema",
-        "name": "fileList"
+        "name": "fileList",
+        "type": "object"
       },
       {
+        "description": "Function",
         "id": "schema:function",
         "kind": "schema",
-        "name": "function"
+        "name": "function",
+        "type": "object"
       },
       {
+        "description": "JWT",
         "id": "schema:jwt",
         "kind": "schema",
-        "name": "jwt"
+        "name": "jwt",
+        "type": "object"
       },
       {
+        "description": "Language",
         "id": "schema:language",
         "kind": "schema",
-        "name": "language"
+        "name": "language",
+        "type": "object"
       },
       {
+        "description": "Languages List",
         "id": "schema:languageList",
         "kind": "schema",
-        "name": "languageList"
+        "name": "languageList",
+        "type": "object"
       },
       {
+        "description": "Locale",
         "id": "schema:locale",
         "kind": "schema",
-        "name": "locale"
+        "name": "locale",
+        "type": "object"
       },
       {
+        "description": "Log",
         "id": "schema:log",
         "kind": "schema",
-        "name": "log"
+        "name": "log",
+        "type": "object"
       },
       {
+        "description": "Logs List",
         "id": "schema:logList",
         "kind": "schema",
-        "name": "logList"
+        "name": "logList",
+        "type": "object"
       },
       {
+        "description": "Membership",
         "id": "schema:membership",
         "kind": "schema",
-        "name": "membership"
+        "name": "membership",
+        "type": "object"
       },
       {
+        "description": "Memberships List",
         "id": "schema:membershipList",
         "kind": "schema",
-        "name": "membershipList"
+        "name": "membershipList",
+        "type": "object"
       },
       {
+        "description": "Permissions",
         "id": "schema:permissions",
         "kind": "schema",
-        "name": "permissions"
+        "name": "permissions",
+        "type": "object"
       },
       {
+        "description": "Phone",
         "id": "schema:phone",
         "kind": "schema",
-        "name": "phone"
+        "name": "phone",
+        "type": "object"
       },
       {
+        "description": "Phones List",
         "id": "schema:phoneList",
         "kind": "schema",
-        "name": "phoneList"
+        "name": "phoneList",
+        "type": "object"
       },
       {
+        "description": "Preferences",
         "id": "schema:preferences",
         "kind": "schema",
-        "name": "preferences"
+        "name": "preferences",
+        "type": "object"
       },
       {
+        "description": "Rule",
         "id": "schema:rule",
         "kind": "schema",
-        "name": "rule"
+        "name": "rule",
+        "type": "object"
       },
       {
+        "description": "Session",
         "id": "schema:session",
         "kind": "schema",
-        "name": "session"
+        "name": "session",
+        "type": "object"
       },
       {
+        "description": "Sessions List",
         "id": "schema:sessionList",
         "kind": "schema",
-        "name": "sessionList"
+        "name": "sessionList",
+        "type": "object"
       },
       {
+        "description": "Tag",
         "id": "schema:tag",
         "kind": "schema",
-        "name": "tag"
+        "name": "tag",
+        "type": "object"
       },
       {
+        "description": "Team",
         "id": "schema:team",
         "kind": "schema",
-        "name": "team"
+        "name": "team",
+        "type": "object"
       },
       {
+        "description": "Teams List",
         "id": "schema:teamList",
         "kind": "schema",
-        "name": "teamList"
+        "name": "teamList",
+        "type": "object"
       },
       {
+        "description": "Token",
         "id": "schema:token",
         "kind": "schema",
-        "name": "token"
+        "name": "token",
+        "type": "object"
       },
       {
+        "description": "User",
         "id": "schema:user",
         "kind": "schema",
-        "name": "user"
+        "name": "user",
+        "type": "object"
       }
     ]
   },

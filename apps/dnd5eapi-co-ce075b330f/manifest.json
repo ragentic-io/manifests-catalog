@@ -238,6 +238,696 @@
         "from": "dnd5eapi-co-ce075b330f",
         "kind": "EXPOSES",
         "to": "operation:get:/api/{endpoint}"
+      },
+      {
+        "from": "operation:get:/api/ability-scores/{index}",
+        "kind": "RETURNS",
+        "to": "schema:AbilityScore"
+      },
+      {
+        "from": "operation:get:/api/alignments/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Alignment"
+      },
+      {
+        "from": "operation:get:/api/backgrounds/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Background"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Class"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/features",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/levels",
+        "kind": "RETURNS",
+        "to": "schema:ClassLevel"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/levels/{class_level}",
+        "kind": "RETURNS",
+        "to": "schema:ClassLevel"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/levels/{class_level}/features",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/levels/{spell_level}/spells",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/multi-classing",
+        "kind": "RETURNS",
+        "to": "schema:Multiclassing"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/proficiencies",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/spellcasting",
+        "kind": "RETURNS",
+        "to": "schema:Spellcasting"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/spells",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/classes/{index}/subclasses",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/conditions/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Condition"
+      },
+      {
+        "from": "operation:get:/api/damage-types/{index}",
+        "kind": "RETURNS",
+        "to": "schema:DamageType"
+      },
+      {
+        "from": "operation:get:/api/equipment-categories/{index}",
+        "kind": "RETURNS",
+        "to": "schema:EquipmentCategory"
+      },
+      {
+        "from": "operation:get:/api/equipment/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Equipment"
+      },
+      {
+        "from": "operation:get:/api/feats/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Feat"
+      },
+      {
+        "from": "operation:get:/api/features/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Feature"
+      },
+      {
+        "from": "operation:get:/api/languages/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Language"
+      },
+      {
+        "from": "operation:get:/api/magic-items/{index}",
+        "kind": "RETURNS",
+        "to": "schema:MagicItem"
+      },
+      {
+        "from": "operation:get:/api/magic-schools/{index}",
+        "kind": "RETURNS",
+        "to": "schema:MagicSchool"
+      },
+      {
+        "from": "operation:get:/api/monsters",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/monsters/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Monster"
+      },
+      {
+        "from": "operation:get:/api/proficiencies/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Proficiency"
+      },
+      {
+        "from": "operation:get:/api/races/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Race"
+      },
+      {
+        "from": "operation:get:/api/races/{index}/proficiencies",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/races/{index}/subraces",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/races/{index}/traits",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/rule-sections/{index}",
+        "kind": "RETURNS",
+        "to": "schema:RuleSection"
+      },
+      {
+        "from": "operation:get:/api/rules/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "operation:get:/api/skills/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Skill"
+      },
+      {
+        "from": "operation:get:/api/spells",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/spells/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Spell"
+      },
+      {
+        "from": "operation:get:/api/subclasses/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Subclass"
+      },
+      {
+        "from": "operation:get:/api/subclasses/{index}/features",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/subclasses/{index}/levels",
+        "kind": "RETURNS",
+        "to": "schema:SubclassLevelResource"
+      },
+      {
+        "from": "operation:get:/api/subclasses/{index}/levels/{subclass_level}",
+        "kind": "RETURNS",
+        "to": "schema:SubclassLevel"
+      },
+      {
+        "from": "operation:get:/api/subclasses/{index}/levels/{subclass_level}/features",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/subraces/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Subrace"
+      },
+      {
+        "from": "operation:get:/api/subraces/{index}/proficiencies",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/subraces/{index}/traits",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "operation:get:/api/traits/{index}",
+        "kind": "RETURNS",
+        "to": "schema:Trait"
+      },
+      {
+        "from": "operation:get:/api/weapon-properties/{index}",
+        "kind": "RETURNS",
+        "to": "schema:WeaponProperty"
+      },
+      {
+        "from": "operation:get:/api/{endpoint}",
+        "kind": "RETURNS",
+        "to": "schema:APIReferenceList"
+      },
+      {
+        "from": "schema:APIReferenceList",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:AbilityBonus",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:AbilityScore",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:AbilityScore",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Alignment",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Armor",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Armor",
+        "kind": "REFERENCES",
+        "to": "schema:Cost"
+      },
+      {
+        "from": "schema:Armor",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Background",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Background",
+        "kind": "REFERENCES",
+        "to": "schema:Choice"
+      },
+      {
+        "from": "schema:Choice",
+        "kind": "REFERENCES",
+        "to": "schema:OptionSet"
+      },
+      {
+        "from": "schema:Class",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Class",
+        "kind": "REFERENCES",
+        "to": "schema:Choice"
+      },
+      {
+        "from": "schema:Class",
+        "kind": "REFERENCES",
+        "to": "schema:Multiclassing"
+      },
+      {
+        "from": "schema:Class",
+        "kind": "REFERENCES",
+        "to": "schema:Spellcasting"
+      },
+      {
+        "from": "schema:ClassLevel",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Condition",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Condition",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:DC",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Damage",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:DamageAtCharacterLevel",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:DamageAtSlotLevel",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:DamageType",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:DamageType",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Equipment",
+        "kind": "REFERENCES",
+        "to": "schema:Armor"
+      },
+      {
+        "from": "schema:Equipment",
+        "kind": "REFERENCES",
+        "to": "schema:EquipmentPack"
+      },
+      {
+        "from": "schema:Equipment",
+        "kind": "REFERENCES",
+        "to": "schema:Gear"
+      },
+      {
+        "from": "schema:Equipment",
+        "kind": "REFERENCES",
+        "to": "schema:Weapon"
+      },
+      {
+        "from": "schema:EquipmentCategory",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:EquipmentPack",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:EquipmentPack",
+        "kind": "REFERENCES",
+        "to": "schema:Cost"
+      },
+      {
+        "from": "schema:EquipmentPack",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Feat",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Feat",
+        "kind": "REFERENCES",
+        "to": "schema:Prerequisite"
+      },
+      {
+        "from": "schema:Feat",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Feature",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Feature",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Gear",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Gear",
+        "kind": "REFERENCES",
+        "to": "schema:Cost"
+      },
+      {
+        "from": "schema:Gear",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Language",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:MagicItem",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:MagicItem",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:MagicSchool",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Monster",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Monster",
+        "kind": "REFERENCES",
+        "to": "schema:Choice"
+      },
+      {
+        "from": "schema:Monster",
+        "kind": "REFERENCES",
+        "to": "schema:DC"
+      },
+      {
+        "from": "schema:Monster",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Multiclassing",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Multiclassing",
+        "kind": "REFERENCES",
+        "to": "schema:Choice"
+      },
+      {
+        "from": "schema:Multiclassing",
+        "kind": "REFERENCES",
+        "to": "schema:Prerequisite"
+      },
+      {
+        "from": "schema:Option",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Option",
+        "kind": "REFERENCES",
+        "to": "schema:Choice"
+      },
+      {
+        "from": "schema:Option",
+        "kind": "REFERENCES",
+        "to": "schema:DC"
+      },
+      {
+        "from": "schema:Option",
+        "kind": "REFERENCES",
+        "to": "schema:Damage"
+      },
+      {
+        "from": "schema:OptionSet",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:OptionSet",
+        "kind": "REFERENCES",
+        "to": "schema:Option"
+      },
+      {
+        "from": "schema:Prerequisite",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Proficiency",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Race",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Race",
+        "kind": "REFERENCES",
+        "to": "schema:AbilityBonus"
+      },
+      {
+        "from": "schema:Race",
+        "kind": "REFERENCES",
+        "to": "schema:Choice"
+      },
+      {
+        "from": "schema:Rule",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:RuleSection",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Skill",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Skill",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Spell",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Spell",
+        "kind": "REFERENCES",
+        "to": "schema:AreaOfEffect"
+      },
+      {
+        "from": "schema:Spell",
+        "kind": "REFERENCES",
+        "to": "schema:DamageAtCharacterLevel"
+      },
+      {
+        "from": "schema:Spell",
+        "kind": "REFERENCES",
+        "to": "schema:DamageAtSlotLevel"
+      },
+      {
+        "from": "schema:Spell",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:SpellPrerequisite",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Spellcasting",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Subclass",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Subclass",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Subclass",
+        "kind": "REFERENCES",
+        "to": "schema:SpellPrerequisite"
+      },
+      {
+        "from": "schema:SubclassLevel",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:SubclassLevelResource",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Subrace",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Subrace",
+        "kind": "REFERENCES",
+        "to": "schema:AbilityBonus"
+      },
+      {
+        "from": "schema:Subrace",
+        "kind": "REFERENCES",
+        "to": "schema:Choice"
+      },
+      {
+        "from": "schema:Trait",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Trait",
+        "kind": "REFERENCES",
+        "to": "schema:AreaOfEffect"
+      },
+      {
+        "from": "schema:Trait",
+        "kind": "REFERENCES",
+        "to": "schema:Choice"
+      },
+      {
+        "from": "schema:Trait",
+        "kind": "REFERENCES",
+        "to": "schema:DC"
+      },
+      {
+        "from": "schema:Trait",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:Weapon",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:Weapon",
+        "kind": "REFERENCES",
+        "to": "schema:Cost"
+      },
+      {
+        "from": "schema:Weapon",
+        "kind": "REFERENCES",
+        "to": "schema:Damage"
+      },
+      {
+        "from": "schema:Weapon",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
+      },
+      {
+        "from": "schema:WeaponProperty",
+        "kind": "REFERENCES",
+        "to": "schema:APIReference"
+      },
+      {
+        "from": "schema:WeaponProperty",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceDescription"
       }
     ],
     "nodes": [
@@ -247,58 +937,185 @@
       },
       {
         "deprecated": false,
+        "description": "Making a request to the API's base URL returns an object containing available endpoints.",
         "id": "operation:get:/api",
         "kind": "operation",
         "method": "get",
         "name": "get /api",
         "path": "/api",
         "pointer": "#/paths/~1api/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all resource URLs."
+        "summary": "Get all resource URLs.",
+        "tags": [
+          "Common"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Ability Score Represents one of the six abilities that describes a creature's physical and mental characteristics.",
         "id": "operation:get:/api/ability-scores/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/ability-scores/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the ability score to get.",
+            "enum": [
+              "cha",
+              "con",
+              "dex",
+              "int",
+              "str",
+              "wis"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/ability-scores/{index}",
         "pointer": "#/paths/~1api~1ability-scores~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AbilityScore"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an ability score by index."
+        "summary": "Get an ability score by index.",
+        "tags": [
+          "Character Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Alignment A typical creature in the game world has an alignment, which broadly describes its moral and personal attitudes.",
         "id": "operation:get:/api/alignments/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/alignments/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the alignment to get.",
+            "enum": [
+              "chaotic-neutral",
+              "chaotic-evil",
+              "chaotic-good",
+              "lawful-neutral",
+              "lawful-evil",
+              "lawful-good",
+              "neutral",
+              "neutral-evil",
+              "neutral-good"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/alignments/{index}",
         "pointer": "#/paths/~1api~1alignments~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Alignment"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an alignment by index."
+        "summary": "Get an alignment by index.",
+        "tags": [
+          "Character Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Background Every story has a beginning.",
         "id": "operation:get:/api/backgrounds/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/backgrounds/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the background to get.",
+            "enum": [
+              "acolyte"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/backgrounds/{index}",
         "pointer": "#/paths/~1api~1backgrounds~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Background"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a background by index."
+        "summary": "Get a background by index.",
+        "tags": [
+          "Character Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Class A character class is a fundamental part of the identity and nature of characters in the Dungeons & Dragons role-playing game.",
         "id": "operation:get:/api/classes/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/classes/{index}",
         "pointer": "#/paths/~1api~1classes~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Class"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a class by index."
+        "summary": "Get a class by index.",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -306,10 +1123,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/features",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/classes/{index}/features",
         "pointer": "#/paths/~1api~1classes~1{index}~1features/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get features available for a class."
+        "summary": "Get features available for a class.",
+        "tags": [
+          "Class Resource Lists"
+        ]
       },
       {
         "deprecated": false,
@@ -317,10 +1167,50 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/levels",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Adds subclasses for class to the response",
+            "in": "query",
+            "name": "subclass",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/classes/{index}/levels",
         "pointer": "#/paths/~1api~1classes~1{index}~1levels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassLevel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all level resources for a class."
+        "summary": "Get all level resources for a class.",
+        "tags": [
+          "Class Levels"
+        ]
       },
       {
         "deprecated": false,
@@ -328,10 +1218,49 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/levels/{class_level}",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "class_level",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/api/classes/{index}/levels/{class_level}",
         "pointer": "#/paths/~1api~1classes~1{index}~1levels~1{class_level}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassLevel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get level resource for a class and level."
+        "summary": "Get level resource for a class and level.",
+        "tags": [
+          "Class Levels"
+        ]
       },
       {
         "deprecated": false,
@@ -339,10 +1268,49 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/levels/{class_level}/features",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "class_level",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/api/classes/{index}/levels/{class_level}/features",
         "pointer": "#/paths/~1api~1classes~1{index}~1levels~1{class_level}~1features/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get features available to a class at the requested level."
+        "summary": "Get features available to a class at the requested level.",
+        "tags": [
+          "Class Levels"
+        ]
       },
       {
         "deprecated": false,
@@ -350,10 +1318,49 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/levels/{spell_level}/spells",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "spell_level",
+            "required": true,
+            "type": "number"
+          }
+        ],
         "path": "/api/classes/{index}/levels/{spell_level}/spells",
         "pointer": "#/paths/~1api~1classes~1{index}~1levels~1{spell_level}~1spells/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get spells of the requested level available to the class."
+        "summary": "Get spells of the requested level available to the class.",
+        "tags": [
+          "Class Levels"
+        ]
       },
       {
         "deprecated": false,
@@ -361,10 +1368,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/multi-classing",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/classes/{index}/multi-classing",
         "pointer": "#/paths/~1api~1classes~1{index}~1multi-classing/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Multiclassing"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get multiclassing resource for a class."
+        "summary": "Get multiclassing resource for a class.",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -372,10 +1412,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/proficiencies",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/classes/{index}/proficiencies",
         "pointer": "#/paths/~1api~1classes~1{index}~1proficiencies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get proficiencies available for a class."
+        "summary": "Get proficiencies available for a class.",
+        "tags": [
+          "Class Resource Lists"
+        ]
       },
       {
         "deprecated": false,
@@ -383,10 +1456,47 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/spellcasting",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/classes/{index}/spellcasting",
         "pointer": "#/paths/~1api~1classes~1{index}~1spellcasting/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Spellcasting"
+          },
+          {
+            "status": "404",
+            "type": "error-response"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get spellcasting info for a class."
+        "summary": "Get spellcasting info for a class.",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -394,10 +1504,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/spells",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/classes/{index}/spells",
         "pointer": "#/paths/~1api~1classes~1{index}~1spells/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get spells available for a class."
+        "summary": "Get spells available for a class.",
+        "tags": [
+          "Class Resource Lists"
+        ]
       },
       {
         "deprecated": false,
@@ -405,109 +1548,385 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/classes/{index}/subclasses",
+        "parameters": [
+          {
+            "description": "The `index` of the class to get.",
+            "enum": [
+              "barbarian",
+              "bard",
+              "cleric",
+              "druid",
+              "fighter",
+              "monk",
+              "paladin",
+              "ranger",
+              "rogue",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/classes/{index}/subclasses",
         "pointer": "#/paths/~1api~1classes~1{index}~1subclasses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get subclasses available for a class."
+        "summary": "Get subclasses available for a class.",
+        "tags": [
+          "Class Resource Lists"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Condition A condition alters a creature’s capabilities in a variety of ways and can arise as a result of a spell, a class feature, a monster’s attack, or oth…",
         "id": "operation:get:/api/conditions/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/conditions/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the condition to get.",
+            "enum": [
+              "blinded",
+              "charmed",
+              "deafened",
+              "exhaustion",
+              "frightened",
+              "grappled",
+              "incapacitated",
+              "invisible",
+              "paralyzed",
+              "petrified",
+              "poisoned",
+              "prone",
+              "restrained",
+              "stunned",
+              "unconscious"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/conditions/{index}",
         "pointer": "#/paths/~1api~1conditions~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Condition"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a condition by index."
+        "summary": "Get a condition by index.",
+        "tags": [
+          "Game Mechanics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Damage type Different attacks, damaging spells, and other harmful effects deal different types of damage.",
         "id": "operation:get:/api/damage-types/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/damage-types/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the damage type to get.",
+            "enum": [
+              "acid",
+              "bludgeoning",
+              "cold",
+              "fire",
+              "force",
+              "lightning",
+              "necrotic",
+              "piercing",
+              "poison",
+              "psychic",
+              "radiant",
+              "slashing",
+              "thunder"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/damage-types/{index}",
         "pointer": "#/paths/~1api~1damage-types~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DamageType"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a damage type by index."
+        "summary": "Get a damage type by index.",
+        "tags": [
+          "Game Mechanics"
+        ]
       },
       {
         "deprecated": false,
+        "description": "These are the categories that various equipment fall under.",
         "id": "operation:get:/api/equipment-categories/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/equipment-categories/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the equipment category score to get.",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/equipment-categories/{index}",
         "pointer": "#/paths/~1api~1equipment-categories~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EquipmentCategory"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an equipment category by index."
+        "summary": "Get an equipment category by index.",
+        "tags": [
+          "Equipment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Equipment Opportunities abound to find treasure, equipment, weapons, armor, and more in the dungeons you explore.",
         "id": "operation:get:/api/equipment/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/equipment/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the equipment to get.",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/equipment/{index}",
         "pointer": "#/paths/~1api~1equipment~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Equipment"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get an equipment item by index."
+        "summary": "Get an equipment item by index.",
+        "tags": [
+          "Equipment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Feat A feat is a boon a character can receive at level up instead of an ability score increase.",
         "id": "operation:get:/api/feats/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/feats/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the feat to get.",
+            "enum": [
+              "grappler"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/feats/{index}",
         "pointer": "#/paths/~1api~1feats~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feat"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a feat by index."
+        "summary": "Get a feat by index.",
+        "tags": [
+          "Feats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Feature When you gain a new level in a class, you get its features for that level.",
         "id": "operation:get:/api/features/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/features/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the feature to get.",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/features/{index}",
         "pointer": "#/paths/~1api~1features~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Feature"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a feature by index."
+        "summary": "Get a feature by index.",
+        "tags": [
+          "Features"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Language Your race indicates the languages your character can speak by default, and your background might give you access to one or more additional languages…",
         "id": "operation:get:/api/languages/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/languages/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the language to get.",
+            "enum": [
+              "abyssal",
+              "celestial",
+              "common",
+              "deep-speech",
+              "draconic",
+              "dwarvish",
+              "elvish",
+              "giant",
+              "gnomish",
+              "goblin",
+              "halfling",
+              "infernal",
+              "orc",
+              "primordial",
+              "sylvan",
+              "undercommon"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/languages/{index}",
         "pointer": "#/paths/~1api~1languages~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Language"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a language by index."
+        "summary": "Get a language by index.",
+        "tags": [
+          "Character Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "These are the various magic items you can find in the game.",
         "id": "operation:get:/api/magic-items/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/magic-items/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the magic item to get.",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/magic-items/{index}",
         "pointer": "#/paths/~1api~1magic-items~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MagicItem"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a magic item by index."
+        "summary": "Get a magic item by index.",
+        "tags": [
+          "Equipment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Magic School Academies of magic group spells into eight categories called schools of magic.",
         "id": "operation:get:/api/magic-schools/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/magic-schools/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the magic school to get.",
+            "enum": [
+              "abjuration",
+              "conjuration",
+              "divination",
+              "enchantment",
+              "evocation",
+              "illusion",
+              "necromancy",
+              "transmutation"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/magic-schools/{index}",
         "pointer": "#/paths/~1api~1magic-schools~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MagicSchool"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a magic school by index."
+        "summary": "Get a magic school by index.",
+        "tags": [
+          "Game Mechanics"
+        ]
       },
       {
         "deprecated": false,
@@ -515,10 +1934,29 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/monsters",
+        "parameters": [
+          {
+            "description": "The challenge rating or ratings to filter on.",
+            "in": "query",
+            "name": "challenge_rating",
+            "required": false,
+            "type": "number[]"
+          }
+        ],
         "path": "/api/monsters",
         "pointer": "#/paths/~1api~1monsters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get list of monsters with optional filtering"
+        "summary": "Get list of monsters with optional filtering",
+        "tags": [
+          "Monsters"
+        ]
       },
       {
         "deprecated": false,
@@ -526,32 +1964,102 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/monsters/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the `Monster` to get.",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/monsters/{index}",
         "pointer": "#/paths/~1api~1monsters~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Monster"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get monster by index."
+        "summary": "Get monster by index.",
+        "tags": [
+          "Monsters"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Proficiency By virtue of race, class, and background a character is proficient at using certain skills, weapons, and equipment.",
         "id": "operation:get:/api/proficiencies/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/proficiencies/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the proficiency to get.",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/proficiencies/{index}",
         "pointer": "#/paths/~1api~1proficiencies~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Proficiency"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a proficiency by index."
+        "summary": "Get a proficiency by index.",
+        "tags": [
+          "Character Data"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Each race grants your character ability and skill bonuses as well as racial traits.",
         "id": "operation:get:/api/races/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/races/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the race to get.",
+            "enum": [
+              "dragonborn",
+              "dwarf",
+              "elf",
+              "gnome",
+              "half-elf",
+              "half-orc",
+              "halfling",
+              "human",
+              "tiefling"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/races/{index}",
         "pointer": "#/paths/~1api~1races~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Race"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a race by index."
+        "summary": "Get a race by index.",
+        "tags": [
+          "Races"
+        ]
       },
       {
         "deprecated": false,
@@ -559,10 +2067,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/races/{index}/proficiencies",
+        "parameters": [
+          {
+            "description": "The `index` of the race to get.",
+            "enum": [
+              "dragonborn",
+              "dwarf",
+              "elf",
+              "gnome",
+              "half-elf",
+              "half-orc",
+              "halfling",
+              "human",
+              "tiefling"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/races/{index}/proficiencies",
         "pointer": "#/paths/~1api~1races~1{index}~1proficiencies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get proficiencies available for a race."
+        "summary": "Get proficiencies available for a race.",
+        "tags": [
+          "Races"
+        ]
       },
       {
         "deprecated": false,
@@ -570,10 +2108,40 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/races/{index}/subraces",
+        "parameters": [
+          {
+            "description": "The `index` of the race to get.",
+            "enum": [
+              "dragonborn",
+              "dwarf",
+              "elf",
+              "gnome",
+              "half-elf",
+              "half-orc",
+              "halfling",
+              "human",
+              "tiefling"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/races/{index}/subraces",
         "pointer": "#/paths/~1api~1races~1{index}~1subraces/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get subraces available for a race."
+        "summary": "Get subraces available for a race.",
+        "tags": [
+          "Races"
+        ]
       },
       {
         "deprecated": false,
@@ -581,43 +2149,188 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/races/{index}/traits",
+        "parameters": [
+          {
+            "description": "The `index` of the race to get.",
+            "enum": [
+              "dragonborn",
+              "dwarf",
+              "elf",
+              "gnome",
+              "half-elf",
+              "half-orc",
+              "halfling",
+              "human",
+              "tiefling"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/races/{index}/traits",
         "pointer": "#/paths/~1api~1races~1{index}~1traits/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get traits available for a race."
+        "summary": "Get traits available for a race.",
+        "tags": [
+          "Races"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Rule sections represent a sub-heading and text that can be found underneath a rule heading in the SRD.",
         "id": "operation:get:/api/rule-sections/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/rule-sections/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the rule section to get.",
+            "enum": [
+              "ability-checks",
+              "ability-scores-and-modifiers",
+              "actions-in-combat",
+              "advantage-and-disadvantage",
+              "between-adventures",
+              "casting-a-spell",
+              "cover",
+              "damage-and-healing",
+              "diseases",
+              "fantasy-historical-pantheons",
+              "madness",
+              "making-an-attack",
+              "mounted-combat",
+              "movement",
+              "movement-and-position",
+              "objects",
+              "poisons",
+              "proficiency-bonus",
+              "resting",
+              "saving-throws",
+              "sentient-magic-items",
+              "standard-exchange-rates",
+              "the-environment",
+              "the-order-of-combat",
+              "the-planes-of-existence"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/rule-sections/{index}",
         "pointer": "#/paths/~1api~1rule-sections~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RuleSection"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a rule section by index."
+        "summary": "Get a rule section by index.",
+        "tags": [
+          "Rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Rule Rules are pages in the SRD that document the mechanics of Dungeons and Dragons.",
         "id": "operation:get:/api/rules/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/rules/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the rule to get.",
+            "enum": [
+              "adventuring",
+              "appendix",
+              "combat",
+              "equipment",
+              "spellcasting",
+              "using-ability-scores"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/rules/{index}",
         "pointer": "#/paths/~1api~1rules~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rule"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a rule by index."
+        "summary": "Get a rule by index.",
+        "tags": [
+          "Rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "# Skill Each ability covers a broad range of capabilities, including skills that a character or a monster can be proficient in.",
         "id": "operation:get:/api/skills/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/skills/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the skill to get.",
+            "enum": [
+              "acrobatics",
+              "animal-handling",
+              "arcana",
+              "athletics",
+              "deception",
+              "history",
+              "insight",
+              "intimidation",
+              "investigation",
+              "medicine",
+              "nature",
+              "perception",
+              "performance",
+              "persuasion",
+              "religion",
+              "sleight-of-hand",
+              "stealth",
+              "survival"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/skills/{index}",
         "pointer": "#/paths/~1api~1skills~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Skill"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a skill by index."
+        "summary": "Get a skill by index.",
+        "tags": [
+          "Character Data"
+        ]
       },
       {
         "deprecated": false,
@@ -625,10 +2338,36 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/spells",
+        "parameters": [
+          {
+            "description": "The level or levels to filter on.",
+            "in": "query",
+            "name": "level",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "The magic school or schools to filter on.",
+            "in": "query",
+            "name": "school",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/spells",
         "pointer": "#/paths/~1api~1spells/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get list of spells with optional filtering."
+        "summary": "Get list of spells with optional filtering.",
+        "tags": [
+          "Spells"
+        ]
       },
       {
         "deprecated": false,
@@ -636,21 +2375,74 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/spells/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the `Spell` to get.",
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/spells/{index}",
         "pointer": "#/paths/~1api~1spells~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Spell"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a spell by index."
+        "summary": "Get a spell by index.",
+        "tags": [
+          "Spells"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Subclasses reflect the different paths a class may take as levels are gained.",
         "id": "operation:get:/api/subclasses/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/subclasses/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the subclass to get.",
+            "enum": [
+              "berserker",
+              "champion",
+              "devotion",
+              "draconic",
+              "evocation",
+              "fiend",
+              "hunter",
+              "land",
+              "life",
+              "lore",
+              "open-hand",
+              "thief"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/subclasses/{index}",
         "pointer": "#/paths/~1api~1subclasses~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Subclass"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a subclass by index."
+        "summary": "Get a subclass by index.",
+        "tags": [
+          "Subclasses"
+        ]
       },
       {
         "deprecated": false,
@@ -658,10 +2450,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/subclasses/{index}/features",
+        "parameters": [
+          {
+            "description": "The `index` of the subclass to get.",
+            "enum": [
+              "berserker",
+              "champion",
+              "devotion",
+              "draconic",
+              "evocation",
+              "fiend",
+              "hunter",
+              "land",
+              "life",
+              "lore",
+              "open-hand",
+              "thief"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/subclasses/{index}/features",
         "pointer": "#/paths/~1api~1subclasses~1{index}~1features/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get features available for a subclass."
+        "summary": "Get features available for a subclass.",
+        "tags": [
+          "Subclasses"
+        ]
       },
       {
         "deprecated": false,
@@ -669,10 +2494,43 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/subclasses/{index}/levels",
+        "parameters": [
+          {
+            "description": "The `index` of the subclass to get.",
+            "enum": [
+              "berserker",
+              "champion",
+              "devotion",
+              "draconic",
+              "evocation",
+              "fiend",
+              "hunter",
+              "land",
+              "life",
+              "lore",
+              "open-hand",
+              "thief"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/subclasses/{index}/levels",
         "pointer": "#/paths/~1api~1subclasses~1{index}~1levels/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubclassLevelResource[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all level resources for a subclass."
+        "summary": "Get all level resources for a subclass.",
+        "tags": [
+          "Subclasses"
+        ]
       },
       {
         "deprecated": false,
@@ -680,10 +2538,49 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/subclasses/{index}/levels/{subclass_level}",
+        "parameters": [
+          {
+            "description": "The `index` of the subclass to get.",
+            "enum": [
+              "berserker",
+              "champion",
+              "devotion",
+              "draconic",
+              "evocation",
+              "fiend",
+              "hunter",
+              "land",
+              "life",
+              "lore",
+              "open-hand",
+              "thief"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "subclass_level",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/api/subclasses/{index}/levels/{subclass_level}",
         "pointer": "#/paths/~1api~1subclasses~1{index}~1levels~1{subclass_level}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SubclassLevel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get level resources for a subclass and level."
+        "summary": "Get level resources for a subclass and level.",
+        "tags": [
+          "Subclasses"
+        ]
       },
       {
         "deprecated": false,
@@ -691,21 +2588,86 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/subclasses/{index}/levels/{subclass_level}/features",
+        "parameters": [
+          {
+            "description": "The `index` of the subclass to get.",
+            "enum": [
+              "berserker",
+              "champion",
+              "devotion",
+              "draconic",
+              "evocation",
+              "fiend",
+              "hunter",
+              "land",
+              "life",
+              "lore",
+              "open-hand",
+              "thief"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "subclass_level",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/api/subclasses/{index}/levels/{subclass_level}/features",
         "pointer": "#/paths/~1api~1subclasses~1{index}~1levels~1{subclass_level}~1features/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get features of the requested spell level available to the class."
+        "summary": "Get features of the requested spell level available to the class.",
+        "tags": [
+          "Subclasses"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Subraces reflect the different varieties of a certain parent race.",
         "id": "operation:get:/api/subraces/{index}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/subraces/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the subrace to get.",
+            "enum": [
+              "high-elf",
+              "hill-dwarf",
+              "lightfoot-halfling",
+              "rock-gnome"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/subraces/{index}",
         "pointer": "#/paths/~1api~1subraces~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Subrace"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a subrace by index."
+        "summary": "Get a subrace by index.",
+        "tags": [
+          "Subraces"
+        ]
       },
       {
         "deprecated": false,
@@ -713,10 +2675,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/subraces/{index}/proficiencies",
+        "parameters": [
+          {
+            "description": "The `index` of the subrace to get.",
+            "enum": [
+              "high-elf",
+              "hill-dwarf",
+              "lightfoot-halfling",
+              "rock-gnome"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/subraces/{index}/proficiencies",
         "pointer": "#/paths/~1api~1subraces~1{index}~1proficiencies/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get proficiences available for a subrace."
+        "summary": "Get proficiences available for a subrace.",
+        "tags": [
+          "Subraces"
+        ]
       },
       {
         "deprecated": false,
@@ -724,10 +2711,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/subraces/{index}/traits",
+        "parameters": [
+          {
+            "description": "The `index` of the subrace to get.",
+            "enum": [
+              "high-elf",
+              "hill-dwarf",
+              "lightfoot-halfling",
+              "rock-gnome"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/subraces/{index}/traits",
         "pointer": "#/paths/~1api~1subraces~1{index}~1traits/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get traits available for a subrace."
+        "summary": "Get traits available for a subrace.",
+        "tags": [
+          "Subraces"
+        ]
       },
       {
         "deprecated": false,
@@ -735,10 +2747,56 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/traits/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the `Trait` to get.",
+            "enum": [
+              "artificers-lore",
+              "brave",
+              "breath-weapon",
+              "damage-resistance",
+              "darkvision",
+              "draconic-ancestry",
+              "draconic-ancestry-black",
+              "draconic-ancestry-blue",
+              "draconic-ancestry-brass",
+              "draconic-ancestry-bronze",
+              "draconic-ancestry-copper",
+              "draconic-ancestry-gold",
+              "draconic-ancestry-green",
+              "draconic-ancestry-red",
+              "draconic-ancestry-silver",
+              "draconic-ancestry-white",
+              "dwarven-combat-training",
+              "dwarven-resilience",
+              "dwarven-toughness",
+              "elf-weapon-training",
+              "extra-language",
+              "fey-ancestry",
+              "gnome-cunning",
+              "halfling-nimbleness",
+              "hellish-resistance"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/traits/{index}",
         "pointer": "#/paths/~1api~1traits~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trait"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a trait by index."
+        "summary": "Get a trait by index.",
+        "tags": [
+          "Traits"
+        ]
       },
       {
         "deprecated": false,
@@ -746,266 +2804,436 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/weapon-properties/{index}",
+        "parameters": [
+          {
+            "description": "The `index` of the weapon property to get.",
+            "enum": [
+              "ammunition",
+              "finesse",
+              "heavy",
+              "light",
+              "loading",
+              "monk",
+              "reach",
+              "special",
+              "thrown",
+              "two-handed",
+              "versatile"
+            ],
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/weapon-properties/{index}",
         "pointer": "#/paths/~1api~1weapon-properties~1{index}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WeaponProperty"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a weapon property by index."
+        "summary": "Get a weapon property by index.",
+        "tags": [
+          "Equipment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Currently only the [`/spells`](#get-/api/spells) and [`/monsters`](#get-/api/monsters) endpoints support filtering with query parameters.",
         "id": "operation:get:/api/{endpoint}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/{endpoint}",
+        "parameters": [
+          {
+            "enum": [
+              "ability-scores",
+              "alignments",
+              "backgrounds",
+              "classes",
+              "conditions",
+              "damage-types",
+              "equipment",
+              "equipment-categories",
+              "feats",
+              "features",
+              "languages",
+              "magic-items",
+              "magic-schools",
+              "monsters",
+              "proficiencies",
+              "races",
+              "rule-sections",
+              "rules",
+              "skills",
+              "spells",
+              "subclasses",
+              "subraces",
+              "traits",
+              "weapon-properties"
+            ],
+            "in": "path",
+            "name": "endpoint",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/{endpoint}",
         "pointer": "#/paths/~1api~1{endpoint}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIReferenceList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get list of all available resources for an endpoint."
+        "summary": "Get list of all available resources for an endpoint.",
+        "tags": [
+          "Common"
+        ]
       },
       {
+        "description": "`APIReference`",
         "id": "schema:APIReference",
         "kind": "schema",
-        "name": "APIReference"
+        "name": "APIReference",
+        "type": "object"
       },
       {
+        "description": "`APIReferenceList`",
         "id": "schema:APIReferenceList",
         "kind": "schema",
-        "name": "APIReferenceList"
+        "name": "APIReferenceList",
+        "type": "object"
       },
       {
         "id": "schema:AbilityBonus",
         "kind": "schema",
-        "name": "AbilityBonus"
+        "name": "AbilityBonus",
+        "type": "object"
       },
       {
+        "description": "`AbilityScore`",
         "id": "schema:AbilityScore",
         "kind": "schema",
-        "name": "AbilityScore"
+        "name": "AbilityScore",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`Alignment`",
         "id": "schema:Alignment",
         "kind": "schema",
-        "name": "Alignment"
+        "name": "Alignment",
+        "type": "APIReference|object"
       },
       {
         "id": "schema:AreaOfEffect",
         "kind": "schema",
-        "name": "AreaOfEffect"
+        "name": "AreaOfEffect",
+        "type": "object"
       },
       {
+        "description": "`Armor`",
         "id": "schema:Armor",
         "kind": "schema",
-        "name": "Armor"
+        "name": "Armor",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`Background`",
         "id": "schema:Background",
         "kind": "schema",
-        "name": "Background"
+        "name": "Background",
+        "type": "APIReference|object"
       },
       {
+        "description": "`Choice`",
         "id": "schema:Choice",
         "kind": "schema",
-        "name": "Choice"
+        "name": "Choice",
+        "type": "object"
       },
       {
+        "description": "`Class`",
         "id": "schema:Class",
         "kind": "schema",
-        "name": "Class"
+        "name": "Class",
+        "type": "APIReference|object"
       },
       {
+        "description": "`ClassLevel`",
         "id": "schema:ClassLevel",
         "kind": "schema",
-        "name": "ClassLevel"
+        "name": "ClassLevel",
+        "type": "object"
       },
       {
+        "description": "`Condition`",
         "id": "schema:Condition",
         "kind": "schema",
-        "name": "Condition"
+        "name": "Condition",
+        "type": "APIReference|ResourceDescription"
       },
       {
+        "description": "`Cost`",
         "id": "schema:Cost",
         "kind": "schema",
-        "name": "Cost"
+        "name": "Cost",
+        "type": "object"
       },
       {
+        "description": "`DC`",
         "id": "schema:DC",
         "kind": "schema",
-        "name": "DC"
+        "name": "DC",
+        "type": "object"
       },
       {
+        "description": "`Damage`",
         "id": "schema:Damage",
         "kind": "schema",
-        "name": "Damage"
+        "name": "Damage",
+        "type": "object"
       },
       {
+        "description": "'Spell Damage'",
         "id": "schema:DamageAtCharacterLevel",
         "kind": "schema",
-        "name": "DamageAtCharacterLevel"
+        "name": "DamageAtCharacterLevel",
+        "type": "object"
       },
       {
+        "description": "'Spell Damage'",
         "id": "schema:DamageAtSlotLevel",
         "kind": "schema",
-        "name": "DamageAtSlotLevel"
+        "name": "DamageAtSlotLevel",
+        "type": "object"
       },
       {
+        "description": "`DamageType`",
         "id": "schema:DamageType",
         "kind": "schema",
-        "name": "DamageType"
+        "name": "DamageType",
+        "type": "APIReference|ResourceDescription"
       },
       {
+        "description": "`Equipment`",
         "id": "schema:Equipment",
         "kind": "schema",
-        "name": "Equipment"
+        "name": "Equipment",
+        "type": "Weapon|Armor|Gear|EquipmentPack"
       },
       {
+        "description": "`EquipmentCategory`",
         "id": "schema:EquipmentCategory",
         "kind": "schema",
-        "name": "EquipmentCategory"
+        "name": "EquipmentCategory",
+        "type": "APIReference|object"
       },
       {
+        "description": "`EquipmentPack`",
         "id": "schema:EquipmentPack",
         "kind": "schema",
-        "name": "EquipmentPack"
+        "name": "EquipmentPack",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`Feat`",
         "id": "schema:Feat",
         "kind": "schema",
-        "name": "Feat"
+        "name": "Feat",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`Feature`",
         "id": "schema:Feature",
         "kind": "schema",
-        "name": "Feature"
+        "name": "Feature",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`Gear`",
         "id": "schema:Gear",
         "kind": "schema",
-        "name": "Gear"
+        "name": "Gear",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`Language`",
         "id": "schema:Language",
         "kind": "schema",
-        "name": "Language"
+        "name": "Language",
+        "type": "APIReference|object"
       },
       {
+        "description": "`MagicItem`",
         "id": "schema:MagicItem",
         "kind": "schema",
-        "name": "MagicItem"
+        "name": "MagicItem",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`MagicSchool`",
         "id": "schema:MagicSchool",
         "kind": "schema",
-        "name": "MagicSchool"
+        "name": "MagicSchool",
+        "type": "APIReference|object"
       },
       {
+        "description": "`Monster`",
         "id": "schema:Monster",
         "kind": "schema",
-        "name": "Monster"
+        "name": "Monster",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`Multiclassing`",
         "id": "schema:Multiclassing",
         "kind": "schema",
-        "name": "Multiclassing"
+        "name": "Multiclassing",
+        "type": "object"
       },
       {
+        "description": "`Option`",
         "id": "schema:Option",
         "kind": "schema",
-        "name": "Option"
+        "name": "Option",
+        "type": "object"
       },
       {
+        "description": "`Option Set`",
         "id": "schema:OptionSet",
         "kind": "schema",
-        "name": "OptionSet"
+        "name": "OptionSet",
+        "type": "object"
       },
       {
+        "description": "`Prerequisite`",
         "id": "schema:Prerequisite",
         "kind": "schema",
-        "name": "Prerequisite"
+        "name": "Prerequisite",
+        "type": "object"
       },
       {
+        "description": "`Proficiency`",
         "id": "schema:Proficiency",
         "kind": "schema",
-        "name": "Proficiency"
+        "name": "Proficiency",
+        "type": "APIReference|object"
       },
       {
+        "description": "`Race`",
         "id": "schema:Race",
         "kind": "schema",
-        "name": "Race"
+        "name": "Race",
+        "type": "APIReference|object"
       },
       {
         "id": "schema:ResourceDescription",
         "kind": "schema",
-        "name": "ResourceDescription"
+        "name": "ResourceDescription",
+        "type": "object"
       },
       {
+        "description": "`Rule`",
         "id": "schema:Rule",
         "kind": "schema",
-        "name": "Rule"
+        "name": "Rule",
+        "type": "APIReference|object"
       },
       {
+        "description": "`RuleSection`",
         "id": "schema:RuleSection",
         "kind": "schema",
-        "name": "RuleSection"
+        "name": "RuleSection",
+        "type": "APIReference|object"
       },
       {
+        "description": "`Skill`",
         "id": "schema:Skill",
         "kind": "schema",
-        "name": "Skill"
+        "name": "Skill",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`Spell`",
         "id": "schema:Spell",
         "kind": "schema",
-        "name": "Spell"
+        "name": "Spell",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`SpellPrerequisite`",
         "id": "schema:SpellPrerequisite",
         "kind": "schema",
-        "name": "SpellPrerequisite"
+        "name": "SpellPrerequisite",
+        "type": "APIReference|object"
       },
       {
+        "description": "`Spellcasting`",
         "id": "schema:Spellcasting",
         "kind": "schema",
-        "name": "Spellcasting"
+        "name": "Spellcasting",
+        "type": "object"
       },
       {
+        "description": "`Subclass`",
         "id": "schema:Subclass",
         "kind": "schema",
-        "name": "Subclass"
+        "name": "Subclass",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`SubclassLevel`",
         "id": "schema:SubclassLevel",
         "kind": "schema",
-        "name": "SubclassLevel"
+        "name": "SubclassLevel",
+        "type": "object"
       },
       {
         "id": "schema:SubclassLevelResource",
         "kind": "schema",
-        "name": "SubclassLevelResource"
+        "name": "SubclassLevelResource",
+        "type": "object"
       },
       {
+        "description": "`Subrace`",
         "id": "schema:Subrace",
         "kind": "schema",
-        "name": "Subrace"
+        "name": "Subrace",
+        "type": "APIReference|object"
       },
       {
+        "description": "`Trait`",
         "id": "schema:Trait",
         "kind": "schema",
-        "name": "Trait"
+        "name": "Trait",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "`Weapon`",
         "id": "schema:Weapon",
         "kind": "schema",
-        "name": "Weapon"
+        "name": "Weapon",
+        "type": "APIReference|ResourceDescription|object"
       },
       {
+        "description": "WeaponProperty",
         "id": "schema:WeaponProperty",
         "kind": "schema",
-        "name": "WeaponProperty"
+        "name": "WeaponProperty",
+        "type": "APIReference|ResourceDescription"
       },
       {
         "id": "schema:error-response",
         "kind": "schema",
-        "name": "error-response"
+        "name": "error-response",
+        "type": "object"
       }
     ]
   },

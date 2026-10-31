@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_raw.githubusercontent.com_darkl
 
 | | |
 | --- | --- |
-| Signed bundle | `9624a6443bba31474978b9622c7098bb4af67353016791b6e9afdf11fc65b9fd` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,25 +34,27 @@ logo: "https://api.apis.guru/v2/cache/logo/https_raw.githubusercontent.com_darkl
 
 10 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/baskets` | get /api/baskets | Get baskets |
-| DELETE | `/api/baskets/{name}` | delete /api/baskets/{name} | Delete basket |
-| GET | `/api/baskets/{name}` | get /api/baskets/{name} | Get basket settings |
-| POST | `/api/baskets/{name}` | post /api/baskets/{name} | Create new basket |
-| PUT | `/api/baskets/{name}` | put /api/baskets/{name} | Update basket settings |
-| DELETE | `/api/baskets/{name}/requests` | delete /api/baskets/{name}/requests | Delete all requests |
-| GET | `/api/baskets/{name}/requests` | get /api/baskets/{name}/requests | Get collected requests |
-| GET | `/api/baskets/{name}/responses/{method}` | get /api/baskets/{name}/responses/{method} | Get response settings |
-| PUT | `/api/baskets/{name}/responses/{method}` | put /api/baskets/{name}/responses/{method} | Update response settings |
-| GET | `/api/stats` | get /api/stats | Get baskets statistics |
-| GET | `/api/version` | get /api/version | Get service version |
-| GET | `/baskets` | get /baskets | Get baskets |
-| DELETE | `/baskets/{name}` | delete /baskets/{name} | Delete basket |
-| GET | `/baskets/{name}` | get /baskets/{name} | Get basket settings |
-| POST | `/baskets/{name}` | post /baskets/{name} | Create new basket |
-| PUT | `/baskets/{name}` | put /baskets/{name} | Update basket settings |
-| DELETE | `/baskets/{name}/requests` | delete /baskets/{name}/requests | Delete all requests |
-| GET | `/baskets/{name}/requests` | get /baskets/{name}/requests | Get collected requests |
-| GET | `/baskets/{name}/responses/{method}` | get /baskets/{name}/responses/{method} | Get response settings |
-| PUT | `/baskets/{name}/responses/{method}` | put /baskets/{name}/responses/{method} | Update response settings |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/baskets` | get /api/baskets | `max`, `skip`, `q` | Baskets | yes | Get baskets |
+| GET | `/api/baskets/{name}` | get /api/baskets/{name} | `name`* | Config | yes | Get basket settings |
+| PUT | `/api/baskets/{name}` | put /api/baskets/{name} | `name`*, body*: Config | — |  | Update basket settings |
+| POST | `/api/baskets/{name}` | post /api/baskets/{name} | `name`*, body: Config | Token |  | Create new basket |
+| DELETE | `/api/baskets/{name}` | delete /api/baskets/{name} | `name`* | — |  | Delete basket |
+| GET | `/api/baskets/{name}/requests` | get /api/baskets/{name}/requests | `name`*, `max`, `skip`, `q`, `in` | Requests | yes | Get collected requests |
+| DELETE | `/api/baskets/{name}/requests` | delete /api/baskets/{name}/requests | `name`* | — |  | Delete all requests |
+| GET | `/api/baskets/{name}/responses/{method}` | get /api/baskets/{name}/responses/{method} | `name`*, `method`* | Response | yes | Get response settings |
+| PUT | `/api/baskets/{name}/responses/{method}` | put /api/baskets/{name}/responses/{method} | `name`*, `method`*, body*: Response | — |  | Update response settings |
+| GET | `/api/stats` | get /api/stats | `max` | ServiceStats | yes | Get baskets statistics |
+| GET | `/api/version` | get /api/version | — | Version | yes | Get service version |
+| GET | `/baskets` | get /baskets | `max`, `skip`, `q` | Baskets | yes | Get baskets |
+| GET | `/baskets/{name}` | get /baskets/{name} | `name`* | Config | yes | Get basket settings |
+| PUT | `/baskets/{name}` | put /baskets/{name} | `name`*, body*: Config | — |  | Update basket settings |
+| POST | `/baskets/{name}` | post /baskets/{name} | `name`*, body: Config | Token |  | Create new basket |
+| DELETE | `/baskets/{name}` | delete /baskets/{name} | `name`* | — |  | Delete basket |
+| GET | `/baskets/{name}/requests` | get /baskets/{name}/requests | `name`*, `max`, `skip`, `q`, `in` | Requests | yes | Get collected requests |
+| DELETE | `/baskets/{name}/requests` | delete /baskets/{name}/requests | `name`* | — |  | Delete all requests |
+| GET | `/baskets/{name}/responses/{method}` | get /baskets/{name}/responses/{method} | `name`*, `method`* | Response | yes | Get response settings |
+| PUT | `/baskets/{name}/responses/{method}` | put /baskets/{name}/responses/{method} | `name`*, `method`*, body*: Response | — |  | Update response settings |

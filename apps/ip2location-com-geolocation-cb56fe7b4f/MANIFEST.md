@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_ip2location_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `4fa2640b6e28e68d20dfae4ad77a8f93162175b0ff610f6eb10076bc180b4ffc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,6 +32,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_ip2location_profile
 
 ## Operations (1)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | get / | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | get / | `package`, `addon`, `ip`*, `format`, `lang`, `key`* | string | yes | — |

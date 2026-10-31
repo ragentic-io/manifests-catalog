@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.appveyor.com_assets_img_app
 
 | | |
 | --- | --- |
-| Signed bundle | `fc835425ca94f1f64ec76b022a4c3603eb4c50abef4b1636e2a8e1fe0a9a94ba` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,58 +34,60 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.appveyor.com_assets_img_app
 
 99 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/account/encrypt` | encryptValue | Encrypt a value for use in StoredValue. |
-| GET | `/buildjobs/{jobId}/artifacts` | getBuildArtifacts | Get build artifacts |
-| GET | `/buildjobs/{jobId}/artifacts/{artifactFileName}` | getBuildArtifact | Download build artifact |
-| GET | `/buildjobs/{jobId}/log` | getBuildLog | Download build log |
-| POST | `/builds` | startBuild | Start build of branch most recent commit |
-| PUT | `/builds` | reRunBuild | Re-run build |
-| DELETE | `/builds/{accountName}/{projectSlug}/{buildVersion}` | cancelBuild | Cancel build |
-| GET | `/collaborators` | getCollaborators | Get collaborators |
-| PUT | `/collaborators` | updateCollaborator | Update collaborator |
-| DELETE | `/collaborators/{userId}` | deleteCollaborator | Delete collaborator |
-| GET | `/collaborators/{userId}` | getCollaborator | Get collaborator |
-| POST | `/deployments` | startDeployment | Start deployment |
-| PUT | `/deployments/stop` | cancelDeployment | Cancel deployment |
-| GET | `/deployments/{deploymentId}` | getDeployment | Get deployment |
-| GET | `/environments` | getEnvironments | Get environments |
-| POST | `/environments` | addEnvironment | Add environment |
-| PUT | `/environments` | updateEnvironment | Update environment |
-| DELETE | `/environments/{deploymentEnvironmentId}` | deleteEnvironment | Delete environment |
-| GET | `/environments/{deploymentEnvironmentId}/deployments` | getEnvironmentDeployments | Get environment deployments |
-| GET | `/environments/{deploymentEnvironmentId}/settings` | getEnvironmentSettings | Get environment settings |
-| GET | `/projects` | getProjects | Get projects |
-| POST | `/projects` | addProject | Add project |
-| PUT | `/projects` | updateProject | Update project |
-| GET | `/projects/status/{badgeRepoProvider}/{repoAccountName}/{repoSlug}` | getPublicProjectStatusBadge | Get status badge image for a project with a public repository |
-| GET | `/projects/status/{statusBadgeId}` | getProjectStatusBadge | Get project status badge image |
-| GET | `/projects/status/{statusBadgeId}/branch/{buildBranch}` | getProjectBranchStatusBadge | Get project branch status badge image |
-| DELETE | `/projects/{accountName}/{projectSlug}` | deleteProject | Delete project |
-| GET | `/projects/{accountName}/{projectSlug}` | getProjectLastBuild | Get project last build |
-| GET | `/projects/{accountName}/{projectSlug}/artifacts/{artifactFileName}` | getProjectArtifact | Get last successful build artifact |
-| GET | `/projects/{accountName}/{projectSlug}/branch/{buildBranch}` | getProjectLastBuildBranch | Get project last branch build |
-| GET | `/projects/{accountName}/{projectSlug}/build/{buildVersion}` | getProjectBuildByVersion | Get project build by version |
-| DELETE | `/projects/{accountName}/{projectSlug}/buildcache` | deleteProjectBuildCache | Delete project build cache |
-| GET | `/projects/{accountName}/{projectSlug}/deployments` | getProjectDeployments | Get project deployments |
-| GET | `/projects/{accountName}/{projectSlug}/history` | getProjectHistory | Get project history |
-| GET | `/projects/{accountName}/{projectSlug}/settings` | getProjectSettings | Get project settings |
-| PUT | `/projects/{accountName}/{projectSlug}/settings/build-number` | updateProjectBuildNumber | Update project build number |
-| GET | `/projects/{accountName}/{projectSlug}/settings/environment-variables` | getProjectEnvironmentVariables | Get project environment variables |
-| PUT | `/projects/{accountName}/{projectSlug}/settings/environment-variables` | updateProjectEnvironmentVariables | Update project environment variables |
-| GET | `/projects/{accountName}/{projectSlug}/settings/yaml` | getProjectSettingsYaml | Get project settings in YAML |
-| PUT | `/projects/{accountName}/{projectSlug}/settings/yaml` | updateProjectSettingsYaml | Update project settings in YAML |
-| GET | `/roles` | getRoles | Get roles |
-| POST | `/roles` | addRole | Add role |
-| PUT | `/roles` | updateRole | Update role |
-| DELETE | `/roles/{roleId}` | deleteRole | Delete role |
-| GET | `/roles/{roleId}` | getRole | Get role |
-| PUT | `/user/join-account` | joinAccount | Join Account |
-| GET | `/users` | getUsers | Get users |
-| PUT | `/users` | updateUser | Update user |
-| GET | `/users/invitations` | getUserInvitations | Get user invitations |
-| POST | `/users/invitations` | inviteUser | Invite user |
-| DELETE | `/users/invitations/{userInvitationId}` | cancelUserInvitation | Cancel user invitation |
-| DELETE | `/users/{userId}` | deleteUser | Delete user |
-| GET | `/users/{userId}` | getUser | Get user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/account/encrypt` | encryptValue | body*: EncryptRequest | string |  | Encrypt a value for use in StoredValue. |
+| GET | `/buildjobs/{jobId}/artifacts` | getBuildArtifacts | `jobId`* | ArtifactModel[] | yes | Get build artifacts |
+| GET | `/buildjobs/{jobId}/artifacts/{artifactFileName}` | getBuildArtifact | `jobId`*, `artifactFileName`* | file | yes | Download build artifact |
+| GET | `/buildjobs/{jobId}/log` | getBuildLog | `jobId`* | file | yes | Download build log |
+| PUT | `/builds` | reRunBuild | body*: ReRunBuildRequest | Build |  | Re-run build |
+| POST | `/builds` | startBuild | body*: BuildStartRequest | Build |  | Start build of branch most recent commit |
+| DELETE | `/builds/{accountName}/{projectSlug}/{buildVersion}` | cancelBuild | `accountName`*, `projectSlug`*, `buildVersion`* | — |  | Cancel build |
+| GET | `/collaborators` | getCollaborators | — | UserAccount[] | yes | Get collaborators |
+| PUT | `/collaborators` | updateCollaborator | body*: CollaboratorUpdate | — |  | Update collaborator |
+| GET | `/collaborators/{userId}` | getCollaborator | `userId`* | UserAccountRolesResults | yes | Get collaborator |
+| DELETE | `/collaborators/{userId}` | deleteCollaborator | `userId`* | — |  | Delete collaborator |
+| POST | `/deployments` | startDeployment | body*: DeploymentStartRequest | Deployment |  | Start deployment |
+| PUT | `/deployments/stop` | cancelDeployment | body*: DeploymentCancellation | — |  | Cancel deployment |
+| GET | `/deployments/{deploymentId}` | getDeployment | `deploymentId`* | ProjectDeployment | yes | Get deployment |
+| GET | `/environments` | getEnvironments | — | DeploymentEnvironmentLookupModel[] | yes | Get environments |
+| PUT | `/environments` | updateEnvironment | body*: DeploymentEnvironmentWithSettings | DeploymentEnvironmentWithSettings |  | Update environment |
+| POST | `/environments` | addEnvironment | body*: DeploymentEnvironmentAddition | DeploymentEnvironmentWithSettings |  | Add environment |
+| DELETE | `/environments/{deploymentEnvironmentId}` | deleteEnvironment | `deploymentEnvironmentId`* | — |  | Delete environment |
+| GET | `/environments/{deploymentEnvironmentId}/deployments` | getEnvironmentDeployments | `deploymentEnvironmentId`* | DeploymentEnvironmentDeploymentsResults | yes | Get environment deployments |
+| GET | `/environments/{deploymentEnvironmentId}/settings` | getEnvironmentSettings | `deploymentEnvironmentId`* | DeploymentEnvironmentSettingsResults | yes | Get environment settings |
+| GET | `/projects` | getProjects | — | Project[] | yes | Get projects |
+| PUT | `/projects` | updateProject | body*: ProjectWithConfiguration | — |  | Update project |
+| POST | `/projects` | addProject | body*: ProjectAddition | Project |  | Add project |
+| GET | `/projects/status/{badgeRepoProvider}/{repoAccountName}/{repoSlug}` | getPublicProjectStatusBadge | `badgeRepoProvider`*, `repoAccountName`*, `repoSlug`*, `branch`, `svg`, `retina`, `passingText`, `failingText`, `pendingText` | file | yes | Get status badge image for a project with a public repository |
+| GET | `/projects/status/{statusBadgeId}` | getProjectStatusBadge | `statusBadgeId`*, `svg`, `retina`, `passingText`, `failingText`, `pendingText` | file | yes | Get project status badge image |
+| GET | `/projects/status/{statusBadgeId}/branch/{buildBranch}` | getProjectBranchStatusBadge | `statusBadgeId`*, `buildBranch`*, `svg`, `retina`, `passingText`, `failingText`, `pendingText` | file | yes | Get project branch status badge image |
+| GET | `/projects/{accountName}/{projectSlug}` | getProjectLastBuild | `accountName`*, `projectSlug`* | ProjectBuildResults | yes | Get project last build |
+| DELETE | `/projects/{accountName}/{projectSlug}` | deleteProject | `accountName`*, `projectSlug`* | — |  | Delete project |
+| GET | `/projects/{accountName}/{projectSlug}/artifacts/{artifactFileName}` | getProjectArtifact | `accountName`*, `projectSlug`*, `artifactFileName`*, `branch`, `tag`, `job`, `all`, `pr` | file | yes | Get last successful build artifact |
+| GET | `/projects/{accountName}/{projectSlug}/branch/{buildBranch}` | getProjectLastBuildBranch | `accountName`*, `projectSlug`*, `buildBranch`* | ProjectBuildResults | yes | Get project last branch build |
+| GET | `/projects/{accountName}/{projectSlug}/build/{buildVersion}` | getProjectBuildByVersion | `accountName`*, `projectSlug`*, `buildVersion`* | ProjectBuildResults | yes | Get project build by version |
+| DELETE | `/projects/{accountName}/{projectSlug}/buildcache` | deleteProjectBuildCache | `accountName`*, `projectSlug`* | — |  | Delete project build cache |
+| GET | `/projects/{accountName}/{projectSlug}/deployments` | getProjectDeployments | `accountName`*, `projectSlug`*, `recordsNumber`* | ProjectDeploymentsResults | yes | Get project deployments |
+| GET | `/projects/{accountName}/{projectSlug}/history` | getProjectHistory | `accountName`*, `projectSlug`*, `recordsNumber`*, `startBuildId`, `branch` | ProjectHistory | yes | Get project history |
+| GET | `/projects/{accountName}/{projectSlug}/settings` | getProjectSettings | `accountName`*, `projectSlug`* | ProjectSettingsResults | yes | Get project settings |
+| PUT | `/projects/{accountName}/{projectSlug}/settings/build-number` | updateProjectBuildNumber | `accountName`*, `projectSlug`*, body*: ProjectBuildNumberUpdate | — |  | Update project build number |
+| GET | `/projects/{accountName}/{projectSlug}/settings/environment-variables` | getProjectEnvironmentVariables | `accountName`*, `projectSlug`* | StoredNameValue[] | yes | Get project environment variables |
+| PUT | `/projects/{accountName}/{projectSlug}/settings/environment-variables` | updateProjectEnvironmentVariables | `accountName`*, `projectSlug`*, body*: StoredNameValue[] | — |  | Update project environment variables |
+| GET | `/projects/{accountName}/{projectSlug}/settings/yaml` | getProjectSettingsYaml | `accountName`*, `projectSlug`* | string | yes | Get project settings in YAML |
+| PUT | `/projects/{accountName}/{projectSlug}/settings/yaml` | updateProjectSettingsYaml | `accountName`*, `projectSlug`*, body*: string:binary | — |  | Update project settings in YAML |
+| GET | `/roles` | getRoles | — | Role[] | yes | Get roles |
+| PUT | `/roles` | updateRole | body*: RoleWithGroups | RoleWithGroups |  | Update role |
+| POST | `/roles` | addRole | body*: RoleAddition | RoleWithGroups |  | Add role |
+| GET | `/roles/{roleId}` | getRole | `roleId`* | RoleWithGroups | yes | Get role |
+| DELETE | `/roles/{roleId}` | deleteRole | `roleId`* | — |  | Delete role |
+| PUT | `/user/join-account` | joinAccount | body*: JoinAccountRequest | SessionModel |  | Join Account |
+| GET | `/users` | getUsers | — | UserAccount[] | yes | Get users |
+| PUT | `/users` | updateUser | body*: UserAccount | — |  | Update user |
+| GET | `/users/invitations` | getUserInvitations | — | UserInvitationModel[] | yes | Get user invitations |
+| POST | `/users/invitations` | inviteUser | body*: InviteUserRequest | — |  | Invite user |
+| DELETE | `/users/invitations/{userInvitationId}` | cancelUserInvitation | `userInvitationId`* | — |  | Cancel user invitation |
+| GET | `/users/{userId}` | getUser | `userId`* | UserAccountRolesResults | yes | Get user |
+| DELETE | `/users/{userId}` | deleteUser | `userId`* | — |  | Delete user |

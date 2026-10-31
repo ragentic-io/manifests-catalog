@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static.codat.io_public_branding
 
 | | |
 | --- | --- |
-| Signed bundle | `0ef7be6f800700468512b16e6cb55310a70b8458c3902c797ef9af3f859d28f3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,132 +34,134 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static.codat.io_public_branding
 
 94 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/accountTransactions` | list-account-transactions | List account transactions |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/accountTransactions/{accountTransactionId}` | get-account-transaction | Get account transaction |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/bankAccounts` | list-bank-accounts | List bank accounts |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}` | get-bank-account | Get bank account |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}/bankTransactions` | list-bank-account-transactions | List bank transactions for bank account |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments` | get-bill-attachments | List bill attachments |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}` | get-bill-attachment | Get bill attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}/download` | download-bill-attachment | Download bill attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/customers/{customerId}/attachments` | get-customer-attachments | List customer attachments |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/customers/{customerId}/attachments/{attachmentId}` | get-customer-attachment | Get customer attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/customers/{customerId}/attachments/{attachmentId}/download` | download-customer-attachment | Download customer attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts` | get-direct-costs | List direct costs |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts/{directCostId}` | get-direct-cost | Get direct cost |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts/{directCostId}/attachments` | list-direct-cost-attachments | List direct cost attachments |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts/{directCostId}/attachments/{attachmentId}` | get-direct-cost-attachment | Get direct cost attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts/{directCostId}/attachments/{attachmentId}/download` | download-direct-cost-attachment | Download direct cost attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes` | get-direct-incomes | Get direct incomes |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes/{directIncomeId}` | get-direct-income | Get direct income |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes/{directIncomeId}/attachments` | list-direct-income-attachments | List direct income attachments |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes/{directIncomeId}/attachments/{attachmentId}` | get-direct-income-attachment | Get direct income attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes/{directIncomeId}/attachments/{attachmentId}/download` | download-direct-income-attachment | Download direct income attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/invoices/{invoiceId}/attachments` | get-invoice-attachments | Get invoice attachments |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/invoices/{invoiceId}/attachments/{attachmentId}` | get-invoice-attachment | Get invoice attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/invoices/{invoiceId}/attachments/{attachmentId}/download` | download-invoice-attachment | Download invoice attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/suppliers/{supplierId}/attachments` | list-supplier-attachments | List supplier attachments |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/suppliers/{supplierId}/attachments/{attachmentId}` | get-supplier-attachment | Get supplier attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/suppliers/{supplierId}/attachments/{attachmentId}/download` | download-supplier-attachment | Download supplier attachment |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/transfers` | list-transfers | List transfers |
-| GET | `/companies/{companyId}/connections/{connectionId}/data/transfers/{transferId}` | get-transfer | Get transfer |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/bankAccounts` | get-create-update-bankAccounts-model | Get create/update bank account model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/bankAccounts/{accountId}/bankTransactions` | get-create-bank-account-model | List push options for bank account bank transactions |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/billCreditNotes` | get-create-update-billCreditNotes-model | Get create/update bill credit note model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/billPayments` | get-create-billPayments-model | Get create bill payment model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/bills` | get-create-update-bills-model | Get create/update bill model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/chartOfAccounts` | get-create-chartOfAccounts-model | Get create account model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/creditNotes` | get-create-update-creditNotes-model | Get create/update credit note model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/customers` | get-create-update-customers-model | Get create/update customer model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/directCosts` | get-create-directCosts-model | Get create direct cost model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/directIncomes` | get-create-directIncomes-model | Get create direct income model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/invoices` | get-create-update-invoices-model | Get create/update invoice model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/items` | get-create-items-model | Get create item model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/journalEntries` | get-create-journalEntries-model | Get create journal entry model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/journals` | get-create-journals-model | Get create journal model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/payments` | get-create-payments-model | Get create payment model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/purchaseOrders` | get-create-update-purchaseOrders-model | Get create/update purchase order model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/suppliers` | get-create-update-suppliers-model | Get create/update supplier model |
-| GET | `/companies/{companyId}/connections/{connectionId}/options/transfers` | get-create-transfers-model | Get create transfer model |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/accounts` | create-account | Create account |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/bankAccounts` | create-bank-account | Create bank account |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions` | create-bank-transactions | Create bank transactions |
-| PUT | `/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{bankAccountId}` | update-bank-account | Update bank account |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/billCreditNotes` | create-bill-credit-note | Create bill credit note |
-| PUT | `/companies/{companyId}/connections/{connectionId}/push/billCreditNotes/{billCreditNoteId}` | update-bill-credit-note | Update bill credit note |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/billPayments` | create-bill-payment | Create bill payments |
-| DELETE | `/companies/{companyId}/connections/{connectionId}/push/billPayments/{billPaymentId}` | delete-billPayment | Delete bill payment |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/bills` | create-bill | Create bill |
-| DELETE | `/companies/{companyId}/connections/{connectionId}/push/bills/{billId}` | delete-bill | Delete bill |
-| PUT | `/companies/{companyId}/connections/{connectionId}/push/bills/{billId}` | update-bill | Update bill |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/bills/{billId}/attachments` | upload-bill-attachments | Upload bill attachments |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/creditNotes` | create-credit-note | Create credit note |
-| PUT | `/companies/{companyId}/connections/{connectionId}/push/creditNotes/{creditNoteId}` | update-credit-note | Update creditNote |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/customers` | create-customer | Create customer |
-| PUT | `/companies/{companyId}/connections/{connectionId}/push/customers/{customerId}` | update-customer | Update customer |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/directCosts` | create-direct-cost | Create direct cost |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/directCosts/{directCostId}/attachment` | upload-direct-cost-attachment | Upload direct cost attachment |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/directIncomes` | create-direct-income | Create direct income |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/directIncomes/{directIncomeId}/attachment` | upload-direct-income-attachment | Create direct income attachment |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/invoices` | create-invoice | Create invoice |
-| DELETE | `/companies/{companyId}/connections/{connectionId}/push/invoices/{invoiceId}` | delete-invoice | Delete invoice |
-| PUT | `/companies/{companyId}/connections/{connectionId}/push/invoices/{invoiceId}` | update-invoice | Update invoice |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/invoices/{invoiceId}/attachment` | upload-invoice-attachment | Push invoice attachment |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/items` | create-item | Create item |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/journalEntries` | create-journal-entry | Create journal entry |
-| DELETE | `/companies/{companyId}/connections/{connectionId}/push/journalEntries/{journalEntryId}` | delete-journal-entry | Delete journal entry |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/journals` | push-journal | Create journal |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/payments` | create-payment | Create payment |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/purchaseOrders` | create-purchase-order | Create purchase order |
-| PUT | `/companies/{companyId}/connections/{connectionId}/push/purchaseOrders/{purchaseOrderId}` | update-purchase-order | Update purchase order |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/suppliers` | create-supplier | Create suppliers |
-| PUT | `/companies/{companyId}/connections/{connectionId}/push/suppliers/{supplierId}` | put-supplier | Update supplier |
-| POST | `/companies/{companyId}/connections/{connectionId}/push/transfers` | create-transfer | Create transfer |
-| GET | `/companies/{companyId}/data/accounts` | list-accounts | List accounts |
-| GET | `/companies/{companyId}/data/accounts/{accountId}` | get-account | Get account |
-| GET | `/companies/{companyId}/data/bankAccounts/{accountId}` | get-all-bank-account | Get bank account |
-| GET | `/companies/{companyId}/data/bankAccounts/{accountId}/transactions` | list-bank-transactions | List all bank transactions |
-| GET | `/companies/{companyId}/data/billCreditNotes` | list-bill-credit-notes | List bill credit notes |
-| GET | `/companies/{companyId}/data/billCreditNotes/{billCreditNoteId}` | get-bill-credit-note | Get bill credit note |
-| GET | `/companies/{companyId}/data/billPayments` | list-bill-payments | List bill payments |
-| GET | `/companies/{companyId}/data/billPayments/{billPaymentId}` | get-bill-payments | Get bill payment |
-| GET | `/companies/{companyId}/data/bills` | list-bills | List bills |
-| GET | `/companies/{companyId}/data/bills/{billId}` | get-bill | Get bill |
-| GET | `/companies/{companyId}/data/creditNotes` | list-credit-notes | List credit notes |
-| GET | `/companies/{companyId}/data/creditNotes/{creditNoteId}` | get-credit-note | Get credit note |
-| GET | `/companies/{companyId}/data/customers` | get-customers | List customers |
-| GET | `/companies/{companyId}/data/customers/{customerId}` | get-customer | Get customer |
-| GET | `/companies/{companyId}/data/financials/balanceSheet` | get-balance-sheet | Get balance sheet |
-| GET | `/companies/{companyId}/data/financials/cashFlowStatement` | get-cash-flow-statement | Get cash flow statement |
-| GET | `/companies/{companyId}/data/financials/profitAndLoss` | get-profit-and-loss | Get profit and loss |
-| GET | `/companies/{companyId}/data/info` | get-company-info | Get company info |
-| POST | `/companies/{companyId}/data/info` | post-sync-info | Refresh company info |
-| GET | `/companies/{companyId}/data/invoices` | list-invoices | List invoices |
-| GET | `/companies/{companyId}/data/invoices/{invoiceId}` | get-invoice | Get invoice |
-| GET | `/companies/{companyId}/data/invoices/{invoiceId}/pdf` | Download-invoice-pdf | Get invoice as PDF |
-| GET | `/companies/{companyId}/data/items` | list-items | List items |
-| GET | `/companies/{companyId}/data/items/{itemId}` | get-item | Get item |
-| GET | `/companies/{companyId}/data/journalEntries` | list-journal-entries | List journal entries |
-| GET | `/companies/{companyId}/data/journalEntries/{journalEntryId}` | get-journal-entry | Get journal entry |
-| GET | `/companies/{companyId}/data/journals` | list-journals | List journals |
-| GET | `/companies/{companyId}/data/journals/{journalId}` | get-journal | Get journal |
-| GET | `/companies/{companyId}/data/paymentMethods` | list-payment-methods | List all payment methods |
-| GET | `/companies/{companyId}/data/paymentMethods/{paymentMethodId}` | get-payment-method | Get payment method |
-| GET | `/companies/{companyId}/data/payments` | list-payments | List payments |
-| GET | `/companies/{companyId}/data/payments/{paymentId}` | get-payment | Get payment |
-| GET | `/companies/{companyId}/data/purchaseOrders` | list-purchase-orders | List purchase orders |
-| GET | `/companies/{companyId}/data/purchaseOrders/{purchaseOrderId}` | get-purchase-order | Get purchase order |
-| GET | `/companies/{companyId}/data/salesOrders` | list-sales-orders | List sales orders |
-| GET | `/companies/{companyId}/data/salesOrders/{salesOrderId}` | get-sales-order | Get sales order |
-| GET | `/companies/{companyId}/data/suppliers` | list-suppliers | List suppliers |
-| GET | `/companies/{companyId}/data/suppliers/{supplierId}` | get-supplier | Get supplier |
-| GET | `/companies/{companyId}/data/taxRates` | list-tax-rates | List all tax rates |
-| GET | `/companies/{companyId}/data/taxRates/{taxRateId}` | get-tax-rate | Get tax rate |
-| GET | `/companies/{companyId}/data/trackingCategories` | list-tracking-categories | List tracking categories |
-| GET | `/companies/{companyId}/data/trackingCategories/{trackingCategoryId}` | get-tracking-category | Get tracking categories |
-| GET | `/companies/{companyId}/reports/agedCreditor` | get-aged-creditors-report | Aged creditors report |
-| GET | `/companies/{companyId}/reports/agedCreditor/available` | is-aged-creditors-report-available | Aged creditors report available |
-| GET | `/companies/{companyId}/reports/agedDebtor` | get-aged-debtors-report | Aged debtors report |
-| GET | `/companies/{companyId}/reports/agedDebtor/available` | is-aged-debtor-report-available | Aged debtors report available |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/accountTransactions` | list-account-transactions | `companyId`*, `connectionId`*, `page`*, `pageSize`, `query`, `orderBy` | AccountTransactions | yes | List account transactions |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/accountTransactions/{accountTransactionId}` | get-account-transaction | `companyId`*, `connectionId`*, `accountTransactionId`* | AccountTransaction | yes | Get account transaction |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/bankAccounts` | list-bank-accounts | `companyId`*, `connectionId`*, `page`*, `pageSize`, `query`, `orderBy` | BankAccounts | yes | List bank accounts |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}` | get-bank-account | `companyId`*, `accountId`*, `connectionId`* | BankAccount | yes | Get bank account |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}/bankTransactions` | list-bank-account-transactions | `companyId`*, `connectionId`*, `accountId`*, `page`*, `pageSize`, `query`, `orderBy` | BankTransactionsResponse | yes | List bank transactions for bank account |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments` | get-bill-attachments | `billId`*, `companyId`*, `connectionId`* | AttachmentsDataset | yes | List bill attachments |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}` | get-bill-attachment | `billId`*, `companyId`*, `connectionId`*, `attachmentId`* | Attachment | yes | Get bill attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}/download` | download-bill-attachment | `billId`*, `companyId`*, `connectionId`*, `attachmentId`* | — | yes | Download bill attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/customers/{customerId}/attachments` | get-customer-attachments | `companyId`*, `connectionId`*, `customerId`* | AttachmentsDataset | yes | List customer attachments |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/customers/{customerId}/attachments/{attachmentId}` | get-customer-attachment | `companyId`*, `connectionId`*, `customerId`*, `attachmentId`* | Attachment | yes | Get customer attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/customers/{customerId}/attachments/{attachmentId}/download` | download-customer-attachment | `companyId`*, `connectionId`*, `customerId`*, `attachmentId`* | — | yes | Download customer attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts` | get-direct-costs | `companyId`*, `connectionId`*, `page`*, `pageSize`, `query`, `orderBy` | DirectCosts | yes | List direct costs |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts/{directCostId}` | get-direct-cost | `companyId`*, `connectionId`*, `directCostId`* | DirectCost | yes | Get direct cost |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts/{directCostId}/attachments` | list-direct-cost-attachments | `companyId`*, `connectionId`*, `directCostId`* | AttachmentsDataset | yes | List direct cost attachments |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts/{directCostId}/attachments/{attachmentId}` | get-direct-cost-attachment | `companyId`*, `connectionId`*, `directCostId`*, `attachmentId`* | Attachment | yes | Get direct cost attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directCosts/{directCostId}/attachments/{attachmentId}/download` | download-direct-cost-attachment | `companyId`*, `connectionId`*, `directCostId`*, `attachmentId`* | — | yes | Download direct cost attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes` | get-direct-incomes | `companyId`*, `connectionId`*, `page`*, `pageSize`, `query`, `orderBy` | DirectIncomes | yes | Get direct incomes |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes/{directIncomeId}` | get-direct-income | `companyId`*, `connectionId`*, `directIncomeId`* | DirectIncome | yes | Get direct income |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes/{directIncomeId}/attachments` | list-direct-income-attachments | `companyId`*, `connectionId`*, `directIncomeId`* | AttachmentsDataset | yes | List direct income attachments |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes/{directIncomeId}/attachments/{attachmentId}` | get-direct-income-attachment | `companyId`*, `connectionId`*, `directIncomeId`*, `attachmentId`*, `timeoutInMinutes` | Attachment | yes | Get direct income attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/directIncomes/{directIncomeId}/attachments/{attachmentId}/download` | download-direct-income-attachment | `companyId`*, `connectionId`*, `directIncomeId`*, `attachmentId`* | — | yes | Download direct income attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/invoices/{invoiceId}/attachments` | get-invoice-attachments | `companyId`*, `connectionId`*, `invoiceId`* | AttachmentsDataset | yes | Get invoice attachments |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/invoices/{invoiceId}/attachments/{attachmentId}` | get-invoice-attachment | `companyId`*, `connectionId`*, `invoiceId`*, `attachmentId`* | Attachment | yes | Get invoice attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/invoices/{invoiceId}/attachments/{attachmentId}/download` | download-invoice-attachment | `companyId`*, `connectionId`*, `invoiceId`*, `attachmentId`* | — | yes | Download invoice attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/suppliers/{supplierId}/attachments` | list-supplier-attachments | `supplierId`*, `companyId`*, `connectionId`* | AttachmentsDataset | yes | List supplier attachments |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/suppliers/{supplierId}/attachments/{attachmentId}` | get-supplier-attachment | `supplierId`*, `companyId`*, `connectionId`*, `attachmentId`* | Attachment | yes | Get supplier attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/suppliers/{supplierId}/attachments/{attachmentId}/download` | download-supplier-attachment | `supplierId`*, `companyId`*, `connectionId`*, `attachmentId`* | — | yes | Download supplier attachment |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/transfers` | list-transfers | `companyId`*, `connectionId`*, `page`*, `pageSize`, `query`, `orderBy` | Transfers | yes | List transfers |
+| GET | `/companies/{companyId}/connections/{connectionId}/data/transfers/{transferId}` | get-transfer | `companyId`*, `connectionId`*, `transferId`* | Transfer | yes | Get transfer |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/bankAccounts` | get-create-update-bankAccounts-model | `companyId`*, `connectionId`* | PushOption | yes | Get create/update bank account model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/bankAccounts/{accountId}/bankTransactions` | get-create-bank-account-model | `companyId`*, `connectionId`*, `—` | PushOption | yes | List push options for bank account bank transactions |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/billCreditNotes` | get-create-update-billCreditNotes-model | `companyId`*, `connectionId`* | PushOption | yes | Get create/update bill credit note model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/billPayments` | get-create-billPayments-model | `companyId`*, `connectionId`* | PushOption | yes | Get create bill payment model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/bills` | get-create-update-bills-model | `companyId`*, `connectionId`* | PushOption | yes | Get create/update bill model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/chartOfAccounts` | get-create-chartOfAccounts-model | `companyId`*, `connectionId`* | PushOption | yes | Get create account model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/creditNotes` | get-create-update-creditNotes-model | `companyId`*, `connectionId`* | PushOption | yes | Get create/update credit note model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/customers` | get-create-update-customers-model | `companyId`*, `connectionId`* | PushOption | yes | Get create/update customer model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/directCosts` | get-create-directCosts-model | `companyId`*, `connectionId`* | PushOption | yes | Get create direct cost model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/directIncomes` | get-create-directIncomes-model | `companyId`*, `connectionId`* | PushOption | yes | Get create direct income model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/invoices` | get-create-update-invoices-model | `companyId`*, `connectionId`* | PushOption | yes | Get create/update invoice model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/items` | get-create-items-model | `companyId`*, `connectionId`* | PushOption | yes | Get create item model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/journalEntries` | get-create-journalEntries-model | `companyId`*, `connectionId`* | PushOption | yes | Get create journal entry model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/journals` | get-create-journals-model | `companyId`*, `connectionId`* | PushOption | yes | Get create journal model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/payments` | get-create-payments-model | `companyId`*, `connectionId`* | PushOption | yes | Get create payment model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/purchaseOrders` | get-create-update-purchaseOrders-model | `companyId`*, `connectionId`* | PushOption | yes | Get create/update purchase order model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/suppliers` | get-create-update-suppliers-model | `companyId`*, `connectionId`* | PushOption | yes | Get create/update supplier model |
+| GET | `/companies/{companyId}/connections/{connectionId}/options/transfers` | get-create-transfers-model | `companyId`*, `connectionId`* | PushOption | yes | Get create transfer model |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/accounts` | create-account | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: Account | CreateAccountResponse |  | Create account |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/bankAccounts` | create-bank-account | `companyId`*, `connectionId`*, `allowSyncOnPushComplete`, `timeoutInMinutes`, body: BankAccount | CreateBankAccountResponse |  | Create bank account |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions` | create-bank-transactions | `companyId`*, `connectionId`*, `—`, `allowSyncOnPushComplete`, `timeoutInMinutes`, body: BankTransactions | CreateBankTransactionsResponse |  | Create bank transactions |
+| PUT | `/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{bankAccountId}` | update-bank-account | `companyId`*, `connectionId`*, `bankAccountId`*, `timeoutInMinutes`, `forceUpdate`, body: BankAccount | UpdateBankAccountResponse |  | Update bank account |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/billCreditNotes` | create-bill-credit-note | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: BillCreditNote | CreateBillCreditNoteResponse |  | Create bill credit note |
+| PUT | `/companies/{companyId}/connections/{connectionId}/push/billCreditNotes/{billCreditNoteId}` | update-bill-credit-note | `companyId`*, `connectionId`*, `billCreditNoteId`*, `timeoutInMinutes`, `forceUpdate`, body: BillCreditNote | UpdateBillCreditNoteResponse |  | Update bill credit note |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/billPayments` | create-bill-payment | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: BillPayment | CreateBillPaymentResponse |  | Create bill payments |
+| DELETE | `/companies/{companyId}/connections/{connectionId}/push/billPayments/{billPaymentId}` | delete-billPayment | `companyId`*, `connectionId`*, `billPaymentId`* | PushOperationSummary |  | Delete bill payment |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/bills` | create-bill | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: Bill | CreateBillResponse |  | Create bill |
+| PUT | `/companies/{companyId}/connections/{connectionId}/push/bills/{billId}` | update-bill | `billId`*, `companyId`*, `connectionId`*, `timeoutInMinutes`, `forceUpdate`, body: Bill | UpdateBillResponse |  | Update bill |
+| DELETE | `/companies/{companyId}/connections/{connectionId}/push/bills/{billId}` | delete-bill | `billId`*, `companyId`*, `connectionId`* | PushOperationSummary |  | Delete bill |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/bills/{billId}/attachments` | upload-bill-attachments | `billId`*, `companyId`*, `connectionId`*, body: — | — |  | Upload bill attachments |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/creditNotes` | create-credit-note | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: CreditNote | CreateCreditNoteResponse |  | Create credit note |
+| PUT | `/companies/{companyId}/connections/{connectionId}/push/creditNotes/{creditNoteId}` | update-credit-note | `companyId`*, `connectionId`*, `creditNoteId`*, `timeoutInMinutes`, `forceUpdate`, body: CreditNote | UpdateCreditNoteResponse |  | Update creditNote |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/customers` | create-customer | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: Customer | CreateCustomerResponse |  | Create customer |
+| PUT | `/companies/{companyId}/connections/{connectionId}/push/customers/{customerId}` | update-customer | `companyId`*, `connectionId`*, `customerId`*, `timeoutInMinutes`, `forceUpdate`, body: Customer | UpdateCustomerResponse |  | Update customer |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/directCosts` | create-direct-cost | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: DirectCost | CreateDirectCostResponse |  | Create direct cost |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/directCosts/{directCostId}/attachment` | upload-direct-cost-attachment | `companyId`*, `connectionId`*, `directCostId`*, body: — | — |  | Upload direct cost attachment |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/directIncomes` | create-direct-income | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: DirectIncome | CreateDirectIncomeResponse |  | Create direct income |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/directIncomes/{directIncomeId}/attachment` | upload-direct-income-attachment | `companyId`*, `connectionId`*, `directIncomeId`*, body: — | — |  | Create direct income attachment |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/invoices` | create-invoice | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: Invoice | CreateInvoiceResponse |  | Create invoice |
+| PUT | `/companies/{companyId}/connections/{connectionId}/push/invoices/{invoiceId}` | update-invoice | `companyId`*, `connectionId`*, `invoiceId`*, `timeoutInMinutes`, `forceUpdate`, body: Invoice | UpdateInvoiceResponse |  | Update invoice |
+| DELETE | `/companies/{companyId}/connections/{connectionId}/push/invoices/{invoiceId}` | delete-invoice | `companyId`*, `connectionId`*, `invoiceId`* | PushOperationSummary |  | Delete invoice |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/invoices/{invoiceId}/attachment` | upload-invoice-attachment | `companyId`*, `connectionId`*, `invoiceId`*, body: — | — |  | Push invoice attachment |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/items` | create-item | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: Item | CreateItemResponse |  | Create item |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/journalEntries` | create-journal-entry | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: JournalEntry | CreateJournalEntryResponse |  | Create journal entry |
+| DELETE | `/companies/{companyId}/connections/{connectionId}/push/journalEntries/{journalEntryId}` | delete-journal-entry | `journalEntryId`*, `companyId`*, `connectionId`* | PushOperationSummary |  | Delete journal entry |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/journals` | push-journal | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: Journal | object\|PushOperationSummary |  | Create journal |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/payments` | create-payment | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: Payment | CreatePaymentResponse |  | Create payment |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/purchaseOrders` | create-purchase-order | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: PurchaseOrder | CreatePurchaseOrderResponse |  | Create purchase order |
+| PUT | `/companies/{companyId}/connections/{connectionId}/push/purchaseOrders/{purchaseOrderId}` | update-purchase-order | `companyId`*, `connectionId`*, `purchaseOrderId`*, `timeoutInMinutes`, `forceUpdate`, body: PurchaseOrder | UpdatePurchaseOrderResponse |  | Update purchase order |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/suppliers` | create-supplier | `companyId`*, `connectionId`*, `timeoutInMinutes`, body: Supplier | CreateSupplierResponse |  | Create suppliers |
+| PUT | `/companies/{companyId}/connections/{connectionId}/push/suppliers/{supplierId}` | put-supplier | `supplierId`*, `companyId`*, `connectionId`*, `timeoutInMinutes`, `forceUpdate`, body: Supplier | object\|PushOperationSummary |  | Update supplier |
+| POST | `/companies/{companyId}/connections/{connectionId}/push/transfers` | create-transfer | `companyId`*, `connectionId`*, body: Transfer | CreateTransferResponse |  | Create transfer |
+| GET | `/companies/{companyId}/data/accounts` | list-accounts | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | Accounts | yes | List accounts |
+| GET | `/companies/{companyId}/data/accounts/{accountId}` | get-account | `companyId`*, `accountId`* | Account | yes | Get account |
+| GET | `/companies/{companyId}/data/bankAccounts/{accountId}` | get-all-bank-account | `companyId`*, `accountId`*, `query` | BankStatementAccount | yes | Get bank account |
+| GET | `/companies/{companyId}/data/bankAccounts/{accountId}/transactions` | list-bank-transactions | `companyId`*, `accountId`*, `page`*, `pageSize`, `query`, `orderBy` | BankAccountTransactions | yes | List all bank transactions |
+| GET | `/companies/{companyId}/data/billCreditNotes` | list-bill-credit-notes | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | BillCreditNotes | yes | List bill credit notes |
+| GET | `/companies/{companyId}/data/billCreditNotes/{billCreditNoteId}` | get-bill-credit-note | `companyId`*, `billCreditNoteId`* | BillCreditNote | yes | Get bill credit note |
+| GET | `/companies/{companyId}/data/billPayments` | list-bill-payments | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | BillPayments | yes | List bill payments |
+| GET | `/companies/{companyId}/data/billPayments/{billPaymentId}` | get-bill-payments | `companyId`*, `billPaymentId`* | BillPayment | yes | Get bill payment |
+| GET | `/companies/{companyId}/data/bills` | list-bills | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | Bills | yes | List bills |
+| GET | `/companies/{companyId}/data/bills/{billId}` | get-bill | `billId`*, `companyId`* | Bill | yes | Get bill |
+| GET | `/companies/{companyId}/data/creditNotes` | list-credit-notes | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | CreditNotes | yes | List credit notes |
+| GET | `/companies/{companyId}/data/creditNotes/{creditNoteId}` | get-credit-note | `companyId`*, `creditNoteId`* | CreditNote | yes | Get credit note |
+| GET | `/companies/{companyId}/data/customers` | get-customers | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | Customers | yes | List customers |
+| GET | `/companies/{companyId}/data/customers/{customerId}` | get-customer | `companyId`*, `customerId`* | Customer | yes | Get customer |
+| GET | `/companies/{companyId}/data/financials/balanceSheet` | get-balance-sheet | `companyId`*, `periodLength`*, `periodsToCompare`*, `startMonth` | BalanceSheet | yes | Get balance sheet |
+| GET | `/companies/{companyId}/data/financials/cashFlowStatement` | get-cash-flow-statement | `companyId`*, `periodLength`*, `periodsToCompare`*, `startMonth` | CashFlowStatement | yes | Get cash flow statement |
+| GET | `/companies/{companyId}/data/financials/profitAndLoss` | get-profit-and-loss | `companyId`*, `periodLength`*, `periodsToCompare`*, `startMonth` | ProfitAndLossReport | yes | Get profit and loss |
+| GET | `/companies/{companyId}/data/info` | get-company-info | `companyId`* | CompanyDataset | yes | Get company info |
+| POST | `/companies/{companyId}/data/info` | post-sync-info | `companyId`* | Dataset |  | Refresh company info |
+| GET | `/companies/{companyId}/data/invoices` | list-invoices | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | Invoices | yes | List invoices |
+| GET | `/companies/{companyId}/data/invoices/{invoiceId}` | get-invoice | `companyId`*, `invoiceId`* | Invoice | yes | Get invoice |
+| GET | `/companies/{companyId}/data/invoices/{invoiceId}/pdf` | Download-invoice-pdf | `companyId`*, `invoiceId`* | — | yes | Get invoice as PDF |
+| GET | `/companies/{companyId}/data/items` | list-items | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | Items | yes | List items |
+| GET | `/companies/{companyId}/data/items/{itemId}` | get-item | `companyId`*, `itemId`* | Item | yes | Get item |
+| GET | `/companies/{companyId}/data/journalEntries` | list-journal-entries | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | JournalEntries | yes | List journal entries |
+| GET | `/companies/{companyId}/data/journalEntries/{journalEntryId}` | get-journal-entry | `companyId`*, `journalEntryId`* | JournalEntry | yes | Get journal entry |
+| GET | `/companies/{companyId}/data/journals` | list-journals | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | Journals | yes | List journals |
+| GET | `/companies/{companyId}/data/journals/{journalId}` | get-journal | `companyId`*, `journalId`* | Journal | yes | Get journal |
+| GET | `/companies/{companyId}/data/paymentMethods` | list-payment-methods | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | PaymentMethods | yes | List all payment methods |
+| GET | `/companies/{companyId}/data/paymentMethods/{paymentMethodId}` | get-payment-method | `companyId`*, `paymentMethodId`* | PaymentMethod | yes | Get payment method |
+| GET | `/companies/{companyId}/data/payments` | list-payments | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | Payments | yes | List payments |
+| GET | `/companies/{companyId}/data/payments/{paymentId}` | get-payment | `companyId`*, `paymentId`* | Payment | yes | Get payment |
+| GET | `/companies/{companyId}/data/purchaseOrders` | list-purchase-orders | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | PurchaseOrders | yes | List purchase orders |
+| GET | `/companies/{companyId}/data/purchaseOrders/{purchaseOrderId}` | get-purchase-order | `companyId`*, `purchaseOrderId`* | PurchaseOrder | yes | Get purchase order |
+| GET | `/companies/{companyId}/data/salesOrders` | list-sales-orders | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | SalesOrders | yes | List sales orders |
+| GET | `/companies/{companyId}/data/salesOrders/{salesOrderId}` | get-sales-order | `companyId`*, `salesOrderId`* | SalesOrder | yes | Get sales order |
+| GET | `/companies/{companyId}/data/suppliers` | list-suppliers | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | Suppliers | yes | List suppliers |
+| GET | `/companies/{companyId}/data/suppliers/{supplierId}` | get-supplier | `supplierId`*, `companyId`* | Supplier | yes | Get supplier |
+| GET | `/companies/{companyId}/data/taxRates` | list-tax-rates | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | TaxRates | yes | List all tax rates |
+| GET | `/companies/{companyId}/data/taxRates/{taxRateId}` | get-tax-rate | `companyId`*, `taxRateId`* | TaxRate | yes | Get tax rate |
+| GET | `/companies/{companyId}/data/trackingCategories` | list-tracking-categories | `companyId`*, `page`*, `pageSize`, `query`, `orderBy` | TrackingCategories | yes | List tracking categories |
+| GET | `/companies/{companyId}/data/trackingCategories/{trackingCategoryId}` | get-tracking-category | `companyId`*, `trackingCategoryId`* | TrackingCategoryTree | yes | Get tracking categories |
+| GET | `/companies/{companyId}/reports/agedCreditor` | get-aged-creditors-report | `companyId`*, `reportDate`, `numberOfPeriods`, `periodLengthDays` | AgedCreditorReport | yes | Aged creditors report |
+| GET | `/companies/{companyId}/reports/agedCreditor/available` | is-aged-creditors-report-available | `companyId`* | boolean | yes | Aged creditors report available |
+| GET | `/companies/{companyId}/reports/agedDebtor` | get-aged-debtors-report | `companyId`*, `reportDate`, `numberOfPeriods`, `periodLengthDays` | AgedDebtorReport | yes | Aged debtors report |
+| GET | `/companies/{companyId}/reports/agedDebtor/available` | is-aged-debtor-report-available | `companyId`* | boolean | yes | Aged debtors report available |

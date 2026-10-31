@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_GIPHY_profile_image
 
 | | |
 | --- | --- |
-| Signed bundle | `745fcd0d5e92b1334b4a0e4ba6e83f830ae42589c89280678d8914b2a946d385` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_GIPHY_profile_image
 
 5 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/gifs` | getGifsById | Get GIFs by ID |
-| GET | `/gifs/random` | randomGif | Random GIF |
-| GET | `/gifs/search` | searchGifs | Search GIFs |
-| GET | `/gifs/translate` | translateGif | Translate phrase to GIF |
-| GET | `/gifs/trending` | trendingGifs | Trending GIFs |
-| GET | `/gifs/{gifId}` | getGifById | Get GIF by Id |
-| GET | `/stickers/random` | randomSticker | Random Sticker |
-| GET | `/stickers/search` | searchStickers | Search Stickers |
-| GET | `/stickers/translate` | translateSticker | Translate phrase to Sticker |
-| GET | `/stickers/trending` | trendingStickers | Trending Stickers |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/gifs` | getGifsById | `ids` | object | yes | Get GIFs by ID |
+| GET | `/gifs/random` | randomGif | `tag`, `rating` | object | yes | Random GIF |
+| GET | `/gifs/search` | searchGifs | `q`*, `limit`, `offset`, `rating`, `lang` | object | yes | Search GIFs |
+| GET | `/gifs/translate` | translateGif | `s`* | object | yes | Translate phrase to GIF |
+| GET | `/gifs/trending` | trendingGifs | `limit`, `offset`, `rating` | object | yes | Trending GIFs |
+| GET | `/gifs/{gifId}` | getGifById | `gifId`* | object | yes | Get GIF by Id |
+| GET | `/stickers/random` | randomSticker | `tag`, `rating` | object | yes | Random Sticker |
+| GET | `/stickers/search` | searchStickers | `q`*, `limit`, `offset`, `rating`, `lang` | object | yes | Search Stickers |
+| GET | `/stickers/translate` | translateSticker | `s`* | object | yes | Translate phrase to Sticker |
+| GET | `/stickers/trending` | trendingStickers | `limit`, `offset`, `rating` | object | yes | Trending Stickers |

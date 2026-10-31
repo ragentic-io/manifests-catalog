@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_AfterbanksAPI_profi
 
 | | |
 | --- | --- |
-| Signed bundle | `c22a50b6997e7d7c5a2a71f096e6e9a667581c643c89a10016e6a2671e80c498` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_AfterbanksAPI_profi
 
 5 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/forms` | get /forms | Lista de bancos soportados |
-| POST | `/me` | post /me | Información de uso de mi licencia |
-| POST | `/serviceV3` | post /serviceV3 | Posición global y movimientos hasta una fecha dada. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/forms` | get /forms | `country_code` | Forms[] | yes | Lista de bancos soportados |
+| POST | `/me` | post /me | `servicekey`* | me |  | Información de uso de mi licencia |
+| POST | `/serviceV3` | post /serviceV3 | `servicekey`*, `service`*, `documentType`, `user`*, `pass`*, `pass2`, `products`, `startdate`* | serviceV3[] |  | Posición global y movimientos hasta una fecha dada. |

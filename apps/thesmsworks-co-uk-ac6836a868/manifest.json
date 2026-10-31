@@ -77,12 +77,12 @@
       {
         "from": "thesmsworks-co-uk-ac6836a868",
         "kind": "EXPOSES",
-        "to": "operation:delete:/messages/{messageid}"
+        "to": "operation:get:/messages/{messageid}"
       },
       {
         "from": "thesmsworks-co-uk-ac6836a868",
         "kind": "EXPOSES",
-        "to": "operation:get:/messages/{messageid}"
+        "to": "operation:delete:/messages/{messageid}"
       },
       {
         "from": "thesmsworks-co-uk-ac6836a868",
@@ -93,6 +93,161 @@
         "from": "thesmsworks-co-uk-ac6836a868",
         "kind": "EXPOSES",
         "to": "operation:get:/utils/test"
+      },
+      {
+        "from": "operation:post:/batch/any",
+        "kind": "ACCEPTS",
+        "to": "schema:MessageArray"
+      },
+      {
+        "from": "operation:post:/batch/any",
+        "kind": "RETURNS",
+        "to": "schema:BatchMessageResponse"
+      },
+      {
+        "from": "operation:post:/batch/schedule",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchMessage"
+      },
+      {
+        "from": "operation:post:/batch/schedule",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledBatchResponse"
+      },
+      {
+        "from": "operation:post:/batch/send",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchMessage"
+      },
+      {
+        "from": "operation:post:/batch/send",
+        "kind": "RETURNS",
+        "to": "schema:BatchMessageResponse"
+      },
+      {
+        "from": "operation:get:/batch/{batchid}",
+        "kind": "RETURNS",
+        "to": "schema:MessageResponse"
+      },
+      {
+        "from": "operation:delete:/batches/schedule/{batchid}",
+        "kind": "RETURNS",
+        "to": "schema:CancelledMessageResponse"
+      },
+      {
+        "from": "operation:get:/credits/balance",
+        "kind": "RETURNS",
+        "to": "schema:CreditsResponse"
+      },
+      {
+        "from": "operation:post:/message/flash",
+        "kind": "ACCEPTS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:post:/message/flash",
+        "kind": "RETURNS",
+        "to": "schema:SendMessageResponse"
+      },
+      {
+        "from": "operation:post:/message/schedule",
+        "kind": "ACCEPTS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:post:/message/schedule",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledMessageResponse"
+      },
+      {
+        "from": "operation:post:/message/send",
+        "kind": "ACCEPTS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "operation:post:/message/send",
+        "kind": "RETURNS",
+        "to": "schema:SendMessageResponse"
+      },
+      {
+        "from": "operation:post:/messages",
+        "kind": "ACCEPTS",
+        "to": "schema:Query"
+      },
+      {
+        "from": "operation:post:/messages",
+        "kind": "RETURNS",
+        "to": "schema:MessageResponse"
+      },
+      {
+        "from": "operation:post:/messages/failed",
+        "kind": "ACCEPTS",
+        "to": "schema:Query"
+      },
+      {
+        "from": "operation:post:/messages/failed",
+        "kind": "RETURNS",
+        "to": "schema:MessageResponse"
+      },
+      {
+        "from": "operation:post:/messages/inbox",
+        "kind": "ACCEPTS",
+        "to": "schema:Query"
+      },
+      {
+        "from": "operation:post:/messages/inbox",
+        "kind": "RETURNS",
+        "to": "schema:MessageResponse"
+      },
+      {
+        "from": "operation:get:/messages/schedule",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledMessagesResponse"
+      },
+      {
+        "from": "operation:delete:/messages/schedule/{messageid}",
+        "kind": "RETURNS",
+        "to": "schema:CancelledMessageResponse"
+      },
+      {
+        "from": "operation:get:/messages/{messageid}",
+        "kind": "RETURNS",
+        "to": "schema:MessageResponse"
+      },
+      {
+        "from": "operation:delete:/messages/{messageid}",
+        "kind": "RETURNS",
+        "to": "schema:DeletedMessageResponse"
+      },
+      {
+        "from": "operation:get:/utils/test",
+        "kind": "RETURNS",
+        "to": "schema:TestResponse"
+      },
+      {
+        "from": "schema:ExtendedErrorModel",
+        "kind": "REFERENCES",
+        "to": "schema:ErrorModel"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:MessageArray",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "REFERENCES",
+        "to": "schema:MetaData"
+      },
+      {
+        "from": "schema:ScheduledMessagesResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduledMessage"
       }
     ],
     "nodes": [
@@ -102,315 +257,729 @@
       },
       {
         "deprecated": false,
+        "description": "Sends a collection of unique SMS messages.",
         "id": "operation:post:/batch/any",
         "kind": "operation",
         "method": "post",
         "name": "post /batch/any",
         "path": "/batch/any",
         "pointer": "#/paths/~1batch~1any/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "MessageArray"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "BatchMessageResponse"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "batch messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Schedules a batch of SMS messages to be sent at the date time you specify",
         "id": "operation:post:/batch/schedule",
         "kind": "operation",
         "method": "post",
         "name": "post /batch/schedule",
         "path": "/batch/schedule",
         "pointer": "#/paths/~1batch~1schedule/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BatchMessage"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "ScheduledBatchResponse"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "batch messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Send a single SMS message to multiple recipients.",
         "id": "operation:post:/batch/send",
         "kind": "operation",
         "method": "post",
         "name": "post /batch/send",
         "path": "/batch/send",
         "pointer": "#/paths/~1batch~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BatchMessage"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "BatchMessageResponse"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "batch messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve all messages in a batch with the given batch ID",
         "id": "operation:get:/batch/{batchid}",
         "kind": "operation",
         "method": "get",
         "name": "get /batch/{batchid}",
+        "parameters": [
+          {
+            "description": "The ID of the batch you would like returned",
+            "in": "path",
+            "name": "batchid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/batch/{batchid}",
         "pointer": "#/paths/~1batch~1{batchid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageResponse[]"
+          },
+          {
+            "status": "404",
+            "type": "ErrorModel"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "batch messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Cancels a scheduled SMS message",
         "id": "operation:delete:/batches/schedule/{batchid}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /batches/schedule/{batchid}",
+        "parameters": [
+          {
+            "description": "The ID of the batch you would like returned",
+            "in": "path",
+            "name": "batchid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/batches/schedule/{batchid}",
         "pointer": "#/paths/~1batches~1schedule~1{batchid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CancelledMessageResponse"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "batch messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the number of credits currently available on the account",
         "id": "operation:get:/credits/balance",
         "kind": "operation",
         "method": "get",
         "name": "get /credits/balance",
         "path": "/credits/balance",
         "pointer": "#/paths/~1credits~1balance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreditsResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "credits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sends an SMS flash message, which appears on the recipients lock screen",
         "id": "operation:post:/message/flash",
         "kind": "operation",
         "method": "post",
         "name": "sendFlashMessage",
         "path": "/message/flash",
         "pointer": "#/paths/~1message~1flash/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Message"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SendMessageResponse"
+          },
+          {
+            "status": "402",
+            "type": "ExtendedErrorModel"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Schedules an SMS message to be sent at the date-time you specify",
         "id": "operation:post:/message/schedule",
         "kind": "operation",
         "method": "post",
         "name": "post /message/schedule",
         "path": "/message/schedule",
         "pointer": "#/paths/~1message~1schedule/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Message"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduledMessageResponse[]"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Send an SMS Message",
         "id": "operation:post:/message/send",
         "kind": "operation",
         "method": "post",
         "name": "post /message/send",
         "path": "/message/send",
         "pointer": "#/paths/~1message~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Message"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SendMessageResponse"
+          },
+          {
+            "status": "402",
+            "type": "ExtendedErrorModel"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve up to 1000 messages matching your search criteria",
         "id": "operation:post:/messages",
         "kind": "operation",
         "method": "post",
         "name": "post /messages",
         "path": "/messages",
         "pointer": "#/paths/~1messages/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Query"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageResponse[]"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get failed messages matching your search criteria",
         "id": "operation:post:/messages/failed",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/failed",
         "path": "/messages/failed",
         "pointer": "#/paths/~1messages~1failed/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Query"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageResponse[]"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get unread uncoming messages matching your search criteria",
         "id": "operation:post:/messages/inbox",
         "kind": "operation",
         "method": "post",
         "name": "post /messages/inbox",
         "path": "/messages/inbox",
         "pointer": "#/paths/~1messages~1inbox/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Query"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageResponse[]"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of messages scheduled from your account, comprising any messages scheduled in the last 3 months and any scheduled to send in the future",
         "id": "operation:get:/messages/schedule",
         "kind": "operation",
         "method": "get",
         "name": "get /messages/schedule",
         "path": "/messages/schedule",
         "pointer": "#/paths/~1messages~1schedule/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduledMessagesResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Cancels a scheduled SMS message",
         "id": "operation:delete:/messages/schedule/{messageid}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /messages/schedule/{messageid}",
+        "parameters": [
+          {
+            "description": "The ID of the message you would like returned",
+            "in": "path",
+            "name": "messageid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/messages/schedule/{messageid}",
         "pointer": "#/paths/~1messages~1schedule~1{messageid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CancelledMessageResponse"
+          },
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/messages/{messageid}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /messages/{messageid}",
-        "path": "/messages/{messageid}",
-        "pointer": "#/paths/~1messages~1{messageid}/delete",
-        "security": [
-          {
-            "JWT": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieve a logged message by the message ID",
         "id": "operation:get:/messages/{messageid}",
         "kind": "operation",
         "method": "get",
         "name": "get /messages/{messageid}",
+        "parameters": [
+          {
+            "description": "The ID of the message you would like returned",
+            "in": "path",
+            "name": "messageid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/messages/{messageid}",
         "pointer": "#/paths/~1messages~1{messageid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MessageResponse"
+          },
+          {
+            "status": "404",
+            "type": "ErrorModel"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete the message with the mathcing messageid",
+        "id": "operation:delete:/messages/{messageid}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /messages/{messageid}",
+        "parameters": [
+          {
+            "description": "The ID of the message you would like returned",
+            "in": "path",
+            "name": "messageid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/messages/{messageid}",
+        "pointer": "#/paths/~1messages~1{messageid}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DeletedMessageResponse"
+          },
+          {
+            "status": "400",
+            "type": "ErrorModel"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "messages"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a sample error object for the given error code.",
         "id": "operation:get:/utils/errors/{errorcode}",
         "kind": "operation",
         "method": "get",
         "name": "get /utils/errors/{errorcode}",
+        "parameters": [
+          {
+            "description": "The code of the error you would like returned",
+            "in": "path",
+            "name": "errorcode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/utils/errors/{errorcode}",
         "pointer": "#/paths/~1utils~1errors~1{errorcode}/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "ExtendedErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "utils"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the customer ID to the caller",
         "id": "operation:get:/utils/test",
         "kind": "operation",
         "method": "get",
         "name": "get /utils/test",
         "path": "/utils/test",
         "pointer": "#/paths/~1utils~1test/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TestResponse"
+          },
+          {
+            "status": "default",
+            "type": "ErrorModel"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JWT": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "utils"
+        ]
       },
       {
+        "description": "SMS Message Batch",
         "id": "schema:BatchMessage",
         "kind": "schema",
-        "name": "BatchMessage"
+        "name": "BatchMessage",
+        "type": "object"
       },
       {
         "id": "schema:BatchMessageResponse",
         "kind": "schema",
-        "name": "BatchMessageResponse"
+        "name": "BatchMessageResponse",
+        "type": "object"
       },
       {
         "id": "schema:CancelledMessageResponse",
         "kind": "schema",
-        "name": "CancelledMessageResponse"
+        "name": "CancelledMessageResponse",
+        "type": "object"
       },
       {
         "id": "schema:CreditsResponse",
         "kind": "schema",
-        "name": "CreditsResponse"
+        "name": "CreditsResponse",
+        "type": "object"
       },
       {
         "id": "schema:DeletedMessageResponse",
         "kind": "schema",
-        "name": "DeletedMessageResponse"
+        "name": "DeletedMessageResponse",
+        "type": "object"
       },
       {
         "id": "schema:ErrorModel",
         "kind": "schema",
-        "name": "ErrorModel"
+        "name": "ErrorModel",
+        "type": "object"
       },
       {
         "id": "schema:ExtendedErrorModel",
         "kind": "schema",
-        "name": "ExtendedErrorModel"
+        "name": "ExtendedErrorModel",
+        "type": "ErrorModel|object"
       },
       {
+        "description": "SMS message object",
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
+        "description": "An array of Messages",
         "id": "schema:MessageArray",
         "kind": "schema",
         "name": "MessageArray"
@@ -418,47 +987,60 @@
       {
         "id": "schema:MessageResponse",
         "kind": "schema",
-        "name": "MessageResponse"
+        "name": "MessageResponse",
+        "type": "object"
       },
       {
+        "description": "Key/value pair that will be returned to you in the API call response.",
         "id": "schema:MetaData",
         "kind": "schema",
-        "name": "MetaData"
+        "name": "MetaData",
+        "type": "object"
       },
       {
+        "description": "search parameters for querying the message database",
         "id": "schema:Query",
         "kind": "schema",
-        "name": "Query"
+        "name": "Query",
+        "type": "object"
       },
       {
         "id": "schema:ScheduledBatchResponse",
         "kind": "schema",
-        "name": "ScheduledBatchResponse"
+        "name": "ScheduledBatchResponse",
+        "type": "object"
       },
       {
+        "description": "the scheduled message content",
         "id": "schema:ScheduledMessage",
         "kind": "schema",
-        "name": "ScheduledMessage"
+        "name": "ScheduledMessage",
+        "type": "object"
       },
       {
         "id": "schema:ScheduledMessageResponse",
         "kind": "schema",
-        "name": "ScheduledMessageResponse"
+        "name": "ScheduledMessageResponse",
+        "type": "object"
       },
       {
+        "description": "details of a message scheduled to be sent at a specified date and time",
         "id": "schema:ScheduledMessagesResponse",
         "kind": "schema",
-        "name": "ScheduledMessagesResponse"
+        "name": "ScheduledMessagesResponse",
+        "type": "object"
       },
       {
         "id": "schema:SendMessageResponse",
         "kind": "schema",
-        "name": "SendMessageResponse"
+        "name": "SendMessageResponse",
+        "type": "object"
       },
       {
         "id": "schema:TestResponse",
         "kind": "schema",
-        "name": "TestResponse"
+        "name": "TestResponse",
+        "type": "object"
       }
     ]
   },

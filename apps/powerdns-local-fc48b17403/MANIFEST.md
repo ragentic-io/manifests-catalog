@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `91c9ffb7294d95e8f8a8f452f18a54cc7f7299fd814eecec3f95630b55e404b6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,37 +34,39 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 22 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/servers` | listServers | List all servers |
-| GET | `/servers/{server_id}` | listServer | List a server |
-| PUT | `/servers/{server_id}/cache/flush` | cacheFlushByName | Flush a cache-entry by name |
-| GET | `/servers/{server_id}/config` | getConfig | Returns all ConfigSettings for a single server |
-| GET | `/servers/{server_id}/config/{config_setting_name}` | getConfigSetting | Returns a specific ConfigSetting for a single server |
-| GET | `/servers/{server_id}/search-data` | searchData | Search the data inside PowerDNS |
-| GET | `/servers/{server_id}/statistics` | getStats | Query statistics. |
-| GET | `/servers/{server_id}/tsigkeys` | listTSIGKeys | Get all TSIGKeys on the server, except the actual key |
-| POST | `/servers/{server_id}/tsigkeys` | createTSIGKey | Add a TSIG key |
-| DELETE | `/servers/{server_id}/tsigkeys/{tsigkey_id}` | deleteTSIGKey | Delete the TSIGKey with tsigkey_id |
-| GET | `/servers/{server_id}/tsigkeys/{tsigkey_id}` | getTSIGKey | Get a specific TSIGKeys on the server, including the actual key |
-| PUT | `/servers/{server_id}/tsigkeys/{tsigkey_id}` | putTSIGKey | — |
-| GET | `/servers/{server_id}/zones` | listZones | List all Zones in a server |
-| POST | `/servers/{server_id}/zones` | createZone | Creates a new domain, returns the Zone on creation. |
-| DELETE | `/servers/{server_id}/zones/{zone_id}` | deleteZone | Deletes this zone, all attached metadata and rrsets. |
-| GET | `/servers/{server_id}/zones/{zone_id}` | listZone | zone managed by a server |
-| PATCH | `/servers/{server_id}/zones/{zone_id}` | patchZone | Creates/modifies/deletes RRsets present in the payload and their comments. Returns 204 No Content on success. |
-| PUT | `/servers/{server_id}/zones/{zone_id}` | putZone | Modifies basic zone data. |
-| PUT | `/servers/{server_id}/zones/{zone_id}/axfr-retrieve` | axfrRetrieveZone | Retrieve slave zone from its master. |
-| GET | `/servers/{server_id}/zones/{zone_id}/cryptokeys` | listCryptokeys | Get all CryptoKeys for a zone, except the privatekey |
-| POST | `/servers/{server_id}/zones/{zone_id}/cryptokeys` | createCryptokey | Creates a Cryptokey |
-| DELETE | `/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}` | deleteCryptokey | This method deletes a key specified by cryptokey_id. |
-| GET | `/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}` | getCryptokey | Returns all data about the CryptoKey, including the privatekey. |
-| PUT | `/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}` | modifyCryptokey | This method (de)activates a key from zone_name specified by cryptokey_id |
-| GET | `/servers/{server_id}/zones/{zone_id}/export` | axfrExportZone | Returns the zone in AXFR format. |
-| GET | `/servers/{server_id}/zones/{zone_id}/metadata` | listMetadata | Get all the Metadata associated with the zone. |
-| POST | `/servers/{server_id}/zones/{zone_id}/metadata` | createMetadata | Creates a set of metadata entries |
-| DELETE | `/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}` | deleteMetadata | Delete all items of a single kind of domain metadata. |
-| GET | `/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}` | getMetadata | Get the content of a single kind of domain metadata as a Metadata object. |
-| PUT | `/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}` | modifyMetadata | Replace the content of a single kind of domain metadata. |
-| PUT | `/servers/{server_id}/zones/{zone_id}/notify` | notifyZone | Send a DNS NOTIFY to all slaves. |
-| PUT | `/servers/{server_id}/zones/{zone_id}/rectify` | rectifyZone | Rectify the zone data. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/servers` | listServers | — | Server[] | yes | List all servers |
+| GET | `/servers/{server_id}` | listServer | `server_id`* | Server | yes | List a server |
+| PUT | `/servers/{server_id}/cache/flush` | cacheFlushByName | `server_id`*, `domain`* | CacheFlushResult |  | Flush a cache-entry by name |
+| GET | `/servers/{server_id}/config` | getConfig | `server_id`* | ConfigSetting[] | yes | Returns all ConfigSettings for a single server |
+| GET | `/servers/{server_id}/config/{config_setting_name}` | getConfigSetting | `server_id`*, `config_setting_name`* | ConfigSetting | yes | Returns a specific ConfigSetting for a single server |
+| GET | `/servers/{server_id}/search-data` | searchData | `server_id`*, `q`*, `max`*, `object_type` | SearchResults | yes | Search the data inside PowerDNS |
+| GET | `/servers/{server_id}/statistics` | getStats | `server_id`*, `statistic`, `includerings` | array | yes | Query statistics. |
+| GET | `/servers/{server_id}/tsigkeys` | listTSIGKeys | `server_id`* | TSIGKey[] | yes | Get all TSIGKeys on the server, except the actual key |
+| POST | `/servers/{server_id}/tsigkeys` | createTSIGKey | `server_id`*, body*: TSIGKey | TSIGKey |  | Add a TSIG key |
+| GET | `/servers/{server_id}/tsigkeys/{tsigkey_id}` | getTSIGKey | `server_id`*, `tsigkey_id`* | TSIGKey | yes | Get a specific TSIGKeys on the server, including the actual key |
+| PUT | `/servers/{server_id}/tsigkeys/{tsigkey_id}` | putTSIGKey | `server_id`*, `tsigkey_id`*, body*: TSIGKey | TSIGKey |  | — |
+| DELETE | `/servers/{server_id}/tsigkeys/{tsigkey_id}` | deleteTSIGKey | `server_id`*, `tsigkey_id`* | — |  | Delete the TSIGKey with tsigkey_id |
+| GET | `/servers/{server_id}/zones` | listZones | `server_id`*, `zone`, `dnssec` | Zone[] | yes | List all Zones in a server |
+| POST | `/servers/{server_id}/zones` | createZone | `server_id`*, `rrsets`, body*: Zone | Zone |  | Creates a new domain, returns the Zone on creation. |
+| GET | `/servers/{server_id}/zones/{zone_id}` | listZone | `server_id`*, `zone_id`*, `rrsets` | Zone | yes | zone managed by a server |
+| PUT | `/servers/{server_id}/zones/{zone_id}` | putZone | `server_id`*, `zone_id`*, body*: Zone | — |  | Modifies basic zone data. |
+| DELETE | `/servers/{server_id}/zones/{zone_id}` | deleteZone | `server_id`*, `zone_id`* | — |  | Deletes this zone, all attached metadata and rrsets. |
+| PATCH | `/servers/{server_id}/zones/{zone_id}` | patchZone | `server_id`*, `zone_id`*, body*: Zone | — |  | Creates/modifies/deletes RRsets present in the payload and their comments. Returns 204 No Content on success. |
+| PUT | `/servers/{server_id}/zones/{zone_id}/axfr-retrieve` | axfrRetrieveZone | `server_id`*, `zone_id`* | — |  | Retrieve slave zone from its master. |
+| GET | `/servers/{server_id}/zones/{zone_id}/cryptokeys` | listCryptokeys | `server_id`*, `zone_id`* | Cryptokey[] | yes | Get all CryptoKeys for a zone, except the privatekey |
+| POST | `/servers/{server_id}/zones/{zone_id}/cryptokeys` | createCryptokey | `server_id`*, `zone_id`*, body*: Cryptokey | Cryptokey |  | Creates a Cryptokey |
+| GET | `/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}` | getCryptokey | `server_id`*, `zone_id`*, `cryptokey_id`* | Cryptokey | yes | Returns all data about the CryptoKey, including the privatekey. |
+| PUT | `/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}` | modifyCryptokey | `server_id`*, `zone_id`*, `cryptokey_id`*, body*: Cryptokey | — |  | This method (de)activates a key from zone_name specified by cryptokey_id |
+| DELETE | `/servers/{server_id}/zones/{zone_id}/cryptokeys/{cryptokey_id}` | deleteCryptokey | `server_id`*, `zone_id`*, `cryptokey_id`* | — |  | This method deletes a key specified by cryptokey_id. |
+| GET | `/servers/{server_id}/zones/{zone_id}/export` | axfrExportZone | `server_id`*, `zone_id`* | string | yes | Returns the zone in AXFR format. |
+| GET | `/servers/{server_id}/zones/{zone_id}/metadata` | listMetadata | `server_id`*, `zone_id`* | Metadata[] | yes | Get all the Metadata associated with the zone. |
+| POST | `/servers/{server_id}/zones/{zone_id}/metadata` | createMetadata | `server_id`*, `zone_id`*, body*: Metadata | — |  | Creates a set of metadata entries |
+| GET | `/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}` | getMetadata | `server_id`*, `zone_id`*, `metadata_kind`* | Metadata | yes | Get the content of a single kind of domain metadata as a Metadata object. |
+| PUT | `/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}` | modifyMetadata | `server_id`*, `zone_id`*, `metadata_kind`*, body*: Metadata | Metadata |  | Replace the content of a single kind of domain metadata. |
+| DELETE | `/servers/{server_id}/zones/{zone_id}/metadata/{metadata_kind}` | deleteMetadata | `server_id`*, `zone_id`*, `metadata_kind`* | — |  | Delete all items of a single kind of domain metadata. |
+| PUT | `/servers/{server_id}/zones/{zone_id}/notify` | notifyZone | `server_id`*, `zone_id`* | — |  | Send a DNS NOTIFY to all slaves. |
+| PUT | `/servers/{server_id}/zones/{zone_id}/rectify` | rectifyZone | `server_id`*, `zone_id`* | string |  | Rectify the zone data. |

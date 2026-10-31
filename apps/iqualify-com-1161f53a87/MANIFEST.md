@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_hello_iqualify_prof
 
 | | |
 | --- | --- |
-| Signed bundle | `79a690fb686b62213a98ebdee3e259597c5023cc823b302fd47c9a5fc92ec96e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,89 +34,91 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_hello_iqualify_prof
 
 70 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | get / | List supported endpoints URLs |
-| GET | `/course-mappings` | get /course-mappings | Find course mappings |
-| GET | `/course-mappings/externalcourse/{externalCourseId}` | get /course-mappings/externalcourse/{externalCourseId} | Find course mappings by externalCourseId |
-| GET | `/course-mappings/{offeringId}` | get /course-mappings/{offeringId} | Find course mappings by offeringId |
-| DELETE | `/course-mappings/{offeringId}/{externalCourseId}` | delete /course-mappings/{offeringId}/{externalCourseId} | Remove course mapping |
-| PUT | `/course-mappings/{offeringId}/{externalCourseId}` | put /course-mappings/{offeringId}/{externalCourseId} | Add course mapping |
-| GET | `/courses` | get /courses | Find courses |
-| GET | `/courses/{contentId}` | get /courses/{contentId} | Find course by contentId |
-| GET | `/courses/{contentId}/activations` | get /courses/{contentId}/activations | Find activations for a contentId |
-| PUT | `/courses/{contentId}/metadata/category` | put /courses/{contentId}/metadata/category | Update course category |
-| PUT | `/courses/{contentId}/metadata/level` | put /courses/{contentId}/metadata/level | Update course level |
-| PUT | `/courses/{contentId}/metadata/tags` | put /courses/{contentId}/metadata/tags | Update course tags |
-| PUT | `/courses/{contentId}/metadata/topic` | put /courses/{contentId}/metadata/topic | Update course topic |
-| GET | `/courses/{contentId}/permissions` | get /courses/{contentId}/permissions | Find users who have access to the contentId provided |
-| POST | `/courses/{rootContentId}/permissions/{userEmail}` | post /courses/{rootContentId}/permissions/{userEmail} | Update course access |
-| GET | `/offerings` | get /offerings | Find current, past and future offerings |
-| POST | `/offerings` | post /offerings | Create offering |
-| GET | `/offerings/current` | get /offerings/current | Find active offerings |
-| GET | `/offerings/future` | get /offerings/future | Find scheduled offerings |
-| GET | `/offerings/info/{textPattern}` | get /offerings/info/{textPattern} | Find offerings where info field matches the specified textPattern |
-| GET | `/offerings/past` | get /offerings/past | Find past offerings |
-| GET | `/offerings/summary` | get /offerings/summary | Offerings summary |
-| GET | `/offerings/{offeringId}` | get /offerings/{offeringId} | Find offering by ID |
-| PATCH | `/offerings/{offeringId}` | patch /offerings/{offeringId} | Update offering |
-| GET | `/offerings/{offeringId}/activities/openresponse` | get /offerings/{offeringId}/activities/openresponse | Find offering's activities |
-| GET | `/offerings/{offeringId}/analytics/activities/responses` | get /offerings/{offeringId}/analytics/activities/responses | Find open response activity attempts |
-| GET | `/offerings/{offeringId}/analytics/channels/{channelId}/comments` | get /offerings/{offeringId}/analytics/channels/{channelId}/comments | Find comments |
-| GET | `/offerings/{offeringId}/analytics/channels/{channelId}/posts` | get /offerings/{offeringId}/analytics/channels/{channelId}/posts | Find posts |
-| GET | `/offerings/{offeringId}/analytics/channels/{channelId}/replies` | get /offerings/{offeringId}/analytics/channels/{channelId}/replies | Find replies |
-| GET | `/offerings/{offeringId}/analytics/learners-progress` | get /offerings/{offeringId}/analytics/learners-progress | Find learner progress in a specified offering |
-| GET | `/offerings/{offeringId}/analytics/marks/assignments` | get /offerings/{offeringId}/analytics/marks/assignments | Find assessment marks |
-| GET | `/offerings/{offeringId}/analytics/marks/quizzes` | get /offerings/{offeringId}/analytics/marks/quizzes | Find quiz marks |
-| GET | `/offerings/{offeringId}/analytics/pulses` | get /offerings/{offeringId}/analytics/pulses | Find all pulse IDs in the specified offering |
-| GET | `/offerings/{offeringId}/analytics/pulses/responses` | get /offerings/{offeringId}/analytics/pulses/responses | Find pulses by offeringId |
-| GET | `/offerings/{offeringId}/analytics/pulses/{pulseId}/responses` | get /offerings/{offeringId}/analytics/pulses/{pulseId}/responses | Find pulses by offeringId and pulseId |
-| GET | `/offerings/{offeringId}/analytics/social-notes` | get /offerings/{offeringId}/analytics/social-notes | Find shared social notes in an offering |
-| GET | `/offerings/{offeringId}/analytics/submissions/assignments` | get /offerings/{offeringId}/analytics/submissions/assignments | Find submissions to assessments, including marks if any |
-| GET | `/offerings/{offeringId}/analytics/submissions/open-response/{assessmentId}` | get /offerings/{offeringId}/analytics/submissions/open-response/{assessmentId} | Find submissions to a specified open response assessment, including marks if any |
-| GET | `/offerings/{offeringId}/analytics/submissions/{userEmail}/assignments/{assessmentId}` | get /offerings/{offeringId}/analytics/submissions/{userEmail}/assignments/{assessmentId} | Find a learner's submission to a specified assessment, including marks if any |
-| GET | `/offerings/{offeringId}/analytics/unit-reactions` | get /offerings/{offeringId}/analytics/unit-reactions | Find unit reactions |
-| GET | `/offerings/{offeringId}/assessments` | get /offerings/{offeringId}/assessments | Find offering's assessments |
-| PATCH | `/offerings/{offeringId}/assessments/{assessmentId}` | patch /offerings/{offeringId}/assessments/{assessmentId} | Update assessment details |
-| DELETE | `/offerings/{offeringId}/assessments/{assessmentId}/documents/{documentId}` | delete /offerings/{offeringId}/assessments/{assessmentId}/documents/{documentId} | Remove assessment document |
-| PATCH | `/offerings/{offeringId}/assessments/{assessmentId}/{userEmail}` | patch /offerings/{offeringId}/assessments/{assessmentId}/{userEmail} | Update the due dates for a learner's quiz attempt |
-| GET | `/offerings/{offeringId}/badges` | get /offerings/{offeringId}/badges | Find offering badges |
-| GET | `/offerings/{offeringId}/channels` | get /offerings/{offeringId}/channels | Find channels |
-| POST | `/offerings/{offeringId}/channels` | post /offerings/{offeringId}/channels | Add channel |
-| PATCH | `/offerings/{offeringId}/channels/{channelId}` | patch /offerings/{offeringId}/channels/{channelId} | Update channel |
-| DELETE | `/offerings/{offeringId}/channels/{channelId}/learners` | delete /offerings/{offeringId}/channels/{channelId}/learners | Remove learners from a group channel |
-| GET | `/offerings/{offeringId}/channels/{channelId}/learners` | get /offerings/{offeringId}/channels/{channelId}/learners | Find learners in a group channel |
-| POST | `/offerings/{offeringId}/channels/{channelId}/learners` | post /offerings/{offeringId}/channels/{channelId}/learners | Add learners to a group channel |
-| GET | `/offerings/{offeringId}/groups` | get /offerings/{offeringId}/groups | Find assessment groups |
-| POST | `/offerings/{offeringId}/groups` | post /offerings/{offeringId}/groups | Add an assessment group |
-| GET | `/offerings/{offeringId}/groups/{groupId}/learners` | get /offerings/{offeringId}/groups/{groupId}/learners | Find learners in an assessment group |
-| POST | `/offerings/{offeringId}/groups/{groupId}/learners` | post /offerings/{offeringId}/groups/{groupId}/learners | Add a learner to an assessment group |
-| DELETE | `/offerings/{offeringId}/groups/{groupId}/learners/{userEmail}` | delete /offerings/{offeringId}/groups/{groupId}/learners/{userEmail} | Remove a learner from an assessment group |
-| GET | `/offerings/{offeringId}/learners/pending-submission` | get /offerings/{offeringId}/learners/pending-submission | Find learners with assessments pending x days before due date within the specified offeringId |
-| PUT | `/offerings/{offeringId}/metadata/category` | put /offerings/{offeringId}/metadata/category | Update offering category metadata |
-| PUT | `/offerings/{offeringId}/metadata/level` | put /offerings/{offeringId}/metadata/level | Update offering level metadata |
-| PUT | `/offerings/{offeringId}/metadata/tags` | put /offerings/{offeringId}/metadata/tags | Update offering tags metadata |
-| PUT | `/offerings/{offeringId}/metadata/topic` | put /offerings/{offeringId}/metadata/topic | Update offering topic metadata |
-| GET | `/offerings/{offeringId}/users` | get /offerings/{offeringId}/users | Find offering's users |
-| POST | `/offerings/{offeringId}/users` | post /offerings/{offeringId}/users | Adds user to the offering |
-| DELETE | `/offerings/{offeringId}/users/{markerEmail}/marks` | delete /offerings/{offeringId}/users/{markerEmail}/marks | Remove learners from coach's marking list |
-| GET | `/offerings/{offeringId}/users/{markerEmail}/marks` | get /offerings/{offeringId}/users/{markerEmail}/marks | Find Learners marked by a coach |
-| POST | `/offerings/{offeringId}/users/{markerEmail}/marks` | post /offerings/{offeringId}/users/{markerEmail}/marks | Add learners to be marked by a coach |
-| DELETE | `/offerings/{offeringId}/users/{userEmail}` | delete /offerings/{offeringId}/users/{userEmail} | Removes user from the offering |
-| DELETE | `/offerings/{offeringId}/users/{userEmail}/assessments/{assessmentId}` | delete /offerings/{offeringId}/users/{userEmail}/assessments/{assessmentId} | Reset user's assessment to draft state |
-| POST | `/offerings/{offeringId}/users/{userEmail}/badges/award` | post /offerings/{offeringId}/users/{userEmail}/badges/award | Award badge |
-| GET | `/offerings/{offeringId}/users/{userEmail}/submissions/open-response` | get /offerings/{offeringId}/users/{userEmail}/submissions/open-response | Find learner's open response assessment submissions |
-| GET | `/org` | get /org | Gets the current organisation |
-| POST | `/users` | post /users | Add new user |
-| GET | `/users/all/progress` | get /users/all/progress | Find learner progress in all offerings |
-| GET | `/users/{userEmail}` | get /users/{userEmail} | Find user by email |
-| PATCH | `/users/{userEmail}` | patch /users/{userEmail} | Update user |
-| GET | `/users/{userEmail}/badges` | get /users/{userEmail}/badges | Find user's badges |
-| POST | `/users/{userEmail}/invite-email` | post /users/{userEmail}/invite-email | Resend invitation email |
-| GET | `/users/{userEmail}/offerings` | get /users/{userEmail}/offerings | Find user's offerings |
-| POST | `/users/{userEmail}/offerings` | post /users/{userEmail}/offerings | Adds the user to the specified offerings as a learner |
-| GET | `/users/{userEmail}/offerings/{offeringId}/progress` | get /users/{userEmail}/offerings/{offeringId}/progress | Find learner's progress in a specified offering |
-| POST | `/users/{userEmail}/permissions/{permissionName}` | post /users/{userEmail}/permissions/{permissionName} | Add permission to user |
-| GET | `/users/{userEmail}/progress` | get /users/{userEmail}/progress | Find learner's progress in offerings |
-| PUT | `/users/{userEmail}/suspend` | put /users/{userEmail}/suspend | Suspend user |
-| PATCH | `/users/{userEmail}/transfer` | patch /users/{userEmail}/transfer | Transfer a user between offerings |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | get / | — | object | yes | List supported endpoints URLs |
+| GET | `/course-mappings` | get /course-mappings | — | object | yes | Find course mappings |
+| GET | `/course-mappings/externalcourse/{externalCourseId}` | get /course-mappings/externalcourse/{externalCourseId} | `externalCourseId`* | string[] | yes | Find course mappings by externalCourseId |
+| GET | `/course-mappings/{offeringId}` | get /course-mappings/{offeringId} | `offeringId`* | string[] | yes | Find course mappings by offeringId |
+| PUT | `/course-mappings/{offeringId}/{externalCourseId}` | put /course-mappings/{offeringId}/{externalCourseId} | `offeringId`*, `externalCourseId`* | string[] |  | Add course mapping |
+| DELETE | `/course-mappings/{offeringId}/{externalCourseId}` | delete /course-mappings/{offeringId}/{externalCourseId} | `offeringId`*, `externalCourseId`* | string[] |  | Remove course mapping |
+| GET | `/courses` | get /courses | — | CourseResponse[] | yes | Find courses |
+| GET | `/courses/{contentId}` | get /courses/{contentId} | `contentId`* | CourseMetaResponse | yes | Find course by contentId |
+| GET | `/courses/{contentId}/activations` | get /courses/{contentId}/activations | `contentId`* | ActivationResponse | yes | Find activations for a contentId |
+| PUT | `/courses/{contentId}/metadata/category` | put /courses/{contentId}/metadata/category | `contentId`*, body*: object | CourseMetaResponse |  | Update course category |
+| PUT | `/courses/{contentId}/metadata/level` | put /courses/{contentId}/metadata/level | `contentId`*, body*: object | CourseMetaResponse |  | Update course level |
+| PUT | `/courses/{contentId}/metadata/tags` | put /courses/{contentId}/metadata/tags | `contentId`*, body*: object | CourseMetaResponse |  | Update course tags |
+| PUT | `/courses/{contentId}/metadata/topic` | put /courses/{contentId}/metadata/topic | `contentId`*, body*: object | CourseMetaResponse |  | Update course topic |
+| GET | `/courses/{contentId}/permissions` | get /courses/{contentId}/permissions | `contentId`* | UserPermission | yes | Find users who have access to the contentId provided |
+| POST | `/courses/{rootContentId}/permissions/{userEmail}` | post /courses/{rootContentId}/permissions/{userEmail} | `rootContentId`*, `userEmail`*, body*: object | object |  | Update course access |
+| GET | `/offerings` | get /offerings | — | OfferingMetadataResponse[] | yes | Find current, past and future offerings |
+| POST | `/offerings` | post /offerings | body*: OfferingRequired | OfferingMetadataResponse |  | Create offering |
+| GET | `/offerings/current` | get /offerings/current | — | OfferingMetadataResponse[] | yes | Find active offerings |
+| GET | `/offerings/future` | get /offerings/future | — | OfferingMetadataResponse[] | yes | Find scheduled offerings |
+| GET | `/offerings/info/{textPattern}` | get /offerings/info/{textPattern} | `textPattern`* | PortfolioActivations[] | yes | Find offerings where info field matches the specified textPattern |
+| GET | `/offerings/past` | get /offerings/past | — | OfferingMetadataResponse[] | yes | Find past offerings |
+| GET | `/offerings/summary` | get /offerings/summary | `$top`, `$orderby`, `$filter` | PortfolioActivations[] | yes | Offerings summary |
+| GET | `/offerings/{offeringId}` | get /offerings/{offeringId} | `offeringId`* | OfferingMetadataResponse | yes | Find offering by ID |
+| PATCH | `/offerings/{offeringId}` | patch /offerings/{offeringId} | `offeringId`*, body*: Offering | OfferingMetadataResponse |  | Update offering |
+| GET | `/offerings/{offeringId}/activities/openresponse` | get /offerings/{offeringId}/activities/openresponse | `offeringId`* | OfferingActivitiesResponse[] | yes | Find offering's activities |
+| GET | `/offerings/{offeringId}/analytics/activities/responses` | get /offerings/{offeringId}/analytics/activities/responses | `offeringId`* | ActivityAttemptOpenResponse[] | yes | Find open response activity attempts |
+| GET | `/offerings/{offeringId}/analytics/channels/{channelId}/comments` | get /offerings/{offeringId}/analytics/channels/{channelId}/comments | `offeringId`*, `channelId`* | Comment[] | yes | Find comments |
+| GET | `/offerings/{offeringId}/analytics/channels/{channelId}/posts` | get /offerings/{offeringId}/analytics/channels/{channelId}/posts | `offeringId`*, `channelId`* | httpPost[] | yes | Find posts |
+| GET | `/offerings/{offeringId}/analytics/channels/{channelId}/replies` | get /offerings/{offeringId}/analytics/channels/{channelId}/replies | `offeringId`*, `channelId`* | Comment[] | yes | Find replies |
+| GET | `/offerings/{offeringId}/analytics/learners-progress` | get /offerings/{offeringId}/analytics/learners-progress | `offeringId`* | LearnerProgressResponse[] | yes | Find learner progress in a specified offering |
+| GET | `/offerings/{offeringId}/analytics/marks/assignments` | get /offerings/{offeringId}/analytics/marks/assignments | `offeringId`* | AssignmentMarkResponse[] | yes | Find assessment marks |
+| GET | `/offerings/{offeringId}/analytics/marks/quizzes` | get /offerings/{offeringId}/analytics/marks/quizzes | `offeringId`* | QuizMarkResponse[] | yes | Find quiz marks |
+| GET | `/offerings/{offeringId}/analytics/pulses` | get /offerings/{offeringId}/analytics/pulses | `offeringId`* | string[] | yes | Find all pulse IDs in the specified offering |
+| GET | `/offerings/{offeringId}/analytics/pulses/responses` | get /offerings/{offeringId}/analytics/pulses/responses | `offeringId`*, `pulseType`, `responseTime` | PulseResponse[] | yes | Find pulses by offeringId |
+| GET | `/offerings/{offeringId}/analytics/pulses/{pulseId}/responses` | get /offerings/{offeringId}/analytics/pulses/{pulseId}/responses | `offeringId`*, `pulseId`* | PulseResponse[] | yes | Find pulses by offeringId and pulseId |
+| GET | `/offerings/{offeringId}/analytics/social-notes` | get /offerings/{offeringId}/analytics/social-notes | `offeringId`* | SocialNotesResponse[] | yes | Find shared social notes in an offering |
+| GET | `/offerings/{offeringId}/analytics/submissions/assignments` | get /offerings/{offeringId}/analytics/submissions/assignments | `offeringId`* | AssignmentMarkResponse[] | yes | Find submissions to assessments, including marks if any |
+| GET | `/offerings/{offeringId}/analytics/submissions/open-response/{assessmentId}` | get /offerings/{offeringId}/analytics/submissions/open-response/{assessmentId} | `offeringId`*, `assessmentId`* | SubmissionMarkResponse[] | yes | Find submissions to a specified open response assessment, including marks if any |
+| GET | `/offerings/{offeringId}/analytics/submissions/{userEmail}/assignments/{assessmentId}` | get /offerings/{offeringId}/analytics/submissions/{userEmail}/assignments/{assessmentId} | `offeringId`*, `userEmail`*, `assessmentId`* | SubmissionMarkResponse[] | yes | Find a learner's submission to a specified assessment, including marks if any |
+| GET | `/offerings/{offeringId}/analytics/unit-reactions` | get /offerings/{offeringId}/analytics/unit-reactions | `offeringId`* | UnitReactionsAnalyticsResponse[] | yes | Find unit reactions |
+| GET | `/offerings/{offeringId}/assessments` | get /offerings/{offeringId}/assessments | `offeringId`* | AssessmentResponse[] | yes | Find offering's assessments |
+| PATCH | `/offerings/{offeringId}/assessments/{assessmentId}` | patch /offerings/{offeringId}/assessments/{assessmentId} | `offeringId`*, `assessmentId`*, body*: Assessment | AssessmentResponse |  | Update assessment details |
+| DELETE | `/offerings/{offeringId}/assessments/{assessmentId}/documents/{documentId}` | delete /offerings/{offeringId}/assessments/{assessmentId}/documents/{documentId} | `offeringId`*, `assessmentId`*, `documentId`* | — |  | Remove assessment document |
+| PATCH | `/offerings/{offeringId}/assessments/{assessmentId}/{userEmail}` | patch /offerings/{offeringId}/assessments/{assessmentId}/{userEmail} | `offeringId`*, `assessmentId`*, `userEmail`*, body*: object | — |  | Update the due dates for a learner's quiz attempt |
+| GET | `/offerings/{offeringId}/badges` | get /offerings/{offeringId}/badges | `offeringId`* | Badge | yes | Find offering badges |
+| GET | `/offerings/{offeringId}/channels` | get /offerings/{offeringId}/channels | `offeringId`* | ChannelResponse[] | yes | Find channels |
+| POST | `/offerings/{offeringId}/channels` | post /offerings/{offeringId}/channels | `offeringId`*, body*: ChannelRequired | ChannelResponse |  | Add channel |
+| PATCH | `/offerings/{offeringId}/channels/{channelId}` | patch /offerings/{offeringId}/channels/{channelId} | `offeringId`*, `channelId`*, body*: Channel | ChannelResponse |  | Update channel |
+| GET | `/offerings/{offeringId}/channels/{channelId}/learners` | get /offerings/{offeringId}/channels/{channelId}/learners | `offeringId`*, `channelId`* | ChannelResponse | yes | Find learners in a group channel |
+| POST | `/offerings/{offeringId}/channels/{channelId}/learners` | post /offerings/{offeringId}/channels/{channelId}/learners | `offeringId`*, `channelId`*, body*: object | — |  | Add learners to a group channel |
+| DELETE | `/offerings/{offeringId}/channels/{channelId}/learners` | delete /offerings/{offeringId}/channels/{channelId}/learners | `offeringId`*, `channelId`*, body*: object | — |  | Remove learners from a group channel |
+| GET | `/offerings/{offeringId}/groups` | get /offerings/{offeringId}/groups | `offeringId`* | AssessmentGroupResponse[] | yes | Find assessment groups |
+| POST | `/offerings/{offeringId}/groups` | post /offerings/{offeringId}/groups | `offeringId`*, body*: AssessmentGroupRequired | AssessmentGroupResponse |  | Add an assessment group |
+| GET | `/offerings/{offeringId}/groups/{groupId}/learners` | get /offerings/{offeringId}/groups/{groupId}/learners | `offeringId`*, `groupId`* | UserResponse[] | yes | Find learners in an assessment group |
+| POST | `/offerings/{offeringId}/groups/{groupId}/learners` | post /offerings/{offeringId}/groups/{groupId}/learners | `offeringId`*, `groupId`*, body*: object | UserResponse |  | Add a learner to an assessment group |
+| DELETE | `/offerings/{offeringId}/groups/{groupId}/learners/{userEmail}` | delete /offerings/{offeringId}/groups/{groupId}/learners/{userEmail} | `offeringId`*, `groupId`*, `userEmail`* | — |  | Remove a learner from an assessment group |
+| GET | `/offerings/{offeringId}/learners/pending-submission` | get /offerings/{offeringId}/learners/pending-submission | `offeringId`*, `days` | AssessmentPendingSubmission[] | yes | Find learners with assessments pending x days before due date within the specified offeringId |
+| PUT | `/offerings/{offeringId}/metadata/category` | put /offerings/{offeringId}/metadata/category | `offeringId`*, body*: object | OfferingMetadataResponse |  | Update offering category metadata |
+| PUT | `/offerings/{offeringId}/metadata/level` | put /offerings/{offeringId}/metadata/level | `offeringId`*, body*: object | OfferingMetadataResponse |  | Update offering level metadata |
+| PUT | `/offerings/{offeringId}/metadata/tags` | put /offerings/{offeringId}/metadata/tags | `offeringId`*, body*: object | OfferingMetadataResponse |  | Update offering tags metadata |
+| PUT | `/offerings/{offeringId}/metadata/topic` | put /offerings/{offeringId}/metadata/topic | `offeringId`*, body*: object | OfferingMetadataResponse |  | Update offering topic metadata |
+| GET | `/offerings/{offeringId}/users` | get /offerings/{offeringId}/users | `offeringId`*, `facilitators`, `learners`, `markers` | OfferingUserResponse[] | yes | Find offering's users |
+| POST | `/offerings/{offeringId}/users` | post /offerings/{offeringId}/users | `offeringId`*, body*: OfferingUser[] | OfferingUserAddResponse[], OfferingUserAddResponse\|Error[] |  | Adds user to the offering |
+| GET | `/offerings/{offeringId}/users/{markerEmail}/marks` | get /offerings/{offeringId}/users/{markerEmail}/marks | `offeringId`*, `markerEmail`* | OfferingUser[] | yes | Find Learners marked by a coach |
+| POST | `/offerings/{offeringId}/users/{markerEmail}/marks` | post /offerings/{offeringId}/users/{markerEmail}/marks | `offeringId`*, `markerEmail`*, body*: string[] | OfferingUser[] |  | Add learners to be marked by a coach |
+| DELETE | `/offerings/{offeringId}/users/{markerEmail}/marks` | delete /offerings/{offeringId}/users/{markerEmail}/marks | `offeringId`*, `markerEmail`*, body*: string[] | OfferingUser[] |  | Remove learners from coach's marking list |
+| DELETE | `/offerings/{offeringId}/users/{userEmail}` | delete /offerings/{offeringId}/users/{userEmail} | `offeringId`*, `userEmail`* | — |  | Removes user from the offering |
+| DELETE | `/offerings/{offeringId}/users/{userEmail}/assessments/{assessmentId}` | delete /offerings/{offeringId}/users/{userEmail}/assessments/{assessmentId} | `offeringId`*, `userEmail`*, `assessmentId`* | — |  | Reset user's assessment to draft state |
+| POST | `/offerings/{offeringId}/users/{userEmail}/badges/award` | post /offerings/{offeringId}/users/{userEmail}/badges/award | `offeringId`*, `userEmail`* | AwardedResponse |  | Award badge |
+| GET | `/offerings/{offeringId}/users/{userEmail}/submissions/open-response` | get /offerings/{offeringId}/users/{userEmail}/submissions/open-response | `offeringId`*, `userEmail`* | Assignments[] | yes | Find learner's open response assessment submissions |
+| GET | `/org` | get /org | — | OrgResponse | yes | Gets the current organisation |
+| POST | `/users` | post /users | body*: User | UserResponse |  | Add new user |
+| GET | `/users/all/progress` | get /users/all/progress | `$top`, `$orderby`, `$filter` | object | yes | Find learner progress in all offerings |
+| GET | `/users/{userEmail}` | get /users/{userEmail} | `userEmail`* | UserResponse | yes | Find user by email |
+| PATCH | `/users/{userEmail}` | patch /users/{userEmail} | `userEmail`*, body: User | UserResponse |  | Update user |
+| GET | `/users/{userEmail}/badges` | get /users/{userEmail}/badges | `userEmail`* | UserBadge[] | yes | Find user's badges |
+| POST | `/users/{userEmail}/invite-email` | post /users/{userEmail}/invite-email | `userEmail`* | — |  | Resend invitation email |
+| GET | `/users/{userEmail}/offerings` | get /users/{userEmail}/offerings | `userEmail`* | OfferingMetadataResponse[] | yes | Find user's offerings |
+| POST | `/users/{userEmail}/offerings` | post /users/{userEmail}/offerings | `userEmail`*, body*: string[] | OfferingMetadataResponse[] |  | Adds the user to the specified offerings as a learner |
+| GET | `/users/{userEmail}/offerings/{offeringId}/progress` | get /users/{userEmail}/offerings/{offeringId}/progress | `userEmail`*, `offeringId`* | object | yes | Find learner's progress in a specified offering |
+| POST | `/users/{userEmail}/permissions/{permissionName}` | post /users/{userEmail}/permissions/{permissionName} | `userEmail`*, `permissionName`* | UserResponse |  | Add permission to user |
+| GET | `/users/{userEmail}/progress` | get /users/{userEmail}/progress | `userEmail`* | LearnerResponse | yes | Find learner's progress in offerings |
+| PUT | `/users/{userEmail}/suspend` | put /users/{userEmail}/suspend | `userEmail`*, body*: SuspendedRequest | — |  | Suspend user |
+| PATCH | `/users/{userEmail}/transfer` | patch /users/{userEmail}/transfer | `userEmail`*, body*: TransferRequest | — |  | Transfer a user between offerings |

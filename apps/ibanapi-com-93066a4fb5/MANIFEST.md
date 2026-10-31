@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_ibanapi.com_assets_favicon_appl
 
 | | |
 | --- | --- |
-| Signed bundle | `26bcf188eb0f31a607c766ee30ca5a5ee293efd78293a865fa1bcb882324f136` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_ibanapi.com_assets_favicon_appl
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/balance` | getBalance | Get Account Balance |
-| GET | `/validate` | validateIBAN | Validate IBAN |
-| GET | `/validate-basic` | validateIBANBasic | Validate IBAN Basic |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/balance` | getBalance | — | BalanceResponse | yes | Get Account Balance |
+| GET | `/validate` | validateIBAN | `iban`* | IBANResult | yes | Validate IBAN |
+| GET | `/validate-basic` | validateIBANBasic | `iban`* | IBANResultBasic | yes | Validate IBAN Basic |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.exchangerate-api.com_img_lo
 
 | | |
 | --- | --- |
-| Signed bundle | `3e4df0bfac3e2e7776e16042911a95ccf3de02c89e45584d4b5bf150825b622e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,6 +32,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.exchangerate-api.com_img_lo
 
 ## Operations (1)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/latest/{base_currency}` | get /latest/{base_currency} | Returns latest exchange rates in parameter-supplied base currency. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/latest/{base_currency}` | get /latest/{base_currency} | `base_currency`* | object | yes | Returns latest exchange rates in parameter-supplied base currency. |

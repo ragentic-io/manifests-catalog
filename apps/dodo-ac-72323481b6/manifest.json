@@ -153,6 +153,156 @@
         "from": "dodo-ac-72323481b6",
         "kind": "EXPOSES",
         "to": "operation:get:/villagers"
+      },
+      {
+        "from": "operation:get:/nh/art",
+        "kind": "RETURNS",
+        "to": "schema:NHArtwork"
+      },
+      {
+        "from": "operation:get:/nh/art/{artwork}",
+        "kind": "RETURNS",
+        "to": "schema:NHArtwork"
+      },
+      {
+        "from": "operation:get:/nh/bugs",
+        "kind": "RETURNS",
+        "to": "schema:NHBug"
+      },
+      {
+        "from": "operation:get:/nh/bugs/{bug}",
+        "kind": "RETURNS",
+        "to": "schema:NHBug"
+      },
+      {
+        "from": "operation:get:/nh/clothing",
+        "kind": "RETURNS",
+        "to": "schema:NHClothing"
+      },
+      {
+        "from": "operation:get:/nh/clothing/{clothing}",
+        "kind": "RETURNS",
+        "to": "schema:NHClothing"
+      },
+      {
+        "from": "operation:get:/nh/events",
+        "kind": "RETURNS",
+        "to": "schema:NHEvent"
+      },
+      {
+        "from": "operation:get:/nh/fish",
+        "kind": "RETURNS",
+        "to": "schema:NHFish"
+      },
+      {
+        "from": "operation:get:/nh/fish/{fish}",
+        "kind": "RETURNS",
+        "to": "schema:NHFish"
+      },
+      {
+        "from": "operation:get:/nh/fossils/all",
+        "kind": "RETURNS",
+        "to": "schema:NHFossilGroupWithIndividualFossilsNoMatched"
+      },
+      {
+        "from": "operation:get:/nh/fossils/all/{fossil}",
+        "kind": "RETURNS",
+        "to": "schema:NHFossilGroupWithIndividualFossils"
+      },
+      {
+        "from": "operation:get:/nh/fossils/groups",
+        "kind": "RETURNS",
+        "to": "schema:NHFossilGroup"
+      },
+      {
+        "from": "operation:get:/nh/fossils/groups/{fossil_group}",
+        "kind": "RETURNS",
+        "to": "schema:NHFossilGroup"
+      },
+      {
+        "from": "operation:get:/nh/fossils/individuals",
+        "kind": "RETURNS",
+        "to": "schema:NHIndividualFossil"
+      },
+      {
+        "from": "operation:get:/nh/fossils/individuals/{fossil}",
+        "kind": "RETURNS",
+        "to": "schema:NHIndividualFossil"
+      },
+      {
+        "from": "operation:get:/nh/furniture",
+        "kind": "RETURNS",
+        "to": "schema:NHFurniture"
+      },
+      {
+        "from": "operation:get:/nh/furniture/{furniture}",
+        "kind": "RETURNS",
+        "to": "schema:NHFurniture"
+      },
+      {
+        "from": "operation:get:/nh/interior",
+        "kind": "RETURNS",
+        "to": "schema:NHInterior"
+      },
+      {
+        "from": "operation:get:/nh/interior/{item}",
+        "kind": "RETURNS",
+        "to": "schema:NHInterior"
+      },
+      {
+        "from": "operation:get:/nh/items",
+        "kind": "RETURNS",
+        "to": "schema:NHItem"
+      },
+      {
+        "from": "operation:get:/nh/items/{item}",
+        "kind": "RETURNS",
+        "to": "schema:NHItem"
+      },
+      {
+        "from": "operation:get:/nh/photos",
+        "kind": "RETURNS",
+        "to": "schema:NHPhoto"
+      },
+      {
+        "from": "operation:get:/nh/photos/{item}",
+        "kind": "RETURNS",
+        "to": "schema:NHPhoto"
+      },
+      {
+        "from": "operation:get:/nh/recipes",
+        "kind": "RETURNS",
+        "to": "schema:NHRecipe"
+      },
+      {
+        "from": "operation:get:/nh/recipes/{item}",
+        "kind": "RETURNS",
+        "to": "schema:NHRecipe"
+      },
+      {
+        "from": "operation:get:/nh/sea",
+        "kind": "RETURNS",
+        "to": "schema:NHSeaCreature"
+      },
+      {
+        "from": "operation:get:/nh/sea/{sea_creature}",
+        "kind": "RETURNS",
+        "to": "schema:NHSeaCreature"
+      },
+      {
+        "from": "operation:get:/nh/tools",
+        "kind": "RETURNS",
+        "to": "schema:NHTool"
+      },
+      {
+        "from": "operation:get:/nh/tools/{tool}",
+        "kind": "RETURNS",
+        "to": "schema:NHTool"
+      },
+      {
+        "from": "operation:get:/villagers",
+        "kind": "RETURNS",
+        "to": "schema:Villager"
       }
     ],
     "nodes": [
@@ -162,438 +312,2016 @@
       },
       {
         "deprecated": false,
+        "description": "Get a list of all artwork and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/art",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/art",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only artwork that has a fake will be returned.",
+            "in": "query",
+            "name": "hasfake",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only artwork names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/art",
         "pointer": "#/paths/~1nh~1art/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHArtwork[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons artwork"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific artwork in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/art/{artwork}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/art/{artwork}",
+        "parameters": [
+          {
+            "description": "The name of the artwork you wish to retrieve information about.",
+            "in": "path",
+            "name": "artwork",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/art/{artwork}",
         "pointer": "#/paths/~1nh~1art~1{artwork}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHArtwork"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons artwork"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all bugs and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/bugs",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/bugs",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Retrive only the bug that are available in a specific month.",
+            "in": "query",
+            "name": "month",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only bug names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/bugs",
         "pointer": "#/paths/~1nh~1bugs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHBug[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons bugs"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific bug in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/bugs/{bug}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/bugs/{bug}",
+        "parameters": [
+          {
+            "description": "The name of the bug you wish to retrieve information about.",
+            "in": "path",
+            "name": "bug",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/bugs/{bug}",
         "pointer": "#/paths/~1nh~1bugs~1{bug}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHBug"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "404",
+            "type": "Error404"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons bug"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all clothing items and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/clothing",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/clothing",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the category of clothing to return.",
+            "enum": [
+              "Tops",
+              "Bottoms",
+              "Dress-up",
+              "Headwear",
+              "Accessories",
+              "Socks",
+              "Shoes",
+              "Bags",
+              "Umbrellas"
+            ],
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return clothing that matches the provided colors (may specify one or two colors).",
+            "in": "query",
+            "name": "color",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Return clothing that matches the provided styles (may specify one or two styles).",
+            "in": "query",
+            "name": "style",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Return clothing that have the specified Label theme.",
+            "enum": [
+              "Comfy",
+              "Everyday",
+              "Fairy tale",
+              "Formal",
+              "Goth",
+              "Outdoorsy",
+              "Party",
+              "Sporty",
+              "Theatrical",
+              "Vacation",
+              "Work"
+            ],
+            "in": "query",
+            "name": "labeltheme",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only clothing names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/nh/clothing",
         "pointer": "#/paths/~1nh~1clothing/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHClothing[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons clothing"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific clothing item in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/clothing/{clothing}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/clothing/{clothing}",
+        "parameters": [
+          {
+            "description": "The name of the clothing you wish to retrieve information about.",
+            "in": "path",
+            "name": "clothing",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/clothing/{clothing}",
         "pointer": "#/paths/~1nh~1clothing~1{clothing}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHClothing"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons clothing"
       },
       {
         "deprecated": false,
+        "description": "Get a list of events and dates in *Animal Crossing: New Horizons*, filterable to specific years, months, or days.",
         "id": "operation:get:/nh/events",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/events",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify a specific date (in the current or next year) to retrieve events for.",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the year to retrieve events for.",
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the month to retrieve events for (accepts multiple formats, such as `Oct`, `October`, or `10`).",
+            "in": "query",
+            "name": "month",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the day of the month to retrieve events for.",
+            "in": "query",
+            "name": "day",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/events",
         "pointer": "#/paths/~1nh~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHEvent[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons events"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all fish and their details in *New Horizons*.",
         "id": "operation:get:/nh/fish",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/fish",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Retrive only the fish that are available in a specific month.",
+            "in": "query",
+            "name": "month",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only fish names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/fish",
         "pointer": "#/paths/~1nh~1fish/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHFish[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons fish"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific fish in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/fish/{fish}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/fish/{fish}",
+        "parameters": [
+          {
+            "description": "The name of the fish you wish to retrieve information about.",
+            "in": "path",
+            "name": "fish",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/fish/{fish}",
         "pointer": "#/paths/~1nh~1fish~1{fish}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHFish"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "404",
+            "type": "Error404"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons fish"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the fossil groups with their respective individual fossils in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/fossils/all",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/fossils/all",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/fossils/all",
         "pointer": "#/paths/~1nh~1fossils~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHFossilGroupWithIndividualFossilsNoMatched[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons fossil groups or individual fossil"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific fossil group with their respective individual fossils in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/fossils/all/{fossil}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/fossils/all/{fossil}",
+        "parameters": [
+          {
+            "description": "The name of the fossil OR fossil group you wish to retrieve information about.",
+            "in": "path",
+            "name": "fossil",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/fossils/all/{fossil}",
         "pointer": "#/paths/~1nh~1fossils~1all~1{fossil}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHFossilGroupWithIndividualFossils"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons fossil group with individual fossils"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the fossil groups in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/fossils/groups",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/fossils/groups",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/fossils/groups",
         "pointer": "#/paths/~1nh~1fossils~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHFossilGroup[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons fossil groups"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific fossil group in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/fossils/groups/{fossil_group}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/fossils/groups/{fossil_group}",
+        "parameters": [
+          {
+            "description": "The name of the fossil group you wish to retrieve information about.",
+            "in": "path",
+            "name": "fossil_group",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/fossils/groups/{fossil_group}",
         "pointer": "#/paths/~1nh~1fossils~1groups~1{fossil_group}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHFossilGroup"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons fossil group"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the individual fossils in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/fossils/individuals",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/fossils/individuals",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/fossils/individuals",
         "pointer": "#/paths/~1nh~1fossils~1individuals/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHIndividualFossil[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons fossils"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific individual fossil in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/fossils/individuals/{fossil}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/fossils/individuals/{fossil}",
+        "parameters": [
+          {
+            "description": "The name of the individual fossil you wish to retrieve fossil information about.",
+            "in": "path",
+            "name": "fossil",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/fossils/individuals/{fossil}",
         "pointer": "#/paths/~1nh~1fossils~1individuals~1{fossil}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHIndividualFossil"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons fossil"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all furniture and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/furniture",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/furniture",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the category of furniture to return (houswares, miscellaneous, or wall-mounted).",
+            "enum": [
+              "Housewares",
+              "Miscellaneous",
+              "Wall-mounted"
+            ],
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return furniture that matches the provided colors (may specify one or two colors).",
+            "in": "query",
+            "name": "color",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "When set to `true`, only furniture names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/nh/furniture",
         "pointer": "#/paths/~1nh~1furniture/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHFurniture[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons furniture"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific furniture in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/furniture/{furniture}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/furniture/{furniture}",
+        "parameters": [
+          {
+            "description": "The name of the furniture you wish to retrieve information about.",
+            "in": "path",
+            "name": "furniture",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/furniture/{furniture}",
         "pointer": "#/paths/~1nh~1furniture~1{furniture}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHFurniture"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons furniture"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all interior items (flooring, wallpaper, and rugs) and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/interior",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/interior",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Return furniture that matches the provided colors (may specify one or two colors).",
+            "in": "query",
+            "name": "color",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "When set to `true`, only interior item names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/nh/interior",
         "pointer": "#/paths/~1nh~1interior/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHInterior[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons interior items"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific interior item in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/interior/{item}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/interior/{item}",
+        "parameters": [
+          {
+            "description": "The name of the interior item you wish to retrieve information about.",
+            "in": "path",
+            "name": "item",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Return furniture that matches the provided colors (may specify one or two colors).",
+            "in": "query",
+            "name": "color",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/interior/{item}",
         "pointer": "#/paths/~1nh~1interior~1{item}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHInterior"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons interior item"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all miscellaneous items (such as materials, star fragments, fruits, fences, and plants) and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/items",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/items",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only item names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/nh/items",
         "pointer": "#/paths/~1nh~1items/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHItem[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Miscellaneous New Horizons items"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a miscellaneous item (such as materials, star fragments, fruits, fences, and plants) in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/items/{item}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/items/{item}",
+        "parameters": [
+          {
+            "description": "The name of the interior item you wish to retrieve information about.",
+            "in": "path",
+            "name": "item",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/items/{item}",
         "pointer": "#/paths/~1nh~1items~1{item}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHItem"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons miscellaneous item"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all character photos+posters and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/photos",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/photos",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only item names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/nh/photos",
         "pointer": "#/paths/~1nh~1photos/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHPhoto[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons photos and posters"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a character photo or poster in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/photos/{item}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/photos/{item}",
+        "parameters": [
+          {
+            "description": "The name of the photo or poster you wish to retrieve information about.",
+            "in": "path",
+            "name": "item",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/photos/{item}",
         "pointer": "#/paths/~1nh~1photos~1{item}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHPhoto"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons photo or poster"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all recipes and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/recipes",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/recipes",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify a material to only get recipes that use that material.",
+            "in": "query",
+            "name": "material",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only recipe names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/recipes",
         "pointer": "#/paths/~1nh~1recipes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHRecipe[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons recipes"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific recipe in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/recipes/{item}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/recipes/{item}",
+        "parameters": [
+          {
+            "description": "The name of the item you wish to retrieve recipe information about.",
+            "in": "path",
+            "name": "item",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/recipes/{item}",
         "pointer": "#/paths/~1nh~1recipes~1{item}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHRecipe"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons recipe"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all sea creatures and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/sea",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/sea",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Retrive only the sea creature that are available in a specific month.",
+            "in": "query",
+            "name": "month",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only sea creature names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/sea",
         "pointer": "#/paths/~1nh~1sea/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHSeaCreature[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons sea creatures"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific sea creature in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/sea/{sea_creature}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/sea/{sea_creature}",
+        "parameters": [
+          {
+            "description": "The name of the sea creature you wish to retrieve information about.",
+            "in": "path",
+            "name": "sea_creature",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/sea/{sea_creature}",
         "pointer": "#/paths/~1nh~1sea~1{sea_creature}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHSeaCreature"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "404",
+            "type": "Error404"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons sea creature"
       },
       {
         "deprecated": false,
+        "description": "Get a list of all tools and their details in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/tools",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/tools",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only tool names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/nh/tools",
         "pointer": "#/paths/~1nh~1tools/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHTool[]"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "All New Horizons tools"
       },
       {
         "deprecated": false,
+        "description": "Retrieve information about a specific tool in *Animal Crossing: New Horizons*.",
         "id": "operation:get:/nh/tools/{tool}",
         "kind": "operation",
         "method": "get",
         "name": "get /nh/tools/{tool}",
+        "parameters": [
+          {
+            "description": "The name of the interior item you wish to retrieve information about.",
+            "in": "path",
+            "name": "tool",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/nh/tools/{tool}",
         "pointer": "#/paths/~1nh~1tools~1{tool}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NHTool"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Single New Horizons tool"
       },
       {
         "deprecated": false,
+        "description": "This endpoint retrieves villager information from the entire *Animal Crossing* series, with the option to filter by species, personality, game, and/or birthday.",
         "id": "operation:get:/villagers",
         "kind": "operation",
         "method": "get",
         "name": "get /villagers",
+        "parameters": [
+          {
+            "description": "Your UUID secret key, granted to you by the Nookipedia team.",
+            "in": "header",
+            "name": "X-API-KEY",
+            "required": true,
+            "type": "string:uuid"
+          },
+          {
+            "description": "The version of the API you are calling, written as `1.0.0`.",
+            "in": "header",
+            "name": "Accept-Version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Villager name.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Retrieve villagers of a certain species.",
+            "enum": [
+              "alligator",
+              "anteater",
+              "bear",
+              "bird",
+              "bull",
+              "cat",
+              "cub",
+              "chicken",
+              "cow",
+              "deer",
+              "dog",
+              "duck",
+              "eagle",
+              "elephant",
+              "frog",
+              "goat",
+              "gorilla",
+              "hamster",
+              "hippo",
+              "horse",
+              "koala",
+              "kangaroo",
+              "lion",
+              "monkey",
+              "mouse"
+            ],
+            "in": "query",
+            "name": "species",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Retrieve villagers with a certain personality.",
+            "enum": [
+              "lazy",
+              "jock",
+              "cranky",
+              "smug",
+              "normal",
+              "peppy",
+              "snooty",
+              "sisterly"
+            ],
+            "in": "query",
+            "name": "personality",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Retrieve villagers that appear in all listed games.",
+            "in": "query",
+            "name": "game",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Retrieve villagers born in a specific month.",
+            "in": "query",
+            "name": "birthmonth",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Use with `birthmonth` to get villager(s) born on a specific day.",
+            "in": "query",
+            "name": "birthday",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, an `nh_details` object will be included that contains *New Horizons* details about the villager.",
+            "in": "query",
+            "name": "nhdetails",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When set to `true`, only villager names are returned.",
+            "in": "query",
+            "name": "excludedetails",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specify the desired width of returned image URLs.",
+            "in": "query",
+            "name": "thumbsize",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/villagers",
         "pointer": "#/paths/~1villagers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Villager[]"
+          },
+          {
+            "status": "400",
+            "type": "Error400"
+          },
+          {
+            "status": "401",
+            "type": "Error401"
+          },
+          {
+            "status": "500",
+            "type": "Error500"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Villagers"
       },
       {
+        "description": "Bad request (often an invalid input).",
         "id": "schema:Error400",
         "kind": "schema",
-        "name": "Error400"
+        "name": "Error400",
+        "type": "object"
       },
       {
+        "description": "Unauthorized.",
         "id": "schema:Error401",
         "kind": "schema",
-        "name": "Error401"
+        "name": "Error401",
+        "type": "object"
       },
       {
+        "description": "Not found.",
         "id": "schema:Error404",
         "kind": "schema",
-        "name": "Error404"
+        "name": "Error404",
+        "type": "object"
       },
       {
+        "description": "Internal server error.",
         "id": "schema:Error500",
         "kind": "schema",
-        "name": "Error500"
+        "name": "Error500",
+        "type": "object"
       },
       {
         "id": "schema:NHArtwork",
         "kind": "schema",
-        "name": "NHArtwork"
+        "name": "NHArtwork",
+        "type": "object"
       },
       {
         "id": "schema:NHBug",
         "kind": "schema",
-        "name": "NHBug"
+        "name": "NHBug",
+        "type": "object"
       },
       {
         "id": "schema:NHClothing",
         "kind": "schema",
-        "name": "NHClothing"
+        "name": "NHClothing",
+        "type": "object"
       },
       {
         "id": "schema:NHEvent",
         "kind": "schema",
-        "name": "NHEvent"
+        "name": "NHEvent",
+        "type": "object"
       },
       {
         "id": "schema:NHFish",
         "kind": "schema",
-        "name": "NHFish"
+        "name": "NHFish",
+        "type": "object"
       },
       {
         "id": "schema:NHFossilGroup",
         "kind": "schema",
-        "name": "NHFossilGroup"
+        "name": "NHFossilGroup",
+        "type": "object"
       },
       {
         "id": "schema:NHFossilGroupWithIndividualFossils",
         "kind": "schema",
-        "name": "NHFossilGroupWithIndividualFossils"
+        "name": "NHFossilGroupWithIndividualFossils",
+        "type": "object"
       },
       {
         "id": "schema:NHFossilGroupWithIndividualFossilsNoMatched",
         "kind": "schema",
-        "name": "NHFossilGroupWithIndividualFossilsNoMatched"
+        "name": "NHFossilGroupWithIndividualFossilsNoMatched",
+        "type": "object"
       },
       {
         "id": "schema:NHFurniture",
         "kind": "schema",
-        "name": "NHFurniture"
+        "name": "NHFurniture",
+        "type": "object"
       },
       {
         "id": "schema:NHIndividualFossil",
         "kind": "schema",
-        "name": "NHIndividualFossil"
+        "name": "NHIndividualFossil",
+        "type": "object"
       },
       {
         "id": "schema:NHInterior",
         "kind": "schema",
-        "name": "NHInterior"
+        "name": "NHInterior",
+        "type": "object"
       },
       {
         "id": "schema:NHItem",
         "kind": "schema",
-        "name": "NHItem"
+        "name": "NHItem",
+        "type": "object"
       },
       {
         "id": "schema:NHPhoto",
         "kind": "schema",
-        "name": "NHPhoto"
+        "name": "NHPhoto",
+        "type": "object"
       },
       {
         "id": "schema:NHRecipe",
         "kind": "schema",
-        "name": "NHRecipe"
+        "name": "NHRecipe",
+        "type": "object"
       },
       {
         "id": "schema:NHSeaCreature",
         "kind": "schema",
-        "name": "NHSeaCreature"
+        "name": "NHSeaCreature",
+        "type": "object"
       },
       {
         "id": "schema:NHTool",
         "kind": "schema",
-        "name": "NHTool"
+        "name": "NHTool",
+        "type": "object"
       },
       {
         "id": "schema:Villager",
         "kind": "schema",
-        "name": "Villager"
+        "name": "Villager",
+        "type": "object"
       }
     ]
   },

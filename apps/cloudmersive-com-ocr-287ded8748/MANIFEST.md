@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.cloudmersive.com_Content_cl
 
 | | |
 | --- | --- |
-| Signed bundle | `a546d9e9055c6c0d4996100e48c1c0b4967c6ba82f43b88d541394a186b8a6e0` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,24 +34,26 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.cloudmersive.com_Content_cl
 
 27 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/ocr/image/to/lines-with-location` | ImageOcr_ImageLinesWithLocation | Convert a scanned image into words with location |
-| POST | `/ocr/image/to/words-with-location` | ImageOcr_ImageWordsWithLocation | Convert a scanned image into words with location |
-| POST | `/ocr/image/toText` | ImageOcr_Post | Convert a scanned image into text |
-| POST | `/ocr/pdf/to/lines-with-location` | PdfOcr_PdfToLinesWithLocation | Convert a PDF into text lines with location |
-| POST | `/ocr/pdf/to/words-with-location` | PdfOcr_PdfToWordsWithLocation | Convert a PDF into words with location |
-| POST | `/ocr/pdf/toText` | PdfOcr_Post | Converts an uploaded PDF file into text via Optical Character Recognition. |
-| POST | `/ocr/photo/recognize/business-card` | ImageOcr_PhotoRecognizeBusinessCard | Recognize a photo of a business card, extract key business information |
-| POST | `/ocr/photo/recognize/form` | ImageOcr_PhotoRecognizeForm | Recognize a photo of a form, extract key fields and business information |
-| POST | `/ocr/photo/recognize/form/advanced` | ImageOcr_PhotoRecognizeFormAdvanced | Recognize a photo of a form, extract key fields using stored templates |
-| POST | `/ocr/photo/recognize/receipt` | ImageOcr_PhotoRecognizeReceipt | Recognize a photo of a receipt, extract key business information |
-| POST | `/ocr/photo/to/words-with-location` | ImageOcr_PhotoWordsWithLocation | Convert a photo of a document or receipt into words with location |
-| POST | `/ocr/photo/toText` | ImageOcr_PhotoToText | Convert a photo of a document into text |
-| POST | `/ocr/preprocessing/image/binarize` | Preprocessing_Binarize | Convert an image of text into a binarized (light and dark) view |
-| POST | `/ocr/preprocessing/image/binarize/advanced` | Preprocessing_BinarizeAdvanced | Convert an image of text into a binary (light and dark) view with ML |
-| POST | `/ocr/preprocessing/image/get-page-angle` | Preprocessing_GetPageAngle | Get the angle of the page / document / receipt |
-| POST | `/ocr/preprocessing/image/unrotate` | Preprocessing_Unrotate | Detect and unrotate a document image |
-| POST | `/ocr/preprocessing/image/unrotate/advanced` | Preprocessing_UnrotateAdvanced | Detect and unrotate a document image (advanced) |
-| POST | `/ocr/preprocessing/image/unskew` | Preprocessing_Unskew | Detect and unskew a photo of a document |
-| POST | `/ocr/receipts/photo/to/csv` | Receipts_PhotoToCSV | Convert a photo of a receipt into a CSV file containing structured information from the receipt |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/ocr/image/to/lines-with-location` | ImageOcr_ImageLinesWithLocation | `language`, `preprocessing`, body*: object | ImageToLinesWithLocationResult |  | Convert a scanned image into words with location |
+| POST | `/ocr/image/to/words-with-location` | ImageOcr_ImageWordsWithLocation | `language`, `preprocessing`, body*: object | ImageToWordsWithLocationResult |  | Convert a scanned image into words with location |
+| POST | `/ocr/image/toText` | ImageOcr_Post | `recognitionMode`, `language`, `preprocessing`, body*: object | ImageToTextResponse |  | Convert a scanned image into text |
+| POST | `/ocr/pdf/to/lines-with-location` | PdfOcr_PdfToLinesWithLocation | `language`, `preprocessing`, body*: object | PdfToLinesWithLocationResult |  | Convert a PDF into text lines with location |
+| POST | `/ocr/pdf/to/words-with-location` | PdfOcr_PdfToWordsWithLocation | `language`, `preprocessing`, body*: object | PdfToWordsWithLocationResult |  | Convert a PDF into words with location |
+| POST | `/ocr/pdf/toText` | PdfOcr_Post | `recognitionMode`, `language`, `preprocessing`, body*: object | PdfToTextResponse |  | Converts an uploaded PDF file into text via Optical Character Recognition. |
+| POST | `/ocr/photo/recognize/business-card` | ImageOcr_PhotoRecognizeBusinessCard | body*: object | BusinessCardRecognitionResult |  | Recognize a photo of a business card, extract key business information |
+| POST | `/ocr/photo/recognize/form` | ImageOcr_PhotoRecognizeForm | `formTemplateDefinition`, `recognitionMode`, `preprocessing`, `diagnostics`, `language`, body*: object | FormRecognitionResult |  | Recognize a photo of a form, extract key fields and business information |
+| POST | `/ocr/photo/recognize/form/advanced` | ImageOcr_PhotoRecognizeFormAdvanced | `bucketID`, `bucketSecretKey`, `recognitionMode`, `preprocessing`, `diagnostics`, body*: object | FormRecognitionResult |  | Recognize a photo of a form, extract key fields using stored templates |
+| POST | `/ocr/photo/recognize/receipt` | ImageOcr_PhotoRecognizeReceipt | `recognitionMode`, `language`, `preprocessing`, body*: object | ReceiptRecognitionResult |  | Recognize a photo of a receipt, extract key business information |
+| POST | `/ocr/photo/to/words-with-location` | ImageOcr_PhotoWordsWithLocation | `recognitionMode`, `language`, `preprocessing`, `diagnostics`, body*: object | PhotoToWordsWithLocationResult |  | Convert a photo of a document or receipt into words with location |
+| POST | `/ocr/photo/toText` | ImageOcr_PhotoToText | `recognitionMode`, `language`, body*: object | ImageToTextResponse |  | Convert a photo of a document into text |
+| POST | `/ocr/preprocessing/image/binarize` | Preprocessing_Binarize | body*: object | string:byte |  | Convert an image of text into a binarized (light and dark) view |
+| POST | `/ocr/preprocessing/image/binarize/advanced` | Preprocessing_BinarizeAdvanced | body*: object | string:byte |  | Convert an image of text into a binary (light and dark) view with ML |
+| POST | `/ocr/preprocessing/image/get-page-angle` | Preprocessing_GetPageAngle | body*: object | GetPageAngleResult |  | Get the angle of the page / document / receipt |
+| POST | `/ocr/preprocessing/image/unrotate` | Preprocessing_Unrotate | body*: object | string:byte |  | Detect and unrotate a document image |
+| POST | `/ocr/preprocessing/image/unrotate/advanced` | Preprocessing_UnrotateAdvanced | body*: object | string:byte |  | Detect and unrotate a document image (advanced) |
+| POST | `/ocr/preprocessing/image/unskew` | Preprocessing_Unskew | body*: object | string:byte |  | Detect and unskew a photo of a document |
+| POST | `/ocr/receipts/photo/to/csv` | Receipts_PhotoToCSV | body*: object | object |  | Convert a photo of a receipt into a CSV file containing structured information from the receipt |

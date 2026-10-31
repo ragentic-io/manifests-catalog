@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_microcks.io_images_microcks-log
 
 | | |
 | --- | --- |
-| Signed bundle | `963f219f0296ef5773403542544ddcdbb678dce7ba40113efb69084063fb47f5` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,49 +34,51 @@ logo: "https://api.apis.guru/v2/cache/logo/https_microcks.io_images_microcks-log
 
 44 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/artifact/upload` | uploadArtifact | Upload an artifact |
-| GET | `/export` | exportSnapshot | Export a snapshot |
-| GET | `/features/config` | GetFeaturesConfiguration | Get features configuration |
-| POST | `/import` | importSnapshot | Import a snapshot |
-| GET | `/jobs` | GetImportJobs | Get ImportJobs |
-| POST | `/jobs` | CreateImportJob | Create ImportJob |
-| GET | `/jobs/count` | GetImportJobCounter | Get the ImportJobs counter |
-| DELETE | `/jobs/{id}` | DeleteImportJob | Delete ImportJob |
-| GET | `/jobs/{id}` | get /jobs/{id} | Get ImportJob |
-| POST | `/jobs/{id}` | post /jobs/{id} | Update ImportJob |
-| PUT | `/jobs/{id}/activate` | ActivateImportJob | Activate an ImportJob |
-| PUT | `/jobs/{id}/start` | StartImportJob | Start an ImportJob |
-| PUT | `/jobs/{id}/stop` | StopImportJob | Stop an ImportJob |
-| GET | `/keycloak/config` | GetKeycloakConfig | Get authentification configuration |
-| GET | `/metrics/conformance/aggregate` | GetConformanceMetricsAggregation | Get aggregation of conformance metrics |
-| GET | `/metrics/conformance/service/{serviceId}` | GetServiceTestConformanceMetric | Get conformance metrics for a Service |
-| GET | `/metrics/invocations/global` | GetAggregatedInvocationsStats | Get aggregated invocation statistics for a day |
-| GET | `/metrics/invocations/global/latest` | GetLatestAggregatedInvocationsStats | Get aggregated invocations statistics for latest days |
-| GET | `/metrics/invocations/top` | GetTopIvnocationsStatsByDay | Get top invocation statistics for a day |
-| GET | `/metrics/invocations/{serviceName}/{serviceVersion}` | GetInvocationStatsByService | Get invocation statistics for Service |
-| GET | `/metrics/tests/latest` | GetLatestTestResults | Get latest tests results |
-| GET | `/resources/service/{serviceId}` | GetResourcesByService | Get Resources by Service |
-| GET | `/resources/{name}` | GetResource | Get Resource |
-| GET | `/secrets` | GetSecrets | Get Secrets |
-| POST | `/secrets` | CreateSecret | Create a new Secret |
-| GET | `/secrets/count` | GetSecretsCounter | Get the Secrets counter |
-| DELETE | `/secrets/{id}` | DeleteSecret | Delete Secret |
-| GET | `/secrets/{id}` | GetSecret | Get Secret |
-| PUT | `/secrets/{id}` | UpdateSecret | Update Secret |
-| GET | `/services` | GetServices | Get Services and APIs |
-| GET | `/services/count` | GetServicesCounter | Get the Services counter |
-| GET | `/services/labels` | GetServicesLabels | Get the already used labels for Services |
-| GET | `/services/search` | SearchServices | Search for Services and APIs |
-| DELETE | `/services/{id}` | DeleteService | Delete Service |
-| GET | `/services/{id}` | GetService | Get Service |
-| PUT | `/services/{id}/metadata` | UpdateServiceMetadata | Update Service Metadata |
-| PUT | `/services/{id}/operation` | OverrideServiceOperation | Override Service Operation |
-| POST | `/tests` | CreateTest | Create a new Test |
-| GET | `/tests/service/{serviceId}` | GetTestResultsByService | Get TestResults by Service |
-| GET | `/tests/service/{serviceId}/count` | GetTestResultsByServiceCounter | Get the TestResults for Service counter |
-| GET | `/tests/{id}` | GetTestResult | Get TestResult |
-| GET | `/tests/{id}/events/{testCaseId}` | GetEventsByTestCase | Get events for TestCase |
-| GET | `/tests/{id}/messages/{testCaseId}` | GetMessagesByTestCase | Get messages for TestCase |
-| POST | `/tests/{id}/testCaseResult` | ReportTestCaseResult | Report and create a new TestCaseResult |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/artifact/upload` | uploadArtifact | `mainArtifact`*, body*: ArtifactUpload | string |  | Upload an artifact |
+| GET | `/export` | exportSnapshot | `serviceIds`* | string:binary | yes | Export a snapshot |
+| GET | `/features/config` | GetFeaturesConfiguration | — | — | yes | Get features configuration |
+| POST | `/import` | importSnapshot | body*: SnapshotUpload | — |  | Import a snapshot |
+| GET | `/jobs` | GetImportJobs | `page`, `size`, `name` | ImportJob[] | yes | Get ImportJobs |
+| POST | `/jobs` | CreateImportJob | body*: ImportJob | ImportJob |  | Create ImportJob |
+| GET | `/jobs/count` | GetImportJobCounter | — | Counter | yes | Get the ImportJobs counter |
+| GET | `/jobs/{id}` | get /jobs/{id} | `id`* | ImportJob | yes | Get ImportJob |
+| POST | `/jobs/{id}` | post /jobs/{id} | `id`*, body*: ImportJob | ImportJob |  | Update ImportJob |
+| DELETE | `/jobs/{id}` | DeleteImportJob | `id`* | — |  | Delete ImportJob |
+| PUT | `/jobs/{id}/activate` | ActivateImportJob | `id`* | ImportJob |  | Activate an ImportJob |
+| PUT | `/jobs/{id}/start` | StartImportJob | `id`* | ImportJob |  | Start an ImportJob |
+| PUT | `/jobs/{id}/stop` | StopImportJob | `id`* | ImportJob |  | Stop an ImportJob |
+| GET | `/keycloak/config` | GetKeycloakConfig | — | KeycloakConfig | yes | Get authentification configuration |
+| GET | `/metrics/conformance/aggregate` | GetConformanceMetricsAggregation | — | WeightedMetricValue[] | yes | Get aggregation of conformance metrics |
+| GET | `/metrics/conformance/service/{serviceId}` | GetServiceTestConformanceMetric | `serviceId`* | TestConformanceMetric | yes | Get conformance metrics for a Service |
+| GET | `/metrics/invocations/global` | GetAggregatedInvocationsStats | `day` | DailyInvocationStatistic | yes | Get aggregated invocation statistics for a day |
+| GET | `/metrics/invocations/global/latest` | GetLatestAggregatedInvocationsStats | `limit` | CounterMap | yes | Get aggregated invocations statistics for latest days |
+| GET | `/metrics/invocations/top` | GetTopIvnocationsStatsByDay | `day`, `limit` | DailyInvocationStatistic[] | yes | Get top invocation statistics for a day |
+| GET | `/metrics/invocations/{serviceName}/{serviceVersion}` | GetInvocationStatsByService | `serviceName`*, `serviceVersion`*, `day` | DailyInvocationStatistic | yes | Get invocation statistics for Service |
+| GET | `/metrics/tests/latest` | GetLatestTestResults | `limit` | TestResultSummary[] | yes | Get latest tests results |
+| GET | `/resources/service/{serviceId}` | GetResourcesByService | `serviceId`* | Resource[] | yes | Get Resources by Service |
+| GET | `/resources/{name}` | GetResource | `name`* | Resource | yes | Get Resource |
+| GET | `/secrets` | GetSecrets | `page`, `size` | Secret[] | yes | Get Secrets |
+| POST | `/secrets` | CreateSecret | body: Secret | Secret |  | Create a new Secret |
+| GET | `/secrets/count` | GetSecretsCounter | — | Counter | yes | Get the Secrets counter |
+| GET | `/secrets/{id}` | GetSecret | `id`* | Secret | yes | Get Secret |
+| PUT | `/secrets/{id}` | UpdateSecret | `id`* | — |  | Update Secret |
+| DELETE | `/secrets/{id}` | DeleteSecret | `id`* | — |  | Delete Secret |
+| GET | `/services` | GetServices | `page`, `size` | Service | yes | Get Services and APIs |
+| GET | `/services/count` | GetServicesCounter | — | Counter | yes | Get the Services counter |
+| GET | `/services/labels` | GetServicesLabels | — | LabelsMap | yes | Get the already used labels for Services |
+| GET | `/services/search` | SearchServices | `queryMap`* | Service[] | yes | Search for Services and APIs |
+| GET | `/services/{id}` | GetService | `id`*, `messages` | Service\|ServiceView | yes | Get Service |
+| DELETE | `/services/{id}` | DeleteService | `id`* | — |  | Delete Service |
+| PUT | `/services/{id}/metadata` | UpdateServiceMetadata | `id`*, body*: Metadata | — |  | Update Service Metadata |
+| PUT | `/services/{id}/operation` | OverrideServiceOperation | `id`*, `operationName`*, body*: OperationOverrideDTO | — |  | Override Service Operation |
+| POST | `/tests` | CreateTest | body*: TestRequest | TestResult |  | Create a new Test |
+| GET | `/tests/service/{serviceId}` | GetTestResultsByService | `serviceId`* | TestResult[] | yes | Get TestResults by Service |
+| GET | `/tests/service/{serviceId}/count` | GetTestResultsByServiceCounter | `serviceId`* | Counter | yes | Get the TestResults for Service counter |
+| GET | `/tests/{id}` | GetTestResult | `id`* | TestResult | yes | Get TestResult |
+| GET | `/tests/{id}/events/{testCaseId}` | GetEventsByTestCase | `id`*, `testCaseId`* | UnidirectionalEvent[] | yes | Get events for TestCase |
+| GET | `/tests/{id}/messages/{testCaseId}` | GetMessagesByTestCase | `id`*, `testCaseId`* | RequestResponsePair[] | yes | Get messages for TestCase |
+| POST | `/tests/{id}/testCaseResult` | ReportTestCaseResult | `id`*, body*: TestCaseReturnDTO | TestCaseResult |  | Report and create a new TestCaseResult |

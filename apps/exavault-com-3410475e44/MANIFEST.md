@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_ExaVaultInc_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `228d1c2d93b68904a97cf056208bc90327f6eaf9faecb0c848068bd5174e0093` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,64 +34,66 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_ExaVaultInc_profile
 
 65 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | getAccount | Get account settings |
-| PATCH | `/account` | updateAccount | Update account settings |
-| GET | `/activity/session` | getSessionLogs | Get activity logs |
-| GET | `/activity/webhooks` | getWebhookLogs | Get webhook logs |
-| GET | `/email-lists` | getEmailLists | Get all email groups |
-| POST | `/email-lists` | addEmailList | Create new email list |
-| DELETE | `/email-lists/{id}` | deleteEmailListById | Delete an email group with given id |
-| GET | `/email-lists/{id}` | getEmailListById | Get individual email group |
-| PATCH | `/email-lists/{id}` | updateEmailListById | Update an email group |
-| POST | `/email/referral` | sendReferralEmail | Send referral email to a given address |
-| POST | `/email/welcome/{username}` | sendWelcomeEmail | Resend welcome email to specific user |
-| GET | `/forms` | getFormByShareHash | Get receive folder form settings |
-| DELETE | `/forms/entries/{id}` | deleteFormMessageById | Delete a receive form submission |
-| GET | `/forms/entries/{id}` | getFormEntries | Get form data entries for a receive |
-| GET | `/forms/{id}` | getFormById | Get receive folder form by Id |
-| PATCH | `/forms/{id}` | updateFormById | Updates a form with given parameters |
-| GET | `/notifications` | listNotifications | Get a list of notifications |
-| POST | `/notifications` | addNotification | Create a new notification |
-| DELETE | `/notifications/{id}` | deleteNotificationById | Delete a notification |
-| GET | `/notifications/{id}` | getNotificationById | Get notification details |
-| PATCH | `/notifications/{id}` | updateNotificationById | Update a notification |
-| POST | `/recipients/shares/invites/{shareId}` | resendInvitationsForShare | Resend invitations to share recipients |
-| DELETE | `/resources` | deleteResources | Delete Resources |
-| GET | `/resources` | getResourceInfo | Get Resource Properties |
-| POST | `/resources` | addFolder | Create a folder |
-| POST | `/resources/compress` | compressFiles | Compress resources |
-| POST | `/resources/copy` | copyResources | Copy resources |
-| GET | `/resources/download` | download | Download a file |
-| POST | `/resources/extract` | extractFiles | Extract resources |
-| GET | `/resources/list` | listResources | Get a list of all resources |
-| GET | `/resources/list/{id}` | listResourceContents | List contents of folder |
-| POST | `/resources/move` | moveResources | Move resources |
-| GET | `/resources/preview` | getPreviewImage | Preview a file |
-| POST | `/resources/upload` | uploadFile | Upload a file |
-| DELETE | `/resources/{id}` | deleteResourceById | Delete a Resource |
-| GET | `/resources/{id}` | getResourceInfoById | Get resource metadata |
-| PATCH | `/resources/{id}` | updateResourceById | Rename a resource. |
-| GET | `/shares` | listShares | Get a list of shares |
-| POST | `/shares` | addShare | Creates a share |
-| POST | `/shares/complete-send/{id}` | completeDirectSend | Complete send files |
-| DELETE | `/shares/{id}` | deleteShareById | Deactivate a share |
-| GET | `/shares/{id}` | getShareById | Get a share |
-| PATCH | `/shares/{id}` | updateShareById | Update a share |
-| GET | `/ssh-keys` | getSSHKeysList | Get metadata for a list of SSH Keys |
-| POST | `/ssh-keys` | addSSHKey | Create a new SSH Key |
-| DELETE | `/ssh-keys/{id}` | deleteSSHKey | Delete an SSH Key |
-| GET | `/ssh-keys/{id}` | getSSHKey | Get metadata for an SSH Key |
-| GET | `/users` | listUsers | Get a list of users |
-| POST | `/users` | addUser | Create a user |
-| DELETE | `/users/{id}` | deleteUser | Delete a user |
-| GET | `/users/{id}` | getUserById | Get info for a user |
-| PATCH | `/users/{id}` | updateUser | Update a user |
-| GET | `/webhooks` | getWehooksList | Get Webhooks List |
-| POST | `/webhooks` | addWebhook | Add A New Webhook |
-| POST | `/webhooks/regenerate-token/{id}` | regenerateWebhookToken | Regenerate security token |
-| POST | `/webhooks/resend/{activityId}` | resendWebhookActivityEntry | Resend a webhook message |
-| DELETE | `/webhooks/{id}` | deleteWebhook | Delete a webhook |
-| GET | `/webhooks/{id}` | getWebhookById | Get info for a webhook |
-| PATCH | `/webhooks/{id}` | updateWebhook | Update a webhook |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | getAccount | `ev-api-key`*, `ev-access-token`*, `include` | AccountResponse | yes | Get account settings |
+| PATCH | `/account` | updateAccount | `ev-api-key`*, `ev-access-token`*, body: object | AccountResponse |  | Update account settings |
+| GET | `/activity/session` | getSessionLogs | `ev-api-key`*, `ev-access-token`*, `startDate`, `endDate`, `ipAddress`, `username`, `path`, `type`, `offset`, `limit`, `sort` | SessionActivityResponse | yes | Get activity logs |
+| GET | `/activity/webhooks` | getWebhookLogs | `ev-api-key`*, `ev-access-token`*, `startDate`, `endDate`, `endpointUrl`, `event`, `statusCode`, `resourcePath`, `username`, `offset`, `limit`, `sort` | WebhookActivityResponse | yes | Get webhook logs |
+| GET | `/email-lists` | getEmailLists | `ev-api-key`*, `ev-access-token`*, `include` | EmailListCollectionResponse | yes | Get all email groups |
+| POST | `/email-lists` | addEmailList | `ev-api-key`*, `ev-access-token`*, body: object | EmailListResponse |  | Create new email list |
+| GET | `/email-lists/{id}` | getEmailListById | `ev-api-key`*, `ev-access-token`*, `id`*, `include` | EmailListResponse | yes | Get individual email group |
+| DELETE | `/email-lists/{id}` | deleteEmailListById | `ev-api-key`*, `ev-access-token`*, `id`* | EmptyResponse |  | Delete an email group with given id |
+| PATCH | `/email-lists/{id}` | updateEmailListById | `ev-api-key`*, `ev-access-token`*, `id`*, body: object | EmailListResponse |  | Update an email group |
+| POST | `/email/referral` | sendReferralEmail | `ev-api-key`*, `ev-access-token`*, body: object | EmptyResponse |  | Send referral email to a given address |
+| POST | `/email/welcome/{username}` | sendWelcomeEmail | `ev-api-key`*, `ev-access-token`*, `username`* | EmptyResponse |  | Resend welcome email to specific user |
+| GET | `/forms` | getFormByShareHash | `ev-api-key`*, `ev-access-token`*, `shareHash`*, `include` | FormResponse | yes | Get receive folder form settings |
+| GET | `/forms/entries/{id}` | getFormEntries | `ev-api-key`*, `ev-access-token`*, `id`*, `limit`, `offset` | FormEntryResponse | yes | Get form data entries for a receive |
+| DELETE | `/forms/entries/{id}` | deleteFormMessageById | `ev-api-key`*, `ev-access-token`*, `id`* | EmptyResponse |  | Delete a receive form submission |
+| GET | `/forms/{id}` | getFormById | `id`*, `ev-api-key`*, `ev-access-token`*, `include` | FormResponse | yes | Get receive folder form by Id |
+| PATCH | `/forms/{id}` | updateFormById | `id`*, `ev-api-key`*, `ev-access-token`*, body: object | FormResponse |  | Updates a form with given parameters |
+| GET | `/notifications` | listNotifications | `ev-api-key`*, `ev-access-token`*, `type`, `offset`, `sort`, `limit`, `include`, `action` | NotificationCollectionResponse | yes | Get a list of notifications |
+| POST | `/notifications` | addNotification | `ev-api-key`*, `ev-access-token`*, body: object | NotificationResponse |  | Create a new notification |
+| GET | `/notifications/{id}` | getNotificationById | `ev-api-key`*, `ev-access-token`*, `id`*, `include` | NotificationResponse | yes | Get notification details |
+| DELETE | `/notifications/{id}` | deleteNotificationById | `ev-api-key`*, `ev-access-token`*, `id`* | EmptyResponse |  | Delete a notification |
+| PATCH | `/notifications/{id}` | updateNotificationById | `ev-api-key`*, `ev-access-token`*, `id`*, body: object | NotificationResponse |  | Update a notification |
+| POST | `/recipients/shares/invites/{shareId}` | resendInvitationsForShare | `ev-api-key`*, `ev-access-token`*, `shareId`*, body: object | ShareRecipientsResponse |  | Resend invitations to share recipients |
+| GET | `/resources` | getResourceInfo | `ev-api-key`*, `ev-access-token`*, `resource`*, `include` | ResourceResponse | yes | Get Resource Properties |
+| POST | `/resources` | addFolder | `ev-api-key`*, `ev-access-token`*, body: object | ResourceResponse |  | Create a folder |
+| DELETE | `/resources` | deleteResources | `ev-api-key`*, `ev-access-token`*, body: object | EmptyResponse, ResourceMultiResponse |  | Delete Resources |
+| POST | `/resources/compress` | compressFiles | `ev-api-key`*, `ev-access-token`*, body: object | ResourceResponse |  | Compress resources |
+| POST | `/resources/copy` | copyResources | `ev-api-key`*, `ev-access-token`*, body: object | ResourceCopyMove, ResourceMultiResponse |  | Copy resources |
+| GET | `/resources/download` | download | `ev-api-key`*, `ev-access-token`*, `resources[]`*, `downloadArchiveName` | string:binary | yes | Download a file |
+| POST | `/resources/extract` | extractFiles | `ev-api-key`*, `ev-access-token`*, body: object | ResourceCollectionResponse |  | Extract resources |
+| GET | `/resources/list` | listResources | `ev-api-key`*, `ev-access-token`*, `resource`*, `sort`, `offset`, `limit`, `type`, `name`, `include` | ResourceCollectionResponse | yes | Get a list of all resources |
+| GET | `/resources/list/{id}` | listResourceContents | `ev-api-key`*, `ev-access-token`*, `id`*, `sort`, `offset`, `limit`, `type`, `include` | ResourceCollectionResponse | yes | List contents of folder |
+| POST | `/resources/move` | moveResources | `ev-api-key`*, `ev-access-token`*, body: object | ResourceCopyMove, ResourceMultiResponse |  | Move resources |
+| GET | `/resources/preview` | getPreviewImage | `ev-api-key`*, `ev-access-token`*, `resource`*, `size`*, `width`, `height`, `page` | PreviewFileResponse | yes | Preview a file |
+| POST | `/resources/upload` | uploadFile | `ev-api-key`*, `ev-access-token`*, `offsetBytes`, `path`*, `fileSize`*, `resume`, `allowOverwrite`, body: object | ResourceResponse |  | Upload a file |
+| GET | `/resources/{id}` | getResourceInfoById | `id`*, `ev-api-key`*, `ev-access-token`*, `include` | ResourceResponse | yes | Get resource metadata |
+| DELETE | `/resources/{id}` | deleteResourceById | `id`*, `ev-api-key`*, `ev-access-token`* | EmptyResponse |  | Delete a Resource |
+| PATCH | `/resources/{id}` | updateResourceById | `id`*, `ev-access-token`*, `ev-api-key`*, body: object | ResourceResponse |  | Rename a resource. |
+| GET | `/shares` | listShares | `ev-api-key`*, `ev-access-token`*, `offset`, `limit`, `scope`, `sort`, `type`, `include`, `name`, `recipient`, `message`, `username`, `search` | ShareCollectionResponse | yes | Get a list of shares |
+| POST | `/shares` | addShare | `ev-api-key`*, `ev-access-token`*, body: object | ShareResponse |  | Creates a share |
+| POST | `/shares/complete-send/{id}` | completeDirectSend | `ev-api-key`*, `ev-access-token`*, `id`* | ShareResponse |  | Complete send files |
+| GET | `/shares/{id}` | getShareById | `id`*, `ev-api-key`*, `ev-access-token`*, `include` | ShareResponse | yes | Get a share |
+| DELETE | `/shares/{id}` | deleteShareById | `id`*, `ev-api-key`*, `ev-access-token`* | EmptyResponse |  | Deactivate a share |
+| PATCH | `/shares/{id}` | updateShareById | `id`*, `ev-api-key`*, `ev-access-token`*, body*: object | ShareResponse |  | Update a share |
+| GET | `/ssh-keys` | getSSHKeysList | `ev-api-key`*, `ev-access-token`*, `userId`, `limit`, `offset` | SSHKeyCollectionResponse | yes | Get metadata for a list of SSH Keys |
+| POST | `/ssh-keys` | addSSHKey | `ev-api-key`*, `ev-access-token`*, body: object | SSHKeyResponse |  | Create a new SSH Key |
+| GET | `/ssh-keys/{id}` | getSSHKey | `id`*, `ev-api-key`*, `ev-access-token`* | SSHKeyResponse | yes | Get metadata for an SSH Key |
+| DELETE | `/ssh-keys/{id}` | deleteSSHKey | `id`*, `ev-api-key`*, `ev-access-token`* | — |  | Delete an SSH Key |
+| GET | `/users` | listUsers | `ev-api-key`*, `ev-access-token`*, `username`, `homeResource`, `nickname`, `email`, `role`, `status`, `search`, `offset`, `sort`, `limit`, `include` | UserCollectionResponse | yes | Get a list of users |
+| POST | `/users` | addUser | `ev-api-key`*, `ev-access-token`*, body: object | UserResponse |  | Create a user |
+| GET | `/users/{id}` | getUserById | `id`*, `ev-api-key`*, `ev-access-token`*, `include` | UserResponse | yes | Get info for a user |
+| DELETE | `/users/{id}` | deleteUser | `id`*, `ev-api-key`*, `ev-access-token`* | EmptyResponse |  | Delete a user |
+| PATCH | `/users/{id}` | updateUser | `id`*, `ev-api-key`*, `ev-access-token`*, body: object | UserResponse |  | Update a user |
+| GET | `/webhooks` | getWehooksList | `ev-api-key`*, `ev-access-token`*, `include`, `offset`, `limit` | WebhookCollectionResponse | yes | Get Webhooks List |
+| POST | `/webhooks` | addWebhook | `ev-api-key`*, `ev-access-token`*, body: object | WebhookResponse |  | Add A New Webhook |
+| POST | `/webhooks/regenerate-token/{id}` | regenerateWebhookToken | `id`*, `ev-api-key`*, `ev-access-token`* | WebhookResponse |  | Regenerate security token |
+| POST | `/webhooks/resend/{activityId}` | resendWebhookActivityEntry | `activityId`*, `ev-api-key`*, `ev-access-token`* | EmptyResponse |  | Resend a webhook message |
+| GET | `/webhooks/{id}` | getWebhookById | `id`*, `ev-api-key`*, `ev-access-token`*, `include` | WebhookResponse | yes | Get info for a webhook |
+| DELETE | `/webhooks/{id}` | deleteWebhook | `id`*, `ev-api-key`*, `ev-access-token`* | EmptyResponse |  | Delete a webhook |
+| PATCH | `/webhooks/{id}` | updateWebhook | `id`*, `ev-api-key`*, `ev-access-token`*, body: object | WebhookResponse |  | Update a webhook |

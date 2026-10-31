@@ -282,678 +282,1972 @@
       },
       {
         "deprecated": false,
+        "description": "Request full announcement data identified by announcement id",
         "id": "operation:get:/api/v1/company/announcement/{id}",
         "kind": "operation",
         "method": "get",
         "name": "CompanyAnnouncement",
+        "parameters": [
+          {
+            "description": "announcement hex ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/announcement/{id}",
         "pointer": "#/paths/~1api~1v1~1company~1announcement~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves announcement data"
+        "summary": "Retrieves announcement data",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lookup stock exchange listings identified by an ISIN (International Securities Identification Number) number.",
         "id": "operation:post:/api/v1/company/deepsearch/isin",
         "kind": "operation",
         "method": "post",
         "name": "CompanyDeepsearchISIN",
         "path": "/api/v1/company/deepsearch/isin",
         "pointer": "#/paths/~1api~1v1~1company~1deepsearch~1isin/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of stock exchange listings"
+        "summary": "Retrieves a list of stock exchange listings",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lookup companies identified by a LEI (Legal Entity Identifier) number.",
         "id": "operation:get:/api/v1/company/deepsearch/lei/{number}",
         "kind": "operation",
         "method": "get",
         "name": "CompanyDeepsearchLEI",
+        "parameters": [
+          {
+            "description": "lei number",
+            "in": "path",
+            "name": "number",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Pagination for the ISIN number results (1000 numbers per page)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/v1/company/deepsearch/lei/{number}",
         "pointer": "#/paths/~1api~1v1~1company~1deepsearch~1lei~1{number}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of companies"
+        "summary": "Retrieves a list of companies",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for companies with a certain name.",
         "id": "operation:get:/api/v1/company/deepsearch/name/{country}/{name}",
         "kind": "operation",
         "method": "get",
         "name": "CompanyDeepsearchName",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "company name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/deepsearch/name/{country}/{name}",
         "pointer": "#/paths/~1api~1v1~1company~1deepsearch~1name~1{country}~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of companies from the official business register"
+        "summary": "Retrieves a list of companies from the official business register",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for companies with a certain register number.",
         "id": "operation:get:/api/v1/company/deepsearch/number/{country}/{number}",
         "kind": "operation",
         "method": "get",
         "name": "CompanyDeepsearchNumber",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "company registration number",
+            "in": "path",
+            "name": "number",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/deepsearch/number/{country}/{number}",
         "pointer": "#/paths/~1api~1v1~1company~1deepsearch~1number~1{country}~1{number}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of companies from the official business register"
+        "summary": "Retrieves a list of companies from the official business register",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get current list of available ChangeTypes to subscribe to",
         "id": "operation:get:/api/v1/company/monitoring/changeTypes",
         "kind": "operation",
         "method": "get",
         "name": "CompanyMonitorChangeTypesList",
         "path": "/api/v1/company/monitoring/changeTypes",
         "pointer": "#/paths/~1api~1v1~1company~1monitoring~1changeTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Get available ChangeTypes"
+        "summary": "Get available ChangeTypes",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query list of all registered monitors for logged in user",
         "id": "operation:get:/api/v1/company/monitoring/list",
         "kind": "operation",
         "method": "get",
         "name": "CompanyMonitorList",
         "path": "/api/v1/company/monitoring/list",
         "pointer": "#/paths/~1api~1v1~1company~1monitoring~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of registered monitors"
+        "summary": "Retrieves a list of registered monitors",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query status of registered monitors for a specific company identified by a company id",
         "id": "operation:get:/api/v1/company/monitoring/list/{id}",
         "kind": "operation",
         "method": "get",
         "name": "CompanyMonitorId",
+        "parameters": [
+          {
+            "description": "Company Hex ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/monitoring/list/{id}",
         "pointer": "#/paths/~1api~1v1~1company~1monitoring~1list~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Get monitor status for specific company id"
+        "summary": "Get monitor status for specific company id",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add a company to your perpetual monitoring list and register a callback URL to get monitoring alerts.",
         "id": "operation:post:/api/v1/company/monitoring/register/{id}",
         "kind": "operation",
         "method": "post",
         "name": "CompanyMonitorRegister",
+        "parameters": [
+          {
+            "description": "Company Hex ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/monitoring/register/{id}",
         "pointer": "#/paths/~1api~1v1~1company~1monitoring~1register~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Register a Company for monitoring"
+        "summary": "Register a Company for monitoring",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deactivate a previously registered company monitor identified by the notifier id",
         "id": "operation:post:/api/v1/company/monitoring/unregister/{id}",
         "kind": "operation",
         "method": "post",
         "name": "CompanyMonitorUnregister",
+        "parameters": [
+          {
+            "description": "Registration id of monitoring request record",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/monitoring/unregister/{id}",
         "pointer": "#/paths/~1api~1v1~1company~1monitoring~1unregister~1{id}/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Deactivates an active notification"
+        "summary": "Deactivates an active notification",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query list of registered callback URLs for logged in user",
         "id": "operation:get:/api/v1/company/notification/list",
         "kind": "operation",
         "method": "get",
         "name": "CompanyNotificationList",
         "path": "/api/v1/company/notification/list",
         "pointer": "#/paths/~1api~1v1~1company~1notification~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of registered notifications"
+        "summary": "Retrieves a list of registered notifications",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query list of registered notifications for a specific company identified by a company id",
         "id": "operation:get:/api/v1/company/notification/list/{id}",
         "kind": "operation",
         "method": "get",
         "name": "CompanyNotificationId",
+        "parameters": [
+          {
+            "description": "Company Hex ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/notification/list/{id}",
         "pointer": "#/paths/~1api~1v1~1company~1notification~1list~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of registered notifications"
+        "summary": "Retrieves a list of registered notifications",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Register a new callback URL to get notifications about companies.",
         "id": "operation:post:/api/v1/company/notification/register/{id}",
         "kind": "operation",
         "method": "post",
         "name": "CompanyNotificationRegister",
+        "parameters": [
+          {
+            "description": "Company Hex ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/notification/register/{id}",
         "pointer": "#/paths/~1api~1v1~1company~1notification~1register~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Creates a new notification"
+        "summary": "Creates a new notification",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deactivate a previously registered company monitor identified by the notifier id",
         "id": "operation:post:/api/v1/company/notification/unregister/{id}",
         "kind": "operation",
         "method": "post",
         "name": "CompanyNotificationUnregister",
+        "parameters": [
+          {
+            "description": "Registration id of monitoring request record",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/notification/unregister/{id}",
         "pointer": "#/paths/~1api~1v1~1company~1notification~1unregister~1{id}/post",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Unregister a company from Monitoring"
+        "summary": "Unregister a company from Monitoring",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "KYC API company index lookup for companies with a certain name in a country.",
         "id": "operation:get:/api/v1/company/search/name/{country}/{name}",
         "kind": "operation",
         "method": "get",
         "name": "CompanySearchName",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "company name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "number of search results",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/company/search/name/{country}/{name}",
         "pointer": "#/paths/~1api~1v1~1company~1search~1name~1{country}~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of companies from the KYC API company index"
+        "summary": "Retrieves a list of companies from the KYC API company index",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "KYC API company index lookup for companies with a certain register number in a country.",
         "id": "operation:get:/api/v1/company/search/number/{country}/{number}",
         "kind": "operation",
         "method": "get",
         "name": "CompanySearchNumber",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "company registration number",
+            "in": "path",
+            "name": "number",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "number of search results",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/company/search/number/{country}/{number}",
         "pointer": "#/paths/~1api~1v1~1company~1search~1number~1{country}~1{number}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of companies from the KYC API company index"
+        "summary": "Retrieves a list of companies from the KYC API company index",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "KYC API company index lookup by country and mixed parameters.",
         "id": "operation:post:/api/v1/company/search/{country}",
         "kind": "operation",
         "method": "post",
         "name": "CompanyAlternativeSearch",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/search/{country}",
         "pointer": "#/paths/~1api~1v1~1company~1search~1{country}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of companies from the KYC API company index"
+        "summary": "Retrieves a list of companies from the KYC API company index",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search announcements filed to the business register from a company identified by an id",
         "id": "operation:get:/api/v1/company/{id}/announcements",
         "kind": "operation",
         "method": "get",
         "name": "CompanyIdAnnouncements",
+        "parameters": [
+          {
+            "description": "company hex ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "limit of announcements in response (default 10)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "to paginate through results (default 0)",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "If this parameter is set to false, you will only receive ids, and no additional data about announcements and no hits to the metric will be counted.",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/v1/company/{id}/announcements",
         "pointer": "#/paths/~1api~1v1~1company~1{id}~1announcements/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves company announcements"
+        "summary": "Retrieves company announcements",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Request company superdata identified by company id",
         "id": "operation:get:/api/v1/company/{id}/super/{country}",
         "kind": "operation",
         "method": "get",
         "name": "CompanyIdSuper",
+        "parameters": [
+          {
+            "description": "company superdata by id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Optional data translation (only available in limited jurisdictions)",
+            "enum": [
+              "",
+              "OG",
+              "EN"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/{id}/super/{country}",
         "pointer": "#/paths/~1api~1v1~1company~1{id}~1super~1{country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves structured data extracted from a company document"
+        "summary": "Retrieves structured data extracted from a company document",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get company details by id.",
         "id": "operation:get:/api/v1/company/{id}/{dataset}",
         "kind": "operation",
         "method": "get",
         "name": "CompanyIdDataset",
+        "parameters": [
+          {
+            "description": "company master data by id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Try to retrieve additional stock information for this company.",
+            "in": "query",
+            "name": "check_stock_listing",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "company master data by id",
+            "enum": [
+              "",
+              "mini",
+              "master",
+              "full",
+              "refresh"
+            ],
+            "in": "path",
+            "name": "dataset",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Optional data translation (only available in limited jurisdictions)",
+            "enum": [
+              "",
+              "EN",
+              "ES",
+              "FR"
+            ],
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/company/{id}/{dataset}",
         "pointer": "#/paths/~1api~1v1~1company~1{id}~1{dataset}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves company details"
+        "summary": "Retrieves company details",
+        "tags": [
+          "v1-company"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Performs a basic verification check of a given EIN tax number.",
         "id": "operation:get:/api/v1/ein-verification/basic-check",
         "kind": "operation",
         "method": "get",
         "name": "EinVerificationBasic",
+        "parameters": [
+          {
+            "description": "Nine letter EIN number with or without hyphens",
+            "in": "query",
+            "name": "ein",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/ein-verification/basic-check",
         "pointer": "#/paths/~1api~1v1~1ein-verification~1basic-check/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Verifies an EIN number"
+        "summary": "Verifies an EIN number",
+        "tags": [
+          "v1-ein-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Comprehensive verification of a given EIN number.",
         "id": "operation:get:/api/v1/ein-verification/comprehensive-check",
         "kind": "operation",
         "method": "get",
         "name": "EinVerificationComprehensive",
+        "parameters": [
+          {
+            "description": "Nine letter EIN number with or without hyphens",
+            "in": "query",
+            "name": "ein",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/ein-verification/comprehensive-check",
         "pointer": "#/paths/~1api~1v1~1ein-verification~1comprehensive-check/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Verifies EIN number and retrieves company data"
+        "summary": "Verifies EIN number and retrieves company data",
+        "tags": [
+          "v1-ein-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lookup EIN number for a company by its company name",
         "id": "operation:get:/api/v1/ein-verification/lookup",
         "kind": "operation",
         "method": "get",
         "name": "EinVerificationLookup",
+        "parameters": [
+          {
+            "description": "Business name of the company",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Optional state parameter to improve results.",
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Optional zip code parameter to improve results.",
+            "in": "query",
+            "name": "zip",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "Optional parameter to do tight matching.",
+            "in": "query",
+            "name": "tight",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/v1/ein-verification/lookup",
         "pointer": "#/paths/~1api~1v1~1ein-verification~1lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of EIN numbers"
+        "summary": "Retrieves a list of EIN numbers",
+        "tags": [
+          "v1-ein-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Basic verification of an IBAN number validating its structure",
         "id": "operation:post:/api/v1/iban-verification/check-iban",
         "kind": "operation",
         "method": "post",
         "name": "IbanBasic",
         "path": "/api/v1/iban-verification/check-iban",
         "pointer": "#/paths/~1api~1v1~1iban-verification~1check-iban/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Checks validity of an IBAN number"
+        "summary": "Checks validity of an IBAN number",
+        "tags": [
+          "v1-iban-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Comprehensive verification of IBAN number using a service provider for verification",
         "id": "operation:post:/api/v1/iban-verification/comprehensive-check-iban",
         "kind": "operation",
         "method": "post",
         "name": "IbanComprehensive",
         "path": "/api/v1/iban-verification/comprehensive-check-iban",
         "pointer": "#/paths/~1api~1v1~1iban-verification~1comprehensive-check-iban/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Checks validity of an IBAN number"
+        "summary": "Checks validity of an IBAN number",
+        "tags": [
+          "v1-iban-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Performs a basic verification check of a given NIF tax number against NIF.com.",
         "id": "operation:post:/api/v1/nif-verification/basic-check/{country}",
         "kind": "operation",
         "method": "post",
         "name": "NifBasic",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/nif-verification/basic-check/{country}",
         "pointer": "#/paths/~1api~1v1~1nif-verification~1basic-check~1{country}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Verifies a NIF number"
+        "summary": "Verifies a NIF number",
+        "tags": [
+          "v1-nif-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Comprehensive verification of given portuguese NIF number against NIF.com.",
         "id": "operation:post:/api/v1/nif-verification/comprehensive-check/{country}",
         "kind": "operation",
         "method": "post",
         "name": "NifComprehensive",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/nif-verification/comprehensive-check/{country}",
         "pointer": "#/paths/~1api~1v1~1nif-verification~1comprehensive-check~1{country}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Verifies a NIF number and retrieves company data"
+        "summary": "Verifies a NIF number and retrieves company data",
+        "tags": [
+          "v1-nif-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a list of all active Pep Sanction Report monitors for this account",
         "id": "operation:get:/api/v1/pepsanction/monitor/list",
         "kind": "operation",
         "method": "get",
         "name": "PepMonitorList",
         "path": "/api/v1/pepsanction/monitor/list",
         "pointer": "#/paths/~1api~1v1~1pepsanction~1monitor~1list/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a list of monitor entries"
+        "summary": "Retrieves a list of monitor entries",
+        "tags": [
+          "v1-pepsanction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Unregister a previously created Pep Sanction Report Monitor",
         "id": "operation:post:/api/v1/pepsanction/monitor/unregister/{id}",
         "kind": "operation",
         "method": "post",
         "name": "PepMonitorUnregister",
+        "parameters": [
+          {
+            "description": "The identifier of the Monitor",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/pepsanction/monitor/unregister/{id}",
         "pointer": "#/paths/~1api~1v1~1pepsanction~1monitor~1unregister~1{id}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Deactive a pep sanction monitor"
+        "summary": "Deactive a pep sanction monitor",
+        "tags": [
+          "v1-pepsanction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the webhook URL of an active Pep Sanction Report Monitor",
         "id": "operation:post:/api/v1/pepsanction/monitor/update/{id}",
         "kind": "operation",
         "method": "post",
         "name": "PepMonitorUpdate",
+        "parameters": [
+          {
+            "description": "The identifier of the Monitor",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/pepsanction/monitor/update/{id}",
         "pointer": "#/paths/~1api~1v1~1pepsanction~1monitor~1update~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Update details of active Pep Sanction monitor"
+        "summary": "Update details of active Pep Sanction monitor",
+        "tags": [
+          "v1-pepsanction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Order a new Pep Sanction Check by providing either a business or person name with some additional optional parameters.",
         "id": "operation:post:/api/v1/pepsanction/order/{type}/{search}",
         "kind": "operation",
         "method": "post",
         "name": "PepOrder",
+        "parameters": [
+          {
+            "description": "Type (Business or Person) of the requested Pep Sanction Check",
+            "enum": [
+              "",
+              "B",
+              "P"
+            ],
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Search string for the Pep Sanction Check",
+            "in": "path",
+            "name": "search",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/pepsanction/order/{type}/{search}",
         "pointer": "#/paths/~1api~1v1~1pepsanction~1order~1{type}~1{search}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Orders a new Pep Sanction Check Report"
+        "summary": "Orders a new Pep Sanction Check Report",
+        "tags": [
+          "v1-pepsanction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve a completed Pep Sanction check structured or in pdf depending on given accept header",
         "id": "operation:get:/api/v1/pepsanction/retrieve/{id}",
         "kind": "operation",
         "method": "get",
         "name": "PepRetrieve",
+        "parameters": [
+          {
+            "default": "application/json",
+            "description": "The type (pdf or json) in which the check should be returned",
+            "enum": [
+              "application/json",
+              "application/pdf"
+            ],
+            "in": "header",
+            "name": "accept",
+            "required": false,
+            "type": "string:string"
+          },
+          {
+            "description": "The id of the ordered Pep Sanction Check (id as returned by orderPepSanction call)",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/pepsanction/retrieve/{id}",
         "pointer": "#/paths/~1api~1v1~1pepsanction~1retrieve~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns a json or pdf report"
+        "summary": "Returns a json or pdf report",
+        "tags": [
+          "v1-pepsanction"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Check availability and valid options for a particular product for a particular company identfied by its id",
         "id": "operation:get:/api/v1/product/availability/{sku}/{subjectId}",
         "kind": "operation",
         "method": "get",
         "name": "ProductAvailability",
+        "parameters": [
+          {
+            "description": "SKU - 9 character value from a Product object",
+            "in": "path",
+            "name": "sku",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Subject (e.g.",
+            "in": "path",
+            "name": "subjectId",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/availability/{sku}/{subjectId}",
         "pointer": "#/paths/~1api~1v1~1product~1availability~1{sku}~1{subjectId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves a document availability result"
+        "summary": "Retrieves a document availability result",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a catalog of purchasable products available with some metadata for a particular country",
         "id": "operation:get:/api/v1/product/catalog/{country}",
         "kind": "operation",
         "method": "get",
         "name": "ProductCatalog",
+        "parameters": [
+          {
+            "description": "two letter country code in upper case",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/catalog/{country}",
         "pointer": "#/paths/~1api~1v1~1product~1catalog~1{country}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns a catalog of products"
+        "summary": "Returns a catalog of products",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Queries and returns all metadata associated with a notifier identified by its notifer id",
         "id": "operation:get:/api/v1/product/notifier/{notifierId}",
         "kind": "operation",
         "method": "get",
         "name": "ProductNotifier",
+        "parameters": [
+          {
+            "description": "ID of the ProductOrderNotifier as returned from a /notifier POST call - 32 character hex value",
+            "in": "path",
+            "name": "notifierId",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/notifier/{notifierId}",
         "pointer": "#/paths/~1api~1v1~1product~1notifier~1{notifierId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns metadata for a notifier"
+        "summary": "Returns metadata for a notifier",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create a notifier for a particular order.",
         "id": "operation:post:/api/v1/product/notifier/{orderId}/{type}/{uri}",
         "kind": "operation",
         "method": "post",
         "name": "ProductNotifierCreate",
+        "parameters": [
+          {
+            "description": "ID of the ProductOrder as returned from a /product/buy call - 32 character hex value",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Type of the notifier - indicates the action the notifier will perform.",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "URI of the notifier for the 'complete' action.",
+            "in": "path",
+            "name": "uri",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/notifier/{orderId}/{type}/{uri}",
         "pointer": "#/paths/~1api~1v1~1product~1notifier~1{orderId}~1{type}~1{uri}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Creates a notifier for an order"
+        "summary": "Creates a notifier for an order",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Place an order for a concierge product",
         "id": "operation:post:/api/v1/product/order/concierge",
         "kind": "operation",
         "method": "post",
         "name": "ProductOrderConcierge",
         "path": "/api/v1/product/order/concierge",
         "pointer": "#/paths/~1api~1v1~1product~1order~1concierge/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Places a concierge order"
+        "summary": "Places a concierge order",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Place an order for a UBO (ultimate beneficial owner) discovery report",
         "id": "operation:post:/api/v1/product/order/ubo",
         "kind": "operation",
         "method": "post",
         "name": "ProductOrderUbo",
         "path": "/api/v1/product/order/ubo",
         "pointer": "#/paths/~1api~1v1~1product~1order~1ubo/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Places a UBO order"
+        "summary": "Places a UBO order",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Place an order for a particular product identified by its SKU with a particular option for a particular company identified by its id",
         "id": "operation:post:/api/v1/product/order/{sku}/{option}/{subjectId}",
         "kind": "operation",
         "method": "post",
         "name": "ProductOrderWithOption",
+        "parameters": [
+          {
+            "description": "SKU - 9 character value from a Product object",
+            "in": "path",
+            "name": "sku",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Product option (e.g.",
+            "in": "path",
+            "name": "option",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Subject (e.g.",
+            "in": "path",
+            "name": "subjectId",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/order/{sku}/{option}/{subjectId}",
         "pointer": "#/paths/~1api~1v1~1product~1order~1{sku}~1{option}~1{subjectId}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Places a product order"
+        "summary": "Places a product order",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Place an order for a particular product identified by its SKU for a particular company identified by its id",
         "id": "operation:post:/api/v1/product/order/{sku}/{subjectId}",
         "kind": "operation",
         "method": "post",
         "name": "ProductOrder",
+        "parameters": [
+          {
+            "description": "SKU - 9 character value from a Product object",
+            "in": "path",
+            "name": "sku",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Subject (e.g.",
+            "in": "path",
+            "name": "subjectId",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/order/{sku}/{subjectId}",
         "pointer": "#/paths/~1api~1v1~1product~1order~1{sku}~1{subjectId}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Places a product order"
+        "summary": "Places a product order",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for possible products for a particular company identified by its id",
         "id": "operation:get:/api/v1/product/search/{subjectId}",
         "kind": "operation",
         "method": "get",
         "name": "ProductSearch",
+        "parameters": [
+          {
+            "description": "Subject (e.g.",
+            "in": "path",
+            "name": "subjectId",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/search/{subjectId}",
         "pointer": "#/paths/~1api~1v1~1product~1search~1{subjectId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns a list of products"
+        "summary": "Returns a list of products",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the current status of an order identified by its order id",
         "id": "operation:get:/api/v1/product/status/{orderId}",
         "kind": "operation",
         "method": "get",
         "name": "ProductStatus",
+        "parameters": [
+          {
+            "description": "ID of the ProductOrder as returned from a /product/buy call - 32 character hex value",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/status/{orderId}",
         "pointer": "#/paths/~1api~1v1~1product~1status~1{orderId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns metadata for a order"
+        "summary": "Returns metadata for a order",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update an existing order identified by its order id",
         "id": "operation:post:/api/v1/product/update/{action}/{orderId}",
         "kind": "operation",
         "method": "post",
         "name": "ProductUpdateAction",
+        "parameters": [
+          {
+            "description": "The action you want to perform for the order",
+            "in": "path",
+            "name": "action",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "ID of the ProductOrder as returned from a /product/buy call - 32 character hex value",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/update/{action}/{orderId}",
         "pointer": "#/paths/~1api~1v1~1product~1update~1{action}~1{orderId}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Updates metadata of an order"
+        "summary": "Updates metadata of an order",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the document or structured data associated with a completed order identified with its order id",
         "id": "operation:get:/api/v1/product/{orderId}",
         "kind": "operation",
         "method": "get",
         "name": "ProductRetrieve",
+        "parameters": [
+          {
+            "description": "ID of the ProductOrder as returned from a /product/buy call - 32 character hex value",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/product/{orderId}",
         "pointer": "#/paths/~1api~1v1~1product~1{orderId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Retrieves the result of an order"
+        "summary": "Retrieves the result of an order",
+        "tags": [
+          "v1-product"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the list of all currently enabled countries",
         "id": "operation:get:/api/v1/system/countries",
         "kind": "operation",
         "method": "get",
         "name": "SystemCountries",
         "path": "/api/v1/system/countries",
         "pointer": "#/paths/~1api~1v1~1system~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns a list of countries"
+        "summary": "Returns a list of countries",
+        "tags": [
+          "v1-system"
+        ]
       },
       {
         "deprecated": false,
@@ -963,132 +2257,378 @@
         "name": "HealthCheck",
         "path": "/api/v1/system/health",
         "pointer": "#/paths/~1api~1v1~1system~1health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns the health information for the official business registers based on usage."
+        "summary": "Returns the health information for the official business registers based on usage.",
+        "tags": [
+          "v1-system"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve pricing rules for your subscription plan",
         "id": "operation:get:/api/v1/system/pricelist",
         "kind": "operation",
         "method": "get",
         "name": "SystemPricelist",
         "path": "/api/v1/system/pricelist",
         "pointer": "#/paths/~1api~1v1~1system~1pricelist/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns a list of products with prices"
+        "summary": "Returns a list of products with prices",
+        "tags": [
+          "v1-system"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Performs a basic verification check of a given TIN number and name.",
         "id": "operation:get:/api/v1/tin-verification/basic-check",
         "kind": "operation",
         "method": "get",
         "name": "TinVerificationBasicCheck",
+        "parameters": [
+          {
+            "description": "Nine letter TIN number with or without hyphens",
+            "in": "query",
+            "name": "tin",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Company Name",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/tin-verification/basic-check",
         "pointer": "#/paths/~1api~1v1~1tin-verification~1basic-check/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Verifies a TIN number"
+        "summary": "Verifies a TIN number",
+        "tags": [
+          "v1-tin-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Performs an EIN name match using provided TIN Number.",
         "id": "operation:get:/api/v1/tin-verification/comprehensive-check",
         "kind": "operation",
         "method": "get",
         "name": "TinVerificationComprehensiveCheck",
+        "parameters": [
+          {
+            "description": "Nine letter TIN number with or without hyphens",
+            "in": "query",
+            "name": "tin",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "Company Name",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string:string"
+          },
+          {
+            "description": "The percentage of minimum similarity threshold for company matching (optional, default: 70%)",
+            "in": "query",
+            "name": "threshold",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/v1/tin-verification/comprehensive-check",
         "pointer": "#/paths/~1api~1v1~1tin-verification~1comprehensive-check/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "EIN Name Lookup with TIN number and retrieves company data"
+        "summary": "EIN Name Lookup with TIN number and retrieves company data",
+        "tags": [
+          "v1-tin-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Performs an EIN name match using provided TIN Number",
         "id": "operation:get:/api/v1/tin-verification/name-lookup",
         "kind": "operation",
         "method": "get",
         "name": "TinVerificationNameLookup",
+        "parameters": [
+          {
+            "description": "Nine letter TIN number with or without hyphens",
+            "in": "query",
+            "name": "tin",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/tin-verification/name-lookup",
         "pointer": "#/paths/~1api~1v1~1tin-verification~1name-lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "EIN Name Lookup with TIN number"
+        "summary": "EIN Name Lookup with TIN number",
+        "tags": [
+          "v1-tin-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Basic verification of given VAT number against VIES.",
         "id": "operation:post:/api/v1/vat-verification/basic-check/{country}",
         "kind": "operation",
         "method": "post",
         "name": "VatBasic",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/vat-verification/basic-check/{country}",
         "pointer": "#/paths/~1api~1v1~1vat-verification~1basic-check~1{country}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns a verification result"
+        "summary": "Returns a verification result",
+        "tags": [
+          "v1-vat-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Extended verification of given VAT number against VIES.",
         "id": "operation:post:/api/v1/vat-verification/comprehensive-check/{country}",
         "kind": "operation",
         "method": "post",
         "name": "VatComprehensive",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/vat-verification/comprehensive-check/{country}",
         "pointer": "#/paths/~1api~1v1~1vat-verification~1comprehensive-check~1{country}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns a verification result and company data"
+        "summary": "Returns a verification result and company data",
+        "tags": [
+          "v1-vat-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Second Level Verification of VAT number against BMF Austria.",
         "id": "operation:post:/api/v1/vat-verification/leveltwo-check/{country}",
         "kind": "operation",
         "method": "post",
         "name": "VatLevelTwo",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/vat-verification/leveltwo-check/{country}",
         "pointer": "#/paths/~1api~1v1~1vat-verification~1leveltwo-check~1{country}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns a level two verification result"
+        "summary": "Returns a level two verification result",
+        "tags": [
+          "v1-vat-verification"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Reverse VAT Lookup: Search for companies and their VAT numbers by company name.",
         "id": "operation:post:/api/v1/vat-verification/lookup/{country}",
         "kind": "operation",
         "method": "post",
         "name": "VatLookup",
+        "parameters": [
+          {
+            "description": "ISO_3166-1_alpha-2 representation of a country name - 2 chars",
+            "in": "path",
+            "name": "country",
+            "required": true,
+            "type": "string:string"
+          }
+        ],
         "path": "/api/v1/vat-verification/lookup/{country}",
         "pointer": "#/paths/~1api~1v1~1vat-verification~1lookup~1{country}/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "user_key": []
           }
         ],
-        "summary": "Returns a list of vat numbers with additional data"
+        "summary": "Returns a list of vat numbers with additional data",
+        "tags": [
+          "v1-vat-verification"
+        ]
       }
     ]
   },

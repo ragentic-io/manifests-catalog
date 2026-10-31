@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `e9ed34da4a3fd6be2b9599d51a6f61f7bd0eefcfa4393cffe408f4a899b625fc` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,9 +34,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/books` | get-books | List all books |
-| GET | `/books/{id}/sentences` | get-sentences-from-book | Random sentences from a specific book |
-| GET | `/sentences` | get-sentences | A random sentence |
-| GET | `/sentences/{id}` | get-specific-sentence | A specific sentence |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/books` | get-books | — | object | yes | List all books |
+| GET | `/books/{id}/sentences` | get-sentences-from-book | `id`*, `limit` | object | yes | Random sentences from a specific book |
+| GET | `/sentences` | get-sentences | `limit` | object | yes | A random sentence |
+| GET | `/sentences/{id}` | get-specific-sentence | `id`* | object | yes | A specific sentence |

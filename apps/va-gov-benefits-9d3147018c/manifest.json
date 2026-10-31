@@ -33,6 +33,46 @@
         "from": "va-gov-benefits-9d3147018c",
         "kind": "EXPOSES",
         "to": "operation:get:/uploads/{id}/download"
+      },
+      {
+        "from": "operation:post:/uploads/report",
+        "kind": "ACCEPTS",
+        "to": "schema:DocumentUploadStatusGuidList"
+      },
+      {
+        "from": "schema:DocumentUploadPath",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentUploadAttributes"
+      },
+      {
+        "from": "schema:DocumentUploadStatus",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentUploadStatusAttributes"
+      },
+      {
+        "from": "schema:DocumentUploadStatusAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:PdfUploadAttributes"
+      },
+      {
+        "from": "schema:DocumentUploadStatusReport",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentUploadStatus"
+      },
+      {
+        "from": "schema:DocumentUploadSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentUploadSubmissionAttributes"
+      },
+      {
+        "from": "schema:DocumentUploadSubmissionAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:DocumentUploadStatusAttributes"
+      },
+      {
+        "from": "schema:PdfUploadAttributes",
+        "kind": "REFERENCES",
+        "to": "schema:PdfDimensionAttributes"
       }
     ],
     "nodes": [
@@ -42,14 +82,53 @@
       },
       {
         "deprecated": false,
+        "description": "Accepts document metadata, document binary, and attachment binaries.",
         "id": "operation:put:/path",
         "kind": "operation",
         "method": "put",
         "name": "putBenefitsDocumentUpload",
+        "parameters": [
+          {
+            "description": "Base64-encoded 128-bit MD5 digest of the message.",
+            "in": "header",
+            "name": "Content-MD5",
+            "required": false,
+            "type": "string:md5"
+          }
+        ],
         "path": "/path",
         "pointer": "#/paths/~1path/put",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "DocumentUploadFailure"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Accepts document upload."
+        "summary": "Accepts document upload.",
+        "tags": [
+          "VBA Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -59,12 +138,42 @@
         "name": "postBenefitsDocumentUpload",
         "path": "/uploads",
         "pointer": "#/paths/~1uploads/post",
+        "responses": [
+          {
+            "status": "202",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Get a location for subsequent document upload PUT request"
+        "summary": "Get a location for subsequent document upload PUT request",
+        "tags": [
+          "VBA Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -74,23 +183,94 @@
         "name": "getBenefitsDocumentUploadStatusReport",
         "path": "/uploads/report",
         "pointer": "#/paths/~1uploads~1report/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "DocumentUploadStatusGuidList"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Get a bulk status report for a list of previous uploads"
+        "summary": "Get a bulk status report for a list of previous uploads",
+        "tags": [
+          "VBA Documents"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Using this endpoint will decrease the likelihood of errors associated with individual documents during the submission process.",
         "id": "operation:post:/uploads/validate_document",
         "kind": "operation",
         "method": "post",
         "name": "postBenefitsDocumentUploadValidateDocument",
         "path": "/uploads/validate_document",
         "pointer": "#/paths/~1uploads~1validate_document/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Validate an individual document against system file requirements"
+        "summary": "Validate an individual document against system file requirements",
+        "tags": [
+          "VBA Documents"
+        ]
       },
       {
         "deprecated": false,
@@ -98,99 +278,199 @@
         "kind": "operation",
         "method": "get",
         "name": "getBenefitsDocumentUploadStatus",
+        "parameters": [
+          {
+            "description": "ID as returned by a previous create upload request",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/uploads/{id}",
         "pointer": "#/paths/~1uploads~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Get status for a previous benefits document upload"
+        "summary": "Get status for a previous benefits document upload",
+        "tags": [
+          "VBA Documents"
+        ]
       },
       {
         "deprecated": false,
+        "description": "An endpoint that will allow you to see exactly what the server sees.",
         "id": "operation:get:/uploads/{id}/download",
         "kind": "operation",
         "method": "get",
         "name": "getBenefitsDocumentUploadDownload",
+        "parameters": [
+          {
+            "description": "ID as returned by a previous create upload request",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/uploads/{id}/download",
         "pointer": "#/paths/~1uploads~1{id}~1download/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "apikey": []
           }
         ],
-        "summary": "Download zip of \"what the server sees\""
+        "summary": "Download zip of \"what the server sees\"",
+        "tags": [
+          "VBA Documents"
+        ]
       },
       {
         "id": "schema:DocumentUploadAttributes",
         "kind": "schema",
-        "name": "DocumentUploadAttributes"
+        "name": "DocumentUploadAttributes",
+        "type": "object"
       },
       {
+        "description": "Document upload failed",
         "id": "schema:DocumentUploadFailure",
         "kind": "schema",
-        "name": "DocumentUploadFailure"
+        "name": "DocumentUploadFailure",
+        "type": "object"
       },
       {
+        "description": "Identifying properties about the document payload being submitted",
         "id": "schema:DocumentUploadMetadata",
         "kind": "schema",
-        "name": "DocumentUploadMetadata"
+        "name": "DocumentUploadMetadata",
+        "type": "object"
       },
       {
+        "description": "Status record for a previously initiated document submission.",
         "id": "schema:DocumentUploadPath",
         "kind": "schema",
-        "name": "DocumentUploadPath"
+        "name": "DocumentUploadPath",
+        "type": "object"
       },
       {
+        "description": "Status record for a previously initiated document submission.",
         "id": "schema:DocumentUploadStatus",
         "kind": "schema",
-        "name": "DocumentUploadStatus"
+        "name": "DocumentUploadStatus",
+        "type": "object"
       },
       {
         "id": "schema:DocumentUploadStatusAttributes",
         "kind": "schema",
-        "name": "DocumentUploadStatusAttributes"
+        "name": "DocumentUploadStatusAttributes",
+        "type": "object"
       },
       {
         "id": "schema:DocumentUploadStatusGuidList",
         "kind": "schema",
-        "name": "DocumentUploadStatusGuidList"
+        "name": "DocumentUploadStatusGuidList",
+        "type": "object"
       },
       {
         "id": "schema:DocumentUploadStatusReport",
         "kind": "schema",
-        "name": "DocumentUploadStatusReport"
+        "name": "DocumentUploadStatusReport",
+        "type": "DocumentUploadStatus[]"
       },
       {
+        "description": "Record of requested document submission.",
         "id": "schema:DocumentUploadSubmission",
         "kind": "schema",
-        "name": "DocumentUploadSubmission"
+        "name": "DocumentUploadSubmission",
+        "type": "object"
       },
       {
         "id": "schema:DocumentUploadSubmissionAttributes",
         "kind": "schema",
-        "name": "DocumentUploadSubmissionAttributes"
+        "name": "DocumentUploadSubmissionAttributes",
+        "type": "object|DocumentUploadStatusAttributes"
       },
       {
+        "description": "Error returned from the document validation endpoint.",
         "id": "schema:DocumentValidationErrorModel",
         "kind": "schema",
-        "name": "DocumentValidationErrorModel"
+        "name": "DocumentValidationErrorModel",
+        "type": "object"
       },
       {
+        "description": "Errors with some details for the given request",
         "id": "schema:ErrorModel",
         "kind": "schema",
-        "name": "ErrorModel"
+        "name": "ErrorModel",
+        "type": "object"
       },
       {
         "id": "schema:PdfDimensionAttributes",
         "kind": "schema",
-        "name": "PdfDimensionAttributes"
+        "name": "PdfDimensionAttributes",
+        "type": "object"
       },
       {
         "id": "schema:PdfUploadAttributes",
         "kind": "schema",
-        "name": "PdfUploadAttributes"
+        "name": "PdfUploadAttributes",
+        "type": "object"
       }
     ]
   },

@@ -423,6 +423,896 @@
         "from": "namsor-com-a0324e0999",
         "kind": "EXPOSES",
         "to": "operation:post:/api2/json/usZipRaceEthnicityBatch"
+      },
+      {
+        "from": "operation:get:/api2/json/anonymize/{source}/{anonymized}/{token}",
+        "kind": "RETURNS",
+        "to": "schema:APIKeyOut"
+      },
+      {
+        "from": "operation:get:/api2/json/apiKeyInfo",
+        "kind": "RETURNS",
+        "to": "schema:APIKeyOut"
+      },
+      {
+        "from": "operation:get:/api2/json/apiServices",
+        "kind": "RETURNS",
+        "to": "schema:APIServicesOut"
+      },
+      {
+        "from": "operation:get:/api2/json/apiStatus",
+        "kind": "RETURNS",
+        "to": "schema:APIClassifiersStatusOut"
+      },
+      {
+        "from": "operation:get:/api2/json/apiUsage",
+        "kind": "RETURNS",
+        "to": "schema:APIPeriodUsageOut"
+      },
+      {
+        "from": "operation:get:/api2/json/apiUsageHistory",
+        "kind": "RETURNS",
+        "to": "schema:APIUsageHistoryOut"
+      },
+      {
+        "from": "operation:get:/api2/json/apiUsageHistoryAggregate",
+        "kind": "RETURNS",
+        "to": "schema:APIUsageAggregatedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/castegroupIndianFull/{subDivisionIso31662}/{personalNameFull}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameCastegroupOut"
+      },
+      {
+        "from": "operation:post:/api2/json/castegroupIndianFullBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameSubdivisionIn"
+      },
+      {
+        "from": "operation:post:/api2/json/castegroupIndianFullBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameCastegroupOut"
+      },
+      {
+        "from": "operation:get:/api2/json/chineseNameCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin}",
+        "kind": "RETURNS",
+        "to": "schema:NameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:post:/api2/json/chineseNameCandidatesBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/chineseNameCandidatesBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchNameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:post:/api2/json/chineseNameCandidatesGenderBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameGenderIn"
+      },
+      {
+        "from": "operation:post:/api2/json/chineseNameCandidatesGenderBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchNameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:get:/api2/json/chineseNameGenderCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin}/{knownGender}",
+        "kind": "RETURNS",
+        "to": "schema:NameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:get:/api2/json/chineseNameMatch/{chineseSurnameLatin}/{chineseGivenNameLatin}/{chineseName}",
+        "kind": "RETURNS",
+        "to": "schema:NameMatchedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/chineseNameMatchBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchMatchPersonalFirstLastNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/chineseNameMatchBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchNameMatchedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/corridor/{countryIso2From}/{firstNameFrom}/{lastNameFrom}/{countryIso2To}/{firstNameTo}/{lastNameTo}",
+        "kind": "RETURNS",
+        "to": "schema:CorridorOut"
+      },
+      {
+        "from": "operation:post:/api2/json/corridorBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchCorridorIn"
+      },
+      {
+        "from": "operation:post:/api2/json/corridorBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchCorridorOut"
+      },
+      {
+        "from": "operation:get:/api2/json/country/{personalNameFull}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameGeoOut"
+      },
+      {
+        "from": "operation:post:/api2/json/countryBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/countryBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameGeoOut"
+      },
+      {
+        "from": "operation:get:/api2/json/diaspora/{countryIso2}/{firstName}/{lastName}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameDiasporaedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/diasporaBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameGeoIn"
+      },
+      {
+        "from": "operation:post:/api2/json/diasporaBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameDiasporaedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/gender/{firstName}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameGenderedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/gender/{firstName}/{lastName}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameGenderedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/genderBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/genderBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameGenderedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/genderChineseName/{chineseName}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameGenderedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/genderChineseNameBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/genderChineseNameBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameGenderedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/genderChineseNamePinyin/{chineseSurnameLatin}/{chineseGivenNameLatin}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameGenderedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/genderChineseNamePinyinBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/genderChineseNamePinyinBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameGenderedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/genderFull/{fullName}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameGenderedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/genderFullBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/genderFullBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameGenderedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/genderFullGeo/{fullName}/{countryIso2}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameGenderedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/genderFullGeoBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameGeoIn"
+      },
+      {
+        "from": "operation:post:/api2/json/genderFullGeoBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameGenderedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/genderGeo/{firstName}/{lastName}/{countryIso2}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameGenderedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/genderGeoBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameGeoIn"
+      },
+      {
+        "from": "operation:post:/api2/json/genderGeoBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameGenderedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/genderJapaneseName/{japaneseSurname}/{japaneseGivenName}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameGenderedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/genderJapaneseNameBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/genderJapaneseNameBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameGenderedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/genderJapaneseNameFull/{japaneseName}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameGenderedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/genderJapaneseNameFullBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/genderJapaneseNameFullBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameGenderedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/japaneseNameGenderKanjiCandidatesBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameGenderIn"
+      },
+      {
+        "from": "operation:post:/api2/json/japaneseNameGenderKanjiCandidatesBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchNameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:get:/api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin}",
+        "kind": "RETURNS",
+        "to": "schema:NameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:get:/api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{knownGender}",
+        "kind": "RETURNS",
+        "to": "schema:NameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:post:/api2/json/japaneseNameKanjiCandidatesBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/japaneseNameKanjiCandidatesBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchNameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:get:/api2/json/japaneseNameLatinCandidates/{japaneseSurnameKanji}/{japaneseGivenNameKanji}",
+        "kind": "RETURNS",
+        "to": "schema:NameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:post:/api2/json/japaneseNameLatinCandidatesBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/japaneseNameLatinCandidatesBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchNameMatchCandidatesOut"
+      },
+      {
+        "from": "operation:get:/api2/json/japaneseNameMatch/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{japaneseName}",
+        "kind": "RETURNS",
+        "to": "schema:NameMatchedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/japaneseNameMatchBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchMatchPersonalFirstLastNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/japaneseNameMatchBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchNameMatchedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/japaneseNameMatchFeedbackLoop/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{japaneseName}",
+        "kind": "RETURNS",
+        "to": "schema:FeedbackLoopOut"
+      },
+      {
+        "from": "operation:get:/api2/json/learnable/{source}/{learnable}/{token}",
+        "kind": "RETURNS",
+        "to": "schema:APIKeyOut"
+      },
+      {
+        "from": "operation:get:/api2/json/nameType/{properNoun}",
+        "kind": "RETURNS",
+        "to": "schema:ProperNounCategorizedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/nameTypeBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/nameTypeBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchProperNounCategorizedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/nameTypeGeo/{properNoun}/{countryIso2}",
+        "kind": "RETURNS",
+        "to": "schema:ProperNounCategorizedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/nameTypeGeoBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchNameGeoIn"
+      },
+      {
+        "from": "operation:post:/api2/json/nameTypeGeoBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchProperNounCategorizedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/origin/{firstName}/{lastName}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameOriginedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/originBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/originBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameOriginedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/parseChineseName/{chineseName}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameParsedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/parseChineseNameBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/parseChineseNameBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameParsedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/parseJapaneseName/{japaneseName}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameParsedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/parseJapaneseNameBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/parseJapaneseNameBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameParsedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/parseName/{nameFull}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameParsedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/parseName/{nameFull}/{countryIso2}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameParsedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/parseNameBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/parseNameBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameParsedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/parseNameGeoBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameGeoIn"
+      },
+      {
+        "from": "operation:post:/api2/json/parseNameGeoBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameParsedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/phoneCode/{firstName}/{lastName}/{phoneNumber}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNamePhoneCodedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/phoneCodeBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNamePhoneNumberIn"
+      },
+      {
+        "from": "operation:post:/api2/json/phoneCodeBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNamePhoneCodedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/phoneCodeGeo/{firstName}/{lastName}/{phoneNumber}/{countryIso2}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNamePhoneCodedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/phoneCodeGeoBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNamePhoneNumberGeoIn"
+      },
+      {
+        "from": "operation:post:/api2/json/phoneCodeGeoBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNamePhoneCodedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/phoneCodeGeoFeedbackLoop/{firstName}/{lastName}/{phoneNumber}/{phoneNumberE164}/{countryIso2}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNamePhoneCodedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/pinyinChineseName/{chineseName}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameParsedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/pinyinChineseNameBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameIn"
+      },
+      {
+        "from": "operation:post:/api2/json/pinyinChineseNameBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameParsedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/regions",
+        "kind": "RETURNS",
+        "to": "schema:RegionOut"
+      },
+      {
+        "from": "operation:get:/api2/json/religionFull/{countryIso2}/{subDivisionIso31662}/{personalNameFull}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameReligionedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/religionFullBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameGeoSubdivisionIn"
+      },
+      {
+        "from": "operation:post:/api2/json/religionFullBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameReligionedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/religionIndianFull/{subDivisionIso31662}/{personalNameFull}",
+        "kind": "RETURNS",
+        "to": "schema:PersonalNameReligionedOut"
+      },
+      {
+        "from": "operation:post:/api2/json/religionIndianFullBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchPersonalNameSubdivisionIn"
+      },
+      {
+        "from": "operation:post:/api2/json/religionIndianFullBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchPersonalNameReligionedOut"
+      },
+      {
+        "from": "operation:get:/api2/json/softwareVersion",
+        "kind": "RETURNS",
+        "to": "schema:SoftwareVersionOut"
+      },
+      {
+        "from": "operation:get:/api2/json/subclassification/{countryIso2}/{firstName}/{lastName}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameGeoSubclassificationOut"
+      },
+      {
+        "from": "operation:post:/api2/json/subclassificationBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameGeoIn"
+      },
+      {
+        "from": "operation:post:/api2/json/subclassificationBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameGeoSubclassificationOut"
+      },
+      {
+        "from": "operation:get:/api2/json/subclassificationIndian/{firstName}/{lastName}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameGeoSubclassificationOut"
+      },
+      {
+        "from": "operation:post:/api2/json/subclassificationIndianBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameGeoIn"
+      },
+      {
+        "from": "operation:post:/api2/json/subclassificationIndianBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameGeoSubclassificationOut"
+      },
+      {
+        "from": "operation:get:/api2/json/taxonomyClasses/{classifierName}",
+        "kind": "RETURNS",
+        "to": "schema:APIClassifierTaxonomyOut"
+      },
+      {
+        "from": "operation:get:/api2/json/usRaceEthnicity/{firstName}/{lastName}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameUSRaceEthnicityOut"
+      },
+      {
+        "from": "operation:post:/api2/json/usRaceEthnicityBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameGeoIn"
+      },
+      {
+        "from": "operation:post:/api2/json/usRaceEthnicityBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameUSRaceEthnicityOut"
+      },
+      {
+        "from": "operation:get:/api2/json/usRaceEthnicityZIP5/{firstName}/{lastName}/{zip5Code}",
+        "kind": "RETURNS",
+        "to": "schema:FirstLastNameUSRaceEthnicityOut"
+      },
+      {
+        "from": "operation:post:/api2/json/usZipRaceEthnicityBatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchFirstLastNameGeoZippedIn"
+      },
+      {
+        "from": "operation:post:/api2/json/usZipRaceEthnicityBatch",
+        "kind": "RETURNS",
+        "to": "schema:BatchFirstLastNameUSRaceEthnicityOut"
+      },
+      {
+        "from": "schema:APIClassifiersStatusOut",
+        "kind": "REFERENCES",
+        "to": "schema:APIClassifierOut"
+      },
+      {
+        "from": "schema:APIClassifiersStatusOut",
+        "kind": "REFERENCES",
+        "to": "schema:SoftwareVersionOut"
+      },
+      {
+        "from": "schema:APICounterV2Out",
+        "kind": "REFERENCES",
+        "to": "schema:APIKeyOut"
+      },
+      {
+        "from": "schema:APIPeriodUsageOut",
+        "kind": "REFERENCES",
+        "to": "schema:APIBillingPeriodUsageOut"
+      },
+      {
+        "from": "schema:APIPeriodUsageOut",
+        "kind": "REFERENCES",
+        "to": "schema:APIPlanSubscriptionOut"
+      },
+      {
+        "from": "schema:APIServicesOut",
+        "kind": "REFERENCES",
+        "to": "schema:APIServiceOut"
+      },
+      {
+        "from": "schema:APIUsageHistoryOut",
+        "kind": "REFERENCES",
+        "to": "schema:APICounterV2Out"
+      },
+      {
+        "from": "schema:BatchCorridorIn",
+        "kind": "REFERENCES",
+        "to": "schema:CorridorIn"
+      },
+      {
+        "from": "schema:BatchCorridorIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchCorridorOut",
+        "kind": "REFERENCES",
+        "to": "schema:CorridorOut"
+      },
+      {
+        "from": "schema:BatchFirstLastNameDiasporaedOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameDiasporaedOut"
+      },
+      {
+        "from": "schema:BatchFirstLastNameGenderIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNameGenderIn",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameGenderIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNameGenderedOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameGenderedOut"
+      },
+      {
+        "from": "schema:BatchFirstLastNameGeoIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNameGeoIn",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameGeoIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNameGeoSubclassificationOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameGeoSubclassificationOut"
+      },
+      {
+        "from": "schema:BatchFirstLastNameGeoZippedIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNameGeoZippedIn",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameGeoZippedIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNameOriginedOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameOriginedOut"
+      },
+      {
+        "from": "schema:BatchFirstLastNamePhoneCodedOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNamePhoneCodedOut"
+      },
+      {
+        "from": "schema:BatchFirstLastNamePhoneNumberGeoIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNamePhoneNumberGeoIn",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNamePhoneNumberGeoIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNamePhoneNumberIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNamePhoneNumberIn",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNamePhoneNumberIn"
+      },
+      {
+        "from": "schema:BatchFirstLastNameUSRaceEthnicityOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameUSRaceEthnicityOut"
+      },
+      {
+        "from": "schema:BatchMatchPersonalFirstLastNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchMatchPersonalFirstLastNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:MatchPersonalFirstLastNameIn"
+      },
+      {
+        "from": "schema:BatchNameGeoIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchNameGeoIn",
+        "kind": "REFERENCES",
+        "to": "schema:NameGeoIn"
+      },
+      {
+        "from": "schema:BatchNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:NameIn"
+      },
+      {
+        "from": "schema:BatchNameMatchCandidatesOut",
+        "kind": "REFERENCES",
+        "to": "schema:NameMatchCandidatesOut"
+      },
+      {
+        "from": "schema:BatchNameMatchedOut",
+        "kind": "REFERENCES",
+        "to": "schema:NameMatchedOut"
+      },
+      {
+        "from": "schema:BatchPersonalNameCastegroupOut",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameCastegroupOut"
+      },
+      {
+        "from": "schema:BatchPersonalNameGenderedOut",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameGenderedOut"
+      },
+      {
+        "from": "schema:BatchPersonalNameGeoIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchPersonalNameGeoIn",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameGeoIn"
+      },
+      {
+        "from": "schema:BatchPersonalNameGeoOut",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameGeoOut"
+      },
+      {
+        "from": "schema:BatchPersonalNameGeoSubdivisionIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchPersonalNameGeoSubdivisionIn",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameGeoSubdivisionIn"
+      },
+      {
+        "from": "schema:BatchPersonalNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchPersonalNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameIn"
+      },
+      {
+        "from": "schema:BatchPersonalNameParsedOut",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameParsedOut"
+      },
+      {
+        "from": "schema:BatchPersonalNameReligionedOut",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameReligionedOut"
+      },
+      {
+        "from": "schema:BatchPersonalNameSubdivisionIn",
+        "kind": "REFERENCES",
+        "to": "schema:FactIn"
+      },
+      {
+        "from": "schema:BatchPersonalNameSubdivisionIn",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameSubdivisionIn"
+      },
+      {
+        "from": "schema:BatchProperNounCategorizedOut",
+        "kind": "REFERENCES",
+        "to": "schema:ProperNounCategorizedOut"
+      },
+      {
+        "from": "schema:CorridorIn",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameGeoIn"
+      },
+      {
+        "from": "schema:CorridorOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameDiasporaedOut"
+      },
+      {
+        "from": "schema:CorridorOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameGenderedOut"
+      },
+      {
+        "from": "schema:CorridorOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameOriginedOut"
+      },
+      {
+        "from": "schema:MatchPersonalFirstLastNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameIn"
+      },
+      {
+        "from": "schema:MatchPersonalFirstLastNameIn",
+        "kind": "REFERENCES",
+        "to": "schema:PersonalNameIn"
+      },
+      {
+        "from": "schema:NameMatchCandidatesOut",
+        "kind": "REFERENCES",
+        "to": "schema:NameMatchCandidateOut"
+      },
+      {
+        "from": "schema:PersonalNameParsedOut",
+        "kind": "REFERENCES",
+        "to": "schema:FirstLastNameOut"
+      },
+      {
+        "from": "schema:RegionOut",
+        "kind": "REFERENCES",
+        "to": "schema:RegionISO"
       }
     ],
     "nodes": [
@@ -436,14 +1326,47 @@
         "kind": "operation",
         "method": "get",
         "name": "anonymize",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "anonymized",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "in": "path",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/anonymize/{source}/{anonymized}/{token}",
         "pointer": "#/paths/~1api2~1json~1anonymize~1{source}~1{anonymized}~1{token}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIKeyOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Activate/deactivate anonymization for a source."
+        "summary": "Activate/deactivate anonymization for a source.",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -453,12 +1376,25 @@
         "name": "apiKeyInfo",
         "path": "/api2/json/apiKeyInfo",
         "pointer": "#/paths/~1api2~1json~1apiKeyInfo/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIKeyOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Read API Key info."
+        "summary": "Read API Key info.",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -468,12 +1404,25 @@
         "name": "availableServices",
         "path": "/api2/json/apiServices",
         "pointer": "#/paths/~1api2~1json~1apiServices/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIServicesOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "List of classification services and usage cost in Units per classification (default is 1=ONE Unit). Some API endpoints (ex. Corridor) combine multiple classifiers."
+        "summary": "List of classification services and usage cost in Units per classification (default is 1=ONE Unit). Some API endpoints (ex. Corridor) combine multiple classifiers.",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -483,12 +1432,25 @@
         "name": "apiStatus",
         "path": "/api2/json/apiStatus",
         "pointer": "#/paths/~1api2~1json~1apiStatus/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIClassifiersStatusOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices."
+        "summary": "Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices.",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -498,12 +1460,25 @@
         "name": "apiUsage",
         "path": "/api2/json/apiUsage",
         "pointer": "#/paths/~1api2~1json~1apiUsage/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIPeriodUsageOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Print current API usage."
+        "summary": "Print current API usage.",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -513,12 +1488,25 @@
         "name": "apiUsageHistory",
         "path": "/api2/json/apiUsageHistory",
         "pointer": "#/paths/~1api2~1json~1apiUsageHistory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIUsageHistoryOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Print historical API usage."
+        "summary": "Print historical API usage.",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -528,12 +1516,25 @@
         "name": "apiUsageHistoryAggregate",
         "path": "/api2/json/apiUsageHistoryAggregate",
         "pointer": "#/paths/~1api2~1json~1apiUsageHistoryAggregate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIUsageAggregatedOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Print historical API usage (in an aggregated view, by service, by day/hour/min)."
+        "summary": "Print historical API usage (in an aggregated view, by service, by day/hour/min).",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -541,14 +1542,44 @@
         "kind": "operation",
         "method": "get",
         "name": "castegroupIndianFull",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subDivisionIso31662",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "personalNameFull",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/castegroupIndianFull/{subDivisionIso31662}/{personalNameFull}",
         "pointer": "#/paths/~1api2~1json~1castegroupIndianFull~1{subDivisionIso31662}~1{personalNameFull}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameCastegroupOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of a personal full name."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of a personal full name.",
+        "tags": [
+          "indian"
+        ]
       },
       {
         "deprecated": false,
@@ -558,12 +1589,38 @@
         "name": "castegroupIndianFullBatch",
         "path": "/api2/json/castegroupIndianFullBatch",
         "pointer": "#/paths/~1api2~1json~1castegroupIndianFullBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameSubdivisionIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameCastegroupOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of up to 100 personal full names. "
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of up to 100 personal full names. ",
+        "tags": [
+          "indian"
+        ]
       },
       {
         "deprecated": false,
@@ -571,14 +1628,44 @@
         "kind": "operation",
         "method": "get",
         "name": "chineseNameCandidates",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chineseSurnameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "chineseGivenNameLatin",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/chineseNameCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin}",
         "pointer": "#/paths/~1api2~1json~1chineseNameCandidates~1{chineseSurnameLatin}~1{chineseGivenNameLatin}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NameMatchCandidatesOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming"
+        "summary": "Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -588,12 +1675,38 @@
         "name": "chineseNameCandidatesBatch",
         "path": "/api2/json/chineseNameCandidatesBatch",
         "pointer": "#/paths/~1api2~1json~1chineseNameCandidatesBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchNameMatchCandidatesOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname), ex. Wang Xiaoming"
+        "summary": "Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname), ex. Wang Xiaoming",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -603,12 +1716,38 @@
         "name": "chineseNameCandidatesGenderBatch",
         "path": "/api2/json/chineseNameCandidatesGenderBatch",
         "pointer": "#/paths/~1api2~1json~1chineseNameCandidatesGenderBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameGenderIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchNameMatchCandidatesOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname) ex. Wang Xiaoming."
+        "summary": "Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname) ex. Wang Xiaoming.",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -616,14 +1755,50 @@
         "kind": "operation",
         "method": "get",
         "name": "chineseNameGenderCandidates",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chineseSurnameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "chineseGivenNameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "knownGender",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/chineseNameGenderCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin}/{knownGender}",
         "pointer": "#/paths/~1api2~1json~1chineseNameGenderCandidates~1{chineseSurnameLatin}~1{chineseGivenNameLatin}~1{knownGender}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NameMatchCandidatesOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming - having a known gender ('male' or 'female')"
+        "summary": "Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming - having a known gender ('male' or 'female')",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -631,14 +1806,50 @@
         "kind": "operation",
         "method": "get",
         "name": "chineseNameMatch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chineseSurnameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "chineseGivenNameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "chineseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/chineseNameMatch/{chineseSurnameLatin}/{chineseGivenNameLatin}/{chineseName}",
         "pointer": "#/paths/~1api2~1json~1chineseNameMatch~1{chineseSurnameLatin}~1{chineseGivenNameLatin}~1{chineseName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NameMatchedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Return a score for matching Chinese name ex. 王晓明 with a romanized name ex. Wang Xiaoming"
+        "summary": "Return a score for matching Chinese name ex. 王晓明 with a romanized name ex. Wang Xiaoming",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -648,12 +1859,38 @@
         "name": "chineseNameMatchBatch",
         "path": "/api2/json/chineseNameMatchBatch",
         "pointer": "#/paths/~1api2~1json~1chineseNameMatchBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchMatchPersonalFirstLastNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchNameMatchedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname), ex. Wang Xiaoming"
+        "summary": "Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname), ex. Wang Xiaoming",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -661,14 +1898,68 @@
         "kind": "operation",
         "method": "get",
         "name": "corridor",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "countryIso2From",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "firstNameFrom",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastNameFrom",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "countryIso2To",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "firstNameTo",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastNameTo",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/corridor/{countryIso2From}/{firstNameFrom}/{lastNameFrom}/{countryIso2To}/{firstNameTo}/{lastNameTo}",
         "pointer": "#/paths/~1api2~1json~1corridor~1{countryIso2From}~1{firstNameFrom}~1{lastNameFrom}~1{countryIso2To}~1{firstNameTo}~1{lastNameTo}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CorridorOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 20 UNITS PER NAME COUPLE] Infer several classifications for a cross border interaction between names (ex. remit, travel, intl com)"
+        "summary": "[USES 20 UNITS PER NAME COUPLE] Infer several classifications for a cross border interaction between names (ex. remit, travel, intl com)",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -678,12 +1969,38 @@
         "name": "corridorBatch",
         "path": "/api2/json/corridorBatch",
         "pointer": "#/paths/~1api2~1json~1corridorBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchCorridorIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchCorridorOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 20 UNITS PER NAME PAIR] Infer several classifications for up to 100 cross border interaction between names (ex. remit, travel, intl com)"
+        "summary": "[USES 20 UNITS PER NAME PAIR] Infer several classifications for up to 100 cross border interaction between names (ex. remit, travel, intl com)",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -691,14 +2008,38 @@
         "kind": "operation",
         "method": "get",
         "name": "country",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "personalNameFull",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/country/{personalNameFull}",
         "pointer": "#/paths/~1api2~1json~1country~1{personalNameFull}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameGeoOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely country of residence of a personal full name, or one surname. Assumes names as they are in the country of residence OR the country of origin."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely country of residence of a personal full name, or one surname. Assumes names as they are in the country of residence OR the country of origin.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -708,12 +2049,38 @@
         "name": "countryBatch",
         "path": "/api2/json/countryBatch",
         "pointer": "#/paths/~1api2~1json~1countryBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameGeoOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely country of residence of up to 100 personal full names, or surnames. Assumes names as they are in the country of residence OR the country of origin."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely country of residence of up to 100 personal full names, or surnames. Assumes names as they are in the country of residence OR the country of origin.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -721,14 +2088,50 @@
         "kind": "operation",
         "method": "get",
         "name": "diaspora",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "countryIso2",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/diaspora/{countryIso2}/{firstName}/{lastName}",
         "pointer": "#/paths/~1api2~1json~1diaspora~1{countryIso2}~1{firstName}~1{lastName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameDiasporaedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of a personal name, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)"
+        "summary": "[USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of a personal name, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -738,12 +2141,38 @@
         "name": "diasporaBatch",
         "path": "/api2/json/diasporaBatch",
         "pointer": "#/paths/~1api2~1json~1diasporaBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameGeoIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameDiasporaedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of up to 100 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)"
+        "summary": "[USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of up to 100 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -751,14 +2180,38 @@
         "kind": "operation",
         "method": "get",
         "name": "gender",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/gender/{firstName}",
         "pointer": "#/paths/~1api2~1json~1gender~1{firstName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameGenderedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of a just a fiven name, assuming default 'US' local context. Please use preferably full names and local geographic context for better accuracy."
+        "summary": "Infer the likely gender of a just a fiven name, assuming default 'US' local context. Please use preferably full names and local geographic context for better accuracy.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -766,14 +2219,44 @@
         "kind": "operation",
         "method": "get",
         "name": "gender_1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/gender/{firstName}/{lastName}",
         "pointer": "#/paths/~1api2~1json~1gender~1{firstName}~1{lastName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameGenderedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of a name."
+        "summary": "Infer the likely gender of a name.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -783,12 +2266,38 @@
         "name": "genderBatch",
         "path": "/api2/json/genderBatch",
         "pointer": "#/paths/~1api2~1json~1genderBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameGenderedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of up to 100 names, detecting automatically the cultural context."
+        "summary": "Infer the likely gender of up to 100 names, detecting automatically the cultural context.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -796,14 +2305,38 @@
         "kind": "operation",
         "method": "get",
         "name": "genderChineseName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chineseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/genderChineseName/{chineseName}",
         "pointer": "#/paths/~1api2~1json~1genderChineseName~1{chineseName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameGenderedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of a Chinese full name ex. 王晓明"
+        "summary": "Infer the likely gender of a Chinese full name ex. 王晓明",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -813,12 +2346,38 @@
         "name": "genderChineseNameBatch",
         "path": "/api2/json/genderChineseNameBatch",
         "pointer": "#/paths/~1api2~1json~1genderChineseNameBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameGenderedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of up to 100 full names ex. 王晓明"
+        "summary": "Infer the likely gender of up to 100 full names ex. 王晓明",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -826,14 +2385,44 @@
         "kind": "operation",
         "method": "get",
         "name": "genderChineseNamePinyin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chineseSurnameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "chineseGivenNameLatin",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/genderChineseNamePinyin/{chineseSurnameLatin}/{chineseGivenNameLatin}",
         "pointer": "#/paths/~1api2~1json~1genderChineseNamePinyin~1{chineseSurnameLatin}~1{chineseGivenNameLatin}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameGenderedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of a Chinese name in LATIN (Pinyin)."
+        "summary": "Infer the likely gender of a Chinese name in LATIN (Pinyin).",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -843,12 +2432,38 @@
         "name": "genderChineseNamePinyinBatch",
         "path": "/api2/json/genderChineseNamePinyinBatch",
         "pointer": "#/paths/~1api2~1json~1genderChineseNamePinyinBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameGenderedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of up to 100 Chinese names in LATIN (Pinyin)."
+        "summary": "Infer the likely gender of up to 100 Chinese names in LATIN (Pinyin).",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -856,14 +2471,38 @@
         "kind": "operation",
         "method": "get",
         "name": "genderFull",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fullName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/genderFull/{fullName}",
         "pointer": "#/paths/~1api2~1json~1genderFull~1{fullName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameGenderedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of a full name, ex. John H. Smith"
+        "summary": "Infer the likely gender of a full name, ex. John H. Smith",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -873,12 +2512,38 @@
         "name": "genderFullBatch",
         "path": "/api2/json/genderFullBatch",
         "pointer": "#/paths/~1api2~1json~1genderFullBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameGenderedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of up to 100 full names, detecting automatically the cultural context."
+        "summary": "Infer the likely gender of up to 100 full names, detecting automatically the cultural context.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -886,14 +2551,44 @@
         "kind": "operation",
         "method": "get",
         "name": "genderFullGeo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fullName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "countryIso2",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/genderFullGeo/{fullName}/{countryIso2}",
         "pointer": "#/paths/~1api2~1json~1genderFullGeo~1{fullName}~1{countryIso2}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameGenderedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of a full name, given a local context (ISO2 country code)."
+        "summary": "Infer the likely gender of a full name, given a local context (ISO2 country code).",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -903,12 +2598,38 @@
         "name": "genderFullGeoBatch",
         "path": "/api2/json/genderFullGeoBatch",
         "pointer": "#/paths/~1api2~1json~1genderFullGeoBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameGeoIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameGenderedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of up to 100 full names, with a given cultural context (country ISO2 code)."
+        "summary": "Infer the likely gender of up to 100 full names, with a given cultural context (country ISO2 code).",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -916,14 +2637,50 @@
         "kind": "operation",
         "method": "get",
         "name": "genderGeo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "countryIso2",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/genderGeo/{firstName}/{lastName}/{countryIso2}",
         "pointer": "#/paths/~1api2~1json~1genderGeo~1{firstName}~1{lastName}~1{countryIso2}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameGenderedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of a name, given a local context (ISO2 country code)."
+        "summary": "Infer the likely gender of a name, given a local context (ISO2 country code).",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -933,12 +2690,38 @@
         "name": "genderGeoBatch",
         "path": "/api2/json/genderGeoBatch",
         "pointer": "#/paths/~1api2~1json~1genderGeoBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameGeoIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameGenderedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of up to 100 names, each given a local context (ISO2 country code)."
+        "summary": "Infer the likely gender of up to 100 names, each given a local context (ISO2 country code).",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -946,14 +2729,44 @@
         "kind": "operation",
         "method": "get",
         "name": "genderJapaneseNamePinyin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "japaneseSurname",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "japaneseGivenName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/genderJapaneseName/{japaneseSurname}/{japaneseGivenName}",
         "pointer": "#/paths/~1api2~1json~1genderJapaneseName~1{japaneseSurname}~1{japaneseGivenName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameGenderedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of a Japanese name in LATIN (Pinyin)."
+        "summary": "Infer the likely gender of a Japanese name in LATIN (Pinyin).",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -963,12 +2776,38 @@
         "name": "genderJapaneseNamePinyinBatch",
         "path": "/api2/json/genderJapaneseNameBatch",
         "pointer": "#/paths/~1api2~1json~1genderJapaneseNameBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameGenderedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of up to 100 Japanese names in LATIN (Pinyin)."
+        "summary": "Infer the likely gender of up to 100 Japanese names in LATIN (Pinyin).",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -976,14 +2815,38 @@
         "kind": "operation",
         "method": "get",
         "name": "genderJapaneseNameFull",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "japaneseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/genderJapaneseNameFull/{japaneseName}",
         "pointer": "#/paths/~1api2~1json~1genderJapaneseNameFull~1{japaneseName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameGenderedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of a Japanese full name ex. 王晓明"
+        "summary": "Infer the likely gender of a Japanese full name ex. 王晓明",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -993,12 +2856,38 @@
         "name": "genderJapaneseNameFullBatch",
         "path": "/api2/json/genderJapaneseNameFullBatch",
         "pointer": "#/paths/~1api2~1json~1genderJapaneseNameFullBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameGenderedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely gender of up to 100 full names"
+        "summary": "Infer the likely gender of up to 100 full names",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1008,12 +2897,38 @@
         "name": "japaneseNameGenderKanjiCandidatesBatch",
         "path": "/api2/json/japaneseNameGenderKanjiCandidatesBatch",
         "pointer": "#/paths/~1api2~1json~1japaneseNameGenderKanjiCandidatesBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameGenderIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchNameMatchCandidatesOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Identify japanese name candidates in KANJI, based on the romanized name (firstName = japaneseGivenName; lastName=japaneseSurname) with KNOWN gender, ex. Yamamoto Sanae"
+        "summary": "Identify japanese name candidates in KANJI, based on the romanized name (firstName = japaneseGivenName; lastName=japaneseSurname) with KNOWN gender, ex. Yamamoto Sanae",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1021,14 +2936,44 @@
         "kind": "operation",
         "method": "get",
         "name": "japaneseNameKanjiCandidates",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "japaneseSurnameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "japaneseGivenNameLatin",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin}",
         "pointer": "#/paths/~1api2~1json~1japaneseNameKanjiCandidates~1{japaneseSurnameLatin}~1{japaneseGivenNameLatin}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NameMatchCandidatesOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae"
+        "summary": "Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1036,14 +2981,50 @@
         "kind": "operation",
         "method": "get",
         "name": "japaneseNameKanjiCandidates_1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "japaneseSurnameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "japaneseGivenNameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "knownGender",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{knownGender}",
         "pointer": "#/paths/~1api2~1json~1japaneseNameKanjiCandidates~1{japaneseSurnameLatin}~1{japaneseGivenNameLatin}~1{knownGender}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NameMatchCandidatesOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae - and a known gender."
+        "summary": "Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae - and a known gender.",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1053,12 +3034,38 @@
         "name": "japaneseNameKanjiCandidatesBatch",
         "path": "/api2/json/japaneseNameKanjiCandidatesBatch",
         "pointer": "#/paths/~1api2~1json~1japaneseNameKanjiCandidatesBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchNameMatchCandidatesOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Identify japanese name candidates in KANJI, based on the romanized name (firstName = japaneseGivenName; lastName=japaneseSurname), ex. Yamamoto Sanae"
+        "summary": "Identify japanese name candidates in KANJI, based on the romanized name (firstName = japaneseGivenName; lastName=japaneseSurname), ex. Yamamoto Sanae",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1066,14 +3073,44 @@
         "kind": "operation",
         "method": "get",
         "name": "japaneseNameLatinCandidates",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "japaneseSurnameKanji",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "japaneseGivenNameKanji",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/japaneseNameLatinCandidates/{japaneseSurnameKanji}/{japaneseGivenNameKanji}",
         "pointer": "#/paths/~1api2~1json~1japaneseNameLatinCandidates~1{japaneseSurnameKanji}~1{japaneseGivenNameKanji}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NameMatchCandidatesOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Romanize japanese name, based on the name in Kanji."
+        "summary": "Romanize japanese name, based on the name in Kanji.",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1083,12 +3120,38 @@
         "name": "japaneseNameLatinCandidatesBatch",
         "path": "/api2/json/japaneseNameLatinCandidatesBatch",
         "pointer": "#/paths/~1api2~1json~1japaneseNameLatinCandidatesBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchNameMatchCandidatesOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Romanize japanese names, based on the name in KANJI"
+        "summary": "Romanize japanese names, based on the name in KANJI",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1096,14 +3159,50 @@
         "kind": "operation",
         "method": "get",
         "name": "japaneseNameMatch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "japaneseSurnameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "japaneseGivenNameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "japaneseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/japaneseNameMatch/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{japaneseName}",
         "pointer": "#/paths/~1api2~1json~1japaneseNameMatch~1{japaneseSurnameLatin}~1{japaneseGivenNameLatin}~1{japaneseName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NameMatchedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Return a score for matching Japanese name in KANJI ex. 山本 早苗 with a romanized name ex. Yamamoto Sanae"
+        "summary": "Return a score for matching Japanese name in KANJI ex. 山本 早苗 with a romanized name ex. Yamamoto Sanae",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1113,12 +3212,38 @@
         "name": "japaneseNameMatchBatch",
         "path": "/api2/json/japaneseNameMatchBatch",
         "pointer": "#/paths/~1api2~1json~1japaneseNameMatchBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchMatchPersonalFirstLastNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchNameMatchedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Return a score for matching a list of Japanese names in KANJI ex. 山本 早苗 with romanized names ex. Yamamoto Sanae"
+        "summary": "Return a score for matching a list of Japanese names in KANJI ex. 山本 早苗 with romanized names ex. Yamamoto Sanae",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1126,14 +3251,50 @@
         "kind": "operation",
         "method": "get",
         "name": "japaneseNameMatchFeedbackLoop",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "japaneseSurnameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "japaneseGivenNameLatin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "japaneseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/japaneseNameMatchFeedbackLoop/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{japaneseName}",
         "pointer": "#/paths/~1api2~1json~1japaneseNameMatchFeedbackLoop~1{japaneseSurnameLatin}~1{japaneseGivenNameLatin}~1{japaneseName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FeedbackLoopOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[CREDITS 1 UNIT] Feedback loop to better perform matching Japanese name in KANJI ex. 山本 早苗 with a romanized name ex. Yamamoto Sanae"
+        "summary": "[CREDITS 1 UNIT] Feedback loop to better perform matching Japanese name in KANJI ex. 山本 早苗 with a romanized name ex. Yamamoto Sanae",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1141,14 +3302,48 @@
         "kind": "operation",
         "method": "get",
         "name": "learnable",
+        "parameters": [
+          {
+            "description": "The API Key to set as learnable/non learnable.",
+            "in": "path",
+            "name": "source",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "learnable",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "in": "path",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/learnable/{source}/{learnable}/{token}",
         "pointer": "#/paths/~1api2~1json~1learnable~1{source}~1{learnable}~1{token}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIKeyOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Activate/deactivate learning from a source."
+        "summary": "Activate/deactivate learning from a source.",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -1156,14 +3351,38 @@
         "kind": "operation",
         "method": "get",
         "name": "nameType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "properNoun",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/nameType/{properNoun}",
         "pointer": "#/paths/~1api2~1json~1nameType~1{properNoun}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProperNounCategorizedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely type of a proper noun (personal name, brand name, place name etc.)"
+        "summary": "Infer the likely type of a proper noun (personal name, brand name, place name etc.)",
+        "tags": [
+          "general"
+        ]
       },
       {
         "deprecated": false,
@@ -1173,12 +3392,38 @@
         "name": "nameTypeBatch",
         "path": "/api2/json/nameTypeBatch",
         "pointer": "#/paths/~1api2~1json~1nameTypeBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchProperNounCategorizedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely common type of up to 100 proper nouns (personal name, brand name, place name etc.)"
+        "summary": "Infer the likely common type of up to 100 proper nouns (personal name, brand name, place name etc.)",
+        "tags": [
+          "general"
+        ]
       },
       {
         "deprecated": false,
@@ -1186,14 +3431,44 @@
         "kind": "operation",
         "method": "get",
         "name": "nameTypeGeo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "properNoun",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "countryIso2",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/nameTypeGeo/{properNoun}/{countryIso2}",
         "pointer": "#/paths/~1api2~1json~1nameTypeGeo~1{properNoun}~1{countryIso2}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProperNounCategorizedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely type of a proper noun (personal name, brand name, place name etc.)"
+        "summary": "Infer the likely type of a proper noun (personal name, brand name, place name etc.)",
+        "tags": [
+          "general"
+        ]
       },
       {
         "deprecated": false,
@@ -1203,12 +3478,38 @@
         "name": "nameTypeGeoBatch",
         "path": "/api2/json/nameTypeGeoBatch",
         "pointer": "#/paths/~1api2~1json~1nameTypeGeoBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchNameGeoIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchProperNounCategorizedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely common type of up to 100 proper nouns (personal name, brand name, place name etc.)"
+        "summary": "Infer the likely common type of up to 100 proper nouns (personal name, brand name, place name etc.)",
+        "tags": [
+          "general"
+        ]
       },
       {
         "deprecated": false,
@@ -1216,14 +3517,44 @@
         "kind": "operation",
         "method": "get",
         "name": "origin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/origin/{firstName}/{lastName}",
         "pointer": "#/paths/~1api2~1json~1origin~1{firstName}~1{lastName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameOriginedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely country of origin of a personal name. Assumes names as they are in the country of origin. For US, CA, AU, NZ and other melting-pots : use 'diaspora' instead."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely country of origin of a personal name. Assumes names as they are in the country of origin. For US, CA, AU, NZ and other melting-pots : use 'diaspora' instead.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1233,12 +3564,38 @@
         "name": "originBatch",
         "path": "/api2/json/originBatch",
         "pointer": "#/paths/~1api2~1json~1originBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameOriginedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely country of origin of up to 100 names, detecting automatically the cultural context."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely country of origin of up to 100 names, detecting automatically the cultural context.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1246,14 +3603,38 @@
         "kind": "operation",
         "method": "get",
         "name": "parseChineseName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chineseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/parseChineseName/{chineseName}",
         "pointer": "#/paths/~1api2~1json~1parseChineseName~1{chineseName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameParsedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely first/last name structure of a name, ex. 王晓明 -> 王(surname) 晓明(given name)"
+        "summary": "Infer the likely first/last name structure of a name, ex. 王晓明 -> 王(surname) 晓明(given name)",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -1263,12 +3644,38 @@
         "name": "parseChineseNameBatch",
         "path": "/api2/json/parseChineseNameBatch",
         "pointer": "#/paths/~1api2~1json~1parseChineseNameBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameParsedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely first/last name structure of a name, ex. 王晓明 -> 王(surname) 晓明(given name)."
+        "summary": "Infer the likely first/last name structure of a name, ex. 王晓明 -> 王(surname) 晓明(given name).",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -1276,14 +3683,38 @@
         "kind": "operation",
         "method": "get",
         "name": "parseJapaneseName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "japaneseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/parseJapaneseName/{japaneseName}",
         "pointer": "#/paths/~1api2~1json~1parseJapaneseName~1{japaneseName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameParsedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely first/last name structure of a name, ex. 山本 早苗 or Yamamoto Sanae"
+        "summary": "Infer the likely first/last name structure of a name, ex. 山本 早苗 or Yamamoto Sanae",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1293,12 +3724,38 @@
         "name": "parseJapaneseNameBatch",
         "path": "/api2/json/parseJapaneseNameBatch",
         "pointer": "#/paths/~1api2~1json~1parseJapaneseNameBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameParsedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely first/last name structure of a name, ex. 山本 早苗 or Yamamoto Sanae "
+        "summary": "Infer the likely first/last name structure of a name, ex. 山本 早苗 or Yamamoto Sanae ",
+        "tags": [
+          "japanese"
+        ]
       },
       {
         "deprecated": false,
@@ -1306,14 +3763,38 @@
         "kind": "operation",
         "method": "get",
         "name": "parseName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nameFull",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/parseName/{nameFull}",
         "pointer": "#/paths/~1api2~1json~1parseName~1{nameFull}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameParsedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. "
+        "summary": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. ",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1321,14 +3802,44 @@
         "kind": "operation",
         "method": "get",
         "name": "parseNameGeo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nameFull",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "countryIso2",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/parseName/{nameFull}/{countryIso2}",
         "pointer": "#/paths/~1api2~1json~1parseName~1{nameFull}~1{countryIso2}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameParsedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context."
+        "summary": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1338,12 +3849,38 @@
         "name": "parseNameBatch",
         "path": "/api2/json/parseNameBatch",
         "pointer": "#/paths/~1api2~1json~1parseNameBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameParsedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John."
+        "summary": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1353,12 +3890,38 @@
         "name": "parseNameGeoBatch",
         "path": "/api2/json/parseNameGeoBatch",
         "pointer": "#/paths/~1api2~1json~1parseNameGeoBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameGeoIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameParsedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. "
+        "summary": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. ",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1366,14 +3929,50 @@
         "kind": "operation",
         "method": "get",
         "name": "phoneCode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "phoneNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/phoneCode/{firstName}/{lastName}/{phoneNumber}",
         "pointer": "#/paths/~1api2~1json~1phoneCode~1{firstName}~1{lastName}~1{phoneNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNamePhoneCodedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 11 UNITS PER NAME] Infer the likely country and phone prefix, given a personal name and formatted / unformatted phone number."
+        "summary": "[USES 11 UNITS PER NAME] Infer the likely country and phone prefix, given a personal name and formatted / unformatted phone number.",
+        "tags": [
+          "social"
+        ]
       },
       {
         "deprecated": false,
@@ -1383,12 +3982,38 @@
         "name": "phoneCodeBatch",
         "path": "/api2/json/phoneCodeBatch",
         "pointer": "#/paths/~1api2~1json~1phoneCodeBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNamePhoneNumberIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNamePhoneCodedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 11 UNITS PER NAME] Infer the likely country and phone prefix, of up to 100 personal names, detecting automatically the local context given a name and formatted / unformatted phone number."
+        "summary": "[USES 11 UNITS PER NAME] Infer the likely country and phone prefix, of up to 100 personal names, detecting automatically the local context given a name and formatted / unformatted phone number.",
+        "tags": [
+          "social"
+        ]
       },
       {
         "deprecated": false,
@@ -1396,14 +4021,56 @@
         "kind": "operation",
         "method": "get",
         "name": "phoneCodeGeo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "phoneNumber",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "countryIso2",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/phoneCodeGeo/{firstName}/{lastName}/{phoneNumber}/{countryIso2}",
         "pointer": "#/paths/~1api2~1json~1phoneCodeGeo~1{firstName}~1{lastName}~1{phoneNumber}~1{countryIso2}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNamePhoneCodedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 11 UNITS PER NAME] Infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence)."
+        "summary": "[USES 11 UNITS PER NAME] Infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence).",
+        "tags": [
+          "social"
+        ]
       },
       {
         "deprecated": false,
@@ -1413,12 +4080,38 @@
         "name": "phoneCodeGeoBatch",
         "path": "/api2/json/phoneCodeGeoBatch",
         "pointer": "#/paths/~1api2~1json~1phoneCodeGeoBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNamePhoneNumberGeoIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNamePhoneCodedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 11 UNITS PER NAME] Infer the likely country and phone prefix, of up to 100 personal names, with a local context (ISO2 country of residence)."
+        "summary": "[USES 11 UNITS PER NAME] Infer the likely country and phone prefix, of up to 100 personal names, with a local context (ISO2 country of residence).",
+        "tags": [
+          "social"
+        ]
       },
       {
         "deprecated": false,
@@ -1426,14 +4119,62 @@
         "kind": "operation",
         "method": "get",
         "name": "phoneCodeGeoFeedbackLoop",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "phoneNumber",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "phoneNumberE164",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "countryIso2",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/phoneCodeGeoFeedbackLoop/{firstName}/{lastName}/{phoneNumber}/{phoneNumberE164}/{countryIso2}",
         "pointer": "#/paths/~1api2~1json~1phoneCodeGeoFeedbackLoop~1{firstName}~1{lastName}~1{phoneNumber}~1{phoneNumberE164}~1{countryIso2}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNamePhoneCodedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[CREDITS 1 UNIT] Feedback loop to better infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence)."
+        "summary": "[CREDITS 1 UNIT] Feedback loop to better infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence).",
+        "tags": [
+          "social"
+        ]
       },
       {
         "deprecated": false,
@@ -1441,14 +4182,38 @@
         "kind": "operation",
         "method": "get",
         "name": "pinyinChineseName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chineseName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/pinyinChineseName/{chineseName}",
         "pointer": "#/paths/~1api2~1json~1pinyinChineseName~1{chineseName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameParsedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Romanize the Chinese name to Pinyin, ex. 王晓明 -> Wang (surname) Xiaoming (given name)"
+        "summary": "Romanize the Chinese name to Pinyin, ex. 王晓明 -> Wang (surname) Xiaoming (given name)",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -1458,12 +4223,38 @@
         "name": "pinyinChineseNameBatch",
         "path": "/api2/json/pinyinChineseNameBatch",
         "pointer": "#/paths/~1api2~1json~1pinyinChineseNameBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameParsedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Romanize a list of Chinese name to Pinyin, ex. 王晓明 -> Wang (surname) Xiaoming (given name)."
+        "summary": "Romanize a list of Chinese name to Pinyin, ex. 王晓明 -> Wang (surname) Xiaoming (given name).",
+        "tags": [
+          "chinese"
+        ]
       },
       {
         "deprecated": false,
@@ -1473,12 +4264,25 @@
         "name": "regions",
         "path": "/api2/json/regions",
         "pointer": "#/paths/~1api2~1json~1regions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RegionOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Print basic source statistics."
+        "summary": "Print basic source statistics.",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -1486,14 +4290,50 @@
         "kind": "operation",
         "method": "get",
         "name": "religionFull",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "countryIso2",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "subDivisionIso31662",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "personalNameFull",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/religionFull/{countryIso2}/{subDivisionIso31662}/{personalNameFull}",
         "pointer": "#/paths/~1api2~1json~1religionFull~1{countryIso2}~1{subDivisionIso31662}~1{personalNameFull}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameReligionedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely religion of a personal full name. NB: only for INDIA (as of current version)."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely religion of a personal full name. NB: only for INDIA (as of current version).",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1503,12 +4343,38 @@
         "name": "religionFullBatch",
         "path": "/api2/json/religionFullBatch",
         "pointer": "#/paths/~1api2~1json~1religionFullBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameGeoSubdivisionIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameReligionedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal full names. NB: only for India as of currently."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal full names. NB: only for India as of currently.",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1516,14 +4382,44 @@
         "kind": "operation",
         "method": "get",
         "name": "religion",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subDivisionIso31662",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "personalNameFull",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/religionIndianFull/{subDivisionIso31662}/{personalNameFull}",
         "pointer": "#/paths/~1api2~1json~1religionIndianFull~1{subDivisionIso31662}~1{personalNameFull}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PersonalNameReligionedOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely religion of a personal Indian full name, provided the Indian state or Union territory (NB/ this can be inferred using the subclassification endpoint)."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely religion of a personal Indian full name, provided the Indian state or Union territory (NB/ this can be inferred using the subclassification endpoint).",
+        "tags": [
+          "indian"
+        ]
       },
       {
         "deprecated": false,
@@ -1533,12 +4429,38 @@
         "name": "religionIndianFullBatch",
         "path": "/api2/json/religionIndianFullBatch",
         "pointer": "#/paths/~1api2~1json~1religionIndianFullBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchPersonalNameSubdivisionIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchPersonalNameReligionedOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal full Indian names, provided the subclassification at State or Union territory level (NB/ can be inferred using the subclassification endpoint)."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal full Indian names, provided the subclassification at State or Union territory level (NB/ can be inferred using the subclassification endpoint).",
+        "tags": [
+          "indian"
+        ]
       },
       {
         "deprecated": false,
@@ -1548,12 +4470,25 @@
         "name": "softwareVersion",
         "path": "/api2/json/softwareVersion",
         "pointer": "#/paths/~1api2~1json~1softwareVersion/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SoftwareVersionOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get the current software version"
+        "summary": "Get the current software version",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -1561,14 +4496,50 @@
         "kind": "operation",
         "method": "get",
         "name": "subclassification",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "countryIso2",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/subclassification/{countryIso2}/{firstName}/{lastName}",
         "pointer": "#/paths/~1api2~1json~1subclassification~1{countryIso2}~1{firstName}~1{lastName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameGeoSubclassificationOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely origin of a name at a country subclassification level (state or regeion). Initially, this is only supported for India (ISO2 code 'IN')."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely origin of a name at a country subclassification level (state or regeion). Initially, this is only supported for India (ISO2 code 'IN').",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1578,12 +4549,38 @@
         "name": "subclassificationBatch",
         "path": "/api2/json/subclassificationBatch",
         "pointer": "#/paths/~1api2~1json~1subclassificationBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameGeoIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameGeoSubclassificationOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely origin of a list of up to 100 names at a country subclassification level (state or regeion). Initially, this is only supported for India (ISO2 code 'IN')."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely origin of a list of up to 100 names at a country subclassification level (state or regeion). Initially, this is only supported for India (ISO2 code 'IN').",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1591,14 +4588,44 @@
         "kind": "operation",
         "method": "get",
         "name": "subclassificationIndian",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/subclassificationIndian/{firstName}/{lastName}",
         "pointer": "#/paths/~1api2~1json~1subclassificationIndian~1{firstName}~1{lastName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameGeoSubclassificationOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely Indian state of Union territory according to ISO 3166-2:IN based on the name."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely Indian state of Union territory according to ISO 3166-2:IN based on the name.",
+        "tags": [
+          "indian"
+        ]
       },
       {
         "deprecated": false,
@@ -1608,12 +4635,38 @@
         "name": "subclassificationIndianBatch",
         "path": "/api2/json/subclassificationIndianBatch",
         "pointer": "#/paths/~1api2~1json~1subclassificationIndianBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameGeoIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameGeoSubclassificationOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer the likely Indian state of Union territory according to ISO 3166-2:IN based on a list of up to 100 names."
+        "summary": "[USES 10 UNITS PER NAME] Infer the likely Indian state of Union territory according to ISO 3166-2:IN based on a list of up to 100 names.",
+        "tags": [
+          "indian"
+        ]
       },
       {
         "deprecated": false,
@@ -1621,14 +4674,35 @@
         "kind": "operation",
         "method": "get",
         "name": "taxonomyClasses",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "classifierName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/taxonomyClasses/{classifierName}",
         "pointer": "#/paths/~1api2~1json~1taxonomyClasses~1{classifierName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "APIClassifierTaxonomyOut"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Print the taxonomy classes valid for the given classifier."
+        "summary": "Print the taxonomy classes valid for the given classifier.",
+        "tags": [
+          "admin"
+        ]
       },
       {
         "deprecated": false,
@@ -1636,14 +4710,44 @@
         "kind": "operation",
         "method": "get",
         "name": "usRaceEthnicity",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/usRaceEthnicity/{firstName}/{lastName}",
         "pointer": "#/paths/~1api2~1json~1usRaceEthnicity~1{firstName}~1{lastName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameUSRaceEthnicityOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer a US resident's likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander)."
+        "summary": "[USES 10 UNITS PER NAME] Infer a US resident's likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1653,12 +4757,38 @@
         "name": "usRaceEthnicityBatch",
         "path": "/api2/json/usRaceEthnicityBatch",
         "pointer": "#/paths/~1api2~1json~1usRaceEthnicityBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameGeoIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameUSRaceEthnicityOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer up-to 100 US resident's likely race/ethnicity according to US Census taxonomy. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander)."
+        "summary": "[USES 10 UNITS PER NAME] Infer up-to 100 US resident's likely race/ethnicity according to US Census taxonomy. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1666,14 +4796,50 @@
         "kind": "operation",
         "method": "get",
         "name": "usRaceEthnicityZIP5",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "firstName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "lastName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "zip5Code",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api2/json/usRaceEthnicityZIP5/{firstName}/{lastName}/{zip5Code}",
         "pointer": "#/paths/~1api2~1json~1usRaceEthnicityZIP5~1{firstName}~1{lastName}~1{zip5Code}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FirstLastNameUSRaceEthnicityOut"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer a US resident's likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander)."
+        "summary": "[USES 10 UNITS PER NAME] Infer a US resident's likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).",
+        "tags": [
+          "personal"
+        ]
       },
       {
         "deprecated": false,
@@ -1683,397 +4849,531 @@
         "name": "usZipRaceEthnicityBatch",
         "path": "/api2/json/usZipRaceEthnicityBatch",
         "pointer": "#/paths/~1api2~1json~1usZipRaceEthnicityBatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "BatchFirstLastNameGeoZippedIn"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BatchFirstLastNameUSRaceEthnicityOut"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "[USES 10 UNITS PER NAME] Infer up-to 100 US resident's likely race/ethnicity according to US Census taxonomy, with (optional) ZIP code. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander)."
+        "summary": "[USES 10 UNITS PER NAME] Infer up-to 100 US resident's likely race/ethnicity according to US Census taxonomy, with (optional) ZIP code. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).",
+        "tags": [
+          "personal"
+        ]
       },
       {
+        "description": "The current billing period.",
         "id": "schema:APIBillingPeriodUsageOut",
         "kind": "schema",
-        "name": "APIBillingPeriodUsageOut"
+        "name": "APIBillingPeriodUsageOut",
+        "type": "object"
       },
       {
+        "description": "The list of classifiers and versions.",
         "id": "schema:APIClassifierOut",
         "kind": "schema",
-        "name": "APIClassifierOut"
+        "name": "APIClassifierOut",
+        "type": "object"
       },
       {
         "id": "schema:APIClassifierTaxonomyOut",
         "kind": "schema",
-        "name": "APIClassifierTaxonomyOut"
+        "name": "APIClassifierTaxonomyOut",
+        "type": "object"
       },
       {
         "id": "schema:APIClassifiersStatusOut",
         "kind": "schema",
-        "name": "APIClassifiersStatusOut"
+        "name": "APIClassifiersStatusOut",
+        "type": "object"
       },
       {
+        "description": "Detailed usage as reported by the deduplicating API counter.",
         "id": "schema:APICounterV2Out",
         "kind": "schema",
-        "name": "APICounterV2Out"
+        "name": "APICounterV2Out",
+        "type": "object"
       },
       {
         "id": "schema:APIKeyOut",
         "kind": "schema",
-        "name": "APIKeyOut"
+        "name": "APIKeyOut",
+        "type": "object"
       },
       {
         "id": "schema:APIPeriodUsageOut",
         "kind": "schema",
-        "name": "APIPeriodUsageOut"
+        "name": "APIPeriodUsageOut",
+        "type": "object"
       },
       {
+        "description": "The API Plan governing the subscription.",
         "id": "schema:APIPlanSubscriptionOut",
         "kind": "schema",
-        "name": "APIPlanSubscriptionOut"
+        "name": "APIPlanSubscriptionOut",
+        "type": "object"
       },
       {
+        "description": "List of API Services",
         "id": "schema:APIServiceOut",
         "kind": "schema",
-        "name": "APIServiceOut"
+        "name": "APIServiceOut",
+        "type": "object"
       },
       {
         "id": "schema:APIServicesOut",
         "kind": "schema",
-        "name": "APIServicesOut"
+        "name": "APIServicesOut",
+        "type": "object"
       },
       {
         "id": "schema:APIUsageAggregatedOut",
         "kind": "schema",
-        "name": "APIUsageAggregatedOut"
+        "name": "APIUsageAggregatedOut",
+        "type": "object"
       },
       {
         "id": "schema:APIUsageHistoryOut",
         "kind": "schema",
-        "name": "APIUsageHistoryOut"
+        "name": "APIUsageHistoryOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchCorridorIn",
         "kind": "schema",
-        "name": "BatchCorridorIn"
+        "name": "BatchCorridorIn",
+        "type": "object"
       },
       {
         "id": "schema:BatchCorridorOut",
         "kind": "schema",
-        "name": "BatchCorridorOut"
+        "name": "BatchCorridorOut",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence.",
         "id": "schema:BatchFirstLastNameDiasporaedOut",
         "kind": "schema",
-        "name": "BatchFirstLastNameDiasporaedOut"
+        "name": "BatchFirstLastNameDiasporaedOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchFirstLastNameGenderIn",
         "kind": "schema",
-        "name": "BatchFirstLastNameGenderIn"
+        "name": "BatchFirstLastNameGenderIn",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY gender from a list of personal names.",
         "id": "schema:BatchFirstLastNameGenderedOut",
         "kind": "schema",
-        "name": "BatchFirstLastNameGenderedOut"
+        "name": "BatchFirstLastNameGenderedOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchFirstLastNameGeoIn",
         "kind": "schema",
-        "name": "BatchFirstLastNameGeoIn"
+        "name": "BatchFirstLastNameGeoIn",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY country subclassification (regional names).",
         "id": "schema:BatchFirstLastNameGeoSubclassificationOut",
         "kind": "schema",
-        "name": "BatchFirstLastNameGeoSubclassificationOut"
+        "name": "BatchFirstLastNameGeoSubclassificationOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchFirstLastNameGeoZippedIn",
         "kind": "schema",
-        "name": "BatchFirstLastNameGeoZippedIn"
+        "name": "BatchFirstLastNameGeoZippedIn",
+        "type": "object"
       },
       {
         "id": "schema:BatchFirstLastNameIn",
         "kind": "schema",
-        "name": "BatchFirstLastNameIn"
+        "name": "BatchFirstLastNameIn",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY origin from a list of personal names.",
         "id": "schema:BatchFirstLastNameOriginedOut",
         "kind": "schema",
-        "name": "BatchFirstLastNameOriginedOut"
+        "name": "BatchFirstLastNameOriginedOut",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY country and phone code of personal names+phones.",
         "id": "schema:BatchFirstLastNamePhoneCodedOut",
         "kind": "schema",
-        "name": "BatchFirstLastNamePhoneCodedOut"
+        "name": "BatchFirstLastNamePhoneCodedOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchFirstLastNamePhoneNumberGeoIn",
         "kind": "schema",
-        "name": "BatchFirstLastNamePhoneNumberGeoIn"
+        "name": "BatchFirstLastNamePhoneNumberGeoIn",
+        "type": "object"
       },
       {
         "id": "schema:BatchFirstLastNamePhoneNumberIn",
         "kind": "schema",
-        "name": "BatchFirstLastNamePhoneNumberIn"
+        "name": "BatchFirstLastNamePhoneNumberIn",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code.",
         "id": "schema:BatchFirstLastNameUSRaceEthnicityOut",
         "kind": "schema",
-        "name": "BatchFirstLastNameUSRaceEthnicityOut"
+        "name": "BatchFirstLastNameUSRaceEthnicityOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchMatchPersonalFirstLastNameIn",
         "kind": "schema",
-        "name": "BatchMatchPersonalFirstLastNameIn"
+        "name": "BatchMatchPersonalFirstLastNameIn",
+        "type": "object"
       },
       {
         "id": "schema:BatchNameGeoIn",
         "kind": "schema",
-        "name": "BatchNameGeoIn"
+        "name": "BatchNameGeoIn",
+        "type": "object"
       },
       {
         "id": "schema:BatchNameIn",
         "kind": "schema",
-        "name": "BatchNameIn"
+        "name": "BatchNameIn",
+        "type": "object"
       },
       {
         "id": "schema:BatchNameMatchCandidatesOut",
         "kind": "schema",
-        "name": "BatchNameMatchCandidatesOut"
+        "name": "BatchNameMatchCandidatesOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchNameMatchedOut",
         "kind": "schema",
-        "name": "BatchNameMatchedOut"
+        "name": "BatchNameMatchedOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchPersonalNameCastegroupOut",
         "kind": "schema",
-        "name": "BatchPersonalNameCastegroupOut"
+        "name": "BatchPersonalNameCastegroupOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchPersonalNameGenderedOut",
         "kind": "schema",
-        "name": "BatchPersonalNameGenderedOut"
+        "name": "BatchPersonalNameGenderedOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchPersonalNameGeoIn",
         "kind": "schema",
-        "name": "BatchPersonalNameGeoIn"
+        "name": "BatchPersonalNameGeoIn",
+        "type": "object"
       },
       {
         "id": "schema:BatchPersonalNameGeoOut",
         "kind": "schema",
-        "name": "BatchPersonalNameGeoOut"
+        "name": "BatchPersonalNameGeoOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchPersonalNameGeoSubdivisionIn",
         "kind": "schema",
-        "name": "BatchPersonalNameGeoSubdivisionIn"
+        "name": "BatchPersonalNameGeoSubdivisionIn",
+        "type": "object"
       },
       {
         "id": "schema:BatchPersonalNameIn",
         "kind": "schema",
-        "name": "BatchPersonalNameIn"
+        "name": "BatchPersonalNameIn",
+        "type": "object"
       },
       {
         "id": "schema:BatchPersonalNameParsedOut",
         "kind": "schema",
-        "name": "BatchPersonalNameParsedOut"
+        "name": "BatchPersonalNameParsedOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchPersonalNameReligionedOut",
         "kind": "schema",
-        "name": "BatchPersonalNameReligionedOut"
+        "name": "BatchPersonalNameReligionedOut",
+        "type": "object"
       },
       {
         "id": "schema:BatchPersonalNameSubdivisionIn",
         "kind": "schema",
-        "name": "BatchPersonalNameSubdivisionIn"
+        "name": "BatchPersonalNameSubdivisionIn",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the common type (anthroponym, toponym, brand, etc.) from a list of proper names.",
         "id": "schema:BatchProperNounCategorizedOut",
         "kind": "schema",
-        "name": "BatchProperNounCategorizedOut"
+        "name": "BatchProperNounCategorizedOut",
+        "type": "object"
       },
       {
+        "description": "Represent any transnational interaction between names (ex.",
         "id": "schema:CorridorIn",
         "kind": "schema",
-        "name": "CorridorIn"
+        "name": "CorridorIn",
+        "type": "object"
       },
       {
+        "description": "Represent multiple classifications for corridor sender and receiver (gender, country, origin, diaspora)",
         "id": "schema:CorridorOut",
         "kind": "schema",
-        "name": "CorridorOut"
+        "name": "CorridorOut",
+        "type": "object"
       },
       {
         "id": "schema:FactIn",
         "kind": "schema",
-        "name": "FactIn"
+        "name": "FactIn",
+        "type": "object"
       },
       {
         "id": "schema:FeedbackLoopOut",
         "kind": "schema",
-        "name": "FeedbackLoopOut"
+        "name": "FeedbackLoopOut",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence.",
         "id": "schema:FirstLastNameDiasporaedOut",
         "kind": "schema",
-        "name": "FirstLastNameDiasporaedOut"
+        "name": "FirstLastNameDiasporaedOut",
+        "type": "object"
       },
       {
         "id": "schema:FirstLastNameGenderIn",
         "kind": "schema",
-        "name": "FirstLastNameGenderIn"
+        "name": "FirstLastNameGenderIn",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY gender from a personal name.",
         "id": "schema:FirstLastNameGenderedOut",
         "kind": "schema",
-        "name": "FirstLastNameGenderedOut"
+        "name": "FirstLastNameGenderedOut",
+        "type": "object"
       },
       {
         "id": "schema:FirstLastNameGeoIn",
         "kind": "schema",
-        "name": "FirstLastNameGeoIn"
+        "name": "FirstLastNameGeoIn",
+        "type": "object"
       },
       {
+        "description": "Represents the geographic name origin at a country subclassification level (usually regional or state level).",
         "id": "schema:FirstLastNameGeoSubclassificationOut",
         "kind": "schema",
-        "name": "FirstLastNameGeoSubclassificationOut"
+        "name": "FirstLastNameGeoSubclassificationOut",
+        "type": "object"
       },
       {
         "id": "schema:FirstLastNameGeoZippedIn",
         "kind": "schema",
-        "name": "FirstLastNameGeoZippedIn"
+        "name": "FirstLastNameGeoZippedIn",
+        "type": "object"
       },
       {
         "id": "schema:FirstLastNameIn",
         "kind": "schema",
-        "name": "FirstLastNameIn"
+        "name": "FirstLastNameIn",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY country of Origin from a personal name.",
         "id": "schema:FirstLastNameOriginedOut",
         "kind": "schema",
-        "name": "FirstLastNameOriginedOut"
+        "name": "FirstLastNameOriginedOut",
+        "type": "object"
       },
       {
+        "description": "First / last name structure corresponding to the most likely parsing.",
         "id": "schema:FirstLastNameOut",
         "kind": "schema",
-        "name": "FirstLastNameOut"
+        "name": "FirstLastNameOut",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY country and phone code from a personal name and phone number.",
         "id": "schema:FirstLastNamePhoneCodedOut",
         "kind": "schema",
-        "name": "FirstLastNamePhoneCodedOut"
+        "name": "FirstLastNamePhoneCodedOut",
+        "type": "object"
       },
       {
         "id": "schema:FirstLastNamePhoneNumberGeoIn",
         "kind": "schema",
-        "name": "FirstLastNamePhoneNumberGeoIn"
+        "name": "FirstLastNamePhoneNumberGeoIn",
+        "type": "object"
       },
       {
         "id": "schema:FirstLastNamePhoneNumberIn",
         "kind": "schema",
-        "name": "FirstLastNamePhoneNumberIn"
+        "name": "FirstLastNamePhoneNumberIn",
+        "type": "object"
       },
       {
+        "description": "Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code.",
         "id": "schema:FirstLastNameUSRaceEthnicityOut",
         "kind": "schema",
-        "name": "FirstLastNameUSRaceEthnicityOut"
+        "name": "FirstLastNameUSRaceEthnicityOut",
+        "type": "object"
       },
       {
         "id": "schema:MatchPersonalFirstLastNameIn",
         "kind": "schema",
-        "name": "MatchPersonalFirstLastNameIn"
+        "name": "MatchPersonalFirstLastNameIn",
+        "type": "object"
       },
       {
         "id": "schema:NameGeoIn",
         "kind": "schema",
-        "name": "NameGeoIn"
+        "name": "NameGeoIn",
+        "type": "object"
       },
       {
         "id": "schema:NameIn",
         "kind": "schema",
-        "name": "NameIn"
+        "name": "NameIn",
+        "type": "object"
       },
       {
+        "description": "The ordered list of name matching candidates",
         "id": "schema:NameMatchCandidateOut",
         "kind": "schema",
-        "name": "NameMatchCandidateOut"
+        "name": "NameMatchCandidateOut",
+        "type": "object"
       },
       {
+        "description": "Classified matched names",
         "id": "schema:NameMatchCandidatesOut",
         "kind": "schema",
-        "name": "NameMatchCandidatesOut"
+        "name": "NameMatchCandidatesOut",
+        "type": "object"
       },
       {
+        "description": "Classified matched names",
         "id": "schema:NameMatchedOut",
         "kind": "schema",
-        "name": "NameMatchedOut"
+        "name": "NameMatchedOut",
+        "type": "object"
       },
       {
+        "description": "Caste group-coded names",
         "id": "schema:PersonalNameCastegroupOut",
         "kind": "schema",
-        "name": "PersonalNameCastegroupOut"
+        "name": "PersonalNameCastegroupOut",
+        "type": "object"
       },
       {
+        "description": "Classified genderized names",
         "id": "schema:PersonalNameGenderedOut",
         "kind": "schema",
-        "name": "PersonalNameGenderedOut"
+        "name": "PersonalNameGenderedOut",
+        "type": "object"
       },
       {
         "id": "schema:PersonalNameGeoIn",
         "kind": "schema",
-        "name": "PersonalNameGeoIn"
+        "name": "PersonalNameGeoIn",
+        "type": "object"
       },
       {
+        "description": "Classified geo names",
         "id": "schema:PersonalNameGeoOut",
         "kind": "schema",
-        "name": "PersonalNameGeoOut"
+        "name": "PersonalNameGeoOut",
+        "type": "object"
       },
       {
         "id": "schema:PersonalNameGeoSubdivisionIn",
         "kind": "schema",
-        "name": "PersonalNameGeoSubdivisionIn"
+        "name": "PersonalNameGeoSubdivisionIn",
+        "type": "object"
       },
       {
         "id": "schema:PersonalNameIn",
         "kind": "schema",
-        "name": "PersonalNameIn"
+        "name": "PersonalNameIn",
+        "type": "object"
       },
       {
         "id": "schema:PersonalNameParsedOut",
         "kind": "schema",
-        "name": "PersonalNameParsedOut"
+        "name": "PersonalNameParsedOut",
+        "type": "object"
       },
       {
+        "description": "religious-coded names",
         "id": "schema:PersonalNameReligionedOut",
         "kind": "schema",
-        "name": "PersonalNameReligionedOut"
+        "name": "PersonalNameReligionedOut",
+        "type": "object"
       },
       {
         "id": "schema:PersonalNameSubdivisionIn",
         "kind": "schema",
-        "name": "PersonalNameSubdivisionIn"
+        "name": "PersonalNameSubdivisionIn",
+        "type": "object"
       },
       {
+        "description": "Classified typed proper names",
         "id": "schema:ProperNounCategorizedOut",
         "kind": "schema",
-        "name": "ProperNounCategorizedOut"
+        "name": "ProperNounCategorizedOut",
+        "type": "object"
       },
       {
+        "description": "List of countries and regions",
         "id": "schema:RegionISO",
         "kind": "schema",
-        "name": "RegionISO"
+        "name": "RegionISO",
+        "type": "object"
       },
       {
         "id": "schema:RegionOut",
         "kind": "schema",
-        "name": "RegionOut"
+        "name": "RegionOut",
+        "type": "object"
       },
       {
+        "description": "The software version.",
         "id": "schema:SoftwareVersionOut",
         "kind": "schema",
-        "name": "SoftwareVersionOut"
+        "name": "SoftwareVersionOut",
+        "type": "object"
       }
     ]
   },

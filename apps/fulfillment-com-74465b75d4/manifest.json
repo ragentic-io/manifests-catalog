@@ -32,12 +32,12 @@
       {
         "from": "fulfillment-com-74465b75d4",
         "kind": "EXPOSES",
-        "to": "operation:delete:/orders/{id}"
+        "to": "operation:get:/orders/{id}"
       },
       {
         "from": "fulfillment-com-74465b75d4",
         "kind": "EXPOSES",
-        "to": "operation:get:/orders/{id}"
+        "to": "operation:delete:/orders/{id}"
       },
       {
         "from": "fulfillment-com-74465b75d4",
@@ -77,12 +77,73 @@
       },
       {
         "deprecated": false,
+        "description": "Retrieves accounting activity during the queried timespan.",
         "id": "operation:get:/accounting",
         "kind": "operation",
         "method": "get",
         "name": "get-accounting",
+        "parameters": [
+          {
+            "description": "Orders invoice date.",
+            "in": "query",
+            "name": "fromDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Orders invoice date.",
+            "in": "query",
+            "name": "toDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "A multiplier of the number of items (limit parameter) to skip before returning results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 80,
+            "description": "The numbers of items to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A CSV of warehouse id, '123' or '1,2,3'",
+            "in": "query",
+            "name": "warehouseIds",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "A CSV of FDC order id, '123' or '1,2,3'",
+            "in": "query",
+            "name": "orderIds",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "Adds additional information to the response, uses a CSV format for multiple values.",
+            "in": "query",
+            "name": "hydrate",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/accounting",
         "pointer": "#/paths/~1accounting/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "fdcAuth": [
@@ -90,16 +151,78 @@
             ]
           }
         ],
-        "summary": "List Order Accounting"
+        "summary": "List Order Accounting",
+        "tags": [
+          "Accounting"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve inventory for one or more items.",
         "id": "operation:get:/inventory",
         "kind": "operation",
         "method": "get",
         "name": "get-inventory",
+        "parameters": [
+          {
+            "default": 1,
+            "description": "A multiplier of the number of items (limit parameter) to skip before returning results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 80,
+            "description": "The numbers of items to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "A CSV of merchant id, '123' or '1,2,3'",
+            "in": "query",
+            "name": "merchantIds",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "A CSV of warehouse id, '123' or '1,2,3'",
+            "in": "query",
+            "name": "warehouseIds",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "A CSV of sku reference names, 'skuName1' or 'skuName1,skuName2,skuName3'",
+            "in": "query",
+            "name": "externalSkuNames",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/inventory",
         "pointer": "#/paths/~1inventory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "fdcAuth": [
@@ -107,27 +230,116 @@
             ]
           }
         ],
-        "summary": "List of Item Inventories"
+        "summary": "List of Item Inventories",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "By default tokens are valid for 7 days while refresh tokens are valid for 30 days.",
         "id": "operation:post:/oauth/access_token",
         "kind": "operation",
         "method": "post",
         "name": "post-oauth-access_token",
         "path": "/oauth/access_token",
         "pointer": "#/paths/~1oauth~1access_token/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Generate an Access Token"
+        "summary": "Generate an Access Token",
+        "tags": [
+          "Auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve many orders at once",
         "id": "operation:get:/orders",
         "kind": "operation",
         "method": "get",
         "name": "get-orders",
+        "parameters": [
+          {
+            "description": "Date-time in ISO 8601 format for selecting orders after, or at, the specified time",
+            "in": "query",
+            "name": "fromDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Date-time in ISO 8601 format for selecting orders before, or at, the specified time",
+            "in": "query",
+            "name": "toDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A CSV of merchant id, '123' or '1,2,3'",
+            "in": "query",
+            "name": "merchantIds",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "description": "A CSV of warehouse id, '123' or '1,2,3'",
+            "in": "query",
+            "name": "warehouseIds",
+            "required": false,
+            "type": "integer[]"
+          },
+          {
+            "default": 1,
+            "description": "A multiplier of the number of items (limit parameter) to skip before returning results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 80,
+            "description": "The numbers of items to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Adds additional information to the response, uses a CSV format for multiple values.'",
+            "in": "query",
+            "name": "hydrate",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/orders",
         "pointer": "#/paths/~1orders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "fdcAuth": [
@@ -135,16 +347,51 @@
             ]
           }
         ],
-        "summary": "List of Orders"
+        "summary": "List of Orders",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Error Notes&#58; * When `409 Conflict` is a 'Duplicate Order' the `context` will include the FDC `id`, see samples.",
         "id": "operation:post:/orders",
         "kind": "operation",
         "method": "post",
         "name": "post-orders",
         "path": "/orders",
         "pointer": "#/paths/~1orders/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "fdcAuth": [
@@ -152,33 +399,52 @@
             ]
           }
         ],
-        "summary": "New Order"
+        "summary": "New Order",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/orders/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete-orders-id",
-        "path": "/orders/{id}",
-        "pointer": "#/paths/~1orders~1{id}/delete",
-        "security": [
-          {
-            "fdcAuth": [
-              "oms"
-            ]
-          }
-        ],
-        "summary": "Cancel an Order"
-      },
-      {
-        "deprecated": false,
+        "description": "For the fastest results use the FDC provided `id` however you can use your `merchantOrderId` as the `id`.",
         "id": "operation:get:/orders/{id}",
         "kind": "operation",
         "method": "get",
         "name": "getOrder",
+        "parameters": [
+          {
+            "description": "The FDC order Id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Providing your `merchantId` indicates the `id` is your `merchantOrderId`.",
+            "in": "query",
+            "name": "merchantId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Adds additional information to the response, uses a CSV format for multiple values.'",
+            "in": "query",
+            "name": "hydrate",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/orders/{id}",
         "pointer": "#/paths/~1orders~1{id}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "fdcAuth": [
@@ -186,16 +452,87 @@
             ]
           }
         ],
-        "summary": "Order Details"
+        "summary": "Order Details",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Request an order is canceled to prevent shipment.",
+        "id": "operation:delete:/orders/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete-orders-id",
+        "parameters": [
+          {
+            "description": "ID of order that needs to be canceled",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/orders/{id}",
+        "pointer": "#/paths/~1orders~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "405"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "fdcAuth": [
+              "oms"
+            ]
+          }
+        ],
+        "summary": "Cancel an Order",
+        "tags": [
+          "Orders"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Note, this API is used to update orders and is reserved for our shipping partners.",
         "id": "operation:put:/orders/{id}/ship",
         "kind": "operation",
         "method": "put",
         "name": "put-orders-id-ship",
+        "parameters": [
+          {
+            "description": "The FDC order Id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/orders/{id}/ship",
         "pointer": "#/paths/~1orders~1{id}~1ship/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "fdcAuth": [
@@ -203,16 +540,45 @@
             ]
           }
         ],
-        "summary": "Ship an Order"
+        "summary": "Ship an Order",
+        "tags": [
+          "Partners"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Note, this API is used to update orders and is reserved for our shipping partners.",
         "id": "operation:put:/orders/{id}/status",
         "kind": "operation",
         "method": "put",
         "name": "put-orders-id-status",
+        "parameters": [
+          {
+            "description": "The FDC order Id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/orders/{id}/status",
         "pointer": "#/paths/~1orders~1{id}~1status/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "fdcAuth": [
@@ -220,16 +586,59 @@
             ]
           }
         ],
-        "summary": "Update Order Status"
+        "summary": "Update Order Status",
+        "tags": [
+          "Partners"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves summary return activity during the queried timespan.",
         "id": "operation:get:/returns",
         "kind": "operation",
         "method": "get",
         "name": "get-returns",
+        "parameters": [
+          {
+            "description": "Date-time in ISO 8601 format for selecting orders after, or at, the specified time",
+            "in": "query",
+            "name": "fromDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Date-time in ISO 8601 format for selecting orders before, or at, the specified time",
+            "in": "query",
+            "name": "toDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "A multiplier of the number of items (limit parameter) to skip before returning results",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 80,
+            "description": "The numbers of items to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/returns",
         "pointer": "#/paths/~1returns/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "fdcAuth": [
@@ -237,16 +646,43 @@
             ]
           }
         ],
-        "summary": "List Returns"
+        "summary": "List Returns",
+        "tags": [
+          "Returns"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Inform FDC of an expected return.",
         "id": "operation:put:/returns",
         "kind": "operation",
         "method": "put",
         "name": "put-returns",
         "path": "/returns",
         "pointer": "#/paths/~1returns/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "202"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "fdcAuth": [
@@ -254,27 +690,63 @@
             ]
           }
         ],
-        "summary": "Inform us of an RMA"
+        "summary": "Inform us of an RMA",
+        "tags": [
+          "Returns"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get uniformed tracking events for any package, this response is carrier independent.",
         "id": "operation:get:/track",
         "kind": "operation",
         "method": "get",
         "name": "get-track",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "trackingNumber",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/track",
         "pointer": "#/paths/~1track/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "429"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Tracking"
+        "summary": "Tracking",
+        "tags": [
+          "Tracking"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the user profile of the access token's owner.",
         "id": "operation:get:/users/me",
         "kind": "operation",
         "method": "get",
         "name": "get-users-me",
         "path": "/users/me",
         "pointer": "#/paths/~1users~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "fdcAuth": [
@@ -282,7 +754,10 @@
             ]
           }
         ],
-        "summary": "About Me"
+        "summary": "About Me",
+        "tags": [
+          "Users"
+        ]
       }
     ]
   },

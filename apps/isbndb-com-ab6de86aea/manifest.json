@@ -53,6 +53,36 @@
         "from": "isbndb-com-ab6de86aea",
         "kind": "EXPOSES",
         "to": "operation:get:/subjects/{query}"
+      },
+      {
+        "from": "operation:get:/author/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Author"
+      },
+      {
+        "from": "operation:get:/authors/{query}",
+        "kind": "RETURNS",
+        "to": "schema:AuthorQueryResults"
+      },
+      {
+        "from": "operation:get:/book/{isbn}",
+        "kind": "RETURNS",
+        "to": "schema:Book"
+      },
+      {
+        "from": "operation:get:/publisher/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Publisher"
+      },
+      {
+        "from": "operation:get:/subject/{name}",
+        "kind": "RETURNS",
+        "to": "schema:Subject"
+      },
+      {
+        "from": "schema:Author",
+        "kind": "REFERENCES",
+        "to": "schema:Book"
       }
     ],
     "nodes": [
@@ -62,178 +92,490 @@
       },
       {
         "deprecated": false,
+        "description": "Returns the name and a list of books by the author.",
         "id": "operation:get:/author/{name}",
         "kind": "operation",
         "method": "get",
         "name": "get /author/{name}",
+        "parameters": [
+          {
+            "description": "The name of an author in the Author's database",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of page to retrieve, please note the API will not return more than 10,000 results no matter how you paginate them",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "How many items should be returned per page, maximum of 1,000",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/author/{name}",
         "pointer": "#/paths/~1author~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Author"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Gets author details"
+        "summary": "Gets author details",
+        "tags": [
+          "Author"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns a list of authors whos name matches the given query",
         "id": "operation:get:/authors/{query}",
         "kind": "operation",
         "method": "get",
         "name": "get /authors/{query}",
+        "parameters": [
+          {
+            "description": "How many items should be returned per page, maximum of 1,000",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A string to search for in the Author’s database",
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of page to retrieve, please note the API will not return more than 10,000 results no matter how you paginate them",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/authors/{query}",
         "pointer": "#/paths/~1authors~1{query}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AuthorQueryResults"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Search authors"
+        "summary": "Search authors",
+        "tags": [
+          "Author"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the book details",
         "id": "operation:get:/book/{isbn}",
         "kind": "operation",
         "method": "get",
         "name": "get /book/{isbn}",
+        "parameters": [
+          {
+            "description": "an ISBN 10 or ISBN 13 in the Books database",
+            "in": "path",
+            "name": "isbn",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/book/{isbn}",
         "pointer": "#/paths/~1book~1{isbn}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Book"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Gets book details"
+        "summary": "Gets book details",
+        "tags": [
+          "Book"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns a list of books that match the query",
         "id": "operation:get:/books/{query}",
         "kind": "operation",
         "method": "get",
         "name": "get /books/{query}",
+        "parameters": [
+          {
+            "description": "A string to search for in the Book’s database",
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of page to retrieve, please note the API will not return more than 10,000 results no matter how you paginate them",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filters the query results by author",
+            "in": "query",
+            "name": "author",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "How many items should be returned per page, maximum of 1,000",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/books/{query}",
         "pointer": "#/paths/~1books~1{query}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Search books"
+        "summary": "Search books",
+        "tags": [
+          "Book"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns details and a list of books by the publisher.",
         "id": "operation:get:/publisher/{name}",
         "kind": "operation",
         "method": "get",
         "name": "get /publisher/{name}",
+        "parameters": [
+          {
+            "description": "The name of a publisher in the Publisher's database",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of page to retrieve, please note the API will not return more than 10,000 results no matter how you paginate them",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "How many items should be returned per page, maximum of 1,000",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/publisher/{name}",
         "pointer": "#/paths/~1publisher~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Publisher"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Gets publisher details"
+        "summary": "Gets publisher details",
+        "tags": [
+          "Publisher"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns a list of publishers that match the given query",
         "id": "operation:get:/publishers/{query}",
         "kind": "operation",
         "method": "get",
         "name": "get /publishers/{query}",
+        "parameters": [
+          {
+            "description": "How many items should be returned per page, maximum of 1,000",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A string to search for in the Publisher’s database",
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of page to retrieve, please note the API will not return more than 10,000 results no matter how you paginate them",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/publishers/{query}",
         "pointer": "#/paths/~1publishers~1{query}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Search publishers"
+        "summary": "Search publishers",
+        "tags": [
+          "Publisher"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Uses a free query string compatible with ElasticSearch 6 to search in any of the ISBNDB's databases",
         "id": "operation:get:/search",
         "kind": "operation",
         "method": "get",
         "name": "get /search",
+        "parameters": [
+          {
+            "description": "A query string compatible with ElasticSearch 6",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search",
         "pointer": "#/paths/~1search/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Search all ISBNDB databases"
+        "summary": "Search all ISBNDB databases",
+        "tags": [
+          "Search"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a status object about the ISBNDB database.",
         "id": "operation:get:/stats",
         "kind": "operation",
         "method": "get",
         "name": "get /stats",
         "path": "/stats",
         "pointer": "#/paths/~1stats/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Gets status on the ISBNDB Database"
+        "summary": "Gets status on the ISBNDB Database",
+        "tags": [
+          "Stats"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns details and a list of books with subject.",
         "id": "operation:get:/subject/{name}",
         "kind": "operation",
         "method": "get",
         "name": "get /subject/{name}",
+        "parameters": [
+          {
+            "description": "A subject in the Subject's database",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/subject/{name}",
         "pointer": "#/paths/~1subject~1{name}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Subject"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Gets subject details"
+        "summary": "Gets subject details",
+        "tags": [
+          "Subject"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns a list of subjects that match the given query",
         "id": "operation:get:/subjects/{query}",
         "kind": "operation",
         "method": "get",
         "name": "get /subjects/{query}",
+        "parameters": [
+          {
+            "description": "How many items should be returned per page, maximum of 1,000",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A string to search for in the Subject’s database",
+            "in": "path",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The number of page to retrieve, please note the API will not return more than 10,000 results no matter how you paginate them",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/subjects/{query}",
         "pointer": "#/paths/~1subjects~1{query}/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Search subjects"
+        "summary": "Search subjects",
+        "tags": [
+          "Subject"
+        ]
       },
       {
+        "description": "Describes the name of an author and the books written by that author in the database",
         "id": "schema:Author",
         "kind": "schema",
-        "name": "Author"
+        "name": "Author",
+        "type": "object"
       },
       {
+        "description": "Describes the results of a query in the author's database",
         "id": "schema:AuthorQueryResults",
         "kind": "schema",
-        "name": "AuthorQueryResults"
+        "name": "AuthorQueryResults",
+        "type": "object"
       },
       {
+        "description": "Describes a book in the book's database",
         "id": "schema:Book",
         "kind": "schema",
-        "name": "Book"
+        "name": "Book",
+        "type": "object"
       },
       {
         "id": "schema:Publisher",
         "kind": "schema",
-        "name": "Publisher"
+        "name": "Publisher",
+        "type": "object"
       },
       {
         "id": "schema:Subject",
         "kind": "schema",
-        "name": "Subject"
+        "name": "Subject",
+        "type": "object"
       }
     ]
   },

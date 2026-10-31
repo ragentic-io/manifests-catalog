@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.klarna.com_static_img_socia
 
 | | |
 | --- | --- |
-| Signed bundle | `d7496daf1c03d6c602d937798b6437064fe71778bbd7296cc7b3c87ebe358b29` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.klarna.com_static_img_socia
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/public/openai/v0/products` | productsUsingGET | API for fetching Klarna product information |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/public/openai/v0/products` | productsUsingGET | `q`*, `size`, `budget` | ProductResponse | yes | API for fetching Klarna product information |

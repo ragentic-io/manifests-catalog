@@ -17,12 +17,28 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a list of food item nutrition facts extracted from an input string containing food and beverage words.",
         "id": "operation:get:/v1/nutrition",
         "kind": "operation",
         "method": "get",
         "name": "",
+        "parameters": [
+          {
+            "description": "Input query containing food and/or beverage words.",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/nutrition",
         "pointer": "#/paths/~1v1~1nutrition/get",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "x-api-key": []

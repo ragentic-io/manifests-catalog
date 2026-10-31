@@ -57,112 +57,451 @@
       },
       {
         "deprecated": false,
+        "description": "Get latest data for specific country.",
         "id": "operation:get:/country",
         "kind": "operation",
         "method": "get",
         "name": "getLatestCountryDataByName",
+        "parameters": [
+          {
+            "description": "Name of the country",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "Format of the response",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/country",
         "pointer": "#/paths/~1country/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getLatestCountryDataByName"
+        "summary": "getLatestCountryDataByName",
+        "tags": [
+          "Country"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get latest data from all countries.",
         "id": "operation:get:/country/all",
         "kind": "operation",
         "method": "get",
         "name": "getLatestAllCountries",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "Format of the response",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/country/all",
         "pointer": "#/paths/~1country~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getLatestAllCountries"
+        "summary": "getLatestAllCountries",
+        "tags": [
+          "Country"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get latest data for specific country.",
         "id": "operation:get:/country/code",
         "kind": "operation",
         "method": "get",
         "name": "getLatestCountryDataByCode",
+        "parameters": [
+          {
+            "description": "Country code",
+            "in": "query",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "Format of the response",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/country/code",
         "pointer": "#/paths/~1country~1code/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getLatestCountryDataByCode"
+        "summary": "getLatestCountryDataByCode",
+        "tags": [
+          "Country"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get name name, alpha-2, alpha-3 code, latitude and longitude for every country.",
         "id": "operation:get:/help/countries",
         "kind": "operation",
         "method": "get",
         "name": "getListOfCountries",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "Format of the response",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/help/countries",
         "pointer": "#/paths/~1help~1countries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getListOfCountries"
+        "summary": "getListOfCountries",
+        "tags": [
+          "Help"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get daily report for all countries.",
         "id": "operation:get:/report/country/all",
         "kind": "operation",
         "method": "get",
         "name": "getDailyReportAllCountries",
+        "parameters": [
+          {
+            "description": "Date of the report.",
+            "in": "query",
+            "name": "date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "YYYY-MM-DD",
+            "description": "Date format.",
+            "enum": [
+              "YYYY-MM-DD",
+              "YYYY-DD-MM",
+              "DD-MM-YYYY",
+              "MM-DD-YYYY"
+            ],
+            "in": "query",
+            "name": "date-format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "Format of the response",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/report/country/all",
         "pointer": "#/paths/~1report~1country~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getDailyReportAllCountries"
+        "summary": "getDailyReportAllCountries",
+        "tags": [
+          "Country"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get daily report for specific country.",
         "id": "operation:get:/report/country/code",
         "kind": "operation",
         "method": "get",
         "name": "getDailyReportByCountryCode",
+        "parameters": [
+          {
+            "description": "Country code.",
+            "in": "query",
+            "name": "code",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Date of the report.",
+            "in": "query",
+            "name": "date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "YYYY-MM-DD",
+            "description": "Date format.",
+            "enum": [
+              "YYYY-MM-DD",
+              "YYYY-DD-MM",
+              "DD-MM-YYYY",
+              "MM-DD-YYYY"
+            ],
+            "in": "query",
+            "name": "date-format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "Format of the response",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/report/country/code",
         "pointer": "#/paths/~1report~1country~1code/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getDailyReportByCountryCode"
+        "summary": "getDailyReportByCountryCode",
+        "tags": [
+          "Country"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get daily report for specific country.",
         "id": "operation:get:/report/country/name",
         "kind": "operation",
         "method": "get",
         "name": "getDailyReportByCountryName",
+        "parameters": [
+          {
+            "description": "Country name.",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Date of the report.",
+            "in": "query",
+            "name": "date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "YYYY-MM-DD",
+            "description": "Date format.",
+            "enum": [
+              "YYYY-MM-DD",
+              "YYYY-DD-MM",
+              "DD-MM-YYYY",
+              "MM-DD-YYYY"
+            ],
+            "in": "query",
+            "name": "date-format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "Format of the response",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/report/country/name",
         "pointer": "#/paths/~1report~1country~1name/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getDailyReportByCountryName"
+        "summary": "getDailyReportByCountryName",
+        "tags": [
+          "Country"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get daily report data for whole world.",
         "id": "operation:get:/report/totals",
         "kind": "operation",
         "method": "get",
         "name": "getDailyReportTotals",
+        "parameters": [
+          {
+            "description": "Date of the report.",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "YYYY-MM-DD",
+            "description": "Date format.",
+            "enum": [
+              "YYYY-MM-DD",
+              "YYYY-DD-MM",
+              "DD-MM-YYYY",
+              "MM-DD-YYYY"
+            ],
+            "in": "query",
+            "name": "date-format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "json",
+            "description": "Format of the response.",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/report/totals",
         "pointer": "#/paths/~1report~1totals/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getDailyReportTotals"
+        "summary": "getDailyReportTotals",
+        "tags": [
+          "Totals"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get latest data for whole world.",
         "id": "operation:get:/totals",
         "kind": "operation",
         "method": "get",
         "name": "getLatestTotals",
+        "parameters": [
+          {
+            "default": "json",
+            "description": "Format of the response",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/totals",
         "pointer": "#/paths/~1totals/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getLatestTotals"
+        "summary": "getLatestTotals",
+        "tags": [
+          "Totals"
+        ]
       },
       {
         "id": "schema:Country-read",
         "kind": "schema",
-        "name": "Country-read"
+        "name": "Country-read",
+        "type": "object"
       },
       {
         "id": "schema:DailyReport-read",
         "kind": "schema",
-        "name": "DailyReport-read"
+        "name": "DailyReport-read",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.urlbox.io_logos_logo4.png"
 
 | | |
 | --- | --- |
-| Signed bundle | `16505ad0c765e073e30d4951524f1f346d92fbd2de0ed5a9d3516f11398e380e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.urlbox.io_logos_logo4.png"
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v1/render/sync` | renderSync | Render a URL as an image or video |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v1/render/sync` | renderSync | body*: RenderRequest | RenderResponse |  | Render a URL as an image or video |

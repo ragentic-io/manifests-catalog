@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `6d0477034833abf8238788e3d612654ed368725cc8e0ed692ba1b3695cd571b8` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,257 +34,259 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 243 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| PATCH | `/v1/ageRatingDeclarations/{id}` | ageRatingDeclarations-update_instance | — |
-| GET | `/v1/appCategories` | appCategories-get_collection | — |
-| GET | `/v1/appCategories/{id}` | appCategories-get_instance | — |
-| GET | `/v1/appCategories/{id}/parent` | appCategories-parent-get_to_one_related | — |
-| GET | `/v1/appCategories/{id}/subcategories` | appCategories-subcategories-get_to_many_related | — |
-| GET | `/v1/appEncryptionDeclarations` | appEncryptionDeclarations-get_collection | — |
-| GET | `/v1/appEncryptionDeclarations/{id}` | appEncryptionDeclarations-get_instance | — |
-| GET | `/v1/appEncryptionDeclarations/{id}/app` | appEncryptionDeclarations-app-get_to_one_related | — |
-| POST | `/v1/appEncryptionDeclarations/{id}/relationships/builds` | appEncryptionDeclarations-builds-create_to_many_relationship | — |
-| POST | `/v1/appInfoLocalizations` | appInfoLocalizations-create_instance | — |
-| DELETE | `/v1/appInfoLocalizations/{id}` | appInfoLocalizations-delete_instance | — |
-| GET | `/v1/appInfoLocalizations/{id}` | appInfoLocalizations-get_instance | — |
-| PATCH | `/v1/appInfoLocalizations/{id}` | appInfoLocalizations-update_instance | — |
-| GET | `/v1/appInfos/{id}` | appInfos-get_instance | — |
-| PATCH | `/v1/appInfos/{id}` | appInfos-update_instance | — |
-| GET | `/v1/appInfos/{id}/ageRatingDeclaration` | appInfos-ageRatingDeclaration-get_to_one_related | — |
-| GET | `/v1/appInfos/{id}/appInfoLocalizations` | appInfos-appInfoLocalizations-get_to_many_related | — |
-| GET | `/v1/appInfos/{id}/primaryCategory` | appInfos-primaryCategory-get_to_one_related | — |
-| GET | `/v1/appInfos/{id}/primarySubcategoryOne` | appInfos-primarySubcategoryOne-get_to_one_related | — |
-| GET | `/v1/appInfos/{id}/primarySubcategoryTwo` | appInfos-primarySubcategoryTwo-get_to_one_related | — |
-| GET | `/v1/appInfos/{id}/secondaryCategory` | appInfos-secondaryCategory-get_to_one_related | — |
-| GET | `/v1/appInfos/{id}/secondarySubcategoryOne` | appInfos-secondarySubcategoryOne-get_to_one_related | — |
-| GET | `/v1/appInfos/{id}/secondarySubcategoryTwo` | appInfos-secondarySubcategoryTwo-get_to_one_related | — |
-| POST | `/v1/appPreOrders` | appPreOrders-create_instance | — |
-| DELETE | `/v1/appPreOrders/{id}` | appPreOrders-delete_instance | — |
-| GET | `/v1/appPreOrders/{id}` | appPreOrders-get_instance | — |
-| PATCH | `/v1/appPreOrders/{id}` | appPreOrders-update_instance | — |
-| POST | `/v1/appPreviewSets` | appPreviewSets-create_instance | — |
-| DELETE | `/v1/appPreviewSets/{id}` | appPreviewSets-delete_instance | — |
-| GET | `/v1/appPreviewSets/{id}` | appPreviewSets-get_instance | — |
-| GET | `/v1/appPreviewSets/{id}/appPreviews` | appPreviewSets-appPreviews-get_to_many_related | — |
-| GET | `/v1/appPreviewSets/{id}/relationships/appPreviews` | appPreviewSets-appPreviews-get_to_many_relationship | — |
-| PATCH | `/v1/appPreviewSets/{id}/relationships/appPreviews` | appPreviewSets-appPreviews-replace_to_many_relationship | — |
-| POST | `/v1/appPreviews` | appPreviews-create_instance | — |
-| DELETE | `/v1/appPreviews/{id}` | appPreviews-delete_instance | — |
-| GET | `/v1/appPreviews/{id}` | appPreviews-get_instance | — |
-| PATCH | `/v1/appPreviews/{id}` | appPreviews-update_instance | — |
-| GET | `/v1/appPricePoints` | appPricePoints-get_collection | — |
-| GET | `/v1/appPricePoints/{id}` | appPricePoints-get_instance | — |
-| GET | `/v1/appPricePoints/{id}/territory` | appPricePoints-territory-get_to_one_related | — |
-| GET | `/v1/appPriceTiers` | appPriceTiers-get_collection | — |
-| GET | `/v1/appPriceTiers/{id}` | appPriceTiers-get_instance | — |
-| GET | `/v1/appPriceTiers/{id}/pricePoints` | appPriceTiers-pricePoints-get_to_many_related | — |
-| GET | `/v1/appPrices/{id}` | appPrices-get_instance | — |
-| POST | `/v1/appScreenshotSets` | appScreenshotSets-create_instance | — |
-| DELETE | `/v1/appScreenshotSets/{id}` | appScreenshotSets-delete_instance | — |
-| GET | `/v1/appScreenshotSets/{id}` | appScreenshotSets-get_instance | — |
-| GET | `/v1/appScreenshotSets/{id}/appScreenshots` | appScreenshotSets-appScreenshots-get_to_many_related | — |
-| GET | `/v1/appScreenshotSets/{id}/relationships/appScreenshots` | appScreenshotSets-appScreenshots-get_to_many_relationship | — |
-| PATCH | `/v1/appScreenshotSets/{id}/relationships/appScreenshots` | appScreenshotSets-appScreenshots-replace_to_many_relationship | — |
-| POST | `/v1/appScreenshots` | appScreenshots-create_instance | — |
-| DELETE | `/v1/appScreenshots/{id}` | appScreenshots-delete_instance | — |
-| GET | `/v1/appScreenshots/{id}` | appScreenshots-get_instance | — |
-| PATCH | `/v1/appScreenshots/{id}` | appScreenshots-update_instance | — |
-| POST | `/v1/appStoreReviewAttachments` | appStoreReviewAttachments-create_instance | — |
-| DELETE | `/v1/appStoreReviewAttachments/{id}` | appStoreReviewAttachments-delete_instance | — |
-| GET | `/v1/appStoreReviewAttachments/{id}` | appStoreReviewAttachments-get_instance | — |
-| PATCH | `/v1/appStoreReviewAttachments/{id}` | appStoreReviewAttachments-update_instance | — |
-| POST | `/v1/appStoreReviewDetails` | appStoreReviewDetails-create_instance | — |
-| GET | `/v1/appStoreReviewDetails/{id}` | appStoreReviewDetails-get_instance | — |
-| PATCH | `/v1/appStoreReviewDetails/{id}` | appStoreReviewDetails-update_instance | — |
-| GET | `/v1/appStoreReviewDetails/{id}/appStoreReviewAttachments` | appStoreReviewDetails-appStoreReviewAttachments-get_to_many_related | — |
-| POST | `/v1/appStoreVersionLocalizations` | appStoreVersionLocalizations-create_instance | — |
-| DELETE | `/v1/appStoreVersionLocalizations/{id}` | appStoreVersionLocalizations-delete_instance | — |
-| GET | `/v1/appStoreVersionLocalizations/{id}` | appStoreVersionLocalizations-get_instance | — |
-| PATCH | `/v1/appStoreVersionLocalizations/{id}` | appStoreVersionLocalizations-update_instance | — |
-| GET | `/v1/appStoreVersionLocalizations/{id}/appPreviewSets` | appStoreVersionLocalizations-appPreviewSets-get_to_many_related | — |
-| GET | `/v1/appStoreVersionLocalizations/{id}/appScreenshotSets` | appStoreVersionLocalizations-appScreenshotSets-get_to_many_related | — |
-| POST | `/v1/appStoreVersionPhasedReleases` | appStoreVersionPhasedReleases-create_instance | — |
-| DELETE | `/v1/appStoreVersionPhasedReleases/{id}` | appStoreVersionPhasedReleases-delete_instance | — |
-| PATCH | `/v1/appStoreVersionPhasedReleases/{id}` | appStoreVersionPhasedReleases-update_instance | — |
-| POST | `/v1/appStoreVersionSubmissions` | appStoreVersionSubmissions-create_instance | — |
-| DELETE | `/v1/appStoreVersionSubmissions/{id}` | appStoreVersionSubmissions-delete_instance | — |
-| POST | `/v1/appStoreVersions` | appStoreVersions-create_instance | — |
-| DELETE | `/v1/appStoreVersions/{id}` | appStoreVersions-delete_instance | — |
-| GET | `/v1/appStoreVersions/{id}` | appStoreVersions-get_instance | — |
-| PATCH | `/v1/appStoreVersions/{id}` | appStoreVersions-update_instance | — |
-| GET | `/v1/appStoreVersions/{id}/ageRatingDeclaration` | appStoreVersions-ageRatingDeclaration-get_to_one_related | — |
-| GET | `/v1/appStoreVersions/{id}/appStoreReviewDetail` | appStoreVersions-appStoreReviewDetail-get_to_one_related | — |
-| GET | `/v1/appStoreVersions/{id}/appStoreVersionLocalizations` | appStoreVersions-appStoreVersionLocalizations-get_to_many_related | — |
-| GET | `/v1/appStoreVersions/{id}/appStoreVersionPhasedRelease` | appStoreVersions-appStoreVersionPhasedRelease-get_to_one_related | — |
-| GET | `/v1/appStoreVersions/{id}/appStoreVersionSubmission` | appStoreVersions-appStoreVersionSubmission-get_to_one_related | — |
-| GET | `/v1/appStoreVersions/{id}/build` | appStoreVersions-build-get_to_one_related | — |
-| GET | `/v1/appStoreVersions/{id}/idfaDeclaration` | appStoreVersions-idfaDeclaration-get_to_one_related | — |
-| GET | `/v1/appStoreVersions/{id}/relationships/build` | appStoreVersions-build-get_to_one_relationship | — |
-| PATCH | `/v1/appStoreVersions/{id}/relationships/build` | appStoreVersions-build-update_to_one_relationship | — |
-| GET | `/v1/appStoreVersions/{id}/routingAppCoverage` | appStoreVersions-routingAppCoverage-get_to_one_related | — |
-| GET | `/v1/apps` | apps-get_collection | — |
-| GET | `/v1/apps/{id}` | apps-get_instance | — |
-| PATCH | `/v1/apps/{id}` | apps-update_instance | — |
-| GET | `/v1/apps/{id}/appInfos` | apps-appInfos-get_to_many_related | — |
-| GET | `/v1/apps/{id}/appStoreVersions` | apps-appStoreVersions-get_to_many_related | — |
-| GET | `/v1/apps/{id}/availableTerritories` | apps-availableTerritories-get_to_many_related | — |
-| GET | `/v1/apps/{id}/betaAppLocalizations` | apps-betaAppLocalizations-get_to_many_related | — |
-| GET | `/v1/apps/{id}/betaAppReviewDetail` | apps-betaAppReviewDetail-get_to_one_related | — |
-| GET | `/v1/apps/{id}/betaGroups` | apps-betaGroups-get_to_many_related | — |
-| GET | `/v1/apps/{id}/betaLicenseAgreement` | apps-betaLicenseAgreement-get_to_one_related | — |
-| GET | `/v1/apps/{id}/builds` | apps-builds-get_to_many_related | — |
-| GET | `/v1/apps/{id}/endUserLicenseAgreement` | apps-endUserLicenseAgreement-get_to_one_related | — |
-| GET | `/v1/apps/{id}/gameCenterEnabledVersions` | apps-gameCenterEnabledVersions-get_to_many_related | — |
-| GET | `/v1/apps/{id}/inAppPurchases` | apps-inAppPurchases-get_to_many_related | — |
-| GET | `/v1/apps/{id}/perfPowerMetrics` | apps-perfPowerMetrics-get_to_many_related | — |
-| GET | `/v1/apps/{id}/preOrder` | apps-preOrder-get_to_one_related | — |
-| GET | `/v1/apps/{id}/preReleaseVersions` | apps-preReleaseVersions-get_to_many_related | — |
-| GET | `/v1/apps/{id}/prices` | apps-prices-get_to_many_related | — |
-| DELETE | `/v1/apps/{id}/relationships/betaTesters` | apps-betaTesters-delete_to_many_relationship | — |
-| GET | `/v1/betaAppLocalizations` | betaAppLocalizations-get_collection | — |
-| POST | `/v1/betaAppLocalizations` | betaAppLocalizations-create_instance | — |
-| DELETE | `/v1/betaAppLocalizations/{id}` | betaAppLocalizations-delete_instance | — |
-| GET | `/v1/betaAppLocalizations/{id}` | betaAppLocalizations-get_instance | — |
-| PATCH | `/v1/betaAppLocalizations/{id}` | betaAppLocalizations-update_instance | — |
-| GET | `/v1/betaAppLocalizations/{id}/app` | betaAppLocalizations-app-get_to_one_related | — |
-| GET | `/v1/betaAppReviewDetails` | betaAppReviewDetails-get_collection | — |
-| GET | `/v1/betaAppReviewDetails/{id}` | betaAppReviewDetails-get_instance | — |
-| PATCH | `/v1/betaAppReviewDetails/{id}` | betaAppReviewDetails-update_instance | — |
-| GET | `/v1/betaAppReviewDetails/{id}/app` | betaAppReviewDetails-app-get_to_one_related | — |
-| GET | `/v1/betaAppReviewSubmissions` | betaAppReviewSubmissions-get_collection | — |
-| POST | `/v1/betaAppReviewSubmissions` | betaAppReviewSubmissions-create_instance | — |
-| GET | `/v1/betaAppReviewSubmissions/{id}` | betaAppReviewSubmissions-get_instance | — |
-| GET | `/v1/betaAppReviewSubmissions/{id}/build` | betaAppReviewSubmissions-build-get_to_one_related | — |
-| GET | `/v1/betaBuildLocalizations` | betaBuildLocalizations-get_collection | — |
-| POST | `/v1/betaBuildLocalizations` | betaBuildLocalizations-create_instance | — |
-| DELETE | `/v1/betaBuildLocalizations/{id}` | betaBuildLocalizations-delete_instance | — |
-| GET | `/v1/betaBuildLocalizations/{id}` | betaBuildLocalizations-get_instance | — |
-| PATCH | `/v1/betaBuildLocalizations/{id}` | betaBuildLocalizations-update_instance | — |
-| GET | `/v1/betaBuildLocalizations/{id}/build` | betaBuildLocalizations-build-get_to_one_related | — |
-| GET | `/v1/betaGroups` | betaGroups-get_collection | — |
-| POST | `/v1/betaGroups` | betaGroups-create_instance | — |
-| DELETE | `/v1/betaGroups/{id}` | betaGroups-delete_instance | — |
-| GET | `/v1/betaGroups/{id}` | betaGroups-get_instance | — |
-| PATCH | `/v1/betaGroups/{id}` | betaGroups-update_instance | — |
-| GET | `/v1/betaGroups/{id}/app` | betaGroups-app-get_to_one_related | — |
-| GET | `/v1/betaGroups/{id}/betaTesters` | betaGroups-betaTesters-get_to_many_related | — |
-| GET | `/v1/betaGroups/{id}/builds` | betaGroups-builds-get_to_many_related | — |
-| DELETE | `/v1/betaGroups/{id}/relationships/betaTesters` | betaGroups-betaTesters-delete_to_many_relationship | — |
-| GET | `/v1/betaGroups/{id}/relationships/betaTesters` | betaGroups-betaTesters-get_to_many_relationship | — |
-| POST | `/v1/betaGroups/{id}/relationships/betaTesters` | betaGroups-betaTesters-create_to_many_relationship | — |
-| DELETE | `/v1/betaGroups/{id}/relationships/builds` | betaGroups-builds-delete_to_many_relationship | — |
-| GET | `/v1/betaGroups/{id}/relationships/builds` | betaGroups-builds-get_to_many_relationship | — |
-| POST | `/v1/betaGroups/{id}/relationships/builds` | betaGroups-builds-create_to_many_relationship | — |
-| GET | `/v1/betaLicenseAgreements` | betaLicenseAgreements-get_collection | — |
-| GET | `/v1/betaLicenseAgreements/{id}` | betaLicenseAgreements-get_instance | — |
-| PATCH | `/v1/betaLicenseAgreements/{id}` | betaLicenseAgreements-update_instance | — |
-| GET | `/v1/betaLicenseAgreements/{id}/app` | betaLicenseAgreements-app-get_to_one_related | — |
-| POST | `/v1/betaTesterInvitations` | betaTesterInvitations-create_instance | — |
-| GET | `/v1/betaTesters` | betaTesters-get_collection | — |
-| POST | `/v1/betaTesters` | betaTesters-create_instance | — |
-| DELETE | `/v1/betaTesters/{id}` | betaTesters-delete_instance | — |
-| GET | `/v1/betaTesters/{id}` | betaTesters-get_instance | — |
-| GET | `/v1/betaTesters/{id}/apps` | betaTesters-apps-get_to_many_related | — |
-| GET | `/v1/betaTesters/{id}/betaGroups` | betaTesters-betaGroups-get_to_many_related | — |
-| GET | `/v1/betaTesters/{id}/builds` | betaTesters-builds-get_to_many_related | — |
-| DELETE | `/v1/betaTesters/{id}/relationships/apps` | betaTesters-apps-delete_to_many_relationship | — |
-| GET | `/v1/betaTesters/{id}/relationships/apps` | betaTesters-apps-get_to_many_relationship | — |
-| DELETE | `/v1/betaTesters/{id}/relationships/betaGroups` | betaTesters-betaGroups-delete_to_many_relationship | — |
-| GET | `/v1/betaTesters/{id}/relationships/betaGroups` | betaTesters-betaGroups-get_to_many_relationship | — |
-| POST | `/v1/betaTesters/{id}/relationships/betaGroups` | betaTesters-betaGroups-create_to_many_relationship | — |
-| DELETE | `/v1/betaTesters/{id}/relationships/builds` | betaTesters-builds-delete_to_many_relationship | — |
-| GET | `/v1/betaTesters/{id}/relationships/builds` | betaTesters-builds-get_to_many_relationship | — |
-| POST | `/v1/betaTesters/{id}/relationships/builds` | betaTesters-builds-create_to_many_relationship | — |
-| GET | `/v1/buildBetaDetails` | buildBetaDetails-get_collection | — |
-| GET | `/v1/buildBetaDetails/{id}` | buildBetaDetails-get_instance | — |
-| PATCH | `/v1/buildBetaDetails/{id}` | buildBetaDetails-update_instance | — |
-| GET | `/v1/buildBetaDetails/{id}/build` | buildBetaDetails-build-get_to_one_related | — |
-| POST | `/v1/buildBetaNotifications` | buildBetaNotifications-create_instance | — |
-| GET | `/v1/builds` | builds-get_collection | — |
-| GET | `/v1/builds/{id}` | builds-get_instance | — |
-| PATCH | `/v1/builds/{id}` | builds-update_instance | — |
-| GET | `/v1/builds/{id}/app` | builds-app-get_to_one_related | — |
-| GET | `/v1/builds/{id}/appEncryptionDeclaration` | builds-appEncryptionDeclaration-get_to_one_related | — |
-| GET | `/v1/builds/{id}/appStoreVersion` | builds-appStoreVersion-get_to_one_related | — |
-| GET | `/v1/builds/{id}/betaAppReviewSubmission` | builds-betaAppReviewSubmission-get_to_one_related | — |
-| GET | `/v1/builds/{id}/betaBuildLocalizations` | builds-betaBuildLocalizations-get_to_many_related | — |
-| GET | `/v1/builds/{id}/buildBetaDetail` | builds-buildBetaDetail-get_to_one_related | — |
-| GET | `/v1/builds/{id}/diagnosticSignatures` | builds-diagnosticSignatures-get_to_many_related | — |
-| GET | `/v1/builds/{id}/icons` | builds-icons-get_to_many_related | — |
-| GET | `/v1/builds/{id}/individualTesters` | builds-individualTesters-get_to_many_related | — |
-| GET | `/v1/builds/{id}/perfPowerMetrics` | builds-perfPowerMetrics-get_to_many_related | — |
-| GET | `/v1/builds/{id}/preReleaseVersion` | builds-preReleaseVersion-get_to_one_related | — |
-| GET | `/v1/builds/{id}/relationships/appEncryptionDeclaration` | builds-appEncryptionDeclaration-get_to_one_relationship | — |
-| PATCH | `/v1/builds/{id}/relationships/appEncryptionDeclaration` | builds-appEncryptionDeclaration-update_to_one_relationship | — |
-| DELETE | `/v1/builds/{id}/relationships/betaGroups` | builds-betaGroups-delete_to_many_relationship | — |
-| POST | `/v1/builds/{id}/relationships/betaGroups` | builds-betaGroups-create_to_many_relationship | — |
-| DELETE | `/v1/builds/{id}/relationships/individualTesters` | builds-individualTesters-delete_to_many_relationship | — |
-| GET | `/v1/builds/{id}/relationships/individualTesters` | builds-individualTesters-get_to_many_relationship | — |
-| POST | `/v1/builds/{id}/relationships/individualTesters` | builds-individualTesters-create_to_many_relationship | — |
-| POST | `/v1/bundleIdCapabilities` | bundleIdCapabilities-create_instance | — |
-| DELETE | `/v1/bundleIdCapabilities/{id}` | bundleIdCapabilities-delete_instance | — |
-| PATCH | `/v1/bundleIdCapabilities/{id}` | bundleIdCapabilities-update_instance | — |
-| GET | `/v1/bundleIds` | bundleIds-get_collection | — |
-| POST | `/v1/bundleIds` | bundleIds-create_instance | — |
-| DELETE | `/v1/bundleIds/{id}` | bundleIds-delete_instance | — |
-| GET | `/v1/bundleIds/{id}` | bundleIds-get_instance | — |
-| PATCH | `/v1/bundleIds/{id}` | bundleIds-update_instance | — |
-| GET | `/v1/bundleIds/{id}/app` | bundleIds-app-get_to_one_related | — |
-| GET | `/v1/bundleIds/{id}/bundleIdCapabilities` | bundleIds-bundleIdCapabilities-get_to_many_related | — |
-| GET | `/v1/bundleIds/{id}/profiles` | bundleIds-profiles-get_to_many_related | — |
-| GET | `/v1/certificates` | certificates-get_collection | — |
-| POST | `/v1/certificates` | certificates-create_instance | — |
-| DELETE | `/v1/certificates/{id}` | certificates-delete_instance | — |
-| GET | `/v1/certificates/{id}` | certificates-get_instance | — |
-| GET | `/v1/devices` | devices-get_collection | — |
-| POST | `/v1/devices` | devices-create_instance | — |
-| GET | `/v1/devices/{id}` | devices-get_instance | — |
-| PATCH | `/v1/devices/{id}` | devices-update_instance | — |
-| GET | `/v1/diagnosticSignatures/{id}/logs` | diagnosticSignatures-logs-get_to_many_related | — |
-| POST | `/v1/endUserLicenseAgreements` | endUserLicenseAgreements-create_instance | — |
-| DELETE | `/v1/endUserLicenseAgreements/{id}` | endUserLicenseAgreements-delete_instance | — |
-| GET | `/v1/endUserLicenseAgreements/{id}` | endUserLicenseAgreements-get_instance | — |
-| PATCH | `/v1/endUserLicenseAgreements/{id}` | endUserLicenseAgreements-update_instance | — |
-| GET | `/v1/endUserLicenseAgreements/{id}/territories` | endUserLicenseAgreements-territories-get_to_many_related | — |
-| GET | `/v1/financeReports` | financeReports-get_collection | — |
-| GET | `/v1/gameCenterEnabledVersions/{id}/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-get_to_many_related | — |
-| DELETE | `/v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-delete_to_many_relationship | — |
-| GET | `/v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-get_to_many_relationship | — |
-| PATCH | `/v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-replace_to_many_relationship | — |
-| POST | `/v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-create_to_many_relationship | — |
-| POST | `/v1/idfaDeclarations` | idfaDeclarations-create_instance | — |
-| DELETE | `/v1/idfaDeclarations/{id}` | idfaDeclarations-delete_instance | — |
-| PATCH | `/v1/idfaDeclarations/{id}` | idfaDeclarations-update_instance | — |
-| GET | `/v1/inAppPurchases/{id}` | inAppPurchases-get_instance | — |
-| GET | `/v1/preReleaseVersions` | preReleaseVersions-get_collection | — |
-| GET | `/v1/preReleaseVersions/{id}` | preReleaseVersions-get_instance | — |
-| GET | `/v1/preReleaseVersions/{id}/app` | preReleaseVersions-app-get_to_one_related | — |
-| GET | `/v1/preReleaseVersions/{id}/builds` | preReleaseVersions-builds-get_to_many_related | — |
-| GET | `/v1/profiles` | profiles-get_collection | — |
-| POST | `/v1/profiles` | profiles-create_instance | — |
-| DELETE | `/v1/profiles/{id}` | profiles-delete_instance | — |
-| GET | `/v1/profiles/{id}` | profiles-get_instance | — |
-| GET | `/v1/profiles/{id}/bundleId` | profiles-bundleId-get_to_one_related | — |
-| GET | `/v1/profiles/{id}/certificates` | profiles-certificates-get_to_many_related | — |
-| GET | `/v1/profiles/{id}/devices` | profiles-devices-get_to_many_related | — |
-| POST | `/v1/routingAppCoverages` | routingAppCoverages-create_instance | — |
-| DELETE | `/v1/routingAppCoverages/{id}` | routingAppCoverages-delete_instance | — |
-| GET | `/v1/routingAppCoverages/{id}` | routingAppCoverages-get_instance | — |
-| PATCH | `/v1/routingAppCoverages/{id}` | routingAppCoverages-update_instance | — |
-| GET | `/v1/salesReports` | salesReports-get_collection | — |
-| GET | `/v1/territories` | territories-get_collection | — |
-| GET | `/v1/userInvitations` | userInvitations-get_collection | — |
-| POST | `/v1/userInvitations` | userInvitations-create_instance | — |
-| DELETE | `/v1/userInvitations/{id}` | userInvitations-delete_instance | — |
-| GET | `/v1/userInvitations/{id}` | userInvitations-get_instance | — |
-| GET | `/v1/userInvitations/{id}/visibleApps` | userInvitations-visibleApps-get_to_many_related | — |
-| GET | `/v1/users` | users-get_collection | — |
-| DELETE | `/v1/users/{id}` | users-delete_instance | — |
-| GET | `/v1/users/{id}` | users-get_instance | — |
-| PATCH | `/v1/users/{id}` | users-update_instance | — |
-| DELETE | `/v1/users/{id}/relationships/visibleApps` | users-visibleApps-delete_to_many_relationship | — |
-| GET | `/v1/users/{id}/relationships/visibleApps` | users-visibleApps-get_to_many_relationship | — |
-| PATCH | `/v1/users/{id}/relationships/visibleApps` | users-visibleApps-replace_to_many_relationship | — |
-| POST | `/v1/users/{id}/relationships/visibleApps` | users-visibleApps-create_to_many_relationship | — |
-| GET | `/v1/users/{id}/visibleApps` | users-visibleApps-get_to_many_related | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| PATCH | `/v1/ageRatingDeclarations/{id}` | ageRatingDeclarations-update_instance | `id`*, body*: AgeRatingDeclarationUpdateRequest | AgeRatingDeclarationResponse |  | — |
+| GET | `/v1/appCategories` | appCategories-get_collection | `filter[platforms]`, `exists[parent]`, `fields[appCategories]`, `limit`, `include`, `limit[subcategories]` | AppCategoriesResponse | yes | — |
+| GET | `/v1/appCategories/{id}` | appCategories-get_instance | `id`*, `fields[appCategories]`, `include`, `limit[subcategories]` | AppCategoryResponse | yes | — |
+| GET | `/v1/appCategories/{id}/parent` | appCategories-parent-get_to_one_related | `id`*, `fields[appCategories]` | AppCategoryResponse | yes | — |
+| GET | `/v1/appCategories/{id}/subcategories` | appCategories-subcategories-get_to_many_related | `id`*, `fields[appCategories]`, `limit` | AppCategoriesResponse | yes | — |
+| GET | `/v1/appEncryptionDeclarations` | appEncryptionDeclarations-get_collection | `filter[platform]`, `filter[app]`, `filter[builds]`, `fields[appEncryptionDeclarations]`, `limit`, `include`, `fields[apps]` | AppEncryptionDeclarationsResponse | yes | — |
+| GET | `/v1/appEncryptionDeclarations/{id}` | appEncryptionDeclarations-get_instance | `id`*, `fields[appEncryptionDeclarations]`, `include`, `fields[apps]` | AppEncryptionDeclarationResponse | yes | — |
+| GET | `/v1/appEncryptionDeclarations/{id}/app` | appEncryptionDeclarations-app-get_to_one_related | `id`*, `fields[apps]` | AppResponse | yes | — |
+| POST | `/v1/appEncryptionDeclarations/{id}/relationships/builds` | appEncryptionDeclarations-builds-create_to_many_relationship | `id`*, body*: AppEncryptionDeclarationBuildsLinkagesRequest | — |  | — |
+| POST | `/v1/appInfoLocalizations` | appInfoLocalizations-create_instance | body*: AppInfoLocalizationCreateRequest | AppInfoLocalizationResponse |  | — |
+| GET | `/v1/appInfoLocalizations/{id}` | appInfoLocalizations-get_instance | `id`*, `fields[appInfoLocalizations]`, `include` | AppInfoLocalizationResponse | yes | — |
+| DELETE | `/v1/appInfoLocalizations/{id}` | appInfoLocalizations-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/appInfoLocalizations/{id}` | appInfoLocalizations-update_instance | `id`*, body*: AppInfoLocalizationUpdateRequest | AppInfoLocalizationResponse |  | — |
+| GET | `/v1/appInfos/{id}` | appInfos-get_instance | `id`*, `fields[appInfos]`, `include`, `fields[ageRatingDeclarations]`, `fields[appCategories]`, `fields[appInfoLocalizations]`, `limit[appInfoLocalizations]` | AppInfoResponse | yes | — |
+| PATCH | `/v1/appInfos/{id}` | appInfos-update_instance | `id`*, body*: AppInfoUpdateRequest | AppInfoResponse |  | — |
+| GET | `/v1/appInfos/{id}/ageRatingDeclaration` | appInfos-ageRatingDeclaration-get_to_one_related | `id`*, `fields[ageRatingDeclarations]` | AgeRatingDeclarationResponse | yes | — |
+| GET | `/v1/appInfos/{id}/appInfoLocalizations` | appInfos-appInfoLocalizations-get_to_many_related | `id`*, `filter[locale]`, `fields[appInfos]`, `fields[appInfoLocalizations]`, `limit`, `include` | AppInfoLocalizationsResponse | yes | — |
+| GET | `/v1/appInfos/{id}/primaryCategory` | appInfos-primaryCategory-get_to_one_related | `id`*, `fields[appCategories]` | AppCategoryResponse | yes | — |
+| GET | `/v1/appInfos/{id}/primarySubcategoryOne` | appInfos-primarySubcategoryOne-get_to_one_related | `id`*, `fields[appCategories]` | AppCategoryResponse | yes | — |
+| GET | `/v1/appInfos/{id}/primarySubcategoryTwo` | appInfos-primarySubcategoryTwo-get_to_one_related | `id`*, `fields[appCategories]` | AppCategoryResponse | yes | — |
+| GET | `/v1/appInfos/{id}/secondaryCategory` | appInfos-secondaryCategory-get_to_one_related | `id`*, `fields[appCategories]` | AppCategoryResponse | yes | — |
+| GET | `/v1/appInfos/{id}/secondarySubcategoryOne` | appInfos-secondarySubcategoryOne-get_to_one_related | `id`*, `fields[appCategories]` | AppCategoryResponse | yes | — |
+| GET | `/v1/appInfos/{id}/secondarySubcategoryTwo` | appInfos-secondarySubcategoryTwo-get_to_one_related | `id`*, `fields[appCategories]` | AppCategoryResponse | yes | — |
+| POST | `/v1/appPreOrders` | appPreOrders-create_instance | body*: AppPreOrderCreateRequest | AppPreOrderResponse |  | — |
+| GET | `/v1/appPreOrders/{id}` | appPreOrders-get_instance | `id`*, `fields[appPreOrders]`, `include` | AppPreOrderResponse | yes | — |
+| DELETE | `/v1/appPreOrders/{id}` | appPreOrders-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/appPreOrders/{id}` | appPreOrders-update_instance | `id`*, body*: AppPreOrderUpdateRequest | AppPreOrderResponse |  | — |
+| POST | `/v1/appPreviewSets` | appPreviewSets-create_instance | body*: AppPreviewSetCreateRequest | AppPreviewSetResponse |  | — |
+| GET | `/v1/appPreviewSets/{id}` | appPreviewSets-get_instance | `id`*, `fields[appPreviewSets]`, `include`, `fields[appPreviews]`, `limit[appPreviews]` | AppPreviewSetResponse | yes | — |
+| DELETE | `/v1/appPreviewSets/{id}` | appPreviewSets-delete_instance | `id`* | — |  | — |
+| GET | `/v1/appPreviewSets/{id}/appPreviews` | appPreviewSets-appPreviews-get_to_many_related | `id`*, `fields[appPreviews]`, `fields[appPreviewSets]`, `limit`, `include` | AppPreviewsResponse | yes | — |
+| GET | `/v1/appPreviewSets/{id}/relationships/appPreviews` | appPreviewSets-appPreviews-get_to_many_relationship | `id`*, `limit` | AppPreviewSetAppPreviewsLinkagesResponse | yes | — |
+| PATCH | `/v1/appPreviewSets/{id}/relationships/appPreviews` | appPreviewSets-appPreviews-replace_to_many_relationship | `id`*, body*: AppPreviewSetAppPreviewsLinkagesRequest | — |  | — |
+| POST | `/v1/appPreviews` | appPreviews-create_instance | body*: AppPreviewCreateRequest | AppPreviewResponse |  | — |
+| GET | `/v1/appPreviews/{id}` | appPreviews-get_instance | `id`*, `fields[appPreviews]`, `include` | AppPreviewResponse | yes | — |
+| DELETE | `/v1/appPreviews/{id}` | appPreviews-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/appPreviews/{id}` | appPreviews-update_instance | `id`*, body*: AppPreviewUpdateRequest | AppPreviewResponse |  | — |
+| GET | `/v1/appPricePoints` | appPricePoints-get_collection | `filter[priceTier]`, `filter[territory]`, `fields[appPricePoints]`, `limit`, `include`, `fields[territories]` | AppPricePointsResponse | yes | — |
+| GET | `/v1/appPricePoints/{id}` | appPricePoints-get_instance | `id`*, `fields[appPricePoints]`, `include`, `fields[territories]` | AppPricePointResponse | yes | — |
+| GET | `/v1/appPricePoints/{id}/territory` | appPricePoints-territory-get_to_one_related | `id`*, `fields[territories]` | TerritoryResponse | yes | — |
+| GET | `/v1/appPriceTiers` | appPriceTiers-get_collection | `filter[id]`, `fields[appPriceTiers]`, `limit`, `include`, `fields[appPricePoints]`, `limit[pricePoints]` | AppPriceTiersResponse | yes | — |
+| GET | `/v1/appPriceTiers/{id}` | appPriceTiers-get_instance | `id`*, `fields[appPriceTiers]`, `include`, `fields[appPricePoints]`, `limit[pricePoints]` | AppPriceTierResponse | yes | — |
+| GET | `/v1/appPriceTiers/{id}/pricePoints` | appPriceTiers-pricePoints-get_to_many_related | `id`*, `fields[appPricePoints]`, `limit` | AppPricePointsResponse | yes | — |
+| GET | `/v1/appPrices/{id}` | appPrices-get_instance | `id`*, `fields[appPrices]`, `include` | AppPriceResponse | yes | — |
+| POST | `/v1/appScreenshotSets` | appScreenshotSets-create_instance | body*: AppScreenshotSetCreateRequest | AppScreenshotSetResponse |  | — |
+| GET | `/v1/appScreenshotSets/{id}` | appScreenshotSets-get_instance | `id`*, `fields[appScreenshotSets]`, `include`, `fields[appScreenshots]`, `limit[appScreenshots]` | AppScreenshotSetResponse | yes | — |
+| DELETE | `/v1/appScreenshotSets/{id}` | appScreenshotSets-delete_instance | `id`* | — |  | — |
+| GET | `/v1/appScreenshotSets/{id}/appScreenshots` | appScreenshotSets-appScreenshots-get_to_many_related | `id`*, `fields[appScreenshotSets]`, `fields[appScreenshots]`, `limit`, `include` | AppScreenshotsResponse | yes | — |
+| GET | `/v1/appScreenshotSets/{id}/relationships/appScreenshots` | appScreenshotSets-appScreenshots-get_to_many_relationship | `id`*, `limit` | AppScreenshotSetAppScreenshotsLinkagesResponse | yes | — |
+| PATCH | `/v1/appScreenshotSets/{id}/relationships/appScreenshots` | appScreenshotSets-appScreenshots-replace_to_many_relationship | `id`*, body*: AppScreenshotSetAppScreenshotsLinkagesRequest | — |  | — |
+| POST | `/v1/appScreenshots` | appScreenshots-create_instance | body*: AppScreenshotCreateRequest | AppScreenshotResponse |  | — |
+| GET | `/v1/appScreenshots/{id}` | appScreenshots-get_instance | `id`*, `fields[appScreenshots]`, `include` | AppScreenshotResponse | yes | — |
+| DELETE | `/v1/appScreenshots/{id}` | appScreenshots-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/appScreenshots/{id}` | appScreenshots-update_instance | `id`*, body*: AppScreenshotUpdateRequest | AppScreenshotResponse |  | — |
+| POST | `/v1/appStoreReviewAttachments` | appStoreReviewAttachments-create_instance | body*: AppStoreReviewAttachmentCreateRequest | AppStoreReviewAttachmentResponse |  | — |
+| GET | `/v1/appStoreReviewAttachments/{id}` | appStoreReviewAttachments-get_instance | `id`*, `fields[appStoreReviewAttachments]`, `include` | AppStoreReviewAttachmentResponse | yes | — |
+| DELETE | `/v1/appStoreReviewAttachments/{id}` | appStoreReviewAttachments-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/appStoreReviewAttachments/{id}` | appStoreReviewAttachments-update_instance | `id`*, body*: AppStoreReviewAttachmentUpdateRequest | AppStoreReviewAttachmentResponse |  | — |
+| POST | `/v1/appStoreReviewDetails` | appStoreReviewDetails-create_instance | body*: AppStoreReviewDetailCreateRequest | AppStoreReviewDetailResponse |  | — |
+| GET | `/v1/appStoreReviewDetails/{id}` | appStoreReviewDetails-get_instance | `id`*, `fields[appStoreReviewDetails]`, `include`, `fields[appStoreReviewAttachments]`, `limit[appStoreReviewAttachments]` | AppStoreReviewDetailResponse | yes | — |
+| PATCH | `/v1/appStoreReviewDetails/{id}` | appStoreReviewDetails-update_instance | `id`*, body*: AppStoreReviewDetailUpdateRequest | AppStoreReviewDetailResponse |  | — |
+| GET | `/v1/appStoreReviewDetails/{id}/appStoreReviewAttachments` | appStoreReviewDetails-appStoreReviewAttachments-get_to_many_related | `id`*, `fields[appStoreReviewDetails]`, `fields[appStoreReviewAttachments]`, `limit`, `include` | AppStoreReviewAttachmentsResponse | yes | — |
+| POST | `/v1/appStoreVersionLocalizations` | appStoreVersionLocalizations-create_instance | body*: AppStoreVersionLocalizationCreateRequest | AppStoreVersionLocalizationResponse |  | — |
+| GET | `/v1/appStoreVersionLocalizations/{id}` | appStoreVersionLocalizations-get_instance | `id`*, `fields[appStoreVersionLocalizations]`, `include`, `fields[appScreenshotSets]`, `fields[appPreviewSets]`, `limit[appPreviewSets]`, `limit[appScreenshotSets]` | AppStoreVersionLocalizationResponse | yes | — |
+| DELETE | `/v1/appStoreVersionLocalizations/{id}` | appStoreVersionLocalizations-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/appStoreVersionLocalizations/{id}` | appStoreVersionLocalizations-update_instance | `id`*, body*: AppStoreVersionLocalizationUpdateRequest | AppStoreVersionLocalizationResponse |  | — |
+| GET | `/v1/appStoreVersionLocalizations/{id}/appPreviewSets` | appStoreVersionLocalizations-appPreviewSets-get_to_many_related | `id`*, `filter[previewType]`, `fields[appStoreVersionLocalizations]`, `fields[appPreviews]`, `fields[appPreviewSets]`, `limit`, `include` | AppPreviewSetsResponse | yes | — |
+| GET | `/v1/appStoreVersionLocalizations/{id}/appScreenshotSets` | appStoreVersionLocalizations-appScreenshotSets-get_to_many_related | `id`*, `filter[screenshotDisplayType]`, `fields[appStoreVersionLocalizations]`, `fields[appScreenshotSets]`, `fields[appScreenshots]`, `limit`, `include` | AppScreenshotSetsResponse | yes | — |
+| POST | `/v1/appStoreVersionPhasedReleases` | appStoreVersionPhasedReleases-create_instance | body*: AppStoreVersionPhasedReleaseCreateRequest | AppStoreVersionPhasedReleaseResponse |  | — |
+| DELETE | `/v1/appStoreVersionPhasedReleases/{id}` | appStoreVersionPhasedReleases-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/appStoreVersionPhasedReleases/{id}` | appStoreVersionPhasedReleases-update_instance | `id`*, body*: AppStoreVersionPhasedReleaseUpdateRequest | AppStoreVersionPhasedReleaseResponse |  | — |
+| POST | `/v1/appStoreVersionSubmissions` | appStoreVersionSubmissions-create_instance | body*: AppStoreVersionSubmissionCreateRequest | AppStoreVersionSubmissionResponse |  | — |
+| DELETE | `/v1/appStoreVersionSubmissions/{id}` | appStoreVersionSubmissions-delete_instance | `id`* | — |  | — |
+| POST | `/v1/appStoreVersions` | appStoreVersions-create_instance | body*: AppStoreVersionCreateRequest | AppStoreVersionResponse |  | — |
+| GET | `/v1/appStoreVersions/{id}` | appStoreVersions-get_instance | `id`*, `fields[appStoreVersions]`, `include`, `fields[appStoreVersionLocalizations]`, `fields[idfaDeclarations]`, `fields[routingAppCoverages]`, `fields[appStoreVersionPhasedReleases]`, `fields[ageRatingDeclarations]`, `fields[appStoreReviewDetails]`, `fields[builds]`, `fields[appStoreVersionSubmissions]`, `limit[appStoreVersionLocalizations]` | AppStoreVersionResponse | yes | — |
+| DELETE | `/v1/appStoreVersions/{id}` | appStoreVersions-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/appStoreVersions/{id}` | appStoreVersions-update_instance | `id`*, body*: AppStoreVersionUpdateRequest | AppStoreVersionResponse |  | — |
+| GET | `/v1/appStoreVersions/{id}/ageRatingDeclaration` | appStoreVersions-ageRatingDeclaration-get_to_one_related | `id`*, `fields[ageRatingDeclarations]` | AgeRatingDeclarationResponse | yes | — |
+| GET | `/v1/appStoreVersions/{id}/appStoreReviewDetail` | appStoreVersions-appStoreReviewDetail-get_to_one_related | `id`*, `fields[appStoreReviewDetails]`, `fields[appStoreVersions]`, `fields[appStoreReviewAttachments]`, `include` | AppStoreReviewDetailResponse | yes | — |
+| GET | `/v1/appStoreVersions/{id}/appStoreVersionLocalizations` | appStoreVersions-appStoreVersionLocalizations-get_to_many_related | `id`*, `fields[appStoreVersionLocalizations]`, `limit` | AppStoreVersionLocalizationsResponse | yes | — |
+| GET | `/v1/appStoreVersions/{id}/appStoreVersionPhasedRelease` | appStoreVersions-appStoreVersionPhasedRelease-get_to_one_related | `id`*, `fields[appStoreVersionPhasedReleases]` | AppStoreVersionPhasedReleaseResponse | yes | — |
+| GET | `/v1/appStoreVersions/{id}/appStoreVersionSubmission` | appStoreVersions-appStoreVersionSubmission-get_to_one_related | `id`*, `fields[appStoreVersions]`, `fields[appStoreVersionSubmissions]`, `include` | AppStoreVersionSubmissionResponse | yes | — |
+| GET | `/v1/appStoreVersions/{id}/build` | appStoreVersions-build-get_to_one_related | `id`*, `fields[builds]` | BuildResponse | yes | — |
+| GET | `/v1/appStoreVersions/{id}/idfaDeclaration` | appStoreVersions-idfaDeclaration-get_to_one_related | `id`*, `fields[idfaDeclarations]` | IdfaDeclarationResponse | yes | — |
+| GET | `/v1/appStoreVersions/{id}/relationships/build` | appStoreVersions-build-get_to_one_relationship | `id`* | AppStoreVersionBuildLinkageResponse | yes | — |
+| PATCH | `/v1/appStoreVersions/{id}/relationships/build` | appStoreVersions-build-update_to_one_relationship | `id`*, body*: AppStoreVersionBuildLinkageRequest | — |  | — |
+| GET | `/v1/appStoreVersions/{id}/routingAppCoverage` | appStoreVersions-routingAppCoverage-get_to_one_related | `id`*, `fields[routingAppCoverages]` | RoutingAppCoverageResponse | yes | — |
+| GET | `/v1/apps` | apps-get_collection | `filter[appStoreVersions.appStoreState]`, `filter[appStoreVersions.platform]`, `filter[bundleId]`, `filter[name]`, `filter[sku]`, `filter[appStoreVersions]`, `filter[id]`, `exists[gameCenterEnabledVersions]`, `sort`, `fields[apps]`, `limit`, `include`, `fields[betaGroups]`, `fields[perfPowerMetrics]`, `fields[appInfos]`, `fields[appPreOrders]`, `fields[preReleaseVersions]`, `fields[appPrices]`, `fields[inAppPurchases]`, `fields[betaAppReviewDetails]`, `fields[territories]`, `fields[gameCenterEnabledVersions]`, `fields[appStoreVersions]`, `fields[builds]`, `fields[betaAppLocalizations]`, `fields[betaLicenseAgreements]`, `fields[endUserLicenseAgreements]`, `limit[appInfos]`, `limit[appStoreVersions]`, `limit[availableTerritories]`, `limit[betaAppLocalizations]`, `limit[betaGroups]`, `limit[builds]`, `limit[gameCenterEnabledVersions]`, `limit[inAppPurchases]`, `limit[preReleaseVersions]`, `limit[prices]` | AppsResponse | yes | — |
+| GET | `/v1/apps/{id}` | apps-get_instance | `id`*, `fields[apps]`, `include`, `fields[betaGroups]`, `fields[perfPowerMetrics]`, `fields[appInfos]`, `fields[appPreOrders]`, `fields[preReleaseVersions]`, `fields[appPrices]`, `fields[inAppPurchases]`, `fields[betaAppReviewDetails]`, `fields[territories]`, `fields[gameCenterEnabledVersions]`, `fields[appStoreVersions]`, `fields[builds]`, `fields[betaAppLocalizations]`, `fields[betaLicenseAgreements]`, `fields[endUserLicenseAgreements]`, `limit[appInfos]`, `limit[appStoreVersions]`, `limit[availableTerritories]`, `limit[betaAppLocalizations]`, `limit[betaGroups]`, `limit[builds]`, `limit[gameCenterEnabledVersions]`, `limit[inAppPurchases]`, `limit[preReleaseVersions]`, `limit[prices]` | AppResponse | yes | — |
+| PATCH | `/v1/apps/{id}` | apps-update_instance | `id`*, body*: AppUpdateRequest | AppResponse |  | — |
+| GET | `/v1/apps/{id}/appInfos` | apps-appInfos-get_to_many_related | `id`*, `fields[ageRatingDeclarations]`, `fields[appInfos]`, `fields[appCategories]`, `fields[appInfoLocalizations]`, `fields[apps]`, `limit`, `include` | AppInfosResponse | yes | — |
+| GET | `/v1/apps/{id}/appStoreVersions` | apps-appStoreVersions-get_to_many_related | `id`*, `filter[appStoreState]`, `filter[platform]`, `filter[versionString]`, `filter[id]`, `fields[idfaDeclarations]`, `fields[appStoreVersionLocalizations]`, `fields[routingAppCoverages]`, `fields[appStoreVersionPhasedReleases]`, `fields[ageRatingDeclarations]`, `fields[appStoreReviewDetails]`, `fields[appStoreVersions]`, `fields[builds]`, `fields[appStoreVersionSubmissions]`, `fields[apps]`, `limit`, `include` | AppStoreVersionsResponse | yes | — |
+| GET | `/v1/apps/{id}/availableTerritories` | apps-availableTerritories-get_to_many_related | `id`*, `fields[territories]`, `limit` | TerritoriesResponse | yes | — |
+| GET | `/v1/apps/{id}/betaAppLocalizations` | apps-betaAppLocalizations-get_to_many_related | `id`*, `fields[betaAppLocalizations]`, `limit` | BetaAppLocalizationsResponse | yes | — |
+| GET | `/v1/apps/{id}/betaAppReviewDetail` | apps-betaAppReviewDetail-get_to_one_related | `id`*, `fields[betaAppReviewDetails]` | BetaAppReviewDetailResponse | yes | — |
+| GET | `/v1/apps/{id}/betaGroups` | apps-betaGroups-get_to_many_related | `id`*, `fields[betaGroups]`, `limit` | BetaGroupsResponse | yes | — |
+| GET | `/v1/apps/{id}/betaLicenseAgreement` | apps-betaLicenseAgreement-get_to_one_related | `id`*, `fields[betaLicenseAgreements]` | BetaLicenseAgreementResponse | yes | — |
+| GET | `/v1/apps/{id}/builds` | apps-builds-get_to_many_related | `id`*, `fields[builds]`, `limit` | BuildsResponse | yes | — |
+| GET | `/v1/apps/{id}/endUserLicenseAgreement` | apps-endUserLicenseAgreement-get_to_one_related | `id`*, `fields[endUserLicenseAgreements]` | EndUserLicenseAgreementResponse | yes | — |
+| GET | `/v1/apps/{id}/gameCenterEnabledVersions` | apps-gameCenterEnabledVersions-get_to_many_related | `id`*, `filter[platform]`, `filter[versionString]`, `filter[id]`, `sort`, `fields[gameCenterEnabledVersions]`, `fields[apps]`, `limit`, `include` | GameCenterEnabledVersionsResponse | yes | — |
+| GET | `/v1/apps/{id}/inAppPurchases` | apps-inAppPurchases-get_to_many_related | `id`*, `filter[inAppPurchaseType]`, `filter[canBeSubmitted]`, `sort`, `fields[inAppPurchases]`, `fields[apps]`, `limit`, `include` | InAppPurchasesResponse | yes | — |
+| GET | `/v1/apps/{id}/perfPowerMetrics` | apps-perfPowerMetrics-get_to_many_related | `id`*, `filter[deviceType]`, `filter[metricType]`, `filter[platform]` | PerfPowerMetricsResponse | yes | — |
+| GET | `/v1/apps/{id}/preOrder` | apps-preOrder-get_to_one_related | `id`*, `fields[appPreOrders]` | AppPreOrderResponse | yes | — |
+| GET | `/v1/apps/{id}/preReleaseVersions` | apps-preReleaseVersions-get_to_many_related | `id`*, `fields[preReleaseVersions]`, `limit` | PreReleaseVersionsResponse | yes | — |
+| GET | `/v1/apps/{id}/prices` | apps-prices-get_to_many_related | `id`*, `fields[appPrices]`, `fields[appPriceTiers]`, `fields[apps]`, `limit`, `include` | AppPricesResponse | yes | — |
+| DELETE | `/v1/apps/{id}/relationships/betaTesters` | apps-betaTesters-delete_to_many_relationship | `id`*, body*: AppBetaTestersLinkagesRequest | — |  | — |
+| GET | `/v1/betaAppLocalizations` | betaAppLocalizations-get_collection | `filter[locale]`, `filter[app]`, `fields[betaAppLocalizations]`, `limit`, `include`, `fields[apps]` | BetaAppLocalizationsResponse | yes | — |
+| POST | `/v1/betaAppLocalizations` | betaAppLocalizations-create_instance | body*: BetaAppLocalizationCreateRequest | BetaAppLocalizationResponse |  | — |
+| GET | `/v1/betaAppLocalizations/{id}` | betaAppLocalizations-get_instance | `id`*, `fields[betaAppLocalizations]`, `include`, `fields[apps]` | BetaAppLocalizationResponse | yes | — |
+| DELETE | `/v1/betaAppLocalizations/{id}` | betaAppLocalizations-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/betaAppLocalizations/{id}` | betaAppLocalizations-update_instance | `id`*, body*: BetaAppLocalizationUpdateRequest | BetaAppLocalizationResponse |  | — |
+| GET | `/v1/betaAppLocalizations/{id}/app` | betaAppLocalizations-app-get_to_one_related | `id`*, `fields[apps]` | AppResponse | yes | — |
+| GET | `/v1/betaAppReviewDetails` | betaAppReviewDetails-get_collection | `filter[app]`*, `fields[betaAppReviewDetails]`, `limit`, `include`, `fields[apps]` | BetaAppReviewDetailsResponse | yes | — |
+| GET | `/v1/betaAppReviewDetails/{id}` | betaAppReviewDetails-get_instance | `id`*, `fields[betaAppReviewDetails]`, `include`, `fields[apps]` | BetaAppReviewDetailResponse | yes | — |
+| PATCH | `/v1/betaAppReviewDetails/{id}` | betaAppReviewDetails-update_instance | `id`*, body*: BetaAppReviewDetailUpdateRequest | BetaAppReviewDetailResponse |  | — |
+| GET | `/v1/betaAppReviewDetails/{id}/app` | betaAppReviewDetails-app-get_to_one_related | `id`*, `fields[apps]` | AppResponse | yes | — |
+| GET | `/v1/betaAppReviewSubmissions` | betaAppReviewSubmissions-get_collection | `filter[betaReviewState]`, `filter[build]`*, `fields[betaAppReviewSubmissions]`, `limit`, `include`, `fields[builds]` | BetaAppReviewSubmissionsResponse | yes | — |
+| POST | `/v1/betaAppReviewSubmissions` | betaAppReviewSubmissions-create_instance | body*: BetaAppReviewSubmissionCreateRequest | BetaAppReviewSubmissionResponse |  | — |
+| GET | `/v1/betaAppReviewSubmissions/{id}` | betaAppReviewSubmissions-get_instance | `id`*, `fields[betaAppReviewSubmissions]`, `include`, `fields[builds]` | BetaAppReviewSubmissionResponse | yes | — |
+| GET | `/v1/betaAppReviewSubmissions/{id}/build` | betaAppReviewSubmissions-build-get_to_one_related | `id`*, `fields[builds]` | BuildResponse | yes | — |
+| GET | `/v1/betaBuildLocalizations` | betaBuildLocalizations-get_collection | `filter[locale]`, `filter[build]`, `fields[betaBuildLocalizations]`, `limit`, `include`, `fields[builds]` | BetaBuildLocalizationsResponse | yes | — |
+| POST | `/v1/betaBuildLocalizations` | betaBuildLocalizations-create_instance | body*: BetaBuildLocalizationCreateRequest | BetaBuildLocalizationResponse |  | — |
+| GET | `/v1/betaBuildLocalizations/{id}` | betaBuildLocalizations-get_instance | `id`*, `fields[betaBuildLocalizations]`, `include`, `fields[builds]` | BetaBuildLocalizationResponse | yes | — |
+| DELETE | `/v1/betaBuildLocalizations/{id}` | betaBuildLocalizations-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/betaBuildLocalizations/{id}` | betaBuildLocalizations-update_instance | `id`*, body*: BetaBuildLocalizationUpdateRequest | BetaBuildLocalizationResponse |  | — |
+| GET | `/v1/betaBuildLocalizations/{id}/build` | betaBuildLocalizations-build-get_to_one_related | `id`*, `fields[builds]` | BuildResponse | yes | — |
+| GET | `/v1/betaGroups` | betaGroups-get_collection | `filter[isInternalGroup]`, `filter[name]`, `filter[publicLink]`, `filter[publicLinkEnabled]`, `filter[publicLinkLimitEnabled]`, `filter[app]`, `filter[builds]`, `filter[id]`, `sort`, `fields[betaGroups]`, `limit`, `include`, `fields[builds]`, `fields[betaTesters]`, `fields[apps]`, `limit[betaTesters]`, `limit[builds]` | BetaGroupsResponse | yes | — |
+| POST | `/v1/betaGroups` | betaGroups-create_instance | body*: BetaGroupCreateRequest | BetaGroupResponse |  | — |
+| GET | `/v1/betaGroups/{id}` | betaGroups-get_instance | `id`*, `fields[betaGroups]`, `include`, `fields[builds]`, `fields[betaTesters]`, `fields[apps]`, `limit[betaTesters]`, `limit[builds]` | BetaGroupResponse | yes | — |
+| DELETE | `/v1/betaGroups/{id}` | betaGroups-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/betaGroups/{id}` | betaGroups-update_instance | `id`*, body*: BetaGroupUpdateRequest | BetaGroupResponse |  | — |
+| GET | `/v1/betaGroups/{id}/app` | betaGroups-app-get_to_one_related | `id`*, `fields[apps]` | AppResponse | yes | — |
+| GET | `/v1/betaGroups/{id}/betaTesters` | betaGroups-betaTesters-get_to_many_related | `id`*, `fields[betaTesters]`, `limit` | BetaTestersResponse | yes | — |
+| GET | `/v1/betaGroups/{id}/builds` | betaGroups-builds-get_to_many_related | `id`*, `fields[builds]`, `limit` | BuildsResponse | yes | — |
+| GET | `/v1/betaGroups/{id}/relationships/betaTesters` | betaGroups-betaTesters-get_to_many_relationship | `id`*, `limit` | BetaGroupBetaTestersLinkagesResponse | yes | — |
+| POST | `/v1/betaGroups/{id}/relationships/betaTesters` | betaGroups-betaTesters-create_to_many_relationship | `id`*, body*: BetaGroupBetaTestersLinkagesRequest | — |  | — |
+| DELETE | `/v1/betaGroups/{id}/relationships/betaTesters` | betaGroups-betaTesters-delete_to_many_relationship | `id`*, body*: BetaGroupBetaTestersLinkagesRequest | — |  | — |
+| GET | `/v1/betaGroups/{id}/relationships/builds` | betaGroups-builds-get_to_many_relationship | `id`*, `limit` | BetaGroupBuildsLinkagesResponse | yes | — |
+| POST | `/v1/betaGroups/{id}/relationships/builds` | betaGroups-builds-create_to_many_relationship | `id`*, body*: BetaGroupBuildsLinkagesRequest | — |  | — |
+| DELETE | `/v1/betaGroups/{id}/relationships/builds` | betaGroups-builds-delete_to_many_relationship | `id`*, body*: BetaGroupBuildsLinkagesRequest | — |  | — |
+| GET | `/v1/betaLicenseAgreements` | betaLicenseAgreements-get_collection | `filter[app]`, `fields[betaLicenseAgreements]`, `limit`, `include`, `fields[apps]` | BetaLicenseAgreementsResponse | yes | — |
+| GET | `/v1/betaLicenseAgreements/{id}` | betaLicenseAgreements-get_instance | `id`*, `fields[betaLicenseAgreements]`, `include`, `fields[apps]` | BetaLicenseAgreementResponse | yes | — |
+| PATCH | `/v1/betaLicenseAgreements/{id}` | betaLicenseAgreements-update_instance | `id`*, body*: BetaLicenseAgreementUpdateRequest | BetaLicenseAgreementResponse |  | — |
+| GET | `/v1/betaLicenseAgreements/{id}/app` | betaLicenseAgreements-app-get_to_one_related | `id`*, `fields[apps]` | AppResponse | yes | — |
+| POST | `/v1/betaTesterInvitations` | betaTesterInvitations-create_instance | body*: BetaTesterInvitationCreateRequest | BetaTesterInvitationResponse |  | — |
+| GET | `/v1/betaTesters` | betaTesters-get_collection | `filter[email]`, `filter[firstName]`, `filter[inviteType]`, `filter[lastName]`, `filter[apps]`, `filter[betaGroups]`, `filter[builds]`, `sort`, `fields[betaTesters]`, `limit`, `include`, `fields[betaGroups]`, `fields[builds]`, `fields[apps]`, `limit[apps]`, `limit[betaGroups]`, `limit[builds]` | BetaTestersResponse | yes | — |
+| POST | `/v1/betaTesters` | betaTesters-create_instance | body*: BetaTesterCreateRequest | BetaTesterResponse |  | — |
+| GET | `/v1/betaTesters/{id}` | betaTesters-get_instance | `id`*, `fields[betaTesters]`, `include`, `fields[betaGroups]`, `fields[builds]`, `fields[apps]`, `limit[apps]`, `limit[betaGroups]`, `limit[builds]` | BetaTesterResponse | yes | — |
+| DELETE | `/v1/betaTesters/{id}` | betaTesters-delete_instance | `id`* | — |  | — |
+| GET | `/v1/betaTesters/{id}/apps` | betaTesters-apps-get_to_many_related | `id`*, `fields[apps]`, `limit` | AppsResponse | yes | — |
+| GET | `/v1/betaTesters/{id}/betaGroups` | betaTesters-betaGroups-get_to_many_related | `id`*, `fields[betaGroups]`, `limit` | BetaGroupsResponse | yes | — |
+| GET | `/v1/betaTesters/{id}/builds` | betaTesters-builds-get_to_many_related | `id`*, `fields[builds]`, `limit` | BuildsResponse | yes | — |
+| GET | `/v1/betaTesters/{id}/relationships/apps` | betaTesters-apps-get_to_many_relationship | `id`*, `limit` | BetaTesterAppsLinkagesResponse | yes | — |
+| DELETE | `/v1/betaTesters/{id}/relationships/apps` | betaTesters-apps-delete_to_many_relationship | `id`*, body*: BetaTesterAppsLinkagesRequest | — |  | — |
+| GET | `/v1/betaTesters/{id}/relationships/betaGroups` | betaTesters-betaGroups-get_to_many_relationship | `id`*, `limit` | BetaTesterBetaGroupsLinkagesResponse | yes | — |
+| POST | `/v1/betaTesters/{id}/relationships/betaGroups` | betaTesters-betaGroups-create_to_many_relationship | `id`*, body*: BetaTesterBetaGroupsLinkagesRequest | — |  | — |
+| DELETE | `/v1/betaTesters/{id}/relationships/betaGroups` | betaTesters-betaGroups-delete_to_many_relationship | `id`*, body*: BetaTesterBetaGroupsLinkagesRequest | — |  | — |
+| GET | `/v1/betaTesters/{id}/relationships/builds` | betaTesters-builds-get_to_many_relationship | `id`*, `limit` | BetaTesterBuildsLinkagesResponse | yes | — |
+| POST | `/v1/betaTesters/{id}/relationships/builds` | betaTesters-builds-create_to_many_relationship | `id`*, body*: BetaTesterBuildsLinkagesRequest | — |  | — |
+| DELETE | `/v1/betaTesters/{id}/relationships/builds` | betaTesters-builds-delete_to_many_relationship | `id`*, body*: BetaTesterBuildsLinkagesRequest | — |  | — |
+| GET | `/v1/buildBetaDetails` | buildBetaDetails-get_collection | `filter[build]`, `filter[id]`, `fields[buildBetaDetails]`, `limit`, `include`, `fields[builds]` | BuildBetaDetailsResponse | yes | — |
+| GET | `/v1/buildBetaDetails/{id}` | buildBetaDetails-get_instance | `id`*, `fields[buildBetaDetails]`, `include`, `fields[builds]` | BuildBetaDetailResponse | yes | — |
+| PATCH | `/v1/buildBetaDetails/{id}` | buildBetaDetails-update_instance | `id`*, body*: BuildBetaDetailUpdateRequest | BuildBetaDetailResponse |  | — |
+| GET | `/v1/buildBetaDetails/{id}/build` | buildBetaDetails-build-get_to_one_related | `id`*, `fields[builds]` | BuildResponse | yes | — |
+| POST | `/v1/buildBetaNotifications` | buildBetaNotifications-create_instance | body*: BuildBetaNotificationCreateRequest | BuildBetaNotificationResponse |  | — |
+| GET | `/v1/builds` | builds-get_collection | `filter[betaAppReviewSubmission.betaReviewState]`, `filter[expired]`, `filter[preReleaseVersion.platform]`, `filter[preReleaseVersion.version]`, `filter[processingState]`, `filter[usesNonExemptEncryption]`, `filter[version]`, `filter[app]`, `filter[appStoreVersion]`, `filter[betaGroups]`, `filter[preReleaseVersion]`, `filter[id]`, `sort`, `fields[builds]`, `limit`, `include`, `fields[appEncryptionDeclarations]`, `fields[betaAppReviewSubmissions]`, `fields[buildBetaDetails]`, `fields[buildIcons]`, `fields[perfPowerMetrics]`, `fields[preReleaseVersions]`, `fields[appStoreVersions]`, `fields[diagnosticSignatures]`, `fields[betaTesters]`, `fields[betaBuildLocalizations]`, `fields[apps]`, `limit[betaBuildLocalizations]`, `limit[icons]`, `limit[individualTesters]` | BuildsResponse | yes | — |
+| GET | `/v1/builds/{id}` | builds-get_instance | `id`*, `fields[builds]`, `include`, `fields[appEncryptionDeclarations]`, `fields[betaAppReviewSubmissions]`, `fields[buildBetaDetails]`, `fields[buildIcons]`, `fields[perfPowerMetrics]`, `fields[preReleaseVersions]`, `fields[appStoreVersions]`, `fields[diagnosticSignatures]`, `fields[betaTesters]`, `fields[betaBuildLocalizations]`, `fields[apps]`, `limit[betaBuildLocalizations]`, `limit[icons]`, `limit[individualTesters]` | BuildResponse | yes | — |
+| PATCH | `/v1/builds/{id}` | builds-update_instance | `id`*, body*: BuildUpdateRequest | BuildResponse |  | — |
+| GET | `/v1/builds/{id}/app` | builds-app-get_to_one_related | `id`*, `fields[apps]` | AppResponse | yes | — |
+| GET | `/v1/builds/{id}/appEncryptionDeclaration` | builds-appEncryptionDeclaration-get_to_one_related | `id`*, `fields[appEncryptionDeclarations]` | AppEncryptionDeclarationResponse | yes | — |
+| GET | `/v1/builds/{id}/appStoreVersion` | builds-appStoreVersion-get_to_one_related | `id`*, `fields[appStoreVersions]` | AppStoreVersionResponse | yes | — |
+| GET | `/v1/builds/{id}/betaAppReviewSubmission` | builds-betaAppReviewSubmission-get_to_one_related | `id`*, `fields[betaAppReviewSubmissions]` | BetaAppReviewSubmissionResponse | yes | — |
+| GET | `/v1/builds/{id}/betaBuildLocalizations` | builds-betaBuildLocalizations-get_to_many_related | `id`*, `fields[betaBuildLocalizations]`, `limit` | BetaBuildLocalizationsResponse | yes | — |
+| GET | `/v1/builds/{id}/buildBetaDetail` | builds-buildBetaDetail-get_to_one_related | `id`*, `fields[buildBetaDetails]` | BuildBetaDetailResponse | yes | — |
+| GET | `/v1/builds/{id}/diagnosticSignatures` | builds-diagnosticSignatures-get_to_many_related | `id`*, `filter[diagnosticType]`, `fields[diagnosticSignatures]`, `limit` | DiagnosticSignaturesResponse | yes | — |
+| GET | `/v1/builds/{id}/icons` | builds-icons-get_to_many_related | `id`*, `fields[buildIcons]`, `limit` | BuildIconsResponse | yes | — |
+| GET | `/v1/builds/{id}/individualTesters` | builds-individualTesters-get_to_many_related | `id`*, `fields[betaTesters]`, `limit` | BetaTestersResponse | yes | — |
+| GET | `/v1/builds/{id}/perfPowerMetrics` | builds-perfPowerMetrics-get_to_many_related | `id`*, `filter[deviceType]`, `filter[metricType]`, `filter[platform]` | PerfPowerMetricsResponse | yes | — |
+| GET | `/v1/builds/{id}/preReleaseVersion` | builds-preReleaseVersion-get_to_one_related | `id`*, `fields[preReleaseVersions]` | PrereleaseVersionResponse | yes | — |
+| GET | `/v1/builds/{id}/relationships/appEncryptionDeclaration` | builds-appEncryptionDeclaration-get_to_one_relationship | `id`* | BuildAppEncryptionDeclarationLinkageResponse | yes | — |
+| PATCH | `/v1/builds/{id}/relationships/appEncryptionDeclaration` | builds-appEncryptionDeclaration-update_to_one_relationship | `id`*, body*: BuildAppEncryptionDeclarationLinkageRequest | — |  | — |
+| POST | `/v1/builds/{id}/relationships/betaGroups` | builds-betaGroups-create_to_many_relationship | `id`*, body*: BuildBetaGroupsLinkagesRequest | — |  | — |
+| DELETE | `/v1/builds/{id}/relationships/betaGroups` | builds-betaGroups-delete_to_many_relationship | `id`*, body*: BuildBetaGroupsLinkagesRequest | — |  | — |
+| GET | `/v1/builds/{id}/relationships/individualTesters` | builds-individualTesters-get_to_many_relationship | `id`*, `limit` | BuildIndividualTestersLinkagesResponse | yes | — |
+| POST | `/v1/builds/{id}/relationships/individualTesters` | builds-individualTesters-create_to_many_relationship | `id`*, body*: BuildIndividualTestersLinkagesRequest | — |  | — |
+| DELETE | `/v1/builds/{id}/relationships/individualTesters` | builds-individualTesters-delete_to_many_relationship | `id`*, body*: BuildIndividualTestersLinkagesRequest | — |  | — |
+| POST | `/v1/bundleIdCapabilities` | bundleIdCapabilities-create_instance | body*: BundleIdCapabilityCreateRequest | BundleIdCapabilityResponse |  | — |
+| DELETE | `/v1/bundleIdCapabilities/{id}` | bundleIdCapabilities-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/bundleIdCapabilities/{id}` | bundleIdCapabilities-update_instance | `id`*, body*: BundleIdCapabilityUpdateRequest | BundleIdCapabilityResponse |  | — |
+| GET | `/v1/bundleIds` | bundleIds-get_collection | `filter[identifier]`, `filter[name]`, `filter[platform]`, `filter[seedId]`, `filter[id]`, `sort`, `fields[bundleIds]`, `limit`, `include`, `fields[bundleIdCapabilities]`, `fields[profiles]`, `fields[apps]`, `limit[bundleIdCapabilities]`, `limit[profiles]` | BundleIdsResponse | yes | — |
+| POST | `/v1/bundleIds` | bundleIds-create_instance | body*: BundleIdCreateRequest | BundleIdResponse |  | — |
+| GET | `/v1/bundleIds/{id}` | bundleIds-get_instance | `id`*, `fields[bundleIds]`, `include`, `fields[bundleIdCapabilities]`, `fields[profiles]`, `fields[apps]`, `limit[bundleIdCapabilities]`, `limit[profiles]` | BundleIdResponse | yes | — |
+| DELETE | `/v1/bundleIds/{id}` | bundleIds-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/bundleIds/{id}` | bundleIds-update_instance | `id`*, body*: BundleIdUpdateRequest | BundleIdResponse |  | — |
+| GET | `/v1/bundleIds/{id}/app` | bundleIds-app-get_to_one_related | `id`*, `fields[apps]` | AppResponse | yes | — |
+| GET | `/v1/bundleIds/{id}/bundleIdCapabilities` | bundleIds-bundleIdCapabilities-get_to_many_related | `id`*, `fields[bundleIdCapabilities]`, `limit` | BundleIdCapabilitiesResponse | yes | — |
+| GET | `/v1/bundleIds/{id}/profiles` | bundleIds-profiles-get_to_many_related | `id`*, `fields[profiles]`, `limit` | ProfilesResponse | yes | — |
+| GET | `/v1/certificates` | certificates-get_collection | `filter[certificateType]`, `filter[displayName]`, `filter[serialNumber]`, `filter[id]`, `sort`, `fields[certificates]`, `limit` | CertificatesResponse | yes | — |
+| POST | `/v1/certificates` | certificates-create_instance | body*: CertificateCreateRequest | CertificateResponse |  | — |
+| GET | `/v1/certificates/{id}` | certificates-get_instance | `id`*, `fields[certificates]` | CertificateResponse | yes | — |
+| DELETE | `/v1/certificates/{id}` | certificates-delete_instance | `id`* | — |  | — |
+| GET | `/v1/devices` | devices-get_collection | `filter[name]`, `filter[platform]`, `filter[status]`, `filter[udid]`, `filter[id]`, `sort`, `fields[devices]`, `limit` | DevicesResponse | yes | — |
+| POST | `/v1/devices` | devices-create_instance | body*: DeviceCreateRequest | DeviceResponse |  | — |
+| GET | `/v1/devices/{id}` | devices-get_instance | `id`*, `fields[devices]` | DeviceResponse | yes | — |
+| PATCH | `/v1/devices/{id}` | devices-update_instance | `id`*, body*: DeviceUpdateRequest | DeviceResponse |  | — |
+| GET | `/v1/diagnosticSignatures/{id}/logs` | diagnosticSignatures-logs-get_to_many_related | `id`*, `limit` | DiagnosticLogsResponse | yes | — |
+| POST | `/v1/endUserLicenseAgreements` | endUserLicenseAgreements-create_instance | body*: EndUserLicenseAgreementCreateRequest | EndUserLicenseAgreementResponse |  | — |
+| GET | `/v1/endUserLicenseAgreements/{id}` | endUserLicenseAgreements-get_instance | `id`*, `fields[endUserLicenseAgreements]`, `include`, `fields[territories]`, `limit[territories]` | EndUserLicenseAgreementResponse | yes | — |
+| DELETE | `/v1/endUserLicenseAgreements/{id}` | endUserLicenseAgreements-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/endUserLicenseAgreements/{id}` | endUserLicenseAgreements-update_instance | `id`*, body*: EndUserLicenseAgreementUpdateRequest | EndUserLicenseAgreementResponse |  | — |
+| GET | `/v1/endUserLicenseAgreements/{id}/territories` | endUserLicenseAgreements-territories-get_to_many_related | `id`*, `fields[territories]`, `limit` | TerritoriesResponse | yes | — |
+| GET | `/v1/financeReports` | financeReports-get_collection | `filter[regionCode]`*, `filter[reportDate]`*, `filter[reportType]`*, `filter[vendorNumber]`* | string:binary | yes | — |
+| GET | `/v1/gameCenterEnabledVersions/{id}/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-get_to_many_related | `id`*, `filter[platform]`, `filter[versionString]`, `filter[app]`, `filter[id]`, `sort`, `fields[gameCenterEnabledVersions]`, `fields[apps]`, `limit`, `include` | GameCenterEnabledVersionsResponse | yes | — |
+| GET | `/v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-get_to_many_relationship | `id`*, `limit` | GameCenterEnabledVersionCompatibleVersionsLinkagesResponse | yes | — |
+| POST | `/v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-create_to_many_relationship | `id`*, body*: GameCenterEnabledVersionCompatibleVersionsLinkagesRequest | — |  | — |
+| DELETE | `/v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-delete_to_many_relationship | `id`*, body*: GameCenterEnabledVersionCompatibleVersionsLinkagesRequest | — |  | — |
+| PATCH | `/v1/gameCenterEnabledVersions/{id}/relationships/compatibleVersions` | gameCenterEnabledVersions-compatibleVersions-replace_to_many_relationship | `id`*, body*: GameCenterEnabledVersionCompatibleVersionsLinkagesRequest | — |  | — |
+| POST | `/v1/idfaDeclarations` | idfaDeclarations-create_instance | body*: IdfaDeclarationCreateRequest | IdfaDeclarationResponse |  | — |
+| DELETE | `/v1/idfaDeclarations/{id}` | idfaDeclarations-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/idfaDeclarations/{id}` | idfaDeclarations-update_instance | `id`*, body*: IdfaDeclarationUpdateRequest | IdfaDeclarationResponse |  | — |
+| GET | `/v1/inAppPurchases/{id}` | inAppPurchases-get_instance | `id`*, `fields[inAppPurchases]`, `include`, `limit[apps]` | InAppPurchaseResponse | yes | — |
+| GET | `/v1/preReleaseVersions` | preReleaseVersions-get_collection | `filter[builds.expired]`, `filter[builds.processingState]`, `filter[platform]`, `filter[version]`, `filter[app]`, `filter[builds]`, `sort`, `fields[preReleaseVersions]`, `limit`, `include`, `fields[builds]`, `fields[apps]`, `limit[builds]` | PreReleaseVersionsResponse | yes | — |
+| GET | `/v1/preReleaseVersions/{id}` | preReleaseVersions-get_instance | `id`*, `fields[preReleaseVersions]`, `include`, `fields[builds]`, `fields[apps]`, `limit[builds]` | PrereleaseVersionResponse | yes | — |
+| GET | `/v1/preReleaseVersions/{id}/app` | preReleaseVersions-app-get_to_one_related | `id`*, `fields[apps]` | AppResponse | yes | — |
+| GET | `/v1/preReleaseVersions/{id}/builds` | preReleaseVersions-builds-get_to_many_related | `id`*, `fields[builds]`, `limit` | BuildsResponse | yes | — |
+| GET | `/v1/profiles` | profiles-get_collection | `filter[name]`, `filter[profileState]`, `filter[profileType]`, `filter[id]`, `sort`, `fields[profiles]`, `limit`, `include`, `fields[certificates]`, `fields[devices]`, `fields[bundleIds]`, `limit[certificates]`, `limit[devices]` | ProfilesResponse | yes | — |
+| POST | `/v1/profiles` | profiles-create_instance | body*: ProfileCreateRequest | ProfileResponse |  | — |
+| GET | `/v1/profiles/{id}` | profiles-get_instance | `id`*, `fields[profiles]`, `include`, `fields[certificates]`, `fields[devices]`, `fields[bundleIds]`, `limit[certificates]`, `limit[devices]` | ProfileResponse | yes | — |
+| DELETE | `/v1/profiles/{id}` | profiles-delete_instance | `id`* | — |  | — |
+| GET | `/v1/profiles/{id}/bundleId` | profiles-bundleId-get_to_one_related | `id`*, `fields[bundleIds]` | BundleIdResponse | yes | — |
+| GET | `/v1/profiles/{id}/certificates` | profiles-certificates-get_to_many_related | `id`*, `fields[certificates]`, `limit` | CertificatesResponse | yes | — |
+| GET | `/v1/profiles/{id}/devices` | profiles-devices-get_to_many_related | `id`*, `fields[devices]`, `limit` | DevicesResponse | yes | — |
+| POST | `/v1/routingAppCoverages` | routingAppCoverages-create_instance | body*: RoutingAppCoverageCreateRequest | RoutingAppCoverageResponse |  | — |
+| GET | `/v1/routingAppCoverages/{id}` | routingAppCoverages-get_instance | `id`*, `fields[routingAppCoverages]`, `include` | RoutingAppCoverageResponse | yes | — |
+| DELETE | `/v1/routingAppCoverages/{id}` | routingAppCoverages-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/routingAppCoverages/{id}` | routingAppCoverages-update_instance | `id`*, body*: RoutingAppCoverageUpdateRequest | RoutingAppCoverageResponse |  | — |
+| GET | `/v1/salesReports` | salesReports-get_collection | `filter[frequency]`*, `filter[reportDate]`, `filter[reportSubType]`*, `filter[reportType]`*, `filter[vendorNumber]`*, `filter[version]` | string:binary | yes | — |
+| GET | `/v1/territories` | territories-get_collection | `fields[territories]`, `limit` | TerritoriesResponse | yes | — |
+| GET | `/v1/userInvitations` | userInvitations-get_collection | `filter[email]`, `filter[roles]`, `filter[visibleApps]`, `sort`, `fields[userInvitations]`, `limit`, `include`, `fields[apps]`, `limit[visibleApps]` | UserInvitationsResponse | yes | — |
+| POST | `/v1/userInvitations` | userInvitations-create_instance | body*: UserInvitationCreateRequest | UserInvitationResponse |  | — |
+| GET | `/v1/userInvitations/{id}` | userInvitations-get_instance | `id`*, `fields[userInvitations]`, `include`, `fields[apps]`, `limit[visibleApps]` | UserInvitationResponse | yes | — |
+| DELETE | `/v1/userInvitations/{id}` | userInvitations-delete_instance | `id`* | — |  | — |
+| GET | `/v1/userInvitations/{id}/visibleApps` | userInvitations-visibleApps-get_to_many_related | `id`*, `fields[apps]`, `limit` | AppsResponse | yes | — |
+| GET | `/v1/users` | users-get_collection | `filter[roles]`, `filter[username]`, `filter[visibleApps]`, `sort`, `fields[users]`, `limit`, `include`, `fields[apps]`, `limit[visibleApps]` | UsersResponse | yes | — |
+| GET | `/v1/users/{id}` | users-get_instance | `id`*, `fields[users]`, `include`, `fields[apps]`, `limit[visibleApps]` | UserResponse | yes | — |
+| DELETE | `/v1/users/{id}` | users-delete_instance | `id`* | — |  | — |
+| PATCH | `/v1/users/{id}` | users-update_instance | `id`*, body*: UserUpdateRequest | UserResponse |  | — |
+| GET | `/v1/users/{id}/relationships/visibleApps` | users-visibleApps-get_to_many_relationship | `id`*, `limit` | UserVisibleAppsLinkagesResponse | yes | — |
+| POST | `/v1/users/{id}/relationships/visibleApps` | users-visibleApps-create_to_many_relationship | `id`*, body*: UserVisibleAppsLinkagesRequest | — |  | — |
+| DELETE | `/v1/users/{id}/relationships/visibleApps` | users-visibleApps-delete_to_many_relationship | `id`*, body*: UserVisibleAppsLinkagesRequest | — |  | — |
+| PATCH | `/v1/users/{id}/relationships/visibleApps` | users-visibleApps-replace_to_many_relationship | `id`*, body*: UserVisibleAppsLinkagesRequest | — |  | — |
+| GET | `/v1/users/{id}/visibleApps` | users-visibleApps-get_to_many_related | `id`*, `fields[apps]`, `limit` | AppsResponse | yes | — |

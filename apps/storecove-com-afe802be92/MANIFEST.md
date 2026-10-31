@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.storecove.com_assets_v2_log
 
 | | |
 | --- | --- |
-| Signed bundle | `e4db66323719d6a4fc5b03c5fcaf80bfa067f15d236aa528e3fffc48436dbf41` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,35 +34,37 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.storecove.com_assets_v2_log
 
 90 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/discovery/exists` | discovery_exists | Discover Network Participant Existence |
-| GET | `/discovery/identifiers` | discovery_identifiers | Discover Country Identifiers ** EXPERIMENTAL |
-| POST | `/discovery/receives` | discovery_receives | Disover Network Participant |
-| POST | `/document_submissions` | create_document_submission | Submit a new document. |
-| GET | `/document_submissions/{guid}/evidence/{evidence_type}` | show_document_submission_evidence | Get DocumentSubmission Evidence |
-| POST | `/invoice_submissions` | create_invoice_submission | Submit a new invoice |
-| POST | `/invoice_submissions/preflight` | preflight_invoice_recipient | DEPRECATED. Preflight an invoice recipient |
-| GET | `/invoice_submissions/{guid}/evidence` | show_invoice_submission_evidence | DEPRECATED. Get InvoiceSubmission Evidence |
-| POST | `/legal_entities` | create_legal_entity | Create a new LegalEntity |
-| DELETE | `/legal_entities/{id}` | delete_legal_entity | Delete LegalEntity |
-| GET | `/legal_entities/{id}` | get_legal_entity | Get LegalEntity |
-| PATCH | `/legal_entities/{id}` | update_legal_entity | Update LegalEntity |
-| POST | `/legal_entities/{legal_entity_id}/additional_tax_identifiers` | create_additional_tax_identifier | Create a new AdditionalTaxIdentifier |
-| DELETE | `/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}` | delete_additional_tax_identifier | Delete AdditionalTaxIdentifier |
-| GET | `/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}` | get_additional_tax_identifier | Get AdditionalTaxIdentifier |
-| PATCH | `/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}` | update_additional_tax_identifier | Update AdditionalTaxIdentifier |
-| POST | `/legal_entities/{legal_entity_id}/administrations` | create_administration | Create a new Administration |
-| DELETE | `/legal_entities/{legal_entity_id}/administrations/{id}` | delete_administration | Delete Administration |
-| GET | `/legal_entities/{legal_entity_id}/administrations/{id}` | get_administration | Get Administration |
-| PATCH | `/legal_entities/{legal_entity_id}/administrations/{id}` | update_administration | Update Administration |
-| POST | `/legal_entities/{legal_entity_id}/peppol_identifiers` | create_peppol_identifier | Create a new PeppolIdentifier |
-| DELETE | `/legal_entities/{legal_entity_id}/peppol_identifiers/{superscheme}/{scheme}/{identifier}` | delete_peppol_identifier | Delete PeppolIdentifier |
-| POST | `/legal_entities/{legal_entity_id}/received_documents` | receive_documenht | Receive a new Document |
-| GET | `/purchase_invoices/{guid}` | get_invoice_json | Get Purchase invoice data as JSON |
-| GET | `/purchase_invoices/{guid}/{packaging}` | get_invoice_ubl | Get Purchase invoice data in a selectable format |
-| GET | `/purchase_invoices/{guid}/{packaging}/{package_version}` | get_invoice_ubl_versioned | Get Purchase invoice data as JSON with a Base64-encoded UBL string in the specified version |
-| POST | `/received_documents` | create_received_document | Create a new received document |
-| GET | `/received_documents/{guid}/{format}` | get_received_document | Get a new ReceivedDocument |
-| GET | `/webhook_instances/` | get_webhook_instances | GET a WebhookInstance |
-| DELETE | `/webhook_instances/{guid}` | delete_webhook_instance | DELETE a WebhookInstance |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/discovery/exists` | discovery_exists | body*: DiscoverableParticipant | DiscoveredParticipant |  | Discover Network Participant Existence |
+| GET | `/discovery/identifiers` | discovery_identifiers | — | CountrySpecifications | yes | Discover Country Identifiers ** EXPERIMENTAL |
+| POST | `/discovery/receives` | discovery_receives | body*: DiscoverableParticipant | DiscoveredParticipant |  | Disover Network Participant |
+| POST | `/document_submissions` | create_document_submission | body*: DocumentSubmission | DocumentSubmissionResult |  | Submit a new document. |
+| GET | `/document_submissions/{guid}/evidence/{evidence_type}` | show_document_submission_evidence | `guid`*, `evidence_type`* | DocumentSubmissionEvidence | yes | Get DocumentSubmission Evidence |
+| POST | `/invoice_submissions` | create_invoice_submission | body*: InvoiceSubmission | InvoiceSubmissionResult |  | Submit a new invoice |
+| POST | `/invoice_submissions/preflight` | preflight_invoice_recipient | body*: InvoiceRecipientPreflight | PreflightInvoiceRecipientResult |  | DEPRECATED. Preflight an invoice recipient |
+| GET | `/invoice_submissions/{guid}/evidence` | show_invoice_submission_evidence | `guid`* | InvoiceSubmissionEvidence | yes | DEPRECATED. Get InvoiceSubmission Evidence |
+| POST | `/legal_entities` | create_legal_entity | body*: LegalEntityCreate | LegalEntity |  | Create a new LegalEntity |
+| GET | `/legal_entities/{id}` | get_legal_entity | `id`* | LegalEntity | yes | Get LegalEntity |
+| DELETE | `/legal_entities/{id}` | delete_legal_entity | `id`* | — |  | Delete LegalEntity |
+| PATCH | `/legal_entities/{id}` | update_legal_entity | `id`*, body*: LegalEntityUpdate | LegalEntity |  | Update LegalEntity |
+| POST | `/legal_entities/{legal_entity_id}/additional_tax_identifiers` | create_additional_tax_identifier | `legal_entity_id`*, body*: AdditionalTaxIdentifierCreate | AdditionalTaxIdentifier |  | Create a new AdditionalTaxIdentifier |
+| GET | `/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}` | get_additional_tax_identifier | `legal_entity_id`*, `id`* | AdditionalTaxIdentifier | yes | Get AdditionalTaxIdentifier |
+| DELETE | `/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}` | delete_additional_tax_identifier | `legal_entity_id`*, `id`* | — |  | Delete AdditionalTaxIdentifier |
+| PATCH | `/legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}` | update_additional_tax_identifier | `legal_entity_id`*, `id`*, body*: AdditionalTaxIdentifierUpdate | AdditionalTaxIdentifier |  | Update AdditionalTaxIdentifier |
+| POST | `/legal_entities/{legal_entity_id}/administrations` | create_administration | `legal_entity_id`*, body*: AdministrationCreate | Administration |  | Create a new Administration |
+| GET | `/legal_entities/{legal_entity_id}/administrations/{id}` | get_administration | `legal_entity_id`*, `id`* | Administration | yes | Get Administration |
+| DELETE | `/legal_entities/{legal_entity_id}/administrations/{id}` | delete_administration | `legal_entity_id`*, `id`* | — |  | Delete Administration |
+| PATCH | `/legal_entities/{legal_entity_id}/administrations/{id}` | update_administration | `legal_entity_id`*, `id`*, body*: AdministrationUpdate | Administration |  | Update Administration |
+| POST | `/legal_entities/{legal_entity_id}/peppol_identifiers` | create_peppol_identifier | `legal_entity_id`*, body*: PeppolIdentifierCreate | PeppolIdentifier |  | Create a new PeppolIdentifier |
+| DELETE | `/legal_entities/{legal_entity_id}/peppol_identifiers/{superscheme}/{scheme}/{identifier}` | delete_peppol_identifier | `legal_entity_id`*, `superscheme`*, `scheme`*, `identifier`* | — |  | Delete PeppolIdentifier |
+| POST | `/legal_entities/{legal_entity_id}/received_documents` | receive_documenht | `legal_entity_id`*, body*: ReceivedDocumentCreate | ReceivedDocument |  | Receive a new Document |
+| GET | `/purchase_invoices/{guid}` | get_invoice_json | `guid`*, `pmv` | PurchaseInvoice | yes | Get Purchase invoice data as JSON |
+| GET | `/purchase_invoices/{guid}/{packaging}` | get_invoice_ubl | `guid`*, `packaging`*, `pmv` | PurchaseInvoiceUbl | yes | Get Purchase invoice data in a selectable format |
+| GET | `/purchase_invoices/{guid}/{packaging}/{package_version}` | get_invoice_ubl_versioned | `guid`*, `packaging`*, `package_version`* | PurchaseInvoiceUbl | yes | Get Purchase invoice data as JSON with a Base64-encoded UBL string in the specified version |
+| POST | `/received_documents` | create_received_document | body*: ReceivedDocumentCreate | ReceivedDocument |  | Create a new received document |
+| GET | `/received_documents/{guid}/{format}` | get_received_document | `guid`*, `syntax`*, `format`* | ReceivedDocument | yes | Get a new ReceivedDocument |
+| GET | `/webhook_instances/` | get_webhook_instances | — | WebhookInstance | yes | GET a WebhookInstance |
+| DELETE | `/webhook_instances/{guid}` | delete_webhook_instance | `guid`* | — |  | DELETE a WebhookInstance |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_wellknown.ai_icon.png"
 
 | | |
 | --- | --- |
-| Signed bundle | `4425fc12a4f38619d88f6d133cbf4ff06f45e061b7270ffe6dc671702bf27157` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,7 +32,9 @@ logo: "https://api.apis.guru/v2/cache/logo/https_wellknown.ai_icon.png"
 
 ## Operations (2)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/plugins` | get /api/plugins | — |
-| GET | `/plugins` | getProvider | List all the Wellknown AI Plugins. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/plugins` | get /api/plugins | — | — | yes | — |
+| GET | `/plugins` | getProvider | — | — | yes | List all the Wellknown AI Plugins. |

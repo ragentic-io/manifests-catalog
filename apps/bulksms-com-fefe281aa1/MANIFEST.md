@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/_developer_images_bulksms.svg"
 
 | | |
 | --- | --- |
-| Signed bundle | `af9fe47d1f6a646dca3337058d07075ed84b2b516aeedf2da3dd5692220c24d3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,20 +34,22 @@ logo: "https://api.apis.guru/v2/cache/logo/_developer_images_bulksms.svg"
 
 11 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/blocked-numbers` | get /blocked-numbers | List blocked numbers |
-| POST | `/blocked-numbers` | post /blocked-numbers | Create a blocked number |
-| POST | `/credit/transfer` | post /credit/transfer | Transfer credits to another account |
-| GET | `/messages` | get /messages | Retrieve Messages |
-| POST | `/messages` | post /messages | Send Messages |
-| GET | `/messages/send` | get /messages/send | Send message by simple GET or POST |
-| GET | `/messages/{id}` | get /messages/{id} | Show Message |
-| GET | `/messages/{id}/relatedReceivedMessages` | get /messages/{id}/relatedReceivedMessages | List Related Messages |
-| GET | `/profile` | get /profile | Get profile |
-| POST | `/rmm/pre-sign-attachment` | post /rmm/pre-sign-attachment | Upload an attachment via a signed URL |
-| GET | `/webhooks` | get /webhooks | List webhooks |
-| POST | `/webhooks` | post /webhooks | Create a webhook |
-| DELETE | `/webhooks/{id}` | delete /webhooks/{id} | Delete a webhook |
-| GET | `/webhooks/{id}` | get /webhooks/{id} | Read a webhook |
-| POST | `/webhooks/{id}` | post /webhooks/{id} | Update a webhook |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/blocked-numbers` | get /blocked-numbers | `min-id`, `limit` | BlockedNumber | yes | List blocked numbers |
+| POST | `/blocked-numbers` | post /blocked-numbers | body*: PhoneNumber[] | — |  | Create a blocked number |
+| POST | `/credit/transfer` | post /credit/transfer | body*: TransferEntry | — |  | Transfer credits to another account |
+| GET | `/messages` | get /messages | `limit`, `filter`, `sortOrder` | Message[] | yes | Retrieve Messages |
+| POST | `/messages` | post /messages | `deduplication-id`, `auto-unicode`, `schedule-date`, `schedule-description`, body*: SubmissionEntry[] | Message[] |  | Send Messages |
+| GET | `/messages/send` | get /messages/send | `to`*, `body`*, `deduplication-id` | Message[] | yes | Send message by simple GET or POST |
+| GET | `/messages/{id}` | get /messages/{id} | `id`* | Message | yes | Show Message |
+| GET | `/messages/{id}/relatedReceivedMessages` | get /messages/{id}/relatedReceivedMessages | `id`* | Message[] | yes | List Related Messages |
+| GET | `/profile` | get /profile | — | Profile | yes | Get profile |
+| POST | `/rmm/pre-sign-attachment` | post /rmm/pre-sign-attachment | body*: PreSignRequest | PreSignInfo |  | Upload an attachment via a signed URL |
+| GET | `/webhooks` | get /webhooks | — | Webhook[] | yes | List webhooks |
+| POST | `/webhooks` | post /webhooks | body*: WebhookEntry | Webhook |  | Create a webhook |
+| GET | `/webhooks/{id}` | get /webhooks/{id} | `id`* | Webhook | yes | Read a webhook |
+| POST | `/webhooks/{id}` | post /webhooks/{id} | `id`*, body*: WebhookEntry | Webhook |  | Update a webhook |
+| DELETE | `/webhooks/{id}` | delete /webhooks/{id} | `id`* | — |  | Delete a webhook |

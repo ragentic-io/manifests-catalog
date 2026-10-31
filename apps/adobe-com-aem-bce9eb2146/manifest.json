@@ -117,17 +117,17 @@
       {
         "from": "adobe-com-aem-bce9eb2146",
         "kind": "EXPOSES",
-        "to": "operation:delete:/etc/replication/agents.{runmode}/{name}"
-      },
-      {
-        "from": "adobe-com-aem-bce9eb2146",
-        "kind": "EXPOSES",
         "to": "operation:get:/etc/replication/agents.{runmode}/{name}"
       },
       {
         "from": "adobe-com-aem-bce9eb2146",
         "kind": "EXPOSES",
         "to": "operation:post:/etc/replication/agents.{runmode}/{name}"
+      },
+      {
+        "from": "adobe-com-aem-bce9eb2146",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/etc/replication/agents.{runmode}/{name}"
       },
       {
         "from": "adobe-com-aem-bce9eb2146",
@@ -227,11 +227,6 @@
       {
         "from": "adobe-com-aem-bce9eb2146",
         "kind": "EXPOSES",
-        "to": "operation:delete:/{path}/{name}"
-      },
-      {
-        "from": "adobe-com-aem-bce9eb2146",
-        "kind": "EXPOSES",
         "to": "operation:get:/{path}/{name}"
       },
       {
@@ -242,7 +237,92 @@
       {
         "from": "adobe-com-aem-bce9eb2146",
         "kind": "EXPOSES",
+        "to": "operation:delete:/{path}/{name}"
+      },
+      {
+        "from": "adobe-com-aem-bce9eb2146",
+        "kind": "EXPOSES",
         "to": "operation:post:/{path}/{name}.rw.html"
+      },
+      {
+        "from": "operation:get:/crx/packmgr/installstatus.jsp",
+        "kind": "RETURNS",
+        "to": "schema:InstallStatus"
+      },
+      {
+        "from": "operation:get:/libs/granite/security/truststore.json",
+        "kind": "RETURNS",
+        "to": "schema:TruststoreInfo"
+      },
+      {
+        "from": "operation:get:/system/console/bundles/{name}.json",
+        "kind": "RETURNS",
+        "to": "schema:BundleInfo"
+      },
+      {
+        "from": "operation:post:/system/console/configMgr/com.adobe.granite.auth.saml.SamlAuthenticationHandler",
+        "kind": "RETURNS",
+        "to": "schema:SamlConfigurationInfo"
+      },
+      {
+        "from": "operation:post:/{intermediatePath}/{authorizableId}.ks.html",
+        "kind": "RETURNS",
+        "to": "schema:KeystoreInfo"
+      },
+      {
+        "from": "operation:get:/{intermediatePath}/{authorizableId}.ks.json",
+        "kind": "RETURNS",
+        "to": "schema:KeystoreInfo"
+      },
+      {
+        "from": "schema:BundleData",
+        "kind": "REFERENCES",
+        "to": "schema:BundleDataProp"
+      },
+      {
+        "from": "schema:BundleInfo",
+        "kind": "REFERENCES",
+        "to": "schema:BundleData"
+      },
+      {
+        "from": "schema:KeystoreInfo",
+        "kind": "REFERENCES",
+        "to": "schema:KeystoreItems"
+      },
+      {
+        "from": "schema:KeystoreItems",
+        "kind": "REFERENCES",
+        "to": "schema:KeystoreChainItems"
+      },
+      {
+        "from": "schema:SamlConfigurationInfo",
+        "kind": "REFERENCES",
+        "to": "schema:SamlConfigurationProperties"
+      },
+      {
+        "from": "schema:SamlConfigurationProperties",
+        "kind": "REFERENCES",
+        "to": "schema:SamlConfigurationPropertyItemsArray"
+      },
+      {
+        "from": "schema:SamlConfigurationProperties",
+        "kind": "REFERENCES",
+        "to": "schema:SamlConfigurationPropertyItemsBoolean"
+      },
+      {
+        "from": "schema:SamlConfigurationProperties",
+        "kind": "REFERENCES",
+        "to": "schema:SamlConfigurationPropertyItemsLong"
+      },
+      {
+        "from": "schema:SamlConfigurationProperties",
+        "kind": "REFERENCES",
+        "to": "schema:SamlConfigurationPropertyItemsString"
+      },
+      {
+        "from": "schema:TruststoreInfo",
+        "kind": "REFERENCES",
+        "to": "schema:TruststoreItems"
       }
     ],
     "nodes": [
@@ -256,14 +336,37 @@
         "kind": "operation",
         "method": "post",
         "name": "postCqActions",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorizableId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "changelog",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/.cqactions.html",
         "pointer": "#/paths/~1.cqactions.html/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "cq"
+        ]
       },
       {
         "deprecated": false,
@@ -271,14 +374,313 @@
         "kind": "operation",
         "method": "post",
         "name": "postConfigAdobeGraniteSamlAuthenticationHandler",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "keyStorePassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keyStorePassword@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "service.ranking",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "service.ranking@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "idpHttpRedirect",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "idpHttpRedirect@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "createUser",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "createUser@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "defaultRedirectUrl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "defaultRedirectUrl@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "userIDAttribute",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "userIDAttribute@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "defaultGroups",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "defaultGroups@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "idpCertAlias",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "idpCertAlias@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "addGroupMemberships",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "addGroupMemberships@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "path",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "path@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "synchronizeAttributes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "synchronizeAttributes@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "clockTolerance",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "clockTolerance@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "groupMembershipAttribute",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "groupMembershipAttribute@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "idpUrl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "idpUrl@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "logoutUrl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "logoutUrl@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "serviceProviderEntityId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "serviceProviderEntityId@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "assertionConsumerServiceURL",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "assertionConsumerServiceURL@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "handleLogout",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "handleLogout@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "spPrivateKeyAlias",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "spPrivateKeyAlias@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "useEncryption",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "useEncryption@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "nameIdFormat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "nameIdFormat@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "digestMethod",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "digestMethod@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "signatureMethod",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "signatureMethod@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "userIntermediatePath",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "userIntermediatePath@TypeHint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/system/config/com.adobe.granite.auth.saml.SamlAuthenticationHandler.config",
         "pointer": "#/paths/~1apps~1system~1config~1com.adobe.granite.auth.saml.SamlAuthenticationHandler.config/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -286,14 +688,37 @@
         "kind": "operation",
         "method": "post",
         "name": "postConfigAemPasswordReset",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "pwdreset.authorizables",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "pwdreset.authorizables@TypeHint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/system/config/com.shinesolutions.aem.passwordreset.Activator",
         "pointer": "#/paths/~1apps~1system~1config~1com.shinesolutions.aem.passwordreset.Activator/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "custom"
+        ]
       },
       {
         "deprecated": false,
@@ -301,14 +726,37 @@
         "kind": "operation",
         "method": "post",
         "name": "postConfigAemHealthCheckServlet",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "bundles.ignored",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "bundles.ignored@TypeHint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/system/config/com.shinesolutions.healthcheck.hc.impl.ActiveBundleHealthCheck",
         "pointer": "#/paths/~1apps~1system~1config~1com.shinesolutions.healthcheck.hc.impl.ActiveBundleHealthCheck/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "custom"
+        ]
       },
       {
         "deprecated": false,
@@ -316,14 +764,145 @@
         "kind": "operation",
         "method": "post",
         "name": "postConfigApacheFelixJettyBasedHttpService",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.nio",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.nio@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.keystore",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.keystore@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.keystore.password",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.keystore.password@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.keystore.key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.keystore.key@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.keystore.key.password",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.keystore.key.password@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.truststore",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.truststore@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.truststore.password",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.truststore.password@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.clientcertificate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.clientcertificate@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.enable",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "org.apache.felix.https.enable@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.osgi.service.http.port.secure",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "org.osgi.service.http.port.secure@TypeHint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/system/config/org.apache.felix.http",
         "pointer": "#/paths/~1apps~1system~1config~1org.apache.felix.http/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -331,14 +910,97 @@
         "kind": "operation",
         "method": "post",
         "name": "postConfigApacheHttpComponentsProxyConfiguration",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "proxy.host",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "proxy.host@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "proxy.port",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "proxy.port@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "proxy.exceptions",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "proxy.exceptions@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "proxy.enabled",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "proxy.enabled@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "proxy.user",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "proxy.user@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "proxy.password",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "proxy.password@TypeHint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/system/config/org.apache.http.proxyconfigurator.config",
         "pointer": "#/paths/~1apps~1system~1config~1org.apache.http.proxyconfigurator.config/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -346,14 +1008,49 @@
         "kind": "operation",
         "method": "post",
         "name": "postConfigApacheSlingDavExServlet",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "alias",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "alias@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "dav.create-absolute-uri",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "dav.create-absolute-uri@TypeHint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/system/config/org.apache.sling.jcr.davex.impl.servlets.SlingDavExServlet",
         "pointer": "#/paths/~1apps~1system~1config~1org.apache.sling.jcr.davex.impl.servlets.SlingDavExServlet/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -361,14 +1058,73 @@
         "kind": "operation",
         "method": "post",
         "name": "postConfigApacheSlingReferrerFilter",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "allow.empty",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "allow.empty@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "allow.hosts",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "allow.hosts@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "allow.hosts.regexp",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "allow.hosts.regexp@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "filter.methods",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "filter.methods@TypeHint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/system/config/org.apache.sling.security.impl.ReferrerFilter",
         "pointer": "#/paths/~1apps~1system~1config~1org.apache.sling.security.impl.ReferrerFilter/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -376,14 +1132,73 @@
         "kind": "operation",
         "method": "post",
         "name": "postConfigApacheSlingGetServlet",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "json.maximumresults",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "json.maximumresults@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "enable.html",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "enable.html@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "enable.txt",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "enable.txt@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "enable.xml",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "enable.xml@TypeHint",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/apps/system/config/org.apache.sling.servlets.get.DefaultGetServlet",
         "pointer": "#/paths/~1apps~1system~1config~1org.apache.sling.servlets.get.DefaultGetServlet/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -391,14 +1206,31 @@
         "kind": "operation",
         "method": "post",
         "name": "postConfigProperty",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "configNodeName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/apps/system/config/{configNodeName}",
         "pointer": "#/paths/~1apps~1system~1config~1{configNodeName}/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -406,14 +1238,50 @@
         "kind": "operation",
         "method": "get",
         "name": "getQuery",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "p.limit",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "1_property",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "1_property.value",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/bin/querybuilder.json",
         "pointer": "#/paths/~1bin~1querybuilder.json/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -421,14 +1289,50 @@
         "kind": "operation",
         "method": "post",
         "name": "postQuery",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "p.limit",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "1_property",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "1_property.value",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/bin/querybuilder.json",
         "pointer": "#/paths/~1bin~1querybuilder.json/post",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -436,14 +1340,44 @@
         "kind": "operation",
         "method": "post",
         "name": "postSetPassword",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "old",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "plain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "verify",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/crx/explorer/ui/setpassword.jsp",
         "pointer": "#/paths/~1crx~1explorer~1ui~1setpassword.jsp/post",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "crx"
+        ]
       },
       {
         "deprecated": false,
@@ -453,12 +1387,26 @@
         "name": "getInstallStatus",
         "path": "/crx/packmgr/installstatus.jsp",
         "pointer": "#/paths/~1crx~1packmgr~1installstatus.jsp/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InstallStatus"
+          },
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "crx"
+        ]
       },
       {
         "deprecated": false,
@@ -466,14 +1414,32 @@
         "kind": "operation",
         "method": "post",
         "name": "postPackageService",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cmd",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/crx/packmgr/service.jsp",
         "pointer": "#/paths/~1crx~1packmgr~1service.jsp/post",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "crx"
+        ]
       },
       {
         "deprecated": false,
@@ -481,14 +1447,81 @@
         "kind": "operation",
         "method": "post",
         "name": "postPackageServiceJson",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cmd",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "groupName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "packageName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "packageVersion",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_charset_",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "recursive",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/crx/packmgr/service/.json/{path}",
         "pointer": "#/paths/~1crx~1packmgr~1service~1.json~1{path}/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "crx"
+        ]
       },
       {
         "deprecated": false,
@@ -498,12 +1531,26 @@
         "name": "getPackageManagerServlet",
         "path": "/crx/packmgr/service/script.html",
         "pointer": "#/paths/~1crx~1packmgr~1service~1script.html/get",
+        "responses": [
+          {
+            "status": "404",
+            "type": "string"
+          },
+          {
+            "status": "405",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "crx"
+        ]
       },
       {
         "deprecated": false,
@@ -511,14 +1558,62 @@
         "kind": "operation",
         "method": "post",
         "name": "postPackageUpdate",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "packageName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "_charset_",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/crx/packmgr/update.jsp",
         "pointer": "#/paths/~1crx~1packmgr~1update.jsp/post",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "crx"
+        ]
       },
       {
         "deprecated": false,
@@ -528,12 +1623,26 @@
         "name": "getCrxdeStatus",
         "path": "/crx/server/crx.default/jcr:root/.1.json",
         "pointer": "#/paths/~1crx~1server~1crx.default~1jcr:root~1.1.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "404",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "crx"
+        ]
       },
       {
         "deprecated": false,
@@ -541,14 +1650,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getPackage",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "group",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/etc/packages/{group}/{name}-{version}.zip",
         "pointer": "#/paths/~1etc~1packages~1{group}~1{name}-{version}.zip/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string:binary"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -556,14 +1695,44 @@
         "kind": "operation",
         "method": "get",
         "name": "getPackageFilter",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "group",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/etc/packages/{group}/{name}-{version}.zip/jcr:content/vlt:definition/filter.tidy.2.json",
         "pointer": "#/paths/~1etc~1packages~1{group}~1{name}-{version}.zip~1jcr:content~1vlt:definition~1filter.tidy.2.json/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -571,29 +1740,32 @@
         "kind": "operation",
         "method": "get",
         "name": "getAgents",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "runmode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/etc/replication/agents.{runmode}.-1.json",
         "pointer": "#/paths/~1etc~1replication~1agents.{runmode}.-1.json/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/etc/replication/agents.{runmode}/{name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteAgent",
-        "path": "/etc/replication/agents.{runmode}/{name}",
-        "pointer": "#/paths/~1etc~1replication~1agents.{runmode}~1{name}/delete",
-        "security": [
-          {
-            "aemAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -601,14 +1773,37 @@
         "kind": "operation",
         "method": "get",
         "name": "getAgent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "runmode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/etc/replication/agents.{runmode}/{name}",
         "pointer": "#/paths/~1etc~1replication~1agents.{runmode}~1{name}/get",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -616,14 +1811,375 @@
         "kind": "operation",
         "method": "post",
         "name": "postAgent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "runmode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/cq:distribute",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/cq:distribute@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/cq:name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/cq:template",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/enabled",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/jcr:description",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/jcr:lastModified",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/jcr:lastModifiedBy",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/jcr:mixinTypes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/jcr:title",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/logLevel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/noStatusUpdate",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/noVersioning",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolConnectTimeout",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolHTTPConnectionClosed",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolHTTPExpired",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolHTTPHeaders",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolHTTPHeaders@TypeHint",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolHTTPMethod",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolHTTPSRelaxed",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolInterface",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolSocketTimeout",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/protocolVersion",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/proxyNTLMDomain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/proxyNTLMHost",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/proxyHost",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/proxyPassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/proxyPort",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/proxyUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/queueBatchMaxSize",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/queueBatchMode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/queueBatchWaitTime",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/retryDelay",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/reverseReplication",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/serializationType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/sling:resourceType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/ssl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/transportNTLMDomain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/transportNTLMHost",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/transportPassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/transportUri",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/transportUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/triggerDistribute",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/triggerModified",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/triggerOnOffTime",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/triggerReceive",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/triggerSpecific",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "jcr:content/userId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:primaryType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": ":operation",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/etc/replication/agents.{runmode}/{name}",
         "pointer": "#/paths/~1etc~1replication~1agents.{runmode}~1{name}/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/etc/replication/agents.{runmode}/{name}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteAgent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "runmode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/etc/replication/agents.{runmode}/{name}",
+        "pointer": "#/paths/~1etc~1replication~1agents.{runmode}~1{name}/delete",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "aemAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -633,12 +2189,29 @@
         "name": "postTruststorePKCS12",
         "path": "/etc/truststore",
         "pointer": "#/paths/~1etc~1truststore/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -648,12 +2221,22 @@
         "name": "getTruststore",
         "path": "/etc/truststore/truststore.p12",
         "pointer": "#/paths/~1etc~1truststore~1truststore.p12/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string:binary"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -663,8 +2246,18 @@
         "name": "getLoginPage",
         "path": "/libs/granite/core/content/login.html",
         "pointer": "#/paths/~1libs~1granite~1core~1content~1login.html/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "cq"
+        ]
       },
       {
         "deprecated": false,
@@ -672,14 +2265,62 @@
         "kind": "operation",
         "method": "post",
         "name": "postAuthorizables",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "authorizableId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "intermediatePath",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "createUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "createGroup",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rep:password",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "profile/givenName",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/libs/granite/security/post/authorizables",
         "pointer": "#/paths/~1libs~1granite~1security~1post~1authorizables/post",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -687,14 +2328,69 @@
         "kind": "operation",
         "method": "post",
         "name": "sslSetup",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "keystorePassword",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keystorePasswordConfirm",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "truststorePassword",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "truststorePasswordConfirm",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "httpsHostname",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "httpsPort",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/libs/granite/security/post/sslSetup.html",
         "pointer": "#/paths/~1libs~1granite~1security~1post~1sslSetup.html/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "granite"
+        ]
       },
       {
         "deprecated": false,
@@ -702,14 +2398,63 @@
         "kind": "operation",
         "method": "post",
         "name": "postTruststore",
+        "parameters": [
+          {
+            "in": "query",
+            "name": ":operation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "newPassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rePassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keyStoreType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "removeAlias",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/libs/granite/security/post/truststore",
         "pointer": "#/paths/~1libs~1granite~1security~1post~1truststore/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -719,12 +2464,26 @@
         "name": "getTruststoreInfo",
         "path": "/libs/granite/security/truststore.json",
         "pointer": "#/paths/~1libs~1granite~1security~1truststore.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TruststoreInfo"
+          },
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -732,14 +2491,50 @@
         "kind": "operation",
         "method": "post",
         "name": "postTreeActivation",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ignoredeactivated",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "onlymodified",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "activate",
+            "in": "query",
+            "name": "cmd",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/libs/replication/treeactivation.html",
         "pointer": "#/paths/~1libs~1replication~1treeactivation.html/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -747,14 +2542,37 @@
         "kind": "operation",
         "method": "post",
         "name": "postBundle",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/system/console/bundles/{name}",
         "pointer": "#/paths/~1system~1console~1bundles~1{name}/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "console"
+        ]
       },
       {
         "deprecated": false,
@@ -762,14 +2580,36 @@
         "kind": "operation",
         "method": "get",
         "name": "getBundleInfo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/system/console/bundles/{name}.json",
         "pointer": "#/paths/~1system~1console~1bundles~1{name}.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BundleInfo"
+          },
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "console"
+        ]
       },
       {
         "deprecated": false,
@@ -779,12 +2619,25 @@
         "name": "getConfigMgr",
         "path": "/system/console/configMgr",
         "pointer": "#/paths/~1system~1console~1configMgr/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "5XX"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "console"
+        ]
       },
       {
         "deprecated": false,
@@ -792,14 +2645,214 @@
         "kind": "operation",
         "method": "post",
         "name": "postSamlConfiguration",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "post",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "apply",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "delete",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "action",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$location",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "path",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "service.ranking",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "idpUrl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "idpCertAlias",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "idpHttpRedirect",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "serviceProviderEntityId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "assertionConsumerServiceURL",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "spPrivateKeyAlias",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keyStorePassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "defaultRedirectUrl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "userIDAttribute",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "useEncryption",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "createUser",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "addGroupMemberships",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "groupMembershipAttribute",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "defaultGroups",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "nameIdFormat",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "synchronizeAttributes",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "handleLogout",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "logoutUrl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "clockTolerance",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "digestMethod",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "signatureMethod",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "userIntermediatePath",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "propertylist",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/system/console/configMgr/com.adobe.granite.auth.saml.SamlAuthenticationHandler",
         "pointer": "#/paths/~1system~1console~1configMgr~1com.adobe.granite.auth.saml.SamlAuthenticationHandler/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SamlConfigurationInfo"
+          },
+          {
+            "status": "302",
+            "type": "string"
+          },
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "console"
+        ]
       },
       {
         "deprecated": false,
@@ -807,14 +2860,31 @@
         "kind": "operation",
         "method": "post",
         "name": "postJmxRepository",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "action",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/system/console/jmx/com.adobe.granite:type=Repository/op/{action}",
         "pointer": "#/paths/~1system~1console~1jmx~1com.adobe.granite:type=Repository~1op~1{action}/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "console"
+        ]
       },
       {
         "deprecated": false,
@@ -824,12 +2894,22 @@
         "name": "getAemProductInfo",
         "path": "/system/console/status-productinfo.json",
         "pointer": "#/paths/~1system~1console~1status-productinfo.json/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "console"
+        ]
       },
       {
         "deprecated": false,
@@ -837,14 +2917,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getAemHealthCheck",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "combineTagsOr",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/system/health",
         "pointer": "#/paths/~1system~1health/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "custom"
+        ]
       },
       {
         "deprecated": false,
@@ -852,14 +2956,103 @@
         "kind": "operation",
         "method": "post",
         "name": "postAuthorizableKeystore",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "intermediatePath",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "authorizableId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": ":operation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "currentPassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "newPassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "rePassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keyPassword",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keyStorePass",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "alias",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "newAlias",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "removeAlias",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{intermediatePath}/{authorizableId}.ks.html",
         "pointer": "#/paths/~1{intermediatePath}~1{authorizableId}.ks.html/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "KeystoreInfo"
+          },
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -867,14 +3060,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getAuthorizableKeystore",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "intermediatePath",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "authorizableId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{intermediatePath}/{authorizableId}.ks.json",
         "pointer": "#/paths/~1{intermediatePath}~1{authorizableId}.ks.json/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "KeystoreInfo"
+          },
+          {
+            "status": "default",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -882,14 +3103,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getKeystore",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "intermediatePath",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "authorizableId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{intermediatePath}/{authorizableId}/keystore/store.p12",
         "pointer": "#/paths/~1{intermediatePath}~1{authorizableId}~1keystore~1store.p12/get",
+        "responses": [
+          {
+            "status": "default",
+            "type": "string:binary"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -897,29 +3142,43 @@
         "kind": "operation",
         "method": "post",
         "name": "postPath",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "jcr:primaryType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": ":name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{path}/",
         "pointer": "#/paths/~1{path}~1/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/{path}/{name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteNode",
-        "path": "/{path}/{name}",
-        "pointer": "#/paths/~1{path}~1{name}/delete",
-        "security": [
-          {
-            "aemAuth": []
-          }
-        ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -927,14 +3186,37 @@
         "kind": "operation",
         "method": "get",
         "name": "getNode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{path}/{name}",
         "pointer": "#/paths/~1{path}~1{name}/get",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -942,14 +3224,94 @@
         "kind": "operation",
         "method": "post",
         "name": "postNode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": ":operation",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "deleteAuthorizable",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{path}/{name}",
         "pointer": "#/paths/~1{path}~1{name}/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/{path}/{name}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteNode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/{path}/{name}",
+        "pointer": "#/paths/~1{path}~1{name}/delete",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "aemAuth": []
+          }
+        ],
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "deprecated": false,
@@ -957,89 +3319,133 @@
         "kind": "operation",
         "method": "post",
         "name": "postNodeRw",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "addMembers",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/{path}/{name}.rw.html",
         "pointer": "#/paths/~1{path}~1{name}.rw.html/post",
+        "responses": [
+          {
+            "status": "default"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "aemAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "sling"
+        ]
       },
       {
         "id": "schema:BundleData",
         "kind": "schema",
-        "name": "BundleData"
+        "name": "BundleData",
+        "type": "object"
       },
       {
         "id": "schema:BundleDataProp",
         "kind": "schema",
-        "name": "BundleDataProp"
+        "name": "BundleDataProp",
+        "type": "object"
       },
       {
         "id": "schema:BundleInfo",
         "kind": "schema",
-        "name": "BundleInfo"
+        "name": "BundleInfo",
+        "type": "object"
       },
       {
         "id": "schema:InstallStatus",
         "kind": "schema",
-        "name": "InstallStatus"
+        "name": "InstallStatus",
+        "type": "object"
       },
       {
         "id": "schema:KeystoreChainItems",
         "kind": "schema",
-        "name": "KeystoreChainItems"
+        "name": "KeystoreChainItems",
+        "type": "object"
       },
       {
         "id": "schema:KeystoreInfo",
         "kind": "schema",
-        "name": "KeystoreInfo"
+        "name": "KeystoreInfo",
+        "type": "object"
       },
       {
         "id": "schema:KeystoreItems",
         "kind": "schema",
-        "name": "KeystoreItems"
+        "name": "KeystoreItems",
+        "type": "object"
       },
       {
         "id": "schema:SamlConfigurationInfo",
         "kind": "schema",
-        "name": "SamlConfigurationInfo"
+        "name": "SamlConfigurationInfo",
+        "type": "object"
       },
       {
         "id": "schema:SamlConfigurationProperties",
         "kind": "schema",
-        "name": "SamlConfigurationProperties"
+        "name": "SamlConfigurationProperties",
+        "type": "object"
       },
       {
         "id": "schema:SamlConfigurationPropertyItemsArray",
         "kind": "schema",
-        "name": "SamlConfigurationPropertyItemsArray"
+        "name": "SamlConfigurationPropertyItemsArray",
+        "type": "object"
       },
       {
         "id": "schema:SamlConfigurationPropertyItemsBoolean",
         "kind": "schema",
-        "name": "SamlConfigurationPropertyItemsBoolean"
+        "name": "SamlConfigurationPropertyItemsBoolean",
+        "type": "object"
       },
       {
         "id": "schema:SamlConfigurationPropertyItemsLong",
         "kind": "schema",
-        "name": "SamlConfigurationPropertyItemsLong"
+        "name": "SamlConfigurationPropertyItemsLong",
+        "type": "object"
       },
       {
         "id": "schema:SamlConfigurationPropertyItemsString",
         "kind": "schema",
-        "name": "SamlConfigurationPropertyItemsString"
+        "name": "SamlConfigurationPropertyItemsString",
+        "type": "object"
       },
       {
         "id": "schema:TruststoreInfo",
         "kind": "schema",
-        "name": "TruststoreInfo"
+        "name": "TruststoreInfo",
+        "type": "object"
       },
       {
         "id": "schema:TruststoreItems",
         "kind": "schema",
-        "name": "TruststoreItems"
+        "name": "TruststoreItems",
+        "type": "object"
       }
     ]
   },

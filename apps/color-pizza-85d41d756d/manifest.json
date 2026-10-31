@@ -229,6 +229,36 @@
         "from": "color-pizza-85d41d756d",
         "kind": "EXPOSES",
         "to": "operation:get:/v1/swatch/"
+      },
+      {
+        "from": "operation:get:/v1/lists/",
+        "kind": "RETURNS",
+        "to": "schema:listDescription"
+      },
+      {
+        "from": "schema:color",
+        "kind": "REFERENCES",
+        "to": "schema:colorBasic"
+      },
+      {
+        "from": "schema:color",
+        "kind": "REFERENCES",
+        "to": "schema:colorExtension"
+      },
+      {
+        "from": "schema:colorExtension",
+        "kind": "REFERENCES",
+        "to": "schema:colorDescription"
+      },
+      {
+        "from": "schema:socketColorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:colorBasic"
+      },
+      {
+        "from": "schema:socketColorResponse",
+        "kind": "REFERENCES",
+        "to": "schema:possibleLists"
       }
     ],
     "nodes": [
@@ -238,120 +268,295 @@
       },
       {
         "deprecated": false,
+        "description": "Returns metadata about the API including available endpoints, version information, and links to documentation.",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "getApiMetadata",
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get API metadata and discovery information"
       },
       {
         "deprecated": false,
+        "description": "Returns the health status of the API.",
         "id": "operation:get:/health",
         "kind": "operation",
         "method": "get",
         "name": "healthCheck",
         "path": "/health",
         "pointer": "#/paths/~1health/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Health check endpoint"
       },
       {
         "deprecated": false,
+        "description": "Returns an array of colors from the specified list, with distance calculations to show how close each match is to the requested colors.",
         "id": "operation:get:/v1/",
         "kind": "operation",
         "method": "get",
         "name": "getColorNames",
+        "parameters": [
+          {
+            "description": "The name of the color name list to use (case-sensitive)",
+            "in": "query",
+            "name": "list",
+            "required": false,
+            "type": "possibleLists"
+          },
+          {
+            "description": "A comma-separated list of hex values (e.g., `FF0000,00FF00` do not include the `#`)",
+            "in": "query",
+            "name": "values",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "When true, ensures each color gets a unique name even when colors are similar",
+            "in": "query",
+            "name": "noduplicates",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "When true, uses the 'bestOf' list automatically",
+            "in": "query",
+            "name": "goodnamesonly",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "When true, adds a `description` object with words describing each requested color.",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Custom header for explicit referrer tracking.",
+            "in": "header",
+            "name": "X-Referrer",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/",
         "pointer": "#/paths/~1v1~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "422",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get color names for specific hex values"
       },
       {
         "deprecated": false,
+        "description": "Serves the static HTML documentation page for the API.",
         "id": "operation:get:/v1/docs/",
         "kind": "operation",
         "method": "get",
         "name": "getDocumentation",
         "path": "/v1/docs/",
         "pointer": "#/paths/~1v1~1docs~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:html"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get API Documentation"
       },
       {
         "deprecated": false,
+        "description": "Returns a list of available color name lists with descriptions and URLs to the color list endpoints.",
         "id": "operation:get:/v1/lists/",
         "kind": "operation",
         "method": "get",
         "name": "getColorLists",
+        "parameters": [
+          {
+            "description": "The name of a specific color name list to retrieve details for",
+            "in": "query",
+            "name": "list",
+            "required": false,
+            "type": "possibleLists"
+          }
+        ],
         "path": "/v1/lists/",
         "pointer": "#/paths/~1v1~1lists~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object|listDescription"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          },
+          {
+            "status": "404",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get available color name lists"
       },
       {
         "deprecated": false,
+        "description": "Returns colors whose names contain the search string.",
         "id": "operation:get:/v1/names/",
         "kind": "operation",
         "method": "get",
         "name": "searchColorsByName",
+        "parameters": [
+          {
+            "description": "The search term to look for in color names (min 3 characters)",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The name of the color name list to search in",
+            "in": "query",
+            "name": "list",
+            "required": false,
+            "type": "possibleLists"
+          }
+        ],
         "path": "/v1/names/",
         "pointer": "#/paths/~1v1~1names~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Search for colors by name"
       },
       {
         "deprecated": false,
+        "description": "Generates an SVG swatch representation of a color.",
         "id": "operation:get:/v1/swatch/",
         "kind": "operation",
         "method": "get",
         "name": "getColorSwatch",
+        "parameters": [
+          {
+            "description": "The hex value of the color to retrieve without '#'",
+            "in": "query",
+            "name": "color",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The name of the color to display on the swatch",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/v1/swatch/",
         "pointer": "#/paths/~1v1~1swatch~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:svg"
+          },
+          {
+            "status": "400",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Generate a color swatch for any color"
       },
       {
         "id": "schema:color",
         "kind": "schema",
-        "name": "color"
+        "name": "color",
+        "type": "colorBasic|colorExtension"
       },
       {
         "id": "schema:colorBasic",
         "kind": "schema",
-        "name": "colorBasic"
+        "name": "colorBasic",
+        "type": "object"
       },
       {
+        "description": "Words describing the requested color (`requestedHex`, not the matched name), from [color-description](https://github.com/words/color-description).",
         "id": "schema:colorDescription",
         "kind": "schema",
-        "name": "colorDescription"
+        "name": "colorDescription",
+        "type": "object"
       },
       {
         "id": "schema:colorExtension",
         "kind": "schema",
-        "name": "colorExtension"
+        "name": "colorExtension",
+        "type": "object"
       },
       {
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
         "id": "schema:listDescription",
         "kind": "schema",
-        "name": "listDescription"
+        "name": "listDescription",
+        "type": "object"
       },
       {
+        "description": "Predefined color lists.",
         "id": "schema:possibleLists",
         "kind": "schema",
-        "name": "possibleLists"
+        "name": "possibleLists",
+        "type": "string"
       },
       {
         "id": "schema:socketColorResponse",
         "kind": "schema",
-        "name": "socketColorResponse"
+        "name": "socketColorResponse",
+        "type": "object"
       }
     ]
   },

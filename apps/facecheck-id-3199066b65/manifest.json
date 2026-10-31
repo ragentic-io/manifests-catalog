@@ -23,6 +23,46 @@
         "from": "facecheck-id-3199066b65",
         "kind": "EXPOSES",
         "to": "operation:post:/api/upload_pic"
+      },
+      {
+        "from": "operation:post:/api/delete_pic",
+        "kind": "RETURNS",
+        "to": "schema:BrowserJsonResponse"
+      },
+      {
+        "from": "operation:post:/api/info",
+        "kind": "RETURNS",
+        "to": "schema:InfoResponse"
+      },
+      {
+        "from": "operation:post:/api/search",
+        "kind": "ACCEPTS",
+        "to": "schema:SearchData"
+      },
+      {
+        "from": "operation:post:/api/search",
+        "kind": "RETURNS",
+        "to": "schema:BrowserJsonResponse"
+      },
+      {
+        "from": "operation:post:/api/upload_pic",
+        "kind": "RETURNS",
+        "to": "schema:BrowserJsonResponse"
+      },
+      {
+        "from": "schema:BrowserJsonResponse",
+        "kind": "REFERENCES",
+        "to": "schema:InputImage"
+      },
+      {
+        "from": "schema:BrowserJsonResponse",
+        "kind": "REFERENCES",
+        "to": "schema:Search_Results"
+      },
+      {
+        "from": "schema:Search_Results",
+        "kind": "REFERENCES",
+        "to": "schema:SearchItem"
       }
     ],
     "nodes": [
@@ -36,14 +76,38 @@
         "kind": "operation",
         "method": "post",
         "name": "post /api/delete_pic",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id_search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "id_pic",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/delete_pic",
         "pointer": "#/paths/~1api~1delete_pic/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BrowserJsonResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Remove an image from a search request"
+        "summary": "Remove an image from a search request",
+        "tags": [
+          "FaceCheckAPI"
+        ]
       },
       {
         "deprecated": false,
@@ -53,12 +117,22 @@
         "name": "post /api/info",
         "path": "/api/info",
         "pointer": "#/paths/~1api~1info/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InfoResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Returns remaining search credits, search engine online status, and number of indexed faces"
+        "summary": "Returns remaining search credits, search engine online status, and number of indexed faces",
+        "tags": [
+          "FaceCheckAPI"
+        ]
       },
       {
         "deprecated": false,
@@ -68,12 +142,31 @@
         "name": "post /api/search",
         "path": "/api/search",
         "pointer": "#/paths/~1api~1search/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "SearchData"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BrowserJsonResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Submit a search request to the search engine and get back search results that contain URLs and all images in base64/webp format"
+        "summary": "Submit a search request to the search engine and get back search results that contain URLs and all images in base64/webp format",
+        "tags": [
+          "FaceCheckAPI"
+        ]
       },
       {
         "deprecated": false,
@@ -83,42 +176,65 @@
         "name": "post /api/upload_pic",
         "path": "/api/upload_pic",
         "pointer": "#/paths/~1api~1upload_pic/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BrowserJsonResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Bearer": []
           }
         ],
-        "summary": "Upload 1 to 3 images as multipart/form-data, and get back a search request that contains id_search and 1 to 3 preview thumbnails"
+        "summary": "Upload 1 to 3 images as multipart/form-data, and get back a search request that contains id_search and 1 to 3 preview thumbnails",
+        "tags": [
+          "FaceCheckAPI"
+        ]
       },
       {
         "id": "schema:BrowserJsonResponse",
         "kind": "schema",
-        "name": "BrowserJsonResponse"
+        "name": "BrowserJsonResponse",
+        "type": "object"
       },
       {
         "id": "schema:InfoResponse",
         "kind": "schema",
-        "name": "InfoResponse"
+        "name": "InfoResponse",
+        "type": "object"
       },
       {
         "id": "schema:InputImage",
         "kind": "schema",
-        "name": "InputImage"
+        "name": "InputImage",
+        "type": "object"
       },
       {
         "id": "schema:SearchData",
         "kind": "schema",
-        "name": "SearchData"
+        "name": "SearchData",
+        "type": "object"
       },
       {
         "id": "schema:SearchItem",
         "kind": "schema",
-        "name": "SearchItem"
+        "name": "SearchItem",
+        "type": "object"
       },
       {
         "id": "schema:Search_Results",
         "kind": "schema",
-        "name": "Search_Results"
+        "name": "Search_Results",
+        "type": "object"
       }
     ]
   },

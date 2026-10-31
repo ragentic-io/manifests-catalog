@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_internetarchive_pro
 
 | | |
 | --- | --- |
-| Signed bundle | `fc5d4781453d4c0dad568871804d0bf993f5382db326a3cfb9fb52be3098eafd` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,8 +34,10 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_internetarchive_pro
 
 6 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/search/v1/fields` | get /search/v1/fields | — |
-| GET | `/search/v1/organic` | get /search/v1/organic | — |
-| GET | `/search/v1/scrape` | get /search/v1/scrape | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/search/v1/fields` | get /search/v1/fields | `callback` | Field[] | yes | — |
+| GET | `/search/v1/organic` | get /search/v1/organic | `q`, `field`, `size`, `total_only`, `callback` | OrganicResult | yes | — |
+| GET | `/search/v1/scrape` | get /search/v1/scrape | `q`, `field`, `sort`, `size`, `cursor`, `total_only`, `callback` | ScrapeResult | yes | — |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_raw.githubusercontent.com_edent
 
 | | |
 | --- | --- |
-| Signed bundle | `b2a51e21379f504239f9ad4bfbad06c67a9b72035aeb0b9adcc0b53b372caf49` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,95 +34,97 @@ logo: "https://api.apis.guru/v2/cache/logo/https_raw.githubusercontent.com_edent
 
 95 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/exports/activity.json` | post /exports/activity.json | — |
-| POST | `/exports/info.json` | post /exports/info.json | — |
-| POST | `/exports/list.json` | post /exports/list.json | — |
-| POST | `/exports/rejects.json` | post /exports/rejects.json | — |
-| POST | `/exports/whitelist.json` | post /exports/whitelist.json | — |
-| POST | `/inbound/add-domain.json` | post /inbound/add-domain.json | — |
-| POST | `/inbound/add-route.json` | post /inbound/add-route.json | — |
-| POST | `/inbound/check-domain.json` | post /inbound/check-domain.json | — |
-| POST | `/inbound/delete-domain.json` | post /inbound/delete-domain.json | — |
-| POST | `/inbound/delete-route.json` | post /inbound/delete-route.json | — |
-| POST | `/inbound/domains.json` | post /inbound/domains.json | — |
-| POST | `/inbound/routes.json` | post /inbound/routes.json | — |
-| POST | `/inbound/send-raw.json` | post /inbound/send-raw.json | — |
-| POST | `/inbound/update-route.json` | post /inbound/update-route.json | — |
-| POST | `/ips/cancel-warmup.json` | post /ips/cancel-warmup.json | — |
-| POST | `/ips/check-custom-dns.json` | post /ips/check-custom-dns.json | — |
-| POST | `/ips/create-pool.json` | post /ips/create-pool.json | — |
-| POST | `/ips/delete-pool.json` | post /ips/delete-pool.json | — |
-| POST | `/ips/delete.json` | post /ips/delete.json | — |
-| POST | `/ips/info.json` | post /ips/info.json | — |
-| POST | `/ips/list-pools.json` | post /ips/list-pools.json | — |
-| POST | `/ips/list.json` | post /ips/list.json | — |
-| POST | `/ips/pool-info.json` | post /ips/pool-info.json | — |
-| POST | `/ips/provision.json` | post /ips/provision.json | — |
-| POST | `/ips/set-custom-dns.json` | post /ips/set-custom-dns.json | — |
-| POST | `/ips/set-pool.json` | post /ips/set-pool.json | — |
-| POST | `/ips/start-warmup.json` | post /ips/start-warmup.json | — |
-| POST | `/messages/cancel-scheduled.json` | post /messages/cancel-scheduled.json | — |
-| POST | `/messages/content.json` | post /messages/content.json | — |
-| POST | `/messages/info.json` | post /messages/info.json | — |
-| POST | `/messages/list-scheduled.json` | post /messages/list-scheduled.json | — |
-| POST | `/messages/parse.json` | post /messages/parse.json | — |
-| POST | `/messages/reschedule.json` | post /messages/reschedule.json | — |
-| POST | `/messages/search-time-series.json` | post /messages/search-time-series.json | — |
-| POST | `/messages/search.json` | post /messages/search.json | — |
-| POST | `/messages/send-raw.json` | post /messages/send-raw.json | — |
-| POST | `/messages/send-template.json` | post /messages/send-template.json | — |
-| POST | `/messages/send.json` | post /messages/send.json | — |
-| POST | `/metadata/add.json` | post /metadata/add.json | — |
-| POST | `/metadata/delete.json` | post /metadata/delete.json | — |
-| POST | `/metadata/list.json` | post /metadata/list.json | — |
-| POST | `/metadata/update.json` | post /metadata/update.json | — |
-| POST | `/rejects/add.json` | post /rejects/add.json | — |
-| POST | `/rejects/delete.json` | post /rejects/delete.json | — |
-| POST | `/rejects/list.json` | post /rejects/list.json | — |
-| POST | `/senders/add-domain.json` | post /senders/add-domain.json | — |
-| POST | `/senders/check-domain.json` | post /senders/check-domain.json | — |
-| POST | `/senders/domains.json` | post /senders/domains.json | — |
-| POST | `/senders/info.json` | post /senders/info.json | — |
-| POST | `/senders/list.json` | post /senders/list.json | — |
-| POST | `/senders/time-series.json` | post /senders/time-series.json | — |
-| POST | `/senders/verify-domain.json` | post /senders/verify-domain.json | — |
-| POST | `/subaccounts/add.json` | post /subaccounts/add.json | — |
-| POST | `/subaccounts/delete.json` | post /subaccounts/delete.json | — |
-| POST | `/subaccounts/info.json` | post /subaccounts/info.json | — |
-| POST | `/subaccounts/list.json` | post /subaccounts/list.json | — |
-| POST | `/subaccounts/pause.json` | post /subaccounts/pause.json | — |
-| POST | `/subaccounts/resume.json` | post /subaccounts/resume.json | — |
-| POST | `/subaccounts/update.json` | post /subaccounts/update.json | — |
-| POST | `/tags/all-time-series.json` | post /tags/all-time-series.json | — |
-| POST | `/tags/delete.json` | post /tags/delete.json | — |
-| POST | `/tags/info.json` | post /tags/info.json | — |
-| POST | `/tags/list.json` | post /tags/list.json | — |
-| POST | `/tags/time-series.json` | post /tags/time-series.json | — |
-| POST | `/templates/add.json` | post /templates/add.json | — |
-| POST | `/templates/delete.json` | post /templates/delete.json | — |
-| POST | `/templates/info.json` | post /templates/info.json | — |
-| POST | `/templates/list.json` | post /templates/list.json | — |
-| POST | `/templates/publish.json` | post /templates/publish.json | — |
-| POST | `/templates/render.json` | post /templates/render.json | — |
-| POST | `/templates/time-series.json` | post /templates/time-series.json | — |
-| POST | `/templates/update.json` | post /templates/update.json | — |
-| POST | `/urls/add-tracking-domain.json` | post /urls/add-tracking-domain.json | — |
-| POST | `/urls/check-tracking-domain.json` | post /urls/check-tracking-domain.json | — |
-| POST | `/urls/list.json` | post /urls/list.json | — |
-| POST | `/urls/search.json` | post /urls/search.json | — |
-| POST | `/urls/time-series.json` | post /urls/time-series.json | — |
-| POST | `/urls/tracking-domains.json` | post /urls/tracking-domains.json | — |
-| POST | `/users/info.json` | post /users/info.json | — |
-| POST | `/users/ping.json` | post /users/ping.json | — |
-| POST | `/users/ping2.json` | post /users/ping2.json | — |
-| POST | `/users/senders.json` | post /users/senders.json | — |
-| POST | `/webhooks/add.json` | post /webhooks/add.json | — |
-| POST | `/webhooks/delete.json` | post /webhooks/delete.json | — |
-| POST | `/webhooks/info.json` | post /webhooks/info.json | — |
-| POST | `/webhooks/list.json` | post /webhooks/list.json | — |
-| POST | `/webhooks/update.json` | post /webhooks/update.json | — |
-| POST | `/whitelists/add.json` | post /whitelists/add.json | — |
-| POST | `/whitelists/delete.json` | post /whitelists/delete.json | — |
-| POST | `/whitelists/list.json` | post /whitelists/list.json | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/exports/activity.json` | post /exports/activity.json | body*: exports_activity | exports_satus |  | — |
+| POST | `/exports/info.json` | post /exports/info.json | body*: id | exports_info-response |  | — |
+| POST | `/exports/list.json` | post /exports/list.json | body*: api_key | exports_list-response |  | — |
+| POST | `/exports/rejects.json` | post /exports/rejects.json | body*: notify_email | exports_satus |  | — |
+| POST | `/exports/whitelist.json` | post /exports/whitelist.json | body*: notify_email | exports_satus |  | — |
+| POST | `/inbound/add-domain.json` | post /inbound/add-domain.json | body*: domain | inbound_info |  | — |
+| POST | `/inbound/add-route.json` | post /inbound/add-route.json | body*: inbound_add-route | route |  | — |
+| POST | `/inbound/check-domain.json` | post /inbound/check-domain.json | body*: domain | inbound_info |  | — |
+| POST | `/inbound/delete-domain.json` | post /inbound/delete-domain.json | body*: domain | inbound_info |  | — |
+| POST | `/inbound/delete-route.json` | post /inbound/delete-route.json | body*: id | route |  | — |
+| POST | `/inbound/domains.json` | post /inbound/domains.json | body*: api_key | inbound_domains-response |  | — |
+| POST | `/inbound/routes.json` | post /inbound/routes.json | body*: domain | inbound_routes-response |  | — |
+| POST | `/inbound/send-raw.json` | post /inbound/send-raw.json | body*: inbound_send-raw | inbound_send-raw-response |  | — |
+| POST | `/inbound/update-route.json` | post /inbound/update-route.json | body*: inbound_update-route | route |  | — |
+| POST | `/ips/cancel-warmup.json` | post /ips/cancel-warmup.json | body*: ip | ip_info |  | — |
+| POST | `/ips/check-custom-dns.json` | post /ips/check-custom-dns.json | body*: ip_domain | ips_check-custom-dns-response |  | — |
+| POST | `/ips/create-pool.json` | post /ips/create-pool.json | body*: ips_pool-key | ips_pool |  | — |
+| POST | `/ips/delete-pool.json` | post /ips/delete-pool.json | body*: ips_pool-key | ips_delete-pool-response |  | — |
+| POST | `/ips/delete.json` | post /ips/delete.json | body*: ip | ips_delete-response |  | — |
+| POST | `/ips/info.json` | post /ips/info.json | body*: ip | ip_info |  | — |
+| POST | `/ips/list-pools.json` | post /ips/list-pools.json | body*: api_key | ips_list-pools-response |  | — |
+| POST | `/ips/list.json` | post /ips/list.json | body*: api_key | ips_list-response |  | — |
+| POST | `/ips/pool-info.json` | post /ips/pool-info.json | body*: ips_pool-key | ips_pool |  | — |
+| POST | `/ips/provision.json` | post /ips/provision.json | body*: ips_provision | ips_provision-response |  | — |
+| POST | `/ips/set-custom-dns.json` | post /ips/set-custom-dns.json | body*: ip_domain | ip_info |  | — |
+| POST | `/ips/set-pool.json` | post /ips/set-pool.json | body*: ips_set-pool | ip_info |  | — |
+| POST | `/ips/start-warmup.json` | post /ips/start-warmup.json | body*: ip | ip_info |  | — |
+| POST | `/messages/cancel-scheduled.json` | post /messages/cancel-scheduled.json | body*: messages_cancel-scheduled | schedulingchange_info |  | — |
+| POST | `/messages/content.json` | post /messages/content.json | body*: id | messages_content-response |  | — |
+| POST | `/messages/info.json` | post /messages/info.json | body*: id | messages_info-response |  | — |
+| POST | `/messages/list-scheduled.json` | post /messages/list-scheduled.json | body*: messages_list-scheduled | messages_list-scheduled-response |  | — |
+| POST | `/messages/parse.json` | post /messages/parse.json | body*: messages_parse | messages_parse-response |  | — |
+| POST | `/messages/reschedule.json` | post /messages/reschedule.json | body*: messages_reschedule | schedulingchange_info |  | — |
+| POST | `/messages/search-time-series.json` | post /messages/search-time-series.json | body*: messages_search-time-series | timeseries |  | — |
+| POST | `/messages/search.json` | post /messages/search.json | body*: messages_search | messages_search-response |  | — |
+| POST | `/messages/send-raw.json` | post /messages/send-raw.json | body*: messages_send-raw | message_send-status |  | — |
+| POST | `/messages/send-template.json` | post /messages/send-template.json | body*: messages_send-template | message_send-status |  | — |
+| POST | `/messages/send.json` | post /messages/send.json | body*: messages_send | message_send-status |  | — |
+| POST | `/metadata/add.json` | post /metadata/add.json | body*: metadata_template | metadata_info |  | — |
+| POST | `/metadata/delete.json` | post /metadata/delete.json | body*: name | metadata_info |  | — |
+| POST | `/metadata/list.json` | post /metadata/list.json | body*: api_key | metadata_list-response |  | — |
+| POST | `/metadata/update.json` | post /metadata/update.json | body*: metadata_template | metadata_info |  | — |
+| POST | `/rejects/add.json` | post /rejects/add.json | body*: rejects_add | rejects_add-response |  | — |
+| POST | `/rejects/delete.json` | post /rejects/delete.json | body*: rejects_delete | rejects_delete-response |  | — |
+| POST | `/rejects/list.json` | post /rejects/list.json | body*: rejects_list | rejects_list-response |  | — |
+| POST | `/senders/add-domain.json` | post /senders/add-domain.json | body*: domain | sender_domain_info |  | — |
+| POST | `/senders/check-domain.json` | post /senders/check-domain.json | body*: domain | sender_domain_info |  | — |
+| POST | `/senders/domains.json` | post /senders/domains.json | body*: api_key | senders_domains-response |  | — |
+| POST | `/senders/info.json` | post /senders/info.json | body*: sender_address | senders_info-response |  | — |
+| POST | `/senders/list.json` | post /senders/list.json | body*: api_key | senders |  | — |
+| POST | `/senders/time-series.json` | post /senders/time-series.json | body*: sender_address | time-series |  | — |
+| POST | `/senders/verify-domain.json` | post /senders/verify-domain.json | body*: senders_verify-domain | senders_verify-domain-response |  | — |
+| POST | `/subaccounts/add.json` | post /subaccounts/add.json | body*: subaccount_info | subaccount_info2 |  | — |
+| POST | `/subaccounts/delete.json` | post /subaccounts/delete.json | body*: id | subaccount_info2 |  | — |
+| POST | `/subaccounts/info.json` | post /subaccounts/info.json | body*: id | subaccounts_info-response |  | — |
+| POST | `/subaccounts/list.json` | post /subaccounts/list.json | body*: url_key | subaccounts_list-response |  | — |
+| POST | `/subaccounts/pause.json` | post /subaccounts/pause.json | body*: id | subaccount_info2 |  | — |
+| POST | `/subaccounts/resume.json` | post /subaccounts/resume.json | body*: id | subaccount_info2 |  | — |
+| POST | `/subaccounts/update.json` | post /subaccounts/update.json | body*: subaccount_info | subaccount_info2 |  | — |
+| POST | `/tags/all-time-series.json` | post /tags/all-time-series.json | body*: api_key | timeseries |  | — |
+| POST | `/tags/delete.json` | post /tags/delete.json | body*: tag_key | tags_delete-response |  | — |
+| POST | `/tags/info.json` | post /tags/info.json | body*: tag_key | tags_info-response |  | — |
+| POST | `/tags/list.json` | post /tags/list.json | body*: api_key | tags_list-response |  | — |
+| POST | `/tags/time-series.json` | post /tags/time-series.json | body*: tag_key | timeseries |  | — |
+| POST | `/templates/add.json` | post /templates/add.json | body*: template | template_detailed |  | — |
+| POST | `/templates/delete.json` | post /templates/delete.json | body*: name | template_detailed |  | — |
+| POST | `/templates/info.json` | post /templates/info.json | body*: name | template_detailed |  | — |
+| POST | `/templates/list.json` | post /templates/list.json | body*: templates_list | templates_list-response |  | — |
+| POST | `/templates/publish.json` | post /templates/publish.json | body*: name | template_detailed |  | — |
+| POST | `/templates/render.json` | post /templates/render.json | body*: templates_render | templates_render-response |  | — |
+| POST | `/templates/time-series.json` | post /templates/time-series.json | body*: name | time-series |  | — |
+| POST | `/templates/update.json` | post /templates/update.json | body*: template | template_detailed |  | — |
+| POST | `/urls/add-tracking-domain.json` | post /urls/add-tracking-domain.json | body*: domain | tracking-domain-status |  | — |
+| POST | `/urls/check-tracking-domain.json` | post /urls/check-tracking-domain.json | body*: domain | tracking-domain-status |  | — |
+| POST | `/urls/list.json` | post /urls/list.json | body*: api_key | url_infos |  | — |
+| POST | `/urls/search.json` | post /urls/search.json | body*: url_key | url_infos |  | — |
+| POST | `/urls/time-series.json` | post /urls/time-series.json | body*: urls_time-series | urls_time-series-response |  | — |
+| POST | `/urls/tracking-domains.json` | post /urls/tracking-domains.json | body*: api_key | urls_tracking-domains-response |  | — |
+| POST | `/users/info.json` | post /users/info.json | body*: api_key | users_info-response |  | — |
+| POST | `/users/ping.json` | post /users/ping.json | body*: api_key | — |  | — |
+| POST | `/users/ping2.json` | post /users/ping2.json | body*: api_key | users_ping2-response |  | — |
+| POST | `/users/senders.json` | post /users/senders.json | body*: api_key | senders |  | — |
+| POST | `/webhooks/add.json` | post /webhooks/add.json | body*: webhooks_add | webhook |  | — |
+| POST | `/webhooks/delete.json` | post /webhooks/delete.json | body*: webhook_key | webhook |  | — |
+| POST | `/webhooks/info.json` | post /webhooks/info.json | body*: webhook_key | webhook |  | — |
+| POST | `/webhooks/list.json` | post /webhooks/list.json | body*: api_key | webhooks_list-response |  | — |
+| POST | `/webhooks/update.json` | post /webhooks/update.json | body*: webhooks_update | webhook |  | — |
+| POST | `/whitelists/add.json` | post /whitelists/add.json | body*: email | whitelists_add-response |  | — |
+| POST | `/whitelists/delete.json` | post /whitelists/delete.json | body*: email | whitelists_delete-response |  | — |
+| POST | `/whitelists/list.json` | post /whitelists/list.json | body*: email | whitelists_list-response |  | — |

@@ -122,12 +122,29 @@
       },
       {
         "deprecated": false,
+        "description": "Return an organization's activity stream",
         "id": "operation:get:/action/organization_activity_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/organization_activity_list",
+        "parameters": [
+          {
+            "default": "ministry-of-agriculture",
+            "description": "The id or name of the organization",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/organization_activity_list",
         "pointer": "#/paths/~1action~1organization_activity_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -156,16 +173,36 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get the activity stream of an organization"
+        "summary": "Get the activity stream of an organization",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return an organization's activity stream as HTML",
         "id": "operation:get:/action/organization_activity_list_html",
         "kind": "operation",
         "method": "get",
         "name": "get /action/organization_activity_list_html",
+        "parameters": [
+          {
+            "default": "ministry-of-agriculture",
+            "description": "The id or name of the organization",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/organization_activity_list_html",
         "pointer": "#/paths/~1action~1organization_activity_list_html/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -194,16 +231,44 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get the activity stream of an organization, HTML format"
+        "summary": "Get the activity stream of an organization, HTML format",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of organization names that contain a string",
         "id": "operation:get:/action/organization_autocomplete",
         "kind": "operation",
         "method": "get",
         "name": "get /action/organization_autocomplete",
+        "parameters": [
+          {
+            "default": "ministry",
+            "description": "The string to search for",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "The maximum number of organizations to return (optional)",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/action/organization_autocomplete",
         "pointer": "#/paths/~1action~1organization_autocomplete/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -232,16 +297,36 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get names of organizations that match a query string"
+        "summary": "Get names of organizations that match a query string",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the number of followers of an organization",
         "id": "operation:get:/action/organization_follower_count",
         "kind": "operation",
         "method": "get",
         "name": "get /action/organization_follower_count",
+        "parameters": [
+          {
+            "default": "ministry-of-agriculture",
+            "description": "The id or name of the organization",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/organization_follower_count",
         "pointer": "#/paths/~1action~1organization_follower_count/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -270,16 +355,36 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get number of followers of an organization"
+        "summary": "Get number of followers of an organization",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of users that are following a given organization",
         "id": "operation:get:/action/organization_follower_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/organization_follower_list",
+        "parameters": [
+          {
+            "default": "ministry-of-agriculture",
+            "description": "The id or name of the organization",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/organization_follower_list",
         "pointer": "#/paths/~1action~1organization_follower_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -308,16 +413,44 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get users following an organization"
+        "summary": "Get users following an organization",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the names of all indexed organizations",
         "id": "operation:get:/action/organization_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/organization_list",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "The offset (index) of the first organizations to return",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "The number of organizations to be returned per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/action/organization_list",
         "pointer": "#/paths/~1action~1organization_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -346,16 +479,36 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get names of all organizations"
+        "summary": "Get names of all organizations",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the organizations that the user has a given permission for",
         "id": "operation:get:/action/organization_list_for_user",
         "kind": "operation",
         "method": "get",
         "name": "get /action/organization_list_for_user",
+        "parameters": [
+          {
+            "default": "\"edit_group\"",
+            "description": "The permission the user has against the returned organization",
+            "in": "query",
+            "name": "permission",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/organization_list_for_user",
         "pointer": "#/paths/~1action~1organization_list_for_user/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -384,16 +537,36 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get organizations that a user has a given permission for"
+        "summary": "Get organizations that a user has a given permission for",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return an organization's revisions",
         "id": "operation:get:/action/organization_revision_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/organization_revision_list",
+        "parameters": [
+          {
+            "default": "ministry-of-agriculture",
+            "description": "The name or id of the organization",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/organization_revision_list",
         "pointer": "#/paths/~1action~1organization_revision_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -422,16 +595,44 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get organization revisions"
+        "summary": "Get organization revisions",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the details of an organization",
         "id": "operation:get:/action/organization_show",
         "kind": "operation",
         "method": "get",
         "name": "get /action/organization_show",
+        "parameters": [
+          {
+            "default": "ministry-of-agriculture",
+            "description": "The id or name of the organization",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "include a list of the organization's datasets",
+            "in": "query",
+            "name": "include_datasets",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/action/organization_show",
         "pointer": "#/paths/~1action~1organization_show/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -460,16 +661,52 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get details of a specific organization"
+        "summary": "Get details of a specific organization",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a package's activity stream",
         "id": "operation:get:/action/package_activity_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/package_activity_list",
+        "parameters": [
+          {
+            "default": "grizzly-bear-population-units",
+            "description": "The id or name of the package",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Where to start getting activity items from",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 31,
+            "description": "The maximum number of activities to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/action/package_activity_list",
         "pointer": "#/paths/~1action~1package_activity_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -498,16 +735,52 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get the activity stream of a package (dataset)"
+        "summary": "Get the activity stream of a package (dataset)",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The activity stream is rendered as a snippet of HTML meant to be included in an HTML pag, i.e it doesn't have any header or footer.",
         "id": "operation:get:/action/package_activity_list_html",
         "kind": "operation",
         "method": "get",
         "name": "get /action/package_activity_list_html",
+        "parameters": [
+          {
+            "default": "grizzly-bear-population-units",
+            "description": "The id or name of the package",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Where to start getting activity items from",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 31,
+            "description": "The maximum number of activities to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/action/package_activity_list_html",
         "pointer": "#/paths/~1action~1package_activity_list_html/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -536,16 +809,44 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get the activity stream of a package (dataset), HTML format"
+        "summary": "Get the activity stream of a package (dataset), HTML format",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a list of datasets that match a string",
         "id": "operation:get:/action/package_autocomplete",
         "kind": "operation",
         "method": "get",
         "name": "get /action/package_autocomplete",
+        "parameters": [
+          {
+            "default": "\"Okanagan Lake\"",
+            "description": "The string to query",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 10,
+            "description": "The maximum number of resource formats to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/action/package_autocomplete",
         "pointer": "#/paths/~1action~1package_autocomplete/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -574,16 +875,44 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Find packages (datasets) matching a query"
+        "summary": "Find packages (datasets) matching a query",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the names of all indexed packages (datasets)",
         "id": "operation:get:/action/package_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/package_list",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "The offset (index) of the first package to return",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "The number of packages to be returned per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/action/package_list",
         "pointer": "#/paths/~1action~1package_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -612,16 +941,51 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get a list of all packages (datasets)"
+        "summary": "Get a list of all packages (datasets)",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a dataset's relationships",
         "id": "operation:get:/action/package_relationships_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/package_relationships_list",
+        "parameters": [
+          {
+            "default": "grizzly-bear-population-units",
+            "description": "The id or name of the first package",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "important-fossil-areas",
+            "description": "The id or name of the second package",
+            "in": "query",
+            "name": "id2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "relationship as string",
+            "in": "query",
+            "name": "rel",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/package_relationships_list",
         "pointer": "#/paths/~1action~1package_relationships_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -650,16 +1014,36 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get package (dataset) relationships"
+        "summary": "Get package (dataset) relationships",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return a dataset's revision as a list of dictionaries",
         "id": "operation:get:/action/package_revision_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/package_revision_list",
+        "parameters": [
+          {
+            "default": "grizzly-bear-population-units",
+            "description": "The id or name of the dataset",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/package_revision_list",
         "pointer": "#/paths/~1action~1package_revision_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -688,16 +1072,36 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get list of revisions for a package (dataset)"
+        "summary": "Get list of revisions for a package (dataset)",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Searches for packages (datasets) matching the specified query terms",
         "id": "operation:get:/action/package_search",
         "kind": "operation",
         "method": "get",
         "name": "get /action/package_search",
+        "parameters": [
+          {
+            "default": "\"Okanagan Lake\"",
+            "description": "A query string",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/package_search",
         "pointer": "#/paths/~1action~1package_search/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -726,16 +1130,36 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Find packages (datasets) matching query terms"
+        "summary": "Find packages (datasets) matching query terms",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns metadata about the package (dataset) corresponding to the specified unique name",
         "id": "operation:get:/action/package_show",
         "kind": "operation",
         "method": "get",
         "name": "get /action/package_show",
+        "parameters": [
+          {
+            "default": "grizzly-bear-population-units",
+            "description": "The package name",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/package_show",
         "pointer": "#/paths/~1action~1package_show/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -764,16 +1188,63 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get metadata about one specific package (dataset)"
+        "summary": "Get metadata about one specific package (dataset)",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a dataset's related items.",
         "id": "operation:get:/action/related_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/related_list",
+        "parameters": [
+          {
+            "description": "id or name of the dataset (optional)",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Dataset dictionary of the dataset (optional)",
+            "in": "query",
+            "name": "dataset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The type of related item to show (optional)",
+            "in": "query",
+            "name": "type_filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The order to sort the related items in",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "whether or not to restrict the results to only featured items",
+            "in": "query",
+            "name": "featured",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/action/related_list",
         "pointer": "#/paths/~1action~1related_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -802,16 +1273,66 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Gets items related to a package (dataset)"
+        "summary": "Gets items related to a package (dataset)",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a dictionary with two fields ``count`` and ``results``.",
         "id": "operation:get:/action/resource_search",
         "kind": "operation",
         "method": "get",
         "name": "get /action/resource_search",
+        "parameters": [
+          {
+            "default": "format:csv",
+            "description": "The search criteria string or list of strings of the form ``{field}:{term1}``",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Depreciated",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "A field on the resource model that orders the results",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "Apply an offset to the query",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Apply a limit to the query",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/action/resource_search",
         "pointer": "#/paths/~1action~1resource_search/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -840,16 +1361,44 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Find resources"
+        "summary": "Find resources",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Return the metadata of a resource",
         "id": "operation:get:/action/resource_show",
         "kind": "operation",
         "method": "get",
         "name": "get /action/resource_show",
+        "parameters": [
+          {
+            "default": "e6c8bb1d-3726-418b-9b7e-1d97a9bbb817",
+            "description": "The id of the resource",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Add tracking information to dataset",
+            "in": "query",
+            "name": "include_tracking",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/action/resource_show",
         "pointer": "#/paths/~1action~1resource_show/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -878,16 +1427,26 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get metadata for a specific resource"
+        "summary": "Get metadata for a specific resource",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the site status",
         "id": "operation:get:/action/status_show",
         "kind": "operation",
         "method": "get",
         "name": "get /action/status_show",
         "path": "/action/status_show",
         "pointer": "#/paths/~1action~1status_show/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -916,16 +1475,44 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get the site status"
+        "summary": "Get the site status",
+        "tags": [
+          "action"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the names of all indexed tags",
         "id": "operation:get:/action/tag_list",
         "kind": "operation",
         "method": "get",
         "name": "get /action/tag_list",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "The offset (index) of the first tag to return",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "The number of tags to be returned per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/action/tag_list",
         "pointer": "#/paths/~1action~1tag_list/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "githubAccessCode": [
@@ -954,7 +1541,10 @@
             "internalApiKey": []
           }
         ],
-        "summary": "Get a list of tags"
+        "summary": "Get a list of tags",
+        "tags": [
+          "action"
+        ]
       }
     ]
   },

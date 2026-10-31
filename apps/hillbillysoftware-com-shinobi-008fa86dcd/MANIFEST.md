@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `9de30d078f5fa87b9dc239256cf5b0657fe8a0b8efeeb09677c6b0779af5aacd` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,63 +34,65 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 34 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/Actors/Search/{accesstoken}/{Query}` | Actor_Get | Returns data on queried actor/actress. Result set limited to 5 records |
-| POST | `/AddActor` | AddActor_Post | Add new actor or actress to database |
-| POST | `/AddTVShow` | AddTVShow_Post | Add new show to database |
-| GET | `/Aliases/ByID/{AccessToken}/{imdbID}` | AliasesByID_Get | Get known aliases for Movies or Television shows from passed imdbID |
-| GET | `/Aliases/ByName/{AccessToken}/{Title}` | Aliases_Get | Get known aliases for Movies or Television shows |
-| GET | `/Awards/ByWinner/{AccessToken}/{Nominee}` | AwardsbyWinner_Get | Gets all awards by nominiee |
-| GET | `/Awards/ByYear/{Year}` | awards_Get | Gets all awards for requested year |
-| GET | `/Calendar/ByDate/{AccessToken}/{Date}/{Country}` | ScheduleByDate_Get | Gets TV Schedule for selected data |
-| GET | `/Calendar/Countries/{AccessToken}` | CalendarCountries_Get | Returns list of available countries in calendar database |
-| GET | `/Calendar/Networks/{AccessToken}` | CalendarNetworks_Get | Gets a list of available networks |
-| GET | `/Calendar/Seasons/{AccessToken}/{Name}` | CalendarShowSeasons_Get | Returns list of seasons available in the calendar for show |
-| GET | `/Calendar/Show/Season/{AccessToken}/{Name}/{Season}` | CalendarbyShownameSeason_Get | Get Calendar by showname and season |
-| GET | `/Calendar/Show/{AccessToken}/{Name}/{Year}` | CalendarByShowName_Get | Will return show schedule for queried showname and year |
-| GET | `/Calendar/Today/{AccessToken}` | CalendarToday_Get | Will return show schedule for today for all countries in database |
-| GET | `/Cast/ActorBySearch/{AccessToken}/{Actor}` | ActorInShows_Get | Returns all shows queried actor/actress is or has been in |
-| GET | `/Cast/ByActor/{AccessToken}/{Actor}` | CastByActor_Get | Returns list of show actor is appearing in |
-| GET | `/Cast/ByTVShow/{accesstoken}/{ShowName}` | ActorsInTVShow_Get | Returns all actors in queried tvshow |
-| GET | `/Crew/ByID/{AccessToken}/{ID}` | CrewByID_Get | Get crew list by ID |
-| GET | `/Crew/ByPerson/{AccessToken}/{PersonName}` | CrewByPerson_Get | Gets list of productions searched person is/was involved in. |
-| GET | `/Crew/ByShowName/{AccessToken}/{ShowName}` | CrewbyShowname_Get | Get crew list by showname |
-| GET | `/Crew/Search/{AccessToken}/{Phrase}` | Crew_Get | Returns crew for queried show. |
-| GET | `/Episodes/ByID/{AccessToken}/{ID}` | EpisodesByID_Get | Gets all episodes for selected ID |
-| GET | `/Episodes/BySeason/{AccessToken}/{ID}/{Season}` | EpisodesBySeason_Get | Gets list of episodes for specified imdbID and Season number |
-| GET | `/Episodes/ByShowName/{AccessToken}/{Showname}` | Episodes_Get | Gets all episodes for selected show |
-| GET | `/Episodes/LatestSeason/Show/{AccessToken}/{Name}` | EpisodesLastAvailableSeasonbyName_Get | Gets latest season number based on show name |
-| GET | `/Episodes/LatestSeason/{AccessToken}/{ID}` | EpisodesLastAvailableSeason_Get | Returns last available season number in database, based on passed imdbID |
-| GET | `/Episodes/SeasonCount/{AccessToken}/{ID}` | EpisodesSeasonCount_Get | Returns number of available seasons and episodes |
-| GET | `/GetIMDBid/ByID/{AccessToken}/{Query}` | GetIMDBid_GetAsync | Gets list of avaiable IMDB ids from Movies and TV Show databases, you can use those to query other end points that need ID's |
-| GET | `/Images/ByID/{AccessToken}/{imdbID}` | Images_Get | Get images available for movie/tv show with passed imdbID |
-| GET | `/Images/Search/{Accesstoken}/{Query}` | ImageSearch_Get | Get images available for movie/tv show with passed query |
-| GET | `/Magnets/ByDate/{AccessToken}/{Date}` | MagnetsByDate_GetAsync | Gets available magnet hashes on passed date (yyyy-mm-dd). Feature not available on free plan, please donate to be able to use this feature. |
-| GET | `/Magnets/ByIMDB/{AccessToken}/{imdbID}` | MagnetsByimdbID_GetAsync | Returns list of magnet hashes for passed IMDBID. Feature not available on free plan, please donate to be able to use this feature. |
-| GET | `/Magnets/Search/{AccessToken}/{Query}` | magnetsMovieByID_GetAsync | Try and find magnet links for queried movie. Feature not available on free plan, please donate to be able to use this feature |
-| GET | `/Magnets/TVShow/{AccessToken}/{TVShow}` | TVShowsearch_Get | Returns results based on query, Feature not available on free plan, please donate to be able to use this feature. |
-| GET | `/Movie/ByID/{accesstoken}/{imdbID}` | MovieID_Get | — |
-| GET | `/Movie/Search/{AccessToken}/{Query}` | MovieSearch_GetAsync | Searches for movies, result set limited to 5 records |
-| GET | `/Music/Albums/Art/{AccessToken}/{AlbumID}` | musicAlbumArt_Get | Returns Albumart for passed AlbumID |
-| GET | `/Music/Albums/CoverArt/{AccessToken}/{MBID}` | musicCDCovers_Get | Gets CD art for passed MusicBrainzID |
-| GET | `/Music/Albums/MusicBrainzID/{AccessToken}/{MBID}` | MusicByMusicBrainz_Get | Get Artist / Band information on MusicBrainzID |
-| GET | `/Music/Albums/{AccessToken}/{ArtistID}` | musicAlbums_Get | Get albums from passed ArtistID |
-| GET | `/Music/Artist/Art/ID/{AccessToken}/{ArtistID}` | musicCoverArt_Get | Retrieves artist / band Banner and logo based on ArtistID |
-| GET | `/Music/Artist/Art/Name/{AccessToken}/{Name}` | musicCoverArtByName_Get | Retrieves artist / band Banner and logo based on artist or bandname |
-| GET | `/Music/Artist/Extended/{AccessToken}/{Name}` | musicArtistExtended_Get | Provides extended information, which includes all known albums and music videos of artist / band |
-| GET | `/Music/Artist/{AccessToken}/{Name}` | Music_Get | Get information about passed band name or artist |
-| GET | `/Music/Lyrics/AlbumID/{AccessToken}/{AlbumID}` | musicLyricsbyAlbumID_Get | Returns all lyrics for requested AlbumID |
-| GET | `/Music/Lyrics/ByName/{AccessToken}/{Name}` | musicLyrics_Get | Get lyrics for band or artist (record set limited to 25) |
-| GET | `/Music/Lyrics/BySong/{AccessToken}/{Song}` | musicLyricsBySong_Get | Get lyrics on song title |
-| GET | `/Music/Tracks/{AccessToken}/{AlbumID}` | musicTracks_Get | Get all tracks from requested album |
-| GET | `/Music/Videos/{AccessToken}/{ArtistID}` | MusiVideos_Get | Lists all videos available for this Artist / Band |
-| GET | `/Rating/ByID/{AccessToken}/{imdbID}` | Rating_Get | Returns ratings from various resources(IMDB,Rotten Tomatoes, metaCritics, TVMaze etc) of passed IMDBid |
-| GET | `/Rating/ByName/{AccessToken}/{Name}` | RatingByName_Get | — |
-| GET | `/Status/{AccessToken}/{Query}` | ShowStatus_Get | Returns status of queried show (query can be IMDB, TVDB, or showname) |
-| GET | `/TV/ByID/{accesstoken}/{imdbID}` | TVShowID_Get | Returns TVShow information based on IMDBid |
-| GET | `/TV/ByName/{AccessToken}/{Query}` | TVShowByName_Get | Returns results based on query, result set limited to 5 records |
-| GET | `/Trailers/ByID/{AccessToken}/{imdbID}` | TrailersbyID_Get | Get Trailers for passed imdbID |
-| GET | `/Trailers/CountByID/{AccessToken}/{imdbID}` | TrailerCountByID_Get | Get trailer count for passed ID |
-| GET | `/Trailers/CountByName/{AccessToken}/{Name}` | TrailerCountByName_Get | Get trailer count for passed name (Movie title or TVShow name) |
-| GET | `/Trailers/Search/{AccessToken}/{Phrase}` | TrailerSearch_Get | Gets trailers by search phrase (limited to 10 records) |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/Actors/Search/{accesstoken}/{Query}` | Actor_Get | `accesstoken`*, `Query`* | Actor[] | yes | Returns data on queried actor/actress. Result set limited to 5 records |
+| POST | `/AddActor` | AddActor_Post | body*: ActorPost | PostResult |  | Add new actor or actress to database |
+| POST | `/AddTVShow` | AddTVShow_Post | body*: TVInformationPost | PostResult |  | Add new show to database |
+| GET | `/Aliases/ByID/{AccessToken}/{imdbID}` | AliasesByID_Get | `AccessToken`*, `imdbID`* | Aliases[] | yes | Get known aliases for Movies or Television shows from passed imdbID |
+| GET | `/Aliases/ByName/{AccessToken}/{Title}` | Aliases_Get | `AccessToken`*, `Title`* | Aliases[] | yes | Get known aliases for Movies or Television shows |
+| GET | `/Awards/ByWinner/{AccessToken}/{Nominee}` | AwardsbyWinner_Get | `AccessToken`*, `Nominee`* | _Awards[] | yes | Gets all awards by nominiee |
+| GET | `/Awards/ByYear/{Year}` | awards_Get | `Year`* | _Awards[] | yes | Gets all awards for requested year |
+| GET | `/Calendar/ByDate/{AccessToken}/{Date}/{Country}` | ScheduleByDate_Get | `AccessToken`*, `Date`*, `Country`* | schedule[] | yes | Gets TV Schedule for selected data |
+| GET | `/Calendar/Countries/{AccessToken}` | CalendarCountries_Get | `AccessToken`* | Country[] | yes | Returns list of available countries in calendar database |
+| GET | `/Calendar/Networks/{AccessToken}` | CalendarNetworks_Get | `AccessToken`* | Networks[] | yes | Gets a list of available networks |
+| GET | `/Calendar/Seasons/{AccessToken}/{Name}` | CalendarShowSeasons_Get | `AccessToken`*, `Name`* | ShowSeasons[] | yes | Returns list of seasons available in the calendar for show |
+| GET | `/Calendar/Show/Season/{AccessToken}/{Name}/{Season}` | CalendarbyShownameSeason_Get | `AccessToken`*, `Name`*, `Season`* | schedule[] | yes | Get Calendar by showname and season |
+| GET | `/Calendar/Show/{AccessToken}/{Name}/{Year}` | CalendarByShowName_Get | `AccessToken`*, `Name`*, `Year`* | schedule[] | yes | Will return show schedule for queried showname and year |
+| GET | `/Calendar/Today/{AccessToken}` | CalendarToday_Get | `AccessToken`* | schedule[] | yes | Will return show schedule for today for all countries in database |
+| GET | `/Cast/ActorBySearch/{AccessToken}/{Actor}` | ActorInShows_Get | `AccessToken`*, `Actor`* | TVShowActor[] | yes | Returns all shows queried actor/actress is or has been in |
+| GET | `/Cast/ByActor/{AccessToken}/{Actor}` | CastByActor_Get | `AccessToken`*, `Actor`* | TVShowActor[] | yes | Returns list of show actor is appearing in |
+| GET | `/Cast/ByTVShow/{accesstoken}/{ShowName}` | ActorsInTVShow_Get | `accesstoken`*, `ShowName`* | TVShowActor[] | yes | Returns all actors in queried tvshow |
+| GET | `/Crew/ByID/{AccessToken}/{ID}` | CrewByID_Get | `AccessToken`*, `ID`* | Crew[] | yes | Get crew list by ID |
+| GET | `/Crew/ByPerson/{AccessToken}/{PersonName}` | CrewByPerson_Get | `AccessToken`*, `PersonName`* | Crew[] | yes | Gets list of productions searched person is/was involved in. |
+| GET | `/Crew/ByShowName/{AccessToken}/{ShowName}` | CrewbyShowname_Get | `AccessToken`*, `ShowName`* | Crew[] | yes | Get crew list by showname |
+| GET | `/Crew/Search/{AccessToken}/{Phrase}` | Crew_Get | `AccessToken`*, `Phrase`* | Crew[] | yes | Returns crew for queried show. |
+| GET | `/Episodes/ByID/{AccessToken}/{ID}` | EpisodesByID_Get | `AccessToken`*, `ID`* | Episode[] | yes | Gets all episodes for selected ID |
+| GET | `/Episodes/BySeason/{AccessToken}/{ID}/{Season}` | EpisodesBySeason_Get | `AccessToken`*, `ID`*, `Season`* | Episode[] | yes | Gets list of episodes for specified imdbID and Season number |
+| GET | `/Episodes/ByShowName/{AccessToken}/{Showname}` | Episodes_Get | `AccessToken`*, `Showname`* | Episode[] | yes | Gets all episodes for selected show |
+| GET | `/Episodes/LatestSeason/Show/{AccessToken}/{Name}` | EpisodesLastAvailableSeasonbyName_Get | `AccessToken`*, `Name`* | LastAvailableSeason | yes | Gets latest season number based on show name |
+| GET | `/Episodes/LatestSeason/{AccessToken}/{ID}` | EpisodesLastAvailableSeason_Get | `AccessToken`*, `ID`* | LastAvailableSeason | yes | Returns last available season number in database, based on passed imdbID |
+| GET | `/Episodes/SeasonCount/{AccessToken}/{ID}` | EpisodesSeasonCount_Get | `AccessToken`*, `ID`* | TVShowSeasons | yes | Returns number of available seasons and episodes |
+| GET | `/GetIMDBid/ByID/{AccessToken}/{Query}` | GetIMDBid_GetAsync | `AccessToken`*, `Query`* | imdbID[] | yes | Gets list of avaiable IMDB ids from Movies and TV Show databases, you can use those to query other end points that need ID's |
+| GET | `/Images/ByID/{AccessToken}/{imdbID}` | Images_Get | `AccessToken`*, `imdbID`* | imdbImages[] | yes | Get images available for movie/tv show with passed imdbID |
+| GET | `/Images/Search/{Accesstoken}/{Query}` | ImageSearch_Get | `Accesstoken`*, `Query`*, `Strictmatch` | imdbImages[] | yes | Get images available for movie/tv show with passed query |
+| GET | `/Magnets/ByDate/{AccessToken}/{Date}` | MagnetsByDate_GetAsync | `AccessToken`*, `Date`* | Magnets[] | yes | Gets available magnet hashes on passed date (yyyy-mm-dd). Feature not available on free plan, please donate to be able to use this feature. |
+| GET | `/Magnets/ByIMDB/{AccessToken}/{imdbID}` | MagnetsByimdbID_GetAsync | `AccessToken`*, `imdbID`* | Magnets[] | yes | Returns list of magnet hashes for passed IMDBID. Feature not available on free plan, please donate to be able to use this feature. |
+| GET | `/Magnets/Search/{AccessToken}/{Query}` | magnetsMovieByID_GetAsync | `AccessToken`*, `Query`* | Magnets[] | yes | Try and find magnet links for queried movie. Feature not available on free plan, please donate to be able to use this feature |
+| GET | `/Magnets/TVShow/{AccessToken}/{TVShow}` | TVShowsearch_Get | `AccessToken`*, `TVShow`* | Magnets[] | yes | Returns results based on query, Feature not available on free plan, please donate to be able to use this feature. |
+| GET | `/Movie/ByID/{accesstoken}/{imdbID}` | MovieID_Get | `accesstoken`*, `imdbID`* | MovieInformation | yes | — |
+| GET | `/Movie/Search/{AccessToken}/{Query}` | MovieSearch_GetAsync | `AccessToken`*, `Query`* | MovieInformation[] | yes | Searches for movies, result set limited to 5 records |
+| GET | `/Music/Albums/Art/{AccessToken}/{AlbumID}` | musicAlbumArt_Get | `AccessToken`*, `AlbumID`* | AlbumArt | yes | Returns Albumart for passed AlbumID |
+| GET | `/Music/Albums/CoverArt/{AccessToken}/{MBID}` | musicCDCovers_Get | `AccessToken`*, `MBID`* | CDCoverArt[] | yes | Gets CD art for passed MusicBrainzID |
+| GET | `/Music/Albums/MusicBrainzID/{AccessToken}/{MBID}` | MusicByMusicBrainz_Get | `AccessToken`*, `MBID`* | BandInfo[] | yes | Get Artist / Band information on MusicBrainzID |
+| GET | `/Music/Albums/{AccessToken}/{ArtistID}` | musicAlbums_Get | `AccessToken`*, `ArtistID`* | BandAlbums[] | yes | Get albums from passed ArtistID |
+| GET | `/Music/Artist/Art/ID/{AccessToken}/{ArtistID}` | musicCoverArt_Get | `AccessToken`*, `ArtistID`* | ArtistArt | yes | Retrieves artist / band Banner and logo based on ArtistID |
+| GET | `/Music/Artist/Art/Name/{AccessToken}/{Name}` | musicCoverArtByName_Get | `AccessToken`*, `Name`* | ArtistArt | yes | Retrieves artist / band Banner and logo based on artist or bandname |
+| GET | `/Music/Artist/Extended/{AccessToken}/{Name}` | musicArtistExtended_Get | `AccessToken`*, `Name`* | BandInfoExtended[] | yes | Provides extended information, which includes all known albums and music videos of artist / band |
+| GET | `/Music/Artist/{AccessToken}/{Name}` | Music_Get | `AccessToken`*, `Name`* | BandInfo[] | yes | Get information about passed band name or artist |
+| GET | `/Music/Lyrics/AlbumID/{AccessToken}/{AlbumID}` | musicLyricsbyAlbumID_Get | `AccessToken`*, `AlbumID`* | Lyric[] | yes | Returns all lyrics for requested AlbumID |
+| GET | `/Music/Lyrics/ByName/{AccessToken}/{Name}` | musicLyrics_Get | `AccessToken`*, `Name`* | Lyric[] | yes | Get lyrics for band or artist (record set limited to 25) |
+| GET | `/Music/Lyrics/BySong/{AccessToken}/{Song}` | musicLyricsBySong_Get | `AccessToken`*, `Song`* | Lyric[] | yes | Get lyrics on song title |
+| GET | `/Music/Tracks/{AccessToken}/{AlbumID}` | musicTracks_Get | `AccessToken`*, `AlbumID`* | AlbumTracks[] | yes | Get all tracks from requested album |
+| GET | `/Music/Videos/{AccessToken}/{ArtistID}` | MusiVideos_Get | `AccessToken`*, `ArtistID`* | MusicVideo[] | yes | Lists all videos available for this Artist / Band |
+| GET | `/Rating/ByID/{AccessToken}/{imdbID}` | Rating_Get | `AccessToken`*, `imdbID`* | RatingItem | yes | Returns ratings from various resources(IMDB,Rotten Tomatoes, metaCritics, TVMaze etc) of passed IMDBid |
+| GET | `/Rating/ByName/{AccessToken}/{Name}` | RatingByName_Get | `AccessToken`*, `Name`* | RatingItem[] | yes | — |
+| GET | `/Status/{AccessToken}/{Query}` | ShowStatus_Get | `AccessToken`*, `Query`* | _ShowStatus[] | yes | Returns status of queried show (query can be IMDB, TVDB, or showname) |
+| GET | `/TV/ByID/{accesstoken}/{imdbID}` | TVShowID_Get | `accesstoken`*, `id`*, `imdbID`* | TVInformation | yes | Returns TVShow information based on IMDBid |
+| GET | `/TV/ByName/{AccessToken}/{Query}` | TVShowByName_Get | `AccessToken`*, `Query`* | TVInformation[] | yes | Returns results based on query, result set limited to 5 records |
+| GET | `/Trailers/ByID/{AccessToken}/{imdbID}` | TrailersbyID_Get | `AccessToken`*, `imdbID`* | Trailer[] | yes | Get Trailers for passed imdbID |
+| GET | `/Trailers/CountByID/{AccessToken}/{imdbID}` | TrailerCountByID_Get | `AccessToken`*, `imdbID`* | TrailerCount | yes | Get trailer count for passed ID |
+| GET | `/Trailers/CountByName/{AccessToken}/{Name}` | TrailerCountByName_Get | `AccessToken`*, `Name`* | TrailerCount | yes | Get trailer count for passed name (Movie title or TVShow name) |
+| GET | `/Trailers/Search/{AccessToken}/{Phrase}` | TrailerSearch_Get | `AccessToken`*, `Phrase`* | Trailer[] | yes | Gets trailers by search phrase (limited to 10 records) |

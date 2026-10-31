@@ -202,12 +202,12 @@
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/announcements/{id}/reactions/{name}"
+        "to": "operation:put:/api/v1/announcements/{id}/reactions/{name}"
       },
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/v1/announcements/{id}/reactions/{name}"
+        "to": "operation:delete:/api/v1/announcements/{id}/reactions/{name}"
       },
       {
         "from": "mastodon-local-d03546f163",
@@ -257,17 +257,17 @@
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/domain_blocks"
-      },
-      {
-        "from": "mastodon-local-d03546f163",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/domain_blocks"
       },
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
         "to": "operation:post:/api/v1/domain_blocks"
+      },
+      {
+        "from": "mastodon-local-d03546f163",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/domain_blocks"
       },
       {
         "from": "mastodon-local-d03546f163",
@@ -312,17 +312,17 @@
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/filters/{id}"
-      },
-      {
-        "from": "mastodon-local-d03546f163",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/filters/{id}"
       },
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
         "to": "operation:put:/api/v1/filters/{id}"
+      },
+      {
+        "from": "mastodon-local-d03546f163",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/filters/{id}"
       },
       {
         "from": "mastodon-local-d03546f163",
@@ -357,17 +357,7 @@
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/lists"
-      },
-      {
-        "from": "mastodon-local-d03546f163",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/lists"
-      },
-      {
-        "from": "mastodon-local-d03546f163",
-        "kind": "EXPOSES",
-        "to": "operation:post:/api/v1/lists"
       },
       {
         "from": "mastodon-local-d03546f163",
@@ -377,12 +367,17 @@
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v1/lists/{id}"
+        "to": "operation:post:/api/v1/lists"
       },
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/lists/{id}/accounts"
+        "to": "operation:delete:/api/v1/lists"
+      },
+      {
+        "from": "mastodon-local-d03546f163",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/v1/lists/{id}"
       },
       {
         "from": "mastodon-local-d03546f163",
@@ -393,6 +388,11 @@
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
         "to": "operation:post:/api/v1/lists/{id}/accounts"
+      },
+      {
+        "from": "mastodon-local-d03546f163",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/lists/{id}/accounts"
       },
       {
         "from": "mastodon-local-d03546f163",
@@ -462,12 +462,12 @@
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/push/subscription"
+        "to": "operation:get:/api/v1/push/subscription"
       },
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v1/push/subscription"
+        "to": "operation:put:/api/v1/push/subscription"
       },
       {
         "from": "mastodon-local-d03546f163",
@@ -477,7 +477,7 @@
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/v1/push/subscription"
+        "to": "operation:delete:/api/v1/push/subscription"
       },
       {
         "from": "mastodon-local-d03546f163",
@@ -492,11 +492,6 @@
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/scheduled_statuses/{id}"
-      },
-      {
-        "from": "mastodon-local-d03546f163",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/v1/scheduled_statuses/{id}"
       },
       {
@@ -507,17 +502,22 @@
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
+        "to": "operation:delete:/api/v1/scheduled_statuses/{id}"
+      },
+      {
+        "from": "mastodon-local-d03546f163",
+        "kind": "EXPOSES",
         "to": "operation:post:/api/v1/statuses"
       },
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/v1/statuses/{id}"
+        "to": "operation:get:/api/v1/statuses/{id}"
       },
       {
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/v1/statuses/{id}"
+        "to": "operation:delete:/api/v1/statuses/{id}"
       },
       {
         "from": "mastodon-local-d03546f163",
@@ -638,6 +638,636 @@
         "from": "mastodon-local-d03546f163",
         "kind": "EXPOSES",
         "to": "operation:post:/oauth/token"
+      },
+      {
+        "from": "operation:get:/api/oembed",
+        "kind": "RETURNS",
+        "to": "schema:Card"
+      },
+      {
+        "from": "operation:get:/api/proofs",
+        "kind": "RETURNS",
+        "to": "schema:IdentityProof"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/relationships",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/search",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:patch:/api/v1/accounts/update_credentials",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/verify_credentials",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:post:/api/v1/accounts/{id}/block",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/{id}/featured_tags",
+        "kind": "RETURNS",
+        "to": "schema:FeaturedTag"
+      },
+      {
+        "from": "operation:post:/api/v1/accounts/{id}/follow",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/{id}/followers",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/{id}/following",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/{id}/identity_proofs",
+        "kind": "RETURNS",
+        "to": "schema:IdentityProof"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/{id}/lists",
+        "kind": "RETURNS",
+        "to": "schema:List"
+      },
+      {
+        "from": "operation:post:/api/v1/accounts/{id}/mute",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:post:/api/v1/accounts/{id}/note",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:post:/api/v1/accounts/{id}/pin",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:get:/api/v1/accounts/{id}/statuses",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:post:/api/v1/accounts/{id}/unblock",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:post:/api/v1/accounts/{id}/unfollow",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:post:/api/v1/accounts/{id}/unmute",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:post:/api/v1/accounts/{id}/unpin",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:get:/api/v1/admin/accounts",
+        "kind": "RETURNS",
+        "to": "schema:AdminAccount"
+      },
+      {
+        "from": "operation:get:/api/v1/admin/accounts/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AdminAccount"
+      },
+      {
+        "from": "operation:get:/api/v1/admin/reports",
+        "kind": "RETURNS",
+        "to": "schema:AdminReport"
+      },
+      {
+        "from": "operation:get:/api/v1/admin/reports/{id}",
+        "kind": "RETURNS",
+        "to": "schema:AdminReport"
+      },
+      {
+        "from": "operation:post:/api/v1/admin/reports/{id}/assign_to_self",
+        "kind": "RETURNS",
+        "to": "schema:AdminReport"
+      },
+      {
+        "from": "operation:post:/api/v1/admin/reports/{id}/reopen",
+        "kind": "RETURNS",
+        "to": "schema:AdminReport"
+      },
+      {
+        "from": "operation:post:/api/v1/admin/reports/{id}/resolve",
+        "kind": "RETURNS",
+        "to": "schema:AdminReport"
+      },
+      {
+        "from": "operation:post:/api/v1/admin/reports/{id}/unassign",
+        "kind": "RETURNS",
+        "to": "schema:AdminReport"
+      },
+      {
+        "from": "operation:get:/api/v1/announcements",
+        "kind": "RETURNS",
+        "to": "schema:Announcement"
+      },
+      {
+        "from": "operation:get:/api/v1/apps/verify_credentials",
+        "kind": "RETURNS",
+        "to": "schema:Application"
+      },
+      {
+        "from": "operation:get:/api/v1/blocks",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/api/v1/bookmarks",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/conversations",
+        "kind": "RETURNS",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "operation:post:/api/v1/conversations/{id}/read",
+        "kind": "RETURNS",
+        "to": "schema:Conversation"
+      },
+      {
+        "from": "operation:get:/api/v1/custom_emojis",
+        "kind": "RETURNS",
+        "to": "schema:Emoji"
+      },
+      {
+        "from": "operation:get:/api/v1/directory",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/api/v1/endorsements",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/api/v1/favourites",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/featured_tags",
+        "kind": "RETURNS",
+        "to": "schema:FeaturedTag"
+      },
+      {
+        "from": "operation:post:/api/v1/featured_tags",
+        "kind": "RETURNS",
+        "to": "schema:FeaturedTag"
+      },
+      {
+        "from": "operation:get:/api/v1/featured_tags/suggestions",
+        "kind": "RETURNS",
+        "to": "schema:FeaturedTag"
+      },
+      {
+        "from": "operation:get:/api/v1/filters",
+        "kind": "RETURNS",
+        "to": "schema:Filter"
+      },
+      {
+        "from": "operation:post:/api/v1/filters",
+        "kind": "RETURNS",
+        "to": "schema:Filter"
+      },
+      {
+        "from": "operation:get:/api/v1/filters/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Filter"
+      },
+      {
+        "from": "operation:put:/api/v1/filters/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Filter"
+      },
+      {
+        "from": "operation:get:/api/v1/follow_requests",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:post:/api/v1/follow_requests/{id}/authorize",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:post:/api/v1/follow_requests/{id}/reject",
+        "kind": "RETURNS",
+        "to": "schema:Relationship"
+      },
+      {
+        "from": "operation:get:/api/v1/instance",
+        "kind": "RETURNS",
+        "to": "schema:Instance"
+      },
+      {
+        "from": "operation:get:/api/v1/instance/activity",
+        "kind": "RETURNS",
+        "to": "schema:Activity"
+      },
+      {
+        "from": "operation:get:/api/v1/lists",
+        "kind": "RETURNS",
+        "to": "schema:List"
+      },
+      {
+        "from": "operation:put:/api/v1/lists",
+        "kind": "RETURNS",
+        "to": "schema:List"
+      },
+      {
+        "from": "operation:post:/api/v1/lists",
+        "kind": "RETURNS",
+        "to": "schema:List"
+      },
+      {
+        "from": "operation:get:/api/v1/lists/{id}",
+        "kind": "RETURNS",
+        "to": "schema:List"
+      },
+      {
+        "from": "operation:get:/api/v1/lists/{id}/accounts",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:post:/api/v1/media",
+        "kind": "RETURNS",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "operation:get:/api/v1/media/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "operation:post:/api/v1/media/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "operation:get:/api/v1/mutes",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/api/v1/notifications",
+        "kind": "RETURNS",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "operation:get:/api/v1/notifications/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "operation:post:/api/v1/notifications/{id}/dismiss",
+        "kind": "RETURNS",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "operation:get:/api/v1/polls/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Poll"
+      },
+      {
+        "from": "operation:post:/api/v1/polls/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Poll"
+      },
+      {
+        "from": "operation:get:/api/v1/preferences",
+        "kind": "RETURNS",
+        "to": "schema:Preferences"
+      },
+      {
+        "from": "operation:get:/api/v1/push/subscription",
+        "kind": "RETURNS",
+        "to": "schema:PushSubscription"
+      },
+      {
+        "from": "operation:put:/api/v1/push/subscription",
+        "kind": "RETURNS",
+        "to": "schema:PushSubscription"
+      },
+      {
+        "from": "operation:post:/api/v1/push/subscription",
+        "kind": "RETURNS",
+        "to": "schema:PushSubscription"
+      },
+      {
+        "from": "operation:post:/api/v1/reports",
+        "kind": "RETURNS",
+        "to": "schema:Report"
+      },
+      {
+        "from": "operation:get:/api/v1/scheduled_statuses",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledStatus"
+      },
+      {
+        "from": "operation:get:/api/v1/scheduled_statuses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledStatus"
+      },
+      {
+        "from": "operation:put:/api/v1/scheduled_statuses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledStatus"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses",
+        "kind": "RETURNS",
+        "to": "schema:ScheduledStatus"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/statuses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:delete:/api/v1/statuses/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/bookmark",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/statuses/{id}/context",
+        "kind": "RETURNS",
+        "to": "schema:Context"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/favourite",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/statuses/{id}/favourited_by",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/mute",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/pin",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/reblog",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/statuses/{id}/reblogged_by",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/unbookmark",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/unfavourite",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/unmute",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/unpin",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:post:/api/v1/statuses/{id}/unreblog",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/suggestions",
+        "kind": "RETURNS",
+        "to": "schema:Account"
+      },
+      {
+        "from": "operation:get:/api/v1/timelines/home",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/timelines/list/{list_id}",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/timelines/public",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/timelines/tag/{hashtag}",
+        "kind": "RETURNS",
+        "to": "schema:Status"
+      },
+      {
+        "from": "operation:get:/api/v1/trends",
+        "kind": "RETURNS",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:Emoji"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:Field"
+      },
+      {
+        "from": "schema:Account",
+        "kind": "REFERENCES",
+        "to": "schema:Source"
+      },
+      {
+        "from": "schema:AdminAccount",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:AdminReport",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:AdminReport",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Context",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:Conversation",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Instance",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:Notification",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:Notification",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Poll",
+        "kind": "REFERENCES",
+        "to": "schema:Emoji"
+      },
+      {
+        "from": "schema:Report",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:Results",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:Results",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Results",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:ScheduledStatus",
+        "kind": "REFERENCES",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "schema:ScheduledStatus",
+        "kind": "REFERENCES",
+        "to": "schema:StatusParams"
+      },
+      {
+        "from": "schema:Source",
+        "kind": "REFERENCES",
+        "to": "schema:Field"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:Account"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:Application"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:Card"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:Emoji"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:Mention"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:Poll"
+      },
+      {
+        "from": "schema:Status",
+        "kind": "REFERENCES",
+        "to": "schema:Tag"
+      },
+      {
+        "from": "schema:Tag",
+        "kind": "REFERENCES",
+        "to": "schema:History"
       }
     ],
     "nodes": [
@@ -647,100 +1277,300 @@
       },
       {
         "deprecated": false,
+        "description": "OEmbed as JSON",
         "id": "operation:get:/api/oembed",
         "kind": "operation",
         "method": "get",
         "name": "get /api/oembed",
+        "parameters": [
+          {
+            "description": "URL of a status",
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 400,
+            "description": "width of the iframe.",
+            "in": "query",
+            "name": "maxwidth",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "height of the iframe.",
+            "in": "query",
+            "name": "maxheight",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/oembed",
         "pointer": "#/paths/~1api~1oembed/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Card"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "View identity proof",
         "id": "operation:get:/api/proofs",
         "kind": "operation",
         "method": "get",
         "name": "get /api/proofs",
+        "parameters": [
+          {
+            "description": "The identity provider to be looked up.",
+            "in": "query",
+            "name": "provider",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The username on the selected identity provider",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/proofs",
         "pointer": "#/paths/~1api~1proofs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IdentityProof"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Creates a user and account records.",
         "id": "operation:post:/api/v1/accounts",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts",
         "path": "/api/v1/accounts",
         "pointer": "#/paths/~1api~1v1~1accounts/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "TODOSecurity",
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets a private note on a user.",
         "id": "operation:get:/api/v1/accounts/relationships",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/relationships",
+        "parameters": [
+          {
+            "description": "Array of account IDs to check",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
         "path": "/api/v1/accounts/relationships",
         "pointer": "#/paths/~1api~1v1~1accounts~1relationships/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Search for matching accounts by username or display name.",
         "id": "operation:get:/api/v1/accounts/search",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/search",
+        "parameters": [
+          {
+            "description": "What to search for",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 40,
+            "description": "Maximum number of results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Attempt WebFinger lookup.",
+            "in": "query",
+            "name": "resolve",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only who the user is following.",
+            "in": "query",
+            "name": "following",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/v1/accounts/search",
         "pointer": "#/paths/~1api~1v1~1accounts~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "503",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the user's display and preferences.",
         "id": "operation:patch:/api/v1/accounts/update_credentials",
         "kind": "operation",
         "method": "patch",
         "name": "patch /api/v1/accounts/update_credentials",
         "path": "/api/v1/accounts/update_credentials",
         "pointer": "#/paths/~1api~1v1~1accounts~1update_credentials/patch",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Test to make sure that the user token works.",
         "id": "operation:get:/api/v1/accounts/verify_credentials",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/verify_credentials",
         "path": "/api/v1/accounts/verify_credentials",
         "pointer": "#/paths/~1api~1v1~1accounts~1verify_credentials/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
@@ -748,248 +1578,857 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/{id}",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Block the given account.",
         "id": "operation:post:/api/v1/accounts/{id}/block",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts/{id}/block",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/block",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1block/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Tags featured by this account.",
         "id": "operation:get:/api/v1/accounts/{id}/featured_tags",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/{id}/featured_tags",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/featured_tags",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1featured_tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FeaturedTag[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Follow the given account.",
         "id": "operation:post:/api/v1/accounts/{id}/follow",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts/{id}/follow",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/follow",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1follow/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Accounts which follow the given account, if network is not hidden by the account owner.",
         "id": "operation:get:/api/v1/accounts/{id}/followers",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/{id}/followers",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Internal parameter.",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Internal parameter.",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 40,
+            "description": "Maximum number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/followers",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1followers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Accounts which the given account is following, if network is not hidden by the account owner.",
         "id": "operation:get:/api/v1/accounts/{id}/following",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/{id}/following",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Internal parameter.",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Internal parameter.",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 40,
+            "description": "Maximum number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/following",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1following/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Array of IdentityProof",
         "id": "operation:get:/api/v1/accounts/{id}/identity_proofs",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/{id}/identity_proofs",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/identity_proofs",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1identity_proofs/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "IdentityProof[]"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "410"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "User lists that you have added this account to.",
         "id": "operation:get:/api/v1/accounts/{id}/lists",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/{id}/lists",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/lists",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1lists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "List[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Mute the given account.",
         "id": "operation:post:/api/v1/accounts/{id}/mute",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts/{id}/mute",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/mute",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1mute/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Sets a private note on a user.",
         "id": "operation:post:/api/v1/accounts/{id}/note",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts/{id}/note",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/note",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1note/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Add the given account to the user's featured profiles.",
         "id": "operation:post:/api/v1/accounts/{id}/pin",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts/{id}/pin",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/pin",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1pin/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Statuses posted to the given account.",
         "id": "operation:get:/api/v1/accounts/{id}/statuses",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/accounts/{id}/statuses",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/statuses",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1statuses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "410"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Block the given account.",
         "id": "operation:post:/api/v1/accounts/{id}/unblock",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts/{id}/unblock",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/unblock",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1unblock/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Unfollow the given account.",
         "id": "operation:post:/api/v1/accounts/{id}/unfollow",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts/{id}/unfollow",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/unfollow",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1unfollow/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Unmute the given account.",
         "id": "operation:post:/api/v1/accounts/{id}/unmute",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts/{id}/unmute",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/unmute",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1unmute/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove the given account from the user's featured profiles.",
         "id": "operation:post:/api/v1/accounts/{id}/unpin",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/accounts/{id}/unpin",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/accounts/{id}/unpin",
         "pointer": "#/paths/~1api~1v1~1accounts~1{id}~1unpin/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "422"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "accounts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "View accounts matching certain criteria for filtering, up to 100 at a time.",
         "id": "operation:get:/api/v1/admin/accounts",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/admin/accounts",
+        "parameters": [
+          {
+            "description": "Filter for local accounts?",
+            "in": "query",
+            "name": "local",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter for remote accounts?",
+            "in": "query",
+            "name": "remote",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter by the given domain",
+            "in": "query",
+            "name": "by_domain",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter for currently active accounts?",
+            "in": "query",
+            "name": "active",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter for currently pending accounts?",
+            "in": "query",
+            "name": "pending",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter for currently disabled accounts?",
+            "in": "query",
+            "name": "disabled",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter for currently silenced accounts?",
+            "in": "query",
+            "name": "silenced",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter for currently suspended accounts?",
+            "in": "query",
+            "name": "suspended",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter for staff accounts?",
+            "in": "query",
+            "name": "staff",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Username to search for",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Display name to search for",
+            "in": "query",
+            "name": "display_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Lookup a user with this email",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Lookup a user with this IP",
+            "in": "query",
+            "name": "ip",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/accounts",
         "pointer": "#/paths/~1api~1v1~1admin~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdminAccount[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -999,12 +2438,29 @@
       },
       {
         "deprecated": false,
+        "description": "View admin-level information about the given account.",
         "id": "operation:get:/api/v1/admin/accounts/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/admin/accounts/{id}",
+        "parameters": [
+          {
+            "description": "ID of the account",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/accounts/{id}",
         "pointer": "#/paths/~1api~1v1~1admin~1accounts~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdminAccount"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1014,12 +2470,35 @@
       },
       {
         "deprecated": false,
+        "description": "Perform an action against an account and log this action in the moderation history.",
         "id": "operation:post:/api/v1/admin/accounts/{id}/action",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/accounts/{id}/action",
+        "parameters": [
+          {
+            "description": "ID of the account",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/accounts/{id}/action",
         "pointer": "#/paths/~1api~1v1~1admin~1accounts~1{id}~1action/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1029,12 +2508,28 @@
       },
       {
         "deprecated": false,
+        "description": "Approve the given local account if it is currently pending approval.",
         "id": "operation:post:/api/v1/admin/accounts/{id}/approve",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/accounts/{id}/approve",
+        "parameters": [
+          {
+            "description": "ID of the account",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/accounts/{id}/approve",
         "pointer": "#/paths/~1api~1v1~1admin~1accounts~1{id}~1approve/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1044,12 +2539,28 @@
       },
       {
         "deprecated": false,
+        "description": "Re-enable a local account whose login is currently disabled.",
         "id": "operation:post:/api/v1/admin/accounts/{id}/enable",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/accounts/{id}/enable",
+        "parameters": [
+          {
+            "description": "ID of the account",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/accounts/{id}/enable",
         "pointer": "#/paths/~1api~1v1~1admin~1accounts~1{id}~1enable/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1059,12 +2570,28 @@
       },
       {
         "deprecated": false,
+        "description": "Reject the given local account if it is currently pending approval.",
         "id": "operation:post:/api/v1/admin/accounts/{id}/reject",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/accounts/{id}/reject",
+        "parameters": [
+          {
+            "description": "ID of the account",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/accounts/{id}/reject",
         "pointer": "#/paths/~1api~1v1~1admin~1accounts~1{id}~1reject/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1074,12 +2601,28 @@
       },
       {
         "deprecated": false,
+        "description": "Unsilence a currently silenced account.",
         "id": "operation:post:/api/v1/admin/accounts/{id}/unsilence",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/accounts/{id}/unsilence",
+        "parameters": [
+          {
+            "description": "ID of the account",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/accounts/{id}/unsilence",
         "pointer": "#/paths/~1api~1v1~1admin~1accounts~1{id}~1unsilence/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1089,12 +2632,28 @@
       },
       {
         "deprecated": false,
+        "description": "Unsuspend a currently suspended account.",
         "id": "operation:post:/api/v1/admin/accounts/{id}/unsuspend",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/accounts/{id}/unsuspend",
+        "parameters": [
+          {
+            "description": "ID of the account",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/accounts/{id}/unsuspend",
         "pointer": "#/paths/~1api~1v1~1admin~1accounts~1{id}~1unsuspend/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1104,12 +2663,40 @@
       },
       {
         "deprecated": false,
+        "description": "View all reports.",
         "id": "operation:get:/api/v1/admin/reports",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/admin/reports",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "resolved",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "target_account_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/reports",
         "pointer": "#/paths/~1api~1v1~1admin~1reports/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdminReport[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1119,12 +2706,29 @@
       },
       {
         "deprecated": false,
+        "description": "View information about the report with the given ID.",
         "id": "operation:get:/api/v1/admin/reports/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/admin/reports/{id}",
+        "parameters": [
+          {
+            "description": "ID of the report",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/reports/{id}",
         "pointer": "#/paths/~1api~1v1~1admin~1reports~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdminReport"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1134,12 +2738,29 @@
       },
       {
         "deprecated": false,
+        "description": "Claim the handling of this report to yourself.",
         "id": "operation:post:/api/v1/admin/reports/{id}/assign_to_self",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/reports/{id}/assign_to_self",
+        "parameters": [
+          {
+            "description": "ID of the report",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/reports/{id}/assign_to_self",
         "pointer": "#/paths/~1api~1v1~1admin~1reports~1{id}~1assign_to_self/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdminReport"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1149,12 +2770,29 @@
       },
       {
         "deprecated": false,
+        "description": "Mark a report as resolved with no further action taken.",
         "id": "operation:post:/api/v1/admin/reports/{id}/reopen",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/reports/{id}/reopen",
+        "parameters": [
+          {
+            "description": "ID of the report",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/reports/{id}/reopen",
         "pointer": "#/paths/~1api~1v1~1admin~1reports~1{id}~1reopen/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdminReport"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1164,12 +2802,29 @@
       },
       {
         "deprecated": false,
+        "description": "Mark a report as resolved with no further action taken.",
         "id": "operation:post:/api/v1/admin/reports/{id}/resolve",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/reports/{id}/resolve",
+        "parameters": [
+          {
+            "description": "ID of the report",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/reports/{id}/resolve",
         "pointer": "#/paths/~1api~1v1~1admin~1reports~1{id}~1resolve/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdminReport"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1179,12 +2834,29 @@
       },
       {
         "deprecated": false,
+        "description": "Unassign a report so that someone else can claim it.",
         "id": "operation:post:/api/v1/admin/reports/{id}/unassign",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/admin/reports/{id}/unassign",
+        "parameters": [
+          {
+            "description": "ID of the report",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/admin/reports/{id}/unassign",
         "pointer": "#/paths/~1api~1v1~1admin~1reports~1{id}~1unassign/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AdminReport"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1194,12 +2866,29 @@
       },
       {
         "deprecated": false,
+        "description": "See all currently active announcements set by admins.",
         "id": "operation:get:/api/v1/announcements",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/announcements",
+        "parameters": [
+          {
+            "description": "If true, response will include announcements dismissed by the user.",
+            "in": "query",
+            "name": "with_dismissed",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/v1/announcements",
         "pointer": "#/paths/~1api~1v1~1announcements/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Announcement[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1209,12 +2898,29 @@
       },
       {
         "deprecated": false,
+        "description": "Allows a user to mark the announcement as read.",
         "id": "operation:post:/api/v1/announcements/{id}/dismiss",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/announcements/{id}/dismiss",
+        "parameters": [
+          {
+            "description": "Local ID of an announcement in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/announcements/{id}/dismiss",
         "pointer": "#/paths/~1api~1v1~1announcements~1{id}~1dismiss/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1224,27 +2930,40 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/announcements/{id}/reactions/{name}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/announcements/{id}/reactions/{name}",
-        "path": "/api/v1/announcements/{id}/reactions/{name}",
-        "pointer": "#/paths/~1api~1v1~1announcements~1{id}~1reactions~1{name}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Allows a user to mark the announcement as read.",
         "id": "operation:put:/api/v1/announcements/{id}/reactions/{name}",
         "kind": "operation",
         "method": "put",
         "name": "put /api/v1/announcements/{id}/reactions/{name}",
+        "parameters": [
+          {
+            "description": "Local ID of an announcement in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unicode emoji, or shortcode of custom emoji",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/announcements/{id}/reactions/{name}",
         "pointer": "#/paths/~1api~1v1~1announcements~1{id}~1reactions~1{name}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1254,38 +2973,150 @@
       },
       {
         "deprecated": false,
+        "description": "Undo a react emoji to an announcement.",
+        "id": "operation:delete:/api/v1/announcements/{id}/reactions/{name}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/announcements/{id}/reactions/{name}",
+        "parameters": [
+          {
+            "description": "Local ID of an announcement in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unicode emoji, or shortcode of custom emoji",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/announcements/{id}/reactions/{name}",
+        "pointer": "#/paths/~1api~1v1~1announcements~1{id}~1reactions~1{name}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Create a new application to obtain OAuth2 credentials.",
         "id": "operation:post:/api/v1/apps",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/apps",
         "path": "/api/v1/apps",
         "pointer": "#/paths/~1api~1v1~1apps/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Confirm that the app's OAuth2 credentials work.",
         "id": "operation:get:/api/v1/apps/verify_credentials",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/apps/verify_credentials",
         "path": "/api/v1/apps/verify_credentials",
         "pointer": "#/paths/~1api~1v1~1apps~1verify_credentials/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Application"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "apps"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get blocked users.",
         "id": "operation:get:/api/v1/blocks",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/blocks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/blocks",
         "pointer": "#/paths/~1api~1v1~1blocks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1295,12 +3126,50 @@
       },
       {
         "deprecated": false,
+        "description": "Statuses the user has bookmarked.",
         "id": "operation:get:/api/v1/bookmarks",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/bookmarks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/bookmarks",
         "pointer": "#/paths/~1api~1v1~1bookmarks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1310,12 +3179,55 @@
       },
       {
         "deprecated": false,
+        "description": "Show conversation.",
         "id": "operation:get:/api/v1/conversations",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/conversations",
+        "parameters": [
+          {
+            "default": 20,
+            "description": "Max number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return results older than ID",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results newer than ID",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results immediately newer than ID",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/conversations",
         "pointer": "#/paths/~1api~1v1~1conversations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Conversation[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1325,12 +3237,37 @@
       },
       {
         "deprecated": false,
+        "description": "Remove converstation",
         "id": "operation:delete:/api/v1/conversations/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /api/v1/conversations/{id}",
+        "parameters": [
+          {
+            "description": "ID of the conversation in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/conversations/{id}",
         "pointer": "#/paths/~1api~1v1~1conversations~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1340,12 +3277,37 @@
       },
       {
         "deprecated": false,
+        "description": "Remove converstation",
         "id": "operation:post:/api/v1/conversations/{id}/read",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/conversations/{id}/read",
+        "parameters": [
+          {
+            "description": "ID of the conversation in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/conversations/{id}/read",
         "pointer": "#/paths/~1api~1v1~1conversations~1{id}~1read/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Conversation"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1355,49 +3317,119 @@
       },
       {
         "deprecated": false,
+        "description": "Returns custom emojis that are available on the server.",
         "id": "operation:get:/api/v1/custom_emojis",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/custom_emojis",
         "path": "/api/v1/custom_emojis",
         "pointer": "#/paths/~1api~1v1~1custom_emojis/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Emoji[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "List accounts visible in the directory.",
         "id": "operation:get:/api/v1/directory",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/directory",
+        "parameters": [
+          {
+            "default": 40,
+            "description": "How many accounts to load.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "How many accounts to skip before returning results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "active",
+            "description": "the `active` to sort by most recently posted statuses (default) or `new` to sort by most recently created profiles.",
+            "enum": [
+              "active",
+              "new"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return local accounts.",
+            "in": "query",
+            "name": "local",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/v1/directory",
         "pointer": "#/paths/~1api~1v1~1directory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/domain_blocks",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/domain_blocks",
-        "path": "/api/v1/domain_blocks",
-        "pointer": "#/paths/~1api~1v1~1domain_blocks/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "View domains the user has blocked.",
         "id": "operation:get:/api/v1/domain_blocks",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/domain_blocks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/domain_blocks",
         "pointer": "#/paths/~1api~1v1~1domain_blocks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1407,12 +3439,35 @@
       },
       {
         "deprecated": false,
+        "description": "\"Block a domain to: - hide all public posts from it - hide all notifications from it - remove all followers from it - prevent following new users from it (but…",
         "id": "operation:post:/api/v1/domain_blocks",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/domain_blocks",
         "path": "/api/v1/domain_blocks",
         "pointer": "#/paths/~1api~1v1~1domain_blocks/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1422,12 +3477,88 @@
       },
       {
         "deprecated": false,
+        "description": "Remove a domain block, if it exists in the user's array of blocked domains.",
+        "id": "operation:delete:/api/v1/domain_blocks",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/domain_blocks",
+        "parameters": [
+          {
+            "description": "Domain to unblock.",
+            "in": "query",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/domain_blocks",
+        "pointer": "#/paths/~1api~1v1~1domain_blocks/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Accounts that the user is currently featuring on their profile.",
         "id": "operation:get:/api/v1/endorsements",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/endorsements",
+        "parameters": [
+          {
+            "default": 40,
+            "description": "Maximum number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Internal parameter.",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Internal parameter.",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/endorsements",
         "pointer": "#/paths/~1api~1v1~1endorsements/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1437,12 +3568,44 @@
       },
       {
         "deprecated": false,
+        "description": "Statuses the user has favourited.",
         "id": "operation:get:/api/v1/favourites",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/favourites",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/favourites",
         "pointer": "#/paths/~1api~1v1~1favourites/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1452,12 +3615,24 @@
       },
       {
         "deprecated": false,
+        "description": "View your featured tags.",
         "id": "operation:get:/api/v1/featured_tags",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/featured_tags",
         "path": "/api/v1/featured_tags",
         "pointer": "#/paths/~1api~1v1~1featured_tags/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FeaturedTag[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1467,12 +3642,31 @@
       },
       {
         "deprecated": false,
+        "description": "Create a feature a tag.",
         "id": "operation:post:/api/v1/featured_tags",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/featured_tags",
         "path": "/api/v1/featured_tags",
         "pointer": "#/paths/~1api~1v1~1featured_tags/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FeaturedTag"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1482,12 +3676,24 @@
       },
       {
         "deprecated": false,
+        "description": "Shows your 10 most-used tags, with usage history for the past week.",
         "id": "operation:get:/api/v1/featured_tags/suggestions",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/featured_tags/suggestions",
         "path": "/api/v1/featured_tags/suggestions",
         "pointer": "#/paths/~1api~1v1~1featured_tags~1suggestions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FeaturedTag[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1497,12 +3703,33 @@
       },
       {
         "deprecated": false,
+        "description": "Unfeature a tag",
         "id": "operation:delete:/api/v1/featured_tags/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /api/v1/featured_tags/{id}",
+        "parameters": [
+          {
+            "description": "The id of the FeaturedTag to be unfeatured.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/featured_tags/{id}",
         "pointer": "#/paths/~1api~1v1~1featured_tags~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1518,6 +3745,17 @@
         "name": "get /api/v1/filters",
         "path": "/api/v1/filters",
         "pointer": "#/paths/~1api~1v1~1filters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Filter[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1533,6 +3771,28 @@
         "name": "post /api/v1/filters",
         "path": "/api/v1/filters",
         "pointer": "#/paths/~1api~1v1~1filters/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Filter"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1542,27 +3802,37 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/filters/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/filters/{id}",
-        "path": "/api/v1/filters/{id}",
-        "pointer": "#/paths/~1api~1v1~1filters~1{id}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Get one filter.",
         "id": "operation:get:/api/v1/filters/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/filters/{id}",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/filters/{id}",
         "pointer": "#/paths/~1api~1v1~1filters~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Filter"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1572,12 +3842,48 @@
       },
       {
         "deprecated": false,
+        "description": "Update a filter.",
         "id": "operation:put:/api/v1/filters/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /api/v1/filters/{id}",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/filters/{id}",
         "pointer": "#/paths/~1api~1v1~1filters~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Filter"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1587,12 +3893,73 @@
       },
       {
         "deprecated": false,
+        "description": "Delete a filter.",
+        "id": "operation:delete:/api/v1/filters/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/filters/{id}",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/filters/{id}",
+        "pointer": "#/paths/~1api~1v1~1filters~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Pending Follows",
         "id": "operation:get:/api/v1/follow_requests",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/follow_requests",
+        "parameters": [
+          {
+            "default": 40,
+            "description": "Maximum number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/follow_requests",
         "pointer": "#/paths/~1api~1v1~1follow_requests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1602,12 +3969,37 @@
       },
       {
         "deprecated": false,
+        "description": "Accept Follow",
         "id": "operation:post:/api/v1/follow_requests/{id}/authorize",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/follow_requests/{id}/authorize",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/follow_requests/{id}/authorize",
         "pointer": "#/paths/~1api~1v1~1follow_requests~1{id}~1authorize/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1617,12 +4009,37 @@
       },
       {
         "deprecated": false,
+        "description": "Accept Follow",
         "id": "operation:post:/api/v1/follow_requests/{id}/reject",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/follow_requests/{id}/reject",
+        "parameters": [
+          {
+            "description": "The id of the account in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/follow_requests/{id}/reject",
         "pointer": "#/paths/~1api~1v1~1follow_requests~1{id}~1reject/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Relationship"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1632,60 +4049,81 @@
       },
       {
         "deprecated": false,
+        "description": "Information about the server.",
         "id": "operation:get:/api/v1/instance",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/instance",
         "path": "/api/v1/instance",
         "pointer": "#/paths/~1api~1v1~1instance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Instance"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Instance activity over the last 3 months, binned weekly.",
         "id": "operation:get:/api/v1/instance/activity",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/instance/activity",
         "path": "/api/v1/instance/activity",
         "pointer": "#/paths/~1api~1v1~1instance~1activity/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Activity[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Information about the server.",
         "id": "operation:get:/api/v1/instance/peers",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/instance/peers",
         "path": "/api/v1/instance/peers",
         "pointer": "#/paths/~1api~1v1~1instance~1peers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/lists",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/lists",
-        "path": "/api/v1/lists",
-        "pointer": "#/paths/~1api~1v1~1lists/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Fetch all lists that the user owns.",
         "id": "operation:get:/api/v1/lists",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/lists",
         "path": "/api/v1/lists",
         "pointer": "#/paths/~1api~1v1~1lists/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "List[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1695,27 +4133,35 @@
       },
       {
         "deprecated": false,
-        "id": "operation:post:/api/v1/lists",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /api/v1/lists",
-        "path": "/api/v1/lists",
-        "pointer": "#/paths/~1api~1v1~1lists/post",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Change the title of a list, or which replies to show.",
         "id": "operation:put:/api/v1/lists",
         "kind": "operation",
         "method": "put",
         "name": "put /api/v1/lists",
         "path": "/api/v1/lists",
         "pointer": "#/paths/~1api~1v1~1lists/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "List"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1725,12 +4171,102 @@
       },
       {
         "deprecated": false,
+        "description": "Create a new list.",
+        "id": "operation:post:/api/v1/lists",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/v1/lists",
+        "path": "/api/v1/lists",
+        "pointer": "#/paths/~1api~1v1~1lists/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "List"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Delete a list",
+        "id": "operation:delete:/api/v1/lists",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/lists",
+        "path": "/api/v1/lists",
+        "pointer": "#/paths/~1api~1v1~1lists/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Remove converstation",
         "id": "operation:get:/api/v1/lists/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/lists/{id}",
+        "parameters": [
+          {
+            "description": "ID of the list in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/lists/{id}",
         "pointer": "#/paths/~1api~1v1~1lists~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "List"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1740,27 +4276,59 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/lists/{id}/accounts",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/lists/{id}/accounts",
-        "path": "/api/v1/lists/{id}/accounts",
-        "pointer": "#/paths/~1api~1v1~1lists~1{id}~1accounts/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "View accounts in List",
         "id": "operation:get:/api/v1/lists/{id}/accounts",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/lists/{id}/accounts",
+        "parameters": [
+          {
+            "description": "ID of the list in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 40,
+            "description": "Maximum number of results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return results older than ID",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results newer than ID",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/lists/{id}/accounts",
         "pointer": "#/paths/~1api~1v1~1lists~1{id}~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1770,12 +4338,48 @@
       },
       {
         "deprecated": false,
+        "description": "Add accounts to the given list.",
         "id": "operation:post:/api/v1/lists/{id}/accounts",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/lists/{id}/accounts",
+        "parameters": [
+          {
+            "description": "ID of the list in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/lists/{id}/accounts",
         "pointer": "#/paths/~1api~1v1~1lists~1{id}~1accounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1785,12 +4389,84 @@
       },
       {
         "deprecated": false,
+        "description": "Remove accounts from the given list.",
+        "id": "operation:delete:/api/v1/lists/{id}/accounts",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/lists/{id}/accounts",
+        "parameters": [
+          {
+            "description": "ID of the list in the database",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Array of account IDs to add to the list.",
+            "in": "query",
+            "name": "account_ids",
+            "required": true,
+            "type": "string[]"
+          }
+        ],
+        "path": "/api/v1/lists/{id}/accounts",
+        "pointer": "#/paths/~1api~1v1~1lists~1{id}~1accounts/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Get saved timeline position",
         "id": "operation:get:/api/v1/markers",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/markers",
+        "parameters": [
+          {
+            "description": "Array of markers to fetch.",
+            "in": "query",
+            "name": "timeline",
+            "required": true,
+            "type": "object[]"
+          }
+        ],
         "path": "/api/v1/markers",
         "pointer": "#/paths/~1api~1v1~1markers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1800,12 +4476,35 @@
       },
       {
         "deprecated": false,
+        "description": "Get saved timeline position",
         "id": "operation:post:/api/v1/markers",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/markers",
         "path": "/api/v1/markers",
         "pointer": "#/paths/~1api~1v1~1markers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1815,12 +4514,35 @@
       },
       {
         "deprecated": false,
+        "description": "Creates an attachment to be used with a new status.",
         "id": "operation:post:/api/v1/media",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/media",
         "path": "/api/v1/media",
         "pointer": "#/paths/~1api~1v1~1media/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attachment"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1830,12 +4552,45 @@
       },
       {
         "deprecated": false,
+        "description": "Get an attachement.",
         "id": "operation:get:/api/v1/media/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/media/{id}",
+        "parameters": [
+          {
+            "description": "The id of the Attachment entity to be updated.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/media/{id}",
         "pointer": "#/paths/~1api~1v1~1media~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attachment"
+          },
+          {
+            "status": "206",
+            "type": "Attachment"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1845,12 +4600,48 @@
       },
       {
         "deprecated": false,
+        "description": "Update an Attachment, before it is attached to a status and posted.",
         "id": "operation:post:/api/v1/media/{id}",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/media/{id}",
+        "parameters": [
+          {
+            "description": "The id of the Attachment entity to be updated.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/media/{id}",
         "pointer": "#/paths/~1api~1v1~1media~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Attachment"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1860,12 +4651,44 @@
       },
       {
         "deprecated": false,
+        "description": "Accounts the user has muted.",
         "id": "operation:get:/api/v1/mutes",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/mutes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/mutes",
         "pointer": "#/paths/~1api~1v1~1mutes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1875,12 +4698,69 @@
       },
       {
         "deprecated": false,
+        "description": "Notifications concerning the user.",
         "id": "operation:get:/api/v1/notifications",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/notifications",
+        "parameters": [
+          {
+            "default": 20,
+            "description": "Max number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return results older than ID",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results newer than ID",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results immediately newer than ID",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Array of types to exclude (follow, favourite, reblog, mention, poll, follow_request)",
+            "in": "query",
+            "name": "exclude_types",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Return only notifications received from this account",
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/notifications",
         "pointer": "#/paths/~1api~1v1~1notifications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Notification[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1890,12 +4770,24 @@
       },
       {
         "deprecated": false,
+        "description": "Clear all notifications from the server.",
         "id": "operation:post:/api/v1/notifications/clear",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/notifications/clear",
         "path": "/api/v1/notifications/clear",
         "pointer": "#/paths/~1api~1v1~1notifications~1clear/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1905,12 +4797,33 @@
       },
       {
         "deprecated": false,
+        "description": "View information about a notification with a given ID.",
         "id": "operation:get:/api/v1/notifications/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/notifications/{id}",
+        "parameters": [
+          {
+            "description": "ID of the notification in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/notifications/{id}",
         "pointer": "#/paths/~1api~1v1~1notifications~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Notification"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1920,12 +4833,33 @@
       },
       {
         "deprecated": false,
+        "description": "Clear a single notification from the server.",
         "id": "operation:post:/api/v1/notifications/{id}/dismiss",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/notifications/{id}/dismiss",
+        "parameters": [
+          {
+            "description": "ID of the notification in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/notifications/{id}/dismiss",
         "pointer": "#/paths/~1api~1v1~1notifications~1{id}~1dismiss/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Notification"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1935,23 +4869,80 @@
       },
       {
         "deprecated": false,
+        "description": "View a poll.",
         "id": "operation:get:/api/v1/polls/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/polls/{id}",
+        "parameters": [
+          {
+            "description": "ID of the poll in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/polls/{id}",
         "pointer": "#/paths/~1api~1v1~1polls~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Poll"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Vote on a poll.",
         "id": "operation:post:/api/v1/polls/{id}",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/polls/{id}",
+        "parameters": [
+          {
+            "description": "ID of the poll in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/polls/{id}",
         "pointer": "#/paths/~1api~1v1~1polls~1{id}/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Poll"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1961,12 +4952,24 @@
       },
       {
         "deprecated": false,
+        "description": "Shows your 10 most-used tags, with usage history for the past week.",
         "id": "operation:get:/api/v1/preferences",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/preferences",
         "path": "/api/v1/preferences",
         "pointer": "#/paths/~1api~1v1~1preferences/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Preferences"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1976,27 +4979,24 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/push/subscription",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/push/subscription",
-        "path": "/api/v1/push/subscription",
-        "pointer": "#/paths/~1api~1v1~1push~1subscription/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "View the PushSubscription currently associated with this access token.",
         "id": "operation:get:/api/v1/push/subscription",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/push/subscription",
         "path": "/api/v1/push/subscription",
         "pointer": "#/paths/~1api~1v1~1push~1subscription/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushSubscription"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2006,27 +5006,31 @@
       },
       {
         "deprecated": false,
-        "id": "operation:post:/api/v1/push/subscription",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /api/v1/push/subscription",
-        "path": "/api/v1/push/subscription",
-        "pointer": "#/paths/~1api~1v1~1push~1subscription/post",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Updates the current push subscription.",
         "id": "operation:put:/api/v1/push/subscription",
         "kind": "operation",
         "method": "put",
         "name": "put /api/v1/push/subscription",
         "path": "/api/v1/push/subscription",
         "pointer": "#/paths/~1api~1v1~1push~1subscription/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushSubscription"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2036,12 +5040,88 @@
       },
       {
         "deprecated": false,
+        "description": "Add a Web Push API subscription to receive notifications.",
+        "id": "operation:post:/api/v1/push/subscription",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /api/v1/push/subscription",
+        "path": "/api/v1/push/subscription",
+        "pointer": "#/paths/~1api~1v1~1push~1subscription/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PushSubscription"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Updates the current push subscription.",
+        "id": "operation:delete:/api/v1/push/subscription",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/push/subscription",
+        "path": "/api/v1/push/subscription",
+        "pointer": "#/paths/~1api~1v1~1push~1subscription/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "File a report.",
         "id": "operation:post:/api/v1/reports",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/reports",
         "path": "/api/v1/reports",
         "pointer": "#/paths/~1api~1v1~1reports/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Report"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2051,12 +5131,55 @@
       },
       {
         "deprecated": false,
+        "description": "View scheduled statuses",
         "id": "operation:get:/api/v1/scheduled_statuses",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/scheduled_statuses",
+        "parameters": [
+          {
+            "default": 20,
+            "description": "Max number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return results older than ID",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results newer than ID",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results immediately newer than ID",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/scheduled_statuses",
         "pointer": "#/paths/~1api~1v1~1scheduled_statuses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduledStatus[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2066,27 +5189,37 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/v1/scheduled_statuses/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/scheduled_statuses/{id}",
-        "path": "/api/v1/scheduled_statuses/{id}",
-        "pointer": "#/paths/~1api~1v1~1scheduled_statuses~1{id}/delete",
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "View a single scheduled status",
         "id": "operation:get:/api/v1/scheduled_statuses/{id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/scheduled_statuses/{id}",
+        "parameters": [
+          {
+            "description": "ID of the scheduled status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/scheduled_statuses/{id}",
         "pointer": "#/paths/~1api~1v1~1scheduled_statuses~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduledStatus"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2096,12 +5229,88 @@
       },
       {
         "deprecated": false,
+        "description": "View a single scheduled status",
         "id": "operation:put:/api/v1/scheduled_statuses/{id}",
         "kind": "operation",
         "method": "put",
         "name": "put /api/v1/scheduled_statuses/{id}",
+        "parameters": [
+          {
+            "description": "ID of the scheduled status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/scheduled_statuses/{id}",
         "pointer": "#/paths/~1api~1v1~1scheduled_statuses~1{id}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduledStatus"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Cancel a scheduled status",
+        "id": "operation:delete:/api/v1/scheduled_statuses/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/scheduled_statuses/{id}",
+        "parameters": [
+          {
+            "description": "ID of the scheduled status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/scheduled_statuses/{id}",
+        "pointer": "#/paths/~1api~1v1~1scheduled_statuses~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2115,23 +5324,35 @@
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses",
-        "path": "/api/v1/statuses",
-        "pointer": "#/paths/~1api~1v1~1statuses/post",
-        "security": [
+        "parameters": [
           {
-            "bearerAuth": []
+            "description": "Prevent duplicate submissions of the same status.",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "type": "string"
           }
         ],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/v1/statuses/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "delete /api/v1/statuses/{id}",
-        "path": "/api/v1/statuses/{id}",
-        "pointer": "#/paths/~1api~1v1~1statuses~1{id}/delete",
+        "path": "/api/v1/statuses",
+        "pointer": "#/paths/~1api~1v1~1statuses/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status|ScheduledStatus"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2145,8 +5366,32 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/statuses/{id}",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2156,12 +5401,76 @@
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/api/v1/statuses/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /api/v1/statuses/{id}",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/v1/statuses/{id}",
+        "pointer": "#/paths/~1api~1v1~1statuses~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "description": "Privately bookmark a status.",
         "id": "operation:post:/api/v1/statuses/{id}/bookmark",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/bookmark",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/bookmark",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1bookmark/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2175,8 +5484,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/statuses/{id}/context",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/context",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1context/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Context"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2186,12 +5515,37 @@
       },
       {
         "deprecated": false,
+        "description": "Add a status to your favourites list.",
         "id": "operation:post:/api/v1/statuses/{id}/favourite",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/favourite",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/favourite",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1favourite/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2201,23 +5555,69 @@
       },
       {
         "deprecated": false,
+        "description": "View who favourited a given status.",
         "id": "operation:get:/api/v1/statuses/{id}/favourited_by",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/statuses/{id}/favourited_by",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/favourited_by",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1favourited_by/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Do not receive notifications for the thread that this status is part of.",
         "id": "operation:post:/api/v1/statuses/{id}/mute",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/mute",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/mute",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1mute/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2227,12 +5627,41 @@
       },
       {
         "deprecated": false,
+        "description": "Feature one of your own public statuses at the top of your profile.",
         "id": "operation:post:/api/v1/statuses/{id}/pin",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/pin",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/pin",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1pin/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "422",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2242,12 +5671,44 @@
       },
       {
         "deprecated": false,
+        "description": "Reshare a status.",
         "id": "operation:post:/api/v1/statuses/{id}/reblog",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/reblog",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/reblog",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1reblog/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2257,23 +5718,69 @@
       },
       {
         "deprecated": false,
+        "description": "View who boosted a given status.",
         "id": "operation:get:/api/v1/statuses/{id}/reblogged_by",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/statuses/{id}/reblogged_by",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/reblogged_by",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1reblogged_by/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Remove a status from your private bookmarks.",
         "id": "operation:post:/api/v1/statuses/{id}/unbookmark",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/unbookmark",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/unbookmark",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1unbookmark/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2283,12 +5790,37 @@
       },
       {
         "deprecated": false,
+        "description": "Remove a status from your favourites list.",
         "id": "operation:post:/api/v1/statuses/{id}/unfavourite",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/unfavourite",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/unfavourite",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1unfavourite/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2298,12 +5830,37 @@
       },
       {
         "deprecated": false,
+        "description": "Status's conversation unmuted, or was already unmuted",
         "id": "operation:post:/api/v1/statuses/{id}/unmute",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/unmute",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/unmute",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1unmute/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2313,12 +5870,37 @@
       },
       {
         "deprecated": false,
+        "description": "Unfeature a status from the top of your profile.",
         "id": "operation:post:/api/v1/statuses/{id}/unpin",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/unpin",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/unpin",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1unpin/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2328,12 +5910,37 @@
       },
       {
         "deprecated": false,
+        "description": "Undo a reshare of a status.",
         "id": "operation:post:/api/v1/statuses/{id}/unreblog",
         "kind": "operation",
         "method": "post",
         "name": "post /api/v1/statuses/{id}/unreblog",
+        "parameters": [
+          {
+            "description": "Local ID of a status in the database.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/statuses/{id}/unreblog",
         "pointer": "#/paths/~1api~1v1~1statuses~1{id}~1unreblog/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2343,12 +5950,34 @@
       },
       {
         "deprecated": false,
+        "description": "Accounts the user has had past positive interactions with, but is not yet following.",
         "id": "operation:get:/api/v1/suggestions",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/suggestions",
+        "parameters": [
+          {
+            "default": 40,
+            "description": "Maximum number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/suggestions",
         "pointer": "#/paths/~1api~1v1~1suggestions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Account"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2358,12 +5987,33 @@
       },
       {
         "deprecated": false,
+        "description": "Delete user suggestion",
         "id": "operation:delete:/api/v1/suggestions/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /api/v1/suggestions/{id}",
+        "parameters": [
+          {
+            "description": "id of the account in the database to be removed from suggestions",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/suggestions/{id}",
         "pointer": "#/paths/~1api~1v1~1suggestions~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2373,12 +6023,66 @@
       },
       {
         "deprecated": false,
+        "description": "View statuses from followed users.",
         "id": "operation:get:/api/v1/timelines/home",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/timelines/home",
+        "parameters": [
+          {
+            "default": false,
+            "description": "Show only local statuses?",
+            "in": "query",
+            "name": "local",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 20,
+            "description": "Max number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return results older than ID",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results newer than ID",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results immediately newer than ID",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/timelines/home",
         "pointer": "#/paths/~1api~1v1~1timelines~1home/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status[]"
+          },
+          {
+            "status": "206"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2388,12 +6092,62 @@
       },
       {
         "deprecated": false,
+        "description": "View statuses in the given list timeline.",
         "id": "operation:get:/api/v1/timelines/list/{list_id}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/timelines/list/{list_id}",
+        "parameters": [
+          {
+            "description": "Local ID of the list in the database.",
+            "in": "path",
+            "name": "list_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "Max number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return results older than ID",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results newer than ID",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results immediately newer than ID",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/timelines/list/{list_id}",
         "pointer": "#/paths/~1api~1v1~1timelines~1list~1{list_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status[]"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2403,45 +6157,286 @@
       },
       {
         "deprecated": false,
+        "description": "Public timeline",
         "id": "operation:get:/api/v1/timelines/public",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/timelines/public",
+        "parameters": [
+          {
+            "default": false,
+            "description": "Show only local statuses?",
+            "in": "query",
+            "name": "local",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Show only local statuses?",
+            "in": "query",
+            "name": "remote",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Show only statuses with media attached?",
+            "in": "query",
+            "name": "only_media",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 20,
+            "description": "Max number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return results older than ID",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results newer than ID",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results immediately newer than ID",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/timelines/public",
         "pointer": "#/paths/~1api~1v1~1timelines~1public/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "View public statuses containing the given hashtag.",
         "id": "operation:get:/api/v1/timelines/tag/{hashtag}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/timelines/tag/{hashtag}",
+        "parameters": [
+          {
+            "description": "Content of a `#hashtag``, not including `#` symbol..",
+            "in": "path",
+            "name": "hashtag",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Show only local statuses?",
+            "in": "query",
+            "name": "local",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Show only local statuses?",
+            "in": "query",
+            "name": "remote",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Show only statuses with media attached?",
+            "in": "query",
+            "name": "only_media",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 20,
+            "description": "Max number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Return results older than ID",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results newer than ID",
+            "in": "query",
+            "name": "since_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results immediately newer than ID",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/timelines/tag/{hashtag}",
         "pointer": "#/paths/~1api~1v1~1timelines~1tag~1{hashtag}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Status[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Tags that are being used more frequently within the past week.",
         "id": "operation:get:/api/v1/trends",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/trends",
+        "parameters": [
+          {
+            "default": 10,
+            "description": "Max number of results to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v1/trends",
         "pointer": "#/paths/~1api~1v1~1trends/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Tag[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Search results",
         "id": "operation:get:/api/v2/search",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v2/search",
+        "parameters": [
+          {
+            "description": "What to search for",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "Maximum number of results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Attempt WebFinger lookup.",
+            "in": "query",
+            "name": "resolve",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only who the user is following.",
+            "in": "query",
+            "name": "following",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If provided, statuses returned will be authored only by this account",
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results older than this id",
+            "in": "query",
+            "name": "max_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Return results immediately newer than this id",
+            "in": "query",
+            "name": "min_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Enum(accounts, hashtags, statuses)",
+            "enum": [
+              "accounts",
+              "hashtags",
+              "statuses"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter out unreviewed tags?",
+            "in": "query",
+            "name": "exclude_unreviewed",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Offset in search results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/api/v2/search",
         "pointer": "#/paths/~1api~1v2~1search/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2451,211 +6446,378 @@
       },
       {
         "deprecated": false,
+        "description": "Displays an authorization form to the user.",
         "id": "operation:get:/oauth/authorize",
         "kind": "operation",
         "method": "get",
         "name": "get /oauth/authorize",
+        "parameters": [
+          {
+            "description": "Should be set equal to code.",
+            "in": "query",
+            "name": "response_type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Client ID, obtained during app registration.",
+            "in": "query",
+            "name": "client_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Set a URI to redirect the user to.",
+            "in": "query",
+            "name": "redirect_uri",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "List of requested OAuth scopes, separated by spaces (or by pluses, if using query parameters).",
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Added in 2.6.0.",
+            "in": "query",
+            "name": "force_login",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/oauth/authorize",
         "pointer": "#/paths/~1oauth~1authorize/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "oauth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Revoke an access token to make it no longer valid for use.",
         "id": "operation:post:/oauth/revoke",
         "kind": "operation",
         "method": "post",
         "name": "post /oauth/revoke",
         "path": "/oauth/revoke",
         "pointer": "#/paths/~1oauth~1revoke/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "403",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "oauth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an access token, to be used during API calls that are not public.",
         "id": "operation:post:/oauth/token",
         "kind": "operation",
         "method": "post",
         "name": "post /oauth/token",
         "path": "/oauth/token",
         "pointer": "#/paths/~1oauth~1token/post",
+        "request": {
+          "content_types": [
+            "application/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "oauth"
+        ]
       },
       {
+        "description": "Represents a user of Mastodon and their associated profile.",
         "id": "schema:Account",
         "kind": "schema",
-        "name": "Account"
+        "name": "Account",
+        "type": "object"
       },
       {
+        "description": "Represents a weekly bucket of instance activity.",
         "id": "schema:Activity",
         "kind": "schema",
-        "name": "Activity"
+        "name": "Activity",
+        "type": "object"
       },
       {
+        "description": "Admin-level information about a given account.",
         "id": "schema:AdminAccount",
         "kind": "schema",
-        "name": "AdminAccount"
+        "name": "AdminAccount",
+        "type": "object"
       },
       {
+        "description": "Admin-level information about a filed report.",
         "id": "schema:AdminReport",
         "kind": "schema",
-        "name": "AdminReport"
+        "name": "AdminReport",
+        "type": "object"
       },
       {
+        "description": "Represents an announcement set by an administrator.",
         "id": "schema:Announcement",
         "kind": "schema",
-        "name": "Announcement"
+        "name": "Announcement",
+        "type": "object"
       },
       {
+        "description": "Represents an emoji reaction to an Announcement.",
         "id": "schema:AnnouncementReaction",
         "kind": "schema",
-        "name": "AnnouncementReaction"
+        "name": "AnnouncementReaction",
+        "type": "object"
       },
       {
+        "description": "Represents an application that interfaces with the REST API to access accounts or post statuses.",
         "id": "schema:Application",
         "kind": "schema",
-        "name": "Application"
+        "name": "Application",
+        "type": "object"
       },
       {
+        "description": "Represents a file or media attachment that can be added to a status.",
         "id": "schema:Attachment",
         "kind": "schema",
-        "name": "Attachment"
+        "name": "Attachment",
+        "type": "object"
       },
       {
+        "description": "Represents a rich preview card that is generated using OpenGraph tags from a URL.",
         "id": "schema:Card",
         "kind": "schema",
-        "name": "Card"
+        "name": "Card",
+        "type": "object"
       },
       {
+        "description": "Represents the tree around a given status.",
         "id": "schema:Context",
         "kind": "schema",
-        "name": "Context"
+        "name": "Context",
+        "type": "object"
       },
       {
+        "description": "Represents a conversation with \"direct message\" visibility.",
         "id": "schema:Conversation",
         "kind": "schema",
-        "name": "Conversation"
+        "name": "Conversation",
+        "type": "object"
       },
       {
+        "description": "Represents a custom emoji.",
         "id": "schema:Emoji",
         "kind": "schema",
-        "name": "Emoji"
+        "name": "Emoji",
+        "type": "object"
       },
       {
+        "description": "Represents an error message.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "Represents a hashtag that is featured on a profile.",
         "id": "schema:FeaturedTag",
         "kind": "schema",
-        "name": "FeaturedTag"
+        "name": "FeaturedTag",
+        "type": "object"
       },
       {
+        "description": "Represents a profile field as a name-value pair with optional verification.",
         "id": "schema:Field",
         "kind": "schema",
-        "name": "Field"
+        "name": "Field",
+        "type": "object"
       },
       {
+        "description": "Represents a user-defined filter for determining which statuses should not be shown to the user.",
         "id": "schema:Filter",
         "kind": "schema",
-        "name": "Filter"
+        "name": "Filter",
+        "type": "object"
       },
       {
+        "description": "Represents daily usage history of a hashtag.",
         "id": "schema:History",
         "kind": "schema",
-        "name": "History"
+        "name": "History",
+        "type": "object"
       },
       {
+        "description": "Represents a proof from an external identity provider.",
         "id": "schema:IdentityProof",
         "kind": "schema",
-        "name": "IdentityProof"
+        "name": "IdentityProof",
+        "type": "object"
       },
       {
+        "description": "Represents the software instance of Mastodon running on this domain.",
         "id": "schema:Instance",
         "kind": "schema",
-        "name": "Instance"
+        "name": "Instance",
+        "type": "object"
       },
       {
+        "description": "Represents a list of some users that the authenticated user follows.",
         "id": "schema:List",
         "kind": "schema",
-        "name": "List"
+        "name": "List",
+        "type": "object"
       },
       {
+        "description": "Represents the last read position within a user's timelines.",
         "id": "schema:Marker",
         "kind": "schema",
-        "name": "Marker"
+        "name": "Marker",
+        "type": "object"
       },
       {
+        "description": "Represents a mention of a user within the content of a status.",
         "id": "schema:Mention",
         "kind": "schema",
-        "name": "Mention"
+        "name": "Mention",
+        "type": "object"
       },
       {
+        "description": "Represents a notification of an event relevant to the user.",
         "id": "schema:Notification",
         "kind": "schema",
-        "name": "Notification"
+        "name": "Notification",
+        "type": "object"
       },
       {
+        "description": "Represents a poll attached to a status.",
         "id": "schema:Poll",
         "kind": "schema",
-        "name": "Poll"
+        "name": "Poll",
+        "type": "object"
       },
       {
+        "description": "Represents a user's preferences.",
         "id": "schema:Preferences",
         "kind": "schema",
-        "name": "Preferences"
+        "name": "Preferences",
+        "type": "object"
       },
       {
+        "description": "Represents a subscription to the push streaming server.",
         "id": "schema:PushSubscription",
         "kind": "schema",
-        "name": "PushSubscription"
+        "name": "PushSubscription",
+        "type": "object"
       },
       {
+        "description": "Represents the relationship between accounts, such as following / blocking / muting / etc.",
         "id": "schema:Relationship",
         "kind": "schema",
-        "name": "Relationship"
+        "name": "Relationship",
+        "type": "object"
       },
       {
+        "description": "Reports filed against users and/or statuses, to be taken action on by moderators.",
         "id": "schema:Report",
         "kind": "schema",
-        "name": "Report"
+        "name": "Report",
+        "type": "object"
       },
       {
+        "description": "Represents the results of a search.",
         "id": "schema:Results",
         "kind": "schema",
-        "name": "Results"
+        "name": "Results",
+        "type": "object"
       },
       {
+        "description": "Represents a status that will be published at a future scheduled date.",
         "id": "schema:ScheduledStatus",
         "kind": "schema",
-        "name": "ScheduledStatus"
+        "name": "ScheduledStatus",
+        "type": "object"
       },
       {
+        "description": "Represents display or publishing preferences of user's own account.",
         "id": "schema:Source",
         "kind": "schema",
-        "name": "Source"
+        "name": "Source",
+        "type": "object"
       },
       {
+        "description": "Represents a status posted by an account.",
         "id": "schema:Status",
         "kind": "schema",
-        "name": "Status"
+        "name": "Status",
+        "type": "object"
       },
       {
         "id": "schema:StatusParams",
         "kind": "schema",
-        "name": "StatusParams"
+        "name": "StatusParams",
+        "type": "object"
       },
       {
+        "description": "Represents a hashtag used within the content of a status.",
         "id": "schema:Tag",
         "kind": "schema",
-        "name": "Tag"
+        "name": "Tag",
+        "type": "object"
       },
       {
+        "description": "Represents an OAuth token used for authenticating with the API and performing actions.",
         "id": "schema:Token",
         "kind": "schema",
-        "name": "Token"
+        "name": "Token",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/http_miataru.com_images_clientapp.png
 
 | | |
 | --- | --- |
-| Signed bundle | `7a6c9888642762113e5c30cc4ae31ba177d85f58201341a9a4f61ec53f010f67` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/http_miataru.com_images_clientapp.png
 
 12 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/GetLocation` | getLocation | — |
-| GET | `/GetLocationGeoJSON/{deviceID}` | getLocationGeoJSON | — |
-| POST | `/GetLocationHistory` | getLocationHistory | — |
-| POST | `/GetVisitorHistory` | getVisitorHistory | — |
-| POST | `/UpdateLocation` | updateLocation | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/GetLocation` | getLocation | body*: MiataruGetLocationRequest | — |  | — |
+| GET | `/GetLocationGeoJSON/{deviceID}` | getLocationGeoJSON | `deviceID`* | — | yes | — |
+| POST | `/GetLocationHistory` | getLocationHistory | body*: MiataruGetLocationHistoryRequest | — |  | — |
+| POST | `/GetVisitorHistory` | getVisitorHistory | body*: MiataruGetVisitorHistoryRequest | — |  | — |
+| POST | `/UpdateLocation` | updateLocation | body*: MiataruUpdateLocationRequest | — |  | — |

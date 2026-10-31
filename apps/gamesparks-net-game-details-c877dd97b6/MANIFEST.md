@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_GameSparksltd_profi
 
 | | |
 | --- | --- |
-| Signed bundle | `a4a1394fa63e10a82833495bafb023948cb53218b928d422f7423084924d6fab` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,81 +34,83 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_GameSparksltd_profi
 
 35 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/restv2/game/regions` | getRegionOptionsUsingGET | getRegionOptions |
-| GET | `/restv2/game/{apiKey}/admin/analytics` | getAnalyticsDataUsingGET | Returns the results of executed query defined by the parameters passed in |
-| GET | `/restv2/game/{apiKey}/admin/analytics/count` | getDataCountUsingGET | Returns the count of executed query |
-| GET | `/restv2/game/{apiKey}/admin/analytics/rollingRetention` | getRetentionUsingGET | Returns the percentage of user retention over the last 30 days |
-| GET | `/restv2/game/{apiKey}/admin/billingDetails` | getBillingDetails | Retrieves the Billing Details |
-| PUT | `/restv2/game/{apiKey}/admin/billingDetails` | putBillingDetails | Updates the Billing Details |
-| GET | `/restv2/game/{apiKey}/admin/notifications/summary` | getGameSummaryUsingGET | getGameSummary |
-| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/amazon` | testPushAmazonNotificationsUsingPOST | testPushAmazonNotifications |
-| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/apple/development` | testPushAppleDevNotificationsUsingPOST | testPushAppleDevNotifications |
-| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/apple/production` | testPushAppleProdNotificationsUsingPOST | testPushAppleProdNotifications |
-| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/google` | testPushGoogleNotificationsUsingPOST | testPushGoogleNotifications |
-| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windows8` | testWindows8NotificationsUsingPOST | testWindows8Notifications |
-| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windowsPhone8` | testWindowsPhone8NotificationsUsingPOST | testWindowsPhone8Notifications |
-| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/viber/integration` | testViberIntegrationNotificationsUsingPOST | testViberIntegrationNotifications |
-| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/viber/production` | testViberProductionNotificationsUsingPOST | testViberProductionNotifications |
-| GET | `/restv2/game/{apiKey}/admin/scripts/differences/{snapshotId1}/{snapshotId2}` | getScriptDifferencesUsingGET | getScriptDifferences |
-| GET | `/restv2/game/{apiKey}/admin/scripts/export` | exportZipUsingGET | exportZip |
-| POST | `/restv2/game/{apiKey}/admin/scripts/import/accept` | importAcceptUsingPOST | importAccept |
-| POST | `/restv2/game/{apiKey}/admin/scripts/import/preview` | importZipUsingPOST | importZip |
-| GET | `/restv2/game/{apiKey}/admin/scripts/versions` | getScriptVersionsUsingGET_1 | getScriptVersions |
-| GET | `/restv2/game/{apiKey}/admin/scripts/versions/{page}` | getScriptVersionsUsingGET | getScriptVersions |
-| GET | `/restv2/game/{apiKey}/admin/segmentQueryFilters` | getSegmentQueryFiltersUsingGET | getSegmentQueryFilters |
-| GET | `/restv2/game/{apiKey}/admin/segmentQueryFilters/config` | getSegmentQueryFiltersConfigUsingGET | getSegmentQueryFiltersConfig |
-| PUT | `/restv2/game/{apiKey}/admin/segmentQueryFilters/config` | updateSegmentQueryFiltersConfigUsingPUT | updateSegmentQueryFiltersConfig |
-| GET | `/restv2/game/{apiKey}/admin/segmentQueryFilters/standardFilters` | getSegmentQueryStandardFiltersUsingGET | getSegmentQueryStandardFilters |
-| GET | `/restv2/game/{apiKey}/admin/snapshots` | getSnapshotsUsingGET_1 | getSnapshots |
-| POST | `/restv2/game/{apiKey}/admin/snapshots` | createSnapshotsUsingPOST | createSnapshots |
-| GET | `/restv2/game/{apiKey}/admin/snapshots/liveSnapshotId` | getLiveSnapshotIdUsingGET | getLiveSnapshotId |
-| GET | `/restv2/game/{apiKey}/admin/snapshots/page/{page}` | getSnapshotsUsingGET | getSnapshots |
-| POST | `/restv2/game/{apiKey}/admin/snapshots/revert/to/{snapshotId}` | revertToSnapshotUsingPOST | revertToSnapshot |
-| DELETE | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}` | deleteSnapshotUsingDELETE_1 | deleteSnapshot |
-| GET | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}` | getSnapshotUsingGET | getSnapshot |
-| POST | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/copy` | copySnapshotToNewGameUsingPOST | copySnapshotToNewGame |
-| POST | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/copy/to/{targetApiKey}` | copySnapshotToExistingGameUsingPOST_1 | copySnapshotToExistingGame |
-| POST | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/publish` | publishSnapshotUsingPOST_1 | publishSnapshot |
-| POST | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/unpublish` | unpublishSnapshotUsingPOST | unpublishSnapshot |
-| GET | `/restv2/game/{apiKey}/admin/testHarness/scenarios` | getTestHarnessScenariosUsingGET | getTestHarnessScenarios |
-| POST | `/restv2/game/{apiKey}/admin/testHarness/scenarios` | createTestHarnessScenarioUsingPOST | createTestHarnessScenario |
-| DELETE | `/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}` | deleteTestHarnessScenarioUsingDELETE | deleteTestHarnessScenario |
-| GET | `/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}` | getTestHarnessScenarioUsingGET | getTestHarnessScenario |
-| PUT | `/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}` | updateTestHarnessScenarioUsingPUT | updateTestHarnessScenario |
-| POST | `/restv2/game/{apiKey}/config/~credentials/{credentialName}/resetSecret` | updateCredentialSecretUsingPOST | Resets the secret of a credential |
-| GET | `/restv2/game/{apiKey}/endpoints` | getGamesEndpointsUsingGET | getGamesEndpoints |
-| GET | `/restv2/game/{apiKey}/manage/experiments` | getExperimentsUsingGET | getExperiments |
-| POST | `/restv2/game/{apiKey}/manage/experiments` | createExperimentUsingPOST | createExperiment |
-| DELETE | `/restv2/game/{apiKey}/manage/experiments/{id}` | deleteExperimentUsingDELETE | deleteExperiment |
-| GET | `/restv2/game/{apiKey}/manage/experiments/{id}` | getExperimentUsingGET | getExperiment |
-| PUT | `/restv2/game/{apiKey}/manage/experiments/{id}` | updateExperimentUsingPUT | updateExperiment |
-| POST | `/restv2/game/{apiKey}/manage/experiments/{id}/{action}` | doActionExperimentUsingPOST | doActionExperiment |
-| GET | `/restv2/game/{apiKey}/manage/queries` | listQueriesUsingGET | listQueries |
-| POST | `/restv2/game/{apiKey}/manage/queries` | createQueryUsingPOST | createQuery |
-| DELETE | `/restv2/game/{apiKey}/manage/queries/{shortCode}` | deleteQueryUsingDELETE | deleteQuery |
-| GET | `/restv2/game/{apiKey}/manage/queries/{shortCode}` | getQueryUsingGET | getQuery |
-| PUT | `/restv2/game/{apiKey}/manage/queries/{shortCode}` | updateQueryUsingPUT | updateQuery |
-| GET | `/restv2/game/{apiKey}/manage/screens` | listScreensUsingGET | listScreens |
-| POST | `/restv2/game/{apiKey}/manage/screens` | createScreenUsingPOST | createScreen |
-| GET | `/restv2/game/{apiKey}/manage/screens/executable` | listExecutableScreensUsingGET | listExecutableScreens |
-| DELETE | `/restv2/game/{apiKey}/manage/screens/{shortCode}` | deleteScreenUsingDELETE | deleteScreen |
-| GET | `/restv2/game/{apiKey}/manage/screens/{shortCode}` | getScreenUsingGET | getScreen |
-| PUT | `/restv2/game/{apiKey}/manage/screens/{shortCode}` | updateScreenUsingPUT | updateScreen |
-| GET | `/restv2/game/{apiKey}/manage/snapshots` | listSnapshotsUsingGET | listSnapshots |
-| POST | `/restv2/game/{apiKey}/manage/snapshots` | createSnapshotUsingPOST | createSnapshot |
-| DELETE | `/restv2/game/{apiKey}/manage/snapshots/{snapshotId}` | deleteSnapshotUsingDELETE | deleteSnapshot |
-| POST | `/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/copy/to/{targetApiKey}` | copySnapshotToExistingGameUsingPOST | copySnapshotToExistingGame |
-| POST | `/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/publish` | publishSnapshotUsingPOST | publishSnapshot |
-| POST | `/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/revert` | revertSnapshotUsingPOST | revertSnapshot |
-| GET | `/restv2/game/{apiKey}/manage/snippets` | listSnippetsUsingGET | listSnippets |
-| POST | `/restv2/game/{apiKey}/manage/snippets` | createSnippetUsingPOST | createSnippet |
-| DELETE | `/restv2/game/{apiKey}/manage/snippets/{shortCode}` | deleteSnippetUsingDELETE | deleteSnippet |
-| GET | `/restv2/game/{apiKey}/manage/snippets/{shortCode}` | getSnippetUsingGET | getSnippet |
-| PUT | `/restv2/game/{apiKey}/manage/snippets/{shortCode}` | updateSnippetUsingPUT | updateSnippet |
-| POST | `/restv2/game/{apiKey}/restore` | restoreDeletedGameUsingPOST | restoreDeletedGame |
-| POST | `/restv2/game/{gameApiKey}/region/{regionCode}` | setGameRegionUsingPOST | setGameRegion |
-| GET | `/restv2/game/{gameApiKey}/regions` | getGameRegionOptionsUsingGET | getGameRegionOptions |
-| GET | `/restv2/games` | listUsingGET | list |
-| GET | `/restv2/games/deleted` | listDeletedUsingGET | listDeleted |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/restv2/game/regions` | getRegionOptionsUsingGET | — | GameRegionOptionsDTO | yes | getRegionOptions |
+| GET | `/restv2/game/{apiKey}/admin/analytics` | getAnalyticsDataUsingGET | `apiKey`*, `stage`*, `dataType`*, `precision`*, `startDate`*, `endDate`*, `keys` | AnalyticsDataSwaggerModel[] | yes | Returns the results of executed query defined by the parameters passed in |
+| GET | `/restv2/game/{apiKey}/admin/analytics/count` | getDataCountUsingGET | `apiKey`*, `stage`*, `queryName`* | AnalyticsDataCountSwaggerModel | yes | Returns the count of executed query |
+| GET | `/restv2/game/{apiKey}/admin/analytics/rollingRetention` | getRetentionUsingGET | `apiKey`*, `stage`* | AnalyticsDataCountSwaggerModel | yes | Returns the percentage of user retention over the last 30 days |
+| GET | `/restv2/game/{apiKey}/admin/billingDetails` | getBillingDetails | `apiKey`* | BillingDetailsModel | yes | Retrieves the Billing Details |
+| PUT | `/restv2/game/{apiKey}/admin/billingDetails` | putBillingDetails | `apiKey`*, body*: BillingDetailsModel | BillingDetailsModel |  | Updates the Billing Details |
+| GET | `/restv2/game/{apiKey}/admin/notifications/summary` | getGameSummaryUsingGET | `apiKey`*, `stage`*, `startDate`*, `endDate`* | GameSummaryModel | yes | getGameSummary |
+| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/amazon` | testPushAmazonNotificationsUsingPOST | `apiKey`*, body*: PushNotificationTestModel | PushNotificationTestSummaryListModel |  | testPushAmazonNotifications |
+| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/apple/development` | testPushAppleDevNotificationsUsingPOST | `apiKey`*, body*: PushNotificationTestModel | PushNotificationTestSummaryListModel |  | testPushAppleDevNotifications |
+| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/apple/production` | testPushAppleProdNotificationsUsingPOST | `apiKey`*, body*: PushNotificationTestModel | PushNotificationTestSummaryListModel |  | testPushAppleProdNotifications |
+| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/google` | testPushGoogleNotificationsUsingPOST | `apiKey`*, body*: PushNotificationTestModel | PushNotificationTestSummaryListModel |  | testPushGoogleNotifications |
+| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windows8` | testWindows8NotificationsUsingPOST | `apiKey`*, body*: PushNotificationTestModel | PushNotificationTestSummaryListModel |  | testWindows8Notifications |
+| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/microsoft/windowsPhone8` | testWindowsPhone8NotificationsUsingPOST | `apiKey`*, body*: PushNotificationTestModel | PushNotificationTestSummaryListModel |  | testWindowsPhone8Notifications |
+| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/viber/integration` | testViberIntegrationNotificationsUsingPOST | `apiKey`*, body*: PushNotificationTestModel | PushNotificationTestSummaryListModel |  | testViberIntegrationNotifications |
+| POST | `/restv2/game/{apiKey}/admin/pushNotifications/test/viber/production` | testViberProductionNotificationsUsingPOST | `apiKey`*, body*: PushNotificationTestModel | PushNotificationTestSummaryListModel |  | testViberProductionNotifications |
+| GET | `/restv2/game/{apiKey}/admin/scripts/differences/{snapshotId1}/{snapshotId2}` | getScriptDifferencesUsingGET | `apiKey`*, `snapshotId1`*, `snapshotId2`* | ScriptsDifferenceListModel | yes | getScriptDifferences |
+| GET | `/restv2/game/{apiKey}/admin/scripts/export` | exportZipUsingGET | `apiKey`* | — | yes | exportZip |
+| POST | `/restv2/game/{apiKey}/admin/scripts/import/accept` | importAcceptUsingPOST | `apiKey`*, `body`*, body*: object | MessageModel |  | importAccept |
+| POST | `/restv2/game/{apiKey}/admin/scripts/import/preview` | importZipUsingPOST | `apiKey`*, body*: object | ScriptsDifferenceListModel |  | importZip |
+| GET | `/restv2/game/{apiKey}/admin/scripts/versions` | getScriptVersionsUsingGET_1 | `apiKey`*, `pageSize` | SnapshotScriptVersionListModel | yes | getScriptVersions |
+| GET | `/restv2/game/{apiKey}/admin/scripts/versions/{page}` | getScriptVersionsUsingGET | `apiKey`*, `page`*, `pageSize` | SnapshotScriptVersionListModel | yes | getScriptVersions |
+| GET | `/restv2/game/{apiKey}/admin/segmentQueryFilters` | getSegmentQueryFiltersUsingGET | `apiKey`* | SegmentQueryFilterListModel | yes | getSegmentQueryFilters |
+| GET | `/restv2/game/{apiKey}/admin/segmentQueryFilters/config` | getSegmentQueryFiltersConfigUsingGET | `apiKey`* | SegmentQueryFilterConfigModel | yes | getSegmentQueryFiltersConfig |
+| PUT | `/restv2/game/{apiKey}/admin/segmentQueryFilters/config` | updateSegmentQueryFiltersConfigUsingPUT | `apiKey`*, body*: SegmentQueryFilterConfigModel | SegmentQueryFilterConfigModel |  | updateSegmentQueryFiltersConfig |
+| GET | `/restv2/game/{apiKey}/admin/segmentQueryFilters/standardFilters` | getSegmentQueryStandardFiltersUsingGET | `apiKey`* | SegmentQueryFilterListModel | yes | getSegmentQueryStandardFilters |
+| GET | `/restv2/game/{apiKey}/admin/snapshots` | getSnapshotsUsingGET_1 | `apiKey`*, `pageSize` | SnapshotModel[] | yes | getSnapshots |
+| POST | `/restv2/game/{apiKey}/admin/snapshots` | createSnapshotsUsingPOST | `apiKey`*, body*: SnapshotCreationModel | SnapshotModel |  | createSnapshots |
+| GET | `/restv2/game/{apiKey}/admin/snapshots/liveSnapshotId` | getLiveSnapshotIdUsingGET | `apiKey`* | MessageModel | yes | getLiveSnapshotId |
+| GET | `/restv2/game/{apiKey}/admin/snapshots/page/{page}` | getSnapshotsUsingGET | `apiKey`*, `page`*, `pageSize` | SnapshotModel[] | yes | getSnapshots |
+| POST | `/restv2/game/{apiKey}/admin/snapshots/revert/to/{snapshotId}` | revertToSnapshotUsingPOST | `apiKey`*, `snapshotId`* | MessageModel |  | revertToSnapshot |
+| GET | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}` | getSnapshotUsingGET | `apiKey`*, `snapshotId`* | SnapshotModel | yes | getSnapshot |
+| DELETE | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}` | deleteSnapshotUsingDELETE_1 | `apiKey`*, `snapshotId`* | MessageModel |  | deleteSnapshot |
+| POST | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/copy` | copySnapshotToNewGameUsingPOST | `apiKey`*, `snapshotId`*, `includeGameConfig`, `includeMetadata`, `includeBinaries`, `includeCollaborators` | SnapshotCreationSuccessModel |  | copySnapshotToNewGame |
+| POST | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/copy/to/{targetApiKey}` | copySnapshotToExistingGameUsingPOST_1 | `apiKey`*, `snapshotId`*, `targetApiKey`*, `includeGameConfig`, `includeMetadata`, `includeBinaries`, `includeCollaborators` | SnapshotCreationSuccessModel |  | copySnapshotToExistingGame |
+| POST | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/publish` | publishSnapshotUsingPOST_1 | `apiKey`*, `snapshotId`* | — |  | publishSnapshot |
+| POST | `/restv2/game/{apiKey}/admin/snapshots/{snapshotId}/unpublish` | unpublishSnapshotUsingPOST | `apiKey`*, `snapshotId`* | MessageModel |  | unpublishSnapshot |
+| GET | `/restv2/game/{apiKey}/admin/testHarness/scenarios` | getTestHarnessScenariosUsingGET | `apiKey`* | TestHarnessScenarioModel[] | yes | getTestHarnessScenarios |
+| POST | `/restv2/game/{apiKey}/admin/testHarness/scenarios` | createTestHarnessScenarioUsingPOST | `apiKey`*, body*: TestHarnessScenarioModel | TestHarnessScenarioModel |  | createTestHarnessScenario |
+| GET | `/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}` | getTestHarnessScenarioUsingGET | `apiKey`*, `scenarioName`* | TestHarnessScenarioModel | yes | getTestHarnessScenario |
+| PUT | `/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}` | updateTestHarnessScenarioUsingPUT | `apiKey`*, `scenarioName`*, body*: TestHarnessScenarioModel | TestHarnessScenarioModel |  | updateTestHarnessScenario |
+| DELETE | `/restv2/game/{apiKey}/admin/testHarness/scenarios/{scenarioName}` | deleteTestHarnessScenarioUsingDELETE | `apiKey`*, `scenarioName`* | MessageModel |  | deleteTestHarnessScenario |
+| POST | `/restv2/game/{apiKey}/config/~credentials/{credentialName}/resetSecret` | updateCredentialSecretUsingPOST | `apiKey`*, `credentialName`* | — |  | Resets the secret of a credential |
+| GET | `/restv2/game/{apiKey}/endpoints` | getGamesEndpointsUsingGET | `apiKey`* | GameEndpointsModel | yes | getGamesEndpoints |
+| GET | `/restv2/game/{apiKey}/manage/experiments` | getExperimentsUsingGET | `apiKey`* | ExperimentModel[] | yes | getExperiments |
+| POST | `/restv2/game/{apiKey}/manage/experiments` | createExperimentUsingPOST | `apiKey`*, body*: ExperimentModel | ExperimentModel |  | createExperiment |
+| GET | `/restv2/game/{apiKey}/manage/experiments/{id}` | getExperimentUsingGET | `apiKey`*, `id`* | ExperimentModel | yes | getExperiment |
+| PUT | `/restv2/game/{apiKey}/manage/experiments/{id}` | updateExperimentUsingPUT | `apiKey`*, `id`*, body*: ExperimentModel | ExperimentModel |  | updateExperiment |
+| DELETE | `/restv2/game/{apiKey}/manage/experiments/{id}` | deleteExperimentUsingDELETE | `apiKey`*, `id`* | MessageModel |  | deleteExperiment |
+| POST | `/restv2/game/{apiKey}/manage/experiments/{id}/{action}` | doActionExperimentUsingPOST | `apiKey`*, `id`*, `action`* | ExperimentModel |  | doActionExperiment |
+| GET | `/restv2/game/{apiKey}/manage/queries` | listQueriesUsingGET | `apiKey`* | ManageItemSummary[] | yes | listQueries |
+| POST | `/restv2/game/{apiKey}/manage/queries` | createQueryUsingPOST | `apiKey`*, body*: ManageQuery | ManageQuery |  | createQuery |
+| GET | `/restv2/game/{apiKey}/manage/queries/{shortCode}` | getQueryUsingGET | `apiKey`*, `shortCode`* | ManageQuery | yes | getQuery |
+| PUT | `/restv2/game/{apiKey}/manage/queries/{shortCode}` | updateQueryUsingPUT | `apiKey`*, `shortCode`*, body*: ManageQuery | ManageQuery |  | updateQuery |
+| DELETE | `/restv2/game/{apiKey}/manage/queries/{shortCode}` | deleteQueryUsingDELETE | `apiKey`*, `shortCode`* | ManageResult |  | deleteQuery |
+| GET | `/restv2/game/{apiKey}/manage/screens` | listScreensUsingGET | `apiKey`* | ManageItemSummary[] | yes | listScreens |
+| POST | `/restv2/game/{apiKey}/manage/screens` | createScreenUsingPOST | `apiKey`*, body*: ManageScreen | ManageScreen |  | createScreen |
+| GET | `/restv2/game/{apiKey}/manage/screens/executable` | listExecutableScreensUsingGET | `apiKey`* | ManageItemSummary[] | yes | listExecutableScreens |
+| GET | `/restv2/game/{apiKey}/manage/screens/{shortCode}` | getScreenUsingGET | `apiKey`*, `shortCode`* | ManageScreen | yes | getScreen |
+| PUT | `/restv2/game/{apiKey}/manage/screens/{shortCode}` | updateScreenUsingPUT | `apiKey`*, `shortCode`*, body*: ManageScreen | ManageScreen |  | updateScreen |
+| DELETE | `/restv2/game/{apiKey}/manage/screens/{shortCode}` | deleteScreenUsingDELETE | `apiKey`*, `shortCode`* | ManageResult |  | deleteScreen |
+| GET | `/restv2/game/{apiKey}/manage/snapshots` | listSnapshotsUsingGET | `apiKey`* | ManageSnapshot[] | yes | listSnapshots |
+| POST | `/restv2/game/{apiKey}/manage/snapshots` | createSnapshotUsingPOST | `apiKey`*, body*: SnapshotCreationModel | ManageSnapshot |  | createSnapshot |
+| DELETE | `/restv2/game/{apiKey}/manage/snapshots/{snapshotId}` | deleteSnapshotUsingDELETE | `apiKey`*, `snapshotId`* | ManageResult |  | deleteSnapshot |
+| POST | `/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/copy/to/{targetApiKey}` | copySnapshotToExistingGameUsingPOST | `apiKey`*, `snapshotId`*, `targetApiKey`* | ManageResult |  | copySnapshotToExistingGame |
+| POST | `/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/publish` | publishSnapshotUsingPOST | `apiKey`*, `snapshotId`* | ManageResult |  | publishSnapshot |
+| POST | `/restv2/game/{apiKey}/manage/snapshots/{snapshotId}/revert` | revertSnapshotUsingPOST | `apiKey`*, `snapshotId`* | ManageResult |  | revertSnapshot |
+| GET | `/restv2/game/{apiKey}/manage/snippets` | listSnippetsUsingGET | `apiKey`* | ManageItemSummary[] | yes | listSnippets |
+| POST | `/restv2/game/{apiKey}/manage/snippets` | createSnippetUsingPOST | `apiKey`*, body*: ManageSnippet | ManageSnippet |  | createSnippet |
+| GET | `/restv2/game/{apiKey}/manage/snippets/{shortCode}` | getSnippetUsingGET | `apiKey`*, `shortCode`* | ManageSnippet | yes | getSnippet |
+| PUT | `/restv2/game/{apiKey}/manage/snippets/{shortCode}` | updateSnippetUsingPUT | `apiKey`*, `shortCode`*, body*: ManageSnippet | ManageSnippet |  | updateSnippet |
+| DELETE | `/restv2/game/{apiKey}/manage/snippets/{shortCode}` | deleteSnippetUsingDELETE | `apiKey`*, `shortCode`* | ManageResult |  | deleteSnippet |
+| POST | `/restv2/game/{apiKey}/restore` | restoreDeletedGameUsingPOST | `apiKey`* | MessageModel |  | restoreDeletedGame |
+| POST | `/restv2/game/{gameApiKey}/region/{regionCode}` | setGameRegionUsingPOST | `gameApiKey`*, `regionCode`* | RegionResult |  | setGameRegion |
+| GET | `/restv2/game/{gameApiKey}/regions` | getGameRegionOptionsUsingGET | `gameApiKey`* | GameRegionOptionsDTO | yes | getGameRegionOptions |
+| GET | `/restv2/games` | listUsingGET | — | GameModel[] | yes | list |
+| GET | `/restv2/games/deleted` | listDeletedUsingGET | — | DeletedGameModel[] | yes | listDeleted |

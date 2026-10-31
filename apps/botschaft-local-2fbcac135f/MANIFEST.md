@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `ae087b50284b93206a182e4da43596e4a600573aafe4d1d68688d07ccef7a112` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/config` | config_config_get | Config |
-| GET | `/discord` | discord_get_discord_get | Discord Get |
-| POST | `/discord` | discord_post_discord_post | Discord Post |
-| GET | `/slack` | slack_get_slack_get | Slack Get |
-| POST | `/slack` | slack_post_slack_post | Slack Post |
-| GET | `/sns` | sns_get_sns_get | Sns Get |
-| POST | `/sns` | sns_post_sns_post | Sns Post |
-| GET | `/topic/{topic_name}` | topic_topic__topic_name__get | Topic |
-| GET | `/twilio` | twilio_message_get_twilio_get | Twilio Message Get |
-| POST | `/twilio` | twilio_message_post_twilio_post | Twilio Message Post |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/config` | config_config_get | `authorization` | Config | yes | Config |
+| GET | `/discord` | discord_get_discord_get | `channel`*, `message`, `base64_message`, `authorization` | — | yes | Discord Get |
+| POST | `/discord` | discord_post_discord_post | `authorization`, body*: DiscordMessageRequest | — |  | Discord Post |
+| GET | `/slack` | slack_get_slack_get | `channel`*, `message`, `base64_message`, `authorization` | — | yes | Slack Get |
+| POST | `/slack` | slack_post_slack_post | `authorization`, body*: SlackMessageRequest | — |  | Slack Post |
+| GET | `/sns` | sns_get_sns_get | `message`, `base64_message`, `authorization` | — | yes | Sns Get |
+| POST | `/sns` | sns_post_sns_post | `authorization`, body*: SnsMessageRequest | — |  | Sns Post |
+| GET | `/topic/{topic_name}` | topic_topic__topic_name__get | `topic_name`*, `message`, `base64_message`, `authorization` | — | yes | Topic |
+| GET | `/twilio` | twilio_message_get_twilio_get | `to`*, `message`, `base64_message`, `authorization` | — | yes | Twilio Message Get |
+| POST | `/twilio` | twilio_message_post_twilio_post | `authorization`, body*: TwilioMessageRequest | — |  | Twilio Message Post |

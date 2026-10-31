@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.drchrono.com_site_media_ima
 
 | | |
 | --- | --- |
-| Signed bundle | `dc8537ba218e39f26c1ab2af9b7664d0ae47ffbb16d9107128d5380065e1ac66` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,268 +34,270 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.drchrono.com_site_media_ima
 
 59 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/allergies` | allergies_list | — |
-| POST | `/api/allergies` | allergies_create | — |
-| GET | `/api/allergies/{id}` | allergies_read | — |
-| PATCH | `/api/allergies/{id}` | allergies_partial_update | — |
-| PUT | `/api/allergies/{id}` | allergies_update | — |
-| GET | `/api/amendments` | amendments_list | — |
-| POST | `/api/amendments` | amendments_create | — |
-| DELETE | `/api/amendments/{id}` | amendments_delete | — |
-| GET | `/api/amendments/{id}` | amendments_read | — |
-| PATCH | `/api/amendments/{id}` | amendments_partial_update | — |
-| PUT | `/api/amendments/{id}` | amendments_update | — |
-| GET | `/api/appointment_profiles` | appointment_profiles_list | — |
-| POST | `/api/appointment_profiles` | appointment_profiles_create | — |
-| DELETE | `/api/appointment_profiles/{id}` | appointment_profiles_delete | — |
-| GET | `/api/appointment_profiles/{id}` | appointment_profiles_read | — |
-| PATCH | `/api/appointment_profiles/{id}` | appointment_profiles_partial_update | — |
-| PUT | `/api/appointment_profiles/{id}` | appointment_profiles_update | — |
-| GET | `/api/appointment_templates` | appointment_templates_list | — |
-| POST | `/api/appointment_templates` | appointment_templates_create | — |
-| DELETE | `/api/appointment_templates/{id}` | appointment_templates_delete | — |
-| GET | `/api/appointment_templates/{id}` | appointment_templates_read | — |
-| PATCH | `/api/appointment_templates/{id}` | appointment_templates_partial_update | — |
-| PUT | `/api/appointment_templates/{id}` | appointment_templates_update | — |
-| GET | `/api/appointments` | appointments_list | — |
-| POST | `/api/appointments` | appointments_create | — |
-| DELETE | `/api/appointments/{id}` | appointments_delete | — |
-| GET | `/api/appointments/{id}` | appointments_read | — |
-| PATCH | `/api/appointments/{id}` | appointments_partial_update | — |
-| PUT | `/api/appointments/{id}` | appointments_update | — |
-| GET | `/api/billing_profiles` | billing_profiles_list | — |
-| GET | `/api/billing_profiles/{id}` | billing_profiles_read | — |
-| GET | `/api/care_plans` | care_plans_list | — |
-| GET | `/api/care_plans/{id}` | care_plans_read | — |
-| GET | `/api/care_team_members` | care_team_members_list | — |
-| GET | `/api/care_team_members/{id}` | care_team_members_read | — |
-| GET | `/api/claim_billing_notes` | claim_billing_notes_list | — |
-| POST | `/api/claim_billing_notes` | claim_billing_notes_create | — |
-| GET | `/api/claim_billing_notes/{id}` | claim_billing_notes_read | — |
-| GET | `/api/clinical_note_field_types` | clinical_note_field_types_list | — |
-| GET | `/api/clinical_note_field_types/{id}` | clinical_note_field_types_read | — |
-| GET | `/api/clinical_note_field_values` | clinical_note_field_values_list | — |
-| POST | `/api/clinical_note_field_values` | clinical_note_field_values_create | — |
-| GET | `/api/clinical_note_field_values/{id}` | clinical_note_field_values_read | — |
-| PATCH | `/api/clinical_note_field_values/{id}` | clinical_note_field_values_partial_update | — |
-| PUT | `/api/clinical_note_field_values/{id}` | clinical_note_field_values_update | — |
-| GET | `/api/clinical_note_templates` | clinical_note_templates_list | — |
-| GET | `/api/clinical_note_templates/{id}` | clinical_note_templates_read | — |
-| GET | `/api/clinical_notes` | clinical_notes_list | — |
-| GET | `/api/clinical_notes/{id}` | clinical_notes_read | — |
-| GET | `/api/comm_logs` | comm_logs_list | — |
-| POST | `/api/comm_logs` | comm_logs_create | — |
-| GET | `/api/comm_logs/{id}` | comm_logs_read | — |
-| PATCH | `/api/comm_logs/{id}` | comm_logs_partial_update | — |
-| PUT | `/api/comm_logs/{id}` | comm_logs_update | — |
-| GET | `/api/consent_forms` | consent_forms_list | — |
-| POST | `/api/consent_forms` | consent_forms_create | — |
-| GET | `/api/consent_forms/{id}` | consent_forms_read | — |
-| PATCH | `/api/consent_forms/{id}` | consent_forms_partial_update | — |
-| PUT | `/api/consent_forms/{id}` | consent_forms_update | — |
-| POST | `/api/consent_forms/{id}/apply_to_appointment` | consent_forms_apply_to_appointment | — |
-| POST | `/api/consent_forms/{id}/unapply_from_appointment` | consent_forms_unapply_from_appointment | — |
-| GET | `/api/custom_appointment_fields` | custom_appointment_fields_list | — |
-| POST | `/api/custom_appointment_fields` | custom_appointment_fields_create | — |
-| GET | `/api/custom_appointment_fields/{id}` | custom_appointment_fields_read | — |
-| PATCH | `/api/custom_appointment_fields/{id}` | custom_appointment_fields_partial_update | — |
-| PUT | `/api/custom_appointment_fields/{id}` | custom_appointment_fields_update | — |
-| GET | `/api/custom_demographics` | custom_demographics_list | — |
-| POST | `/api/custom_demographics` | custom_demographics_create | — |
-| GET | `/api/custom_demographics/{id}` | custom_demographics_read | — |
-| PATCH | `/api/custom_demographics/{id}` | custom_demographics_partial_update | — |
-| PUT | `/api/custom_demographics/{id}` | custom_demographics_update | — |
-| GET | `/api/custom_insurance_plan_names` | custom_insurance_plan_names_list | — |
-| GET | `/api/custom_insurance_plan_names/{id}` | custom_insurance_plan_names_read | — |
-| GET | `/api/custom_vitals` | custom_vitals_list | — |
-| GET | `/api/custom_vitals/{id}` | custom_vitals_read | — |
-| GET | `/api/doctors` | doctors_list | — |
-| GET | `/api/doctors/{id}` | doctors_read | — |
-| GET | `/api/documents` | documents_list | — |
-| POST | `/api/documents` | documents_create | — |
-| DELETE | `/api/documents/{id}` | documents_delete | — |
-| GET | `/api/documents/{id}` | documents_read | — |
-| PATCH | `/api/documents/{id}` | documents_partial_update | — |
-| PUT | `/api/documents/{id}` | documents_update | — |
-| GET | `/api/eligibility_checks` | eligibility_checks_list | — |
-| GET | `/api/eligibility_checks/{id}` | eligibility_checks_read | — |
-| GET | `/api/eobs` | eobs_list | — |
-| POST | `/api/eobs` | eobs_create | — |
-| GET | `/api/eobs/{id}` | eobs_read | — |
-| GET | `/api/fee_schedules` | fee_schedules_list | — |
-| GET | `/api/fee_schedules/{id}` | fee_schedules_read | — |
-| GET | `/api/implantable_devices` | implantable_devices_list | — |
-| GET | `/api/implantable_devices/{id}` | implantable_devices_read | — |
-| GET | `/api/insurances` | insurances_list | — |
-| GET | `/api/insurances/{id}` | insurances_read | — |
-| GET | `/api/inventory_categories` | inventory_categories_list | — |
-| GET | `/api/inventory_categories/{id}` | inventory_categories_read | — |
-| GET | `/api/inventory_vaccines` | inventory_vaccines_list | — |
-| POST | `/api/inventory_vaccines` | inventory_vaccines_create | — |
-| GET | `/api/inventory_vaccines/{id}` | inventory_vaccines_read | — |
-| GET | `/api/lab_documents` | lab_documents_list | — |
-| POST | `/api/lab_documents` | lab_documents_create | — |
-| DELETE | `/api/lab_documents/{id}` | lab_documents_delete | — |
-| GET | `/api/lab_documents/{id}` | lab_documents_read | — |
-| PATCH | `/api/lab_documents/{id}` | lab_documents_partial_update | — |
-| PUT | `/api/lab_documents/{id}` | lab_documents_update | — |
-| GET | `/api/lab_orders` | lab_orders_list | — |
-| POST | `/api/lab_orders` | lab_orders_create | — |
-| DELETE | `/api/lab_orders/{id}` | lab_orders_delete | — |
-| GET | `/api/lab_orders/{id}` | lab_orders_read | — |
-| PATCH | `/api/lab_orders/{id}` | lab_orders_partial_update | — |
-| PUT | `/api/lab_orders/{id}` | lab_orders_update | — |
-| GET | `/api/lab_orders_summary` | lab_orders_summary_list | — |
-| GET | `/api/lab_orders_summary/{id}` | lab_orders_summary_read | — |
-| GET | `/api/lab_results` | lab_results_list | — |
-| POST | `/api/lab_results` | lab_results_create | — |
-| DELETE | `/api/lab_results/{id}` | lab_results_delete | — |
-| GET | `/api/lab_results/{id}` | lab_results_read | — |
-| PATCH | `/api/lab_results/{id}` | lab_results_partial_update | — |
-| PUT | `/api/lab_results/{id}` | lab_results_update | — |
-| GET | `/api/lab_tests` | lab_tests_list | — |
-| POST | `/api/lab_tests` | lab_tests_create | — |
-| DELETE | `/api/lab_tests/{id}` | lab_tests_delete | — |
-| GET | `/api/lab_tests/{id}` | lab_tests_read | — |
-| PATCH | `/api/lab_tests/{id}` | lab_tests_partial_update | — |
-| PUT | `/api/lab_tests/{id}` | lab_tests_update | — |
-| GET | `/api/line_items` | line_items_list | — |
-| POST | `/api/line_items` | line_items_create | — |
-| DELETE | `/api/line_items/{id}` | line_items_delete | — |
-| GET | `/api/line_items/{id}` | line_items_read | — |
-| PATCH | `/api/line_items/{id}` | line_items_partial_update | — |
-| PUT | `/api/line_items/{id}` | line_items_update | — |
-| GET | `/api/medications` | medications_list | — |
-| POST | `/api/medications` | medications_create | — |
-| GET | `/api/medications/{id}` | medications_read | — |
-| PATCH | `/api/medications/{id}` | medications_partial_update | — |
-| PUT | `/api/medications/{id}` | medications_update | — |
-| PATCH | `/api/medications/{id}/append_to_pharmacy_note` | medications_append_to_pharmacy_note | — |
-| GET | `/api/messages` | messages_list | — |
-| POST | `/api/messages` | messages_create | — |
-| DELETE | `/api/messages/{id}` | messages_delete | — |
-| GET | `/api/messages/{id}` | messages_read | — |
-| PATCH | `/api/messages/{id}` | messages_partial_update | — |
-| PUT | `/api/messages/{id}` | messages_update | — |
-| GET | `/api/offices` | offices_list | — |
-| GET | `/api/offices/{id}` | offices_read | — |
-| PATCH | `/api/offices/{id}` | offices_partial_update | — |
-| PUT | `/api/offices/{id}` | offices_update | — |
-| POST | `/api/offices/{id}/add_exam_room` | offices_add_exam_room | — |
-| GET | `/api/patient_communications` | patient_communications_list | — |
-| POST | `/api/patient_communications` | patient_communications_create | — |
-| GET | `/api/patient_communications/{id}` | patient_communications_read | — |
-| PATCH | `/api/patient_communications/{id}` | patient_communications_partial_update | — |
-| PUT | `/api/patient_communications/{id}` | patient_communications_update | — |
-| GET | `/api/patient_flag_types` | patient_flag_types_list | — |
-| POST | `/api/patient_flag_types` | patient_flag_types_create | — |
-| GET | `/api/patient_flag_types/{id}` | patient_flag_types_read | — |
-| PATCH | `/api/patient_flag_types/{id}` | patient_flag_types_partial_update | — |
-| PUT | `/api/patient_flag_types/{id}` | patient_flag_types_update | — |
-| GET | `/api/patient_interventions` | patient_interventions_list | — |
-| POST | `/api/patient_interventions` | patient_interventions_create | — |
-| GET | `/api/patient_interventions/{id}` | patient_interventions_read | — |
-| PATCH | `/api/patient_interventions/{id}` | patient_interventions_partial_update | — |
-| PUT | `/api/patient_interventions/{id}` | patient_interventions_update | — |
-| GET | `/api/patient_lab_results` | patient_lab_results_list | — |
-| POST | `/api/patient_lab_results` | patient_lab_results_create | — |
-| DELETE | `/api/patient_lab_results/{id}` | patient_lab_results_delete | — |
-| GET | `/api/patient_lab_results/{id}` | patient_lab_results_read | — |
-| PATCH | `/api/patient_lab_results/{id}` | patient_lab_results_partial_update | — |
-| PUT | `/api/patient_lab_results/{id}` | patient_lab_results_update | — |
-| GET | `/api/patient_messages` | patient_messages_list | — |
-| POST | `/api/patient_messages` | patient_messages_create | — |
-| GET | `/api/patient_messages/{id}` | patient_messages_read | — |
-| PATCH | `/api/patient_messages/{id}` | patient_messages_partial_update | — |
-| PUT | `/api/patient_messages/{id}` | patient_messages_update | — |
-| GET | `/api/patient_payment_log` | patient_payment_log_list | — |
-| GET | `/api/patient_payment_log/{id}` | patient_payment_log_read | — |
-| GET | `/api/patient_payments` | patient_payments_list | — |
-| POST | `/api/patient_payments` | patient_payments_create | — |
-| GET | `/api/patient_payments/{id}` | patient_payments_read | — |
-| GET | `/api/patient_physical_exams` | patient_physical_exams_list | — |
-| POST | `/api/patient_physical_exams` | patient_physical_exams_create | — |
-| GET | `/api/patient_physical_exams/{id}` | patient_physical_exams_read | — |
-| PATCH | `/api/patient_physical_exams/{id}` | patient_physical_exams_partial_update | — |
-| PUT | `/api/patient_physical_exams/{id}` | patient_physical_exams_update | — |
-| GET | `/api/patient_risk_assessments` | patient_risk_assessments_list | — |
-| POST | `/api/patient_risk_assessments` | patient_risk_assessments_create | — |
-| GET | `/api/patient_risk_assessments/{id}` | patient_risk_assessments_read | — |
-| PATCH | `/api/patient_risk_assessments/{id}` | patient_risk_assessments_partial_update | — |
-| PUT | `/api/patient_risk_assessments/{id}` | patient_risk_assessments_update | — |
-| GET | `/api/patient_vaccine_records` | patient_vaccine_records_list | — |
-| POST | `/api/patient_vaccine_records` | patient_vaccine_records_create | — |
-| GET | `/api/patient_vaccine_records/{id}` | patient_vaccine_records_read | — |
-| PATCH | `/api/patient_vaccine_records/{id}` | patient_vaccine_records_partial_update | — |
-| PUT | `/api/patient_vaccine_records/{id}` | patient_vaccine_records_update | — |
-| GET | `/api/patients` | patients_list | — |
-| POST | `/api/patients` | patients_create | — |
-| DELETE | `/api/patients/{id}` | patients_delete | — |
-| GET | `/api/patients/{id}` | patients_read | — |
-| PATCH | `/api/patients/{id}` | patients_partial_update | — |
-| PUT | `/api/patients/{id}` | patients_update | — |
-| GET | `/api/patients/{id}/ccda` | patients_ccda | — |
-| DELETE | `/api/patients/{id}/onpatient_access` | patients_onpatient_access_delete | — |
-| GET | `/api/patients/{id}/onpatient_access` | patients_onpatient_access_read | — |
-| POST | `/api/patients/{id}/onpatient_access` | patients_onpatient_access_create | — |
-| GET | `/api/patients/{id}/qrda1` | patients_qrda1 | — |
-| GET | `/api/patients_summary` | patients_summary_list | — |
-| POST | `/api/patients_summary` | patients_summary_create | — |
-| DELETE | `/api/patients_summary/{id}` | patients_summary_delete | — |
-| GET | `/api/patients_summary/{id}` | patients_summary_read | — |
-| PATCH | `/api/patients_summary/{id}` | patients_summary_partial_update | — |
-| PUT | `/api/patients_summary/{id}` | patients_summary_update | — |
-| GET | `/api/prescription_messages` | prescription_messages_list | — |
-| GET | `/api/prescription_messages/{id}` | prescription_messages_read | — |
-| GET | `/api/problems` | problems_list | — |
-| POST | `/api/problems` | problems_create | — |
-| GET | `/api/problems/{id}` | problems_read | — |
-| PATCH | `/api/problems/{id}` | problems_partial_update | — |
-| PUT | `/api/problems/{id}` | problems_update | — |
-| GET | `/api/procedures` | procedures_list | — |
-| GET | `/api/procedures/{id}` | procedures_read | — |
-| GET | `/api/reminder_profiles` | reminder_profiles_list | — |
-| POST | `/api/reminder_profiles` | reminder_profiles_create | — |
-| DELETE | `/api/reminder_profiles/{id}` | reminder_profiles_delete | — |
-| GET | `/api/reminder_profiles/{id}` | reminder_profiles_read | — |
-| PATCH | `/api/reminder_profiles/{id}` | reminder_profiles_partial_update | — |
-| PUT | `/api/reminder_profiles/{id}` | reminder_profiles_update | — |
-| GET | `/api/sublabs` | sublabs_list | — |
-| POST | `/api/sublabs` | sublabs_create | — |
-| DELETE | `/api/sublabs/{id}` | sublabs_delete | — |
-| GET | `/api/sublabs/{id}` | sublabs_read | — |
-| PATCH | `/api/sublabs/{id}` | sublabs_partial_update | — |
-| PUT | `/api/sublabs/{id}` | sublabs_update | — |
-| GET | `/api/task_categories` | task_categories_list | — |
-| POST | `/api/task_categories` | task_categories_create | — |
-| GET | `/api/task_categories/{id}` | task_categories_read | — |
-| PATCH | `/api/task_categories/{id}` | task_categories_partial_update | — |
-| PUT | `/api/task_categories/{id}` | task_categories_update | — |
-| GET | `/api/task_notes` | task_notes_list | — |
-| POST | `/api/task_notes` | task_notes_create | — |
-| GET | `/api/task_notes/{id}` | task_notes_read | — |
-| PATCH | `/api/task_notes/{id}` | task_notes_partial_update | — |
-| PUT | `/api/task_notes/{id}` | task_notes_update | — |
-| GET | `/api/task_statuses` | task_statuses_list | — |
-| POST | `/api/task_statuses` | task_statuses_create | — |
-| GET | `/api/task_statuses/{id}` | task_statuses_read | — |
-| PATCH | `/api/task_statuses/{id}` | task_statuses_partial_update | — |
-| PUT | `/api/task_statuses/{id}` | task_statuses_update | — |
-| GET | `/api/task_templates` | task_templates_list | — |
-| POST | `/api/task_templates` | task_templates_create | — |
-| GET | `/api/task_templates/{id}` | task_templates_read | — |
-| PATCH | `/api/task_templates/{id}` | task_templates_partial_update | — |
-| PUT | `/api/task_templates/{id}` | task_templates_update | — |
-| GET | `/api/tasks` | tasks_list | — |
-| POST | `/api/tasks` | tasks_create | — |
-| GET | `/api/tasks/{id}` | tasks_read | — |
-| PATCH | `/api/tasks/{id}` | tasks_partial_update | — |
-| PUT | `/api/tasks/{id}` | tasks_update | — |
-| GET | `/api/transactions` | transactions_list | — |
-| GET | `/api/transactions/{id}` | transactions_read | — |
-| GET | `/api/user_groups` | user_groups_list | — |
-| GET | `/api/user_groups/{id}` | user_groups_read | — |
-| GET | `/api/users` | users_list | — |
-| GET | `/api/users/{id}` | users_read | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/allergies` | allergies_list | `cursor`, `page_size`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/allergies` | allergies_create | `patient`, `doctor` | PatientAllergy |  | — |
+| GET | `/api/allergies/{id}` | allergies_read | `id`*, `patient`, `doctor` | PatientAllergy | yes | — |
+| PUT | `/api/allergies/{id}` | allergies_update | `id`*, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/allergies/{id}` | allergies_partial_update | `id`*, `patient`, `doctor` | — |  | — |
+| GET | `/api/amendments` | amendments_list | `cursor`, `page_size`, `appointment`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/amendments` | amendments_create | `appointment`, `patient`, `doctor` | PatientAmendment |  | — |
+| GET | `/api/amendments/{id}` | amendments_read | `id`*, `appointment`, `patient`, `doctor` | PatientAmendment | yes | — |
+| PUT | `/api/amendments/{id}` | amendments_update | `id`*, `appointment`, `patient`, `doctor` | — |  | — |
+| DELETE | `/api/amendments/{id}` | amendments_delete | `id`*, `appointment`, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/amendments/{id}` | amendments_partial_update | `id`*, `appointment`, `patient`, `doctor` | — |  | — |
+| GET | `/api/appointment_profiles` | appointment_profiles_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| POST | `/api/appointment_profiles` | appointment_profiles_create | `doctor` | AppointmentProfile |  | — |
+| GET | `/api/appointment_profiles/{id}` | appointment_profiles_read | `id`*, `doctor` | AppointmentProfile | yes | — |
+| PUT | `/api/appointment_profiles/{id}` | appointment_profiles_update | `id`*, `doctor` | — |  | — |
+| DELETE | `/api/appointment_profiles/{id}` | appointment_profiles_delete | `id`*, `doctor` | — |  | — |
+| PATCH | `/api/appointment_profiles/{id}` | appointment_profiles_partial_update | `id`*, `doctor` | — |  | — |
+| GET | `/api/appointment_templates` | appointment_templates_list | `cursor`, `page_size`, `profile`, `office`, `doctor` | object | yes | — |
+| POST | `/api/appointment_templates` | appointment_templates_create | `profile`, `office`, `doctor` | AppointmentTemplate |  | — |
+| GET | `/api/appointment_templates/{id}` | appointment_templates_read | `id`*, `profile`, `office`, `doctor` | AppointmentTemplate | yes | — |
+| PUT | `/api/appointment_templates/{id}` | appointment_templates_update | `id`*, `profile`, `office`, `doctor` | — |  | — |
+| DELETE | `/api/appointment_templates/{id}` | appointment_templates_delete | `id`*, `profile`, `office`, `doctor` | — |  | — |
+| PATCH | `/api/appointment_templates/{id}` | appointment_templates_partial_update | `id`*, `profile`, `office`, `doctor` | — |  | — |
+| GET | `/api/appointments` | appointments_list | `cursor`, `page_size`, `status`, `patient`, `office`, `doctor`, `since`, `date_range`, `date` | object | yes | — |
+| POST | `/api/appointments` | appointments_create | `status`, `patient`, `office`, `doctor`, `since`, `date_range`, `date` | Appointment |  | — |
+| GET | `/api/appointments/{id}` | appointments_read | `id`*, `status`, `patient`, `office`, `doctor`, `since`, `date_range`, `date` | Appointment | yes | — |
+| PUT | `/api/appointments/{id}` | appointments_update | `id`*, `status`, `patient`, `office`, `doctor`, `since`, `date_range`, `date` | — |  | — |
+| DELETE | `/api/appointments/{id}` | appointments_delete | `id`*, `status`, `patient`, `office`, `doctor`, `since`, `date_range`, `date` | — |  | — |
+| PATCH | `/api/appointments/{id}` | appointments_partial_update | `id`*, `status`, `patient`, `office`, `doctor`, `since`, `date_range`, `date` | — |  | — |
+| GET | `/api/billing_profiles` | billing_profiles_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| GET | `/api/billing_profiles/{id}` | billing_profiles_read | `id`*, `doctor` | BillingProfile | yes | — |
+| GET | `/api/care_plans` | care_plans_list | `cursor`, `page_size`, `patient`, `plan_type`, `doctor` | object | yes | — |
+| GET | `/api/care_plans/{id}` | care_plans_read | `id`*, `patient`, `plan_type`, `doctor` | CarePlan | yes | — |
+| GET | `/api/care_team_members` | care_team_members_list | `cursor`, `page_size`, `patient`, `appointment`, `doctor` | object | yes | — |
+| GET | `/api/care_team_members/{id}` | care_team_members_read | `id`*, `patient`, `appointment`, `doctor` | CareTeamMember | yes | — |
+| GET | `/api/claim_billing_notes` | claim_billing_notes_list | `cursor`, `page_size`, `appointment`, `doctor` | object | yes | — |
+| POST | `/api/claim_billing_notes` | claim_billing_notes_create | `appointment`, `doctor` | ClaimBillingNotes |  | — |
+| GET | `/api/claim_billing_notes/{id}` | claim_billing_notes_read | `id`*, `appointment`, `doctor` | ClaimBillingNotes | yes | — |
+| GET | `/api/clinical_note_field_types` | clinical_note_field_types_list | `cursor`, `page_size`, `clinical_note_template`, `doctor` | object | yes | — |
+| GET | `/api/clinical_note_field_types/{id}` | clinical_note_field_types_read | `id`*, `clinical_note_template`, `doctor` | SoapNoteLineItemFieldType | yes | — |
+| GET | `/api/clinical_note_field_values` | clinical_note_field_values_list | `cursor`, `page_size`, `clinical_note_field`, `since`, `appointment`, `clinical_note_template`, `doctor` | object | yes | — |
+| POST | `/api/clinical_note_field_values` | clinical_note_field_values_create | `clinical_note_field`, `since`, `appointment`, `clinical_note_template`, `doctor` | SoapNoteLineItemFieldValue |  | — |
+| GET | `/api/clinical_note_field_values/{id}` | clinical_note_field_values_read | `id`*, `clinical_note_field`, `since`, `appointment`, `clinical_note_template`, `doctor` | SoapNoteLineItemFieldValue | yes | — |
+| PUT | `/api/clinical_note_field_values/{id}` | clinical_note_field_values_update | `id`*, `clinical_note_field`, `since`, `appointment`, `clinical_note_template`, `doctor` | — |  | — |
+| PATCH | `/api/clinical_note_field_values/{id}` | clinical_note_field_values_partial_update | `id`*, `clinical_note_field`, `since`, `appointment`, `clinical_note_template`, `doctor` | — |  | — |
+| GET | `/api/clinical_note_templates` | clinical_note_templates_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| GET | `/api/clinical_note_templates/{id}` | clinical_note_templates_read | `id`*, `doctor` | SoapNoteCustomReport | yes | — |
+| GET | `/api/clinical_notes` | clinical_notes_list | `cursor`, `page_size`, `patient`, `office`, `doctor`, `since`, `date_range`, `date` | object | yes | — |
+| GET | `/api/clinical_notes/{id}` | clinical_notes_read | `id`*, `patient`, `office`, `doctor`, `since`, `date_range`, `date` | ClinicalNote | yes | — |
+| GET | `/api/comm_logs` | comm_logs_list | `cursor`, `page_size`, `since`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/comm_logs` | comm_logs_create | `since`, `patient`, `doctor` | PhoneCallLog |  | — |
+| GET | `/api/comm_logs/{id}` | comm_logs_read | `id`*, `since`, `patient`, `doctor` | PhoneCallLog | yes | — |
+| PUT | `/api/comm_logs/{id}` | comm_logs_update | `id`*, `since`, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/comm_logs/{id}` | comm_logs_partial_update | `id`*, `since`, `patient`, `doctor` | — |  | — |
+| GET | `/api/consent_forms` | consent_forms_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| POST | `/api/consent_forms` | consent_forms_create | `doctor` | ConsentForm |  | — |
+| GET | `/api/consent_forms/{id}` | consent_forms_read | `id`*, `doctor` | ConsentForm | yes | — |
+| PUT | `/api/consent_forms/{id}` | consent_forms_update | `id`*, `doctor` | — |  | — |
+| PATCH | `/api/consent_forms/{id}` | consent_forms_partial_update | `id`*, `doctor` | — |  | — |
+| POST | `/api/consent_forms/{id}/apply_to_appointment` | consent_forms_apply_to_appointment | `id`*, `doctor` | — |  | — |
+| POST | `/api/consent_forms/{id}/unapply_from_appointment` | consent_forms_unapply_from_appointment | `id`*, `doctor` | — |  | — |
+| GET | `/api/custom_appointment_fields` | custom_appointment_fields_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| POST | `/api/custom_appointment_fields` | custom_appointment_fields_create | `doctor` | CustomAppointmentFieldType |  | — |
+| GET | `/api/custom_appointment_fields/{id}` | custom_appointment_fields_read | `id`*, `doctor` | CustomAppointmentFieldType | yes | — |
+| PUT | `/api/custom_appointment_fields/{id}` | custom_appointment_fields_update | `id`*, `doctor` | — |  | — |
+| PATCH | `/api/custom_appointment_fields/{id}` | custom_appointment_fields_partial_update | `id`*, `doctor` | — |  | — |
+| GET | `/api/custom_demographics` | custom_demographics_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| POST | `/api/custom_demographics` | custom_demographics_create | `doctor` | CustomPatientFieldType |  | — |
+| GET | `/api/custom_demographics/{id}` | custom_demographics_read | `id`*, `doctor` | CustomPatientFieldType | yes | — |
+| PUT | `/api/custom_demographics/{id}` | custom_demographics_update | `id`*, `doctor` | — |  | — |
+| PATCH | `/api/custom_demographics/{id}` | custom_demographics_partial_update | `id`*, `doctor` | — |  | — |
+| GET | `/api/custom_insurance_plan_names` | custom_insurance_plan_names_list | `cursor`, `page_size`, `since`, `user`, `name`, `doctor` | object | yes | — |
+| GET | `/api/custom_insurance_plan_names/{id}` | custom_insurance_plan_names_read | `id`*, `since`, `user`, `name`, `doctor` | CustomInsurancePlanName | yes | — |
+| GET | `/api/custom_vitals` | custom_vitals_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| GET | `/api/custom_vitals/{id}` | custom_vitals_read | `id`*, `doctor` | CustomVitalType | yes | — |
+| GET | `/api/doctors` | doctors_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| GET | `/api/doctors/{id}` | doctors_read | `id`*, `doctor` | Doctor | yes | — |
+| GET | `/api/documents` | documents_list | `cursor`, `page_size`, `since`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/documents` | documents_create | `since`, `patient`, `doctor` | ScannedClinicalDocument |  | — |
+| GET | `/api/documents/{id}` | documents_read | `id`*, `since`, `patient`, `doctor` | ScannedClinicalDocument | yes | — |
+| PUT | `/api/documents/{id}` | documents_update | `id`*, `since`, `patient`, `doctor` | — |  | — |
+| DELETE | `/api/documents/{id}` | documents_delete | `id`*, `since`, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/documents/{id}` | documents_partial_update | `id`*, `since`, `patient`, `doctor` | — |  | — |
+| GET | `/api/eligibility_checks` | eligibility_checks_list | `cursor`, `page_size`, `appointment`, `appointment_date`, `doctor`, `query_date_range`, `appointment_date_range`, `query_date`, `patient` | object | yes | — |
+| GET | `/api/eligibility_checks/{id}` | eligibility_checks_read | `id`*, `appointment`, `appointment_date`, `doctor`, `query_date_range`, `appointment_date_range`, `query_date`, `patient` | Coverage | yes | — |
+| GET | `/api/eobs` | eobs_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| POST | `/api/eobs` | eobs_create | `doctor` | EOBObject |  | — |
+| GET | `/api/eobs/{id}` | eobs_read | `id`*, `doctor` | EOBObject | yes | — |
+| GET | `/api/fee_schedules` | fee_schedules_list | `cursor`, `page_size`, `code`, `code_type`, `since`, `payer_id`, `doctor` | object | yes | — |
+| GET | `/api/fee_schedules/{id}` | fee_schedules_read | `id`*, `code`, `code_type`, `since`, `payer_id`, `doctor` | DoctorFeeSchedule | yes | — |
+| GET | `/api/implantable_devices` | implantable_devices_list | `cursor`, `page_size`, `mu_date`, `patient`, `mu_date_range`, `doctor` | object | yes | — |
+| GET | `/api/implantable_devices/{id}` | implantable_devices_read | `id`*, `mu_date`, `patient`, `mu_date_range`, `doctor` | ImplantableDevice | yes | — |
+| GET | `/api/insurances` | insurances_list | `cursor`, `page_size`, `payer_type`*, `term` | object | yes | — |
+| GET | `/api/insurances/{id}` | insurances_read | `id`*, `payer_type`*, `term` | Insurance | yes | — |
+| GET | `/api/inventory_categories` | inventory_categories_list | `cursor`, `page_size`, `since`, `doctor` | object | yes | — |
+| GET | `/api/inventory_categories/{id}` | inventory_categories_read | `id`*, `since`, `doctor` | InventoryCategory | yes | — |
+| GET | `/api/inventory_vaccines` | inventory_vaccines_list | `cursor`, `page_size`, `status`, `cvx_code`, `since`, `doctor` | object | yes | — |
+| POST | `/api/inventory_vaccines` | inventory_vaccines_create | `status`, `cvx_code`, `since`, `doctor` | InventoryVaccine |  | — |
+| GET | `/api/inventory_vaccines/{id}` | inventory_vaccines_read | `id`*, `status`, `cvx_code`, `since`, `doctor` | InventoryVaccine | yes | — |
+| GET | `/api/lab_documents` | lab_documents_list | `cursor`, `page_size`, `since`, `doctor` | object | yes | — |
+| POST | `/api/lab_documents` | lab_documents_create | `since`, `doctor` | LabOrderDocument |  | — |
+| GET | `/api/lab_documents/{id}` | lab_documents_read | `id`*, `since`, `doctor` | LabOrderDocument | yes | — |
+| PUT | `/api/lab_documents/{id}` | lab_documents_update | `id`*, `since`, `doctor` | — |  | — |
+| DELETE | `/api/lab_documents/{id}` | lab_documents_delete | `id`*, `since`, `doctor` | — |  | — |
+| PATCH | `/api/lab_documents/{id}` | lab_documents_partial_update | `id`*, `since`, `doctor` | — |  | — |
+| GET | `/api/lab_orders` | lab_orders_list | `cursor`, `page_size`, `since`, `doctor` | object | yes | — |
+| POST | `/api/lab_orders` | lab_orders_create | `since`, `doctor` | LabOrder |  | — |
+| GET | `/api/lab_orders/{id}` | lab_orders_read | `id`*, `since`, `doctor` | LabOrder | yes | — |
+| PUT | `/api/lab_orders/{id}` | lab_orders_update | `id`*, `since`, `doctor` | — |  | — |
+| DELETE | `/api/lab_orders/{id}` | lab_orders_delete | `id`*, `since`, `doctor` | — |  | — |
+| PATCH | `/api/lab_orders/{id}` | lab_orders_partial_update | `id`*, `since`, `doctor` | — |  | — |
+| GET | `/api/lab_orders_summary` | lab_orders_summary_list | `cursor`, `page_size`, `since`, `patient`, `doctor` | object | yes | — |
+| GET | `/api/lab_orders_summary/{id}` | lab_orders_summary_read | `id`*, `since`, `patient`, `doctor` | LabOrder | yes | — |
+| GET | `/api/lab_results` | lab_results_list | `cursor`, `page_size`, `order`, `doctor` | object | yes | — |
+| POST | `/api/lab_results` | lab_results_create | `order`, `doctor` | LabResult |  | — |
+| GET | `/api/lab_results/{id}` | lab_results_read | `id`*, `order`, `doctor` | LabResult | yes | — |
+| PUT | `/api/lab_results/{id}` | lab_results_update | `id`*, `order`, `doctor` | — |  | — |
+| DELETE | `/api/lab_results/{id}` | lab_results_delete | `id`*, `order`, `doctor` | — |  | — |
+| PATCH | `/api/lab_results/{id}` | lab_results_partial_update | `id`*, `order`, `doctor` | — |  | — |
+| GET | `/api/lab_tests` | lab_tests_list | `cursor`, `page_size`, `order`, `doctor` | object | yes | — |
+| POST | `/api/lab_tests` | lab_tests_create | `order`, `doctor` | LabTest |  | — |
+| GET | `/api/lab_tests/{id}` | lab_tests_read | `id`*, `order`, `doctor` | LabTest | yes | — |
+| PUT | `/api/lab_tests/{id}` | lab_tests_update | `id`*, `order`, `doctor` | — |  | — |
+| DELETE | `/api/lab_tests/{id}` | lab_tests_delete | `id`*, `order`, `doctor` | — |  | — |
+| PATCH | `/api/lab_tests/{id}` | lab_tests_partial_update | `id`*, `order`, `doctor` | — |  | — |
+| GET | `/api/line_items` | line_items_list | `cursor`, `page_size`, `posted_date`, `patient`, `office`, `doctor`, `since`, `appointment`, `service_date` | object | yes | — |
+| POST | `/api/line_items` | line_items_create | `posted_date`, `patient`, `office`, `doctor`, `since`, `appointment`, `service_date` | BillingLineItem |  | — |
+| GET | `/api/line_items/{id}` | line_items_read | `id`*, `posted_date`, `patient`, `office`, `doctor`, `since`, `appointment`, `service_date` | BillingLineItem | yes | — |
+| PUT | `/api/line_items/{id}` | line_items_update | `id`*, `posted_date`, `patient`, `office`, `doctor`, `since`, `appointment`, `service_date` | — |  | — |
+| DELETE | `/api/line_items/{id}` | line_items_delete | `id`*, `posted_date`, `patient`, `office`, `doctor`, `since`, `appointment`, `service_date` | — |  | — |
+| PATCH | `/api/line_items/{id}` | line_items_partial_update | `id`*, `posted_date`, `patient`, `office`, `doctor`, `since`, `appointment`, `service_date` | — |  | — |
+| GET | `/api/medications` | medications_list | `cursor`, `page_size`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/medications` | medications_create | `patient`, `doctor` | PatientDrug |  | — |
+| GET | `/api/medications/{id}` | medications_read | `id`*, `patient`, `doctor` | PatientDrug | yes | — |
+| PUT | `/api/medications/{id}` | medications_update | `id`*, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/medications/{id}` | medications_partial_update | `id`*, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/medications/{id}/append_to_pharmacy_note` | medications_append_to_pharmacy_note | `id`*, `patient`, `doctor` | — |  | — |
+| GET | `/api/messages` | messages_list | `cursor`, `page_size`, `patient`, `doctor`, `responsible_user`, `updated_since`, `received_since`, `owner`, `type` | object | yes | — |
+| POST | `/api/messages` | messages_create | `patient`, `doctor`, `responsible_user`, `updated_since`, `received_since`, `owner`, `type` | DoctorMessage |  | — |
+| GET | `/api/messages/{id}` | messages_read | `id`*, `patient`, `doctor`, `responsible_user`, `updated_since`, `received_since`, `owner`, `type` | DoctorMessage | yes | — |
+| PUT | `/api/messages/{id}` | messages_update | `id`*, `patient`, `doctor`, `responsible_user`, `updated_since`, `received_since`, `owner`, `type` | — |  | — |
+| DELETE | `/api/messages/{id}` | messages_delete | `id`*, `patient`, `doctor`, `responsible_user`, `updated_since`, `received_since`, `owner`, `type` | — |  | — |
+| PATCH | `/api/messages/{id}` | messages_partial_update | `id`*, `patient`, `doctor`, `responsible_user`, `updated_since`, `received_since`, `owner`, `type` | — |  | — |
+| GET | `/api/offices` | offices_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| GET | `/api/offices/{id}` | offices_read | `id`*, `doctor` | Office | yes | — |
+| PUT | `/api/offices/{id}` | offices_update | `id`*, `doctor` | — |  | — |
+| PATCH | `/api/offices/{id}` | offices_partial_update | `id`*, `doctor` | — |  | — |
+| POST | `/api/offices/{id}/add_exam_room` | offices_add_exam_room | `id`*, `doctor` | Office |  | — |
+| GET | `/api/patient_communications` | patient_communications_list | `cursor`, `page_size`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/patient_communications` | patient_communications_create | `patient`, `doctor` | PatientCommunication |  | — |
+| GET | `/api/patient_communications/{id}` | patient_communications_read | `id`*, `patient`, `doctor` | PatientCommunication | yes | — |
+| PUT | `/api/patient_communications/{id}` | patient_communications_update | `id`*, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/patient_communications/{id}` | patient_communications_partial_update | `id`*, `patient`, `doctor` | — |  | — |
+| GET | `/api/patient_flag_types` | patient_flag_types_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| POST | `/api/patient_flag_types` | patient_flag_types_create | `doctor` | PatientFlagType |  | — |
+| GET | `/api/patient_flag_types/{id}` | patient_flag_types_read | `id`*, `doctor` | PatientFlagType | yes | — |
+| PUT | `/api/patient_flag_types/{id}` | patient_flag_types_update | `id`*, `doctor` | — |  | — |
+| PATCH | `/api/patient_flag_types/{id}` | patient_flag_types_partial_update | `id`*, `doctor` | — |  | — |
+| GET | `/api/patient_interventions` | patient_interventions_list | `cursor`, `page_size`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/patient_interventions` | patient_interventions_create | `patient`, `doctor` | PatientIntervention |  | — |
+| GET | `/api/patient_interventions/{id}` | patient_interventions_read | `id`*, `patient`, `doctor` | PatientIntervention | yes | — |
+| PUT | `/api/patient_interventions/{id}` | patient_interventions_update | `id`*, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/patient_interventions/{id}` | patient_interventions_partial_update | `id`*, `patient`, `doctor` | — |  | — |
+| GET | `/api/patient_lab_results` | patient_lab_results_list | `cursor`, `page_size`, `ordering_doctor`, `since`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/patient_lab_results` | patient_lab_results_create | `ordering_doctor`, `since`, `patient`, `doctor` | PatientLabResultSet |  | — |
+| GET | `/api/patient_lab_results/{id}` | patient_lab_results_read | `id`*, `ordering_doctor`, `since`, `patient`, `doctor` | PatientLabResultSet | yes | — |
+| PUT | `/api/patient_lab_results/{id}` | patient_lab_results_update | `id`*, `ordering_doctor`, `since`, `patient`, `doctor` | — |  | — |
+| DELETE | `/api/patient_lab_results/{id}` | patient_lab_results_delete | `id`*, `ordering_doctor`, `since`, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/patient_lab_results/{id}` | patient_lab_results_partial_update | `id`*, `ordering_doctor`, `since`, `patient`, `doctor` | — |  | — |
+| GET | `/api/patient_messages` | patient_messages_list | `cursor`, `page_size`, `since`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/patient_messages` | patient_messages_create | `since`, `patient`, `doctor` | PatientMessage |  | — |
+| GET | `/api/patient_messages/{id}` | patient_messages_read | `id`*, `since`, `patient`, `doctor` | PatientMessage | yes | — |
+| PUT | `/api/patient_messages/{id}` | patient_messages_update | `id`*, `since`, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/patient_messages/{id}` | patient_messages_partial_update | `id`*, `since`, `patient`, `doctor` | — |  | — |
+| GET | `/api/patient_payment_log` | patient_payment_log_list | `cursor`, `page_size`, `since`, `office`, `doctor` | object | yes | — |
+| GET | `/api/patient_payment_log/{id}` | patient_payment_log_read | `id`*, `since`, `office`, `doctor` | CashPaymentLog | yes | — |
+| GET | `/api/patient_payments` | patient_payments_list | `cursor`, `page_size`, `since`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/patient_payments` | patient_payments_create | `since`, `patient`, `doctor` | CashPayment |  | — |
+| GET | `/api/patient_payments/{id}` | patient_payments_read | `id`*, `since`, `patient`, `doctor` | CashPayment | yes | — |
+| GET | `/api/patient_physical_exams` | patient_physical_exams_list | `cursor`, `page_size`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/patient_physical_exams` | patient_physical_exams_create | `patient`, `doctor` | PatientPhysicalExam |  | — |
+| GET | `/api/patient_physical_exams/{id}` | patient_physical_exams_read | `id`*, `patient`, `doctor` | PatientPhysicalExam | yes | — |
+| PUT | `/api/patient_physical_exams/{id}` | patient_physical_exams_update | `id`*, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/patient_physical_exams/{id}` | patient_physical_exams_partial_update | `id`*, `patient`, `doctor` | — |  | — |
+| GET | `/api/patient_risk_assessments` | patient_risk_assessments_list | `cursor`, `page_size`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/patient_risk_assessments` | patient_risk_assessments_create | `patient`, `doctor` | PatientRiskAssessment |  | — |
+| GET | `/api/patient_risk_assessments/{id}` | patient_risk_assessments_read | `id`*, `patient`, `doctor` | PatientRiskAssessment | yes | — |
+| PUT | `/api/patient_risk_assessments/{id}` | patient_risk_assessments_update | `id`*, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/patient_risk_assessments/{id}` | patient_risk_assessments_partial_update | `id`*, `patient`, `doctor` | — |  | — |
+| GET | `/api/patient_vaccine_records` | patient_vaccine_records_list | `cursor`, `page_size`, `cvx_code`, `patient`, `since`, `doctor` | object | yes | — |
+| POST | `/api/patient_vaccine_records` | patient_vaccine_records_create | `cvx_code`, `patient`, `since`, `doctor` | PatientVaccineRecord |  | — |
+| GET | `/api/patient_vaccine_records/{id}` | patient_vaccine_records_read | `id`*, `cvx_code`, `patient`, `since`, `doctor` | PatientVaccineRecord | yes | — |
+| PUT | `/api/patient_vaccine_records/{id}` | patient_vaccine_records_update | `id`*, `cvx_code`, `patient`, `since`, `doctor` | — |  | — |
+| PATCH | `/api/patient_vaccine_records/{id}` | patient_vaccine_records_partial_update | `id`*, `cvx_code`, `patient`, `since`, `doctor` | — |  | — |
+| GET | `/api/patients` | patients_list | `cursor`, `page_size`, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | object | yes | — |
+| POST | `/api/patients` | patients_create | `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | Patient |  | — |
+| GET | `/api/patients/{id}` | patients_read | `id`*, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | Patient | yes | — |
+| PUT | `/api/patients/{id}` | patients_update | `id`*, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | — |  | — |
+| DELETE | `/api/patients/{id}` | patients_delete | `id`*, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | — |  | — |
+| PATCH | `/api/patients/{id}` | patients_partial_update | `id`*, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | — |  | — |
+| GET | `/api/patients/{id}/ccda` | patients_ccda | `id`*, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | object | yes | — |
+| GET | `/api/patients/{id}/onpatient_access` | patients_onpatient_access_read | `id`*, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | Patient | yes | — |
+| POST | `/api/patients/{id}/onpatient_access` | patients_onpatient_access_create | `id`*, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | Patient |  | — |
+| DELETE | `/api/patients/{id}/onpatient_access` | patients_onpatient_access_delete | `id`*, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | — |  | — |
+| GET | `/api/patients/{id}/qrda1` | patients_qrda1 | `id`*, `first_name`, `last_name`, `preferred_language`, `doctor`, `gender`, `since`, `date_of_birth`, `race`, `chart_id`, `email`, `ethnicity` | object | yes | — |
+| GET | `/api/patients_summary` | patients_summary_list | `cursor`, `page_size`, `first_name`, `last_name`, `doctor`, `gender`, `since`, `date_of_birth` | object | yes | — |
+| POST | `/api/patients_summary` | patients_summary_create | `first_name`, `last_name`, `doctor`, `gender`, `since`, `date_of_birth` | Patient |  | — |
+| GET | `/api/patients_summary/{id}` | patients_summary_read | `id`*, `first_name`, `last_name`, `doctor`, `gender`, `since`, `date_of_birth` | Patient | yes | — |
+| PUT | `/api/patients_summary/{id}` | patients_summary_update | `id`*, `first_name`, `last_name`, `doctor`, `gender`, `since`, `date_of_birth` | — |  | — |
+| DELETE | `/api/patients_summary/{id}` | patients_summary_delete | `id`*, `first_name`, `last_name`, `doctor`, `gender`, `since`, `date_of_birth` | — |  | — |
+| PATCH | `/api/patients_summary/{id}` | patients_summary_partial_update | `id`*, `first_name`, `last_name`, `doctor`, `gender`, `since`, `date_of_birth` | — |  | — |
+| GET | `/api/prescription_messages` | prescription_messages_list | `cursor`, `page_size`, `parent_message`, `since`, `patient`, `doctor` | object | yes | — |
+| GET | `/api/prescription_messages/{id}` | prescription_messages_read | `id`*, `parent_message`, `since`, `patient`, `doctor` | PrescriptionMessage | yes | — |
+| GET | `/api/problems` | problems_list | `cursor`, `page_size`, `patient`, `doctor` | object | yes | — |
+| POST | `/api/problems` | problems_create | `patient`, `doctor` | PatientProblem |  | — |
+| GET | `/api/problems/{id}` | problems_read | `id`*, `patient`, `doctor` | PatientProblem | yes | — |
+| PUT | `/api/problems/{id}` | problems_update | `id`*, `patient`, `doctor` | — |  | — |
+| PATCH | `/api/problems/{id}` | problems_partial_update | `id`*, `patient`, `doctor` | — |  | — |
+| GET | `/api/procedures` | procedures_list | `cursor`, `page_size`, `mu_date`, `patient`, `doctor`, `mu_date_range`, `appointment`, `service_date` | object | yes | — |
+| GET | `/api/procedures/{id}` | procedures_read | `id`*, `mu_date`, `patient`, `doctor`, `mu_date_range`, `appointment`, `service_date` | BillingLineItem | yes | — |
+| GET | `/api/reminder_profiles` | reminder_profiles_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| POST | `/api/reminder_profiles` | reminder_profiles_create | `doctor` | ReminderProfile |  | — |
+| GET | `/api/reminder_profiles/{id}` | reminder_profiles_read | `id`*, `doctor` | ReminderProfile | yes | — |
+| PUT | `/api/reminder_profiles/{id}` | reminder_profiles_update | `id`*, `doctor` | — |  | — |
+| DELETE | `/api/reminder_profiles/{id}` | reminder_profiles_delete | `id`*, `doctor` | — |  | — |
+| PATCH | `/api/reminder_profiles/{id}` | reminder_profiles_partial_update | `id`*, `doctor` | — |  | — |
+| GET | `/api/sublabs` | sublabs_list | `cursor`, `page_size` | object | yes | — |
+| POST | `/api/sublabs` | sublabs_create | — | LabVendorLocation |  | — |
+| GET | `/api/sublabs/{id}` | sublabs_read | `id`* | LabVendorLocation | yes | — |
+| PUT | `/api/sublabs/{id}` | sublabs_update | `id`* | — |  | — |
+| DELETE | `/api/sublabs/{id}` | sublabs_delete | `id`* | — |  | — |
+| PATCH | `/api/sublabs/{id}` | sublabs_partial_update | `id`* | — |  | — |
+| GET | `/api/task_categories` | task_categories_list | `cursor`, `page_size`, `since` | object | yes | — |
+| POST | `/api/task_categories` | task_categories_create | `since` | TaskCategory |  | — |
+| GET | `/api/task_categories/{id}` | task_categories_read | `id`*, `since` | TaskCategory | yes | — |
+| PUT | `/api/task_categories/{id}` | task_categories_update | `id`*, `since` | — |  | — |
+| PATCH | `/api/task_categories/{id}` | task_categories_partial_update | `id`*, `since` | — |  | — |
+| GET | `/api/task_notes` | task_notes_list | `cursor`, `page_size`, `task`, `since` | object | yes | — |
+| POST | `/api/task_notes` | task_notes_create | `task`, `since` | TaskNote |  | — |
+| GET | `/api/task_notes/{id}` | task_notes_read | `id`*, `task`, `since` | TaskNote | yes | — |
+| PUT | `/api/task_notes/{id}` | task_notes_update | `id`*, `task`, `since` | — |  | — |
+| PATCH | `/api/task_notes/{id}` | task_notes_partial_update | `id`*, `task`, `since` | — |  | — |
+| GET | `/api/task_statuses` | task_statuses_list | `cursor`, `page_size`, `since` | object | yes | — |
+| POST | `/api/task_statuses` | task_statuses_create | `since` | TaskStatus |  | — |
+| GET | `/api/task_statuses/{id}` | task_statuses_read | `id`*, `since` | TaskStatus | yes | — |
+| PUT | `/api/task_statuses/{id}` | task_statuses_update | `id`*, `since` | — |  | — |
+| PATCH | `/api/task_statuses/{id}` | task_statuses_partial_update | `id`*, `since` | — |  | — |
+| GET | `/api/task_templates` | task_templates_list | `cursor`, `page_size`, `assignee_user`, `status`, `assignee_group`, `since`, `category` | object | yes | — |
+| POST | `/api/task_templates` | task_templates_create | `assignee_user`, `status`, `assignee_group`, `since`, `category` | TaskTemplate |  | — |
+| GET | `/api/task_templates/{id}` | task_templates_read | `id`*, `assignee_user`, `status`, `assignee_group`, `since`, `category` | TaskTemplate | yes | — |
+| PUT | `/api/task_templates/{id}` | task_templates_update | `id`*, `assignee_user`, `status`, `assignee_group`, `since`, `category` | — |  | — |
+| PATCH | `/api/task_templates/{id}` | task_templates_partial_update | `id`*, `assignee_user`, `status`, `assignee_group`, `since`, `category` | — |  | — |
+| GET | `/api/tasks` | tasks_list | `cursor`, `page_size`, `status`, `category`, `due_at_date`, `due_at_unknown`, `since`, `due_at_since`, `assignee_user`, `assignee_group`, `due_at_range` | object | yes | — |
+| POST | `/api/tasks` | tasks_create | `status`, `category`, `due_at_date`, `due_at_unknown`, `since`, `due_at_since`, `assignee_user`, `assignee_group`, `due_at_range` | Task |  | — |
+| GET | `/api/tasks/{id}` | tasks_read | `id`*, `status`, `category`, `due_at_date`, `due_at_unknown`, `since`, `due_at_since`, `assignee_user`, `assignee_group`, `due_at_range` | Task | yes | — |
+| PUT | `/api/tasks/{id}` | tasks_update | `id`*, `status`, `category`, `due_at_date`, `due_at_unknown`, `since`, `due_at_since`, `assignee_user`, `assignee_group`, `due_at_range` | — |  | — |
+| PATCH | `/api/tasks/{id}` | tasks_partial_update | `id`*, `status`, `category`, `due_at_date`, `due_at_unknown`, `since`, `due_at_since`, `assignee_user`, `assignee_group`, `due_at_range` | — |  | — |
+| GET | `/api/transactions` | transactions_list | `cursor`, `page_size`, `line_item`, `posted_date`, `appointment`, `since`, `doctor` | object | yes | — |
+| GET | `/api/transactions/{id}` | transactions_read | `id`*, `line_item`, `posted_date`, `appointment`, `since`, `doctor` | LineItemTransaction | yes | — |
+| GET | `/api/user_groups` | user_groups_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| GET | `/api/user_groups/{id}` | user_groups_read | `id`*, `doctor` | UserProfilesGroup | yes | — |
+| GET | `/api/users` | users_list | `cursor`, `page_size`, `doctor` | object | yes | — |
+| GET | `/api/users/{id}` | users_read | `id`*, `doctor` | UserProfile | yes | — |

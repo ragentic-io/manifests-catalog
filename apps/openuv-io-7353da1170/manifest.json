@@ -18,6 +18,26 @@
         "from": "openuv-io-7353da1170",
         "kind": "EXPOSES",
         "to": "operation:get:/uv"
+      },
+      {
+        "from": "operation:get:/forecast",
+        "kind": "RETURNS",
+        "to": "schema:forecastResult"
+      },
+      {
+        "from": "operation:get:/protection",
+        "kind": "RETURNS",
+        "to": "schema:protectionResult"
+      },
+      {
+        "from": "operation:get:/uv",
+        "kind": "RETURNS",
+        "to": "schema:uvIndexResult"
+      },
+      {
+        "from": "schema:forecastResult",
+        "kind": "REFERENCES",
+        "to": "schema:forecast"
       }
     ],
     "nodes": [
@@ -27,61 +47,229 @@
       },
       {
         "deprecated": false,
+        "description": "Get hourly UV Index Forecast by location and date.",
         "id": "operation:get:/forecast",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast",
+        "parameters": [
+          {
+            "description": "latitude, from -90.00 to 90.00",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "longitude, from -180.00 to 180.00",
+            "in": "query",
+            "name": "lng",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Altitude in meters, from 0 to 10000m, 0m by default.",
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Ozone in du (Dobson Units), from 100 to 550du, the latest forecast from OMI dataset is used by default.",
+            "in": "query",
+            "name": "ozone",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "UTC datetime in ISO-8601 format, now by default.",
+            "in": "query",
+            "name": "dt",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "This header is used to send data that contains your OpenUV API key",
+            "in": "header",
+            "name": "x-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/forecast",
         "pointer": "#/paths/~1forecast/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "forecastResult[]"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get daily protection time by location, UV Index from and UV Index to with 10 minutes accuracy.",
         "id": "operation:get:/protection",
         "kind": "operation",
         "method": "get",
         "name": "get /protection",
+        "parameters": [
+          {
+            "description": "latitude, from -90.00 to 90.00",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "longitude, from -180.00 to 180.00",
+            "in": "query",
+            "name": "lng",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "UV Index from value for protection datetime lookup.",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "UV Index to value for protection datetime lookup.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Altitude in meters, from 0 to 10000m, 0m by default.",
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Ozone in du (Dobson Units), from 100 to 550du, the latest forecast from OMI dataset is used by default.",
+            "in": "query",
+            "name": "ozone",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "This header is used to send data that contains your OpenUV API key",
+            "in": "header",
+            "name": "x-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/protection",
         "pointer": "#/paths/~1protection/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "protectionResult"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Get real-time UV Index by location.",
         "id": "operation:get:/uv",
         "kind": "operation",
         "method": "get",
         "name": "get /uv",
+        "parameters": [
+          {
+            "description": "latitude, from -90.00 to 90.00",
+            "in": "query",
+            "name": "lat",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "longitude, from -180.00 to 180.00",
+            "in": "query",
+            "name": "lng",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "description": "Altitude in meters, from 0 to 10000m, 0m by default.",
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "Ozone in du (Dobson Units), from 100 to 550du, the latest forecast from OMI dataset is used by default.",
+            "in": "query",
+            "name": "ozone",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "description": "UTC datetime in ISO-8601 format, now by default.",
+            "in": "query",
+            "name": "dt",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "This header is used to send data that contains your OpenUV API key",
+            "in": "header",
+            "name": "x-access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/uv",
         "pointer": "#/paths/~1uv/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "uvIndexResult"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:forecast",
         "kind": "schema",
-        "name": "forecast"
+        "name": "forecast",
+        "type": "object"
       },
       {
         "id": "schema:forecastResult",
         "kind": "schema",
-        "name": "forecastResult"
+        "name": "forecastResult",
+        "type": "forecast[]"
       },
       {
         "id": "schema:protectionResult",
         "kind": "schema",
-        "name": "protectionResult"
+        "name": "protectionResult",
+        "type": "object"
       },
       {
         "id": "schema:uvIndexResult",
         "kind": "schema",
-        "name": "uvIndexResult"
+        "name": "uvIndexResult",
+        "type": "object"
       }
     ]
   },

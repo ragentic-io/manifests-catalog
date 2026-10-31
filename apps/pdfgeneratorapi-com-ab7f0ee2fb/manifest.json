@@ -22,17 +22,17 @@
       {
         "from": "pdfgeneratorapi-com-ab7f0ee2fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/templates/templateId"
-      },
-      {
-        "from": "pdfgeneratorapi-com-ab7f0ee2fb",
-        "kind": "EXPOSES",
         "to": "operation:get:/templates/templateId"
       },
       {
         "from": "pdfgeneratorapi-com-ab7f0ee2fb",
         "kind": "EXPOSES",
         "to": "operation:put:/templates/templateId"
+      },
+      {
+        "from": "pdfgeneratorapi-com-ab7f0ee2fb",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/templates/templateId"
       },
       {
         "from": "pdfgeneratorapi-com-ab7f0ee2fb",
@@ -52,12 +52,47 @@
       {
         "from": "pdfgeneratorapi-com-ab7f0ee2fb",
         "kind": "EXPOSES",
-        "to": "operation:delete:/workspaces/workspaceId"
+        "to": "operation:get:/workspaces/workspaceId"
       },
       {
         "from": "pdfgeneratorapi-com-ab7f0ee2fb",
         "kind": "EXPOSES",
-        "to": "operation:get:/workspaces/workspaceId"
+        "to": "operation:delete:/workspaces/workspaceId"
+      },
+      {
+        "from": "operation:post:/templates",
+        "kind": "ACCEPTS",
+        "to": "schema:TemplateDefinitionNew"
+      },
+      {
+        "from": "operation:post:/templates/output",
+        "kind": "ACCEPTS",
+        "to": "schema:BatchData"
+      },
+      {
+        "from": "operation:put:/templates/templateId",
+        "kind": "ACCEPTS",
+        "to": "schema:TemplateDefinitionNew"
+      },
+      {
+        "from": "operation:post:/templates/templateId/output",
+        "kind": "ACCEPTS",
+        "to": "schema:Data"
+      },
+      {
+        "from": "schema:BatchData",
+        "kind": "REFERENCES",
+        "to": "schema:Data"
+      },
+      {
+        "from": "schema:TemplateDefinition",
+        "kind": "REFERENCES",
+        "to": "schema:Component"
+      },
+      {
+        "from": "schema:TemplateDefinitionNew",
+        "kind": "REFERENCES",
+        "to": "schema:Component"
       }
     ],
     "nodes": [
@@ -67,203 +102,752 @@
       },
       {
         "deprecated": false,
+        "description": "Returns a list of templates available for the authenticated workspace",
         "id": "operation:get:/templates",
         "kind": "operation",
         "method": "get",
         "name": "getTemplates",
         "path": "/templates",
         "pointer": "#/paths/~1templates/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JSONWebTokenAuth": []
           }
         ],
-        "summary": "Get templates"
+        "summary": "Get templates",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new template.",
         "id": "operation:post:/templates",
         "kind": "operation",
         "method": "post",
         "name": "createTemplate",
         "path": "/templates",
         "pointer": "#/paths/~1templates/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TemplateDefinitionNew"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JSONWebTokenAuth": []
           }
         ],
-        "summary": "Create template"
+        "summary": "Create template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Allows to merge multiples template with data and returns base64 encoded document or public URL to a document.",
         "id": "operation:post:/templates/output",
         "kind": "operation",
         "method": "post",
         "name": "mergeTemplates",
+        "parameters": [
+          {
+            "description": "Document name, returned in the meta data.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "pdf",
+            "description": "Document format.",
+            "enum": [
+              "pdf",
+              "html",
+              "zip",
+              "xlsx"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "base64",
+            "description": "Response format.",
+            "enum": [
+              "base64",
+              "url",
+              "I"
+            ],
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/templates/output",
         "pointer": "#/paths/~1templates~1output/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BatchData"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JSONWebTokenAuth": []
           }
         ],
-        "summary": "Generate document (multiple templates)"
+        "summary": "Generate document (multiple templates)",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/templates/templateId",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteTemplate",
-        "path": "/templates/templateId",
-        "pointer": "#/paths/~1templates~1templateId/delete",
-        "security": [
-          {
-            "JSONWebTokenAuth": []
-          }
-        ],
-        "summary": "Delete template"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns template configuration",
         "id": "operation:get:/templates/templateId",
         "kind": "operation",
         "method": "get",
         "name": "getTemplate",
+        "parameters": [
+          {
+            "description": "Template unique identifier",
+            "in": "query",
+            "name": "templateId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/templates/templateId",
         "pointer": "#/paths/~1templates~1templateId/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JSONWebTokenAuth": []
           }
         ],
-        "summary": "Get template"
+        "summary": "Get template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates template configuration.",
         "id": "operation:put:/templates/templateId",
         "kind": "operation",
         "method": "put",
         "name": "updateTemplate",
+        "parameters": [
+          {
+            "description": "Template unique identifier",
+            "in": "query",
+            "name": "templateId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/templates/templateId",
         "pointer": "#/paths/~1templates~1templateId/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "TemplateDefinitionNew"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JSONWebTokenAuth": []
           }
         ],
-        "summary": "Update template"
+        "summary": "Update template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the template from workspace",
+        "id": "operation:delete:/templates/templateId",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteTemplate",
+        "parameters": [
+          {
+            "description": "Template unique identifier",
+            "in": "query",
+            "name": "templateId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "path": "/templates/templateId",
+        "pointer": "#/paths/~1templates~1templateId/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "JSONWebTokenAuth": []
+          }
+        ],
+        "summary": "Delete template",
+        "tags": [
+          "Templates"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Creates a copy of a template to the workspace specified in authentication parameters.",
         "id": "operation:post:/templates/templateId/copy",
         "kind": "operation",
         "method": "post",
         "name": "copyTemplate",
+        "parameters": [
+          {
+            "description": "Template unique identifier",
+            "in": "query",
+            "name": "templateId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Name for the copied template.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/templates/templateId/copy",
         "pointer": "#/paths/~1templates~1templateId~1copy/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JSONWebTokenAuth": []
           }
         ],
-        "summary": "Copy template"
+        "summary": "Copy template",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns an unique URL which you can use to redirect your user to the editor from your application or use the generated URL as iframe source to show the editor…",
         "id": "operation:post:/templates/templateId/editor",
         "kind": "operation",
         "method": "post",
         "name": "getEditorUrl",
+        "parameters": [
+          {
+            "description": "Template unique identifier",
+            "in": "query",
+            "name": "templateId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Specify the editor UI language.",
+            "enum": [
+              "en",
+              "et",
+              "cs",
+              "sk",
+              "ru"
+            ],
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/templates/templateId/editor",
         "pointer": "#/paths/~1templates~1templateId~1editor/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JSONWebTokenAuth": []
           }
         ],
-        "summary": "Open editor"
+        "summary": "Open editor",
+        "tags": [
+          "Templates"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Merges template with data and returns base64 encoded document or a public URL to a document.",
         "id": "operation:post:/templates/templateId/output",
         "kind": "operation",
         "method": "post",
         "name": "mergeTemplate",
+        "parameters": [
+          {
+            "description": "Template unique identifier",
+            "in": "query",
+            "name": "templateId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Document name, returned in the meta data.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "pdf",
+            "description": "Document format.",
+            "enum": [
+              "pdf",
+              "html",
+              "zip",
+              "xlsx"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "base64",
+            "description": "Response format.",
+            "enum": [
+              "base64",
+              "url",
+              "I"
+            ],
+            "in": "query",
+            "name": "output",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/templates/templateId/output",
         "pointer": "#/paths/~1templates~1templateId~1output/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Data"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "JSONWebTokenAuth": []
           }
         ],
-        "summary": "Generate document"
+        "summary": "Generate document",
+        "tags": [
+          "Documents"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/workspaces/workspaceId",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteWorkspace",
-        "path": "/workspaces/workspaceId",
-        "pointer": "#/paths/~1workspaces~1workspaceId/delete",
-        "security": [
-          {
-            "JSONWebTokenAuth": []
-          }
-        ],
-        "summary": "Delete workspace"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns workspace information",
         "id": "operation:get:/workspaces/workspaceId",
         "kind": "operation",
         "method": "get",
         "name": "getWorkspace",
+        "parameters": [
+          {
+            "description": "Workspace identifier",
+            "in": "query",
+            "name": "workspaceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/workspaces/workspaceId",
         "pointer": "#/paths/~1workspaces~1workspaceId/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "JSONWebTokenAuth": []
           }
         ],
-        "summary": "Get workspace"
+        "summary": "Get workspace",
+        "tags": [
+          "Workspaces"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Deletes the workspace",
+        "id": "operation:delete:/workspaces/workspaceId",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteWorkspace",
+        "parameters": [
+          {
+            "description": "Workspace identifier",
+            "in": "query",
+            "name": "workspaceId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/workspaces/workspaceId",
+        "pointer": "#/paths/~1workspaces~1workspaceId/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          },
+          {
+            "status": "422",
+            "type": "object"
+          },
+          {
+            "status": "500",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "JSONWebTokenAuth": []
+          }
+        ],
+        "summary": "Delete workspace",
+        "tags": [
+          "Workspaces"
+        ]
       },
       {
         "id": "schema:BatchData",
         "kind": "schema",
-        "name": "BatchData"
+        "name": "BatchData",
+        "type": "object[]"
       },
       {
+        "description": "Template component definition",
         "id": "schema:Component",
         "kind": "schema",
-        "name": "Component"
+        "name": "Component",
+        "type": "object"
       },
       {
         "id": "schema:Data",
         "kind": "schema",
-        "name": "Data"
+        "name": "Data",
+        "type": "object"
       },
       {
+        "description": "Template object",
         "id": "schema:Template",
         "kind": "schema",
-        "name": "Template"
+        "name": "Template",
+        "type": "object"
       },
       {
         "id": "schema:TemplateDefinition",
         "kind": "schema",
-        "name": "TemplateDefinition"
+        "name": "TemplateDefinition",
+        "type": "object"
       },
       {
+        "description": "Template configuration",
         "id": "schema:TemplateDefinitionNew",
         "kind": "schema",
-        "name": "TemplateDefinitionNew"
+        "name": "TemplateDefinitionNew",
+        "type": "object"
       },
       {
         "id": "schema:Workspace",
         "kind": "schema",
-        "name": "Workspace"
+        "name": "Workspace",
+        "type": "object"
       }
     ]
   },

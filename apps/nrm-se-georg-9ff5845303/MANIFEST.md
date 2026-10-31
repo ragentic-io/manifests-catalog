@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `eac805b02d01d995671869cdbbd45ea8c75aa4f24421cf520ed5ef1823b59d02` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/autocomplete` | autoComplete | Search |
-| GET | `/coordinates` | searchCoordinates | Search coordinates in different formate |
-| GET | `/reverse` | getReverseGeoCode | Get reverse geocoding |
-| GET | `/search` | search | Get geocoding |
-| POST | `/upload` | uploadFile | Batch upload |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/autocomplete` | autoComplete | `text`, `sources`, `layers`, `countryCode`, `size` | string | yes | Search |
+| GET | `/coordinates` | searchCoordinates | `coordinates` | string | yes | Search coordinates in different formate |
+| GET | `/reverse` | getReverseGeoCode | `lat`, `lng` | string | yes | Get reverse geocoding |
+| GET | `/search` | search | `text`, `sources`, `layers`, `countryCode`, `size` | string | yes | Get geocoding |
+| POST | `/upload` | uploadFile | `type`, body: MultipartFormDataInput | — |  | Batch upload |

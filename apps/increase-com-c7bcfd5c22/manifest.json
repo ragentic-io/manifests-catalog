@@ -578,6 +578,911 @@
         "from": "increase-com-c7bcfd5c22",
         "kind": "EXPOSES",
         "to": "operation:post:/wire_transfers/{wire_transfer_id}/cancel"
+      },
+      {
+        "from": "operation:get:/account_numbers",
+        "kind": "RETURNS",
+        "to": "schema:account_number_list"
+      },
+      {
+        "from": "operation:post:/account_numbers",
+        "kind": "ACCEPTS",
+        "to": "schema:create_an_account_number_parameters"
+      },
+      {
+        "from": "operation:post:/account_numbers",
+        "kind": "RETURNS",
+        "to": "schema:account_number"
+      },
+      {
+        "from": "operation:get:/account_numbers/{account_number_id}",
+        "kind": "RETURNS",
+        "to": "schema:account_number"
+      },
+      {
+        "from": "operation:patch:/account_numbers/{account_number_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:update_an_account_number_parameters"
+      },
+      {
+        "from": "operation:patch:/account_numbers/{account_number_id}",
+        "kind": "RETURNS",
+        "to": "schema:account_number"
+      },
+      {
+        "from": "operation:get:/account_statements",
+        "kind": "RETURNS",
+        "to": "schema:account_statement_list"
+      },
+      {
+        "from": "operation:get:/account_statements/{account_statement_id}",
+        "kind": "RETURNS",
+        "to": "schema:account_statement"
+      },
+      {
+        "from": "operation:get:/account_transfers",
+        "kind": "RETURNS",
+        "to": "schema:account_transfer_list"
+      },
+      {
+        "from": "operation:post:/account_transfers",
+        "kind": "ACCEPTS",
+        "to": "schema:create_an_account_transfer_parameters"
+      },
+      {
+        "from": "operation:post:/account_transfers",
+        "kind": "RETURNS",
+        "to": "schema:account_transfer"
+      },
+      {
+        "from": "operation:get:/account_transfers/{account_transfer_id}",
+        "kind": "RETURNS",
+        "to": "schema:account_transfer"
+      },
+      {
+        "from": "operation:post:/account_transfers/{account_transfer_id}/approve",
+        "kind": "RETURNS",
+        "to": "schema:account_transfer"
+      },
+      {
+        "from": "operation:post:/account_transfers/{account_transfer_id}/cancel",
+        "kind": "RETURNS",
+        "to": "schema:account_transfer"
+      },
+      {
+        "from": "operation:get:/accounts",
+        "kind": "RETURNS",
+        "to": "schema:account_list"
+      },
+      {
+        "from": "operation:post:/accounts",
+        "kind": "ACCEPTS",
+        "to": "schema:create_an_account_parameters"
+      },
+      {
+        "from": "operation:post:/accounts",
+        "kind": "RETURNS",
+        "to": "schema:account"
+      },
+      {
+        "from": "operation:get:/accounts/{account_id}",
+        "kind": "RETURNS",
+        "to": "schema:account"
+      },
+      {
+        "from": "operation:patch:/accounts/{account_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:update_an_account_parameters"
+      },
+      {
+        "from": "operation:patch:/accounts/{account_id}",
+        "kind": "RETURNS",
+        "to": "schema:account"
+      },
+      {
+        "from": "operation:post:/accounts/{account_id}/close",
+        "kind": "RETURNS",
+        "to": "schema:account"
+      },
+      {
+        "from": "operation:get:/ach_prenotifications",
+        "kind": "RETURNS",
+        "to": "schema:ach_prenotification_list"
+      },
+      {
+        "from": "operation:post:/ach_prenotifications",
+        "kind": "ACCEPTS",
+        "to": "schema:create_an_ach_prenotification_parameters"
+      },
+      {
+        "from": "operation:post:/ach_prenotifications",
+        "kind": "RETURNS",
+        "to": "schema:ach_prenotification"
+      },
+      {
+        "from": "operation:get:/ach_prenotifications/{ach_prenotification_id}",
+        "kind": "RETURNS",
+        "to": "schema:ach_prenotification"
+      },
+      {
+        "from": "operation:get:/ach_transfers",
+        "kind": "RETURNS",
+        "to": "schema:ach_transfer_list"
+      },
+      {
+        "from": "operation:post:/ach_transfers",
+        "kind": "ACCEPTS",
+        "to": "schema:create_an_ach_transfer_parameters"
+      },
+      {
+        "from": "operation:post:/ach_transfers",
+        "kind": "RETURNS",
+        "to": "schema:ach_transfer"
+      },
+      {
+        "from": "operation:get:/ach_transfers/{ach_transfer_id}",
+        "kind": "RETURNS",
+        "to": "schema:ach_transfer"
+      },
+      {
+        "from": "operation:post:/ach_transfers/{ach_transfer_id}/approve",
+        "kind": "RETURNS",
+        "to": "schema:ach_transfer"
+      },
+      {
+        "from": "operation:post:/ach_transfers/{ach_transfer_id}/cancel",
+        "kind": "RETURNS",
+        "to": "schema:ach_transfer"
+      },
+      {
+        "from": "operation:get:/card_disputes",
+        "kind": "RETURNS",
+        "to": "schema:card_dispute_list"
+      },
+      {
+        "from": "operation:post:/card_disputes",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_card_dispute_parameters"
+      },
+      {
+        "from": "operation:post:/card_disputes",
+        "kind": "RETURNS",
+        "to": "schema:card_dispute"
+      },
+      {
+        "from": "operation:get:/card_disputes/{card_dispute_id}",
+        "kind": "RETURNS",
+        "to": "schema:card_dispute"
+      },
+      {
+        "from": "operation:get:/card_profiles",
+        "kind": "RETURNS",
+        "to": "schema:card_profile_list"
+      },
+      {
+        "from": "operation:post:/card_profiles",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_card_profile_parameters"
+      },
+      {
+        "from": "operation:post:/card_profiles",
+        "kind": "RETURNS",
+        "to": "schema:card_profile"
+      },
+      {
+        "from": "operation:get:/card_profiles/{card_profile_id}",
+        "kind": "RETURNS",
+        "to": "schema:card_profile"
+      },
+      {
+        "from": "operation:get:/cards",
+        "kind": "RETURNS",
+        "to": "schema:card_list"
+      },
+      {
+        "from": "operation:post:/cards",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_card_parameters"
+      },
+      {
+        "from": "operation:post:/cards",
+        "kind": "RETURNS",
+        "to": "schema:card"
+      },
+      {
+        "from": "operation:get:/cards/{card_id}",
+        "kind": "RETURNS",
+        "to": "schema:card"
+      },
+      {
+        "from": "operation:patch:/cards/{card_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:update_a_card_parameters"
+      },
+      {
+        "from": "operation:patch:/cards/{card_id}",
+        "kind": "RETURNS",
+        "to": "schema:card"
+      },
+      {
+        "from": "operation:get:/cards/{card_id}/details",
+        "kind": "RETURNS",
+        "to": "schema:card_details"
+      },
+      {
+        "from": "operation:get:/check_deposits",
+        "kind": "RETURNS",
+        "to": "schema:check_deposit_list"
+      },
+      {
+        "from": "operation:post:/check_deposits",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_check_deposit_parameters"
+      },
+      {
+        "from": "operation:post:/check_deposits",
+        "kind": "RETURNS",
+        "to": "schema:check_deposit"
+      },
+      {
+        "from": "operation:get:/check_deposits/{check_deposit_id}",
+        "kind": "RETURNS",
+        "to": "schema:check_deposit"
+      },
+      {
+        "from": "operation:get:/check_transfers",
+        "kind": "RETURNS",
+        "to": "schema:check_transfer_list"
+      },
+      {
+        "from": "operation:post:/check_transfers",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_check_transfer_parameters"
+      },
+      {
+        "from": "operation:post:/check_transfers",
+        "kind": "RETURNS",
+        "to": "schema:check_transfer"
+      },
+      {
+        "from": "operation:get:/check_transfers/{check_transfer_id}",
+        "kind": "RETURNS",
+        "to": "schema:check_transfer"
+      },
+      {
+        "from": "operation:post:/check_transfers/{check_transfer_id}/approve",
+        "kind": "RETURNS",
+        "to": "schema:check_transfer"
+      },
+      {
+        "from": "operation:post:/check_transfers/{check_transfer_id}/cancel",
+        "kind": "RETURNS",
+        "to": "schema:check_transfer"
+      },
+      {
+        "from": "operation:post:/check_transfers/{check_transfer_id}/stop_payment",
+        "kind": "RETURNS",
+        "to": "schema:check_transfer"
+      },
+      {
+        "from": "operation:get:/declined_transactions",
+        "kind": "RETURNS",
+        "to": "schema:declined_transaction_list"
+      },
+      {
+        "from": "operation:get:/declined_transactions/{declined_transaction_id}",
+        "kind": "RETURNS",
+        "to": "schema:declined_transaction"
+      },
+      {
+        "from": "operation:get:/digital_wallet_tokens",
+        "kind": "RETURNS",
+        "to": "schema:digital_wallet_token_list"
+      },
+      {
+        "from": "operation:get:/digital_wallet_tokens/{digital_wallet_token_id}",
+        "kind": "RETURNS",
+        "to": "schema:digital_wallet_token"
+      },
+      {
+        "from": "operation:get:/documents",
+        "kind": "RETURNS",
+        "to": "schema:document_list"
+      },
+      {
+        "from": "operation:get:/documents/{document_id}",
+        "kind": "RETURNS",
+        "to": "schema:document"
+      },
+      {
+        "from": "operation:get:/entities",
+        "kind": "RETURNS",
+        "to": "schema:entity_list"
+      },
+      {
+        "from": "operation:post:/entities",
+        "kind": "ACCEPTS",
+        "to": "schema:create_an_entity_parameters"
+      },
+      {
+        "from": "operation:post:/entities",
+        "kind": "RETURNS",
+        "to": "schema:entity"
+      },
+      {
+        "from": "operation:get:/entities/{entity_id}",
+        "kind": "RETURNS",
+        "to": "schema:entity"
+      },
+      {
+        "from": "operation:post:/entities/{entity_id}/supplemental_documents",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_supplemental_document_for_an_entity_parameters"
+      },
+      {
+        "from": "operation:post:/entities/{entity_id}/supplemental_documents",
+        "kind": "RETURNS",
+        "to": "schema:entity"
+      },
+      {
+        "from": "operation:get:/event_subscriptions",
+        "kind": "RETURNS",
+        "to": "schema:event_subscription_list"
+      },
+      {
+        "from": "operation:post:/event_subscriptions",
+        "kind": "ACCEPTS",
+        "to": "schema:create_an_event_subscription_parameters"
+      },
+      {
+        "from": "operation:post:/event_subscriptions",
+        "kind": "RETURNS",
+        "to": "schema:event_subscription"
+      },
+      {
+        "from": "operation:get:/event_subscriptions/{event_subscription_id}",
+        "kind": "RETURNS",
+        "to": "schema:event_subscription"
+      },
+      {
+        "from": "operation:patch:/event_subscriptions/{event_subscription_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:update_an_event_subscription_parameters"
+      },
+      {
+        "from": "operation:patch:/event_subscriptions/{event_subscription_id}",
+        "kind": "RETURNS",
+        "to": "schema:event_subscription"
+      },
+      {
+        "from": "operation:get:/events",
+        "kind": "RETURNS",
+        "to": "schema:event_list"
+      },
+      {
+        "from": "operation:get:/events/{event_id}",
+        "kind": "RETURNS",
+        "to": "schema:event"
+      },
+      {
+        "from": "operation:get:/external_accounts",
+        "kind": "RETURNS",
+        "to": "schema:external_account_list"
+      },
+      {
+        "from": "operation:post:/external_accounts",
+        "kind": "ACCEPTS",
+        "to": "schema:create_an_external_account_parameters"
+      },
+      {
+        "from": "operation:post:/external_accounts",
+        "kind": "RETURNS",
+        "to": "schema:external_account"
+      },
+      {
+        "from": "operation:get:/external_accounts/{external_account_id}",
+        "kind": "RETURNS",
+        "to": "schema:external_account"
+      },
+      {
+        "from": "operation:patch:/external_accounts/{external_account_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:update_an_external_account_parameters"
+      },
+      {
+        "from": "operation:patch:/external_accounts/{external_account_id}",
+        "kind": "RETURNS",
+        "to": "schema:external_account"
+      },
+      {
+        "from": "operation:get:/files",
+        "kind": "RETURNS",
+        "to": "schema:file_list"
+      },
+      {
+        "from": "operation:post:/files",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_file_parameters"
+      },
+      {
+        "from": "operation:post:/files",
+        "kind": "RETURNS",
+        "to": "schema:file"
+      },
+      {
+        "from": "operation:get:/files/{file_id}",
+        "kind": "RETURNS",
+        "to": "schema:file"
+      },
+      {
+        "from": "operation:get:/groups/current",
+        "kind": "RETURNS",
+        "to": "schema:group"
+      },
+      {
+        "from": "operation:get:/inbound_ach_transfer_returns",
+        "kind": "RETURNS",
+        "to": "schema:inbound_ach_transfer_return_list"
+      },
+      {
+        "from": "operation:post:/inbound_ach_transfer_returns",
+        "kind": "ACCEPTS",
+        "to": "schema:create_an_ach_return_parameters"
+      },
+      {
+        "from": "operation:post:/inbound_ach_transfer_returns",
+        "kind": "RETURNS",
+        "to": "schema:inbound_ach_transfer_return"
+      },
+      {
+        "from": "operation:get:/inbound_ach_transfer_returns/{inbound_ach_transfer_return_id}",
+        "kind": "RETURNS",
+        "to": "schema:inbound_ach_transfer_return"
+      },
+      {
+        "from": "operation:get:/inbound_wire_drawdown_requests",
+        "kind": "RETURNS",
+        "to": "schema:inbound_wire_drawdown_request_list"
+      },
+      {
+        "from": "operation:get:/inbound_wire_drawdown_requests/{inbound_wire_drawdown_request_id}",
+        "kind": "RETURNS",
+        "to": "schema:inbound_wire_drawdown_request"
+      },
+      {
+        "from": "operation:get:/limits",
+        "kind": "RETURNS",
+        "to": "schema:limit_list"
+      },
+      {
+        "from": "operation:post:/limits",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_limit_parameters"
+      },
+      {
+        "from": "operation:post:/limits",
+        "kind": "RETURNS",
+        "to": "schema:limit"
+      },
+      {
+        "from": "operation:get:/limits/{limit_id}",
+        "kind": "RETURNS",
+        "to": "schema:limit"
+      },
+      {
+        "from": "operation:patch:/limits/{limit_id}",
+        "kind": "ACCEPTS",
+        "to": "schema:update_a_limit_parameters"
+      },
+      {
+        "from": "operation:patch:/limits/{limit_id}",
+        "kind": "RETURNS",
+        "to": "schema:limit"
+      },
+      {
+        "from": "operation:get:/oauth_connections",
+        "kind": "RETURNS",
+        "to": "schema:oauth_connection_list"
+      },
+      {
+        "from": "operation:get:/oauth_connections/{oauth_connection_id}",
+        "kind": "RETURNS",
+        "to": "schema:oauth_connection"
+      },
+      {
+        "from": "operation:get:/pending_transactions",
+        "kind": "RETURNS",
+        "to": "schema:pending_transaction_list"
+      },
+      {
+        "from": "operation:get:/pending_transactions/{pending_transaction_id}",
+        "kind": "RETURNS",
+        "to": "schema:pending_transaction"
+      },
+      {
+        "from": "operation:get:/real_time_decisions/{real_time_decision_id}",
+        "kind": "RETURNS",
+        "to": "schema:real_time_decision"
+      },
+      {
+        "from": "operation:post:/real_time_decisions/{real_time_decision_id}/action",
+        "kind": "ACCEPTS",
+        "to": "schema:action_a_real_time_decision_parameters"
+      },
+      {
+        "from": "operation:post:/real_time_decisions/{real_time_decision_id}/action",
+        "kind": "RETURNS",
+        "to": "schema:real_time_decision"
+      },
+      {
+        "from": "operation:get:/routing_numbers",
+        "kind": "RETURNS",
+        "to": "schema:routing_number_list"
+      },
+      {
+        "from": "operation:post:/simulations/account_statements",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_an_account_statement_being_created_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/account_statements",
+        "kind": "RETURNS",
+        "to": "schema:account_statement"
+      },
+      {
+        "from": "operation:post:/simulations/account_transfers/{account_transfer_id}/complete",
+        "kind": "RETURNS",
+        "to": "schema:account_transfer"
+      },
+      {
+        "from": "operation:post:/simulations/ach_transfers/{ach_transfer_id}/return",
+        "kind": "ACCEPTS",
+        "to": "schema:return_a_sandbox_ach_transfer_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/ach_transfers/{ach_transfer_id}/return",
+        "kind": "RETURNS",
+        "to": "schema:ach_transfer"
+      },
+      {
+        "from": "operation:post:/simulations/ach_transfers/{ach_transfer_id}/submit",
+        "kind": "RETURNS",
+        "to": "schema:ach_transfer"
+      },
+      {
+        "from": "operation:post:/simulations/card_authorizations",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_an_authorization_on_a_card_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/card_authorizations",
+        "kind": "RETURNS",
+        "to": "schema:inbound_card_authorization_simulation_result"
+      },
+      {
+        "from": "operation:post:/simulations/card_disputes/{card_dispute_id}/action",
+        "kind": "ACCEPTS",
+        "to": "schema:simulates_advancing_the_state_of_a_card_dispute_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/card_disputes/{card_dispute_id}/action",
+        "kind": "RETURNS",
+        "to": "schema:card_dispute"
+      },
+      {
+        "from": "operation:post:/simulations/card_refunds",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_a_refund_on_a_card_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/card_refunds",
+        "kind": "RETURNS",
+        "to": "schema:transaction"
+      },
+      {
+        "from": "operation:post:/simulations/card_settlements",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_settling_a_card_authorization_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/card_settlements",
+        "kind": "RETURNS",
+        "to": "schema:transaction"
+      },
+      {
+        "from": "operation:post:/simulations/check_deposits/{check_deposit_id}/reject",
+        "kind": "RETURNS",
+        "to": "schema:check_deposit"
+      },
+      {
+        "from": "operation:post:/simulations/check_deposits/{check_deposit_id}/return",
+        "kind": "RETURNS",
+        "to": "schema:check_deposit"
+      },
+      {
+        "from": "operation:post:/simulations/check_deposits/{check_deposit_id}/submit",
+        "kind": "RETURNS",
+        "to": "schema:check_deposit"
+      },
+      {
+        "from": "operation:post:/simulations/check_transfers/{check_transfer_id}/deposit",
+        "kind": "RETURNS",
+        "to": "schema:check_transfer"
+      },
+      {
+        "from": "operation:post:/simulations/check_transfers/{check_transfer_id}/mail",
+        "kind": "RETURNS",
+        "to": "schema:check_transfer"
+      },
+      {
+        "from": "operation:post:/simulations/digital_wallet_token_requests",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_digital_wallet_provisioning_for_a_card_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/digital_wallet_token_requests",
+        "kind": "RETURNS",
+        "to": "schema:inbound_digital_wallet_token_request_simulation_result"
+      },
+      {
+        "from": "operation:post:/simulations/documents",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_a_tax_document_being_created_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/documents",
+        "kind": "RETURNS",
+        "to": "schema:document"
+      },
+      {
+        "from": "operation:post:/simulations/inbound_ach_transfers",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_an_ach_transfer_to_your_account_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/inbound_ach_transfers",
+        "kind": "RETURNS",
+        "to": "schema:inbound_ach_transfer_simulation_result"
+      },
+      {
+        "from": "operation:post:/simulations/inbound_real_time_payments_transfers",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_a_real_time_payments_transfer_to_your_account_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/inbound_real_time_payments_transfers",
+        "kind": "RETURNS",
+        "to": "schema:inbound_real_time_payments_transfer_simulation_result"
+      },
+      {
+        "from": "operation:post:/simulations/inbound_wire_drawdown_requests",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_an_inbound_wire_drawdown_request_being_created_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/inbound_wire_drawdown_requests",
+        "kind": "RETURNS",
+        "to": "schema:inbound_wire_drawdown_request"
+      },
+      {
+        "from": "operation:post:/simulations/inbound_wire_transfers",
+        "kind": "ACCEPTS",
+        "to": "schema:simulate_a_wire_transfer_to_your_account_parameters"
+      },
+      {
+        "from": "operation:post:/simulations/inbound_wire_transfers",
+        "kind": "RETURNS",
+        "to": "schema:inbound_wire_transfer_simulation_result"
+      },
+      {
+        "from": "operation:post:/simulations/wire_transfers/{wire_transfer_id}/reverse",
+        "kind": "RETURNS",
+        "to": "schema:wire_transfer"
+      },
+      {
+        "from": "operation:post:/simulations/wire_transfers/{wire_transfer_id}/submit",
+        "kind": "RETURNS",
+        "to": "schema:wire_transfer"
+      },
+      {
+        "from": "operation:get:/transactions",
+        "kind": "RETURNS",
+        "to": "schema:transaction_list"
+      },
+      {
+        "from": "operation:get:/transactions/{transaction_id}",
+        "kind": "RETURNS",
+        "to": "schema:transaction"
+      },
+      {
+        "from": "operation:get:/wire_drawdown_requests",
+        "kind": "RETURNS",
+        "to": "schema:wire_drawdown_request_list"
+      },
+      {
+        "from": "operation:post:/wire_drawdown_requests",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_wire_drawdown_request_parameters"
+      },
+      {
+        "from": "operation:post:/wire_drawdown_requests",
+        "kind": "RETURNS",
+        "to": "schema:wire_drawdown_request"
+      },
+      {
+        "from": "operation:get:/wire_drawdown_requests/{wire_drawdown_request_id}",
+        "kind": "RETURNS",
+        "to": "schema:wire_drawdown_request"
+      },
+      {
+        "from": "operation:get:/wire_transfers",
+        "kind": "RETURNS",
+        "to": "schema:wire_transfer_list"
+      },
+      {
+        "from": "operation:post:/wire_transfers",
+        "kind": "ACCEPTS",
+        "to": "schema:create_a_wire_transfer_parameters"
+      },
+      {
+        "from": "operation:post:/wire_transfers",
+        "kind": "RETURNS",
+        "to": "schema:wire_transfer"
+      },
+      {
+        "from": "operation:get:/wire_transfers/{wire_transfer_id}",
+        "kind": "RETURNS",
+        "to": "schema:wire_transfer"
+      },
+      {
+        "from": "operation:post:/wire_transfers/{wire_transfer_id}/approve",
+        "kind": "RETURNS",
+        "to": "schema:wire_transfer"
+      },
+      {
+        "from": "operation:post:/wire_transfers/{wire_transfer_id}/cancel",
+        "kind": "RETURNS",
+        "to": "schema:wire_transfer"
+      },
+      {
+        "from": "schema:account_list",
+        "kind": "REFERENCES",
+        "to": "schema:account"
+      },
+      {
+        "from": "schema:account_number_list",
+        "kind": "REFERENCES",
+        "to": "schema:account_number"
+      },
+      {
+        "from": "schema:account_statement_list",
+        "kind": "REFERENCES",
+        "to": "schema:account_statement"
+      },
+      {
+        "from": "schema:account_transfer_list",
+        "kind": "REFERENCES",
+        "to": "schema:account_transfer"
+      },
+      {
+        "from": "schema:ach_prenotification_list",
+        "kind": "REFERENCES",
+        "to": "schema:ach_prenotification"
+      },
+      {
+        "from": "schema:ach_transfer_list",
+        "kind": "REFERENCES",
+        "to": "schema:ach_transfer"
+      },
+      {
+        "from": "schema:card_dispute_list",
+        "kind": "REFERENCES",
+        "to": "schema:card_dispute"
+      },
+      {
+        "from": "schema:card_list",
+        "kind": "REFERENCES",
+        "to": "schema:card"
+      },
+      {
+        "from": "schema:card_profile_list",
+        "kind": "REFERENCES",
+        "to": "schema:card_profile"
+      },
+      {
+        "from": "schema:check_deposit_list",
+        "kind": "REFERENCES",
+        "to": "schema:check_deposit"
+      },
+      {
+        "from": "schema:check_transfer_list",
+        "kind": "REFERENCES",
+        "to": "schema:check_transfer"
+      },
+      {
+        "from": "schema:declined_transaction_list",
+        "kind": "REFERENCES",
+        "to": "schema:declined_transaction"
+      },
+      {
+        "from": "schema:digital_wallet_token_list",
+        "kind": "REFERENCES",
+        "to": "schema:digital_wallet_token"
+      },
+      {
+        "from": "schema:document_list",
+        "kind": "REFERENCES",
+        "to": "schema:document"
+      },
+      {
+        "from": "schema:entity_list",
+        "kind": "REFERENCES",
+        "to": "schema:entity"
+      },
+      {
+        "from": "schema:event_list",
+        "kind": "REFERENCES",
+        "to": "schema:event"
+      },
+      {
+        "from": "schema:event_subscription_list",
+        "kind": "REFERENCES",
+        "to": "schema:event_subscription"
+      },
+      {
+        "from": "schema:external_account_list",
+        "kind": "REFERENCES",
+        "to": "schema:external_account"
+      },
+      {
+        "from": "schema:file_list",
+        "kind": "REFERENCES",
+        "to": "schema:file"
+      },
+      {
+        "from": "schema:inbound_ach_transfer_return_list",
+        "kind": "REFERENCES",
+        "to": "schema:inbound_ach_transfer_return"
+      },
+      {
+        "from": "schema:inbound_wire_drawdown_request_list",
+        "kind": "REFERENCES",
+        "to": "schema:inbound_wire_drawdown_request"
+      },
+      {
+        "from": "schema:limit_list",
+        "kind": "REFERENCES",
+        "to": "schema:limit"
+      },
+      {
+        "from": "schema:oauth_connection_list",
+        "kind": "REFERENCES",
+        "to": "schema:oauth_connection"
+      },
+      {
+        "from": "schema:pending_transaction_list",
+        "kind": "REFERENCES",
+        "to": "schema:pending_transaction"
+      },
+      {
+        "from": "schema:routing_number_list",
+        "kind": "REFERENCES",
+        "to": "schema:routing_number"
+      },
+      {
+        "from": "schema:transaction_list",
+        "kind": "REFERENCES",
+        "to": "schema:transaction"
+      },
+      {
+        "from": "schema:wire_drawdown_request_list",
+        "kind": "REFERENCES",
+        "to": "schema:wire_drawdown_request"
+      },
+      {
+        "from": "schema:wire_transfer_list",
+        "kind": "REFERENCES",
+        "to": "schema:wire_transfer"
       }
     ],
     "nodes": [
@@ -591,8 +1496,50 @@
         "kind": "operation",
         "method": "get",
         "name": "list_account_numbers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "enum": [
+              "active",
+              "disabled",
+              "canceled"
+            ],
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/account_numbers",
         "pointer": "#/paths/~1account_numbers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_number_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -608,6 +1555,24 @@
         "name": "create_an_account_number",
         "path": "/account_numbers",
         "pointer": "#/paths/~1account_numbers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_an_account_number_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_number"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -621,8 +1586,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_account_number",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_number_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account_numbers/{account_number_id}",
         "pointer": "#/paths/~1account_numbers~1{account_number_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_number"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -636,8 +1620,34 @@
         "kind": "operation",
         "method": "patch",
         "name": "update_an_account_number",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_number_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account_numbers/{account_number_id}",
         "pointer": "#/paths/~1account_numbers~1{account_number_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "update_an_account_number_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_number"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -651,8 +1661,63 @@
         "kind": "operation",
         "method": "get",
         "name": "list_account_statements",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "statement_period_start.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "statement_period_start.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "statement_period_start.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "statement_period_start.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/account_statements",
         "pointer": "#/paths/~1account_statements/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_statement_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -666,8 +1731,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_account_statement",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_statement_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account_statements/{account_statement_id}",
         "pointer": "#/paths/~1account_statements~1{account_statement_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_statement"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -681,8 +1765,63 @@
         "kind": "operation",
         "method": "get",
         "name": "list_account_transfers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/account_transfers",
         "pointer": "#/paths/~1account_transfers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_transfer_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -698,6 +1837,24 @@
         "name": "create_an_account_transfer",
         "path": "/account_transfers",
         "pointer": "#/paths/~1account_transfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_an_account_transfer_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -711,8 +1868,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_account_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account_transfers/{account_transfer_id}",
         "pointer": "#/paths/~1account_transfers~1{account_transfer_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -726,8 +1902,27 @@
         "kind": "operation",
         "method": "post",
         "name": "approve_an_account_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account_transfers/{account_transfer_id}/approve",
         "pointer": "#/paths/~1account_transfers~1{account_transfer_id}~1approve/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -741,8 +1936,27 @@
         "kind": "operation",
         "method": "post",
         "name": "cancel_an_account_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/account_transfers/{account_transfer_id}/cancel",
         "pointer": "#/paths/~1account_transfers~1{account_transfer_id}~1cancel/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -756,8 +1970,49 @@
         "kind": "operation",
         "method": "get",
         "name": "list_accounts",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "entity_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "open",
+              "closed"
+            ],
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -773,6 +2028,24 @@
         "name": "create_an_account",
         "path": "/accounts",
         "pointer": "#/paths/~1accounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_an_account_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "account"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -786,8 +2059,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_account",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}",
         "pointer": "#/paths/~1accounts~1{account_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -801,8 +2093,34 @@
         "kind": "operation",
         "method": "patch",
         "name": "update_an_account",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}",
         "pointer": "#/paths/~1accounts~1{account_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "update_an_account_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "account"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -816,8 +2134,27 @@
         "kind": "operation",
         "method": "post",
         "name": "close_an_account",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/accounts/{account_id}/close",
         "pointer": "#/paths/~1accounts~1{account_id}~1close/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -831,8 +2168,57 @@
         "kind": "operation",
         "method": "get",
         "name": "list_ach_prenotifications",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/ach_prenotifications",
         "pointer": "#/paths/~1ach_prenotifications/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_prenotification_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -848,6 +2234,24 @@
         "name": "create_an_ach_prenotification",
         "path": "/ach_prenotifications",
         "pointer": "#/paths/~1ach_prenotifications/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_an_ach_prenotification_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_prenotification"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -861,8 +2265,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_ach_prenotification",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ach_prenotification_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ach_prenotifications/{ach_prenotification_id}",
         "pointer": "#/paths/~1ach_prenotifications~1{ach_prenotification_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_prenotification"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -876,8 +2299,69 @@
         "kind": "operation",
         "method": "get",
         "name": "list_ach_transfers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "external_account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/ach_transfers",
         "pointer": "#/paths/~1ach_transfers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_transfer_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -893,6 +2377,24 @@
         "name": "create_an_ach_transfer",
         "path": "/ach_transfers",
         "pointer": "#/paths/~1ach_transfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_an_ach_transfer_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -906,8 +2408,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_ach_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ach_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ach_transfers/{ach_transfer_id}",
         "pointer": "#/paths/~1ach_transfers~1{ach_transfer_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -917,12 +2438,32 @@
       },
       {
         "deprecated": false,
+        "description": "Approves an ACH Transfer in a pending_approval state.",
         "id": "operation:post:/ach_transfers/{ach_transfer_id}/approve",
         "kind": "operation",
         "method": "post",
         "name": "approve_an_ach_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ach_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ach_transfers/{ach_transfer_id}/approve",
         "pointer": "#/paths/~1ach_transfers~1{ach_transfer_id}~1approve/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -932,12 +2473,32 @@
       },
       {
         "deprecated": false,
+        "description": "Cancels an ACH Transfer in a pending_approval state.",
         "id": "operation:post:/ach_transfers/{ach_transfer_id}/cancel",
         "kind": "operation",
         "method": "post",
         "name": "cancel_a_pending_ach_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ach_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ach_transfers/{ach_transfer_id}/cancel",
         "pointer": "#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -951,8 +2512,63 @@
         "kind": "operation",
         "method": "get",
         "name": "list_card_disputes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "status.in",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/card_disputes",
         "pointer": "#/paths/~1card_disputes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "card_dispute_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -968,6 +2584,24 @@
         "name": "create_a_card_dispute",
         "path": "/card_disputes",
         "pointer": "#/paths/~1card_disputes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_a_card_dispute_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "card_dispute"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -981,8 +2615,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_card_dispute",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_dispute_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/card_disputes/{card_dispute_id}",
         "pointer": "#/paths/~1card_disputes~1{card_dispute_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "card_dispute"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -996,8 +2649,39 @@
         "kind": "operation",
         "method": "get",
         "name": "list_card_profiles",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "status.in",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/card_profiles",
         "pointer": "#/paths/~1card_profiles/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "card_profile_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1013,6 +2697,24 @@
         "name": "create_a_card_profile",
         "path": "/card_profiles",
         "pointer": "#/paths/~1card_profiles/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_a_card_profile_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "card_profile"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1026,8 +2728,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_card_profile",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_profile_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/card_profiles/{card_profile_id}",
         "pointer": "#/paths/~1card_profiles~1{card_profile_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "card_profile"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1041,8 +2762,63 @@
         "kind": "operation",
         "method": "get",
         "name": "list_cards",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/cards",
         "pointer": "#/paths/~1cards/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "card_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1058,6 +2834,24 @@
         "name": "create_a_card",
         "path": "/cards",
         "pointer": "#/paths/~1cards/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_a_card_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "card"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1071,8 +2865,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_card",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/cards/{card_id}",
         "pointer": "#/paths/~1cards~1{card_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "card"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1086,8 +2899,34 @@
         "kind": "operation",
         "method": "patch",
         "name": "update_a_card",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/cards/{card_id}",
         "pointer": "#/paths/~1cards~1{card_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "update_a_card_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "card"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1101,8 +2940,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_sensitive_details_for_a_card",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/cards/{card_id}/details",
         "pointer": "#/paths/~1cards~1{card_id}~1details/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "card_details"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1116,8 +2974,63 @@
         "kind": "operation",
         "method": "get",
         "name": "list_check_deposits",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/check_deposits",
         "pointer": "#/paths/~1check_deposits/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_deposit_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1133,6 +3046,24 @@
         "name": "create_a_check_deposit",
         "path": "/check_deposits",
         "pointer": "#/paths/~1check_deposits/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_a_check_deposit_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_deposit"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1146,8 +3077,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_check_deposit",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_deposit_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/check_deposits/{check_deposit_id}",
         "pointer": "#/paths/~1check_deposits~1{check_deposit_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_deposit"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1161,8 +3111,63 @@
         "kind": "operation",
         "method": "get",
         "name": "list_check_transfers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/check_transfers",
         "pointer": "#/paths/~1check_transfers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_transfer_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1178,6 +3183,24 @@
         "name": "create_a_check_transfer",
         "path": "/check_transfers",
         "pointer": "#/paths/~1check_transfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_a_check_transfer_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1191,8 +3214,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_check_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/check_transfers/{check_transfer_id}",
         "pointer": "#/paths/~1check_transfers~1{check_transfer_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1206,8 +3248,27 @@
         "kind": "operation",
         "method": "post",
         "name": "approve_a_check_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/check_transfers/{check_transfer_id}/approve",
         "pointer": "#/paths/~1check_transfers~1{check_transfer_id}~1approve/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1221,8 +3282,27 @@
         "kind": "operation",
         "method": "post",
         "name": "cancel_a_pending_check_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/check_transfers/{check_transfer_id}/cancel",
         "pointer": "#/paths/~1check_transfers~1{check_transfer_id}~1cancel/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1236,8 +3316,27 @@
         "kind": "operation",
         "method": "post",
         "name": "request_a_stop_payment_on_a_check_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/check_transfers/{check_transfer_id}/stop_payment",
         "pointer": "#/paths/~1check_transfers~1{check_transfer_id}~1stop_payment/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1251,8 +3350,69 @@
         "kind": "operation",
         "method": "get",
         "name": "list_declined_transactions",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "route_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/declined_transactions",
         "pointer": "#/paths/~1declined_transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "declined_transaction_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1266,8 +3426,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_declined_transaction",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "declined_transaction_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/declined_transactions/{declined_transaction_id}",
         "pointer": "#/paths/~1declined_transactions~1{declined_transaction_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "declined_transaction"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1281,8 +3460,63 @@
         "kind": "operation",
         "method": "get",
         "name": "list_digital_wallet_tokens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "card_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/digital_wallet_tokens",
         "pointer": "#/paths/~1digital_wallet_tokens/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "digital_wallet_token_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1296,8 +3530,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_digital_wallet_token",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "digital_wallet_token_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/digital_wallet_tokens/{digital_wallet_token_id}",
         "pointer": "#/paths/~1digital_wallet_tokens~1{digital_wallet_token_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "digital_wallet_token"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1311,8 +3564,69 @@
         "kind": "operation",
         "method": "get",
         "name": "list_documents",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "entity_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "category.in",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/documents",
         "pointer": "#/paths/~1documents/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "document_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1326,8 +3640,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_document",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "document_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/documents/{document_id}",
         "pointer": "#/paths/~1documents~1{document_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "document"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1341,8 +3674,33 @@
         "kind": "operation",
         "method": "get",
         "name": "list_entities",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/entities",
         "pointer": "#/paths/~1entities/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "entity_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1358,6 +3716,24 @@
         "name": "create_an_entity",
         "path": "/entities",
         "pointer": "#/paths/~1entities/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_an_entity_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "entity"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1371,8 +3747,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_entity",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entity_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entities/{entity_id}",
         "pointer": "#/paths/~1entities~1{entity_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "entity"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1386,8 +3781,34 @@
         "kind": "operation",
         "method": "post",
         "name": "create_a_supplemental_document_for_an_entity",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entity_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/entities/{entity_id}/supplemental_documents",
         "pointer": "#/paths/~1entities~1{entity_id}~1supplemental_documents/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_a_supplemental_document_for_an_entity_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "entity"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1401,8 +3822,33 @@
         "kind": "operation",
         "method": "get",
         "name": "list_event_subscriptions",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/event_subscriptions",
         "pointer": "#/paths/~1event_subscriptions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "event_subscription_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1418,6 +3864,24 @@
         "name": "create_an_event_subscription",
         "path": "/event_subscriptions",
         "pointer": "#/paths/~1event_subscriptions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_an_event_subscription_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "event_subscription"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1431,8 +3895,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_event_subscription",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_subscription_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event_subscriptions/{event_subscription_id}",
         "pointer": "#/paths/~1event_subscriptions~1{event_subscription_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "event_subscription"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1446,8 +3929,34 @@
         "kind": "operation",
         "method": "patch",
         "name": "update_an_event_subscription",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_subscription_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/event_subscriptions/{event_subscription_id}",
         "pointer": "#/paths/~1event_subscriptions~1{event_subscription_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "update_an_event_subscription_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "event_subscription"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1461,8 +3970,69 @@
         "kind": "operation",
         "method": "get",
         "name": "list_events",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "category.in",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "associated_object_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/events",
         "pointer": "#/paths/~1events/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "event_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1476,8 +4046,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_event",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/events/{event_id}",
         "pointer": "#/paths/~1events~1{event_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "event"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1491,8 +4080,39 @@
         "kind": "operation",
         "method": "get",
         "name": "list_external_accounts",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "status.in",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/external_accounts",
         "pointer": "#/paths/~1external_accounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "external_account_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1508,6 +4128,24 @@
         "name": "create_an_external_account",
         "path": "/external_accounts",
         "pointer": "#/paths/~1external_accounts/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_an_external_account_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "external_account"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1521,8 +4159,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_external_account",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "external_account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/external_accounts/{external_account_id}",
         "pointer": "#/paths/~1external_accounts~1{external_account_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "external_account"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1536,8 +4193,34 @@
         "kind": "operation",
         "method": "patch",
         "name": "update_an_external_account",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "external_account_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/external_accounts/{external_account_id}",
         "pointer": "#/paths/~1external_accounts~1{external_account_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "update_an_external_account_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "external_account"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1551,8 +4234,63 @@
         "kind": "operation",
         "method": "get",
         "name": "list_files",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "purpose.in",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/files",
         "pointer": "#/paths/~1files/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1562,12 +4300,31 @@
       },
       {
         "deprecated": false,
+        "description": "To upload a file to Increase, you'll need to send a request of Content-Type `multipart/form-data`.",
         "id": "operation:post:/files",
         "kind": "operation",
         "method": "post",
         "name": "create_a_file",
         "path": "/files",
         "pointer": "#/paths/~1files/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": true,
+          "type": "create_a_file_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1581,8 +4338,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_file",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "file_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/files/{file_id}",
         "pointer": "#/paths/~1files~1{file_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "file"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1592,12 +4368,24 @@
       },
       {
         "deprecated": false,
+        "description": "Returns details for the currently authenticated Group.",
         "id": "operation:get:/groups/current",
         "kind": "operation",
         "method": "get",
         "name": "retrieve_group_details",
         "path": "/groups/current",
         "pointer": "#/paths/~1groups~1current/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "group"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1611,8 +4399,33 @@
         "kind": "operation",
         "method": "get",
         "name": "list_inbound_ach_transfer_returns",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/inbound_ach_transfer_returns",
         "pointer": "#/paths/~1inbound_ach_transfer_returns/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_ach_transfer_return_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1628,6 +4441,24 @@
         "name": "create_an_ach_return",
         "path": "/inbound_ach_transfer_returns",
         "pointer": "#/paths/~1inbound_ach_transfer_returns/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_an_ach_return_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_ach_transfer_return"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1641,8 +4472,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_inbound_ach_transfer_return",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "inbound_ach_transfer_return_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/inbound_ach_transfer_returns/{inbound_ach_transfer_return_id}",
         "pointer": "#/paths/~1inbound_ach_transfer_returns~1{inbound_ach_transfer_return_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_ach_transfer_return"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1656,8 +4506,33 @@
         "kind": "operation",
         "method": "get",
         "name": "list_inbound_wire_drawdown_requests",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/inbound_wire_drawdown_requests",
         "pointer": "#/paths/~1inbound_wire_drawdown_requests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_wire_drawdown_request_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1671,8 +4546,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_inbound_wire_drawdown_request",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "inbound_wire_drawdown_request_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/inbound_wire_drawdown_requests/{inbound_wire_drawdown_request_id}",
         "pointer": "#/paths/~1inbound_wire_drawdown_requests~1{inbound_wire_drawdown_request_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_wire_drawdown_request"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1686,8 +4580,45 @@
         "kind": "operation",
         "method": "get",
         "name": "list_limits",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "model_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/limits",
         "pointer": "#/paths/~1limits/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "limit_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1703,6 +4634,24 @@
         "name": "create_a_limit",
         "path": "/limits",
         "pointer": "#/paths/~1limits/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_a_limit_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "limit"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1716,8 +4665,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_limit",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "limit_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/limits/{limit_id}",
         "pointer": "#/paths/~1limits~1{limit_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "limit"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1731,8 +4699,34 @@
         "kind": "operation",
         "method": "patch",
         "name": "update_a_limit",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "limit_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/limits/{limit_id}",
         "pointer": "#/paths/~1limits~1{limit_id}/patch",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "update_a_limit_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "limit"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1746,8 +4740,33 @@
         "kind": "operation",
         "method": "get",
         "name": "list_oauth_connections",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/oauth_connections",
         "pointer": "#/paths/~1oauth_connections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "oauth_connection_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1761,8 +4780,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_an_oauth_connection",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "oauth_connection_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/oauth_connections/{oauth_connection_id}",
         "pointer": "#/paths/~1oauth_connections~1{oauth_connection_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "oauth_connection"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1776,8 +4814,57 @@
         "kind": "operation",
         "method": "get",
         "name": "list_pending_transactions",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "route_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "status.in",
+            "required": false,
+            "type": "string[]"
+          }
+        ],
         "path": "/pending_transactions",
         "pointer": "#/paths/~1pending_transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "pending_transaction_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1791,8 +4878,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_pending_transaction",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pending_transaction_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/pending_transactions/{pending_transaction_id}",
         "pointer": "#/paths/~1pending_transactions~1{pending_transaction_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "pending_transaction"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1806,8 +4912,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_real_time_decision",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "real_time_decision_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/real_time_decisions/{real_time_decision_id}",
         "pointer": "#/paths/~1real_time_decisions~1{real_time_decision_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "real_time_decision"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1821,8 +4946,34 @@
         "kind": "operation",
         "method": "post",
         "name": "action_a_real_time_decision",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "real_time_decision_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/real_time_decisions/{real_time_decision_id}/action",
         "pointer": "#/paths/~1real_time_decisions~1{real_time_decision_id}~1action/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "action_a_real_time_decision_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "real_time_decision"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1832,12 +4983,44 @@
       },
       {
         "deprecated": false,
+        "description": "You can use this API to confirm if a routing number is valid, such as when a user is providing you with bank account details.",
         "id": "operation:get:/routing_numbers",
         "kind": "operation",
         "method": "get",
         "name": "list_routing_numbers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "routing_number",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/routing_numbers",
         "pointer": "#/paths/~1routing_numbers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "routing_number_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -1847,12 +5030,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates an [Account Statement](#account-statements) being created for an account.",
         "id": "operation:post:/simulations/account_statements",
         "kind": "operation",
         "method": "post",
         "name": "simulate_an_account_statement_being_created",
         "path": "/simulations/account_statements",
         "pointer": "#/paths/~1simulations~1account_statements/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_an_account_statement_being_created_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_statement"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1862,12 +5064,32 @@
       },
       {
         "deprecated": false,
+        "description": "If your account is configured to require approval for each transfer, this endpoint simulates the approval of an [Account Transfer](#account-transfers).",
         "id": "operation:post:/simulations/account_transfers/{account_transfer_id}/complete",
         "kind": "operation",
         "method": "post",
         "name": "complete_a_sandbox_account_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/account_transfers/{account_transfer_id}/complete",
         "pointer": "#/paths/~1simulations~1account_transfers~1{account_transfer_id}~1complete/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "account_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1877,12 +5099,39 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the return of an [ACH Transfer](#ach-transfers) by the Federal Reserve due to an error condition.",
         "id": "operation:post:/simulations/ach_transfers/{ach_transfer_id}/return",
         "kind": "operation",
         "method": "post",
         "name": "return_a_sandbox_ach_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ach_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/ach_transfers/{ach_transfer_id}/return",
         "pointer": "#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1return/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "return_a_sandbox_ach_transfer_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1892,12 +5141,32 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the submission of an [ACH Transfer](#ach-transfers) to the Federal Reserve.",
         "id": "operation:post:/simulations/ach_transfers/{ach_transfer_id}/submit",
         "kind": "operation",
         "method": "post",
         "name": "submit_a_sandbox_ach_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ach_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/ach_transfers/{ach_transfer_id}/submit",
         "pointer": "#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1submit/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ach_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1907,12 +5176,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates a purchase authorization on a [Card](#cards).",
         "id": "operation:post:/simulations/card_authorizations",
         "kind": "operation",
         "method": "post",
         "name": "simulate_an_authorization_on_a_card",
         "path": "/simulations/card_authorizations",
         "pointer": "#/paths/~1simulations~1card_authorizations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_an_authorization_on_a_card_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_card_authorization_simulation_result"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1922,12 +5210,39 @@
       },
       {
         "deprecated": false,
+        "description": "After a [Card Dispute](#card-disputes) is created in production, the dispute will be reviewed.",
         "id": "operation:post:/simulations/card_disputes/{card_dispute_id}/action",
         "kind": "operation",
         "method": "post",
         "name": "simulates_advancing_the_state_of_a_card_dispute",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_dispute_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/card_disputes/{card_dispute_id}/action",
         "pointer": "#/paths/~1simulations~1card_disputes~1{card_dispute_id}~1action/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulates_advancing_the_state_of_a_card_dispute_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "card_dispute"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1937,12 +5252,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates refunding a card transaction.",
         "id": "operation:post:/simulations/card_refunds",
         "kind": "operation",
         "method": "post",
         "name": "simulate_a_refund_on_a_card",
         "path": "/simulations/card_refunds",
         "pointer": "#/paths/~1simulations~1card_refunds/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_a_refund_on_a_card_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "transaction"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1952,12 +5286,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the settlement of an authorization by a card acquirer.",
         "id": "operation:post:/simulations/card_settlements",
         "kind": "operation",
         "method": "post",
         "name": "simulate_settling_a_card_authorization",
         "path": "/simulations/card_settlements",
         "pointer": "#/paths/~1simulations~1card_settlements/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_settling_a_card_authorization_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "transaction"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1967,12 +5320,32 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the rejection of a [Check Deposit](#check-deposits) by Increase due to factors like poor image quality.",
         "id": "operation:post:/simulations/check_deposits/{check_deposit_id}/reject",
         "kind": "operation",
         "method": "post",
         "name": "reject_a_sandbox_check_deposit",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_deposit_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/check_deposits/{check_deposit_id}/reject",
         "pointer": "#/paths/~1simulations~1check_deposits~1{check_deposit_id}~1reject/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_deposit"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1982,12 +5355,32 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the return of a [Check Deposit](#check-deposits).",
         "id": "operation:post:/simulations/check_deposits/{check_deposit_id}/return",
         "kind": "operation",
         "method": "post",
         "name": "return_a_sandbox_check_deposit",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_deposit_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/check_deposits/{check_deposit_id}/return",
         "pointer": "#/paths/~1simulations~1check_deposits~1{check_deposit_id}~1return/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_deposit"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -1997,12 +5390,32 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the submission of a [Check Deposit](#check-deposits) to the Federal Reserve.",
         "id": "operation:post:/simulations/check_deposits/{check_deposit_id}/submit",
         "kind": "operation",
         "method": "post",
         "name": "submit_a_sandbox_check_deposit",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_deposit_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/check_deposits/{check_deposit_id}/submit",
         "pointer": "#/paths/~1simulations~1check_deposits~1{check_deposit_id}~1submit/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_deposit"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2012,12 +5425,32 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates a [Check Transfer](#check-transfers) being deposited at a bank.",
         "id": "operation:post:/simulations/check_transfers/{check_transfer_id}/deposit",
         "kind": "operation",
         "method": "post",
         "name": "deposit_a_sandbox_check_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/check_transfers/{check_transfer_id}/deposit",
         "pointer": "#/paths/~1simulations~1check_transfers~1{check_transfer_id}~1deposit/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2027,12 +5460,32 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the mailing of a [Check Transfer](#check-transfers), which happens once per weekday in production but can be sped up in sandbox.",
         "id": "operation:post:/simulations/check_transfers/{check_transfer_id}/mail",
         "kind": "operation",
         "method": "post",
         "name": "mail_a_sandbox_check_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/check_transfers/{check_transfer_id}/mail",
         "pointer": "#/paths/~1simulations~1check_transfers~1{check_transfer_id}~1mail/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "check_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2042,12 +5495,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates a user attempting add a [Card](#cards) to a digital wallet such as Apple Pay.",
         "id": "operation:post:/simulations/digital_wallet_token_requests",
         "kind": "operation",
         "method": "post",
         "name": "simulate_digital_wallet_provisioning_for_a_card",
         "path": "/simulations/digital_wallet_token_requests",
         "pointer": "#/paths/~1simulations~1digital_wallet_token_requests/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_digital_wallet_provisioning_for_a_card_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_digital_wallet_token_request_simulation_result"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2057,12 +5529,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates an tax document being created for an account.",
         "id": "operation:post:/simulations/documents",
         "kind": "operation",
         "method": "post",
         "name": "simulate_a_tax_document_being_created",
         "path": "/simulations/documents",
         "pointer": "#/paths/~1simulations~1documents/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_a_tax_document_being_created_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "document"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2072,12 +5563,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates an inbound ACH transfer to your account.",
         "id": "operation:post:/simulations/inbound_ach_transfers",
         "kind": "operation",
         "method": "post",
         "name": "simulate_an_ach_transfer_to_your_account",
         "path": "/simulations/inbound_ach_transfers",
         "pointer": "#/paths/~1simulations~1inbound_ach_transfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_an_ach_transfer_to_your_account_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_ach_transfer_simulation_result"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2087,12 +5597,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates an inbound Real Time Payments transfer to your account.",
         "id": "operation:post:/simulations/inbound_real_time_payments_transfers",
         "kind": "operation",
         "method": "post",
         "name": "simulate_a_real_time_payments_transfer_to_your_account",
         "path": "/simulations/inbound_real_time_payments_transfers",
         "pointer": "#/paths/~1simulations~1inbound_real_time_payments_transfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_a_real_time_payments_transfer_to_your_account_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_real_time_payments_transfer_simulation_result"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2102,12 +5631,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the receival of an [Inbound Wire Drawdown Request](#inbound-wire-drawdown-requests).",
         "id": "operation:post:/simulations/inbound_wire_drawdown_requests",
         "kind": "operation",
         "method": "post",
         "name": "simulate_an_inbound_wire_drawdown_request_being_created",
         "path": "/simulations/inbound_wire_drawdown_requests",
         "pointer": "#/paths/~1simulations~1inbound_wire_drawdown_requests/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_an_inbound_wire_drawdown_request_being_created_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_wire_drawdown_request"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2117,12 +5665,31 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates an inbound Wire Transfer to your account.",
         "id": "operation:post:/simulations/inbound_wire_transfers",
         "kind": "operation",
         "method": "post",
         "name": "simulate_a_wire_transfer_to_your_account",
         "path": "/simulations/inbound_wire_transfers",
         "pointer": "#/paths/~1simulations~1inbound_wire_transfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "simulate_a_wire_transfer_to_your_account_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "inbound_wire_transfer_simulation_result"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2132,12 +5699,32 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the reversal of a [Wire Transfer](#wire-transfers) by the Federal Reserve due to error conditions.",
         "id": "operation:post:/simulations/wire_transfers/{wire_transfer_id}/reverse",
         "kind": "operation",
         "method": "post",
         "name": "reverse_a_sandbox_wire_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wire_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/wire_transfers/{wire_transfer_id}/reverse",
         "pointer": "#/paths/~1simulations~1wire_transfers~1{wire_transfer_id}~1reverse/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2147,12 +5734,32 @@
       },
       {
         "deprecated": false,
+        "description": "Simulates the submission of a [Wire Transfer](#wire-transfers) to the Federal Reserve.",
         "id": "operation:post:/simulations/wire_transfers/{wire_transfer_id}/submit",
         "kind": "operation",
         "method": "post",
         "name": "submit_a_sandbox_wire_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wire_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/simulations/wire_transfers/{wire_transfer_id}/submit",
         "pointer": "#/paths/~1simulations~1wire_transfers~1{wire_transfer_id}~1submit/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2166,8 +5773,75 @@
         "kind": "operation",
         "method": "get",
         "name": "list_transactions",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "category.in",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "in": "query",
+            "name": "route_id",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/transactions",
         "pointer": "#/paths/~1transactions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "transaction_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2181,8 +5855,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_transaction",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "transaction_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/transactions/{transaction_id}",
         "pointer": "#/paths/~1transactions~1{transaction_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "transaction"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2196,8 +5889,33 @@
         "kind": "operation",
         "method": "get",
         "name": "list_wire_drawdown_requests",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/wire_drawdown_requests",
         "pointer": "#/paths/~1wire_drawdown_requests/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_drawdown_request_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2213,6 +5931,24 @@
         "name": "create_a_wire_drawdown_request",
         "path": "/wire_drawdown_requests",
         "pointer": "#/paths/~1wire_drawdown_requests/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_a_wire_drawdown_request_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_drawdown_request"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2226,8 +5962,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_wire_drawdown_request",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wire_drawdown_request_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wire_drawdown_requests/{wire_drawdown_request_id}",
         "pointer": "#/paths/~1wire_drawdown_requests~1{wire_drawdown_request_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_drawdown_request"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2241,8 +5996,69 @@
         "kind": "operation",
         "method": "get",
         "name": "list_wire_transfers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "external_account_id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "created_at.after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.before",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_after",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "created_at.on_or_before",
+            "required": false,
+            "type": "string:date-time"
+          }
+        ],
         "path": "/wire_transfers",
         "pointer": "#/paths/~1wire_transfers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_transfer_list"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2258,6 +6074,24 @@
         "name": "create_a_wire_transfer",
         "path": "/wire_transfers",
         "pointer": "#/paths/~1wire_transfers/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "create_a_wire_transfer_parameters"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2271,8 +6105,27 @@
         "kind": "operation",
         "method": "get",
         "name": "retrieve_a_wire_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wire_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wire_transfers/{wire_transfer_id}",
         "pointer": "#/paths/~1wire_transfers~1{wire_transfer_id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "bearerAuth": []
@@ -2286,8 +6139,27 @@
         "kind": "operation",
         "method": "post",
         "name": "approve_a_wire_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wire_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wire_transfers/{wire_transfer_id}/approve",
         "pointer": "#/paths/~1wire_transfers~1{wire_transfer_id}~1approve/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2301,8 +6173,27 @@
         "kind": "operation",
         "method": "post",
         "name": "cancel_a_pending_wire_transfer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wire_transfer_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/wire_transfers/{wire_transfer_id}/cancel",
         "pointer": "#/paths/~1wire_transfers~1{wire_transfer_id}~1cancel/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "wire_transfer"
+          },
+          {
+            "status": "default",
+            "type": "error"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "bearerAuth": []
@@ -2311,519 +6202,686 @@
         "summary": "Cancel a pending Wire Transfer"
       },
       {
+        "description": "Accounts are your bank accounts with Increase.",
         "id": "schema:account",
         "kind": "schema",
-        "name": "account"
+        "name": "account",
+        "type": "object"
       },
       {
+        "description": "A list of Account objects",
         "id": "schema:account_list",
         "kind": "schema",
-        "name": "account_list"
+        "name": "account_list",
+        "type": "object"
       },
       {
+        "description": "Each account can have multiple account and routing numbers.",
         "id": "schema:account_number",
         "kind": "schema",
-        "name": "account_number"
+        "name": "account_number",
+        "type": "object"
       },
       {
+        "description": "A list of Account Number objects",
         "id": "schema:account_number_list",
         "kind": "schema",
-        "name": "account_number_list"
+        "name": "account_number_list",
+        "type": "object"
       },
       {
+        "description": "Account Statements are generated monthly for every active Account.",
         "id": "schema:account_statement",
         "kind": "schema",
-        "name": "account_statement"
+        "name": "account_statement",
+        "type": "object"
       },
       {
+        "description": "A list of Account Statement objects",
         "id": "schema:account_statement_list",
         "kind": "schema",
-        "name": "account_statement_list"
+        "name": "account_statement_list",
+        "type": "object"
       },
       {
+        "description": "Account transfers move funds between your own accounts at Increase.",
         "id": "schema:account_transfer",
         "kind": "schema",
-        "name": "account_transfer"
+        "name": "account_transfer",
+        "type": "object"
       },
       {
+        "description": "A list of Account Transfer objects",
         "id": "schema:account_transfer_list",
         "kind": "schema",
-        "name": "account_transfer_list"
+        "name": "account_transfer_list",
+        "type": "object"
       },
       {
+        "description": "ACH Prenotifications are one way you can verify account and routing numbers by Automated Clearing House (ACH).",
         "id": "schema:ach_prenotification",
         "kind": "schema",
-        "name": "ach_prenotification"
+        "name": "ach_prenotification",
+        "type": "object"
       },
       {
+        "description": "A list of ACH Prenotification objects",
         "id": "schema:ach_prenotification_list",
         "kind": "schema",
-        "name": "ach_prenotification_list"
+        "name": "ach_prenotification_list",
+        "type": "object"
       },
       {
+        "description": "ACH transfers move funds between your Increase account and any other account accessible by the Automated Clearing House (ACH).",
         "id": "schema:ach_transfer",
         "kind": "schema",
-        "name": "ach_transfer"
+        "name": "ach_transfer",
+        "type": "object"
       },
       {
+        "description": "A list of ACH Transfer objects",
         "id": "schema:ach_transfer_list",
         "kind": "schema",
-        "name": "ach_transfer_list"
+        "name": "ach_transfer_list",
+        "type": "object"
       },
       {
         "id": "schema:action_a_real_time_decision_parameters",
         "kind": "schema",
-        "name": "action_a_real_time_decision_parameters"
+        "name": "action_a_real_time_decision_parameters",
+        "type": "object"
       },
       {
+        "description": "Cards are commercial credit cards.",
         "id": "schema:card",
         "kind": "schema",
-        "name": "card"
+        "name": "card",
+        "type": "object"
       },
       {
+        "description": "An object containing the sensitive details (card number, cvc, etc) for a Card.",
         "id": "schema:card_details",
         "kind": "schema",
-        "name": "card_details"
+        "name": "card_details",
+        "type": "object"
       },
       {
+        "description": "If unauthorized activity occurs on a card, you can create a Card Dispute and we'll return the funds if appropriate.",
         "id": "schema:card_dispute",
         "kind": "schema",
-        "name": "card_dispute"
+        "name": "card_dispute",
+        "type": "object"
       },
       {
+        "description": "A list of Card Dispute objects",
         "id": "schema:card_dispute_list",
         "kind": "schema",
-        "name": "card_dispute_list"
+        "name": "card_dispute_list",
+        "type": "object"
       },
       {
+        "description": "A list of Card objects",
         "id": "schema:card_list",
         "kind": "schema",
-        "name": "card_list"
+        "name": "card_list",
+        "type": "object"
       },
       {
+        "description": "This contains artwork and metadata relating to a Card's appearance in digital wallet apps like Apple Pay and Google Pay.",
         "id": "schema:card_profile",
         "kind": "schema",
-        "name": "card_profile"
+        "name": "card_profile",
+        "type": "object"
       },
       {
+        "description": "A list of Card Profile objects",
         "id": "schema:card_profile_list",
         "kind": "schema",
-        "name": "card_profile_list"
+        "name": "card_profile_list",
+        "type": "object"
       },
       {
+        "description": "Check Deposits allow you to deposit images of paper checks into your account.",
         "id": "schema:check_deposit",
         "kind": "schema",
-        "name": "check_deposit"
+        "name": "check_deposit",
+        "type": "object"
       },
       {
+        "description": "A list of Check Deposit objects",
         "id": "schema:check_deposit_list",
         "kind": "schema",
-        "name": "check_deposit_list"
+        "name": "check_deposit_list",
+        "type": "object"
       },
       {
+        "description": "Check Transfers move funds from your Increase account by mailing a physical check.",
         "id": "schema:check_transfer",
         "kind": "schema",
-        "name": "check_transfer"
+        "name": "check_transfer",
+        "type": "object"
       },
       {
+        "description": "A list of Check Transfer objects",
         "id": "schema:check_transfer_list",
         "kind": "schema",
-        "name": "check_transfer_list"
+        "name": "check_transfer_list",
+        "type": "object"
       },
       {
         "id": "schema:create_a_card_dispute_parameters",
         "kind": "schema",
-        "name": "create_a_card_dispute_parameters"
+        "name": "create_a_card_dispute_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_a_card_parameters",
         "kind": "schema",
-        "name": "create_a_card_parameters"
+        "name": "create_a_card_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_a_card_profile_parameters",
         "kind": "schema",
-        "name": "create_a_card_profile_parameters"
+        "name": "create_a_card_profile_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_a_check_deposit_parameters",
         "kind": "schema",
-        "name": "create_a_check_deposit_parameters"
+        "name": "create_a_check_deposit_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_a_check_transfer_parameters",
         "kind": "schema",
-        "name": "create_a_check_transfer_parameters"
+        "name": "create_a_check_transfer_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_a_file_parameters",
         "kind": "schema",
-        "name": "create_a_file_parameters"
+        "name": "create_a_file_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_a_limit_parameters",
         "kind": "schema",
-        "name": "create_a_limit_parameters"
+        "name": "create_a_limit_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_a_supplemental_document_for_an_entity_parameters",
         "kind": "schema",
-        "name": "create_a_supplemental_document_for_an_entity_parameters"
+        "name": "create_a_supplemental_document_for_an_entity_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_a_wire_drawdown_request_parameters",
         "kind": "schema",
-        "name": "create_a_wire_drawdown_request_parameters"
+        "name": "create_a_wire_drawdown_request_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_a_wire_transfer_parameters",
         "kind": "schema",
-        "name": "create_a_wire_transfer_parameters"
+        "name": "create_a_wire_transfer_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_an_account_number_parameters",
         "kind": "schema",
-        "name": "create_an_account_number_parameters"
+        "name": "create_an_account_number_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_an_account_parameters",
         "kind": "schema",
-        "name": "create_an_account_parameters"
+        "name": "create_an_account_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_an_account_transfer_parameters",
         "kind": "schema",
-        "name": "create_an_account_transfer_parameters"
+        "name": "create_an_account_transfer_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_an_ach_prenotification_parameters",
         "kind": "schema",
-        "name": "create_an_ach_prenotification_parameters"
+        "name": "create_an_ach_prenotification_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_an_ach_return_parameters",
         "kind": "schema",
-        "name": "create_an_ach_return_parameters"
+        "name": "create_an_ach_return_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_an_ach_transfer_parameters",
         "kind": "schema",
-        "name": "create_an_ach_transfer_parameters"
+        "name": "create_an_ach_transfer_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_an_entity_parameters",
         "kind": "schema",
-        "name": "create_an_entity_parameters"
+        "name": "create_an_entity_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_an_event_subscription_parameters",
         "kind": "schema",
-        "name": "create_an_event_subscription_parameters"
+        "name": "create_an_event_subscription_parameters",
+        "type": "object"
       },
       {
         "id": "schema:create_an_external_account_parameters",
         "kind": "schema",
-        "name": "create_an_external_account_parameters"
+        "name": "create_an_external_account_parameters",
+        "type": "object"
       },
       {
+        "description": "Declined Transactions are refused additions and removals of money from your bank account.",
         "id": "schema:declined_transaction",
         "kind": "schema",
-        "name": "declined_transaction"
+        "name": "declined_transaction",
+        "type": "object"
       },
       {
+        "description": "A list of Declined Transaction objects",
         "id": "schema:declined_transaction_list",
         "kind": "schema",
-        "name": "declined_transaction_list"
+        "name": "declined_transaction_list",
+        "type": "object"
       },
       {
+        "description": "A Digital Wallet Token is created when a user adds a Card to their Apple Pay or Google Pay app.",
         "id": "schema:digital_wallet_token",
         "kind": "schema",
-        "name": "digital_wallet_token"
+        "name": "digital_wallet_token",
+        "type": "object"
       },
       {
+        "description": "A list of Digital Wallet Token objects",
         "id": "schema:digital_wallet_token_list",
         "kind": "schema",
-        "name": "digital_wallet_token_list"
+        "name": "digital_wallet_token_list",
+        "type": "object"
       },
       {
+        "description": "Increase generates certain documents / forms automatically for your application; they can be listed here.",
         "id": "schema:document",
         "kind": "schema",
-        "name": "document"
+        "name": "document",
+        "type": "object"
       },
       {
+        "description": "A list of Document objects",
         "id": "schema:document_list",
         "kind": "schema",
-        "name": "document_list"
+        "name": "document_list",
+        "type": "object"
       },
       {
+        "description": "Entities are the legal entities that own accounts.",
         "id": "schema:entity",
         "kind": "schema",
-        "name": "entity"
+        "name": "entity",
+        "type": "object"
       },
       {
+        "description": "A list of Entity objects",
         "id": "schema:entity_list",
         "kind": "schema",
-        "name": "entity_list"
+        "name": "entity_list",
+        "type": "object"
       },
       {
         "id": "schema:error",
         "kind": "schema",
-        "name": "error"
+        "name": "error",
+        "type": "object"
       },
       {
+        "description": "Events are records of things that happened to objects in the API.",
         "id": "schema:event",
         "kind": "schema",
-        "name": "event"
+        "name": "event",
+        "type": "object"
       },
       {
+        "description": "A list of Event objects",
         "id": "schema:event_list",
         "kind": "schema",
-        "name": "event_list"
+        "name": "event_list",
+        "type": "object"
       },
       {
+        "description": "Webhooks are event notifications we send to you by HTTPS POST requests.",
         "id": "schema:event_subscription",
         "kind": "schema",
-        "name": "event_subscription"
+        "name": "event_subscription",
+        "type": "object"
       },
       {
+        "description": "A list of Event Subscription objects",
         "id": "schema:event_subscription_list",
         "kind": "schema",
-        "name": "event_subscription_list"
+        "name": "event_subscription_list",
+        "type": "object"
       },
       {
+        "description": "External Accounts represent accounts at financial institutions other than Increase.",
         "id": "schema:external_account",
         "kind": "schema",
-        "name": "external_account"
+        "name": "external_account",
+        "type": "object"
       },
       {
+        "description": "A list of External Account objects",
         "id": "schema:external_account_list",
         "kind": "schema",
-        "name": "external_account_list"
+        "name": "external_account_list",
+        "type": "object"
       },
       {
+        "description": "Files are objects that represent a file hosted on Increase's servers.",
         "id": "schema:file",
         "kind": "schema",
-        "name": "file"
+        "name": "file",
+        "type": "object"
       },
       {
+        "description": "A list of File objects",
         "id": "schema:file_list",
         "kind": "schema",
-        "name": "file_list"
+        "name": "file_list",
+        "type": "object"
       },
       {
+        "description": "Groups represent organizations using Increase.",
         "id": "schema:group",
         "kind": "schema",
-        "name": "group"
+        "name": "group",
+        "type": "object"
       },
       {
+        "description": "If unauthorized activity occurs via ACH, you can create an Inbound ACH Transfer Return and we'll reverse the transaction.",
         "id": "schema:inbound_ach_transfer_return",
         "kind": "schema",
-        "name": "inbound_ach_transfer_return"
+        "name": "inbound_ach_transfer_return",
+        "type": "object"
       },
       {
+        "description": "A list of Inbound ACH Transfer Return objects",
         "id": "schema:inbound_ach_transfer_return_list",
         "kind": "schema",
-        "name": "inbound_ach_transfer_return_list"
+        "name": "inbound_ach_transfer_return_list",
+        "type": "object"
       },
       {
+        "description": "The results of an inbound ACH Transfer simulation.",
         "id": "schema:inbound_ach_transfer_simulation_result",
         "kind": "schema",
-        "name": "inbound_ach_transfer_simulation_result"
+        "name": "inbound_ach_transfer_simulation_result",
+        "type": "object"
       },
       {
+        "description": "The results of a Card Authorization simulation.",
         "id": "schema:inbound_card_authorization_simulation_result",
         "kind": "schema",
-        "name": "inbound_card_authorization_simulation_result"
+        "name": "inbound_card_authorization_simulation_result",
+        "type": "object"
       },
       {
+        "description": "The results of a Digital Wallet Token simulation.",
         "id": "schema:inbound_digital_wallet_token_request_simulation_result",
         "kind": "schema",
-        "name": "inbound_digital_wallet_token_request_simulation_result"
+        "name": "inbound_digital_wallet_token_request_simulation_result",
+        "type": "object"
       },
       {
+        "description": "The results of an inbound Real Time Payments Transfer simulation.",
         "id": "schema:inbound_real_time_payments_transfer_simulation_result",
         "kind": "schema",
-        "name": "inbound_real_time_payments_transfer_simulation_result"
+        "name": "inbound_real_time_payments_transfer_simulation_result",
+        "type": "object"
       },
       {
+        "description": "Inbound wire drawdown requests are requests from someone else to send them a wire.",
         "id": "schema:inbound_wire_drawdown_request",
         "kind": "schema",
-        "name": "inbound_wire_drawdown_request"
+        "name": "inbound_wire_drawdown_request",
+        "type": "object"
       },
       {
+        "description": "A list of Inbound Wire Drawdown Request objects",
         "id": "schema:inbound_wire_drawdown_request_list",
         "kind": "schema",
-        "name": "inbound_wire_drawdown_request_list"
+        "name": "inbound_wire_drawdown_request_list",
+        "type": "object"
       },
       {
+        "description": "The results of an inbound Wire Transfer simulation.",
         "id": "schema:inbound_wire_transfer_simulation_result",
         "kind": "schema",
-        "name": "inbound_wire_transfer_simulation_result"
+        "name": "inbound_wire_transfer_simulation_result",
+        "type": "object"
       },
       {
+        "description": "You can set limits at the Account, Account Number, or Card level.",
         "id": "schema:limit",
         "kind": "schema",
-        "name": "limit"
+        "name": "limit",
+        "type": "object"
       },
       {
+        "description": "A list of Limit objects",
         "id": "schema:limit_list",
         "kind": "schema",
-        "name": "limit_list"
+        "name": "limit_list",
+        "type": "object"
       },
       {
+        "description": "When a user authorizes your OAuth application, an OAuth Connection object is created.",
         "id": "schema:oauth_connection",
         "kind": "schema",
-        "name": "oauth_connection"
+        "name": "oauth_connection",
+        "type": "object"
       },
       {
+        "description": "A list of OAuth Connection objects",
         "id": "schema:oauth_connection_list",
         "kind": "schema",
-        "name": "oauth_connection_list"
+        "name": "oauth_connection_list",
+        "type": "object"
       },
       {
+        "description": "Pending Transactions are potential future additions and removals of money from your bank account.",
         "id": "schema:pending_transaction",
         "kind": "schema",
-        "name": "pending_transaction"
+        "name": "pending_transaction",
+        "type": "object"
       },
       {
+        "description": "A list of Pending Transaction objects",
         "id": "schema:pending_transaction_list",
         "kind": "schema",
-        "name": "pending_transaction_list"
+        "name": "pending_transaction_list",
+        "type": "object"
       },
       {
+        "description": "Real Time Decisions are created when your application needs to take action in real-time to some event such as a card authorization.",
         "id": "schema:real_time_decision",
         "kind": "schema",
-        "name": "real_time_decision"
+        "name": "real_time_decision",
+        "type": "object"
       },
       {
         "id": "schema:return_a_sandbox_ach_transfer_parameters",
         "kind": "schema",
-        "name": "return_a_sandbox_ach_transfer_parameters"
+        "name": "return_a_sandbox_ach_transfer_parameters",
+        "type": "object"
       },
       {
+        "description": "Routing numbers are used to identify your bank in a financial transaction.",
         "id": "schema:routing_number",
         "kind": "schema",
-        "name": "routing_number"
+        "name": "routing_number",
+        "type": "object"
       },
       {
+        "description": "A list of Routing Number objects",
         "id": "schema:routing_number_list",
         "kind": "schema",
-        "name": "routing_number_list"
+        "name": "routing_number_list",
+        "type": "object"
       },
       {
         "id": "schema:simulate_a_real_time_payments_transfer_to_your_account_parameters",
         "kind": "schema",
-        "name": "simulate_a_real_time_payments_transfer_to_your_account_parameters"
+        "name": "simulate_a_real_time_payments_transfer_to_your_account_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulate_a_refund_on_a_card_parameters",
         "kind": "schema",
-        "name": "simulate_a_refund_on_a_card_parameters"
+        "name": "simulate_a_refund_on_a_card_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulate_a_tax_document_being_created_parameters",
         "kind": "schema",
-        "name": "simulate_a_tax_document_being_created_parameters"
+        "name": "simulate_a_tax_document_being_created_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulate_a_wire_transfer_to_your_account_parameters",
         "kind": "schema",
-        "name": "simulate_a_wire_transfer_to_your_account_parameters"
+        "name": "simulate_a_wire_transfer_to_your_account_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulate_an_account_statement_being_created_parameters",
         "kind": "schema",
-        "name": "simulate_an_account_statement_being_created_parameters"
+        "name": "simulate_an_account_statement_being_created_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulate_an_ach_transfer_to_your_account_parameters",
         "kind": "schema",
-        "name": "simulate_an_ach_transfer_to_your_account_parameters"
+        "name": "simulate_an_ach_transfer_to_your_account_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulate_an_authorization_on_a_card_parameters",
         "kind": "schema",
-        "name": "simulate_an_authorization_on_a_card_parameters"
+        "name": "simulate_an_authorization_on_a_card_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulate_an_inbound_wire_drawdown_request_being_created_parameters",
         "kind": "schema",
-        "name": "simulate_an_inbound_wire_drawdown_request_being_created_parameters"
+        "name": "simulate_an_inbound_wire_drawdown_request_being_created_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulate_digital_wallet_provisioning_for_a_card_parameters",
         "kind": "schema",
-        "name": "simulate_digital_wallet_provisioning_for_a_card_parameters"
+        "name": "simulate_digital_wallet_provisioning_for_a_card_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulate_settling_a_card_authorization_parameters",
         "kind": "schema",
-        "name": "simulate_settling_a_card_authorization_parameters"
+        "name": "simulate_settling_a_card_authorization_parameters",
+        "type": "object"
       },
       {
         "id": "schema:simulates_advancing_the_state_of_a_card_dispute_parameters",
         "kind": "schema",
-        "name": "simulates_advancing_the_state_of_a_card_dispute_parameters"
+        "name": "simulates_advancing_the_state_of_a_card_dispute_parameters",
+        "type": "object"
       },
       {
+        "description": "Transactions are the immutable additions and removals of money from your bank account.",
         "id": "schema:transaction",
         "kind": "schema",
-        "name": "transaction"
+        "name": "transaction",
+        "type": "object"
       },
       {
+        "description": "A list of Transaction objects",
         "id": "schema:transaction_list",
         "kind": "schema",
-        "name": "transaction_list"
+        "name": "transaction_list",
+        "type": "object"
       },
       {
         "id": "schema:update_a_card_parameters",
         "kind": "schema",
-        "name": "update_a_card_parameters"
+        "name": "update_a_card_parameters",
+        "type": "object"
       },
       {
         "id": "schema:update_a_limit_parameters",
         "kind": "schema",
-        "name": "update_a_limit_parameters"
+        "name": "update_a_limit_parameters",
+        "type": "object"
       },
       {
         "id": "schema:update_an_account_number_parameters",
         "kind": "schema",
-        "name": "update_an_account_number_parameters"
+        "name": "update_an_account_number_parameters",
+        "type": "object"
       },
       {
         "id": "schema:update_an_account_parameters",
         "kind": "schema",
-        "name": "update_an_account_parameters"
+        "name": "update_an_account_parameters",
+        "type": "object"
       },
       {
         "id": "schema:update_an_event_subscription_parameters",
         "kind": "schema",
-        "name": "update_an_event_subscription_parameters"
+        "name": "update_an_event_subscription_parameters",
+        "type": "object"
       },
       {
         "id": "schema:update_an_external_account_parameters",
         "kind": "schema",
-        "name": "update_an_external_account_parameters"
+        "name": "update_an_external_account_parameters",
+        "type": "object"
       },
       {
+        "description": "Wire drawdown requests enable you to request that someone else send you a wire.",
         "id": "schema:wire_drawdown_request",
         "kind": "schema",
-        "name": "wire_drawdown_request"
+        "name": "wire_drawdown_request",
+        "type": "object"
       },
       {
+        "description": "A list of Wire Drawdown Request objects",
         "id": "schema:wire_drawdown_request_list",
         "kind": "schema",
-        "name": "wire_drawdown_request_list"
+        "name": "wire_drawdown_request_list",
+        "type": "object"
       },
       {
+        "description": "Wire transfers move funds between your Increase account and any other account accessible by Fedwire.",
         "id": "schema:wire_transfer",
         "kind": "schema",
-        "name": "wire_transfer"
+        "name": "wire_transfer",
+        "type": "object"
       },
       {
+        "description": "A list of Wire Transfer objects",
         "id": "schema:wire_transfer_list",
         "kind": "schema",
-        "name": "wire_transfer_list"
+        "name": "wire_transfer_list",
+        "type": "object"
       }
     ]
   },

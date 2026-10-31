@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_i.postimg.cc_m2vR2wwB_ZenoAPI.p
 
 | | |
 | --- | --- |
-| Signed bundle | `49082fedcc0a74d0880b22cac304b01a0cd72bb6924b4e7890141a8981b3e75c` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,23 +34,25 @@ logo: "https://api.apis.guru/v2/cache/logo/https_i.postimg.cc_m2vR2wwB_ZenoAPI.p
 
 15 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v2/podcasts/categories` | getPodcastCategories | — |
-| GET | `/api/v2/podcasts/countries` | getPodcastCountries | — |
-| POST | `/api/v2/podcasts/create` | createPodcast | — |
-| GET | `/api/v2/podcasts/languages` | getPodcastLanguages | — |
-| POST | `/api/v2/podcasts/search` | searchPodcasts | — |
-| DELETE | `/api/v2/podcasts/{podcastKey}` | deletePodcast | — |
-| GET | `/api/v2/podcasts/{podcastKey}` | getPodcast | — |
-| PUT | `/api/v2/podcasts/{podcastKey}` | updatePodcast | — |
-| GET | `/api/v2/podcasts/{podcastKey}/episodes` | getPodcastEpisodes | — |
-| POST | `/api/v2/podcasts/{podcastKey}/episodes/create` | createPodcastEpisode | — |
-| DELETE | `/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}` | deletePodcast_1 | — |
-| GET | `/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}` | getPodcastEpisode | — |
-| PUT | `/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}` | updatePodcastEpisode | — |
-| GET | `/api/v2/stations/countries` | getStationCountries | — |
-| GET | `/api/v2/stations/genres` | getStationGenres | — |
-| GET | `/api/v2/stations/languages` | getStationLanguages | — |
-| GET | `/api/v2/stations/list` | getPartnerAggregatorStations | — |
-| POST | `/api/v2/stations/search` | searchStations | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v2/podcasts/categories` | getPodcastCategories | — | PodcastCategory[] | yes | — |
+| GET | `/api/v2/podcasts/countries` | getPodcastCountries | — | Country[] | yes | — |
+| POST | `/api/v2/podcasts/create` | createPodcast | body: object | Podcast |  | — |
+| GET | `/api/v2/podcasts/languages` | getPodcastLanguages | — | Language[] | yes | — |
+| POST | `/api/v2/podcasts/search` | searchPodcasts | body*: PodcastSearchParams | PodcastSearchResults |  | — |
+| GET | `/api/v2/podcasts/{podcastKey}` | getPodcast | `podcastKey`* | Podcast | yes | — |
+| PUT | `/api/v2/podcasts/{podcastKey}` | updatePodcast | `podcastKey`*, body: object | Podcast |  | — |
+| DELETE | `/api/v2/podcasts/{podcastKey}` | deletePodcast | `podcastKey`* | — |  | — |
+| GET | `/api/v2/podcasts/{podcastKey}/episodes` | getPodcastEpisodes | `podcastKey`*, `limit`, `offset` | PodcastEpisodeList | yes | — |
+| POST | `/api/v2/podcasts/{podcastKey}/episodes/create` | createPodcastEpisode | `podcastKey`*, body: object | PodcastEpisode |  | — |
+| GET | `/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}` | getPodcastEpisode | `podcastKey`*, `episodeKey`* | PodcastEpisode | yes | — |
+| PUT | `/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}` | updatePodcastEpisode | `podcastKey`*, `episodeKey`*, body: object | PodcastEpisode |  | — |
+| DELETE | `/api/v2/podcasts/{podcastKey}/episodes/{episodeKey}` | deletePodcast_1 | `podcastKey`*, `episodeKey`* | — |  | — |
+| GET | `/api/v2/stations/countries` | getStationCountries | — | Country[] | yes | — |
+| GET | `/api/v2/stations/genres` | getStationGenres | — | StationGenre[] | yes | — |
+| GET | `/api/v2/stations/languages` | getStationLanguages | — | Language[] | yes | — |
+| GET | `/api/v2/stations/list` | getPartnerAggregatorStations | `page`, `hitsPerPage` | StationList | yes | — |
+| POST | `/api/v2/stations/search` | searchStations | body*: StationSearchParams | StationSearchResults |  | — |

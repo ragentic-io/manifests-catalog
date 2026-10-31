@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_simplivpn.net_wp-content_upload
 
 | | |
 | --- | --- |
-| Signed bundle | `c683983b4501112ba02dae99882ec93c28f9510dadb7bb6be37734ecef164c00` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_simplivpn.net_wp-content_upload
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/disable-user` | DisableUser | DisableUser |
-| POST | `/enable-user` | EnableUser | EnableUser |
-| POST | `/login` | Login | Login |
-| POST | `/register` | Register | Register |
-| GET | `/server-summaries` | GetServerSummaries | — |
-| GET | `/servers` | GetServers | — |
-| POST | `/username-available` | UsernameAvailable | UsernameAvailable |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/disable-user` | DisableUser | body*: DisableUser | — |  | DisableUser |
+| POST | `/enable-user` | EnableUser | body*: EnableUser | — |  | EnableUser |
+| POST | `/login` | Login | body*: UserLogin | — |  | Login |
+| POST | `/register` | Register | body*: Register | — |  | Register |
+| GET | `/server-summaries` | GetServerSummaries | — | — | yes | — |
+| GET | `/servers` | GetServers | — | — | yes | — |
+| POST | `/username-available` | UsernameAvailable | body*: EnableUser | — |  | UsernameAvailable |

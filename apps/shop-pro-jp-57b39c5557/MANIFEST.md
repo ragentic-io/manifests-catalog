@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static-www.shop-pro.jp_img_cms_
 
 | | |
 | --- | --- |
-| Signed bundle | `5885e41fb46bec78b2369adf79239059e2f3204a465b0a5627eaea40c930ae28` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,23 +34,25 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static-www.shop-pro.jp_img_cms_
 
 6 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/appstore/v1/application_charges.json` | postApplicationCharge | アプリ内課金データの作成 |
-| DELETE | `/appstore/v1/installation.json` | deleteInstallation | アプリストアアプリのアンインストール |
-| POST | `/appstore/v1/recurring_application_charges/{recurringApplicationChargeId}/usage_charges.json` | createUsageCharge | 従量課金データの作成 |
-| GET | `/appstore/v1/script_tags.json` | getShopScriptTags | スクリプトタグの取得 |
-| POST | `/appstore/v1/script_tags.json` | createShopScriptTag | スクリプトタグの作成 |
-| DELETE | `/appstore/v1/script_tags/{scriptTagId}.json` | deleteScriptTag | スクリプトタグの削除 |
-| GET | `/appstore/v1/script_tags/{scriptTagId}.json` | getShopScriptTag | スクリプトタグの取得 |
-| PUT | `/appstore/v1/script_tags/{scriptTagId}.json` | updateShopScriptTag | スクリプトタグの更新 |
-| GET | `/v1/inline_script_tags.json` | getInlineScriptTags | インラインスクリプトタグの取得 |
-| POST | `/v1/inline_script_tags.json` | createInlineScriptTag | インラインスクリプトタグの登録 |
-| DELETE | `/v1/inline_script_tags/{inlineScriptTagId}.json` | deleteInlineScriptTag | インラインスクリプトタグの削除 |
-| GET | `/v1/inline_script_tags/{inlineScriptTagId}.json` | getInlineScriptTag | インラインスクリプトタグの取得 |
-| PUT | `/v1/inline_script_tags/{inlineScriptTagId}.json` | updateInlineScriptTag | インラインスクリプトタグの更新 |
-| GET | `/v1/script_tags.json` | getScriptTags | スクリプトタグの取得 |
-| POST | `/v1/script_tags.json` | createScriptTag | スクリプトタグの作成 |
-| DELETE | `/v1/script_tags/{scriptTagId}.json` | delete /v1/script_tags/{scriptTagId}.json | スクリプトタグの削除 |
-| GET | `/v1/script_tags/{scriptTagId}.json` | getScriptTag | スクリプトタグの取得 |
-| PUT | `/v1/script_tags/{scriptTagId}.json` | updateScriptTag | スクリプトタグの更新 |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/appstore/v1/application_charges.json` | postApplicationCharge | body*: object | object |  | アプリ内課金データの作成 |
+| DELETE | `/appstore/v1/installation.json` | deleteInstallation | — | object |  | アプリストアアプリのアンインストール |
+| POST | `/appstore/v1/recurring_application_charges/{recurringApplicationChargeId}/usage_charges.json` | createUsageCharge | `recurringApplicationChargeId`*, `X-Appstore-Usage-Charge-Token`, body*: object | object |  | 従量課金データの作成 |
+| GET | `/appstore/v1/script_tags.json` | getShopScriptTags | — | object | yes | スクリプトタグの取得 |
+| POST | `/appstore/v1/script_tags.json` | createShopScriptTag | body: object | object |  | スクリプトタグの作成 |
+| GET | `/appstore/v1/script_tags/{scriptTagId}.json` | getShopScriptTag | `scriptTagId`* | object | yes | スクリプトタグの取得 |
+| PUT | `/appstore/v1/script_tags/{scriptTagId}.json` | updateShopScriptTag | `scriptTagId`*, body: object | object |  | スクリプトタグの更新 |
+| DELETE | `/appstore/v1/script_tags/{scriptTagId}.json` | deleteScriptTag | `scriptTagId`* | — |  | スクリプトタグの削除 |
+| GET | `/v1/inline_script_tags.json` | getInlineScriptTags | — | object | yes | インラインスクリプトタグの取得 |
+| POST | `/v1/inline_script_tags.json` | createInlineScriptTag | body: object | object |  | インラインスクリプトタグの登録 |
+| GET | `/v1/inline_script_tags/{inlineScriptTagId}.json` | getInlineScriptTag | `inlineScriptTagId`* | object | yes | インラインスクリプトタグの取得 |
+| PUT | `/v1/inline_script_tags/{inlineScriptTagId}.json` | updateInlineScriptTag | `inlineScriptTagId`*, body: object | object |  | インラインスクリプトタグの更新 |
+| DELETE | `/v1/inline_script_tags/{inlineScriptTagId}.json` | deleteInlineScriptTag | `inlineScriptTagId`* | — |  | インラインスクリプトタグの削除 |
+| GET | `/v1/script_tags.json` | getScriptTags | — | object | yes | スクリプトタグの取得 |
+| POST | `/v1/script_tags.json` | createScriptTag | body: object | object |  | スクリプトタグの作成 |
+| GET | `/v1/script_tags/{scriptTagId}.json` | getScriptTag | `scriptTagId`* | object | yes | スクリプトタグの取得 |
+| PUT | `/v1/script_tags/{scriptTagId}.json` | updateScriptTag | `scriptTagId`*, body: object | object |  | スクリプトタグの更新 |
+| DELETE | `/v1/script_tags/{scriptTagId}.json` | delete /v1/script_tags/{scriptTagId}.json | `scriptTagId`* | — |  | スクリプトタグの削除 |

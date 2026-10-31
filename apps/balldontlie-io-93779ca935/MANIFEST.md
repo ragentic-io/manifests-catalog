@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_balldontlie_io_logo192.svg"
 
 | | |
 | --- | --- |
-| Signed bundle | `fdfebe950f50636f6ddc63f9a9bf23f748b360cef11f933d459ef529249b4fcb` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,12 +32,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_balldontlie_io_logo192.svg"
 
 ## Operations (7)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/v1/games` | allGamesExampleParameters | all games (example parameters) |
-| GET | `/api/v1/games/32881` | specificGame | specific game |
-| GET | `/api/v1/players` | allPlayersSearch | all players (search) |
-| GET | `/api/v1/players/237` | specificPlayer | specific player |
-| GET | `/api/v1/stats` | allStatsExampleParameters | all stats (example parameters) |
-| GET | `/api/v1/teams` | allTeams | all teams |
-| GET | `/api/v1/teams/1` | specificTeam | specific team |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/v1/games` | allGamesExampleParameters | `seasons[]`, `team_ids[]` | — | yes | all games (example parameters) |
+| GET | `/api/v1/games/32881` | specificGame | — | — | yes | specific game |
+| GET | `/api/v1/players` | allPlayersSearch | `search` | — | yes | all players (search) |
+| GET | `/api/v1/players/237` | specificPlayer | — | — | yes | specific player |
+| GET | `/api/v1/stats` | allStatsExampleParameters | `season[]`, `player_ids[]` | — | yes | all stats (example parameters) |
+| GET | `/api/v1/teams` | allTeams | — | — | yes | all teams |
+| GET | `/api/v1/teams/1` | specificTeam | — | — | yes | specific team |

@@ -13,6 +13,216 @@
         "from": "amadeus-com-f4570d52ea",
         "kind": "EXPOSES",
         "to": "operation:post:/shopping/flight-offers"
+      },
+      {
+        "from": "operation:post:/shopping/flight-offers",
+        "kind": "ACCEPTS",
+        "to": "schema:GetFlightOffersQuery"
+      },
+      {
+        "from": "schema:Co2Emission",
+        "kind": "REFERENCES",
+        "to": "schema:TravelClass"
+      },
+      {
+        "from": "schema:Dictionaries",
+        "kind": "REFERENCES",
+        "to": "schema:AircraftEntry"
+      },
+      {
+        "from": "schema:Dictionaries",
+        "kind": "REFERENCES",
+        "to": "schema:CarrierEntry"
+      },
+      {
+        "from": "schema:Dictionaries",
+        "kind": "REFERENCES",
+        "to": "schema:CurrencyEntry"
+      },
+      {
+        "from": "schema:Dictionaries",
+        "kind": "REFERENCES",
+        "to": "schema:LocationEntry"
+      },
+      {
+        "from": "schema:Error_400",
+        "kind": "REFERENCES",
+        "to": "schema:Issue"
+      },
+      {
+        "from": "schema:Error_500",
+        "kind": "REFERENCES",
+        "to": "schema:Issue"
+      },
+      {
+        "from": "schema:Extended_Price",
+        "kind": "REFERENCES",
+        "to": "schema:AdditionalServiceType"
+      },
+      {
+        "from": "schema:Extended_Price",
+        "kind": "REFERENCES",
+        "to": "schema:Price"
+      },
+      {
+        "from": "schema:Fee",
+        "kind": "REFERENCES",
+        "to": "schema:FeeType"
+      },
+      {
+        "from": "schema:FlightEndPoint",
+        "kind": "REFERENCES",
+        "to": "schema:OriginalFlightEndPoint"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:BaggageAllowance"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:Extended_Price"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:FlightOfferSource"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:Price"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:PricingOptionsFareType"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:Segment"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:ServiceName"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:SliceDiceIndicator"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:TravelClass"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:TravelerPricingFareOption"
+      },
+      {
+        "from": "schema:FlightOffer",
+        "kind": "REFERENCES",
+        "to": "schema:TravelerType"
+      },
+      {
+        "from": "schema:FlightSegment",
+        "kind": "REFERENCES",
+        "to": "schema:AircraftEquipment"
+      },
+      {
+        "from": "schema:FlightSegment",
+        "kind": "REFERENCES",
+        "to": "schema:FlightEndPoint"
+      },
+      {
+        "from": "schema:FlightSegment",
+        "kind": "REFERENCES",
+        "to": "schema:FlightStop"
+      },
+      {
+        "from": "schema:FlightSegment",
+        "kind": "REFERENCES",
+        "to": "schema:OperatingFlight"
+      },
+      {
+        "from": "schema:FlightStop",
+        "kind": "REFERENCES",
+        "to": "schema:OriginalFlightStop"
+      },
+      {
+        "from": "schema:GetFlightOffersQuery",
+        "kind": "REFERENCES",
+        "to": "schema:FlightOfferSource"
+      },
+      {
+        "from": "schema:GetFlightOffersQuery",
+        "kind": "REFERENCES",
+        "to": "schema:OriginDestination"
+      },
+      {
+        "from": "schema:GetFlightOffersQuery",
+        "kind": "REFERENCES",
+        "to": "schema:SearchCriteria"
+      },
+      {
+        "from": "schema:GetFlightOffersQuery",
+        "kind": "REFERENCES",
+        "to": "schema:Traveler"
+      },
+      {
+        "from": "schema:LocationEntry",
+        "kind": "REFERENCES",
+        "to": "schema:LocationValue"
+      },
+      {
+        "from": "schema:OriginDestination",
+        "kind": "REFERENCES",
+        "to": "schema:DateTimeRange"
+      },
+      {
+        "from": "schema:Price",
+        "kind": "REFERENCES",
+        "to": "schema:Fee"
+      },
+      {
+        "from": "schema:Price",
+        "kind": "REFERENCES",
+        "to": "schema:Tax"
+      },
+      {
+        "from": "schema:SearchCriteria",
+        "kind": "REFERENCES",
+        "to": "schema:Coverage"
+      },
+      {
+        "from": "schema:SearchCriteria",
+        "kind": "REFERENCES",
+        "to": "schema:ExtendedPricingOptions"
+      },
+      {
+        "from": "schema:SearchCriteria",
+        "kind": "REFERENCES",
+        "to": "schema:TravelClass"
+      },
+      {
+        "from": "schema:Segment",
+        "kind": "REFERENCES",
+        "to": "schema:Co2Emission"
+      },
+      {
+        "from": "schema:Segment",
+        "kind": "REFERENCES",
+        "to": "schema:FlightSegment"
+      },
+      {
+        "from": "schema:Traveler",
+        "kind": "REFERENCES",
+        "to": "schema:TravelerType"
       }
     ],
     "nodes": [
@@ -26,10 +236,137 @@
         "kind": "operation",
         "method": "get",
         "name": "getFlightOffers",
+        "parameters": [
+          {
+            "description": "city/airport [IATA code](http://www.iata.org/publications/Pages/code-search.aspx) from which the traveler will depart, e.g.",
+            "in": "query",
+            "name": "originLocationCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "city/airport [IATA code](http://www.iata.org/publications/Pages/code-search.aspx) to which the traveler is going, e.g.",
+            "in": "query",
+            "name": "destinationLocationCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the date on which the traveler will depart from the origin to go to the destination.",
+            "in": "query",
+            "name": "departureDate",
+            "required": true,
+            "type": "string:date"
+          },
+          {
+            "description": "the date on which the traveler will depart from the destination to return to the origin.",
+            "in": "query",
+            "name": "returnDate",
+            "required": false,
+            "type": "string:date"
+          },
+          {
+            "default": 1,
+            "description": "the number of adult travelers (age 12 or older on date of departure).",
+            "in": "query",
+            "name": "adults",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "the number of child travelers (older than age 2 and younger than age 12 on date of departure) who will each have their own separate seat.",
+            "in": "query",
+            "name": "children",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "the number of infant travelers (whose age is less or equal to 2 on date of departure).",
+            "in": "query",
+            "name": "infants",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "most of the flight time should be spent in a cabin of this quality or higher.",
+            "enum": [
+              "ECONOMY",
+              "PREMIUM_ECONOMY",
+              "BUSINESS",
+              "FIRST"
+            ],
+            "in": "query",
+            "name": "travelClass",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This option ensures that the system will only consider these airlines.",
+            "in": "query",
+            "name": "includedAirlineCodes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This option ensures that the system will ignore these airlines.",
+            "in": "query",
+            "name": "excludedAirlineCodes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "if set to true, the search will find only flights going from the origin to the destination with no stop in between",
+            "in": "query",
+            "name": "nonStop",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "the preferred currency for the flight offers.",
+            "in": "query",
+            "name": "currencyCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "maximum price per traveler.",
+            "in": "query",
+            "name": "maxPrice",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 250,
+            "description": "maximum number of flight offers to return.",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/shopping/flight-offers",
         "pointer": "#/paths/~1shopping~1flight-offers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Error_400"
+          },
+          {
+            "status": "default",
+            "type": "Error_500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return list of Flight Offers based on searching criteria."
+        "summary": "Return list of Flight Offers based on searching criteria.",
+        "tags": [
+          "Shopping"
+        ]
       },
       {
         "deprecated": false,
@@ -37,220 +374,319 @@
         "kind": "operation",
         "method": "post",
         "name": "searchFlightOffers",
+        "parameters": [
+          {
+            "default": "GET",
+            "description": "the HTTP method to apply",
+            "in": "header",
+            "name": "X-HTTP-Method-Override",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/shopping/flight-offers",
         "pointer": "#/paths/~1shopping~1flight-offers/post",
+        "request": {
+          "content_types": [
+            "application/vnd.amadeus+json"
+          ],
+          "required": true,
+          "type": "GetFlightOffersQuery"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "Error_400"
+          },
+          {
+            "status": "default",
+            "type": "Error_500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Return list of Flight Offers based on posted searching criteria."
+        "summary": "Return list of Flight Offers based on posted searching criteria.",
+        "tags": [
+          "Shopping"
+        ]
       },
       {
+        "description": "additional service type",
         "id": "schema:AdditionalServiceType",
         "kind": "schema",
-        "name": "AdditionalServiceType"
+        "name": "AdditionalServiceType",
+        "type": "string"
       },
       {
         "id": "schema:AircraftEntry",
         "kind": "schema",
-        "name": "AircraftEntry"
+        "name": "AircraftEntry",
+        "type": "object"
       },
       {
+        "description": "information related to the aircraft",
         "id": "schema:AircraftEquipment",
         "kind": "schema",
-        "name": "AircraftEquipment"
+        "name": "AircraftEquipment",
+        "type": "object"
       },
       {
+        "description": "baggageAllowance",
         "id": "schema:BaggageAllowance",
         "kind": "schema",
-        "name": "BaggageAllowance"
+        "name": "BaggageAllowance",
+        "type": "object"
       },
       {
         "id": "schema:CarrierEntry",
         "kind": "schema",
-        "name": "CarrierEntry"
+        "name": "CarrierEntry",
+        "type": "object"
       },
       {
         "id": "schema:Co2Emission",
         "kind": "schema",
-        "name": "Co2Emission"
+        "name": "Co2Emission",
+        "type": "object"
       },
       {
         "id": "schema:Collection_Meta",
         "kind": "schema",
-        "name": "Collection_Meta"
+        "name": "Collection_Meta",
+        "type": "object"
       },
       {
         "id": "schema:Collection_Meta_Link",
         "kind": "schema",
-        "name": "Collection_Meta_Link"
+        "name": "Collection_Meta_Link",
+        "type": "object"
       },
       {
+        "description": "part of the trip covered by the travel class restriction (ALL_SEGMENTS if ommited)",
         "id": "schema:Coverage",
         "kind": "schema",
-        "name": "Coverage"
+        "name": "Coverage",
+        "type": "string"
       },
       {
         "id": "schema:CurrencyEntry",
         "kind": "schema",
-        "name": "CurrencyEntry"
+        "name": "CurrencyEntry",
+        "type": "object"
       },
       {
         "id": "schema:DateTimeRange",
         "kind": "schema",
-        "name": "DateTimeRange"
+        "name": "DateTimeRange",
+        "type": "object"
       },
       {
         "id": "schema:Dictionaries",
         "kind": "schema",
-        "name": "Dictionaries"
+        "name": "Dictionaries",
+        "type": "object"
       },
       {
         "id": "schema:Error_400",
         "kind": "schema",
-        "name": "Error_400"
+        "name": "Error_400",
+        "type": "object"
       },
       {
         "id": "schema:Error_500",
         "kind": "schema",
-        "name": "Error_500"
+        "name": "Error_500",
+        "type": "object"
       },
       {
+        "description": "fare filter options",
         "id": "schema:ExtendedPricingOptions",
         "kind": "schema",
-        "name": "ExtendedPricingOptions"
+        "name": "ExtendedPricingOptions",
+        "type": "object"
       },
       {
+        "description": "price information",
         "id": "schema:Extended_Price",
         "kind": "schema",
-        "name": "Extended_Price"
+        "name": "Extended_Price",
+        "type": "object|Price"
       },
       {
+        "description": "a fee",
         "id": "schema:Fee",
         "kind": "schema",
-        "name": "Fee"
+        "name": "Fee",
+        "type": "object"
       },
       {
+        "description": "type of fee",
         "id": "schema:FeeType",
         "kind": "schema",
-        "name": "FeeType"
+        "name": "FeeType",
+        "type": "string"
       },
       {
+        "description": "departure or arrival information",
         "id": "schema:FlightEndPoint",
         "kind": "schema",
-        "name": "FlightEndPoint"
+        "name": "FlightEndPoint",
+        "type": "OriginalFlightEndPoint|object"
       },
       {
         "id": "schema:FlightOffer",
         "kind": "schema",
-        "name": "FlightOffer"
+        "name": "FlightOffer",
+        "type": "object"
       },
       {
+        "description": "source of the flight offer",
         "id": "schema:FlightOfferSource",
         "kind": "schema",
-        "name": "FlightOfferSource"
+        "name": "FlightOfferSource",
+        "type": "string"
       },
       {
+        "description": "defining a flight segment; including both operating and marketing details when applicable",
         "id": "schema:FlightSegment",
         "kind": "schema",
-        "name": "FlightSegment"
+        "name": "FlightSegment",
+        "type": "object"
       },
       {
+        "description": "details of stops for direct or change of gauge flights",
         "id": "schema:FlightStop",
         "kind": "schema",
-        "name": "FlightStop"
+        "name": "FlightStop",
+        "type": "OriginalFlightStop|object"
       },
       {
         "id": "schema:GetFlightOffersQuery",
         "kind": "schema",
-        "name": "GetFlightOffersQuery"
+        "name": "GetFlightOffersQuery",
+        "type": "object"
       },
       {
         "id": "schema:Issue",
         "kind": "schema",
-        "name": "Issue"
+        "name": "Issue",
+        "type": "object"
       },
       {
         "id": "schema:LocationEntry",
         "kind": "schema",
-        "name": "LocationEntry"
+        "name": "LocationEntry",
+        "type": "object"
       },
       {
         "id": "schema:LocationValue",
         "kind": "schema",
-        "name": "LocationValue"
+        "name": "LocationValue",
+        "type": "object"
       },
       {
+        "description": "information about the operating flight",
         "id": "schema:OperatingFlight",
         "kind": "schema",
-        "name": "OperatingFlight"
+        "name": "OperatingFlight",
+        "type": "object"
       },
       {
         "id": "schema:OriginDestination",
         "kind": "schema",
-        "name": "OriginDestination"
+        "name": "OriginDestination",
+        "type": "object"
       },
       {
+        "description": "departure or arrival information",
         "id": "schema:OriginalFlightEndPoint",
         "kind": "schema",
-        "name": "OriginalFlightEndPoint"
+        "name": "OriginalFlightEndPoint",
+        "type": "object"
       },
       {
+        "description": "details of stops for direct or change of gauge flights",
         "id": "schema:OriginalFlightStop",
         "kind": "schema",
-        "name": "OriginalFlightStop"
+        "name": "OriginalFlightStop",
+        "type": "object"
       },
       {
         "id": "schema:Price",
         "kind": "schema",
-        "name": "Price"
+        "name": "Price",
+        "type": "object"
       },
       {
+        "description": "type of fare of the flight-offer",
         "id": "schema:PricingOptionsFareType",
         "kind": "schema",
-        "name": "PricingOptionsFareType"
+        "name": "PricingOptionsFareType",
+        "type": "string[]"
       },
       {
         "id": "schema:SearchCriteria",
         "kind": "schema",
-        "name": "SearchCriteria"
+        "name": "SearchCriteria",
+        "type": "object"
       },
       {
         "id": "schema:Segment",
         "kind": "schema",
-        "name": "Segment"
+        "name": "Segment",
+        "type": "object|FlightSegment"
       },
       {
+        "description": "type of service",
         "id": "schema:ServiceName",
         "kind": "schema",
-        "name": "ServiceName"
+        "name": "ServiceName",
+        "type": "string"
       },
       {
+        "description": "slice and Dice indicator, such as Local Availability, Sub OnD(Origin and Destination) 1 Availability and Sub OnD 2 Availability",
         "id": "schema:SliceDiceIndicator",
         "kind": "schema",
-        "name": "SliceDiceIndicator"
+        "name": "SliceDiceIndicator",
+        "type": "string"
       },
       {
+        "description": "a tax",
         "id": "schema:Tax",
         "kind": "schema",
-        "name": "Tax"
+        "name": "Tax",
+        "type": "object"
       },
       {
+        "description": "quality of service offered in the cabin where the seat is located in this flight.",
         "id": "schema:TravelClass",
         "kind": "schema",
-        "name": "TravelClass"
+        "name": "TravelClass",
+        "type": "string"
       },
       {
         "id": "schema:Traveler",
         "kind": "schema",
-        "name": "Traveler"
+        "name": "Traveler",
+        "type": "object"
       },
       {
+        "description": "option specifying a group of fares, which may be valid under certain conditons Can be used to specify special fare discount for a passenger",
         "id": "schema:TravelerPricingFareOption",
         "kind": "schema",
-        "name": "TravelerPricingFareOption"
+        "name": "TravelerPricingFareOption",
+        "type": "string"
       },
       {
+        "description": "traveler type age restrictions : CHILD < 12y, HELD_INFANT < 2y, SEATED_INFANT < 2y, SENIOR >=60y",
         "id": "schema:TravelerType",
         "kind": "schema",
-        "name": "TravelerType"
+        "name": "TravelerType",
+        "type": "string"
       }
     ]
   },

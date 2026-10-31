@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `5b738ea7d84ee4d907e274aba0445aa8672bf8bda3d60769d754cdd934c1b36b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,413 +34,415 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 264 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/Albums/{id}/InstantMix` | GetInstantMixFromAlbum | Creates an instant playlist based on a given song. |
-| GET | `/Albums/{itemId}/Similar` | GetSimilarAlbums | Gets similar items. |
-| GET | `/Artists` | GetArtists | Gets all artists from a given item, folder, or the entire library. |
-| GET | `/Artists/AlbumArtists` | GetAlbumArtists | Gets all album artists from a given item, folder, or the entire library. |
-| GET | `/Artists/{id}/InstantMix` | GetInstantMixFromArtists | Creates an instant playlist based on a given song. |
-| GET | `/Artists/{itemId}/Similar` | GetSimilarArtists | Gets similar items. |
-| GET | `/Artists/{name}` | GetArtistByName | Gets an artist by name. |
-| GET | `/Artists/{name}/Images/{imageType}/{imageIndex}` | GetArtistImage | Get artist image by name. |
-| HEAD | `/Artists/{name}/Images/{imageType}/{imageIndex}` | HeadArtistImage | Get artist image by name. |
-| GET | `/Audio/{itemId}/hls/{segmentId}/stream.aac` | GetHlsAudioSegmentLegacyAac | Gets the specified audio segment for an audio item. |
-| GET | `/Audio/{itemId}/hls/{segmentId}/stream.mp3` | GetHlsAudioSegmentLegacyMp3 | Gets the specified audio segment for an audio item. |
-| GET | `/Audio/{itemId}/hls1/{playlistId}/{segmentId}.{container}` | GetHlsAudioSegment | Gets a video stream using HTTP live streaming. |
-| GET | `/Audio/{itemId}/main.m3u8` | GetVariantHlsAudioPlaylist | Gets an audio stream using HTTP live streaming. |
-| GET | `/Audio/{itemId}/master.m3u8` | GetMasterHlsAudioPlaylist | Gets an audio hls playlist stream. |
-| HEAD | `/Audio/{itemId}/master.m3u8` | HeadMasterHlsAudioPlaylist | Gets an audio hls playlist stream. |
-| GET | `/Audio/{itemId}/stream` | GetAudioStream | Gets an audio stream. |
-| HEAD | `/Audio/{itemId}/stream` | HeadAudioStream | Gets an audio stream. |
-| GET | `/Audio/{itemId}/stream.{container}` | GetAudioStreamByContainer | Gets an audio stream. |
-| HEAD | `/Audio/{itemId}/stream.{container}` | HeadAudioStreamByContainer | Gets an audio stream. |
-| GET | `/Audio/{itemId}/universal` | GetUniversalAudioStream | Gets an audio stream. |
-| HEAD | `/Audio/{itemId}/universal` | HeadUniversalAudioStream | Gets an audio stream. |
-| GET | `/Auth/Keys` | GetKeys | Get all keys. |
-| POST | `/Auth/Keys` | CreateKey | Create a new api key. |
-| DELETE | `/Auth/Keys/{key}` | RevokeKey | Remove an api key. |
-| GET | `/Auth/PasswordResetProviders` | GetPasswordResetProviders | Get all password reset providers. |
-| GET | `/Auth/Providers` | GetAuthProviders | Get all auth providers. |
-| GET | `/Branding/Configuration` | GetBrandingOptions | Gets branding configuration. |
-| GET | `/Branding/Css` | GetBrandingCss | Gets branding css. |
-| GET | `/Branding/Css.css` | GetBrandingCss_2 | Gets branding css. |
-| GET | `/Channels` | GetChannels | Gets available channels. |
-| GET | `/Channels/Features` | GetAllChannelFeatures | Get all channel features. |
-| GET | `/Channels/Items/Latest` | GetLatestChannelItems | Gets latest channel items. |
-| GET | `/Channels/{channelId}/Features` | GetChannelFeatures | Get channel features. |
-| GET | `/Channels/{channelId}/Items` | GetChannelItems | Get channel items. |
-| POST | `/Collections` | CreateCollection | Creates a new collection. |
-| DELETE | `/Collections/{collectionId}/Items` | RemoveFromCollection | Removes items from a collection. |
-| POST | `/Collections/{collectionId}/Items` | AddToCollection | Adds items to a collection. |
-| DELETE | `/Devices` | DeleteDevice | Deletes a device. |
-| GET | `/Devices` | GetDevices | Get Devices. |
-| GET | `/Devices/Info` | GetDeviceInfo | Get info for a device. |
-| GET | `/Devices/Options` | GetDeviceOptions | Get options for a device. |
-| POST | `/Devices/Options` | UpdateDeviceOptions | Update device options. |
-| GET | `/DisplayPreferences/{displayPreferencesId}` | GetDisplayPreferences | Get Display Preferences. |
-| POST | `/DisplayPreferences/{displayPreferencesId}` | UpdateDisplayPreferences | Update Display Preferences. |
-| GET | `/Dlna/ProfileInfos` | GetProfileInfos | Get profile infos. |
-| POST | `/Dlna/Profiles` | CreateProfile | Creates a profile. |
-| GET | `/Dlna/Profiles/Default` | GetDefaultProfile | Gets the default profile. |
-| DELETE | `/Dlna/Profiles/{profileId}` | DeleteProfile | Deletes a profile. |
-| GET | `/Dlna/Profiles/{profileId}` | GetProfile | Gets a single profile. |
-| POST | `/Dlna/Profiles/{profileId}` | UpdateProfile | Updates a profile. |
-| GET | `/Dlna/icons/{fileName}` | GetIcon | Gets a server icon. |
-| GET | `/Dlna/{serverId}/ConnectionManager` | GetConnectionManager | Gets Dlna media receiver registrar xml. |
-| GET | `/Dlna/{serverId}/ConnectionManager/ConnectionManager` | GetConnectionManager_2 | Gets Dlna media receiver registrar xml. |
-| GET | `/Dlna/{serverId}/ConnectionManager/ConnectionManager.xml` | GetConnectionManager_3 | Gets Dlna media receiver registrar xml. |
-| POST | `/Dlna/{serverId}/ConnectionManager/Control` | ProcessConnectionManagerControlRequest | Process a connection manager control request. |
-| GET | `/Dlna/{serverId}/ContentDirectory` | GetContentDirectory | Gets Dlna content directory xml. |
-| GET | `/Dlna/{serverId}/ContentDirectory/ContentDirectory` | GetContentDirectory_2 | Gets Dlna content directory xml. |
-| GET | `/Dlna/{serverId}/ContentDirectory/ContentDirectory.xml` | GetContentDirectory_3 | Gets Dlna content directory xml. |
-| POST | `/Dlna/{serverId}/ContentDirectory/Control` | ProcessContentDirectoryControlRequest | Process a content directory control request. |
-| GET | `/Dlna/{serverId}/MediaReceiverRegistrar` | GetMediaReceiverRegistrar | Gets Dlna media receiver registrar xml. |
-| POST | `/Dlna/{serverId}/MediaReceiverRegistrar/Control` | ProcessMediaReceiverRegistrarControlRequest | Process a media receiver registrar control request. |
-| GET | `/Dlna/{serverId}/MediaReceiverRegistrar/MediaReceiverRegistrar` | GetMediaReceiverRegistrar_2 | Gets Dlna media receiver registrar xml. |
-| GET | `/Dlna/{serverId}/MediaReceiverRegistrar/MediaReceiverRegistrar.xml` | GetMediaReceiverRegistrar_3 | Gets Dlna media receiver registrar xml. |
-| GET | `/Dlna/{serverId}/description` | GetDescriptionXml | Get Description Xml. |
-| GET | `/Dlna/{serverId}/description.xml` | GetDescriptionXml_2 | Get Description Xml. |
-| GET | `/Dlna/{serverId}/icons/{fileName}` | GetIconId | Gets a server icon. |
-| GET | `/Environment/DefaultDirectoryBrowser` | GetDefaultDirectoryBrowser | Get Default directory browser. |
-| GET | `/Environment/DirectoryContents` | GetDirectoryContents | Gets the contents of a given directory in the file system. |
-| GET | `/Environment/Drives` | GetDrives | Gets available drives from the server's file system. |
-| GET | `/Environment/NetworkShares` | GetNetworkShares | Gets network paths. |
-| GET | `/Environment/ParentPath` | GetParentPath | Gets the parent path of a given path. |
-| POST | `/Environment/ValidatePath` | ValidatePath | Validates path. |
-| GET | `/FallbackFont/Fonts` | GetFallbackFontList | Gets a list of available fallback font files. |
-| GET | `/FallbackFont/Fonts/{name}` | GetFallbackFont | Gets a fallback font file. |
-| GET | `/Genres` | GetGenres | Gets all genres from a given item, folder, or the entire library. |
-| GET | `/Genres/{genreName}` | GetGenre | Gets a genre, by name. |
-| GET | `/Genres/{name}/Images/{imageType}` | GetGenreImage | Get genre image by name. |
-| HEAD | `/Genres/{name}/Images/{imageType}` | HeadGenreImage | Get genre image by name. |
-| GET | `/Genres/{name}/Images/{imageType}/{imageIndex}` | GetGenreImageByIndex | Get genre image by name. |
-| HEAD | `/Genres/{name}/Images/{imageType}/{imageIndex}` | HeadGenreImageByIndex | Get genre image by name. |
-| GET | `/GetUtcTime` | GetUtcTime | Gets the current UTC time. |
-| GET | `/Images/General` | GetGeneralImages | Get all general images. |
-| GET | `/Images/General/{name}/{type}` | GetGeneralImage | Get General Image. |
-| GET | `/Images/MediaInfo` | GetMediaInfoImages | Get all media info images. |
-| GET | `/Images/MediaInfo/{theme}/{name}` | GetMediaInfoImage | Get media info image. |
-| GET | `/Images/Ratings` | GetRatingImages | Get all general images. |
-| GET | `/Images/Ratings/{theme}/{name}` | GetRatingImage | Get rating image. |
-| GET | `/Images/Remote` | GetRemoteImage | Gets a remote image. |
-| DELETE | `/Items` | DeleteItems | Deletes items from the library and filesystem. |
-| GET | `/Items` | GetItems | Gets items based on a query. |
-| GET | `/Items/Counts` | GetItemCounts | Get item counts. |
-| GET | `/Items/Filters` | GetQueryFiltersLegacy | Gets legacy query filters. |
-| GET | `/Items/Filters2` | GetQueryFilters | Gets query filters. |
-| POST | `/Items/RemoteSearch/Apply/{itemId}` | ApplySearchCriteria | Applies search criteria to an item and refreshes metadata. |
-| POST | `/Items/RemoteSearch/Book` | GetBookRemoteSearchResults | Get book remote search. |
-| POST | `/Items/RemoteSearch/BoxSet` | GetBoxSetRemoteSearchResults | Get box set remote search. |
-| GET | `/Items/RemoteSearch/Image` | GetRemoteSearchImage | Gets a remote image. |
-| POST | `/Items/RemoteSearch/Movie` | GetMovieRemoteSearchResults | Get movie remote search. |
-| POST | `/Items/RemoteSearch/MusicAlbum` | GetMusicAlbumRemoteSearchResults | Get music album remote search. |
-| POST | `/Items/RemoteSearch/MusicArtist` | GetMusicArtistRemoteSearchResults | Get music artist remote search. |
-| POST | `/Items/RemoteSearch/MusicVideo` | GetMusicVideoRemoteSearchResults | Get music video remote search. |
-| POST | `/Items/RemoteSearch/Person` | GetPersonRemoteSearchResults | Get person remote search. |
-| POST | `/Items/RemoteSearch/Series` | GetSeriesRemoteSearchResults | Get series remote search. |
-| POST | `/Items/RemoteSearch/Trailer` | GetTrailerRemoteSearchResults | Get trailer remote search. |
-| GET | `/Items/{id}/InstantMix` | GetInstantMixFromItem | Creates an instant playlist based on a given song. |
-| DELETE | `/Items/{itemId}` | DeleteItem | Deletes an item from the library and filesystem. |
-| POST | `/Items/{itemId}` | UpdateItem | Updates an item. |
-| GET | `/Items/{itemId}/Ancestors` | GetAncestors | Gets all parents of an item. |
-| POST | `/Items/{itemId}/ContentType` | UpdateItemContentType | Updates an item's content type. |
-| GET | `/Items/{itemId}/CriticReviews` | GetCriticReviews | Gets critic review for an item. |
-| GET | `/Items/{itemId}/Download` | GetDownload | Downloads item media. |
-| GET | `/Items/{itemId}/ExternalIdInfos` | GetExternalIdInfos | Get the item's external id info. |
-| GET | `/Items/{itemId}/File` | GetFile | Get the original file of an item. |
-| GET | `/Items/{itemId}/Images` | GetItemImageInfos | Get item image infos. |
-| DELETE | `/Items/{itemId}/Images/{imageType}` | DeleteItemImage | Delete an item's image. |
-| GET | `/Items/{itemId}/Images/{imageType}` | GetItemImage | Gets the item's image. |
-| HEAD | `/Items/{itemId}/Images/{imageType}` | HeadItemImage | Gets the item's image. |
-| POST | `/Items/{itemId}/Images/{imageType}` | SetItemImage | Set item image. |
-| DELETE | `/Items/{itemId}/Images/{imageType}/{imageIndex}` | DeleteItemImageByIndex | Delete an item's image. |
-| GET | `/Items/{itemId}/Images/{imageType}/{imageIndex}` | GetItemImageByIndex | Gets the item's image. |
-| HEAD | `/Items/{itemId}/Images/{imageType}/{imageIndex}` | HeadItemImageByIndex | Gets the item's image. |
-| POST | `/Items/{itemId}/Images/{imageType}/{imageIndex}` | SetItemImageByIndex | Set item image. |
-| POST | `/Items/{itemId}/Images/{imageType}/{imageIndex}/Index` | UpdateItemImageIndex | Updates the index for an item image. |
-| GET | `/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}/{unplayedCount}` | GetItemImage2 | Gets the item's image. |
-| HEAD | `/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}/{unplayedCount}` | HeadItemImage2 | Gets the item's image. |
-| GET | `/Items/{itemId}/MetadataEditor` | GetMetadataEditorInfo | Gets metadata editor info for an item. |
-| GET | `/Items/{itemId}/PlaybackInfo` | GetPlaybackInfo | Gets live playback media info for an item. |
-| POST | `/Items/{itemId}/PlaybackInfo` | GetPostedPlaybackInfo | Gets live playback media info for an item. |
-| POST | `/Items/{itemId}/Refresh` | Post | Refreshes metadata for an item. |
-| GET | `/Items/{itemId}/RemoteImages` | GetRemoteImages | Gets available remote images for an item. |
-| POST | `/Items/{itemId}/RemoteImages/Download` | DownloadRemoteImage | Downloads a remote image for an item. |
-| GET | `/Items/{itemId}/RemoteImages/Providers` | GetRemoteImageProviders | Gets available remote image providers for an item. |
-| GET | `/Items/{itemId}/RemoteSearch/Subtitles/{language}` | SearchRemoteSubtitles | Search remote subtitles. |
-| POST | `/Items/{itemId}/RemoteSearch/Subtitles/{subtitleId}` | DownloadRemoteSubtitles | Downloads a remote subtitle. |
-| GET | `/Items/{itemId}/Similar` | GetSimilarItems | Gets similar items. |
-| GET | `/Items/{itemId}/ThemeMedia` | GetThemeMedia | Get theme songs and videos for an item. |
-| GET | `/Items/{itemId}/ThemeSongs` | GetThemeSongs | Get theme songs for an item. |
-| GET | `/Items/{itemId}/ThemeVideos` | GetThemeVideos | Get theme videos for an item. |
-| GET | `/Libraries/AvailableOptions` | GetLibraryOptionsInfo | Gets the library options info. |
-| POST | `/Library/Media/Updated` | PostUpdatedMedia | Reports that new movies have been added by an external source. |
-| GET | `/Library/MediaFolders` | GetMediaFolders | Gets all user media folders. |
-| POST | `/Library/Movies/Added` | PostAddedMovies | Reports that new movies have been added by an external source. |
-| POST | `/Library/Movies/Updated` | PostUpdatedMovies | Reports that new movies have been added by an external source. |
-| GET | `/Library/PhysicalPaths` | GetPhysicalPaths | Gets a list of physical paths from virtual folders. |
-| GET | `/Library/Refresh` | RefreshLibrary | Starts a library scan. |
-| POST | `/Library/Series/Added` | PostAddedSeries | Reports that new episodes of a series have been added by an external source. |
-| POST | `/Library/Series/Updated` | PostUpdatedSeries | Reports that new episodes of a series have been added by an external source. |
-| DELETE | `/Library/VirtualFolders` | RemoveVirtualFolder | Removes a virtual folder. |
-| GET | `/Library/VirtualFolders` | GetVirtualFolders | Gets all virtual folders. |
-| POST | `/Library/VirtualFolders` | AddVirtualFolder | Adds a virtual folder. |
-| POST | `/Library/VirtualFolders/LibraryOptions` | UpdateLibraryOptions | Update library options. |
-| POST | `/Library/VirtualFolders/Name` | RenameVirtualFolder | Renames a virtual folder. |
-| DELETE | `/Library/VirtualFolders/Paths` | RemoveMediaPath | Remove a media path. |
-| POST | `/Library/VirtualFolders/Paths` | AddMediaPath | Add a media path to a library. |
-| POST | `/Library/VirtualFolders/Paths/Update` | UpdateMediaPath | Updates a media path. |
-| POST | `/LiveStreams/Close` | CloseLiveStream | Closes a media source. |
-| POST | `/LiveStreams/Open` | OpenLiveStream | Opens a media source. |
-| GET | `/LiveTv/ChannelMappingOptions` | GetChannelMappingOptions | Get channel mapping options. |
-| POST | `/LiveTv/ChannelMappings` | SetChannelMapping | Set channel mappings. |
-| GET | `/LiveTv/Channels` | GetLiveTvChannels | Gets available live tv channels. |
-| GET | `/LiveTv/Channels/{channelId}` | GetChannel | Gets a live tv channel. |
-| GET | `/LiveTv/GuideInfo` | GetGuideInfo | Get guid info. |
-| GET | `/LiveTv/Info` | GetLiveTvInfo | Gets available live tv services. |
-| DELETE | `/LiveTv/ListingProviders` | DeleteListingProvider | Delete listing provider. |
-| POST | `/LiveTv/ListingProviders` | AddListingProvider | Adds a listings provider. |
-| GET | `/LiveTv/ListingProviders/Default` | GetDefaultListingProvider | Gets default listings provider info. |
-| GET | `/LiveTv/ListingProviders/Lineups` | GetLineups | Gets available lineups. |
-| GET | `/LiveTv/ListingProviders/SchedulesDirect/Countries` | GetSchedulesDirectCountries | Gets available countries. |
-| GET | `/LiveTv/LiveRecordings/{recordingId}/stream` | GetLiveRecordingFile | Gets a live tv recording stream. |
-| GET | `/LiveTv/LiveStreamFiles/{streamId}/stream.{container}` | GetLiveStreamFile | Gets a live tv channel stream. |
-| GET | `/LiveTv/Programs` | GetLiveTvPrograms | Gets available live tv epgs. |
-| POST | `/LiveTv/Programs` | GetPrograms | Gets available live tv epgs. |
-| GET | `/LiveTv/Programs/Recommended` | GetRecommendedPrograms | Gets recommended live tv epgs. |
-| GET | `/LiveTv/Programs/{programId}` | GetProgram | Gets a live tv program. |
-| GET | `/LiveTv/Recordings` | GetRecordings | Gets live tv recordings. |
-| GET | `/LiveTv/Recordings/Folders` | GetRecordingFolders | Gets recording folders. |
-| GET | `/LiveTv/Recordings/Groups` | GetRecordingGroups | Gets live tv recording groups. |
-| GET | `/LiveTv/Recordings/Groups/{groupId}` | GetRecordingGroup | Get recording group. |
-| GET | `/LiveTv/Recordings/Series` | GetRecordingsSeries | Gets live tv recording series. |
-| DELETE | `/LiveTv/Recordings/{recordingId}` | DeleteRecording | Deletes a live tv recording. |
-| GET | `/LiveTv/Recordings/{recordingId}` | GetRecording | Gets a live tv recording. |
-| GET | `/LiveTv/SeriesTimers` | GetSeriesTimers | Gets live tv series timers. |
-| POST | `/LiveTv/SeriesTimers` | CreateSeriesTimer | Creates a live tv series timer. |
-| DELETE | `/LiveTv/SeriesTimers/{timerId}` | CancelSeriesTimer | Cancels a live tv series timer. |
-| GET | `/LiveTv/SeriesTimers/{timerId}` | GetSeriesTimer | Gets a live tv series timer. |
-| POST | `/LiveTv/SeriesTimers/{timerId}` | UpdateSeriesTimer | Updates a live tv series timer. |
-| GET | `/LiveTv/Timers` | GetTimers | Gets the live tv timers. |
-| POST | `/LiveTv/Timers` | CreateTimer | Creates a live tv timer. |
-| GET | `/LiveTv/Timers/Defaults` | GetDefaultTimer | Gets the default values for a new timer. |
-| DELETE | `/LiveTv/Timers/{timerId}` | CancelTimer | Cancels a live tv timer. |
-| GET | `/LiveTv/Timers/{timerId}` | GetTimer | Gets a timer. |
-| POST | `/LiveTv/Timers/{timerId}` | UpdateTimer | Updates a live tv timer. |
-| DELETE | `/LiveTv/TunerHosts` | DeleteTunerHost | Deletes a tuner host. |
-| POST | `/LiveTv/TunerHosts` | AddTunerHost | Adds a tuner host. |
-| GET | `/LiveTv/TunerHosts/Types` | GetTunerHostTypes | Get tuner host types. |
-| GET | `/LiveTv/Tuners/Discover` | DiscoverTuners | Discover tuners. |
-| GET | `/LiveTv/Tuners/Discvover` | DiscvoverTuners | Discover tuners. |
-| POST | `/LiveTv/Tuners/{tunerId}/Reset` | ResetTuner | Resets a tv tuner. |
-| GET | `/Localization/Countries` | GetCountries | Gets known countries. |
-| GET | `/Localization/Cultures` | GetCultures | Gets known cultures. |
-| GET | `/Localization/Options` | GetLocalizationOptions | Gets localization options. |
-| GET | `/Localization/ParentalRatings` | GetParentalRatings | Gets known parental ratings. |
-| GET | `/Movies/Recommendations` | GetMovieRecommendations | Gets movie recommendations. |
-| GET | `/Movies/{itemId}/Similar` | GetSimilarMovies | Gets similar items. |
-| GET | `/MusicGenres` | GetMusicGenres | Gets all music genres from a given item, folder, or the entire library. |
-| GET | `/MusicGenres/{genreName}` | GetMusicGenre | Gets a music genre, by name. |
-| GET | `/MusicGenres/{id}/InstantMix` | GetInstantMixFromMusicGenres | Creates an instant playlist based on a given song. |
-| GET | `/MusicGenres/{name}/Images/{imageType}` | GetMusicGenreImage | Get music genre image by name. |
-| HEAD | `/MusicGenres/{name}/Images/{imageType}` | HeadMusicGenreImage | Get music genre image by name. |
-| GET | `/MusicGenres/{name}/Images/{imageType}/{imageIndex}` | GetMusicGenreImageByIndex | Get music genre image by name. |
-| HEAD | `/MusicGenres/{name}/Images/{imageType}/{imageIndex}` | HeadMusicGenreImageByIndex | Get music genre image by name. |
-| GET | `/MusicGenres/{name}/InstantMix` | GetInstantMixFromMusicGenre | Creates an instant playlist based on a given song. |
-| POST | `/Notifications/Admin` | CreateAdminNotification | Sends a notification to all admins. |
-| GET | `/Notifications/Services` | GetNotificationServices | Gets notification services. |
-| GET | `/Notifications/Types` | GetNotificationTypes | Gets notification types. |
-| GET | `/Notifications/{userId}` | GetNotifications | Gets a user's notifications. |
-| POST | `/Notifications/{userId}/Read` | SetRead | Sets notifications as read. |
-| GET | `/Notifications/{userId}/Summary` | GetNotificationsSummary | Gets a user's notification summary. |
-| POST | `/Notifications/{userId}/Unread` | SetUnread | Sets notifications as unread. |
-| GET | `/Packages` | GetPackages | Gets available packages. |
-| POST | `/Packages/Installed/{name}` | InstallPackage | Installs a package. |
-| DELETE | `/Packages/Installing/{packageId}` | CancelPackageInstallation | Cancels a package installation. |
-| GET | `/Packages/{name}` | GetPackageInfo | Gets a package by name or assembly GUID. |
-| GET | `/Persons` | GetPersons | Gets all persons. |
-| GET | `/Persons/{name}` | GetPerson | Get person by name. |
-| GET | `/Persons/{name}/Images/{imageType}` | GetPersonImage | Get person image by name. |
-| HEAD | `/Persons/{name}/Images/{imageType}` | HeadPersonImage | Get person image by name. |
-| GET | `/Persons/{name}/Images/{imageType}/{imageIndex}` | GetPersonImageByIndex | Get person image by name. |
-| HEAD | `/Persons/{name}/Images/{imageType}/{imageIndex}` | HeadPersonImageByIndex | Get person image by name. |
-| GET | `/Playback/BitrateTest` | GetBitrateTestBytes | Tests the network with a request with the size of the bitrate. |
-| POST | `/Playlists` | CreatePlaylist | Creates a new playlist. |
-| GET | `/Playlists/{id}/InstantMix` | GetInstantMixFromPlaylist | Creates an instant playlist based on a given song. |
-| DELETE | `/Playlists/{playlistId}/Items` | RemoveFromPlaylist | Removes items from a playlist. |
-| GET | `/Playlists/{playlistId}/Items` | GetPlaylistItems | Gets the original items of a playlist. |
-| POST | `/Playlists/{playlistId}/Items` | AddToPlaylist | Adds items to a playlist. |
-| POST | `/Playlists/{playlistId}/Items/{itemId}/Move/{newIndex}` | MoveItem | Moves a playlist item. |
-| GET | `/Plugins` | GetPlugins | Gets a list of currently installed plugins. |
-| POST | `/Plugins/SecurityInfo` | UpdatePluginSecurityInfo | Updates plugin security info. |
-| DELETE | `/Plugins/{pluginId}` | UninstallPlugin | Uninstalls a plugin. |
-| GET | `/Plugins/{pluginId}/Configuration` | GetPluginConfiguration | Gets plugin configuration. |
-| POST | `/Plugins/{pluginId}/Configuration` | UpdatePluginConfiguration | Updates plugin configuration. |
-| POST | `/Plugins/{pluginId}/Manifest` | GetPluginManifest | Gets a plugin's manifest. |
-| DELETE | `/Plugins/{pluginId}/{version}` | UninstallPluginByVersion | Uninstalls a plugin by version. |
-| POST | `/Plugins/{pluginId}/{version}/Disable` | DisablePlugin | Disable a plugin. |
-| POST | `/Plugins/{pluginId}/{version}/Enable` | EnablePlugin | Enables a disabled plugin. |
-| GET | `/Plugins/{pluginId}/{version}/Image` | GetPluginImage | Gets a plugin's image. |
-| GET | `/Providers/Subtitles/Subtitles/{id}` | GetRemoteSubtitles | Gets the remote subtitles. |
-| POST | `/QuickConnect/Activate` | Activate | Temporarily activates quick connect for five minutes. |
-| POST | `/QuickConnect/Authorize` | Authorize | Authorizes a pending quick connect request. |
-| POST | `/QuickConnect/Available` | Available | Enables or disables quick connect. |
-| GET | `/QuickConnect/Connect` | Connect | Attempts to retrieve authentication information. |
-| POST | `/QuickConnect/Deauthorize` | Deauthorize | Deauthorize all quick connect devices for the current user. |
-| GET | `/QuickConnect/Initiate` | Initiate | Initiate a new quick connect request. |
-| GET | `/QuickConnect/Status` | GetStatus | Gets the current quick connect state. |
-| GET | `/Repositories` | GetRepositories | Gets all package repositories. |
-| POST | `/Repositories` | SetRepositories | Sets the enabled and existing package repositories. |
-| GET | `/ScheduledTasks` | GetTasks | Get tasks. |
-| DELETE | `/ScheduledTasks/Running/{taskId}` | StopTask | Stop specified task. |
-| POST | `/ScheduledTasks/Running/{taskId}` | StartTask | Start specified task. |
-| GET | `/ScheduledTasks/{taskId}` | GetTask | Get task by id. |
-| POST | `/ScheduledTasks/{taskId}/Triggers` | UpdateTask | Update specified task triggers. |
-| GET | `/Search/Hints` | Get | Gets the search hint result. |
-| GET | `/Sessions` | GetSessions | Gets a list of sessions. |
-| POST | `/Sessions/Capabilities` | PostCapabilities | Updates capabilities for a device. |
-| POST | `/Sessions/Capabilities/Full` | PostFullCapabilities | Updates capabilities for a device. |
-| POST | `/Sessions/Logout` | ReportSessionEnded | Reports that a session has ended. |
-| POST | `/Sessions/Playing` | ReportPlaybackStart | Reports playback has started within a session. |
-| POST | `/Sessions/Playing/Ping` | PingPlaybackSession | Pings a playback session. |
-| POST | `/Sessions/Playing/Progress` | ReportPlaybackProgress | Reports playback progress within a session. |
-| POST | `/Sessions/Playing/Stopped` | ReportPlaybackStopped | Reports playback has stopped within a session. |
-| POST | `/Sessions/Viewing` | ReportViewing | Reports that a session is viewing an item. |
-| POST | `/Sessions/{sessionId}/Command` | SendFullGeneralCommand | Issues a full general command to a client. |
-| POST | `/Sessions/{sessionId}/Command/{command}` | SendGeneralCommand | Issues a general command to a client. |
-| POST | `/Sessions/{sessionId}/Message` | SendMessageCommand | Issues a command to a client to display a message to the user. |
-| POST | `/Sessions/{sessionId}/Playing` | Play | Instructs a session to play an item. |
-| POST | `/Sessions/{sessionId}/Playing/{command}` | SendPlaystateCommand | Issues a playstate command to a client. |
-| POST | `/Sessions/{sessionId}/System/{command}` | SendSystemCommand | Issues a system command to a client. |
-| DELETE | `/Sessions/{sessionId}/User/{userId}` | RemoveUserFromSession | Removes an additional user from a session. |
-| POST | `/Sessions/{sessionId}/User/{userId}` | AddUserToSession | Adds an additional user to a session. |
-| POST | `/Sessions/{sessionId}/Viewing` | DisplayContent | Instructs a session to browse to an item or view. |
-| GET | `/Shows/NextUp` | GetNextUp | Gets a list of next up episodes. |
-| GET | `/Shows/Upcoming` | GetUpcomingEpisodes | Gets a list of upcoming episodes. |
-| GET | `/Shows/{itemId}/Similar` | GetSimilarShows | Gets similar items. |
-| GET | `/Shows/{seriesId}/Episodes` | GetEpisodes | Gets episodes for a tv season. |
-| GET | `/Shows/{seriesId}/Seasons` | GetSeasons | Gets seasons for a tv series. |
-| GET | `/Songs/{id}/InstantMix` | GetInstantMixFromSong | Creates an instant playlist based on a given song. |
-| POST | `/Startup/Complete` | CompleteWizard | Completes the startup wizard. |
-| GET | `/Startup/Configuration` | GetStartupConfiguration | Gets the initial startup wizard configuration. |
-| POST | `/Startup/Configuration` | UpdateInitialConfiguration | Sets the initial startup wizard configuration. |
-| GET | `/Startup/FirstUser` | GetFirstUser_2 | Gets the first user. |
-| POST | `/Startup/RemoteAccess` | SetRemoteAccess | Sets remote access and UPnP. |
-| GET | `/Startup/User` | GetFirstUser | Gets the first user. |
-| POST | `/Startup/User` | UpdateStartupUser | Sets the user name and password. |
-| GET | `/Studios` | GetStudios | Gets all studios from a given item, folder, or the entire library. |
-| GET | `/Studios/{name}` | GetStudio | Gets a studio by name. |
-| GET | `/Studios/{name}/Images/{imageType}` | GetStudioImage | Get studio image by name. |
-| HEAD | `/Studios/{name}/Images/{imageType}` | HeadStudioImage | Get studio image by name. |
-| GET | `/Studios/{name}/Images/{imageType}/{imageIndex}` | GetStudioImageByIndex | Get studio image by name. |
-| HEAD | `/Studios/{name}/Images/{imageType}/{imageIndex}` | HeadStudioImageByIndex | Get studio image by name. |
-| POST | `/SyncPlay/Buffering` | SyncPlayBuffering | Notify SyncPlay group that member is buffering. |
-| POST | `/SyncPlay/Join` | SyncPlayJoinGroup | Join an existing SyncPlay group. |
-| POST | `/SyncPlay/Leave` | SyncPlayLeaveGroup | Leave the joined SyncPlay group. |
-| GET | `/SyncPlay/List` | SyncPlayGetGroups | Gets all SyncPlay groups. |
-| POST | `/SyncPlay/MovePlaylistItem` | SyncPlayMovePlaylistItem | Request to move an item in the playlist in SyncPlay group. |
-| POST | `/SyncPlay/New` | SyncPlayCreateGroup | Create a new SyncPlay group. |
-| POST | `/SyncPlay/NextItem` | SyncPlayNextItem | Request next item in SyncPlay group. |
-| POST | `/SyncPlay/Pause` | SyncPlayPause | Request pause in SyncPlay group. |
-| POST | `/SyncPlay/Ping` | SyncPlayPing | Update session ping. |
-| POST | `/SyncPlay/PreviousItem` | SyncPlayPreviousItem | Request previous item in SyncPlay group. |
-| POST | `/SyncPlay/Queue` | SyncPlayQueue | Request to queue items to the playlist of a SyncPlay group. |
-| POST | `/SyncPlay/Ready` | SyncPlayReady | Notify SyncPlay group that member is ready for playback. |
-| POST | `/SyncPlay/RemoveFromPlaylist` | SyncPlayRemoveFromPlaylist | Request to remove items from the playlist in SyncPlay group. |
-| POST | `/SyncPlay/Seek` | SyncPlaySeek | Request seek in SyncPlay group. |
-| POST | `/SyncPlay/SetIgnoreWait` | SyncPlaySetIgnoreWait | Request SyncPlay group to ignore member during group-wait. |
-| POST | `/SyncPlay/SetNewQueue` | SyncPlaySetNewQueue | Request to set new playlist in SyncPlay group. |
-| POST | `/SyncPlay/SetPlaylistItem` | SyncPlaySetPlaylistItem | Request to change playlist item in SyncPlay group. |
-| POST | `/SyncPlay/SetRepeatMode` | SyncPlaySetRepeatMode | Request to set repeat mode in SyncPlay group. |
-| POST | `/SyncPlay/SetShuffleMode` | SyncPlaySetShuffleMode | Request to set shuffle mode in SyncPlay group. |
-| POST | `/SyncPlay/Stop` | SyncPlayStop | Request stop in SyncPlay group. |
-| POST | `/SyncPlay/Unpause` | SyncPlayUnpause | Request unpause in SyncPlay group. |
-| GET | `/System/ActivityLog/Entries` | GetLogEntries | Gets activity log entries. |
-| GET | `/System/Configuration` | GetConfiguration | Gets application configuration. |
-| POST | `/System/Configuration` | UpdateConfiguration | Updates application configuration. |
-| GET | `/System/Configuration/MetadataOptions/Default` | GetDefaultMetadataOptions | Gets a default MetadataOptions object. |
-| GET | `/System/Configuration/{key}` | GetNamedConfiguration | Gets a named configuration. |
-| POST | `/System/Configuration/{key}` | UpdateNamedConfiguration | Updates named configuration. |
-| GET | `/System/Endpoint` | GetEndpointInfo | Gets information about the request endpoint. |
-| GET | `/System/Info` | GetSystemInfo | Gets information about the server. |
-| GET | `/System/Info/Public` | GetPublicSystemInfo | Gets public information about the server. |
-| GET | `/System/Logs` | GetServerLogs | Gets a list of available server log files. |
-| GET | `/System/Logs/Log` | GetLogFile | Gets a log file. |
-| POST | `/System/MediaEncoder/Path` | UpdateMediaEncoderPath | Updates the path to the media encoder. |
-| GET | `/System/Ping` | GetPingSystem | Pings the system. |
-| POST | `/System/Ping` | PostPingSystem | Pings the system. |
-| POST | `/System/Restart` | RestartApplication | Restarts the application. |
-| POST | `/System/Shutdown` | ShutdownApplication | Shuts down the application. |
-| GET | `/System/WakeOnLanInfo` | GetWakeOnLanInfo | Gets wake on lan information. |
-| GET | `/Trailers` | GetTrailers | Finds movies and trailers similar to a given trailer. |
-| GET | `/Trailers/{itemId}/Similar` | GetSimilarTrailers | Gets similar items. |
-| GET | `/Users` | GetUsers | Gets a list of users. |
-| POST | `/Users/AuthenticateByName` | AuthenticateUserByName | Authenticates a user by name. |
-| POST | `/Users/AuthenticateWithQuickConnect` | AuthenticateWithQuickConnect | Authenticates a user with quick connect. |
-| POST | `/Users/ForgotPassword` | ForgotPassword | Initiates the forgot password process for a local user. |
-| POST | `/Users/ForgotPassword/Pin` | ForgotPasswordPin | Redeems a forgot password pin. |
-| GET | `/Users/Me` | GetCurrentUser | Gets the user based on auth token. |
-| POST | `/Users/New` | CreateUserByName | Creates a user. |
-| GET | `/Users/Public` | GetPublicUsers | Gets a list of publicly visible users for display on a login screen. |
-| DELETE | `/Users/{userId}` | DeleteUser | Deletes a user. |
-| GET | `/Users/{userId}` | GetUserById | Gets a user by Id. |
-| POST | `/Users/{userId}` | UpdateUser | Updates a user. |
-| POST | `/Users/{userId}/Authenticate` | AuthenticateUser | Authenticates a user. |
-| POST | `/Users/{userId}/Configuration` | UpdateUserConfiguration | Updates a user configuration. |
-| POST | `/Users/{userId}/EasyPassword` | UpdateUserEasyPassword | Updates a user's easy password. |
-| DELETE | `/Users/{userId}/FavoriteItems/{itemId}` | UnmarkFavoriteItem | Unmarks item as a favorite. |
-| POST | `/Users/{userId}/FavoriteItems/{itemId}` | MarkFavoriteItem | Marks an item as a favorite. |
-| GET | `/Users/{userId}/GroupingOptions` | GetGroupingOptions | Get user view grouping options. |
-| DELETE | `/Users/{userId}/Images/{imageType}` | DeleteUserImage | Delete the user's image. |
-| GET | `/Users/{userId}/Images/{imageType}` | GetUserImage | Get user profile image. |
-| HEAD | `/Users/{userId}/Images/{imageType}` | HeadUserImage | Get user profile image. |
-| POST | `/Users/{userId}/Images/{imageType}` | PostUserImage | Sets the user image. |
-| GET | `/Users/{userId}/Images/{imageType}/{imageIndex}` | GetUserImageByIndex | Get user profile image. |
-| HEAD | `/Users/{userId}/Images/{imageType}/{imageIndex}` | HeadUserImageByIndex | Get user profile image. |
-| DELETE | `/Users/{userId}/Images/{imageType}/{index}` | DeleteUserImageByIndex | Delete the user's image. |
-| POST | `/Users/{userId}/Images/{imageType}/{index}` | PostUserImageByIndex | Sets the user image. |
-| GET | `/Users/{userId}/Items` | GetItemsByUserId | Gets items based on a query. |
-| GET | `/Users/{userId}/Items/Latest` | GetLatestMedia | Gets latest media. |
-| GET | `/Users/{userId}/Items/Resume` | GetResumeItems | Gets items based on a query. |
-| GET | `/Users/{userId}/Items/Root` | GetRootFolder | Gets the root folder from a user's library. |
-| GET | `/Users/{userId}/Items/{itemId}` | GetItem | Gets an item from a user's library. |
-| GET | `/Users/{userId}/Items/{itemId}/Intros` | GetIntros | Gets intros to play before the main media item plays. |
-| GET | `/Users/{userId}/Items/{itemId}/LocalTrailers` | GetLocalTrailers | Gets local trailers for an item. |
-| DELETE | `/Users/{userId}/Items/{itemId}/Rating` | DeleteUserItemRating | Deletes a user's saved personal rating for an item. |
-| POST | `/Users/{userId}/Items/{itemId}/Rating` | UpdateUserItemRating | Updates a user's rating for an item. |
-| GET | `/Users/{userId}/Items/{itemId}/SpecialFeatures` | GetSpecialFeatures | Gets special features for an item. |
-| POST | `/Users/{userId}/Password` | UpdateUserPassword | Updates a user's password. |
-| DELETE | `/Users/{userId}/PlayedItems/{itemId}` | MarkUnplayedItem | Marks an item as unplayed for user. |
-| POST | `/Users/{userId}/PlayedItems/{itemId}` | MarkPlayedItem | Marks an item as played for user. |
-| DELETE | `/Users/{userId}/PlayingItems/{itemId}` | OnPlaybackStopped | Reports that a user has stopped playing an item. |
-| POST | `/Users/{userId}/PlayingItems/{itemId}` | OnPlaybackStart | Reports that a user has begun playing an item. |
-| POST | `/Users/{userId}/PlayingItems/{itemId}/Progress` | OnPlaybackProgress | Reports a user's playback progress. |
-| POST | `/Users/{userId}/Policy` | UpdateUserPolicy | Updates a user policy. |
-| GET | `/Users/{userId}/Suggestions` | GetSuggestions | Gets suggestions. |
-| GET | `/Users/{userId}/Views` | GetUserViews | Get user views. |
-| DELETE | `/Videos/ActiveEncodings` | StopEncodingProcess | Stops an active encoding. |
-| POST | `/Videos/MergeVersions` | MergeVersions | Merges videos into a single record. |
-| GET | `/Videos/{itemId}/AdditionalParts` | GetAdditionalPart | Gets additional parts for a video. |
-| DELETE | `/Videos/{itemId}/AlternateSources` | DeleteAlternateSources | Removes alternate video sources. |
-| POST | `/Videos/{itemId}/Subtitles` | UploadSubtitle | Upload an external subtitle file. |
-| DELETE | `/Videos/{itemId}/Subtitles/{index}` | DeleteSubtitle | Deletes an external subtitle file. |
-| GET | `/Videos/{itemId}/hls/{playlistId}/stream.m3u8` | GetHlsPlaylistLegacy | Gets a hls video playlist. |
-| GET | `/Videos/{itemId}/hls/{playlistId}/{segmentId}.{segmentContainer}` | GetHlsVideoSegmentLegacy | Gets a hls video segment. |
-| GET | `/Videos/{itemId}/hls1/{playlistId}/{segmentId}.{container}` | GetHlsVideoSegment | Gets a video stream using HTTP live streaming. |
-| GET | `/Videos/{itemId}/live.m3u8` | GetLiveHlsStream | Gets a hls live stream. |
-| GET | `/Videos/{itemId}/main.m3u8` | GetVariantHlsVideoPlaylist | Gets a video stream using HTTP live streaming. |
-| GET | `/Videos/{itemId}/master.m3u8` | GetMasterHlsVideoPlaylist | Gets a video hls playlist stream. |
-| HEAD | `/Videos/{itemId}/master.m3u8` | HeadMasterHlsVideoPlaylist | Gets a video hls playlist stream. |
-| GET | `/Videos/{itemId}/stream` | GetVideoStream | Gets a video stream. |
-| HEAD | `/Videos/{itemId}/stream` | HeadVideoStream | Gets a video stream. |
-| GET | `/Videos/{itemId}/{mediaSourceId}/Subtitles/{index}/Stream.{format}` | GetSubtitle | Gets subtitles in a specified format. |
-| GET | `/Videos/{itemId}/{mediaSourceId}/Subtitles/{index}/subtitles.m3u8` | GetSubtitlePlaylist | Gets an HLS subtitle playlist. |
-| GET | `/Videos/{itemId}/{mediaSourceId}/Subtitles/{index}/{startPositionTicks}/Stream.{format}` | GetSubtitleWithTicks | Gets subtitles in a specified format. |
-| GET | `/Videos/{itemId}/{stream}.{container}` | GetVideoStreamByContainer | Gets a video stream. |
-| HEAD | `/Videos/{itemId}/{stream}.{container}` | HeadVideoStreamByContainer | Gets a video stream. |
-| GET | `/Videos/{videoId}/{mediaSourceId}/Attachments/{index}` | GetAttachment | Get video attachment. |
-| GET | `/Years` | GetYears | Get years. |
-| GET | `/Years/{year}` | GetYear | Gets a year. |
-| GET | `/web/ConfigurationPage` | GetDashboardConfigurationPage | Gets a dashboard configuration page. |
-| GET | `/web/ConfigurationPages` | GetConfigurationPages | Gets the configuration pages. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/Albums/{id}/InstantMix` | GetInstantMixFromAlbum | `id`*, `userId`, `limit`, `fields`, `enableImages`, `enableUserData`, `imageTypeLimit`, `enableImageTypes` | BaseItemDtoQueryResult | yes | Creates an instant playlist based on a given song. |
+| GET | `/Albums/{itemId}/Similar` | GetSimilarAlbums | `itemId`*, `excludeArtistIds`, `userId`, `limit`, `fields` | BaseItemDtoQueryResult | yes | Gets similar items. |
+| GET | `/Artists` | GetArtists | `minCommunityRating`, `startIndex`, `limit`, `searchTerm`, `parentId`, `fields`, `excludeItemTypes`, `includeItemTypes`, `filters`, `isFavorite`, `mediaTypes`, `genres`, `genreIds`, `officialRatings`, `tags`, `years`, `enableUserData`, `imageTypeLimit`, `enableImageTypes`, `person`, `personIds`, `personTypes`, `studios`, `studioIds`, `userId`, `nameStartsWithOrGreater`, `nameStartsWith`, `nameLessThan`, `enableImages`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets all artists from a given item, folder, or the entire library. |
+| GET | `/Artists/AlbumArtists` | GetAlbumArtists | `minCommunityRating`, `startIndex`, `limit`, `searchTerm`, `parentId`, `fields`, `excludeItemTypes`, `includeItemTypes`, `filters`, `isFavorite`, `mediaTypes`, `genres`, `genreIds`, `officialRatings`, `tags`, `years`, `enableUserData`, `imageTypeLimit`, `enableImageTypes`, `person`, `personIds`, `personTypes`, `studios`, `studioIds`, `userId`, `nameStartsWithOrGreater`, `nameStartsWith`, `nameLessThan`, `enableImages`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets all album artists from a given item, folder, or the entire library. |
+| GET | `/Artists/{id}/InstantMix` | GetInstantMixFromArtists | `id`*, `userId`, `limit`, `fields`, `enableImages`, `enableUserData`, `imageTypeLimit`, `enableImageTypes` | BaseItemDtoQueryResult | yes | Creates an instant playlist based on a given song. |
+| GET | `/Artists/{itemId}/Similar` | GetSimilarArtists | `itemId`*, `excludeArtistIds`, `userId`, `limit`, `fields` | BaseItemDtoQueryResult | yes | Gets similar items. |
+| GET | `/Artists/{name}` | GetArtistByName | `name`*, `userId` | BaseItemDto | yes | Gets an artist by name. |
+| GET | `/Artists/{name}/Images/{imageType}/{imageIndex}` | GetArtistImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex`* | string:binary | yes | Get artist image by name. |
+| HEAD | `/Artists/{name}/Images/{imageType}/{imageIndex}` | HeadArtistImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex`* | string:binary | yes | Get artist image by name. |
+| GET | `/Audio/{itemId}/hls/{segmentId}/stream.aac` | GetHlsAudioSegmentLegacyAac | `itemId`*, `segmentId`* | string:binary | yes | Gets the specified audio segment for an audio item. |
+| GET | `/Audio/{itemId}/hls/{segmentId}/stream.mp3` | GetHlsAudioSegmentLegacyMp3 | `itemId`*, `segmentId`* | string:binary | yes | Gets the specified audio segment for an audio item. |
+| GET | `/Audio/{itemId}/hls1/{playlistId}/{segmentId}.{container}` | GetHlsAudioSegment | `itemId`*, `playlistId`*, `segmentId`*, `container`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `maxStreamingBitrate`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets a video stream using HTTP live streaming. |
+| GET | `/Audio/{itemId}/main.m3u8` | GetVariantHlsAudioPlaylist | `itemId`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `maxStreamingBitrate`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets an audio stream using HTTP live streaming. |
+| GET | `/Audio/{itemId}/master.m3u8` | GetMasterHlsAudioPlaylist | `itemId`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`*, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `maxStreamingBitrate`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions`, `enableAdaptiveBitrateStreaming` | string:binary | yes | Gets an audio hls playlist stream. |
+| HEAD | `/Audio/{itemId}/master.m3u8` | HeadMasterHlsAudioPlaylist | `itemId`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`*, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `maxStreamingBitrate`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions`, `enableAdaptiveBitrateStreaming` | string:binary | yes | Gets an audio hls playlist stream. |
+| GET | `/Audio/{itemId}/stream` | GetAudioStream | `itemId`*, `container`, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets an audio stream. |
+| HEAD | `/Audio/{itemId}/stream` | HeadAudioStream | `itemId`*, `container`, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets an audio stream. |
+| GET | `/Audio/{itemId}/stream.{container}` | GetAudioStreamByContainer | `itemId`*, `container`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets an audio stream. |
+| HEAD | `/Audio/{itemId}/stream.{container}` | HeadAudioStreamByContainer | `itemId`*, `container`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets an audio stream. |
+| GET | `/Audio/{itemId}/universal` | GetUniversalAudioStream | `itemId`*, `container`, `mediaSourceId`, `deviceId`, `userId`, `audioCodec`, `maxAudioChannels`, `transcodingAudioChannels`, `maxStreamingBitrate`, `audioBitRate`, `startTimeTicks`, `transcodingContainer`, `transcodingProtocol`, `maxAudioSampleRate`, `maxAudioBitDepth`, `enableRemoteMedia`, `breakOnNonKeyFrames`, `enableRedirection` | string:binary | yes | Gets an audio stream. |
+| HEAD | `/Audio/{itemId}/universal` | HeadUniversalAudioStream | `itemId`*, `container`, `mediaSourceId`, `deviceId`, `userId`, `audioCodec`, `maxAudioChannels`, `transcodingAudioChannels`, `maxStreamingBitrate`, `audioBitRate`, `startTimeTicks`, `transcodingContainer`, `transcodingProtocol`, `maxAudioSampleRate`, `maxAudioBitDepth`, `enableRemoteMedia`, `breakOnNonKeyFrames`, `enableRedirection` | string:binary | yes | Gets an audio stream. |
+| GET | `/Auth/Keys` | GetKeys | — | AuthenticationInfoQueryResult | yes | Get all keys. |
+| POST | `/Auth/Keys` | CreateKey | `app`* | — |  | Create a new api key. |
+| DELETE | `/Auth/Keys/{key}` | RevokeKey | `key`* | — |  | Remove an api key. |
+| GET | `/Auth/PasswordResetProviders` | GetPasswordResetProviders | — | NameIdPair[] | yes | Get all password reset providers. |
+| GET | `/Auth/Providers` | GetAuthProviders | — | NameIdPair[] | yes | Get all auth providers. |
+| GET | `/Branding/Configuration` | GetBrandingOptions | — | BrandingOptions | yes | Gets branding configuration. |
+| GET | `/Branding/Css` | GetBrandingCss | — | string | yes | Gets branding css. |
+| GET | `/Branding/Css.css` | GetBrandingCss_2 | — | string | yes | Gets branding css. |
+| GET | `/Channels` | GetChannels | `userId`, `startIndex`, `limit`, `supportsLatestItems`, `supportsMediaDeletion`, `isFavorite` | BaseItemDtoQueryResult | yes | Gets available channels. |
+| GET | `/Channels/Features` | GetAllChannelFeatures | — | ChannelFeatures[] | yes | Get all channel features. |
+| GET | `/Channels/Items/Latest` | GetLatestChannelItems | `userId`, `startIndex`, `limit`, `filters`, `fields`, `channelIds` | BaseItemDtoQueryResult | yes | Gets latest channel items. |
+| GET | `/Channels/{channelId}/Features` | GetChannelFeatures | `channelId`* | ChannelFeatures | yes | Get channel features. |
+| GET | `/Channels/{channelId}/Items` | GetChannelItems | `channelId`*, `folderId`, `userId`, `startIndex`, `limit`, `sortOrder`, `filters`, `sortBy`, `fields` | BaseItemDtoQueryResult | yes | Get channel items. |
+| POST | `/Collections` | CreateCollection | `name`, `ids`, `parentId`, `isLocked` | CollectionCreationResult |  | Creates a new collection. |
+| POST | `/Collections/{collectionId}/Items` | AddToCollection | `collectionId`*, `ids`* | — |  | Adds items to a collection. |
+| DELETE | `/Collections/{collectionId}/Items` | RemoveFromCollection | `collectionId`*, `ids`* | — |  | Removes items from a collection. |
+| GET | `/Devices` | GetDevices | `supportsSync`, `userId` | DeviceInfoQueryResult | yes | Get Devices. |
+| DELETE | `/Devices` | DeleteDevice | `id`* | — |  | Deletes a device. |
+| GET | `/Devices/Info` | GetDeviceInfo | `id`* | DeviceInfo | yes | Get info for a device. |
+| GET | `/Devices/Options` | GetDeviceOptions | `id`* | DeviceOptions | yes | Get options for a device. |
+| POST | `/Devices/Options` | UpdateDeviceOptions | `id`*, body*: DeviceOptions | — |  | Update device options. |
+| GET | `/DisplayPreferences/{displayPreferencesId}` | GetDisplayPreferences | `displayPreferencesId`*, `userId`*, `client`* | DisplayPreferencesDto | yes | Get Display Preferences. |
+| POST | `/DisplayPreferences/{displayPreferencesId}` | UpdateDisplayPreferences | `displayPreferencesId`*, `userId`*, `client`*, body*: DisplayPreferencesDto | — |  | Update Display Preferences. |
+| GET | `/Dlna/ProfileInfos` | GetProfileInfos | — | DeviceProfileInfo[] | yes | Get profile infos. |
+| POST | `/Dlna/Profiles` | CreateProfile | body: DeviceProfile | — |  | Creates a profile. |
+| GET | `/Dlna/Profiles/Default` | GetDefaultProfile | — | DeviceProfile | yes | Gets the default profile. |
+| GET | `/Dlna/Profiles/{profileId}` | GetProfile | `profileId`* | DeviceProfile | yes | Gets a single profile. |
+| POST | `/Dlna/Profiles/{profileId}` | UpdateProfile | `profileId`*, body: DeviceProfile | — |  | Updates a profile. |
+| DELETE | `/Dlna/Profiles/{profileId}` | DeleteProfile | `profileId`* | — |  | Deletes a profile. |
+| GET | `/Dlna/icons/{fileName}` | GetIcon | `fileName`* | string:binary | yes | Gets a server icon. |
+| GET | `/Dlna/{serverId}/ConnectionManager` | GetConnectionManager | `serverId`* | string:binary | yes | Gets Dlna media receiver registrar xml. |
+| GET | `/Dlna/{serverId}/ConnectionManager/ConnectionManager` | GetConnectionManager_2 | `serverId`* | string:binary | yes | Gets Dlna media receiver registrar xml. |
+| GET | `/Dlna/{serverId}/ConnectionManager/ConnectionManager.xml` | GetConnectionManager_3 | `serverId`* | string:binary | yes | Gets Dlna media receiver registrar xml. |
+| POST | `/Dlna/{serverId}/ConnectionManager/Control` | ProcessConnectionManagerControlRequest | `serverId`* | string:binary |  | Process a connection manager control request. |
+| GET | `/Dlna/{serverId}/ContentDirectory` | GetContentDirectory | `serverId`* | string:binary | yes | Gets Dlna content directory xml. |
+| GET | `/Dlna/{serverId}/ContentDirectory/ContentDirectory` | GetContentDirectory_2 | `serverId`* | string:binary | yes | Gets Dlna content directory xml. |
+| GET | `/Dlna/{serverId}/ContentDirectory/ContentDirectory.xml` | GetContentDirectory_3 | `serverId`* | string:binary | yes | Gets Dlna content directory xml. |
+| POST | `/Dlna/{serverId}/ContentDirectory/Control` | ProcessContentDirectoryControlRequest | `serverId`* | string:binary |  | Process a content directory control request. |
+| GET | `/Dlna/{serverId}/MediaReceiverRegistrar` | GetMediaReceiverRegistrar | `serverId`* | string:binary | yes | Gets Dlna media receiver registrar xml. |
+| POST | `/Dlna/{serverId}/MediaReceiverRegistrar/Control` | ProcessMediaReceiverRegistrarControlRequest | `serverId`* | string:binary |  | Process a media receiver registrar control request. |
+| GET | `/Dlna/{serverId}/MediaReceiverRegistrar/MediaReceiverRegistrar` | GetMediaReceiverRegistrar_2 | `serverId`* | string:binary | yes | Gets Dlna media receiver registrar xml. |
+| GET | `/Dlna/{serverId}/MediaReceiverRegistrar/MediaReceiverRegistrar.xml` | GetMediaReceiverRegistrar_3 | `serverId`* | string:binary | yes | Gets Dlna media receiver registrar xml. |
+| GET | `/Dlna/{serverId}/description` | GetDescriptionXml | `serverId`* | string:binary | yes | Get Description Xml. |
+| GET | `/Dlna/{serverId}/description.xml` | GetDescriptionXml_2 | `serverId`* | string:binary | yes | Get Description Xml. |
+| GET | `/Dlna/{serverId}/icons/{fileName}` | GetIconId | `serverId`*, `fileName`* | string:binary | yes | Gets a server icon. |
+| GET | `/Environment/DefaultDirectoryBrowser` | GetDefaultDirectoryBrowser | — | DefaultDirectoryBrowserInfoDto | yes | Get Default directory browser. |
+| GET | `/Environment/DirectoryContents` | GetDirectoryContents | `path`*, `includeFiles`, `includeDirectories` | FileSystemEntryInfo[] | yes | Gets the contents of a given directory in the file system. |
+| GET | `/Environment/Drives` | GetDrives | — | FileSystemEntryInfo[] | yes | Gets available drives from the server's file system. |
+| GET | `/Environment/NetworkShares` | GetNetworkShares | — | FileSystemEntryInfo[] | yes | Gets network paths. |
+| GET | `/Environment/ParentPath` | GetParentPath | `path`* | string | yes | Gets the parent path of a given path. |
+| POST | `/Environment/ValidatePath` | ValidatePath | body*: ValidatePathDto | — |  | Validates path. |
+| GET | `/FallbackFont/Fonts` | GetFallbackFontList | — | FontFile[] | yes | Gets a list of available fallback font files. |
+| GET | `/FallbackFont/Fonts/{name}` | GetFallbackFont | `name`* | string:binary | yes | Gets a fallback font file. |
+| GET | `/Genres` | GetGenres | `startIndex`, `limit`, `searchTerm`, `parentId`, `fields`, `excludeItemTypes`, `includeItemTypes`, `isFavorite`, `imageTypeLimit`, `enableImageTypes`, `userId`, `nameStartsWithOrGreater`, `nameStartsWith`, `nameLessThan`, `enableImages`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets all genres from a given item, folder, or the entire library. |
+| GET | `/Genres/{genreName}` | GetGenre | `genreName`*, `userId` | BaseItemDto | yes | Gets a genre, by name. |
+| GET | `/Genres/{name}/Images/{imageType}` | GetGenreImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get genre image by name. |
+| HEAD | `/Genres/{name}/Images/{imageType}` | HeadGenreImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get genre image by name. |
+| GET | `/Genres/{name}/Images/{imageType}/{imageIndex}` | GetGenreImageByIndex | `name`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get genre image by name. |
+| HEAD | `/Genres/{name}/Images/{imageType}/{imageIndex}` | HeadGenreImageByIndex | `name`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get genre image by name. |
+| GET | `/GetUtcTime` | GetUtcTime | — | UtcTimeResponse | yes | Gets the current UTC time. |
+| GET | `/Images/General` | GetGeneralImages | — | ImageByNameInfo[] | yes | Get all general images. |
+| GET | `/Images/General/{name}/{type}` | GetGeneralImage | `name`*, `type`* | string:binary | yes | Get General Image. |
+| GET | `/Images/MediaInfo` | GetMediaInfoImages | — | ImageByNameInfo[] | yes | Get all media info images. |
+| GET | `/Images/MediaInfo/{theme}/{name}` | GetMediaInfoImage | `theme`*, `name`* | string:binary | yes | Get media info image. |
+| GET | `/Images/Ratings` | GetRatingImages | — | ImageByNameInfo[] | yes | Get all general images. |
+| GET | `/Images/Ratings/{theme}/{name}` | GetRatingImage | `theme`*, `name`* | string:binary | yes | Get rating image. |
+| GET | `/Images/Remote` | GetRemoteImage | `imageUrl`* | string:binary | yes | Gets a remote image. |
+| GET | `/Items` | GetItems | `userId`, `maxOfficialRating`, `hasThemeSong`, `hasThemeVideo`, `hasSubtitles`, `hasSpecialFeature`, `hasTrailer`, `adjacentTo`, `parentIndexNumber`, `hasParentalRating`, `isHd`, `is4K`, `locationTypes`, `excludeLocationTypes`, `isMissing`, `isUnaired`, `minCommunityRating`, `minCriticRating`, `minPremiereDate`, `minDateLastSaved`, `minDateLastSavedForUser`, `maxPremiereDate`, `hasOverview`, `hasImdbId`, `hasTmdbId`, `hasTvdbId`, `excludeItemIds`, `startIndex`, `limit`, `recursive`, `searchTerm`, `sortOrder`, `parentId`, `fields`, `excludeItemTypes`, `includeItemTypes`, `filters`, `isFavorite`, `mediaTypes`, `imageTypes`, `sortBy`, `isPlayed`, `genres`, `officialRatings`, `tags`, `years`, `enableUserData`, `imageTypeLimit`, `enableImageTypes`, `person`, `personIds`, `personTypes`, `studios`, `artists`, `excludeArtistIds`, `artistIds`, `albumArtistIds`, `contributingArtistIds`, `albums`, `albumIds`, `ids`, `videoTypes`, `minOfficialRating`, `isLocked`, `isPlaceHolder`, `hasOfficialRating`, `collapseBoxSetItems`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`, `is3D`, `seriesStatus`, `nameStartsWithOrGreater`, `nameStartsWith`, `nameLessThan`, `studioIds`, `genreIds`, `enableTotalRecordCount`, `enableImages` | BaseItemDtoQueryResult | yes | Gets items based on a query. |
+| DELETE | `/Items` | DeleteItems | `ids` | — |  | Deletes items from the library and filesystem. |
+| GET | `/Items/Counts` | GetItemCounts | `userId`, `isFavorite` | ItemCounts | yes | Get item counts. |
+| GET | `/Items/Filters` | GetQueryFiltersLegacy | `userId`, `parentId`, `includeItemTypes`, `mediaTypes` | QueryFiltersLegacy | yes | Gets legacy query filters. |
+| GET | `/Items/Filters2` | GetQueryFilters | `userId`, `parentId`, `includeItemTypes`, `isAiring`, `isMovie`, `isSports`, `isKids`, `isNews`, `isSeries`, `recursive` | QueryFilters | yes | Gets query filters. |
+| POST | `/Items/RemoteSearch/Apply/{itemId}` | ApplySearchCriteria | `itemId`*, `replaceAllImages`, body*: RemoteSearchResult | — |  | Applies search criteria to an item and refreshes metadata. |
+| POST | `/Items/RemoteSearch/Book` | GetBookRemoteSearchResults | body*: BookInfoRemoteSearchQuery | RemoteSearchResult[] |  | Get book remote search. |
+| POST | `/Items/RemoteSearch/BoxSet` | GetBoxSetRemoteSearchResults | body*: BoxSetInfoRemoteSearchQuery | RemoteSearchResult[] |  | Get box set remote search. |
+| GET | `/Items/RemoteSearch/Image` | GetRemoteSearchImage | `imageUrl`*, `providerName`* | string:binary | yes | Gets a remote image. |
+| POST | `/Items/RemoteSearch/Movie` | GetMovieRemoteSearchResults | body*: MovieInfoRemoteSearchQuery | RemoteSearchResult[] |  | Get movie remote search. |
+| POST | `/Items/RemoteSearch/MusicAlbum` | GetMusicAlbumRemoteSearchResults | body*: AlbumInfoRemoteSearchQuery | RemoteSearchResult[] |  | Get music album remote search. |
+| POST | `/Items/RemoteSearch/MusicArtist` | GetMusicArtistRemoteSearchResults | body*: ArtistInfoRemoteSearchQuery | RemoteSearchResult[] |  | Get music artist remote search. |
+| POST | `/Items/RemoteSearch/MusicVideo` | GetMusicVideoRemoteSearchResults | body*: MusicVideoInfoRemoteSearchQuery | RemoteSearchResult[] |  | Get music video remote search. |
+| POST | `/Items/RemoteSearch/Person` | GetPersonRemoteSearchResults | body*: PersonLookupInfoRemoteSearchQuery | RemoteSearchResult[] |  | Get person remote search. |
+| POST | `/Items/RemoteSearch/Series` | GetSeriesRemoteSearchResults | body*: SeriesInfoRemoteSearchQuery | RemoteSearchResult[] |  | Get series remote search. |
+| POST | `/Items/RemoteSearch/Trailer` | GetTrailerRemoteSearchResults | body*: TrailerInfoRemoteSearchQuery | RemoteSearchResult[] |  | Get trailer remote search. |
+| GET | `/Items/{id}/InstantMix` | GetInstantMixFromItem | `id`*, `userId`, `limit`, `fields`, `enableImages`, `enableUserData`, `imageTypeLimit`, `enableImageTypes` | BaseItemDtoQueryResult | yes | Creates an instant playlist based on a given song. |
+| POST | `/Items/{itemId}` | UpdateItem | `itemId`*, body*: BaseItemDto | — |  | Updates an item. |
+| DELETE | `/Items/{itemId}` | DeleteItem | `itemId`* | — |  | Deletes an item from the library and filesystem. |
+| GET | `/Items/{itemId}/Ancestors` | GetAncestors | `itemId`*, `userId` | BaseItemDto[] | yes | Gets all parents of an item. |
+| POST | `/Items/{itemId}/ContentType` | UpdateItemContentType | `itemId`*, `contentType` | — |  | Updates an item's content type. |
+| GET | `/Items/{itemId}/CriticReviews` | GetCriticReviews | `itemId`* | BaseItemDtoQueryResult | yes | Gets critic review for an item. |
+| GET | `/Items/{itemId}/Download` | GetDownload | `itemId`* | string:binary | yes | Downloads item media. |
+| GET | `/Items/{itemId}/ExternalIdInfos` | GetExternalIdInfos | `itemId`* | ExternalIdInfo[] | yes | Get the item's external id info. |
+| GET | `/Items/{itemId}/File` | GetFile | `itemId`* | string:binary | yes | Get the original file of an item. |
+| GET | `/Items/{itemId}/Images` | GetItemImageInfos | `itemId`* | ImageInfo[] | yes | Get item image infos. |
+| GET | `/Items/{itemId}/Images/{imageType}` | GetItemImage | `itemId`*, `imageType`*, `maxWidth`, `maxHeight`, `width`, `height`, `quality`, `tag`, `cropWhitespace`, `format`, `addPlayedIndicator`, `percentPlayed`, `unplayedCount`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Gets the item's image. |
+| POST | `/Items/{itemId}/Images/{imageType}` | SetItemImage | `itemId`*, `imageType`* | — |  | Set item image. |
+| DELETE | `/Items/{itemId}/Images/{imageType}` | DeleteItemImage | `itemId`*, `imageType`*, `imageIndex` | — |  | Delete an item's image. |
+| HEAD | `/Items/{itemId}/Images/{imageType}` | HeadItemImage | `itemId`*, `imageType`*, `maxWidth`, `maxHeight`, `width`, `height`, `quality`, `tag`, `cropWhitespace`, `format`, `addPlayedIndicator`, `percentPlayed`, `unplayedCount`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Gets the item's image. |
+| GET | `/Items/{itemId}/Images/{imageType}/{imageIndex}` | GetItemImageByIndex | `itemId`*, `imageType`*, `imageIndex`*, `maxWidth`, `maxHeight`, `width`, `height`, `quality`, `tag`, `cropWhitespace`, `format`, `addPlayedIndicator`, `percentPlayed`, `unplayedCount`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Gets the item's image. |
+| POST | `/Items/{itemId}/Images/{imageType}/{imageIndex}` | SetItemImageByIndex | `itemId`*, `imageType`*, `imageIndex`* | — |  | Set item image. |
+| DELETE | `/Items/{itemId}/Images/{imageType}/{imageIndex}` | DeleteItemImageByIndex | `itemId`*, `imageType`*, `imageIndex`* | — |  | Delete an item's image. |
+| HEAD | `/Items/{itemId}/Images/{imageType}/{imageIndex}` | HeadItemImageByIndex | `itemId`*, `imageType`*, `imageIndex`*, `maxWidth`, `maxHeight`, `width`, `height`, `quality`, `tag`, `cropWhitespace`, `format`, `addPlayedIndicator`, `percentPlayed`, `unplayedCount`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Gets the item's image. |
+| POST | `/Items/{itemId}/Images/{imageType}/{imageIndex}/Index` | UpdateItemImageIndex | `itemId`*, `imageType`*, `imageIndex`*, `newIndex` | — |  | Updates the index for an item image. |
+| GET | `/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}/{unplayedCount}` | GetItemImage2 | `itemId`*, `imageType`*, `maxWidth`*, `maxHeight`*, `width`, `height`, `quality`, `tag`*, `cropWhitespace`, `format`*, `addPlayedIndicator`, `percentPlayed`*, `unplayedCount`*, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex`* | string:binary | yes | Gets the item's image. |
+| HEAD | `/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}/{unplayedCount}` | HeadItemImage2 | `itemId`*, `imageType`*, `maxWidth`*, `maxHeight`*, `width`, `height`, `quality`, `tag`*, `cropWhitespace`, `format`*, `addPlayedIndicator`, `percentPlayed`*, `unplayedCount`*, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex`* | string:binary | yes | Gets the item's image. |
+| GET | `/Items/{itemId}/MetadataEditor` | GetMetadataEditorInfo | `itemId`* | MetadataEditorInfo | yes | Gets metadata editor info for an item. |
+| GET | `/Items/{itemId}/PlaybackInfo` | GetPlaybackInfo | `itemId`*, `userId`* | PlaybackInfoResponse | yes | Gets live playback media info for an item. |
+| POST | `/Items/{itemId}/PlaybackInfo` | GetPostedPlaybackInfo | `itemId`*, `userId`, `maxStreamingBitrate`, `startTimeTicks`, `audioStreamIndex`, `subtitleStreamIndex`, `maxAudioChannels`, `mediaSourceId`, `liveStreamId`, `autoOpenLiveStream`, `enableDirectPlay`, `enableDirectStream`, `enableTranscoding`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, body: PlaybackInfoDto | PlaybackInfoResponse |  | Gets live playback media info for an item. |
+| POST | `/Items/{itemId}/Refresh` | Post | `itemId`*, `metadataRefreshMode`, `imageRefreshMode`, `replaceAllMetadata`, `replaceAllImages` | — |  | Refreshes metadata for an item. |
+| GET | `/Items/{itemId}/RemoteImages` | GetRemoteImages | `itemId`*, `type`, `startIndex`, `limit`, `providerName`, `includeAllLanguages` | RemoteImageResult | yes | Gets available remote images for an item. |
+| POST | `/Items/{itemId}/RemoteImages/Download` | DownloadRemoteImage | `itemId`*, `type`*, `imageUrl` | — |  | Downloads a remote image for an item. |
+| GET | `/Items/{itemId}/RemoteImages/Providers` | GetRemoteImageProviders | `itemId`* | ImageProviderInfo[] | yes | Gets available remote image providers for an item. |
+| GET | `/Items/{itemId}/RemoteSearch/Subtitles/{language}` | SearchRemoteSubtitles | `itemId`*, `language`*, `isPerfectMatch` | RemoteSubtitleInfo[] | yes | Search remote subtitles. |
+| POST | `/Items/{itemId}/RemoteSearch/Subtitles/{subtitleId}` | DownloadRemoteSubtitles | `itemId`*, `subtitleId`* | — |  | Downloads a remote subtitle. |
+| GET | `/Items/{itemId}/Similar` | GetSimilarItems | `itemId`*, `excludeArtistIds`, `userId`, `limit`, `fields` | BaseItemDtoQueryResult | yes | Gets similar items. |
+| GET | `/Items/{itemId}/ThemeMedia` | GetThemeMedia | `itemId`*, `userId`, `inheritFromParent` | AllThemeMediaResult | yes | Get theme songs and videos for an item. |
+| GET | `/Items/{itemId}/ThemeSongs` | GetThemeSongs | `itemId`*, `userId`, `inheritFromParent` | ThemeMediaResult | yes | Get theme songs for an item. |
+| GET | `/Items/{itemId}/ThemeVideos` | GetThemeVideos | `itemId`*, `userId`, `inheritFromParent` | ThemeMediaResult | yes | Get theme videos for an item. |
+| GET | `/Libraries/AvailableOptions` | GetLibraryOptionsInfo | `libraryContentType`, `isNewLibrary` | LibraryOptionsResultDto | yes | Gets the library options info. |
+| POST | `/Library/Media/Updated` | PostUpdatedMedia | body*: MediaUpdateInfoDto[] | — |  | Reports that new movies have been added by an external source. |
+| GET | `/Library/MediaFolders` | GetMediaFolders | `isHidden` | BaseItemDtoQueryResult | yes | Gets all user media folders. |
+| POST | `/Library/Movies/Added` | PostAddedMovies | `tmdbId`, `imdbId` | — |  | Reports that new movies have been added by an external source. |
+| POST | `/Library/Movies/Updated` | PostUpdatedMovies | `tmdbId`, `imdbId` | — |  | Reports that new movies have been added by an external source. |
+| GET | `/Library/PhysicalPaths` | GetPhysicalPaths | — | string[] | yes | Gets a list of physical paths from virtual folders. |
+| GET | `/Library/Refresh` | RefreshLibrary | — | — | yes | Starts a library scan. |
+| POST | `/Library/Series/Added` | PostAddedSeries | `tvdbId` | — |  | Reports that new episodes of a series have been added by an external source. |
+| POST | `/Library/Series/Updated` | PostUpdatedSeries | `tvdbId` | — |  | Reports that new episodes of a series have been added by an external source. |
+| GET | `/Library/VirtualFolders` | GetVirtualFolders | — | VirtualFolderInfo[] | yes | Gets all virtual folders. |
+| POST | `/Library/VirtualFolders` | AddVirtualFolder | `name`, `collectionType`, `paths`, `refreshLibrary`, body: AddVirtualFolderDto | — |  | Adds a virtual folder. |
+| DELETE | `/Library/VirtualFolders` | RemoveVirtualFolder | `name`, `refreshLibrary` | — |  | Removes a virtual folder. |
+| POST | `/Library/VirtualFolders/LibraryOptions` | UpdateLibraryOptions | body: UpdateLibraryOptionsDto | — |  | Update library options. |
+| POST | `/Library/VirtualFolders/Name` | RenameVirtualFolder | `name`, `newName`, `refreshLibrary` | — |  | Renames a virtual folder. |
+| POST | `/Library/VirtualFolders/Paths` | AddMediaPath | `refreshLibrary`, body*: MediaPathDto | — |  | Add a media path to a library. |
+| DELETE | `/Library/VirtualFolders/Paths` | RemoveMediaPath | `name`, `path`, `refreshLibrary` | — |  | Remove a media path. |
+| POST | `/Library/VirtualFolders/Paths/Update` | UpdateMediaPath | `name`, body: MediaPathInfo | — |  | Updates a media path. |
+| POST | `/LiveStreams/Close` | CloseLiveStream | `liveStreamId`* | — |  | Closes a media source. |
+| POST | `/LiveStreams/Open` | OpenLiveStream | `openToken`, `userId`, `playSessionId`, `maxStreamingBitrate`, `startTimeTicks`, `audioStreamIndex`, `subtitleStreamIndex`, `maxAudioChannels`, `itemId`, `enableDirectPlay`, `enableDirectStream`, body: OpenLiveStreamDto | LiveStreamResponse |  | Opens a media source. |
+| GET | `/LiveTv/ChannelMappingOptions` | GetChannelMappingOptions | `providerId` | ChannelMappingOptionsDto | yes | Get channel mapping options. |
+| POST | `/LiveTv/ChannelMappings` | SetChannelMapping | body*: SetChannelMappingDto | TunerChannelMapping |  | Set channel mappings. |
+| GET | `/LiveTv/Channels` | GetLiveTvChannels | `type`, `userId`, `startIndex`, `isMovie`, `isSeries`, `isNews`, `isKids`, `isSports`, `limit`, `isFavorite`, `isLiked`, `isDisliked`, `enableImages`, `imageTypeLimit`, `enableImageTypes`, `fields`, `enableUserData`, `sortBy`, `sortOrder`, `enableFavoriteSorting`, `addCurrentProgram` | BaseItemDtoQueryResult | yes | Gets available live tv channels. |
+| GET | `/LiveTv/Channels/{channelId}` | GetChannel | `channelId`*, `userId` | BaseItemDto | yes | Gets a live tv channel. |
+| GET | `/LiveTv/GuideInfo` | GetGuideInfo | — | GuideInfo | yes | Get guid info. |
+| GET | `/LiveTv/Info` | GetLiveTvInfo | — | LiveTvInfo | yes | Gets available live tv services. |
+| POST | `/LiveTv/ListingProviders` | AddListingProvider | `pw`, `validateListings`, `validateLogin`, body: ListingsProviderInfo | ListingsProviderInfo |  | Adds a listings provider. |
+| DELETE | `/LiveTv/ListingProviders` | DeleteListingProvider | `id` | — |  | Delete listing provider. |
+| GET | `/LiveTv/ListingProviders/Default` | GetDefaultListingProvider | — | ListingsProviderInfo | yes | Gets default listings provider info. |
+| GET | `/LiveTv/ListingProviders/Lineups` | GetLineups | `id`, `type`, `location`, `country` | NameIdPair[] | yes | Gets available lineups. |
+| GET | `/LiveTv/ListingProviders/SchedulesDirect/Countries` | GetSchedulesDirectCountries | — | string:binary | yes | Gets available countries. |
+| GET | `/LiveTv/LiveRecordings/{recordingId}/stream` | GetLiveRecordingFile | `recordingId`* | string:binary | yes | Gets a live tv recording stream. |
+| GET | `/LiveTv/LiveStreamFiles/{streamId}/stream.{container}` | GetLiveStreamFile | `streamId`*, `container`* | string:binary | yes | Gets a live tv channel stream. |
+| GET | `/LiveTv/Programs` | GetLiveTvPrograms | `channelIds`, `userId`, `minStartDate`, `hasAired`, `isAiring`, `maxStartDate`, `minEndDate`, `maxEndDate`, `isMovie`, `isSeries`, `isNews`, `isKids`, `isSports`, `startIndex`, `limit`, `sortBy`, `sortOrder`, `genres`, `genreIds`, `enableImages`, `imageTypeLimit`, `enableImageTypes`, `enableUserData`, `seriesTimerId`, `librarySeriesId`, `fields`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets available live tv epgs. |
+| POST | `/LiveTv/Programs` | GetPrograms | body: GetProgramsDto | BaseItemDtoQueryResult |  | Gets available live tv epgs. |
+| GET | `/LiveTv/Programs/Recommended` | GetRecommendedPrograms | `userId`, `limit`, `isAiring`, `hasAired`, `isSeries`, `isMovie`, `isNews`, `isKids`, `isSports`, `enableImages`, `imageTypeLimit`, `enableImageTypes`, `genreIds`, `fields`, `enableUserData`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets recommended live tv epgs. |
+| GET | `/LiveTv/Programs/{programId}` | GetProgram | `programId`*, `userId` | BaseItemDto | yes | Gets a live tv program. |
+| GET | `/LiveTv/Recordings` | GetRecordings | `channelId`, `userId`, `startIndex`, `limit`, `status`, `isInProgress`, `seriesTimerId`, `enableImages`, `imageTypeLimit`, `enableImageTypes`, `fields`, `enableUserData`, `isMovie`, `isSeries`, `isKids`, `isSports`, `isNews`, `isLibraryItem`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets live tv recordings. |
+| GET | `/LiveTv/Recordings/Folders` | GetRecordingFolders | `userId` | BaseItemDtoQueryResult | yes | Gets recording folders. |
+| GET | `/LiveTv/Recordings/Groups` | GetRecordingGroups | `userId` | BaseItemDtoQueryResult | yes | Gets live tv recording groups. |
+| GET | `/LiveTv/Recordings/Groups/{groupId}` | GetRecordingGroup | `groupId`* | — | yes | Get recording group. |
+| GET | `/LiveTv/Recordings/Series` | GetRecordingsSeries | `channelId`, `userId`, `groupId`, `startIndex`, `limit`, `status`, `isInProgress`, `seriesTimerId`, `enableImages`, `imageTypeLimit`, `enableImageTypes`, `fields`, `enableUserData`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets live tv recording series. |
+| GET | `/LiveTv/Recordings/{recordingId}` | GetRecording | `recordingId`*, `userId` | BaseItemDto | yes | Gets a live tv recording. |
+| DELETE | `/LiveTv/Recordings/{recordingId}` | DeleteRecording | `recordingId`* | — |  | Deletes a live tv recording. |
+| GET | `/LiveTv/SeriesTimers` | GetSeriesTimers | `sortBy`, `sortOrder` | SeriesTimerInfoDtoQueryResult | yes | Gets live tv series timers. |
+| POST | `/LiveTv/SeriesTimers` | CreateSeriesTimer | body: SeriesTimerInfoDto | — |  | Creates a live tv series timer. |
+| GET | `/LiveTv/SeriesTimers/{timerId}` | GetSeriesTimer | `timerId`* | SeriesTimerInfoDto | yes | Gets a live tv series timer. |
+| POST | `/LiveTv/SeriesTimers/{timerId}` | UpdateSeriesTimer | `timerId`*, body: SeriesTimerInfoDto | — |  | Updates a live tv series timer. |
+| DELETE | `/LiveTv/SeriesTimers/{timerId}` | CancelSeriesTimer | `timerId`* | — |  | Cancels a live tv series timer. |
+| GET | `/LiveTv/Timers` | GetTimers | `channelId`, `seriesTimerId`, `isActive`, `isScheduled` | TimerInfoDtoQueryResult | yes | Gets the live tv timers. |
+| POST | `/LiveTv/Timers` | CreateTimer | body: TimerInfoDto | — |  | Creates a live tv timer. |
+| GET | `/LiveTv/Timers/Defaults` | GetDefaultTimer | `programId` | SeriesTimerInfoDto | yes | Gets the default values for a new timer. |
+| GET | `/LiveTv/Timers/{timerId}` | GetTimer | `timerId`* | TimerInfoDto | yes | Gets a timer. |
+| POST | `/LiveTv/Timers/{timerId}` | UpdateTimer | `timerId`*, body: TimerInfoDto | — |  | Updates a live tv timer. |
+| DELETE | `/LiveTv/Timers/{timerId}` | CancelTimer | `timerId`* | — |  | Cancels a live tv timer. |
+| POST | `/LiveTv/TunerHosts` | AddTunerHost | body: TunerHostInfo | TunerHostInfo |  | Adds a tuner host. |
+| DELETE | `/LiveTv/TunerHosts` | DeleteTunerHost | `id` | — |  | Deletes a tuner host. |
+| GET | `/LiveTv/TunerHosts/Types` | GetTunerHostTypes | — | NameIdPair[] | yes | Get tuner host types. |
+| GET | `/LiveTv/Tuners/Discover` | DiscoverTuners | `newDevicesOnly` | TunerHostInfo[] | yes | Discover tuners. |
+| GET | `/LiveTv/Tuners/Discvover` | DiscvoverTuners | `newDevicesOnly` | TunerHostInfo[] | yes | Discover tuners. |
+| POST | `/LiveTv/Tuners/{tunerId}/Reset` | ResetTuner | `tunerId`* | — |  | Resets a tv tuner. |
+| GET | `/Localization/Countries` | GetCountries | — | CountryInfo[] | yes | Gets known countries. |
+| GET | `/Localization/Cultures` | GetCultures | — | CultureDto[] | yes | Gets known cultures. |
+| GET | `/Localization/Options` | GetLocalizationOptions | — | LocalizationOption[] | yes | Gets localization options. |
+| GET | `/Localization/ParentalRatings` | GetParentalRatings | — | ParentalRating[] | yes | Gets known parental ratings. |
+| GET | `/Movies/Recommendations` | GetMovieRecommendations | `userId`, `parentId`, `fields`, `categoryLimit`, `itemLimit` | RecommendationDto[] | yes | Gets movie recommendations. |
+| GET | `/Movies/{itemId}/Similar` | GetSimilarMovies | `itemId`*, `excludeArtistIds`, `userId`, `limit`, `fields` | BaseItemDtoQueryResult | yes | Gets similar items. |
+| GET | `/MusicGenres` | GetMusicGenres | `startIndex`, `limit`, `searchTerm`, `parentId`, `fields`, `excludeItemTypes`, `includeItemTypes`, `isFavorite`, `imageTypeLimit`, `enableImageTypes`, `userId`, `nameStartsWithOrGreater`, `nameStartsWith`, `nameLessThan`, `enableImages`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets all music genres from a given item, folder, or the entire library. |
+| GET | `/MusicGenres/{genreName}` | GetMusicGenre | `genreName`*, `userId` | BaseItemDto | yes | Gets a music genre, by name. |
+| GET | `/MusicGenres/{id}/InstantMix` | GetInstantMixFromMusicGenres | `id`*, `userId`, `limit`, `fields`, `enableImages`, `enableUserData`, `imageTypeLimit`, `enableImageTypes` | BaseItemDtoQueryResult | yes | Creates an instant playlist based on a given song. |
+| GET | `/MusicGenres/{name}/Images/{imageType}` | GetMusicGenreImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get music genre image by name. |
+| HEAD | `/MusicGenres/{name}/Images/{imageType}` | HeadMusicGenreImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get music genre image by name. |
+| GET | `/MusicGenres/{name}/Images/{imageType}/{imageIndex}` | GetMusicGenreImageByIndex | `name`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get music genre image by name. |
+| HEAD | `/MusicGenres/{name}/Images/{imageType}/{imageIndex}` | HeadMusicGenreImageByIndex | `name`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get music genre image by name. |
+| GET | `/MusicGenres/{name}/InstantMix` | GetInstantMixFromMusicGenre | `name`*, `userId`, `limit`, `fields`, `enableImages`, `enableUserData`, `imageTypeLimit`, `enableImageTypes` | BaseItemDtoQueryResult | yes | Creates an instant playlist based on a given song. |
+| POST | `/Notifications/Admin` | CreateAdminNotification | `url`, `level`, `name`, `description` | — |  | Sends a notification to all admins. |
+| GET | `/Notifications/Services` | GetNotificationServices | — | NameIdPair[] | yes | Gets notification services. |
+| GET | `/Notifications/Types` | GetNotificationTypes | — | NotificationTypeInfo[] | yes | Gets notification types. |
+| GET | `/Notifications/{userId}` | GetNotifications | `userId`* | NotificationResultDto | yes | Gets a user's notifications. |
+| POST | `/Notifications/{userId}/Read` | SetRead | `userId`* | — |  | Sets notifications as read. |
+| GET | `/Notifications/{userId}/Summary` | GetNotificationsSummary | `userId`* | NotificationsSummaryDto | yes | Gets a user's notification summary. |
+| POST | `/Notifications/{userId}/Unread` | SetUnread | `userId`* | — |  | Sets notifications as unread. |
+| GET | `/Packages` | GetPackages | — | PackageInfo[] | yes | Gets available packages. |
+| POST | `/Packages/Installed/{name}` | InstallPackage | `name`*, `assemblyGuid`, `version`, `repositoryUrl` | — |  | Installs a package. |
+| DELETE | `/Packages/Installing/{packageId}` | CancelPackageInstallation | `packageId`* | — |  | Cancels a package installation. |
+| GET | `/Packages/{name}` | GetPackageInfo | `name`*, `assemblyGuid` | PackageInfo | yes | Gets a package by name or assembly GUID. |
+| GET | `/Persons` | GetPersons | `limit`, `searchTerm`, `fields`, `filters`, `isFavorite`, `enableUserData`, `imageTypeLimit`, `enableImageTypes`, `excludePersonTypes`, `personTypes`, `appearsInItemId`, `userId`, `enableImages` | BaseItemDtoQueryResult | yes | Gets all persons. |
+| GET | `/Persons/{name}` | GetPerson | `name`*, `userId` | BaseItemDto | yes | Get person by name. |
+| GET | `/Persons/{name}/Images/{imageType}` | GetPersonImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get person image by name. |
+| HEAD | `/Persons/{name}/Images/{imageType}` | HeadPersonImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get person image by name. |
+| GET | `/Persons/{name}/Images/{imageType}/{imageIndex}` | GetPersonImageByIndex | `name`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get person image by name. |
+| HEAD | `/Persons/{name}/Images/{imageType}/{imageIndex}` | HeadPersonImageByIndex | `name`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get person image by name. |
+| GET | `/Playback/BitrateTest` | GetBitrateTestBytes | `size` | string:binary | yes | Tests the network with a request with the size of the bitrate. |
+| POST | `/Playlists` | CreatePlaylist | `name`, `ids`, `userId`, `mediaType`, body: CreatePlaylistDto | PlaylistCreationResult |  | Creates a new playlist. |
+| GET | `/Playlists/{id}/InstantMix` | GetInstantMixFromPlaylist | `id`*, `userId`, `limit`, `fields`, `enableImages`, `enableUserData`, `imageTypeLimit`, `enableImageTypes` | BaseItemDtoQueryResult | yes | Creates an instant playlist based on a given song. |
+| GET | `/Playlists/{playlistId}/Items` | GetPlaylistItems | `playlistId`*, `userId`*, `startIndex`, `limit`, `fields`, `enableImages`, `enableUserData`, `imageTypeLimit`, `enableImageTypes` | BaseItemDtoQueryResult | yes | Gets the original items of a playlist. |
+| POST | `/Playlists/{playlistId}/Items` | AddToPlaylist | `playlistId`*, `ids`, `userId` | — |  | Adds items to a playlist. |
+| DELETE | `/Playlists/{playlistId}/Items` | RemoveFromPlaylist | `playlistId`*, `entryIds` | — |  | Removes items from a playlist. |
+| POST | `/Playlists/{playlistId}/Items/{itemId}/Move/{newIndex}` | MoveItem | `playlistId`*, `itemId`*, `newIndex`* | — |  | Moves a playlist item. |
+| GET | `/Plugins` | GetPlugins | — | PluginInfo[] | yes | Gets a list of currently installed plugins. |
+| POST | `/Plugins/SecurityInfo` | UpdatePluginSecurityInfo | body*: PluginSecurityInfo | — |  | Updates plugin security info. |
+| DELETE | `/Plugins/{pluginId}` | UninstallPlugin | `pluginId`* | — |  | Uninstalls a plugin. |
+| GET | `/Plugins/{pluginId}/Configuration` | GetPluginConfiguration | `pluginId`* | BasePluginConfiguration | yes | Gets plugin configuration. |
+| POST | `/Plugins/{pluginId}/Configuration` | UpdatePluginConfiguration | `pluginId`* | — |  | Updates plugin configuration. |
+| POST | `/Plugins/{pluginId}/Manifest` | GetPluginManifest | `pluginId`* | — |  | Gets a plugin's manifest. |
+| DELETE | `/Plugins/{pluginId}/{version}` | UninstallPluginByVersion | `pluginId`*, `version`* | — |  | Uninstalls a plugin by version. |
+| POST | `/Plugins/{pluginId}/{version}/Disable` | DisablePlugin | `pluginId`*, `version`* | — |  | Disable a plugin. |
+| POST | `/Plugins/{pluginId}/{version}/Enable` | EnablePlugin | `pluginId`*, `version`* | — |  | Enables a disabled plugin. |
+| GET | `/Plugins/{pluginId}/{version}/Image` | GetPluginImage | `pluginId`*, `version`* | string:binary | yes | Gets a plugin's image. |
+| GET | `/Providers/Subtitles/Subtitles/{id}` | GetRemoteSubtitles | `id`* | string:binary | yes | Gets the remote subtitles. |
+| POST | `/QuickConnect/Activate` | Activate | — | — |  | Temporarily activates quick connect for five minutes. |
+| POST | `/QuickConnect/Authorize` | Authorize | `code`* | boolean |  | Authorizes a pending quick connect request. |
+| POST | `/QuickConnect/Available` | Available | `status` | — |  | Enables or disables quick connect. |
+| GET | `/QuickConnect/Connect` | Connect | `secret`* | QuickConnectResult | yes | Attempts to retrieve authentication information. |
+| POST | `/QuickConnect/Deauthorize` | Deauthorize | — | integer:int32 |  | Deauthorize all quick connect devices for the current user. |
+| GET | `/QuickConnect/Initiate` | Initiate | — | QuickConnectResult | yes | Initiate a new quick connect request. |
+| GET | `/QuickConnect/Status` | GetStatus | — | QuickConnectState | yes | Gets the current quick connect state. |
+| GET | `/Repositories` | GetRepositories | — | RepositoryInfo[] | yes | Gets all package repositories. |
+| POST | `/Repositories` | SetRepositories | body: RepositoryInfo[] | — |  | Sets the enabled and existing package repositories. |
+| GET | `/ScheduledTasks` | GetTasks | `isHidden`, `isEnabled` | TaskInfo[] | yes | Get tasks. |
+| POST | `/ScheduledTasks/Running/{taskId}` | StartTask | `taskId`* | — |  | Start specified task. |
+| DELETE | `/ScheduledTasks/Running/{taskId}` | StopTask | `taskId`* | — |  | Stop specified task. |
+| GET | `/ScheduledTasks/{taskId}` | GetTask | `taskId`* | TaskInfo | yes | Get task by id. |
+| POST | `/ScheduledTasks/{taskId}/Triggers` | UpdateTask | `taskId`*, body*: TaskTriggerInfo[] | — |  | Update specified task triggers. |
+| GET | `/Search/Hints` | Get | `startIndex`, `limit`, `userId`, `searchTerm`*, `includeItemTypes`, `excludeItemTypes`, `mediaTypes`, `parentId`, `isMovie`, `isSeries`, `isNews`, `isKids`, `isSports`, `includePeople`, `includeMedia`, `includeGenres`, `includeStudios`, `includeArtists` | SearchHintResult | yes | Gets the search hint result. |
+| GET | `/Sessions` | GetSessions | `controllableByUserId`, `deviceId`, `activeWithinSeconds` | SessionInfo[] | yes | Gets a list of sessions. |
+| POST | `/Sessions/Capabilities` | PostCapabilities | `id`, `playableMediaTypes`, `supportedCommands`, `supportsMediaControl`, `supportsSync`, `supportsPersistentIdentifier` | — |  | Updates capabilities for a device. |
+| POST | `/Sessions/Capabilities/Full` | PostFullCapabilities | `id`, body*: ClientCapabilitiesDto | — |  | Updates capabilities for a device. |
+| POST | `/Sessions/Logout` | ReportSessionEnded | — | — |  | Reports that a session has ended. |
+| POST | `/Sessions/Playing` | ReportPlaybackStart | body: PlaybackStartInfo | — |  | Reports playback has started within a session. |
+| POST | `/Sessions/Playing/Ping` | PingPlaybackSession | `playSessionId` | — |  | Pings a playback session. |
+| POST | `/Sessions/Playing/Progress` | ReportPlaybackProgress | body: PlaybackProgressInfo | — |  | Reports playback progress within a session. |
+| POST | `/Sessions/Playing/Stopped` | ReportPlaybackStopped | body: PlaybackStopInfo | — |  | Reports playback has stopped within a session. |
+| POST | `/Sessions/Viewing` | ReportViewing | `sessionId`, `itemId`* | — |  | Reports that a session is viewing an item. |
+| POST | `/Sessions/{sessionId}/Command` | SendFullGeneralCommand | `sessionId`*, body*: GeneralCommand | — |  | Issues a full general command to a client. |
+| POST | `/Sessions/{sessionId}/Command/{command}` | SendGeneralCommand | `sessionId`*, `command`* | — |  | Issues a general command to a client. |
+| POST | `/Sessions/{sessionId}/Message` | SendMessageCommand | `sessionId`*, `text`*, `header`, `timeoutMs` | — |  | Issues a command to a client to display a message to the user. |
+| POST | `/Sessions/{sessionId}/Playing` | Play | `sessionId`*, `playCommand`*, `itemIds`*, `startPositionTicks` | — |  | Instructs a session to play an item. |
+| POST | `/Sessions/{sessionId}/Playing/{command}` | SendPlaystateCommand | `sessionId`*, `command`*, `seekPositionTicks`, `controllingUserId` | — |  | Issues a playstate command to a client. |
+| POST | `/Sessions/{sessionId}/System/{command}` | SendSystemCommand | `sessionId`*, `command`* | — |  | Issues a system command to a client. |
+| POST | `/Sessions/{sessionId}/User/{userId}` | AddUserToSession | `sessionId`*, `userId`* | — |  | Adds an additional user to a session. |
+| DELETE | `/Sessions/{sessionId}/User/{userId}` | RemoveUserFromSession | `sessionId`*, `userId`* | — |  | Removes an additional user from a session. |
+| POST | `/Sessions/{sessionId}/Viewing` | DisplayContent | `sessionId`*, `itemType`*, `itemId`*, `itemName`* | — |  | Instructs a session to browse to an item or view. |
+| GET | `/Shows/NextUp` | GetNextUp | `userId`, `startIndex`, `limit`, `fields`, `seriesId`, `parentId`, `enableImges`, `imageTypeLimit`, `enableImageTypes`, `enableUserData`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets a list of next up episodes. |
+| GET | `/Shows/Upcoming` | GetUpcomingEpisodes | `userId`, `startIndex`, `limit`, `fields`, `parentId`, `enableImges`, `imageTypeLimit`, `enableImageTypes`, `enableUserData` | BaseItemDtoQueryResult | yes | Gets a list of upcoming episodes. |
+| GET | `/Shows/{itemId}/Similar` | GetSimilarShows | `itemId`*, `excludeArtistIds`, `userId`, `limit`, `fields` | BaseItemDtoQueryResult | yes | Gets similar items. |
+| GET | `/Shows/{seriesId}/Episodes` | GetEpisodes | `seriesId`*, `userId`, `fields`, `season`, `seasonId`, `isMissing`, `adjacentTo`, `startItemId`, `startIndex`, `limit`, `enableImages`, `imageTypeLimit`, `enableImageTypes`, `enableUserData`, `sortBy` | BaseItemDtoQueryResult | yes | Gets episodes for a tv season. |
+| GET | `/Shows/{seriesId}/Seasons` | GetSeasons | `seriesId`*, `userId`, `fields`, `isSpecialSeason`, `isMissing`, `adjacentTo`, `enableImages`, `imageTypeLimit`, `enableImageTypes`, `enableUserData` | BaseItemDtoQueryResult | yes | Gets seasons for a tv series. |
+| GET | `/Songs/{id}/InstantMix` | GetInstantMixFromSong | `id`*, `userId`, `limit`, `fields`, `enableImages`, `enableUserData`, `imageTypeLimit`, `enableImageTypes` | BaseItemDtoQueryResult | yes | Creates an instant playlist based on a given song. |
+| POST | `/Startup/Complete` | CompleteWizard | — | — |  | Completes the startup wizard. |
+| GET | `/Startup/Configuration` | GetStartupConfiguration | — | StartupConfigurationDto | yes | Gets the initial startup wizard configuration. |
+| POST | `/Startup/Configuration` | UpdateInitialConfiguration | body*: StartupConfigurationDto | — |  | Sets the initial startup wizard configuration. |
+| GET | `/Startup/FirstUser` | GetFirstUser_2 | — | StartupUserDto | yes | Gets the first user. |
+| POST | `/Startup/RemoteAccess` | SetRemoteAccess | body*: StartupRemoteAccessDto | — |  | Sets remote access and UPnP. |
+| GET | `/Startup/User` | GetFirstUser | — | StartupUserDto | yes | Gets the first user. |
+| POST | `/Startup/User` | UpdateStartupUser | body: StartupUserDto | — |  | Sets the user name and password. |
+| GET | `/Studios` | GetStudios | `startIndex`, `limit`, `searchTerm`, `parentId`, `fields`, `excludeItemTypes`, `includeItemTypes`, `isFavorite`, `enableUserData`, `imageTypeLimit`, `enableImageTypes`, `userId`, `nameStartsWithOrGreater`, `nameStartsWith`, `nameLessThan`, `enableImages`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets all studios from a given item, folder, or the entire library. |
+| GET | `/Studios/{name}` | GetStudio | `name`*, `userId` | BaseItemDto | yes | Gets a studio by name. |
+| GET | `/Studios/{name}/Images/{imageType}` | GetStudioImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get studio image by name. |
+| HEAD | `/Studios/{name}/Images/{imageType}` | HeadStudioImage | `name`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get studio image by name. |
+| GET | `/Studios/{name}/Images/{imageType}/{imageIndex}` | GetStudioImageByIndex | `name`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get studio image by name. |
+| HEAD | `/Studios/{name}/Images/{imageType}/{imageIndex}` | HeadStudioImageByIndex | `name`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get studio image by name. |
+| POST | `/SyncPlay/Buffering` | SyncPlayBuffering | body*: BufferRequestDto | — |  | Notify SyncPlay group that member is buffering. |
+| POST | `/SyncPlay/Join` | SyncPlayJoinGroup | body*: JoinGroupRequestDto | — |  | Join an existing SyncPlay group. |
+| POST | `/SyncPlay/Leave` | SyncPlayLeaveGroup | — | — |  | Leave the joined SyncPlay group. |
+| GET | `/SyncPlay/List` | SyncPlayGetGroups | — | GroupInfoDto[] | yes | Gets all SyncPlay groups. |
+| POST | `/SyncPlay/MovePlaylistItem` | SyncPlayMovePlaylistItem | body*: MovePlaylistItemRequestDto | — |  | Request to move an item in the playlist in SyncPlay group. |
+| POST | `/SyncPlay/New` | SyncPlayCreateGroup | body*: NewGroupRequestDto | — |  | Create a new SyncPlay group. |
+| POST | `/SyncPlay/NextItem` | SyncPlayNextItem | body*: NextItemRequestDto | — |  | Request next item in SyncPlay group. |
+| POST | `/SyncPlay/Pause` | SyncPlayPause | — | — |  | Request pause in SyncPlay group. |
+| POST | `/SyncPlay/Ping` | SyncPlayPing | body*: PingRequestDto | — |  | Update session ping. |
+| POST | `/SyncPlay/PreviousItem` | SyncPlayPreviousItem | body*: PreviousItemRequestDto | — |  | Request previous item in SyncPlay group. |
+| POST | `/SyncPlay/Queue` | SyncPlayQueue | body*: QueueRequestDto | — |  | Request to queue items to the playlist of a SyncPlay group. |
+| POST | `/SyncPlay/Ready` | SyncPlayReady | body*: ReadyRequestDto | — |  | Notify SyncPlay group that member is ready for playback. |
+| POST | `/SyncPlay/RemoveFromPlaylist` | SyncPlayRemoveFromPlaylist | body*: RemoveFromPlaylistRequestDto | — |  | Request to remove items from the playlist in SyncPlay group. |
+| POST | `/SyncPlay/Seek` | SyncPlaySeek | body*: SeekRequestDto | — |  | Request seek in SyncPlay group. |
+| POST | `/SyncPlay/SetIgnoreWait` | SyncPlaySetIgnoreWait | body*: IgnoreWaitRequestDto | — |  | Request SyncPlay group to ignore member during group-wait. |
+| POST | `/SyncPlay/SetNewQueue` | SyncPlaySetNewQueue | body*: PlayRequestDto | — |  | Request to set new playlist in SyncPlay group. |
+| POST | `/SyncPlay/SetPlaylistItem` | SyncPlaySetPlaylistItem | body*: SetPlaylistItemRequestDto | — |  | Request to change playlist item in SyncPlay group. |
+| POST | `/SyncPlay/SetRepeatMode` | SyncPlaySetRepeatMode | body*: SetRepeatModeRequestDto | — |  | Request to set repeat mode in SyncPlay group. |
+| POST | `/SyncPlay/SetShuffleMode` | SyncPlaySetShuffleMode | body*: SetShuffleModeRequestDto | — |  | Request to set shuffle mode in SyncPlay group. |
+| POST | `/SyncPlay/Stop` | SyncPlayStop | — | — |  | Request stop in SyncPlay group. |
+| POST | `/SyncPlay/Unpause` | SyncPlayUnpause | — | — |  | Request unpause in SyncPlay group. |
+| GET | `/System/ActivityLog/Entries` | GetLogEntries | `startIndex`, `limit`, `minDate`, `hasUserId` | ActivityLogEntryQueryResult | yes | Gets activity log entries. |
+| GET | `/System/Configuration` | GetConfiguration | — | ServerConfiguration | yes | Gets application configuration. |
+| POST | `/System/Configuration` | UpdateConfiguration | body*: ServerConfiguration | — |  | Updates application configuration. |
+| GET | `/System/Configuration/MetadataOptions/Default` | GetDefaultMetadataOptions | — | MetadataOptions | yes | Gets a default MetadataOptions object. |
+| GET | `/System/Configuration/{key}` | GetNamedConfiguration | `key`* | string:binary | yes | Gets a named configuration. |
+| POST | `/System/Configuration/{key}` | UpdateNamedConfiguration | `key`* | — |  | Updates named configuration. |
+| GET | `/System/Endpoint` | GetEndpointInfo | — | EndPointInfo | yes | Gets information about the request endpoint. |
+| GET | `/System/Info` | GetSystemInfo | — | SystemInfo | yes | Gets information about the server. |
+| GET | `/System/Info/Public` | GetPublicSystemInfo | — | PublicSystemInfo | yes | Gets public information about the server. |
+| GET | `/System/Logs` | GetServerLogs | — | LogFile[] | yes | Gets a list of available server log files. |
+| GET | `/System/Logs/Log` | GetLogFile | `name`* | string:binary | yes | Gets a log file. |
+| POST | `/System/MediaEncoder/Path` | UpdateMediaEncoderPath | body*: MediaEncoderPathDto | — |  | Updates the path to the media encoder. |
+| GET | `/System/Ping` | GetPingSystem | — | string | yes | Pings the system. |
+| POST | `/System/Ping` | PostPingSystem | — | string |  | Pings the system. |
+| POST | `/System/Restart` | RestartApplication | — | — |  | Restarts the application. |
+| POST | `/System/Shutdown` | ShutdownApplication | — | — |  | Shuts down the application. |
+| GET | `/System/WakeOnLanInfo` | GetWakeOnLanInfo | — | WakeOnLanInfo[] | yes | Gets wake on lan information. |
+| GET | `/Trailers` | GetTrailers | `userId`, `maxOfficialRating`, `hasThemeSong`, `hasThemeVideo`, `hasSubtitles`, `hasSpecialFeature`, `hasTrailer`, `adjacentTo`, `parentIndexNumber`, `hasParentalRating`, `isHd`, `is4K`, `locationTypes`, `excludeLocationTypes`, `isMissing`, `isUnaired`, `minCommunityRating`, `minCriticRating`, `minPremiereDate`, `minDateLastSaved`, `minDateLastSavedForUser`, `maxPremiereDate`, `hasOverview`, `hasImdbId`, `hasTmdbId`, `hasTvdbId`, `excludeItemIds`, `startIndex`, `limit`, `recursive`, `searchTerm`, `sortOrder`, `parentId`, `fields`, `excludeItemTypes`, `filters`, `isFavorite`, `mediaTypes`, `imageTypes`, `sortBy`, `isPlayed`, `genres`, `officialRatings`, `tags`, `years`, `enableUserData`, `imageTypeLimit`, `enableImageTypes`, `person`, `personIds`, `personTypes`, `studios`, `artists`, `excludeArtistIds`, `artistIds`, `albumArtistIds`, `contributingArtistIds`, `albums`, `albumIds`, `ids`, `videoTypes`, `minOfficialRating`, `isLocked`, `isPlaceHolder`, `hasOfficialRating`, `collapseBoxSetItems`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`, `is3D`, `seriesStatus`, `nameStartsWithOrGreater`, `nameStartsWith`, `nameLessThan`, `studioIds`, `genreIds`, `enableTotalRecordCount`, `enableImages` | BaseItemDtoQueryResult | yes | Finds movies and trailers similar to a given trailer. |
+| GET | `/Trailers/{itemId}/Similar` | GetSimilarTrailers | `itemId`*, `excludeArtistIds`, `userId`, `limit`, `fields` | BaseItemDtoQueryResult | yes | Gets similar items. |
+| GET | `/Users` | GetUsers | `isHidden`, `isDisabled` | UserDto[] | yes | Gets a list of users. |
+| POST | `/Users/AuthenticateByName` | AuthenticateUserByName | body*: AuthenticateUserByName | AuthenticationResult |  | Authenticates a user by name. |
+| POST | `/Users/AuthenticateWithQuickConnect` | AuthenticateWithQuickConnect | body*: QuickConnectDto | AuthenticationResult |  | Authenticates a user with quick connect. |
+| POST | `/Users/ForgotPassword` | ForgotPassword | body*: ForgotPasswordDto | ForgotPasswordResult |  | Initiates the forgot password process for a local user. |
+| POST | `/Users/ForgotPassword/Pin` | ForgotPasswordPin | body: string | PinRedeemResult |  | Redeems a forgot password pin. |
+| GET | `/Users/Me` | GetCurrentUser | — | UserDto | yes | Gets the user based on auth token. |
+| POST | `/Users/New` | CreateUserByName | body*: CreateUserByName | UserDto |  | Creates a user. |
+| GET | `/Users/Public` | GetPublicUsers | — | UserDto[] | yes | Gets a list of publicly visible users for display on a login screen. |
+| GET | `/Users/{userId}` | GetUserById | `userId`* | UserDto | yes | Gets a user by Id. |
+| POST | `/Users/{userId}` | UpdateUser | `userId`*, body*: UserDto | — |  | Updates a user. |
+| DELETE | `/Users/{userId}` | DeleteUser | `userId`* | — |  | Deletes a user. |
+| POST | `/Users/{userId}/Authenticate` | AuthenticateUser | `userId`*, `pw`*, `password` | AuthenticationResult |  | Authenticates a user. |
+| POST | `/Users/{userId}/Configuration` | UpdateUserConfiguration | `userId`*, body*: UserConfiguration | — |  | Updates a user configuration. |
+| POST | `/Users/{userId}/EasyPassword` | UpdateUserEasyPassword | `userId`*, body*: UpdateUserEasyPassword | — |  | Updates a user's easy password. |
+| POST | `/Users/{userId}/FavoriteItems/{itemId}` | MarkFavoriteItem | `userId`*, `itemId`* | UserItemDataDto |  | Marks an item as a favorite. |
+| DELETE | `/Users/{userId}/FavoriteItems/{itemId}` | UnmarkFavoriteItem | `userId`*, `itemId`* | UserItemDataDto |  | Unmarks item as a favorite. |
+| GET | `/Users/{userId}/GroupingOptions` | GetGroupingOptions | `userId`* | SpecialViewOptionDto[] | yes | Get user view grouping options. |
+| GET | `/Users/{userId}/Images/{imageType}` | GetUserImage | `userId`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get user profile image. |
+| POST | `/Users/{userId}/Images/{imageType}` | PostUserImage | `userId`*, `imageType`*, `index` | — |  | Sets the user image. |
+| DELETE | `/Users/{userId}/Images/{imageType}` | DeleteUserImage | `userId`*, `imageType`*, `index` | — |  | Delete the user's image. |
+| HEAD | `/Users/{userId}/Images/{imageType}` | HeadUserImage | `userId`*, `imageType`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer`, `imageIndex` | string:binary | yes | Get user profile image. |
+| GET | `/Users/{userId}/Images/{imageType}/{imageIndex}` | GetUserImageByIndex | `userId`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get user profile image. |
+| HEAD | `/Users/{userId}/Images/{imageType}/{imageIndex}` | HeadUserImageByIndex | `userId`*, `imageType`*, `imageIndex`*, `tag`, `format`, `maxWidth`, `maxHeight`, `percentPlayed`, `unplayedCount`, `width`, `height`, `quality`, `cropWhitespace`, `addPlayedIndicator`, `blur`, `backgroundColor`, `foregroundLayer` | string:binary | yes | Get user profile image. |
+| POST | `/Users/{userId}/Images/{imageType}/{index}` | PostUserImageByIndex | `userId`*, `imageType`*, `index`* | — |  | Sets the user image. |
+| DELETE | `/Users/{userId}/Images/{imageType}/{index}` | DeleteUserImageByIndex | `userId`*, `imageType`*, `index`* | — |  | Delete the user's image. |
+| GET | `/Users/{userId}/Items` | GetItemsByUserId | `userId`*, `maxOfficialRating`, `hasThemeSong`, `hasThemeVideo`, `hasSubtitles`, `hasSpecialFeature`, `hasTrailer`, `adjacentTo`, `parentIndexNumber`, `hasParentalRating`, `isHd`, `is4K`, `locationTypes`, `excludeLocationTypes`, `isMissing`, `isUnaired`, `minCommunityRating`, `minCriticRating`, `minPremiereDate`, `minDateLastSaved`, `minDateLastSavedForUser`, `maxPremiereDate`, `hasOverview`, `hasImdbId`, `hasTmdbId`, `hasTvdbId`, `excludeItemIds`, `startIndex`, `limit`, `recursive`, `searchTerm`, `sortOrder`, `parentId`, `fields`, `excludeItemTypes`, `includeItemTypes`, `filters`, `isFavorite`, `mediaTypes`, `imageTypes`, `sortBy`, `isPlayed`, `genres`, `officialRatings`, `tags`, `years`, `enableUserData`, `imageTypeLimit`, `enableImageTypes`, `person`, `personIds`, `personTypes`, `studios`, `artists`, `excludeArtistIds`, `artistIds`, `albumArtistIds`, `contributingArtistIds`, `albums`, `albumIds`, `ids`, `videoTypes`, `minOfficialRating`, `isLocked`, `isPlaceHolder`, `hasOfficialRating`, `collapseBoxSetItems`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`, `is3D`, `seriesStatus`, `nameStartsWithOrGreater`, `nameStartsWith`, `nameLessThan`, `studioIds`, `genreIds`, `enableTotalRecordCount`, `enableImages` | BaseItemDtoQueryResult | yes | Gets items based on a query. |
+| GET | `/Users/{userId}/Items/Latest` | GetLatestMedia | `userId`*, `parentId`, `fields`, `includeItemTypes`, `isPlayed`, `enableImages`, `imageTypeLimit`, `enableImageTypes`, `enableUserData`, `limit`, `groupItems` | BaseItemDto[] | yes | Gets latest media. |
+| GET | `/Users/{userId}/Items/Resume` | GetResumeItems | `userId`*, `startIndex`, `limit`, `searchTerm`, `parentId`, `fields`, `mediaTypes`, `enableUserData`, `imageTypeLimit`, `enableImageTypes`, `excludeItemTypes`, `includeItemTypes`, `enableTotalRecordCount`, `enableImages` | BaseItemDtoQueryResult | yes | Gets items based on a query. |
+| GET | `/Users/{userId}/Items/Root` | GetRootFolder | `userId`* | BaseItemDto | yes | Gets the root folder from a user's library. |
+| GET | `/Users/{userId}/Items/{itemId}` | GetItem | `userId`*, `itemId`* | BaseItemDto | yes | Gets an item from a user's library. |
+| GET | `/Users/{userId}/Items/{itemId}/Intros` | GetIntros | `userId`*, `itemId`* | BaseItemDtoQueryResult | yes | Gets intros to play before the main media item plays. |
+| GET | `/Users/{userId}/Items/{itemId}/LocalTrailers` | GetLocalTrailers | `userId`*, `itemId`* | BaseItemDto[] | yes | Gets local trailers for an item. |
+| POST | `/Users/{userId}/Items/{itemId}/Rating` | UpdateUserItemRating | `userId`*, `itemId`*, `likes` | UserItemDataDto |  | Updates a user's rating for an item. |
+| DELETE | `/Users/{userId}/Items/{itemId}/Rating` | DeleteUserItemRating | `userId`*, `itemId`* | UserItemDataDto |  | Deletes a user's saved personal rating for an item. |
+| GET | `/Users/{userId}/Items/{itemId}/SpecialFeatures` | GetSpecialFeatures | `userId`*, `itemId`* | BaseItemDto[] | yes | Gets special features for an item. |
+| POST | `/Users/{userId}/Password` | UpdateUserPassword | `userId`*, body*: UpdateUserPassword | — |  | Updates a user's password. |
+| POST | `/Users/{userId}/PlayedItems/{itemId}` | MarkPlayedItem | `userId`*, `itemId`*, `datePlayed` | UserItemDataDto |  | Marks an item as played for user. |
+| DELETE | `/Users/{userId}/PlayedItems/{itemId}` | MarkUnplayedItem | `userId`*, `itemId`* | UserItemDataDto |  | Marks an item as unplayed for user. |
+| POST | `/Users/{userId}/PlayingItems/{itemId}` | OnPlaybackStart | `userId`*, `itemId`*, `mediaSourceId`, `audioStreamIndex`, `subtitleStreamIndex`, `playMethod`, `liveStreamId`, `playSessionId`, `canSeek` | — |  | Reports that a user has begun playing an item. |
+| DELETE | `/Users/{userId}/PlayingItems/{itemId}` | OnPlaybackStopped | `userId`*, `itemId`*, `mediaSourceId`, `nextMediaType`, `positionTicks`, `liveStreamId`, `playSessionId` | — |  | Reports that a user has stopped playing an item. |
+| POST | `/Users/{userId}/PlayingItems/{itemId}/Progress` | OnPlaybackProgress | `userId`*, `itemId`*, `mediaSourceId`, `positionTicks`, `audioStreamIndex`, `subtitleStreamIndex`, `volumeLevel`, `playMethod`, `liveStreamId`, `playSessionId`, `repeatMode`, `isPaused`, `isMuted` | — |  | Reports a user's playback progress. |
+| POST | `/Users/{userId}/Policy` | UpdateUserPolicy | `userId`*, body*: UserPolicy | — |  | Updates a user policy. |
+| GET | `/Users/{userId}/Suggestions` | GetSuggestions | `userId`*, `mediaType`, `type`, `startIndex`, `limit`, `enableTotalRecordCount` | BaseItemDtoQueryResult | yes | Gets suggestions. |
+| GET | `/Users/{userId}/Views` | GetUserViews | `userId`*, `includeExternalContent`, `presetViews`, `includeHidden` | BaseItemDtoQueryResult | yes | Get user views. |
+| DELETE | `/Videos/ActiveEncodings` | StopEncodingProcess | `deviceId`, `playSessionId` | — |  | Stops an active encoding. |
+| POST | `/Videos/MergeVersions` | MergeVersions | `ids`* | — |  | Merges videos into a single record. |
+| GET | `/Videos/{itemId}/AdditionalParts` | GetAdditionalPart | `itemId`*, `userId` | BaseItemDtoQueryResult | yes | Gets additional parts for a video. |
+| DELETE | `/Videos/{itemId}/AlternateSources` | DeleteAlternateSources | `itemId`* | — |  | Removes alternate video sources. |
+| POST | `/Videos/{itemId}/Subtitles` | UploadSubtitle | `itemId`*, body*: UploadSubtitleDto | — |  | Upload an external subtitle file. |
+| DELETE | `/Videos/{itemId}/Subtitles/{index}` | DeleteSubtitle | `itemId`*, `index`* | — |  | Deletes an external subtitle file. |
+| GET | `/Videos/{itemId}/hls/{playlistId}/stream.m3u8` | GetHlsPlaylistLegacy | `itemId`*, `playlistId`* | string:binary | yes | Gets a hls video playlist. |
+| GET | `/Videos/{itemId}/hls/{playlistId}/{segmentId}.{segmentContainer}` | GetHlsVideoSegmentLegacy | `itemId`*, `playlistId`*, `segmentId`*, `segmentContainer`* | string:binary | yes | Gets a hls video segment. |
+| GET | `/Videos/{itemId}/hls1/{playlistId}/{segmentId}.{container}` | GetHlsVideoSegment | `itemId`*, `playlistId`*, `segmentId`*, `container`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets a video stream using HTTP live streaming. |
+| GET | `/Videos/{itemId}/live.m3u8` | GetLiveHlsStream | `itemId`*, `container`, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions`, `maxWidth`, `maxHeight`, `enableSubtitlesInManifest` | string:binary | yes | Gets a hls live stream. |
+| GET | `/Videos/{itemId}/main.m3u8` | GetVariantHlsVideoPlaylist | `itemId`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets a video stream using HTTP live streaming. |
+| GET | `/Videos/{itemId}/master.m3u8` | GetMasterHlsVideoPlaylist | `itemId`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`*, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions`, `enableAdaptiveBitrateStreaming` | string:binary | yes | Gets a video hls playlist stream. |
+| HEAD | `/Videos/{itemId}/master.m3u8` | HeadMasterHlsVideoPlaylist | `itemId`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`*, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions`, `enableAdaptiveBitrateStreaming` | string:binary | yes | Gets a video hls playlist stream. |
+| GET | `/Videos/{itemId}/stream` | GetVideoStream | `itemId`*, `container`, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets a video stream. |
+| HEAD | `/Videos/{itemId}/stream` | HeadVideoStream | `itemId`*, `container`, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions` | string:binary | yes | Gets a video stream. |
+| GET | `/Videos/{itemId}/{mediaSourceId}/Subtitles/{index}/Stream.{format}` | GetSubtitle | `itemId`*, `mediaSourceId`*, `index`*, `format`*, `endPositionTicks`, `copyTimestamps`, `addVttTimeMap`, `startPositionTicks` | string:binary | yes | Gets subtitles in a specified format. |
+| GET | `/Videos/{itemId}/{mediaSourceId}/Subtitles/{index}/subtitles.m3u8` | GetSubtitlePlaylist | `itemId`*, `index`*, `mediaSourceId`*, `segmentLength`* | string:binary | yes | Gets an HLS subtitle playlist. |
+| GET | `/Videos/{itemId}/{mediaSourceId}/Subtitles/{index}/{startPositionTicks}/Stream.{format}` | GetSubtitleWithTicks | `itemId`*, `mediaSourceId`*, `index`*, `startPositionTicks`*, `format`*, `endPositionTicks`, `copyTimestamps`, `addVttTimeMap` | string:binary | yes | Gets subtitles in a specified format. |
+| GET | `/Videos/{itemId}/{stream}.{container}` | GetVideoStreamByContainer | `itemId`*, `container`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions`, `stream`* | string:binary | yes | Gets a video stream. |
+| HEAD | `/Videos/{itemId}/{stream}.{container}` | HeadVideoStreamByContainer | `itemId`*, `container`*, `static`, `params`, `tag`, `deviceProfileId`, `playSessionId`, `segmentContainer`, `segmentLength`, `minSegments`, `mediaSourceId`, `deviceId`, `audioCodec`, `enableAutoStreamCopy`, `allowVideoStreamCopy`, `allowAudioStreamCopy`, `breakOnNonKeyFrames`, `audioSampleRate`, `maxAudioBitDepth`, `audioBitRate`, `audioChannels`, `maxAudioChannels`, `profile`, `level`, `framerate`, `maxFramerate`, `copyTimestamps`, `startTimeTicks`, `width`, `height`, `videoBitRate`, `subtitleStreamIndex`, `subtitleMethod`, `maxRefFrames`, `maxVideoBitDepth`, `requireAvc`, `deInterlace`, `requireNonAnamorphic`, `transcodingMaxAudioChannels`, `cpuCoreLimit`, `liveStreamId`, `enableMpegtsM2TsMode`, `videoCodec`, `subtitleCodec`, `transcodeReasons`, `audioStreamIndex`, `videoStreamIndex`, `context`, `streamOptions`, `stream`* | string:binary | yes | Gets a video stream. |
+| GET | `/Videos/{videoId}/{mediaSourceId}/Attachments/{index}` | GetAttachment | `videoId`*, `mediaSourceId`*, `index`* | string:binary | yes | Get video attachment. |
+| GET | `/Years` | GetYears | `startIndex`, `limit`, `sortOrder`, `parentId`, `fields`, `excludeItemTypes`, `includeItemTypes`, `mediaTypes`, `sortBy`, `enableUserData`, `imageTypeLimit`, `enableImageTypes`, `userId`, `recursive`, `enableImages` | BaseItemDtoQueryResult | yes | Get years. |
+| GET | `/Years/{year}` | GetYear | `year`*, `userId` | BaseItemDto | yes | Gets a year. |
+| GET | `/web/ConfigurationPage` | GetDashboardConfigurationPage | `name` | string:binary | yes | Gets a dashboard configuration page. |
+| GET | `/web/ConfigurationPages` | GetConfigurationPages | `enableInMainMenu`, `pageType` | ConfigurationPageInfo[] | yes | Gets the configuration pages. |

@@ -37,12 +37,12 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/classes/{class}/archive"
+        "to": "operation:post:/classes/{class}/archive"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:post:/classes/{class}/archive"
+        "to": "operation:delete:/classes/{class}/archive"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -57,12 +57,12 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/classes/{class}/assignments/{assignment}/archive"
+        "to": "operation:post:/classes/{class}/assignments/{assignment}/archive"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:post:/classes/{class}/assignments/{assignment}/archive"
+        "to": "operation:delete:/classes/{class}/assignments/{assignment}/archive"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -92,17 +92,17 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/classes/{class}/assignments/{assignment}/submissions/{submission}"
-      },
-      {
-        "from": "flat-io-1bc724239a",
-        "kind": "EXPOSES",
         "to": "operation:get:/classes/{class}/assignments/{assignment}/submissions/{submission}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
         "to": "operation:put:/classes/{class}/assignments/{assignment}/submissions/{submission}"
+      },
+      {
+        "from": "flat-io-1bc724239a",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/classes/{class}/assignments/{assignment}/submissions/{submission}"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -117,12 +117,12 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}"
+        "to": "operation:put:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:put:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}"
+        "to": "operation:delete:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -137,12 +137,12 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/classes/{class}/users/{user}"
+        "to": "operation:put:/classes/{class}/users/{user}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:put:/classes/{class}/users/{user}"
+        "to": "operation:delete:/classes/{class}/users/{user}"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -157,11 +157,6 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/collections/{collection}"
-      },
-      {
-        "from": "flat-io-1bc724239a",
-        "kind": "EXPOSES",
         "to": "operation:get:/collections/{collection}"
       },
       {
@@ -172,17 +167,22 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
+        "to": "operation:delete:/collections/{collection}"
+      },
+      {
+        "from": "flat-io-1bc724239a",
+        "kind": "EXPOSES",
         "to": "operation:get:/collections/{collection}/scores"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/collections/{collection}/scores/{score}"
+        "to": "operation:put:/collections/{collection}/scores/{score}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:put:/collections/{collection}/scores/{score}"
+        "to": "operation:delete:/collections/{collection}/scores/{score}"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -257,22 +257,17 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/organizations/users/{user}"
-      },
-      {
-        "from": "flat-io-1bc724239a",
-        "kind": "EXPOSES",
         "to": "operation:put:/organizations/users/{user}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:post:/scores"
+        "to": "operation:delete:/organizations/users/{user}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/scores/{score}"
+        "to": "operation:post:/scores"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -287,6 +282,11 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
+        "to": "operation:delete:/scores/{score}"
+      },
+      {
+        "from": "flat-io-1bc724239a",
+        "kind": "EXPOSES",
         "to": "operation:get:/scores/{score}/collaborators"
       },
       {
@@ -297,12 +297,12 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/scores/{score}/collaborators/{collaborator}"
+        "to": "operation:get:/scores/{score}/collaborators/{collaborator}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:get:/scores/{score}/collaborators/{collaborator}"
+        "to": "operation:delete:/scores/{score}/collaborators/{collaborator}"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -317,22 +317,22 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/scores/{score}/comments/{comment}"
-      },
-      {
-        "from": "flat-io-1bc724239a",
-        "kind": "EXPOSES",
         "to": "operation:put:/scores/{score}/comments/{comment}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/scores/{score}/comments/{comment}/resolved"
+        "to": "operation:delete:/scores/{score}/comments/{comment}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
         "to": "operation:put:/scores/{score}/comments/{comment}/resolved"
+      },
+      {
+        "from": "flat-io-1bc724239a",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/scores/{score}/comments/{comment}/resolved"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -377,17 +377,17 @@
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/scores/{score}/tracks/{track}"
-      },
-      {
-        "from": "flat-io-1bc724239a",
-        "kind": "EXPOSES",
         "to": "operation:get:/scores/{score}/tracks/{track}"
       },
       {
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
         "to": "operation:put:/scores/{score}/tracks/{track}"
+      },
+      {
+        "from": "flat-io-1bc724239a",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/scores/{score}/tracks/{track}"
       },
       {
         "from": "flat-io-1bc724239a",
@@ -408,6 +408,771 @@
         "from": "flat-io-1bc724239a",
         "kind": "EXPOSES",
         "to": "operation:get:/users/{user}/scores"
+      },
+      {
+        "from": "operation:get:/classes",
+        "kind": "RETURNS",
+        "to": "schema:ClassDetails"
+      },
+      {
+        "from": "operation:post:/classes",
+        "kind": "ACCEPTS",
+        "to": "schema:ClassCreation"
+      },
+      {
+        "from": "operation:post:/classes",
+        "kind": "RETURNS",
+        "to": "schema:ClassDetails"
+      },
+      {
+        "from": "operation:post:/classes/enroll/{enrollmentCode}",
+        "kind": "RETURNS",
+        "to": "schema:ClassDetails"
+      },
+      {
+        "from": "operation:get:/classes/{class}",
+        "kind": "RETURNS",
+        "to": "schema:ClassDetails"
+      },
+      {
+        "from": "operation:put:/classes/{class}",
+        "kind": "ACCEPTS",
+        "to": "schema:ClassUpdate"
+      },
+      {
+        "from": "operation:put:/classes/{class}",
+        "kind": "RETURNS",
+        "to": "schema:ClassDetails"
+      },
+      {
+        "from": "operation:post:/classes/{class}/activate",
+        "kind": "RETURNS",
+        "to": "schema:ClassDetails"
+      },
+      {
+        "from": "operation:post:/classes/{class}/archive",
+        "kind": "RETURNS",
+        "to": "schema:ClassDetails"
+      },
+      {
+        "from": "operation:delete:/classes/{class}/archive",
+        "kind": "RETURNS",
+        "to": "schema:ClassDetails"
+      },
+      {
+        "from": "operation:get:/classes/{class}/assignments",
+        "kind": "RETURNS",
+        "to": "schema:Assignment"
+      },
+      {
+        "from": "operation:post:/classes/{class}/assignments",
+        "kind": "ACCEPTS",
+        "to": "schema:AssignmentCreation"
+      },
+      {
+        "from": "operation:post:/classes/{class}/assignments",
+        "kind": "RETURNS",
+        "to": "schema:Assignment"
+      },
+      {
+        "from": "operation:post:/classes/{class}/assignments/{assignment}/archive",
+        "kind": "RETURNS",
+        "to": "schema:Assignment"
+      },
+      {
+        "from": "operation:delete:/classes/{class}/assignments/{assignment}/archive",
+        "kind": "RETURNS",
+        "to": "schema:Assignment"
+      },
+      {
+        "from": "operation:post:/classes/{class}/assignments/{assignment}/copy",
+        "kind": "ACCEPTS",
+        "to": "schema:AssignmentCopy"
+      },
+      {
+        "from": "operation:post:/classes/{class}/assignments/{assignment}/copy",
+        "kind": "RETURNS",
+        "to": "schema:Assignment"
+      },
+      {
+        "from": "operation:get:/classes/{class}/assignments/{assignment}/submissions",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmission"
+      },
+      {
+        "from": "operation:put:/classes/{class}/assignments/{assignment}/submissions",
+        "kind": "ACCEPTS",
+        "to": "schema:AssignmentSubmissionUpdate"
+      },
+      {
+        "from": "operation:put:/classes/{class}/assignments/{assignment}/submissions",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmission"
+      },
+      {
+        "from": "operation:get:/classes/{class}/assignments/{assignment}/submissions/{submission}",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmission"
+      },
+      {
+        "from": "operation:put:/classes/{class}/assignments/{assignment}/submissions/{submission}",
+        "kind": "ACCEPTS",
+        "to": "schema:AssignmentSubmissionUpdate"
+      },
+      {
+        "from": "operation:put:/classes/{class}/assignments/{assignment}/submissions/{submission}",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmission"
+      },
+      {
+        "from": "operation:get:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmissionComment"
+      },
+      {
+        "from": "operation:post:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments",
+        "kind": "ACCEPTS",
+        "to": "schema:AssignmentSubmissionCommentCreation"
+      },
+      {
+        "from": "operation:post:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmissionComment"
+      },
+      {
+        "from": "operation:put:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}",
+        "kind": "ACCEPTS",
+        "to": "schema:AssignmentSubmissionCommentCreation"
+      },
+      {
+        "from": "operation:put:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmissionComment"
+      },
+      {
+        "from": "operation:get:/classes/{class}/assignments/{assignment}/submissions/{submission}/history",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmissionHistory"
+      },
+      {
+        "from": "operation:get:/classes/{class}/students/{user}/submissions",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmission"
+      },
+      {
+        "from": "operation:get:/collections",
+        "kind": "RETURNS",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "operation:post:/collections",
+        "kind": "ACCEPTS",
+        "to": "schema:CollectionCreation"
+      },
+      {
+        "from": "operation:post:/collections",
+        "kind": "RETURNS",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "operation:get:/collections/{collection}",
+        "kind": "RETURNS",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "operation:put:/collections/{collection}",
+        "kind": "ACCEPTS",
+        "to": "schema:CollectionModification"
+      },
+      {
+        "from": "operation:put:/collections/{collection}",
+        "kind": "RETURNS",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "operation:get:/collections/{collection}/scores",
+        "kind": "RETURNS",
+        "to": "schema:ScoreDetails"
+      },
+      {
+        "from": "operation:put:/collections/{collection}/scores/{score}",
+        "kind": "RETURNS",
+        "to": "schema:ScoreDetails"
+      },
+      {
+        "from": "operation:get:/groups/{group}",
+        "kind": "RETURNS",
+        "to": "schema:GroupDetails"
+      },
+      {
+        "from": "operation:get:/groups/{group}/scores",
+        "kind": "RETURNS",
+        "to": "schema:ScoreDetails"
+      },
+      {
+        "from": "operation:get:/groups/{group}/users",
+        "kind": "RETURNS",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "operation:get:/me",
+        "kind": "RETURNS",
+        "to": "schema:UserDetails"
+      },
+      {
+        "from": "operation:get:/organizations/invitations",
+        "kind": "RETURNS",
+        "to": "schema:OrganizationInvitation"
+      },
+      {
+        "from": "operation:post:/organizations/invitations",
+        "kind": "ACCEPTS",
+        "to": "schema:OrganizationInvitationCreation"
+      },
+      {
+        "from": "operation:post:/organizations/invitations",
+        "kind": "RETURNS",
+        "to": "schema:OrganizationInvitation"
+      },
+      {
+        "from": "operation:get:/organizations/lti/credentials",
+        "kind": "RETURNS",
+        "to": "schema:LtiCredentials"
+      },
+      {
+        "from": "operation:post:/organizations/lti/credentials",
+        "kind": "ACCEPTS",
+        "to": "schema:LtiCredentialsCreation"
+      },
+      {
+        "from": "operation:post:/organizations/lti/credentials",
+        "kind": "RETURNS",
+        "to": "schema:LtiCredentials"
+      },
+      {
+        "from": "operation:get:/organizations/users",
+        "kind": "RETURNS",
+        "to": "schema:UserDetailsAdmin"
+      },
+      {
+        "from": "operation:post:/organizations/users",
+        "kind": "ACCEPTS",
+        "to": "schema:UserCreation"
+      },
+      {
+        "from": "operation:post:/organizations/users",
+        "kind": "RETURNS",
+        "to": "schema:UserDetailsAdmin"
+      },
+      {
+        "from": "operation:put:/organizations/users/{user}",
+        "kind": "ACCEPTS",
+        "to": "schema:UserAdminUpdate"
+      },
+      {
+        "from": "operation:put:/organizations/users/{user}",
+        "kind": "RETURNS",
+        "to": "schema:UserDetailsAdmin"
+      },
+      {
+        "from": "operation:post:/scores",
+        "kind": "ACCEPTS",
+        "to": "schema:ScoreCreation"
+      },
+      {
+        "from": "operation:post:/scores",
+        "kind": "RETURNS",
+        "to": "schema:ScoreDetails"
+      },
+      {
+        "from": "operation:get:/scores/{score}",
+        "kind": "RETURNS",
+        "to": "schema:ScoreDetails"
+      },
+      {
+        "from": "operation:put:/scores/{score}",
+        "kind": "ACCEPTS",
+        "to": "schema:ScoreModification"
+      },
+      {
+        "from": "operation:put:/scores/{score}",
+        "kind": "RETURNS",
+        "to": "schema:ScoreDetails"
+      },
+      {
+        "from": "operation:get:/scores/{score}/collaborators",
+        "kind": "RETURNS",
+        "to": "schema:ResourceCollaborator"
+      },
+      {
+        "from": "operation:post:/scores/{score}/collaborators",
+        "kind": "ACCEPTS",
+        "to": "schema:ResourceCollaboratorCreation"
+      },
+      {
+        "from": "operation:post:/scores/{score}/collaborators",
+        "kind": "RETURNS",
+        "to": "schema:ResourceCollaborator"
+      },
+      {
+        "from": "operation:get:/scores/{score}/collaborators/{collaborator}",
+        "kind": "RETURNS",
+        "to": "schema:ResourceCollaborator"
+      },
+      {
+        "from": "operation:get:/scores/{score}/comments",
+        "kind": "RETURNS",
+        "to": "schema:ScoreComment"
+      },
+      {
+        "from": "operation:post:/scores/{score}/comments",
+        "kind": "ACCEPTS",
+        "to": "schema:ScoreCommentCreation"
+      },
+      {
+        "from": "operation:post:/scores/{score}/comments",
+        "kind": "RETURNS",
+        "to": "schema:ScoreComment"
+      },
+      {
+        "from": "operation:put:/scores/{score}/comments/{comment}",
+        "kind": "ACCEPTS",
+        "to": "schema:ScoreCommentUpdate"
+      },
+      {
+        "from": "operation:put:/scores/{score}/comments/{comment}",
+        "kind": "RETURNS",
+        "to": "schema:ScoreComment"
+      },
+      {
+        "from": "operation:post:/scores/{score}/fork",
+        "kind": "ACCEPTS",
+        "to": "schema:ScoreFork"
+      },
+      {
+        "from": "operation:post:/scores/{score}/fork",
+        "kind": "RETURNS",
+        "to": "schema:ScoreDetails"
+      },
+      {
+        "from": "operation:get:/scores/{score}/revisions",
+        "kind": "RETURNS",
+        "to": "schema:ScoreRevision"
+      },
+      {
+        "from": "operation:post:/scores/{score}/revisions",
+        "kind": "ACCEPTS",
+        "to": "schema:ScoreRevisionCreation"
+      },
+      {
+        "from": "operation:post:/scores/{score}/revisions",
+        "kind": "RETURNS",
+        "to": "schema:ScoreRevision"
+      },
+      {
+        "from": "operation:get:/scores/{score}/revisions/{revision}",
+        "kind": "RETURNS",
+        "to": "schema:ScoreRevision"
+      },
+      {
+        "from": "operation:get:/scores/{score}/submissions",
+        "kind": "RETURNS",
+        "to": "schema:AssignmentSubmission"
+      },
+      {
+        "from": "operation:get:/scores/{score}/tracks",
+        "kind": "RETURNS",
+        "to": "schema:ScoreTrack"
+      },
+      {
+        "from": "operation:post:/scores/{score}/tracks",
+        "kind": "ACCEPTS",
+        "to": "schema:ScoreTrackCreation"
+      },
+      {
+        "from": "operation:post:/scores/{score}/tracks",
+        "kind": "RETURNS",
+        "to": "schema:ScoreTrack"
+      },
+      {
+        "from": "operation:get:/scores/{score}/tracks/{track}",
+        "kind": "RETURNS",
+        "to": "schema:ScoreTrack"
+      },
+      {
+        "from": "operation:put:/scores/{score}/tracks/{track}",
+        "kind": "ACCEPTS",
+        "to": "schema:ScoreTrackUpdate"
+      },
+      {
+        "from": "operation:put:/scores/{score}/tracks/{track}",
+        "kind": "RETURNS",
+        "to": "schema:ScoreTrack"
+      },
+      {
+        "from": "operation:get:/users/{user}",
+        "kind": "RETURNS",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "operation:get:/users/{user}/likes",
+        "kind": "RETURNS",
+        "to": "schema:ScoreDetails"
+      },
+      {
+        "from": "operation:get:/users/{user}/scores",
+        "kind": "RETURNS",
+        "to": "schema:ScoreDetails"
+      },
+      {
+        "from": "schema:Assignment",
+        "kind": "REFERENCES",
+        "to": "schema:AssignmentSubmission"
+      },
+      {
+        "from": "schema:Assignment",
+        "kind": "REFERENCES",
+        "to": "schema:AssignmentType"
+      },
+      {
+        "from": "schema:Assignment",
+        "kind": "REFERENCES",
+        "to": "schema:GoogleClassroomCoursework"
+      },
+      {
+        "from": "schema:Assignment",
+        "kind": "REFERENCES",
+        "to": "schema:MediaAttachment"
+      },
+      {
+        "from": "schema:Assignment",
+        "kind": "REFERENCES",
+        "to": "schema:MicrosoftGraphAssignment"
+      },
+      {
+        "from": "schema:AssignmentCreation",
+        "kind": "REFERENCES",
+        "to": "schema:AssignmentType"
+      },
+      {
+        "from": "schema:AssignmentCreation",
+        "kind": "REFERENCES",
+        "to": "schema:ClassAttachmentCreation"
+      },
+      {
+        "from": "schema:AssignmentSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:AssignmentSubmissionState"
+      },
+      {
+        "from": "schema:AssignmentSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:GoogleClassroomSubmission"
+      },
+      {
+        "from": "schema:AssignmentSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:MediaAttachment"
+      },
+      {
+        "from": "schema:AssignmentSubmission",
+        "kind": "REFERENCES",
+        "to": "schema:MicrosoftGraphSubmission"
+      },
+      {
+        "from": "schema:AssignmentSubmissionHistory",
+        "kind": "REFERENCES",
+        "to": "schema:AssignmentSubmissionState"
+      },
+      {
+        "from": "schema:AssignmentSubmissionUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:ClassAttachmentCreation"
+      },
+      {
+        "from": "schema:ClassAttachmentCreation",
+        "kind": "REFERENCES",
+        "to": "schema:MediaScoreSharingMode"
+      },
+      {
+        "from": "schema:ClassDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ClassState"
+      },
+      {
+        "from": "schema:ClassDetails",
+        "kind": "REFERENCES",
+        "to": "schema:GroupDetails"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionPrivacy"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionType"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceCollaborator"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceRights"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "REFERENCES",
+        "to": "schema:UserPublicSummary"
+      },
+      {
+        "from": "schema:CollectionCreation",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionPrivacy"
+      },
+      {
+        "from": "schema:CollectionModification",
+        "kind": "REFERENCES",
+        "to": "schema:CollectionPrivacy"
+      },
+      {
+        "from": "schema:GroupDetails",
+        "kind": "REFERENCES",
+        "to": "schema:GroupType"
+      },
+      {
+        "from": "schema:LtiCredentials",
+        "kind": "REFERENCES",
+        "to": "schema:LmsName"
+      },
+      {
+        "from": "schema:LtiCredentialsCreation",
+        "kind": "REFERENCES",
+        "to": "schema:LmsName"
+      },
+      {
+        "from": "schema:MediaAttachment",
+        "kind": "REFERENCES",
+        "to": "schema:MediaScoreSharingMode"
+      },
+      {
+        "from": "schema:OrganizationInvitation",
+        "kind": "REFERENCES",
+        "to": "schema:OrganizationRoles"
+      },
+      {
+        "from": "schema:OrganizationInvitationCreation",
+        "kind": "REFERENCES",
+        "to": "schema:OrganizationRoles"
+      },
+      {
+        "from": "schema:ResourceCollaborator",
+        "kind": "REFERENCES",
+        "to": "schema:Group"
+      },
+      {
+        "from": "schema:ResourceCollaborator",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceRights"
+      },
+      {
+        "from": "schema:ResourceCollaborator",
+        "kind": "REFERENCES",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:ScoreComment",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreCommentContext"
+      },
+      {
+        "from": "schema:ScoreCommentCreation",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreCommentContext"
+      },
+      {
+        "from": "schema:ScoreCommentUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreCommentContext"
+      },
+      {
+        "from": "schema:ScoreCreation",
+        "kind": "REFERENCES",
+        "to": "schema:ScorePrivacy"
+      },
+      {
+        "from": "schema:ScoreCreation",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreSource"
+      },
+      {
+        "from": "schema:ScoreDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceCollaborator"
+      },
+      {
+        "from": "schema:ScoreDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ResourceRights"
+      },
+      {
+        "from": "schema:ScoreDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreCommentsCounts"
+      },
+      {
+        "from": "schema:ScoreDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreCreationType"
+      },
+      {
+        "from": "schema:ScoreDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreLicense"
+      },
+      {
+        "from": "schema:ScoreDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreLikesCounts"
+      },
+      {
+        "from": "schema:ScoreDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ScorePlaysCounts"
+      },
+      {
+        "from": "schema:ScoreDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreSummary"
+      },
+      {
+        "from": "schema:ScoreDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreViewsCounts"
+      },
+      {
+        "from": "schema:ScoreModification",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreCreationType"
+      },
+      {
+        "from": "schema:ScoreModification",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreLicense"
+      },
+      {
+        "from": "schema:ScoreModification",
+        "kind": "REFERENCES",
+        "to": "schema:ScorePrivacy"
+      },
+      {
+        "from": "schema:ScoreRevision",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreRevisionStatistics"
+      },
+      {
+        "from": "schema:ScoreSummary",
+        "kind": "REFERENCES",
+        "to": "schema:ScorePrivacy"
+      },
+      {
+        "from": "schema:ScoreSummary",
+        "kind": "REFERENCES",
+        "to": "schema:UserPublicSummary"
+      },
+      {
+        "from": "schema:ScoreTrack",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreTrackPoint"
+      },
+      {
+        "from": "schema:ScoreTrack",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreTrackState"
+      },
+      {
+        "from": "schema:ScoreTrack",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreTrackType"
+      },
+      {
+        "from": "schema:ScoreTrackCreation",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreTrackPoint"
+      },
+      {
+        "from": "schema:ScoreTrackCreation",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreTrackState"
+      },
+      {
+        "from": "schema:ScoreTrackUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreTrackPoint"
+      },
+      {
+        "from": "schema:ScoreTrackUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:ScoreTrackState"
+      },
+      {
+        "from": "schema:UserAdminUpdate",
+        "kind": "REFERENCES",
+        "to": "schema:OrganizationRoles"
+      },
+      {
+        "from": "schema:UserCreation",
+        "kind": "REFERENCES",
+        "to": "schema:FlatLocales"
+      },
+      {
+        "from": "schema:UserDetails",
+        "kind": "REFERENCES",
+        "to": "schema:FlatLocales"
+      },
+      {
+        "from": "schema:UserDetails",
+        "kind": "REFERENCES",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:UserDetailsAdmin",
+        "kind": "REFERENCES",
+        "to": "schema:LicenseMode"
+      },
+      {
+        "from": "schema:UserDetailsAdmin",
+        "kind": "REFERENCES",
+        "to": "schema:LicenseSources"
+      },
+      {
+        "from": "schema:UserDetailsAdmin",
+        "kind": "REFERENCES",
+        "to": "schema:UserPublicSummary"
+      },
+      {
+        "from": "schema:UserPublic",
+        "kind": "REFERENCES",
+        "to": "schema:UserPublicSummary"
+      },
+      {
+        "from": "schema:UserPublicSummary",
+        "kind": "REFERENCES",
+        "to": "schema:ClassRoles"
+      },
+      {
+        "from": "schema:UserPublicSummary",
+        "kind": "REFERENCES",
+        "to": "schema:OrganizationRoles"
+      },
+      {
+        "from": "schema:UserPublicSummary",
+        "kind": "REFERENCES",
+        "to": "schema:UserBasics"
       }
     ],
     "nodes": [
@@ -421,8 +1186,34 @@
         "kind": "operation",
         "method": "get",
         "name": "listClasses",
+        "parameters": [
+          {
+            "default": "active",
+            "description": "Filter the classes by state",
+            "enum": [
+              "active",
+              "inactive",
+              "archived"
+            ],
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/classes",
         "pointer": "#/paths/~1classes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassDetails[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -431,16 +1222,42 @@
             ]
           }
         ],
-        "summary": "List the classes available for the current user"
+        "summary": "List the classes available for the current user",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Classrooms on Flat allow you to create activities with assignments and post content to a specific group.",
         "id": "operation:post:/classes",
         "kind": "operation",
         "method": "post",
         "name": "createClass",
         "path": "/classes",
         "pointer": "#/paths/~1classes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ClassCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassDetails"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -448,16 +1265,40 @@
             ]
           }
         ],
-        "summary": "Create a new class"
+        "summary": "Create a new class",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this method to join a class using an enrollment code given one of the teacher of this class.",
         "id": "operation:post:/classes/enroll/{enrollmentCode}",
         "kind": "operation",
         "method": "post",
         "name": "enrollClass",
+        "parameters": [
+          {
+            "description": "The enrollment code, available to the teacher in `ClassDetails`",
+            "in": "path",
+            "name": "enrollmentCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/enroll/{enrollmentCode}",
         "pointer": "#/paths/~1classes~1enroll~1{enrollmentCode}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassDetails"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -465,7 +1306,10 @@
             ]
           }
         ],
-        "summary": "Join a class"
+        "summary": "Join a class",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -473,8 +1317,28 @@
         "kind": "operation",
         "method": "get",
         "name": "getClass",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}",
         "pointer": "#/paths/~1classes~1{class}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassDetails"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -483,16 +1347,47 @@
             ]
           }
         ],
-        "summary": "Get the details of a single class"
+        "summary": "Get the details of a single class",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update the meta information of the class",
         "id": "operation:put:/classes/{class}",
         "kind": "operation",
         "method": "put",
         "name": "updateClass",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}",
         "pointer": "#/paths/~1classes~1{class}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ClassUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassDetails"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -500,16 +1395,40 @@
             ]
           }
         ],
-        "summary": "Update the class"
+        "summary": "Update the class",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Mark the class as `active`.",
         "id": "operation:post:/classes/{class}/activate",
         "kind": "operation",
         "method": "post",
         "name": "activateClass",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/activate",
         "pointer": "#/paths/~1classes~1{class}~1activate/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassDetails"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -517,33 +1436,40 @@
             ]
           }
         ],
-        "summary": "Activate the class"
+        "summary": "Activate the class",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/classes/{class}/archive",
-        "kind": "operation",
-        "method": "delete",
-        "name": "unarchiveClass",
-        "path": "/classes/{class}/archive",
-        "pointer": "#/paths/~1classes~1{class}~1archive/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "edu.classes"
-            ]
-          }
-        ],
-        "summary": "Unarchive the class"
-      },
-      {
-        "deprecated": false,
+        "description": "Mark the class as `archived`.",
         "id": "operation:post:/classes/{class}/archive",
         "kind": "operation",
         "method": "post",
         "name": "archiveClass",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/archive",
         "pointer": "#/paths/~1classes~1{class}~1archive/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassDetails"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -551,7 +1477,51 @@
             ]
           }
         ],
-        "summary": "Archive the class"
+        "summary": "Archive the class",
+        "tags": [
+          "Class"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Mark the class as `active`.",
+        "id": "operation:delete:/classes/{class}/archive",
+        "kind": "operation",
+        "method": "delete",
+        "name": "unarchiveClass",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/classes/{class}/archive",
+        "pointer": "#/paths/~1classes~1{class}~1archive/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ClassDetails"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "edu.classes"
+            ]
+          }
+        ],
+        "summary": "Unarchive the class",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -559,8 +1529,28 @@
         "kind": "operation",
         "method": "get",
         "name": "listAssignments",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments",
         "pointer": "#/paths/~1classes~1{class}~1assignments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assignment[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -571,16 +1561,47 @@
             ]
           }
         ],
-        "summary": "Assignments listing"
+        "summary": "Assignments listing",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this method as a teacher to create and post a new assignment to a class.",
         "id": "operation:post:/classes/{class}/assignments",
         "kind": "operation",
         "method": "post",
         "name": "createAssignment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments",
         "pointer": "#/paths/~1classes~1{class}~1assignments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AssignmentCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assignment"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -589,25 +1610,10 @@
             ]
           }
         ],
-        "summary": "Assignment creation"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/classes/{class}/assignments/{assignment}/archive",
-        "kind": "operation",
-        "method": "delete",
-        "name": "unarchiveAssignment",
-        "path": "/classes/{class}/assignments/{assignment}/archive",
-        "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1archive/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "edu.classes",
-              "edu.assignments"
-            ]
-          }
-        ],
-        "summary": "Unarchive the assignment."
+        "summary": "Assignment creation",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -615,8 +1621,35 @@
         "kind": "operation",
         "method": "post",
         "name": "archiveAssignment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/archive",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1archive/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assignment"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -625,16 +1658,103 @@
             ]
           }
         ],
-        "summary": "Archive the assignment"
+        "summary": "Archive the assignment",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Mark the assignment as `active`.",
+        "id": "operation:delete:/classes/{class}/assignments/{assignment}/archive",
+        "kind": "operation",
+        "method": "delete",
+        "name": "unarchiveAssignment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/classes/{class}/assignments/{assignment}/archive",
+        "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1archive/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assignment"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "edu.classes",
+              "edu.assignments"
+            ]
+          }
+        ],
+        "summary": "Unarchive the assignment.",
+        "tags": [
+          "Class"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Copy an assignment to a specified class.",
         "id": "operation:post:/classes/{class}/assignments/{assignment}/copy",
         "kind": "operation",
         "method": "post",
         "name": "copyAssignment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/copy",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1copy/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AssignmentCopy"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Assignment"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -643,7 +1763,10 @@
             ]
           }
         ],
-        "summary": "Copy an assignment"
+        "summary": "Copy an assignment",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -651,8 +1774,35 @@
         "kind": "operation",
         "method": "get",
         "name": "getSubmissions",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmission[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -663,16 +1813,54 @@
             ]
           }
         ],
-        "summary": "List the students' submissions"
+        "summary": "List the students' submissions",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this method as a student to create, update and submit a submission related to an assignment.",
         "id": "operation:put:/classes/{class}/assignments/{assignment}/submissions",
         "kind": "operation",
         "method": "put",
         "name": "createSubmission",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AssignmentSubmissionUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmission"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -681,16 +1869,47 @@
             ]
           }
         ],
-        "summary": "Create or edit a submission"
+        "summary": "Create or edit a submission",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export list of submissions grades to a CSV file",
         "id": "operation:get:/classes/{class}/assignments/{assignment}/submissions/csv",
         "kind": "operation",
         "method": "get",
         "name": "exportSubmissionsReviewsAsCsv",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions/csv",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1csv/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -701,16 +1920,47 @@
             ]
           }
         ],
-        "summary": "CSV Grades exports"
+        "summary": "CSV Grades exports",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Export list of submissions grades to an Excel file",
         "id": "operation:get:/classes/{class}/assignments/{assignment}/submissions/excel",
         "kind": "operation",
         "method": "get",
         "name": "exportSubmissionsReviewsAsExcel",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions/excel",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1excel/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -721,25 +1971,10 @@
             ]
           }
         ],
-        "summary": "Excel Grades exports"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/classes/{class}/assignments/{assignment}/submissions/{submission}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSubmission",
-        "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}",
-        "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "edu.classes",
-              "edu.assignments"
-            ]
-          }
-        ],
-        "summary": "Delete a submission"
+        "summary": "Excel Grades exports",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -747,8 +1982,42 @@
         "kind": "operation",
         "method": "get",
         "name": "getSubmission",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the submission",
+            "in": "path",
+            "name": "submission",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmission"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -759,16 +2028,61 @@
             ]
           }
         ],
-        "summary": "Get a student submission"
+        "summary": "Get a student submission",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this method as a teacher to update the different submission and give feedback.",
         "id": "operation:put:/classes/{class}/assignments/{assignment}/submissions/{submission}",
         "kind": "operation",
         "method": "put",
         "name": "editSubmission",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the submission",
+            "in": "path",
+            "name": "submission",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AssignmentSubmissionUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmission"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -777,7 +2091,65 @@
             ]
           }
         ],
-        "summary": "Edit a submission"
+        "summary": "Edit a submission",
+        "tags": [
+          "Class"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this method as a teacher to delete a submission and allow student to start over the assignment",
+        "id": "operation:delete:/classes/{class}/assignments/{assignment}/submissions/{submission}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSubmission",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the submission",
+            "in": "path",
+            "name": "submission",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}",
+        "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "edu.classes",
+              "edu.assignments"
+            ]
+          }
+        ],
+        "summary": "Delete a submission",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -785,8 +2157,50 @@
         "kind": "operation",
         "method": "get",
         "name": "getSubmissionComments",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the submission",
+            "in": "path",
+            "name": "submission",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}/comments",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmissionComment[]"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -795,7 +2209,10 @@
             ]
           }
         ],
-        "summary": "List the feedback comments of a submission"
+        "summary": "List the feedback comments of a submission",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -803,8 +2220,57 @@
         "kind": "operation",
         "method": "post",
         "name": "postSubmissionComment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the submission",
+            "in": "path",
+            "name": "submission",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}/comments",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}~1comments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AssignmentSubmissionCommentCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmissionComment"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -812,24 +2278,10 @@
             ]
           }
         ],
-        "summary": "Add a feedback comment to a submission"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteSubmissionComment",
-        "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}",
-        "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}~1comments~1{comment}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "edu.assignments"
-            ]
-          }
-        ],
-        "summary": "Delete a feedback comment to a submission"
+        "summary": "Add a feedback comment to a submission",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -837,8 +2289,64 @@
         "kind": "operation",
         "method": "put",
         "name": "updateSubmissionComment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the submission",
+            "in": "path",
+            "name": "submission",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the comment",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}~1comments~1{comment}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "AssignmentSubmissionCommentCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmissionComment"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -846,16 +2354,122 @@
             ]
           }
         ],
-        "summary": "Update a feedback comment to a submission"
+        "summary": "Update a feedback comment to a submission",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteSubmissionComment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the submission",
+            "in": "path",
+            "name": "submission",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the comment",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}/comments/{comment}",
+        "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}~1comments~1{comment}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "edu.assignments"
+            ]
+          }
+        ],
+        "summary": "Delete a feedback comment to a submission",
+        "tags": [
+          "Class"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "For teachers only.",
         "id": "operation:get:/classes/{class}/assignments/{assignment}/submissions/{submission}/history",
         "kind": "operation",
         "method": "get",
         "name": "getSubmissionHistory",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the assignment",
+            "in": "path",
+            "name": "assignment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the submission",
+            "in": "path",
+            "name": "submission",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/assignments/{assignment}/submissions/{submission}/history",
         "pointer": "#/paths/~1classes~1{class}~1assignments~1{assignment}~1submissions~1{submission}~1history/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmissionHistory[]"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -864,16 +2478,47 @@
             ]
           }
         ],
-        "summary": "Get the history of the submission"
+        "summary": "Get the history of the submission",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this method as a teacher to list all the assignment submissions sent by a student of the class",
         "id": "operation:get:/classes/{class}/students/{user}/submissions",
         "kind": "operation",
         "method": "get",
         "name": "listClassStudentSubmissions",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the user",
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/students/{user}/submissions",
         "pointer": "#/paths/~1classes~1{class}~1students~1{user}~1submissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmission[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -884,33 +2529,46 @@
             ]
           }
         ],
-        "summary": "List the submissions for a student"
+        "summary": "List the submissions for a student",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/classes/{class}/users/{user}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteClassUser",
-        "path": "/classes/{class}/users/{user}",
-        "pointer": "#/paths/~1classes~1{class}~1users~1{user}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "edu.classes"
-            ]
-          }
-        ],
-        "summary": "Remove a user from the class"
-      },
-      {
-        "deprecated": false,
+        "description": "This method can be used by a teacher of the class to enroll another Flat user into the class.",
         "id": "operation:put:/classes/{class}/users/{user}",
         "kind": "operation",
         "method": "put",
         "name": "addClassUser",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the user",
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/classes/{class}/users/{user}",
         "pointer": "#/paths/~1classes~1{class}~1users~1{user}/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -918,16 +2576,132 @@
             ]
           }
         ],
-        "summary": "Add a user to the class"
+        "summary": "Add a user to the class",
+        "tags": [
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method can be used by a teacher to remove a user from the class, or by a student to leave the classroom.",
+        "id": "operation:delete:/classes/{class}/users/{user}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteClassUser",
+        "parameters": [
+          {
+            "description": "Unique identifier of the class",
+            "in": "path",
+            "name": "class",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the user",
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/classes/{class}/users/{user}",
+        "pointer": "#/paths/~1classes~1{class}~1users~1{user}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "edu.classes"
+            ]
+          }
+        ],
+        "summary": "Remove a user from the class",
+        "tags": [
+          "Class"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this method to list the user's collections contained in `parent` (by default in the `root` collection).",
         "id": "operation:get:/collections",
         "kind": "operation",
         "method": "get",
         "name": "listCollections",
+        "parameters": [
+          {
+            "default": "root",
+            "description": "List the collection contained in this `parent` collection.",
+            "in": "query",
+            "name": "parent",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort",
+            "enum": [
+              "creationDate",
+              "title"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "This is the maximum number of objects that may be returned",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An opaque string cursor to fetch the next page of data.",
+            "in": "query",
+            "name": "next",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An opaque string cursor to fetch the previous page of data.",
+            "in": "query",
+            "name": "previous",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/collections",
         "pointer": "#/paths/~1collections/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Collection[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -936,16 +2710,42 @@
             ]
           }
         ],
-        "summary": "List the collections"
+        "summary": "List the collections",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method will create a new collection and add it to your `root` collection.",
         "id": "operation:post:/collections",
         "kind": "operation",
         "method": "post",
         "name": "createCollection",
         "path": "/collections",
         "pointer": "#/paths/~1collections/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CollectionCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Collection"
+          },
+          {
+            "status": "400",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -953,24 +2753,10 @@
             ]
           }
         ],
-        "summary": "Create a new collection"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/collections/{collection}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteCollection",
-        "path": "/collections/{collection}",
-        "pointer": "#/paths/~1collections~1{collection}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "collections"
-            ]
-          }
-        ],
-        "summary": "Delete the collection"
+        "summary": "Create a new collection",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
@@ -978,8 +2764,43 @@
         "kind": "operation",
         "method": "get",
         "name": "getCollection",
+        "parameters": [
+          {
+            "description": "Unique identifier of the collection.",
+            "in": "path",
+            "name": "collection",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection}",
         "pointer": "#/paths/~1collections~1{collection}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Collection"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -988,7 +2809,10 @@
             ]
           }
         ],
-        "summary": "Get collection details"
+        "summary": "Get collection details",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
@@ -996,8 +2820,43 @@
         "kind": "operation",
         "method": "put",
         "name": "editCollection",
+        "parameters": [
+          {
+            "description": "Unique identifier of the collection.",
+            "in": "path",
+            "name": "collection",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection}",
         "pointer": "#/paths/~1collections~1{collection}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "CollectionModification"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Collection"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1005,16 +2864,140 @@
             ]
           }
         ],
-        "summary": "Update a collection's metadata"
+        "summary": "Update a collection's metadata",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method will schedule the deletion of the collection.",
+        "id": "operation:delete:/collections/{collection}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteCollection",
+        "parameters": [
+          {
+            "description": "Unique identifier of the collection.",
+            "in": "path",
+            "name": "collection",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/collections/{collection}",
+        "pointer": "#/paths/~1collections~1{collection}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "collections"
+            ]
+          }
+        ],
+        "summary": "Delete the collection",
+        "tags": [
+          "Collection"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this method to list the scores contained in a collection.",
         "id": "operation:get:/collections/{collection}/scores",
         "kind": "operation",
         "method": "get",
         "name": "listCollectionScores",
+        "parameters": [
+          {
+            "description": "Unique identifier of the collection.",
+            "in": "path",
+            "name": "collection",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort",
+            "enum": [
+              "creationDate",
+              "modificationDate",
+              "title"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 25,
+            "description": "This is the maximum number of objects that may be returned",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An opaque string cursor to fetch the next page of data.",
+            "in": "query",
+            "name": "next",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An opaque string cursor to fetch the previous page of data.",
+            "in": "query",
+            "name": "previous",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection}/scores",
         "pointer": "#/paths/~1collections~1{collection}~1scores/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreDetails[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1022,33 +3005,62 @@
             ]
           }
         ],
-        "summary": "List the scores contained in a collection"
+        "summary": "List the scores contained in a collection",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/collections/{collection}/scores/{score}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteScoreFromCollection",
-        "path": "/collections/{collection}/scores/{score}",
-        "pointer": "#/paths/~1collections~1{collection}~1scores~1{score}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "collections"
-            ]
-          }
-        ],
-        "summary": "Delete a score from the collection"
-      },
-      {
-        "deprecated": false,
+        "description": "This operation will add a score to a collection.",
         "id": "operation:put:/collections/{collection}/scores/{score}",
         "kind": "operation",
         "method": "put",
         "name": "addScoreToCollection",
+        "parameters": [
+          {
+            "description": "Unique identifier of the collection.",
+            "in": "path",
+            "name": "collection",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/collections/{collection}/scores/{score}",
         "pointer": "#/paths/~1collections~1{collection}~1scores~1{score}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreDetails"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1057,16 +3069,61 @@
             ]
           }
         ],
-        "summary": "Add a score to the collection"
+        "summary": "Add a score to the collection",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/collections/{collection}/untrash",
+        "description": "This method will delete a score from the collection.",
+        "id": "operation:delete:/collections/{collection}/scores/{score}",
         "kind": "operation",
-        "method": "post",
-        "name": "untrashCollection",
-        "path": "/collections/{collection}/untrash",
-        "pointer": "#/paths/~1collections~1{collection}~1untrash/post",
+        "method": "delete",
+        "name": "deleteScoreFromCollection",
+        "parameters": [
+          {
+            "description": "Unique identifier of the collection.",
+            "in": "path",
+            "name": "collection",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/collections/{collection}/scores/{score}",
+        "pointer": "#/paths/~1collections~1{collection}~1scores~1{score}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1074,7 +3131,58 @@
             ]
           }
         ],
-        "summary": "Untrash a collection"
+        "summary": "Delete a score from the collection",
+        "tags": [
+          "Collection"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This method will restore the collection by removing it from the `trash` and add it back to the `root` collection.",
+        "id": "operation:post:/collections/{collection}/untrash",
+        "kind": "operation",
+        "method": "post",
+        "name": "untrashCollection",
+        "parameters": [
+          {
+            "description": "Unique identifier of the collection.",
+            "in": "path",
+            "name": "collection",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/collections/{collection}/untrash",
+        "pointer": "#/paths/~1collections~1{collection}~1untrash/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "collections"
+            ]
+          }
+        ],
+        "summary": "Untrash a collection",
+        "tags": [
+          "Collection"
+        ]
       },
       {
         "deprecated": false,
@@ -1082,8 +3190,28 @@
         "kind": "operation",
         "method": "get",
         "name": "getGroupDetails",
+        "parameters": [
+          {
+            "description": "Unique identifier of a Flat group",
+            "in": "path",
+            "name": "group",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{group}",
         "pointer": "#/paths/~1groups~1{group}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GroupDetails"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1095,16 +3223,47 @@
             ]
           }
         ],
-        "summary": "Get group information"
+        "summary": "Get group information",
+        "tags": [
+          "Group"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of scores shared with a group.",
         "id": "operation:get:/groups/{group}/scores",
         "kind": "operation",
         "method": "get",
         "name": "getGroupScores",
+        "parameters": [
+          {
+            "description": "Unique identifier of a Flat group",
+            "in": "path",
+            "name": "group",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter the score forked from the score id `parent`",
+            "in": "query",
+            "name": "parent",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{group}/scores",
         "pointer": "#/paths/~1groups~1{group}~1scores/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreDetails[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1113,7 +3272,11 @@
             ]
           }
         ],
-        "summary": "List group's scores"
+        "summary": "List group's scores",
+        "tags": [
+          "Group",
+          "Score"
+        ]
       },
       {
         "deprecated": false,
@@ -1121,8 +3284,40 @@
         "kind": "operation",
         "method": "get",
         "name": "listGroupUsers",
+        "parameters": [
+          {
+            "description": "Unique identifier of a Flat group",
+            "in": "path",
+            "name": "group",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter the users by their source",
+            "enum": [
+              "googleClassroom",
+              "microsoftGraph",
+              "clever"
+            ],
+            "in": "query",
+            "name": "source",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{group}/users",
         "pointer": "#/paths/~1groups~1{group}~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserPublic[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1134,16 +3329,41 @@
             ]
           }
         ],
-        "summary": "List group's users"
+        "summary": "List group's users",
+        "tags": [
+          "Group"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get details about the current authenticated User.",
         "id": "operation:get:/me",
         "kind": "operation",
         "method": "get",
         "name": "getAuthenticatedUser",
+        "parameters": [
+          {
+            "default": false,
+            "description": "Only return the user id",
+            "in": "query",
+            "name": "onlyId",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/me",
         "pointer": "#/paths/~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserDetails"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1152,7 +3372,10 @@
             ]
           }
         ],
-        "summary": "Get current user profile"
+        "summary": "Get current user profile",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
@@ -1160,8 +3383,55 @@
         "kind": "operation",
         "method": "get",
         "name": "listOrganizationInvitations",
+        "parameters": [
+          {
+            "description": "Filter users by role",
+            "enum": [
+              "user",
+              "teacher",
+              "admin"
+            ],
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 50,
+            "description": "This is the maximum number of objects that may be returned",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "An opaque string cursor to fetch the next page of data.",
+            "in": "query",
+            "name": "next",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An opaque string cursor to fetch the previous page of data.",
+            "in": "query",
+            "name": "previous",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/organizations/invitations",
         "pointer": "#/paths/~1organizations~1invitations/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "OrganizationInvitation[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1171,16 +3441,38 @@
             ]
           }
         ],
-        "summary": "List the organization invitations"
+        "summary": "List the organization invitations",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method creates and sends invitation for teachers and admins.",
         "id": "operation:post:/organizations/invitations",
         "kind": "operation",
         "method": "post",
         "name": "createOrganizationInvitation",
         "path": "/organizations/invitations",
         "pointer": "#/paths/~1organizations~1invitations/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "OrganizationInvitationCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OrganizationInvitation"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1189,7 +3481,10 @@
             ]
           }
         ],
-        "summary": "Create a new invitation to join the organization"
+        "summary": "Create a new invitation to join the organization",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
@@ -1197,8 +3492,27 @@
         "kind": "operation",
         "method": "delete",
         "name": "removeOrganizationInvitation",
+        "parameters": [
+          {
+            "description": "Unique identifier of the invitation",
+            "in": "path",
+            "name": "invitation",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/organizations/invitations/{invitation}",
         "pointer": "#/paths/~1organizations~1invitations~1{invitation}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1207,7 +3521,10 @@
             ]
           }
         ],
-        "summary": "Remove an organization invitation"
+        "summary": "Remove an organization invitation",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
@@ -1217,6 +3534,21 @@
         "name": "listLtiCredentials",
         "path": "/organizations/lti/credentials",
         "pointer": "#/paths/~1organizations~1lti~1credentials/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "LtiCredentials[]"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1226,16 +3558,42 @@
             ]
           }
         ],
-        "summary": "List LTI 1.x credentials"
+        "summary": "List LTI 1.x credentials",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Flat for Education is a Certified LTI Provider.",
         "id": "operation:post:/organizations/lti/credentials",
         "kind": "operation",
         "method": "post",
         "name": "createLtiCredentials",
         "path": "/organizations/lti/credentials",
         "pointer": "#/paths/~1organizations~1lti~1credentials/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LtiCredentialsCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "LtiCredentials"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1244,7 +3602,10 @@
             ]
           }
         ],
-        "summary": "Create a new couple of LTI 1.x credentials"
+        "summary": "Create a new couple of LTI 1.x credentials",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
@@ -1252,8 +3613,35 @@
         "kind": "operation",
         "method": "delete",
         "name": "revokeLtiCredentials",
+        "parameters": [
+          {
+            "description": "Credentials unique identifier",
+            "in": "path",
+            "name": "credentials",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/organizations/lti/credentials/{credentials}",
         "pointer": "#/paths/~1organizations~1lti~1credentials~1{credentials}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1262,7 +3650,10 @@
             ]
           }
         ],
-        "summary": "Revoke LTI 1.x credentials"
+        "summary": "Revoke LTI 1.x credentials",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
@@ -1270,8 +3661,103 @@
         "kind": "operation",
         "method": "get",
         "name": "listOrganizationUsers",
+        "parameters": [
+          {
+            "description": "The order to sort the user list",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An opaque string cursor to fetch the next page of data.",
+            "in": "query",
+            "name": "next",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An opaque string cursor to fetch the previous page of data.",
+            "in": "query",
+            "name": "previous",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter users by role",
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The query to search",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter users by group",
+            "in": "query",
+            "name": "group",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter users who don't have an active license",
+            "in": "query",
+            "name": "noActiveLicense",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filter users by license expiration date or `active` / `notActive`",
+            "in": "query",
+            "name": "licenseExpirationDate",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Return only user ids",
+            "in": "query",
+            "name": "onlyIds",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 25,
+            "description": "This is the maximum number of objects that may be returned",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/organizations/users",
         "pointer": "#/paths/~1organizations~1users/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserDetailsAdmin[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1281,7 +3767,10 @@
             ]
           }
         ],
-        "summary": "List the organization users"
+        "summary": "List the organization users",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
@@ -1291,6 +3780,24 @@
         "name": "createOrganizationUser",
         "path": "/organizations/users",
         "pointer": "#/paths/~1organizations~1users/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "UserCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserDetailsAdmin"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1299,7 +3806,10 @@
             ]
           }
         ],
-        "summary": "Create a new user account"
+        "summary": "Create a new user account",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
@@ -1307,8 +3817,49 @@
         "kind": "operation",
         "method": "get",
         "name": "countOrgaUsers",
+        "parameters": [
+          {
+            "description": "Filter users by role",
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "The query to search",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter users by group",
+            "in": "query",
+            "name": "group",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter users who don't have an active license",
+            "in": "query",
+            "name": "noActiveLicense",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/organizations/users/count",
         "pointer": "#/paths/~1organizations~1users~1count/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1318,25 +3869,10 @@
             ]
           }
         ],
-        "summary": "Count the organization users using the provided filters"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/organizations/users/{user}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "removeOrganizationUser",
-        "path": "/organizations/users/{user}",
-        "pointer": "#/paths/~1organizations~1users~1{user}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "edu.admin",
-              "edu.admin.users"
-            ]
-          }
-        ],
-        "summary": "Remove an account from Flat"
+        "summary": "Count the organization users using the provided filters",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
@@ -1344,8 +3880,35 @@
         "kind": "operation",
         "method": "put",
         "name": "updateOrganizationUser",
+        "parameters": [
+          {
+            "description": "Unique identifier of the Flat account",
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/organizations/users/{user}",
         "pointer": "#/paths/~1organizations~1users~1{user}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UserAdminUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserDetailsAdmin"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1354,16 +3917,94 @@
             ]
           }
         ],
-        "summary": "Update account information"
+        "summary": "Update account information",
+        "tags": [
+          "Organization"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation removes an account from Flat and its data, including: * The music scores created by this user (documents, history, comments, collaboration infor…",
+        "id": "operation:delete:/organizations/users/{user}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "removeOrganizationUser",
+        "parameters": [
+          {
+            "description": "Unique identifier of the Flat account",
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "If `true`, the account will be only removed from the organization and converted into an individual account on our public website, https://flat.io.",
+            "in": "query",
+            "name": "convertToIndividual",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/organizations/users/{user}",
+        "pointer": "#/paths/~1organizations~1users~1{user}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "edu.admin",
+              "edu.admin.users"
+            ]
+          }
+        ],
+        "summary": "Remove an account from Flat",
+        "tags": [
+          "Organization"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Use this API method to **create a new music score in the current User account**.",
         "id": "operation:post:/scores",
         "kind": "operation",
         "method": "post",
         "name": "createScore",
         "path": "/scores",
         "pointer": "#/paths/~1scores/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ScoreCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreDetails"
+          },
+          {
+            "status": "400",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1371,33 +4012,59 @@
             ]
           }
         ],
-        "summary": "Create a new score"
+        "summary": "Create a new score",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/scores/{score}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteScore",
-        "path": "/scores/{score}",
-        "pointer": "#/paths/~1scores~1{score}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "scores"
-            ]
-          }
-        ],
-        "summary": "Delete a score"
-      },
-      {
-        "deprecated": false,
+        "description": "Get the details of a score identified by the `score` parameter in the URL.",
         "id": "operation:get:/scores/{score}",
         "kind": "operation",
         "method": "get",
         "name": "getScore",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}",
         "pointer": "#/paths/~1scores~1{score}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreDetails"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1406,16 +4073,59 @@
             ]
           }
         ],
-        "summary": "Get a score's metadata"
+        "summary": "Get a score's metadata",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API method allows you to change the metadata of a score document (e.g.",
         "id": "operation:put:/scores/{score}",
         "kind": "operation",
         "method": "put",
         "name": "editScore",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}",
         "pointer": "#/paths/~1scores~1{score}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "ScoreModification"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreDetails"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1423,16 +4133,115 @@
             ]
           }
         ],
-        "summary": "Edit a score's metadata"
+        "summary": "Edit a score's metadata",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This method can be used by the owner/admin (`aclAdmin` rights) of a score as well as regular collaborators.",
+        "id": "operation:delete:/scores/{score}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteScore",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "If `true`, the score deletion will be scheduled to be done ASAP",
+            "in": "query",
+            "name": "now",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/scores/{score}",
+        "pointer": "#/paths/~1scores~1{score}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "scores"
+            ]
+          }
+        ],
+        "summary": "Delete a score",
+        "tags": [
+          "Score"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This API call will list the different collaborators of a score and their rights on the document.",
         "id": "operation:get:/scores/{score}/collaborators",
         "kind": "operation",
         "method": "get",
         "name": "getScoreCollaborators",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/collaborators",
         "pointer": "#/paths/~1scores~1{score}~1collaborators/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceCollaborator[]"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1441,16 +4250,59 @@
             ]
           }
         ],
-        "summary": "List the collaborators"
+        "summary": "List the collaborators",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Share a score with a single user or a group.",
         "id": "operation:post:/scores/{score}/collaborators",
         "kind": "operation",
         "method": "post",
         "name": "addScoreCollaborator",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/collaborators",
         "pointer": "#/paths/~1scores~1{score}~1collaborators/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ResourceCollaboratorCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceCollaborator"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1458,33 +4310,66 @@
             ]
           }
         ],
-        "summary": "Add a new collaborator"
+        "summary": "Add a new collaborator",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/scores/{score}/collaborators/{collaborator}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "removeScoreCollaborator",
-        "path": "/scores/{score}/collaborators/{collaborator}",
-        "pointer": "#/paths/~1scores~1{score}~1collaborators~1{collaborator}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "scores"
-            ]
-          }
-        ],
-        "summary": "Delete a collaborator"
-      },
-      {
-        "deprecated": false,
+        "description": "Get the information about a collaborator (User or Group).",
         "id": "operation:get:/scores/{score}/collaborators/{collaborator}",
         "kind": "operation",
         "method": "get",
         "name": "getScoreCollaborator",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a **collaborator permission**, or unique identifier of a **User**, or unique identifier of a **Group**",
+            "in": "path",
+            "name": "collaborator",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/collaborators/{collaborator}",
         "pointer": "#/paths/~1scores~1{score}~1collaborators~1{collaborator}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ResourceCollaborator"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1492,16 +4377,146 @@
             ]
           }
         ],
-        "summary": "Get a collaborator"
+        "summary": "Get a collaborator",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Remove the specified collaborator from the score",
+        "id": "operation:delete:/scores/{score}/collaborators/{collaborator}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "removeScoreCollaborator",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a **collaborator permission**, or unique identifier of a **User**, or unique identifier of a **Group**",
+            "in": "path",
+            "name": "collaborator",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/scores/{score}/collaborators/{collaborator}",
+        "pointer": "#/paths/~1scores~1{score}~1collaborators~1{collaborator}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "scores"
+            ]
+          }
+        ],
+        "summary": "Delete a collaborator",
+        "tags": [
+          "Score"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This method lists the different comments added on a music score (documents and inline) sorted by their post dates.",
         "id": "operation:get:/scores/{score}/comments",
         "kind": "operation",
         "method": "get",
         "name": "getScoreComments",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter the comments by type",
+            "enum": [
+              "document",
+              "inline"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort",
+            "enum": [
+              "date"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/comments",
         "pointer": "#/paths/~1scores~1{score}~1comments/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreComment[]"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1511,16 +4526,66 @@
             ]
           }
         ],
-        "summary": "List comments"
+        "summary": "List comments",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Post a document or a contextualized comment on a document.",
         "id": "operation:post:/scores/{score}/comments",
         "kind": "operation",
         "method": "post",
         "name": "postScoreComment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/comments",
         "pointer": "#/paths/~1scores~1{score}~1comments/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ScoreCommentCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreComment"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1529,25 +4594,10 @@
             ]
           }
         ],
-        "summary": "Post a new comment"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/scores/{score}/comments/{comment}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteScoreComment",
-        "path": "/scores/{score}/comments/{comment}",
-        "pointer": "#/paths/~1scores~1{score}~1comments~1{comment}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "scores.social",
-              "scores"
-            ]
-          }
-        ],
-        "summary": "Delete a comment"
+        "summary": "Post a new comment",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
@@ -1555,8 +4605,61 @@
         "kind": "operation",
         "method": "put",
         "name": "updateScoreComment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a sheet music comment",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/comments/{comment}",
         "pointer": "#/paths/~1scores~1{score}~1comments~1{comment}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ScoreCommentUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreComment"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1565,16 +4668,60 @@
             ]
           }
         ],
-        "summary": "Update an existing comment"
+        "summary": "Update an existing comment",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/scores/{score}/comments/{comment}/resolved",
+        "id": "operation:delete:/scores/{score}/comments/{comment}",
         "kind": "operation",
         "method": "delete",
-        "name": "markScoreCommentUnresolved",
-        "path": "/scores/{score}/comments/{comment}/resolved",
-        "pointer": "#/paths/~1scores~1{score}~1comments~1{comment}~1resolved/delete",
+        "name": "deleteScoreComment",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a sheet music comment",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/scores/{score}/comments/{comment}",
+        "pointer": "#/paths/~1scores~1{score}~1comments~1{comment}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1583,7 +4730,10 @@
             ]
           }
         ],
-        "summary": "Mark the comment as unresolved"
+        "summary": "Delete a comment",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
@@ -1591,8 +4741,49 @@
         "kind": "operation",
         "method": "put",
         "name": "markScoreCommentResolved",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a sheet music comment",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/comments/{comment}/resolved",
         "pointer": "#/paths/~1scores~1{score}~1comments~1{comment}~1resolved/put",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1601,16 +4792,128 @@
             ]
           }
         ],
-        "summary": "Mark the comment as resolved"
+        "summary": "Mark the comment as resolved",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/scores/{score}/comments/{comment}/resolved",
+        "kind": "operation",
+        "method": "delete",
+        "name": "markScoreCommentUnresolved",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a sheet music comment",
+            "in": "path",
+            "name": "comment",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/scores/{score}/comments/{comment}/resolved",
+        "pointer": "#/paths/~1scores~1{score}~1comments~1{comment}~1resolved/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "scores.social",
+              "scores"
+            ]
+          }
+        ],
+        "summary": "Mark the comment as unresolved",
+        "tags": [
+          "Score"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This API call will make a copy of the last revision of the specified score and create a new score.",
         "id": "operation:post:/scores/{score}/fork",
         "kind": "operation",
         "method": "post",
         "name": "forkScore",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/fork",
         "pointer": "#/paths/~1scores~1{score}~1fork/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ScoreFork"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreDetails"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1618,16 +4921,60 @@
             ]
           }
         ],
-        "summary": "Fork a score"
+        "summary": "Fork a score",
+        "tags": [
+          "Score",
+          "Class"
+        ]
       },
       {
         "deprecated": false,
+        "description": "When creating a score or saving a new version of a score, a revision is created in our storage.",
         "id": "operation:get:/scores/{score}/revisions",
         "kind": "operation",
         "method": "get",
         "name": "getScoreRevisions",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/revisions",
         "pointer": "#/paths/~1scores~1{score}~1revisions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreRevision[]"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1636,16 +4983,59 @@
             ]
           }
         ],
-        "summary": "List the revisions"
+        "summary": "List the revisions",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Update a score by uploading a new revision for this one.",
         "id": "operation:post:/scores/{score}/revisions",
         "kind": "operation",
         "method": "post",
         "name": "createScoreRevision",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/revisions",
         "pointer": "#/paths/~1scores~1{score}~1revisions/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ScoreRevisionCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreRevision"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1653,16 +5043,66 @@
             ]
           }
         ],
-        "summary": "Create a new revision"
+        "summary": "Create a new revision",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "When creating a score or saving a new version of a score, a revision is created in our storage.",
         "id": "operation:get:/scores/{score}/revisions/{revision}",
         "kind": "operation",
         "method": "get",
         "name": "getScoreRevision",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a score revision.",
+            "in": "path",
+            "name": "revision",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/revisions/{revision}",
         "pointer": "#/paths/~1scores~1{score}~1revisions~1{revision}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreRevision"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1671,16 +5111,104 @@
             ]
           }
         ],
-        "summary": "Get a score revision"
+        "summary": "Get a score revision",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieve the file corresponding to a score revision (the following formats are available): Flat JSON/Adagio JSON `json`, MusicXML `mxl`/`xml`, MP3 `mp3`, WAV `…",
         "id": "operation:get:/scores/{score}/revisions/{revision}/{format}",
         "kind": "operation",
         "method": "get",
         "name": "getScoreRevisionData",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a score revision.",
+            "in": "path",
+            "name": "revision",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The format of the file you will retrieve",
+            "enum": [
+              "json",
+              "mxl",
+              "xml",
+              "mp3",
+              "wav",
+              "midi",
+              "thumbnail.png",
+              "synchronizationPoints"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An optional a set of parts uuid to be exported.",
+            "in": "query",
+            "name": "parts",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return files already generated and cached in Flat's production cache.",
+            "in": "query",
+            "name": "onlyCached",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Returns a json with the `url` in it instead of redirecting",
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/scores/{score}/revisions/{revision}/{format}",
         "pointer": "#/paths/~1scores~1{score}~1revisions~1{revision}~1{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "402",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1689,16 +5217,40 @@
             ]
           }
         ],
-        "summary": "Get a score revision data"
+        "summary": "Get a score revision data",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This API call will list the different assignments submissions where the score is attached.",
         "id": "operation:get:/scores/{score}/submissions",
         "kind": "operation",
         "method": "get",
         "name": "getScoreSubmissions",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/submissions",
         "pointer": "#/paths/~1scores~1{score}~1submissions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AssignmentSubmission[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1707,7 +5259,11 @@
             ]
           }
         ],
-        "summary": "List submissions related to the score"
+        "summary": "List submissions related to the score",
+        "tags": [
+          "Score",
+          "Class"
+        ]
       },
       {
         "deprecated": false,
@@ -1715,8 +5271,57 @@
         "kind": "operation",
         "method": "get",
         "name": "listScoreTracks",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "An assignment id with which all the tracks returned will be related to",
+            "in": "query",
+            "name": "assignment",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "If true, and if available, return last automatically synchronized Flat's mp3 export as an additional track",
+            "in": "query",
+            "name": "listAutoTrack",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/scores/{score}/tracks",
         "pointer": "#/paths/~1scores~1{score}~1tracks/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreTrack[]"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1725,16 +5330,55 @@
             ]
           }
         ],
-        "summary": "List the audio or video tracks linked to a score"
+        "summary": "List the audio or video tracks linked to a score",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this method to add new track to the score.",
         "id": "operation:post:/scores/{score}/tracks",
         "kind": "operation",
         "method": "post",
         "name": "addScoreTrack",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/tracks",
         "pointer": "#/paths/~1scores~1{score}~1tracks/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ScoreTrackCreation"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreTrack"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1742,24 +5386,10 @@
             ]
           }
         ],
-        "summary": "Add a new video or audio track to the score"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/scores/{score}/tracks/{track}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteScoreTrack",
-        "path": "/scores/{score}/tracks/{track}",
-        "pointer": "#/paths/~1scores~1{score}~1tracks~1{track}/delete",
-        "security": [
-          {
-            "OAuth2": [
-              "scores"
-            ]
-          }
-        ],
-        "summary": "Remove an audio or video track linked to the score"
+        "summary": "Add a new video or audio track to the score",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
@@ -1767,8 +5397,50 @@
         "kind": "operation",
         "method": "get",
         "name": "getScoreTrack",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a score audio track",
+            "in": "path",
+            "name": "track",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "This sharing key must be specified to access to a score or collection with a `privacy` mode set to `privateLink` and the current user is not a collaborator of…",
+            "in": "query",
+            "name": "sharingKey",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/tracks/{track}",
         "pointer": "#/paths/~1scores~1{score}~1tracks~1{track}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreTrack"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1777,7 +5449,10 @@
             ]
           }
         ],
-        "summary": "Retrieve the details of an audio or video track linked to a score"
+        "summary": "Retrieve the details of an audio or video track linked to a score",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
@@ -1785,8 +5460,50 @@
         "kind": "operation",
         "method": "put",
         "name": "updateScoreTrack",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a score audio track",
+            "in": "path",
+            "name": "track",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/tracks/{track}",
         "pointer": "#/paths/~1scores~1{score}~1tracks~1{track}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ScoreTrackUpdate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreTrack"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1794,16 +5511,101 @@
             ]
           }
         ],
-        "summary": "Update an audio or video track linked to a score"
+        "summary": "Update an audio or video track linked to a score",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/scores/{score}/tracks/{track}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteScoreTrack",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Unique identifier of a score audio track",
+            "in": "path",
+            "name": "track",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/scores/{score}/tracks/{track}",
+        "pointer": "#/paths/~1scores~1{score}~1tracks~1{track}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "OAuth2": [
+              "scores"
+            ]
+          }
+        ],
+        "summary": "Remove an audio or video track linked to the score",
+        "tags": [
+          "Score"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This method will remove the score from the `trash` collection and from the deletion queue, and add it back to the original collections.",
         "id": "operation:post:/scores/{score}/untrash",
         "kind": "operation",
         "method": "post",
         "name": "untrashScore",
+        "parameters": [
+          {
+            "description": "Unique identifier of the score document.",
+            "in": "path",
+            "name": "score",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scores/{score}/untrash",
         "pointer": "#/paths/~1scores~1{score}~1untrash/post",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "403",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "404",
+            "type": "FlatErrorResponse"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "OAuth2": [
@@ -1811,16 +5613,40 @@
             ]
           }
         ],
-        "summary": "Untrash a score"
+        "summary": "Untrash a score",
+        "tags": [
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a public profile of a Flat User.",
         "id": "operation:get:/users/{user}",
         "kind": "operation",
         "method": "get",
         "name": "getUser",
+        "parameters": [
+          {
+            "description": "This route parameter is the unique identifier of the user.",
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user}",
         "pointer": "#/paths/~1users~1{user}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserPublic"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1829,7 +5655,10 @@
             ]
           }
         ],
-        "summary": "Get a public user profile"
+        "summary": "Get a public user profile",
+        "tags": [
+          "User"
+        ]
       },
       {
         "deprecated": false,
@@ -1837,8 +5666,35 @@
         "kind": "operation",
         "method": "get",
         "name": "gerUserLikes",
+        "parameters": [
+          {
+            "description": "Unique identifier of a Flat user.",
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Return only the identifiers of the scores",
+            "in": "query",
+            "name": "ids",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/users/{user}/likes",
         "pointer": "#/paths/~1users~1{user}~1likes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreDetails[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1846,16 +5702,48 @@
             ]
           }
         ],
-        "summary": "List liked scores"
+        "summary": "List liked scores",
+        "tags": [
+          "User",
+          "Score"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get the list of public scores owned by a User.",
         "id": "operation:get:/users/{user}/scores",
         "kind": "operation",
         "method": "get",
         "name": "getUserScores",
+        "parameters": [
+          {
+            "description": "Unique identifier of a Flat user.",
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Filter the score forked from the score id `parent`",
+            "in": "query",
+            "name": "parent",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/users/{user}/scores",
         "pointer": "#/paths/~1users~1{user}~1scores/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScoreDetails[]"
+          },
+          {
+            "status": "default",
+            "type": "FlatErrorResponse"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "OAuth2": [
@@ -1864,387 +5752,540 @@
             ]
           }
         ],
-        "summary": "List user's scores"
+        "summary": "List user's scores",
+        "tags": [
+          "User",
+          "Score"
+        ]
       },
       {
+        "description": "Assignment details",
         "id": "schema:Assignment",
         "kind": "schema",
-        "name": "Assignment"
+        "name": "Assignment",
+        "type": "object"
       },
       {
+        "description": "Assignment copy operation",
         "id": "schema:AssignmentCopy",
         "kind": "schema",
-        "name": "AssignmentCopy"
+        "name": "AssignmentCopy",
+        "type": "object"
       },
       {
+        "description": "Assignment creation details",
         "id": "schema:AssignmentCreation",
         "kind": "schema",
-        "name": "AssignmentCreation"
+        "name": "AssignmentCreation",
+        "type": "object"
       },
       {
+        "description": "Assignment Submission",
         "id": "schema:AssignmentSubmission",
         "kind": "schema",
-        "name": "AssignmentSubmission"
+        "name": "AssignmentSubmission",
+        "type": "object"
       },
       {
+        "description": "Feedback comment added to an assignment submission",
         "id": "schema:AssignmentSubmissionComment",
         "kind": "schema",
-        "name": "AssignmentSubmissionComment"
+        "name": "AssignmentSubmissionComment",
+        "type": "object"
       },
       {
+        "description": "Creation of a assignment submission comment",
         "id": "schema:AssignmentSubmissionCommentCreation",
         "kind": "schema",
-        "name": "AssignmentSubmissionCommentCreation"
+        "name": "AssignmentSubmissionCommentCreation",
+        "type": "object"
       },
       {
+        "description": "History item of the submission",
         "id": "schema:AssignmentSubmissionHistory",
         "kind": "schema",
-        "name": "AssignmentSubmissionHistory"
+        "name": "AssignmentSubmissionHistory",
+        "type": "object"
       },
       {
+        "description": "State of the submission",
         "id": "schema:AssignmentSubmissionState",
         "kind": "schema",
-        "name": "AssignmentSubmissionState"
+        "name": "AssignmentSubmissionState",
+        "type": "string"
       },
       {
+        "description": "Assignment Submission creation",
         "id": "schema:AssignmentSubmissionUpdate",
         "kind": "schema",
-        "name": "AssignmentSubmissionUpdate"
+        "name": "AssignmentSubmissionUpdate",
+        "type": "object"
       },
       {
+        "description": "Type of the assignment",
         "id": "schema:AssignmentType",
         "kind": "schema",
-        "name": "AssignmentType"
+        "name": "AssignmentType",
+        "type": "string"
       },
       {
+        "description": "Attachment creation for an assignment or stream post.",
         "id": "schema:ClassAttachmentCreation",
         "kind": "schema",
-        "name": "ClassAttachmentCreation"
+        "name": "ClassAttachmentCreation",
+        "type": "object"
       },
       {
+        "description": "Creation of a classroom",
         "id": "schema:ClassCreation",
         "kind": "schema",
-        "name": "ClassCreation"
+        "name": "ClassCreation",
+        "type": "object"
       },
       {
+        "description": "A classroom",
         "id": "schema:ClassDetails",
         "kind": "schema",
-        "name": "ClassDetails"
+        "name": "ClassDetails",
+        "type": "object"
       },
       {
+        "description": "User's Class Role (for Edu users only)",
         "id": "schema:ClassRoles",
         "kind": "schema",
-        "name": "ClassRoles"
+        "name": "ClassRoles",
+        "type": "string"
       },
       {
+        "description": "The state of a classroom",
         "id": "schema:ClassState",
         "kind": "schema",
-        "name": "ClassState"
+        "name": "ClassState",
+        "type": "string"
       },
       {
+        "description": "Update of a classroom",
         "id": "schema:ClassUpdate",
         "kind": "schema",
-        "name": "ClassUpdate"
+        "name": "ClassUpdate",
+        "type": "object"
       },
       {
+        "description": "Collection of scores",
         "id": "schema:Collection",
         "kind": "schema",
-        "name": "Collection"
+        "name": "Collection",
+        "type": "object"
       },
       {
         "id": "schema:CollectionCreation",
         "kind": "schema",
-        "name": "CollectionCreation"
+        "name": "CollectionCreation",
+        "type": "object"
       },
       {
+        "description": "Edit the collection metadata",
         "id": "schema:CollectionModification",
         "kind": "schema",
-        "name": "CollectionModification"
+        "name": "CollectionModification",
+        "type": "object"
       },
       {
+        "description": "The collection main privacy mode.",
         "id": "schema:CollectionPrivacy",
         "kind": "schema",
-        "name": "CollectionPrivacy"
+        "name": "CollectionPrivacy",
+        "type": "string"
       },
       {
+        "description": "Type of the collection.",
         "id": "schema:CollectionType",
         "kind": "schema",
-        "name": "CollectionType"
+        "name": "CollectionType",
+        "type": "string"
       },
       {
+        "description": "An API Error response",
         "id": "schema:FlatErrorResponse",
         "kind": "schema",
-        "name": "FlatErrorResponse"
+        "name": "FlatErrorResponse",
+        "type": "object"
       },
       {
+        "description": "The user language",
         "id": "schema:FlatLocales",
         "kind": "schema",
-        "name": "FlatLocales"
+        "name": "FlatLocales",
+        "type": "string"
       },
       {
+        "description": "A coursework on Google Classroom",
         "id": "schema:GoogleClassroomCoursework",
         "kind": "schema",
-        "name": "GoogleClassroomCoursework"
+        "name": "GoogleClassroomCoursework",
+        "type": "object"
       },
       {
+        "description": "A coursework submission on Google Classroom",
         "id": "schema:GoogleClassroomSubmission",
         "kind": "schema",
-        "name": "GoogleClassroomSubmission"
+        "name": "GoogleClassroomSubmission",
+        "type": "object"
       },
       {
+        "description": "A group of users",
         "id": "schema:Group",
         "kind": "schema",
-        "name": "Group"
+        "name": "Group",
+        "type": "object"
       },
       {
+        "description": "The details of a group",
         "id": "schema:GroupDetails",
         "kind": "schema",
-        "name": "GroupDetails"
+        "name": "GroupDetails",
+        "type": "object"
       },
       {
+        "description": "The type of the group",
         "id": "schema:GroupType",
         "kind": "schema",
-        "name": "GroupType"
+        "name": "GroupType",
+        "type": "string"
       },
       {
+        "description": "Mode of the license",
         "id": "schema:LicenseMode",
         "kind": "schema",
-        "name": "LicenseMode"
+        "name": "LicenseMode",
+        "type": "string"
       },
       {
+        "description": "Source of the license",
         "id": "schema:LicenseSources",
         "kind": "schema",
-        "name": "LicenseSources"
+        "name": "LicenseSources",
+        "type": "string"
       },
       {
+        "description": "LMS name",
         "id": "schema:LmsName",
         "kind": "schema",
-        "name": "LmsName"
+        "name": "LmsName",
+        "type": "string"
       },
       {
+        "description": "A couple of LTI 1.x OAuth credentials",
         "id": "schema:LtiCredentials",
         "kind": "schema",
-        "name": "LtiCredentials"
+        "name": "LtiCredentials",
+        "type": "object"
       },
       {
+        "description": "Creation of a couple of LTI 1.x OAuth credentials",
         "id": "schema:LtiCredentialsCreation",
         "kind": "schema",
-        "name": "LtiCredentialsCreation"
+        "name": "LtiCredentialsCreation",
+        "type": "object"
       },
       {
+        "description": "Media attachment.",
         "id": "schema:MediaAttachment",
         "kind": "schema",
-        "name": "MediaAttachment"
+        "name": "MediaAttachment",
+        "type": "object"
       },
       {
+        "description": "The sharing mode of the score for classes post and assignments",
         "id": "schema:MediaScoreSharingMode",
         "kind": "schema",
-        "name": "MediaScoreSharingMode"
+        "name": "MediaScoreSharingMode",
+        "type": "string"
       },
       {
+        "description": "A Microsoft Teams asignment",
         "id": "schema:MicrosoftGraphAssignment",
         "kind": "schema",
-        "name": "MicrosoftGraphAssignment"
+        "name": "MicrosoftGraphAssignment",
+        "type": "object"
       },
       {
+        "description": "A Microsoft Teams submission",
         "id": "schema:MicrosoftGraphSubmission",
         "kind": "schema",
-        "name": "MicrosoftGraphSubmission"
+        "name": "MicrosoftGraphSubmission",
+        "type": "object"
       },
       {
+        "description": "Details of an invitation to join an organization",
         "id": "schema:OrganizationInvitation",
         "kind": "schema",
-        "name": "OrganizationInvitation"
+        "name": "OrganizationInvitation",
+        "type": "object"
       },
       {
+        "description": "The parameters to create an organization invitation",
         "id": "schema:OrganizationInvitationCreation",
         "kind": "schema",
-        "name": "OrganizationInvitationCreation"
+        "name": "OrganizationInvitationCreation",
+        "type": "object"
       },
       {
+        "description": "User's Organization Role (for Edu users only)",
         "id": "schema:OrganizationRoles",
         "kind": "schema",
-        "name": "OrganizationRoles"
+        "name": "OrganizationRoles",
+        "type": "string"
       },
       {
+        "description": "A collaborator of a score.",
         "id": "schema:ResourceCollaborator",
         "kind": "schema",
-        "name": "ResourceCollaborator"
+        "name": "ResourceCollaborator",
+        "type": "ResourceRights|object"
       },
       {
+        "description": "Add a collaborator to a resource.",
         "id": "schema:ResourceCollaboratorCreation",
         "kind": "schema",
-        "name": "ResourceCollaboratorCreation"
+        "name": "ResourceCollaboratorCreation",
+        "type": "object"
       },
       {
+        "description": "The rights of the current user on a score or collection",
         "id": "schema:ResourceRights",
         "kind": "schema",
-        "name": "ResourceRights"
+        "name": "ResourceRights",
+        "type": "object"
       },
       {
+        "description": "Comment added on a sheet music",
         "id": "schema:ScoreComment",
         "kind": "schema",
-        "name": "ScoreComment"
+        "name": "ScoreComment",
+        "type": "object"
       },
       {
+        "description": "The context of the comment (for inline/contextualized comments).",
         "id": "schema:ScoreCommentContext",
         "kind": "schema",
-        "name": "ScoreCommentContext"
+        "name": "ScoreCommentContext",
+        "type": "object"
       },
       {
+        "description": "Creation of a comment",
         "id": "schema:ScoreCommentCreation",
         "kind": "schema",
-        "name": "ScoreCommentCreation"
+        "name": "ScoreCommentCreation",
+        "type": "object"
       },
       {
+        "description": "Update of a comment",
         "id": "schema:ScoreCommentUpdate",
         "kind": "schema",
-        "name": "ScoreCommentUpdate"
+        "name": "ScoreCommentUpdate",
+        "type": "object"
       },
       {
+        "description": "A computed version of the total, unique, weekly and monthly number of comments added on the documents (this doesn't include inline comments).",
         "id": "schema:ScoreCommentsCounts",
         "kind": "schema",
-        "name": "ScoreCommentsCounts"
+        "name": "ScoreCommentsCounts",
+        "type": "object"
       },
       {
+        "description": "A new created score",
         "id": "schema:ScoreCreation",
         "kind": "schema",
-        "name": "ScoreCreation"
+        "name": "ScoreCreation",
+        "type": "object"
       },
       {
+        "description": "The type of creation (an orginal, an arrangement)",
         "id": "schema:ScoreCreationType",
         "kind": "schema",
-        "name": "ScoreCreationType"
+        "name": "ScoreCreationType",
+        "type": "string"
       },
       {
+        "description": "The score and all its details",
         "id": "schema:ScoreDetails",
         "kind": "schema",
-        "name": "ScoreDetails"
+        "name": "ScoreDetails",
+        "type": "ScoreSummary|object"
       },
       {
+        "description": "Options to fork the score",
         "id": "schema:ScoreFork",
         "kind": "schema",
-        "name": "ScoreFork"
+        "name": "ScoreFork",
+        "type": "object"
       },
       {
+        "description": "License of the creation.",
         "id": "schema:ScoreLicense",
         "kind": "schema",
-        "name": "ScoreLicense"
+        "name": "ScoreLicense",
+        "type": "string"
       },
       {
+        "description": "A computed version of the weekly, monthly and total of number of likes for a score",
         "id": "schema:ScoreLikesCounts",
         "kind": "schema",
-        "name": "ScoreLikesCounts"
+        "name": "ScoreLikesCounts",
+        "type": "object"
       },
       {
+        "description": "Edit the score metadata",
         "id": "schema:ScoreModification",
         "kind": "schema",
-        "name": "ScoreModification"
+        "name": "ScoreModification",
+        "type": "object"
       },
       {
+        "description": "A computed version of the total, weekly, and monthly number of plays of the score",
         "id": "schema:ScorePlaysCounts",
         "kind": "schema",
-        "name": "ScorePlaysCounts"
+        "name": "ScorePlaysCounts",
+        "type": "object"
       },
       {
+        "description": "The score main privacy mode.",
         "id": "schema:ScorePrivacy",
         "kind": "schema",
-        "name": "ScorePrivacy"
+        "name": "ScorePrivacy",
+        "type": "string"
       },
       {
+        "description": "A score revision metadata",
         "id": "schema:ScoreRevision",
         "kind": "schema",
-        "name": "ScoreRevision"
+        "name": "ScoreRevision",
+        "type": "object"
       },
       {
+        "description": "A new created revision",
         "id": "schema:ScoreRevisionCreation",
         "kind": "schema",
-        "name": "ScoreRevisionCreation"
+        "name": "ScoreRevisionCreation",
+        "type": "object"
       },
       {
+        "description": "The statistics related to the score revision (additions and deletions)",
         "id": "schema:ScoreRevisionStatistics",
         "kind": "schema",
-        "name": "ScoreRevisionStatistics"
+        "name": "ScoreRevisionStatistics",
+        "type": "object"
       },
       {
         "id": "schema:ScoreSource",
         "kind": "schema",
-        "name": "ScoreSource"
+        "name": "ScoreSource",
+        "type": "object"
       },
       {
+        "description": "A summary of the score details",
         "id": "schema:ScoreSummary",
         "kind": "schema",
-        "name": "ScoreSummary"
+        "name": "ScoreSummary",
+        "type": "object"
       },
       {
+        "description": "An audio track for a score",
         "id": "schema:ScoreTrack",
         "kind": "schema",
-        "name": "ScoreTrack"
+        "name": "ScoreTrack",
+        "type": "object"
       },
       {
+        "description": "Creation of a new track.",
         "id": "schema:ScoreTrackCreation",
         "kind": "schema",
-        "name": "ScoreTrackCreation"
+        "name": "ScoreTrackCreation",
+        "type": "object"
       },
       {
+        "description": "A track synchronization point",
         "id": "schema:ScoreTrackPoint",
         "kind": "schema",
-        "name": "ScoreTrackPoint"
+        "name": "ScoreTrackPoint",
+        "type": "object"
       },
       {
+        "description": "State of the track",
         "id": "schema:ScoreTrackState",
         "kind": "schema",
-        "name": "ScoreTrackState"
+        "name": "ScoreTrackState",
+        "type": "string"
       },
       {
+        "description": "The type of an audio track",
         "id": "schema:ScoreTrackType",
         "kind": "schema",
-        "name": "ScoreTrackType"
+        "name": "ScoreTrackType",
+        "type": "string"
       },
       {
+        "description": "Update an existing track.",
         "id": "schema:ScoreTrackUpdate",
         "kind": "schema",
-        "name": "ScoreTrackUpdate"
+        "name": "ScoreTrackUpdate",
+        "type": "object"
       },
       {
+        "description": "A computed version of the total, weekly, and monthly number of views of the score",
         "id": "schema:ScoreViewsCounts",
         "kind": "schema",
-        "name": "ScoreViewsCounts"
+        "name": "ScoreViewsCounts",
+        "type": "object"
       },
       {
+        "description": "User update as an organization admin",
         "id": "schema:UserAdminUpdate",
         "kind": "schema",
-        "name": "UserAdminUpdate"
+        "name": "UserAdminUpdate",
+        "type": "object"
       },
       {
         "id": "schema:UserBasics",
         "kind": "schema",
-        "name": "UserBasics"
+        "name": "UserBasics",
+        "type": "object"
       },
       {
+        "description": "User creation",
         "id": "schema:UserCreation",
         "kind": "schema",
-        "name": "UserCreation"
+        "name": "UserCreation",
+        "type": "object"
       },
       {
+        "description": "User details",
         "id": "schema:UserDetails",
         "kind": "schema",
-        "name": "UserDetails"
+        "name": "UserDetails",
+        "type": "UserPublic|object"
       },
       {
+        "description": "User details (view for organization teacher / admin)",
         "id": "schema:UserDetailsAdmin",
         "kind": "schema",
-        "name": "UserDetailsAdmin"
+        "name": "UserDetailsAdmin",
+        "type": "UserPublicSummary|object"
       },
       {
+        "description": "Public User details",
         "id": "schema:UserPublic",
         "kind": "schema",
-        "name": "UserPublic"
+        "name": "UserPublic",
+        "type": "UserPublicSummary|object"
       },
       {
+        "description": "Public User details summary",
         "id": "schema:UserPublicSummary",
         "kind": "schema",
-        "name": "UserPublicSummary"
+        "name": "UserPublicSummary",
+        "type": "UserBasics|object"
       }
     ]
   },

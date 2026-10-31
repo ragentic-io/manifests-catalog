@@ -67,173 +67,652 @@
       },
       {
         "deprecated": false,
+        "description": "Get the current remaining credit balance for the account.",
         "id": "operation:get:/credits/balance",
         "kind": "operation",
         "method": "get",
         "name": "getCreditBalance",
         "path": "/credits/balance",
         "pointer": "#/paths/~1credits~1balance/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get your current WinSMS credit balance"
+        "summary": "Get your current WinSMS credit balance",
+        "tags": [
+          "credits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Transfer credits between accounts.",
         "id": "operation:post:/credits/transfer",
         "kind": "operation",
         "method": "post",
         "name": "transferCredits",
         "path": "/credits/transfer",
         "pointer": "#/paths/~1credits~1transfer/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "errorDetails"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "413",
+            "type": "errorDetails"
+          },
+          {
+            "status": "415",
+            "type": "errorDetails"
+          },
+          {
+            "status": "422",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Transfer credits between main and sub accounts."
+        "summary": "Transfer credits between main and sub accounts.",
+        "tags": [
+          "credits"
+        ]
       },
       {
         "deprecated": false,
+        "description": "***Only available to users with a [WinSMS Short/Long Code](https://support.winsms.co.za/winsms-long-short-code-system/).*** Get a list of all incoming short/lo…",
         "id": "operation:get:/shortcode/incoming",
         "kind": "operation",
         "method": "get",
         "name": "getShortCodeMessages",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "***Optional*** - The number of items to skip before starting to return results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "***Optional*** - The number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/shortcode/incoming",
         "pointer": "#/paths/~1shortcode~1incoming/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "422",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get a list of incoming short/long code messages\n"
+        "summary": "Get a list of incoming short/long code messages\n",
+        "tags": [
+          "shortcode"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all incoming SMS messages received by the account.",
         "id": "operation:get:/sms/incoming",
         "kind": "operation",
         "method": "get",
         "name": "getIncomingMessages",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "***Optional*** - The number of items to skip before starting to return results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "***Optional*** - The number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/sms/incoming",
         "pointer": "#/paths/~1sms~1incoming/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "422",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get a list of incoming SMS messages"
+        "summary": "Get a list of incoming SMS messages",
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all opt-out SMS messages received by the account, as well as all manually added opt-out numbers.<br>",
         "id": "operation:get:/sms/incoming/optout",
         "kind": "operation",
         "method": "get",
         "name": "getOptoutMessages",
         "path": "/sms/incoming/optout",
         "pointer": "#/paths/~1sms~1incoming~1optout/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get a list of incoming opt-out SMS messages"
+        "summary": "Get a list of incoming opt-out SMS messages",
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Submit 1 or more SMS messages to be sent by WinSMS.",
         "id": "operation:post:/sms/outgoing/send",
         "kind": "operation",
         "method": "post",
         "name": "smsSend",
         "path": "/sms/outgoing/send",
         "pointer": "#/paths/~1sms~1outgoing~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "errorDetails"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "413",
+            "type": "errorDetails"
+          },
+          {
+            "status": "415",
+            "type": "errorDetails"
+          },
+          {
+            "status": "422",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Send SMS messages"
+        "summary": "Send SMS messages",
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Submit multiple different SMS messages to be sent to multiple recipients.",
         "id": "operation:post:/sms/outgoing/sendmulti",
         "kind": "operation",
         "method": "post",
         "name": "smsSendBatch",
         "path": "/sms/outgoing/sendmulti",
         "pointer": "#/paths/~1sms~1outgoing~1sendmulti/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "errorDetails"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "413",
+            "type": "errorDetails"
+          },
+          {
+            "status": "415",
+            "type": "errorDetails"
+          },
+          {
+            "status": "422",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Send multiple different SMS messages"
+        "summary": "Send multiple different SMS messages",
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of previously submitted SMS message delivery statuses.",
         "id": "operation:post:/sms/outgoing/status",
         "kind": "operation",
         "method": "post",
         "name": "smsStatus",
         "path": "/sms/outgoing/status",
         "pointer": "#/paths/~1sms~1outgoing~1status/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "integer[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "errorDetails"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "413",
+            "type": "errorDetails"
+          },
+          {
+            "status": "415",
+            "type": "errorDetails"
+          },
+          {
+            "status": "422",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get SMS delivery statuses"
+        "summary": "Get SMS delivery statuses",
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all scheduled SMS messages that have not yet been sent.",
         "id": "operation:get:/sms/scheduled",
         "kind": "operation",
         "method": "get",
         "name": "getScheduledMessages",
+        "parameters": [
+          {
+            "default": 0,
+            "description": "***Optional*** - The number of items to skip before starting to return results.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 100,
+            "description": "***Optional*** - The number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/sms/scheduled",
         "pointer": "#/paths/~1sms~1scheduled/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "422",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get a list of scheduled SMS messages"
+        "summary": "Get a list of scheduled SMS messages",
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete a list of previously scheduled SMS messages that have not yet been sent.",
         "id": "operation:post:/sms/scheduled/delete",
         "kind": "operation",
         "method": "post",
         "name": "deleteScheduledMessages",
         "path": "/sms/scheduled/delete",
         "pointer": "#/paths/~1sms~1scheduled~1delete/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "integer[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "errorDetails"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "413",
+            "type": "errorDetails"
+          },
+          {
+            "status": "415",
+            "type": "errorDetails"
+          },
+          {
+            "status": "422",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Delete scheduled SMS messages and refund credits"
+        "summary": "Delete scheduled SMS messages and refund credits",
+        "tags": [
+          "sms"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the Sub Accounts owned by the Main Account.",
         "id": "operation:get:/subaccounts",
         "kind": "operation",
         "method": "get",
         "name": "getSubAccounts",
         "path": "/subaccounts",
         "pointer": "#/paths/~1subaccounts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "errorDetails"
+          },
+          {
+            "status": "404",
+            "type": "errorDetails"
+          },
+          {
+            "status": "405",
+            "type": "errorDetails"
+          },
+          {
+            "status": "500",
+            "type": "errorDetails"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "APIKeyHeader": []
           }
         ],
-        "summary": "Get a list of all Sub Accounts."
+        "summary": "Get a list of all Sub Accounts.",
+        "tags": [
+          "subaccounts"
+        ]
       },
       {
         "id": "schema:errorDetails",
         "kind": "schema",
-        "name": "errorDetails"
+        "name": "errorDetails",
+        "type": "object"
       }
     ]
   },

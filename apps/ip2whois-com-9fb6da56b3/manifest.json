@@ -17,12 +17,43 @@
       },
       {
         "deprecated": false,
+        "description": "Lookup WHOIS information",
         "id": "operation:get:/",
         "kind": "operation",
         "method": "get",
         "name": "get /",
+        "parameters": [
+          {
+            "description": "Domain name for lookup purpose.",
+            "in": "query",
+            "name": "domain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Returns the API response in json (default) or xml format.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/",
         "pointer": "#/paths/~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       }

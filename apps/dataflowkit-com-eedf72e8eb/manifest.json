@@ -28,6 +28,86 @@
         "from": "dataflowkit-com-eedf72e8eb",
         "kind": "EXPOSES",
         "to": "operation:post:/serp"
+      },
+      {
+        "from": "operation:post:/convert/url/pdf",
+        "kind": "ACCEPTS",
+        "to": "schema:url2pdfrequest"
+      },
+      {
+        "from": "operation:post:/convert/url/screenshot",
+        "kind": "ACCEPTS",
+        "to": "schema:url2screenshotrequest"
+      },
+      {
+        "from": "operation:post:/fetch",
+        "kind": "ACCEPTS",
+        "to": "schema:fetchrequest"
+      },
+      {
+        "from": "operation:post:/parse",
+        "kind": "ACCEPTS",
+        "to": "schema:parserequest"
+      },
+      {
+        "from": "operation:post:/serp",
+        "kind": "ACCEPTS",
+        "to": "schema:serprequest"
+      },
+      {
+        "from": "schema:fetchrequest",
+        "kind": "REFERENCES",
+        "to": "schema:action"
+      },
+      {
+        "from": "schema:fetchrequest",
+        "kind": "REFERENCES",
+        "to": "schema:initialCookie"
+      },
+      {
+        "from": "schema:field",
+        "kind": "REFERENCES",
+        "to": "schema:parserequest"
+      },
+      {
+        "from": "schema:parserequest",
+        "kind": "REFERENCES",
+        "to": "schema:Paginator"
+      },
+      {
+        "from": "schema:parserequest",
+        "kind": "REFERENCES",
+        "to": "schema:fetchrequest"
+      },
+      {
+        "from": "schema:parserequest",
+        "kind": "REFERENCES",
+        "to": "schema:field"
+      },
+      {
+        "from": "schema:serprequest",
+        "kind": "REFERENCES",
+        "to": "schema:field"
+      },
+      {
+        "from": "schema:url2pdfrequest",
+        "kind": "REFERENCES",
+        "to": "schema:action"
+      },
+      {
+        "from": "schema:url2pdfrequest",
+        "kind": "REFERENCES",
+        "to": "schema:initialCookie"
+      },
+      {
+        "from": "schema:url2screenshotrequest",
+        "kind": "REFERENCES",
+        "to": "schema:action"
+      },
+      {
+        "from": "schema:url2screenshotrequest",
+        "kind": "REFERENCES",
+        "to": "schema:initialCookie"
       }
     ],
     "nodes": [
@@ -37,123 +117,268 @@
       },
       {
         "deprecated": false,
+        "description": "Automate URL to PDF Conversion right in your application.",
         "id": "operation:post:/convert/url/pdf",
         "kind": "operation",
         "method": "post",
         "name": "url-to-pdf",
         "path": "/convert/url/pdf",
         "pointer": "#/paths/~1convert~1url~1pdf/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "url2pdfrequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Save web page as PDF"
+        "summary": "Save web page as PDF",
+        "tags": [
+          "url-to-pdf"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Automate URL to Screenshot Conversion right in your application.",
         "id": "operation:post:/convert/url/screenshot",
         "kind": "operation",
         "method": "post",
         "name": "url-to-screenshot",
         "path": "/convert/url/screenshot",
         "pointer": "#/paths/~1convert~1url~1screenshot/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "url2screenshotrequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:binary"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Capture web page Screenshots."
+        "summary": "Capture web page Screenshots.",
+        "tags": [
+          "url-to-screenshot"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use fetch endpoint to download web pages.",
         "id": "operation:post:/fetch",
         "kind": "operation",
         "method": "post",
         "name": "fetch",
         "path": "/fetch",
         "pointer": "#/paths/~1fetch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "fetchrequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Download web page content"
+        "summary": "Download web page content",
+        "tags": [
+          "fetch"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Dataflow kit uses CSS selectors to find HTML elements in web pages for later data extraction.",
         "id": "operation:post:/parse",
         "kind": "operation",
         "method": "post",
         "name": "parse",
         "path": "/parse",
         "pointer": "#/paths/~1parse/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "parserequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Extract structured data from web pages"
+        "summary": "Extract structured data from web pages",
+        "tags": [
+          "parse"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To crawl search engine result pages, you can use `/serp` endpoint.",
         "id": "operation:post:/serp",
         "kind": "operation",
         "method": "post",
         "name": "serp",
         "path": "/serp",
         "pointer": "#/paths/~1serp/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "serprequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Collect search results from search engines"
+        "summary": "Collect search results from search engines",
+        "tags": [
+          "serp"
+        ]
       },
       {
+        "description": "Specify _Next link_ paginator on pages containing a link pointing to the next page.",
         "id": "schema:Paginator",
         "kind": "schema",
-        "name": "Paginator"
+        "name": "Paginator",
+        "type": "object"
       },
       {
         "id": "schema:action",
         "kind": "schema",
-        "name": "action"
+        "name": "action",
+        "type": "object"
       },
       {
         "id": "schema:fetchrequest",
         "kind": "schema",
-        "name": "fetchrequest"
+        "name": "fetchrequest",
+        "type": "object"
       },
       {
         "id": "schema:field",
         "kind": "schema",
-        "name": "field"
+        "name": "field",
+        "type": "object"
       },
       {
+        "description": "InitialCookie structure keep cookies that optionally can be passed to the new fetcher crawl a website that requires a login.",
         "id": "schema:initialCookie",
         "kind": "schema",
-        "name": "initialCookie"
+        "name": "initialCookie",
+        "type": "object"
       },
       {
         "id": "schema:parserequest",
         "kind": "schema",
-        "name": "parserequest"
+        "name": "parserequest",
+        "type": "object"
       },
       {
         "id": "schema:serprequest",
         "kind": "schema",
-        "name": "serprequest"
+        "name": "serprequest",
+        "type": "object"
       },
       {
         "id": "schema:url2pdfrequest",
         "kind": "schema",
-        "name": "url2pdfrequest"
+        "name": "url2pdfrequest",
+        "type": "object"
       },
       {
         "id": "schema:url2screenshotrequest",
         "kind": "schema",
-        "name": "url2screenshotrequest"
+        "name": "url2screenshotrequest",
+        "type": "object"
       }
     ]
   },

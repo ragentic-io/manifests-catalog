@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_magento.com_sites_all_themes_ma
 
 | | |
 | --- | --- |
-| Signed bundle | `301492909753ce1be1b45cf6e6460068ae35da5882d59b03d41856f8734b092a` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,460 +34,462 @@ logo: "https://api.apis.guru/v2/cache/logo/https_magento.com_sites_all_themes_ma
 
 376 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/V1/addresses/{addressId}` | customerAddressRepositoryV1DeleteByIdDelete | addresses/{addressId} |
-| PUT | `/V1/amazon-billing-address/{amazonOrderReferenceId}` | amazonPaymentAddressManagementV1GetBillingAddressPut | amazon-billing-address/{amazonOrderReferenceId} |
-| PUT | `/V1/amazon-shipping-address/{amazonOrderReferenceId}` | amazonPaymentAddressManagementV1GetShippingAddressPut | amazon-shipping-address/{amazonOrderReferenceId} |
-| DELETE | `/V1/amazon/order-ref` | amazonPaymentOrderInformationManagementV1RemoveOrderReferenceDelete | amazon/order-ref |
-| GET | `/V1/analytics/link` | analyticsLinkProviderV1GetGet | analytics/link |
-| GET | `/V1/attributeMetadata/customer` | customerCustomerMetadataV1GetAllAttributesMetadataGet | attributeMetadata/customer |
-| GET | `/V1/attributeMetadata/customer/attribute/{attributeCode}` | customerCustomerMetadataV1GetAttributeMetadataGet | attributeMetadata/customer/attribute/{attributeCode} |
-| GET | `/V1/attributeMetadata/customer/custom` | customerCustomerMetadataV1GetCustomAttributesMetadataGet | attributeMetadata/customer/custom |
-| GET | `/V1/attributeMetadata/customer/form/{formCode}` | customerCustomerMetadataV1GetAttributesGet | attributeMetadata/customer/form/{formCode} |
-| GET | `/V1/attributeMetadata/customerAddress` | customerAddressMetadataV1GetAllAttributesMetadataGet | attributeMetadata/customerAddress |
-| GET | `/V1/attributeMetadata/customerAddress/attribute/{attributeCode}` | customerAddressMetadataV1GetAttributeMetadataGet | attributeMetadata/customerAddress/attribute/{attributeCode} |
-| GET | `/V1/attributeMetadata/customerAddress/custom` | customerAddressMetadataV1GetCustomAttributesMetadataGet | attributeMetadata/customerAddress/custom |
-| GET | `/V1/attributeMetadata/customerAddress/form/{formCode}` | customerAddressMetadataV1GetAttributesGet | attributeMetadata/customerAddress/form/{formCode} |
-| GET | `/V1/bulk/{bulkUuid}/detailed-status` | asynchronousOperationsBulkStatusV1GetBulkDetailedStatusGet | bulk/{bulkUuid}/detailed-status |
-| GET | `/V1/bulk/{bulkUuid}/operation-status/{status}` | asynchronousOperationsBulkStatusV1GetOperationsCountByBulkIdAndStatusGet | bulk/{bulkUuid}/operation-status/{status} |
-| GET | `/V1/bulk/{bulkUuid}/status` | asynchronousOperationsBulkStatusV1GetBulkShortStatusGet | bulk/{bulkUuid}/status |
-| POST | `/V1/bundle-products/options/add` | bundleProductOptionManagementV1SavePost | bundle-products/options/add |
-| GET | `/V1/bundle-products/options/types` | bundleProductOptionTypeListV1GetItemsGet | bundle-products/options/types |
-| PUT | `/V1/bundle-products/options/{optionId}` | bundleProductOptionManagementV1SavePut | bundle-products/options/{optionId} |
-| GET | `/V1/bundle-products/{productSku}/children` | bundleProductLinkManagementV1GetChildrenGet | bundle-products/{productSku}/children |
-| PUT | `/V1/bundle-products/{sku}/links/{id}` | bundleProductLinkManagementV1SaveChildPut | bundle-products/{sku}/links/{id} |
-| POST | `/V1/bundle-products/{sku}/links/{optionId}` | bundleProductLinkManagementV1AddChildByProductSkuPost | bundle-products/{sku}/links/{optionId} |
-| GET | `/V1/bundle-products/{sku}/options/all` | bundleProductOptionRepositoryV1GetListGet | bundle-products/{sku}/options/all |
-| DELETE | `/V1/bundle-products/{sku}/options/{optionId}` | bundleProductOptionRepositoryV1DeleteByIdDelete | bundle-products/{sku}/options/{optionId} |
-| GET | `/V1/bundle-products/{sku}/options/{optionId}` | bundleProductOptionRepositoryV1GetGet | bundle-products/{sku}/options/{optionId} |
-| DELETE | `/V1/bundle-products/{sku}/options/{optionId}/children/{childSku}` | bundleProductLinkManagementV1RemoveChildDelete | bundle-products/{sku}/options/{optionId}/children/{childSku} |
-| POST | `/V1/carts/` | quoteCartManagementV1CreateEmptyCartPost | carts/ |
-| GET | `/V1/carts/guest-carts/{cartId}/checkGiftCard/{giftCardCode}` | giftCardAccountGuestGiftCardAccountManagementV1CheckGiftCardGet | carts/guest-carts/{cartId}/checkGiftCard/{giftCardCode} |
-| POST | `/V1/carts/guest-carts/{cartId}/giftCards` | giftCardAccountGuestGiftCardAccountManagementV1AddGiftCardPost | carts/guest-carts/{cartId}/giftCards |
-| DELETE | `/V1/carts/guest-carts/{cartId}/giftCards/{giftCardCode}` | giftCardAccountGuestGiftCardAccountManagementV1DeleteByQuoteIdDelete | carts/guest-carts/{cartId}/giftCards/{giftCardCode} |
-| GET | `/V1/carts/licence` | checkoutAgreementsCheckoutAgreementsRepositoryV1GetListGet | carts/licence |
-| GET | `/V1/carts/mine` | quoteCartManagementV1GetCartForCustomerGet | carts/mine |
-| POST | `/V1/carts/mine` | quoteCartManagementV1CreateEmptyCartForCustomerPost | carts/mine |
-| PUT | `/V1/carts/mine` | quoteCartRepositoryV1SavePut | carts/mine |
-| POST | `/V1/carts/mine/balance/apply` | customerBalanceBalanceManagementFromQuoteV1ApplyPost | carts/mine/balance/apply |
-| POST | `/V1/carts/mine/balance/unapply` | customerBalanceBalanceManagementFromQuoteV1UnapplyPost | carts/mine/balance/unapply |
-| GET | `/V1/carts/mine/billing-address` | quoteBillingAddressManagementV1GetGet | carts/mine/billing-address |
-| POST | `/V1/carts/mine/billing-address` | quoteBillingAddressManagementV1AssignPost | carts/mine/billing-address |
-| GET | `/V1/carts/mine/checkGiftCard/{giftCardCode}` | giftCardAccountGiftCardAccountManagementV1CheckGiftCardGet | carts/mine/checkGiftCard/{giftCardCode} |
-| POST | `/V1/carts/mine/checkout-fields` | temandoShippingQuoteCartCheckoutFieldManagementV1SaveCheckoutFieldsPost | carts/mine/checkout-fields |
-| PUT | `/V1/carts/mine/collect-totals` | quoteCartTotalManagementV1CollectTotalsPut | carts/mine/collect-totals |
-| DELETE | `/V1/carts/mine/collection-point/search-request` | temandoShippingCollectionPointCartCollectionPointManagementV1DeleteSearchRequestDelete | carts/mine/collection-point/search-request |
-| PUT | `/V1/carts/mine/collection-point/search-request` | temandoShippingCollectionPointCartCollectionPointManagementV1SaveSearchRequestPut | carts/mine/collection-point/search-request |
-| GET | `/V1/carts/mine/collection-point/search-result` | temandoShippingCollectionPointCartCollectionPointManagementV1GetCollectionPointsGet | carts/mine/collection-point/search-result |
-| POST | `/V1/carts/mine/collection-point/select` | temandoShippingCollectionPointCartCollectionPointManagementV1SelectCollectionPointPost | carts/mine/collection-point/select |
-| DELETE | `/V1/carts/mine/coupons` | quoteCouponManagementV1RemoveDelete | carts/mine/coupons |
-| GET | `/V1/carts/mine/coupons` | quoteCouponManagementV1GetGet | carts/mine/coupons |
-| PUT | `/V1/carts/mine/coupons/{couponCode}` | quoteCouponManagementV1SetPut | carts/mine/coupons/{couponCode} |
-| POST | `/V1/carts/mine/delivery-option` | temandoShippingQuoteCartDeliveryOptionManagementV1SavePost | carts/mine/delivery-option |
-| POST | `/V1/carts/mine/estimate-shipping-methods` | quoteShipmentEstimationV1EstimateByExtendedAddressPost | carts/mine/estimate-shipping-methods |
-| POST | `/V1/carts/mine/estimate-shipping-methods-by-address-id` | quoteShippingMethodManagementV1EstimateByAddressIdPost | carts/mine/estimate-shipping-methods-by-address-id |
-| GET | `/V1/carts/mine/gift-message` | giftMessageCartRepositoryV1GetGet | carts/mine/gift-message |
-| POST | `/V1/carts/mine/gift-message` | giftMessageCartRepositoryV1SavePost | carts/mine/gift-message |
-| GET | `/V1/carts/mine/gift-message/{itemId}` | giftMessageItemRepositoryV1GetGet | carts/mine/gift-message/{itemId} |
-| POST | `/V1/carts/mine/gift-message/{itemId}` | giftMessageItemRepositoryV1SavePost | carts/mine/gift-message/{itemId} |
-| POST | `/V1/carts/mine/giftCards` | giftCardAccountGiftCardAccountManagementV1SaveByQuoteIdPost | carts/mine/giftCards |
-| DELETE | `/V1/carts/mine/giftCards/{giftCardCode}` | giftCardAccountGiftCardAccountManagementV1DeleteByQuoteIdDelete | carts/mine/giftCards/{giftCardCode} |
-| GET | `/V1/carts/mine/items` | quoteCartItemRepositoryV1GetListGet | carts/mine/items |
-| POST | `/V1/carts/mine/items` | quoteCartItemRepositoryV1SavePost | carts/mine/items |
-| DELETE | `/V1/carts/mine/items/{itemId}` | quoteCartItemRepositoryV1DeleteByIdDelete | carts/mine/items/{itemId} |
-| PUT | `/V1/carts/mine/items/{itemId}` | quoteCartItemRepositoryV1SavePut | carts/mine/items/{itemId} |
-| PUT | `/V1/carts/mine/order` | quoteCartManagementV1PlaceOrderPut | carts/mine/order |
-| GET | `/V1/carts/mine/payment-information` | checkoutPaymentInformationManagementV1GetPaymentInformationGet | carts/mine/payment-information |
-| POST | `/V1/carts/mine/payment-information` | checkoutPaymentInformationManagementV1SavePaymentInformationAndPlaceOrderPost | carts/mine/payment-information |
-| GET | `/V1/carts/mine/payment-methods` | quotePaymentMethodManagementV1GetListGet | carts/mine/payment-methods |
-| GET | `/V1/carts/mine/selected-payment-method` | quotePaymentMethodManagementV1GetGet | carts/mine/selected-payment-method |
-| PUT | `/V1/carts/mine/selected-payment-method` | quotePaymentMethodManagementV1SetPut | carts/mine/selected-payment-method |
-| POST | `/V1/carts/mine/set-payment-information` | checkoutPaymentInformationManagementV1SavePaymentInformationPost | carts/mine/set-payment-information |
-| POST | `/V1/carts/mine/shipping-information` | checkoutShippingInformationManagementV1SaveAddressInformationPost | carts/mine/shipping-information |
-| GET | `/V1/carts/mine/shipping-methods` | quoteShippingMethodManagementV1GetListGet | carts/mine/shipping-methods |
-| GET | `/V1/carts/mine/totals` | quoteCartTotalRepositoryV1GetGet | carts/mine/totals |
-| POST | `/V1/carts/mine/totals-information` | checkoutTotalsInformationManagementV1CalculatePost | carts/mine/totals-information |
-| GET | `/V1/carts/search` | quoteCartRepositoryV1GetListGet | carts/search |
-| GET | `/V1/carts/{cartId}` | quoteCartRepositoryV1GetGet | carts/{cartId} |
-| PUT | `/V1/carts/{cartId}` | quoteCartManagementV1AssignCustomerPut | carts/{cartId} |
-| GET | `/V1/carts/{cartId}/billing-address` | get /V1/carts/{cartId}/billing-address | carts/{cartId}/billing-address |
-| POST | `/V1/carts/{cartId}/billing-address` | post /V1/carts/{cartId}/billing-address | carts/{cartId}/billing-address |
-| DELETE | `/V1/carts/{cartId}/coupons` | delete /V1/carts/{cartId}/coupons | carts/{cartId}/coupons |
-| GET | `/V1/carts/{cartId}/coupons` | get /V1/carts/{cartId}/coupons | carts/{cartId}/coupons |
-| PUT | `/V1/carts/{cartId}/coupons/{couponCode}` | put /V1/carts/{cartId}/coupons/{couponCode} | carts/{cartId}/coupons/{couponCode} |
-| POST | `/V1/carts/{cartId}/estimate-shipping-methods` | post /V1/carts/{cartId}/estimate-shipping-methods | carts/{cartId}/estimate-shipping-methods |
-| POST | `/V1/carts/{cartId}/estimate-shipping-methods-by-address-id` | post /V1/carts/{cartId}/estimate-shipping-methods-by-address-id | carts/{cartId}/estimate-shipping-methods-by-address-id |
-| GET | `/V1/carts/{cartId}/gift-message` | get /V1/carts/{cartId}/gift-message | carts/{cartId}/gift-message |
-| POST | `/V1/carts/{cartId}/gift-message` | post /V1/carts/{cartId}/gift-message | carts/{cartId}/gift-message |
-| GET | `/V1/carts/{cartId}/gift-message/{itemId}` | get /V1/carts/{cartId}/gift-message/{itemId} | carts/{cartId}/gift-message/{itemId} |
-| POST | `/V1/carts/{cartId}/gift-message/{itemId}` | post /V1/carts/{cartId}/gift-message/{itemId} | carts/{cartId}/gift-message/{itemId} |
-| PUT | `/V1/carts/{cartId}/giftCards` | giftCardAccountGiftCardAccountManagementV1SaveByQuoteIdPut | carts/{cartId}/giftCards |
-| DELETE | `/V1/carts/{cartId}/giftCards/{giftCardCode}` | delete /V1/carts/{cartId}/giftCards/{giftCardCode} | carts/{cartId}/giftCards/{giftCardCode} |
-| GET | `/V1/carts/{cartId}/items` | get /V1/carts/{cartId}/items | carts/{cartId}/items |
-| DELETE | `/V1/carts/{cartId}/items/{itemId}` | delete /V1/carts/{cartId}/items/{itemId} | carts/{cartId}/items/{itemId} |
-| PUT | `/V1/carts/{cartId}/items/{itemId}` | put /V1/carts/{cartId}/items/{itemId} | carts/{cartId}/items/{itemId} |
-| PUT | `/V1/carts/{cartId}/order` | put /V1/carts/{cartId}/order | carts/{cartId}/order |
-| GET | `/V1/carts/{cartId}/payment-methods` | get /V1/carts/{cartId}/payment-methods | carts/{cartId}/payment-methods |
-| GET | `/V1/carts/{cartId}/selected-payment-method` | get /V1/carts/{cartId}/selected-payment-method | carts/{cartId}/selected-payment-method |
-| PUT | `/V1/carts/{cartId}/selected-payment-method` | put /V1/carts/{cartId}/selected-payment-method | carts/{cartId}/selected-payment-method |
-| POST | `/V1/carts/{cartId}/shipping-information` | post /V1/carts/{cartId}/shipping-information | carts/{cartId}/shipping-information |
-| GET | `/V1/carts/{cartId}/shipping-methods` | get /V1/carts/{cartId}/shipping-methods | carts/{cartId}/shipping-methods |
-| GET | `/V1/carts/{cartId}/totals` | get /V1/carts/{cartId}/totals | carts/{cartId}/totals |
-| POST | `/V1/carts/{cartId}/totals-information` | post /V1/carts/{cartId}/totals-information | carts/{cartId}/totals-information |
-| GET | `/V1/carts/{quoteId}/giftCards` | giftCardAccountGiftCardAccountManagementV1GetListByQuoteIdGet | carts/{quoteId}/giftCards |
-| POST | `/V1/carts/{quoteId}/items` | post /V1/carts/{quoteId}/items | carts/{quoteId}/items |
-| GET | `/V1/categories` | catalogCategoryManagementV1GetTreeGet | categories |
-| POST | `/V1/categories` | catalogCategoryRepositoryV1SavePost | categories |
-| GET | `/V1/categories/attributes` | catalogCategoryAttributeRepositoryV1GetListGet | categories/attributes |
-| GET | `/V1/categories/attributes/{attributeCode}` | catalogCategoryAttributeRepositoryV1GetGet | categories/attributes/{attributeCode} |
-| GET | `/V1/categories/attributes/{attributeCode}/options` | catalogCategoryAttributeOptionManagementV1GetItemsGet | categories/attributes/{attributeCode}/options |
-| GET | `/V1/categories/list` | catalogCategoryListV1GetListGet | categories/list |
-| DELETE | `/V1/categories/{categoryId}` | catalogCategoryRepositoryV1DeleteByIdentifierDelete | categories/{categoryId} |
-| GET | `/V1/categories/{categoryId}` | catalogCategoryRepositoryV1GetGet | categories/{categoryId} |
-| PUT | `/V1/categories/{categoryId}/move` | catalogCategoryManagementV1MovePut | categories/{categoryId}/move |
-| GET | `/V1/categories/{categoryId}/products` | catalogCategoryLinkManagementV1GetAssignedProductsGet | categories/{categoryId}/products |
-| POST | `/V1/categories/{categoryId}/products` | catalogCategoryLinkRepositoryV1SavePost | categories/{categoryId}/products |
-| PUT | `/V1/categories/{categoryId}/products` | catalogCategoryLinkRepositoryV1SavePut | categories/{categoryId}/products |
-| DELETE | `/V1/categories/{categoryId}/products/{sku}` | catalogCategoryLinkRepositoryV1DeleteByIdsDelete | categories/{categoryId}/products/{sku} |
-| PUT | `/V1/categories/{id}` | catalogCategoryRepositoryV1SavePut | categories/{id} |
-| POST | `/V1/cmsBlock` | cmsBlockRepositoryV1SavePost | cmsBlock |
-| GET | `/V1/cmsBlock/search` | cmsBlockRepositoryV1GetListGet | cmsBlock/search |
-| DELETE | `/V1/cmsBlock/{blockId}` | cmsBlockRepositoryV1DeleteByIdDelete | cmsBlock/{blockId} |
-| GET | `/V1/cmsBlock/{blockId}` | cmsBlockRepositoryV1GetByIdGet | cmsBlock/{blockId} |
-| PUT | `/V1/cmsBlock/{id}` | cmsBlockRepositoryV1SavePut | cmsBlock/{id} |
-| POST | `/V1/cmsPage` | cmsPageRepositoryV1SavePost | cmsPage |
-| GET | `/V1/cmsPage/search` | cmsPageRepositoryV1GetListGet | cmsPage/search |
-| PUT | `/V1/cmsPage/{id}` | cmsPageRepositoryV1SavePut | cmsPage/{id} |
-| DELETE | `/V1/cmsPage/{pageId}` | cmsPageRepositoryV1DeleteByIdDelete | cmsPage/{pageId} |
-| GET | `/V1/cmsPage/{pageId}` | cmsPageRepositoryV1GetByIdGet | cmsPage/{pageId} |
-| GET | `/V1/company/` | companyCompanyRepositoryV1GetListGet | company/ |
-| POST | `/V1/company/` | companyCompanyRepositoryV1SavePost | company/ |
-| PUT | `/V1/company/assignRoles` | companyAclV1AssignRolesPut | company/assignRoles |
-| GET | `/V1/company/role/` | companyRoleRepositoryV1GetListGet | company/role/ |
-| POST | `/V1/company/role/` | companyRoleRepositoryV1SavePost | company/role/ |
-| PUT | `/V1/company/role/{id}` | companyRoleRepositoryV1SavePut | company/role/{id} |
-| DELETE | `/V1/company/role/{roleId}` | companyRoleRepositoryV1DeleteDelete | company/role/{roleId} |
-| GET | `/V1/company/role/{roleId}` | companyRoleRepositoryV1GetGet | company/role/{roleId} |
-| GET | `/V1/company/role/{roleId}/users` | companyAclV1GetUsersByRoleIdGet | company/role/{roleId}/users |
-| DELETE | `/V1/company/{companyId}` | companyCompanyRepositoryV1DeleteByIdDelete | company/{companyId} |
-| GET | `/V1/company/{companyId}` | companyCompanyRepositoryV1GetGet | company/{companyId} |
-| PUT | `/V1/company/{companyId}` | companyCompanyRepositoryV1SavePut | company/{companyId} |
-| GET | `/V1/companyCredits/` | companyCreditCreditLimitRepositoryV1GetListGet | companyCredits/ |
-| GET | `/V1/companyCredits/company/{companyId}` | companyCreditCreditLimitManagementV1GetCreditByCompanyIdGet | companyCredits/company/{companyId} |
-| GET | `/V1/companyCredits/history` | companyCreditCreditHistoryManagementV1GetListGet | companyCredits/history |
-| PUT | `/V1/companyCredits/history/{historyId}` | companyCreditCreditHistoryManagementV1UpdatePut | companyCredits/history/{historyId} |
-| GET | `/V1/companyCredits/{creditId}` | companyCreditCreditLimitRepositoryV1GetGet | companyCredits/{creditId} |
-| POST | `/V1/companyCredits/{creditId}/decreaseBalance` | companyCreditCreditBalanceManagementV1DecreasePost | companyCredits/{creditId}/decreaseBalance |
-| POST | `/V1/companyCredits/{creditId}/increaseBalance` | companyCreditCreditBalanceManagementV1IncreasePost | companyCredits/{creditId}/increaseBalance |
-| PUT | `/V1/companyCredits/{id}` | companyCreditCreditLimitRepositoryV1SavePut | companyCredits/{id} |
-| PUT | `/V1/configurable-products/variation` | configurableProductConfigurableProductManagementV1GenerateVariationPut | configurable-products/variation |
-| POST | `/V1/configurable-products/{sku}/child` | configurableProductLinkManagementV1AddChildPost | configurable-products/{sku}/child |
-| GET | `/V1/configurable-products/{sku}/children` | configurableProductLinkManagementV1GetChildrenGet | configurable-products/{sku}/children |
-| DELETE | `/V1/configurable-products/{sku}/children/{childSku}` | configurableProductLinkManagementV1RemoveChildDelete | configurable-products/{sku}/children/{childSku} |
-| POST | `/V1/configurable-products/{sku}/options` | configurableProductOptionRepositoryV1SavePost | configurable-products/{sku}/options |
-| GET | `/V1/configurable-products/{sku}/options/all` | configurableProductOptionRepositoryV1GetListGet | configurable-products/{sku}/options/all |
-| DELETE | `/V1/configurable-products/{sku}/options/{id}` | configurableProductOptionRepositoryV1DeleteByIdDelete | configurable-products/{sku}/options/{id} |
-| GET | `/V1/configurable-products/{sku}/options/{id}` | configurableProductOptionRepositoryV1GetGet | configurable-products/{sku}/options/{id} |
-| PUT | `/V1/configurable-products/{sku}/options/{id}` | configurableProductOptionRepositoryV1SavePut | configurable-products/{sku}/options/{id} |
-| POST | `/V1/coupons` | salesRuleCouponRepositoryV1SavePost | coupons |
-| POST | `/V1/coupons/deleteByCodes` | salesRuleCouponManagementV1DeleteByCodesPost | coupons/deleteByCodes |
-| POST | `/V1/coupons/deleteByIds` | salesRuleCouponManagementV1DeleteByIdsPost | coupons/deleteByIds |
-| POST | `/V1/coupons/generate` | salesRuleCouponManagementV1GeneratePost | coupons/generate |
-| GET | `/V1/coupons/search` | salesRuleCouponRepositoryV1GetListGet | coupons/search |
-| DELETE | `/V1/coupons/{couponId}` | salesRuleCouponRepositoryV1DeleteByIdDelete | coupons/{couponId} |
-| GET | `/V1/coupons/{couponId}` | salesRuleCouponRepositoryV1GetByIdGet | coupons/{couponId} |
-| PUT | `/V1/coupons/{couponId}` | salesRuleCouponRepositoryV1SavePut | coupons/{couponId} |
-| POST | `/V1/creditmemo` | salesCreditmemoRepositoryV1SavePost | creditmemo |
-| POST | `/V1/creditmemo/refund` | salesCreditmemoManagementV1RefundPost | creditmemo/refund |
-| GET | `/V1/creditmemo/{id}` | salesCreditmemoRepositoryV1GetGet | creditmemo/{id} |
-| PUT | `/V1/creditmemo/{id}` | salesCreditmemoManagementV1CancelPut | creditmemo/{id} |
-| GET | `/V1/creditmemo/{id}/comments` | salesCreditmemoManagementV1GetCommentsListGet | creditmemo/{id}/comments |
-| POST | `/V1/creditmemo/{id}/comments` | salesCreditmemoCommentRepositoryV1SavePost | creditmemo/{id}/comments |
-| POST | `/V1/creditmemo/{id}/emails` | salesCreditmemoManagementV1NotifyPost | creditmemo/{id}/emails |
-| GET | `/V1/creditmemos` | salesCreditmemoRepositoryV1GetListGet | creditmemos |
-| POST | `/V1/customerGroups` | customerGroupRepositoryV1SavePost | customerGroups |
-| GET | `/V1/customerGroups/default` | customerGroupManagementV1GetDefaultGroupGet | customerGroups/default |
-| PUT | `/V1/customerGroups/default/{id}` | customerCustomerGroupConfigV1SetDefaultCustomerGroupPut | customerGroups/default/{id} |
-| GET | `/V1/customerGroups/default/{storeId}` | get /V1/customerGroups/default/{storeId} | customerGroups/default/{storeId} |
-| GET | `/V1/customerGroups/search` | customerGroupRepositoryV1GetListGet | customerGroups/search |
-| DELETE | `/V1/customerGroups/{id}` | customerGroupRepositoryV1DeleteByIdDelete | customerGroups/{id} |
-| GET | `/V1/customerGroups/{id}` | customerGroupRepositoryV1GetByIdGet | customerGroups/{id} |
-| PUT | `/V1/customerGroups/{id}` | customerGroupRepositoryV1SavePut | customerGroups/{id} |
-| GET | `/V1/customerGroups/{id}/permissions` | customerGroupManagementV1IsReadonlyGet | customerGroups/{id}/permissions |
-| POST | `/V1/customers` | customerAccountManagementV1CreateAccountPost | customers |
-| GET | `/V1/customers/addresses/{addressId}` | customerAddressRepositoryV1GetByIdGet | customers/addresses/{addressId} |
-| POST | `/V1/customers/confirm` | customerAccountManagementV1ResendConfirmationPost | customers/confirm |
-| POST | `/V1/customers/isEmailAvailable` | customerAccountManagementV1IsEmailAvailablePost | customers/isEmailAvailable |
-| GET | `/V1/customers/me` | customerCustomerRepositoryV1GetByIdGet | customers/me |
-| PUT | `/V1/customers/me` | customerCustomerRepositoryV1SavePut | customers/me |
-| PUT | `/V1/customers/me/activate` | customerAccountManagementV1ActivateByIdPut | customers/me/activate |
-| GET | `/V1/customers/me/billingAddress` | customerAccountManagementV1GetDefaultBillingAddressGet | customers/me/billingAddress |
-| PUT | `/V1/customers/me/password` | customerAccountManagementV1ChangePasswordByIdPut | customers/me/password |
-| GET | `/V1/customers/me/shippingAddress` | customerAccountManagementV1GetDefaultShippingAddressGet | customers/me/shippingAddress |
-| PUT | `/V1/customers/password` | customerAccountManagementV1InitiatePasswordResetPut | customers/password |
-| POST | `/V1/customers/resetPassword` | customerAccountManagementV1ResetPasswordPost | customers/resetPassword |
-| GET | `/V1/customers/search` | customerCustomerRepositoryV1GetListGet | customers/search |
-| PUT | `/V1/customers/validate` | customerAccountManagementV1ValidatePut | customers/validate |
-| DELETE | `/V1/customers/{customerId}` | customerCustomerRepositoryV1DeleteByIdDelete | customers/{customerId} |
-| GET | `/V1/customers/{customerId}` | get /V1/customers/{customerId} | customers/{customerId} |
-| PUT | `/V1/customers/{customerId}` | put /V1/customers/{customerId} | customers/{customerId} |
-| GET | `/V1/customers/{customerId}/billingAddress` | get /V1/customers/{customerId}/billingAddress | customers/{customerId}/billingAddress |
-| POST | `/V1/customers/{customerId}/carts` | post /V1/customers/{customerId}/carts | customers/{customerId}/carts |
-| GET | `/V1/customers/{customerId}/confirm` | customerAccountManagementV1GetConfirmationStatusGet | customers/{customerId}/confirm |
-| GET | `/V1/customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken}` | customerAccountManagementV1ValidateResetPasswordLinkTokenGet | customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken} |
-| GET | `/V1/customers/{customerId}/permissions/readonly` | customerAccountManagementV1IsReadonlyGet | customers/{customerId}/permissions/readonly |
-| GET | `/V1/customers/{customerId}/shippingAddress` | get /V1/customers/{customerId}/shippingAddress | customers/{customerId}/shippingAddress |
-| PUT | `/V1/customers/{email}/activate` | customerAccountManagementV1ActivatePut | customers/{email}/activate |
-| GET | `/V1/directory/countries` | directoryCountryInformationAcquirerV1GetCountriesInfoGet | directory/countries |
-| GET | `/V1/directory/countries/{countryId}` | directoryCountryInformationAcquirerV1GetCountryInfoGet | directory/countries/{countryId} |
-| GET | `/V1/directory/currency` | directoryCurrencyInformationAcquirerV1GetCurrencyInfoGet | directory/currency |
-| POST | `/V1/eav/attribute-sets` | eavAttributeSetManagementV1CreatePost | eav/attribute-sets |
-| GET | `/V1/eav/attribute-sets/list` | eavAttributeSetRepositoryV1GetListGet | eav/attribute-sets/list |
-| DELETE | `/V1/eav/attribute-sets/{attributeSetId}` | eavAttributeSetRepositoryV1DeleteByIdDelete | eav/attribute-sets/{attributeSetId} |
-| GET | `/V1/eav/attribute-sets/{attributeSetId}` | eavAttributeSetRepositoryV1GetGet | eav/attribute-sets/{attributeSetId} |
-| PUT | `/V1/eav/attribute-sets/{attributeSetId}` | eavAttributeSetRepositoryV1SavePut | eav/attribute-sets/{attributeSetId} |
-| GET | `/V1/gift-wrappings` | giftWrappingWrappingRepositoryV1GetListGet | gift-wrappings |
-| POST | `/V1/gift-wrappings` | giftWrappingWrappingRepositoryV1SavePost | gift-wrappings |
-| DELETE | `/V1/gift-wrappings/{id}` | giftWrappingWrappingRepositoryV1DeleteByIdDelete | gift-wrappings/{id} |
-| GET | `/V1/gift-wrappings/{id}` | giftWrappingWrappingRepositoryV1GetGet | gift-wrappings/{id} |
-| PUT | `/V1/gift-wrappings/{wrappingId}` | giftWrappingWrappingRepositoryV1SavePut | gift-wrappings/{wrappingId} |
-| POST | `/V1/giftregistry/mine/estimate-shipping-methods` | giftRegistryShippingMethodManagementV1EstimateByRegistryIdPost | giftregistry/mine/estimate-shipping-methods |
-| POST | `/V1/guest-carts` | quoteGuestCartManagementV1CreateEmptyCartPost | guest-carts |
-| GET | `/V1/guest-carts/{cartId}` | quoteGuestCartRepositoryV1GetGet | guest-carts/{cartId} |
-| PUT | `/V1/guest-carts/{cartId}` | quoteGuestCartManagementV1AssignCustomerPut | guest-carts/{cartId} |
-| GET | `/V1/guest-carts/{cartId}/billing-address` | quoteGuestBillingAddressManagementV1GetGet | guest-carts/{cartId}/billing-address |
-| POST | `/V1/guest-carts/{cartId}/billing-address` | quoteGuestBillingAddressManagementV1AssignPost | guest-carts/{cartId}/billing-address |
-| POST | `/V1/guest-carts/{cartId}/checkout-fields` | temandoShippingQuoteGuestCartCheckoutFieldManagementV1SaveCheckoutFieldsPost | guest-carts/{cartId}/checkout-fields |
-| PUT | `/V1/guest-carts/{cartId}/collect-totals` | quoteGuestCartTotalManagementV1CollectTotalsPut | guest-carts/{cartId}/collect-totals |
-| DELETE | `/V1/guest-carts/{cartId}/collection-point/search-request` | temandoShippingCollectionPointGuestCartCollectionPointManagementV1DeleteSearchRequestDelete | guest-carts/{cartId}/collection-point/search-request |
-| PUT | `/V1/guest-carts/{cartId}/collection-point/search-request` | temandoShippingCollectionPointGuestCartCollectionPointManagementV1SaveSearchRequestPut | guest-carts/{cartId}/collection-point/search-request |
-| GET | `/V1/guest-carts/{cartId}/collection-point/search-result` | temandoShippingCollectionPointGuestCartCollectionPointManagementV1GetCollectionPointsGet | guest-carts/{cartId}/collection-point/search-result |
-| POST | `/V1/guest-carts/{cartId}/collection-point/select` | temandoShippingCollectionPointGuestCartCollectionPointManagementV1SelectCollectionPointPost | guest-carts/{cartId}/collection-point/select |
-| DELETE | `/V1/guest-carts/{cartId}/coupons` | quoteGuestCouponManagementV1RemoveDelete | guest-carts/{cartId}/coupons |
-| GET | `/V1/guest-carts/{cartId}/coupons` | quoteGuestCouponManagementV1GetGet | guest-carts/{cartId}/coupons |
-| PUT | `/V1/guest-carts/{cartId}/coupons/{couponCode}` | quoteGuestCouponManagementV1SetPut | guest-carts/{cartId}/coupons/{couponCode} |
-| POST | `/V1/guest-carts/{cartId}/delivery-option` | temandoShippingQuoteGuestCartDeliveryOptionManagementV1SavePost | guest-carts/{cartId}/delivery-option |
-| POST | `/V1/guest-carts/{cartId}/estimate-shipping-methods` | quoteGuestShipmentEstimationV1EstimateByExtendedAddressPost | guest-carts/{cartId}/estimate-shipping-methods |
-| GET | `/V1/guest-carts/{cartId}/gift-message` | giftMessageGuestCartRepositoryV1GetGet | guest-carts/{cartId}/gift-message |
-| POST | `/V1/guest-carts/{cartId}/gift-message` | giftMessageGuestCartRepositoryV1SavePost | guest-carts/{cartId}/gift-message |
-| GET | `/V1/guest-carts/{cartId}/gift-message/{itemId}` | giftMessageGuestItemRepositoryV1GetGet | guest-carts/{cartId}/gift-message/{itemId} |
-| POST | `/V1/guest-carts/{cartId}/gift-message/{itemId}` | giftMessageGuestItemRepositoryV1SavePost | guest-carts/{cartId}/gift-message/{itemId} |
-| GET | `/V1/guest-carts/{cartId}/items` | quoteGuestCartItemRepositoryV1GetListGet | guest-carts/{cartId}/items |
-| POST | `/V1/guest-carts/{cartId}/items` | quoteGuestCartItemRepositoryV1SavePost | guest-carts/{cartId}/items |
-| DELETE | `/V1/guest-carts/{cartId}/items/{itemId}` | quoteGuestCartItemRepositoryV1DeleteByIdDelete | guest-carts/{cartId}/items/{itemId} |
-| PUT | `/V1/guest-carts/{cartId}/items/{itemId}` | quoteGuestCartItemRepositoryV1SavePut | guest-carts/{cartId}/items/{itemId} |
-| PUT | `/V1/guest-carts/{cartId}/order` | quoteGuestCartManagementV1PlaceOrderPut | guest-carts/{cartId}/order |
-| GET | `/V1/guest-carts/{cartId}/payment-information` | checkoutGuestPaymentInformationManagementV1GetPaymentInformationGet | guest-carts/{cartId}/payment-information |
-| POST | `/V1/guest-carts/{cartId}/payment-information` | checkoutGuestPaymentInformationManagementV1SavePaymentInformationAndPlaceOrderPost | guest-carts/{cartId}/payment-information |
-| GET | `/V1/guest-carts/{cartId}/payment-methods` | quoteGuestPaymentMethodManagementV1GetListGet | guest-carts/{cartId}/payment-methods |
-| GET | `/V1/guest-carts/{cartId}/selected-payment-method` | quoteGuestPaymentMethodManagementV1GetGet | guest-carts/{cartId}/selected-payment-method |
-| PUT | `/V1/guest-carts/{cartId}/selected-payment-method` | quoteGuestPaymentMethodManagementV1SetPut | guest-carts/{cartId}/selected-payment-method |
-| POST | `/V1/guest-carts/{cartId}/set-payment-information` | checkoutGuestPaymentInformationManagementV1SavePaymentInformationPost | guest-carts/{cartId}/set-payment-information |
-| POST | `/V1/guest-carts/{cartId}/shipping-information` | checkoutGuestShippingInformationManagementV1SaveAddressInformationPost | guest-carts/{cartId}/shipping-information |
-| GET | `/V1/guest-carts/{cartId}/shipping-methods` | quoteGuestShippingMethodManagementV1GetListGet | guest-carts/{cartId}/shipping-methods |
-| GET | `/V1/guest-carts/{cartId}/totals` | quoteGuestCartTotalRepositoryV1GetGet | guest-carts/{cartId}/totals |
-| POST | `/V1/guest-carts/{cartId}/totals-information` | checkoutGuestTotalsInformationManagementV1CalculatePost | guest-carts/{cartId}/totals-information |
-| POST | `/V1/guest-giftregistry/{cartId}/estimate-shipping-methods` | giftRegistryGuestCartShippingMethodManagementV1EstimateByRegistryIdPost | guest-giftregistry/{cartId}/estimate-shipping-methods |
-| PUT | `/V1/hierarchy/move/{id}` | companyCompanyHierarchyV1MoveNodePut | hierarchy/move/{id} |
-| GET | `/V1/hierarchy/{id}` | companyCompanyHierarchyV1GetCompanyHierarchyGet | hierarchy/{id} |
-| POST | `/V1/integration/admin/token` | integrationAdminTokenServiceV1CreateAdminAccessTokenPost | integration/admin/token |
-| POST | `/V1/integration/customer/token` | integrationCustomerTokenServiceV1CreateCustomerAccessTokenPost | integration/customer/token |
-| POST | `/V1/invoice/{invoiceId}/refund` | salesRefundInvoiceV1ExecutePost | invoice/{invoiceId}/refund |
-| GET | `/V1/invoices` | salesInvoiceRepositoryV1GetListGet | invoices |
-| POST | `/V1/invoices/` | salesInvoiceRepositoryV1SavePost | invoices/ |
-| POST | `/V1/invoices/comments` | salesInvoiceCommentRepositoryV1SavePost | invoices/comments |
-| GET | `/V1/invoices/{id}` | salesInvoiceRepositoryV1GetGet | invoices/{id} |
-| POST | `/V1/invoices/{id}/capture` | salesInvoiceManagementV1SetCapturePost | invoices/{id}/capture |
-| GET | `/V1/invoices/{id}/comments` | salesInvoiceManagementV1GetCommentsListGet | invoices/{id}/comments |
-| POST | `/V1/invoices/{id}/emails` | salesInvoiceManagementV1NotifyPost | invoices/{id}/emails |
-| POST | `/V1/invoices/{id}/void` | salesInvoiceManagementV1SetVoidPost | invoices/{id}/void |
-| GET | `/V1/modules` | backendModuleServiceV1GetModulesGet | modules |
-| GET | `/V1/negotiable-carts/{cartId}/billing-address` | negotiableQuoteBillingAddressManagementV1GetGet | negotiable-carts/{cartId}/billing-address |
-| POST | `/V1/negotiable-carts/{cartId}/billing-address` | negotiableQuoteBillingAddressManagementV1AssignPost | negotiable-carts/{cartId}/billing-address |
-| DELETE | `/V1/negotiable-carts/{cartId}/coupons` | negotiableQuoteCouponManagementV1RemoveDelete | negotiable-carts/{cartId}/coupons |
-| PUT | `/V1/negotiable-carts/{cartId}/coupons/{couponCode}` | negotiableQuoteCouponManagementV1SetPut | negotiable-carts/{cartId}/coupons/{couponCode} |
-| POST | `/V1/negotiable-carts/{cartId}/estimate-shipping-methods` | negotiableQuoteShipmentEstimationV1EstimateByExtendedAddressPost | negotiable-carts/{cartId}/estimate-shipping-methods |
-| POST | `/V1/negotiable-carts/{cartId}/estimate-shipping-methods-by-address-id` | negotiableQuoteShippingMethodManagementV1EstimateByAddressIdPost | negotiable-carts/{cartId}/estimate-shipping-methods-by-address-id |
-| POST | `/V1/negotiable-carts/{cartId}/giftCards` | negotiableQuoteGiftCardAccountManagementV1SaveByQuoteIdPost | negotiable-carts/{cartId}/giftCards |
-| DELETE | `/V1/negotiable-carts/{cartId}/giftCards/{giftCardCode}` | negotiableQuoteGiftCardAccountManagementV1DeleteByQuoteIdDelete | negotiable-carts/{cartId}/giftCards/{giftCardCode} |
-| GET | `/V1/negotiable-carts/{cartId}/payment-information` | negotiableQuotePaymentInformationManagementV1GetPaymentInformationGet | negotiable-carts/{cartId}/payment-information |
-| POST | `/V1/negotiable-carts/{cartId}/payment-information` | negotiableQuotePaymentInformationManagementV1SavePaymentInformationAndPlaceOrderPost | negotiable-carts/{cartId}/payment-information |
-| POST | `/V1/negotiable-carts/{cartId}/set-payment-information` | negotiableQuotePaymentInformationManagementV1SavePaymentInformationPost | negotiable-carts/{cartId}/set-payment-information |
-| POST | `/V1/negotiable-carts/{cartId}/shipping-information` | negotiableQuoteShippingInformationManagementV1SaveAddressInformationPost | negotiable-carts/{cartId}/shipping-information |
-| GET | `/V1/negotiable-carts/{cartId}/totals` | negotiableQuoteCartTotalRepositoryV1GetGet | negotiable-carts/{cartId}/totals |
-| GET | `/V1/negotiableQuote/attachmentContent` | negotiableQuoteAttachmentContentManagementV1GetGet | negotiableQuote/attachmentContent |
-| POST | `/V1/negotiableQuote/decline` | negotiableQuoteNegotiableQuoteManagementV1DeclinePost | negotiableQuote/decline |
-| POST | `/V1/negotiableQuote/pricesUpdated` | negotiableQuoteNegotiableQuotePriceManagementV1PricesUpdatedPost | negotiableQuote/pricesUpdated |
-| POST | `/V1/negotiableQuote/request` | negotiableQuoteNegotiableQuoteManagementV1CreatePost | negotiableQuote/request |
-| POST | `/V1/negotiableQuote/submitToCustomer` | negotiableQuoteNegotiableQuoteManagementV1AdminSendPost | negotiableQuote/submitToCustomer |
-| PUT | `/V1/negotiableQuote/{quoteId}` | negotiableQuoteNegotiableCartRepositoryV1SavePut | negotiableQuote/{quoteId} |
-| GET | `/V1/negotiableQuote/{quoteId}/comments` | negotiableQuoteCommentLocatorV1GetListForQuoteGet | negotiableQuote/{quoteId}/comments |
-| PUT | `/V1/negotiableQuote/{quoteId}/shippingMethod` | negotiableQuoteNegotiableQuoteShippingManagementV1SetShippingMethodPut | negotiableQuote/{quoteId}/shippingMethod |
-| POST | `/V1/order/{orderId}/invoice` | salesInvoiceOrderV1ExecutePost | order/{orderId}/invoice |
-| POST | `/V1/order/{orderId}/refund` | salesRefundOrderV1ExecutePost | order/{orderId}/refund |
-| POST | `/V1/order/{orderId}/ship` | salesShipOrderV1ExecutePost | order/{orderId}/ship |
-| GET | `/V1/orders` | salesOrderRepositoryV1GetListGet | orders |
-| POST | `/V1/orders/` | salesOrderRepositoryV1SavePost | orders/ |
-| PUT | `/V1/orders/create` | salesOrderRepositoryV1SavePut | orders/create |
-| GET | `/V1/orders/items` | salesOrderItemRepositoryV1GetListGet | orders/items |
-| GET | `/V1/orders/items/{id}` | salesOrderItemRepositoryV1GetGet | orders/items/{id} |
-| GET | `/V1/orders/{id}` | salesOrderRepositoryV1GetGet | orders/{id} |
-| POST | `/V1/orders/{id}/cancel` | salesOrderManagementV1CancelPost | orders/{id}/cancel |
-| GET | `/V1/orders/{id}/comments` | salesOrderManagementV1GetCommentsListGet | orders/{id}/comments |
-| POST | `/V1/orders/{id}/comments` | salesOrderManagementV1AddCommentPost | orders/{id}/comments |
-| POST | `/V1/orders/{id}/emails` | salesOrderManagementV1NotifyPost | orders/{id}/emails |
-| POST | `/V1/orders/{id}/hold` | salesOrderManagementV1HoldPost | orders/{id}/hold |
-| GET | `/V1/orders/{id}/statuses` | salesOrderManagementV1GetStatusGet | orders/{id}/statuses |
-| POST | `/V1/orders/{id}/unhold` | salesOrderManagementV1UnHoldPost | orders/{id}/unhold |
-| PUT | `/V1/orders/{parent_id}` | salesOrderAddressRepositoryV1SavePut | orders/{parent_id} |
-| GET | `/V1/products` | catalogProductRepositoryV1GetListGet | products |
-| POST | `/V1/products` | catalogProductRepositoryV1SavePost | products |
-| GET | `/V1/products-render-info` | catalogProductRenderListV1GetListGet | products-render-info |
-| POST | `/V1/products/attribute-sets` | catalogAttributeSetManagementV1CreatePost | products/attribute-sets |
-| POST | `/V1/products/attribute-sets/attributes` | catalogProductAttributeManagementV1AssignPost | products/attribute-sets/attributes |
-| POST | `/V1/products/attribute-sets/groups` | catalogProductAttributeGroupRepositoryV1SavePost | products/attribute-sets/groups |
-| GET | `/V1/products/attribute-sets/groups/list` | catalogProductAttributeGroupRepositoryV1GetListGet | products/attribute-sets/groups/list |
-| DELETE | `/V1/products/attribute-sets/groups/{groupId}` | catalogProductAttributeGroupRepositoryV1DeleteByIdDelete | products/attribute-sets/groups/{groupId} |
-| GET | `/V1/products/attribute-sets/sets/list` | catalogAttributeSetRepositoryV1GetListGet | products/attribute-sets/sets/list |
-| DELETE | `/V1/products/attribute-sets/{attributeSetId}` | catalogAttributeSetRepositoryV1DeleteByIdDelete | products/attribute-sets/{attributeSetId} |
-| GET | `/V1/products/attribute-sets/{attributeSetId}` | catalogAttributeSetRepositoryV1GetGet | products/attribute-sets/{attributeSetId} |
-| PUT | `/V1/products/attribute-sets/{attributeSetId}` | catalogAttributeSetRepositoryV1SavePut | products/attribute-sets/{attributeSetId} |
-| GET | `/V1/products/attribute-sets/{attributeSetId}/attributes` | catalogProductAttributeManagementV1GetAttributesGet | products/attribute-sets/{attributeSetId}/attributes |
-| DELETE | `/V1/products/attribute-sets/{attributeSetId}/attributes/{attributeCode}` | catalogProductAttributeManagementV1UnassignDelete | products/attribute-sets/{attributeSetId}/attributes/{attributeCode} |
-| PUT | `/V1/products/attribute-sets/{attributeSetId}/groups` | catalogProductAttributeGroupRepositoryV1SavePut | products/attribute-sets/{attributeSetId}/groups |
-| GET | `/V1/products/attributes` | catalogProductAttributeRepositoryV1GetListGet | products/attributes |
-| POST | `/V1/products/attributes` | catalogProductAttributeRepositoryV1SavePost | products/attributes |
-| GET | `/V1/products/attributes/types` | catalogProductAttributeTypesListV1GetItemsGet | products/attributes/types |
-| DELETE | `/V1/products/attributes/{attributeCode}` | catalogProductAttributeRepositoryV1DeleteByIdDelete | products/attributes/{attributeCode} |
-| GET | `/V1/products/attributes/{attributeCode}` | catalogProductAttributeRepositoryV1GetGet | products/attributes/{attributeCode} |
-| PUT | `/V1/products/attributes/{attributeCode}` | catalogProductAttributeRepositoryV1SavePut | products/attributes/{attributeCode} |
-| GET | `/V1/products/attributes/{attributeCode}/options` | catalogProductAttributeOptionManagementV1GetItemsGet | products/attributes/{attributeCode}/options |
-| POST | `/V1/products/attributes/{attributeCode}/options` | catalogProductAttributeOptionManagementV1AddPost | products/attributes/{attributeCode}/options |
-| DELETE | `/V1/products/attributes/{attributeCode}/options/{optionId}` | catalogProductAttributeOptionManagementV1DeleteDelete | products/attributes/{attributeCode}/options/{optionId} |
-| POST | `/V1/products/base-prices` | catalogBasePriceStorageV1UpdatePost | products/base-prices |
-| POST | `/V1/products/base-prices-information` | catalogBasePriceStorageV1GetPost | products/base-prices-information |
-| POST | `/V1/products/cost` | catalogCostStorageV1UpdatePost | products/cost |
-| POST | `/V1/products/cost-delete` | catalogCostStorageV1DeletePost | products/cost-delete |
-| POST | `/V1/products/cost-information` | catalogCostStorageV1GetPost | products/cost-information |
-| DELETE | `/V1/products/downloadable-links/samples/{id}` | downloadableSampleRepositoryV1DeleteDelete | products/downloadable-links/samples/{id} |
-| DELETE | `/V1/products/downloadable-links/{id}` | downloadableLinkRepositoryV1DeleteDelete | products/downloadable-links/{id} |
-| GET | `/V1/products/links/types` | catalogProductLinkTypeListV1GetItemsGet | products/links/types |
-| GET | `/V1/products/links/{type}/attributes` | catalogProductLinkTypeListV1GetItemAttributesGet | products/links/{type}/attributes |
-| GET | `/V1/products/media/types/{attributeSetName}` | catalogProductMediaAttributeManagementV1GetListGet | products/media/types/{attributeSetName} |
-| POST | `/V1/products/options` | catalogProductCustomOptionRepositoryV1SavePost | products/options |
-| GET | `/V1/products/options/types` | catalogProductCustomOptionTypeListV1GetItemsGet | products/options/types |
-| PUT | `/V1/products/options/{optionId}` | catalogProductCustomOptionRepositoryV1SavePut | products/options/{optionId} |
-| POST | `/V1/products/special-price` | catalogSpecialPriceStorageV1UpdatePost | products/special-price |
-| POST | `/V1/products/special-price-delete` | catalogSpecialPriceStorageV1DeletePost | products/special-price-delete |
-| POST | `/V1/products/special-price-information` | catalogSpecialPriceStorageV1GetPost | products/special-price-information |
-| POST | `/V1/products/tier-prices` | catalogTierPriceStorageV1UpdatePost | products/tier-prices |
-| PUT | `/V1/products/tier-prices` | catalogTierPriceStorageV1ReplacePut | products/tier-prices |
-| POST | `/V1/products/tier-prices-delete` | catalogTierPriceStorageV1DeletePost | products/tier-prices-delete |
-| POST | `/V1/products/tier-prices-information` | catalogTierPriceStorageV1GetPost | products/tier-prices-information |
-| GET | `/V1/products/types` | catalogProductTypeListV1GetProductTypesGet | products/types |
-| PUT | `/V1/products/{productSku}/stockItems/{itemId}` | catalogInventoryStockRegistryV1UpdateStockItemBySkuPut | products/{productSku}/stockItems/{itemId} |
-| DELETE | `/V1/products/{sku}` | catalogProductRepositoryV1DeleteByIdDelete | products/{sku} |
-| GET | `/V1/products/{sku}` | catalogProductRepositoryV1GetGet | products/{sku} |
-| PUT | `/V1/products/{sku}` | catalogProductRepositoryV1SavePut | products/{sku} |
-| GET | `/V1/products/{sku}/downloadable-links` | downloadableLinkRepositoryV1GetListGet | products/{sku}/downloadable-links |
-| POST | `/V1/products/{sku}/downloadable-links` | downloadableLinkRepositoryV1SavePost | products/{sku}/downloadable-links |
-| GET | `/V1/products/{sku}/downloadable-links/samples` | downloadableSampleRepositoryV1GetListGet | products/{sku}/downloadable-links/samples |
-| POST | `/V1/products/{sku}/downloadable-links/samples` | downloadableSampleRepositoryV1SavePost | products/{sku}/downloadable-links/samples |
-| PUT | `/V1/products/{sku}/downloadable-links/samples/{id}` | downloadableSampleRepositoryV1SavePut | products/{sku}/downloadable-links/samples/{id} |
-| PUT | `/V1/products/{sku}/downloadable-links/{id}` | downloadableLinkRepositoryV1SavePut | products/{sku}/downloadable-links/{id} |
-| GET | `/V1/products/{sku}/group-prices/{customerGroupId}/tiers` | catalogProductTierPriceManagementV1GetListGet | products/{sku}/group-prices/{customerGroupId}/tiers |
-| DELETE | `/V1/products/{sku}/group-prices/{customerGroupId}/tiers/{qty}` | catalogProductTierPriceManagementV1RemoveDelete | products/{sku}/group-prices/{customerGroupId}/tiers/{qty} |
-| POST | `/V1/products/{sku}/group-prices/{customerGroupId}/tiers/{qty}/price/{price}` | catalogProductTierPriceManagementV1AddPost | products/{sku}/group-prices/{customerGroupId}/tiers/{qty}/price/{price} |
-| POST | `/V1/products/{sku}/links` | catalogProductLinkManagementV1SetProductLinksPost | products/{sku}/links |
-| PUT | `/V1/products/{sku}/links` | catalogProductLinkRepositoryV1SavePut | products/{sku}/links |
-| GET | `/V1/products/{sku}/links/{type}` | catalogProductLinkManagementV1GetLinkedItemsByTypeGet | products/{sku}/links/{type} |
-| DELETE | `/V1/products/{sku}/links/{type}/{linkedProductSku}` | catalogProductLinkRepositoryV1DeleteByIdDelete | products/{sku}/links/{type}/{linkedProductSku} |
-| GET | `/V1/products/{sku}/media` | catalogProductAttributeMediaGalleryManagementV1GetListGet | products/{sku}/media |
-| POST | `/V1/products/{sku}/media` | catalogProductAttributeMediaGalleryManagementV1CreatePost | products/{sku}/media |
-| DELETE | `/V1/products/{sku}/media/{entryId}` | catalogProductAttributeMediaGalleryManagementV1RemoveDelete | products/{sku}/media/{entryId} |
-| GET | `/V1/products/{sku}/media/{entryId}` | catalogProductAttributeMediaGalleryManagementV1GetGet | products/{sku}/media/{entryId} |
-| PUT | `/V1/products/{sku}/media/{entryId}` | catalogProductAttributeMediaGalleryManagementV1UpdatePut | products/{sku}/media/{entryId} |
-| GET | `/V1/products/{sku}/options` | catalogProductCustomOptionRepositoryV1GetListGet | products/{sku}/options |
-| DELETE | `/V1/products/{sku}/options/{optionId}` | catalogProductCustomOptionRepositoryV1DeleteByIdentifierDelete | products/{sku}/options/{optionId} |
-| GET | `/V1/products/{sku}/options/{optionId}` | catalogProductCustomOptionRepositoryV1GetGet | products/{sku}/options/{optionId} |
-| POST | `/V1/products/{sku}/websites` | catalogProductWebsiteLinkRepositoryV1SavePost | products/{sku}/websites |
-| PUT | `/V1/products/{sku}/websites` | catalogProductWebsiteLinkRepositoryV1SavePut | products/{sku}/websites |
-| DELETE | `/V1/products/{sku}/websites/{websiteId}` | catalogProductWebsiteLinkRepositoryV1DeleteByIdDelete | products/{sku}/websites/{websiteId} |
-| POST | `/V1/requisition_lists` | requisitionListRequisitionListRepositoryV1SavePost | requisition_lists |
-| GET | `/V1/returns` | rmaRmaManagementV1SearchGet | returns |
-| POST | `/V1/returns` | rmaRmaManagementV1SaveRmaPost | returns |
-| DELETE | `/V1/returns/{id}` | rmaRmaRepositoryV1DeleteDelete | returns/{id} |
-| GET | `/V1/returns/{id}` | rmaRmaRepositoryV1GetGet | returns/{id} |
-| PUT | `/V1/returns/{id}` | rmaRmaManagementV1SaveRmaPut | returns/{id} |
-| GET | `/V1/returns/{id}/comments` | rmaCommentManagementV1CommentsListGet | returns/{id}/comments |
-| POST | `/V1/returns/{id}/comments` | rmaCommentManagementV1AddCommentPost | returns/{id}/comments |
-| GET | `/V1/returns/{id}/labels` | rmaTrackManagementV1GetShippingLabelPdfGet | returns/{id}/labels |
-| GET | `/V1/returns/{id}/tracking-numbers` | rmaTrackManagementV1GetTracksGet | returns/{id}/tracking-numbers |
-| POST | `/V1/returns/{id}/tracking-numbers` | rmaTrackManagementV1AddTrackPost | returns/{id}/tracking-numbers |
-| DELETE | `/V1/returns/{id}/tracking-numbers/{trackId}` | rmaTrackManagementV1RemoveTrackByIdDelete | returns/{id}/tracking-numbers/{trackId} |
-| GET | `/V1/returnsAttributeMetadata` | rmaRmaAttributesManagementV1GetAllAttributesMetadataGet | returnsAttributeMetadata |
-| GET | `/V1/returnsAttributeMetadata/custom` | rmaRmaAttributesManagementV1GetCustomAttributesMetadataGet | returnsAttributeMetadata/custom |
-| GET | `/V1/returnsAttributeMetadata/form/{formCode}` | rmaRmaAttributesManagementV1GetAttributesGet | returnsAttributeMetadata/form/{formCode} |
-| GET | `/V1/returnsAttributeMetadata/{attributeCode}` | rmaRmaAttributesManagementV1GetAttributeMetadataGet | returnsAttributeMetadata/{attributeCode} |
-| POST | `/V1/reward/mine/use-reward` | rewardRewardManagementV1SetPost | reward/mine/use-reward |
-| POST | `/V1/salesRules` | salesRuleRuleRepositoryV1SavePost | salesRules |
-| GET | `/V1/salesRules/search` | salesRuleRuleRepositoryV1GetListGet | salesRules/search |
-| DELETE | `/V1/salesRules/{ruleId}` | salesRuleRuleRepositoryV1DeleteByIdDelete | salesRules/{ruleId} |
-| GET | `/V1/salesRules/{ruleId}` | salesRuleRuleRepositoryV1GetByIdGet | salesRules/{ruleId} |
-| PUT | `/V1/salesRules/{ruleId}` | salesRuleRuleRepositoryV1SavePut | salesRules/{ruleId} |
-| GET | `/V1/search` | searchV1SearchGet | search |
-| POST | `/V1/sharedCatalog` | sharedCatalogSharedCatalogRepositoryV1SavePost | sharedCatalog |
-| GET | `/V1/sharedCatalog/` | sharedCatalogSharedCatalogRepositoryV1GetListGet | sharedCatalog/ |
-| PUT | `/V1/sharedCatalog/{id}` | sharedCatalogSharedCatalogRepositoryV1SavePut | sharedCatalog/{id} |
-| POST | `/V1/sharedCatalog/{id}/assignCategories` | sharedCatalogCategoryManagementV1AssignCategoriesPost | sharedCatalog/{id}/assignCategories |
-| POST | `/V1/sharedCatalog/{id}/assignProducts` | sharedCatalogProductManagementV1AssignProductsPost | sharedCatalog/{id}/assignProducts |
-| GET | `/V1/sharedCatalog/{id}/categories` | sharedCatalogCategoryManagementV1GetCategoriesGet | sharedCatalog/{id}/categories |
-| GET | `/V1/sharedCatalog/{id}/products` | sharedCatalogProductManagementV1GetProductsGet | sharedCatalog/{id}/products |
-| POST | `/V1/sharedCatalog/{id}/unassignCategories` | sharedCatalogCategoryManagementV1UnassignCategoriesPost | sharedCatalog/{id}/unassignCategories |
-| POST | `/V1/sharedCatalog/{id}/unassignProducts` | sharedCatalogProductManagementV1UnassignProductsPost | sharedCatalog/{id}/unassignProducts |
-| DELETE | `/V1/sharedCatalog/{sharedCatalogId}` | sharedCatalogSharedCatalogRepositoryV1DeleteByIdDelete | sharedCatalog/{sharedCatalogId} |
-| GET | `/V1/sharedCatalog/{sharedCatalogId}` | sharedCatalogSharedCatalogRepositoryV1GetGet | sharedCatalog/{sharedCatalogId} |
-| POST | `/V1/sharedCatalog/{sharedCatalogId}/assignCompanies` | sharedCatalogCompanyManagementV1AssignCompaniesPost | sharedCatalog/{sharedCatalogId}/assignCompanies |
-| GET | `/V1/sharedCatalog/{sharedCatalogId}/companies` | sharedCatalogCompanyManagementV1GetCompaniesGet | sharedCatalog/{sharedCatalogId}/companies |
-| POST | `/V1/sharedCatalog/{sharedCatalogId}/unassignCompanies` | sharedCatalogCompanyManagementV1UnassignCompaniesPost | sharedCatalog/{sharedCatalogId}/unassignCompanies |
-| POST | `/V1/shipment/` | salesShipmentRepositoryV1SavePost | shipment/ |
-| POST | `/V1/shipment/track` | salesShipmentTrackRepositoryV1SavePost | shipment/track |
-| DELETE | `/V1/shipment/track/{id}` | salesShipmentTrackRepositoryV1DeleteByIdDelete | shipment/track/{id} |
-| GET | `/V1/shipment/{id}` | salesShipmentRepositoryV1GetGet | shipment/{id} |
-| GET | `/V1/shipment/{id}/comments` | salesShipmentManagementV1GetCommentsListGet | shipment/{id}/comments |
-| POST | `/V1/shipment/{id}/comments` | salesShipmentCommentRepositoryV1SavePost | shipment/{id}/comments |
-| POST | `/V1/shipment/{id}/emails` | salesShipmentManagementV1NotifyPost | shipment/{id}/emails |
-| GET | `/V1/shipment/{id}/label` | salesShipmentManagementV1GetLabelGet | shipment/{id}/label |
-| GET | `/V1/shipments` | salesShipmentRepositoryV1GetListGet | shipments |
-| GET | `/V1/stockItems/lowStock/` | catalogInventoryStockRegistryV1GetLowStockItemsGet | stockItems/lowStock/ |
-| GET | `/V1/stockItems/{productSku}` | catalogInventoryStockRegistryV1GetStockItemBySkuGet | stockItems/{productSku} |
-| GET | `/V1/stockStatuses/{productSku}` | catalogInventoryStockRegistryV1GetStockStatusBySkuGet | stockStatuses/{productSku} |
-| GET | `/V1/store/storeConfigs` | storeStoreConfigManagerV1GetStoreConfigsGet | store/storeConfigs |
-| GET | `/V1/store/storeGroups` | storeGroupRepositoryV1GetListGet | store/storeGroups |
-| GET | `/V1/store/storeViews` | storeStoreRepositoryV1GetListGet | store/storeViews |
-| GET | `/V1/store/websites` | storeWebsiteRepositoryV1GetListGet | store/websites |
-| POST | `/V1/taxClasses` | taxTaxClassRepositoryV1SavePost | taxClasses |
-| GET | `/V1/taxClasses/search` | taxTaxClassRepositoryV1GetListGet | taxClasses/search |
-| PUT | `/V1/taxClasses/{classId}` | taxTaxClassRepositoryV1SavePut | taxClasses/{classId} |
-| DELETE | `/V1/taxClasses/{taxClassId}` | taxTaxClassRepositoryV1DeleteByIdDelete | taxClasses/{taxClassId} |
-| GET | `/V1/taxClasses/{taxClassId}` | taxTaxClassRepositoryV1GetGet | taxClasses/{taxClassId} |
-| POST | `/V1/taxRates` | taxTaxRateRepositoryV1SavePost | taxRates |
-| PUT | `/V1/taxRates` | taxTaxRateRepositoryV1SavePut | taxRates |
-| GET | `/V1/taxRates/search` | taxTaxRateRepositoryV1GetListGet | taxRates/search |
-| DELETE | `/V1/taxRates/{rateId}` | taxTaxRateRepositoryV1DeleteByIdDelete | taxRates/{rateId} |
-| GET | `/V1/taxRates/{rateId}` | taxTaxRateRepositoryV1GetGet | taxRates/{rateId} |
-| POST | `/V1/taxRules` | taxTaxRuleRepositoryV1SavePost | taxRules |
-| PUT | `/V1/taxRules` | taxTaxRuleRepositoryV1SavePut | taxRules |
-| GET | `/V1/taxRules/search` | taxTaxRuleRepositoryV1GetListGet | taxRules/search |
-| DELETE | `/V1/taxRules/{ruleId}` | taxTaxRuleRepositoryV1DeleteByIdDelete | taxRules/{ruleId} |
-| GET | `/V1/taxRules/{ruleId}` | taxTaxRuleRepositoryV1GetGet | taxRules/{ruleId} |
-| GET | `/V1/team/` | companyTeamRepositoryV1GetListGet | team/ |
-| POST | `/V1/team/{companyId}` | companyTeamRepositoryV1CreatePost | team/{companyId} |
-| DELETE | `/V1/team/{teamId}` | companyTeamRepositoryV1DeleteByIdDelete | team/{teamId} |
-| GET | `/V1/team/{teamId}` | companyTeamRepositoryV1GetGet | team/{teamId} |
-| PUT | `/V1/team/{teamId}` | companyTeamRepositoryV1SavePut | team/{teamId} |
-| PUT | `/V1/temando/rma/{rmaId}/shipments` | temandoShippingRmaRmaShipmentManagementV1AssignShipmentIdsPut | temando/rma/{rmaId}/shipments |
-| GET | `/V1/transactions` | salesTransactionRepositoryV1GetListGet | transactions |
-| GET | `/V1/transactions/{id}` | salesTransactionRepositoryV1GetGet | transactions/{id} |
-| POST | `/V1/worldpay-guest-carts/{cartId}/payment-information` | worldpayGuestPaymentInformationManagementProxyV1SavePaymentInformationAndPlaceOrderPost | worldpay-guest-carts/{cartId}/payment-information |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| DELETE | `/V1/addresses/{addressId}` | customerAddressRepositoryV1DeleteByIdDelete | `addressId`* | boolean |  | addresses/{addressId} |
+| PUT | `/V1/amazon-billing-address/{amazonOrderReferenceId}` | amazonPaymentAddressManagementV1GetBillingAddressPut | `amazonOrderReferenceId`*, body: object | string |  | amazon-billing-address/{amazonOrderReferenceId} |
+| PUT | `/V1/amazon-shipping-address/{amazonOrderReferenceId}` | amazonPaymentAddressManagementV1GetShippingAddressPut | `amazonOrderReferenceId`*, body: object | string |  | amazon-shipping-address/{amazonOrderReferenceId} |
+| DELETE | `/V1/amazon/order-ref` | amazonPaymentOrderInformationManagementV1RemoveOrderReferenceDelete | — | — |  | amazon/order-ref |
+| GET | `/V1/analytics/link` | analyticsLinkProviderV1GetGet | — | analytics-data-link-interface | yes | analytics/link |
+| GET | `/V1/attributeMetadata/customer` | customerCustomerMetadataV1GetAllAttributesMetadataGet | — | customer-data-attribute-metadata-interface[] | yes | attributeMetadata/customer |
+| GET | `/V1/attributeMetadata/customer/attribute/{attributeCode}` | customerCustomerMetadataV1GetAttributeMetadataGet | `attributeCode`* | customer-data-attribute-metadata-interface | yes | attributeMetadata/customer/attribute/{attributeCode} |
+| GET | `/V1/attributeMetadata/customer/custom` | customerCustomerMetadataV1GetCustomAttributesMetadataGet | `dataInterfaceName` | customer-data-attribute-metadata-interface[] | yes | attributeMetadata/customer/custom |
+| GET | `/V1/attributeMetadata/customer/form/{formCode}` | customerCustomerMetadataV1GetAttributesGet | `formCode`* | customer-data-attribute-metadata-interface[] | yes | attributeMetadata/customer/form/{formCode} |
+| GET | `/V1/attributeMetadata/customerAddress` | customerAddressMetadataV1GetAllAttributesMetadataGet | — | customer-data-attribute-metadata-interface[] | yes | attributeMetadata/customerAddress |
+| GET | `/V1/attributeMetadata/customerAddress/attribute/{attributeCode}` | customerAddressMetadataV1GetAttributeMetadataGet | `attributeCode`* | customer-data-attribute-metadata-interface | yes | attributeMetadata/customerAddress/attribute/{attributeCode} |
+| GET | `/V1/attributeMetadata/customerAddress/custom` | customerAddressMetadataV1GetCustomAttributesMetadataGet | `dataInterfaceName` | customer-data-attribute-metadata-interface[] | yes | attributeMetadata/customerAddress/custom |
+| GET | `/V1/attributeMetadata/customerAddress/form/{formCode}` | customerAddressMetadataV1GetAttributesGet | `formCode`* | customer-data-attribute-metadata-interface[] | yes | attributeMetadata/customerAddress/form/{formCode} |
+| GET | `/V1/bulk/{bulkUuid}/detailed-status` | asynchronousOperationsBulkStatusV1GetBulkDetailedStatusGet | `bulkUuid`* | asynchronous-operations-data-detailed-bulk-operations-status-interface | yes | bulk/{bulkUuid}/detailed-status |
+| GET | `/V1/bulk/{bulkUuid}/operation-status/{status}` | asynchronousOperationsBulkStatusV1GetOperationsCountByBulkIdAndStatusGet | `bulkUuid`*, `status`* | integer | yes | bulk/{bulkUuid}/operation-status/{status} |
+| GET | `/V1/bulk/{bulkUuid}/status` | asynchronousOperationsBulkStatusV1GetBulkShortStatusGet | `bulkUuid`* | asynchronous-operations-data-bulk-operations-status-interface | yes | bulk/{bulkUuid}/status |
+| POST | `/V1/bundle-products/options/add` | bundleProductOptionManagementV1SavePost | body: object | integer |  | bundle-products/options/add |
+| GET | `/V1/bundle-products/options/types` | bundleProductOptionTypeListV1GetItemsGet | — | bundle-data-option-type-interface[] | yes | bundle-products/options/types |
+| PUT | `/V1/bundle-products/options/{optionId}` | bundleProductOptionManagementV1SavePut | `optionId`*, body: object | integer |  | bundle-products/options/{optionId} |
+| GET | `/V1/bundle-products/{productSku}/children` | bundleProductLinkManagementV1GetChildrenGet | `productSku`*, `optionId` | bundle-data-link-interface[] | yes | bundle-products/{productSku}/children |
+| PUT | `/V1/bundle-products/{sku}/links/{id}` | bundleProductLinkManagementV1SaveChildPut | `sku`*, `id`*, body: object | boolean |  | bundle-products/{sku}/links/{id} |
+| POST | `/V1/bundle-products/{sku}/links/{optionId}` | bundleProductLinkManagementV1AddChildByProductSkuPost | `sku`*, `optionId`*, body: object | integer |  | bundle-products/{sku}/links/{optionId} |
+| GET | `/V1/bundle-products/{sku}/options/all` | bundleProductOptionRepositoryV1GetListGet | `sku`* | bundle-data-option-interface[] | yes | bundle-products/{sku}/options/all |
+| GET | `/V1/bundle-products/{sku}/options/{optionId}` | bundleProductOptionRepositoryV1GetGet | `sku`*, `optionId`* | bundle-data-option-interface | yes | bundle-products/{sku}/options/{optionId} |
+| DELETE | `/V1/bundle-products/{sku}/options/{optionId}` | bundleProductOptionRepositoryV1DeleteByIdDelete | `sku`*, `optionId`* | boolean |  | bundle-products/{sku}/options/{optionId} |
+| DELETE | `/V1/bundle-products/{sku}/options/{optionId}/children/{childSku}` | bundleProductLinkManagementV1RemoveChildDelete | `sku`*, `optionId`*, `childSku`* | boolean |  | bundle-products/{sku}/options/{optionId}/children/{childSku} |
+| POST | `/V1/carts/` | quoteCartManagementV1CreateEmptyCartPost | — | integer |  | carts/ |
+| GET | `/V1/carts/guest-carts/{cartId}/checkGiftCard/{giftCardCode}` | giftCardAccountGuestGiftCardAccountManagementV1CheckGiftCardGet | `cartId`*, `giftCardCode`* | number | yes | carts/guest-carts/{cartId}/checkGiftCard/{giftCardCode} |
+| POST | `/V1/carts/guest-carts/{cartId}/giftCards` | giftCardAccountGuestGiftCardAccountManagementV1AddGiftCardPost | `cartId`*, body: object | boolean |  | carts/guest-carts/{cartId}/giftCards |
+| DELETE | `/V1/carts/guest-carts/{cartId}/giftCards/{giftCardCode}` | giftCardAccountGuestGiftCardAccountManagementV1DeleteByQuoteIdDelete | `cartId`*, `giftCardCode`* | boolean |  | carts/guest-carts/{cartId}/giftCards/{giftCardCode} |
+| GET | `/V1/carts/licence` | checkoutAgreementsCheckoutAgreementsRepositoryV1GetListGet | — | checkout-agreements-data-agreement-interface[] | yes | carts/licence |
+| GET | `/V1/carts/mine` | quoteCartManagementV1GetCartForCustomerGet | — | quote-data-cart-interface | yes | carts/mine |
+| PUT | `/V1/carts/mine` | quoteCartRepositoryV1SavePut | body: object | — |  | carts/mine |
+| POST | `/V1/carts/mine` | quoteCartManagementV1CreateEmptyCartForCustomerPost | — | integer |  | carts/mine |
+| POST | `/V1/carts/mine/balance/apply` | customerBalanceBalanceManagementFromQuoteV1ApplyPost | — | boolean |  | carts/mine/balance/apply |
+| POST | `/V1/carts/mine/balance/unapply` | customerBalanceBalanceManagementFromQuoteV1UnapplyPost | — | boolean |  | carts/mine/balance/unapply |
+| GET | `/V1/carts/mine/billing-address` | quoteBillingAddressManagementV1GetGet | — | quote-data-address-interface | yes | carts/mine/billing-address |
+| POST | `/V1/carts/mine/billing-address` | quoteBillingAddressManagementV1AssignPost | body: object | integer |  | carts/mine/billing-address |
+| GET | `/V1/carts/mine/checkGiftCard/{giftCardCode}` | giftCardAccountGiftCardAccountManagementV1CheckGiftCardGet | `giftCardCode`* | number | yes | carts/mine/checkGiftCard/{giftCardCode} |
+| POST | `/V1/carts/mine/checkout-fields` | temandoShippingQuoteCartCheckoutFieldManagementV1SaveCheckoutFieldsPost | body: object | — |  | carts/mine/checkout-fields |
+| PUT | `/V1/carts/mine/collect-totals` | quoteCartTotalManagementV1CollectTotalsPut | body: object | quote-data-totals-interface |  | carts/mine/collect-totals |
+| PUT | `/V1/carts/mine/collection-point/search-request` | temandoShippingCollectionPointCartCollectionPointManagementV1SaveSearchRequestPut | body: object | temando-shipping-data-collection-point-search-request-interface |  | carts/mine/collection-point/search-request |
+| DELETE | `/V1/carts/mine/collection-point/search-request` | temandoShippingCollectionPointCartCollectionPointManagementV1DeleteSearchRequestDelete | — | boolean |  | carts/mine/collection-point/search-request |
+| GET | `/V1/carts/mine/collection-point/search-result` | temandoShippingCollectionPointCartCollectionPointManagementV1GetCollectionPointsGet | — | temando-shipping-data-collection-point-quote-collection-point-interface[] | yes | carts/mine/collection-point/search-result |
+| POST | `/V1/carts/mine/collection-point/select` | temandoShippingCollectionPointCartCollectionPointManagementV1SelectCollectionPointPost | body: object | boolean |  | carts/mine/collection-point/select |
+| GET | `/V1/carts/mine/coupons` | quoteCouponManagementV1GetGet | — | string | yes | carts/mine/coupons |
+| DELETE | `/V1/carts/mine/coupons` | quoteCouponManagementV1RemoveDelete | — | boolean |  | carts/mine/coupons |
+| PUT | `/V1/carts/mine/coupons/{couponCode}` | quoteCouponManagementV1SetPut | `couponCode`* | boolean |  | carts/mine/coupons/{couponCode} |
+| POST | `/V1/carts/mine/delivery-option` | temandoShippingQuoteCartDeliveryOptionManagementV1SavePost | body: object | — |  | carts/mine/delivery-option |
+| POST | `/V1/carts/mine/estimate-shipping-methods` | quoteShipmentEstimationV1EstimateByExtendedAddressPost | body: object | quote-data-shipping-method-interface[] |  | carts/mine/estimate-shipping-methods |
+| POST | `/V1/carts/mine/estimate-shipping-methods-by-address-id` | quoteShippingMethodManagementV1EstimateByAddressIdPost | body: object | quote-data-shipping-method-interface[] |  | carts/mine/estimate-shipping-methods-by-address-id |
+| GET | `/V1/carts/mine/gift-message` | giftMessageCartRepositoryV1GetGet | — | gift-message-data-message-interface | yes | carts/mine/gift-message |
+| POST | `/V1/carts/mine/gift-message` | giftMessageCartRepositoryV1SavePost | body: object | boolean |  | carts/mine/gift-message |
+| GET | `/V1/carts/mine/gift-message/{itemId}` | giftMessageItemRepositoryV1GetGet | `itemId`* | gift-message-data-message-interface | yes | carts/mine/gift-message/{itemId} |
+| POST | `/V1/carts/mine/gift-message/{itemId}` | giftMessageItemRepositoryV1SavePost | `itemId`*, body: object | boolean |  | carts/mine/gift-message/{itemId} |
+| POST | `/V1/carts/mine/giftCards` | giftCardAccountGiftCardAccountManagementV1SaveByQuoteIdPost | body: object | boolean |  | carts/mine/giftCards |
+| DELETE | `/V1/carts/mine/giftCards/{giftCardCode}` | giftCardAccountGiftCardAccountManagementV1DeleteByQuoteIdDelete | `giftCardCode`* | boolean |  | carts/mine/giftCards/{giftCardCode} |
+| GET | `/V1/carts/mine/items` | quoteCartItemRepositoryV1GetListGet | — | quote-data-cart-item-interface[] | yes | carts/mine/items |
+| POST | `/V1/carts/mine/items` | quoteCartItemRepositoryV1SavePost | body: object | quote-data-cart-item-interface |  | carts/mine/items |
+| PUT | `/V1/carts/mine/items/{itemId}` | quoteCartItemRepositoryV1SavePut | `itemId`*, body: object | quote-data-cart-item-interface |  | carts/mine/items/{itemId} |
+| DELETE | `/V1/carts/mine/items/{itemId}` | quoteCartItemRepositoryV1DeleteByIdDelete | `itemId`* | boolean |  | carts/mine/items/{itemId} |
+| PUT | `/V1/carts/mine/order` | quoteCartManagementV1PlaceOrderPut | body: object | integer |  | carts/mine/order |
+| GET | `/V1/carts/mine/payment-information` | checkoutPaymentInformationManagementV1GetPaymentInformationGet | — | checkout-data-payment-details-interface | yes | carts/mine/payment-information |
+| POST | `/V1/carts/mine/payment-information` | checkoutPaymentInformationManagementV1SavePaymentInformationAndPlaceOrderPost | body: object | integer |  | carts/mine/payment-information |
+| GET | `/V1/carts/mine/payment-methods` | quotePaymentMethodManagementV1GetListGet | — | quote-data-payment-method-interface[] | yes | carts/mine/payment-methods |
+| GET | `/V1/carts/mine/selected-payment-method` | quotePaymentMethodManagementV1GetGet | — | quote-data-payment-interface | yes | carts/mine/selected-payment-method |
+| PUT | `/V1/carts/mine/selected-payment-method` | quotePaymentMethodManagementV1SetPut | body: object | string |  | carts/mine/selected-payment-method |
+| POST | `/V1/carts/mine/set-payment-information` | checkoutPaymentInformationManagementV1SavePaymentInformationPost | body: object | integer |  | carts/mine/set-payment-information |
+| POST | `/V1/carts/mine/shipping-information` | checkoutShippingInformationManagementV1SaveAddressInformationPost | body: object | checkout-data-payment-details-interface |  | carts/mine/shipping-information |
+| GET | `/V1/carts/mine/shipping-methods` | quoteShippingMethodManagementV1GetListGet | — | quote-data-shipping-method-interface[] | yes | carts/mine/shipping-methods |
+| GET | `/V1/carts/mine/totals` | quoteCartTotalRepositoryV1GetGet | — | quote-data-totals-interface | yes | carts/mine/totals |
+| POST | `/V1/carts/mine/totals-information` | checkoutTotalsInformationManagementV1CalculatePost | body: object | quote-data-totals-interface |  | carts/mine/totals-information |
+| GET | `/V1/carts/search` | quoteCartRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | quote-data-cart-search-results-interface | yes | carts/search |
+| GET | `/V1/carts/{cartId}` | quoteCartRepositoryV1GetGet | `cartId`* | quote-data-cart-interface | yes | carts/{cartId} |
+| PUT | `/V1/carts/{cartId}` | quoteCartManagementV1AssignCustomerPut | `cartId`*, body: object | boolean |  | carts/{cartId} |
+| GET | `/V1/carts/{cartId}/billing-address` | get /V1/carts/{cartId}/billing-address | `cartId`* | quote-data-address-interface | yes | carts/{cartId}/billing-address |
+| POST | `/V1/carts/{cartId}/billing-address` | post /V1/carts/{cartId}/billing-address | `cartId`*, body: object | integer |  | carts/{cartId}/billing-address |
+| GET | `/V1/carts/{cartId}/coupons` | get /V1/carts/{cartId}/coupons | `cartId`* | string | yes | carts/{cartId}/coupons |
+| DELETE | `/V1/carts/{cartId}/coupons` | delete /V1/carts/{cartId}/coupons | `cartId`* | boolean |  | carts/{cartId}/coupons |
+| PUT | `/V1/carts/{cartId}/coupons/{couponCode}` | put /V1/carts/{cartId}/coupons/{couponCode} | `cartId`*, `couponCode`* | boolean |  | carts/{cartId}/coupons/{couponCode} |
+| POST | `/V1/carts/{cartId}/estimate-shipping-methods` | post /V1/carts/{cartId}/estimate-shipping-methods | `cartId`*, body: object | quote-data-shipping-method-interface[] |  | carts/{cartId}/estimate-shipping-methods |
+| POST | `/V1/carts/{cartId}/estimate-shipping-methods-by-address-id` | post /V1/carts/{cartId}/estimate-shipping-methods-by-address-id | `cartId`*, body: object | quote-data-shipping-method-interface[] |  | carts/{cartId}/estimate-shipping-methods-by-address-id |
+| GET | `/V1/carts/{cartId}/gift-message` | get /V1/carts/{cartId}/gift-message | `cartId`* | gift-message-data-message-interface | yes | carts/{cartId}/gift-message |
+| POST | `/V1/carts/{cartId}/gift-message` | post /V1/carts/{cartId}/gift-message | `cartId`*, body: object | boolean |  | carts/{cartId}/gift-message |
+| GET | `/V1/carts/{cartId}/gift-message/{itemId}` | get /V1/carts/{cartId}/gift-message/{itemId} | `cartId`*, `itemId`* | gift-message-data-message-interface | yes | carts/{cartId}/gift-message/{itemId} |
+| POST | `/V1/carts/{cartId}/gift-message/{itemId}` | post /V1/carts/{cartId}/gift-message/{itemId} | `cartId`*, `itemId`*, body: object | boolean |  | carts/{cartId}/gift-message/{itemId} |
+| PUT | `/V1/carts/{cartId}/giftCards` | giftCardAccountGiftCardAccountManagementV1SaveByQuoteIdPut | `cartId`*, body: object | boolean |  | carts/{cartId}/giftCards |
+| DELETE | `/V1/carts/{cartId}/giftCards/{giftCardCode}` | delete /V1/carts/{cartId}/giftCards/{giftCardCode} | `cartId`*, `giftCardCode`* | boolean |  | carts/{cartId}/giftCards/{giftCardCode} |
+| GET | `/V1/carts/{cartId}/items` | get /V1/carts/{cartId}/items | `cartId`* | quote-data-cart-item-interface[] | yes | carts/{cartId}/items |
+| PUT | `/V1/carts/{cartId}/items/{itemId}` | put /V1/carts/{cartId}/items/{itemId} | `cartId`*, `itemId`*, body: object | quote-data-cart-item-interface |  | carts/{cartId}/items/{itemId} |
+| DELETE | `/V1/carts/{cartId}/items/{itemId}` | delete /V1/carts/{cartId}/items/{itemId} | `cartId`*, `itemId`* | boolean |  | carts/{cartId}/items/{itemId} |
+| PUT | `/V1/carts/{cartId}/order` | put /V1/carts/{cartId}/order | `cartId`*, body: object | integer |  | carts/{cartId}/order |
+| GET | `/V1/carts/{cartId}/payment-methods` | get /V1/carts/{cartId}/payment-methods | `cartId`* | quote-data-payment-method-interface[] | yes | carts/{cartId}/payment-methods |
+| GET | `/V1/carts/{cartId}/selected-payment-method` | get /V1/carts/{cartId}/selected-payment-method | `cartId`* | quote-data-payment-interface | yes | carts/{cartId}/selected-payment-method |
+| PUT | `/V1/carts/{cartId}/selected-payment-method` | put /V1/carts/{cartId}/selected-payment-method | `cartId`*, body: object | string |  | carts/{cartId}/selected-payment-method |
+| POST | `/V1/carts/{cartId}/shipping-information` | post /V1/carts/{cartId}/shipping-information | `cartId`*, body: object | checkout-data-payment-details-interface |  | carts/{cartId}/shipping-information |
+| GET | `/V1/carts/{cartId}/shipping-methods` | get /V1/carts/{cartId}/shipping-methods | `cartId`* | quote-data-shipping-method-interface[] | yes | carts/{cartId}/shipping-methods |
+| GET | `/V1/carts/{cartId}/totals` | get /V1/carts/{cartId}/totals | `cartId`* | quote-data-totals-interface | yes | carts/{cartId}/totals |
+| POST | `/V1/carts/{cartId}/totals-information` | post /V1/carts/{cartId}/totals-information | `cartId`*, body: object | quote-data-totals-interface |  | carts/{cartId}/totals-information |
+| GET | `/V1/carts/{quoteId}/giftCards` | giftCardAccountGiftCardAccountManagementV1GetListByQuoteIdGet | `quoteId`* | gift-card-account-data-gift-card-account-interface | yes | carts/{quoteId}/giftCards |
+| POST | `/V1/carts/{quoteId}/items` | post /V1/carts/{quoteId}/items | `quoteId`*, body: object | quote-data-cart-item-interface |  | carts/{quoteId}/items |
+| GET | `/V1/categories` | catalogCategoryManagementV1GetTreeGet | `rootCategoryId`, `depth` | catalog-data-category-tree-interface | yes | categories |
+| POST | `/V1/categories` | catalogCategoryRepositoryV1SavePost | body: object | catalog-data-category-interface |  | categories |
+| GET | `/V1/categories/attributes` | catalogCategoryAttributeRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | catalog-data-category-attribute-search-results-interface | yes | categories/attributes |
+| GET | `/V1/categories/attributes/{attributeCode}` | catalogCategoryAttributeRepositoryV1GetGet | `attributeCode`* | catalog-data-category-attribute-interface | yes | categories/attributes/{attributeCode} |
+| GET | `/V1/categories/attributes/{attributeCode}/options` | catalogCategoryAttributeOptionManagementV1GetItemsGet | `attributeCode`* | eav-data-attribute-option-interface[] | yes | categories/attributes/{attributeCode}/options |
+| GET | `/V1/categories/list` | catalogCategoryListV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | catalog-data-category-search-results-interface | yes | categories/list |
+| GET | `/V1/categories/{categoryId}` | catalogCategoryRepositoryV1GetGet | `categoryId`*, `storeId` | catalog-data-category-interface | yes | categories/{categoryId} |
+| DELETE | `/V1/categories/{categoryId}` | catalogCategoryRepositoryV1DeleteByIdentifierDelete | `categoryId`* | boolean |  | categories/{categoryId} |
+| PUT | `/V1/categories/{categoryId}/move` | catalogCategoryManagementV1MovePut | `categoryId`*, body: object | boolean |  | categories/{categoryId}/move |
+| GET | `/V1/categories/{categoryId}/products` | catalogCategoryLinkManagementV1GetAssignedProductsGet | `categoryId`* | catalog-data-category-product-link-interface[] | yes | categories/{categoryId}/products |
+| PUT | `/V1/categories/{categoryId}/products` | catalogCategoryLinkRepositoryV1SavePut | `categoryId`*, body: object | boolean |  | categories/{categoryId}/products |
+| POST | `/V1/categories/{categoryId}/products` | catalogCategoryLinkRepositoryV1SavePost | `categoryId`*, body: object | boolean |  | categories/{categoryId}/products |
+| DELETE | `/V1/categories/{categoryId}/products/{sku}` | catalogCategoryLinkRepositoryV1DeleteByIdsDelete | `categoryId`*, `sku`* | boolean |  | categories/{categoryId}/products/{sku} |
+| PUT | `/V1/categories/{id}` | catalogCategoryRepositoryV1SavePut | `id`*, body: object | catalog-data-category-interface |  | categories/{id} |
+| POST | `/V1/cmsBlock` | cmsBlockRepositoryV1SavePost | body: object | cms-data-block-interface |  | cmsBlock |
+| GET | `/V1/cmsBlock/search` | cmsBlockRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | cms-data-block-search-results-interface | yes | cmsBlock/search |
+| GET | `/V1/cmsBlock/{blockId}` | cmsBlockRepositoryV1GetByIdGet | `blockId`* | cms-data-block-interface | yes | cmsBlock/{blockId} |
+| DELETE | `/V1/cmsBlock/{blockId}` | cmsBlockRepositoryV1DeleteByIdDelete | `blockId`* | boolean |  | cmsBlock/{blockId} |
+| PUT | `/V1/cmsBlock/{id}` | cmsBlockRepositoryV1SavePut | `id`*, body: object | cms-data-block-interface |  | cmsBlock/{id} |
+| POST | `/V1/cmsPage` | cmsPageRepositoryV1SavePost | body: object | cms-data-page-interface |  | cmsPage |
+| GET | `/V1/cmsPage/search` | cmsPageRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | cms-data-page-search-results-interface | yes | cmsPage/search |
+| PUT | `/V1/cmsPage/{id}` | cmsPageRepositoryV1SavePut | `id`*, body: object | cms-data-page-interface |  | cmsPage/{id} |
+| GET | `/V1/cmsPage/{pageId}` | cmsPageRepositoryV1GetByIdGet | `pageId`* | cms-data-page-interface | yes | cmsPage/{pageId} |
+| DELETE | `/V1/cmsPage/{pageId}` | cmsPageRepositoryV1DeleteByIdDelete | `pageId`* | boolean |  | cmsPage/{pageId} |
+| GET | `/V1/company/` | companyCompanyRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | company-data-company-search-results-interface | yes | company/ |
+| POST | `/V1/company/` | companyCompanyRepositoryV1SavePost | body: object | company-data-company-interface |  | company/ |
+| PUT | `/V1/company/assignRoles` | companyAclV1AssignRolesPut | body: object | boolean |  | company/assignRoles |
+| GET | `/V1/company/role/` | companyRoleRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | company-data-role-search-results-interface | yes | company/role/ |
+| POST | `/V1/company/role/` | companyRoleRepositoryV1SavePost | body: object | company-data-role-interface |  | company/role/ |
+| PUT | `/V1/company/role/{id}` | companyRoleRepositoryV1SavePut | `id`*, body: object | company-data-role-interface |  | company/role/{id} |
+| GET | `/V1/company/role/{roleId}` | companyRoleRepositoryV1GetGet | `roleId`* | company-data-role-interface | yes | company/role/{roleId} |
+| DELETE | `/V1/company/role/{roleId}` | companyRoleRepositoryV1DeleteDelete | `roleId`* | boolean |  | company/role/{roleId} |
+| GET | `/V1/company/role/{roleId}/users` | companyAclV1GetUsersByRoleIdGet | `roleId`* | customer-data-customer-interface[] | yes | company/role/{roleId}/users |
+| GET | `/V1/company/{companyId}` | companyCompanyRepositoryV1GetGet | `companyId`* | company-data-company-interface | yes | company/{companyId} |
+| PUT | `/V1/company/{companyId}` | companyCompanyRepositoryV1SavePut | `companyId`*, body: object | company-data-company-interface |  | company/{companyId} |
+| DELETE | `/V1/company/{companyId}` | companyCompanyRepositoryV1DeleteByIdDelete | `companyId`* | boolean |  | company/{companyId} |
+| GET | `/V1/companyCredits/` | companyCreditCreditLimitRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | company-credit-data-credit-limit-search-results-interface | yes | companyCredits/ |
+| GET | `/V1/companyCredits/company/{companyId}` | companyCreditCreditLimitManagementV1GetCreditByCompanyIdGet | `companyId`* | company-credit-data-credit-limit-interface | yes | companyCredits/company/{companyId} |
+| GET | `/V1/companyCredits/history` | companyCreditCreditHistoryManagementV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | company-credit-data-history-search-results-interface | yes | companyCredits/history |
+| PUT | `/V1/companyCredits/history/{historyId}` | companyCreditCreditHistoryManagementV1UpdatePut | `historyId`*, body: object | boolean |  | companyCredits/history/{historyId} |
+| GET | `/V1/companyCredits/{creditId}` | companyCreditCreditLimitRepositoryV1GetGet | `creditId`*, `reload` | company-credit-data-credit-limit-interface | yes | companyCredits/{creditId} |
+| POST | `/V1/companyCredits/{creditId}/decreaseBalance` | companyCreditCreditBalanceManagementV1DecreasePost | `creditId`*, body: object | boolean |  | companyCredits/{creditId}/decreaseBalance |
+| POST | `/V1/companyCredits/{creditId}/increaseBalance` | companyCreditCreditBalanceManagementV1IncreasePost | `creditId`*, body: object | boolean |  | companyCredits/{creditId}/increaseBalance |
+| PUT | `/V1/companyCredits/{id}` | companyCreditCreditLimitRepositoryV1SavePut | `id`*, body: object | company-credit-data-credit-limit-interface |  | companyCredits/{id} |
+| PUT | `/V1/configurable-products/variation` | configurableProductConfigurableProductManagementV1GenerateVariationPut | body: object | catalog-data-product-interface[] |  | configurable-products/variation |
+| POST | `/V1/configurable-products/{sku}/child` | configurableProductLinkManagementV1AddChildPost | `sku`*, body: object | boolean |  | configurable-products/{sku}/child |
+| GET | `/V1/configurable-products/{sku}/children` | configurableProductLinkManagementV1GetChildrenGet | `sku`* | catalog-data-product-interface[] | yes | configurable-products/{sku}/children |
+| DELETE | `/V1/configurable-products/{sku}/children/{childSku}` | configurableProductLinkManagementV1RemoveChildDelete | `sku`*, `childSku`* | boolean |  | configurable-products/{sku}/children/{childSku} |
+| POST | `/V1/configurable-products/{sku}/options` | configurableProductOptionRepositoryV1SavePost | `sku`*, body: object | integer |  | configurable-products/{sku}/options |
+| GET | `/V1/configurable-products/{sku}/options/all` | configurableProductOptionRepositoryV1GetListGet | `sku`* | configurable-product-data-option-interface[] | yes | configurable-products/{sku}/options/all |
+| GET | `/V1/configurable-products/{sku}/options/{id}` | configurableProductOptionRepositoryV1GetGet | `sku`*, `id`* | configurable-product-data-option-interface | yes | configurable-products/{sku}/options/{id} |
+| PUT | `/V1/configurable-products/{sku}/options/{id}` | configurableProductOptionRepositoryV1SavePut | `sku`*, `id`*, body: object | integer |  | configurable-products/{sku}/options/{id} |
+| DELETE | `/V1/configurable-products/{sku}/options/{id}` | configurableProductOptionRepositoryV1DeleteByIdDelete | `sku`*, `id`* | boolean |  | configurable-products/{sku}/options/{id} |
+| POST | `/V1/coupons` | salesRuleCouponRepositoryV1SavePost | body: object | sales-rule-data-coupon-interface |  | coupons |
+| POST | `/V1/coupons/deleteByCodes` | salesRuleCouponManagementV1DeleteByCodesPost | body: object | sales-rule-data-coupon-mass-delete-result-interface |  | coupons/deleteByCodes |
+| POST | `/V1/coupons/deleteByIds` | salesRuleCouponManagementV1DeleteByIdsPost | body: object | sales-rule-data-coupon-mass-delete-result-interface |  | coupons/deleteByIds |
+| POST | `/V1/coupons/generate` | salesRuleCouponManagementV1GeneratePost | body: object | string[] |  | coupons/generate |
+| GET | `/V1/coupons/search` | salesRuleCouponRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | sales-rule-data-coupon-search-result-interface | yes | coupons/search |
+| GET | `/V1/coupons/{couponId}` | salesRuleCouponRepositoryV1GetByIdGet | `couponId`* | sales-rule-data-coupon-interface | yes | coupons/{couponId} |
+| PUT | `/V1/coupons/{couponId}` | salesRuleCouponRepositoryV1SavePut | `couponId`*, body: object | sales-rule-data-coupon-interface |  | coupons/{couponId} |
+| DELETE | `/V1/coupons/{couponId}` | salesRuleCouponRepositoryV1DeleteByIdDelete | `couponId`* | boolean |  | coupons/{couponId} |
+| POST | `/V1/creditmemo` | salesCreditmemoRepositoryV1SavePost | body: object | sales-data-creditmemo-interface |  | creditmemo |
+| POST | `/V1/creditmemo/refund` | salesCreditmemoManagementV1RefundPost | body: object | sales-data-creditmemo-interface |  | creditmemo/refund |
+| GET | `/V1/creditmemo/{id}` | salesCreditmemoRepositoryV1GetGet | `id`* | sales-data-creditmemo-interface | yes | creditmemo/{id} |
+| PUT | `/V1/creditmemo/{id}` | salesCreditmemoManagementV1CancelPut | `id`* | boolean |  | creditmemo/{id} |
+| GET | `/V1/creditmemo/{id}/comments` | salesCreditmemoManagementV1GetCommentsListGet | `id`* | sales-data-creditmemo-comment-search-result-interface | yes | creditmemo/{id}/comments |
+| POST | `/V1/creditmemo/{id}/comments` | salesCreditmemoCommentRepositoryV1SavePost | `id`*, body: object | sales-data-creditmemo-comment-interface |  | creditmemo/{id}/comments |
+| POST | `/V1/creditmemo/{id}/emails` | salesCreditmemoManagementV1NotifyPost | `id`* | boolean |  | creditmemo/{id}/emails |
+| GET | `/V1/creditmemos` | salesCreditmemoRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | sales-data-creditmemo-search-result-interface | yes | creditmemos |
+| POST | `/V1/customerGroups` | customerGroupRepositoryV1SavePost | body: object | customer-data-group-interface |  | customerGroups |
+| GET | `/V1/customerGroups/default` | customerGroupManagementV1GetDefaultGroupGet | `storeId` | customer-data-group-interface | yes | customerGroups/default |
+| PUT | `/V1/customerGroups/default/{id}` | customerCustomerGroupConfigV1SetDefaultCustomerGroupPut | `id`* | integer |  | customerGroups/default/{id} |
+| GET | `/V1/customerGroups/default/{storeId}` | get /V1/customerGroups/default/{storeId} | `storeId`* | customer-data-group-interface | yes | customerGroups/default/{storeId} |
+| GET | `/V1/customerGroups/search` | customerGroupRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | customer-data-group-search-results-interface | yes | customerGroups/search |
+| GET | `/V1/customerGroups/{id}` | customerGroupRepositoryV1GetByIdGet | `id`* | customer-data-group-interface | yes | customerGroups/{id} |
+| PUT | `/V1/customerGroups/{id}` | customerGroupRepositoryV1SavePut | `id`*, body: object | customer-data-group-interface |  | customerGroups/{id} |
+| DELETE | `/V1/customerGroups/{id}` | customerGroupRepositoryV1DeleteByIdDelete | `id`* | boolean |  | customerGroups/{id} |
+| GET | `/V1/customerGroups/{id}/permissions` | customerGroupManagementV1IsReadonlyGet | `id`* | boolean | yes | customerGroups/{id}/permissions |
+| POST | `/V1/customers` | customerAccountManagementV1CreateAccountPost | body: object | customer-data-customer-interface |  | customers |
+| GET | `/V1/customers/addresses/{addressId}` | customerAddressRepositoryV1GetByIdGet | `addressId`* | customer-data-address-interface | yes | customers/addresses/{addressId} |
+| POST | `/V1/customers/confirm` | customerAccountManagementV1ResendConfirmationPost | body: object | boolean |  | customers/confirm |
+| POST | `/V1/customers/isEmailAvailable` | customerAccountManagementV1IsEmailAvailablePost | body: object | boolean |  | customers/isEmailAvailable |
+| GET | `/V1/customers/me` | customerCustomerRepositoryV1GetByIdGet | — | customer-data-customer-interface | yes | customers/me |
+| PUT | `/V1/customers/me` | customerCustomerRepositoryV1SavePut | body: object | customer-data-customer-interface |  | customers/me |
+| PUT | `/V1/customers/me/activate` | customerAccountManagementV1ActivateByIdPut | body: object | customer-data-customer-interface |  | customers/me/activate |
+| GET | `/V1/customers/me/billingAddress` | customerAccountManagementV1GetDefaultBillingAddressGet | — | customer-data-address-interface | yes | customers/me/billingAddress |
+| PUT | `/V1/customers/me/password` | customerAccountManagementV1ChangePasswordByIdPut | body: object | boolean |  | customers/me/password |
+| GET | `/V1/customers/me/shippingAddress` | customerAccountManagementV1GetDefaultShippingAddressGet | — | customer-data-address-interface | yes | customers/me/shippingAddress |
+| PUT | `/V1/customers/password` | customerAccountManagementV1InitiatePasswordResetPut | body: object | boolean |  | customers/password |
+| POST | `/V1/customers/resetPassword` | customerAccountManagementV1ResetPasswordPost | body: object | boolean |  | customers/resetPassword |
+| GET | `/V1/customers/search` | customerCustomerRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | customer-data-customer-search-results-interface | yes | customers/search |
+| PUT | `/V1/customers/validate` | customerAccountManagementV1ValidatePut | body: object | customer-data-validation-results-interface |  | customers/validate |
+| GET | `/V1/customers/{customerId}` | get /V1/customers/{customerId} | `customerId`* | customer-data-customer-interface | yes | customers/{customerId} |
+| PUT | `/V1/customers/{customerId}` | put /V1/customers/{customerId} | `customerId`*, body: object | customer-data-customer-interface |  | customers/{customerId} |
+| DELETE | `/V1/customers/{customerId}` | customerCustomerRepositoryV1DeleteByIdDelete | `customerId`* | boolean |  | customers/{customerId} |
+| GET | `/V1/customers/{customerId}/billingAddress` | get /V1/customers/{customerId}/billingAddress | `customerId`* | customer-data-address-interface | yes | customers/{customerId}/billingAddress |
+| POST | `/V1/customers/{customerId}/carts` | post /V1/customers/{customerId}/carts | `customerId`* | integer |  | customers/{customerId}/carts |
+| GET | `/V1/customers/{customerId}/confirm` | customerAccountManagementV1GetConfirmationStatusGet | `customerId`* | string | yes | customers/{customerId}/confirm |
+| GET | `/V1/customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken}` | customerAccountManagementV1ValidateResetPasswordLinkTokenGet | `customerId`*, `resetPasswordLinkToken`* | boolean | yes | customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken} |
+| GET | `/V1/customers/{customerId}/permissions/readonly` | customerAccountManagementV1IsReadonlyGet | `customerId`* | boolean | yes | customers/{customerId}/permissions/readonly |
+| GET | `/V1/customers/{customerId}/shippingAddress` | get /V1/customers/{customerId}/shippingAddress | `customerId`* | customer-data-address-interface | yes | customers/{customerId}/shippingAddress |
+| PUT | `/V1/customers/{email}/activate` | customerAccountManagementV1ActivatePut | `email`*, body: object | customer-data-customer-interface |  | customers/{email}/activate |
+| GET | `/V1/directory/countries` | directoryCountryInformationAcquirerV1GetCountriesInfoGet | — | directory-data-country-information-interface[] | yes | directory/countries |
+| GET | `/V1/directory/countries/{countryId}` | directoryCountryInformationAcquirerV1GetCountryInfoGet | `countryId`* | directory-data-country-information-interface | yes | directory/countries/{countryId} |
+| GET | `/V1/directory/currency` | directoryCurrencyInformationAcquirerV1GetCurrencyInfoGet | — | directory-data-currency-information-interface | yes | directory/currency |
+| POST | `/V1/eav/attribute-sets` | eavAttributeSetManagementV1CreatePost | body: object | eav-data-attribute-set-interface |  | eav/attribute-sets |
+| GET | `/V1/eav/attribute-sets/list` | eavAttributeSetRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | eav-data-attribute-set-search-results-interface | yes | eav/attribute-sets/list |
+| GET | `/V1/eav/attribute-sets/{attributeSetId}` | eavAttributeSetRepositoryV1GetGet | `attributeSetId`* | eav-data-attribute-set-interface | yes | eav/attribute-sets/{attributeSetId} |
+| PUT | `/V1/eav/attribute-sets/{attributeSetId}` | eavAttributeSetRepositoryV1SavePut | `attributeSetId`*, body: object | eav-data-attribute-set-interface |  | eav/attribute-sets/{attributeSetId} |
+| DELETE | `/V1/eav/attribute-sets/{attributeSetId}` | eavAttributeSetRepositoryV1DeleteByIdDelete | `attributeSetId`* | boolean |  | eav/attribute-sets/{attributeSetId} |
+| GET | `/V1/gift-wrappings` | giftWrappingWrappingRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | gift-wrapping-data-wrapping-search-results-interface | yes | gift-wrappings |
+| POST | `/V1/gift-wrappings` | giftWrappingWrappingRepositoryV1SavePost | body: object | gift-wrapping-data-wrapping-interface |  | gift-wrappings |
+| GET | `/V1/gift-wrappings/{id}` | giftWrappingWrappingRepositoryV1GetGet | `id`*, `storeId` | gift-wrapping-data-wrapping-interface | yes | gift-wrappings/{id} |
+| DELETE | `/V1/gift-wrappings/{id}` | giftWrappingWrappingRepositoryV1DeleteByIdDelete | `id`* | boolean |  | gift-wrappings/{id} |
+| PUT | `/V1/gift-wrappings/{wrappingId}` | giftWrappingWrappingRepositoryV1SavePut | `wrappingId`*, body: object | gift-wrapping-data-wrapping-interface |  | gift-wrappings/{wrappingId} |
+| POST | `/V1/giftregistry/mine/estimate-shipping-methods` | giftRegistryShippingMethodManagementV1EstimateByRegistryIdPost | body: object | quote-data-shipping-method-interface[] |  | giftregistry/mine/estimate-shipping-methods |
+| POST | `/V1/guest-carts` | quoteGuestCartManagementV1CreateEmptyCartPost | — | string |  | guest-carts |
+| GET | `/V1/guest-carts/{cartId}` | quoteGuestCartRepositoryV1GetGet | `cartId`* | quote-data-cart-interface | yes | guest-carts/{cartId} |
+| PUT | `/V1/guest-carts/{cartId}` | quoteGuestCartManagementV1AssignCustomerPut | `cartId`*, body: object | boolean |  | guest-carts/{cartId} |
+| GET | `/V1/guest-carts/{cartId}/billing-address` | quoteGuestBillingAddressManagementV1GetGet | `cartId`* | quote-data-address-interface | yes | guest-carts/{cartId}/billing-address |
+| POST | `/V1/guest-carts/{cartId}/billing-address` | quoteGuestBillingAddressManagementV1AssignPost | `cartId`*, body: object | integer |  | guest-carts/{cartId}/billing-address |
+| POST | `/V1/guest-carts/{cartId}/checkout-fields` | temandoShippingQuoteGuestCartCheckoutFieldManagementV1SaveCheckoutFieldsPost | `cartId`*, body: object | — |  | guest-carts/{cartId}/checkout-fields |
+| PUT | `/V1/guest-carts/{cartId}/collect-totals` | quoteGuestCartTotalManagementV1CollectTotalsPut | `cartId`*, body: object | quote-data-totals-interface |  | guest-carts/{cartId}/collect-totals |
+| PUT | `/V1/guest-carts/{cartId}/collection-point/search-request` | temandoShippingCollectionPointGuestCartCollectionPointManagementV1SaveSearchRequestPut | `cartId`*, body: object | temando-shipping-data-collection-point-search-request-interface |  | guest-carts/{cartId}/collection-point/search-request |
+| DELETE | `/V1/guest-carts/{cartId}/collection-point/search-request` | temandoShippingCollectionPointGuestCartCollectionPointManagementV1DeleteSearchRequestDelete | `cartId`* | boolean |  | guest-carts/{cartId}/collection-point/search-request |
+| GET | `/V1/guest-carts/{cartId}/collection-point/search-result` | temandoShippingCollectionPointGuestCartCollectionPointManagementV1GetCollectionPointsGet | `cartId`* | temando-shipping-data-collection-point-quote-collection-point-interface[] | yes | guest-carts/{cartId}/collection-point/search-result |
+| POST | `/V1/guest-carts/{cartId}/collection-point/select` | temandoShippingCollectionPointGuestCartCollectionPointManagementV1SelectCollectionPointPost | `cartId`*, body: object | boolean |  | guest-carts/{cartId}/collection-point/select |
+| GET | `/V1/guest-carts/{cartId}/coupons` | quoteGuestCouponManagementV1GetGet | `cartId`* | string | yes | guest-carts/{cartId}/coupons |
+| DELETE | `/V1/guest-carts/{cartId}/coupons` | quoteGuestCouponManagementV1RemoveDelete | `cartId`* | boolean |  | guest-carts/{cartId}/coupons |
+| PUT | `/V1/guest-carts/{cartId}/coupons/{couponCode}` | quoteGuestCouponManagementV1SetPut | `cartId`*, `couponCode`* | boolean |  | guest-carts/{cartId}/coupons/{couponCode} |
+| POST | `/V1/guest-carts/{cartId}/delivery-option` | temandoShippingQuoteGuestCartDeliveryOptionManagementV1SavePost | `cartId`*, body: object | — |  | guest-carts/{cartId}/delivery-option |
+| POST | `/V1/guest-carts/{cartId}/estimate-shipping-methods` | quoteGuestShipmentEstimationV1EstimateByExtendedAddressPost | `cartId`*, body: object | quote-data-shipping-method-interface[] |  | guest-carts/{cartId}/estimate-shipping-methods |
+| GET | `/V1/guest-carts/{cartId}/gift-message` | giftMessageGuestCartRepositoryV1GetGet | `cartId`* | gift-message-data-message-interface | yes | guest-carts/{cartId}/gift-message |
+| POST | `/V1/guest-carts/{cartId}/gift-message` | giftMessageGuestCartRepositoryV1SavePost | `cartId`*, body: object | boolean |  | guest-carts/{cartId}/gift-message |
+| GET | `/V1/guest-carts/{cartId}/gift-message/{itemId}` | giftMessageGuestItemRepositoryV1GetGet | `cartId`*, `itemId`* | gift-message-data-message-interface | yes | guest-carts/{cartId}/gift-message/{itemId} |
+| POST | `/V1/guest-carts/{cartId}/gift-message/{itemId}` | giftMessageGuestItemRepositoryV1SavePost | `cartId`*, `itemId`*, body: object | boolean |  | guest-carts/{cartId}/gift-message/{itemId} |
+| GET | `/V1/guest-carts/{cartId}/items` | quoteGuestCartItemRepositoryV1GetListGet | `cartId`* | quote-data-cart-item-interface[] | yes | guest-carts/{cartId}/items |
+| POST | `/V1/guest-carts/{cartId}/items` | quoteGuestCartItemRepositoryV1SavePost | `cartId`*, body: object | quote-data-cart-item-interface |  | guest-carts/{cartId}/items |
+| PUT | `/V1/guest-carts/{cartId}/items/{itemId}` | quoteGuestCartItemRepositoryV1SavePut | `cartId`*, `itemId`*, body: object | quote-data-cart-item-interface |  | guest-carts/{cartId}/items/{itemId} |
+| DELETE | `/V1/guest-carts/{cartId}/items/{itemId}` | quoteGuestCartItemRepositoryV1DeleteByIdDelete | `cartId`*, `itemId`* | boolean |  | guest-carts/{cartId}/items/{itemId} |
+| PUT | `/V1/guest-carts/{cartId}/order` | quoteGuestCartManagementV1PlaceOrderPut | `cartId`*, body: object | integer |  | guest-carts/{cartId}/order |
+| GET | `/V1/guest-carts/{cartId}/payment-information` | checkoutGuestPaymentInformationManagementV1GetPaymentInformationGet | `cartId`* | checkout-data-payment-details-interface | yes | guest-carts/{cartId}/payment-information |
+| POST | `/V1/guest-carts/{cartId}/payment-information` | checkoutGuestPaymentInformationManagementV1SavePaymentInformationAndPlaceOrderPost | `cartId`*, body: object | integer |  | guest-carts/{cartId}/payment-information |
+| GET | `/V1/guest-carts/{cartId}/payment-methods` | quoteGuestPaymentMethodManagementV1GetListGet | `cartId`* | quote-data-payment-method-interface[] | yes | guest-carts/{cartId}/payment-methods |
+| GET | `/V1/guest-carts/{cartId}/selected-payment-method` | quoteGuestPaymentMethodManagementV1GetGet | `cartId`* | quote-data-payment-interface | yes | guest-carts/{cartId}/selected-payment-method |
+| PUT | `/V1/guest-carts/{cartId}/selected-payment-method` | quoteGuestPaymentMethodManagementV1SetPut | `cartId`*, body: object | integer |  | guest-carts/{cartId}/selected-payment-method |
+| POST | `/V1/guest-carts/{cartId}/set-payment-information` | checkoutGuestPaymentInformationManagementV1SavePaymentInformationPost | `cartId`*, body: object | integer |  | guest-carts/{cartId}/set-payment-information |
+| POST | `/V1/guest-carts/{cartId}/shipping-information` | checkoutGuestShippingInformationManagementV1SaveAddressInformationPost | `cartId`*, body: object | checkout-data-payment-details-interface |  | guest-carts/{cartId}/shipping-information |
+| GET | `/V1/guest-carts/{cartId}/shipping-methods` | quoteGuestShippingMethodManagementV1GetListGet | `cartId`* | quote-data-shipping-method-interface[] | yes | guest-carts/{cartId}/shipping-methods |
+| GET | `/V1/guest-carts/{cartId}/totals` | quoteGuestCartTotalRepositoryV1GetGet | `cartId`* | quote-data-totals-interface | yes | guest-carts/{cartId}/totals |
+| POST | `/V1/guest-carts/{cartId}/totals-information` | checkoutGuestTotalsInformationManagementV1CalculatePost | `cartId`*, body: object | quote-data-totals-interface |  | guest-carts/{cartId}/totals-information |
+| POST | `/V1/guest-giftregistry/{cartId}/estimate-shipping-methods` | giftRegistryGuestCartShippingMethodManagementV1EstimateByRegistryIdPost | `cartId`*, body: object | quote-data-shipping-method-interface[] |  | guest-giftregistry/{cartId}/estimate-shipping-methods |
+| PUT | `/V1/hierarchy/move/{id}` | companyCompanyHierarchyV1MoveNodePut | `id`*, body: object | — |  | hierarchy/move/{id} |
+| GET | `/V1/hierarchy/{id}` | companyCompanyHierarchyV1GetCompanyHierarchyGet | `id`* | company-data-hierarchy-interface[] | yes | hierarchy/{id} |
+| POST | `/V1/integration/admin/token` | integrationAdminTokenServiceV1CreateAdminAccessTokenPost | body: object | string |  | integration/admin/token |
+| POST | `/V1/integration/customer/token` | integrationCustomerTokenServiceV1CreateCustomerAccessTokenPost | body: object | string |  | integration/customer/token |
+| POST | `/V1/invoice/{invoiceId}/refund` | salesRefundInvoiceV1ExecutePost | `invoiceId`*, body: object | integer |  | invoice/{invoiceId}/refund |
+| GET | `/V1/invoices` | salesInvoiceRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | sales-data-invoice-search-result-interface | yes | invoices |
+| POST | `/V1/invoices/` | salesInvoiceRepositoryV1SavePost | body: object | sales-data-invoice-interface |  | invoices/ |
+| POST | `/V1/invoices/comments` | salesInvoiceCommentRepositoryV1SavePost | body: object | sales-data-invoice-comment-interface |  | invoices/comments |
+| GET | `/V1/invoices/{id}` | salesInvoiceRepositoryV1GetGet | `id`* | sales-data-invoice-interface | yes | invoices/{id} |
+| POST | `/V1/invoices/{id}/capture` | salesInvoiceManagementV1SetCapturePost | `id`* | string |  | invoices/{id}/capture |
+| GET | `/V1/invoices/{id}/comments` | salesInvoiceManagementV1GetCommentsListGet | `id`* | sales-data-invoice-comment-search-result-interface | yes | invoices/{id}/comments |
+| POST | `/V1/invoices/{id}/emails` | salesInvoiceManagementV1NotifyPost | `id`* | boolean |  | invoices/{id}/emails |
+| POST | `/V1/invoices/{id}/void` | salesInvoiceManagementV1SetVoidPost | `id`* | boolean |  | invoices/{id}/void |
+| GET | `/V1/modules` | backendModuleServiceV1GetModulesGet | — | string[] | yes | modules |
+| GET | `/V1/negotiable-carts/{cartId}/billing-address` | negotiableQuoteBillingAddressManagementV1GetGet | `cartId`* | quote-data-address-interface | yes | negotiable-carts/{cartId}/billing-address |
+| POST | `/V1/negotiable-carts/{cartId}/billing-address` | negotiableQuoteBillingAddressManagementV1AssignPost | `cartId`*, body: object | integer |  | negotiable-carts/{cartId}/billing-address |
+| DELETE | `/V1/negotiable-carts/{cartId}/coupons` | negotiableQuoteCouponManagementV1RemoveDelete | `cartId`* | boolean |  | negotiable-carts/{cartId}/coupons |
+| PUT | `/V1/negotiable-carts/{cartId}/coupons/{couponCode}` | negotiableQuoteCouponManagementV1SetPut | `cartId`*, `couponCode`* | boolean |  | negotiable-carts/{cartId}/coupons/{couponCode} |
+| POST | `/V1/negotiable-carts/{cartId}/estimate-shipping-methods` | negotiableQuoteShipmentEstimationV1EstimateByExtendedAddressPost | `cartId`*, body: object | quote-data-shipping-method-interface[] |  | negotiable-carts/{cartId}/estimate-shipping-methods |
+| POST | `/V1/negotiable-carts/{cartId}/estimate-shipping-methods-by-address-id` | negotiableQuoteShippingMethodManagementV1EstimateByAddressIdPost | `cartId`*, body: object | quote-data-shipping-method-interface[] |  | negotiable-carts/{cartId}/estimate-shipping-methods-by-address-id |
+| POST | `/V1/negotiable-carts/{cartId}/giftCards` | negotiableQuoteGiftCardAccountManagementV1SaveByQuoteIdPost | `cartId`*, body: object | boolean |  | negotiable-carts/{cartId}/giftCards |
+| DELETE | `/V1/negotiable-carts/{cartId}/giftCards/{giftCardCode}` | negotiableQuoteGiftCardAccountManagementV1DeleteByQuoteIdDelete | `cartId`*, `giftCardCode`* | boolean |  | negotiable-carts/{cartId}/giftCards/{giftCardCode} |
+| GET | `/V1/negotiable-carts/{cartId}/payment-information` | negotiableQuotePaymentInformationManagementV1GetPaymentInformationGet | `cartId`* | checkout-data-payment-details-interface | yes | negotiable-carts/{cartId}/payment-information |
+| POST | `/V1/negotiable-carts/{cartId}/payment-information` | negotiableQuotePaymentInformationManagementV1SavePaymentInformationAndPlaceOrderPost | `cartId`*, body: object | integer |  | negotiable-carts/{cartId}/payment-information |
+| POST | `/V1/negotiable-carts/{cartId}/set-payment-information` | negotiableQuotePaymentInformationManagementV1SavePaymentInformationPost | `cartId`*, body: object | integer |  | negotiable-carts/{cartId}/set-payment-information |
+| POST | `/V1/negotiable-carts/{cartId}/shipping-information` | negotiableQuoteShippingInformationManagementV1SaveAddressInformationPost | `cartId`*, body: object | checkout-data-payment-details-interface |  | negotiable-carts/{cartId}/shipping-information |
+| GET | `/V1/negotiable-carts/{cartId}/totals` | negotiableQuoteCartTotalRepositoryV1GetGet | `cartId`* | quote-data-totals-interface | yes | negotiable-carts/{cartId}/totals |
+| GET | `/V1/negotiableQuote/attachmentContent` | negotiableQuoteAttachmentContentManagementV1GetGet | `attachmentIds`* | negotiable-quote-data-attachment-content-interface[] | yes | negotiableQuote/attachmentContent |
+| POST | `/V1/negotiableQuote/decline` | negotiableQuoteNegotiableQuoteManagementV1DeclinePost | body: object | boolean |  | negotiableQuote/decline |
+| POST | `/V1/negotiableQuote/pricesUpdated` | negotiableQuoteNegotiableQuotePriceManagementV1PricesUpdatedPost | body: object | boolean |  | negotiableQuote/pricesUpdated |
+| POST | `/V1/negotiableQuote/request` | negotiableQuoteNegotiableQuoteManagementV1CreatePost | body: object | boolean |  | negotiableQuote/request |
+| POST | `/V1/negotiableQuote/submitToCustomer` | negotiableQuoteNegotiableQuoteManagementV1AdminSendPost | body: object | boolean |  | negotiableQuote/submitToCustomer |
+| PUT | `/V1/negotiableQuote/{quoteId}` | negotiableQuoteNegotiableCartRepositoryV1SavePut | `quoteId`*, body: object | — |  | negotiableQuote/{quoteId} |
+| GET | `/V1/negotiableQuote/{quoteId}/comments` | negotiableQuoteCommentLocatorV1GetListForQuoteGet | `quoteId`* | negotiable-quote-data-comment-interface[] | yes | negotiableQuote/{quoteId}/comments |
+| PUT | `/V1/negotiableQuote/{quoteId}/shippingMethod` | negotiableQuoteNegotiableQuoteShippingManagementV1SetShippingMethodPut | `quoteId`*, body: object | boolean |  | negotiableQuote/{quoteId}/shippingMethod |
+| POST | `/V1/order/{orderId}/invoice` | salesInvoiceOrderV1ExecutePost | `orderId`*, body: object | integer |  | order/{orderId}/invoice |
+| POST | `/V1/order/{orderId}/refund` | salesRefundOrderV1ExecutePost | `orderId`*, body: object | integer |  | order/{orderId}/refund |
+| POST | `/V1/order/{orderId}/ship` | salesShipOrderV1ExecutePost | `orderId`*, body: object | integer |  | order/{orderId}/ship |
+| GET | `/V1/orders` | salesOrderRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | sales-data-order-search-result-interface | yes | orders |
+| POST | `/V1/orders/` | salesOrderRepositoryV1SavePost | body: object | sales-data-order-interface |  | orders/ |
+| PUT | `/V1/orders/create` | salesOrderRepositoryV1SavePut | body: object | sales-data-order-interface |  | orders/create |
+| GET | `/V1/orders/items` | salesOrderItemRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | sales-data-order-item-search-result-interface | yes | orders/items |
+| GET | `/V1/orders/items/{id}` | salesOrderItemRepositoryV1GetGet | `id`* | sales-data-order-item-interface | yes | orders/items/{id} |
+| GET | `/V1/orders/{id}` | salesOrderRepositoryV1GetGet | `id`* | sales-data-order-interface | yes | orders/{id} |
+| POST | `/V1/orders/{id}/cancel` | salesOrderManagementV1CancelPost | `id`* | boolean |  | orders/{id}/cancel |
+| GET | `/V1/orders/{id}/comments` | salesOrderManagementV1GetCommentsListGet | `id`* | sales-data-order-status-history-search-result-interface | yes | orders/{id}/comments |
+| POST | `/V1/orders/{id}/comments` | salesOrderManagementV1AddCommentPost | `id`*, body: object | boolean |  | orders/{id}/comments |
+| POST | `/V1/orders/{id}/emails` | salesOrderManagementV1NotifyPost | `id`* | boolean |  | orders/{id}/emails |
+| POST | `/V1/orders/{id}/hold` | salesOrderManagementV1HoldPost | `id`* | boolean |  | orders/{id}/hold |
+| GET | `/V1/orders/{id}/statuses` | salesOrderManagementV1GetStatusGet | `id`* | string | yes | orders/{id}/statuses |
+| POST | `/V1/orders/{id}/unhold` | salesOrderManagementV1UnHoldPost | `id`* | boolean |  | orders/{id}/unhold |
+| PUT | `/V1/orders/{parent_id}` | salesOrderAddressRepositoryV1SavePut | `parent_id`*, body: object | sales-data-order-address-interface |  | orders/{parent_id} |
+| GET | `/V1/products` | catalogProductRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | catalog-data-product-search-results-interface | yes | products |
+| POST | `/V1/products` | catalogProductRepositoryV1SavePost | body: object | catalog-data-product-interface |  | products |
+| GET | `/V1/products-render-info` | catalogProductRenderListV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]`, `storeId`*, `currencyCode`* | catalog-data-product-render-search-results-interface | yes | products-render-info |
+| POST | `/V1/products/attribute-sets` | catalogAttributeSetManagementV1CreatePost | body: object | eav-data-attribute-set-interface |  | products/attribute-sets |
+| POST | `/V1/products/attribute-sets/attributes` | catalogProductAttributeManagementV1AssignPost | body: object | integer |  | products/attribute-sets/attributes |
+| POST | `/V1/products/attribute-sets/groups` | catalogProductAttributeGroupRepositoryV1SavePost | body: object | eav-data-attribute-group-interface |  | products/attribute-sets/groups |
+| GET | `/V1/products/attribute-sets/groups/list` | catalogProductAttributeGroupRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | eav-data-attribute-group-search-results-interface | yes | products/attribute-sets/groups/list |
+| DELETE | `/V1/products/attribute-sets/groups/{groupId}` | catalogProductAttributeGroupRepositoryV1DeleteByIdDelete | `groupId`* | boolean |  | products/attribute-sets/groups/{groupId} |
+| GET | `/V1/products/attribute-sets/sets/list` | catalogAttributeSetRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | eav-data-attribute-set-search-results-interface | yes | products/attribute-sets/sets/list |
+| GET | `/V1/products/attribute-sets/{attributeSetId}` | catalogAttributeSetRepositoryV1GetGet | `attributeSetId`* | eav-data-attribute-set-interface | yes | products/attribute-sets/{attributeSetId} |
+| PUT | `/V1/products/attribute-sets/{attributeSetId}` | catalogAttributeSetRepositoryV1SavePut | `attributeSetId`*, body: object | eav-data-attribute-set-interface |  | products/attribute-sets/{attributeSetId} |
+| DELETE | `/V1/products/attribute-sets/{attributeSetId}` | catalogAttributeSetRepositoryV1DeleteByIdDelete | `attributeSetId`* | boolean |  | products/attribute-sets/{attributeSetId} |
+| GET | `/V1/products/attribute-sets/{attributeSetId}/attributes` | catalogProductAttributeManagementV1GetAttributesGet | `attributeSetId`* | catalog-data-product-attribute-interface[] | yes | products/attribute-sets/{attributeSetId}/attributes |
+| DELETE | `/V1/products/attribute-sets/{attributeSetId}/attributes/{attributeCode}` | catalogProductAttributeManagementV1UnassignDelete | `attributeSetId`*, `attributeCode`* | boolean |  | products/attribute-sets/{attributeSetId}/attributes/{attributeCode} |
+| PUT | `/V1/products/attribute-sets/{attributeSetId}/groups` | catalogProductAttributeGroupRepositoryV1SavePut | `attributeSetId`*, body: object | eav-data-attribute-group-interface |  | products/attribute-sets/{attributeSetId}/groups |
+| GET | `/V1/products/attributes` | catalogProductAttributeRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | catalog-data-product-attribute-search-results-interface | yes | products/attributes |
+| POST | `/V1/products/attributes` | catalogProductAttributeRepositoryV1SavePost | body: object | catalog-data-product-attribute-interface |  | products/attributes |
+| GET | `/V1/products/attributes/types` | catalogProductAttributeTypesListV1GetItemsGet | — | catalog-data-product-attribute-type-interface[] | yes | products/attributes/types |
+| GET | `/V1/products/attributes/{attributeCode}` | catalogProductAttributeRepositoryV1GetGet | `attributeCode`* | catalog-data-product-attribute-interface | yes | products/attributes/{attributeCode} |
+| PUT | `/V1/products/attributes/{attributeCode}` | catalogProductAttributeRepositoryV1SavePut | `attributeCode`*, body: object | catalog-data-product-attribute-interface |  | products/attributes/{attributeCode} |
+| DELETE | `/V1/products/attributes/{attributeCode}` | catalogProductAttributeRepositoryV1DeleteByIdDelete | `attributeCode`* | boolean |  | products/attributes/{attributeCode} |
+| GET | `/V1/products/attributes/{attributeCode}/options` | catalogProductAttributeOptionManagementV1GetItemsGet | `attributeCode`* | eav-data-attribute-option-interface[] | yes | products/attributes/{attributeCode}/options |
+| POST | `/V1/products/attributes/{attributeCode}/options` | catalogProductAttributeOptionManagementV1AddPost | `attributeCode`*, body: object | boolean |  | products/attributes/{attributeCode}/options |
+| DELETE | `/V1/products/attributes/{attributeCode}/options/{optionId}` | catalogProductAttributeOptionManagementV1DeleteDelete | `attributeCode`*, `optionId`* | boolean |  | products/attributes/{attributeCode}/options/{optionId} |
+| POST | `/V1/products/base-prices` | catalogBasePriceStorageV1UpdatePost | body: object | catalog-data-price-update-result-interface[] |  | products/base-prices |
+| POST | `/V1/products/base-prices-information` | catalogBasePriceStorageV1GetPost | body: object | catalog-data-base-price-interface[] |  | products/base-prices-information |
+| POST | `/V1/products/cost` | catalogCostStorageV1UpdatePost | body: object | catalog-data-price-update-result-interface[] |  | products/cost |
+| POST | `/V1/products/cost-delete` | catalogCostStorageV1DeletePost | body: object | boolean |  | products/cost-delete |
+| POST | `/V1/products/cost-information` | catalogCostStorageV1GetPost | body: object | catalog-data-cost-interface[] |  | products/cost-information |
+| DELETE | `/V1/products/downloadable-links/samples/{id}` | downloadableSampleRepositoryV1DeleteDelete | `id`* | boolean |  | products/downloadable-links/samples/{id} |
+| DELETE | `/V1/products/downloadable-links/{id}` | downloadableLinkRepositoryV1DeleteDelete | `id`* | boolean |  | products/downloadable-links/{id} |
+| GET | `/V1/products/links/types` | catalogProductLinkTypeListV1GetItemsGet | — | catalog-data-product-link-type-interface[] | yes | products/links/types |
+| GET | `/V1/products/links/{type}/attributes` | catalogProductLinkTypeListV1GetItemAttributesGet | `type`* | catalog-data-product-link-attribute-interface[] | yes | products/links/{type}/attributes |
+| GET | `/V1/products/media/types/{attributeSetName}` | catalogProductMediaAttributeManagementV1GetListGet | `attributeSetName`* | catalog-data-product-attribute-interface[] | yes | products/media/types/{attributeSetName} |
+| POST | `/V1/products/options` | catalogProductCustomOptionRepositoryV1SavePost | body: object | catalog-data-product-custom-option-interface |  | products/options |
+| GET | `/V1/products/options/types` | catalogProductCustomOptionTypeListV1GetItemsGet | — | catalog-data-product-custom-option-type-interface[] | yes | products/options/types |
+| PUT | `/V1/products/options/{optionId}` | catalogProductCustomOptionRepositoryV1SavePut | `optionId`*, body: object | catalog-data-product-custom-option-interface |  | products/options/{optionId} |
+| POST | `/V1/products/special-price` | catalogSpecialPriceStorageV1UpdatePost | body: object | catalog-data-price-update-result-interface[] |  | products/special-price |
+| POST | `/V1/products/special-price-delete` | catalogSpecialPriceStorageV1DeletePost | body: object | catalog-data-price-update-result-interface[] |  | products/special-price-delete |
+| POST | `/V1/products/special-price-information` | catalogSpecialPriceStorageV1GetPost | body: object | catalog-data-special-price-interface[] |  | products/special-price-information |
+| PUT | `/V1/products/tier-prices` | catalogTierPriceStorageV1ReplacePut | body: object | catalog-data-price-update-result-interface[] |  | products/tier-prices |
+| POST | `/V1/products/tier-prices` | catalogTierPriceStorageV1UpdatePost | body: object | catalog-data-price-update-result-interface[] |  | products/tier-prices |
+| POST | `/V1/products/tier-prices-delete` | catalogTierPriceStorageV1DeletePost | body: object | catalog-data-price-update-result-interface[] |  | products/tier-prices-delete |
+| POST | `/V1/products/tier-prices-information` | catalogTierPriceStorageV1GetPost | body: object | catalog-data-tier-price-interface[] |  | products/tier-prices-information |
+| GET | `/V1/products/types` | catalogProductTypeListV1GetProductTypesGet | — | catalog-data-product-type-interface[] | yes | products/types |
+| PUT | `/V1/products/{productSku}/stockItems/{itemId}` | catalogInventoryStockRegistryV1UpdateStockItemBySkuPut | `productSku`*, `itemId`*, body: object | integer |  | products/{productSku}/stockItems/{itemId} |
+| GET | `/V1/products/{sku}` | catalogProductRepositoryV1GetGet | `sku`*, `editMode`, `storeId`, `forceReload` | catalog-data-product-interface | yes | products/{sku} |
+| PUT | `/V1/products/{sku}` | catalogProductRepositoryV1SavePut | `sku`*, body: object | catalog-data-product-interface |  | products/{sku} |
+| DELETE | `/V1/products/{sku}` | catalogProductRepositoryV1DeleteByIdDelete | `sku`* | boolean |  | products/{sku} |
+| GET | `/V1/products/{sku}/downloadable-links` | downloadableLinkRepositoryV1GetListGet | `sku`* | downloadable-data-link-interface[] | yes | products/{sku}/downloadable-links |
+| POST | `/V1/products/{sku}/downloadable-links` | downloadableLinkRepositoryV1SavePost | `sku`*, body: object | integer |  | products/{sku}/downloadable-links |
+| GET | `/V1/products/{sku}/downloadable-links/samples` | downloadableSampleRepositoryV1GetListGet | `sku`* | downloadable-data-sample-interface[] | yes | products/{sku}/downloadable-links/samples |
+| POST | `/V1/products/{sku}/downloadable-links/samples` | downloadableSampleRepositoryV1SavePost | `sku`*, body: object | integer |  | products/{sku}/downloadable-links/samples |
+| PUT | `/V1/products/{sku}/downloadable-links/samples/{id}` | downloadableSampleRepositoryV1SavePut | `sku`*, `id`*, body: object | integer |  | products/{sku}/downloadable-links/samples/{id} |
+| PUT | `/V1/products/{sku}/downloadable-links/{id}` | downloadableLinkRepositoryV1SavePut | `sku`*, `id`*, body: object | integer |  | products/{sku}/downloadable-links/{id} |
+| GET | `/V1/products/{sku}/group-prices/{customerGroupId}/tiers` | catalogProductTierPriceManagementV1GetListGet | `sku`*, `customerGroupId`* | catalog-data-product-tier-price-interface[] | yes | products/{sku}/group-prices/{customerGroupId}/tiers |
+| DELETE | `/V1/products/{sku}/group-prices/{customerGroupId}/tiers/{qty}` | catalogProductTierPriceManagementV1RemoveDelete | `sku`*, `customerGroupId`*, `qty`* | boolean |  | products/{sku}/group-prices/{customerGroupId}/tiers/{qty} |
+| POST | `/V1/products/{sku}/group-prices/{customerGroupId}/tiers/{qty}/price/{price}` | catalogProductTierPriceManagementV1AddPost | `sku`*, `customerGroupId`*, `price`*, `qty`* | boolean |  | products/{sku}/group-prices/{customerGroupId}/tiers/{qty}/price/{price} |
+| PUT | `/V1/products/{sku}/links` | catalogProductLinkRepositoryV1SavePut | `sku`*, body: object | boolean |  | products/{sku}/links |
+| POST | `/V1/products/{sku}/links` | catalogProductLinkManagementV1SetProductLinksPost | `sku`*, body: object | boolean |  | products/{sku}/links |
+| GET | `/V1/products/{sku}/links/{type}` | catalogProductLinkManagementV1GetLinkedItemsByTypeGet | `sku`*, `type`* | catalog-data-product-link-interface[] | yes | products/{sku}/links/{type} |
+| DELETE | `/V1/products/{sku}/links/{type}/{linkedProductSku}` | catalogProductLinkRepositoryV1DeleteByIdDelete | `sku`*, `type`*, `linkedProductSku`* | boolean |  | products/{sku}/links/{type}/{linkedProductSku} |
+| GET | `/V1/products/{sku}/media` | catalogProductAttributeMediaGalleryManagementV1GetListGet | `sku`* | catalog-data-product-attribute-media-gallery-entry-interface[] | yes | products/{sku}/media |
+| POST | `/V1/products/{sku}/media` | catalogProductAttributeMediaGalleryManagementV1CreatePost | `sku`*, body: object | integer |  | products/{sku}/media |
+| GET | `/V1/products/{sku}/media/{entryId}` | catalogProductAttributeMediaGalleryManagementV1GetGet | `sku`*, `entryId`* | catalog-data-product-attribute-media-gallery-entry-interface | yes | products/{sku}/media/{entryId} |
+| PUT | `/V1/products/{sku}/media/{entryId}` | catalogProductAttributeMediaGalleryManagementV1UpdatePut | `sku`*, `entryId`*, body: object | boolean |  | products/{sku}/media/{entryId} |
+| DELETE | `/V1/products/{sku}/media/{entryId}` | catalogProductAttributeMediaGalleryManagementV1RemoveDelete | `sku`*, `entryId`* | boolean |  | products/{sku}/media/{entryId} |
+| GET | `/V1/products/{sku}/options` | catalogProductCustomOptionRepositoryV1GetListGet | `sku`* | catalog-data-product-custom-option-interface[] | yes | products/{sku}/options |
+| GET | `/V1/products/{sku}/options/{optionId}` | catalogProductCustomOptionRepositoryV1GetGet | `sku`*, `optionId`* | catalog-data-product-custom-option-interface | yes | products/{sku}/options/{optionId} |
+| DELETE | `/V1/products/{sku}/options/{optionId}` | catalogProductCustomOptionRepositoryV1DeleteByIdentifierDelete | `sku`*, `optionId`* | boolean |  | products/{sku}/options/{optionId} |
+| PUT | `/V1/products/{sku}/websites` | catalogProductWebsiteLinkRepositoryV1SavePut | `sku`*, body: object | boolean |  | products/{sku}/websites |
+| POST | `/V1/products/{sku}/websites` | catalogProductWebsiteLinkRepositoryV1SavePost | `sku`*, body: object | boolean |  | products/{sku}/websites |
+| DELETE | `/V1/products/{sku}/websites/{websiteId}` | catalogProductWebsiteLinkRepositoryV1DeleteByIdDelete | `sku`*, `websiteId`* | boolean |  | products/{sku}/websites/{websiteId} |
+| POST | `/V1/requisition_lists` | requisitionListRequisitionListRepositoryV1SavePost | body: object | requisition-list-data-requisition-list-interface |  | requisition_lists |
+| GET | `/V1/returns` | rmaRmaManagementV1SearchGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | rma-data-rma-search-result-interface | yes | returns |
+| POST | `/V1/returns` | rmaRmaManagementV1SaveRmaPost | body: object | rma-data-rma-interface |  | returns |
+| GET | `/V1/returns/{id}` | rmaRmaRepositoryV1GetGet | `id`* | rma-data-rma-interface | yes | returns/{id} |
+| PUT | `/V1/returns/{id}` | rmaRmaManagementV1SaveRmaPut | `id`*, body: object | rma-data-rma-interface |  | returns/{id} |
+| DELETE | `/V1/returns/{id}` | rmaRmaRepositoryV1DeleteDelete | `id`*, body: object | boolean |  | returns/{id} |
+| GET | `/V1/returns/{id}/comments` | rmaCommentManagementV1CommentsListGet | `id`* | rma-data-comment-search-result-interface | yes | returns/{id}/comments |
+| POST | `/V1/returns/{id}/comments` | rmaCommentManagementV1AddCommentPost | `id`*, body: object | boolean |  | returns/{id}/comments |
+| GET | `/V1/returns/{id}/labels` | rmaTrackManagementV1GetShippingLabelPdfGet | `id`* | string | yes | returns/{id}/labels |
+| GET | `/V1/returns/{id}/tracking-numbers` | rmaTrackManagementV1GetTracksGet | `id`* | rma-data-track-search-result-interface | yes | returns/{id}/tracking-numbers |
+| POST | `/V1/returns/{id}/tracking-numbers` | rmaTrackManagementV1AddTrackPost | `id`*, body: object | boolean |  | returns/{id}/tracking-numbers |
+| DELETE | `/V1/returns/{id}/tracking-numbers/{trackId}` | rmaTrackManagementV1RemoveTrackByIdDelete | `id`*, `trackId`* | boolean |  | returns/{id}/tracking-numbers/{trackId} |
+| GET | `/V1/returnsAttributeMetadata` | rmaRmaAttributesManagementV1GetAllAttributesMetadataGet | — | customer-data-attribute-metadata-interface[] | yes | returnsAttributeMetadata |
+| GET | `/V1/returnsAttributeMetadata/custom` | rmaRmaAttributesManagementV1GetCustomAttributesMetadataGet | `dataObjectClassName` | framework-metadata-object-interface[] | yes | returnsAttributeMetadata/custom |
+| GET | `/V1/returnsAttributeMetadata/form/{formCode}` | rmaRmaAttributesManagementV1GetAttributesGet | `formCode`* | customer-data-attribute-metadata-interface[] | yes | returnsAttributeMetadata/form/{formCode} |
+| GET | `/V1/returnsAttributeMetadata/{attributeCode}` | rmaRmaAttributesManagementV1GetAttributeMetadataGet | `attributeCode`* | customer-data-attribute-metadata-interface | yes | returnsAttributeMetadata/{attributeCode} |
+| POST | `/V1/reward/mine/use-reward` | rewardRewardManagementV1SetPost | — | boolean |  | reward/mine/use-reward |
+| POST | `/V1/salesRules` | salesRuleRuleRepositoryV1SavePost | body: object | sales-rule-data-rule-interface |  | salesRules |
+| GET | `/V1/salesRules/search` | salesRuleRuleRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | sales-rule-data-rule-search-result-interface | yes | salesRules/search |
+| GET | `/V1/salesRules/{ruleId}` | salesRuleRuleRepositoryV1GetByIdGet | `ruleId`* | sales-rule-data-rule-interface | yes | salesRules/{ruleId} |
+| PUT | `/V1/salesRules/{ruleId}` | salesRuleRuleRepositoryV1SavePut | `ruleId`*, body: object | sales-rule-data-rule-interface |  | salesRules/{ruleId} |
+| DELETE | `/V1/salesRules/{ruleId}` | salesRuleRuleRepositoryV1DeleteByIdDelete | `ruleId`* | boolean |  | salesRules/{ruleId} |
+| GET | `/V1/search` | searchV1SearchGet | `searchCriteria[requestName]`, `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | framework-search-search-result-interface | yes | search |
+| POST | `/V1/sharedCatalog` | sharedCatalogSharedCatalogRepositoryV1SavePost | body: object | integer |  | sharedCatalog |
+| GET | `/V1/sharedCatalog/` | sharedCatalogSharedCatalogRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | shared-catalog-data-search-results-interface | yes | sharedCatalog/ |
+| PUT | `/V1/sharedCatalog/{id}` | sharedCatalogSharedCatalogRepositoryV1SavePut | `id`*, body: object | integer |  | sharedCatalog/{id} |
+| POST | `/V1/sharedCatalog/{id}/assignCategories` | sharedCatalogCategoryManagementV1AssignCategoriesPost | `id`*, body: object | boolean |  | sharedCatalog/{id}/assignCategories |
+| POST | `/V1/sharedCatalog/{id}/assignProducts` | sharedCatalogProductManagementV1AssignProductsPost | `id`*, body: object | boolean |  | sharedCatalog/{id}/assignProducts |
+| GET | `/V1/sharedCatalog/{id}/categories` | sharedCatalogCategoryManagementV1GetCategoriesGet | `id`* | integer[] | yes | sharedCatalog/{id}/categories |
+| GET | `/V1/sharedCatalog/{id}/products` | sharedCatalogProductManagementV1GetProductsGet | `id`* | string[] | yes | sharedCatalog/{id}/products |
+| POST | `/V1/sharedCatalog/{id}/unassignCategories` | sharedCatalogCategoryManagementV1UnassignCategoriesPost | `id`*, body: object | boolean |  | sharedCatalog/{id}/unassignCategories |
+| POST | `/V1/sharedCatalog/{id}/unassignProducts` | sharedCatalogProductManagementV1UnassignProductsPost | `id`*, body: object | boolean |  | sharedCatalog/{id}/unassignProducts |
+| GET | `/V1/sharedCatalog/{sharedCatalogId}` | sharedCatalogSharedCatalogRepositoryV1GetGet | `sharedCatalogId`* | shared-catalog-data-shared-catalog-interface | yes | sharedCatalog/{sharedCatalogId} |
+| DELETE | `/V1/sharedCatalog/{sharedCatalogId}` | sharedCatalogSharedCatalogRepositoryV1DeleteByIdDelete | `sharedCatalogId`* | boolean |  | sharedCatalog/{sharedCatalogId} |
+| POST | `/V1/sharedCatalog/{sharedCatalogId}/assignCompanies` | sharedCatalogCompanyManagementV1AssignCompaniesPost | `sharedCatalogId`*, body: object | boolean |  | sharedCatalog/{sharedCatalogId}/assignCompanies |
+| GET | `/V1/sharedCatalog/{sharedCatalogId}/companies` | sharedCatalogCompanyManagementV1GetCompaniesGet | `sharedCatalogId`* | string | yes | sharedCatalog/{sharedCatalogId}/companies |
+| POST | `/V1/sharedCatalog/{sharedCatalogId}/unassignCompanies` | sharedCatalogCompanyManagementV1UnassignCompaniesPost | `sharedCatalogId`*, body: object | boolean |  | sharedCatalog/{sharedCatalogId}/unassignCompanies |
+| POST | `/V1/shipment/` | salesShipmentRepositoryV1SavePost | body: object | sales-data-shipment-interface |  | shipment/ |
+| POST | `/V1/shipment/track` | salesShipmentTrackRepositoryV1SavePost | body: object | sales-data-shipment-track-interface |  | shipment/track |
+| DELETE | `/V1/shipment/track/{id}` | salesShipmentTrackRepositoryV1DeleteByIdDelete | `id`* | boolean |  | shipment/track/{id} |
+| GET | `/V1/shipment/{id}` | salesShipmentRepositoryV1GetGet | `id`* | sales-data-shipment-interface | yes | shipment/{id} |
+| GET | `/V1/shipment/{id}/comments` | salesShipmentManagementV1GetCommentsListGet | `id`* | sales-data-shipment-comment-search-result-interface | yes | shipment/{id}/comments |
+| POST | `/V1/shipment/{id}/comments` | salesShipmentCommentRepositoryV1SavePost | `id`*, body: object | sales-data-shipment-comment-interface |  | shipment/{id}/comments |
+| POST | `/V1/shipment/{id}/emails` | salesShipmentManagementV1NotifyPost | `id`* | boolean |  | shipment/{id}/emails |
+| GET | `/V1/shipment/{id}/label` | salesShipmentManagementV1GetLabelGet | `id`* | string | yes | shipment/{id}/label |
+| GET | `/V1/shipments` | salesShipmentRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | sales-data-shipment-search-result-interface | yes | shipments |
+| GET | `/V1/stockItems/lowStock/` | catalogInventoryStockRegistryV1GetLowStockItemsGet | `scopeId`*, `qty`*, `currentPage`, `pageSize` | catalog-inventory-data-stock-item-collection-interface | yes | stockItems/lowStock/ |
+| GET | `/V1/stockItems/{productSku}` | catalogInventoryStockRegistryV1GetStockItemBySkuGet | `productSku`*, `scopeId` | catalog-inventory-data-stock-item-interface | yes | stockItems/{productSku} |
+| GET | `/V1/stockStatuses/{productSku}` | catalogInventoryStockRegistryV1GetStockStatusBySkuGet | `productSku`*, `scopeId` | catalog-inventory-data-stock-status-interface | yes | stockStatuses/{productSku} |
+| GET | `/V1/store/storeConfigs` | storeStoreConfigManagerV1GetStoreConfigsGet | `storeCodes` | store-data-store-config-interface[] | yes | store/storeConfigs |
+| GET | `/V1/store/storeGroups` | storeGroupRepositoryV1GetListGet | — | store-data-group-interface[] | yes | store/storeGroups |
+| GET | `/V1/store/storeViews` | storeStoreRepositoryV1GetListGet | — | store-data-store-interface[] | yes | store/storeViews |
+| GET | `/V1/store/websites` | storeWebsiteRepositoryV1GetListGet | — | store-data-website-interface[] | yes | store/websites |
+| POST | `/V1/taxClasses` | taxTaxClassRepositoryV1SavePost | body: object | string |  | taxClasses |
+| GET | `/V1/taxClasses/search` | taxTaxClassRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | tax-data-tax-class-search-results-interface | yes | taxClasses/search |
+| PUT | `/V1/taxClasses/{classId}` | taxTaxClassRepositoryV1SavePut | `classId`*, body: object | string |  | taxClasses/{classId} |
+| GET | `/V1/taxClasses/{taxClassId}` | taxTaxClassRepositoryV1GetGet | `taxClassId`* | tax-data-tax-class-interface | yes | taxClasses/{taxClassId} |
+| DELETE | `/V1/taxClasses/{taxClassId}` | taxTaxClassRepositoryV1DeleteByIdDelete | `taxClassId`* | boolean |  | taxClasses/{taxClassId} |
+| PUT | `/V1/taxRates` | taxTaxRateRepositoryV1SavePut | body: object | tax-data-tax-rate-interface |  | taxRates |
+| POST | `/V1/taxRates` | taxTaxRateRepositoryV1SavePost | body: object | tax-data-tax-rate-interface |  | taxRates |
+| GET | `/V1/taxRates/search` | taxTaxRateRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | tax-data-tax-rate-search-results-interface | yes | taxRates/search |
+| GET | `/V1/taxRates/{rateId}` | taxTaxRateRepositoryV1GetGet | `rateId`* | tax-data-tax-rate-interface | yes | taxRates/{rateId} |
+| DELETE | `/V1/taxRates/{rateId}` | taxTaxRateRepositoryV1DeleteByIdDelete | `rateId`* | boolean |  | taxRates/{rateId} |
+| PUT | `/V1/taxRules` | taxTaxRuleRepositoryV1SavePut | body: object | tax-data-tax-rule-interface |  | taxRules |
+| POST | `/V1/taxRules` | taxTaxRuleRepositoryV1SavePost | body: object | tax-data-tax-rule-interface |  | taxRules |
+| GET | `/V1/taxRules/search` | taxTaxRuleRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | tax-data-tax-rule-search-results-interface | yes | taxRules/search |
+| GET | `/V1/taxRules/{ruleId}` | taxTaxRuleRepositoryV1GetGet | `ruleId`* | tax-data-tax-rule-interface | yes | taxRules/{ruleId} |
+| DELETE | `/V1/taxRules/{ruleId}` | taxTaxRuleRepositoryV1DeleteByIdDelete | `ruleId`* | boolean |  | taxRules/{ruleId} |
+| GET | `/V1/team/` | companyTeamRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | company-data-team-search-results-interface | yes | team/ |
+| POST | `/V1/team/{companyId}` | companyTeamRepositoryV1CreatePost | `companyId`*, body: object | — |  | team/{companyId} |
+| GET | `/V1/team/{teamId}` | companyTeamRepositoryV1GetGet | `teamId`* | company-data-team-interface | yes | team/{teamId} |
+| PUT | `/V1/team/{teamId}` | companyTeamRepositoryV1SavePut | `teamId`*, body: object | boolean |  | team/{teamId} |
+| DELETE | `/V1/team/{teamId}` | companyTeamRepositoryV1DeleteByIdDelete | `teamId`* | — |  | team/{teamId} |
+| PUT | `/V1/temando/rma/{rmaId}/shipments` | temandoShippingRmaRmaShipmentManagementV1AssignShipmentIdsPut | `rmaId`*, body: object | integer |  | temando/rma/{rmaId}/shipments |
+| GET | `/V1/transactions` | salesTransactionRepositoryV1GetListGet | `searchCriteria[filterGroups][0][filters][0][field]`, `searchCriteria[filterGroups][0][filters][0][value]`, `searchCriteria[filterGroups][0][filters][0][conditionType]`, `searchCriteria[sortOrders][0][field]`, `searchCriteria[sortOrders][0][direction]`, `searchCriteria[pageSize]`, `searchCriteria[currentPage]` | sales-data-transaction-search-result-interface | yes | transactions |
+| GET | `/V1/transactions/{id}` | salesTransactionRepositoryV1GetGet | `id`* | sales-data-transaction-interface | yes | transactions/{id} |
+| POST | `/V1/worldpay-guest-carts/{cartId}/payment-information` | worldpayGuestPaymentInformationManagementProxyV1SavePaymentInformationAndPlaceOrderPost | `cartId`*, body: object | integer |  | worldpay-guest-carts/{cartId}/payment-information |

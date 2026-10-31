@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_theysaidso_profile_
 
 | | |
 | --- | --- |
-| Signed bundle | `91a79c184b698ab34882a2ee7b787f598f5460879a6c7cda41d3ffe2e8972f19` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,52 +34,54 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_theysaidso_profile_
 
 4 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/qod` | get /qod | — |
-| GET | `/qod/categories` | get /qod/categories | — |
-| GET | `/qod/languages` | get /qod/languages | — |
-| DELETE | `/qshow` | delete /qshow | — |
-| GET | `/qshow` | get /qshow | — |
-| PATCH | `/qshow` | patch /qshow | — |
-| PUT | `/qshow` | put /qshow | — |
-| GET | `/qshow/list` | get /qshow/list | — |
-| GET | `/qshow/quotes` | get /qshow/quotes | — |
-| POST | `/qshow/quotes/add` | post /qshow/quotes/add | — |
-| POST | `/qshow/quotes/remove` | post /qshow/quotes/remove | — |
-| DELETE | `/quote` | delete /quote | — |
-| GET | `/quote` | get /quote | — |
-| PATCH | `/quote` | patch /quote | — |
-| POST | `/quote` | post /quote | — |
-| PUT | `/quote` | put /quote | — |
-| GET | `/quote/authors/popular` | get /quote/authors/popular | — |
-| GET | `/quote/authors/search` | get /quote/authors/search | — |
-| GET | `/quote/categories/popular` | get /quote/categories/popular | — |
-| GET | `/quote/categories/search` | get /quote/categories/search | — |
-| DELETE | `/quote/dislike` | delete /quote/dislike | — |
-| POST | `/quote/dislike` | post /quote/dislike | — |
-| PUT | `/quote/dislike` | put /quote/dislike | — |
-| DELETE | `/quote/image` | delete /quote/image | — |
-| GET | `/quote/image` | get /quote/image | — |
-| PUT | `/quote/image` | put /quote/image | — |
-| DELETE | `/quote/image/background` | delete /quote/image/background | — |
-| POST | `/quote/image/background` | post /quote/image/background | — |
-| GET | `/quote/image/background/list` | get /quote/image/background/list | — |
-| GET | `/quote/image/background/search` | get /quote/image/background/search | — |
-| POST | `/quote/image/background/tags/add` | post /quote/image/background/tags/add | — |
-| POST | `/quote/image/background/tags/remove` | post /quote/image/background/tags/remove | — |
-| DELETE | `/quote/image/font` | delete /quote/image/font | — |
-| POST | `/quote/image/font` | post /quote/image/font | — |
-| GET | `/quote/image/font/list` | get /quote/image/font/list | — |
-| GET | `/quote/image/font/search` | get /quote/image/font/search | — |
-| POST | `/quote/image/font/tags/add` | post /quote/image/font/tags/add | — |
-| POST | `/quote/image/font/tags/remove` | post /quote/image/font/tags/remove | — |
-| GET | `/quote/image/search` | get /quote/image/search | — |
-| DELETE | `/quote/like` | delete /quote/like | — |
-| POST | `/quote/like` | post /quote/like | — |
-| PUT | `/quote/like` | put /quote/like | — |
-| GET | `/quote/list` | get /quote/list | — |
-| GET | `/quote/random` | get /quote/random | — |
-| GET | `/quote/search` | get /quote/search | — |
-| POST | `/quote/tags/add` | post /quote/tags/add | — |
-| POST | `/quote/tags/remove` | post /quote/tags/remove | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/qod` | get /qod | `category`, `language` | QuoteResponse | yes | — |
+| GET | `/qod/categories` | get /qod/categories | `language`, `detailed` | — | yes | — |
+| GET | `/qod/languages` | get /qod/languages | — | — | yes | — |
+| GET | `/qshow` | get /qshow | `id`* | — | yes | — |
+| PUT | `/qshow` | put /qshow | `title`*, `description`, `tags` | — |  | — |
+| DELETE | `/qshow` | delete /qshow | `id`* | — |  | — |
+| PATCH | `/qshow` | patch /qshow | `id`*, `title`, `description`, `tags` | — |  | — |
+| GET | `/qshow/list` | get /qshow/list | `start`, `public` | — | yes | — |
+| GET | `/qshow/quotes` | get /qshow/quotes | `id`* | — | yes | — |
+| POST | `/qshow/quotes/add` | post /qshow/quotes/add | `id`*, `quoteid`* | — |  | — |
+| POST | `/qshow/quotes/remove` | post /qshow/quotes/remove | `id`*, `quoteid`* | — |  | — |
+| GET | `/quote` | get /quote | `id` | QuoteResponse | yes | — |
+| PUT | `/quote` | put /quote | `quote`*, `author`, `tags`, `language` | — |  | — |
+| POST | `/quote` | post /quote | `quote`*, `author`, `tags`, `language` | — |  | — |
+| DELETE | `/quote` | delete /quote | `id`* | — |  | — |
+| PATCH | `/quote` | patch /quote | `id`*, `quote`, `author`, `language`, `tags` | — |  | — |
+| GET | `/quote/authors/popular` | get /quote/authors/popular | `language`, `detailed`, `start`, `limit` | — | yes | — |
+| GET | `/quote/authors/search` | get /quote/authors/search | `query`, `language`, `detailed`, `start`, `limit` | — | yes | — |
+| GET | `/quote/categories/popular` | get /quote/categories/popular | `start`, `limit` | — | yes | — |
+| GET | `/quote/categories/search` | get /quote/categories/search | `query`, `start`, `limit` | — | yes | — |
+| PUT | `/quote/dislike` | put /quote/dislike | `quote_id`* | — |  | — |
+| POST | `/quote/dislike` | post /quote/dislike | `quote_id`* | — |  | — |
+| DELETE | `/quote/dislike` | delete /quote/dislike | `quote_id`* | — |  | — |
+| GET | `/quote/image` | get /quote/image | `id`*, `binary` | — | yes | — |
+| PUT | `/quote/image` | put /quote/image | `quote_id`*, `bgimage_id`, `bg_color`, `font_id`, `text_color`, `text_size`, `halign`, `valign`, `width`, `height`, `branding`, `include_transparent_layer` | — |  | — |
+| DELETE | `/quote/image` | delete /quote/image | `id`* | — |  | — |
+| POST | `/quote/image/background` | post /quote/image/background | body: object | — |  | — |
+| DELETE | `/quote/image/background` | delete /quote/image/background | `id`* | — |  | — |
+| GET | `/quote/image/background/list` | get /quote/image/background/list | `start` | — | yes | — |
+| GET | `/quote/image/background/search` | get /quote/image/background/search | `query` | — | yes | — |
+| POST | `/quote/image/background/tags/add` | post /quote/image/background/tags/add | `id`*, `tags`* | — |  | — |
+| POST | `/quote/image/background/tags/remove` | post /quote/image/background/tags/remove | `id`*, `tags`* | — |  | — |
+| POST | `/quote/image/font` | post /quote/image/font | body: object | — |  | — |
+| DELETE | `/quote/image/font` | delete /quote/image/font | `id`* | — |  | — |
+| GET | `/quote/image/font/list` | get /quote/image/font/list | `start` | — | yes | — |
+| GET | `/quote/image/font/search` | get /quote/image/font/search | `query` | — | yes | — |
+| POST | `/quote/image/font/tags/add` | post /quote/image/font/tags/add | `id`*, `tags`* | — |  | — |
+| POST | `/quote/image/font/tags/remove` | post /quote/image/font/tags/remove | `id`*, `tags`* | — |  | — |
+| GET | `/quote/image/search` | get /quote/image/search | `category`, `author`, `private` | — | yes | — |
+| PUT | `/quote/like` | put /quote/like | `quote_id`* | — |  | — |
+| POST | `/quote/like` | post /quote/like | `quote_id`* | — |  | — |
+| DELETE | `/quote/like` | delete /quote/like | `quote_id`* | — |  | — |
+| GET | `/quote/list` | get /quote/list | `start`, `limit` | — | yes | — |
+| GET | `/quote/random` | get /quote/random | `language`, `limit` | QuoteResponse | yes | — |
+| GET | `/quote/search` | get /quote/search | `category`, `author`, `minlength`, `maxlength`, `query`, `private`, `language`, `limit`, `sfw` | QuoteResponse | yes | — |
+| POST | `/quote/tags/add` | post /quote/tags/add | `id`*, `tags`* | — |  | — |
+| POST | `/quote/tags/remove` | post /quote/tags/remove | `id`*, `tags`* | — |  | — |

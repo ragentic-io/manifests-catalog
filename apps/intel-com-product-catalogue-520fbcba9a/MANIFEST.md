@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.intel.com_content_dam_logos
 
 | | |
 | --- | --- |
-| Signed bundle | `98dfd51c2042e7912e19a1eac8c34eaed96a50d5b500670ca50c12d133c277e9` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,9 +32,11 @@ logo: "https://api.apis.guru/v2/cache/logo/https_www.intel.com_content_dam_logos
 
 ## Operations (4)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/api/products/get-codename` | getCodeName | 5. Get list of codename details for Intel products. |
-| GET | `/api/products/get-ordering-info` | getorderinginfo | 3. Get ordering info for product id's requested. |
-| GET | `/api/products/get-products` | getProductList | 1. Find products by product id or category id |
-| GET | `/api/products/get-products-info` | getProductInfo | 2. Get complete product info with product id. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/api/products/get-codename` | getCodeName | `locale_geo_id`* | object | yes | 5. Get list of codename details for Intel products. |
+| GET | `/api/products/get-ordering-info` | getorderinginfo | `product_id`*, `locale_geo_id`* | object | yes | 3. Get ordering info for product id's requested. |
+| GET | `/api/products/get-products` | getProductList | `locale_geo_id`*, `category_id`, `product_id`, `highlights`, `sort`, `filters`, `per_page`, `page_no` | object | yes | 1. Find products by product id or category id |
+| GET | `/api/products/get-products-info` | getProductInfo | `locale_geo_id`*, `product_id`*, `include_reference` | object | yes | 2. Get complete product info with product id. |

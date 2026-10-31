@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `bfbb35aa24cb216c73fe0613c00aa6ea63e63dc54520123ace2d477f539f8274` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,86 +32,88 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (81)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/about` | get /about | Get information about API. |
-| GET | `/architectures` | get /architectures | List all known architectures. |
-| GET | `/architectures/{architecture_name}` | get /architectures/{architecture_name} | Show one architecture. |
-| GET | `/attribute` | get /attribute | List all attribute namespaces. |
-| DELETE | `/attribute/{namespace}` | delete /attribute/{namespace} | Delete an attribute namespace and all attributes below. |
-| GET | `/attribute/{namespace}` | get /attribute/{namespace} | List all attributes below a namespace. |
-| DELETE | `/attribute/{namespace}/_meta` | delete /attribute/{namespace}/_meta | Delete an attribute namespace and all attributes below. |
-| GET | `/attribute/{namespace}/_meta` | get /attribute/{namespace}/_meta | Show attribute namespace. |
-| POST | `/attribute/{namespace}/_meta` | post /attribute/{namespace}/_meta | Change attribute namespace. Create an attribute namespace if it doesn't exist. |
-| PUT | `/attribute/{namespace}/_meta` | put /attribute/{namespace}/_meta | Change attribute namespace. Create an attribute namespace if it doesn't exist. |
-| DELETE | `/attribute/{namespace}/{attribute_name}` | delete /attribute/{namespace}/{attribute_name} | Delete an attribute and all its values in projects or packages. |
-| DELETE | `/attribute/{namespace}/{attribute_name}/_meta` | delete /attribute/{namespace}/{attribute_name}/_meta | Delete an attribute and all its values in projects or packages. |
-| GET | `/attribute/{namespace}/{attribute_name}/_meta` | get /attribute/{namespace}/{attribute_name}/_meta | Shows attribute. |
-| POST | `/attribute/{namespace}/{attribute_name}/_meta` | post /attribute/{namespace}/{attribute_name}/_meta | Change attribute data. Create an attribute if it doesn't exist. |
-| PUT | `/attribute/{namespace}/{attribute_name}/_meta` | put /attribute/{namespace}/{attribute_name}/_meta | Change attribute data. Create an attribute if it doesn't exist. |
-| GET | `/build` | get /build | Get a simple directory listing of all projects |
-| GET | `/build/{project_name}` | get /build/{project_name} | Get a simple directory listing of all repositories for the specified project |
-| POST | `/build/{project_name}` | post /build/{project_name} | Apply different actions on builds/build processes of the specified project |
-| GET | `/build/{project_name}/_result` | get /build/{project_name}/_result | Get the build results for packages, architectures and repositories of the specified project. |
-| GET | `/build/{project_name}/{repository_name}` | get /build/{project_name}/{repository_name} | List of all architectures the specified project builds against a given repository. |
-| GET | `/build/{project_name}/{repository_name}/_buildconfig` | get /build/{project_name}/{repository_name}/_buildconfig | Show the build configuration for the specified repository. |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/_builddepinfo` | get /build/{project_name}/{repository_name}/{architecture_name}/_builddepinfo | Show the build dependencies of packages that are part of the project. |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/_repository` | get /build/{project_name}/{repository_name}/{architecture_name}/_repository | List all binaries (produced by all packages of the given project). |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}` | get /build/{project_name}/{repository_name}/{architecture_name}/{package_name} | List binaries built by the sources of the specified package. |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_buildinfo` | getBuildProjectRepositoryArchPackageBuildinfo | — |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_history` | getBuildProjectRepositoryArchPackageHistory | — |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_jobstatus` | get /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_jobstatus | Show the build status of a currently running build job. |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_log` | getBuildProjectRepositoryArchPackageLog | — |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_reason` | get /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_reason | Show the reason for the lastly triggered build. |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_status` | getBuildProjectRepositoryArchPackageStatus | — |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}` | getBuildProjectRepositoryArchitecturePackageFile | Return a specific artifact file contents |
-| PUT | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}` | putBuildProjectRepositoryArchitecturePackageFile | Update a specific artifact file contents |
-| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}?view=fileinfo` | getBuildProjectRepositoryArchitecturePackageFileViewFileinfo | This endpoint returns details about an specific artifact |
-| GET | `/configuration` | get /configuration | Display the configuration of this Open Build Service instance |
-| PUT | `/configuration` | put /configuration | Update the configuration of this Open Build Service instance |
-| GET | `/distributions` | get /distributions | List all distributions. |
-| POST | `/distributions` | post /distributions | Create a distribution. |
-| PUT | `/distributions/bulk_replace` | put /distributions/bulk_replace | Bulk replace all distributions. |
-| GET | `/distributions/include_remotes` | get /distributions/include_remotes | List all distributions including remote. |
-| DELETE | `/distributions/{distribution_id}` | delete /distributions/{distribution_id} | Delete a distribution. |
-| GET | `/distributions/{distribution_id}` | get /distributions/{distribution_id} | Show a distribution. |
-| PUT | `/distributions/{distribution_id}` | put /distributions/{distribution_id} | Update a distribution. |
-| GET | `/group` | get /group | List available groups. |
-| DELETE | `/group/{group_title}` | delete /group/{group_title} | Delete a group. |
-| GET | `/group/{group_title}` | get /group/{group_title} | Read group data. |
-| POST | `/group/{group_title}` | post /group/{group_title} | Modify group data. |
-| PUT | `/group/{group_title}` | put /group/{group_title} | Write group data. |
-| GET | `/issue_trackers` | get /issue_trackers | Get the list of issue trackers. |
-| POST | `/issue_trackers` | post /issue_trackers | Create an issue tracker. |
-| DELETE | `/issue_trackers/{issue_tracker_name}` | delete /issue_trackers/{issue_tracker_name} | Delete an issue tracker. |
-| GET | `/issue_trackers/{issue_tracker_name}` | get /issue_trackers/{issue_tracker_name} | Show an issue tracker. |
-| PUT | `/issue_trackers/{issue_tracker_name}` | put /issue_trackers/{issue_tracker_name} | Update or create an issue tracker. |
-| GET | `/issue_trackers/{issue_tracker_name}/issues/{issue_name}` | get /issue_trackers/{issue_tracker_name}/issues/{issue_name} | Show an issue of an issue tracker. |
-| GET | `/person` | get /person | List all people. |
-| POST | `/person` | post /person | Executes a command on the person endpoint. |
-| POST | `/person/register` | post /person/register | Registers a new person |
-| GET | `/person/{login}` | get /person/{login} | Get details about a person |
-| POST | `/person/{login}` | post /person/{login} | Perform changes on a registered person |
-| PUT | `/person/{login}` | put /person/{login} | Update person |
-| GET | `/person/{login}/group` | get /person/{login}/group | List the groups of a person |
-| GET | `/person/{login}/token` | get /person/{login}/token | List the authentication tokens of a person. |
-| POST | `/person/{login}/token` | post /person/{login}/token | Create a new authentication token for a person. |
-| DELETE | `/person/{login}/token/{id}` | delete /person/{login}/token/{id} | Delete a token of a person. |
-| GET | `/published` | get /published | List all the published projects. |
-| GET | `/published/{project_name}` | get /published/{project_name} | List the repositories of a project with published binaries |
-| GET | `/published/{project_name}/{repository_name}` | get /published/{project_name}/{repository_name} | List the content of the directory tree where the binaries are published at the level project/repository. |
-| GET | `/published/{project_name}/{repository_name}/{architecture_name}` | get /published/{project_name}/{repository_name}/{architecture_name} | List the content of the directory tree where the binaries are published at the level project/repository/architecture. |
-| GET | `/published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}` | get /published/{project_name}/{repository_name}/{architecture_name}/{binary_filename} | Return the binary file itself. |
-| GET | `/published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}?view=ymp` | get /published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}?view=ymp | Generate a ymp pattern that includes the needed repositories to install the given binary. |
-| GET | `/published/{project_name}/{repository_name}?view=status` | get /published/{project_name}/{repository_name}?view=status | Present information about the last publication of the pair project and repository. |
-| GET | `/request` | get /request | Get a simple directory listing of all requests |
-| POST | `/request` | post /request | Create a request |
-| DELETE | `/request/{id}` | delete /request/{id} | Delete a given request. |
-| GET | `/request/{id}` | get /request/{id} | Show details about a specified request. |
-| POST | `/request/{id}` | post /request/{id} | Apply certain actions on a specified request. |
-| PUT | `/request/{id}` | put /request/{id} | Modify a given request. |
-| POST | `/request/{id}?cmd=diff` | post /request/{id}?cmd=diff | Get the diff for all packages affected by the request. |
-| GET | `/request?view=collection` | get /request?view=collection | Get a collection of requests for a specified target |
-| GET | `/worker/status` | get /worker/status | Lists status of workers, jobs, backend services and general statistics. |
-| GET | `/worker/{architecture_name}:{worker_id}` | get /worker/{architecture_name}:{worker_id} | Lists capabilites of a worker. |
-| POST | `/worker?cmd=checkconstraints` | post /worker?cmd=checkconstraints | Lists workers which match a constraints filter. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/about` | get /about | — | object | yes | Get information about API. |
+| GET | `/architectures` | get /architectures | — | object | yes | List all known architectures. |
+| GET | `/architectures/{architecture_name}` | get /architectures/{architecture_name} | `architecture_name`* | object | yes | Show one architecture. |
+| GET | `/attribute` | get /attribute | — | — | yes | List all attribute namespaces. |
+| GET | `/attribute/{namespace}` | get /attribute/{namespace} | `namespace`* | — | yes | List all attributes below a namespace. |
+| DELETE | `/attribute/{namespace}` | delete /attribute/{namespace} | `—` | — |  | Delete an attribute namespace and all attributes below. |
+| GET | `/attribute/{namespace}/_meta` | get /attribute/{namespace}/_meta | `—` | object | yes | Show attribute namespace. |
+| PUT | `/attribute/{namespace}/_meta` | put /attribute/{namespace}/_meta | `—`, body*: — | — |  | Change attribute namespace. Create an attribute namespace if it doesn't exist. |
+| POST | `/attribute/{namespace}/_meta` | post /attribute/{namespace}/_meta | `—`, body*: — | — |  | Change attribute namespace. Create an attribute namespace if it doesn't exist. |
+| DELETE | `/attribute/{namespace}/_meta` | delete /attribute/{namespace}/_meta | `—` | — |  | Delete an attribute namespace and all attributes below. |
+| DELETE | `/attribute/{namespace}/{attribute_name}` | delete /attribute/{namespace}/{attribute_name} | `—`, `attribute_name`* | — |  | Delete an attribute and all its values in projects or packages. |
+| GET | `/attribute/{namespace}/{attribute_name}/_meta` | get /attribute/{namespace}/{attribute_name}/_meta | `—` | object | yes | Shows attribute. |
+| PUT | `/attribute/{namespace}/{attribute_name}/_meta` | put /attribute/{namespace}/{attribute_name}/_meta | `—`, body*: — | — |  | Change attribute data. Create an attribute if it doesn't exist. |
+| POST | `/attribute/{namespace}/{attribute_name}/_meta` | post /attribute/{namespace}/{attribute_name}/_meta | `—`, body*: — | — |  | Change attribute data. Create an attribute if it doesn't exist. |
+| DELETE | `/attribute/{namespace}/{attribute_name}/_meta` | delete /attribute/{namespace}/{attribute_name}/_meta | `—` | — |  | Delete an attribute and all its values in projects or packages. |
+| GET | `/build` | get /build | — | — | yes | Get a simple directory listing of all projects |
+| GET | `/build/{project_name}` | get /build/{project_name} | `project_name`* | — | yes | Get a simple directory listing of all repositories for the specified project |
+| POST | `/build/{project_name}` | post /build/{project_name} | `—`, `package`, `arch`, `repository`, `cmd`* | — |  | Apply different actions on builds/build processes of the specified project |
+| GET | `/build/{project_name}/_result` | get /build/{project_name}/_result | `—`, `view`, `package`, `arch`, `repository`, `lastbuild`, `locallink`, `multibuild` | object | yes | Get the build results for packages, architectures and repositories of the specified project. |
+| GET | `/build/{project_name}/{repository_name}` | get /build/{project_name}/{repository_name} | `—`, `repository_name`* | — | yes | List of all architectures the specified project builds against a given repository. |
+| GET | `/build/{project_name}/{repository_name}/_buildconfig` | get /build/{project_name}/{repository_name}/_buildconfig | `—` | — | yes | Show the build configuration for the specified repository. |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/_builddepinfo` | get /build/{project_name}/{repository_name}/{architecture_name}/_builddepinfo | `—`, `package`, `view` | object | yes | Show the build dependencies of packages that are part of the project. |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/_repository` | get /build/{project_name}/{repository_name}/{architecture_name}/_repository | `—` | object | yes | List all binaries (produced by all packages of the given project). |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}` | get /build/{project_name}/{repository_name}/{architecture_name}/{package_name} | `—`, `package_name`* | — | yes | List binaries built by the sources of the specified package. |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_buildinfo` | getBuildProjectRepositoryArchPackageBuildinfo | `—` | object | yes | — |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_history` | getBuildProjectRepositoryArchPackageHistory | `—` | object | yes | — |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_jobstatus` | get /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_jobstatus | `—` | object | yes | Show the build status of a currently running build job. |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_log` | getBuildProjectRepositoryArchPackageLog | `—` | — | yes | — |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_reason` | get /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_reason | `—` | object | yes | Show the reason for the lastly triggered build. |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_status` | getBuildProjectRepositoryArchPackageStatus | `—` | object | yes | — |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}` | getBuildProjectRepositoryArchitecturePackageFile | `—`, `file_name`* | string:binary | yes | Return a specific artifact file contents |
+| PUT | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}` | putBuildProjectRepositoryArchitecturePackageFile | `—`, `package_name`*, body: string | — |  | Update a specific artifact file contents |
+| GET | `/build/{project_name}/{repository_name}/{architecture_name}/{package_name}/{file_name}?view=fileinfo` | getBuildProjectRepositoryArchitecturePackageFileViewFileinfo | `—`, `view`* | object | yes | This endpoint returns details about an specific artifact |
+| GET | `/configuration` | get /configuration | — | object | yes | Display the configuration of this Open Build Service instance |
+| PUT | `/configuration` | put /configuration | body: — | — |  | Update the configuration of this Open Build Service instance |
+| GET | `/distributions` | get /distributions | — | object | yes | List all distributions. |
+| POST | `/distributions` | post /distributions | body: object | — |  | Create a distribution. |
+| PUT | `/distributions/bulk_replace` | put /distributions/bulk_replace | body: — | — |  | Bulk replace all distributions. |
+| GET | `/distributions/include_remotes` | get /distributions/include_remotes | — | object | yes | List all distributions including remote. |
+| GET | `/distributions/{distribution_id}` | get /distributions/{distribution_id} | `distribution_id`* | — | yes | Show a distribution. |
+| PUT | `/distributions/{distribution_id}` | put /distributions/{distribution_id} | `—`, body: — | — |  | Update a distribution. |
+| DELETE | `/distributions/{distribution_id}` | delete /distributions/{distribution_id} | `—` | — |  | Delete a distribution. |
+| GET | `/group` | get /group | — | — | yes | List available groups. |
+| GET | `/group/{group_title}` | get /group/{group_title} | `group_title`* | object | yes | Read group data. |
+| PUT | `/group/{group_title}` | put /group/{group_title} | `—`, body*: — | — |  | Write group data. |
+| POST | `/group/{group_title}` | post /group/{group_title} | `—`, `cmd`, `userid`, `email` | — |  | Modify group data. |
+| DELETE | `/group/{group_title}` | delete /group/{group_title} | `—` | — |  | Delete a group. |
+| GET | `/issue_trackers` | get /issue_trackers | — | object[] | yes | Get the list of issue trackers. |
+| POST | `/issue_trackers` | post /issue_trackers | body*: — | — |  | Create an issue tracker. |
+| GET | `/issue_trackers/{issue_tracker_name}` | get /issue_trackers/{issue_tracker_name} | `issue_tracker_name`* | — | yes | Show an issue tracker. |
+| PUT | `/issue_trackers/{issue_tracker_name}` | put /issue_trackers/{issue_tracker_name} | `—`, body*: — | — |  | Update or create an issue tracker. |
+| DELETE | `/issue_trackers/{issue_tracker_name}` | delete /issue_trackers/{issue_tracker_name} | `—` | — |  | Delete an issue tracker. |
+| GET | `/issue_trackers/{issue_tracker_name}/issues/{issue_name}` | get /issue_trackers/{issue_tracker_name}/issues/{issue_name} | `—`, `issue_name`* | object | yes | Show an issue of an issue tracker. |
+| GET | `/person` | get /person | `prefix` | — | yes | List all people. |
+| POST | `/person` | post /person | `cmd`*, body*: object | — |  | Executes a command on the person endpoint. |
+| POST | `/person/register` | post /person/register | body*: — | — |  | Registers a new person |
+| GET | `/person/{login}` | get /person/{login} | `login`* | object | yes | Get details about a person |
+| PUT | `/person/{login}` | put /person/{login} | `—`, body*: — | — |  | Update person |
+| POST | `/person/{login}` | post /person/{login} | `—`, `cmd`*, body: string | — |  | Perform changes on a registered person |
+| GET | `/person/{login}/group` | get /person/{login}/group | `—` | — | yes | List the groups of a person |
+| GET | `/person/{login}/token` | get /person/{login}/token | `—` | object | yes | List the authentication tokens of a person. |
+| POST | `/person/{login}/token` | post /person/{login}/token | `—`, `project`, `package`, `operation`, `scm_token` | — |  | Create a new authentication token for a person. |
+| DELETE | `/person/{login}/token/{id}` | delete /person/{login}/token/{id} | `—`, `id`* | — |  | Delete a token of a person. |
+| GET | `/published` | get /published | — | — | yes | List all the published projects. |
+| GET | `/published/{project_name}` | get /published/{project_name} | `—` | — | yes | List the repositories of a project with published binaries |
+| GET | `/published/{project_name}/{repository_name}` | get /published/{project_name}/{repository_name} | `—` | — | yes | List the content of the directory tree where the binaries are published at the level project/repository. |
+| GET | `/published/{project_name}/{repository_name}/{architecture_name}` | get /published/{project_name}/{repository_name}/{architecture_name} | `—` | — | yes | List the content of the directory tree where the binaries are published at the level project/repository/architecture. |
+| GET | `/published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}` | get /published/{project_name}/{repository_name}/{architecture_name}/{binary_filename} | `—`, `binary_filename`* | string:binary | yes | Return the binary file itself. |
+| GET | `/published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}?view=ymp` | get /published/{project_name}/{repository_name}/{architecture_name}/{binary_filename}?view=ymp | `—` | object | yes | Generate a ymp pattern that includes the needed repositories to install the given binary. |
+| GET | `/published/{project_name}/{repository_name}?view=status` | get /published/{project_name}/{repository_name}?view=status | `—`, `view` | object | yes | Present information about the last publication of the pair project and repository. |
+| GET | `/request` | get /request | — | — | yes | Get a simple directory listing of all requests |
+| POST | `/request` | post /request | `cmd`*, `addrevision`, `ignore_delegate`, `ignore_build_state`, body*: object | — |  | Create a request |
+| GET | `/request/{id}` | get /request/{id} | `id`*, `—` | — | yes | Show details about a specified request. |
+| PUT | `/request/{id}` | put /request/{id} | `—`, body*: — | — |  | Modify a given request. |
+| POST | `/request/{id}` | post /request/{id} | `—`, `cmd`, `newstate`, `priority`, `by_user`, `by_group`, `by_project`, `by_package`, `incident`, `time`, `comment` | — |  | Apply certain actions on a specified request. |
+| DELETE | `/request/{id}` | delete /request/{id} | `—` | — |  | Delete a given request. |
+| POST | `/request/{id}?cmd=diff` | post /request/{id}?cmd=diff | `—`, `diff_to_superseded`, `view`, `withissues` | object |  | Get the diff for all packages affected by the request. |
+| GET | `/request?view=collection` | get /request?view=collection | `user`, `project`, `package`, `states`, `types`, `roles`, `withhistory`, `withfullhistory`, `limit`, `ids` | object | yes | Get a collection of requests for a specified target |
+| GET | `/worker/status` | get /worker/status | — | object | yes | Lists status of workers, jobs, backend services and general statistics. |
+| GET | `/worker/{architecture_name}:{worker_id}` | get /worker/{architecture_name}:{worker_id} | `—`, `worker_id`* | object | yes | Lists capabilites of a worker. |
+| POST | `/worker?cmd=checkconstraints` | post /worker?cmd=checkconstraints | `project`*, `repository`*, `arch`*, `package`*, body*: object | — |  | Lists workers which match a constraints filter. |

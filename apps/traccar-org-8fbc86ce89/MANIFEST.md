@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_59
 
 | | |
 | --- | --- |
-| Signed bundle | `3b7829f676b4886083b2c3809eeb93bf8fba3a78adc7c2332cd9a940287d95ad` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,66 +34,68 @@ logo: "https://api.apis.guru/v2/cache/logo/https_pbs.twimg.com_profile_images_59
 
 21 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/attributes/computed` | get /attributes/computed | Fetch a list of Attributes |
-| POST | `/attributes/computed` | post /attributes/computed | Create an Attribute |
-| DELETE | `/attributes/computed/{id}` | delete /attributes/computed/{id} | Delete an Attribute |
-| PUT | `/attributes/computed/{id}` | put /attributes/computed/{id} | Update an Attribute |
-| GET | `/calendars` | get /calendars | Fetch a list of Calendars |
-| POST | `/calendars` | post /calendars | Create a Calendar |
-| DELETE | `/calendars/{id}` | delete /calendars/{id} | Delete a Calendar |
-| PUT | `/calendars/{id}` | put /calendars/{id} | Update a Calendar |
-| GET | `/commands` | get /commands | Fetch a list of Saved Commands |
-| POST | `/commands` | post /commands | Create a Saved Command |
-| GET | `/commands/send` | get /commands/send | Fetch a list of Saved Commands supported by Device at the moment |
-| POST | `/commands/send` | post /commands/send | Dispatch commands to device |
-| GET | `/commands/types` | get /commands/types | Fetch a list of available Commands for the Device or all possible Commands if Device ommited |
-| DELETE | `/commands/{id}` | delete /commands/{id} | Delete a Saved Command |
-| PUT | `/commands/{id}` | put /commands/{id} | Update a Saved Command |
-| GET | `/devices` | get /devices | Fetch a list of Devices |
-| POST | `/devices` | post /devices | Create a Device |
-| DELETE | `/devices/{id}` | delete /devices/{id} | Delete a Device |
-| PUT | `/devices/{id}` | put /devices/{id} | Update a Device |
-| PUT | `/devices/{id}/accumulators` | put /devices/{id}/accumulators | Update total distance and hours of the Device |
-| GET | `/drivers` | get /drivers | Fetch a list of Drivers |
-| POST | `/drivers` | post /drivers | Create a Driver |
-| DELETE | `/drivers/{id}` | delete /drivers/{id} | Delete a Driver |
-| PUT | `/drivers/{id}` | put /drivers/{id} | Update a Driver |
-| GET | `/events/{id}` | get /events/{id} | — |
-| GET | `/geofences` | get /geofences | Fetch a list of Geofences |
-| POST | `/geofences` | post /geofences | Create a Geofence |
-| DELETE | `/geofences/{id}` | delete /geofences/{id} | Delete a Geofence |
-| PUT | `/geofences/{id}` | put /geofences/{id} | Update a Geofence |
-| GET | `/groups` | get /groups | Fetch a list of Groups |
-| POST | `/groups` | post /groups | Create a Group |
-| DELETE | `/groups/{id}` | delete /groups/{id} | Delete a Group |
-| PUT | `/groups/{id}` | put /groups/{id} | Update a Group |
-| GET | `/maintenance` | get /maintenance | Fetch a list of Maintenance |
-| POST | `/maintenance` | post /maintenance | Create a Maintenance |
-| DELETE | `/maintenance/{id}` | delete /maintenance/{id} | Delete a Maintenance |
-| PUT | `/maintenance/{id}` | put /maintenance/{id} | Update a Maintenance |
-| GET | `/notifications` | get /notifications | Fetch a list of Notifications |
-| POST | `/notifications` | post /notifications | Create a Notification |
-| POST | `/notifications/test` | post /notifications/test | Send test notification to current user via Email and SMS |
-| GET | `/notifications/types` | get /notifications/types | Fetch a list of available Notification types |
-| DELETE | `/notifications/{id}` | delete /notifications/{id} | Delete a Notification |
-| PUT | `/notifications/{id}` | put /notifications/{id} | Update a Notification |
-| DELETE | `/permissions` | delete /permissions | Unlink an Object from another Object |
-| POST | `/permissions` | post /permissions | Link an Object to another Object |
-| GET | `/positions` | get /positions | Fetches a list of Positions |
-| GET | `/reports/events` | get /reports/events | Fetch a list of Events within the time period for the Devices or Groups |
-| GET | `/reports/route` | get /reports/route | Fetch a list of Positions within the time period for the Devices or Groups |
-| GET | `/reports/stops` | get /reports/stops | Fetch a list of ReportStops within the time period for the Devices or Groups |
-| GET | `/reports/summary` | get /reports/summary | Fetch a list of ReportSummary within the time period for the Devices or Groups |
-| GET | `/reports/trips` | get /reports/trips | Fetch a list of ReportTrips within the time period for the Devices or Groups |
-| GET | `/server` | get /server | Fetch Server information |
-| PUT | `/server` | put /server | Update Server information |
-| DELETE | `/session` | delete /session | Close the Session |
-| GET | `/session` | get /session | Fetch Session information |
-| POST | `/session` | post /session | Create a new Session |
-| GET | `/statistics` | get /statistics | Fetch server Statistics |
-| GET | `/users` | get /users | Fetch a list of Users |
-| POST | `/users` | post /users | Create a User |
-| DELETE | `/users/{id}` | delete /users/{id} | Delete a User |
-| PUT | `/users/{id}` | put /users/{id} | Update a User |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/attributes/computed` | get /attributes/computed | `all`, `userId`, `deviceId`, `groupId`, `refresh` | Attribute[] | yes | Fetch a list of Attributes |
+| POST | `/attributes/computed` | post /attributes/computed | body*: Attribute | Attribute |  | Create an Attribute |
+| PUT | `/attributes/computed/{id}` | put /attributes/computed/{id} | `id`*, body*: Attribute | Attribute |  | Update an Attribute |
+| DELETE | `/attributes/computed/{id}` | delete /attributes/computed/{id} | `id`* | — |  | Delete an Attribute |
+| GET | `/calendars` | get /calendars | `all`, `userId` | Calendar[] | yes | Fetch a list of Calendars |
+| POST | `/calendars` | post /calendars | body*: Calendar | Calendar |  | Create a Calendar |
+| PUT | `/calendars/{id}` | put /calendars/{id} | `id`*, body*: Calendar | Calendar |  | Update a Calendar |
+| DELETE | `/calendars/{id}` | delete /calendars/{id} | `id`* | — |  | Delete a Calendar |
+| GET | `/commands` | get /commands | `all`, `userId`, `deviceId`, `groupId`, `refresh` | Command[] | yes | Fetch a list of Saved Commands |
+| POST | `/commands` | post /commands | body*: Command | Command |  | Create a Saved Command |
+| GET | `/commands/send` | get /commands/send | `deviceId` | Command[] | yes | Fetch a list of Saved Commands supported by Device at the moment |
+| POST | `/commands/send` | post /commands/send | body*: Command | Command |  | Dispatch commands to device |
+| GET | `/commands/types` | get /commands/types | `deviceId`, `protocol`, `textChannel` | CommandType[] | yes | Fetch a list of available Commands for the Device or all possible Commands if Device ommited |
+| PUT | `/commands/{id}` | put /commands/{id} | `id`*, body*: Command | Command |  | Update a Saved Command |
+| DELETE | `/commands/{id}` | delete /commands/{id} | `id`* | — |  | Delete a Saved Command |
+| GET | `/devices` | get /devices | `all`, `userId`, `id`, `uniqueId` | Device[] | yes | Fetch a list of Devices |
+| POST | `/devices` | post /devices | body*: Device | Device |  | Create a Device |
+| PUT | `/devices/{id}` | put /devices/{id} | `id`*, body*: Device | Device |  | Update a Device |
+| DELETE | `/devices/{id}` | delete /devices/{id} | `id`* | — |  | Delete a Device |
+| PUT | `/devices/{id}/accumulators` | put /devices/{id}/accumulators | `id`*, body*: DeviceAccumulators | — |  | Update total distance and hours of the Device |
+| GET | `/drivers` | get /drivers | `all`, `userId`, `deviceId`, `groupId`, `refresh` | Driver[] | yes | Fetch a list of Drivers |
+| POST | `/drivers` | post /drivers | body*: Driver | Driver |  | Create a Driver |
+| PUT | `/drivers/{id}` | put /drivers/{id} | `id`*, body*: Driver | Driver |  | Update a Driver |
+| DELETE | `/drivers/{id}` | delete /drivers/{id} | `id`* | — |  | Delete a Driver |
+| GET | `/events/{id}` | get /events/{id} | `id`* | Event | yes | — |
+| GET | `/geofences` | get /geofences | `all`, `userId`, `deviceId`, `groupId`, `refresh` | Geofence[] | yes | Fetch a list of Geofences |
+| POST | `/geofences` | post /geofences | body*: Geofence | Geofence |  | Create a Geofence |
+| PUT | `/geofences/{id}` | put /geofences/{id} | `id`*, body*: Geofence | Geofence |  | Update a Geofence |
+| DELETE | `/geofences/{id}` | delete /geofences/{id} | `id`* | — |  | Delete a Geofence |
+| GET | `/groups` | get /groups | `all`, `userId` | Group[] | yes | Fetch a list of Groups |
+| POST | `/groups` | post /groups | body*: Group | Group |  | Create a Group |
+| PUT | `/groups/{id}` | put /groups/{id} | `id`*, body*: Group | Group |  | Update a Group |
+| DELETE | `/groups/{id}` | delete /groups/{id} | `id`* | — |  | Delete a Group |
+| GET | `/maintenance` | get /maintenance | `all`, `userId`, `deviceId`, `groupId`, `refresh` | Maintenance[] | yes | Fetch a list of Maintenance |
+| POST | `/maintenance` | post /maintenance | body*: Maintenance | Maintenance |  | Create a Maintenance |
+| PUT | `/maintenance/{id}` | put /maintenance/{id} | `id`*, body*: Maintenance | Maintenance |  | Update a Maintenance |
+| DELETE | `/maintenance/{id}` | delete /maintenance/{id} | `id`* | — |  | Delete a Maintenance |
+| GET | `/notifications` | get /notifications | `all`, `userId`, `deviceId`, `groupId`, `refresh` | Notification[] | yes | Fetch a list of Notifications |
+| POST | `/notifications` | post /notifications | body*: Notification | Notification |  | Create a Notification |
+| POST | `/notifications/test` | post /notifications/test | — | — |  | Send test notification to current user via Email and SMS |
+| GET | `/notifications/types` | get /notifications/types | — | NotificationType[] | yes | Fetch a list of available Notification types |
+| PUT | `/notifications/{id}` | put /notifications/{id} | `id`*, body*: Notification | Notification |  | Update a Notification |
+| DELETE | `/notifications/{id}` | delete /notifications/{id} | `id`* | — |  | Delete a Notification |
+| POST | `/permissions` | post /permissions | body*: Permission | Permission |  | Link an Object to another Object |
+| DELETE | `/permissions` | delete /permissions | body*: Permission | — |  | Unlink an Object from another Object |
+| GET | `/positions` | get /positions | `deviceId`, `from`, `to`, `id` | Position[] | yes | Fetches a list of Positions |
+| GET | `/reports/events` | get /reports/events | `deviceId`, `groupId`, `type`, `from`*, `to`* | Event[] | yes | Fetch a list of Events within the time period for the Devices or Groups |
+| GET | `/reports/route` | get /reports/route | `deviceId`, `groupId`, `from`*, `to`* | Position[] | yes | Fetch a list of Positions within the time period for the Devices or Groups |
+| GET | `/reports/stops` | get /reports/stops | `deviceId`, `groupId`, `from`*, `to`* | ReportStops[] | yes | Fetch a list of ReportStops within the time period for the Devices or Groups |
+| GET | `/reports/summary` | get /reports/summary | `deviceId`, `groupId`, `from`*, `to`* | ReportSummary[] | yes | Fetch a list of ReportSummary within the time period for the Devices or Groups |
+| GET | `/reports/trips` | get /reports/trips | `deviceId`, `groupId`, `from`*, `to`* | ReportTrips[] | yes | Fetch a list of ReportTrips within the time period for the Devices or Groups |
+| GET | `/server` | get /server | — | Server | yes | Fetch Server information |
+| PUT | `/server` | put /server | body*: Server | Server |  | Update Server information |
+| GET | `/session` | get /session | `token` | User | yes | Fetch Session information |
+| POST | `/session` | post /session | body*: object | User |  | Create a new Session |
+| DELETE | `/session` | delete /session | — | — |  | Close the Session |
+| GET | `/statistics` | get /statistics | `from`*, `to`* | Statistics[] | yes | Fetch server Statistics |
+| GET | `/users` | get /users | `userId` | User[] | yes | Fetch a list of Users |
+| POST | `/users` | post /users | body*: User | User |  | Create a User |
+| PUT | `/users/{id}` | put /users/{id} | `id`*, body*: User | User |  | Update a User |
+| DELETE | `/users/{id}` | delete /users/{id} | `id`* | — |  | Delete a User |

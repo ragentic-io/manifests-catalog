@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_res.cloudinary.com_dnutsfp7d_im
 
 | | |
 | --- | --- |
-| Signed bundle | `9e13e33efe24a2e5de7ae50078dd69c10bd39a494d53b6c10e2824f5a47bc042` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,6 +32,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_res.cloudinary.com_dnutsfp7d_im
 
 ## Operations (1)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/post-review` | post /post-review | Posts the user's review to Stellastra |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/post-review` | post /post-review | `user_email`*, `user_name`, `rating`*, body*: object | object |  | Posts the user's review to Stellastra |

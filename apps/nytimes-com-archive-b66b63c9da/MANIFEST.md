@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static01.nyt.com_images_icons_t
 
 | | |
 | --- | --- |
-| Signed bundle | `078a0698a0fe55fd7f8635d30e3537e0991b2fb83cdb0817b031a0db29e34af3` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_static01.nyt.com_images_icons_t
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/{year}/{month}.json` | get /{year}/{month}.json | Archive API |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/{year}/{month}.json` | get /{year}/{month}.json | `year`*, `month`* | object | yes | Archive API |

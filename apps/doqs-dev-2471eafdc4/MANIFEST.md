@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `ae7ca2f0ee725d325f637cf5978198bfa960698cd97ed1e4b9600dddb5f6f4e6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,19 +34,21 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 28 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/designer/templates/` | list_templates_designer_templates__get | List Templates |
-| POST | `/designer/templates/` | create_template_designer_templates__post | Create Template |
-| POST | `/designer/templates/preview` | preview_designer_templates_preview_post | Preview |
-| DELETE | `/designer/templates/{id}` | delete_designer_templates__id__delete | Delete |
-| GET | `/designer/templates/{id}` | list_templates_designer_templates__id__get | List Templates |
-| PUT | `/designer/templates/{id}` | update_template_designer_templates__id__put | Update Template |
-| POST | `/designer/templates/{id}/generate` | generate_pdf_designer_templates__id__generate_post | Generate Pdf |
-| GET | `/templates` | list | List |
-| POST | `/templates` | create | Create |
-| DELETE | `/templates/{id}` | delete__templates__id__delete | Delete |
-| GET | `/templates/{id}` | get | Get Template |
-| PUT | `/templates/{id}` | update | Update |
-| GET | `/templates/{id}/file` | get_file_templates__id__file_get | Get File |
-| POST | `/templates/{id}/fill` | fill | Fill |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/designer/templates/` | list_templates_designer_templates__get | `limit`, `offset` | ResponseOk_List_fillr.entities.designer_template.DesignerTemplate__ | yes | List Templates |
+| POST | `/designer/templates/` | create_template_designer_templates__post | body*: CreateOrUpdateTemplateRequest | ResponseOk_DesignerTemplate_ |  | Create Template |
+| POST | `/designer/templates/preview` | preview_designer_templates_preview_post | body*: PreviewModel | ResponseOk_PreviewResponse_ |  | Preview |
+| GET | `/designer/templates/{id}` | list_templates_designer_templates__id__get | `id`* | ResponseOk_DesignerTemplate_ | yes | List Templates |
+| PUT | `/designer/templates/{id}` | update_template_designer_templates__id__put | `id`*, body*: CreateOrUpdateTemplateRequest | ResponseOk_DesignerTemplate_ |  | Update Template |
+| DELETE | `/designer/templates/{id}` | delete_designer_templates__id__delete | `id`* | ResponseOk_NoneType_ |  | Delete |
+| POST | `/designer/templates/{id}/generate` | generate_pdf_designer_templates__id__generate_post | `id`*, body*: GeneratePDFPayload | — |  | Generate Pdf |
+| GET | `/templates` | list | `limit`, `offset` | ResponseOk_List_apps.api.routes_templates.Template__ | yes | List |
+| POST | `/templates` | create | body*: Body_create | ResponseOk_Template_ |  | Create |
+| GET | `/templates/{id}` | get | `id`* | ResponseOk_Template_ | yes | Get Template |
+| PUT | `/templates/{id}` | update | `id`*, body*: UpdateTemplateRequest | ResponseOk_Template_ |  | Update |
+| DELETE | `/templates/{id}` | delete__templates__id__delete | `id`* | ResponseOk_NoneType_ |  | Delete |
+| GET | `/templates/{id}/file` | get_file_templates__id__file_get | `id`* | ResponseOk_HttpUrl_ | yes | Get File |
+| POST | `/templates/{id}/fill` | fill | `id`*, body*: FillTemplateRequest | — |  | Fill |

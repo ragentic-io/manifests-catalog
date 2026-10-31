@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `9fe822289182d3428bd96a23c87f5a8ae35b09f430530fbf6c6691a46798da14` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,15 +34,17 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 7 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/client` | post /client | Create a Client Selfie |
-| GET | `/client/{client_id}` | get /client/{client_id} | Get a Client |
-| GET | `/client/{client_id}/token/{kind}` | get /client/{client_id}/token/{kind} | Get a Client Token |
-| GET | `/domain/{domainname}` | get /domain/{domainname} | Get a Domain |
-| GET | `/fleet/{fleetname}` | get /fleet/{fleetname} | Get a Fleet |
-| GET | `/team/{teamname}` | get /team/{teamname} | Get a Team |
-| GET | `/tenant/{tenantname}` | get /tenant/{tenantname} | Get a Tenant |
-| POST | `/user` | post /user | Create a User Selfie |
-| GET | `/user/{username}` | get /user/{username} | Get a User |
-| GET | `/user/{username}/token/{kind}` | get /user/{username}/token/{kind} | Get a User Token |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/client` | post /client | body: object | — |  | Create a Client Selfie |
+| GET | `/client/{client_id}` | get /client/{client_id} | `client_id`* | object | yes | Get a Client |
+| GET | `/client/{client_id}/token/{kind}` | get /client/{client_id}/token/{kind} | `client_id`*, `kind`* | — | yes | Get a Client Token |
+| GET | `/domain/{domainname}` | get /domain/{domainname} | `domainname`* | object | yes | Get a Domain |
+| GET | `/fleet/{fleetname}` | get /fleet/{fleetname} | `fleetname`* | object | yes | Get a Fleet |
+| GET | `/team/{teamname}` | get /team/{teamname} | `teamname`* | object | yes | Get a Team |
+| GET | `/tenant/{tenantname}` | get /tenant/{tenantname} | `tenantname`* | object | yes | Get a Tenant |
+| POST | `/user` | post /user | body: object | — |  | Create a User Selfie |
+| GET | `/user/{username}` | get /user/{username} | `username`* | object | yes | Get a User |
+| GET | `/user/{username}/token/{kind}` | get /user/{username}/token/{kind} | `username`*, `kind`*, `scope` | — | yes | Get a User Token |

@@ -8,6 +8,11 @@
         "from": "extpose-com-45ea8d0ff9",
         "kind": "EXPOSES",
         "to": "operation:get:/user-extensions"
+      },
+      {
+        "from": "operation:get:/user-extensions",
+        "kind": "RETURNS",
+        "to": "schema:Extension"
       }
     ],
     "nodes": [
@@ -17,23 +22,38 @@
       },
       {
         "deprecated": false,
+        "description": "This endpoint allows you to get list of your extensions including extensions from the watchlist.",
         "id": "operation:get:/user-extensions",
         "kind": "operation",
         "method": "get",
         "name": "getUserExtensions",
         "path": "/user-extensions",
         "pointer": "#/paths/~1user-extensions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Extension[]"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "api_key": []
           }
         ],
-        "summary": "Get User Extensions"
+        "summary": "Get User Extensions",
+        "tags": [
+          "user"
+        ]
       },
       {
         "id": "schema:Extension",
         "kind": "schema",
-        "name": "Extension"
+        "name": "Extension",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_thesmsworks_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `6ce06775738a56c6b3be8ddd9d389507d0d45bb91edd7e997e1502344a49061f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,23 +34,25 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_thesmsworks_profile
 
 18 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/batch/any` | post /batch/any | — |
-| POST | `/batch/schedule` | post /batch/schedule | — |
-| POST | `/batch/send` | post /batch/send | — |
-| GET | `/batch/{batchid}` | get /batch/{batchid} | — |
-| DELETE | `/batches/schedule/{batchid}` | delete /batches/schedule/{batchid} | — |
-| GET | `/credits/balance` | get /credits/balance | — |
-| POST | `/message/flash` | sendFlashMessage | — |
-| POST | `/message/schedule` | post /message/schedule | — |
-| POST | `/message/send` | post /message/send | — |
-| POST | `/messages` | post /messages | — |
-| POST | `/messages/failed` | post /messages/failed | — |
-| POST | `/messages/inbox` | post /messages/inbox | — |
-| GET | `/messages/schedule` | get /messages/schedule | — |
-| DELETE | `/messages/schedule/{messageid}` | delete /messages/schedule/{messageid} | — |
-| DELETE | `/messages/{messageid}` | delete /messages/{messageid} | — |
-| GET | `/messages/{messageid}` | get /messages/{messageid} | — |
-| GET | `/utils/errors/{errorcode}` | get /utils/errors/{errorcode} | — |
-| GET | `/utils/test` | get /utils/test | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/batch/any` | post /batch/any | body*: MessageArray | BatchMessageResponse |  | — |
+| POST | `/batch/schedule` | post /batch/schedule | body*: BatchMessage | ScheduledBatchResponse |  | — |
+| POST | `/batch/send` | post /batch/send | body*: BatchMessage | BatchMessageResponse |  | — |
+| GET | `/batch/{batchid}` | get /batch/{batchid} | `batchid`* | MessageResponse[] | yes | — |
+| DELETE | `/batches/schedule/{batchid}` | delete /batches/schedule/{batchid} | `batchid`* | CancelledMessageResponse |  | — |
+| GET | `/credits/balance` | get /credits/balance | — | CreditsResponse | yes | — |
+| POST | `/message/flash` | sendFlashMessage | body*: Message | SendMessageResponse |  | — |
+| POST | `/message/schedule` | post /message/schedule | body*: Message | ScheduledMessageResponse[] |  | — |
+| POST | `/message/send` | post /message/send | body*: Message | SendMessageResponse |  | — |
+| POST | `/messages` | post /messages | body*: Query | MessageResponse[] |  | — |
+| POST | `/messages/failed` | post /messages/failed | body*: Query | MessageResponse[] |  | — |
+| POST | `/messages/inbox` | post /messages/inbox | body*: Query | MessageResponse[] |  | — |
+| GET | `/messages/schedule` | get /messages/schedule | — | ScheduledMessagesResponse | yes | — |
+| DELETE | `/messages/schedule/{messageid}` | delete /messages/schedule/{messageid} | `messageid`* | CancelledMessageResponse |  | — |
+| GET | `/messages/{messageid}` | get /messages/{messageid} | `messageid`* | MessageResponse | yes | — |
+| DELETE | `/messages/{messageid}` | delete /messages/{messageid} | `messageid`* | DeletedMessageResponse |  | — |
+| GET | `/utils/errors/{errorcode}` | get /utils/errors/{errorcode} | `errorcode`* | — | yes | — |
+| GET | `/utils/test` | get /utils/test | — | TestResponse | yes | — |

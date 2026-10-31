@@ -8,6 +8,76 @@
         "from": "javatpoint-com-313b35ffad",
         "kind": "EXPOSES",
         "to": "operation:post:/v1/{parent}/messages:send"
+      },
+      {
+        "from": "operation:post:/v1/{parent}/messages:send",
+        "kind": "ACCEPTS",
+        "to": "schema:SendMessageRequest"
+      },
+      {
+        "from": "operation:post:/v1/{parent}/messages:send",
+        "kind": "RETURNS",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:AndroidConfig",
+        "kind": "REFERENCES",
+        "to": "schema:AndroidFcmOptions"
+      },
+      {
+        "from": "schema:AndroidConfig",
+        "kind": "REFERENCES",
+        "to": "schema:AndroidNotification"
+      },
+      {
+        "from": "schema:AndroidNotification",
+        "kind": "REFERENCES",
+        "to": "schema:LightSettings"
+      },
+      {
+        "from": "schema:ApnsConfig",
+        "kind": "REFERENCES",
+        "to": "schema:ApnsFcmOptions"
+      },
+      {
+        "from": "schema:LightSettings",
+        "kind": "REFERENCES",
+        "to": "schema:Color"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:AndroidConfig"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:ApnsConfig"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:FcmOptions"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:Notification"
+      },
+      {
+        "from": "schema:Message",
+        "kind": "REFERENCES",
+        "to": "schema:WebpushConfig"
+      },
+      {
+        "from": "schema:SendMessageRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
+      },
+      {
+        "from": "schema:WebpushConfig",
+        "kind": "REFERENCES",
+        "to": "schema:WebpushFcmOptions"
       }
     ],
     "nodes": [
@@ -17,12 +87,122 @@
       },
       {
         "deprecated": false,
+        "description": "Send a message to specified target (a registration token, topic or condition).",
         "id": "operation:post:/v1/{parent}/messages:send",
         "kind": "operation",
         "method": "post",
         "name": "fcm.projects.messages.send",
+        "parameters": [
+          {
+            "description": "V1 error format.",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "in": "query",
+            "name": "$.xgafv",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Data format for response.",
+            "enum": [
+              "json",
+              "media",
+              "proto"
+            ],
+            "in": "query",
+            "name": "alt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "JSONP",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "API key.",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "name": "oauth_token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "name": "prettyPrint",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Available to use for quota purposes for server-side applications.",
+            "in": "query",
+            "name": "quotaUser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Upload protocol for media (e.g.",
+            "in": "query",
+            "name": "upload_protocol",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Legacy upload protocol for media (e.g.",
+            "in": "query",
+            "name": "uploadType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Required.",
+            "in": "path",
+            "name": "parent",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/v1/{parent}/messages:send",
         "pointer": "#/paths/~1v1~1{parent}~1messages:send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "SendMessageRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Message"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "Oauth2": [
@@ -41,72 +221,101 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "projects"
+        ]
       },
       {
+        "description": "Android specific options for messages sent through [FCM connection server](https://goo.gl/4GLdUl).",
         "id": "schema:AndroidConfig",
         "kind": "schema",
-        "name": "AndroidConfig"
+        "name": "AndroidConfig",
+        "type": "object"
       },
       {
+        "description": "Options for features provided by the FCM SDK for Android.",
         "id": "schema:AndroidFcmOptions",
         "kind": "schema",
-        "name": "AndroidFcmOptions"
+        "name": "AndroidFcmOptions",
+        "type": "object"
       },
       {
+        "description": "Notification to send to android devices.",
         "id": "schema:AndroidNotification",
         "kind": "schema",
-        "name": "AndroidNotification"
+        "name": "AndroidNotification",
+        "type": "object"
       },
       {
+        "description": "[Apple Push Notification Service](https://goo.gl/MXRTPa) specific options.",
         "id": "schema:ApnsConfig",
         "kind": "schema",
-        "name": "ApnsConfig"
+        "name": "ApnsConfig",
+        "type": "object"
       },
       {
+        "description": "Options for features provided by the FCM SDK for iOS.",
         "id": "schema:ApnsFcmOptions",
         "kind": "schema",
-        "name": "ApnsFcmOptions"
+        "name": "ApnsFcmOptions",
+        "type": "object"
       },
       {
+        "description": "Represents a color in the RGBA color space.",
         "id": "schema:Color",
         "kind": "schema",
-        "name": "Color"
+        "name": "Color",
+        "type": "object"
       },
       {
+        "description": "Platform independent options for features provided by the FCM SDKs.",
         "id": "schema:FcmOptions",
         "kind": "schema",
-        "name": "FcmOptions"
+        "name": "FcmOptions",
+        "type": "object"
       },
       {
+        "description": "Settings to control notification LED.",
         "id": "schema:LightSettings",
         "kind": "schema",
-        "name": "LightSettings"
+        "name": "LightSettings",
+        "type": "object"
       },
       {
+        "description": "Message to send by Firebase Cloud Messaging Service.",
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
+        "description": "Basic notification template to use across all platforms.",
         "id": "schema:Notification",
         "kind": "schema",
-        "name": "Notification"
+        "name": "Notification",
+        "type": "object"
       },
       {
+        "description": "Request to send a message to specified target.",
         "id": "schema:SendMessageRequest",
         "kind": "schema",
-        "name": "SendMessageRequest"
+        "name": "SendMessageRequest",
+        "type": "object"
       },
       {
+        "description": "[Webpush protocol](https://tools.ietf.org/html/rfc8030) options.",
         "id": "schema:WebpushConfig",
         "kind": "schema",
-        "name": "WebpushConfig"
+        "name": "WebpushConfig",
+        "type": "object"
       },
       {
+        "description": "Options for features provided by the FCM SDK for Web.",
         "id": "schema:WebpushFcmOptions",
         "kind": "schema",
-        "name": "WebpushFcmOptions"
+        "name": "WebpushFcmOptions",
+        "type": "object"
       }
     ]
   },

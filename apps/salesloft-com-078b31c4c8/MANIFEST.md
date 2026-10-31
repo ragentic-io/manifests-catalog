@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_SalesLoft_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `72fb650184b28d78f78c0341a85ed1fc98f9c43a7ba2b40eef1d16c36ecdecb6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,123 +34,125 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_SalesLoft_profile_i
 
 68 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/v2/account_stages.json` | get /v2/account_stages.json | List account stages |
-| GET | `/v2/account_stages/{id}.json` | get /v2/account_stages/{id}.json | Fetch an account stage |
-| GET | `/v2/account_tiers.json` | get /v2/account_tiers.json | List Account Tiers |
-| GET | `/v2/account_tiers/{id}.json` | get /v2/account_tiers/{id}.json | Fetch an account tier |
-| POST | `/v2/account_upserts.json` | post /v2/account_upserts.json | Upsert an account |
-| GET | `/v2/accounts.json` | get /v2/accounts.json | List accounts |
-| POST | `/v2/accounts.json` | post /v2/accounts.json | Create an account |
-| DELETE | `/v2/accounts/{id}.json` | delete /v2/accounts/{id}.json | Delete an account |
-| GET | `/v2/accounts/{id}.json` | get /v2/accounts/{id}.json | Fetch an account |
-| PUT | `/v2/accounts/{id}.json` | put /v2/accounts/{id}.json | Update an existing Account |
-| GET | `/v2/action_details/call_instructions.json` | get /v2/action_details/call_instructions.json | List call instructions |
-| GET | `/v2/action_details/call_instructions/{id}.json` | get /v2/action_details/call_instructions/{id}.json | Fetch a call instructions |
-| GET | `/v2/actions.json` | get /v2/actions.json | List actions |
-| GET | `/v2/actions/{id}.json` | get /v2/actions/{id}.json | Fetch an action |
-| POST | `/v2/activities.json` | post /v2/activities.json | Create an activity |
-| GET | `/v2/activities/calls.json` | get /v2/activities/calls.json | List calls |
-| POST | `/v2/activities/calls.json` | post /v2/activities/calls.json | Create a call |
-| GET | `/v2/activities/calls/{id}.json` | get /v2/activities/calls/{id}.json | Fetch a call |
-| GET | `/v2/activities/emails.json` | get /v2/activities/emails.json | List emails |
-| GET | `/v2/activities/emails/{id}.json` | get /v2/activities/emails/{id}.json | Fetch an email |
-| GET | `/v2/activity_histories` | get /v2/activity_histories | List Past Activities |
-| GET | `/v2/bulk_jobs` | get /v2/bulk_jobs | List bulk jobs |
-| POST | `/v2/bulk_jobs` | post /v2/bulk_jobs | Create a bulk job |
-| GET | `/v2/bulk_jobs/{bulk_jobs_id}/job_data` | get /v2/bulk_jobs/{bulk_jobs_id}/job_data | List job data for a bulk job |
-| POST | `/v2/bulk_jobs/{bulk_jobs_id}/job_data` | post /v2/bulk_jobs/{bulk_jobs_id}/job_data | Create job data for a bulk job |
-| GET | `/v2/bulk_jobs/{bulk_jobs_id}/results` | get /v2/bulk_jobs/{bulk_jobs_id}/results | List job data for a completed bulk job. |
-| GET | `/v2/bulk_jobs/{id}` | get /v2/bulk_jobs/{id} | Fetch a bulk job |
-| PUT | `/v2/bulk_jobs/{id}` | put /v2/bulk_jobs/{id} | Update a bulk job |
-| GET | `/v2/cadence_exports/{id}.json` | get /v2/cadence_exports/{id}.json | Export a cadence |
-| POST | `/v2/cadence_imports.json` | post /v2/cadence_imports.json | Import cadences from JSON |
-| GET | `/v2/cadence_memberships.json` | get /v2/cadence_memberships.json | List cadence memberships |
-| POST | `/v2/cadence_memberships.json` | post /v2/cadence_memberships.json | Create a cadence membership |
-| DELETE | `/v2/cadence_memberships/{id}.json` | delete /v2/cadence_memberships/{id}.json | Delete a cadence membership |
-| GET | `/v2/cadence_memberships/{id}.json` | get /v2/cadence_memberships/{id}.json | Fetch a cadence membership |
-| GET | `/v2/cadences.json` | get /v2/cadences.json | List cadences |
-| GET | `/v2/cadences/{id}.json` | get /v2/cadences/{id}.json | Fetch a cadence |
-| GET | `/v2/calendar/events` | get /v2/calendar/events | List calendar events |
-| POST | `/v2/calendar/events/upsert` | post /v2/calendar/events/upsert | Upsert a calendar event |
-| GET | `/v2/call_data_records.json` | get /v2/call_data_records.json | List call data records |
-| GET | `/v2/call_data_records/{id}.json` | get /v2/call_data_records/{id}.json | Fetch a call data record |
-| GET | `/v2/call_dispositions.json` | get /v2/call_dispositions.json | List call dispositions |
-| GET | `/v2/call_sentiments.json` | get /v2/call_sentiments.json | List call sentiments |
-| POST | `/v2/conversations/calls` | post /v2/conversations/calls | Create Conversations Call |
-| GET | `/v2/crm_activities.json` | get /v2/crm_activities.json | List crm activities |
-| GET | `/v2/crm_activities/{id}.json` | get /v2/crm_activities/{id}.json | Fetch a crm activity |
-| GET | `/v2/crm_activity_fields.json` | get /v2/crm_activity_fields.json | List crm activity fields |
-| GET | `/v2/crm_users.json` | get /v2/crm_users.json | List crm users |
-| GET | `/v2/custom_fields.json` | get /v2/custom_fields.json | List custom fields |
-| POST | `/v2/custom_fields.json` | post /v2/custom_fields.json | Create a custom field |
-| DELETE | `/v2/custom_fields/{id}.json` | delete /v2/custom_fields/{id}.json | Delete a custom field |
-| GET | `/v2/custom_fields/{id}.json` | get /v2/custom_fields/{id}.json | Fetch a custom field |
-| PUT | `/v2/custom_fields/{id}.json` | put /v2/custom_fields/{id}.json | Update a custom field |
-| GET | `/v2/email_template_attachments.json` | get /v2/email_template_attachments.json | List email template attachments |
-| GET | `/v2/email_templates.json` | get /v2/email_templates.json | List email templates |
-| GET | `/v2/email_templates/{id}.json` | get /v2/email_templates/{id}.json | Fetch an email template |
-| POST | `/v2/external_emails.json` | post /v2/external_emails.json | Create an External Email |
-| GET | `/v2/groups.json` | get /v2/groups.json | List groups |
-| GET | `/v2/groups/{id}.json` | get /v2/groups/{id}.json | Fetch a group |
-| GET | `/v2/imports.json` | get /v2/imports.json | List imports |
-| POST | `/v2/imports.json` | post /v2/imports.json | Create an import |
-| DELETE | `/v2/imports/{id}.json` | delete /v2/imports/{id}.json | Delete an import |
-| GET | `/v2/imports/{id}.json` | get /v2/imports/{id}.json | Fetch an import |
-| PUT | `/v2/imports/{id}.json` | put /v2/imports/{id}.json | Update an import |
-| POST | `/v2/live_website_tracking_parameters.json` | post /v2/live_website_tracking_parameters.json | Create an Live Website Tracking Parameter |
-| GET | `/v2/me.json` | get /v2/me.json | Fetch current user |
-| GET | `/v2/meetings.json` | get /v2/meetings.json | List meetings |
-| POST | `/v2/meetings/settings/searches.json` | post /v2/meetings/settings/searches.json | List meeting settings |
-| PUT | `/v2/meetings/settings/{id}.json` | put /v2/meetings/settings/{id}.json | Update a meeting setting |
-| PUT | `/v2/meetings/{id}.json` | put /v2/meetings/{id}.json | Update a meeting |
-| GET | `/v2/mime_email_payloads/{id}.json` | get /v2/mime_email_payloads/{id}.json | Fetch the MIME content for email |
-| GET | `/v2/notes.json` | get /v2/notes.json | List notes |
-| POST | `/v2/notes.json` | post /v2/notes.json | Create a note |
-| DELETE | `/v2/notes/{id}.json` | delete /v2/notes/{id}.json | Delete a note |
-| GET | `/v2/notes/{id}.json` | get /v2/notes/{id}.json | Fetch a note |
-| PUT | `/v2/notes/{id}.json` | put /v2/notes/{id}.json | Update a note |
-| POST | `/v2/ongoing_actions.json` | post /v2/ongoing_actions.json | Create an ongoing action |
-| GET | `/v2/pending_emails.json` | get /v2/pending_emails.json | Fetches a list of emails ready to be sent by an external email service. Only emails sent with an External Email Client will appear here. |
-| PUT | `/v2/pending_emails/{id}.json` | put /v2/pending_emails/{id}.json | Updates the status of an email sent by an External Email Client |
-| GET | `/v2/people.json` | get /v2/people.json | List people |
-| POST | `/v2/people.json` | post /v2/people.json | Create a person |
-| DELETE | `/v2/people/{id}.json` | delete /v2/people/{id}.json | Delete a person |
-| GET | `/v2/people/{id}.json` | get /v2/people/{id}.json | Fetch a person |
-| PUT | `/v2/people/{id}.json` | put /v2/people/{id}.json | Update a person |
-| GET | `/v2/person_stages.json` | get /v2/person_stages.json | List person stages |
-| POST | `/v2/person_stages.json` | post /v2/person_stages.json | Create a person stage |
-| DELETE | `/v2/person_stages/{id}.json` | delete /v2/person_stages/{id}.json | Delete an person stage |
-| GET | `/v2/person_stages/{id}.json` | get /v2/person_stages/{id}.json | Fetch a person stage |
-| PUT | `/v2/person_stages/{id}.json` | put /v2/person_stages/{id}.json | Update a person stage |
-| POST | `/v2/person_upserts.json` | post /v2/person_upserts.json | Upsert a person |
-| GET | `/v2/phone_number_assignments.json` | get /v2/phone_number_assignments.json | List phone number assignments |
-| GET | `/v2/phone_number_assignments/{id}.json` | get /v2/phone_number_assignments/{id}.json | Fetch a phone number assignment |
-| GET | `/v2/phone_numbers/caller_ids.json` | get /v2/phone_numbers/caller_ids.json | List caller ids |
-| GET | `/v2/phone_numbers/recording_settings/{id}.json` | get /v2/phone_numbers/recording_settings/{id}.json | Fetch recording setting |
-| GET | `/v2/saved_list_views.json` | get /v2/saved_list_views.json | List saved list views |
-| POST | `/v2/saved_list_views.json` | post /v2/saved_list_views.json | Create a saved list view |
-| DELETE | `/v2/saved_list_views/{id}.json` | delete /v2/saved_list_views/{id}.json | Delete a saved list view |
-| GET | `/v2/saved_list_views/{id}.json` | get /v2/saved_list_views/{id}.json | Fetch a saved list view |
-| PUT | `/v2/saved_list_views/{id}.json` | put /v2/saved_list_views/{id}.json | Update a saved list view |
-| GET | `/v2/steps.json` | get /v2/steps.json | List steps |
-| GET | `/v2/steps/{id}.json` | get /v2/steps/{id}.json | Fetch a step |
-| GET | `/v2/successes.json` | get /v2/successes.json | List successes |
-| GET | `/v2/tags.json` | get /v2/tags.json | List team tags |
-| GET | `/v2/tasks.json` | get /v2/tasks.json | List tasks |
-| POST | `/v2/tasks.json` | post /v2/tasks.json | Create a Task |
-| GET | `/v2/tasks/{id}.json` | get /v2/tasks/{id}.json | Fetch a task |
-| PUT | `/v2/tasks/{id}.json` | put /v2/tasks/{id}.json | Update a Task |
-| GET | `/v2/team.json` | get /v2/team.json | Fetch current team |
-| GET | `/v2/team_template_attachments.json` | get /v2/team_template_attachments.json | List team template attachments |
-| GET | `/v2/team_templates.json` | get /v2/team_templates.json | List team templates |
-| GET | `/v2/team_templates/{id}.json` | get /v2/team_templates/{id}.json | Fetch a team template |
-| POST | `/v2/third_party_live_feed_items` | post /v2/third_party_live_feed_items | Create a live feed item |
-| GET | `/v2/users.json` | get /v2/users.json | List users |
-| GET | `/v2/users/{id}.json` | get /v2/users/{id}.json | Fetch a user |
-| GET | `/v2/webhook_subscriptions` | get /v2/webhook_subscriptions | List webhook subscriptions |
-| POST | `/v2/webhook_subscriptions` | post /v2/webhook_subscriptions | Create a webhook subscription |
-| DELETE | `/v2/webhook_subscriptions/{id}` | delete /v2/webhook_subscriptions/{id} | Delete a webhook subscription |
-| GET | `/v2/webhook_subscriptions/{id}` | get /v2/webhook_subscriptions/{id} | Fetch a webhook subscription |
-| PUT | `/v2/webhook_subscriptions/{id}` | put /v2/webhook_subscriptions/{id} | Update a webhook subscription |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/v2/account_stages.json` | get /v2/account_stages.json | `ids`, `updated_at`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | AccountStage[] | yes | List account stages |
+| GET | `/v2/account_stages/{id}.json` | get /v2/account_stages/{id}.json | `id`* | AccountStage | yes | Fetch an account stage |
+| GET | `/v2/account_tiers.json` | get /v2/account_tiers.json | `ids`, `name`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | AccountTier[] | yes | List Account Tiers |
+| GET | `/v2/account_tiers/{id}.json` | get /v2/account_tiers/{id}.json | `id`* | AccountTier | yes | Fetch an account tier |
+| POST | `/v2/account_upserts.json` | post /v2/account_upserts.json | body: object | AccountUpsert |  | Upsert an account |
+| GET | `/v2/accounts.json` | get /v2/accounts.json | `ids`, `crm_id`, `tag`, `tag_id`, `created_at`, `updated_at`, `domain`, `website`, `archived`, `name`, `account_stage_id`, `account_tier_id`, `owner_id`, `owner_is_active`, `last_contacted`, `custom_fields`, `industry`, `country`, `state`, `city`, `owner_crm_id`, `locales`, `user_relationships`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Account[] | yes | List accounts |
+| POST | `/v2/accounts.json` | post /v2/accounts.json | body*: object | Account |  | Create an account |
+| GET | `/v2/accounts/{id}.json` | get /v2/accounts/{id}.json | `id`* | Account | yes | Fetch an account |
+| PUT | `/v2/accounts/{id}.json` | put /v2/accounts/{id}.json | `id`*, body*: object | Account |  | Update an existing Account |
+| DELETE | `/v2/accounts/{id}.json` | delete /v2/accounts/{id}.json | `id`* | — |  | Delete an account |
+| GET | `/v2/action_details/call_instructions.json` | get /v2/action_details/call_instructions.json | `ids`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | CallInstruction[] | yes | List call instructions |
+| GET | `/v2/action_details/call_instructions/{id}.json` | get /v2/action_details/call_instructions/{id}.json | `id`* | CallInstruction | yes | Fetch a call instructions |
+| GET | `/v2/actions.json` | get /v2/actions.json | `ids`, `step_id`, `type`, `due_on`, `user_guid`, `person_id`, `cadence_id`, `multitouch_group_id`, `updated_at`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Action[] | yes | List actions |
+| GET | `/v2/actions/{id}.json` | get /v2/actions/{id}.json | `id`* | Action | yes | Fetch an action |
+| POST | `/v2/activities.json` | post /v2/activities.json | body: object | Activity |  | Create an activity |
+| GET | `/v2/activities/calls.json` | get /v2/activities/calls.json | `ids`, `created_at`, `updated_at`, `user_guid`, `person_id`, `sentiment`, `disposition`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Call[] | yes | List calls |
+| POST | `/v2/activities/calls.json` | post /v2/activities/calls.json | body*: object | Call |  | Create a call |
+| GET | `/v2/activities/calls/{id}.json` | get /v2/activities/calls/{id}.json | `id`* | Call | yes | Fetch a call |
+| GET | `/v2/activities/emails.json` | get /v2/activities/emails.json | `ids`, `updated_at`, `bounced`, `crm_activity_id`, `action_id`, `user_id`, `status`, `cadence_id`, `step_id`, `one_off`, `scoped_fields`, `person_id`, `email_addresses`, `personalization`, `sent_at`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Email[] | yes | List emails |
+| GET | `/v2/activities/emails/{id}.json` | get /v2/activities/emails/{id}.json | `id`* | Email | yes | Fetch an email |
+| GET | `/v2/activity_histories` | get /v2/activity_histories | `per_page`, `page`, `include_paging_counts`, `sort_by`, `sort_direction`, `type`, `_resource`, `occurred_at`, `pinned`, `resource_type`, `resource_id`, `updated_at`, `user_guid` | ActivityHistory | yes | List Past Activities |
+| GET | `/v2/bulk_jobs` | get /v2/bulk_jobs | `state`, `id`, `per_page` | BulkJob[] | yes | List bulk jobs |
+| POST | `/v2/bulk_jobs` | post /v2/bulk_jobs | body: object | BulkJob |  | Create a bulk job |
+| GET | `/v2/bulk_jobs/{bulk_jobs_id}/job_data` | get /v2/bulk_jobs/{bulk_jobs_id}/job_data | `bulk_jobs_id`*, `status`, `id`, `per_page` | BulkJobResult[] | yes | List job data for a bulk job |
+| POST | `/v2/bulk_jobs/{bulk_jobs_id}/job_data` | post /v2/bulk_jobs/{bulk_jobs_id}/job_data | `bulk_jobs_id`*, body*: object | JobDataCreationResult |  | Create job data for a bulk job |
+| GET | `/v2/bulk_jobs/{bulk_jobs_id}/results` | get /v2/bulk_jobs/{bulk_jobs_id}/results | `bulk_jobs_id`*, `status`, `id`, `per_page` | BulkJobResult[] | yes | List job data for a completed bulk job. |
+| GET | `/v2/bulk_jobs/{id}` | get /v2/bulk_jobs/{id} | `id`* | BulkJob | yes | Fetch a bulk job |
+| PUT | `/v2/bulk_jobs/{id}` | put /v2/bulk_jobs/{id} | `id`*, body: object | BulkJob |  | Update a bulk job |
+| GET | `/v2/cadence_exports/{id}.json` | get /v2/cadence_exports/{id}.json | `id`* | CadenceExport | yes | Export a cadence |
+| POST | `/v2/cadence_imports.json` | post /v2/cadence_imports.json | body: object | CadenceImport |  | Import cadences from JSON |
+| GET | `/v2/cadence_memberships.json` | get /v2/cadence_memberships.json | `ids`, `person_id`, `cadence_id`, `updated_at`, `currently_on_cadence`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | CadenceMembership[] | yes | List cadence memberships |
+| POST | `/v2/cadence_memberships.json` | post /v2/cadence_memberships.json | `person_id`*, `cadence_id`*, `user_id`, `step_id` | CadenceMembership |  | Create a cadence membership |
+| GET | `/v2/cadence_memberships/{id}.json` | get /v2/cadence_memberships/{id}.json | `id`* | CadenceMembership | yes | Fetch a cadence membership |
+| DELETE | `/v2/cadence_memberships/{id}.json` | delete /v2/cadence_memberships/{id}.json | `id`* | — |  | Delete a cadence membership |
+| GET | `/v2/cadences.json` | get /v2/cadences.json | `ids`, `updated_at`, `team_cadence`, `shared`, `owned_by_guid`, `people_addable`, `name`, `group_ids`, `archived`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Cadence[] | yes | List cadences |
+| GET | `/v2/cadences/{id}.json` | get /v2/cadences/{id}.json | `id`* | Cadence | yes | Fetch a cadence |
+| GET | `/v2/calendar/events` | get /v2/calendar/events | `per_page`, `page`, `include_paging_counts`, `sort_by`, `sort_direction`, `start_time`, `end_time`, `user_guid` | CalendarEvent[] | yes | List calendar events |
+| POST | `/v2/calendar/events/upsert` | post /v2/calendar/events/upsert | body*: object | CalendarEvent |  | Upsert a calendar event |
+| GET | `/v2/call_data_records.json` | get /v2/call_data_records.json | `ids`, `has_call`, `created_at`, `updated_at`, `user_guid`, `person_id`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | CallDataRecord[] | yes | List call data records |
+| GET | `/v2/call_data_records/{id}.json` | get /v2/call_data_records/{id}.json | `id`* | CallDataRecord | yes | Fetch a call data record |
+| GET | `/v2/call_dispositions.json` | get /v2/call_dispositions.json | `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | CallDisposition[] | yes | List call dispositions |
+| GET | `/v2/call_sentiments.json` | get /v2/call_sentiments.json | `name`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | CallSentiment[] | yes | List call sentiments |
+| POST | `/v2/conversations/calls` | post /v2/conversations/calls | body*: object | ConversationsCall |  | Create Conversations Call |
+| GET | `/v2/crm_activities.json` | get /v2/crm_activities.json | `ids`, `updated_at`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | CrmActivity[] | yes | List crm activities |
+| GET | `/v2/crm_activities/{id}.json` | get /v2/crm_activities/{id}.json | `id`* | CrmActivity | yes | Fetch a crm activity |
+| GET | `/v2/crm_activity_fields.json` | get /v2/crm_activity_fields.json | `source`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | CrmActivityField[] | yes | List crm activity fields |
+| GET | `/v2/crm_users.json` | get /v2/crm_users.json | `ids`, `crm_id`, `user_id`, `user_guid`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts`, `sort_by`, `sort_direction` | CrmUser[] | yes | List crm users |
+| GET | `/v2/custom_fields.json` | get /v2/custom_fields.json | `ids`, `field_type`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | CustomField[] | yes | List custom fields |
+| POST | `/v2/custom_fields.json` | post /v2/custom_fields.json | body*: object | CustomField |  | Create a custom field |
+| GET | `/v2/custom_fields/{id}.json` | get /v2/custom_fields/{id}.json | `id`* | CustomField | yes | Fetch a custom field |
+| PUT | `/v2/custom_fields/{id}.json` | put /v2/custom_fields/{id}.json | `id`*, body: object | CustomField |  | Update a custom field |
+| DELETE | `/v2/custom_fields/{id}.json` | delete /v2/custom_fields/{id}.json | `id`* | — |  | Delete a custom field |
+| GET | `/v2/email_template_attachments.json` | get /v2/email_template_attachments.json | `ids`, `email_template_id`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | EmailTemplateAttachment[] | yes | List email template attachments |
+| GET | `/v2/email_templates.json` | get /v2/email_templates.json | `ids`, `updated_at`, `linked_to_team_template`, `search`, `tag_ids`, `tag`, `filter_by_owner`, `group_id`, `include_cadence_templates`, `include_archived_templates`, `cadence_id`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | EmailTemplate[] | yes | List email templates |
+| GET | `/v2/email_templates/{id}.json` | get /v2/email_templates/{id}.json | `id`*, `include_signature` | EmailTemplate | yes | Fetch an email template |
+| POST | `/v2/external_emails.json` | post /v2/external_emails.json | body*: object | ExternalEmail |  | Create an External Email |
+| GET | `/v2/groups.json` | get /v2/groups.json | `ids`, `sort_by`, `sort_direction` | Group[] | yes | List groups |
+| GET | `/v2/groups/{id}.json` | get /v2/groups/{id}.json | `id`* | Group | yes | Fetch a group |
+| GET | `/v2/imports.json` | get /v2/imports.json | `ids`, `user_ids`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Import[] | yes | List imports |
+| POST | `/v2/imports.json` | post /v2/imports.json | body: object | Import |  | Create an import |
+| GET | `/v2/imports/{id}.json` | get /v2/imports/{id}.json | `id`* | Import | yes | Fetch an import |
+| PUT | `/v2/imports/{id}.json` | put /v2/imports/{id}.json | `id`*, body: object | Import |  | Update an import |
+| DELETE | `/v2/imports/{id}.json` | delete /v2/imports/{id}.json | `id`*, `undo` | — |  | Delete an import |
+| POST | `/v2/live_website_tracking_parameters.json` | post /v2/live_website_tracking_parameters.json | body*: object | LiveWebsiteTrackingParameter |  | Create an Live Website Tracking Parameter |
+| GET | `/v2/me.json` | get /v2/me.json | — | User | yes | Fetch current user |
+| GET | `/v2/meetings.json` | get /v2/meetings.json | `ids`, `status`, `person_id`, `account_id`, `person_ids`, `event_ids`, `i_cal_uids`, `task_ids`, `include_meetings_settings`, `start_time`, `user_guids`, `show_deleted`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Meeting[] | yes | List meetings |
+| POST | `/v2/meetings/settings/searches.json` | post /v2/meetings/settings/searches.json | `user_guids`, `updated_at`, `calendar_type`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | MeetingSetting[] |  | List meeting settings |
+| PUT | `/v2/meetings/settings/{id}.json` | put /v2/meetings/settings/{id}.json | `id`*, body: object | MeetingSetting |  | Update a meeting setting |
+| PUT | `/v2/meetings/{id}.json` | put /v2/meetings/{id}.json | `id`*, body: object | Meeting |  | Update a meeting |
+| GET | `/v2/mime_email_payloads/{id}.json` | get /v2/mime_email_payloads/{id}.json | `id`* | MimeEmailPayload | yes | Fetch the MIME content for email |
+| GET | `/v2/notes.json` | get /v2/notes.json | `associated_with_type`, `associated_with_id`, `updated_at`, `ids`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Note[] | yes | List notes |
+| POST | `/v2/notes.json` | post /v2/notes.json | body*: object | Note |  | Create a note |
+| GET | `/v2/notes/{id}.json` | get /v2/notes/{id}.json | `id`* | Note | yes | Fetch a note |
+| PUT | `/v2/notes/{id}.json` | put /v2/notes/{id}.json | `id`*, body*: object | Person |  | Update a note |
+| DELETE | `/v2/notes/{id}.json` | delete /v2/notes/{id}.json | `id`* | — |  | Delete a note |
+| POST | `/v2/ongoing_actions.json` | post /v2/ongoing_actions.json | body: object | Action |  | Create an ongoing action |
+| GET | `/v2/pending_emails.json` | get /v2/pending_emails.json | `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | PendingEmail[] | yes | Fetches a list of emails ready to be sent by an external email service. Only emails sent with an External Email Client will appear here. |
+| PUT | `/v2/pending_emails/{id}.json` | put /v2/pending_emails/{id}.json | `id`*, body*: object | PendingEmail |  | Updates the status of an email sent by an External Email Client |
+| GET | `/v2/people.json` | get /v2/people.json | `ids`, `updated_at`, `email_addresses`, `owned_by_guid`, `person_stage_id`, `crm_id`, `owner_crm_id`, `do_not_contact`, `can_email`, `can_call`, `can_text`, `account_id`, `custom_fields`, `import_id`, `job_seniority`, `tag_id`, `owner_is_active`, `cadence_id`, `starred_by_guid`, `replied`, `bounced`, `success`, `eu_resident`, `title`, `country`, `state`, `city`, `last_contacted`, `created_at`, `new`, `phone_number`, `locales`, `owner_id`, `_query`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Person[] | yes | List people |
+| POST | `/v2/people.json` | post /v2/people.json | body: object | Person |  | Create a person |
+| GET | `/v2/people/{id}.json` | get /v2/people/{id}.json | `id`* | Person | yes | Fetch a person |
+| PUT | `/v2/people/{id}.json` | put /v2/people/{id}.json | `id`*, body: object | Person |  | Update a person |
+| DELETE | `/v2/people/{id}.json` | delete /v2/people/{id}.json | `id`* | — |  | Delete a person |
+| GET | `/v2/person_stages.json` | get /v2/person_stages.json | `ids`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | PersonStage[] | yes | List person stages |
+| POST | `/v2/person_stages.json` | post /v2/person_stages.json | body*: object | PersonStage |  | Create a person stage |
+| GET | `/v2/person_stages/{id}.json` | get /v2/person_stages/{id}.json | `id`* | PersonStage | yes | Fetch a person stage |
+| PUT | `/v2/person_stages/{id}.json` | put /v2/person_stages/{id}.json | `id`*, body*: object | PersonStage |  | Update a person stage |
+| DELETE | `/v2/person_stages/{id}.json` | delete /v2/person_stages/{id}.json | `id`* | — |  | Delete an person stage |
+| POST | `/v2/person_upserts.json` | post /v2/person_upserts.json | body: object | PersonUpsert |  | Upsert a person |
+| GET | `/v2/phone_number_assignments.json` | get /v2/phone_number_assignments.json | `ids`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | PhoneNumberAssignment[] | yes | List phone number assignments |
+| GET | `/v2/phone_number_assignments/{id}.json` | get /v2/phone_number_assignments/{id}.json | `id`* | PhoneNumberAssignment | yes | Fetch a phone number assignment |
+| GET | `/v2/phone_numbers/caller_ids.json` | get /v2/phone_numbers/caller_ids.json | `phone_number`* | CallerId[] | yes | List caller ids |
+| GET | `/v2/phone_numbers/recording_settings/{id}.json` | get /v2/phone_numbers/recording_settings/{id}.json | `id`* | RecordingSetting | yes | Fetch recording setting |
+| GET | `/v2/saved_list_views.json` | get /v2/saved_list_views.json | `ids`, `view`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | SavedListView[] | yes | List saved list views |
+| POST | `/v2/saved_list_views.json` | post /v2/saved_list_views.json | body*: object | SavedListView |  | Create a saved list view |
+| GET | `/v2/saved_list_views/{id}.json` | get /v2/saved_list_views/{id}.json | `id`* | SavedListView | yes | Fetch a saved list view |
+| PUT | `/v2/saved_list_views/{id}.json` | put /v2/saved_list_views/{id}.json | `id`*, body: object | SavedListView |  | Update a saved list view |
+| DELETE | `/v2/saved_list_views/{id}.json` | delete /v2/saved_list_views/{id}.json | `id`* | — |  | Delete a saved list view |
+| GET | `/v2/steps.json` | get /v2/steps.json | `ids`, `cadence_id`, `type`, `has_due_actions`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Step[] | yes | List steps |
+| GET | `/v2/steps/{id}.json` | get /v2/steps/{id}.json | `id`* | Step | yes | Fetch a step |
+| GET | `/v2/successes.json` | get /v2/successes.json | `ids`, `person_id`, `updated_at`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Success[] | yes | List successes |
+| GET | `/v2/tags.json` | get /v2/tags.json | `search`, `ids`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Tag[] | yes | List team tags |
+| GET | `/v2/tasks.json` | get /v2/tasks.json | `ids`, `user_id`, `person_id`, `account_id`, `current_state`, `task_type`, `time_interval_filter`, `idempotency_key`, `locale`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | Task[] | yes | List tasks |
+| POST | `/v2/tasks.json` | post /v2/tasks.json | body*: object | Task |  | Create a Task |
+| GET | `/v2/tasks/{id}.json` | get /v2/tasks/{id}.json | `id`* | Step | yes | Fetch a task |
+| PUT | `/v2/tasks/{id}.json` | put /v2/tasks/{id}.json | `id`*, body: object | Task |  | Update a Task |
+| GET | `/v2/team.json` | get /v2/team.json | — | Team | yes | Fetch current team |
+| GET | `/v2/team_template_attachments.json` | get /v2/team_template_attachments.json | `ids`, `team_template_id`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | TeamTemplateAttachment[] | yes | List team template attachments |
+| GET | `/v2/team_templates.json` | get /v2/team_templates.json | `ids`, `updated_at`, `search`, `tag_ids`, `tag`, `include_archived_templates`, `sort_by`, `sort_direction`, `per_page`, `page`, `include_paging_counts`, `limit_paging_counts` | TeamTemplate[] | yes | List team templates |
+| GET | `/v2/team_templates/{id}.json` | get /v2/team_templates/{id}.json | `id`*, `include_signature` | TeamTemplate | yes | Fetch a team template |
+| POST | `/v2/third_party_live_feed_items` | post /v2/third_party_live_feed_items | body*: object | LiveFeedItem[] |  | Create a live feed item |
+| GET | `/v2/users.json` | get /v2/users.json | `ids`, `guid`, `group_id`, `role_id`, `search`, `active`, `visible_only`, `per_page`, `page`, `include_paging_counts`, `has_crm_user`, `work_country`, `sort_by`, `sort_direction` | User[] | yes | List users |
+| GET | `/v2/users/{id}.json` | get /v2/users/{id}.json | `id`* | User | yes | Fetch a user |
+| GET | `/v2/webhook_subscriptions` | get /v2/webhook_subscriptions | `enabled` | Subscription[] | yes | List webhook subscriptions |
+| POST | `/v2/webhook_subscriptions` | post /v2/webhook_subscriptions | body*: object | Subscription |  | Create a webhook subscription |
+| GET | `/v2/webhook_subscriptions/{id}` | get /v2/webhook_subscriptions/{id} | `id`* | Subscription | yes | Fetch a webhook subscription |
+| PUT | `/v2/webhook_subscriptions/{id}` | put /v2/webhook_subscriptions/{id} | `id`*, body: object | Subscription |  | Update a webhook subscription |
+| DELETE | `/v2/webhook_subscriptions/{id}` | delete /v2/webhook_subscriptions/{id} | `id`* | — |  | Delete a webhook subscription |

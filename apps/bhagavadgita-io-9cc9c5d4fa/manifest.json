@@ -33,6 +33,31 @@
         "from": "bhagavadgita-io-9cc9c5d4fa",
         "kind": "EXPOSES",
         "to": "operation:post:/auth/oauth/token"
+      },
+      {
+        "from": "operation:get:/api/v1/chapters",
+        "kind": "RETURNS",
+        "to": "schema:ChapterSchema"
+      },
+      {
+        "from": "operation:get:/api/v1/chapters/{chapter_number}",
+        "kind": "RETURNS",
+        "to": "schema:ChapterSchema"
+      },
+      {
+        "from": "operation:get:/api/v1/chapters/{chapter_number}/verses",
+        "kind": "RETURNS",
+        "to": "schema:VerseSchema"
+      },
+      {
+        "from": "operation:get:/api/v1/chapters/{chapter_number}/verses/{verse_number}",
+        "kind": "RETURNS",
+        "to": "schema:VerseSchema"
+      },
+      {
+        "from": "operation:get:/api/v1/verses",
+        "kind": "RETURNS",
+        "to": "schema:VerseSchema"
       }
     ],
     "nodes": [
@@ -42,58 +67,329 @@
       },
       {
         "deprecated": false,
+        "description": "Get a list of all the 18 Chapters of the Bhagavad Gita.<br/>",
         "id": "operation:get:/api/v1/chapters",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/chapters",
+        "parameters": [
+          {
+            "description": "Your app's access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Language to query.",
+            "enum": [
+              "hi"
+            ],
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/chapters",
         "pointer": "#/paths/~1api~1v1~1chapters/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ChapterSchema"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all the 18 Chapters of the Bhagavad Gita."
+        "summary": "Get all the 18 Chapters of the Bhagavad Gita.",
+        "tags": [
+          "chapter"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get information about a specific chapter from the Bhagavad Gita.<br/>",
         "id": "operation:get:/api/v1/chapters/{chapter_number}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/chapters/{chapter_number}",
+        "parameters": [
+          {
+            "description": "Your app's access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Which Chapter Number to filter?",
+            "enum": [
+              1,
+              2,
+              3
+            ],
+            "in": "path",
+            "name": "chapter_number",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Language to query.",
+            "enum": [
+              "hi"
+            ],
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/chapters/{chapter_number}",
         "pointer": "#/paths/~1api~1v1~1chapters~1{chapter_number}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ChapterSchema"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a specific chapter from the Bhagavad Gita."
+        "summary": "Get a specific chapter from the Bhagavad Gita.",
+        "tags": [
+          "chapter"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all Verses from a particular Chapter.<br/>",
         "id": "operation:get:/api/v1/chapters/{chapter_number}/verses",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/chapters/{chapter_number}/verses",
+        "parameters": [
+          {
+            "description": "Your app's access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Which Chapter Number to filter?",
+            "enum": [
+              1,
+              2,
+              3
+            ],
+            "in": "path",
+            "name": "chapter_number",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Language to query.",
+            "enum": [
+              "hi"
+            ],
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/chapters/{chapter_number}/verses",
         "pointer": "#/paths/~1api~1v1~1chapters~1{chapter_number}~1verses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VerseSchema"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all the Verses from a Chapter."
+        "summary": "Get all the Verses from a Chapter.",
+        "tags": [
+          "verse"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a specific verse from a specific chapter.<br/>",
         "id": "operation:get:/api/v1/chapters/{chapter_number}/verses/{verse_number}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/chapters/{chapter_number}/verses/{verse_number}",
+        "parameters": [
+          {
+            "description": "Your app's access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Which Chapter Number to filter?",
+            "enum": [
+              1,
+              2,
+              3
+            ],
+            "in": "path",
+            "name": "chapter_number",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "default": 1,
+            "description": "Which Verse Number to filter?",
+            "enum": [
+              1,
+              2,
+              3
+            ],
+            "in": "path",
+            "name": "verse_number",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Language to query.",
+            "enum": [
+              "hi"
+            ],
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/chapters/{chapter_number}/verses/{verse_number}",
         "pointer": "#/paths/~1api~1v1~1chapters~1{chapter_number}~1verses~1{verse_number}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VerseSchema"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "404"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a particular verse from a chapter."
+        "summary": "Get a particular verse from a chapter.",
+        "tags": [
+          "verse"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get a list of all Verses.<br/>",
         "id": "operation:get:/api/v1/verses",
         "kind": "operation",
         "method": "get",
         "name": "get /api/v1/verses",
+        "parameters": [
+          {
+            "description": "Your app's access token.",
+            "in": "query",
+            "name": "access_token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Language to query.",
+            "enum": [
+              "hi"
+            ],
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/v1/verses",
         "pointer": "#/paths/~1api~1v1~1verses/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VerseSchema"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all the Verses."
+        "summary": "Get all the Verses.",
+        "tags": [
+          "verse"
+        ]
       },
       {
         "deprecated": false,
@@ -103,18 +399,48 @@
         "name": "post /auth/oauth/token",
         "path": "/auth/oauth/token",
         "pointer": "#/paths/~1auth~1oauth~1token/post",
+        "request": {
+          "content_types": [
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "402"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Send client credentials and get an access token."
+        "summary": "Send client credentials and get an access token.",
+        "tags": [
+          "auth"
+        ]
       },
       {
         "id": "schema:ChapterSchema",
         "kind": "schema",
-        "name": "ChapterSchema"
+        "name": "ChapterSchema",
+        "type": "object"
       },
       {
         "id": "schema:VerseSchema",
         "kind": "schema",
-        "name": "VerseSchema"
+        "name": "VerseSchema",
+        "type": "object"
       }
     ]
   },

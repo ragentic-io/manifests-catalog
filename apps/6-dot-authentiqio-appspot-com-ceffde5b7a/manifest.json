@@ -7,17 +7,12 @@
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/key"
-      },
-      {
-        "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
-        "kind": "EXPOSES",
         "to": "operation:post:/key"
       },
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/key/{PK}"
+        "to": "operation:delete:/key"
       },
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
@@ -27,7 +22,7 @@
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
         "kind": "EXPOSES",
-        "to": "operation:head:/key/{PK}"
+        "to": "operation:put:/key/{PK}"
       },
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
@@ -37,7 +32,12 @@
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
         "kind": "EXPOSES",
-        "to": "operation:put:/key/{PK}"
+        "to": "operation:delete:/key/{PK}"
+      },
+      {
+        "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
+        "kind": "EXPOSES",
+        "to": "operation:head:/key/{PK}"
       },
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
@@ -52,17 +52,12 @@
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
         "kind": "EXPOSES",
-        "to": "operation:delete:/scope/{job}"
-      },
-      {
-        "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
-        "kind": "EXPOSES",
         "to": "operation:get:/scope/{job}"
       },
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
         "kind": "EXPOSES",
-        "to": "operation:head:/scope/{job}"
+        "to": "operation:put:/scope/{job}"
       },
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
@@ -72,7 +67,37 @@
       {
         "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
         "kind": "EXPOSES",
-        "to": "operation:put:/scope/{job}"
+        "to": "operation:delete:/scope/{job}"
+      },
+      {
+        "from": "6-dot-authentiqio-appspot-com-ceffde5b7a",
+        "kind": "EXPOSES",
+        "to": "operation:head:/scope/{job}"
+      },
+      {
+        "from": "operation:post:/key",
+        "kind": "ACCEPTS",
+        "to": "schema:AuthentiqID"
+      },
+      {
+        "from": "operation:put:/key/{PK}",
+        "kind": "ACCEPTS",
+        "to": "schema:AuthentiqID"
+      },
+      {
+        "from": "operation:post:/key/{PK}",
+        "kind": "ACCEPTS",
+        "to": "schema:AuthentiqID"
+      },
+      {
+        "from": "operation:post:/login",
+        "kind": "ACCEPTS",
+        "to": "schema:PushToken"
+      },
+      {
+        "from": "operation:post:/scope",
+        "kind": "ACCEPTS",
+        "to": "schema:Claims"
       }
     ],
     "nodes": [
@@ -82,177 +107,677 @@
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/key",
-        "kind": "operation",
-        "method": "delete",
-        "name": "key_revoke_nosecret",
-        "path": "/key",
-        "pointer": "#/paths/~1key/delete",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Register a new ID `JWT(sub, devtoken)` v5: `JWT(sub, pk, devtoken, ...)` See: https://github.com/skion/authentiq/wiki/JWT-Examples",
         "id": "operation:post:/key",
         "kind": "operation",
         "method": "post",
         "name": "key_register",
         "path": "/key",
         "pointer": "#/paths/~1key/post",
+        "request": {
+          "content_types": [
+            "application/jwt"
+          ],
+          "required": true,
+          "type": "AuthentiqID"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "key",
+          "post"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/key/{PK}",
+        "description": "Revoke an Authentiq ID using email & phone.",
+        "id": "operation:delete:/key",
         "kind": "operation",
         "method": "delete",
-        "name": "key_revoke",
-        "path": "/key/{PK}",
-        "pointer": "#/paths/~1key~1{PK}/delete",
+        "name": "key_revoke_nosecret",
+        "parameters": [
+          {
+            "description": "primary email associated to Key (ID)",
+            "in": "query",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "primary phone number, international representation",
+            "in": "query",
+            "name": "phone",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "verification code sent by email",
+            "in": "query",
+            "name": "code",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/key",
+        "pointer": "#/paths/~1key/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "key",
+          "delete"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get public details of an Authentiq ID.",
         "id": "operation:get:/key/{PK}",
         "kind": "operation",
         "method": "get",
         "name": "key_retrieve",
+        "parameters": [
+          {
+            "description": "Public Signing Key - Authentiq ID (43 chars)",
+            "in": "path",
+            "name": "PK",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/key/{PK}",
         "pointer": "#/paths/~1key~1{PK}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "410",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "key",
+          "get"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:head:/key/{PK}",
-        "kind": "operation",
-        "method": "head",
-        "name": "head /key/{PK}",
-        "path": "/key/{PK}",
-        "pointer": "#/paths/~1key~1{PK}/head",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/key/{PK}",
-        "kind": "operation",
-        "method": "post",
-        "name": "key_update",
-        "path": "/key/{PK}",
-        "pointer": "#/paths/~1key~1{PK}/post",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "Update Authentiq ID by replacing the object.",
         "id": "operation:put:/key/{PK}",
         "kind": "operation",
         "method": "put",
         "name": "key_bind",
+        "parameters": [
+          {
+            "description": "Public Signing Key - Authentiq ID (43 chars)",
+            "in": "path",
+            "name": "PK",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/key/{PK}",
         "pointer": "#/paths/~1key~1{PK}/put",
+        "request": {
+          "content_types": [
+            "application/jwt"
+          ],
+          "required": true,
+          "type": "AuthentiqID"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "key",
+          "put"
+        ]
       },
       {
         "deprecated": false,
+        "description": "update properties of an Authentiq ID.",
+        "id": "operation:post:/key/{PK}",
+        "kind": "operation",
+        "method": "post",
+        "name": "key_update",
+        "parameters": [
+          {
+            "description": "Public Signing Key - Authentiq ID (43 chars)",
+            "in": "path",
+            "name": "PK",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/key/{PK}",
+        "pointer": "#/paths/~1key~1{PK}/post",
+        "request": {
+          "content_types": [
+            "application/jwt"
+          ],
+          "required": true,
+          "type": "AuthentiqID"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "key",
+          "post"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Revoke an Identity (Key) with a revocation secret",
+        "id": "operation:delete:/key/{PK}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "key_revoke",
+        "parameters": [
+          {
+            "description": "Public Signing Key - Authentiq ID (43 chars)",
+            "in": "path",
+            "name": "PK",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "revokation secret",
+            "in": "query",
+            "name": "secret",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/key/{PK}",
+        "pointer": "#/paths/~1key~1{PK}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "key",
+          "delete"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "HEAD info on Authentiq ID",
+        "id": "operation:head:/key/{PK}",
+        "kind": "operation",
+        "method": "head",
+        "name": "head /key/{PK}",
+        "parameters": [
+          {
+            "description": "Public Signing Key - Authentiq ID (43 chars)",
+            "in": "path",
+            "name": "PK",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/key/{PK}",
+        "pointer": "#/paths/~1key~1{PK}/head",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "410",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "key",
+          "head"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "push sign-in request See: https://github.com/skion/authentiq/wiki/JWT-Examples",
         "id": "operation:post:/login",
         "kind": "operation",
         "method": "post",
         "name": "push_login_request",
+        "parameters": [
+          {
+            "description": "URI App will connect to",
+            "in": "query",
+            "name": "callback",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/login",
         "pointer": "#/paths/~1login/post",
+        "request": {
+          "content_types": [
+            "application/jwt"
+          ],
+          "required": true,
+          "type": "PushToken"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "login",
+          "post"
+        ]
       },
       {
         "deprecated": false,
+        "description": "scope verification request See: https://github.com/skion/authentiq/wiki/JWT-Examples",
         "id": "operation:post:/scope",
         "kind": "operation",
         "method": "post",
         "name": "sign_request",
+        "parameters": [
+          {
+            "description": "test only mode, using test issuer",
+            "in": "query",
+            "name": "test",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/scope",
         "pointer": "#/paths/~1scope/post",
+        "request": {
+          "content_types": [
+            "application/jwt"
+          ],
+          "required": true,
+          "type": "Claims"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "object"
+          },
+          {
+            "status": "429",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "scope",
+          "post"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/scope/{job}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "sign_delete",
-        "path": "/scope/{job}",
-        "pointer": "#/paths/~1scope~1{job}/delete",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "get the status / current content of a verification job",
         "id": "operation:get:/scope/{job}",
         "kind": "operation",
         "method": "get",
         "name": "sign_retrieve",
+        "parameters": [
+          {
+            "description": "Job ID (20 chars)",
+            "in": "path",
+            "name": "job",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scope/{job}",
         "pointer": "#/paths/~1scope~1{job}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "scope",
+          "get"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:head:/scope/{job}",
-        "kind": "operation",
-        "method": "head",
-        "name": "sign_retrieve_head",
-        "path": "/scope/{job}",
-        "pointer": "#/paths/~1scope~1{job}/head",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/scope/{job}",
-        "kind": "operation",
-        "method": "post",
-        "name": "sign_confirm",
-        "path": "/scope/{job}",
-        "pointer": "#/paths/~1scope~1{job}/post",
-        "security": [],
-        "summary": null
-      },
-      {
-        "deprecated": false,
+        "description": "authority updates a JWT with its signature See: https://github.com/skion/authentiq/wiki/JWT-Examples",
         "id": "operation:put:/scope/{job}",
         "kind": "operation",
         "method": "put",
         "name": "sign_update",
+        "parameters": [
+          {
+            "description": "Job ID (20 chars)",
+            "in": "path",
+            "name": "job",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/scope/{job}",
         "pointer": "#/paths/~1scope~1{job}/put",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "scope",
+          "put"
+        ]
       },
       {
+        "deprecated": false,
+        "description": "this is a scope confirmation",
+        "id": "operation:post:/scope/{job}",
+        "kind": "operation",
+        "method": "post",
+        "name": "sign_confirm",
+        "parameters": [
+          {
+            "description": "Job ID (20 chars)",
+            "in": "path",
+            "name": "job",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/scope/{job}",
+        "pointer": "#/paths/~1scope~1{job}/post",
+        "responses": [
+          {
+            "status": "202",
+            "type": "object"
+          },
+          {
+            "status": "401",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "405",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "scope",
+          "post"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "delete a verification job",
+        "id": "operation:delete:/scope/{job}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "sign_delete",
+        "parameters": [
+          {
+            "description": "Job ID (20 chars)",
+            "in": "path",
+            "name": "job",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/scope/{job}",
+        "pointer": "#/paths/~1scope~1{job}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "scope",
+          "delete"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "HEAD to get the status of a verification job",
+        "id": "operation:head:/scope/{job}",
+        "kind": "operation",
+        "method": "head",
+        "name": "sign_retrieve_head",
+        "parameters": [
+          {
+            "description": "Job ID (20 chars)",
+            "in": "path",
+            "name": "job",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/scope/{job}",
+        "pointer": "#/paths/~1scope~1{job}/head",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "default",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
+        "security": [],
+        "summary": null,
+        "tags": [
+          "scope",
+          "head"
+        ]
+      },
+      {
+        "description": "Authentiq ID in JWT format, self-signed.",
         "id": "schema:AuthentiqID",
         "kind": "schema",
-        "name": "AuthentiqID"
+        "name": "AuthentiqID",
+        "type": "object"
       },
       {
+        "description": "Claim in JWT format, self- or issuer-signed.",
         "id": "schema:Claims",
         "kind": "schema",
-        "name": "Claims"
+        "name": "Claims",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
+        "description": "PushToken in JWT format, self-signed.",
         "id": "schema:PushToken",
         "kind": "schema",
-        "name": "PushToken"
+        "name": "PushToken",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_fulfillment.github.io_api_FDC_A
 
 | | |
 | --- | --- |
-| Signed bundle | `7cb5a761db413c2dbeda03a23c673b8783a013fdd9a52e5ff31f6759eb10ccad` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,18 +32,20 @@ logo: "https://api.apis.guru/v2/cache/logo/https_fulfillment.github.io_api_FDC_A
 
 ## Operations (13)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/accounting` | get-accounting | List Order Accounting |
-| GET | `/inventory` | get-inventory | List of Item Inventories |
-| POST | `/oauth/access_token` | post-oauth-access_token | Generate an Access Token |
-| GET | `/orders` | get-orders | List of Orders |
-| POST | `/orders` | post-orders | New Order |
-| DELETE | `/orders/{id}` | delete-orders-id | Cancel an Order |
-| GET | `/orders/{id}` | getOrder | Order Details |
-| PUT | `/orders/{id}/ship` | put-orders-id-ship | Ship an Order |
-| PUT | `/orders/{id}/status` | put-orders-id-status | Update Order Status |
-| GET | `/returns` | get-returns | List Returns |
-| PUT | `/returns` | put-returns | Inform us of an RMA |
-| GET | `/track` | get-track | Tracking |
-| GET | `/users/me` | get-users-me | About Me |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/accounting` | get-accounting | `fromDate`*, `toDate`*, `page`, `limit`, `warehouseIds`, `orderIds`, `hydrate`* | object | yes | List Order Accounting |
+| GET | `/inventory` | get-inventory | `page`, `limit`, `merchantIds`, `warehouseIds`, `externalSkuNames` | object | yes | List of Item Inventories |
+| POST | `/oauth/access_token` | post-oauth-access_token | body*: object | object |  | Generate an Access Token |
+| GET | `/orders` | get-orders | `fromDate`*, `toDate`*, `merchantIds`, `warehouseIds`, `page`, `limit`, `hydrate` | object | yes | List of Orders |
+| POST | `/orders` | post-orders | body*: object | object |  | New Order |
+| GET | `/orders/{id}` | getOrder | `id`*, `merchantId`, `hydrate` | — | yes | Order Details |
+| DELETE | `/orders/{id}` | delete-orders-id | `id`* | — |  | Cancel an Order |
+| PUT | `/orders/{id}/ship` | put-orders-id-ship | `id`*, body*: object | — |  | Ship an Order |
+| PUT | `/orders/{id}/status` | put-orders-id-status | `id`*, body*: object | — |  | Update Order Status |
+| GET | `/returns` | get-returns | `fromDate`*, `toDate`*, `page`, `limit` | object | yes | List Returns |
+| PUT | `/returns` | put-returns | body*: object | object |  | Inform us of an RMA |
+| GET | `/track` | get-track | `trackingNumber` | object | yes | Tracking |
+| GET | `/users/me` | get-users-me | — | object | yes | About Me |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_dracoongmbh_profile
 
 | | |
 | --- | --- |
-| Signed bundle | `28076499020e1402f2cb192ad14c7b0b3ac28879b4c7d9e73914e4410e6f5628` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,302 +34,304 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_dracoongmbh_profile
 
 282 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v4/auth/login` | login | Authenticate user (Login) |
-| GET | `/v4/auth/openid/login` | initiateOpenIdLogin | Initiate OpenID Connect authentication |
-| POST | `/v4/auth/openid/login` | completeOpenIdLogin | Complete OpenID Connect authentication |
-| GET | `/v4/auth/ping` | ping | Ping |
-| POST | `/v4/auth/recover_username` | recoverUserName | Recover username |
-| POST | `/v4/auth/reset_password` | requestPasswordReset | Request password reset |
-| GET | `/v4/auth/reset_password/{token}` | validateResetPasswordToken | Validate information for password reset |
-| PUT | `/v4/auth/reset_password/{token}` | resetPassword | Reset password |
-| GET | `/v4/config/info/defaults` | requestSystemDefaultsInfo | Request default values |
-| GET | `/v4/config/info/general` | requestGeneralSettingsInfo | Request general settings |
-| GET | `/v4/config/info/infrastructure` | requestInfrastructurePropertiesInfo | Request infrastructure properties |
-| GET | `/v4/config/info/notifications/channels` | requestNotificationChannelsInfo | Request list of notification channels |
-| GET | `/v4/config/info/policies/algorithms` | requestAlgorithms | Request algorithms |
-| GET | `/v4/config/info/policies/classifications` | requestClassificationPoliciesConfigInfo | Request classification policies |
-| GET | `/v4/config/info/policies/guest_users` | requestGuestUsersPoliciesConfigInfo | Request guest users policies |
-| GET | `/v4/config/info/policies/passwords` | requestPasswordPoliciesConfigInfo | Request password policies |
-| GET | `/v4/config/info/product_packages` | requestProductPackages | Request list of product packages |
-| GET | `/v4/config/info/product_packages/current` | requestCurrentProductPackages | Request list of currently enabled product packages |
-| GET | `/v4/config/info/s3_tags` | requestS3TagsInfo | Request list of configured S3 tags |
-| GET | `/v4/config/settings` | requestSystemSettings | Request system settings |
-| PUT | `/v4/config/settings` | updateSystemSettings | Update system settings |
-| GET | `/v4/downloads/avatar/{user_id}/{uuid}` | downloadAvatar | Download avatar |
-| GET | `/v4/downloads/zip/{token}` | downloadZipArchiveViaToken | Download ZIP archive |
-| GET | `/v4/downloads/{token}` | downloadFileViaToken | Download file |
-| HEAD | `/v4/downloads/{token}` | downloadFileViaToken_1 | Download file |
-| GET | `/v4/eventlog/audits/node_info` | requestAuditNodeInfo | Request nodes |
-| GET | `/v4/eventlog/audits/nodes` | requestAuditNodeUserData | Request node assigned users with permissions |
-| GET | `/v4/eventlog/events` | requestLogEventsAsJson | Request system events |
-| GET | `/v4/eventlog/operations` | requestLogOperations | Request allowed Log Operations |
-| GET | `/v4/groups` | requestGroups | Request list of user groups |
-| POST | `/v4/groups` | createGroup | Create new user group |
-| DELETE | `/v4/groups/{group_id}` | removeGroup | Remove user group |
-| GET | `/v4/groups/{group_id}` | requestGroup | Request user group |
-| PUT | `/v4/groups/{group_id}` | updateGroup | Update user group's metadata |
-| GET | `/v4/groups/{group_id}/last_admin_rooms` | requestLastAdminRoomsGroups | Request rooms where the group is defined as last admin group |
-| GET | `/v4/groups/{group_id}/roles` | requestGroupRoles | Request list of roles assigned to the group |
-| GET | `/v4/groups/{group_id}/rooms` | requestGroupRooms | Request rooms granted to the group or / and rooms that can be granted |
-| DELETE | `/v4/groups/{group_id}/users` | removeGroupMembers | Remove group members |
-| GET | `/v4/groups/{group_id}/users` | requestGroupMembers | Request group member users or / and users who can become a member |
-| POST | `/v4/groups/{group_id}/users` | addGroupMembers | Add group members |
-| GET | `/v4/internal/tenant/subscription_plan` | internalRequestSubscriptionPlan | Request subscription plan |
-| PUT | `/v4/internal/tenant/subscription_plan` | internalSetSubscriptionPlan | Set subscription plan |
-| DELETE | `/v4/nodes` | removeNodes | Remove nodes |
-| GET | `/v4/nodes` | requestNodes | Request list of nodes |
-| DELETE | `/v4/nodes/comments/{comment_id}` | removeNodeComment | Remove node comment |
-| PUT | `/v4/nodes/comments/{comment_id}` | updateNodeComment | Edit node comment |
-| DELETE | `/v4/nodes/deleted_nodes` | removeDeletedNodes | Remove nodes from recycle bin |
-| POST | `/v4/nodes/deleted_nodes/actions/restore` | restoreNodes | Restore deleted nodes |
-| GET | `/v4/nodes/deleted_nodes/{deleted_node_id}` | requestDeletedNode | Request deleted node |
-| PUT | `/v4/nodes/favorites` | updateFavorites | Mark or unmark a list of nodes (room, folder or file) as favorite |
-| PUT | `/v4/nodes/files` | updateFiles | Updates a list of file’s metadata |
-| POST | `/v4/nodes/files/keys` | setUserFileKeys | Set file keys for a list of users and files |
-| POST | `/v4/nodes/files/uploads` | createFileUploadChannel | Create new file upload channel |
-| DELETE | `/v4/nodes/files/uploads/{upload_id}` | cancelFileUpload | Cancel file upload |
-| GET | `/v4/nodes/files/uploads/{upload_id}` | requestUploadStatusFiles | Request status of S3 file upload |
-| POST | `/v4/nodes/files/uploads/{upload_id}` | uploadFileAsMultipart | Upload file |
-| PUT | `/v4/nodes/files/uploads/{upload_id}` | completeFileUpload | Complete file upload |
-| PUT | `/v4/nodes/files/uploads/{upload_id}/s3` | completeS3FileUpload | Complete S3 file upload |
-| POST | `/v4/nodes/files/uploads/{upload_id}/s3_urls` | generatePresignedUrlsFiles | Generate presigned URLs for S3 file upload |
-| GET | `/v4/nodes/files/versions/{reference_id}` | requestFileVersionList | Request list of file versions |
-| PUT | `/v4/nodes/files/{file_id}` | updateFile | Updates a file’s metadata |
-| GET | `/v4/nodes/files/{file_id}/data_room_file_key` | requestRoomRescueKey | Request room rescue key |
-| GET | `/v4/nodes/files/{file_id}/data_space_file_key` | requestSystemRescueKey | Request system rescue key |
-| POST | `/v4/nodes/files/{file_id}/downloads` | generateDownloadUrl | Generate download URL |
-| GET | `/v4/nodes/files/{file_id}/user_file_key` | requestUserFileKey | Request user's file key |
-| POST | `/v4/nodes/folders` | createFolder | Create new folder |
-| PUT | `/v4/nodes/folders/{folder_id}` | updateFolder | Updates folder’s metadata |
-| GET | `/v4/nodes/missingFileKeys` | requestMissingFileKeys | Request files without user's file key |
-| POST | `/v4/nodes/rooms` | createRoom | Create new room |
-| GET | `/v4/nodes/rooms/pending` | requestPendingAssignments | Request user-room assignments per group |
-| PUT | `/v4/nodes/rooms/pending` | changePendingAssignments | Handle user-room assignments per group |
-| PUT | `/v4/nodes/rooms/{room_id}` | updateRoom | Updates room’s metadata |
-| PUT | `/v4/nodes/rooms/{room_id}/config` | configureRoom | Configure room |
-| PUT | `/v4/nodes/rooms/{room_id}/encrypt` | encryptRoom | Encrypt room |
-| GET | `/v4/nodes/rooms/{room_id}/events` | requestRoomActivitiesLogAsJson | Request events of a room |
-| DELETE | `/v4/nodes/rooms/{room_id}/groups` | revokeRoomGroups | Revoke granted group(s) from room |
-| GET | `/v4/nodes/rooms/{room_id}/groups` | requestRoomGroups | Request room granted group(s) or / and group(s) that can be granted |
-| PUT | `/v4/nodes/rooms/{room_id}/groups` | updateRoomGroups | Add or change room granted group(s) |
-| PUT | `/v4/nodes/rooms/{room_id}/guest_users` | addRoomGuestUsers | Add guest users to a room |
-| DELETE | `/v4/nodes/rooms/{room_id}/keypair` | removeRoomRescueKeyPair | Remove rooms's rescue key pair |
-| GET | `/v4/nodes/rooms/{room_id}/keypair` | requestRoomRescueKeyPair | Request room rescue key |
-| POST | `/v4/nodes/rooms/{room_id}/keypair` | setRoomRescueKeyPair | Set room's rescue key pair |
-| GET | `/v4/nodes/rooms/{room_id}/keypairs` | requestRoomRescueKeyPairs | Request all room rescue key pairs |
-| POST | `/v4/nodes/rooms/{room_id}/keypairs` | createAndPreserveRoomRescueKeyPair | Create key pair and preserve copy of old private key |
-| GET | `/v4/nodes/rooms/{room_id}/policies` | requestRoomPolicies | Request Room Policies |
-| PUT | `/v4/nodes/rooms/{room_id}/policies` | setRoomPolicies | Set room policies |
-| GET | `/v4/nodes/rooms/{room_id}/s3_tags` | requestRoomS3Tags | Request list of all assigned S3 tags to the room |
-| POST | `/v4/nodes/rooms/{room_id}/s3_tags` | setRoomS3Tags | Set S3 tags for a room |
-| DELETE | `/v4/nodes/rooms/{room_id}/users` | revokeRoomUsers | Revoke granted user(s) from room |
-| GET | `/v4/nodes/rooms/{room_id}/users` | requestRoomUsers | Request room granted user(s) or / and user(s) that can be granted |
-| PUT | `/v4/nodes/rooms/{room_id}/users` | updateRoomUsers | Add or change room granted user(s) |
-| GET | `/v4/nodes/rooms/{room_id}/webhooks` | requestListOfWebhooksForRoom | Request list of webhooks that are assigned or can be assigned to this room |
-| PUT | `/v4/nodes/rooms/{room_id}/webhooks` | handleRoomWebhookAssignments | Assign or unassign webhooks to room |
-| GET | `/v4/nodes/search` | searchNodes | Search nodes |
-| POST | `/v4/nodes/zip` | generateDownloadUrlForZipArchive | Generate download URL for ZIP download |
-| POST | `/v4/nodes/zip/download` | downloadZipArchive | Download files / folders as ZIP archive |
-| DELETE | `/v4/nodes/{node_id}` | removeNode | Remove node |
-| GET | `/v4/nodes/{node_id}` | requestNode | Request node |
-| GET | `/v4/nodes/{node_id}/comments` | requestNodeComments | Request list of node comments |
-| POST | `/v4/nodes/{node_id}/comments` | createNodeComment | Create node comment |
-| POST | `/v4/nodes/{node_id}/copy_to` | copyNodes | Copy node(s) |
-| DELETE | `/v4/nodes/{node_id}/deleted_nodes` | emptyDeletedNodes | Empty recycle bin |
-| GET | `/v4/nodes/{node_id}/deleted_nodes` | requestDeletedNodesSummary | Request list of deleted nodes |
-| GET | `/v4/nodes/{node_id}/deleted_nodes/versions` | requestDeletedNodeVersions | Request deleted versions of nodes |
-| DELETE | `/v4/nodes/{node_id}/favorite` | removeFavorite | Unmark a node (room, folder or file) as favorite |
-| POST | `/v4/nodes/{node_id}/favorite` | addFavorite | Mark a node (room, folder or file) as favorite |
-| POST | `/v4/nodes/{node_id}/move_to` | moveNodes | Move node(s) |
-| GET | `/v4/nodes/{node_id}/parents` | requestNodeParents | Request list of parent nodes |
-| GET | `/v4/provisioning/customers` | requestCustomers | Request list of customers |
-| POST | `/v4/provisioning/customers` | createCustomer | Create customer |
-| DELETE | `/v4/provisioning/customers/{customer_id}` | removeCustomer | Remove customer |
-| GET | `/v4/provisioning/customers/{customer_id}` | requestCustomer | Get customer |
-| PUT | `/v4/provisioning/customers/{customer_id}` | updateCustomer | Update customer |
-| GET | `/v4/provisioning/customers/{customer_id}/customerAttributes` | requestCustomerAttributes | Request customer attributes |
-| POST | `/v4/provisioning/customers/{customer_id}/customerAttributes` | setCustomerAttributes | Set customer attributes |
-| PUT | `/v4/provisioning/customers/{customer_id}/customerAttributes` | updateCustomerAttributes | Add or edit customer attributes |
-| DELETE | `/v4/provisioning/customers/{customer_id}/customerAttributes/{key}` | removeCustomerAttribute | Remove customer attribute |
-| GET | `/v4/provisioning/customers/{customer_id}/users` | requestCustomerUsers | Request list of customer users |
-| GET | `/v4/provisioning/webhooks` | requestListOfTenantWebhooks | Request list of tenant webhooks |
-| POST | `/v4/provisioning/webhooks` | createTenantWebhook | Create tenant webhook |
-| GET | `/v4/provisioning/webhooks/event_types` | requestListOfEventTypesForTenant | Request list of event types |
-| DELETE | `/v4/provisioning/webhooks/{webhook_id}` | removeTenantWebhook | Remove tenant webhook |
-| GET | `/v4/provisioning/webhooks/{webhook_id}` | requestTenantWebhook | Request tenant webhook |
-| PUT | `/v4/provisioning/webhooks/{webhook_id}` | updateTenantWebhook | Update tenant webhook |
-| POST | `/v4/provisioning/webhooks/{webhook_id}/reset_lifetime` | resetTenantWebhookLifetime | Reset tenant webhook lifetime |
-| GET | `/v4/public/shares/downloads/{access_key}` | requestPublicDownloadShareInfo | Request public Download Share information |
-| HEAD | `/v4/public/shares/downloads/{access_key}` | checkPublicDownloadSharePassword | Check public Download Share password |
-| POST | `/v4/public/shares/downloads/{access_key}` | generateDownloadUrlPublic | Generate download URL |
-| GET | `/v4/public/shares/downloads/{access_key}/{token}` | downloadFileViaTokenPublic | Download file with token |
-| HEAD | `/v4/public/shares/downloads/{access_key}/{token}` | downloadFileViaTokenPublic_1 | Download file with token |
-| GET | `/v4/public/shares/uploads/{access_key}` | requestPublicUploadShareInfo | Request public Upload Share information |
-| POST | `/v4/public/shares/uploads/{access_key}` | createShareUploadChannel | Create new file upload channel |
-| DELETE | `/v4/public/shares/uploads/{access_key}/{upload_id}` | cancelFileUploadViaShare | Cancel file upload |
-| GET | `/v4/public/shares/uploads/{access_key}/{upload_id}` | requestUploadStatusPublic | Request status of S3 file upload |
-| POST | `/v4/public/shares/uploads/{access_key}/{upload_id}` | uploadFileAsMultipartPublic_1 | Upload file |
-| PUT | `/v4/public/shares/uploads/{access_key}/{upload_id}` | completeFileUploadViaShare | Complete file upload |
-| PUT | `/v4/public/shares/uploads/{access_key}/{upload_id}/s3` | completeS3FileUploadViaShare | Complete S3 file upload |
-| POST | `/v4/public/shares/uploads/{access_key}/{upload_id}/s3_urls` | generatePresignedUrlsPublic | Generate presigned URLs for S3 file upload |
-| GET | `/v4/public/software/third_party_dependencies` | requestThirdPartyDependencies | Request third-party software dependencies |
-| GET | `/v4/public/software/version` | requestSoftwareVersion | Request software version information |
-| GET | `/v4/public/system/info` | requestSystemInfo | Request system information |
-| GET | `/v4/public/system/info/auth/ad` | requestActiveDirectoryAuthInfo | Request Active Directory authentication information |
-| GET | `/v4/public/system/info/auth/openid` | requestOpenIdAuthInfo | Request OpenID Connect provider authentication information |
-| GET | `/v4/public/time` | requestSystemTime | Request system time |
-| GET | `/v4/resources/user/notifications/scopes` | requestSubscriptionScopes | Request list of subscription scopes |
-| GET | `/v4/resources/users/{user_id}/avatar/{uuid}` | requestUserAvatar | Request user avatar |
-| GET | `/v4/roles` | requestRoles | Request all roles with assigned rights |
-| DELETE | `/v4/roles/{role_id}/groups` | revokeRoleGroups | Revoke granted role from group(s) |
-| GET | `/v4/roles/{role_id}/groups` | requestRoleGroups | Request groups with specific role |
-| POST | `/v4/roles/{role_id}/groups` | addRoleGroups | Assign group(s) to the role |
-| DELETE | `/v4/roles/{role_id}/users` | revokeRoleUsers | Revoke granted role from user(s) |
-| GET | `/v4/roles/{role_id}/users` | requestRoleUsers | Request users with specific role |
-| POST | `/v4/roles/{role_id}/users` | addRoleUsers | Assign user(s) to the role |
-| GET | `/v4/settings` | requestSettings | Request customer settings |
-| PUT | `/v4/settings` | setSettings | Set customer settings |
-| DELETE | `/v4/settings/keypair` | removeSystemRescueKeyPair | Remove system rescue key pair |
-| GET | `/v4/settings/keypair` | requestSystemRescueKeyPair | Request system rescue key pair |
-| POST | `/v4/settings/keypair` | setSystemRescueKeyPair | Activate client-side encryption for customer |
-| GET | `/v4/settings/keypairs` | requestAllSystemRescueKeyPairs | Request all system rescue key pairs |
-| POST | `/v4/settings/keypairs` | createAndPreserveKeyPair | Create system rescue key pair and preserve copy of old private key |
-| GET | `/v4/settings/notifications/channels` | requestNotificationChannels | Request list of notification channels |
-| PUT | `/v4/settings/notifications/channels` | toggleNotificationChannels | Toggle notification channels |
-| GET | `/v4/settings/webhooks` | requestListOfWebhooks | Request list of webhooks |
-| POST | `/v4/settings/webhooks` | createWebhook | Create webhook |
-| GET | `/v4/settings/webhooks/event_types` | requestListOfEventTypesForConfigManager | Request list of event types |
-| DELETE | `/v4/settings/webhooks/{webhook_id}` | removeWebhook | Remove webhook |
-| GET | `/v4/settings/webhooks/{webhook_id}` | requestWebhook | Request webhook |
-| PUT | `/v4/settings/webhooks/{webhook_id}` | updateWebhook | Update webhook |
-| POST | `/v4/settings/webhooks/{webhook_id}/reset_lifetime` | resetWebhookLifetime | Reset webhook lifetime |
-| DELETE | `/v4/shares/downloads` | deleteDownloadShares | Remove Download Shares |
-| GET | `/v4/shares/downloads` | requestDownloadShares | Request list of Download Shares |
-| POST | `/v4/shares/downloads` | createDownloadShare | Create new Download Share |
-| PUT | `/v4/shares/downloads` | updateDownloadShares | Update a list of Download Shares |
-| DELETE | `/v4/shares/downloads/{share_id}` | removeDownloadShare | Remove Download Share |
-| GET | `/v4/shares/downloads/{share_id}` | requestDownloadShare | Request Download Share |
-| PUT | `/v4/shares/downloads/{share_id}` | updateDownloadShare | Update Download Share |
-| POST | `/v4/shares/downloads/{share_id}/email` | sendDownloadShareLinkViaEmail | Send an existing Download Share link via email |
-| GET | `/v4/shares/downloads/{share_id}/qr` | requestDownloadShareQr | Request Download Share via QR Code |
-| DELETE | `/v4/shares/uploads` | deleteUploadShares | Remove Upload Shares |
-| GET | `/v4/shares/uploads` | requestUploadShares | Request list of Upload Shares |
-| POST | `/v4/shares/uploads` | createUploadShare | Create new Upload Share |
-| PUT | `/v4/shares/uploads` | updateUploadShares | Update List of Upload Shares |
-| DELETE | `/v4/shares/uploads/{share_id}` | removeUploadShare | Remove Upload Share |
-| GET | `/v4/shares/uploads/{share_id}` | requestUploadShare | Request Upload Share |
-| PUT | `/v4/shares/uploads/{share_id}` | updateUploadShare | Update Upload Share |
-| POST | `/v4/shares/uploads/{share_id}/email` | sendUploadShareLinkViaEmail | Send an existing Upload Share link via email |
-| GET | `/v4/shares/uploads/{share_id}/qr` | requestUploadShareQr | Request Upload Share via QR Code |
-| POST | `/v4/system/config/actions/test/ad` | testAdConfig | Test Active Directory configuration |
-| POST | `/v4/system/config/actions/test/radius` | testRadiusConfig | Test RADIUS server availability |
-| GET | `/v4/system/config/auth/ads` | requestAdConfigs | Request list of Active Directory configurations |
-| POST | `/v4/system/config/auth/ads` | createAdConfig | Create Active Directory configuration |
-| DELETE | `/v4/system/config/auth/ads/{ad_id}` | removeAdConfig | Remove Active Directory configuration |
-| GET | `/v4/system/config/auth/ads/{ad_id}` | requestAdConfig | Request Active Directory configuration |
-| PUT | `/v4/system/config/auth/ads/{ad_id}` | updateAdConfig | Update Active Directory configuration |
-| GET | `/v4/system/config/auth/openid/idps` | requestOpenIdIdpConfigs | Request list of OpenID Connect IDP configurations |
-| POST | `/v4/system/config/auth/openid/idps` | createOpenIdIdpConfig | Create OpenID Connect IDP configuration |
-| DELETE | `/v4/system/config/auth/openid/idps/{idp_id}` | removeOpenIdIdpConfig | Remove OpenID Connect IDP configuration |
-| GET | `/v4/system/config/auth/openid/idps/{idp_id}` | requestOpenIdIdpConfig | Request OpenID Connect IDP configuration |
-| PUT | `/v4/system/config/auth/openid/idps/{idp_id}` | updateOpenIdIdpConfig | Update OpenID Connect IDP configuration |
-| DELETE | `/v4/system/config/auth/radius` | removeRadiusConfig | Remove RADIUS configuration |
-| GET | `/v4/system/config/auth/radius` | requestRadiusConfig | Request RADIUS configuration |
-| POST | `/v4/system/config/auth/radius` | createRadiusConfig | Create RADIUS configuration |
-| PUT | `/v4/system/config/auth/radius` | updateRadiusConfig | Update RADIUS configuration |
-| GET | `/v4/system/config/oauth/clients` | requestOAuthClients | Request list of OAuth clients |
-| POST | `/v4/system/config/oauth/clients` | createOAuthClient | Create OAuth client |
-| DELETE | `/v4/system/config/oauth/clients/{client_id}` | removeOAuthClient | Remove OAuth client |
-| GET | `/v4/system/config/oauth/clients/{client_id}` | requestOAuthClient | Request OAuth client |
-| PUT | `/v4/system/config/oauth/clients/{client_id}` | updateOAuthClient | Update OAuth client |
-| GET | `/v4/system/config/policies/classifications` | requestClassificationPoliciesConfig | Request classification policies |
-| PUT | `/v4/system/config/policies/classifications` | changeClassificationPoliciesConfig | Change classification policies |
-| GET | `/v4/system/config/policies/guest_users` | requestGuestUsersPoliciesConfig | Request guest user policies |
-| PUT | `/v4/system/config/policies/guest_users` | changeGuestUsersPoliciesConfig | Change guest user policies |
-| GET | `/v4/system/config/policies/mfa` | requestMfaPoliciesConfig | Request MFA policies |
-| PUT | `/v4/system/config/policies/mfa` | changeMfaPoliciesConfig | Change MFA policies |
-| GET | `/v4/system/config/policies/passwords` | requestPasswordPoliciesConfig | Request password policies |
-| PUT | `/v4/system/config/policies/passwords` | changePasswordPoliciesConfig | Change password policies |
-| POST | `/v4/system/config/policies/passwords/enforce_change` | enforceLoginPasswordChange | Enforce login password change for all users |
-| GET | `/v4/system/config/policies/passwords/{password_type}` | requestPasswordPoliciesForPasswordType | Request password policies for a certain password type |
-| GET | `/v4/system/config/settings/auth` | requestAuthConfig | Request authentication settings |
-| PUT | `/v4/system/config/settings/auth` | updateAuthConfig | Update authentication settings |
-| GET | `/v4/system/config/settings/defaults` | requestSystemDefaults | Request system defaults |
-| PUT | `/v4/system/config/settings/defaults` | updateSystemDefaults | Update system defaults |
-| GET | `/v4/system/config/settings/eventlog` | requestEventlogConfig | Request eventlog settings |
-| PUT | `/v4/system/config/settings/eventlog` | updateEventlogConfig | Update eventlog settings |
-| GET | `/v4/system/config/settings/general` | requestGeneralSettings | Request general settings |
-| PUT | `/v4/system/config/settings/general` | updateGeneralSettings | Update general settings |
-| GET | `/v4/system/config/settings/infrastructure` | requestInfrastructureProperties | Request infrastructure properties |
-| GET | `/v4/system/config/settings/syslog` | requestSyslogConfig | Request syslog settings |
-| PUT | `/v4/system/config/settings/syslog` | updateSyslogConfig | Update syslog settings |
-| GET | `/v4/system/config/storage/s3` | request3Config | Request S3 storage configuration |
-| POST | `/v4/system/config/storage/s3` | createS3Config | Create S3 storage configuration |
-| PUT | `/v4/system/config/storage/s3` | updateS3Config | Update S3 storage configuration |
-| GET | `/v4/system/config/storage/s3/tags` | requestS3TagList | Request list of configured S3 tags |
-| POST | `/v4/system/config/storage/s3/tags` | createS3Tag | Create S3 tag |
-| DELETE | `/v4/system/config/storage/s3/tags/{id}` | removeS3Tag | Remove S3 tag |
-| GET | `/v4/system/config/storage/s3/tags/{id}` | requestS3Tag | Request S3 tag |
-| DELETE | `/v4/uploads/{token}` | cancelFileUploadByToken | Cancel file upload |
-| POST | `/v4/uploads/{token}` | uploadFileByTokenAsMultipart_1 | Upload file |
-| PUT | `/v4/uploads/{token}` | completeFileUploadByToken | Complete file upload |
-| GET | `/v4/user/account` | requestUserInfo | Request user account information |
-| PUT | `/v4/user/account` | updateUserAccount | Update user account |
-| DELETE | `/v4/user/account/avatar` | resetAvatar | Reset avatar |
-| GET | `/v4/user/account/avatar` | requestAvatar | Request avatar |
-| POST | `/v4/user/account/avatar` | uploadAvatarAsMultipart | Change avatar |
-| GET | `/v4/user/account/customer` | requestCustomerInfo | Request customer information for user |
-| PUT | `/v4/user/account/customer` | enableCustomerEncryption | Activate client-side encryption for customer |
-| GET | `/v4/user/account/customer/keypair` | requestCustomerKeyPair | Request customer's key pair |
-| DELETE | `/v4/user/account/keypair` | removeUserKeyPair | Remove user's key pair |
-| GET | `/v4/user/account/keypair` | requestUserKeyPair | Request user's key pair |
-| POST | `/v4/user/account/keypair` | setUserKeyPair | Set user's key pair |
-| GET | `/v4/user/account/keypairs` | requestUserKeyPairs | Request all user key pairs |
-| POST | `/v4/user/account/keypairs` | createAndPreserveUserKeyPair | Create key pair and preserve copy of old private key |
-| DELETE | `/v4/user/account/mfa` | useEmergencyCode | Using emergency-code |
-| GET | `/v4/user/account/mfa` | getMfaStatusForUser | Request information about the user's mfa status |
-| GET | `/v4/user/account/mfa/totp` | getTotpSetupInformation | Request information to setup TOTP as second authentication factor |
-| POST | `/v4/user/account/mfa/totp` | confirmTotpSetup | Confirm second factor TOTP setup with a generated OTP |
-| DELETE | `/v4/user/account/mfa/totp/{id}` | deleteMfaTotpSetup | Disable a MFA TOTP setup with generated OTP |
-| PUT | `/v4/user/account/password` | changeUserPassword | Change user's password |
-| POST | `/v4/user/logout` | logout | Invalidate authentication token |
-| GET | `/v4/user/notifications/config` | requestListOfNotificationConfigs | Request list of notification configurations |
-| PUT | `/v4/user/notifications/config/{id}` | updateNotificationConfig | Update notification configuration |
-| GET | `/v4/user/oauth/approvals` | requestOAuthApprovals | Request list of OAuth client approvals |
-| DELETE | `/v4/user/oauth/approvals/{client_id}` | removeOAuthApproval | Remove OAuth client approval |
-| GET | `/v4/user/oauth/authorizations` | requestOAuthAuthorizations | Request list of OAuth client authorizations |
-| DELETE | `/v4/user/oauth/authorizations/{client_id}` | removeOAuthAuthorizations | Remove all OAuth authorizations of a client |
-| DELETE | `/v4/user/oauth/authorizations/{client_id}/{authorization_id}` | removeOAuthAuthorization | Remove a OAuth authorization |
-| GET | `/v4/user/ping` | pingUser | (authenticated) Ping |
-| GET | `/v4/user/profileAttributes` | requestProfileAttributes | Request user profile attributes |
-| POST | `/v4/user/profileAttributes` | setProfileAttributes | Set user profile attributes |
-| PUT | `/v4/user/profileAttributes` | updateProfileAttributes | Add or edit user profile attributes |
-| DELETE | `/v4/user/profileAttributes/{key}` | removeProfileAttribute | Remove user profile attribute |
-| GET | `/v4/user/subscriptions/download_shares` | listDownloadShareSubscriptions | List Download Share subscriptions |
-| PUT | `/v4/user/subscriptions/download_shares` | subscribeDownloadShares | Subscribe or Unsubscribe a List of Download Shares for notifications |
-| DELETE | `/v4/user/subscriptions/download_shares/{share_id}` | unsubscribeDownloadShare | Unsubscribe Download Share from notifications |
-| POST | `/v4/user/subscriptions/download_shares/{share_id}` | subscribeDownloadShare | Subscribe Download Share for notifications |
-| GET | `/v4/user/subscriptions/nodes` | listNodeSubscriptions | List node subscriptions |
-| PUT | `/v4/user/subscriptions/nodes` | updateNodeSubscriptions | Subscribe or Unsubscribe a List of nodes for notifications |
-| DELETE | `/v4/user/subscriptions/nodes/{node_id}` | unsubscribeNode | Unsubscribe node from notifications |
-| POST | `/v4/user/subscriptions/nodes/{node_id}` | subscribeNode | Subscribe node for notifications |
-| GET | `/v4/user/subscriptions/upload_shares` | listUploadShareSubscriptions | List Upload Share subscriptions |
-| PUT | `/v4/user/subscriptions/upload_shares` | subscribeUploadShares | Subscribe or Unsubscribe a List of Upload Shares for notifications |
-| DELETE | `/v4/user/subscriptions/upload_shares/{share_id}` | unsubscribeUploadShare | Unsubscribe Upload Share from notifications |
-| POST | `/v4/user/subscriptions/upload_shares/{share_id}` | subscribeUploadShare | Subscribe Upload Share for notifications |
-| GET | `/v4/users` | requestUsers | Request users |
-| POST | `/v4/users` | createUser | Create new user |
-| DELETE | `/v4/users/{user_id}` | removeUser | Remove user |
-| GET | `/v4/users/{user_id}` | requestUser | Request user |
-| PUT | `/v4/users/{user_id}` | updateUser | Update user's metadata |
-| GET | `/v4/users/{user_id}/groups` | requestUserGroups | Request groups that user is a member of or / and can become a member |
-| GET | `/v4/users/{user_id}/last_admin_rooms` | requestLastAdminRoomsUsers | Request rooms where the user is last admin |
-| POST | `/v4/users/{user_id}/mfa/emergency_code` | requestEmergencyMfaCode | Request emergency MFA code |
-| GET | `/v4/users/{user_id}/roles` | requestUserRoles | Request user's granted roles |
-| GET | `/v4/users/{user_id}/rooms` | requestUsersRooms | Request rooms granted to the user or / and rooms that can be granted |
-| GET | `/v4/users/{user_id}/userAttributes` | requestUserAttributes | Request custom user attributes |
-| POST | `/v4/users/{user_id}/userAttributes` | setUserAttributes | Set custom user attributes |
-| PUT | `/v4/users/{user_id}/userAttributes` | updateUserAttributes | Add or edit custom user attributes |
-| DELETE | `/v4/users/{user_id}/userAttributes/{key}` | removeUserAttribute | Remove custom user attribute |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v4/auth/login` | login | body*: LoginRequest | LoginResponse |  | Authenticate user (Login) |
+| GET | `/v4/auth/openid/login` | initiateOpenIdLogin | `issuer`*, `redirect_uri`*, `language`*, `test`* | — | yes | Initiate OpenID Connect authentication |
+| POST | `/v4/auth/openid/login` | completeOpenIdLogin | `code`*, `id_token`, `state`* | LoginResponse |  | Complete OpenID Connect authentication |
+| GET | `/v4/auth/ping` | ping | — | string | yes | Ping |
+| POST | `/v4/auth/recover_username` | recoverUserName | body*: RecoverUserNameRequest | — |  | Recover username |
+| POST | `/v4/auth/reset_password` | requestPasswordReset | body*: ResetPasswordRequest | — |  | Request password reset |
+| GET | `/v4/auth/reset_password/{token}` | validateResetPasswordToken | `token`* | ResetPasswordTokenValidateResponse | yes | Validate information for password reset |
+| PUT | `/v4/auth/reset_password/{token}` | resetPassword | `token`*, body*: ResetPasswordWithTokenRequest | — |  | Reset password |
+| GET | `/v4/config/info/defaults` | requestSystemDefaultsInfo | `X-Sds-Auth-Token` | SystemDefaults | yes | Request default values |
+| GET | `/v4/config/info/general` | requestGeneralSettingsInfo | `X-Sds-Auth-Token` | GeneralSettingsInfo | yes | Request general settings |
+| GET | `/v4/config/info/infrastructure` | requestInfrastructurePropertiesInfo | `X-Sds-Auth-Token` | InfrastructureProperties | yes | Request infrastructure properties |
+| GET | `/v4/config/info/notifications/channels` | requestNotificationChannelsInfo | `X-Sds-Auth-Token` | NotificationChannelList | yes | Request list of notification channels |
+| GET | `/v4/config/info/policies/algorithms` | requestAlgorithms | `X-Sds-Auth-Token` | AlgorithmVersionInfoList | yes | Request algorithms |
+| GET | `/v4/config/info/policies/classifications` | requestClassificationPoliciesConfigInfo | `X-Sds-Auth-Token` | ClassificationPoliciesConfig | yes | Request classification policies |
+| GET | `/v4/config/info/policies/guest_users` | requestGuestUsersPoliciesConfigInfo | `X-Sds-Auth-Token` | GuestUsersPoliciesConfig | yes | Request guest users policies |
+| GET | `/v4/config/info/policies/passwords` | requestPasswordPoliciesConfigInfo | `X-Sds-Auth-Token` | PasswordPoliciesConfig | yes | Request password policies |
+| GET | `/v4/config/info/product_packages` | requestProductPackages | `X-Sds-Auth-Token` | ProductPackageResponseList | yes | Request list of product packages |
+| GET | `/v4/config/info/product_packages/current` | requestCurrentProductPackages | `X-Sds-Auth-Token` | ProductPackageResponseList | yes | Request list of currently enabled product packages |
+| GET | `/v4/config/info/s3_tags` | requestS3TagsInfo | `X-Sds-Auth-Token` | S3TagList | yes | Request list of configured S3 tags |
+| GET | `/v4/config/settings` | requestSystemSettings | `X-Sds-Auth-Token` | ConfigOptionList | yes | Request system settings |
+| PUT | `/v4/config/settings` | updateSystemSettings | `X-Sds-Auth-Token`, body*: ConfigOptionList | — |  | Update system settings |
+| GET | `/v4/downloads/avatar/{user_id}/{uuid}` | downloadAvatar | `user_id`*, `uuid`* | string | yes | Download avatar |
+| GET | `/v4/downloads/zip/{token}` | downloadZipArchiveViaToken | `token`* | — | yes | Download ZIP archive |
+| GET | `/v4/downloads/{token}` | downloadFileViaToken | `token`*, `Range`, `generic_mimetype`, `inline` | — | yes | Download file |
+| HEAD | `/v4/downloads/{token}` | downloadFileViaToken_1 | `token`*, `Range`, `generic_mimetype`, `inline` | — | yes | Download file |
+| GET | `/v4/eventlog/audits/node_info` | requestAuditNodeInfo | `parent_id`, `offset`, `limit`, `filter`, `sort`, `X-Sds-Auth-Token` | AuditNodeInfoResponse | yes | Request nodes |
+| GET | `/v4/eventlog/audits/nodes` | requestAuditNodeUserData | `X-Sds-Date-Format`, `offset`, `limit`, `filter`, `sort`, `X-Sds-Auth-Token` | AuditNodeResponse[] | yes | Request node assigned users with permissions |
+| GET | `/v4/eventlog/events` | requestLogEventsAsJson | `X-Sds-Date-Format`, `sort`, `offset`, `limit`, `date_start`, `date_end`, `type`, `user_id`, `status`, `user_client`, `X-Sds-Auth-Token` | LogEventList | yes | Request system events |
+| GET | `/v4/eventlog/operations` | requestLogOperations | `is_deprecated`, `X-Sds-Auth-Token` | LogOperationList | yes | Request allowed Log Operations |
+| GET | `/v4/groups` | requestGroups | `X-Sds-Date-Format`, `offset`, `limit`, `filter`, `sort`, `X-Sds-Auth-Token` | GroupList | yes | Request list of user groups |
+| POST | `/v4/groups` | createGroup | `X-Sds-Date-Format`, `X-Sds-Auth-Token`, body*: CreateGroupRequest | Group |  | Create new user group |
+| GET | `/v4/groups/{group_id}` | requestGroup | `X-Sds-Date-Format`, `group_id`*, `X-Sds-Auth-Token` | Group | yes | Request user group |
+| PUT | `/v4/groups/{group_id}` | updateGroup | `X-Sds-Date-Format`, `group_id`*, `X-Sds-Auth-Token`, body*: UpdateGroupRequest | Group |  | Update user group's metadata |
+| DELETE | `/v4/groups/{group_id}` | removeGroup | `group_id`*, `X-Sds-Auth-Token` | — |  | Remove user group |
+| GET | `/v4/groups/{group_id}/last_admin_rooms` | requestLastAdminRoomsGroups | `group_id`*, `X-Sds-Auth-Token` | LastAdminGroupRoomList | yes | Request rooms where the group is defined as last admin group |
+| GET | `/v4/groups/{group_id}/roles` | requestGroupRoles | `group_id`*, `X-Sds-Auth-Token` | RoleList | yes | Request list of roles assigned to the group |
+| GET | `/v4/groups/{group_id}/rooms` | requestGroupRooms | `X-Sds-Date-Format`, `group_id`*, `offset`, `limit`, `filter`, `X-Sds-Auth-Token` | RoomTreeDataList | yes | Request rooms granted to the group or / and rooms that can be granted |
+| GET | `/v4/groups/{group_id}/users` | requestGroupMembers | `group_id`*, `offset`, `limit`, `filter`, `X-Sds-Auth-Token` | GroupUserList | yes | Request group member users or / and users who can become a member |
+| POST | `/v4/groups/{group_id}/users` | addGroupMembers | `X-Sds-Date-Format`, `group_id`*, `X-Sds-Auth-Token`, body*: ChangeGroupMembersRequest | Group |  | Add group members |
+| DELETE | `/v4/groups/{group_id}/users` | removeGroupMembers | `X-Sds-Date-Format`, `group_id`*, `X-Sds-Auth-Token`, body*: ChangeGroupMembersRequest | Group |  | Remove group members |
+| GET | `/v4/internal/tenant/subscription_plan` | internalRequestSubscriptionPlan | `X-Sds-Service-Token`* | SubscriptionPlanResponse | yes | Request subscription plan |
+| PUT | `/v4/internal/tenant/subscription_plan` | internalSetSubscriptionPlan | `X-Sds-Service-Token`*, body*: SubscriptionPlanRequest | SubscriptionPlanResponse |  | Set subscription plan |
+| GET | `/v4/nodes` | requestNodes | `X-Sds-Date-Format`, `depth_level`, `parent_id`, `room_manager`, `filter`, `sort`, `offset`, `limit`, `X-Sds-Auth-Token` | NodeList | yes | Request list of nodes |
+| DELETE | `/v4/nodes` | removeNodes | `X-Sds-Auth-Token`, body*: DeleteNodesRequest | — |  | Remove nodes |
+| PUT | `/v4/nodes/comments/{comment_id}` | updateNodeComment | `X-Sds-Date-Format`, `comment_id`*, `X-Sds-Auth-Token`, body*: ChangeNodeCommentRequest | Comment |  | Edit node comment |
+| DELETE | `/v4/nodes/comments/{comment_id}` | removeNodeComment | `comment_id`*, `X-Sds-Auth-Token` | — |  | Remove node comment |
+| DELETE | `/v4/nodes/deleted_nodes` | removeDeletedNodes | `X-Sds-Auth-Token`, body*: DeleteDeletedNodesRequest | — |  | Remove nodes from recycle bin |
+| POST | `/v4/nodes/deleted_nodes/actions/restore` | restoreNodes | `X-Sds-Auth-Token`, body*: RestoreDeletedNodesRequest | — |  | Restore deleted nodes |
+| GET | `/v4/nodes/deleted_nodes/{deleted_node_id}` | requestDeletedNode | `X-Sds-Date-Format`, `deleted_node_id`*, `X-Sds-Auth-Token` | DeletedNode | yes | Request deleted node |
+| PUT | `/v4/nodes/favorites` | updateFavorites | `X-Sds-Auth-Token`, body*: UpdateFavoritesBulkRequest | — |  | Mark or unmark a list of nodes (room, folder or file) as favorite |
+| PUT | `/v4/nodes/files` | updateFiles | `X-Sds-Auth-Token`, body*: UpdateFilesBulkRequest | — |  | Updates a list of file’s metadata |
+| POST | `/v4/nodes/files/keys` | setUserFileKeys | `X-Sds-Auth-Token`, body*: UserFileKeySetBatchRequest | — |  | Set file keys for a list of users and files |
+| POST | `/v4/nodes/files/uploads` | createFileUploadChannel | `X-Sds-Auth-Token`, body*: CreateFileUploadRequest | CreateFileUploadResponse |  | Create new file upload channel |
+| GET | `/v4/nodes/files/uploads/{upload_id}` | requestUploadStatusFiles | `X-Sds-Date-Format`, `upload_id`*, `X-Sds-Auth-Token` | S3FileUploadStatus | yes | Request status of S3 file upload |
+| PUT | `/v4/nodes/files/uploads/{upload_id}` | completeFileUpload | `X-Sds-Date-Format`, `upload_id`*, `X-Sds-Auth-Token`, body: CompleteUploadRequest | Node |  | Complete file upload |
+| POST | `/v4/nodes/files/uploads/{upload_id}` | uploadFileAsMultipart | `upload_id`*, `Content-Range`, `X-Sds-Auth-Token`, body: object | ChunkUploadResponse |  | Upload file |
+| DELETE | `/v4/nodes/files/uploads/{upload_id}` | cancelFileUpload | `upload_id`*, `X-Sds-Auth-Token` | — |  | Cancel file upload |
+| PUT | `/v4/nodes/files/uploads/{upload_id}/s3` | completeS3FileUpload | `upload_id`*, `X-Sds-Auth-Token`, body*: CompleteS3FileUploadRequest | — |  | Complete S3 file upload |
+| POST | `/v4/nodes/files/uploads/{upload_id}/s3_urls` | generatePresignedUrlsFiles | `upload_id`*, `X-Sds-Auth-Token`, body*: GeneratePresignedUrlsRequest | PresignedUrlList |  | Generate presigned URLs for S3 file upload |
+| GET | `/v4/nodes/files/versions/{reference_id}` | requestFileVersionList | `X-Sds-Date-Format`, `reference_id`*, `offset`, `limit`, `X-Sds-Auth-Token` | FileVersionList | yes | Request list of file versions |
+| PUT | `/v4/nodes/files/{file_id}` | updateFile | `X-Sds-Date-Format`, `file_id`*, `X-Sds-Auth-Token`, body*: UpdateFileRequest | Node |  | Updates a file’s metadata |
+| GET | `/v4/nodes/files/{file_id}/data_room_file_key` | requestRoomRescueKey | `file_id`*, `version`, `X-Sds-Auth-Token` | FileKey | yes | Request room rescue key |
+| GET | `/v4/nodes/files/{file_id}/data_space_file_key` | requestSystemRescueKey | `file_id`*, `version`, `X-Sds-Auth-Token` | FileKey | yes | Request system rescue key |
+| POST | `/v4/nodes/files/{file_id}/downloads` | generateDownloadUrl | `file_id`*, `X-Sds-Auth-Token` | DownloadTokenGenerateResponse |  | Generate download URL |
+| GET | `/v4/nodes/files/{file_id}/user_file_key` | requestUserFileKey | `file_id`*, `version`, `X-Sds-Auth-Token` | FileKey | yes | Request user's file key |
+| POST | `/v4/nodes/folders` | createFolder | `X-Sds-Date-Format`, `X-Sds-Auth-Token`, body*: CreateFolderRequest | Node |  | Create new folder |
+| PUT | `/v4/nodes/folders/{folder_id}` | updateFolder | `X-Sds-Date-Format`, `folder_id`*, `X-Sds-Auth-Token`, body*: UpdateFolderRequest | Node |  | Updates folder’s metadata |
+| GET | `/v4/nodes/missingFileKeys` | requestMissingFileKeys | `offset`, `limit`, `room_id`, `file_id`, `user_id`, `use_key`, `X-Sds-Auth-Token` | MissingKeysResponse | yes | Request files without user's file key |
+| POST | `/v4/nodes/rooms` | createRoom | `X-Sds-Date-Format`, `X-Sds-Auth-Token`, body*: CreateRoomRequest | Node |  | Create new room |
+| GET | `/v4/nodes/rooms/pending` | requestPendingAssignments | `offset`, `limit`, `filter`, `sort`, `X-Sds-Auth-Token` | PendingAssignmentList | yes | Request user-room assignments per group |
+| PUT | `/v4/nodes/rooms/pending` | changePendingAssignments | `X-Sds-Auth-Token`, body*: PendingAssignmentsRequest | — |  | Handle user-room assignments per group |
+| PUT | `/v4/nodes/rooms/{room_id}` | updateRoom | `X-Sds-Date-Format`, `room_id`*, `X-Sds-Auth-Token`, body*: UpdateRoomRequest | Node |  | Updates room’s metadata |
+| PUT | `/v4/nodes/rooms/{room_id}/config` | configureRoom | `X-Sds-Date-Format`, `room_id`*, `X-Sds-Auth-Token`, body*: ConfigRoomRequest | Node |  | Configure room |
+| PUT | `/v4/nodes/rooms/{room_id}/encrypt` | encryptRoom | `X-Sds-Date-Format`, `room_id`*, `X-Sds-Auth-Token`, body*: EncryptRoomRequest | Node |  | Encrypt room |
+| GET | `/v4/nodes/rooms/{room_id}/events` | requestRoomActivitiesLogAsJson | `X-Sds-Date-Format`, `room_id`*, `sort`, `offset`, `limit`, `date_start`, `date_end`, `type`, `user_id`, `status`, `X-Sds-Auth-Token` | LogEventList | yes | Request events of a room |
+| GET | `/v4/nodes/rooms/{room_id}/groups` | requestRoomGroups | `room_id`*, `offset`, `limit`, `filter`, `sort`, `X-Sds-Auth-Token` | RoomGroupList | yes | Request room granted group(s) or / and group(s) that can be granted |
+| PUT | `/v4/nodes/rooms/{room_id}/groups` | updateRoomGroups | `room_id`*, `X-Sds-Auth-Token`, body*: RoomGroupsAddBatchRequest | — |  | Add or change room granted group(s) |
+| DELETE | `/v4/nodes/rooms/{room_id}/groups` | revokeRoomGroups | `X-Sds-Date-Format`, `room_id`*, `X-Sds-Auth-Token`, body*: RoomGroupsDeleteBatchRequest | — |  | Revoke granted group(s) from room |
+| PUT | `/v4/nodes/rooms/{room_id}/guest_users` | addRoomGuestUsers | `room_id`*, `X-Sds-Auth-Token`, body*: RoomGuestUserAddRequest | — |  | Add guest users to a room |
+| GET | `/v4/nodes/rooms/{room_id}/keypair` | requestRoomRescueKeyPair | `X-Sds-Date-Format`, `room_id`*, `version`, `X-Sds-Auth-Token` | UserKeyPairContainer | yes | Request room rescue key |
+| POST | `/v4/nodes/rooms/{room_id}/keypair` | setRoomRescueKeyPair | `room_id`*, `X-Sds-Auth-Token`, body*: UserKeyPairContainer | — |  | Set room's rescue key pair |
+| DELETE | `/v4/nodes/rooms/{room_id}/keypair` | removeRoomRescueKeyPair | `room_id`*, `version`, `X-Sds-Auth-Token` | — |  | Remove rooms's rescue key pair |
+| GET | `/v4/nodes/rooms/{room_id}/keypairs` | requestRoomRescueKeyPairs | `X-Sds-Date-Format`, `room_id`*, `X-Sds-Auth-Token` | UserKeyPairContainer[] | yes | Request all room rescue key pairs |
+| POST | `/v4/nodes/rooms/{room_id}/keypairs` | createAndPreserveRoomRescueKeyPair | `room_id`*, `X-Sds-Auth-Token`, body*: CreateKeyPairRequest | — |  | Create key pair and preserve copy of old private key |
+| GET | `/v4/nodes/rooms/{room_id}/policies` | requestRoomPolicies | `room_id`*, `X-Sds-Auth-Token` | RoomPolicies | yes | Request Room Policies |
+| PUT | `/v4/nodes/rooms/{room_id}/policies` | setRoomPolicies | `room_id`*, `X-Sds-Auth-Token`, body*: RoomPoliciesRequest | — |  | Set room policies |
+| GET | `/v4/nodes/rooms/{room_id}/s3_tags` | requestRoomS3Tags | `room_id`*, `X-Sds-Auth-Token` | S3TagList | yes | Request list of all assigned S3 tags to the room |
+| POST | `/v4/nodes/rooms/{room_id}/s3_tags` | setRoomS3Tags | `room_id`*, `X-Sds-Auth-Token`, body*: S3TagIds | S3TagList |  | Set S3 tags for a room |
+| GET | `/v4/nodes/rooms/{room_id}/users` | requestRoomUsers | `room_id`*, `offset`, `limit`, `filter`, `sort`, `X-Sds-Auth-Token` | RoomUserList | yes | Request room granted user(s) or / and user(s) that can be granted |
+| PUT | `/v4/nodes/rooms/{room_id}/users` | updateRoomUsers | `room_id`*, `X-Sds-Auth-Token`, body*: RoomUsersAddBatchRequest | — |  | Add or change room granted user(s) |
+| DELETE | `/v4/nodes/rooms/{room_id}/users` | revokeRoomUsers | `room_id`*, `X-Sds-Auth-Token`, body*: RoomUsersDeleteBatchRequest | — |  | Revoke granted user(s) from room |
+| GET | `/v4/nodes/rooms/{room_id}/webhooks` | requestListOfWebhooksForRoom | `X-Sds-Date-Format`, `room_id`*, `offset`, `limit`, `filter`, `X-Sds-Auth-Token` | RoomWebhookList | yes | Request list of webhooks that are assigned or can be assigned to this room |
+| PUT | `/v4/nodes/rooms/{room_id}/webhooks` | handleRoomWebhookAssignments | `X-Sds-Date-Format`, `room_id`*, `X-Sds-Auth-Token`, body*: UpdateRoomWebhookRequest | RoomWebhookList |  | Assign or unassign webhooks to room |
+| GET | `/v4/nodes/search` | searchNodes | `X-Sds-Date-Format`, `search_string`*, `depth_level`, `parent_id`, `filter`, `sort`, `offset`, `limit`, `X-Sds-Auth-Token` | NodeList | yes | Search nodes |
+| POST | `/v4/nodes/zip` | generateDownloadUrlForZipArchive | `X-Sds-Auth-Token`, body*: ZipDownloadRequest | DownloadTokenGenerateResponse |  | Generate download URL for ZIP download |
+| POST | `/v4/nodes/zip/download` | downloadZipArchive | `X-Sds-Auth-Token`, body*: ZipDownloadRequest | — |  | Download files / folders as ZIP archive |
+| GET | `/v4/nodes/{node_id}` | requestNode | `X-Sds-Date-Format`, `node_id`*, `X-Sds-Auth-Token` | Node | yes | Request node |
+| DELETE | `/v4/nodes/{node_id}` | removeNode | `node_id`*, `X-Sds-Auth-Token` | — |  | Remove node |
+| GET | `/v4/nodes/{node_id}/comments` | requestNodeComments | `X-Sds-Date-Format`, `offset`, `limit`, `node_id`*, `hide_deleted`, `X-Sds-Auth-Token` | CommentList | yes | Request list of node comments |
+| POST | `/v4/nodes/{node_id}/comments` | createNodeComment | `X-Sds-Date-Format`, `node_id`*, `X-Sds-Auth-Token`, body*: CreateNodeCommentRequest | Comment |  | Create node comment |
+| POST | `/v4/nodes/{node_id}/copy_to` | copyNodes | `X-Sds-Date-Format`, `node_id`*, `X-Sds-Auth-Token`, body*: CopyNodesRequest | Node, string |  | Copy node(s) |
+| GET | `/v4/nodes/{node_id}/deleted_nodes` | requestDeletedNodesSummary | `X-Sds-Date-Format`, `node_id`*, `filter`, `sort`, `offset`, `limit`, `X-Sds-Auth-Token` | DeletedNodeSummaryList | yes | Request list of deleted nodes |
+| DELETE | `/v4/nodes/{node_id}/deleted_nodes` | emptyDeletedNodes | `node_id`*, `X-Sds-Auth-Token` | — |  | Empty recycle bin |
+| GET | `/v4/nodes/{node_id}/deleted_nodes/versions` | requestDeletedNodeVersions | `X-Sds-Date-Format`, `node_id`*, `type`*, `name`*, `sort`, `offset`, `limit`, `X-Sds-Auth-Token` | DeletedNodeVersionsList | yes | Request deleted versions of nodes |
+| POST | `/v4/nodes/{node_id}/favorite` | addFavorite | `X-Sds-Date-Format`, `node_id`*, `X-Sds-Auth-Token` | Node |  | Mark a node (room, folder or file) as favorite |
+| DELETE | `/v4/nodes/{node_id}/favorite` | removeFavorite | `node_id`*, `X-Sds-Auth-Token` | — |  | Unmark a node (room, folder or file) as favorite |
+| POST | `/v4/nodes/{node_id}/move_to` | moveNodes | `X-Sds-Date-Format`, `node_id`*, `X-Sds-Auth-Token`, body*: MoveNodesRequest | Node, string |  | Move node(s) |
+| GET | `/v4/nodes/{node_id}/parents` | requestNodeParents | `node_id`*, `X-Sds-Auth-Token` | NodeParentList | yes | Request list of parent nodes |
+| GET | `/v4/provisioning/customers` | requestCustomers | `X-Sds-Date-Format`, `offset`, `limit`, `filter`, `sort`, `include_attributes`, `X-Sds-Service-Token` | CustomerList | yes | Request list of customers |
+| POST | `/v4/provisioning/customers` | createCustomer | `X-Sds-Date-Format`, `X-Sds-Service-Token`, body*: NewCustomerRequest | NewCustomerResponse |  | Create customer |
+| GET | `/v4/provisioning/customers/{customer_id}` | requestCustomer | `X-Sds-Date-Format`, `customer_id`*, `include_attributes`, `X-Sds-Service-Token` | Customer | yes | Get customer |
+| PUT | `/v4/provisioning/customers/{customer_id}` | updateCustomer | `X-Sds-Date-Format`, `customer_id`*, `X-Sds-Service-Token`, body*: UpdateCustomerRequest | UpdateCustomerResponse |  | Update customer |
+| DELETE | `/v4/provisioning/customers/{customer_id}` | removeCustomer | `customer_id`*, `X-Sds-Service-Token` | — |  | Remove customer |
+| GET | `/v4/provisioning/customers/{customer_id}/customerAttributes` | requestCustomerAttributes | `customer_id`*, `offset`, `limit`, `filter`, `sort`, `X-Sds-Service-Token` | AttributesResponse | yes | Request customer attributes |
+| PUT | `/v4/provisioning/customers/{customer_id}/customerAttributes` | updateCustomerAttributes | `X-Sds-Date-Format`, `customer_id`*, `X-Sds-Service-Token`, body*: CustomerAttributes | Customer |  | Add or edit customer attributes |
+| POST | `/v4/provisioning/customers/{customer_id}/customerAttributes` | setCustomerAttributes | `X-Sds-Date-Format`, `customer_id`*, `X-Sds-Service-Token`, body*: CustomerAttributes | Customer |  | Set customer attributes |
+| DELETE | `/v4/provisioning/customers/{customer_id}/customerAttributes/{key}` | removeCustomerAttribute | `customer_id`*, `key`*, `X-Sds-Service-Token` | — |  | Remove customer attribute |
+| GET | `/v4/provisioning/customers/{customer_id}/users` | requestCustomerUsers | `X-Sds-Date-Format`, `customer_id`*, `offset`, `limit`, `filter`, `sort`, `include_attributes`, `include_roles`, `include_manageable_rooms`, `X-Sds-Service-Token` | UserList | yes | Request list of customer users |
+| GET | `/v4/provisioning/webhooks` | requestListOfTenantWebhooks | `X-Sds-Date-Format`, `offset`, `limit`, `filter`, `sort`, `X-Sds-Service-Token` | WebhookList | yes | Request list of tenant webhooks |
+| POST | `/v4/provisioning/webhooks` | createTenantWebhook | `X-Sds-Date-Format`, `X-Sds-Service-Token`, body*: CreateWebhookRequest | Webhook |  | Create tenant webhook |
+| GET | `/v4/provisioning/webhooks/event_types` | requestListOfEventTypesForTenant | `X-Sds-Service-Token` | EventTypeList | yes | Request list of event types |
+| GET | `/v4/provisioning/webhooks/{webhook_id}` | requestTenantWebhook | `X-Sds-Date-Format`, `webhook_id`*, `X-Sds-Service-Token` | Webhook | yes | Request tenant webhook |
+| PUT | `/v4/provisioning/webhooks/{webhook_id}` | updateTenantWebhook | `X-Sds-Date-Format`, `webhook_id`*, `X-Sds-Service-Token`, body*: UpdateWebhookRequest | Webhook |  | Update tenant webhook |
+| DELETE | `/v4/provisioning/webhooks/{webhook_id}` | removeTenantWebhook | `webhook_id`*, `X-Sds-Service-Token` | — |  | Remove tenant webhook |
+| POST | `/v4/provisioning/webhooks/{webhook_id}/reset_lifetime` | resetTenantWebhookLifetime | `X-Sds-Date-Format`, `webhook_id`*, `X-Sds-Service-Token` | Webhook |  | Reset tenant webhook lifetime |
+| GET | `/v4/public/shares/downloads/{access_key}` | requestPublicDownloadShareInfo | `X-Sds-Date-Format`, `access_key`* | PublicDownloadShare | yes | Request public Download Share information |
+| POST | `/v4/public/shares/downloads/{access_key}` | generateDownloadUrlPublic | `access_key`*, body: PublicDownloadTokenGenerateRequest | PublicDownloadTokenGenerateResponse |  | Generate download URL |
+| HEAD | `/v4/public/shares/downloads/{access_key}` | checkPublicDownloadSharePassword | `access_key`*, `password` | — | yes | Check public Download Share password |
+| GET | `/v4/public/shares/downloads/{access_key}/{token}` | downloadFileViaTokenPublic | `access_key`*, `token`*, `Range`, `generic_mimetype`, `inline` | — | yes | Download file with token |
+| HEAD | `/v4/public/shares/downloads/{access_key}/{token}` | downloadFileViaTokenPublic_1 | `access_key`*, `token`*, `Range`, `generic_mimetype`, `inline` | — | yes | Download file with token |
+| GET | `/v4/public/shares/uploads/{access_key}` | requestPublicUploadShareInfo | `X-Sds-Share-Password`, `X-Sds-Date-Format`, `access_key`* | PublicUploadShare | yes | Request public Upload Share information |
+| POST | `/v4/public/shares/uploads/{access_key}` | createShareUploadChannel | `access_key`*, body*: CreateShareUploadChannelRequest | CreateShareUploadChannelResponse |  | Create new file upload channel |
+| GET | `/v4/public/shares/uploads/{access_key}/{upload_id}` | requestUploadStatusPublic | `access_key`*, `upload_id`* | S3ShareUploadStatus | yes | Request status of S3 file upload |
+| PUT | `/v4/public/shares/uploads/{access_key}/{upload_id}` | completeFileUploadViaShare | `X-Sds-Date-Format`, `access_key`*, `upload_id`*, body: UserFileKeyList | PublicUploadedFileData |  | Complete file upload |
+| POST | `/v4/public/shares/uploads/{access_key}/{upload_id}` | uploadFileAsMultipartPublic_1 | `access_key`*, `upload_id`*, `Content-Range`, `X-Sds-Date-Format`, body: object | ChunkUploadResponse |  | Upload file |
+| DELETE | `/v4/public/shares/uploads/{access_key}/{upload_id}` | cancelFileUploadViaShare | `access_key`*, `upload_id`* | — |  | Cancel file upload |
+| PUT | `/v4/public/shares/uploads/{access_key}/{upload_id}/s3` | completeS3FileUploadViaShare | `access_key`*, `upload_id`*, body*: CompleteS3ShareUploadRequest | — |  | Complete S3 file upload |
+| POST | `/v4/public/shares/uploads/{access_key}/{upload_id}/s3_urls` | generatePresignedUrlsPublic | `X-Sds-Date-Format`, `access_key`*, `upload_id`*, body*: GeneratePresignedUrlsRequest | PresignedUrlList |  | Generate presigned URLs for S3 file upload |
+| GET | `/v4/public/software/third_party_dependencies` | requestThirdPartyDependencies | — | ThirdPartyDependenciesData[] | yes | Request third-party software dependencies |
+| GET | `/v4/public/software/version` | requestSoftwareVersion | `X-Sds-Date-Format` | SoftwareVersionData | yes | Request software version information |
+| GET | `/v4/public/system/info` | requestSystemInfo | `is_enabled` | SystemInfo | yes | Request system information |
+| GET | `/v4/public/system/info/auth/ad` | requestActiveDirectoryAuthInfo | `is_global_available` | ActiveDirectoryAuthInfo | yes | Request Active Directory authentication information |
+| GET | `/v4/public/system/info/auth/openid` | requestOpenIdAuthInfo | `is_global_available` | OpenIdAuthInfo | yes | Request OpenID Connect provider authentication information |
+| GET | `/v4/public/time` | requestSystemTime | `X-Sds-Date-Format` | SdsServerTime | yes | Request system time |
+| GET | `/v4/resources/user/notifications/scopes` | requestSubscriptionScopes | — | NotificationScopeList | yes | Request list of subscription scopes |
+| GET | `/v4/resources/users/{user_id}/avatar/{uuid}` | requestUserAvatar | `uuid`*, `user_id`* | Avatar | yes | Request user avatar |
+| GET | `/v4/roles` | requestRoles | `X-Sds-Auth-Token` | RoleList | yes | Request all roles with assigned rights |
+| GET | `/v4/roles/{role_id}/groups` | requestRoleGroups | `role_id`*, `offset`, `limit`, `filter`, `X-Sds-Auth-Token` | RoleGroupList | yes | Request groups with specific role |
+| POST | `/v4/roles/{role_id}/groups` | addRoleGroups | `role_id`*, `X-Sds-Auth-Token`, body*: GroupIds | RoleGroupList |  | Assign group(s) to the role |
+| DELETE | `/v4/roles/{role_id}/groups` | revokeRoleGroups | `role_id`*, `X-Sds-Auth-Token`, body*: GroupIds | RoleGroupList |  | Revoke granted role from group(s) |
+| GET | `/v4/roles/{role_id}/users` | requestRoleUsers | `role_id`*, `offset`, `limit`, `filter`, `X-Sds-Auth-Token` | RoleUserList | yes | Request users with specific role |
+| POST | `/v4/roles/{role_id}/users` | addRoleUsers | `role_id`*, `X-Sds-Auth-Token`, body*: UserIds | RoleUserList |  | Assign user(s) to the role |
+| DELETE | `/v4/roles/{role_id}/users` | revokeRoleUsers | `role_id`*, `X-Sds-Auth-Token`, body*: UserIds | RoleUserList |  | Revoke granted role from user(s) |
+| GET | `/v4/settings` | requestSettings | `X-Sds-Auth-Token` | CustomerSettingsResponse | yes | Request customer settings |
+| PUT | `/v4/settings` | setSettings | `X-Sds-Auth-Token`, body*: CustomerSettingsRequest | CustomerSettingsResponse |  | Set customer settings |
+| GET | `/v4/settings/keypair` | requestSystemRescueKeyPair | `X-Sds-Date-Format`, `version`, `X-Sds-Auth-Token` | UserKeyPairContainer | yes | Request system rescue key pair |
+| POST | `/v4/settings/keypair` | setSystemRescueKeyPair | `X-Sds-Auth-Token`, body*: UserKeyPairContainer | — |  | Activate client-side encryption for customer |
+| DELETE | `/v4/settings/keypair` | removeSystemRescueKeyPair | `version`, `X-Sds-Auth-Token` | — |  | Remove system rescue key pair |
+| GET | `/v4/settings/keypairs` | requestAllSystemRescueKeyPairs | `X-Sds-Date-Format`, `X-Sds-Auth-Token` | UserKeyPairContainer[] | yes | Request all system rescue key pairs |
+| POST | `/v4/settings/keypairs` | createAndPreserveKeyPair | `X-Sds-Auth-Token`, body*: CreateKeyPairRequest | — |  | Create system rescue key pair and preserve copy of old private key |
+| GET | `/v4/settings/notifications/channels` | requestNotificationChannels | `X-Sds-Auth-Token` | NotificationChannelList | yes | Request list of notification channels |
+| PUT | `/v4/settings/notifications/channels` | toggleNotificationChannels | `X-Sds-Auth-Token`, body*: NotificationChannelActivationRequest | NotificationChannelList |  | Toggle notification channels |
+| GET | `/v4/settings/webhooks` | requestListOfWebhooks | `X-Sds-Date-Format`, `offset`, `limit`, `filter`, `sort`, `X-Sds-Auth-Token` | WebhookList | yes | Request list of webhooks |
+| POST | `/v4/settings/webhooks` | createWebhook | `X-Sds-Date-Format`, `X-Sds-Auth-Token`, body*: CreateWebhookRequest | Webhook |  | Create webhook |
+| GET | `/v4/settings/webhooks/event_types` | requestListOfEventTypesForConfigManager | `X-Sds-Auth-Token` | EventTypeList | yes | Request list of event types |
+| GET | `/v4/settings/webhooks/{webhook_id}` | requestWebhook | `X-Sds-Date-Format`, `webhook_id`*, `X-Sds-Auth-Token` | Webhook | yes | Request webhook |
+| PUT | `/v4/settings/webhooks/{webhook_id}` | updateWebhook | `X-Sds-Date-Format`, `webhook_id`*, `X-Sds-Auth-Token`, body*: UpdateWebhookRequest | Webhook |  | Update webhook |
+| DELETE | `/v4/settings/webhooks/{webhook_id}` | removeWebhook | `webhook_id`*, `X-Sds-Auth-Token` | — |  | Remove webhook |
+| POST | `/v4/settings/webhooks/{webhook_id}/reset_lifetime` | resetWebhookLifetime | `X-Sds-Date-Format`, `webhook_id`*, `X-Sds-Auth-Token` | Webhook |  | Reset webhook lifetime |
+| GET | `/v4/shares/downloads` | requestDownloadShares | `X-Sds-Date-Format`, `filter`, `sort`, `offset`, `limit`, `X-Sds-Auth-Token` | DownloadShareList | yes | Request list of Download Shares |
+| PUT | `/v4/shares/downloads` | updateDownloadShares | `X-Sds-Auth-Token`, body*: UpdateDownloadSharesBulkRequest | — |  | Update a list of Download Shares |
+| POST | `/v4/shares/downloads` | createDownloadShare | `X-Sds-Date-Format`, `X-Sds-Auth-Token`, body*: CreateDownloadShareRequest | DownloadShare |  | Create new Download Share |
+| DELETE | `/v4/shares/downloads` | deleteDownloadShares | `X-Sds-Auth-Token`, body*: DeleteDownloadSharesRequest | — |  | Remove Download Shares |
+| GET | `/v4/shares/downloads/{share_id}` | requestDownloadShare | `X-Sds-Date-Format`, `share_id`*, `X-Sds-Auth-Token` | DownloadShare | yes | Request Download Share |
+| PUT | `/v4/shares/downloads/{share_id}` | updateDownloadShare | `X-Sds-Date-Format`, `share_id`*, `X-Sds-Auth-Token`, body*: UpdateDownloadShareRequest | DownloadShare |  | Update Download Share |
+| DELETE | `/v4/shares/downloads/{share_id}` | removeDownloadShare | `share_id`*, `X-Sds-Auth-Token` | — |  | Remove Download Share |
+| POST | `/v4/shares/downloads/{share_id}/email` | sendDownloadShareLinkViaEmail | `share_id`*, `X-Sds-Auth-Token`, body*: DownloadShareLinkEmail | — |  | Send an existing Download Share link via email |
+| GET | `/v4/shares/downloads/{share_id}/qr` | requestDownloadShareQr | `X-Sds-Date-Format`, `share_id`*, `X-Sds-Auth-Token` | DownloadShare | yes | Request Download Share via QR Code |
+| GET | `/v4/shares/uploads` | requestUploadShares | `X-Sds-Date-Format`, `filter`, `sort`, `offset`, `limit`, `X-Sds-Auth-Token` | UploadShareList | yes | Request list of Upload Shares |
+| PUT | `/v4/shares/uploads` | updateUploadShares | `X-Sds-Date-Format`, `X-Sds-Auth-Token`, body*: UpdateUploadSharesBulkRequest | — |  | Update List of Upload Shares |
+| POST | `/v4/shares/uploads` | createUploadShare | `X-Sds-Date-Format`, `X-Sds-Auth-Token`, body*: CreateUploadShareRequest | UploadShare |  | Create new Upload Share |
+| DELETE | `/v4/shares/uploads` | deleteUploadShares | `X-Sds-Auth-Token`, body*: DeleteUploadSharesRequest | — |  | Remove Upload Shares |
+| GET | `/v4/shares/uploads/{share_id}` | requestUploadShare | `X-Sds-Date-Format`, `share_id`*, `X-Sds-Auth-Token` | UploadShare | yes | Request Upload Share |
+| PUT | `/v4/shares/uploads/{share_id}` | updateUploadShare | `X-Sds-Date-Format`, `share_id`*, `X-Sds-Auth-Token`, body*: UpdateUploadShareRequest | UploadShare |  | Update Upload Share |
+| DELETE | `/v4/shares/uploads/{share_id}` | removeUploadShare | `share_id`*, `X-Sds-Auth-Token` | — |  | Remove Upload Share |
+| POST | `/v4/shares/uploads/{share_id}/email` | sendUploadShareLinkViaEmail | `share_id`*, `X-Sds-Auth-Token`, body*: UploadShareLinkEmail | — |  | Send an existing Upload Share link via email |
+| GET | `/v4/shares/uploads/{share_id}/qr` | requestUploadShareQr | `X-Sds-Date-Format`, `share_id`*, `X-Sds-Auth-Token` | UploadShare | yes | Request Upload Share via QR Code |
+| POST | `/v4/system/config/actions/test/ad` | testAdConfig | `X-Sds-Auth-Token`, body*: TestActiveDirectoryConfigRequest | TestActiveDirectoryConfigResponse |  | Test Active Directory configuration |
+| POST | `/v4/system/config/actions/test/radius` | testRadiusConfig | `X-Sds-Auth-Token` | — |  | Test RADIUS server availability |
+| GET | `/v4/system/config/auth/ads` | requestAdConfigs | `X-Sds-Auth-Token` | ActiveDirectoryConfigList | yes | Request list of Active Directory configurations |
+| POST | `/v4/system/config/auth/ads` | createAdConfig | `X-Sds-Auth-Token`, body*: CreateActiveDirectoryConfigRequest | ActiveDirectoryConfig |  | Create Active Directory configuration |
+| GET | `/v4/system/config/auth/ads/{ad_id}` | requestAdConfig | `ad_id`*, `X-Sds-Auth-Token` | ActiveDirectoryConfig | yes | Request Active Directory configuration |
+| PUT | `/v4/system/config/auth/ads/{ad_id}` | updateAdConfig | `ad_id`*, `X-Sds-Auth-Token`, body*: UpdateActiveDirectoryConfigRequest | ActiveDirectoryConfig |  | Update Active Directory configuration |
+| DELETE | `/v4/system/config/auth/ads/{ad_id}` | removeAdConfig | `ad_id`*, `X-Sds-Auth-Token` | — |  | Remove Active Directory configuration |
+| GET | `/v4/system/config/auth/openid/idps` | requestOpenIdIdpConfigs | `X-Sds-Auth-Token` | OpenIdIdpConfig[] | yes | Request list of OpenID Connect IDP configurations |
+| POST | `/v4/system/config/auth/openid/idps` | createOpenIdIdpConfig | `X-Sds-Auth-Token`, body*: CreateOpenIdIdpConfigRequest | OpenIdIdpConfig |  | Create OpenID Connect IDP configuration |
+| GET | `/v4/system/config/auth/openid/idps/{idp_id}` | requestOpenIdIdpConfig | `idp_id`*, `X-Sds-Auth-Token` | OpenIdIdpConfig | yes | Request OpenID Connect IDP configuration |
+| PUT | `/v4/system/config/auth/openid/idps/{idp_id}` | updateOpenIdIdpConfig | `idp_id`*, `X-Sds-Auth-Token`, body*: UpdateOpenIdIdpConfigRequest | OpenIdIdpConfig |  | Update OpenID Connect IDP configuration |
+| DELETE | `/v4/system/config/auth/openid/idps/{idp_id}` | removeOpenIdIdpConfig | `idp_id`*, `X-Sds-Auth-Token` | — |  | Remove OpenID Connect IDP configuration |
+| GET | `/v4/system/config/auth/radius` | requestRadiusConfig | `X-Sds-Auth-Token` | RadiusConfig | yes | Request RADIUS configuration |
+| PUT | `/v4/system/config/auth/radius` | updateRadiusConfig | `X-Sds-Auth-Token`, body*: RadiusConfigUpdateRequest | RadiusConfig |  | Update RADIUS configuration |
+| POST | `/v4/system/config/auth/radius` | createRadiusConfig | `X-Sds-Auth-Token`, body*: RadiusConfigCreateRequest | RadiusConfig |  | Create RADIUS configuration |
+| DELETE | `/v4/system/config/auth/radius` | removeRadiusConfig | `X-Sds-Auth-Token` | — |  | Remove RADIUS configuration |
+| GET | `/v4/system/config/oauth/clients` | requestOAuthClients | `filter`, `sort`, `X-Sds-Auth-Token` | OAuthClient[] | yes | Request list of OAuth clients |
+| POST | `/v4/system/config/oauth/clients` | createOAuthClient | `X-Sds-Auth-Token`, body*: CreateOAuthClientRequest | OAuthClient |  | Create OAuth client |
+| GET | `/v4/system/config/oauth/clients/{client_id}` | requestOAuthClient | `client_id`*, `X-Sds-Auth-Token` | OAuthClient | yes | Request OAuth client |
+| PUT | `/v4/system/config/oauth/clients/{client_id}` | updateOAuthClient | `client_id`*, `X-Sds-Auth-Token`, body*: UpdateOAuthClientRequest | OAuthClient |  | Update OAuth client |
+| DELETE | `/v4/system/config/oauth/clients/{client_id}` | removeOAuthClient | `client_id`*, `X-Sds-Auth-Token` | — |  | Remove OAuth client |
+| GET | `/v4/system/config/policies/classifications` | requestClassificationPoliciesConfig | `X-Sds-Auth-Token` | ClassificationPoliciesConfig | yes | Request classification policies |
+| PUT | `/v4/system/config/policies/classifications` | changeClassificationPoliciesConfig | `X-Sds-Auth-Token`, body*: UpdateClassificationPoliciesConfig | ClassificationPoliciesConfig |  | Change classification policies |
+| GET | `/v4/system/config/policies/guest_users` | requestGuestUsersPoliciesConfig | `X-Sds-Auth-Token` | GuestUsersPoliciesConfig | yes | Request guest user policies |
+| PUT | `/v4/system/config/policies/guest_users` | changeGuestUsersPoliciesConfig | `X-Sds-Auth-Token`, body*: UpdateGuestUsersPoliciesConfig | GuestUsersPoliciesConfig |  | Change guest user policies |
+| GET | `/v4/system/config/policies/mfa` | requestMfaPoliciesConfig | `X-Sds-Auth-Token` | MfaPoliciesConfig | yes | Request MFA policies |
+| PUT | `/v4/system/config/policies/mfa` | changeMfaPoliciesConfig | `X-Sds-Auth-Token`, body*: UpdateMfaPoliciesConfig | MfaPoliciesConfig |  | Change MFA policies |
+| GET | `/v4/system/config/policies/passwords` | requestPasswordPoliciesConfig | `X-Sds-Auth-Token` | PasswordPoliciesConfig | yes | Request password policies |
+| PUT | `/v4/system/config/policies/passwords` | changePasswordPoliciesConfig | `X-Sds-Auth-Token`, body*: UpdatePasswordPoliciesConfig | PasswordPoliciesConfig |  | Change password policies |
+| POST | `/v4/system/config/policies/passwords/enforce_change` | enforceLoginPasswordChange | `X-Sds-Auth-Token` | — |  | Enforce login password change for all users |
+| GET | `/v4/system/config/policies/passwords/{password_type}` | requestPasswordPoliciesForPasswordType | `password_type`*, `X-Sds-Auth-Token` | PasswordPoliciesConfig | yes | Request password policies for a certain password type |
+| GET | `/v4/system/config/settings/auth` | requestAuthConfig | `X-Sds-Auth-Token` | AuthConfig | yes | Request authentication settings |
+| PUT | `/v4/system/config/settings/auth` | updateAuthConfig | `X-Sds-Auth-Token`, body*: AuthConfig | AuthConfig |  | Update authentication settings |
+| GET | `/v4/system/config/settings/defaults` | requestSystemDefaults | `X-Sds-Auth-Token` | SystemDefaults | yes | Request system defaults |
+| PUT | `/v4/system/config/settings/defaults` | updateSystemDefaults | `X-Sds-Auth-Token`, body*: UpdateSystemDefaults | SystemDefaults |  | Update system defaults |
+| GET | `/v4/system/config/settings/eventlog` | requestEventlogConfig | `X-Sds-Auth-Token` | EventlogConfig | yes | Request eventlog settings |
+| PUT | `/v4/system/config/settings/eventlog` | updateEventlogConfig | `X-Sds-Auth-Token`, body*: UpdateEventlogConfig | EventlogConfig |  | Update eventlog settings |
+| GET | `/v4/system/config/settings/general` | requestGeneralSettings | `X-Sds-Auth-Token` | GeneralSettings | yes | Request general settings |
+| PUT | `/v4/system/config/settings/general` | updateGeneralSettings | `X-Sds-Auth-Token`, body*: UpdateGeneralSettings | GeneralSettings |  | Update general settings |
+| GET | `/v4/system/config/settings/infrastructure` | requestInfrastructureProperties | `X-Sds-Auth-Token` | InfrastructureProperties | yes | Request infrastructure properties |
+| GET | `/v4/system/config/settings/syslog` | requestSyslogConfig | `X-Sds-Auth-Token` | SyslogConfig | yes | Request syslog settings |
+| PUT | `/v4/system/config/settings/syslog` | updateSyslogConfig | `X-Sds-Auth-Token`, body*: UpdateSyslogConfig | SyslogConfig |  | Update syslog settings |
+| GET | `/v4/system/config/storage/s3` | request3Config | `X-Sds-Auth-Token` | S3Config | yes | Request S3 storage configuration |
+| PUT | `/v4/system/config/storage/s3` | updateS3Config | `X-Sds-Auth-Token`, body*: S3ConfigUpdateRequest | S3Config |  | Update S3 storage configuration |
+| POST | `/v4/system/config/storage/s3` | createS3Config | `X-Sds-Auth-Token`, body*: S3ConfigCreateRequest | S3Config |  | Create S3 storage configuration |
+| GET | `/v4/system/config/storage/s3/tags` | requestS3TagList | `X-Sds-Auth-Token` | S3TagList | yes | Request list of configured S3 tags |
+| POST | `/v4/system/config/storage/s3/tags` | createS3Tag | `X-Sds-Auth-Token`, body*: S3TagCreateRequest | S3Tag |  | Create S3 tag |
+| GET | `/v4/system/config/storage/s3/tags/{id}` | requestS3Tag | `id`*, `X-Sds-Auth-Token` | S3Tag | yes | Request S3 tag |
+| DELETE | `/v4/system/config/storage/s3/tags/{id}` | removeS3Tag | `id`*, `X-Sds-Auth-Token` | — |  | Remove S3 tag |
+| PUT | `/v4/uploads/{token}` | completeFileUploadByToken | `X-Sds-Date-Format`, `token`*, body: CompleteUploadRequest | Node |  | Complete file upload |
+| POST | `/v4/uploads/{token}` | uploadFileByTokenAsMultipart_1 | `token`*, `Content-Range`, body: object | ChunkUploadResponse |  | Upload file |
+| DELETE | `/v4/uploads/{token}` | cancelFileUploadByToken | `token`* | — |  | Cancel file upload |
+| GET | `/v4/user/account` | requestUserInfo | `X-Sds-Date-Format`, `more_info`, `X-Sds-Auth-Token` | UserAccount | yes | Request user account information |
+| PUT | `/v4/user/account` | updateUserAccount | `X-Sds-Date-Format`, `X-Sds-Auth-Token`, body*: UpdateUserAccountRequest | UserAccount |  | Update user account |
+| GET | `/v4/user/account/avatar` | requestAvatar | `X-Sds-Auth-Token` | Avatar | yes | Request avatar |
+| POST | `/v4/user/account/avatar` | uploadAvatarAsMultipart | `X-Sds-Auth-Token`, body: object | Avatar |  | Change avatar |
+| DELETE | `/v4/user/account/avatar` | resetAvatar | `X-Sds-Auth-Token` | Avatar |  | Reset avatar |
+| GET | `/v4/user/account/customer` | requestCustomerInfo | `X-Sds-Auth-Token` | CustomerData | yes | Request customer information for user |
+| PUT | `/v4/user/account/customer` | enableCustomerEncryption | `X-Sds-Auth-Token`, body*: EnableCustomerEncryptionRequest | CustomerData |  | Activate client-side encryption for customer |
+| GET | `/v4/user/account/customer/keypair` | requestCustomerKeyPair | `X-Sds-Auth-Token` | UserKeyPairContainer | yes | Request customer's key pair |
+| GET | `/v4/user/account/keypair` | requestUserKeyPair | `X-Sds-Date-Format`, `version`, `X-Sds-Auth-Token` | UserKeyPairContainer | yes | Request user's key pair |
+| POST | `/v4/user/account/keypair` | setUserKeyPair | `X-Sds-Auth-Token`, body*: UserKeyPairContainer | — |  | Set user's key pair |
+| DELETE | `/v4/user/account/keypair` | removeUserKeyPair | `version`, `X-Sds-Auth-Token` | — |  | Remove user's key pair |
+| GET | `/v4/user/account/keypairs` | requestUserKeyPairs | `X-Sds-Date-Format`, `X-Sds-Auth-Token` | UserKeyPairContainer[] | yes | Request all user key pairs |
+| POST | `/v4/user/account/keypairs` | createAndPreserveUserKeyPair | `X-Sds-Auth-Token`, body*: CreateKeyPairRequest | — |  | Create key pair and preserve copy of old private key |
+| GET | `/v4/user/account/mfa` | getMfaStatusForUser | `X-Sds-Auth-Token` | UserMfaStatusResponse | yes | Request information about the user's mfa status |
+| DELETE | `/v4/user/account/mfa` | useEmergencyCode | `emergency_code`*, `X-Sds-Auth-Token` | — |  | Using emergency-code |
+| GET | `/v4/user/account/mfa/totp` | getTotpSetupInformation | `X-Sds-Auth-Token` | TotpSetupResponse | yes | Request information to setup TOTP as second authentication factor |
+| POST | `/v4/user/account/mfa/totp` | confirmTotpSetup | `X-Sds-Auth-Token`, body*: MfaTotpConfirmationRequest | — |  | Confirm second factor TOTP setup with a generated OTP |
+| DELETE | `/v4/user/account/mfa/totp/{id}` | deleteMfaTotpSetup | `id`*, `valid_otp`*, `X-Sds-Auth-Token` | — |  | Disable a MFA TOTP setup with generated OTP |
+| PUT | `/v4/user/account/password` | changeUserPassword | `X-Sds-Auth-Token`, body*: ChangeUserPasswordRequest | — |  | Change user's password |
+| POST | `/v4/user/logout` | logout | `everywhere`, `X-Sds-Auth-Token` | — |  | Invalidate authentication token |
+| GET | `/v4/user/notifications/config` | requestListOfNotificationConfigs | `X-Sds-Auth-Token` | NotificationConfigList | yes | Request list of notification configurations |
+| PUT | `/v4/user/notifications/config/{id}` | updateNotificationConfig | `id`*, `X-Sds-Auth-Token`, body*: NotificationConfigChangeRequest | NotificationConfig |  | Update notification configuration |
+| GET | `/v4/user/oauth/approvals` | requestOAuthApprovals | `X-Sds-Date-Format`, `sort`, `X-Sds-Auth-Token` | OAuthApproval[] | yes | Request list of OAuth client approvals |
+| DELETE | `/v4/user/oauth/approvals/{client_id}` | removeOAuthApproval | `client_id`*, `X-Sds-Auth-Token` | — |  | Remove OAuth client approval |
+| GET | `/v4/user/oauth/authorizations` | requestOAuthAuthorizations | `X-Sds-Date-Format`, `filter`, `sort`, `X-Sds-Auth-Token` | OAuthAuthorization[] | yes | Request list of OAuth client authorizations |
+| DELETE | `/v4/user/oauth/authorizations/{client_id}` | removeOAuthAuthorizations | `client_id`*, `X-Sds-Auth-Token` | — |  | Remove all OAuth authorizations of a client |
+| DELETE | `/v4/user/oauth/authorizations/{client_id}/{authorization_id}` | removeOAuthAuthorization | `client_id`*, `authorization_id`*, `X-Sds-Auth-Token` | — |  | Remove a OAuth authorization |
+| GET | `/v4/user/ping` | pingUser | `X-Sds-Auth-Token` | string | yes | (authenticated) Ping |
+| GET | `/v4/user/profileAttributes` | requestProfileAttributes | `offset`, `limit`, `filter`, `sort`, `X-Sds-Auth-Token` | AttributesResponse | yes | Request user profile attributes |
+| PUT | `/v4/user/profileAttributes` | updateProfileAttributes | `X-Sds-Auth-Token`, body*: ProfileAttributesRequest | ProfileAttributes |  | Add or edit user profile attributes |
+| POST | `/v4/user/profileAttributes` | setProfileAttributes | `X-Sds-Auth-Token`, body*: ProfileAttributesRequest | ProfileAttributes |  | Set user profile attributes |
+| DELETE | `/v4/user/profileAttributes/{key}` | removeProfileAttribute | `key`*, `X-Sds-Auth-Token` | — |  | Remove user profile attribute |
+| GET | `/v4/user/subscriptions/download_shares` | listDownloadShareSubscriptions | `filter`, `limit`, `offset`, `sort`, `X-Sds-Auth-Token` | SubscribedDownloadShareList | yes | List Download Share subscriptions |
+| PUT | `/v4/user/subscriptions/download_shares` | subscribeDownloadShares | `X-Sds-Auth-Token`, body*: UpdateSubscriptionsBulkRequest | — |  | Subscribe or Unsubscribe a List of Download Shares for notifications |
+| POST | `/v4/user/subscriptions/download_shares/{share_id}` | subscribeDownloadShare | `share_id`*, `X-Sds-Auth-Token` | SubscribedDownloadShare |  | Subscribe Download Share for notifications |
+| DELETE | `/v4/user/subscriptions/download_shares/{share_id}` | unsubscribeDownloadShare | `share_id`*, `X-Sds-Auth-Token` | — |  | Unsubscribe Download Share from notifications |
+| GET | `/v4/user/subscriptions/nodes` | listNodeSubscriptions | `filter`, `limit`, `offset`, `sort`, `X-Sds-Auth-Token` | SubscribedNodeList | yes | List node subscriptions |
+| PUT | `/v4/user/subscriptions/nodes` | updateNodeSubscriptions | `X-Sds-Auth-Token`, body*: UpdateSubscriptionsBulkRequest | — |  | Subscribe or Unsubscribe a List of nodes for notifications |
+| POST | `/v4/user/subscriptions/nodes/{node_id}` | subscribeNode | `node_id`*, `X-Sds-Auth-Token` | SubscribedNode |  | Subscribe node for notifications |
+| DELETE | `/v4/user/subscriptions/nodes/{node_id}` | unsubscribeNode | `node_id`*, `X-Sds-Auth-Token` | — |  | Unsubscribe node from notifications |
+| GET | `/v4/user/subscriptions/upload_shares` | listUploadShareSubscriptions | `filter`, `limit`, `offset`, `sort`, `X-Sds-Auth-Token` | SubscribedUploadShareList | yes | List Upload Share subscriptions |
+| PUT | `/v4/user/subscriptions/upload_shares` | subscribeUploadShares | `X-Sds-Auth-Token`, body*: UpdateSubscriptionsBulkRequest | — |  | Subscribe or Unsubscribe a List of Upload Shares for notifications |
+| POST | `/v4/user/subscriptions/upload_shares/{share_id}` | subscribeUploadShare | `share_id`*, `X-Sds-Auth-Token` | SubscribedUploadShare |  | Subscribe Upload Share for notifications |
+| DELETE | `/v4/user/subscriptions/upload_shares/{share_id}` | unsubscribeUploadShare | `share_id`*, `X-Sds-Auth-Token` | — |  | Unsubscribe Upload Share from notifications |
+| GET | `/v4/users` | requestUsers | `X-Sds-Date-Format`, `offset`, `limit`, `filter`, `sort`, `include_attributes`, `include_roles`, `include_manageable_rooms`, `X-Sds-Auth-Token` | UserList | yes | Request users |
+| POST | `/v4/users` | createUser | `X-Sds-Date-Format`, `X-Sds-Auth-Token`, body*: CreateUserRequest | UserData |  | Create new user |
+| GET | `/v4/users/{user_id}` | requestUser | `X-Sds-Date-Format`, `user_id`*, `effective_roles`, `X-Sds-Auth-Token` | UserData | yes | Request user |
+| PUT | `/v4/users/{user_id}` | updateUser | `X-Sds-Date-Format`, `user_id`*, `X-Sds-Auth-Token`, body*: UpdateUserRequest | UserData |  | Update user's metadata |
+| DELETE | `/v4/users/{user_id}` | removeUser | `user_id`*, `X-Sds-Auth-Token` | — |  | Remove user |
+| GET | `/v4/users/{user_id}/groups` | requestUserGroups | `user_id`*, `offset`, `limit`, `filter`, `X-Sds-Auth-Token` | UserGroupList | yes | Request groups that user is a member of or / and can become a member |
+| GET | `/v4/users/{user_id}/last_admin_rooms` | requestLastAdminRoomsUsers | `user_id`*, `X-Sds-Auth-Token` | LastAdminUserRoomList | yes | Request rooms where the user is last admin |
+| POST | `/v4/users/{user_id}/mfa/emergency_code` | requestEmergencyMfaCode | `user_id`*, `X-Sds-Auth-Token` | EmergencyMfaCodeResponse |  | Request emergency MFA code |
+| GET | `/v4/users/{user_id}/roles` | requestUserRoles | `user_id`*, `X-Sds-Auth-Token` | RoleList | yes | Request user's granted roles |
+| GET | `/v4/users/{user_id}/rooms` | requestUsersRooms | `X-Sds-Date-Format`, `user_id`*, `offset`, `limit`, `filter`, `X-Sds-Auth-Token` | RoomTreeDataList | yes | Request rooms granted to the user or / and rooms that can be granted |
+| GET | `/v4/users/{user_id}/userAttributes` | requestUserAttributes | `user_id`*, `offset`, `limit`, `filter`, `sort`, `X-Sds-Auth-Token` | AttributesResponse | yes | Request custom user attributes |
+| PUT | `/v4/users/{user_id}/userAttributes` | updateUserAttributes | `X-Sds-Date-Format`, `user_id`*, `X-Sds-Auth-Token`, body*: UserAttributes | UserData |  | Add or edit custom user attributes |
+| POST | `/v4/users/{user_id}/userAttributes` | setUserAttributes | `X-Sds-Date-Format`, `user_id`*, `X-Sds-Auth-Token`, body*: UserAttributes | UserData |  | Set custom user attributes |
+| DELETE | `/v4/users/{user_id}/userAttributes/{key}` | removeUserAttribute | `user_id`*, `key`*, `X-Sds-Auth-Token` | — |  | Remove custom user attribute |

@@ -17,17 +17,17 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/admin/config/properties/{propertyName}"
-      },
-      {
-        "from": "apicurio-local-registry-f8e8ccae25",
-        "kind": "EXPOSES",
         "to": "operation:get:/admin/config/properties/{propertyName}"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
         "to": "operation:put:/admin/config/properties/{propertyName}"
+      },
+      {
+        "from": "apicurio-local-registry-f8e8ccae25",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/admin/config/properties/{propertyName}"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -47,17 +47,17 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/admin/loggers/{logger}"
-      },
-      {
-        "from": "apicurio-local-registry-f8e8ccae25",
-        "kind": "EXPOSES",
         "to": "operation:get:/admin/loggers/{logger}"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
         "to": "operation:put:/admin/loggers/{logger}"
+      },
+      {
+        "from": "apicurio-local-registry-f8e8ccae25",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/admin/loggers/{logger}"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -72,11 +72,6 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/admin/roleMappings/{principalId}"
-      },
-      {
-        "from": "apicurio-local-registry-f8e8ccae25",
-        "kind": "EXPOSES",
         "to": "operation:get:/admin/roleMappings/{principalId}"
       },
       {
@@ -87,7 +82,7 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/admin/rules"
+        "to": "operation:delete:/admin/roleMappings/{principalId}"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -102,7 +97,7 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/admin/rules/{rule}"
+        "to": "operation:delete:/admin/rules"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -117,6 +112,11 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
+        "to": "operation:delete:/admin/rules/{rule}"
+      },
+      {
+        "from": "apicurio-local-registry-f8e8ccae25",
+        "kind": "EXPOSES",
         "to": "operation:get:/groups"
       },
       {
@@ -127,17 +127,12 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/groups/{groupId}"
-      },
-      {
-        "from": "apicurio-local-registry-f8e8ccae25",
-        "kind": "EXPOSES",
         "to": "operation:get:/groups/{groupId}"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/groups/{groupId}/artifacts"
+        "to": "operation:delete:/groups/{groupId}"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -152,7 +147,7 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/groups/{groupId}/artifacts/{artifactId}"
+        "to": "operation:delete:/groups/{groupId}/artifacts"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -167,17 +162,22 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
+        "to": "operation:delete:/groups/{groupId}/artifacts/{artifactId}"
+      },
+      {
+        "from": "apicurio-local-registry-f8e8ccae25",
+        "kind": "EXPOSES",
         "to": "operation:get:/groups/{groupId}/artifacts/{artifactId}/meta"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:post:/groups/{groupId}/artifacts/{artifactId}/meta"
+        "to": "operation:put:/groups/{groupId}/artifacts/{artifactId}/meta"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:put:/groups/{groupId}/artifacts/{artifactId}/meta"
+        "to": "operation:post:/groups/{groupId}/artifacts/{artifactId}/meta"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -192,11 +192,6 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/rules"
-      },
-      {
-        "from": "apicurio-local-registry-f8e8ccae25",
-        "kind": "EXPOSES",
         "to": "operation:get:/groups/{groupId}/artifacts/{artifactId}/rules"
       },
       {
@@ -207,7 +202,7 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}"
+        "to": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/rules"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -218,6 +213,11 @@
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
         "to": "operation:put:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}"
+      },
+      {
+        "from": "apicurio-local-registry-f8e8ccae25",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -247,17 +247,17 @@
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
-        "to": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta"
-      },
-      {
-        "from": "apicurio-local-registry-f8e8ccae25",
-        "kind": "EXPOSES",
         "to": "operation:get:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
         "to": "operation:put:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta"
+      },
+      {
+        "from": "apicurio-local-registry-f8e8ccae25",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta"
       },
       {
         "from": "apicurio-local-registry-f8e8ccae25",
@@ -323,6 +323,501 @@
         "from": "apicurio-local-registry-f8e8ccae25",
         "kind": "EXPOSES",
         "to": "operation:get:/users/me"
+      },
+      {
+        "from": "operation:get:/admin/artifactTypes",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactTypeInfo"
+      },
+      {
+        "from": "operation:get:/admin/config/properties",
+        "kind": "RETURNS",
+        "to": "schema:ConfigurationProperty"
+      },
+      {
+        "from": "operation:get:/admin/config/properties/{propertyName}",
+        "kind": "RETURNS",
+        "to": "schema:ConfigurationProperty"
+      },
+      {
+        "from": "operation:put:/admin/config/properties/{propertyName}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateConfigurationProperty"
+      },
+      {
+        "from": "operation:get:/admin/export",
+        "kind": "RETURNS",
+        "to": "schema:DownloadRef"
+      },
+      {
+        "from": "operation:post:/admin/import",
+        "kind": "ACCEPTS",
+        "to": "schema:FileContent"
+      },
+      {
+        "from": "operation:get:/admin/loggers",
+        "kind": "RETURNS",
+        "to": "schema:NamedLogConfiguration"
+      },
+      {
+        "from": "operation:get:/admin/loggers/{logger}",
+        "kind": "RETURNS",
+        "to": "schema:NamedLogConfiguration"
+      },
+      {
+        "from": "operation:put:/admin/loggers/{logger}",
+        "kind": "ACCEPTS",
+        "to": "schema:LogConfiguration"
+      },
+      {
+        "from": "operation:put:/admin/loggers/{logger}",
+        "kind": "RETURNS",
+        "to": "schema:NamedLogConfiguration"
+      },
+      {
+        "from": "operation:delete:/admin/loggers/{logger}",
+        "kind": "RETURNS",
+        "to": "schema:NamedLogConfiguration"
+      },
+      {
+        "from": "operation:get:/admin/roleMappings",
+        "kind": "RETURNS",
+        "to": "schema:RoleMapping"
+      },
+      {
+        "from": "operation:post:/admin/roleMappings",
+        "kind": "ACCEPTS",
+        "to": "schema:RoleMapping"
+      },
+      {
+        "from": "operation:get:/admin/roleMappings/{principalId}",
+        "kind": "RETURNS",
+        "to": "schema:RoleMapping"
+      },
+      {
+        "from": "operation:put:/admin/roleMappings/{principalId}",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateRole"
+      },
+      {
+        "from": "operation:get:/admin/rules",
+        "kind": "RETURNS",
+        "to": "schema:RuleType"
+      },
+      {
+        "from": "operation:post:/admin/rules",
+        "kind": "ACCEPTS",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "operation:get:/admin/rules/{rule}",
+        "kind": "RETURNS",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "operation:put:/admin/rules/{rule}",
+        "kind": "ACCEPTS",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "operation:put:/admin/rules/{rule}",
+        "kind": "RETURNS",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "operation:get:/groups",
+        "kind": "RETURNS",
+        "to": "schema:GroupSearchResults"
+      },
+      {
+        "from": "operation:post:/groups",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateGroupMetaData"
+      },
+      {
+        "from": "operation:post:/groups",
+        "kind": "RETURNS",
+        "to": "schema:GroupMetaData"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}",
+        "kind": "RETURNS",
+        "to": "schema:GroupMetaData"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactSearchResults"
+      },
+      {
+        "from": "operation:post:/groups/{groupId}/artifacts",
+        "kind": "ACCEPTS",
+        "to": "schema:ContentCreateRequest"
+      },
+      {
+        "from": "operation:post:/groups/{groupId}/artifacts",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactMetaData"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts/{artifactId}",
+        "kind": "RETURNS",
+        "to": "schema:FileContent"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}",
+        "kind": "ACCEPTS",
+        "to": "schema:ContentCreateRequest"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactMetaData"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts/{artifactId}/meta",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactMetaData"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}/meta",
+        "kind": "ACCEPTS",
+        "to": "schema:EditableMetaData"
+      },
+      {
+        "from": "operation:post:/groups/{groupId}/artifacts/{artifactId}/meta",
+        "kind": "ACCEPTS",
+        "to": "schema:FileContent"
+      },
+      {
+        "from": "operation:post:/groups/{groupId}/artifacts/{artifactId}/meta",
+        "kind": "RETURNS",
+        "to": "schema:VersionMetaData"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts/{artifactId}/owner",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactOwner"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}/owner",
+        "kind": "ACCEPTS",
+        "to": "schema:ArtifactOwner"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts/{artifactId}/rules",
+        "kind": "RETURNS",
+        "to": "schema:RuleType"
+      },
+      {
+        "from": "operation:post:/groups/{groupId}/artifacts/{artifactId}/rules",
+        "kind": "ACCEPTS",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
+        "kind": "RETURNS",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
+        "kind": "ACCEPTS",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
+        "kind": "RETURNS",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}/state",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateState"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}/test",
+        "kind": "ACCEPTS",
+        "to": "schema:FileContent"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts/{artifactId}/versions",
+        "kind": "RETURNS",
+        "to": "schema:VersionSearchResults"
+      },
+      {
+        "from": "operation:post:/groups/{groupId}/artifacts/{artifactId}/versions",
+        "kind": "ACCEPTS",
+        "to": "schema:ContentCreateRequest"
+      },
+      {
+        "from": "operation:post:/groups/{groupId}/artifacts/{artifactId}/versions",
+        "kind": "RETURNS",
+        "to": "schema:VersionMetaData"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts/{artifactId}/versions/{version}",
+        "kind": "RETURNS",
+        "to": "schema:FileContent"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
+        "kind": "RETURNS",
+        "to": "schema:VersionMetaData"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
+        "kind": "ACCEPTS",
+        "to": "schema:EditableMetaData"
+      },
+      {
+        "from": "operation:get:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/references",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactReference"
+      },
+      {
+        "from": "operation:put:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/state",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateState"
+      },
+      {
+        "from": "operation:get:/ids/contentHashes/{contentHash}/",
+        "kind": "RETURNS",
+        "to": "schema:FileContent"
+      },
+      {
+        "from": "operation:get:/ids/contentHashes/{contentHash}/references",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactReference"
+      },
+      {
+        "from": "operation:get:/ids/contentIds/{contentId}/",
+        "kind": "RETURNS",
+        "to": "schema:FileContent"
+      },
+      {
+        "from": "operation:get:/ids/contentIds/{contentId}/references",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactReference"
+      },
+      {
+        "from": "operation:get:/ids/globalIds/{globalId}",
+        "kind": "RETURNS",
+        "to": "schema:FileContent"
+      },
+      {
+        "from": "operation:get:/ids/globalIds/{globalId}/references",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactReference"
+      },
+      {
+        "from": "operation:get:/search/artifacts",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactSearchResults"
+      },
+      {
+        "from": "operation:post:/search/artifacts",
+        "kind": "ACCEPTS",
+        "to": "schema:FileContent"
+      },
+      {
+        "from": "operation:post:/search/artifacts",
+        "kind": "RETURNS",
+        "to": "schema:ArtifactSearchResults"
+      },
+      {
+        "from": "operation:get:/system/info",
+        "kind": "RETURNS",
+        "to": "schema:SystemInfo"
+      },
+      {
+        "from": "operation:get:/system/limits",
+        "kind": "RETURNS",
+        "to": "schema:Limits"
+      },
+      {
+        "from": "operation:get:/users/me",
+        "kind": "RETURNS",
+        "to": "schema:UserInfo"
+      },
+      {
+        "from": "schema:ArtifactMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactId"
+      },
+      {
+        "from": "schema:ArtifactMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactReference"
+      },
+      {
+        "from": "schema:ArtifactMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactState"
+      },
+      {
+        "from": "schema:ArtifactMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactType"
+      },
+      {
+        "from": "schema:ArtifactMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:GroupId"
+      },
+      {
+        "from": "schema:ArtifactMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:Properties"
+      },
+      {
+        "from": "schema:ArtifactSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchedArtifact"
+      },
+      {
+        "from": "schema:ContentCreateRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactReference"
+      },
+      {
+        "from": "schema:CreateGroupMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:Properties"
+      },
+      {
+        "from": "schema:EditableMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:Properties"
+      },
+      {
+        "from": "schema:GroupMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:GroupId"
+      },
+      {
+        "from": "schema:GroupMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:Properties"
+      },
+      {
+        "from": "schema:GroupSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchedGroup"
+      },
+      {
+        "from": "schema:LogConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:LogLevel"
+      },
+      {
+        "from": "schema:NamedLogConfiguration",
+        "kind": "REFERENCES",
+        "to": "schema:LogConfiguration"
+      },
+      {
+        "from": "schema:RoleMapping",
+        "kind": "REFERENCES",
+        "to": "schema:RoleType"
+      },
+      {
+        "from": "schema:Rule",
+        "kind": "REFERENCES",
+        "to": "schema:RuleType"
+      },
+      {
+        "from": "schema:RuleViolationError",
+        "kind": "REFERENCES",
+        "to": "schema:Error"
+      },
+      {
+        "from": "schema:RuleViolationError",
+        "kind": "REFERENCES",
+        "to": "schema:RuleViolationCause"
+      },
+      {
+        "from": "schema:SearchedArtifact",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactId"
+      },
+      {
+        "from": "schema:SearchedArtifact",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactState"
+      },
+      {
+        "from": "schema:SearchedArtifact",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactType"
+      },
+      {
+        "from": "schema:SearchedArtifact",
+        "kind": "REFERENCES",
+        "to": "schema:GroupId"
+      },
+      {
+        "from": "schema:SearchedGroup",
+        "kind": "REFERENCES",
+        "to": "schema:GroupId"
+      },
+      {
+        "from": "schema:SearchedVersion",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactReference"
+      },
+      {
+        "from": "schema:SearchedVersion",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactState"
+      },
+      {
+        "from": "schema:SearchedVersion",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactType"
+      },
+      {
+        "from": "schema:SearchedVersion",
+        "kind": "REFERENCES",
+        "to": "schema:Properties"
+      },
+      {
+        "from": "schema:UpdateRole",
+        "kind": "REFERENCES",
+        "to": "schema:RoleType"
+      },
+      {
+        "from": "schema:UpdateState",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactState"
+      },
+      {
+        "from": "schema:VersionMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactId"
+      },
+      {
+        "from": "schema:VersionMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactState"
+      },
+      {
+        "from": "schema:VersionMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:ArtifactType"
+      },
+      {
+        "from": "schema:VersionMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:GroupId"
+      },
+      {
+        "from": "schema:VersionMetaData",
+        "kind": "REFERENCES",
+        "to": "schema:Properties"
+      },
+      {
+        "from": "schema:VersionSearchResults",
+        "kind": "REFERENCES",
+        "to": "schema:SearchedVersion"
       }
     ],
     "nodes": [
@@ -332,942 +827,3373 @@
       },
       {
         "deprecated": false,
+        "description": "Gets a list of all the configured artifact types.",
         "id": "operation:get:/admin/artifactTypes",
         "kind": "operation",
         "method": "get",
         "name": "listArtifactTypes",
         "path": "/admin/artifactTypes",
         "pointer": "#/paths/~1admin~1artifactTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactTypeInfo[]"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List artifact types"
+        "summary": "List artifact types",
+        "tags": [
+          "Artifact Type",
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of all configuration properties that have been set.",
         "id": "operation:get:/admin/config/properties",
         "kind": "operation",
         "method": "get",
         "name": "listConfigProperties",
         "path": "/admin/config/properties",
         "pointer": "#/paths/~1admin~1config~1properties/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigurationProperty[]"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all configuration properties"
+        "summary": "List all configuration properties",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/admin/config/properties/{propertyName}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "resetConfigProperty",
-        "path": "/admin/config/properties/{propertyName}",
-        "pointer": "#/paths/~1admin~1config~1properties~1{propertyName}/delete",
-        "security": [],
-        "summary": "Reset a configuration property"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns the value of a single configuration property.",
         "id": "operation:get:/admin/config/properties/{propertyName}",
         "kind": "operation",
         "method": "get",
         "name": "getConfigProperty",
+        "parameters": [
+          {
+            "description": "The name of a configuration property.",
+            "in": "path",
+            "name": "propertyName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/admin/config/properties/{propertyName}",
         "pointer": "#/paths/~1admin~1config~1properties~1{propertyName}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ConfigurationProperty"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get configuration property value"
+        "summary": "Get configuration property value",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the value of a single configuration property.",
         "id": "operation:put:/admin/config/properties/{propertyName}",
         "kind": "operation",
         "method": "put",
         "name": "updateConfigProperty",
+        "parameters": [
+          {
+            "description": "The name of a configuration property.",
+            "in": "path",
+            "name": "propertyName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/admin/config/properties/{propertyName}",
         "pointer": "#/paths/~1admin~1config~1properties~1{propertyName}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateConfigurationProperty"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a configuration property"
+        "summary": "Update a configuration property",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Resets the value of a single configuration property.",
+        "id": "operation:delete:/admin/config/properties/{propertyName}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "resetConfigProperty",
+        "parameters": [
+          {
+            "description": "The name of a configuration property.",
+            "in": "path",
+            "name": "propertyName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/admin/config/properties/{propertyName}",
+        "pointer": "#/paths/~1admin~1config~1properties~1{propertyName}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Reset a configuration property",
+        "tags": [
+          "Admin"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Exports registry data as a ZIP archive.",
         "id": "operation:get:/admin/export",
         "kind": "operation",
         "method": "get",
         "name": "exportData",
+        "parameters": [
+          {
+            "description": "Indicates if the operation is done for a browser.",
+            "in": "query",
+            "name": "forBrowser",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/admin/export",
         "pointer": "#/paths/~1admin~1export/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "DownloadRef"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Export registry data"
+        "summary": "Export registry data",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Imports registry data that was previously exported using the `/admin/export` operation.",
         "id": "operation:post:/admin/import",
         "kind": "operation",
         "method": "post",
         "name": "importData",
+        "parameters": [
+          {
+            "description": "If this header is set to false, global ids of imported data will be ignored and replaced by next id in global id sequence.",
+            "in": "header",
+            "name": "X-Registry-Preserve-GlobalId",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "If this header is set to false, content ids of imported data will be ignored and replaced by next id in content id sequence.",
+            "in": "header",
+            "name": "X-Registry-Preserve-ContentId",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/admin/import",
         "pointer": "#/paths/~1admin~1import/post",
+        "request": {
+          "content_types": [
+            "application/zip"
+          ],
+          "required": true,
+          "type": "FileContent"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Import registry data"
+        "summary": "Import registry data",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List all of the configured logging levels.",
         "id": "operation:get:/admin/loggers",
         "kind": "operation",
         "method": "get",
         "name": "listLogConfigurations",
         "path": "/admin/loggers",
         "pointer": "#/paths/~1admin~1loggers/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NamedLogConfiguration[]"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List logging configurations"
+        "summary": "List logging configurations",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/admin/loggers/{logger}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "removeLogConfiguration",
-        "path": "/admin/loggers/{logger}",
-        "pointer": "#/paths/~1admin~1loggers~1{logger}/delete",
-        "security": [],
-        "summary": "Removes logger configuration"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns the configured logger configuration for the provided logger name, if no logger configuration is persisted it will return the current default log config…",
         "id": "operation:get:/admin/loggers/{logger}",
         "kind": "operation",
         "method": "get",
         "name": "getLogConfiguration",
+        "parameters": [
+          {
+            "description": "The name of a single logger.",
+            "in": "path",
+            "name": "logger",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/admin/loggers/{logger}",
         "pointer": "#/paths/~1admin~1loggers~1{logger}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NamedLogConfiguration"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a single logger configuration"
+        "summary": "Get a single logger configuration",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Configures the logger referenced by the provided logger name with the given configuration.",
         "id": "operation:put:/admin/loggers/{logger}",
         "kind": "operation",
         "method": "put",
         "name": "setLogConfiguration",
+        "parameters": [
+          {
+            "description": "The name of a single logger.",
+            "in": "path",
+            "name": "logger",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/admin/loggers/{logger}",
         "pointer": "#/paths/~1admin~1loggers~1{logger}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "LogConfiguration"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "NamedLogConfiguration"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Set a logger's configuration"
+        "summary": "Set a logger's configuration",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Removes the configured logger configuration (if any) for the given logger.",
+        "id": "operation:delete:/admin/loggers/{logger}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "removeLogConfiguration",
+        "parameters": [
+          {
+            "description": "The name of a single logger.",
+            "in": "path",
+            "name": "logger",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/admin/loggers/{logger}",
+        "pointer": "#/paths/~1admin~1loggers~1{logger}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "NamedLogConfiguration"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Removes logger configuration",
+        "tags": [
+          "Admin"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Gets a list of all role mappings configured in the registry (if any).",
         "id": "operation:get:/admin/roleMappings",
         "kind": "operation",
         "method": "get",
         "name": "listRoleMappings",
         "path": "/admin/roleMappings",
         "pointer": "#/paths/~1admin~1roleMappings/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RoleMapping[]"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List all role mappings"
+        "summary": "List all role mappings",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new mapping between a user/principal and a role.",
         "id": "operation:post:/admin/roleMappings",
         "kind": "operation",
         "method": "post",
         "name": "createRoleMapping",
         "path": "/admin/roleMappings",
         "pointer": "#/paths/~1admin~1roleMappings/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "RoleMapping"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new role mapping"
+        "summary": "Create a new role mapping",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/admin/roleMappings/{principalId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteRoleMapping",
-        "path": "/admin/roleMappings/{principalId}",
-        "pointer": "#/paths/~1admin~1roleMappings~1{principalId}/delete",
-        "security": [],
-        "summary": "Delete a role mapping"
-      },
-      {
-        "deprecated": false,
+        "description": "Gets the details of a single role mapping (by `principalId`).",
         "id": "operation:get:/admin/roleMappings/{principalId}",
         "kind": "operation",
         "method": "get",
         "name": "getRoleMapping",
+        "parameters": [
+          {
+            "description": "Unique id of a principal (typically either a user or service account).",
+            "in": "path",
+            "name": "principalId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/admin/roleMappings/{principalId}",
         "pointer": "#/paths/~1admin~1roleMappings~1{principalId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RoleMapping"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a single role mapping"
+        "summary": "Return a single role mapping",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates a single role mapping for one user/principal.",
         "id": "operation:put:/admin/roleMappings/{principalId}",
         "kind": "operation",
         "method": "put",
         "name": "updateRoleMapping",
+        "parameters": [
+          {
+            "description": "Unique id of a principal (typically either a user or service account).",
+            "in": "path",
+            "name": "principalId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/admin/roleMappings/{principalId}",
         "pointer": "#/paths/~1admin~1roleMappings~1{principalId}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateRole"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update a role mapping"
+        "summary": "Update a role mapping",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/admin/rules",
+        "description": "Deletes a single role mapping, effectively denying access to a user/principal.",
+        "id": "operation:delete:/admin/roleMappings/{principalId}",
         "kind": "operation",
         "method": "delete",
-        "name": "deleteAllGlobalRules",
-        "path": "/admin/rules",
-        "pointer": "#/paths/~1admin~1rules/delete",
+        "name": "deleteRoleMapping",
+        "parameters": [
+          {
+            "description": "Unique id of a principal (typically either a user or service account).",
+            "in": "path",
+            "name": "principalId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/admin/roleMappings/{principalId}",
+        "pointer": "#/paths/~1admin~1roleMappings~1{principalId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete all global rules"
+        "summary": "Delete a role mapping",
+        "tags": [
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets a list of all the currently configured global rules (if any).",
         "id": "operation:get:/admin/rules",
         "kind": "operation",
         "method": "get",
         "name": "listGlobalRules",
         "path": "/admin/rules",
         "pointer": "#/paths/~1admin~1rules/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RuleType[]"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List global rules"
+        "summary": "List global rules",
+        "tags": [
+          "Global rules",
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds a rule to the list of globally configured rules.",
         "id": "operation:post:/admin/rules",
         "kind": "operation",
         "method": "post",
         "name": "createGlobalRule",
         "path": "/admin/rules",
         "pointer": "#/paths/~1admin~1rules/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Rule"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create global rule"
+        "summary": "Create global rule",
+        "tags": [
+          "Global rules",
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/admin/rules/{rule}",
+        "description": "Deletes all globally configured rules.",
+        "id": "operation:delete:/admin/rules",
         "kind": "operation",
         "method": "delete",
-        "name": "deleteGlobalRule",
-        "path": "/admin/rules/{rule}",
-        "pointer": "#/paths/~1admin~1rules~1{rule}/delete",
+        "name": "deleteAllGlobalRules",
+        "path": "/admin/rules",
+        "pointer": "#/paths/~1admin~1rules/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete global rule"
+        "summary": "Delete all global rules",
+        "tags": [
+          "Global rules",
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information about the named globally configured rule.",
         "id": "operation:get:/admin/rules/{rule}",
         "kind": "operation",
         "method": "get",
         "name": "getGlobalRuleConfig",
+        "parameters": [
+          {
+            "description": "The unique name/type of a rule.",
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "type": "RuleType"
+          }
+        ],
         "path": "/admin/rules/{rule}",
         "pointer": "#/paths/~1admin~1rules~1{rule}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rule"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get global rule configuration"
+        "summary": "Get global rule configuration",
+        "tags": [
+          "Global rules",
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the configuration for a globally configured rule.",
         "id": "operation:put:/admin/rules/{rule}",
         "kind": "operation",
         "method": "put",
         "name": "updateGlobalRuleConfig",
+        "parameters": [
+          {
+            "description": "The unique name/type of a rule.",
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "type": "RuleType"
+          }
+        ],
         "path": "/admin/rules/{rule}",
         "pointer": "#/paths/~1admin~1rules~1{rule}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Rule"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rule"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update global rule configuration"
+        "summary": "Update global rule configuration",
+        "tags": [
+          "Global rules",
+          "Admin"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a single global rule.",
+        "id": "operation:delete:/admin/rules/{rule}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteGlobalRule",
+        "parameters": [
+          {
+            "description": "The unique name/type of a rule.",
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "type": "RuleType"
+          }
+        ],
+        "path": "/admin/rules/{rule}",
+        "pointer": "#/paths/~1admin~1rules~1{rule}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete global rule",
+        "tags": [
+          "Global rules",
+          "Admin"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Returns a list of all groups.",
         "id": "operation:get:/groups",
         "kind": "operation",
         "method": "get",
         "name": "listGroups",
+        "parameters": [
+          {
+            "description": "The number of groups to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of groups to skip before starting the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort order, ascending (`asc`) or descending (`desc`).",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "SortOrder"
+          },
+          {
+            "description": "The field to sort by.",
+            "in": "query",
+            "name": "orderby",
+            "required": false,
+            "type": "SortBy"
+          }
+        ],
         "path": "/groups",
         "pointer": "#/paths/~1groups/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GroupSearchResults"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List groups"
+        "summary": "List groups",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new group.",
         "id": "operation:post:/groups",
         "kind": "operation",
         "method": "post",
         "name": "createGroup",
         "path": "/groups",
         "pointer": "#/paths/~1groups/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "CreateGroupMetaData"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "GroupMetaData"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create a new group"
+        "summary": "Create a new group",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/groups/{groupId}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteGroupById",
-        "path": "/groups/{groupId}",
-        "pointer": "#/paths/~1groups~1{groupId}/delete",
-        "security": [],
-        "summary": "Delete a group by the specified ID."
-      },
-      {
-        "deprecated": false,
+        "description": "Returns a group using the specified id.",
         "id": "operation:get:/groups/{groupId}",
         "kind": "operation",
         "method": "get",
         "name": "getGroupById",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          }
+        ],
         "path": "/groups/{groupId}",
         "pointer": "#/paths/~1groups~1{groupId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GroupMetaData"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a group by the specified ID."
+        "summary": "Get a group by the specified ID.",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/groups/{groupId}/artifacts",
+        "description": "Deletes a group by identifier.",
+        "id": "operation:delete:/groups/{groupId}",
         "kind": "operation",
         "method": "delete",
-        "name": "deleteArtifactsInGroup",
-        "path": "/groups/{groupId}/artifacts",
-        "pointer": "#/paths/~1groups~1{groupId}~1artifacts/delete",
+        "name": "deleteGroupById",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          }
+        ],
+        "path": "/groups/{groupId}",
+        "pointer": "#/paths/~1groups~1{groupId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete artifacts in group"
+        "summary": "Delete a group by the specified ID.",
+        "tags": [
+          "Groups"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of all artifacts in the group.",
         "id": "operation:get:/groups/{groupId}/artifacts",
         "kind": "operation",
         "method": "get",
         "name": "listArtifactsInGroup",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The number of artifacts to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of artifacts to skip before starting the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort order, ascending (`asc`) or descending (`desc`).",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "SortOrder"
+          },
+          {
+            "description": "The field to sort by.",
+            "in": "query",
+            "name": "orderby",
+            "required": false,
+            "type": "SortBy"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactSearchResults"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List artifacts in group"
+        "summary": "List artifacts in group",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new artifact by posting the artifact content.",
         "id": "operation:post:/groups/{groupId}/artifacts",
         "kind": "operation",
         "method": "post",
         "name": "createArtifact",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "Specifies the type of the artifact being added.",
+            "in": "header",
+            "name": "X-Registry-ArtifactType",
+            "required": false,
+            "type": "ArtifactType"
+          },
+          {
+            "description": "A client-provided, globally unique identifier for the new artifact.",
+            "in": "header",
+            "name": "X-Registry-ArtifactId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Specifies the version number of this initial version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Version",
+            "required": false,
+            "type": "Version"
+          },
+          {
+            "description": "Set this option to instruct the server on what to do if the artifact already exists.",
+            "in": "query",
+            "name": "ifExists",
+            "required": false,
+            "type": "IfExists"
+          },
+          {
+            "description": "Used only when the `ifExists` query parameter is set to `RETURN_OR_UPDATE`, this parameter can be set to `true` to indicate that the server should \"canonicaliz…",
+            "in": "query",
+            "name": "canonical",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Specifies the description of artifact being added.",
+            "in": "header",
+            "name": "X-Registry-Description",
+            "required": false,
+            "type": "ArtifactDescription"
+          },
+          {
+            "description": "Specifies the description of artifact being added.",
+            "in": "header",
+            "name": "X-Registry-Description-Encoded",
+            "required": false,
+            "type": "EncodedArtifactDescription"
+          },
+          {
+            "description": "Specifies the name of artifact being added.",
+            "in": "header",
+            "name": "X-Registry-Name",
+            "required": false,
+            "type": "ArtifactName"
+          },
+          {
+            "description": "Specifies the name of artifact being added.",
+            "in": "header",
+            "name": "X-Registry-Name-Encoded",
+            "required": false,
+            "type": "EncodedArtifactName"
+          },
+          {
+            "description": "Specifies the (optional) hash of the artifact to be verified.",
+            "in": "header",
+            "name": "X-Registry-Content-Hash",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The algorithm to use when checking the content validity.",
+            "enum": [
+              "SHA256",
+              "MD5"
+            ],
+            "in": "header",
+            "name": "X-Registry-Hash-Algorithm",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts/post",
+        "request": {
+          "content_types": [
+            "*/*",
+            "application/create.extended+json",
+            "application/vnd.create.extended+json"
+          ],
+          "required": true,
+          "type": "ContentCreateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactMetaData"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "RuleViolationError"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create artifact"
+        "summary": "Create artifact",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/groups/{groupId}/artifacts/{artifactId}",
+        "description": "Deletes all of the artifacts that exist in a given group.",
+        "id": "operation:delete:/groups/{groupId}/artifacts",
         "kind": "operation",
         "method": "delete",
-        "name": "deleteArtifact",
-        "path": "/groups/{groupId}/artifacts/{artifactId}",
-        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}/delete",
+        "name": "deleteArtifactsInGroup",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          }
+        ],
+        "path": "/groups/{groupId}/artifacts",
+        "pointer": "#/paths/~1groups~1{groupId}~1artifacts/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete artifact"
+        "summary": "Delete artifacts in group",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns the latest version of the artifact in its raw form.",
         "id": "operation:get:/groups/{groupId}/artifacts/{artifactId}",
         "kind": "operation",
         "method": "get",
         "name": "getLatestArtifact",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "Allows the user to specify if the content should be dereferenced when being returned",
+            "in": "query",
+            "name": "dereference",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FileContent"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get latest artifact"
+        "summary": "Get latest artifact",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates an artifact by uploading new content.",
         "id": "operation:put:/groups/{groupId}/artifacts/{artifactId}",
         "kind": "operation",
         "method": "put",
         "name": "updateArtifact",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "Specifies the version number of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Version",
+            "required": false,
+            "type": "Version"
+          },
+          {
+            "description": "Specifies the artifact name of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Name",
+            "required": false,
+            "type": "ArtifactName"
+          },
+          {
+            "description": "Specifies the artifact name of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Name-Encoded",
+            "required": false,
+            "type": "EncodedArtifactName"
+          },
+          {
+            "description": "Specifies the artifact description of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Description",
+            "required": false,
+            "type": "ArtifactDescription"
+          },
+          {
+            "description": "Specifies the artifact description of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Description-Encoded",
+            "required": false,
+            "type": "EncodedArtifactDescription"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}/put",
+        "request": {
+          "content_types": [
+            "*/*",
+            "application/create.extended+json",
+            "application/vnd.create.extended+json"
+          ],
+          "required": true,
+          "type": "ContentCreateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactMetaData"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update artifact"
+        "summary": "Update artifact",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes an artifact completely, resulting in all versions of the artifact also being deleted.",
+        "id": "operation:delete:/groups/{groupId}/artifacts/{artifactId}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteArtifact",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
+        "path": "/groups/{groupId}/artifacts/{artifactId}",
+        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete artifact",
+        "tags": [
+          "Artifacts"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Gets the metadata for an artifact in the registry.",
         "id": "operation:get:/groups/{groupId}/artifacts/{artifactId}/meta",
         "kind": "operation",
         "method": "get",
         "name": "getArtifactMetaData",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/meta",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1meta/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactMetaData"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artifact metadata"
+        "summary": "Get artifact metadata",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/groups/{groupId}/artifacts/{artifactId}/meta",
-        "kind": "operation",
-        "method": "post",
-        "name": "getArtifactVersionMetaDataByContent",
-        "path": "/groups/{groupId}/artifacts/{artifactId}/meta",
-        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1meta/post",
-        "security": [],
-        "summary": "Get artifact version metadata by content"
-      },
-      {
-        "deprecated": false,
+        "description": "Updates the editable parts of the artifact's metadata.",
         "id": "operation:put:/groups/{groupId}/artifacts/{artifactId}/meta",
         "kind": "operation",
         "method": "put",
         "name": "updateArtifactMetaData",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/meta",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1meta/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EditableMetaData"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update artifact metadata"
+        "summary": "Update artifact metadata",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the metadata for an artifact that matches the raw content.",
+        "id": "operation:post:/groups/{groupId}/artifacts/{artifactId}/meta",
+        "kind": "operation",
+        "method": "post",
+        "name": "getArtifactVersionMetaDataByContent",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "Parameter that can be set to `true` to indicate that the server should \"canonicalize\" the content when searching for a matching version.",
+            "in": "query",
+            "name": "canonical",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "path": "/groups/{groupId}/artifacts/{artifactId}/meta",
+        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1meta/post",
+        "request": {
+          "content_types": [
+            "*/*"
+          ],
+          "required": true,
+          "type": "FileContent"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "VersionMetaData"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Get artifact version metadata by content",
+        "tags": [
+          "Metadata"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Gets the owner of an artifact in the registry.",
         "id": "operation:get:/groups/{groupId}/artifacts/{artifactId}/owner",
         "kind": "operation",
         "method": "get",
         "name": "getArtifactOwner",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/owner",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1owner/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactOwner"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artifact owner"
+        "summary": "Get artifact owner",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Changes the ownership of an artifact.",
         "id": "operation:put:/groups/{groupId}/artifacts/{artifactId}/owner",
         "kind": "operation",
         "method": "put",
         "name": "updateArtifactOwner",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/owner",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1owner/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "ArtifactOwner"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update artifact owner"
+        "summary": "Update artifact owner",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/rules",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteArtifactRules",
-        "path": "/groups/{groupId}/artifacts/{artifactId}/rules",
-        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1rules/delete",
-        "security": [],
-        "summary": "Delete artifact rules"
-      },
-      {
-        "deprecated": false,
+        "description": "Returns a list of all rules configured for the artifact.",
         "id": "operation:get:/groups/{groupId}/artifacts/{artifactId}/rules",
         "kind": "operation",
         "method": "get",
         "name": "listArtifactRules",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/rules",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1rules/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "RuleType[]"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List artifact rules"
+        "summary": "List artifact rules",
+        "tags": [
+          "Artifact rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Adds a rule to the list of rules that get applied to the artifact when adding new versions.",
         "id": "operation:post:/groups/{groupId}/artifacts/{artifactId}/rules",
         "kind": "operation",
         "method": "post",
         "name": "createArtifactRule",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/rules",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1rules/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Rule"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create artifact rule"
+        "summary": "Create artifact rule",
+        "tags": [
+          "Artifact rules"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
+        "description": "Deletes all of the rules configured for the artifact.",
+        "id": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/rules",
         "kind": "operation",
         "method": "delete",
-        "name": "deleteArtifactRule",
-        "path": "/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
-        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1rules~1{rule}/delete",
+        "name": "deleteArtifactRules",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
+        "path": "/groups/{groupId}/artifacts/{artifactId}/rules",
+        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1rules/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete artifact rule"
+        "summary": "Delete artifact rules",
+        "tags": [
+          "Artifact rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information about a single rule configured for an artifact.",
         "id": "operation:get:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
         "kind": "operation",
         "method": "get",
         "name": "getArtifactRuleConfig",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The unique name/type of a rule.",
+            "enum": [
+              "VALIDITY",
+              "COMPATIBILITY"
+            ],
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1rules~1{rule}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rule"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artifact rule configuration"
+        "summary": "Get artifact rule configuration",
+        "tags": [
+          "Artifact rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the configuration of a single rule for the artifact.",
         "id": "operation:put:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
         "kind": "operation",
         "method": "put",
         "name": "updateArtifactRuleConfig",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The unique name/type of a rule.",
+            "enum": [
+              "VALIDITY",
+              "COMPATIBILITY"
+            ],
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1rules~1{rule}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Rule"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Rule"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update artifact rule configuration"
+        "summary": "Update artifact rule configuration",
+        "tags": [
+          "Artifact rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes a rule from the artifact.",
+        "id": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteArtifactRule",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The unique name/type of a rule.",
+            "enum": [
+              "VALIDITY",
+              "COMPATIBILITY"
+            ],
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/groups/{groupId}/artifacts/{artifactId}/rules/{rule}",
+        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1rules~1{rule}/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete artifact rule",
+        "tags": [
+          "Artifact rules"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Updates the state of the artifact.",
         "id": "operation:put:/groups/{groupId}/artifacts/{artifactId}/state",
         "kind": "operation",
         "method": "put",
         "name": "updateArtifactState",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/state",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1state/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateState"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update artifact state"
+        "summary": "Update artifact state",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Tests whether an update to the artifact's content *would* succeed for the provided content.",
         "id": "operation:put:/groups/{groupId}/artifacts/{artifactId}/test",
         "kind": "operation",
         "method": "put",
         "name": "testUpdateArtifact",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/test",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1test/put",
+        "request": {
+          "content_types": [
+            "*/*"
+          ],
+          "required": true,
+          "type": "FileContent"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "RuleViolationError"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Test update artifact"
+        "summary": "Test update artifact",
+        "tags": [
+          "Artifact rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of all versions of the artifact.",
         "id": "operation:get:/groups/{groupId}/artifacts/{artifactId}/versions",
         "kind": "operation",
         "method": "get",
         "name": "listArtifactVersions",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The number of versions to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "The number of versions to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/versions",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1versions/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VersionSearchResults"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List artifact versions"
+        "summary": "List artifact versions",
+        "tags": [
+          "Versions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Creates a new version of the artifact by uploading new content.",
         "id": "operation:post:/groups/{groupId}/artifacts/{artifactId}/versions",
         "kind": "operation",
         "method": "post",
         "name": "createArtifactVersion",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "Specifies the version number of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Version",
+            "required": false,
+            "type": "Version"
+          },
+          {
+            "description": "Specifies the artifact name of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Name",
+            "required": false,
+            "type": "ArtifactName"
+          },
+          {
+            "description": "Specifies the artifact description of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Description",
+            "required": false,
+            "type": "ArtifactDescription"
+          },
+          {
+            "description": "Specifies the artifact description of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Description-Encoded",
+            "required": false,
+            "type": "EncodedArtifactDescription"
+          },
+          {
+            "description": "Specifies the artifact name of this new version of the artifact content.",
+            "in": "header",
+            "name": "X-Registry-Name-Encoded",
+            "required": false,
+            "type": "EncodedArtifactName"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/versions",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1versions/post",
+        "request": {
+          "content_types": [
+            "*/*",
+            "application/create.extended+json",
+            "application/vnd.create.extended+json"
+          ],
+          "required": true,
+          "type": "ContentCreateRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "VersionMetaData"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "409",
+            "type": "RuleViolationError"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Create artifact version"
+        "summary": "Create artifact version",
+        "tags": [
+          "Versions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a single version of the artifact content.",
         "id": "operation:get:/groups/{groupId}/artifacts/{artifactId}/versions/{version}",
         "kind": "operation",
         "method": "get",
         "name": "getArtifactVersion",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The unique identifier of a specific version of the artifact content.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "Version"
+          },
+          {
+            "description": "Allows the user to specify if the content should be dereferenced when being returned",
+            "in": "query",
+            "name": "dereference",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/versions/{version}",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1versions~1{version}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FileContent"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artifact version"
+        "summary": "Get artifact version",
+        "tags": [
+          "Versions"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
-        "kind": "operation",
-        "method": "delete",
-        "name": "deleteArtifactVersionMetaData",
-        "path": "/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
-        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1versions~1{version}~1meta/delete",
-        "security": [],
-        "summary": "Delete artifact version metadata"
-      },
-      {
-        "deprecated": false,
+        "description": "Retrieves the metadata for a single version of the artifact.",
         "id": "operation:get:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
         "kind": "operation",
         "method": "get",
         "name": "getArtifactVersionMetaData",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The unique identifier of a specific version of the artifact content.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "Version"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1versions~1{version}~1meta/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "VersionMetaData"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artifact version metadata"
+        "summary": "Get artifact version metadata",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the user-editable portion of the artifact version's metadata.",
         "id": "operation:put:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
         "kind": "operation",
         "method": "put",
         "name": "updateArtifactVersionMetaData",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The unique identifier of a specific version of the artifact content.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "Version"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1versions~1{version}~1meta/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EditableMetaData"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update artifact version metadata"
+        "summary": "Update artifact version metadata",
+        "tags": [
+          "Metadata"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Deletes the user-editable metadata properties of the artifact version.",
+        "id": "operation:delete:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
+        "kind": "operation",
+        "method": "delete",
+        "name": "deleteArtifactVersionMetaData",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The unique identifier of a specific version of the artifact content.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "Version"
+          }
+        ],
+        "path": "/groups/{groupId}/artifacts/{artifactId}/versions/{version}/meta",
+        "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1versions~1{version}~1meta/delete",
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Delete artifact version metadata",
+        "tags": [
+          "Metadata"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Retrieves a single version of the artifact content.",
         "id": "operation:get:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/references",
         "kind": "operation",
         "method": "get",
         "name": "getArtifactVersionReferences",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The unique identifier of a specific version of the artifact content.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "Version"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/versions/{version}/references",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1versions~1{version}~1references/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactReference[]"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artifact version"
+        "summary": "Get artifact version",
+        "tags": [
+          "Versions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Updates the state of a specific version of an artifact.",
         "id": "operation:put:/groups/{groupId}/artifacts/{artifactId}/versions/{version}/state",
         "kind": "operation",
         "method": "put",
         "name": "updateArtifactVersionState",
+        "parameters": [
+          {
+            "description": "The artifact group ID.",
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "type": "GroupId"
+          },
+          {
+            "description": "The artifact ID.",
+            "in": "path",
+            "name": "artifactId",
+            "required": true,
+            "type": "ArtifactId"
+          },
+          {
+            "description": "The unique identifier of a specific version of the artifact content.",
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "Version"
+          }
+        ],
         "path": "/groups/{groupId}/artifacts/{artifactId}/versions/{version}/state",
         "pointer": "#/paths/~1groups~1{groupId}~1artifacts~1{artifactId}~1versions~1{version}~1state/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "UpdateState"
+        },
+        "responses": [
+          {
+            "status": "204"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update artifact version state"
+        "summary": "Update artifact version state",
+        "tags": [
+          "Versions"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the content for an artifact version in the registry using the SHA-256 hash of the content.",
         "id": "operation:get:/ids/contentHashes/{contentHash}/",
         "kind": "operation",
         "method": "get",
         "name": "getContentByHash",
+        "parameters": [
+          {
+            "description": "SHA-256 content hash for a single artifact content.",
+            "in": "path",
+            "name": "contentHash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ids/contentHashes/{contentHash}/",
         "pointer": "#/paths/~1ids~1contentHashes~1{contentHash}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FileContent"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artifact content by SHA-256 hash"
+        "summary": "Get artifact content by SHA-256 hash",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list containing all the artifact references using the artifact content hash.",
         "id": "operation:get:/ids/contentHashes/{contentHash}/references",
         "kind": "operation",
         "method": "get",
         "name": "referencesByContentHash",
+        "parameters": [
+          {
+            "description": "SHA-256 content hash for a single artifact content.",
+            "in": "path",
+            "name": "contentHash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ids/contentHashes/{contentHash}/references",
         "pointer": "#/paths/~1ids~1contentHashes~1{contentHash}~1references/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactReference[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List artifact references by hash"
+        "summary": "List artifact references by hash",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the content for an artifact version in the registry using the unique content identifier for that content.",
         "id": "operation:get:/ids/contentIds/{contentId}/",
         "kind": "operation",
         "method": "get",
         "name": "getContentById",
+        "parameters": [
+          {
+            "description": "Global identifier for a single artifact content.",
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/ids/contentIds/{contentId}/",
         "pointer": "#/paths/~1ids~1contentIds~1{contentId}~1/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FileContent"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artifact content by ID"
+        "summary": "Get artifact content by ID",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list containing all the artifact references using the artifact content ID.",
         "id": "operation:get:/ids/contentIds/{contentId}/references",
         "kind": "operation",
         "method": "get",
         "name": "referencesByContentId",
+        "parameters": [
+          {
+            "description": "Global identifier for a single artifact content.",
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/ids/contentIds/{contentId}/references",
         "pointer": "#/paths/~1ids~1contentIds~1{contentId}~1references/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactReference[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List artifact references by content ID"
+        "summary": "List artifact references by content ID",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Gets the content for an artifact version in the registry using its globally unique identifier.",
         "id": "operation:get:/ids/globalIds/{globalId}",
         "kind": "operation",
         "method": "get",
         "name": "getContentByGlobalId",
+        "parameters": [
+          {
+            "description": "Global identifier for an artifact version.",
+            "in": "path",
+            "name": "globalId",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Allows the user to specify if the content should be dereferenced when being returned",
+            "in": "query",
+            "name": "dereference",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/ids/globalIds/{globalId}",
         "pointer": "#/paths/~1ids~1globalIds~1{globalId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FileContent"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get artifact by global ID"
+        "summary": "Get artifact by global ID",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list containing all the artifact references using the artifact global ID.",
         "id": "operation:get:/ids/globalIds/{globalId}/references",
         "kind": "operation",
         "method": "get",
         "name": "referencesByGlobalId",
+        "parameters": [
+          {
+            "description": "Global identifier for an artifact version.",
+            "in": "path",
+            "name": "globalId",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/ids/globalIds/{globalId}/references",
         "pointer": "#/paths/~1ids~1globalIds~1{globalId}~1references/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactReference[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "List artifact references by global ID"
+        "summary": "List artifact references by global ID",
+        "tags": [
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a paginated list of all artifacts that match the provided filter criteria.",
         "id": "operation:get:/search/artifacts",
         "kind": "operation",
         "method": "get",
         "name": "searchArtifacts",
+        "parameters": [
+          {
+            "description": "Filter by artifact name.",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "The number of artifacts to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "The number of artifacts to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort order, ascending (`asc`) or descending (`desc`).",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "SortOrder"
+          },
+          {
+            "description": "The field to sort by.",
+            "in": "query",
+            "name": "orderby",
+            "required": false,
+            "type": "SortBy"
+          },
+          {
+            "description": "Filter by label.",
+            "in": "query",
+            "name": "labels",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter by one or more name/value property.",
+            "in": "query",
+            "name": "properties",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "Filter by description.",
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by artifact group.",
+            "in": "query",
+            "name": "group",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter by globalId.",
+            "in": "query",
+            "name": "globalId",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Filter by contentId.",
+            "in": "query",
+            "name": "contentId",
+            "required": false,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/search/artifacts",
         "pointer": "#/paths/~1search~1artifacts/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactSearchResults"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Search for artifacts"
+        "summary": "Search for artifacts",
+        "tags": [
+          "Search",
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a paginated list of all artifacts with at least one version that matches the posted content.",
         "id": "operation:post:/search/artifacts",
         "kind": "operation",
         "method": "post",
         "name": "searchArtifactsByContent",
+        "parameters": [
+          {
+            "description": "Parameter that can be set to `true` to indicate that the server should \"canonicalize\" the content when searching for matching artifacts.",
+            "in": "query",
+            "name": "canonical",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Indicates the type of artifact represented by the content being used for the search.",
+            "in": "query",
+            "name": "artifactType",
+            "required": false,
+            "type": "ArtifactType"
+          },
+          {
+            "default": 0,
+            "description": "The number of artifacts to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "The number of artifacts to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Sort order, ascending (`asc`) or descending (`desc`).",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The field to sort by.",
+            "enum": [
+              "name",
+              "createdOn"
+            ],
+            "in": "query",
+            "name": "orderby",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/search/artifacts",
         "pointer": "#/paths/~1search~1artifacts/post",
+        "request": {
+          "content_types": [
+            "*/*"
+          ],
+          "required": true,
+          "type": "FileContent"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ArtifactSearchResults"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Search for artifacts by content"
+        "summary": "Search for artifacts by content",
+        "tags": [
+          "Search",
+          "Artifacts"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation retrieves information about the running registry system, such as the version of the software and when it was built.",
         "id": "operation:get:/system/info",
         "kind": "operation",
         "method": "get",
         "name": "getSystemInfo",
         "path": "/system/info",
         "pointer": "#/paths/~1system~1info/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SystemInfo"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get system information"
+        "summary": "Get system information",
+        "tags": [
+          "System"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This operation retrieves the list of limitations on used resources, that are applied on the current instance of Registry.",
         "id": "operation:get:/system/limits",
         "kind": "operation",
         "method": "get",
         "name": "getResourceLimits",
         "path": "/system/limits",
         "pointer": "#/paths/~1system~1limits/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Limits"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get resource limits information"
+        "summary": "Get resource limits information",
+        "tags": [
+          "System"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information about the currently authenticated user.",
         "id": "operation:get:/users/me",
         "kind": "operation",
         "method": "get",
         "name": "getCurrentUserInfo",
         "path": "/users/me",
         "pointer": "#/paths/~1users~1me/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserInfo"
+          },
+          {
+            "status": "500",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get current user"
+        "summary": "Get current user",
+        "tags": [
+          "Users"
+        ]
       },
       {
+        "description": "Description of the artifact.",
         "id": "schema:ArtifactDescription",
         "kind": "schema",
-        "name": "ArtifactDescription"
+        "name": "ArtifactDescription",
+        "type": "string"
       },
       {
+        "description": "The ID of a single artifact.",
         "id": "schema:ArtifactId",
         "kind": "schema",
-        "name": "ArtifactId"
+        "name": "ArtifactId",
+        "type": "string"
       },
       {
         "id": "schema:ArtifactMetaData",
         "kind": "schema",
-        "name": "ArtifactMetaData"
+        "name": "ArtifactMetaData",
+        "type": "object"
       },
       {
+        "description": "Name of the artifact.",
         "id": "schema:ArtifactName",
         "kind": "schema",
-        "name": "ArtifactName"
+        "name": "ArtifactName",
+        "type": "string"
       },
       {
+        "description": "Describes the ownership of an artifact.",
         "id": "schema:ArtifactOwner",
         "kind": "schema",
-        "name": "ArtifactOwner"
+        "name": "ArtifactOwner",
+        "type": "object"
       },
       {
+        "description": "A reference to a different artifact.",
         "id": "schema:ArtifactReference",
         "kind": "schema",
-        "name": "ArtifactReference"
+        "name": "ArtifactReference",
+        "type": "object"
       },
       {
+        "description": "Describes the response received when searching for artifacts.",
         "id": "schema:ArtifactSearchResults",
         "kind": "schema",
-        "name": "ArtifactSearchResults"
+        "name": "ArtifactSearchResults",
+        "type": "object"
       },
       {
+        "description": "Describes the state of an artifact or artifact version.",
         "id": "schema:ArtifactState",
         "kind": "schema",
-        "name": "ArtifactState"
+        "name": "ArtifactState",
+        "type": "string"
       },
       {
         "id": "schema:ArtifactType",
         "kind": "schema",
-        "name": "ArtifactType"
+        "name": "ArtifactType",
+        "type": "string"
       },
       {
         "id": "schema:ArtifactTypeInfo",
         "kind": "schema",
-        "name": "ArtifactTypeInfo"
+        "name": "ArtifactTypeInfo",
+        "type": "object"
       },
       {
         "id": "schema:ConfigurationProperty",
         "kind": "schema",
-        "name": "ConfigurationProperty"
+        "name": "ConfigurationProperty",
+        "type": "object"
       },
       {
         "id": "schema:ContentCreateRequest",
         "kind": "schema",
-        "name": "ContentCreateRequest"
+        "name": "ContentCreateRequest",
+        "type": "object"
       },
       {
         "id": "schema:CreateGroupMetaData",
         "kind": "schema",
-        "name": "CreateGroupMetaData"
+        "name": "CreateGroupMetaData",
+        "type": "object"
       },
       {
+        "description": "Models a download \"link\".",
         "id": "schema:DownloadRef",
         "kind": "schema",
-        "name": "DownloadRef"
+        "name": "DownloadRef",
+        "type": "object"
       },
       {
         "id": "schema:EditableMetaData",
         "kind": "schema",
-        "name": "EditableMetaData"
+        "name": "EditableMetaData",
+        "type": "object"
       },
       {
+        "description": "Base64 encoded description of the artifact.",
         "id": "schema:EncodedArtifactDescription",
         "kind": "schema",
-        "name": "EncodedArtifactDescription"
+        "name": "EncodedArtifactDescription",
+        "type": "string"
       },
       {
+        "description": "Base64 encoded name of the artifact.",
         "id": "schema:EncodedArtifactName",
         "kind": "schema",
-        "name": "EncodedArtifactName"
+        "name": "EncodedArtifactName",
+        "type": "string"
       },
       {
+        "description": "All error responses, whether `4xx` or `5xx` will include one of these as the response body.",
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:FileContent",
         "kind": "schema",
-        "name": "FileContent"
+        "name": "FileContent",
+        "type": "string:binary"
       },
       {
+        "description": "An ID of a single artifact group.",
         "id": "schema:GroupId",
         "kind": "schema",
-        "name": "GroupId"
+        "name": "GroupId",
+        "type": "string"
       },
       {
         "id": "schema:GroupMetaData",
         "kind": "schema",
-        "name": "GroupMetaData"
+        "name": "GroupMetaData",
+        "type": "object"
       },
       {
+        "description": "Describes the response received when searching for groups.",
         "id": "schema:GroupSearchResults",
         "kind": "schema",
-        "name": "GroupSearchResults"
+        "name": "GroupSearchResults",
+        "type": "object"
       },
       {
         "id": "schema:IfExists",
         "kind": "schema",
-        "name": "IfExists"
+        "name": "IfExists",
+        "type": "string"
       },
       {
+        "description": "List of limitations on used resources, that are applied on the current instance of Registry.",
         "id": "schema:Limits",
         "kind": "schema",
-        "name": "Limits"
+        "name": "Limits",
+        "type": "object"
       },
       {
         "id": "schema:LogConfiguration",
         "kind": "schema",
-        "name": "LogConfiguration"
+        "name": "LogConfiguration",
+        "type": "object"
       },
       {
         "id": "schema:LogLevel",
         "kind": "schema",
-        "name": "LogLevel"
+        "name": "LogLevel",
+        "type": "string"
       },
       {
         "id": "schema:NamedLogConfiguration",
         "kind": "schema",
-        "name": "NamedLogConfiguration"
+        "name": "NamedLogConfiguration",
+        "type": "object|LogConfiguration"
       },
       {
+        "description": "User-defined name-value pairs.",
         "id": "schema:Properties",
         "kind": "schema",
-        "name": "Properties"
+        "name": "Properties",
+        "type": "object"
       },
       {
+        "description": "The mapping between a user/principal and their role.",
         "id": "schema:RoleMapping",
         "kind": "schema",
-        "name": "RoleMapping"
+        "name": "RoleMapping",
+        "type": "object"
       },
       {
         "id": "schema:RoleType",
         "kind": "schema",
-        "name": "RoleType"
+        "name": "RoleType",
+        "type": "string"
       },
       {
         "id": "schema:Rule",
         "kind": "schema",
-        "name": "Rule"
+        "name": "Rule",
+        "type": "object"
       },
       {
         "id": "schema:RuleType",
         "kind": "schema",
-        "name": "RuleType"
+        "name": "RuleType",
+        "type": "string"
       },
       {
         "id": "schema:RuleViolationCause",
         "kind": "schema",
-        "name": "RuleViolationCause"
+        "name": "RuleViolationCause",
+        "type": "object"
       },
       {
+        "description": "All error responses, whether `4xx` or `5xx` will include one of these as the response body.",
         "id": "schema:RuleViolationError",
         "kind": "schema",
-        "name": "RuleViolationError"
+        "name": "RuleViolationError",
+        "type": "object|Error"
       },
       {
+        "description": "Models a single artifact from the result set returned when searching for artifacts.",
         "id": "schema:SearchedArtifact",
         "kind": "schema",
-        "name": "SearchedArtifact"
+        "name": "SearchedArtifact",
+        "type": "object"
       },
       {
+        "description": "Models a single group from the result set returned when searching for groups.",
         "id": "schema:SearchedGroup",
         "kind": "schema",
-        "name": "SearchedGroup"
+        "name": "SearchedGroup",
+        "type": "object"
       },
       {
+        "description": "Models a single artifact from the result set returned when searching for artifacts.",
         "id": "schema:SearchedVersion",
         "kind": "schema",
-        "name": "SearchedVersion"
+        "name": "SearchedVersion",
+        "type": "object"
       },
       {
         "id": "schema:SortBy",
         "kind": "schema",
-        "name": "SortBy"
+        "name": "SortBy",
+        "type": "string"
       },
       {
         "id": "schema:SortOrder",
         "kind": "schema",
-        "name": "SortOrder"
+        "name": "SortOrder",
+        "type": "string"
       },
       {
         "id": "schema:SystemInfo",
         "kind": "schema",
-        "name": "SystemInfo"
+        "name": "SystemInfo",
+        "type": "object"
       },
       {
         "id": "schema:UpdateConfigurationProperty",
         "kind": "schema",
-        "name": "UpdateConfigurationProperty"
+        "name": "UpdateConfigurationProperty",
+        "type": "object"
       },
       {
         "id": "schema:UpdateRole",
         "kind": "schema",
-        "name": "UpdateRole"
+        "name": "UpdateRole",
+        "type": "object"
       },
       {
         "id": "schema:UpdateState",
         "kind": "schema",
-        "name": "UpdateState"
+        "name": "UpdateState",
+        "type": "object"
       },
       {
+        "description": "Information about a single user.",
         "id": "schema:UserInfo",
         "kind": "schema",
-        "name": "UserInfo"
+        "name": "UserInfo",
+        "type": "object"
       },
       {
+        "description": "A single version of an artifact.",
         "id": "schema:Version",
         "kind": "schema",
-        "name": "Version"
+        "name": "Version",
+        "type": "string"
       },
       {
         "id": "schema:VersionMetaData",
         "kind": "schema",
-        "name": "VersionMetaData"
+        "name": "VersionMetaData",
+        "type": "object"
       },
       {
+        "description": "Describes the response received when searching for artifacts.",
         "id": "schema:VersionSearchResults",
         "kind": "schema",
-        "name": "VersionSearchResults"
+        "name": "VersionSearchResults",
+        "type": "object"
       }
     ]
   },

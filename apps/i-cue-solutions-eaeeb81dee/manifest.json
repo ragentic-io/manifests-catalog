@@ -12,12 +12,12 @@
       {
         "from": "i-cue-solutions-eaeeb81dee",
         "kind": "EXPOSES",
-        "to": "operation:post:/administration/entity"
+        "to": "operation:put:/administration/entity"
       },
       {
         "from": "i-cue-solutions-eaeeb81dee",
         "kind": "EXPOSES",
-        "to": "operation:put:/administration/entity"
+        "to": "operation:post:/administration/entity"
       },
       {
         "from": "i-cue-solutions-eaeeb81dee",
@@ -67,12 +67,12 @@
       {
         "from": "i-cue-solutions-eaeeb81dee",
         "kind": "EXPOSES",
-        "to": "operation:post:/administration/user"
+        "to": "operation:put:/administration/user"
       },
       {
         "from": "i-cue-solutions-eaeeb81dee",
         "kind": "EXPOSES",
-        "to": "operation:put:/administration/user"
+        "to": "operation:post:/administration/user"
       },
       {
         "from": "i-cue-solutions-eaeeb81dee",
@@ -323,6 +323,401 @@
         "from": "i-cue-solutions-eaeeb81dee",
         "kind": "EXPOSES",
         "to": "operation:get:/report/user"
+      },
+      {
+        "from": "operation:get:/administration/entity",
+        "kind": "RETURNS",
+        "to": "schema:EntityResponse"
+      },
+      {
+        "from": "operation:put:/administration/entity",
+        "kind": "ACCEPTS",
+        "to": "schema:ToggleRequest"
+      },
+      {
+        "from": "operation:post:/administration/entity",
+        "kind": "ACCEPTS",
+        "to": "schema:NewEntityRequest"
+      },
+      {
+        "from": "operation:post:/administration/file-to-json",
+        "kind": "RETURNS",
+        "to": "schema:JsonForecastResponse"
+      },
+      {
+        "from": "operation:get:/administration/model",
+        "kind": "RETURNS",
+        "to": "schema:MethodDto"
+      },
+      {
+        "from": "operation:post:/administration/model",
+        "kind": "ACCEPTS",
+        "to": "schema:NewModelRequest"
+      },
+      {
+        "from": "operation:post:/administration/model",
+        "kind": "RETURNS",
+        "to": "schema:MethodDto"
+      },
+      {
+        "from": "operation:get:/administration/model/{entityId}",
+        "kind": "RETURNS",
+        "to": "schema:MethodDto"
+      },
+      {
+        "from": "operation:post:/administration/model/{entityId}",
+        "kind": "ACCEPTS",
+        "to": "schema:NewModelRequest"
+      },
+      {
+        "from": "operation:post:/administration/model/{entityId}",
+        "kind": "RETURNS",
+        "to": "schema:MethodDto"
+      },
+      {
+        "from": "operation:post:/administration/token",
+        "kind": "ACCEPTS",
+        "to": "schema:NewTokenRequest"
+      },
+      {
+        "from": "operation:post:/administration/user",
+        "kind": "ACCEPTS",
+        "to": "schema:NewUserRequest"
+      },
+      {
+        "from": "operation:put:/administration/user/lock",
+        "kind": "ACCEPTS",
+        "to": "schema:ToggleUserRequest"
+      },
+      {
+        "from": "operation:post:/forecast",
+        "kind": "ACCEPTS",
+        "to": "schema:PlanningLevelRequest"
+      },
+      {
+        "from": "operation:post:/forecast",
+        "kind": "RETURNS",
+        "to": "schema:ForecastResponse"
+      },
+      {
+        "from": "operation:post:/forecast/AI",
+        "kind": "ACCEPTS",
+        "to": "schema:AiPlanningLevelRequest"
+      },
+      {
+        "from": "operation:post:/forecast/AI",
+        "kind": "RETURNS",
+        "to": "schema:JobResponse"
+      },
+      {
+        "from": "operation:post:/forecast/AI/history-and-forecast",
+        "kind": "ACCEPTS",
+        "to": "schema:AiPlanningLevelRequest"
+      },
+      {
+        "from": "operation:post:/forecast/AI/history-and-forecast",
+        "kind": "RETURNS",
+        "to": "schema:JobResponse"
+      },
+      {
+        "from": "operation:post:/forecast/file-to-forecast",
+        "kind": "RETURNS",
+        "to": "schema:JobResponse"
+      },
+      {
+        "from": "operation:post:/forecast/forecast-bottom-up",
+        "kind": "ACCEPTS",
+        "to": "schema:PlanningLevelRequest"
+      },
+      {
+        "from": "operation:post:/forecast/forecast-bottom-up",
+        "kind": "RETURNS",
+        "to": "schema:ForecastBottomUpResponse"
+      },
+      {
+        "from": "operation:post:/forecast/forecast-top-down",
+        "kind": "ACCEPTS",
+        "to": "schema:PlanningLevelRequest"
+      },
+      {
+        "from": "operation:post:/forecast/full-detail",
+        "kind": "ACCEPTS",
+        "to": "schema:PlanningLevelRequest"
+      },
+      {
+        "from": "operation:post:/forecast/full-detail",
+        "kind": "RETURNS",
+        "to": "schema:FullDetailsForecastResponse"
+      },
+      {
+        "from": "operation:post:/forecast/history-and-forecast",
+        "kind": "ACCEPTS",
+        "to": "schema:PlanningLevelRequest"
+      },
+      {
+        "from": "operation:post:/forecast/history-and-forecast",
+        "kind": "RETURNS",
+        "to": "schema:HistoryAndForecastResponse"
+      },
+      {
+        "from": "operation:post:/forecast/optimal-parameter",
+        "kind": "ACCEPTS",
+        "to": "schema:PlanningLevelRequest"
+      },
+      {
+        "from": "operation:post:/forecast/optimal-parameter",
+        "kind": "RETURNS",
+        "to": "schema:OptimalParameterResponse"
+      },
+      {
+        "from": "operation:post:/forecast/rerun",
+        "kind": "ACCEPTS",
+        "to": "schema:PlanningLevelReRunRequest"
+      },
+      {
+        "from": "operation:post:/forecast/rerun",
+        "kind": "RETURNS",
+        "to": "schema:ForecastResponse"
+      },
+      {
+        "from": "operation:get:/hyperparameter",
+        "kind": "RETURNS",
+        "to": "schema:HyperparameterModel"
+      },
+      {
+        "from": "operation:post:/hyperparameter",
+        "kind": "ACCEPTS",
+        "to": "schema:HyperparameterModel"
+      },
+      {
+        "from": "operation:post:/lifecycle/many-to-one",
+        "kind": "ACCEPTS",
+        "to": "schema:LifecycleManyToOneRequest"
+      },
+      {
+        "from": "operation:post:/lifecycle/many-to-one",
+        "kind": "RETURNS",
+        "to": "schema:PlanningLevelDataDto"
+      },
+      {
+        "from": "operation:post:/lifecycle/one-to-one",
+        "kind": "ACCEPTS",
+        "to": "schema:LifecycleOneToOneRequest"
+      },
+      {
+        "from": "operation:post:/lifecycle/one-to-one",
+        "kind": "RETURNS",
+        "to": "schema:PlanningLevelDataDto"
+      },
+      {
+        "from": "operation:post:/outlier",
+        "kind": "ACCEPTS",
+        "to": "schema:OutliersRequest"
+      },
+      {
+        "from": "operation:post:/outlier",
+        "kind": "RETURNS",
+        "to": "schema:TimeSeriesOutliersResponse"
+      },
+      {
+        "from": "operation:post:/portfolio",
+        "kind": "ACCEPTS",
+        "to": "schema:PortfolioRequest"
+      },
+      {
+        "from": "operation:post:/portfolio",
+        "kind": "RETURNS",
+        "to": "schema:PortfolioModel"
+      },
+      {
+        "from": "operation:post:/portfolio/abc",
+        "kind": "ACCEPTS",
+        "to": "schema:PortfolioRequest"
+      },
+      {
+        "from": "operation:post:/portfolio/abc",
+        "kind": "RETURNS",
+        "to": "schema:PortfolioAbcModel"
+      },
+      {
+        "from": "operation:post:/portfolio/forecast-performance-rewind",
+        "kind": "ACCEPTS",
+        "to": "schema:ForecastPerformanceRequest"
+      },
+      {
+        "from": "operation:post:/portfolio/forecast-performance-rewind",
+        "kind": "RETURNS",
+        "to": "schema:RewindResponse"
+      },
+      {
+        "from": "operation:post:/portfolio/xyz",
+        "kind": "ACCEPTS",
+        "to": "schema:PortfolioRequest"
+      },
+      {
+        "from": "operation:post:/portfolio/xyz",
+        "kind": "RETURNS",
+        "to": "schema:PortfolioXyzModel"
+      },
+      {
+        "from": "operation:get:/report/performance/sku-rationalization/{planningLevelId}",
+        "kind": "RETURNS",
+        "to": "schema:PortfolioModel"
+      },
+      {
+        "from": "schema:AiPlanningLevelRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelDataDto"
+      },
+      {
+        "from": "schema:AiPlanningLevelRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelInfoRequest"
+      },
+      {
+        "from": "schema:ForecastBottomUpResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ForecastHyperparameterResponse"
+      },
+      {
+        "from": "schema:ForecastBottomUpResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelForecastResultData"
+      },
+      {
+        "from": "schema:ForecastPerformanceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:ForecastPerformanceDataRequest"
+      },
+      {
+        "from": "schema:ForecastPerformanceRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelInfoRequest"
+      },
+      {
+        "from": "schema:ForecastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ForecastHyperparameterResponse"
+      },
+      {
+        "from": "schema:ForecastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimeSeriesForecastResponse"
+      },
+      {
+        "from": "schema:FullDetailsForecastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ForecastHyperparameterResponse"
+      },
+      {
+        "from": "schema:FullDetailsForecastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimeSeriesFullDetailsResponse"
+      },
+      {
+        "from": "schema:HistoryAndForecastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ForecastHyperparameterResponse"
+      },
+      {
+        "from": "schema:HistoryAndForecastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimeSeriesHistoryAndForecastResponse"
+      },
+      {
+        "from": "schema:JsonForecastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelDataDto"
+      },
+      {
+        "from": "schema:LifecycleManyToOneRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelDataDto"
+      },
+      {
+        "from": "schema:LifecycleOneToOneRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelDataDto"
+      },
+      {
+        "from": "schema:OptimalParameterResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ForecastHyperparameterResponse"
+      },
+      {
+        "from": "schema:OptimalParameterResponse",
+        "kind": "REFERENCES",
+        "to": "schema:TimeSeriesOptimalParametersResponse"
+      },
+      {
+        "from": "schema:OutliersRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelDataDto"
+      },
+      {
+        "from": "schema:PlanningLevelReRunRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelInfoRequest"
+      },
+      {
+        "from": "schema:PlanningLevelRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelDataDto"
+      },
+      {
+        "from": "schema:PlanningLevelRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelInfoRequest"
+      },
+      {
+        "from": "schema:PortfolioRequest",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelDataDto"
+      },
+      {
+        "from": "schema:RewindResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewindHyperparameterResponse"
+      },
+      {
+        "from": "schema:RewindResponse",
+        "kind": "REFERENCES",
+        "to": "schema:RewindTimeSeriesResponse"
+      },
+      {
+        "from": "schema:TimeSeriesForecastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelForecastResultData"
+      },
+      {
+        "from": "schema:TimeSeriesFullDetailsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ForecastOptimalParametersResponse"
+      },
+      {
+        "from": "schema:TimeSeriesFullDetailsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OutlierResponse"
+      },
+      {
+        "from": "schema:TimeSeriesFullDetailsResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelForecastResultData"
+      },
+      {
+        "from": "schema:TimeSeriesHistoryAndForecastResponse",
+        "kind": "REFERENCES",
+        "to": "schema:PlanningLevelForecastResultData"
+      },
+      {
+        "from": "schema:TimeSeriesOptimalParametersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:ForecastOptimalParametersResponse"
+      },
+      {
+        "from": "schema:TimeSeriesOutliersResponse",
+        "kind": "REFERENCES",
+        "to": "schema:OutlierResponse"
       }
     ],
     "nodes": [
@@ -332,47 +727,149 @@
       },
       {
         "deprecated": false,
+        "description": "This is an iCUE only endpoint or Enterprise feature.",
         "id": "operation:get:/administration/entity",
         "kind": "operation",
         "method": "get",
         "name": "get /administration/entity",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/entity",
         "pointer": "#/paths/~1administration~1entity/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EntityResponse[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all organizations"
+        "summary": "Get all organizations",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/administration/entity",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /administration/entity",
-        "path": "/administration/entity",
-        "pointer": "#/paths/~1administration~1entity/post",
-        "security": [],
-        "summary": "Create organization"
-      },
-      {
-        "deprecated": false,
+        "description": "This is an iCUE only endpoint or Enterprise feature.",
         "id": "operation:put:/administration/entity",
         "kind": "operation",
         "method": "put",
         "name": "put /administration/entity",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/entity",
         "pointer": "#/paths/~1administration~1entity/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "ToggleRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Pause organization"
+        "summary": "Pause organization",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is an iCUE only endpoint or Enterprise feature.",
+        "id": "operation:post:/administration/entity",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /administration/entity",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/administration/entity",
+        "pointer": "#/paths/~1administration~1entity/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "NewEntityRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:uuid"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Create organization",
+        "tags": [
+          "Administration"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "This is an iCUE only endpoint or Enterprise feature.",
         "id": "operation:delete:/administration/entity/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /administration/entity/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/entity/{id}",
         "pointer": "#/paths/~1administration~1entity~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete organization"
+        "summary": "Delete organization",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
@@ -380,98 +877,302 @@
         "kind": "operation",
         "method": "post",
         "name": "post /administration/file-to-json",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/file-to-json",
         "pointer": "#/paths/~1administration~1file-to-json/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "JsonForecastResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Transform data file to JSON format"
+        "summary": "Transform data file to JSON format",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns models that are common for all Organizations",
         "id": "operation:get:/administration/model",
         "kind": "operation",
         "method": "get",
         "name": "get /administration/model",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/model",
         "pointer": "#/paths/~1administration~1model/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MethodDto[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all common Models"
+        "summary": "Get all common Models",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Register new forecasting model for all organziations",
         "id": "operation:post:/administration/model",
         "kind": "operation",
         "method": "post",
         "name": "post /administration/model",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/model",
         "pointer": "#/paths/~1administration~1model/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "NewModelRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MethodDto"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Register new forecasting model"
+        "summary": "Register new forecasting model",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns models registered for Organization",
         "id": "operation:get:/administration/model/{entityId}",
         "kind": "operation",
         "method": "get",
         "name": "get /administration/model/{entityId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/model/{entityId}",
         "pointer": "#/paths/~1administration~1model~1{entityId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MethodDto[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get Models for Organization"
+        "summary": "Get Models for Organization",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Register new forecasting model for single organziation",
         "id": "operation:post:/administration/model/{entityId}",
         "kind": "operation",
         "method": "post",
         "name": "post /administration/model/{entityId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/model/{entityId}",
         "pointer": "#/paths/~1administration~1model~1{entityId}/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "NewModelRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "MethodDto"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Register new forecasting model"
+        "summary": "Register new forecasting model",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Lock planning level against modification.",
         "id": "operation:post:/administration/planning-level/lock",
         "kind": "operation",
         "method": "post",
         "name": "post /administration/planning-level/lock",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/planning-level/lock",
         "pointer": "#/paths/~1administration~1planning-level~1lock/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Lock planning level"
+        "summary": "Lock planning level",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete planning level.",
         "id": "operation:delete:/administration/planning-level/{entityId}/{id}",
         "kind": "operation",
         "method": "delete",
         "name": "delete /administration/planning-level/{entityId}/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/planning-level/{entityId}/{id}",
         "pointer": "#/paths/~1administration~1planning-level~1{entityId}~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete planning level"
+        "summary": "Delete planning level",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This is an iCUE only endpoint.",
         "id": "operation:post:/administration/token",
         "kind": "operation",
         "method": "post",
         "name": "post /administration/token",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/token",
         "pointer": "#/paths/~1administration~1token/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "NewTokenRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:uuid"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Issue a token"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/administration/user",
-        "kind": "operation",
-        "method": "post",
-        "name": "post /administration/user",
-        "path": "/administration/user",
-        "pointer": "#/paths/~1administration~1user/post",
-        "security": [],
-        "summary": "Create user"
+        "summary": "Issue a token",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
@@ -479,21 +1180,107 @@
         "kind": "operation",
         "method": "put",
         "name": "put /administration/user",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/user",
         "pointer": "#/paths/~1administration~1user/put",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Update user"
+        "summary": "Update user",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Create new user for entity/organization.",
+        "id": "operation:post:/administration/user",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /administration/user",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "path": "/administration/user",
+        "pointer": "#/paths/~1administration~1user/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "NewUserRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "string:uuid"
+          }
+        ],
+        "safe": false,
+        "security": [],
+        "summary": "Create user",
+        "tags": [
+          "Administration"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "After lock user won't be able to use iCUE API endpoints.",
         "id": "operation:put:/administration/user/lock",
         "kind": "operation",
         "method": "put",
         "name": "put /administration/user/lock",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/user/lock",
         "pointer": "#/paths/~1administration~1user~1lock/put",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "ToggleUserRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Lock user"
+        "summary": "Lock user",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
@@ -501,10 +1288,34 @@
         "kind": "operation",
         "method": "get",
         "name": "get /administration/user/{entityId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/user/{entityId}",
         "pointer": "#/paths/~1administration~1user~1{entityId}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get all users"
+        "summary": "Get all users",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
@@ -512,164 +1323,579 @@
         "kind": "operation",
         "method": "delete",
         "name": "delete /administration/user/{entityId}/{id}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/administration/user/{entityId}/{id}",
         "pointer": "#/paths/~1administration~1user~1{entityId}~1{id}/delete",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Delete user"
+        "summary": "Delete user",
+        "tags": [
+          "Administration"
+        ]
       },
       {
         "deprecated": false,
+        "description": "To support maximum operation and integration speed, this endpoint only returns the calculated forecast.",
         "id": "operation:post:/forecast",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast",
         "pointer": "#/paths/~1forecast/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PlanningLevelRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Forecasts only, for faster results"
+        "summary": "Forecasts only, for faster results",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Forecast AI is utilizing advanced machine learning models.",
         "id": "operation:post:/forecast/AI",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast/AI",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/AI",
         "pointer": "#/paths/~1forecast~1AI/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "AiPlanningLevelRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "JobResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Forecast utilizing advanced machine learning models"
+        "summary": "Forecast utilizing advanced machine learning models",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "History and forecast utilizing advanced machine learning models.",
         "id": "operation:post:/forecast/AI/history-and-forecast",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast/AI/history-and-forecast",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/AI/history-and-forecast",
         "pointer": "#/paths/~1forecast~1AI~1history-and-forecast/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "AiPlanningLevelRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "JobResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "History and forecast utilizing advanced machine learning models"
+        "summary": "History and forecast utilizing advanced machine learning models",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Forecast from file allows for quick analysis via Microsoft Excel and CSV file format.",
         "id": "operation:post:/forecast/file-to-forecast",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast/file-to-forecast",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/file-to-forecast",
         "pointer": "#/paths/~1forecast~1file-to-forecast/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "JobResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Forecast from file"
+        "summary": "Forecast from file",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate forecast by timeseries and sum results up to establish forecast for top level timeseries.",
         "id": "operation:post:/forecast/forecast-bottom-up",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast/forecast-bottom-up",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/forecast-bottom-up",
         "pointer": "#/paths/~1forecast~1forecast-bottom-up/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PlanningLevelRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastBottomUpResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Bottom up forecasting"
+        "summary": "Bottom up forecasting",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate forecast based on sum of of lower level timeseries and distribute forecast down based on ratios.",
         "id": "operation:post:/forecast/forecast-top-down",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast/forecast-top-down",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/forecast-top-down",
         "pointer": "#/paths/~1forecast~1forecast-top-down/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PlanningLevelRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Top down forecasting"
+        "summary": "Top down forecasting",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Response provides full forecast result details, including error, trend seasonality and outlier.",
         "id": "operation:post:/forecast/full-detail",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast/full-detail",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/full-detail",
         "pointer": "#/paths/~1forecast~1full-detail/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PlanningLevelRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "FullDetailsForecastResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Full forecast result details, including error, trend seasonality and outlier"
+        "summary": "Full forecast result details, including error, trend seasonality and outlier",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Reponse provides history and forecast per timeseries.",
         "id": "operation:post:/forecast/history-and-forecast",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast/history-and-forecast",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/history-and-forecast",
         "pointer": "#/paths/~1forecast~1history-and-forecast/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PlanningLevelRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "HistoryAndForecastResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "History and forecast for fast timeseries view"
+        "summary": "History and forecast for fast timeseries view",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use the optimal parameter sets created by iCUE to set the method parameters of your internal planning system.",
         "id": "operation:post:/forecast/optimal-parameter",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast/optimal-parameter",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/optimal-parameter",
         "pointer": "#/paths/~1forecast~1optimal-parameter/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PlanningLevelRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "OptimalParameterResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get optimal parameter per method"
+        "summary": "Get optimal parameter per method",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Rerun previously uploaded planning level.",
         "id": "operation:post:/forecast/rerun",
         "kind": "operation",
         "method": "post",
         "name": "post /forecast/rerun",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/rerun",
         "pointer": "#/paths/~1forecast~1rerun/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PlanningLevelReRunRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ForecastResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Rerun previously uploaded planning level"
+        "summary": "Rerun previously uploaded planning level",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get result for forecast job",
         "id": "operation:get:/forecast/result/{jobId}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/result/{jobId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/result/{jobId}",
         "pointer": "#/paths/~1forecast~1result~1{jobId}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Forecast result"
+        "summary": "Forecast result",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get status for forecast job",
         "id": "operation:get:/forecast/status/{jobId}",
         "kind": "operation",
         "method": "get",
         "name": "get /forecast/status/{jobId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "jobId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/forecast/status/{jobId}",
         "pointer": "#/paths/~1forecast~1status~1{jobId}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Forecast status"
+        "summary": "Forecast status",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Get entity global hyperparameters.",
         "id": "operation:get:/hyperparameter",
         "kind": "operation",
         "method": "get",
         "name": "get /hyperparameter",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/hyperparameter",
         "pointer": "#/paths/~1hyperparameter/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "HyperparameterModel"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get hyperparameters"
+        "summary": "Get hyperparameters",
+        "tags": [
+          "Hyperparameter Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Set entity global hyperparameters.",
         "id": "operation:post:/hyperparameter",
         "kind": "operation",
         "method": "post",
         "name": "post /hyperparameter",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/hyperparameter",
         "pointer": "#/paths/~1hyperparameter/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "HyperparameterModel"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Set hyperparameters"
+        "summary": "Set hyperparameters",
+        "tags": [
+          "Hyperparameter Management"
+        ]
       },
       {
         "deprecated": false,
@@ -677,10 +1903,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/amazon-ipi",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/amazon-ipi",
         "pointer": "#/paths/~1inventory~1amazon-ipi/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calculate Amazon Inventory Performance Index (IPI)"
+        "summary": "Calculate Amazon Inventory Performance Index (IPI)",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -688,10 +1932,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/caryying-cost",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/caryying-cost",
         "pointer": "#/paths/~1inventory~1caryying-cost/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Carrying Cost"
+        "summary": "Carrying Cost",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -699,10 +1961,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/eoq",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/eoq",
         "pointer": "#/paths/~1inventory~1eoq/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calculate economic order quantity"
+        "summary": "Calculate economic order quantity",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -710,10 +1990,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/fill-rate",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/fill-rate",
         "pointer": "#/paths/~1inventory~1fill-rate/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calculate fill rate"
+        "summary": "Calculate fill rate",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -721,10 +2019,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/financial-imapct-forecast-accuracy",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/financial-imapct-forecast-accuracy",
         "pointer": "#/paths/~1inventory~1financial-imapct-forecast-accuracy/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calculate financial impact of forecast accuracy"
+        "summary": "Calculate financial impact of forecast accuracy",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -732,10 +2048,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/inventory-turnover",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/inventory-turnover",
         "pointer": "#/paths/~1inventory~1inventory-turnover/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Inventroy Turn-over"
+        "summary": "Inventroy Turn-over",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -743,10 +2077,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/ltd",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/ltd",
         "pointer": "#/paths/~1inventory~1ltd/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calculate lead time demand"
+        "summary": "Calculate lead time demand",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -754,10 +2106,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/moq",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/moq",
         "pointer": "#/paths/~1inventory~1moq/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calculate minimum order quantity"
+        "summary": "Calculate minimum order quantity",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -765,10 +2135,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/optimal-service-level",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/optimal-service-level",
         "pointer": "#/paths/~1inventory~1optimal-service-level/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calculate optimal service level"
+        "summary": "Calculate optimal service level",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -776,10 +2164,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/reorder-point",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/reorder-point",
         "pointer": "#/paths/~1inventory~1reorder-point/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Re-order Point"
+        "summary": "Re-order Point",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -787,10 +2193,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/safety-stock",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/safety-stock",
         "pointer": "#/paths/~1inventory~1safety-stock/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Safety Stock"
+        "summary": "Safety Stock",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -798,10 +2222,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/service-level",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/service-level",
         "pointer": "#/paths/~1inventory~1service-level/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calculate service level"
+        "summary": "Calculate service level",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
@@ -809,76 +2251,265 @@
         "kind": "operation",
         "method": "post",
         "name": "post /inventory/turns",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/inventory/turns",
         "pointer": "#/paths/~1inventory~1turns/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Calculate inventory turns"
+        "summary": "Calculate inventory turns",
+        "tags": [
+          "Inventory Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Supports the creation of artificial startup history for new products, based on a flexible mapping of old to new.",
         "id": "operation:post:/lifecycle/many-to-one",
         "kind": "operation",
         "method": "post",
         "name": "post /lifecycle/many-to-one",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/lifecycle/many-to-one",
         "pointer": "#/paths/~1lifecycle~1many-to-one/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "LifecycleManyToOneRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlanningLevelDataDto"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Map from old product to new product to create artifical history"
+        "summary": "Map from old product to new product to create artifical history",
+        "tags": [
+          "Product Lifecycle Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Supports the creation of artificial startup history for new products, based on a flexible mapping of old to new.",
         "id": "operation:post:/lifecycle/one-to-one",
         "kind": "operation",
         "method": "post",
         "name": "post /lifecycle/one-to-one",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/lifecycle/one-to-one",
         "pointer": "#/paths/~1lifecycle~1one-to-one/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "LifecycleOneToOneRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PlanningLevelDataDto"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Map from old product to new product to create artifical history"
+        "summary": "Map from old product to new product to create artifical history",
+        "tags": [
+          "Product Lifecycle Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Identify outliers (single and repetitive spikes, seasonality, masked outliers, trend and level jumps, amongst other topics) and use for cleansing of the histor…",
         "id": "operation:post:/outlier",
         "kind": "operation",
         "method": "post",
         "name": "post /outlier",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/outlier",
         "pointer": "#/paths/~1outlier/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "OutliersRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimeSeriesOutliersResponse[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Get outlier"
+        "summary": "Get outlier",
+        "tags": [
+          "Insight-Driven Planning (Forecast & Optimization)"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate and retrieve results of ABC (pareto analysis) and xyz (Coefficient of variation) per timeseries and planning level.",
         "id": "operation:post:/portfolio",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/portfolio",
         "pointer": "#/paths/~1portfolio/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PortfolioRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PortfolioModel[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "ABCxyz Analysis"
+        "summary": "ABCxyz Analysis",
+        "tags": [
+          "Portfolio Performance Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate and retrieve results of ABC (pareto analysis) per timeseries and planning level.",
         "id": "operation:post:/portfolio/abc",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/abc",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/portfolio/abc",
         "pointer": "#/paths/~1portfolio~1abc/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PortfolioRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PortfolioAbcModel[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "ABC Analysis"
+        "summary": "ABC Analysis",
+        "tags": [
+          "Portfolio Performance Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate and retrieve results of ABC (pareto analysis) and xyz (Coefficient of variation) per timeseries and planning level.",
         "id": "operation:post:/portfolio/file-to-portfolio",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/file-to-portfolio",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/portfolio/file-to-portfolio",
         "pointer": "#/paths/~1portfolio~1file-to-portfolio/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "ABCxyz Analysis"
+        "summary": "ABCxyz Analysis",
+        "tags": [
+          "Portfolio Performance Management"
+        ]
       },
       {
         "deprecated": false,
@@ -886,21 +2517,78 @@
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/forecast-performance-rewind",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/portfolio/forecast-performance-rewind",
         "pointer": "#/paths/~1portfolio~1forecast-performance-rewind/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "ForecastPerformanceRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "RewindResponse"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Planning level rewind to calculate and measure performance potential (internal versus iCUE)."
+        "summary": "Planning level rewind to calculate and measure performance potential (internal versus iCUE).",
+        "tags": [
+          "Portfolio Performance Management"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Calculate and retrieve results of xyz (Coefficient of variation) per timeseries and planning level.",
         "id": "operation:post:/portfolio/xyz",
         "kind": "operation",
         "method": "post",
         "name": "post /portfolio/xyz",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/portfolio/xyz",
         "pointer": "#/paths/~1portfolio~1xyz/post",
+        "request": {
+          "content_types": [
+            "application/*+json",
+            "application/json",
+            "text/json"
+          ],
+          "required": false,
+          "type": "PortfolioRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "PortfolioXyzModel[]"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "xyz Analysis"
+        "summary": "xyz Analysis",
+        "tags": [
+          "Portfolio Performance Management"
+        ]
       },
       {
         "deprecated": false,
@@ -908,10 +2596,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /pricing/bundle-pricing",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pricing/bundle-pricing",
         "pointer": "#/paths/~1pricing~1bundle-pricing/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Bundle pricing"
+        "summary": "Bundle pricing",
+        "tags": [
+          "Pricing"
+        ]
       },
       {
         "deprecated": false,
@@ -919,10 +2625,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /pricing/competitive-pricing",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pricing/competitive-pricing",
         "pointer": "#/paths/~1pricing~1competitive-pricing/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Pricing"
+        ]
       },
       {
         "deprecated": false,
@@ -930,10 +2654,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /pricing/cost-plus-pricing",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pricing/cost-plus-pricing",
         "pointer": "#/paths/~1pricing~1cost-plus-pricing/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Pricing"
+        ]
       },
       {
         "deprecated": false,
@@ -941,10 +2683,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /pricing/decoy-pricing",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pricing/decoy-pricing",
         "pointer": "#/paths/~1pricing~1decoy-pricing/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Pricing"
+        ]
       },
       {
         "deprecated": false,
@@ -952,10 +2712,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /pricing/odd-pricing",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pricing/odd-pricing",
         "pointer": "#/paths/~1pricing~1odd-pricing/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Pricing"
+        ]
       },
       {
         "deprecated": false,
@@ -963,10 +2741,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /pricing/penetration-pricing",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pricing/penetration-pricing",
         "pointer": "#/paths/~1pricing~1penetration-pricing/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Pricing"
+        ]
       },
       {
         "deprecated": false,
@@ -974,10 +2770,28 @@
         "kind": "operation",
         "method": "post",
         "name": "post /pricing/price-elasticity-of-demand",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/pricing/price-elasticity-of-demand",
         "pointer": "#/paths/~1pricing~1price-elasticity-of-demand/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": ""
+        "summary": "",
+        "tags": [
+          "Pricing"
+        ]
       },
       {
         "deprecated": false,
@@ -985,10 +2799,35 @@
         "kind": "operation",
         "method": "get",
         "name": "get /report/performance/sku-rationalization/{planningLevelId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "planningLevelId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/report/performance/sku-rationalization/{planningLevelId}",
         "pointer": "#/paths/~1report~1performance~1sku-rationalization~1{planningLevelId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PortfolioModel[]"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "SKU rationalization report"
+        "summary": "SKU rationalization report",
+        "tags": [
+          "Reporting and Monitoring"
+        ]
       },
       {
         "deprecated": false,
@@ -996,10 +2835,34 @@
         "kind": "operation",
         "method": "get",
         "name": "get /report/performance/{planningLevelId}",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "planningLevelId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/report/performance/{planningLevelId}",
         "pointer": "#/paths/~1report~1performance~1{planningLevelId}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Month over month performance per planning level"
+        "summary": "Month over month performance per planning level",
+        "tags": [
+          "Reporting and Monitoring"
+        ]
       },
       {
         "deprecated": false,
@@ -1007,10 +2870,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /report/planning-level/organization",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/report/planning-level/organization",
         "pointer": "#/paths/~1report~1planning-level~1organization/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get list of plannign levels by organization"
+        "summary": "Get list of plannign levels by organization",
+        "tags": [
+          "Reporting and Monitoring"
+        ]
       },
       {
         "deprecated": false,
@@ -1018,10 +2899,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /report/planning-level/user",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/report/planning-level/user",
         "pointer": "#/paths/~1report~1planning-level~1user/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get list of plannign levels by user"
+        "summary": "Get list of plannign levels by user",
+        "tags": [
+          "Reporting and Monitoring"
+        ]
       },
       {
         "deprecated": false,
@@ -1029,220 +2928,280 @@
         "kind": "operation",
         "method": "get",
         "name": "get /report/user",
+        "parameters": [
+          {
+            "description": "User Authentication Token",
+            "in": "header",
+            "name": "Token",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/report/user",
         "pointer": "#/paths/~1report~1user/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get usage statistics per user"
+        "summary": "Get usage statistics per user",
+        "tags": [
+          "Reporting and Monitoring"
+        ]
       },
       {
         "id": "schema:AiPlanningLevelRequest",
         "kind": "schema",
-        "name": "AiPlanningLevelRequest"
+        "name": "AiPlanningLevelRequest",
+        "type": "object"
       },
       {
         "id": "schema:EntityResponse",
         "kind": "schema",
-        "name": "EntityResponse"
+        "name": "EntityResponse",
+        "type": "object"
       },
       {
         "id": "schema:ForecastBottomUpResponse",
         "kind": "schema",
-        "name": "ForecastBottomUpResponse"
+        "name": "ForecastBottomUpResponse",
+        "type": "object"
       },
       {
         "id": "schema:ForecastHyperparameterResponse",
         "kind": "schema",
-        "name": "ForecastHyperparameterResponse"
+        "name": "ForecastHyperparameterResponse",
+        "type": "object"
       },
       {
         "id": "schema:ForecastOptimalParametersResponse",
         "kind": "schema",
-        "name": "ForecastOptimalParametersResponse"
+        "name": "ForecastOptimalParametersResponse",
+        "type": "object"
       },
       {
         "id": "schema:ForecastPerformanceDataRequest",
         "kind": "schema",
-        "name": "ForecastPerformanceDataRequest"
+        "name": "ForecastPerformanceDataRequest",
+        "type": "object"
       },
       {
         "id": "schema:ForecastPerformanceRequest",
         "kind": "schema",
-        "name": "ForecastPerformanceRequest"
+        "name": "ForecastPerformanceRequest",
+        "type": "object"
       },
       {
         "id": "schema:ForecastResponse",
         "kind": "schema",
-        "name": "ForecastResponse"
+        "name": "ForecastResponse",
+        "type": "object"
       },
       {
         "id": "schema:FullDetailsForecastResponse",
         "kind": "schema",
-        "name": "FullDetailsForecastResponse"
+        "name": "FullDetailsForecastResponse",
+        "type": "object"
       },
       {
         "id": "schema:HistoryAndForecastResponse",
         "kind": "schema",
-        "name": "HistoryAndForecastResponse"
+        "name": "HistoryAndForecastResponse",
+        "type": "object"
       },
       {
         "id": "schema:HyperparameterModel",
         "kind": "schema",
-        "name": "HyperparameterModel"
+        "name": "HyperparameterModel",
+        "type": "object"
       },
       {
         "id": "schema:JobResponse",
         "kind": "schema",
-        "name": "JobResponse"
+        "name": "JobResponse",
+        "type": "object"
       },
       {
         "id": "schema:JsonForecastResponse",
         "kind": "schema",
-        "name": "JsonForecastResponse"
+        "name": "JsonForecastResponse",
+        "type": "object"
       },
       {
         "id": "schema:LifecycleManyToOneRequest",
         "kind": "schema",
-        "name": "LifecycleManyToOneRequest"
+        "name": "LifecycleManyToOneRequest",
+        "type": "object"
       },
       {
         "id": "schema:LifecycleOneToOneRequest",
         "kind": "schema",
-        "name": "LifecycleOneToOneRequest"
+        "name": "LifecycleOneToOneRequest",
+        "type": "object"
       },
       {
         "id": "schema:MethodDto",
         "kind": "schema",
-        "name": "MethodDto"
+        "name": "MethodDto",
+        "type": "object"
       },
       {
         "id": "schema:NewEntityRequest",
         "kind": "schema",
-        "name": "NewEntityRequest"
+        "name": "NewEntityRequest",
+        "type": "object"
       },
       {
         "id": "schema:NewModelRequest",
         "kind": "schema",
-        "name": "NewModelRequest"
+        "name": "NewModelRequest",
+        "type": "object"
       },
       {
         "id": "schema:NewTokenRequest",
         "kind": "schema",
-        "name": "NewTokenRequest"
+        "name": "NewTokenRequest",
+        "type": "object"
       },
       {
         "id": "schema:NewUserRequest",
         "kind": "schema",
-        "name": "NewUserRequest"
+        "name": "NewUserRequest",
+        "type": "object"
       },
       {
         "id": "schema:OptimalParameterResponse",
         "kind": "schema",
-        "name": "OptimalParameterResponse"
+        "name": "OptimalParameterResponse",
+        "type": "object"
       },
       {
         "id": "schema:OutlierResponse",
         "kind": "schema",
-        "name": "OutlierResponse"
+        "name": "OutlierResponse",
+        "type": "object"
       },
       {
         "id": "schema:OutliersRequest",
         "kind": "schema",
-        "name": "OutliersRequest"
+        "name": "OutliersRequest",
+        "type": "object"
       },
       {
         "id": "schema:PlanningLevelDataDto",
         "kind": "schema",
-        "name": "PlanningLevelDataDto"
+        "name": "PlanningLevelDataDto",
+        "type": "object"
       },
       {
         "id": "schema:PlanningLevelForecastResultData",
         "kind": "schema",
-        "name": "PlanningLevelForecastResultData"
+        "name": "PlanningLevelForecastResultData",
+        "type": "object"
       },
       {
         "id": "schema:PlanningLevelInfoRequest",
         "kind": "schema",
-        "name": "PlanningLevelInfoRequest"
+        "name": "PlanningLevelInfoRequest",
+        "type": "object"
       },
       {
         "id": "schema:PlanningLevelReRunRequest",
         "kind": "schema",
-        "name": "PlanningLevelReRunRequest"
+        "name": "PlanningLevelReRunRequest",
+        "type": "object"
       },
       {
         "id": "schema:PlanningLevelRequest",
         "kind": "schema",
-        "name": "PlanningLevelRequest"
+        "name": "PlanningLevelRequest",
+        "type": "object"
       },
       {
         "id": "schema:PortfolioAbcModel",
         "kind": "schema",
-        "name": "PortfolioAbcModel"
+        "name": "PortfolioAbcModel",
+        "type": "object"
       },
       {
         "id": "schema:PortfolioModel",
         "kind": "schema",
-        "name": "PortfolioModel"
+        "name": "PortfolioModel",
+        "type": "object"
       },
       {
         "id": "schema:PortfolioRequest",
         "kind": "schema",
-        "name": "PortfolioRequest"
+        "name": "PortfolioRequest",
+        "type": "object"
       },
       {
         "id": "schema:PortfolioXyzModel",
         "kind": "schema",
-        "name": "PortfolioXyzModel"
+        "name": "PortfolioXyzModel",
+        "type": "object"
       },
       {
         "id": "schema:RewindHyperparameterResponse",
         "kind": "schema",
-        "name": "RewindHyperparameterResponse"
+        "name": "RewindHyperparameterResponse",
+        "type": "object"
       },
       {
         "id": "schema:RewindResponse",
         "kind": "schema",
-        "name": "RewindResponse"
+        "name": "RewindResponse",
+        "type": "object"
       },
       {
         "id": "schema:RewindTimeSeriesResponse",
         "kind": "schema",
-        "name": "RewindTimeSeriesResponse"
+        "name": "RewindTimeSeriesResponse",
+        "type": "object"
       },
       {
         "id": "schema:TimeSeriesForecastResponse",
         "kind": "schema",
-        "name": "TimeSeriesForecastResponse"
+        "name": "TimeSeriesForecastResponse",
+        "type": "object"
       },
       {
         "id": "schema:TimeSeriesFullDetailsResponse",
         "kind": "schema",
-        "name": "TimeSeriesFullDetailsResponse"
+        "name": "TimeSeriesFullDetailsResponse",
+        "type": "object"
       },
       {
         "id": "schema:TimeSeriesHistoryAndForecastResponse",
         "kind": "schema",
-        "name": "TimeSeriesHistoryAndForecastResponse"
+        "name": "TimeSeriesHistoryAndForecastResponse",
+        "type": "object"
       },
       {
         "id": "schema:TimeSeriesOptimalParametersResponse",
         "kind": "schema",
-        "name": "TimeSeriesOptimalParametersResponse"
+        "name": "TimeSeriesOptimalParametersResponse",
+        "type": "object"
       },
       {
         "id": "schema:TimeSeriesOutliersResponse",
         "kind": "schema",
-        "name": "TimeSeriesOutliersResponse"
+        "name": "TimeSeriesOutliersResponse",
+        "type": "object"
       },
       {
         "id": "schema:ToggleRequest",
         "kind": "schema",
-        "name": "ToggleRequest"
+        "name": "ToggleRequest",
+        "type": "object"
       },
       {
         "id": "schema:ToggleUserRequest",
         "kind": "schema",
-        "name": "ToggleUserRequest"
+        "name": "ToggleUserRequest",
+        "type": "object"
       }
     ]
   },

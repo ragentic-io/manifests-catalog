@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `25018740c1f51b174d9e6720e084682caf789000ffa204c59ec21ab05b71dbe1` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 3 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/apply-yara-rules` | applyYaraRules | — |
-| HEAD | `/clean` | clean | — |
-| POST | `/emulation-output` | emulationOutput | — |
-| POST | `/generate-partial-yara-rules` | generatePartialYaraRule | — |
-| POST | `/unpack` | unpack | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/apply-yara-rules` | applyYaraRules | body*: object | object |  | — |
+| HEAD | `/clean` | clean | — | — | yes | — |
+| POST | `/emulation-output` | emulationOutput | body*: object | object |  | — |
+| POST | `/generate-partial-yara-rules` | generatePartialYaraRule | body*: object | object |  | — |
+| POST | `/unpack` | unpack | body*: object | string:binary |  | — |

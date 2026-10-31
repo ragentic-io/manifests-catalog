@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets.onestore.ms_cdnfiles_one
 
 | | |
 | --- | --- |
-| Signed bundle | `a075b71885b2ad76d5e5b185f1b6bde1f411bb4975dea6916d0ab8e4b56b3f37` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,12 +34,14 @@ logo: "https://api.apis.guru/v2/cache/logo/https_assets.onestore.ms_cdnfiles_one
 
 11 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/providers/Microsoft.EnterpriseKnowledgeGraph/operations` | Operations_List | — |
-| GET | `/subscriptions/{subscriptionId}/providers/Microsoft.EnterpriseKnowledgeGraph/services` | EnterpriseKnowledgeGraph_List | — |
-| GET | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services` | EnterpriseKnowledgeGraph_ListByResourceGroup | — |
-| DELETE | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}` | EnterpriseKnowledgeGraph_Delete | — |
-| GET | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}` | EnterpriseKnowledgeGraph_Get | — |
-| PATCH | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}` | EnterpriseKnowledgeGraph_Update | — |
-| PUT | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}` | EnterpriseKnowledgeGraph_Create | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/providers/Microsoft.EnterpriseKnowledgeGraph/operations` | Operations_List | `api-version`* | OperationEntityListResult | yes | — |
+| GET | `/subscriptions/{subscriptionId}/providers/Microsoft.EnterpriseKnowledgeGraph/services` | EnterpriseKnowledgeGraph_List | `api-version`*, `subscriptionId`* | EnterpriseKnowledgeGraphResponseList | yes | — |
+| GET | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services` | EnterpriseKnowledgeGraph_ListByResourceGroup | `resourceGroupName`*, `subscriptionId`*, `api-version`* | EnterpriseKnowledgeGraphResponseList | yes | — |
+| GET | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}` | EnterpriseKnowledgeGraph_Get | `resourceGroupName`*, `resourceName`*, `api-version`*, `subscriptionId`* | EnterpriseKnowledgeGraph | yes | — |
+| PUT | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}` | EnterpriseKnowledgeGraph_Create | `resourceGroupName`*, `resourceName`*, `api-version`*, `subscriptionId`*, body*: EnterpriseKnowledgeGraph | EnterpriseKnowledgeGraph |  | — |
+| DELETE | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}` | EnterpriseKnowledgeGraph_Delete | `resourceGroupName`*, `resourceName`*, `api-version`*, `subscriptionId`* | — |  | — |
+| PATCH | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}` | EnterpriseKnowledgeGraph_Update | `resourceGroupName`*, `resourceName`*, `api-version`*, `subscriptionId`*, body*: EnterpriseKnowledgeGraph | EnterpriseKnowledgeGraph |  | — |

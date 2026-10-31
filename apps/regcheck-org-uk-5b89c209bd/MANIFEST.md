@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_webtropy_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `7db9b338439164d3ca7a1a77eb6f212a62d63f3568c6b4c15e3ccc96888f2e39` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_webtropy_profile_im
 
 1 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/Check` | Check | Gets details of a UK Vehicle |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/Check` | Check | `searchString`* | Car[] | yes | Gets details of a UK Vehicle |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/_images_apple.svg"
 
 | | |
 | --- | --- |
-| Signed bundle | `2a2df075fe742e3f315ba3eec87c24d8c4040f642e7d8aef57b7f345d555f3f4` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,66 +34,68 @@ logo: "https://api.apis.guru/v2/cache/logo/_images_apple.svg"
 
 35 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/account` | accountDelete | Delete Account |
-| GET | `/account` | accountGet | Get Account |
-| POST | `/account` | accountCreate | Create Account |
-| PATCH | `/account/email` | accountUpdateEmail | Update Account Email |
-| POST | `/account/jwt` | accountCreateJWT | Create Account JWT |
-| GET | `/account/logs` | accountGetLogs | Get Account Logs |
-| PATCH | `/account/name` | accountUpdateName | Update Account Name |
-| PATCH | `/account/password` | accountUpdatePassword | Update Account Password |
-| GET | `/account/prefs` | accountGetPrefs | Get Account Preferences |
-| PATCH | `/account/prefs` | accountUpdatePrefs | Update Account Preferences |
-| POST | `/account/recovery` | accountCreateRecovery | Create Password Recovery |
-| PUT | `/account/recovery` | accountUpdateRecovery | Complete Password Recovery |
-| DELETE | `/account/sessions` | accountDeleteSessions | Delete All Account Sessions |
-| GET | `/account/sessions` | accountGetSessions | Get Account Sessions |
-| POST | `/account/sessions` | accountCreateSession | Create Account Session |
-| POST | `/account/sessions/anonymous` | accountCreateAnonymousSession | Create Anonymous Session |
-| GET | `/account/sessions/oauth2/{provider}` | accountCreateOAuth2Session | Create Account Session with OAuth2 |
-| DELETE | `/account/sessions/{sessionId}` | accountDeleteSession | Delete Account Session |
-| GET | `/account/sessions/{sessionId}` | accountGetSession | Get Session By ID |
-| POST | `/account/verification` | accountCreateVerification | Create Email Verification |
-| PUT | `/account/verification` | accountUpdateVerification | Complete Email Verification |
-| GET | `/avatars/browsers/{code}` | avatarsGetBrowser | Get Browser Icon |
-| GET | `/avatars/credit-cards/{code}` | avatarsGetCreditCard | Get Credit Card Icon |
-| GET | `/avatars/favicon` | avatarsGetFavicon | Get Favicon |
-| GET | `/avatars/flags/{code}` | avatarsGetFlag | Get Country Flag |
-| GET | `/avatars/image` | avatarsGetImage | Get Image from URL |
-| GET | `/avatars/initials` | avatarsGetInitials | Get User Initials |
-| GET | `/avatars/qr` | avatarsGetQR | Get QR Code |
-| GET | `/database/collections/{collectionId}/documents` | databaseListDocuments | List Documents |
-| POST | `/database/collections/{collectionId}/documents` | databaseCreateDocument | Create Document |
-| DELETE | `/database/collections/{collectionId}/documents/{documentId}` | databaseDeleteDocument | Delete Document |
-| GET | `/database/collections/{collectionId}/documents/{documentId}` | databaseGetDocument | Get Document |
-| PATCH | `/database/collections/{collectionId}/documents/{documentId}` | databaseUpdateDocument | Update Document |
-| GET | `/functions/{functionId}/executions` | functionsListExecutions | List Executions |
-| POST | `/functions/{functionId}/executions` | functionsCreateExecution | Create Execution |
-| GET | `/functions/{functionId}/executions/{executionId}` | functionsGetExecution | Get Execution |
-| GET | `/locale` | localeGet | Get User Locale |
-| GET | `/locale/continents` | localeGetContinents | List Continents |
-| GET | `/locale/countries` | localeGetCountries | List Countries |
-| GET | `/locale/countries/eu` | localeGetCountriesEU | List EU Countries |
-| GET | `/locale/countries/phones` | localeGetCountriesPhones | List Countries Phone Codes |
-| GET | `/locale/currencies` | localeGetCurrencies | List Currencies |
-| GET | `/locale/languages` | localeGetLanguages | List Languages |
-| GET | `/storage/files` | storageListFiles | List Files |
-| POST | `/storage/files` | storageCreateFile | Create File |
-| DELETE | `/storage/files/{fileId}` | storageDeleteFile | Delete File |
-| GET | `/storage/files/{fileId}` | storageGetFile | Get File |
-| PUT | `/storage/files/{fileId}` | storageUpdateFile | Update File |
-| GET | `/storage/files/{fileId}/download` | storageGetFileDownload | Get File for Download |
-| GET | `/storage/files/{fileId}/preview` | storageGetFilePreview | Get File Preview |
-| GET | `/storage/files/{fileId}/view` | storageGetFileView | Get File for View |
-| GET | `/teams` | teamsList | List Teams |
-| POST | `/teams` | teamsCreate | Create Team |
-| DELETE | `/teams/{teamId}` | teamsDelete | Delete Team |
-| GET | `/teams/{teamId}` | teamsGet | Get Team |
-| PUT | `/teams/{teamId}` | teamsUpdate | Update Team |
-| GET | `/teams/{teamId}/memberships` | teamsGetMemberships | Get Team Memberships |
-| POST | `/teams/{teamId}/memberships` | teamsCreateMembership | Create Team Membership |
-| DELETE | `/teams/{teamId}/memberships/{membershipId}` | teamsDeleteMembership | Delete Team Membership |
-| PATCH | `/teams/{teamId}/memberships/{membershipId}` | teamsUpdateMembershipRoles | Update Membership Roles |
-| PATCH | `/teams/{teamId}/memberships/{membershipId}/status` | teamsUpdateMembershipStatus | Update Team Membership Status |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | accountGet | — | user | yes | Get Account |
+| POST | `/account` | accountCreate | body: object | user |  | Create Account |
+| DELETE | `/account` | accountDelete | — | — |  | Delete Account |
+| PATCH | `/account/email` | accountUpdateEmail | body: object | user |  | Update Account Email |
+| POST | `/account/jwt` | accountCreateJWT | — | jwt |  | Create Account JWT |
+| GET | `/account/logs` | accountGetLogs | — | logList | yes | Get Account Logs |
+| PATCH | `/account/name` | accountUpdateName | body: object | user |  | Update Account Name |
+| PATCH | `/account/password` | accountUpdatePassword | body: object | user |  | Update Account Password |
+| GET | `/account/prefs` | accountGetPrefs | — | preferences | yes | Get Account Preferences |
+| PATCH | `/account/prefs` | accountUpdatePrefs | body: object | user |  | Update Account Preferences |
+| PUT | `/account/recovery` | accountUpdateRecovery | body: object | token |  | Complete Password Recovery |
+| POST | `/account/recovery` | accountCreateRecovery | body: object | token |  | Create Password Recovery |
+| GET | `/account/sessions` | accountGetSessions | — | sessionList | yes | Get Account Sessions |
+| POST | `/account/sessions` | accountCreateSession | body: object | session |  | Create Account Session |
+| DELETE | `/account/sessions` | accountDeleteSessions | — | — |  | Delete All Account Sessions |
+| POST | `/account/sessions/anonymous` | accountCreateAnonymousSession | — | session |  | Create Anonymous Session |
+| GET | `/account/sessions/oauth2/{provider}` | accountCreateOAuth2Session | `provider`*, `success`, `failure`, `scopes` | — | yes | Create Account Session with OAuth2 |
+| GET | `/account/sessions/{sessionId}` | accountGetSession | `sessionId`* | session | yes | Get Session By ID |
+| DELETE | `/account/sessions/{sessionId}` | accountDeleteSession | `sessionId`* | — |  | Delete Account Session |
+| PUT | `/account/verification` | accountUpdateVerification | body: object | token |  | Complete Email Verification |
+| POST | `/account/verification` | accountCreateVerification | body: object | token |  | Create Email Verification |
+| GET | `/avatars/browsers/{code}` | avatarsGetBrowser | `code`*, `width`, `height`, `quality` | — | yes | Get Browser Icon |
+| GET | `/avatars/credit-cards/{code}` | avatarsGetCreditCard | `code`*, `width`, `height`, `quality` | — | yes | Get Credit Card Icon |
+| GET | `/avatars/favicon` | avatarsGetFavicon | `url`* | — | yes | Get Favicon |
+| GET | `/avatars/flags/{code}` | avatarsGetFlag | `code`*, `width`, `height`, `quality` | — | yes | Get Country Flag |
+| GET | `/avatars/image` | avatarsGetImage | `url`*, `width`, `height` | — | yes | Get Image from URL |
+| GET | `/avatars/initials` | avatarsGetInitials | `name`, `width`, `height`, `color`, `background` | — | yes | Get User Initials |
+| GET | `/avatars/qr` | avatarsGetQR | `text`*, `size`, `margin`, `download` | — | yes | Get QR Code |
+| GET | `/database/collections/{collectionId}/documents` | databaseListDocuments | `collectionId`*, `filters`, `limit`, `offset`, `orderField`, `orderType`, `orderCast`, `search` | documentList | yes | List Documents |
+| POST | `/database/collections/{collectionId}/documents` | databaseCreateDocument | `collectionId`*, body: object | document |  | Create Document |
+| GET | `/database/collections/{collectionId}/documents/{documentId}` | databaseGetDocument | `collectionId`*, `documentId`* | document | yes | Get Document |
+| DELETE | `/database/collections/{collectionId}/documents/{documentId}` | databaseDeleteDocument | `collectionId`*, `documentId`* | — |  | Delete Document |
+| PATCH | `/database/collections/{collectionId}/documents/{documentId}` | databaseUpdateDocument | `collectionId`*, `documentId`*, body: object | document |  | Update Document |
+| GET | `/functions/{functionId}/executions` | functionsListExecutions | `functionId`*, `search`, `limit`, `offset`, `orderType` | executionList | yes | List Executions |
+| POST | `/functions/{functionId}/executions` | functionsCreateExecution | `functionId`*, body: object | execution |  | Create Execution |
+| GET | `/functions/{functionId}/executions/{executionId}` | functionsGetExecution | `functionId`*, `executionId`* | execution | yes | Get Execution |
+| GET | `/locale` | localeGet | — | locale | yes | Get User Locale |
+| GET | `/locale/continents` | localeGetContinents | — | continentList | yes | List Continents |
+| GET | `/locale/countries` | localeGetCountries | — | countryList | yes | List Countries |
+| GET | `/locale/countries/eu` | localeGetCountriesEU | — | countryList | yes | List EU Countries |
+| GET | `/locale/countries/phones` | localeGetCountriesPhones | — | phoneList | yes | List Countries Phone Codes |
+| GET | `/locale/currencies` | localeGetCurrencies | — | currencyList | yes | List Currencies |
+| GET | `/locale/languages` | localeGetLanguages | — | languageList | yes | List Languages |
+| GET | `/storage/files` | storageListFiles | `search`, `limit`, `offset`, `orderType` | fileList | yes | List Files |
+| POST | `/storage/files` | storageCreateFile | body: object | file |  | Create File |
+| GET | `/storage/files/{fileId}` | storageGetFile | `fileId`* | file | yes | Get File |
+| PUT | `/storage/files/{fileId}` | storageUpdateFile | `fileId`*, body: object | file |  | Update File |
+| DELETE | `/storage/files/{fileId}` | storageDeleteFile | `fileId`* | — |  | Delete File |
+| GET | `/storage/files/{fileId}/download` | storageGetFileDownload | `fileId`* | — | yes | Get File for Download |
+| GET | `/storage/files/{fileId}/preview` | storageGetFilePreview | `fileId`*, `width`, `height`, `gravity`, `quality`, `borderWidth`, `borderColor`, `borderRadius`, `opacity`, `rotation`, `background`, `output` | — | yes | Get File Preview |
+| GET | `/storage/files/{fileId}/view` | storageGetFileView | `fileId`* | — | yes | Get File for View |
+| GET | `/teams` | teamsList | `search`, `limit`, `offset`, `orderType` | teamList | yes | List Teams |
+| POST | `/teams` | teamsCreate | body: object | team |  | Create Team |
+| GET | `/teams/{teamId}` | teamsGet | `teamId`* | team | yes | Get Team |
+| PUT | `/teams/{teamId}` | teamsUpdate | `teamId`*, body: object | team |  | Update Team |
+| DELETE | `/teams/{teamId}` | teamsDelete | `teamId`* | — |  | Delete Team |
+| GET | `/teams/{teamId}/memberships` | teamsGetMemberships | `teamId`*, `search`, `limit`, `offset`, `orderType` | membershipList | yes | Get Team Memberships |
+| POST | `/teams/{teamId}/memberships` | teamsCreateMembership | `teamId`*, body: object | membership |  | Create Team Membership |
+| DELETE | `/teams/{teamId}/memberships/{membershipId}` | teamsDeleteMembership | `teamId`*, `membershipId`* | — |  | Delete Team Membership |
+| PATCH | `/teams/{teamId}/memberships/{membershipId}` | teamsUpdateMembershipRoles | `teamId`*, `membershipId`*, body: object | membership |  | Update Membership Roles |
+| PATCH | `/teams/{teamId}/memberships/{membershipId}/status` | teamsUpdateMembershipStatus | `teamId`*, `membershipId`*, body: object | membership |  | Update Team Membership Status |

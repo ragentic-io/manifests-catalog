@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `eee702d3b3a6f676a247dea87dc6c613027bb128d609e6f66e16989b7a70cc6e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,51 +34,53 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 174 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/business/international/profile` | InternationalBusinessProfile | Retrieve a business profile from any country (AUS included). |
-| POST | `/business/international/search` | InternationalBusinessSearch | Search for a business from any country (AUS included). |
-| POST | `/business/ownership/query` | BusinessOwnershipQuery | Create Business Entity and Query UBO (AUS Only) |
-| POST | `/business/reports` | RunBusinessReports | Run Report(s) against a new or existing organisation entity (AUS Only). |
-| POST | `/business/{entityId}/verify` | CheckOrganisation | Run KYC/AML Checks on Organisation and/or Associated Individuals. |
-| POST | `/document` | CreateDocument | Create New Document. |
-| POST | `/document/new/compare` | CompareDocument | Create Document and Compare to Original. |
-| POST | `/document/new/scan` | CreateScanDocument | Create and OCR Scan Document. |
-| POST | `/document/new/utility/process/compare` | CreateProcessIndustryUtilityDocument | Create Document and Run Utility Price Comparison. |
-| POST | `/document/new/verify` | VerifyDocument | Create and Verify Document. |
-| POST | `/document/search` | SearchDocument | Search For a Document !! EXPERIMENTAL !! |
-| DELETE | `/document/{documentId}` | DeleteDocument | Delete Document. |
-| GET | `/document/{documentId}` | QueryDocument | Retrieve Document Details |
-| POST | `/document/{documentId}` | UpdateDocument | Update Existing Document. |
-| GET | `/document/{documentId}/checks` | QueryDocumentChecks | Retrieve Document Verification Check Details. |
-| POST | `/document/{documentId}/compare` | UpdateCompareDocument | Update Document and Compare to Original. |
-| GET | `/document/{documentId}/full` | QueryDocumentFull | Retrieve Document and Scan Data |
-| POST | `/document/{documentId}/scan` | UpdateScanDocument | Update and OCR Scan Document |
-| POST | `/document/{documentId}/utility/process/compare` | UpdateProcessIndustryUtilityDocument | Update Document and Run Utility Price Comparison. |
-| POST | `/document/{documentId}/utility/process/consent` | UpdateProcessIndustryUtilityDocumentConsent | Provide Explicit Consent to Switch Utility Plans. |
-| POST | `/document/{documentId}/utility/process/switch` | UpdateProcessIndustryUtilityDocumentSwitch | Initiate Switching of Utility Plan. |
-| POST | `/document/{documentId}/verify` | UpdateVerifyDocument | Update and Verify Document. |
-| POST | `/entity` | CreateEntity | Create New Entity. |
-| POST | `/entity/new/idvalidate/getToken` | CreateEntityGetIDVToken | Create Entity and Get IDV Token |
-| POST | `/entity/new/verify/pushToMobile` | CreateCheckEntityPushToMobile | Create Entity and Push Self-Verification Link |
-| POST | `/entity/new/verify/{checkType}/{resultLevel}` | CreateCheckEntity | Create and Verify Entity |
-| POST | `/entity/search` | SearchEntity | Search for Entity |
-| DELETE | `/entity/{entityId}` | DeleteEntity | Delete Entity |
-| GET | `/entity/{entityId}` | QueryEntity | Retrieve Entity Details |
-| POST | `/entity/{entityId}` | UpdateEntity | Update Existing Entity. |
-| POST | `/entity/{entityId}/check/{checkId}/{checkClass}` | UpdateCheckClassResults | Update Check Result States (Batch) |
-| POST | `/entity/{entityId}/check/{checkId}/{checkClass}/{checkClassId}` | UpdateCheckClassResult | Update Check Result State |
-| GET | `/entity/{entityId}/checks` | QueryEntityChecks | Retrieve Entity Verication Check Details |
-| POST | `/entity/{entityId}/flag/blacklist` | BlacklistEntity | Set Entity Blacklist State. |
-| POST | `/entity/{entityId}/flag/duplicate/{otherId}` | FlagDuplicateEntity | Resolve Duplicate States. |
-| POST | `/entity/{entityId}/flag/monitor` | EntityMonitoring | Set Entity Ongoing AML Monitoring Status. |
-| POST | `/entity/{entityId}/flag/watchlist` | WatchlistEntity | Set Entity Watchlist State. |
-| GET | `/entity/{entityId}/full` | QueryEntityFull | Retrieve Entity Details and Document Scan Data |
-| POST | `/entity/{entityId}/idvalidate/getToken` | UpdateEntityGetIDVToken | Update Entity and Get IDV Token |
-| POST | `/entity/{entityId}/idvalidate/initProcess` | UpdateEntityInitIDVProcess | Update Entity and Initiate IDV Process |
-| POST | `/entity/{entityId}/status` | UpdateEntityState | Update Entity States |
-| POST | `/entity/{entityId}/verify/pushToMobile` | UpdateCheckEntityPushToMobile | Update Entity and Push Self-Verification Link |
-| POST | `/entity/{entityId}/verify/{checkType}/{resultLevel}` | UpdateCheckEntity | Update Entity and Verify Details |
-| GET | `/retrieve/response/{requestId}` | RetrieveResult | (Re)retrieve Response Result. |
-| GET | `/ruok` | StatusCheck | Service Status |
-| POST | `/your/configured/path/{requestId}` | notifyResult | Push Notification Payload |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/business/international/profile` | InternationalBusinessProfile | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, body*: InternationalBusinessProfileCriteria | InternationalBusinessProfileResponse |  | Retrieve a business profile from any country (AUS included). |
+| POST | `/business/international/search` | InternationalBusinessSearch | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, body*: InternationalBusinessSearchCriteria | InternationalBusinessSearchResponse |  | Search for a business from any country (AUS included). |
+| POST | `/business/ownership/query` | BusinessOwnershipQuery | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `checkType`, `entityCategories`, `resultLevel`, `validation`, `generateReport`, `includeHistorical`, `onlyProfile`, body*: OwnershipQuery | OrganisationCheckResponseObject, AcceptedEntityResultObject |  | Create Business Entity and Query UBO (AUS Only) |
+| POST | `/business/reports` | RunBusinessReports | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `reportTypes`*, body*: EntityObject | BusinessReportResponseDetails |  | Run Report(s) against a new or existing organisation entity (AUS Only). |
+| POST | `/business/{entityId}/verify` | CheckOrganisation | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, `checkType`, `entityCategories`, `resultLevel`, `generateReport` | AcceptedEntityResultObject |  | Run KYC/AML Checks on Organisation and/or Associated Individuals. |
+| POST | `/document` | CreateDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, body: IdentityDocumentObject | DocumentResultObject |  | Create New Document. |
+| POST | `/document/new/compare` | CompareDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, body*: ComparisonSet | DocumentCompareResultObject, AcceptedDocumentResultObject |  | Create Document and Compare to Original. |
+| POST | `/document/new/scan` | CreateScanDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, body: IdentityDocumentObject | DocumentScanResultObject, AcceptedDocumentResultObject |  | Create and OCR Scan Document. |
+| POST | `/document/new/utility/process/compare` | CreateProcessIndustryUtilityDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `planLimit`, body: IdentityDocumentObject | DocumentIndustryUtilityProcessResultObject, AcceptedDocumentResultObject |  | Create Document and Run Utility Price Comparison. |
+| POST | `/document/new/verify` | VerifyDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, body*: DocumentVerify | DocumentVerifyResultObject, AcceptedDocumentResultObject |  | Create and Verify Document. |
+| POST | `/document/search` | SearchDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, body*: IdentityDocumentObject | DocumentSearchResultObject |  | Search For a Document !! EXPERIMENTAL !! |
+| GET | `/document/{documentId}` | QueryDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `documentId`* | DocumentResultObject | yes | Retrieve Document Details |
+| POST | `/document/{documentId}` | UpdateDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `documentId`*, `noInvalidate`, body*: IdentityDocumentObject | DocumentResultObject, AcceptedDocumentResultObject |  | Update Existing Document. |
+| DELETE | `/document/{documentId}` | DeleteDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `documentId`* | BasicStatusResultObject, AcceptedDocumentResultObject |  | Delete Document. |
+| GET | `/document/{documentId}/checks` | QueryDocumentChecks | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `documentId`* | DocumentChecksResultObject, AcceptedDocumentResultObject | yes | Retrieve Document Verification Check Details. |
+| POST | `/document/{documentId}/compare` | UpdateCompareDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `documentId`*, body*: ComparisonSet | DocumentCompareResultObject, AcceptedDocumentResultObject |  | Update Document and Compare to Original. |
+| GET | `/document/{documentId}/full` | QueryDocumentFull | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `documentId`* | DocumentResultObject | yes | Retrieve Document and Scan Data |
+| POST | `/document/{documentId}/scan` | UpdateScanDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `documentId`*, body*: IdentityDocumentObject | DocumentScanResultObject, AcceptedDocumentResultObject |  | Update and OCR Scan Document |
+| POST | `/document/{documentId}/utility/process/compare` | UpdateProcessIndustryUtilityDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `documentId`*, `planLimit`, body: IdentityDocumentObject | DocumentIndustryUtilityProcessResultObject, AcceptedDocumentResultObject |  | Update Document and Run Utility Price Comparison. |
+| POST | `/document/{documentId}/utility/process/consent` | UpdateProcessIndustryUtilityDocumentConsent | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `documentId`*, body: EICRequest | DocumentIndustryUtilityConsentResultObject, AcceptedDocumentResultObject |  | Provide Explicit Consent to Switch Utility Plans. |
+| POST | `/document/{documentId}/utility/process/switch` | UpdateProcessIndustryUtilityDocumentSwitch | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `documentId`*, body: SwitchRequest | DocumentIndustryUtilitySwitchResultObject, AcceptedDocumentResultObject |  | Initiate Switching of Utility Plan. |
+| POST | `/document/{documentId}/verify` | UpdateVerifyDocument | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `documentId`*, body*: DocumentVerify | DocumentVerifyResultObject, AcceptedDocumentResultObject |  | Update and Verify Document. |
+| POST | `/entity` | CreateEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, body: EntityObject | EntityResultObject |  | Create New Entity. |
+| POST | `/entity/new/idvalidate/getToken` | CreateEntityGetIDVToken | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, body*: EntityIDVDetailsObject | EntityIDVResultObject |  | Create Entity and Get IDV Token |
+| POST | `/entity/new/verify/pushToMobile` | CreateCheckEntityPushToMobile | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `nopush`, body*: EntityCheckDetailsObject | AcceptedEntityResultObject |  | Create Entity and Push Self-Verification Link |
+| POST | `/entity/new/verify/{checkType}/{resultLevel}` | CreateCheckEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `checkType`*, `resultLevel`*, body*: EntityCheckDetailsObject | CheckEntityCheckResultObject, AcceptedEntityResultObject |  | Create and Verify Entity |
+| POST | `/entity/search` | SearchEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, body*: EntityObject | EntitySearchResultObject |  | Search for Entity |
+| GET | `/entity/{entityId}` | QueryEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`* | EntityResultObject | yes | Retrieve Entity Details |
+| POST | `/entity/{entityId}` | UpdateEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `entityId`*, `noInvalidate`, body*: EntityObject | EntityResultObject, AcceptedEntityResultObject |  | Update Existing Entity. |
+| DELETE | `/entity/{entityId}` | DeleteEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `entityId`* | BasicStatusResultObject, AcceptedEntityResultObject |  | Delete Entity |
+| POST | `/entity/{entityId}/check/{checkId}/{checkClass}` | UpdateCheckClassResults | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, `checkId`*, `checkClass`*, body*: CheckResultUpdateObject | CheckEntityCheckResultObject |  | Update Check Result States (Batch) |
+| POST | `/entity/{entityId}/check/{checkId}/{checkClass}/{checkClassId}` | UpdateCheckClassResult | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, `checkId`*, `checkClass`*, `checkClassId`*, `status`*, `undo` | CheckEntityCheckResultObject |  | Update Check Result State |
+| GET | `/entity/{entityId}/checks` | QueryEntityChecks | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, `alldata` | CheckEntityCheckResultObject | yes | Retrieve Entity Verication Check Details |
+| POST | `/entity/{entityId}/flag/blacklist` | BlacklistEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, `set`*, `reason`, `blockedBy`, `attribute`, `originalId` | EntityResultObject |  | Set Entity Blacklist State. |
+| POST | `/entity/{entityId}/flag/duplicate/{otherId}` | FlagDuplicateEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, `otherId`*, `set`* | EntityResultObject |  | Resolve Duplicate States. |
+| POST | `/entity/{entityId}/flag/monitor` | EntityMonitoring | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, `set`* | EntityResultObject |  | Set Entity Ongoing AML Monitoring Status. |
+| POST | `/entity/{entityId}/flag/watchlist` | WatchlistEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, `set`*, `reason`, `comment` | EntityResultObject |  | Set Entity Watchlist State. |
+| GET | `/entity/{entityId}/full` | QueryEntityFull | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`* | EntityResultObject | yes | Retrieve Entity Details and Document Scan Data |
+| POST | `/entity/{entityId}/idvalidate/getToken` | UpdateEntityGetIDVToken | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, body*: EntityIDVDetailsObject | EntityIDVResultObject |  | Update Entity and Get IDV Token |
+| POST | `/entity/{entityId}/idvalidate/initProcess` | UpdateEntityInitIDVProcess | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, body*: EntityCheckDetailsObject | EntityIDVResultObject |  | Update Entity and Initiate IDV Process |
+| POST | `/entity/{entityId}/status` | UpdateEntityState | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `entityId`*, `set`, `risk`, `comment` | CheckEntityCheckResultObject |  | Update Entity States |
+| POST | `/entity/{entityId}/verify/pushToMobile` | UpdateCheckEntityPushToMobile | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `entityId`*, `nopush`, `phase`, body*: EntityCheckDetailsObject | AcceptedEntityResultObject |  | Update Entity and Push Self-Verification Link |
+| POST | `/entity/{entityId}/verify/{checkType}/{resultLevel}` | UpdateCheckEntity | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `X-Frankie-Background`, `entityId`*, `checkType`*, `resultLevel`*, `force`, `noInvalidate`, body*: EntityCheckDetailsObject | CheckEntityCheckResultObject, AcceptedEntityResultObject |  | Update Entity and Verify Details |
+| GET | `/retrieve/response/{requestId}` | RetrieveResult | `X-Frankie-CustomerID`*, `X-Frankie-CustomerChildID`, `requestId`*, `payload` | RetrievedResponseObject | yes | (Re)retrieve Response Result. |
+| GET | `/ruok` | StatusCheck | `askingNicely` | PuppyObject | yes | Service Status |
+| POST | `/your/configured/path/{requestId}` | notifyResult | `requestId`*, body: NotificationResultObject | — |  | Push Notification Payload |

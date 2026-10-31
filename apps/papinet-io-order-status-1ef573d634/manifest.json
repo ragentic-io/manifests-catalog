@@ -13,6 +13,46 @@
         "from": "papinet-io-order-status-1ef573d634",
         "kind": "EXPOSES",
         "to": "operation:get:/orders/{orderId}"
+      },
+      {
+        "from": "operation:get:/orders",
+        "kind": "RETURNS",
+        "to": "schema:ListOfOrders"
+      },
+      {
+        "from": "operation:get:/orders/{orderId}",
+        "kind": "RETURNS",
+        "to": "schema:GetOrder"
+      },
+      {
+        "from": "schema:GetOrder",
+        "kind": "REFERENCES",
+        "to": "schema:Order"
+      },
+      {
+        "from": "schema:ListOfOrders",
+        "kind": "REFERENCES",
+        "to": "schema:OrderHeader"
+      },
+      {
+        "from": "schema:ListOfOrders",
+        "kind": "REFERENCES",
+        "to": "schema:PaginationLinks"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:OrderHeader"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:OrderLineItem"
+      },
+      {
+        "from": "schema:Order",
+        "kind": "REFERENCES",
+        "to": "schema:PaginationLinks"
       }
     ],
     "nodes": [
@@ -22,23 +62,76 @@
       },
       {
         "deprecated": false,
+        "description": "Gets a paginated list of all `orders`.",
         "id": "operation:get:/orders",
         "kind": "operation",
         "method": "get",
         "name": "get /orders",
+        "parameters": [
+          {
+            "description": "Filter by status",
+            "enum": [
+              "Active",
+              "Cancelled",
+              "Completed"
+            ],
+            "in": "query",
+            "name": "orderStatus",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The number of items to skip before starting to collect the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The maximum number of items to return.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/orders",
         "pointer": "#/paths/~1orders/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ListOfOrders"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "List `orders`"
       },
       {
         "deprecated": false,
+        "description": "Gets the details of a specific `order`, including a paginated list of all its lines.",
         "id": "operation:get:/orders/{orderId}",
         "kind": "operation",
         "method": "get",
         "name": "get /orders/{orderId}",
+        "parameters": [
+          {
+            "description": "UUID of the `order` to get",
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "string:uuid"
+          }
+        ],
         "path": "/orders/{orderId}",
         "pointer": "#/paths/~1orders~1{orderId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "GetOrder"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": "Get an `order`"
       },
@@ -50,27 +143,32 @@
       {
         "id": "schema:ListOfOrders",
         "kind": "schema",
-        "name": "ListOfOrders"
+        "name": "ListOfOrders",
+        "type": "object"
       },
       {
         "id": "schema:Order",
         "kind": "schema",
-        "name": "Order"
+        "name": "Order",
+        "type": "OrderHeader|object"
       },
       {
         "id": "schema:OrderHeader",
         "kind": "schema",
-        "name": "OrderHeader"
+        "name": "OrderHeader",
+        "type": "object"
       },
       {
         "id": "schema:OrderLineItem",
         "kind": "schema",
-        "name": "OrderLineItem"
+        "name": "OrderLineItem",
+        "type": "object"
       },
       {
         "id": "schema:PaginationLinks",
         "kind": "schema",
-        "name": "PaginationLinks"
+        "name": "PaginationLinks",
+        "type": "object"
       }
     ]
   },

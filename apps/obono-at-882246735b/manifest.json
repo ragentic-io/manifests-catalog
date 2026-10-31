@@ -93,6 +93,96 @@
         "from": "obono-at-882246735b",
         "kind": "EXPOSES",
         "to": "operation:get:/registrierkassen/{registrierkasseUuid}/monatsbelege"
+      },
+      {
+        "from": "operation:get:/auth",
+        "kind": "RETURNS",
+        "to": "schema:AuthResult"
+      },
+      {
+        "from": "operation:get:/belege/{belegUuid}",
+        "kind": "RETURNS",
+        "to": "schema:Beleg"
+      },
+      {
+        "from": "operation:get:/registrierkassen/{registrierkasseUuid}",
+        "kind": "RETURNS",
+        "to": "schema:Registrierkasse"
+      },
+      {
+        "from": "operation:post:/registrierkassen/{registrierkasseUuid}/abschluss",
+        "kind": "ACCEPTS",
+        "to": "schema:Abschlussbelegdaten"
+      },
+      {
+        "from": "operation:get:/registrierkassen/{registrierkasseUuid}/belege",
+        "kind": "RETURNS",
+        "to": "schema:Belege"
+      },
+      {
+        "from": "operation:get:/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}",
+        "kind": "RETURNS",
+        "to": "schema:Beleg"
+      },
+      {
+        "from": "operation:put:/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}",
+        "kind": "ACCEPTS",
+        "to": "schema:Belegdaten"
+      },
+      {
+        "from": "operation:get:/registrierkassen/{registrierkasseUuid}/monatsbelege",
+        "kind": "RETURNS",
+        "to": "schema:Monatsbeleg"
+      },
+      {
+        "from": "schema:Beleg",
+        "kind": "REFERENCES",
+        "to": "schema:SignierteBelegdaten"
+      },
+      {
+        "from": "schema:Belegdaten",
+        "kind": "REFERENCES",
+        "to": "schema:Posten"
+      },
+      {
+        "from": "schema:Belegdaten",
+        "kind": "REFERENCES",
+        "to": "schema:Rabatt"
+      },
+      {
+        "from": "schema:Belegdaten",
+        "kind": "REFERENCES",
+        "to": "schema:Zahlung"
+      },
+      {
+        "from": "schema:Belege",
+        "kind": "REFERENCES",
+        "to": "schema:Belegformat"
+      },
+      {
+        "from": "schema:Belege",
+        "kind": "REFERENCES",
+        "to": "schema:Exportformat"
+      },
+      {
+        "from": "schema:Belegformat",
+        "kind": "REFERENCES",
+        "to": "schema:Beleg"
+      },
+      {
+        "from": "schema:SignierteBelegdaten",
+        "kind": "REFERENCES",
+        "to": "schema:Posten"
+      },
+      {
+        "from": "schema:SignierteBelegdaten",
+        "kind": "REFERENCES",
+        "to": "schema:Rabatt"
+      },
+      {
+        "from": "schema:SignierteBelegdaten",
+        "kind": "REFERENCES",
+        "to": "schema:Zahlung"
       }
     ],
     "nodes": [
@@ -102,29 +192,63 @@
       },
       {
         "deprecated": false,
+        "description": "Request a JWT access token using your obono username and password.",
         "id": "operation:get:/auth",
         "kind": "operation",
         "method": "get",
         "name": "get /auth",
         "path": "/auth",
         "pointer": "#/paths/~1auth/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AuthResult"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "basicAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "auth"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a particular `Beleg` from the \"Datenerfassungsprotokoll\".",
         "id": "operation:get:/belege/{belegUuid}",
         "kind": "operation",
         "method": "get",
         "name": "get /belege/{belegUuid}",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Beleg` to fetch.",
+            "in": "path",
+            "name": "belegUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/belege/{belegUuid}",
         "pointer": "#/paths/~1belege~1{belegUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Beleg"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "beleg"
+        ]
       },
       {
         "deprecated": false,
@@ -132,14 +256,53 @@
         "kind": "operation",
         "method": "get",
         "name": "get /export/csv/registrierkassen/{registrierkasseUuid}/belege",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` to export.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved before the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved after the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Export `Posten` instead of `Belegdaten`.",
+            "in": "query",
+            "name": "posten",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/export/csv/registrierkassen/{registrierkasseUuid}/belege",
         "pointer": "#/paths/~1export~1csv~1registrierkassen~1{registrierkasseUuid}~1belege/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export"
+        ]
       },
       {
         "deprecated": false,
@@ -147,14 +310,46 @@
         "kind": "operation",
         "method": "get",
         "name": "get /export/dep131/registrierkassen/{registrierkasseUuid}/belege",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` to export.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved before the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved after the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/export/dep131/registrierkassen/{registrierkasseUuid}/belege",
         "pointer": "#/paths/~1export~1dep131~1registrierkassen~1{registrierkasseUuid}~1belege/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export"
+        ]
       },
       {
         "deprecated": false,
@@ -162,14 +357,46 @@
         "kind": "operation",
         "method": "get",
         "name": "get /export/dep7/registrierkassen/{registrierkasseUuid}/belege",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` to export.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved before the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved after the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/export/dep7/registrierkassen/{registrierkasseUuid}/belege",
         "pointer": "#/paths/~1export~1dep7~1registrierkassen~1{registrierkasseUuid}~1belege/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export"
+        ]
       },
       {
         "deprecated": false,
@@ -177,14 +404,46 @@
         "kind": "operation",
         "method": "get",
         "name": "get /export/gobd/registrierkassen/{registrierkasseUuid}",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` to export.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved before the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved after the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/export/gobd/registrierkassen/{registrierkasseUuid}",
         "pointer": "#/paths/~1export~1gobd~1registrierkassen~1{registrierkasseUuid}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export"
+        ]
       },
       {
         "deprecated": false,
@@ -192,10 +451,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /export/html/belege/{belegUuid}",
+        "parameters": [
+          {
+            "description": "The `_uuid` of a particular `Beleg` to export.",
+            "in": "path",
+            "name": "belegUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/export/html/belege/{belegUuid}",
         "pointer": "#/paths/~1export~1html~1belege~1{belegUuid}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export"
+        ]
       },
       {
         "deprecated": false,
@@ -203,10 +480,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /export/pdf/belege/{belegUuid}",
+        "parameters": [
+          {
+            "description": "The `_uuid` of a particular `Beleg` to export.",
+            "in": "path",
+            "name": "belegUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/export/pdf/belege/{belegUuid}",
         "pointer": "#/paths/~1export~1pdf~1belege~1{belegUuid}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export"
+        ]
       },
       {
         "deprecated": false,
@@ -214,10 +509,28 @@
         "kind": "operation",
         "method": "get",
         "name": "get /export/qr/belege/{belegUuid}",
+        "parameters": [
+          {
+            "description": "The `_uuid` of a particular `Beleg` to export.",
+            "in": "path",
+            "name": "belegUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/export/qr/belege/{belegUuid}",
         "pointer": "#/paths/~1export~1qr~1belege~1{belegUuid}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export"
+        ]
       },
       {
         "deprecated": false,
@@ -225,10 +538,70 @@
         "kind": "operation",
         "method": "get",
         "name": "get /export/thermal-print/belege/{belegUuid}",
+        "parameters": [
+          {
+            "description": "The `_uuid` of a particular `Beleg` to export.",
+            "in": "path",
+            "name": "belegUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": true,
+            "description": "Should the RKSV QR code should be rendered?",
+            "in": "query",
+            "name": "qr",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "default": 42,
+            "description": "Number of characters per line.",
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": "escpos",
+            "description": "The thermal printer dialect.",
+            "enum": [
+              "escpos",
+              "escposlite",
+              "star",
+              "text"
+            ],
+            "in": "query",
+            "name": "dialect",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "raw",
+            "description": "The encoding of the binary data.",
+            "enum": [
+              "raw",
+              "base64"
+            ],
+            "in": "query",
+            "name": "encoding",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/export/thermal-print/belege/{belegUuid}",
         "pointer": "#/paths/~1export~1thermal-print~1belege~1{belegUuid}/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export"
+        ]
       },
       {
         "deprecated": false,
@@ -236,184 +609,500 @@
         "kind": "operation",
         "method": "get",
         "name": "get /export/xls/registrierkassen/{registrierkasseUuid}/belege",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` to export.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved before the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that were saved after the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/export/xls/registrierkassen/{registrierkasseUuid}/belege",
         "pointer": "#/paths/~1export~1xls~1registrierkassen~1{registrierkasseUuid}~1belege/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "export"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns information about a particular `Registrierkasse`.",
         "id": "operation:get:/registrierkassen/{registrierkasseUuid}",
         "kind": "operation",
         "method": "get",
         "name": "getRegistrierkasse",
+        "parameters": [
+          {
+            "description": "The `_uuid` of a particular `Registrierkasse` to fetch.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrierkassen/{registrierkasseUuid}",
         "pointer": "#/paths/~1registrierkassen~1{registrierkasseUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Registrierkasse"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "registrierkasse"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generates an `Abschlussbeleg`.",
         "id": "operation:post:/registrierkassen/{registrierkasseUuid}/abschluss",
         "kind": "operation",
         "method": "post",
         "name": "createAbschluss",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` to retrieve the `Beleg` collection.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrierkassen/{registrierkasseUuid}/abschluss",
         "pointer": "#/paths/~1registrierkassen~1{registrierkasseUuid}~1abschluss/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Abschlussbelegdaten"
+        },
+        "responses": [
+          {
+            "status": "201"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "beleg"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves the `Beleg` collection from the \"Datenerfassungsprotokoll\".",
         "id": "operation:get:/registrierkassen/{registrierkasseUuid}/belege",
         "kind": "operation",
         "method": "get",
         "name": "getBelege",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` to retrieve the `Beleg` collection.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "export",
+            "description": "Determines the format of the `Beleg` collection.",
+            "enum": [
+              "export",
+              "beleg",
+              "uuidlist"
+            ],
+            "in": "query",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": "asc",
+            "description": "Determines the sorting order.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Limits the number of returned results.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Skips the specified number of results from the result set.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Only return results that where saved before the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that where saved after the specified date-time string (i.e., anything that `Date.parse()` can parse).",
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Only return results that have at least a particular `Belegnummer`.",
+            "in": "query",
+            "name": "gte",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Only return results that have at most a particular `Belegnummer`.",
+            "in": "query",
+            "name": "lte",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/registrierkassen/{registrierkasseUuid}/belege",
         "pointer": "#/paths/~1registrierkassen~1{registrierkasseUuid}~1belege/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Belege"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "beleg"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Retrieves a particular `Beleg` from the \"Datenerfassungsprotokoll\".",
         "id": "operation:get:/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}",
         "kind": "operation",
         "method": "get",
         "name": "getBeleg",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` that contains the requested `Beleg`.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `_uuid` of the `Beleg` to fetch.",
+            "in": "path",
+            "name": "belegUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}",
         "pointer": "#/paths/~1registrierkassen~1{registrierkasseUuid}~1belege~1{belegUuid}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Beleg"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "beleg"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Signs a receipt and stores it in the \"Datenerfassungsprotokoll\".",
         "id": "operation:put:/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}",
         "kind": "operation",
         "method": "put",
         "name": "addBeleg",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` to use for signing data.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The `_uuid` of the `Beleg` to store.",
+            "in": "path",
+            "name": "belegUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrierkassen/{registrierkasseUuid}/belege/{belegUuid}",
         "pointer": "#/paths/~1registrierkassen~1{registrierkasseUuid}~1belege~1{belegUuid}/put",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Belegdaten"
+        },
+        "responses": [
+          {
+            "status": "201"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "415"
+          },
+          {
+            "status": "429"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "beleg"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Generates a DEP file.",
         "id": "operation:get:/registrierkassen/{registrierkasseUuid}/dep",
         "kind": "operation",
         "method": "get",
         "name": "getDEP",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse` to retrieve the DEP file.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/registrierkassen/{registrierkasseUuid}/dep",
         "pointer": "#/paths/~1registrierkassen~1{registrierkasseUuid}~1dep/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "registrierkasse"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Returns a list of `Monatsbelege`.",
         "id": "operation:get:/registrierkassen/{registrierkasseUuid}/monatsbelege",
         "kind": "operation",
         "method": "get",
         "name": "getMonatsbelege",
+        "parameters": [
+          {
+            "description": "The `_uuid` of the `Registrierkasse`.",
+            "in": "path",
+            "name": "registrierkasseUuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "month",
+            "required": false,
+            "type": "integer"
+          }
+        ],
         "path": "/registrierkassen/{registrierkasseUuid}/monatsbelege",
         "pointer": "#/paths/~1registrierkassen~1{registrierkasseUuid}~1monatsbelege/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Monatsbeleg[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "jwt": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "monatsbelege"
+        ]
       },
       {
         "id": "schema:Abschlussbelegdaten",
         "kind": "schema",
-        "name": "Abschlussbelegdaten"
+        "name": "Abschlussbelegdaten",
+        "type": "object"
       },
       {
         "id": "schema:AuthResult",
         "kind": "schema",
-        "name": "AuthResult"
+        "name": "AuthResult",
+        "type": "object"
       },
       {
         "id": "schema:Beleg",
         "kind": "schema",
-        "name": "Beleg"
+        "name": "Beleg",
+        "type": "object"
       },
       {
+        "description": "The `Beleg` to be signed by the \"Signaturerstellungseinheit\" and stored in the \"Datenerfassungsprotokoll\".",
         "id": "schema:Belegdaten",
         "kind": "schema",
-        "name": "Belegdaten"
+        "name": "Belegdaten",
+        "type": "object"
       },
       {
         "id": "schema:Belege",
         "kind": "schema",
-        "name": "Belege"
+        "name": "Belege",
+        "type": "Belegformat|Exportformat"
       },
       {
         "id": "schema:Belegformat",
         "kind": "schema",
-        "name": "Belegformat"
+        "name": "Belegformat",
+        "type": "object"
       },
       {
         "id": "schema:Exportformat",
         "kind": "schema",
-        "name": "Exportformat"
+        "name": "Exportformat",
+        "type": "object"
       },
       {
         "id": "schema:Monatsbeleg",
         "kind": "schema",
-        "name": "Monatsbeleg"
+        "name": "Monatsbeleg",
+        "type": "object"
       },
       {
         "id": "schema:Posten",
         "kind": "schema",
-        "name": "Posten"
+        "name": "Posten",
+        "type": "object"
       },
       {
         "id": "schema:Rabatt",
         "kind": "schema",
-        "name": "Rabatt"
+        "name": "Rabatt",
+        "type": "object"
       },
       {
         "id": "schema:Registrierkasse",
         "kind": "schema",
-        "name": "Registrierkasse"
+        "name": "Registrierkasse",
+        "type": "object"
       },
       {
+        "description": "The complete `Beleg` that has been signed by the \"Signaturerstellungseinheit\" and stored in the \"Datenerfassungsprotokoll\".",
         "id": "schema:SignierteBelegdaten",
         "kind": "schema",
-        "name": "SignierteBelegdaten"
+        "name": "SignierteBelegdaten",
+        "type": "object"
       },
       {
         "id": "schema:Zahlung",
         "kind": "schema",
-        "name": "Zahlung"
+        "name": "Zahlung",
+        "type": "object"
       }
     ]
   },

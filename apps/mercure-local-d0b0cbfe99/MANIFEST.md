@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_raw.githubusercontent.com_dungl
 
 | | |
 | --- | --- |
-| Signed bundle | `44eec1f36fef828d7e145463c277bab02c7e98c53b1ed59b2edae1d8b25a6cf6` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,10 +34,12 @@ logo: "https://api.apis.guru/v2/cache/logo/https_raw.githubusercontent.com_dungl
 
 2 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/.well-known/mercure` | get /.well-known/mercure | Subscribe to updates |
-| POST | `/.well-known/mercure` | post /.well-known/mercure | Publish an update |
-| GET | `/.well-known/mercure/subscriptions` | get /.well-known/mercure/subscriptions | Active subscriptions |
-| GET | `/.well-known/mercure/subscriptions/{topic}` | get /.well-known/mercure/subscriptions/{topic} | Active subscriptions for the given topic |
-| GET | `/.well-known/mercure/subscriptions/{topic}/{subscriber}` | get /.well-known/mercure/subscriptions/{topic}/{subscriber} | Active subscription for the given topic and subscriber |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/.well-known/mercure` | get /.well-known/mercure | `topic`*, `Last-Event-ID`, `Last-Event-ID` | — | yes | Subscribe to updates |
+| POST | `/.well-known/mercure` | post /.well-known/mercure | body: object | — |  | Publish an update |
+| GET | `/.well-known/mercure/subscriptions` | get /.well-known/mercure/subscriptions | — | Subscriptions | yes | Active subscriptions |
+| GET | `/.well-known/mercure/subscriptions/{topic}` | get /.well-known/mercure/subscriptions/{topic} | `topic`* | Subscriptions | yes | Active subscriptions for the given topic |
+| GET | `/.well-known/mercure/subscriptions/{topic}/{subscriber}` | get /.well-known/mercure/subscriptions/{topic}/{subscriber} | `topic`*, `subscriber`* | Subscriptions | yes | Active subscription for the given topic and subscriber |

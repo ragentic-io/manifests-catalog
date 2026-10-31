@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `ad00b11ebc99ec96bf8a8b3be8bd5e9f6296c8a17505ccf578f6ccb02dcca63e` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,355 +34,357 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 114 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/account` | getAccount | Account View |
-| PUT | `/account` | updateAccount | Account Update |
-| POST | `/account/cancel` | cancelAccount | Account Cancel |
-| POST | `/account/credit-card` | createCreditCard | Credit Card Add/Edit |
-| GET | `/account/entity-transfers` | getEntityTransfers | Entity Transfers List |
-| POST | `/account/entity-transfers` | createEntityTransfer | Entity Transfer Create |
-| DELETE | `/account/entity-transfers/{token}` | deleteEntityTransfer | Entity Transfer Cancel |
-| GET | `/account/entity-transfers/{token}` | getEntityTransfer | Entity Transfer View |
-| POST | `/account/entity-transfers/{token}/accept` | acceptEntityTransfer | Entity Transfer Accept |
-| GET | `/account/events` | getEvents | Events List |
-| GET | `/account/events/{eventId}` | getEvent | Event View |
-| POST | `/account/events/{eventId}/read` | eventRead | Event Mark as Read |
-| POST | `/account/events/{eventId}/seen` | eventSeen | Event Mark as Seen |
-| GET | `/account/invoices` | getInvoices | Invoices List |
-| GET | `/account/invoices/{invoiceId}` | getInvoice | Invoice View |
-| GET | `/account/invoices/{invoiceId}/items` | getInvoiceItems | Invoice Items List |
-| GET | `/account/logins` | getAccountLogins | User Logins List All |
-| GET | `/account/logins/{loginId}` | getAccountLogin | Login View |
-| GET | `/account/maintenance` | getMaintenance | Maintenance List |
-| GET | `/account/notifications` | getNotifications | Notifications List |
-| GET | `/account/oauth-clients` | getClients | OAuth Clients List |
-| POST | `/account/oauth-clients` | createClient | OAuth Client Create |
-| DELETE | `/account/oauth-clients/{clientId}` | deleteClient | OAuth Client Delete |
-| GET | `/account/oauth-clients/{clientId}` | getClient | OAuth Client View |
-| PUT | `/account/oauth-clients/{clientId}` | updateClient | OAuth Client Update |
-| POST | `/account/oauth-clients/{clientId}/reset-secret` | resetClientSecret | OAuth Client Secret Reset |
-| GET | `/account/oauth-clients/{clientId}/thumbnail` | getClientThumbnail | OAuth Client Thumbnail View |
-| PUT | `/account/oauth-clients/{clientId}/thumbnail` | setClientThumbnail | OAuth Client Thumbnail Update |
-| GET | `/account/payment-methods` | getPaymentMethods | Payment Methods List |
-| POST | `/account/payment-methods` | createPaymentMethod | Payment Method Add |
-| DELETE | `/account/payment-methods/{paymentMethodId}` | deletePaymentMethod | Payment Method Delete |
-| GET | `/account/payment-methods/{paymentMethodId}` | getPaymentMethod | Payment Method View |
-| POST | `/account/payment-methods/{paymentMethodId}/make-default` | makePaymentMethodDefault | Payment Method Make Default |
-| GET | `/account/payments` | getPayments | Payments List |
-| POST | `/account/payments` | createPayment | Payment Make |
-| POST | `/account/payments/paypal` | createPayPalPayment | PayPal Payment Stage |
-| POST | `/account/payments/paypal/execute` | executePayPalPayment | Staged/Approved PayPal Payment Execute |
-| GET | `/account/payments/{paymentId}` | getPayment | Payment View |
-| POST | `/account/promo-codes` | createPromoCredit | Promo Credit Add |
-| GET | `/account/service-transfers` | getServiceTransfers | Service Transfers List |
-| POST | `/account/service-transfers` | createServiceTransfer | Service Transfer Create |
-| DELETE | `/account/service-transfers/{token}` | deleteServiceTransfer | Service Transfer Cancel |
-| GET | `/account/service-transfers/{token}` | getServiceTransfer | Service Transfer View |
-| POST | `/account/service-transfers/{token}/accept` | acceptServiceTransfer | Service Transfer Accept |
-| GET | `/account/settings` | getAccountSettings | Account Settings View |
-| PUT | `/account/settings` | updateAccountSettings | Account Settings Update |
-| POST | `/account/settings/managed-enable` | enableAccountManaged | Linode Managed Enable |
-| GET | `/account/transfer` | getTransfer | Network Utilization View |
-| GET | `/account/users` | getUsers | Users List |
-| POST | `/account/users` | createUser | User Create |
-| DELETE | `/account/users/{username}` | deleteUser | User Delete |
-| GET | `/account/users/{username}` | getUser | User View |
-| PUT | `/account/users/{username}` | updateUser | User Update |
-| GET | `/account/users/{username}/grants` | getUserGrants | User's Grants View |
-| PUT | `/account/users/{username}/grants` | updateUserGrants | User's Grants Update |
-| GET | `/databases/engines` | getDatabasesEngines | Managed Database Engines List |
-| GET | `/databases/engines/{engineId}` | getDatabasesEngine | Managed Database Engine View |
-| GET | `/databases/instances` | getDatabasesInstances | Managed Databases List All |
-| GET | `/databases/mongodb/instances` | getDatabasesMongoDBInstances | Managed MongoDB Databases List |
-| DELETE | `/databases/mongodb/instances/{instanceId}` | deleteDatabasesMongoDBInstance | Managed MongoDB Database Delete |
-| GET | `/databases/mongodb/instances/{instanceId}` | getDatabasesMongoDBInstance | Managed MongoDB Database View |
-| PUT | `/databases/mongodb/instances/{instanceId}` | putDatabasesMongoDBInstance | Managed MongoDB Database Update |
-| GET | `/databases/mongodb/instances/{instanceId}/backups` | getDatabasesMongoDBInstanceBackups | Managed MongoDB Database Backups List |
-| POST | `/databases/mongodb/instances/{instanceId}/backups` | postDatabasesMongoDBInstanceBackup | Managed MongoDB Database Backup Snapshot Create |
-| DELETE | `/databases/mongodb/instances/{instanceId}/backups/{backupId}` | deleteDatabaseMongoDBInstanceBackup | Managed MongoDB Database Backup Delete |
-| GET | `/databases/mongodb/instances/{instanceId}/backups/{backupId}` | getDatabasesMongoDBInstanceBackup | Managed MongoDB Database Backup View |
-| POST | `/databases/mongodb/instances/{instanceId}/backups/{backupId}/restore` | postDatabasesMongoDBInstanceBackupRestore | Managed MongoDB Database Backup Restore |
-| GET | `/databases/mongodb/instances/{instanceId}/credentials` | getDatabasesMongoDBInstanceCredentials | Managed MongoDB Database Credentials View |
-| POST | `/databases/mongodb/instances/{instanceId}/credentials/reset` | postDatabasesMongoDBInstanceCredentialsReset | Managed MongoDB Database Credentials Reset |
-| POST | `/databases/mongodb/instances/{instanceId}/patch` | postDatabasesMongoDBInstancePatch | Managed MongoDB Database Patch |
-| GET | `/databases/mongodb/instances/{instanceId}/ssl` | getDatabasesMongoDBInstanceSSL | Managed MongoDB Database SSL Certificate View |
-| GET | `/databases/mysql/instances` | getDatabasesMySQLInstances | Managed MySQL Databases List |
-| POST | `/databases/mysql/instances` | postDatabasesMySQLInstances | Managed MySQL Database Create |
-| DELETE | `/databases/mysql/instances/{instanceId}` | deleteDatabasesMySQLInstance | Managed MySQL Database Delete |
-| GET | `/databases/mysql/instances/{instanceId}` | getDatabasesMySQLInstance | Managed MySQL Database View |
-| PUT | `/databases/mysql/instances/{instanceId}` | putDatabasesMySQLInstance | Managed MySQL Database Update |
-| GET | `/databases/mysql/instances/{instanceId}/backups` | getDatabasesMySQLInstanceBackups | Managed MySQL Database Backups List |
-| POST | `/databases/mysql/instances/{instanceId}/backups` | postDatabasesMySQLInstanceBackup | Managed MySQL Database Backup Snapshot Create |
-| DELETE | `/databases/mysql/instances/{instanceId}/backups/{backupId}` | deleteDatabaseMySQLInstanceBackup | Managed MySQL Database Backup Delete |
-| GET | `/databases/mysql/instances/{instanceId}/backups/{backupId}` | getDatabasesMySQLInstanceBackup | Managed MySQL Database Backup View |
-| POST | `/databases/mysql/instances/{instanceId}/backups/{backupId}/restore` | postDatabasesMySQLInstanceBackupRestore | Managed MySQL Database Backup Restore |
-| GET | `/databases/mysql/instances/{instanceId}/credentials` | getDatabasesMySQLInstanceCredentials | Managed MySQL Database Credentials View |
-| POST | `/databases/mysql/instances/{instanceId}/credentials/reset` | postDatabasesMySQLInstanceCredentialsReset | Managed MySQL Database Credentials Reset |
-| POST | `/databases/mysql/instances/{instanceId}/patch` | postDatabasesMySQLInstancePatch | Managed MySQL Database Patch |
-| GET | `/databases/mysql/instances/{instanceId}/ssl` | getDatabasesMySQLInstanceSSL | Managed MySQL Database SSL Certificate View |
-| GET | `/databases/postgresql/instances` | getDatabasesPostgreSQLInstances | Managed PostgreSQL Databases List |
-| POST | `/databases/postgresql/instances` | postDatabasesPostgreSQLInstances | Managed PostgreSQL Database Create |
-| DELETE | `/databases/postgresql/instances/{instanceId}` | deleteDatabasesPostgreSQLInstance | Managed PostgreSQL Database Delete |
-| GET | `/databases/postgresql/instances/{instanceId}` | getDatabasesPostgreSQLInstance | Managed PostgreSQL Database View |
-| PUT | `/databases/postgresql/instances/{instanceId}` | putDatabasesPostgreSQLInstance | Managed PostgreSQL Database Update |
-| GET | `/databases/postgresql/instances/{instanceId}/backups` | getDatabasesPostgreSQLInstanceBackups | Managed PostgreSQL Database Backups List |
-| POST | `/databases/postgresql/instances/{instanceId}/backups` | postDatabasesPostgreSQLInstanceBackup | Managed PostgreSQL Database Backup Snapshot Create |
-| DELETE | `/databases/postgresql/instances/{instanceId}/backups/{backupId}` | deleteDatabasePostgreSQLInstanceBackup | Managed PostgreSQL Database Backup Delete |
-| GET | `/databases/postgresql/instances/{instanceId}/backups/{backupId}` | getDatabasesPostgreSQLInstanceBackup | Managed PostgreSQL Database Backup View |
-| POST | `/databases/postgresql/instances/{instanceId}/backups/{backupId}/restore` | postDatabasesPostgreSQLInstanceBackupRestore | Managed PostgreSQL Database Backup Restore |
-| GET | `/databases/postgresql/instances/{instanceId}/credentials` | getDatabasesPostgreSQLInstanceCredentials | Managed PostgreSQL Database Credentials View |
-| POST | `/databases/postgresql/instances/{instanceId}/credentials/reset` | postDatabasesPostgreSQLInstanceCredentialsReset | Managed PostgreSQL Database Credentials Reset |
-| POST | `/databases/postgresql/instances/{instanceId}/patch` | postDatabasesPostgreSQLInstancePatch | Managed PostgreSQL Database Patch |
-| GET | `/databases/postgresql/instances/{instanceId}/ssl` | getDatabasesPostgreSQLInstanceSSL | Managed PostgreSQL Database SSL Certificate View |
-| GET | `/databases/types` | getDatabasesTypes | Managed Database Types List |
-| GET | `/databases/types/{typeId}` | getDatabasesType | Managed Database Type View |
-| GET | `/domains` | getDomains | Domains List |
-| POST | `/domains` | createDomain | Domain Create |
-| POST | `/domains/import` | importDomain | Domain Import |
-| DELETE | `/domains/{domainId}` | deleteDomain | Domain Delete |
-| GET | `/domains/{domainId}` | getDomain | Domain View |
-| PUT | `/domains/{domainId}` | updateDomain | Domain Update |
-| POST | `/domains/{domainId}/clone` | cloneDomain | Domain Clone |
-| GET | `/domains/{domainId}/records` | getDomainRecords | Domain Records List |
-| POST | `/domains/{domainId}/records` | createDomainRecord | Domain Record Create |
-| DELETE | `/domains/{domainId}/records/{recordId}` | deleteDomainRecord | Domain Record Delete |
-| GET | `/domains/{domainId}/records/{recordId}` | getDomainRecord | Domain Record View |
-| PUT | `/domains/{domainId}/records/{recordId}` | updateDomainRecord | Domain Record Update |
-| GET | `/domains/{domainId}/zone-file` | getDomainZone | Domain Zone File View |
-| GET | `/images` | getImages | Images List |
-| POST | `/images` | createImage | Image Create |
-| POST | `/images/upload` | post /images/upload | Image Upload |
-| DELETE | `/images/{imageId}` | deleteImage | Image Delete |
-| GET | `/images/{imageId}` | getImage | Image View |
-| PUT | `/images/{imageId}` | updateImage | Image Update |
-| GET | `/linode/instances` | getLinodeInstances | Linodes List |
-| POST | `/linode/instances` | createLinodeInstance | Linode Create |
-| DELETE | `/linode/instances/{linodeId}` | deleteLinodeInstance | Linode Delete |
-| GET | `/linode/instances/{linodeId}` | getLinodeInstance | Linode View |
-| PUT | `/linode/instances/{linodeId}` | updateLinodeInstance | Linode Update |
-| GET | `/linode/instances/{linodeId}/backups` | getBackups | Backups List |
-| POST | `/linode/instances/{linodeId}/backups` | createSnapshot | Snapshot Create |
-| POST | `/linode/instances/{linodeId}/backups/cancel` | cancelBackups | Backups Cancel |
-| POST | `/linode/instances/{linodeId}/backups/enable` | enableBackups | Backups Enable |
-| GET | `/linode/instances/{linodeId}/backups/{backupId}` | getBackup | Backup View |
-| POST | `/linode/instances/{linodeId}/backups/{backupId}/restore` | restoreBackup | Backup Restore |
-| POST | `/linode/instances/{linodeId}/boot` | bootLinodeInstance | Linode Boot |
-| POST | `/linode/instances/{linodeId}/clone` | cloneLinodeInstance | Linode Clone |
-| GET | `/linode/instances/{linodeId}/configs` | getLinodeConfigs | Configuration Profiles List |
-| POST | `/linode/instances/{linodeId}/configs` | addLinodeConfig | Configuration Profile Create |
-| DELETE | `/linode/instances/{linodeId}/configs/{configId}` | deleteLinodeConfig | Configuration Profile Delete |
-| GET | `/linode/instances/{linodeId}/configs/{configId}` | getLinodeConfig | Configuration Profile View |
-| PUT | `/linode/instances/{linodeId}/configs/{configId}` | updateLinodeConfig | Configuration Profile Update |
-| GET | `/linode/instances/{linodeId}/disks` | getLinodeDisks | Disks List |
-| POST | `/linode/instances/{linodeId}/disks` | addLinodeDisk | Disk Create |
-| DELETE | `/linode/instances/{linodeId}/disks/{diskId}` | deleteDisk | Disk Delete |
-| GET | `/linode/instances/{linodeId}/disks/{diskId}` | getLinodeDisk | Disk View |
-| PUT | `/linode/instances/{linodeId}/disks/{diskId}` | updateDisk | Disk Update |
-| POST | `/linode/instances/{linodeId}/disks/{diskId}/clone` | cloneLinodeDisk | Disk Clone |
-| POST | `/linode/instances/{linodeId}/disks/{diskId}/password` | resetDiskPassword | Disk Root Password Reset |
-| POST | `/linode/instances/{linodeId}/disks/{diskId}/resize` | resizeDisk | Disk Resize |
-| GET | `/linode/instances/{linodeId}/firewalls` | getLinodeFirewalls | Firewalls List |
-| GET | `/linode/instances/{linodeId}/ips` | getLinodeIPs | Networking Information List |
-| POST | `/linode/instances/{linodeId}/ips` | addLinodeIP | IPv4 Address Allocate |
-| DELETE | `/linode/instances/{linodeId}/ips/{address}` | removeLinodeIP | IPv4 Address Delete |
-| GET | `/linode/instances/{linodeId}/ips/{address}` | getLinodeIP | IP Address View |
-| PUT | `/linode/instances/{linodeId}/ips/{address}` | updateLinodeIP | IP Address Update |
-| POST | `/linode/instances/{linodeId}/migrate` | migrateLinodeInstance | DC Migration/Pending Host Migration Initiate |
-| POST | `/linode/instances/{linodeId}/mutate` | mutateLinodeInstance | Linode Upgrade |
-| GET | `/linode/instances/{linodeId}/nodebalancers` | getLinodeNodeBalancers | Linode NodeBalancers View |
-| POST | `/linode/instances/{linodeId}/password` | resetLinodePassword | Linode Root Password Reset |
-| POST | `/linode/instances/{linodeId}/reboot` | rebootLinodeInstance | Linode Reboot |
-| POST | `/linode/instances/{linodeId}/rebuild` | rebuildLinodeInstance | Linode Rebuild |
-| POST | `/linode/instances/{linodeId}/rescue` | rescueLinodeInstance | Linode Boot into Rescue Mode |
-| POST | `/linode/instances/{linodeId}/resize` | resizeLinodeInstance | Linode Resize |
-| POST | `/linode/instances/{linodeId}/shutdown` | shutdownLinodeInstance | Linode Shut Down |
-| GET | `/linode/instances/{linodeId}/stats` | getLinodeStats | Linode Statistics View |
-| GET | `/linode/instances/{linodeId}/stats/{year}/{month}` | getLinodeStatsByYearMonth | Statistics View (year/month) |
-| GET | `/linode/instances/{linodeId}/transfer` | getLinodeTransfer | Network Transfer View |
-| GET | `/linode/instances/{linodeId}/transfer/{year}/{month}` | getLinodeTransferByYearMonth | Network Transfer View (year/month) |
-| GET | `/linode/instances/{linodeId}/volumes` | getLinodeVolumes | Linode's Volumes List |
-| GET | `/linode/kernels` | getKernels | Kernels List |
-| GET | `/linode/kernels/{kernelId}` | getKernel | Kernel View |
-| GET | `/linode/stackscripts` | getStackScripts | StackScripts List |
-| POST | `/linode/stackscripts` | addStackScript | StackScript Create |
-| DELETE | `/linode/stackscripts/{stackscriptId}` | deleteStackScript | StackScript Delete |
-| GET | `/linode/stackscripts/{stackscriptId}` | getStackScript | StackScript View |
-| PUT | `/linode/stackscripts/{stackscriptId}` | updateStackScript | StackScript Update |
-| GET | `/linode/types` | getLinodeTypes | Types List |
-| GET | `/linode/types/{typeId}` | getLinodeType | Type View |
-| GET | `/lke/clusters` | getLKEClusters | Kubernetes Clusters List |
-| POST | `/lke/clusters` | createLKECluster | Kubernetes Cluster Create |
-| DELETE | `/lke/clusters/{clusterId}` | deleteLKECluster | Kubernetes Cluster Delete |
-| GET | `/lke/clusters/{clusterId}` | getLKECluster | Kubernetes Cluster View |
-| PUT | `/lke/clusters/{clusterId}` | putLKECluster | Kubernetes Cluster Update |
-| GET | `/lke/clusters/{clusterId}/api-endpoints` | getLKEClusterAPIEndpoints | Kubernetes API Endpoints List |
-| GET | `/lke/clusters/{clusterId}/dashboard` | getLKEClusterDashboard | Kubernetes Cluster Dashboard URL View |
-| DELETE | `/lke/clusters/{clusterId}/kubeconfig` | deleteLKEClusterKubeconfig | Kubeconfig Delete |
-| GET | `/lke/clusters/{clusterId}/kubeconfig` | getLKEClusterKubeconfig | Kubeconfig View |
-| DELETE | `/lke/clusters/{clusterId}/nodes/{nodeId}` | deleteLKEClusterNode | Node Delete |
-| GET | `/lke/clusters/{clusterId}/nodes/{nodeId}` | getLKEClusterNode | Node View |
-| POST | `/lke/clusters/{clusterId}/nodes/{nodeId}/recycle` | postLKEClusterNodeRecycle | Node Recycle |
-| GET | `/lke/clusters/{clusterId}/pools` | getLKEClusterPools | Node Pools List |
-| POST | `/lke/clusters/{clusterId}/pools` | postLKEClusterPools | Node Pool Create |
-| DELETE | `/lke/clusters/{clusterId}/pools/{poolId}` | deleteLKENodePool | Node Pool Delete |
-| GET | `/lke/clusters/{clusterId}/pools/{poolId}` | getLKENodePool | Node Pool View |
-| PUT | `/lke/clusters/{clusterId}/pools/{poolId}` | putLKENodePool | Node Pool Update |
-| POST | `/lke/clusters/{clusterId}/pools/{poolId}/recycle` | postLKEClusterPoolRecycle | Node Pool Recycle |
-| POST | `/lke/clusters/{clusterId}/recycle` | postLKEClusterRecycle | Cluster Nodes Recycle |
-| POST | `/lke/clusters/{clusterId}/regenerate` | postLKEClusterRegenerate | Kubernetes Cluster Regenerate |
-| DELETE | `/lke/clusters/{clusterId}/servicetoken` | postLKECServiceTokenDelete | Service Token Delete |
-| GET | `/lke/versions` | getLKEVersions | Kubernetes Versions List |
-| GET | `/lke/versions/{version}` | getLKEVersion | Kubernetes Version View |
-| GET | `/longview/clients` | getLongviewClients | Longview Clients List |
-| POST | `/longview/clients` | createLongviewClient | Longview Client Create |
-| DELETE | `/longview/clients/{clientId}` | deleteLongviewClient | Longview Client Delete |
-| GET | `/longview/clients/{clientId}` | getLongviewClient | Longview Client View |
-| PUT | `/longview/clients/{clientId}` | updateLongviewClient | Longview Client Update |
-| GET | `/longview/plan` | getLongviewPlan | Longview Plan View |
-| PUT | `/longview/plan` | updateLongviewPlan | Longview Plan Update |
-| GET | `/longview/subscriptions` | getLongviewSubscriptions | Longview Subscriptions List |
-| GET | `/longview/subscriptions/{subscriptionId}` | getLongviewSubscription | Longview Subscription View |
-| GET | `/managed/contacts` | getManagedContacts | Managed Contacts List |
-| POST | `/managed/contacts` | createManagedContact | Managed Contact Create |
-| DELETE | `/managed/contacts/{contactId}` | deleteManagedContact | Managed Contact Delete |
-| GET | `/managed/contacts/{contactId}` | getManagedContact | Managed Contact View |
-| PUT | `/managed/contacts/{contactId}` | updateManagedContact | Managed Contact Update |
-| GET | `/managed/credentials` | getManagedCredentials | Managed Credentials List |
-| POST | `/managed/credentials` | createManagedCredential | Managed Credential Create |
-| GET | `/managed/credentials/sshkey` | viewManagedSSHKey | Managed SSH Key View |
-| GET | `/managed/credentials/{credentialId}` | getManagedCredential | Managed Credential View |
-| PUT | `/managed/credentials/{credentialId}` | updateManagedCredential | Managed Credential Update |
-| POST | `/managed/credentials/{credentialId}/revoke` | deleteManagedCredential | Managed Credential Delete |
-| POST | `/managed/credentials/{credentialId}/update` | updateManagedCredentialUsernamePassword | Managed Credential Username and Password Update |
-| GET | `/managed/issues` | getManagedIssues | Managed Issues List |
-| GET | `/managed/issues/{issueId}` | getManagedIssue | Managed Issue View |
-| GET | `/managed/linode-settings` | getManagedLinodeSettings | Managed Linode Settings List |
-| GET | `/managed/linode-settings/{linodeId}` | getManagedLinodeSetting | Linode's Managed Settings View |
-| PUT | `/managed/linode-settings/{linodeId}` | updateManagedLinodeSetting | Linode's Managed Settings Update |
-| GET | `/managed/services` | getManagedServices | Managed Services List |
-| POST | `/managed/services` | createManagedService | Managed Service Create |
-| DELETE | `/managed/services/{serviceId}` | deleteManagedService | Managed Service Delete |
-| GET | `/managed/services/{serviceId}` | getManagedService | Managed Service View |
-| PUT | `/managed/services/{serviceId}` | updateManagedService | Managed Service Update |
-| POST | `/managed/services/{serviceId}/disable` | disableManagedService | Managed Service Disable |
-| POST | `/managed/services/{serviceId}/enable` | enableManagedService | Managed Service Enable |
-| GET | `/managed/stats` | getManagedStats | Managed Stats List |
-| GET | `/networking/firewalls` | getFirewalls | Firewalls List |
-| POST | `/networking/firewalls` | createFirewalls | Firewall Create |
-| DELETE | `/networking/firewalls/{firewallId}` | deleteFirewall | Firewall Delete |
-| GET | `/networking/firewalls/{firewallId}` | getFirewall | Firewall View |
-| PUT | `/networking/firewalls/{firewallId}` | updateFirewall | Firewall Update |
-| GET | `/networking/firewalls/{firewallId}/devices` | getFirewallDevices | Firewall Devices List |
-| POST | `/networking/firewalls/{firewallId}/devices` | createFirewallDevice | Firewall Device Create |
-| DELETE | `/networking/firewalls/{firewallId}/devices/{deviceId}` | deleteFirewallDevice | Firewall Device Delete |
-| GET | `/networking/firewalls/{firewallId}/devices/{deviceId}` | getFirewallDevice | Firewall Device View |
-| GET | `/networking/firewalls/{firewallId}/rules` | getFirewallRules | Firewall Rules List |
-| PUT | `/networking/firewalls/{firewallId}/rules` | updateFirewallRules | Firewall Rules Update |
-| GET | `/networking/ips` | getIPs | IP Addresses List |
-| POST | `/networking/ips` | allocateIP | IP Address Allocate |
-| POST | `/networking/ips/assign` | assignIPs | IP Addresses Assign |
-| POST | `/networking/ips/share` | shareIPs | IP Addresses Share |
-| GET | `/networking/ips/{address}` | getIP | IP Address View |
-| PUT | `/networking/ips/{address}` | updateIP | IP Address RDNS Update |
-| POST | `/networking/ipv4/assign` | assignIPv4s | Linodes Assign IPv4s |
-| POST | `/networking/ipv4/share` | shareIPv4s | IPv4 Sharing Configure |
-| GET | `/networking/ipv6/pools` | getIPv6Pools | IPv6 Pools List |
-| GET | `/networking/ipv6/ranges` | getIPv6Ranges | IPv6 Ranges List |
-| POST | `/networking/ipv6/ranges` | postIPv6Range | IPv6 Range Create |
-| DELETE | `/networking/ipv6/ranges/{range}` | deleteIPv6Range | IPv6 Range Delete |
-| GET | `/networking/ipv6/ranges/{range}` | getIPv6Range | IPv6 Range View |
-| GET | `/networking/vlans` | getVLANs | VLANs List |
-| GET | `/nodebalancers` | getNodeBalancers | NodeBalancers List |
-| POST | `/nodebalancers` | createNodeBalancer | NodeBalancer Create |
-| DELETE | `/nodebalancers/{nodeBalancerId}` | deleteNodeBalancer | NodeBalancer Delete |
-| GET | `/nodebalancers/{nodeBalancerId}` | getNodeBalancer | NodeBalancer View |
-| PUT | `/nodebalancers/{nodeBalancerId}` | updateNodeBalancer | NodeBalancer Update |
-| GET | `/nodebalancers/{nodeBalancerId}/configs` | getNodeBalancerConfigs | Configs List |
-| POST | `/nodebalancers/{nodeBalancerId}/configs` | createNodeBalancerConfig | Config Create |
-| DELETE | `/nodebalancers/{nodeBalancerId}/configs/{configId}` | deleteNodeBalancerConfig | Config Delete |
-| GET | `/nodebalancers/{nodeBalancerId}/configs/{configId}` | getNodeBalancerConfig | Config View |
-| PUT | `/nodebalancers/{nodeBalancerId}/configs/{configId}` | updateNodeBalancerConfig | Config Update |
-| GET | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes` | getNodeBalancerConfigNodes | Nodes List |
-| POST | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes` | createNodeBalancerNode | Node Create |
-| DELETE | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes/{nodeId}` | deleteNodeBalancerConfigNode | Node Delete |
-| GET | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes/{nodeId}` | getNodeBalancerNode | Node View |
-| PUT | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes/{nodeId}` | updateNodeBalancerNode | Node Update |
-| POST | `/nodebalancers/{nodeBalancerId}/configs/{configId}/rebuild` | rebuildNodeBalancerConfig | Config Rebuild |
-| GET | `/nodebalancers/{nodeBalancerId}/stats` | get /nodebalancers/{nodeBalancerId}/stats | NodeBalancer Statistics View |
-| GET | `/object-storage/buckets` | getObjectStorageBuckets | Object Storage Buckets List |
-| POST | `/object-storage/buckets` | createObjectStorageBucket | Object Storage Bucket Create |
-| GET | `/object-storage/buckets/{clusterId}` | getObjectStorageBucketinCluster | Object Storage Buckets in Cluster List |
-| DELETE | `/object-storage/buckets/{clusterId}/{bucket}` | deleteObjectStorageBucket | Object Storage Bucket Remove |
-| GET | `/object-storage/buckets/{clusterId}/{bucket}` | getObjectStorageBucket | Object Storage Bucket View |
-| POST | `/object-storage/buckets/{clusterId}/{bucket}/access` | modifyObjectStorageBucketAccess | Object Storage Bucket Access Modify |
-| PUT | `/object-storage/buckets/{clusterId}/{bucket}/access` | updateObjectStorageBucketAccess | Object Storage Bucket Access Update |
-| GET | `/object-storage/buckets/{clusterId}/{bucket}/object-acl` | viewObjectStorageBucketACL | Object Storage Object ACL Config View |
-| PUT | `/object-storage/buckets/{clusterId}/{bucket}/object-acl` | updateObjectStorageBucketACL | Object Storage Object ACL Config Update |
-| GET | `/object-storage/buckets/{clusterId}/{bucket}/object-list` | getObjectStorageBucketContent | Object Storage Bucket Contents List |
-| POST | `/object-storage/buckets/{clusterId}/{bucket}/object-url` | createObjectStorageObjectURL | Object Storage Object URL Create |
-| DELETE | `/object-storage/buckets/{clusterId}/{bucket}/ssl` | deleteObjectStorageSSL | Object Storage TLS/SSL Cert Delete |
-| GET | `/object-storage/buckets/{clusterId}/{bucket}/ssl` | getObjectStorageSSL | Object Storage TLS/SSL Cert View |
-| POST | `/object-storage/buckets/{clusterId}/{bucket}/ssl` | createObjectStorageSSL | Object Storage TLS/SSL Cert Upload |
-| POST | `/object-storage/cancel` | cancelObjectStorage | Object Storage Cancel |
-| GET | `/object-storage/clusters` | getObjectStorageClusters | Clusters List |
-| GET | `/object-storage/clusters/{clusterId}` | getObjectStorageCluster | Cluster View |
-| GET | `/object-storage/keys` | getObjectStorageKeys | Object Storage Keys List |
-| POST | `/object-storage/keys` | createObjectStorageKeys | Object Storage Key Create |
-| DELETE | `/object-storage/keys/{keyId}` | deleteObjectStorageKey | Object Storage Key Revoke |
-| GET | `/object-storage/keys/{keyId}` | getObjectStorageKey | Object Storage Key View |
-| PUT | `/object-storage/keys/{keyId}` | updateObjectStorageKey | Object Storage Key Update |
-| GET | `/object-storage/transfer` | getObjectStorageTransfer | Object Storage Transfer View |
-| GET | `/profile` | getProfile | Profile View |
-| PUT | `/profile` | updateProfile | Profile Update |
-| GET | `/profile/apps` | getProfileApps | Authorized Apps List |
-| DELETE | `/profile/apps/{appId}` | deleteProfileApp | App Access Revoke |
-| GET | `/profile/apps/{appId}` | getProfileApp | Authorized App View |
-| GET | `/profile/devices` | getDevices | Trusted Devices List |
-| DELETE | `/profile/devices/{deviceId}` | revokeTrustedDevice | Trusted Device Revoke |
-| GET | `/profile/devices/{deviceId}` | getTrustedDevice | Trusted Device View |
-| GET | `/profile/grants` | getProfileGrants | Grants List |
-| GET | `/profile/logins` | getProfileLogins | Logins List |
-| GET | `/profile/logins/{loginId}` | getProfileLogin | Login View |
-| DELETE | `/profile/phone-number` | deleteProfilePhoneNumber | Phone Number Delete |
-| POST | `/profile/phone-number` | postProfilePhoneNumber | Phone Number Verification Code Send |
-| POST | `/profile/phone-number/verify` | postProfilePhoneNumberVerify | Phone Number Verify |
-| GET | `/profile/preferences` | getUserPreferences | User Preferences View |
-| PUT | `/profile/preferences` | updateUserPreferences | User Preferences Update |
-| GET | `/profile/security-questions` | getSecurityQuestions | Security Questions List |
-| POST | `/profile/security-questions` | postSecurityQuestions | Security Questions Answer |
-| GET | `/profile/sshkeys` | getSSHKeys | SSH Keys List |
-| POST | `/profile/sshkeys` | addSSHKey | SSH Key Add |
-| DELETE | `/profile/sshkeys/{sshKeyId}` | deleteSSHKey | SSH Key Delete |
-| GET | `/profile/sshkeys/{sshKeyId}` | getSSHKey | SSH Key View |
-| PUT | `/profile/sshkeys/{sshKeyId}` | updateSSHKey | SSH Key Update |
-| POST | `/profile/tfa-disable` | tfaDisable | Two Factor Authentication Disable |
-| POST | `/profile/tfa-enable` | tfaEnable | Two Factor Secret Create |
-| POST | `/profile/tfa-enable-confirm` | tfaConfirm | Two Factor Authentication Confirm/Enable |
-| GET | `/profile/tokens` | getPersonalAccessTokens | Personal Access Tokens List |
-| POST | `/profile/tokens` | createPersonalAccessToken | Personal Access Token Create |
-| DELETE | `/profile/tokens/{tokenId}` | deletePersonalAccessToken | Personal Access Token Revoke |
-| GET | `/profile/tokens/{tokenId}` | getPersonalAccessToken | Personal Access Token View |
-| PUT | `/profile/tokens/{tokenId}` | updatePersonalAccessToken | Personal Access Token Update |
-| GET | `/regions` | getRegions | Regions List |
-| GET | `/regions/{regionId}` | getRegion | Region View |
-| GET | `/support/tickets` | getTickets | Support Tickets List |
-| POST | `/support/tickets` | createTicket | Support Ticket Open |
-| GET | `/support/tickets/{ticketId}` | getTicket | Support Ticket View |
-| POST | `/support/tickets/{ticketId}/attachments` | createTicketAttachment | Support Ticket Attachment Create |
-| POST | `/support/tickets/{ticketId}/close` | closeTicket | Support Ticket Close |
-| GET | `/support/tickets/{ticketId}/replies` | getTicketReplies | Replies List |
-| POST | `/support/tickets/{ticketId}/replies` | createTicketReply | Reply Create |
-| GET | `/tags` | getTags | Tags List |
-| POST | `/tags` | createTag | New Tag Create |
-| DELETE | `/tags/{label}` | deleteTag | Tag Delete |
-| GET | `/tags/{label}` | getTaggedObjects | Tagged Objects List |
-| GET | `/volumes` | getVolumes | Volumes List |
-| POST | `/volumes` | createVolume | Volume Create |
-| DELETE | `/volumes/{volumeId}` | deleteVolume | Volume Delete |
-| GET | `/volumes/{volumeId}` | getVolume | Volume View |
-| PUT | `/volumes/{volumeId}` | updateVolume | Volume Update |
-| POST | `/volumes/{volumeId}/attach` | attachVolume | Volume Attach |
-| POST | `/volumes/{volumeId}/clone` | cloneVolume | Volume Clone |
-| POST | `/volumes/{volumeId}/detach` | detachVolume | Volume Detach |
-| POST | `/volumes/{volumeId}/resize` | resizeVolume | Volume Resize |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/account` | getAccount | — | Account | yes | Account View |
+| PUT | `/account` | updateAccount | body*: Account | Account |  | Account Update |
+| POST | `/account/cancel` | cancelAccount | body*: object | object |  | Account Cancel |
+| POST | `/account/credit-card` | createCreditCard | body*: CreditCard | object |  | Credit Card Add/Edit |
+| GET | `/account/entity-transfers` | getEntityTransfers | `page`, `page_size` | PaginationEnvelope\|object | yes | Entity Transfers List |
+| POST | `/account/entity-transfers` | createEntityTransfer | body: object | EntityTransfer |  | Entity Transfer Create |
+| GET | `/account/entity-transfers/{token}` | getEntityTransfer | `token`* | EntityTransfer | yes | Entity Transfer View |
+| DELETE | `/account/entity-transfers/{token}` | deleteEntityTransfer | `token`* | object |  | Entity Transfer Cancel |
+| POST | `/account/entity-transfers/{token}/accept` | acceptEntityTransfer | `token`* | object |  | Entity Transfer Accept |
+| GET | `/account/events` | getEvents | `page`, `page_size` | object | yes | Events List |
+| GET | `/account/events/{eventId}` | getEvent | `eventId`* | Event | yes | Event View |
+| POST | `/account/events/{eventId}/read` | eventRead | `eventId`* | object |  | Event Mark as Read |
+| POST | `/account/events/{eventId}/seen` | eventSeen | `eventId`* | object |  | Event Mark as Seen |
+| GET | `/account/invoices` | getInvoices | `page`, `page_size` | object | yes | Invoices List |
+| GET | `/account/invoices/{invoiceId}` | getInvoice | `invoiceId`* | Invoice | yes | Invoice View |
+| GET | `/account/invoices/{invoiceId}/items` | getInvoiceItems | `invoiceId`*, `page`, `page_size` | object | yes | Invoice Items List |
+| GET | `/account/logins` | getAccountLogins | — | object | yes | User Logins List All |
+| GET | `/account/logins/{loginId}` | getAccountLogin | `loginId`* | Login | yes | Login View |
+| GET | `/account/maintenance` | getMaintenance | — | object | yes | Maintenance List |
+| GET | `/account/notifications` | getNotifications | — | object | yes | Notifications List |
+| GET | `/account/oauth-clients` | getClients | `page`, `page_size` | object | yes | OAuth Clients List |
+| POST | `/account/oauth-clients` | createClient | body: OAuthClient | OAuthClient |  | OAuth Client Create |
+| GET | `/account/oauth-clients/{clientId}` | getClient | `clientId`* | OAuthClient | yes | OAuth Client View |
+| PUT | `/account/oauth-clients/{clientId}` | updateClient | `clientId`*, body: OAuthClient | OAuthClient |  | OAuth Client Update |
+| DELETE | `/account/oauth-clients/{clientId}` | deleteClient | `clientId`* | object |  | OAuth Client Delete |
+| POST | `/account/oauth-clients/{clientId}/reset-secret` | resetClientSecret | `clientId`* | OAuthClient |  | OAuth Client Secret Reset |
+| GET | `/account/oauth-clients/{clientId}/thumbnail` | getClientThumbnail | `clientId`* | string:binary | yes | OAuth Client Thumbnail View |
+| PUT | `/account/oauth-clients/{clientId}/thumbnail` | setClientThumbnail | `clientId`*, body*: string:binary | object |  | OAuth Client Thumbnail Update |
+| GET | `/account/payment-methods` | getPaymentMethods | `page`, `page_size` | object | yes | Payment Methods List |
+| POST | `/account/payment-methods` | createPaymentMethod | body*: object | object |  | Payment Method Add |
+| GET | `/account/payment-methods/{paymentMethodId}` | getPaymentMethod | `paymentMethodId`* | PaymentMethod | yes | Payment Method View |
+| DELETE | `/account/payment-methods/{paymentMethodId}` | deletePaymentMethod | `paymentMethodId`* | object |  | Payment Method Delete |
+| POST | `/account/payment-methods/{paymentMethodId}/make-default` | makePaymentMethodDefault | `paymentMethodId`* | object |  | Payment Method Make Default |
+| GET | `/account/payments` | getPayments | `page`, `page_size` | object | yes | Payments List |
+| POST | `/account/payments` | createPayment | body*: PaymentRequest | Payment, object |  | Payment Make |
+| POST | `/account/payments/paypal` | createPayPalPayment | body*: PayPal | object |  | PayPal Payment Stage |
+| POST | `/account/payments/paypal/execute` | executePayPalPayment | body*: PayPalExecute | object |  | Staged/Approved PayPal Payment Execute |
+| GET | `/account/payments/{paymentId}` | getPayment | `paymentId`* | Payment | yes | Payment View |
+| POST | `/account/promo-codes` | createPromoCredit | body: object | Promotion |  | Promo Credit Add |
+| GET | `/account/service-transfers` | getServiceTransfers | `page`, `page_size` | object | yes | Service Transfers List |
+| POST | `/account/service-transfers` | createServiceTransfer | body: object | ServiceTransfer |  | Service Transfer Create |
+| GET | `/account/service-transfers/{token}` | getServiceTransfer | `token`* | ServiceTransfer | yes | Service Transfer View |
+| DELETE | `/account/service-transfers/{token}` | deleteServiceTransfer | `token`* | object |  | Service Transfer Cancel |
+| POST | `/account/service-transfers/{token}/accept` | acceptServiceTransfer | `token`* | object |  | Service Transfer Accept |
+| GET | `/account/settings` | getAccountSettings | — | AccountSettings | yes | Account Settings View |
+| PUT | `/account/settings` | updateAccountSettings | body*: AccountSettings | AccountSettings |  | Account Settings Update |
+| POST | `/account/settings/managed-enable` | enableAccountManaged | — | object |  | Linode Managed Enable |
+| GET | `/account/transfer` | getTransfer | — | Transfer | yes | Network Utilization View |
+| GET | `/account/users` | getUsers | `page`, `page_size` | object | yes | Users List |
+| POST | `/account/users` | createUser | body: User | User |  | User Create |
+| GET | `/account/users/{username}` | getUser | `username`* | User | yes | User View |
+| PUT | `/account/users/{username}` | updateUser | `username`*, body: User | User |  | User Update |
+| DELETE | `/account/users/{username}` | deleteUser | `username`* | object |  | User Delete |
+| GET | `/account/users/{username}/grants` | getUserGrants | `username`* | GrantsResponse | yes | User's Grants View |
+| PUT | `/account/users/{username}/grants` | updateUserGrants | `username`*, body*: GrantsResponse | GrantsResponse |  | User's Grants Update |
+| GET | `/databases/engines` | getDatabasesEngines | `page`, `page_size` | PaginationEnvelope\|object | yes | Managed Database Engines List |
+| GET | `/databases/engines/{engineId}` | getDatabasesEngine | `engineId`*, `page`, `page_size` | DatabaseEngine | yes | Managed Database Engine View |
+| GET | `/databases/instances` | getDatabasesInstances | `page`, `page_size` | PaginationEnvelope\|object | yes | Managed Databases List All |
+| GET | `/databases/mongodb/instances` | getDatabasesMongoDBInstances | `page`, `page_size` | PaginationEnvelope\|object | yes | Managed MongoDB Databases List |
+| GET | `/databases/mongodb/instances/{instanceId}` | getDatabasesMongoDBInstance | `instanceId`* | DatabaseMongoDB | yes | Managed MongoDB Database View |
+| PUT | `/databases/mongodb/instances/{instanceId}` | putDatabasesMongoDBInstance | `instanceId`*, body*: object | DatabaseMongoDB |  | Managed MongoDB Database Update |
+| DELETE | `/databases/mongodb/instances/{instanceId}` | deleteDatabasesMongoDBInstance | `instanceId`* | object |  | Managed MongoDB Database Delete |
+| GET | `/databases/mongodb/instances/{instanceId}/backups` | getDatabasesMongoDBInstanceBackups | `instanceId`*, `page`, `page_size` | PaginationEnvelope\|object | yes | Managed MongoDB Database Backups List |
+| POST | `/databases/mongodb/instances/{instanceId}/backups` | postDatabasesMongoDBInstanceBackup | `instanceId`*, body: DatabaseBackupSnapshot | object |  | Managed MongoDB Database Backup Snapshot Create |
+| GET | `/databases/mongodb/instances/{instanceId}/backups/{backupId}` | getDatabasesMongoDBInstanceBackup | `instanceId`*, `backupId`* | DatabaseBackup | yes | Managed MongoDB Database Backup View |
+| DELETE | `/databases/mongodb/instances/{instanceId}/backups/{backupId}` | deleteDatabaseMongoDBInstanceBackup | `instanceId`*, `backupId`* | object |  | Managed MongoDB Database Backup Delete |
+| POST | `/databases/mongodb/instances/{instanceId}/backups/{backupId}/restore` | postDatabasesMongoDBInstanceBackupRestore | `instanceId`*, `backupId`* | object |  | Managed MongoDB Database Backup Restore |
+| GET | `/databases/mongodb/instances/{instanceId}/credentials` | getDatabasesMongoDBInstanceCredentials | `instanceId`* | DatabaseCredentials | yes | Managed MongoDB Database Credentials View |
+| POST | `/databases/mongodb/instances/{instanceId}/credentials/reset` | postDatabasesMongoDBInstanceCredentialsReset | `instanceId`* | object |  | Managed MongoDB Database Credentials Reset |
+| POST | `/databases/mongodb/instances/{instanceId}/patch` | postDatabasesMongoDBInstancePatch | `instanceId`* | object |  | Managed MongoDB Database Patch |
+| GET | `/databases/mongodb/instances/{instanceId}/ssl` | getDatabasesMongoDBInstanceSSL | `instanceId`* | DatabaseSSL | yes | Managed MongoDB Database SSL Certificate View |
+| GET | `/databases/mysql/instances` | getDatabasesMySQLInstances | `page`, `page_size` | PaginationEnvelope\|object | yes | Managed MySQL Databases List |
+| POST | `/databases/mysql/instances` | postDatabasesMySQLInstances | body*: DatabaseMySQLRequest | DatabaseMySQL |  | Managed MySQL Database Create |
+| GET | `/databases/mysql/instances/{instanceId}` | getDatabasesMySQLInstance | `instanceId`* | DatabaseMySQL | yes | Managed MySQL Database View |
+| PUT | `/databases/mysql/instances/{instanceId}` | putDatabasesMySQLInstance | `instanceId`*, body*: object | DatabaseMySQL |  | Managed MySQL Database Update |
+| DELETE | `/databases/mysql/instances/{instanceId}` | deleteDatabasesMySQLInstance | `instanceId`* | object |  | Managed MySQL Database Delete |
+| GET | `/databases/mysql/instances/{instanceId}/backups` | getDatabasesMySQLInstanceBackups | `instanceId`*, `page`, `page_size` | PaginationEnvelope\|object | yes | Managed MySQL Database Backups List |
+| POST | `/databases/mysql/instances/{instanceId}/backups` | postDatabasesMySQLInstanceBackup | `instanceId`*, body: DatabaseBackupSnapshot | object |  | Managed MySQL Database Backup Snapshot Create |
+| GET | `/databases/mysql/instances/{instanceId}/backups/{backupId}` | getDatabasesMySQLInstanceBackup | `instanceId`*, `backupId`* | DatabaseBackup | yes | Managed MySQL Database Backup View |
+| DELETE | `/databases/mysql/instances/{instanceId}/backups/{backupId}` | deleteDatabaseMySQLInstanceBackup | `instanceId`*, `backupId`* | object |  | Managed MySQL Database Backup Delete |
+| POST | `/databases/mysql/instances/{instanceId}/backups/{backupId}/restore` | postDatabasesMySQLInstanceBackupRestore | `instanceId`*, `backupId`* | object |  | Managed MySQL Database Backup Restore |
+| GET | `/databases/mysql/instances/{instanceId}/credentials` | getDatabasesMySQLInstanceCredentials | `instanceId`* | DatabaseCredentials | yes | Managed MySQL Database Credentials View |
+| POST | `/databases/mysql/instances/{instanceId}/credentials/reset` | postDatabasesMySQLInstanceCredentialsReset | `instanceId`* | object |  | Managed MySQL Database Credentials Reset |
+| POST | `/databases/mysql/instances/{instanceId}/patch` | postDatabasesMySQLInstancePatch | `instanceId`* | object |  | Managed MySQL Database Patch |
+| GET | `/databases/mysql/instances/{instanceId}/ssl` | getDatabasesMySQLInstanceSSL | `instanceId`* | DatabaseSSL | yes | Managed MySQL Database SSL Certificate View |
+| GET | `/databases/postgresql/instances` | getDatabasesPostgreSQLInstances | `page`, `page_size` | PaginationEnvelope\|object | yes | Managed PostgreSQL Databases List |
+| POST | `/databases/postgresql/instances` | postDatabasesPostgreSQLInstances | body*: DatabasePostgreSQLRequest | DatabasePostgreSQL |  | Managed PostgreSQL Database Create |
+| GET | `/databases/postgresql/instances/{instanceId}` | getDatabasesPostgreSQLInstance | `instanceId`* | DatabasePostgreSQL | yes | Managed PostgreSQL Database View |
+| PUT | `/databases/postgresql/instances/{instanceId}` | putDatabasesPostgreSQLInstance | `instanceId`*, body*: object | DatabasePostgreSQL |  | Managed PostgreSQL Database Update |
+| DELETE | `/databases/postgresql/instances/{instanceId}` | deleteDatabasesPostgreSQLInstance | `instanceId`* | object |  | Managed PostgreSQL Database Delete |
+| GET | `/databases/postgresql/instances/{instanceId}/backups` | getDatabasesPostgreSQLInstanceBackups | `instanceId`*, `page`, `page_size` | PaginationEnvelope\|object | yes | Managed PostgreSQL Database Backups List |
+| POST | `/databases/postgresql/instances/{instanceId}/backups` | postDatabasesPostgreSQLInstanceBackup | `instanceId`*, body: DatabaseBackupSnapshot | object |  | Managed PostgreSQL Database Backup Snapshot Create |
+| GET | `/databases/postgresql/instances/{instanceId}/backups/{backupId}` | getDatabasesPostgreSQLInstanceBackup | `instanceId`*, `backupId`* | DatabaseBackup | yes | Managed PostgreSQL Database Backup View |
+| DELETE | `/databases/postgresql/instances/{instanceId}/backups/{backupId}` | deleteDatabasePostgreSQLInstanceBackup | `instanceId`*, `backupId`* | object |  | Managed PostgreSQL Database Backup Delete |
+| POST | `/databases/postgresql/instances/{instanceId}/backups/{backupId}/restore` | postDatabasesPostgreSQLInstanceBackupRestore | `instanceId`*, `backupId`* | object |  | Managed PostgreSQL Database Backup Restore |
+| GET | `/databases/postgresql/instances/{instanceId}/credentials` | getDatabasesPostgreSQLInstanceCredentials | `instanceId`* | DatabaseCredentials | yes | Managed PostgreSQL Database Credentials View |
+| POST | `/databases/postgresql/instances/{instanceId}/credentials/reset` | postDatabasesPostgreSQLInstanceCredentialsReset | `instanceId`* | object |  | Managed PostgreSQL Database Credentials Reset |
+| POST | `/databases/postgresql/instances/{instanceId}/patch` | postDatabasesPostgreSQLInstancePatch | `instanceId`* | object |  | Managed PostgreSQL Database Patch |
+| GET | `/databases/postgresql/instances/{instanceId}/ssl` | getDatabasesPostgreSQLInstanceSSL | `instanceId`* | DatabaseSSL | yes | Managed PostgreSQL Database SSL Certificate View |
+| GET | `/databases/types` | getDatabasesTypes | `page`, `page_size` | PaginationEnvelope\|object | yes | Managed Database Types List |
+| GET | `/databases/types/{typeId}` | getDatabasesType | `typeId`*, `page`, `page_size` | DatabaseType | yes | Managed Database Type View |
+| GET | `/domains` | getDomains | `page`, `page_size` | object | yes | Domains List |
+| POST | `/domains` | createDomain | body*: Domain | Domain |  | Domain Create |
+| POST | `/domains/import` | importDomain | body: object | Domain |  | Domain Import |
+| GET | `/domains/{domainId}` | getDomain | `domainId`* | Domain | yes | Domain View |
+| PUT | `/domains/{domainId}` | updateDomain | `domainId`*, body*: Domain | Domain |  | Domain Update |
+| DELETE | `/domains/{domainId}` | deleteDomain | `domainId`* | object |  | Domain Delete |
+| POST | `/domains/{domainId}/clone` | cloneDomain | `domainId`*, body*: object | Domain |  | Domain Clone |
+| GET | `/domains/{domainId}/records` | getDomainRecords | `domainId`*, `page`, `page_size` | object | yes | Domain Records List |
+| POST | `/domains/{domainId}/records` | createDomainRecord | `domainId`*, body*: DomainRecord | DomainRecord |  | Domain Record Create |
+| GET | `/domains/{domainId}/records/{recordId}` | getDomainRecord | `domainId`*, `recordId`* | DomainRecord | yes | Domain Record View |
+| PUT | `/domains/{domainId}/records/{recordId}` | updateDomainRecord | `domainId`*, `recordId`*, body*: object | DomainRecord |  | Domain Record Update |
+| DELETE | `/domains/{domainId}/records/{recordId}` | deleteDomainRecord | `domainId`*, `recordId`* | object |  | Domain Record Delete |
+| GET | `/domains/{domainId}/zone-file` | getDomainZone | `domainId`* | object | yes | Domain Zone File View |
+| GET | `/images` | getImages | `page`, `page_size` | object | yes | Images List |
+| POST | `/images` | createImage | body: object | Image |  | Image Create |
+| POST | `/images/upload` | post /images/upload | body: object | object |  | Image Upload |
+| GET | `/images/{imageId}` | getImage | `imageId`* | Image | yes | Image View |
+| PUT | `/images/{imageId}` | updateImage | `imageId`*, body*: Image | Image |  | Image Update |
+| DELETE | `/images/{imageId}` | deleteImage | `imageId`* | object |  | Image Delete |
+| GET | `/linode/instances` | getLinodeInstances | `page`, `page_size` | object | yes | Linodes List |
+| POST | `/linode/instances` | createLinodeInstance | body*: LinodeRequest\|object | Linode |  | Linode Create |
+| GET | `/linode/instances/{linodeId}` | getLinodeInstance | `linodeId`* | Linode | yes | Linode View |
+| PUT | `/linode/instances/{linodeId}` | updateLinodeInstance | `linodeId`*, body*: Linode | Linode |  | Linode Update |
+| DELETE | `/linode/instances/{linodeId}` | deleteLinodeInstance | `linodeId`* | object |  | Linode Delete |
+| GET | `/linode/instances/{linodeId}/backups` | getBackups | `linodeId`* | object | yes | Backups List |
+| POST | `/linode/instances/{linodeId}/backups` | createSnapshot | `linodeId`*, body*: object | Backup |  | Snapshot Create |
+| POST | `/linode/instances/{linodeId}/backups/cancel` | cancelBackups | `linodeId`* | object |  | Backups Cancel |
+| POST | `/linode/instances/{linodeId}/backups/enable` | enableBackups | `linodeId`* | object |  | Backups Enable |
+| GET | `/linode/instances/{linodeId}/backups/{backupId}` | getBackup | `linodeId`*, `backupId`* | Backup | yes | Backup View |
+| POST | `/linode/instances/{linodeId}/backups/{backupId}/restore` | restoreBackup | `linodeId`*, `backupId`*, body*: object | object |  | Backup Restore |
+| POST | `/linode/instances/{linodeId}/boot` | bootLinodeInstance | `linodeId`*, body: object | object |  | Linode Boot |
+| POST | `/linode/instances/{linodeId}/clone` | cloneLinodeInstance | `linodeId`*, body*: object | Linode |  | Linode Clone |
+| GET | `/linode/instances/{linodeId}/configs` | getLinodeConfigs | `linodeId`*, `page`, `page_size` | object | yes | Configuration Profiles List |
+| POST | `/linode/instances/{linodeId}/configs` | addLinodeConfig | `linodeId`*, body*: LinodeConfig | LinodeConfig |  | Configuration Profile Create |
+| GET | `/linode/instances/{linodeId}/configs/{configId}` | getLinodeConfig | `linodeId`*, `configId`* | LinodeConfig | yes | Configuration Profile View |
+| PUT | `/linode/instances/{linodeId}/configs/{configId}` | updateLinodeConfig | `linodeId`*, `configId`*, body*: LinodeConfig | LinodeConfig |  | Configuration Profile Update |
+| DELETE | `/linode/instances/{linodeId}/configs/{configId}` | deleteLinodeConfig | `linodeId`*, `configId`* | object |  | Configuration Profile Delete |
+| GET | `/linode/instances/{linodeId}/disks` | getLinodeDisks | `linodeId`*, `page`, `page_size` | object | yes | Disks List |
+| POST | `/linode/instances/{linodeId}/disks` | addLinodeDisk | `linodeId`*, body*: DiskRequest | Disk |  | Disk Create |
+| GET | `/linode/instances/{linodeId}/disks/{diskId}` | getLinodeDisk | `linodeId`*, `diskId`* | Disk | yes | Disk View |
+| PUT | `/linode/instances/{linodeId}/disks/{diskId}` | updateDisk | `linodeId`*, `diskId`*, body*: Disk | Disk |  | Disk Update |
+| DELETE | `/linode/instances/{linodeId}/disks/{diskId}` | deleteDisk | `linodeId`*, `diskId`* | object |  | Disk Delete |
+| POST | `/linode/instances/{linodeId}/disks/{diskId}/clone` | cloneLinodeDisk | `linodeId`*, `diskId`* | Disk |  | Disk Clone |
+| POST | `/linode/instances/{linodeId}/disks/{diskId}/password` | resetDiskPassword | `linodeId`*, `diskId`*, body*: object | object |  | Disk Root Password Reset |
+| POST | `/linode/instances/{linodeId}/disks/{diskId}/resize` | resizeDisk | `linodeId`*, `diskId`*, body*: object | object |  | Disk Resize |
+| GET | `/linode/instances/{linodeId}/firewalls` | getLinodeFirewalls | `linodeId`*, `page`, `page_size` | object | yes | Firewalls List |
+| GET | `/linode/instances/{linodeId}/ips` | getLinodeIPs | `linodeId`* | object | yes | Networking Information List |
+| POST | `/linode/instances/{linodeId}/ips` | addLinodeIP | `linodeId`*, body*: object | IPAddress |  | IPv4 Address Allocate |
+| GET | `/linode/instances/{linodeId}/ips/{address}` | getLinodeIP | `linodeId`*, `address`* | IPAddress | yes | IP Address View |
+| PUT | `/linode/instances/{linodeId}/ips/{address}` | updateLinodeIP | `linodeId`*, `address`*, body: object | IPAddress |  | IP Address Update |
+| DELETE | `/linode/instances/{linodeId}/ips/{address}` | removeLinodeIP | `linodeId`*, `address`* | object |  | IPv4 Address Delete |
+| POST | `/linode/instances/{linodeId}/migrate` | migrateLinodeInstance | `linodeId`*, body: object | object |  | DC Migration/Pending Host Migration Initiate |
+| POST | `/linode/instances/{linodeId}/mutate` | mutateLinodeInstance | `linodeId`*, body: object | object |  | Linode Upgrade |
+| GET | `/linode/instances/{linodeId}/nodebalancers` | getLinodeNodeBalancers | `linodeId`* | object | yes | Linode NodeBalancers View |
+| POST | `/linode/instances/{linodeId}/password` | resetLinodePassword | `linodeId`*, body: object | object |  | Linode Root Password Reset |
+| POST | `/linode/instances/{linodeId}/reboot` | rebootLinodeInstance | `linodeId`*, body: object | object |  | Linode Reboot |
+| POST | `/linode/instances/{linodeId}/rebuild` | rebuildLinodeInstance | `linodeId`*, body*: LinodeRequest | Linode |  | Linode Rebuild |
+| POST | `/linode/instances/{linodeId}/rescue` | rescueLinodeInstance | `linodeId`*, body: object | object |  | Linode Boot into Rescue Mode |
+| POST | `/linode/instances/{linodeId}/resize` | resizeLinodeInstance | `linodeId`*, body*: object | object |  | Linode Resize |
+| POST | `/linode/instances/{linodeId}/shutdown` | shutdownLinodeInstance | `linodeId`* | object |  | Linode Shut Down |
+| GET | `/linode/instances/{linodeId}/stats` | getLinodeStats | `linodeId`* | LinodeStats | yes | Linode Statistics View |
+| GET | `/linode/instances/{linodeId}/stats/{year}/{month}` | getLinodeStatsByYearMonth | `linodeId`*, `year`*, `month`* | LinodeStats | yes | Statistics View (year/month) |
+| GET | `/linode/instances/{linodeId}/transfer` | getLinodeTransfer | `linodeId`* | object | yes | Network Transfer View |
+| GET | `/linode/instances/{linodeId}/transfer/{year}/{month}` | getLinodeTransferByYearMonth | `linodeId`*, `year`*, `month`* | object | yes | Network Transfer View (year/month) |
+| GET | `/linode/instances/{linodeId}/volumes` | getLinodeVolumes | `linodeId`*, `page`, `page_size` | object | yes | Linode's Volumes List |
+| GET | `/linode/kernels` | getKernels | `page`, `page_size` | object | yes | Kernels List |
+| GET | `/linode/kernels/{kernelId}` | getKernel | `kernelId`* | Kernel | yes | Kernel View |
+| GET | `/linode/stackscripts` | getStackScripts | `page`, `page_size` | object | yes | StackScripts List |
+| POST | `/linode/stackscripts` | addStackScript | body*: StackScript | StackScript |  | StackScript Create |
+| GET | `/linode/stackscripts/{stackscriptId}` | getStackScript | `stackscriptId`* | StackScript | yes | StackScript View |
+| PUT | `/linode/stackscripts/{stackscriptId}` | updateStackScript | `stackscriptId`*, body: StackScript | StackScript |  | StackScript Update |
+| DELETE | `/linode/stackscripts/{stackscriptId}` | deleteStackScript | `stackscriptId`* | object |  | StackScript Delete |
+| GET | `/linode/types` | getLinodeTypes | — | object | yes | Types List |
+| GET | `/linode/types/{typeId}` | getLinodeType | `typeId`* | LinodeType | yes | Type View |
+| GET | `/lke/clusters` | getLKEClusters | — | object | yes | Kubernetes Clusters List |
+| POST | `/lke/clusters` | createLKECluster | body: object | LKECluster |  | Kubernetes Cluster Create |
+| GET | `/lke/clusters/{clusterId}` | getLKECluster | `clusterId`* | LKECluster | yes | Kubernetes Cluster View |
+| PUT | `/lke/clusters/{clusterId}` | putLKECluster | `clusterId`*, body: object | object |  | Kubernetes Cluster Update |
+| DELETE | `/lke/clusters/{clusterId}` | deleteLKECluster | `clusterId`* | object |  | Kubernetes Cluster Delete |
+| GET | `/lke/clusters/{clusterId}/api-endpoints` | getLKEClusterAPIEndpoints | `clusterId`* | object | yes | Kubernetes API Endpoints List |
+| GET | `/lke/clusters/{clusterId}/dashboard` | getLKEClusterDashboard | `clusterId`* | object | yes | Kubernetes Cluster Dashboard URL View |
+| GET | `/lke/clusters/{clusterId}/kubeconfig` | getLKEClusterKubeconfig | `clusterId`* | object | yes | Kubeconfig View |
+| DELETE | `/lke/clusters/{clusterId}/kubeconfig` | deleteLKEClusterKubeconfig | `clusterId`* | object |  | Kubeconfig Delete |
+| GET | `/lke/clusters/{clusterId}/nodes/{nodeId}` | getLKEClusterNode | `clusterId`*, `nodeId`* | object | yes | Node View |
+| DELETE | `/lke/clusters/{clusterId}/nodes/{nodeId}` | deleteLKEClusterNode | `clusterId`*, `nodeId`* | object |  | Node Delete |
+| POST | `/lke/clusters/{clusterId}/nodes/{nodeId}/recycle` | postLKEClusterNodeRecycle | `clusterId`*, `nodeId`* | object |  | Node Recycle |
+| GET | `/lke/clusters/{clusterId}/pools` | getLKEClusterPools | `clusterId`* | object | yes | Node Pools List |
+| POST | `/lke/clusters/{clusterId}/pools` | postLKEClusterPools | `clusterId`*, body*: LKENodePoolRequestBody | LKENodePool |  | Node Pool Create |
+| GET | `/lke/clusters/{clusterId}/pools/{poolId}` | getLKENodePool | `clusterId`*, `poolId`* | LKENodePool | yes | Node Pool View |
+| PUT | `/lke/clusters/{clusterId}/pools/{poolId}` | putLKENodePool | `clusterId`*, `poolId`*, body: object | LKENodePool |  | Node Pool Update |
+| DELETE | `/lke/clusters/{clusterId}/pools/{poolId}` | deleteLKENodePool | `clusterId`*, `poolId`* | object |  | Node Pool Delete |
+| POST | `/lke/clusters/{clusterId}/pools/{poolId}/recycle` | postLKEClusterPoolRecycle | `clusterId`*, `poolId`* | object |  | Node Pool Recycle |
+| POST | `/lke/clusters/{clusterId}/recycle` | postLKEClusterRecycle | `clusterId`* | object |  | Cluster Nodes Recycle |
+| POST | `/lke/clusters/{clusterId}/regenerate` | postLKEClusterRegenerate | `clusterId`*, body: object | object |  | Kubernetes Cluster Regenerate |
+| DELETE | `/lke/clusters/{clusterId}/servicetoken` | postLKECServiceTokenDelete | `clusterId`* | object |  | Service Token Delete |
+| GET | `/lke/versions` | getLKEVersions | — | object | yes | Kubernetes Versions List |
+| GET | `/lke/versions/{version}` | getLKEVersion | `version`* | LKEVersion | yes | Kubernetes Version View |
+| GET | `/longview/clients` | getLongviewClients | `page`, `page_size` | object | yes | Longview Clients List |
+| POST | `/longview/clients` | createLongviewClient | body*: LongviewClient | LongviewClient |  | Longview Client Create |
+| GET | `/longview/clients/{clientId}` | getLongviewClient | `clientId`* | LongviewClient | yes | Longview Client View |
+| PUT | `/longview/clients/{clientId}` | updateLongviewClient | `clientId`*, body*: LongviewClient | LongviewClient |  | Longview Client Update |
+| DELETE | `/longview/clients/{clientId}` | deleteLongviewClient | `clientId`* | object |  | Longview Client Delete |
+| GET | `/longview/plan` | getLongviewPlan | — | LongviewSubscription | yes | Longview Plan View |
+| PUT | `/longview/plan` | updateLongviewPlan | body*: LongviewPlan | LongviewSubscription |  | Longview Plan Update |
+| GET | `/longview/subscriptions` | getLongviewSubscriptions | `page`, `page_size` | object | yes | Longview Subscriptions List |
+| GET | `/longview/subscriptions/{subscriptionId}` | getLongviewSubscription | `subscriptionId`* | LongviewSubscription | yes | Longview Subscription View |
+| GET | `/managed/contacts` | getManagedContacts | `page`, `page_size` | object | yes | Managed Contacts List |
+| POST | `/managed/contacts` | createManagedContact | body: ManagedContact | ManagedContact |  | Managed Contact Create |
+| GET | `/managed/contacts/{contactId}` | getManagedContact | `contactId`* | ManagedContact | yes | Managed Contact View |
+| PUT | `/managed/contacts/{contactId}` | updateManagedContact | `contactId`*, body*: ManagedContact | ManagedContact |  | Managed Contact Update |
+| DELETE | `/managed/contacts/{contactId}` | deleteManagedContact | `contactId`* | object |  | Managed Contact Delete |
+| GET | `/managed/credentials` | getManagedCredentials | `page`, `page_size` | object | yes | Managed Credentials List |
+| POST | `/managed/credentials` | createManagedCredential | body: ManagedCredential\|object | ManagedCredential |  | Managed Credential Create |
+| GET | `/managed/credentials/sshkey` | viewManagedSSHKey | — | object | yes | Managed SSH Key View |
+| GET | `/managed/credentials/{credentialId}` | getManagedCredential | `credentialId`* | ManagedCredential | yes | Managed Credential View |
+| PUT | `/managed/credentials/{credentialId}` | updateManagedCredential | `credentialId`*, body*: ManagedCredential | ManagedCredential |  | Managed Credential Update |
+| POST | `/managed/credentials/{credentialId}/revoke` | deleteManagedCredential | `credentialId`* | object |  | Managed Credential Delete |
+| POST | `/managed/credentials/{credentialId}/update` | updateManagedCredentialUsernamePassword | `credentialId`*, body: object | object |  | Managed Credential Username and Password Update |
+| GET | `/managed/issues` | getManagedIssues | `page`, `page_size` | object | yes | Managed Issues List |
+| GET | `/managed/issues/{issueId}` | getManagedIssue | `issueId`* | ManagedIssue | yes | Managed Issue View |
+| GET | `/managed/linode-settings` | getManagedLinodeSettings | `page`, `page_size` | object | yes | Managed Linode Settings List |
+| GET | `/managed/linode-settings/{linodeId}` | getManagedLinodeSetting | `linodeId`* | ManagedLinodeSettings | yes | Linode's Managed Settings View |
+| PUT | `/managed/linode-settings/{linodeId}` | updateManagedLinodeSetting | `linodeId`*, body*: ManagedLinodeSettings | ManagedLinodeSettings |  | Linode's Managed Settings Update |
+| GET | `/managed/services` | getManagedServices | — | object | yes | Managed Services List |
+| POST | `/managed/services` | createManagedService | body: ManagedService | ManagedService |  | Managed Service Create |
+| GET | `/managed/services/{serviceId}` | getManagedService | `serviceId`* | ManagedService | yes | Managed Service View |
+| PUT | `/managed/services/{serviceId}` | updateManagedService | `serviceId`*, body*: ManagedService | ManagedService |  | Managed Service Update |
+| DELETE | `/managed/services/{serviceId}` | deleteManagedService | `serviceId`* | object |  | Managed Service Delete |
+| POST | `/managed/services/{serviceId}/disable` | disableManagedService | `serviceId`* | ManagedService |  | Managed Service Disable |
+| POST | `/managed/services/{serviceId}/enable` | enableManagedService | `serviceId`* | ManagedService |  | Managed Service Enable |
+| GET | `/managed/stats` | getManagedStats | — | object | yes | Managed Stats List |
+| GET | `/networking/firewalls` | getFirewalls | `page`, `page_size` | object | yes | Firewalls List |
+| POST | `/networking/firewalls` | createFirewalls | body: Firewall | Firewall |  | Firewall Create |
+| GET | `/networking/firewalls/{firewallId}` | getFirewall | `firewallId`* | Firewall | yes | Firewall View |
+| PUT | `/networking/firewalls/{firewallId}` | updateFirewall | `firewallId`*, body: object | Firewall |  | Firewall Update |
+| DELETE | `/networking/firewalls/{firewallId}` | deleteFirewall | `firewallId`* | object |  | Firewall Delete |
+| GET | `/networking/firewalls/{firewallId}/devices` | getFirewallDevices | `firewallId`*, `page`, `page_size` | object | yes | Firewall Devices List |
+| POST | `/networking/firewalls/{firewallId}/devices` | createFirewallDevice | `firewallId`*, body: FirewallDevices/properties/entity | FirewallDevices |  | Firewall Device Create |
+| GET | `/networking/firewalls/{firewallId}/devices/{deviceId}` | getFirewallDevice | `firewallId`*, `deviceId`* | FirewallDevices | yes | Firewall Device View |
+| DELETE | `/networking/firewalls/{firewallId}/devices/{deviceId}` | deleteFirewallDevice | `firewallId`*, `deviceId`* | object |  | Firewall Device Delete |
+| GET | `/networking/firewalls/{firewallId}/rules` | getFirewallRules | `firewallId`* | Firewall/properties/rules | yes | Firewall Rules List |
+| PUT | `/networking/firewalls/{firewallId}/rules` | updateFirewallRules | `firewallId`*, body: Firewall/properties/rules | Firewall/properties/rules |  | Firewall Rules Update |
+| GET | `/networking/ips` | getIPs | — | object | yes | IP Addresses List |
+| POST | `/networking/ips` | allocateIP | body*: object | IPAddress |  | IP Address Allocate |
+| POST | `/networking/ips/assign` | assignIPs | body*: IPAddressesAssignRequest | object |  | IP Addresses Assign |
+| POST | `/networking/ips/share` | shareIPs | body*: IPAddressesShareRequest | object |  | IP Addresses Share |
+| GET | `/networking/ips/{address}` | getIP | `address`* | IPAddress | yes | IP Address View |
+| PUT | `/networking/ips/{address}` | updateIP | `address`*, body*: object | IPAddress |  | IP Address RDNS Update |
+| POST | `/networking/ipv4/assign` | assignIPv4s | body*: IPAddressesAssignRequest | object |  | Linodes Assign IPv4s |
+| POST | `/networking/ipv4/share` | shareIPv4s | body*: IPAddressesShareRequest | object |  | IPv4 Sharing Configure |
+| GET | `/networking/ipv6/pools` | getIPv6Pools | `page`, `page_size` | object | yes | IPv6 Pools List |
+| GET | `/networking/ipv6/ranges` | getIPv6Ranges | `page`, `page_size` | object | yes | IPv6 Ranges List |
+| POST | `/networking/ipv6/ranges` | postIPv6Range | body*: object | object |  | IPv6 Range Create |
+| GET | `/networking/ipv6/ranges/{range}` | getIPv6Range | `range`* | IPv6RangeBGP | yes | IPv6 Range View |
+| DELETE | `/networking/ipv6/ranges/{range}` | deleteIPv6Range | `range`* | object |  | IPv6 Range Delete |
+| GET | `/networking/vlans` | getVLANs | `page`, `page_size` | object | yes | VLANs List |
+| GET | `/nodebalancers` | getNodeBalancers | `page`, `page_size` | object | yes | NodeBalancers List |
+| POST | `/nodebalancers` | createNodeBalancer | body*: object | NodeBalancer |  | NodeBalancer Create |
+| GET | `/nodebalancers/{nodeBalancerId}` | getNodeBalancer | `nodeBalancerId`* | NodeBalancer | yes | NodeBalancer View |
+| PUT | `/nodebalancers/{nodeBalancerId}` | updateNodeBalancer | `nodeBalancerId`*, body*: NodeBalancer | NodeBalancer |  | NodeBalancer Update |
+| DELETE | `/nodebalancers/{nodeBalancerId}` | deleteNodeBalancer | `nodeBalancerId`* | object |  | NodeBalancer Delete |
+| GET | `/nodebalancers/{nodeBalancerId}/configs` | getNodeBalancerConfigs | `nodeBalancerId`*, `page`, `page_size` | object | yes | Configs List |
+| POST | `/nodebalancers/{nodeBalancerId}/configs` | createNodeBalancerConfig | `nodeBalancerId`*, body: NodeBalancerConfig | NodeBalancerConfig |  | Config Create |
+| GET | `/nodebalancers/{nodeBalancerId}/configs/{configId}` | getNodeBalancerConfig | `nodeBalancerId`*, `configId`* | NodeBalancerConfig | yes | Config View |
+| PUT | `/nodebalancers/{nodeBalancerId}/configs/{configId}` | updateNodeBalancerConfig | `nodeBalancerId`*, `configId`*, body*: NodeBalancerConfig | NodeBalancerConfig |  | Config Update |
+| DELETE | `/nodebalancers/{nodeBalancerId}/configs/{configId}` | deleteNodeBalancerConfig | `nodeBalancerId`*, `configId`* | object |  | Config Delete |
+| GET | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes` | getNodeBalancerConfigNodes | `nodeBalancerId`*, `configId`*, `page`, `page_size` | object | yes | Nodes List |
+| POST | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes` | createNodeBalancerNode | `nodeBalancerId`*, `configId`*, body*: NodeBalancerNode | NodeBalancerNode |  | Node Create |
+| GET | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes/{nodeId}` | getNodeBalancerNode | `nodeBalancerId`*, `configId`*, `nodeId`* | NodeBalancerNode | yes | Node View |
+| PUT | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes/{nodeId}` | updateNodeBalancerNode | `nodeBalancerId`*, `configId`*, `nodeId`*, body*: NodeBalancerNode | NodeBalancerNode |  | Node Update |
+| DELETE | `/nodebalancers/{nodeBalancerId}/configs/{configId}/nodes/{nodeId}` | deleteNodeBalancerConfigNode | `nodeBalancerId`*, `configId`*, `nodeId`* | object |  | Node Delete |
+| POST | `/nodebalancers/{nodeBalancerId}/configs/{configId}/rebuild` | rebuildNodeBalancerConfig | `nodeBalancerId`*, `configId`*, body*: NodeBalancerConfig\|object | NodeBalancerConfig |  | Config Rebuild |
+| GET | `/nodebalancers/{nodeBalancerId}/stats` | get /nodebalancers/{nodeBalancerId}/stats | `nodeBalancerId`* | NodeBalancerStats | yes | NodeBalancer Statistics View |
+| GET | `/object-storage/buckets` | getObjectStorageBuckets | — | object | yes | Object Storage Buckets List |
+| POST | `/object-storage/buckets` | createObjectStorageBucket | body: object | ObjectStorageBucket |  | Object Storage Bucket Create |
+| GET | `/object-storage/buckets/{clusterId}` | getObjectStorageBucketinCluster | `clusterId`* | object | yes | Object Storage Buckets in Cluster List |
+| GET | `/object-storage/buckets/{clusterId}/{bucket}` | getObjectStorageBucket | `clusterId`*, `bucket`* | ObjectStorageBucket | yes | Object Storage Bucket View |
+| DELETE | `/object-storage/buckets/{clusterId}/{bucket}` | deleteObjectStorageBucket | `clusterId`*, `bucket`* | object |  | Object Storage Bucket Remove |
+| PUT | `/object-storage/buckets/{clusterId}/{bucket}/access` | updateObjectStorageBucketAccess | `clusterId`*, `bucket`*, body: object | object |  | Object Storage Bucket Access Update |
+| POST | `/object-storage/buckets/{clusterId}/{bucket}/access` | modifyObjectStorageBucketAccess | `clusterId`*, `bucket`*, body: object | object |  | Object Storage Bucket Access Modify |
+| GET | `/object-storage/buckets/{clusterId}/{bucket}/object-acl` | viewObjectStorageBucketACL | `clusterId`*, `bucket`*, `name`* | object | yes | Object Storage Object ACL Config View |
+| PUT | `/object-storage/buckets/{clusterId}/{bucket}/object-acl` | updateObjectStorageBucketACL | `clusterId`*, `bucket`*, body: object | object |  | Object Storage Object ACL Config Update |
+| GET | `/object-storage/buckets/{clusterId}/{bucket}/object-list` | getObjectStorageBucketContent | `clusterId`*, `bucket`*, `marker`, `delimiter`, `prefix`, `page_size` | object | yes | Object Storage Bucket Contents List |
+| POST | `/object-storage/buckets/{clusterId}/{bucket}/object-url` | createObjectStorageObjectURL | `clusterId`*, `bucket`*, body: object | object |  | Object Storage Object URL Create |
+| GET | `/object-storage/buckets/{clusterId}/{bucket}/ssl` | getObjectStorageSSL | `clusterId`*, `bucket`* | ObjectStorageSSLResponse | yes | Object Storage TLS/SSL Cert View |
+| POST | `/object-storage/buckets/{clusterId}/{bucket}/ssl` | createObjectStorageSSL | `clusterId`*, `bucket`*, body: ObjectStorageSSL | ObjectStorageSSLResponse |  | Object Storage TLS/SSL Cert Upload |
+| DELETE | `/object-storage/buckets/{clusterId}/{bucket}/ssl` | deleteObjectStorageSSL | `clusterId`*, `bucket`* | object |  | Object Storage TLS/SSL Cert Delete |
+| POST | `/object-storage/cancel` | cancelObjectStorage | — | object |  | Object Storage Cancel |
+| GET | `/object-storage/clusters` | getObjectStorageClusters | — | object | yes | Clusters List |
+| GET | `/object-storage/clusters/{clusterId}` | getObjectStorageCluster | `clusterId`* | ObjectStorageCluster | yes | Cluster View |
+| GET | `/object-storage/keys` | getObjectStorageKeys | — | object | yes | Object Storage Keys List |
+| POST | `/object-storage/keys` | createObjectStorageKeys | body: ObjectStorageKey | ObjectStorageKey |  | Object Storage Key Create |
+| GET | `/object-storage/keys/{keyId}` | getObjectStorageKey | `keyId`* | ObjectStorageKey | yes | Object Storage Key View |
+| PUT | `/object-storage/keys/{keyId}` | updateObjectStorageKey | `keyId`*, body: object | ObjectStorageKey |  | Object Storage Key Update |
+| DELETE | `/object-storage/keys/{keyId}` | deleteObjectStorageKey | `keyId`* | object |  | Object Storage Key Revoke |
+| GET | `/object-storage/transfer` | getObjectStorageTransfer | — | object | yes | Object Storage Transfer View |
+| GET | `/profile` | getProfile | — | Profile | yes | Profile View |
+| PUT | `/profile` | updateProfile | body*: Profile | Profile |  | Profile Update |
+| GET | `/profile/apps` | getProfileApps | `page`, `page_size` | object | yes | Authorized Apps List |
+| GET | `/profile/apps/{appId}` | getProfileApp | `appId`* | AuthorizedApp | yes | Authorized App View |
+| DELETE | `/profile/apps/{appId}` | deleteProfileApp | `appId`* | object |  | App Access Revoke |
+| GET | `/profile/devices` | getDevices | — | object | yes | Trusted Devices List |
+| GET | `/profile/devices/{deviceId}` | getTrustedDevice | `deviceId`* | TrustedDevice | yes | Trusted Device View |
+| DELETE | `/profile/devices/{deviceId}` | revokeTrustedDevice | `deviceId`* | object |  | Trusted Device Revoke |
+| GET | `/profile/grants` | getProfileGrants | — | GrantsResponse | yes | Grants List |
+| GET | `/profile/logins` | getProfileLogins | — | object | yes | Logins List |
+| GET | `/profile/logins/{loginId}` | getProfileLogin | `loginId`* | Login | yes | Login View |
+| POST | `/profile/phone-number` | postProfilePhoneNumber | body: object | object |  | Phone Number Verification Code Send |
+| DELETE | `/profile/phone-number` | deleteProfilePhoneNumber | — | object |  | Phone Number Delete |
+| POST | `/profile/phone-number/verify` | postProfilePhoneNumberVerify | body: object | object |  | Phone Number Verify |
+| GET | `/profile/preferences` | getUserPreferences | — | object | yes | User Preferences View |
+| PUT | `/profile/preferences` | updateUserPreferences | body*: object | object |  | User Preferences Update |
+| GET | `/profile/security-questions` | getSecurityQuestions | — | SecurityQuestionsGet | yes | Security Questions List |
+| POST | `/profile/security-questions` | postSecurityQuestions | body: SecurityQuestionsPost | SecurityQuestionsPost |  | Security Questions Answer |
+| GET | `/profile/sshkeys` | getSSHKeys | `page`, `page_size` | object | yes | SSH Keys List |
+| POST | `/profile/sshkeys` | addSSHKey | body: SSHKey | SSHKey |  | SSH Key Add |
+| GET | `/profile/sshkeys/{sshKeyId}` | getSSHKey | `sshKeyId`* | SSHKey | yes | SSH Key View |
+| PUT | `/profile/sshkeys/{sshKeyId}` | updateSSHKey | `sshKeyId`*, body*: object | SSHKey |  | SSH Key Update |
+| DELETE | `/profile/sshkeys/{sshKeyId}` | deleteSSHKey | `sshKeyId`* | object |  | SSH Key Delete |
+| POST | `/profile/tfa-disable` | tfaDisable | — | object |  | Two Factor Authentication Disable |
+| POST | `/profile/tfa-enable` | tfaEnable | — | object |  | Two Factor Secret Create |
+| POST | `/profile/tfa-enable-confirm` | tfaConfirm | body*: object | object |  | Two Factor Authentication Confirm/Enable |
+| GET | `/profile/tokens` | getPersonalAccessTokens | — | object | yes | Personal Access Tokens List |
+| POST | `/profile/tokens` | createPersonalAccessToken | body*: object | PersonalAccessToken |  | Personal Access Token Create |
+| GET | `/profile/tokens/{tokenId}` | getPersonalAccessToken | `tokenId`* | PersonalAccessToken | yes | Personal Access Token View |
+| PUT | `/profile/tokens/{tokenId}` | updatePersonalAccessToken | `tokenId`*, body*: PersonalAccessToken | PersonalAccessToken |  | Personal Access Token Update |
+| DELETE | `/profile/tokens/{tokenId}` | deletePersonalAccessToken | `tokenId`* | object |  | Personal Access Token Revoke |
+| GET | `/regions` | getRegions | — | object | yes | Regions List |
+| GET | `/regions/{regionId}` | getRegion | `regionId`* | Region | yes | Region View |
+| GET | `/support/tickets` | getTickets | `page`, `page_size` | object | yes | Support Tickets List |
+| POST | `/support/tickets` | createTicket | body: SupportTicketRequest | SupportTicket |  | Support Ticket Open |
+| GET | `/support/tickets/{ticketId}` | getTicket | `ticketId`* | SupportTicket | yes | Support Ticket View |
+| POST | `/support/tickets/{ticketId}/attachments` | createTicketAttachment | `ticketId`*, body*: object | object |  | Support Ticket Attachment Create |
+| POST | `/support/tickets/{ticketId}/close` | closeTicket | `ticketId`* | object |  | Support Ticket Close |
+| GET | `/support/tickets/{ticketId}/replies` | getTicketReplies | `ticketId`*, `page`, `page_size` | object | yes | Replies List |
+| POST | `/support/tickets/{ticketId}/replies` | createTicketReply | `ticketId`*, body*: object | SupportTicketReply |  | Reply Create |
+| GET | `/tags` | getTags | `page`, `page_size` | object | yes | Tags List |
+| POST | `/tags` | createTag | body: object | Tag |  | New Tag Create |
+| GET | `/tags/{label}` | getTaggedObjects | `label`*, `page`, `page_size` | object | yes | Tagged Objects List |
+| DELETE | `/tags/{label}` | deleteTag | `label`* | object |  | Tag Delete |
+| GET | `/volumes` | getVolumes | `page`, `page_size` | object | yes | Volumes List |
+| POST | `/volumes` | createVolume | body*: object | Volume |  | Volume Create |
+| GET | `/volumes/{volumeId}` | getVolume | `volumeId`*, `page`, `page_size` | Volume | yes | Volume View |
+| PUT | `/volumes/{volumeId}` | updateVolume | `volumeId`*, body*: Volume\|object | Volume |  | Volume Update |
+| DELETE | `/volumes/{volumeId}` | deleteVolume | `volumeId`* | object |  | Volume Delete |
+| POST | `/volumes/{volumeId}/attach` | attachVolume | `volumeId`*, body*: object | Volume |  | Volume Attach |
+| POST | `/volumes/{volumeId}/clone` | cloneVolume | `volumeId`*, body*: object | Volume |  | Volume Clone |
+| POST | `/volumes/{volumeId}/detach` | detachVolume | `volumeId`* | object |  | Volume Detach |
+| POST | `/volumes/{volumeId}/resize` | resizeVolume | `volumeId`*, body*: object | Volume |  | Volume Resize |

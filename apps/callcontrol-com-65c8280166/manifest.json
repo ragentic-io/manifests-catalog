@@ -33,6 +33,36 @@
         "from": "callcontrol-com-65c8280166",
         "kind": "EXPOSES",
         "to": "operation:get:/api/2015-11-01/Reputation/{phoneNumber}"
+      },
+      {
+        "from": "operation:get:/api/2015-11-01/Complaints/{phoneNumber}",
+        "kind": "RETURNS",
+        "to": "schema:Complaints"
+      },
+      {
+        "from": "operation:get:/api/2015-11-01/Enterprise/GetUser/{phoneNumber}",
+        "kind": "RETURNS",
+        "to": "schema:CallControlUser"
+      },
+      {
+        "from": "operation:post:/api/2015-11-01/Enterprise/UpsertUser",
+        "kind": "ACCEPTS",
+        "to": "schema:CallControlUser"
+      },
+      {
+        "from": "operation:post:/api/2015-11-01/Report",
+        "kind": "ACCEPTS",
+        "to": "schema:CallReport"
+      },
+      {
+        "from": "operation:get:/api/2015-11-01/Reputation/{phoneNumber}",
+        "kind": "RETURNS",
+        "to": "schema:Reputation"
+      },
+      {
+        "from": "schema:CallControlUser",
+        "kind": "REFERENCES",
+        "to": "schema:QuietHour"
       }
     ],
     "nodes": [
@@ -42,14 +72,34 @@
       },
       {
         "deprecated": false,
+        "description": "This is the main funciton to get data out of the call control reporting system<br /> Try with api_key 'demo' and phone numbers 18008472911, 13157244022, 172755…",
         "id": "operation:get:/api/2015-11-01/Complaints/{phoneNumber}",
         "kind": "operation",
         "method": "get",
         "name": "Complaints_Complaints",
+        "parameters": [
+          {
+            "description": "phone number to search",
+            "in": "path",
+            "name": "phoneNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/2015-11-01/Complaints/{phoneNumber}",
         "pointer": "#/paths/~1api~12015-11-01~1Complaints~1{phoneNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Complaints"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Complaints: Free service (with registration), providing community and government complaint lookup by phone number for up to 2,000 queries per month.  Details include number complaint rates from (FTC, FCC, IRS, Indiana Attorney  General) and key entity tag extractions from complaints."
+        "summary": "Complaints: Free service (with registration), providing community and government complaint lookup by phone number for up to 2,000 queries per month.  Details include number complaint rates from (FTC, FCC, IRS, Indiana Attorney  General) and key entity tag extractions from complaints.",
+        "tags": [
+          "Complaints"
+        ]
       },
       {
         "deprecated": false,
@@ -57,21 +107,72 @@
         "kind": "operation",
         "method": "get",
         "name": "EnterpriseApi_GetUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "phoneNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/2015-11-01/Enterprise/GetUser/{phoneNumber}",
         "pointer": "#/paths/~1api~12015-11-01~1Enterprise~1GetUser~1{phoneNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CallControlUser"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Enterprise  GET: GetUser\r\nReturns the current information from the user;  try 12066194123 as demo"
+        "summary": "Enterprise  GET: GetUser\r\nReturns the current information from the user;  try 12066194123 as demo",
+        "tags": [
+          "EnterpriseApi"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns information required to perform basic call blocking behaviors Try with api_key 'demo' and phone numbers 18008472911, 13157244022, 17275567300, 180…",
         "id": "operation:get:/api/2015-11-01/Enterprise/ShouldBlock/{phoneNumber}/{userPhoneNumber}",
         "kind": "operation",
         "method": "get",
         "name": "EnterpriseApi_ShouldBlock",
+        "parameters": [
+          {
+            "description": "phone number to search",
+            "in": "path",
+            "name": "phoneNumber",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "(OPTIONAL) phone number of user to look up block rules",
+            "in": "path",
+            "name": "userPhoneNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/2015-11-01/Enterprise/ShouldBlock/{phoneNumber}/{userPhoneNumber}",
         "pointer": "#/paths/~1api~12015-11-01~1Enterprise~1ShouldBlock~1{phoneNumber}~1{userPhoneNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Enterprise  GET: ShouldBlock\r\nSimple Enteprise which returns a call block proceed decision."
+        "summary": "Enterprise  GET: ShouldBlock\r\nSimple Enteprise which returns a call block proceed decision.",
+        "tags": [
+          "EnterpriseApi"
+        ]
       },
       {
         "deprecated": false,
@@ -81,55 +182,124 @@
         "name": "EnterpriseApi_UpsertUser",
         "path": "/api/2015-11-01/Enterprise/UpsertUser",
         "pointer": "#/paths/~1api~12015-11-01~1Enterprise~1UpsertUser/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CallControlUser"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "UpsertUser: insert or update all properties from a user\r\nPhoneNumber\r\nWhiteList (list of phone numbers to whitelist)\r\nBlackList (list of phone numbers to blacklist)\r\nQuietHourList (list of quiet hour objects)\r\nUseCommunityBlacklist (enable / disable community blacklist) default true\r\nBreakThroughQhWithMultipleCalls (break through quiet hours with two calls in 3 minutes)\r\nWhiteListBreaksQh (break through quiet hours for whitelist)"
+        "summary": "UpsertUser: insert or update all properties from a user\r\nPhoneNumber\r\nWhiteList (list of phone numbers to whitelist)\r\nBlackList (list of phone numbers to blacklist)\r\nQuietHourList (list of quiet hour objects)\r\nUseCommunityBlacklist (enable / disable community blacklist) default true\r\nBreakThroughQhWithMultipleCalls (break through quiet hours with two calls in 3 minutes)\r\nWhiteListBreaksQh (break through quiet hours for whitelist)",
+        "tags": [
+          "EnterpriseApi"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns information required to perform basic call blocking behaviors<br /> Try with api_key 'demo' and phone numbers 18008472911, 13157244022, 1727556730…",
         "id": "operation:post:/api/2015-11-01/Report",
         "kind": "operation",
         "method": "post",
         "name": "Reputation_Report",
         "path": "/api/2015-11-01/Report",
         "pointer": "#/paths/~1api~12015-11-01~1Report/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json"
+          ],
+          "required": true,
+          "type": "CallReport"
+        },
+        "responses": [
+          {
+            "status": "400"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Report: report spam calls received to better tune our algorithms based upon spam calls you receive"
+        "summary": "Report: report spam calls received to better tune our algorithms based upon spam calls you receive",
+        "tags": [
+          "Reputation"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This returns information required to perform basic call blocking behaviors<br /> Try with api_key 'demo' and phone numbers 18008472911, 13157244022, 1727556730…",
         "id": "operation:get:/api/2015-11-01/Reputation/{phoneNumber}",
         "kind": "operation",
         "method": "get",
         "name": "Reputation_Reputation",
+        "parameters": [
+          {
+            "description": "phone number to search",
+            "in": "path",
+            "name": "phoneNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/2015-11-01/Reputation/{phoneNumber}",
         "pointer": "#/paths/~1api~12015-11-01~1Reputation~1{phoneNumber}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Reputation"
+          },
+          {
+            "status": "400"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Reputation:\r\nPremium service which returns a reputation informaiton of a phone number via API."
+        "summary": "Reputation:\r\nPremium service which returns a reputation informaiton of a phone number via API.",
+        "tags": [
+          "Reputation"
+        ]
       },
       {
         "id": "schema:CallControlUser",
         "kind": "schema",
-        "name": "CallControlUser"
+        "name": "CallControlUser",
+        "type": "object"
       },
       {
+        "description": "Call Report PhoneNumber, Caller name(optional), Call category(optional), Comment or tags(free text) (optional), Unwanted call - yes/no(optional),",
         "id": "schema:CallReport",
         "kind": "schema",
-        "name": "CallReport"
+        "name": "CallReport",
+        "type": "object"
       },
       {
+        "description": "Free service (with registration) which serves Government Do Not Call data via API Search via phone number returns available data, reported name, total complain…",
         "id": "schema:Complaints",
         "kind": "schema",
-        "name": "Complaints"
+        "name": "Complaints",
+        "type": "object"
       },
       {
         "id": "schema:QuietHour",
         "kind": "schema",
-        "name": "QuietHour"
+        "name": "QuietHour",
+        "type": "object"
       },
       {
         "id": "schema:Reputation",
         "kind": "schema",
-        "name": "Reputation"
+        "name": "Reputation",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `22c0c0aca72b1f4925dbb7530a0933da3051b0c1c4378cdefc84e5b087f1c340` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,279 +32,281 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 ## Operations (274)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| DELETE | `/changes` | delete /changes | Clear changes |
-| GET | `/changes` | get /changes | List changes |
-| DELETE | `/exports` | delete /exports | Clear exports |
-| GET | `/exports` | get /exports | List exports |
-| GET | `/instances` | get /instances | List the available instances |
-| POST | `/instances` | post /instances | Upload DICOM instances |
-| DELETE | `/instances/{id}` | delete /instances/{id} | Delete some instance |
-| GET | `/instances/{id}` | get /instances/{id} | Get information about some instance |
-| POST | `/instances/{id}/anonymize` | post /instances/{id}/anonymize | Anonymize instance |
-| GET | `/instances/{id}/attachments` | get /instances/{id}/attachments | List attachments |
-| DELETE | `/instances/{id}/attachments/{name}` | delete /instances/{id}/attachments/{name} | Delete attachment |
-| GET | `/instances/{id}/attachments/{name}` | get /instances/{id}/attachments/{name} | List operations on attachments |
-| PUT | `/instances/{id}/attachments/{name}` | put /instances/{id}/attachments/{name} | Set attachment |
-| POST | `/instances/{id}/attachments/{name}/compress` | post /instances/{id}/attachments/{name}/compress | Compress attachment |
-| GET | `/instances/{id}/attachments/{name}/compressed-data` | get /instances/{id}/attachments/{name}/compressed-data | Get attachment (no decompression) |
-| GET | `/instances/{id}/attachments/{name}/compressed-md5` | get /instances/{id}/attachments/{name}/compressed-md5 | Get MD5 of attachment on disk |
-| GET | `/instances/{id}/attachments/{name}/compressed-size` | get /instances/{id}/attachments/{name}/compressed-size | Get size of attachment on disk |
-| GET | `/instances/{id}/attachments/{name}/data` | get /instances/{id}/attachments/{name}/data | Get attachment |
-| GET | `/instances/{id}/attachments/{name}/info` | get /instances/{id}/attachments/{name}/info | Get info about the attachment |
-| GET | `/instances/{id}/attachments/{name}/is-compressed` | get /instances/{id}/attachments/{name}/is-compressed | Is attachment compressed? |
-| GET | `/instances/{id}/attachments/{name}/md5` | get /instances/{id}/attachments/{name}/md5 | Get MD5 of attachment |
-| GET | `/instances/{id}/attachments/{name}/size` | get /instances/{id}/attachments/{name}/size | Get size of attachment |
-| POST | `/instances/{id}/attachments/{name}/uncompress` | post /instances/{id}/attachments/{name}/uncompress | Uncompress attachment |
-| POST | `/instances/{id}/attachments/{name}/verify-md5` | post /instances/{id}/attachments/{name}/verify-md5 | Verify attachment |
-| GET | `/instances/{id}/content` | get /instances/{id}/content | Get raw tag |
-| POST | `/instances/{id}/export` | post /instances/{id}/export | Write DICOM onto filesystem |
-| GET | `/instances/{id}/file` | get /instances/{id}/file | Download DICOM |
-| GET | `/instances/{id}/frames` | get /instances/{id}/frames | List available frames |
-| GET | `/instances/{id}/frames/{frame}` | get /instances/{id}/frames/{frame} | List operations |
-| GET | `/instances/{id}/frames/{frame}/image-int16` | get /instances/{id}/frames/{frame}/image-int16 | Decode a frame (int16) |
-| GET | `/instances/{id}/frames/{frame}/image-uint16` | get /instances/{id}/frames/{frame}/image-uint16 | Decode a frame (uint16) |
-| GET | `/instances/{id}/frames/{frame}/image-uint8` | get /instances/{id}/frames/{frame}/image-uint8 | Decode a frame (uint8) |
-| GET | `/instances/{id}/frames/{frame}/matlab` | get /instances/{id}/frames/{frame}/matlab | Decode frame for Matlab |
-| GET | `/instances/{id}/frames/{frame}/numpy` | get /instances/{id}/frames/{frame}/numpy | Decode frame for numpy |
-| GET | `/instances/{id}/frames/{frame}/preview` | get /instances/{id}/frames/{frame}/preview | Decode a frame (preview) |
-| GET | `/instances/{id}/frames/{frame}/raw` | get /instances/{id}/frames/{frame}/raw | Access raw frame |
-| GET | `/instances/{id}/frames/{frame}/raw.gz` | get /instances/{id}/frames/{frame}/raw.gz | Access raw frame (compressed) |
-| GET | `/instances/{id}/frames/{frame}/rendered` | get /instances/{id}/frames/{frame}/rendered | Render a frame |
-| GET | `/instances/{id}/header` | get /instances/{id}/header | Get DICOM meta-header |
-| GET | `/instances/{id}/image-int16` | get /instances/{id}/image-int16 | Decode an image (int16) |
-| GET | `/instances/{id}/image-uint16` | get /instances/{id}/image-uint16 | Decode an image (uint16) |
-| GET | `/instances/{id}/image-uint8` | get /instances/{id}/image-uint8 | Decode an image (uint8) |
-| GET | `/instances/{id}/matlab` | get /instances/{id}/matlab | Decode frame for Matlab |
-| GET | `/instances/{id}/metadata` | get /instances/{id}/metadata | List metadata |
-| DELETE | `/instances/{id}/metadata/{name}` | delete /instances/{id}/metadata/{name} | Delete metadata |
-| GET | `/instances/{id}/metadata/{name}` | get /instances/{id}/metadata/{name} | Get metadata |
-| PUT | `/instances/{id}/metadata/{name}` | put /instances/{id}/metadata/{name} | Set metadata |
-| POST | `/instances/{id}/modify` | post /instances/{id}/modify | Modify instance |
-| GET | `/instances/{id}/module` | get /instances/{id}/module | Get instance module |
-| GET | `/instances/{id}/numpy` | get /instances/{id}/numpy | Decode instance for numpy |
-| GET | `/instances/{id}/patient` | get /instances/{id}/patient | Get parent patient |
-| GET | `/instances/{id}/pdf` | get /instances/{id}/pdf | Get embedded PDF |
-| GET | `/instances/{id}/preview` | get /instances/{id}/preview | Decode an image (preview) |
-| POST | `/instances/{id}/reconstruct` | post /instances/{id}/reconstruct | Reconstruct tags & optionally files of instance |
-| GET | `/instances/{id}/rendered` | get /instances/{id}/rendered | Render an image |
-| GET | `/instances/{id}/series` | get /instances/{id}/series | Get parent series |
-| GET | `/instances/{id}/simplified-tags` | get /instances/{id}/simplified-tags | Get human-readable tags |
-| GET | `/instances/{id}/statistics` | get /instances/{id}/statistics | Get instance statistics |
-| GET | `/instances/{id}/study` | get /instances/{id}/study | Get parent study |
-| GET | `/instances/{id}/tags` | get /instances/{id}/tags | Get DICOM tags |
-| GET | `/jobs` | get /jobs | List jobs |
-| GET | `/jobs/{id}` | get /jobs/{id} | Get job |
-| POST | `/jobs/{id}/cancel` | post /jobs/{id}/cancel | Cancel job |
-| POST | `/jobs/{id}/pause` | post /jobs/{id}/pause | Pause job |
-| POST | `/jobs/{id}/resubmit` | post /jobs/{id}/resubmit | Resubmit job |
-| POST | `/jobs/{id}/resume` | post /jobs/{id}/resume | Resume job |
-| GET | `/jobs/{id}/{key}` | get /jobs/{id}/{key} | Get job output |
-| GET | `/modalities` | get /modalities | List DICOM modalities |
-| DELETE | `/modalities/{id}` | delete /modalities/{id} | Delete DICOM modality |
-| GET | `/modalities/{id}` | get /modalities/{id} | List operations on modality |
-| PUT | `/modalities/{id}` | put /modalities/{id} | Update DICOM modality |
-| GET | `/modalities/{id}/configuration` | get /modalities/{id}/configuration | Get modality configuration |
-| POST | `/modalities/{id}/echo` | post /modalities/{id}/echo | Trigger C-ECHO SCU |
-| POST | `/modalities/{id}/find` | post /modalities/{id}/find | Hierarchical C-FIND SCU |
-| POST | `/modalities/{id}/find-instance` | post /modalities/{id}/find-instance | C-FIND SCU for instances |
-| POST | `/modalities/{id}/find-patient` | post /modalities/{id}/find-patient | C-FIND SCU for patients |
-| POST | `/modalities/{id}/find-series` | post /modalities/{id}/find-series | C-FIND SCU for series |
-| POST | `/modalities/{id}/find-study` | post /modalities/{id}/find-study | C-FIND SCU for studies |
-| POST | `/modalities/{id}/find-worklist` | post /modalities/{id}/find-worklist | C-FIND SCU for worklist |
-| POST | `/modalities/{id}/move` | post /modalities/{id}/move | Trigger C-MOVE SCU |
-| POST | `/modalities/{id}/query` | post /modalities/{id}/query | Trigger C-FIND SCU |
-| POST | `/modalities/{id}/storage-commitment` | post /modalities/{id}/storage-commitment | Trigger storage commitment request |
-| POST | `/modalities/{id}/store` | post /modalities/{id}/store | Trigger C-STORE SCU |
-| POST | `/modalities/{id}/store-straight` | post /modalities/{id}/store-straight | Straight C-STORE SCU |
-| GET | `/patients` | get /patients | List the available patients |
-| DELETE | `/patients/{id}` | delete /patients/{id} | Delete some patient |
-| GET | `/patients/{id}` | get /patients/{id} | Get information about some patient |
-| POST | `/patients/{id}/anonymize` | post /patients/{id}/anonymize | Anonymize patient |
-| GET | `/patients/{id}/archive` | get /patients/{id}/archive | Create ZIP archive |
-| POST | `/patients/{id}/archive` | post /patients/{id}/archive | Create ZIP archive |
-| GET | `/patients/{id}/attachments` | get /patients/{id}/attachments | List attachments |
-| DELETE | `/patients/{id}/attachments/{name}` | delete /patients/{id}/attachments/{name} | Delete attachment |
-| GET | `/patients/{id}/attachments/{name}` | get /patients/{id}/attachments/{name} | List operations on attachments |
-| PUT | `/patients/{id}/attachments/{name}` | put /patients/{id}/attachments/{name} | Set attachment |
-| POST | `/patients/{id}/attachments/{name}/compress` | post /patients/{id}/attachments/{name}/compress | Compress attachment |
-| GET | `/patients/{id}/attachments/{name}/compressed-data` | get /patients/{id}/attachments/{name}/compressed-data | Get attachment (no decompression) |
-| GET | `/patients/{id}/attachments/{name}/compressed-md5` | get /patients/{id}/attachments/{name}/compressed-md5 | Get MD5 of attachment on disk |
-| GET | `/patients/{id}/attachments/{name}/compressed-size` | get /patients/{id}/attachments/{name}/compressed-size | Get size of attachment on disk |
-| GET | `/patients/{id}/attachments/{name}/data` | get /patients/{id}/attachments/{name}/data | Get attachment |
-| GET | `/patients/{id}/attachments/{name}/info` | get /patients/{id}/attachments/{name}/info | Get info about the attachment |
-| GET | `/patients/{id}/attachments/{name}/is-compressed` | get /patients/{id}/attachments/{name}/is-compressed | Is attachment compressed? |
-| GET | `/patients/{id}/attachments/{name}/md5` | get /patients/{id}/attachments/{name}/md5 | Get MD5 of attachment |
-| GET | `/patients/{id}/attachments/{name}/size` | get /patients/{id}/attachments/{name}/size | Get size of attachment |
-| POST | `/patients/{id}/attachments/{name}/uncompress` | post /patients/{id}/attachments/{name}/uncompress | Uncompress attachment |
-| POST | `/patients/{id}/attachments/{name}/verify-md5` | post /patients/{id}/attachments/{name}/verify-md5 | Verify attachment |
-| GET | `/patients/{id}/instances` | get /patients/{id}/instances | Get child instances |
-| GET | `/patients/{id}/instances-tags` | get /patients/{id}/instances-tags | Get tags of instances |
-| GET | `/patients/{id}/media` | get /patients/{id}/media | Create DICOMDIR media |
-| POST | `/patients/{id}/media` | post /patients/{id}/media | Create DICOMDIR media |
-| GET | `/patients/{id}/metadata` | get /patients/{id}/metadata | List metadata |
-| DELETE | `/patients/{id}/metadata/{name}` | delete /patients/{id}/metadata/{name} | Delete metadata |
-| GET | `/patients/{id}/metadata/{name}` | get /patients/{id}/metadata/{name} | Get metadata |
-| PUT | `/patients/{id}/metadata/{name}` | put /patients/{id}/metadata/{name} | Set metadata |
-| POST | `/patients/{id}/modify` | post /patients/{id}/modify | Modify patient |
-| GET | `/patients/{id}/module` | get /patients/{id}/module | Get patient module |
-| GET | `/patients/{id}/protected` | get /patients/{id}/protected | Is the patient protected against recycling? |
-| PUT | `/patients/{id}/protected` | put /patients/{id}/protected | Protect one patient against recycling |
-| POST | `/patients/{id}/reconstruct` | post /patients/{id}/reconstruct | Reconstruct tags & optionally files of patient |
-| GET | `/patients/{id}/series` | get /patients/{id}/series | Get child series |
-| GET | `/patients/{id}/shared-tags` | get /patients/{id}/shared-tags | Get shared tags |
-| GET | `/patients/{id}/statistics` | get /patients/{id}/statistics | Get patient statistics |
-| GET | `/patients/{id}/studies` | get /patients/{id}/studies | Get child studies |
-| GET | `/peers` | get /peers | List Orthanc peers |
-| DELETE | `/peers/{id}` | delete /peers/{id} | Delete Orthanc peer |
-| GET | `/peers/{id}` | get /peers/{id} | List operations on peer |
-| PUT | `/peers/{id}` | put /peers/{id} | Update Orthanc peer |
-| GET | `/peers/{id}/configuration` | get /peers/{id}/configuration | Get peer configuration |
-| POST | `/peers/{id}/store` | post /peers/{id}/store | Send to Orthanc peer |
-| POST | `/peers/{id}/store-straight` | post /peers/{id}/store-straight | Straight store to peer |
-| GET | `/peers/{id}/system` | get /peers/{id}/system | Get peer system information |
-| GET | `/plugins` | get /plugins | List plugins |
-| GET | `/plugins/explorer.js` | get /plugins/explorer.js | JavaScript extensions to Orthanc Explorer |
-| GET | `/plugins/{id}` | get /plugins/{id} | Get plugin |
-| GET | `/queries` | get /queries | List query/retrieve operations |
-| DELETE | `/queries/{id}` | delete /queries/{id} | Delete a query |
-| GET | `/queries/{id}` | get /queries/{id} | List operations on a query |
-| GET | `/queries/{id}/answers` | get /queries/{id}/answers | List answers to a query |
-| GET | `/queries/{id}/answers/{index}` | get /queries/{id}/answers/{index} | List operations on an answer |
-| GET | `/queries/{id}/answers/{index}/content` | get /queries/{id}/answers/{index}/content | Get one answer |
-| POST | `/queries/{id}/answers/{index}/query-instances` | post /queries/{id}/answers/{index}/query-instances | Query the child instances of an answer |
-| POST | `/queries/{id}/answers/{index}/query-series` | post /queries/{id}/answers/{index}/query-series | Query the child series of an answer |
-| POST | `/queries/{id}/answers/{index}/query-studies` | post /queries/{id}/answers/{index}/query-studies | Query the child studies of an answer |
-| POST | `/queries/{id}/answers/{index}/retrieve` | post /queries/{id}/answers/{index}/retrieve | Retrieve one answer |
-| GET | `/queries/{id}/level` | get /queries/{id}/level | Get level of original query |
-| GET | `/queries/{id}/modality` | get /queries/{id}/modality | Get modality of original query |
-| GET | `/queries/{id}/query` | get /queries/{id}/query | Get original query arguments |
-| POST | `/queries/{id}/retrieve` | post /queries/{id}/retrieve | Retrieve all answers |
-| GET | `/series` | get /series | List the available series |
-| DELETE | `/series/{id}` | delete /series/{id} | Delete some series |
-| GET | `/series/{id}` | get /series/{id} | Get information about some series |
-| POST | `/series/{id}/anonymize` | post /series/{id}/anonymize | Anonymize series |
-| GET | `/series/{id}/archive` | get /series/{id}/archive | Create ZIP archive |
-| POST | `/series/{id}/archive` | post /series/{id}/archive | Create ZIP archive |
-| GET | `/series/{id}/attachments` | get /series/{id}/attachments | List attachments |
-| DELETE | `/series/{id}/attachments/{name}` | delete /series/{id}/attachments/{name} | Delete attachment |
-| GET | `/series/{id}/attachments/{name}` | get /series/{id}/attachments/{name} | List operations on attachments |
-| PUT | `/series/{id}/attachments/{name}` | put /series/{id}/attachments/{name} | Set attachment |
-| POST | `/series/{id}/attachments/{name}/compress` | post /series/{id}/attachments/{name}/compress | Compress attachment |
-| GET | `/series/{id}/attachments/{name}/compressed-data` | get /series/{id}/attachments/{name}/compressed-data | Get attachment (no decompression) |
-| GET | `/series/{id}/attachments/{name}/compressed-md5` | get /series/{id}/attachments/{name}/compressed-md5 | Get MD5 of attachment on disk |
-| GET | `/series/{id}/attachments/{name}/compressed-size` | get /series/{id}/attachments/{name}/compressed-size | Get size of attachment on disk |
-| GET | `/series/{id}/attachments/{name}/data` | get /series/{id}/attachments/{name}/data | Get attachment |
-| GET | `/series/{id}/attachments/{name}/info` | get /series/{id}/attachments/{name}/info | Get info about the attachment |
-| GET | `/series/{id}/attachments/{name}/is-compressed` | get /series/{id}/attachments/{name}/is-compressed | Is attachment compressed? |
-| GET | `/series/{id}/attachments/{name}/md5` | get /series/{id}/attachments/{name}/md5 | Get MD5 of attachment |
-| GET | `/series/{id}/attachments/{name}/size` | get /series/{id}/attachments/{name}/size | Get size of attachment |
-| POST | `/series/{id}/attachments/{name}/uncompress` | post /series/{id}/attachments/{name}/uncompress | Uncompress attachment |
-| POST | `/series/{id}/attachments/{name}/verify-md5` | post /series/{id}/attachments/{name}/verify-md5 | Verify attachment |
-| GET | `/series/{id}/instances` | get /series/{id}/instances | Get child instances |
-| GET | `/series/{id}/instances-tags` | get /series/{id}/instances-tags | Get tags of instances |
-| GET | `/series/{id}/media` | get /series/{id}/media | Create DICOMDIR media |
-| POST | `/series/{id}/media` | post /series/{id}/media | Create DICOMDIR media |
-| GET | `/series/{id}/metadata` | get /series/{id}/metadata | List metadata |
-| DELETE | `/series/{id}/metadata/{name}` | delete /series/{id}/metadata/{name} | Delete metadata |
-| GET | `/series/{id}/metadata/{name}` | get /series/{id}/metadata/{name} | Get metadata |
-| PUT | `/series/{id}/metadata/{name}` | put /series/{id}/metadata/{name} | Set metadata |
-| POST | `/series/{id}/modify` | post /series/{id}/modify | Modify series |
-| GET | `/series/{id}/module` | get /series/{id}/module | Get series module |
-| GET | `/series/{id}/numpy` | get /series/{id}/numpy | Decode series for numpy |
-| GET | `/series/{id}/ordered-slices` | get /series/{id}/ordered-slices | Order the slices |
-| GET | `/series/{id}/patient` | get /series/{id}/patient | Get parent patient |
-| POST | `/series/{id}/reconstruct` | post /series/{id}/reconstruct | Reconstruct tags & optionally files of series |
-| GET | `/series/{id}/shared-tags` | get /series/{id}/shared-tags | Get shared tags |
-| GET | `/series/{id}/statistics` | get /series/{id}/statistics | Get series statistics |
-| GET | `/series/{id}/study` | get /series/{id}/study | Get parent study |
-| GET | `/statistics` | get /statistics | Get database statistics |
-| GET | `/storage-commitment/{id}` | get /storage-commitment/{id} | Get storage commitment report |
-| POST | `/storage-commitment/{id}/remove` | post /storage-commitment/{id}/remove | Remove after storage commitment |
-| GET | `/studies` | get /studies | List the available studies |
-| DELETE | `/studies/{id}` | delete /studies/{id} | Delete some study |
-| GET | `/studies/{id}` | get /studies/{id} | Get information about some study |
-| POST | `/studies/{id}/anonymize` | post /studies/{id}/anonymize | Anonymize study |
-| GET | `/studies/{id}/archive` | get /studies/{id}/archive | Create ZIP archive |
-| POST | `/studies/{id}/archive` | post /studies/{id}/archive | Create ZIP archive |
-| GET | `/studies/{id}/attachments` | get /studies/{id}/attachments | List attachments |
-| DELETE | `/studies/{id}/attachments/{name}` | delete /studies/{id}/attachments/{name} | Delete attachment |
-| GET | `/studies/{id}/attachments/{name}` | get /studies/{id}/attachments/{name} | List operations on attachments |
-| PUT | `/studies/{id}/attachments/{name}` | put /studies/{id}/attachments/{name} | Set attachment |
-| POST | `/studies/{id}/attachments/{name}/compress` | post /studies/{id}/attachments/{name}/compress | Compress attachment |
-| GET | `/studies/{id}/attachments/{name}/compressed-data` | get /studies/{id}/attachments/{name}/compressed-data | Get attachment (no decompression) |
-| GET | `/studies/{id}/attachments/{name}/compressed-md5` | get /studies/{id}/attachments/{name}/compressed-md5 | Get MD5 of attachment on disk |
-| GET | `/studies/{id}/attachments/{name}/compressed-size` | get /studies/{id}/attachments/{name}/compressed-size | Get size of attachment on disk |
-| GET | `/studies/{id}/attachments/{name}/data` | get /studies/{id}/attachments/{name}/data | Get attachment |
-| GET | `/studies/{id}/attachments/{name}/info` | get /studies/{id}/attachments/{name}/info | Get info about the attachment |
-| GET | `/studies/{id}/attachments/{name}/is-compressed` | get /studies/{id}/attachments/{name}/is-compressed | Is attachment compressed? |
-| GET | `/studies/{id}/attachments/{name}/md5` | get /studies/{id}/attachments/{name}/md5 | Get MD5 of attachment |
-| GET | `/studies/{id}/attachments/{name}/size` | get /studies/{id}/attachments/{name}/size | Get size of attachment |
-| POST | `/studies/{id}/attachments/{name}/uncompress` | post /studies/{id}/attachments/{name}/uncompress | Uncompress attachment |
-| POST | `/studies/{id}/attachments/{name}/verify-md5` | post /studies/{id}/attachments/{name}/verify-md5 | Verify attachment |
-| GET | `/studies/{id}/instances` | get /studies/{id}/instances | Get child instances |
-| GET | `/studies/{id}/instances-tags` | get /studies/{id}/instances-tags | Get tags of instances |
-| GET | `/studies/{id}/media` | get /studies/{id}/media | Create DICOMDIR media |
-| POST | `/studies/{id}/media` | post /studies/{id}/media | Create DICOMDIR media |
-| POST | `/studies/{id}/merge` | post /studies/{id}/merge | Merge study |
-| GET | `/studies/{id}/metadata` | get /studies/{id}/metadata | List metadata |
-| DELETE | `/studies/{id}/metadata/{name}` | delete /studies/{id}/metadata/{name} | Delete metadata |
-| GET | `/studies/{id}/metadata/{name}` | get /studies/{id}/metadata/{name} | Get metadata |
-| PUT | `/studies/{id}/metadata/{name}` | put /studies/{id}/metadata/{name} | Set metadata |
-| POST | `/studies/{id}/modify` | post /studies/{id}/modify | Modify study |
-| GET | `/studies/{id}/module` | get /studies/{id}/module | Get study module |
-| GET | `/studies/{id}/module-patient` | get /studies/{id}/module-patient | Get patient module of study |
-| GET | `/studies/{id}/patient` | get /studies/{id}/patient | Get parent patient |
-| POST | `/studies/{id}/reconstruct` | post /studies/{id}/reconstruct | Reconstruct tags & optionally files of study |
-| GET | `/studies/{id}/series` | get /studies/{id}/series | Get child series |
-| GET | `/studies/{id}/shared-tags` | get /studies/{id}/shared-tags | Get shared tags |
-| POST | `/studies/{id}/split` | post /studies/{id}/split | Split study |
-| GET | `/studies/{id}/statistics` | get /studies/{id}/statistics | Get study statistics |
-| GET | `/system` | get /system | Get system information |
-| GET | `/tools` | get /tools | List operations |
-| GET | `/tools/accepted-transfer-syntaxes` | get /tools/accepted-transfer-syntaxes | Get accepted transfer syntaxes |
-| PUT | `/tools/accepted-transfer-syntaxes` | put /tools/accepted-transfer-syntaxes | Set accepted transfer syntaxes |
-| POST | `/tools/bulk-anonymize` | post /tools/bulk-anonymize | Anonymize a set of resources |
-| POST | `/tools/bulk-content` | post /tools/bulk-content | Describe a set of resources |
-| POST | `/tools/bulk-delete` | post /tools/bulk-delete | Delete a set of resources |
-| POST | `/tools/bulk-modify` | post /tools/bulk-modify | Modify a set of resources |
-| POST | `/tools/create-archive` | post /tools/create-archive | Create ZIP archive |
-| POST | `/tools/create-dicom` | post /tools/create-dicom | Create one DICOM instance |
-| POST | `/tools/create-media` | post /tools/create-media | Create DICOMDIR media |
-| POST | `/tools/create-media-extended` | post /tools/create-media-extended | Create DICOMDIR media |
-| GET | `/tools/default-encoding` | get /tools/default-encoding | Get default encoding |
-| PUT | `/tools/default-encoding` | put /tools/default-encoding | Set default encoding |
-| GET | `/tools/dicom-conformance` | get /tools/dicom-conformance | Get DICOM conformance |
-| POST | `/tools/dicom-echo` | post /tools/dicom-echo | Trigger C-ECHO SCU |
-| POST | `/tools/execute-script` | post /tools/execute-script | Execute Lua script |
-| POST | `/tools/find` | post /tools/find | Look for local resources |
-| GET | `/tools/generate-uid` | get /tools/generate-uid | Generate an identifier |
-| POST | `/tools/invalidate-tags` | post /tools/invalidate-tags | Invalidate DICOM-as-JSON summaries |
-| GET | `/tools/log-level` | get /tools/log-level | Get main log level |
-| PUT | `/tools/log-level` | put /tools/log-level | Set main log level |
-| GET | `/tools/log-level-dicom` | get /tools/log-level-dicom | Get log level for `dicom` |
-| PUT | `/tools/log-level-dicom` | put /tools/log-level-dicom | Set log level for `dicom` |
-| GET | `/tools/log-level-generic` | get /tools/log-level-generic | Get log level for `generic` |
-| PUT | `/tools/log-level-generic` | put /tools/log-level-generic | Set log level for `generic` |
-| GET | `/tools/log-level-http` | get /tools/log-level-http | Get log level for `http` |
-| PUT | `/tools/log-level-http` | put /tools/log-level-http | Set log level for `http` |
-| GET | `/tools/log-level-jobs` | get /tools/log-level-jobs | Get log level for `jobs` |
-| PUT | `/tools/log-level-jobs` | put /tools/log-level-jobs | Set log level for `jobs` |
-| GET | `/tools/log-level-lua` | get /tools/log-level-lua | Get log level for `lua` |
-| PUT | `/tools/log-level-lua` | put /tools/log-level-lua | Set log level for `lua` |
-| GET | `/tools/log-level-plugins` | get /tools/log-level-plugins | Get log level for `plugins` |
-| PUT | `/tools/log-level-plugins` | put /tools/log-level-plugins | Set log level for `plugins` |
-| GET | `/tools/log-level-sqlite` | get /tools/log-level-sqlite | Get log level for `sqlite` |
-| PUT | `/tools/log-level-sqlite` | put /tools/log-level-sqlite | Set log level for `sqlite` |
-| POST | `/tools/lookup` | post /tools/lookup | Look for DICOM identifiers |
-| GET | `/tools/metrics` | get /tools/metrics | Are metrics collected? |
-| PUT | `/tools/metrics` | put /tools/metrics | Enable collection of metrics |
-| GET | `/tools/metrics-prometheus` | get /tools/metrics-prometheus | Get usage metrics |
-| GET | `/tools/now` | get /tools/now | Get UTC time |
-| GET | `/tools/now-local` | get /tools/now-local | Get local time |
-| POST | `/tools/reconstruct` | post /tools/reconstruct | Reconstruct all the index |
-| POST | `/tools/reset` | post /tools/reset | Restart Orthanc |
-| POST | `/tools/shutdown` | post /tools/shutdown | Shutdown Orthanc |
-| GET | `/tools/unknown-sop-class-accepted` | get /tools/unknown-sop-class-accepted | Is unknown SOP class accepted? |
-| PUT | `/tools/unknown-sop-class-accepted` | put /tools/unknown-sop-class-accepted | Set unknown SOP class accepted |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/changes` | get /changes | `limit`, `since` | object | yes | List changes |
+| DELETE | `/changes` | delete /changes | — | — |  | Clear changes |
+| GET | `/exports` | get /exports | `limit`, `since` | — | yes | List exports |
+| DELETE | `/exports` | delete /exports | — | — |  | Clear exports |
+| GET | `/instances` | get /instances | `expand`, `full`, `limit`, `requestedTags`, `short`, `since` | — | yes | List the available instances |
+| POST | `/instances` | post /instances | body: — | object |  | Upload DICOM instances |
+| GET | `/instances/{id}` | get /instances/{id} | `full`, `requestedTags`, `short`, `id`* | — | yes | Get information about some instance |
+| DELETE | `/instances/{id}` | delete /instances/{id} | `id`* | — |  | Delete some instance |
+| POST | `/instances/{id}/anonymize` | post /instances/{id}/anonymize | `id`*, body: object | — |  | Anonymize instance |
+| GET | `/instances/{id}/attachments` | get /instances/{id}/attachments | `full`, `id`* | — | yes | List attachments |
+| GET | `/instances/{id}/attachments/{name}` | get /instances/{id}/attachments/{name} | `If-None-Match`, `id`*, `name`* | — | yes | List operations on attachments |
+| PUT | `/instances/{id}/attachments/{name}` | put /instances/{id}/attachments/{name} | `If-Match`, `id`*, `name`*, body: — | — |  | Set attachment |
+| DELETE | `/instances/{id}/attachments/{name}` | delete /instances/{id}/attachments/{name} | `If-Match`, `id`*, `name`* | — |  | Delete attachment |
+| POST | `/instances/{id}/attachments/{name}/compress` | post /instances/{id}/attachments/{name}/compress | `id`*, `name`* | — |  | Compress attachment |
+| GET | `/instances/{id}/attachments/{name}/compressed-data` | get /instances/{id}/attachments/{name}/compressed-data | `If-None-Match`, `id`*, `name`* | — | yes | Get attachment (no decompression) |
+| GET | `/instances/{id}/attachments/{name}/compressed-md5` | get /instances/{id}/attachments/{name}/compressed-md5 | `If-None-Match`, `id`*, `name`* | — | yes | Get MD5 of attachment on disk |
+| GET | `/instances/{id}/attachments/{name}/compressed-size` | get /instances/{id}/attachments/{name}/compressed-size | `If-None-Match`, `id`*, `name`* | — | yes | Get size of attachment on disk |
+| GET | `/instances/{id}/attachments/{name}/data` | get /instances/{id}/attachments/{name}/data | `If-None-Match`, `id`*, `name`* | — | yes | Get attachment |
+| GET | `/instances/{id}/attachments/{name}/info` | get /instances/{id}/attachments/{name}/info | `If-None-Match`, `id`*, `name`* | — | yes | Get info about the attachment |
+| GET | `/instances/{id}/attachments/{name}/is-compressed` | get /instances/{id}/attachments/{name}/is-compressed | `If-None-Match`, `id`*, `name`* | — | yes | Is attachment compressed? |
+| GET | `/instances/{id}/attachments/{name}/md5` | get /instances/{id}/attachments/{name}/md5 | `If-None-Match`, `id`*, `name`* | — | yes | Get MD5 of attachment |
+| GET | `/instances/{id}/attachments/{name}/size` | get /instances/{id}/attachments/{name}/size | `If-None-Match`, `id`*, `name`* | — | yes | Get size of attachment |
+| POST | `/instances/{id}/attachments/{name}/uncompress` | post /instances/{id}/attachments/{name}/uncompress | `id`*, `name`* | — |  | Uncompress attachment |
+| POST | `/instances/{id}/attachments/{name}/verify-md5` | post /instances/{id}/attachments/{name}/verify-md5 | `id`*, `name`* | — |  | Verify attachment |
+| GET | `/instances/{id}/content` | get /instances/{id}/content | `...`*, `id`* | — | yes | Get raw tag |
+| POST | `/instances/{id}/export` | post /instances/{id}/export | `id`*, body: — | — |  | Write DICOM onto filesystem |
+| GET | `/instances/{id}/file` | get /instances/{id}/file | `Accept`, `id`* | — | yes | Download DICOM |
+| GET | `/instances/{id}/frames` | get /instances/{id}/frames | `id`* | — | yes | List available frames |
+| GET | `/instances/{id}/frames/{frame}` | get /instances/{id}/frames/{frame} | `frame`*, `id`* | — | yes | List operations |
+| GET | `/instances/{id}/frames/{frame}/image-int16` | get /instances/{id}/frames/{frame}/image-int16 | `quality`, `returnUnsupportedImage`, `Accept`, `frame`*, `id`* | — | yes | Decode a frame (int16) |
+| GET | `/instances/{id}/frames/{frame}/image-uint16` | get /instances/{id}/frames/{frame}/image-uint16 | `quality`, `returnUnsupportedImage`, `Accept`, `frame`*, `id`* | — | yes | Decode a frame (uint16) |
+| GET | `/instances/{id}/frames/{frame}/image-uint8` | get /instances/{id}/frames/{frame}/image-uint8 | `quality`, `returnUnsupportedImage`, `Accept`, `frame`*, `id`* | — | yes | Decode a frame (uint8) |
+| GET | `/instances/{id}/frames/{frame}/matlab` | get /instances/{id}/frames/{frame}/matlab | `frame`*, `id`* | — | yes | Decode frame for Matlab |
+| GET | `/instances/{id}/frames/{frame}/numpy` | get /instances/{id}/frames/{frame}/numpy | `compress`, `rescale`, `frame`*, `id`* | — | yes | Decode frame for numpy |
+| GET | `/instances/{id}/frames/{frame}/preview` | get /instances/{id}/frames/{frame}/preview | `quality`, `returnUnsupportedImage`, `Accept`, `frame`*, `id`* | — | yes | Decode a frame (preview) |
+| GET | `/instances/{id}/frames/{frame}/raw` | get /instances/{id}/frames/{frame}/raw | `frame`*, `id`* | — | yes | Access raw frame |
+| GET | `/instances/{id}/frames/{frame}/raw.gz` | get /instances/{id}/frames/{frame}/raw.gz | `frame`*, `id`* | — | yes | Access raw frame (compressed) |
+| GET | `/instances/{id}/frames/{frame}/rendered` | get /instances/{id}/frames/{frame}/rendered | `height`, `quality`, `returnUnsupportedImage`, `smooth`, `width`, `window-center`, `window-width`, `Accept`, `frame`*, `id`* | — | yes | Render a frame |
+| GET | `/instances/{id}/header` | get /instances/{id}/header | `short`, `simplify`, `id`* | — | yes | Get DICOM meta-header |
+| GET | `/instances/{id}/image-int16` | get /instances/{id}/image-int16 | `quality`, `returnUnsupportedImage`, `Accept`, `id`* | — | yes | Decode an image (int16) |
+| GET | `/instances/{id}/image-uint16` | get /instances/{id}/image-uint16 | `quality`, `returnUnsupportedImage`, `Accept`, `id`* | — | yes | Decode an image (uint16) |
+| GET | `/instances/{id}/image-uint8` | get /instances/{id}/image-uint8 | `quality`, `returnUnsupportedImage`, `Accept`, `id`* | — | yes | Decode an image (uint8) |
+| GET | `/instances/{id}/matlab` | get /instances/{id}/matlab | `id`* | — | yes | Decode frame for Matlab |
+| GET | `/instances/{id}/metadata` | get /instances/{id}/metadata | `expand`, `id`* | — | yes | List metadata |
+| GET | `/instances/{id}/metadata/{name}` | get /instances/{id}/metadata/{name} | `If-None-Match`, `id`*, `name`* | — | yes | Get metadata |
+| PUT | `/instances/{id}/metadata/{name}` | put /instances/{id}/metadata/{name} | `If-Match`, `id`*, `name`*, body: — | — |  | Set metadata |
+| DELETE | `/instances/{id}/metadata/{name}` | delete /instances/{id}/metadata/{name} | `If-Match`, `id`*, `name`* | — |  | Delete metadata |
+| POST | `/instances/{id}/modify` | post /instances/{id}/modify | `id`*, body: object | — |  | Modify instance |
+| GET | `/instances/{id}/module` | get /instances/{id}/module | `ignore-length`, `short`, `simplify`, `id`* | — | yes | Get instance module |
+| GET | `/instances/{id}/numpy` | get /instances/{id}/numpy | `compress`, `rescale`, `id`* | — | yes | Decode instance for numpy |
+| GET | `/instances/{id}/patient` | get /instances/{id}/patient | `full`, `requestedTags`, `short`, `id`* | — | yes | Get parent patient |
+| GET | `/instances/{id}/pdf` | get /instances/{id}/pdf | `id`* | — | yes | Get embedded PDF |
+| GET | `/instances/{id}/preview` | get /instances/{id}/preview | `quality`, `returnUnsupportedImage`, `Accept`, `id`* | — | yes | Decode an image (preview) |
+| POST | `/instances/{id}/reconstruct` | post /instances/{id}/reconstruct | `id`*, body: object | — |  | Reconstruct tags & optionally files of instance |
+| GET | `/instances/{id}/rendered` | get /instances/{id}/rendered | `height`, `quality`, `returnUnsupportedImage`, `smooth`, `width`, `window-center`, `window-width`, `Accept`, `id`* | — | yes | Render an image |
+| GET | `/instances/{id}/series` | get /instances/{id}/series | `full`, `requestedTags`, `short`, `id`* | — | yes | Get parent series |
+| GET | `/instances/{id}/simplified-tags` | get /instances/{id}/simplified-tags | `ignore-length`, `id`* | — | yes | Get human-readable tags |
+| GET | `/instances/{id}/statistics` | get /instances/{id}/statistics | `id`* | object | yes | Get instance statistics |
+| GET | `/instances/{id}/study` | get /instances/{id}/study | `full`, `requestedTags`, `short`, `id`* | — | yes | Get parent study |
+| GET | `/instances/{id}/tags` | get /instances/{id}/tags | `ignore-length`, `short`, `simplify`, `id`* | — | yes | Get DICOM tags |
+| GET | `/jobs` | get /jobs | `expand` | — | yes | List jobs |
+| GET | `/jobs/{id}` | get /jobs/{id} | `id`* | — | yes | Get job |
+| POST | `/jobs/{id}/cancel` | post /jobs/{id}/cancel | `id`* | — |  | Cancel job |
+| POST | `/jobs/{id}/pause` | post /jobs/{id}/pause | `id`* | — |  | Pause job |
+| POST | `/jobs/{id}/resubmit` | post /jobs/{id}/resubmit | `id`* | — |  | Resubmit job |
+| POST | `/jobs/{id}/resume` | post /jobs/{id}/resume | `id`* | — |  | Resume job |
+| GET | `/jobs/{id}/{key}` | get /jobs/{id}/{key} | `id`*, `key`* | — | yes | Get job output |
+| GET | `/modalities` | get /modalities | `expand` | — | yes | List DICOM modalities |
+| GET | `/modalities/{id}` | get /modalities/{id} | `id`* | — | yes | List operations on modality |
+| PUT | `/modalities/{id}` | put /modalities/{id} | `id`*, body: object | — |  | Update DICOM modality |
+| DELETE | `/modalities/{id}` | delete /modalities/{id} | `id`* | — |  | Delete DICOM modality |
+| GET | `/modalities/{id}/configuration` | get /modalities/{id}/configuration | `id`* | — | yes | Get modality configuration |
+| POST | `/modalities/{id}/echo` | post /modalities/{id}/echo | `id`*, body: object | — |  | Trigger C-ECHO SCU |
+| POST | `/modalities/{id}/find` | post /modalities/{id}/find | `id`*, body: — | — |  | Hierarchical C-FIND SCU |
+| POST | `/modalities/{id}/find-instance` | post /modalities/{id}/find-instance | `id`*, body: — | — |  | C-FIND SCU for instances |
+| POST | `/modalities/{id}/find-patient` | post /modalities/{id}/find-patient | `id`*, body: — | — |  | C-FIND SCU for patients |
+| POST | `/modalities/{id}/find-series` | post /modalities/{id}/find-series | `id`*, body: — | — |  | C-FIND SCU for series |
+| POST | `/modalities/{id}/find-study` | post /modalities/{id}/find-study | `id`*, body: — | — |  | C-FIND SCU for studies |
+| POST | `/modalities/{id}/find-worklist` | post /modalities/{id}/find-worklist | `id`*, body: object | — |  | C-FIND SCU for worklist |
+| POST | `/modalities/{id}/move` | post /modalities/{id}/move | `id`*, body: object | object |  | Trigger C-MOVE SCU |
+| POST | `/modalities/{id}/query` | post /modalities/{id}/query | `id`*, body: object | object |  | Trigger C-FIND SCU |
+| POST | `/modalities/{id}/storage-commitment` | post /modalities/{id}/storage-commitment | `id`*, body: object | object |  | Trigger storage commitment request |
+| POST | `/modalities/{id}/store` | post /modalities/{id}/store | `id`*, body: object | object |  | Trigger C-STORE SCU |
+| POST | `/modalities/{id}/store-straight` | post /modalities/{id}/store-straight | `id`*, body: — | object |  | Straight C-STORE SCU |
+| GET | `/patients` | get /patients | `expand`, `full`, `limit`, `requestedTags`, `short`, `since` | — | yes | List the available patients |
+| GET | `/patients/{id}` | get /patients/{id} | `full`, `requestedTags`, `short`, `id`* | — | yes | Get information about some patient |
+| DELETE | `/patients/{id}` | delete /patients/{id} | `id`* | — |  | Delete some patient |
+| POST | `/patients/{id}/anonymize` | post /patients/{id}/anonymize | `id`*, body: object | object |  | Anonymize patient |
+| GET | `/patients/{id}/archive` | get /patients/{id}/archive | `filename`, `transcode`, `id`* | — | yes | Create ZIP archive |
+| POST | `/patients/{id}/archive` | post /patients/{id}/archive | `id`*, body: object | object |  | Create ZIP archive |
+| GET | `/patients/{id}/attachments` | get /patients/{id}/attachments | `full`, `id`* | — | yes | List attachments |
+| GET | `/patients/{id}/attachments/{name}` | get /patients/{id}/attachments/{name} | `If-None-Match`, `id`*, `name`* | — | yes | List operations on attachments |
+| PUT | `/patients/{id}/attachments/{name}` | put /patients/{id}/attachments/{name} | `If-Match`, `id`*, `name`*, body: — | — |  | Set attachment |
+| DELETE | `/patients/{id}/attachments/{name}` | delete /patients/{id}/attachments/{name} | `If-Match`, `id`*, `name`* | — |  | Delete attachment |
+| POST | `/patients/{id}/attachments/{name}/compress` | post /patients/{id}/attachments/{name}/compress | `id`*, `name`* | — |  | Compress attachment |
+| GET | `/patients/{id}/attachments/{name}/compressed-data` | get /patients/{id}/attachments/{name}/compressed-data | `If-None-Match`, `id`*, `name`* | — | yes | Get attachment (no decompression) |
+| GET | `/patients/{id}/attachments/{name}/compressed-md5` | get /patients/{id}/attachments/{name}/compressed-md5 | `If-None-Match`, `id`*, `name`* | — | yes | Get MD5 of attachment on disk |
+| GET | `/patients/{id}/attachments/{name}/compressed-size` | get /patients/{id}/attachments/{name}/compressed-size | `If-None-Match`, `id`*, `name`* | — | yes | Get size of attachment on disk |
+| GET | `/patients/{id}/attachments/{name}/data` | get /patients/{id}/attachments/{name}/data | `If-None-Match`, `id`*, `name`* | — | yes | Get attachment |
+| GET | `/patients/{id}/attachments/{name}/info` | get /patients/{id}/attachments/{name}/info | `If-None-Match`, `id`*, `name`* | — | yes | Get info about the attachment |
+| GET | `/patients/{id}/attachments/{name}/is-compressed` | get /patients/{id}/attachments/{name}/is-compressed | `If-None-Match`, `id`*, `name`* | — | yes | Is attachment compressed? |
+| GET | `/patients/{id}/attachments/{name}/md5` | get /patients/{id}/attachments/{name}/md5 | `If-None-Match`, `id`*, `name`* | — | yes | Get MD5 of attachment |
+| GET | `/patients/{id}/attachments/{name}/size` | get /patients/{id}/attachments/{name}/size | `If-None-Match`, `id`*, `name`* | — | yes | Get size of attachment |
+| POST | `/patients/{id}/attachments/{name}/uncompress` | post /patients/{id}/attachments/{name}/uncompress | `id`*, `name`* | — |  | Uncompress attachment |
+| POST | `/patients/{id}/attachments/{name}/verify-md5` | post /patients/{id}/attachments/{name}/verify-md5 | `id`*, `name`* | — |  | Verify attachment |
+| GET | `/patients/{id}/instances` | get /patients/{id}/instances | `full`, `requestedTags`, `short`, `id`* | — | yes | Get child instances |
+| GET | `/patients/{id}/instances-tags` | get /patients/{id}/instances-tags | `ignore-length`, `short`, `simplify`, `id`* | — | yes | Get tags of instances |
+| GET | `/patients/{id}/media` | get /patients/{id}/media | `extended`, `filename`, `transcode`, `id`* | — | yes | Create DICOMDIR media |
+| POST | `/patients/{id}/media` | post /patients/{id}/media | `id`*, body: object | object |  | Create DICOMDIR media |
+| GET | `/patients/{id}/metadata` | get /patients/{id}/metadata | `expand`, `id`* | — | yes | List metadata |
+| GET | `/patients/{id}/metadata/{name}` | get /patients/{id}/metadata/{name} | `If-None-Match`, `id`*, `name`* | — | yes | Get metadata |
+| PUT | `/patients/{id}/metadata/{name}` | put /patients/{id}/metadata/{name} | `If-Match`, `id`*, `name`*, body: — | — |  | Set metadata |
+| DELETE | `/patients/{id}/metadata/{name}` | delete /patients/{id}/metadata/{name} | `If-Match`, `id`*, `name`* | — |  | Delete metadata |
+| POST | `/patients/{id}/modify` | post /patients/{id}/modify | `id`*, body: object | object |  | Modify patient |
+| GET | `/patients/{id}/module` | get /patients/{id}/module | `ignore-length`, `short`, `simplify`, `id`* | — | yes | Get patient module |
+| GET | `/patients/{id}/protected` | get /patients/{id}/protected | `id`* | — | yes | Is the patient protected against recycling? |
+| PUT | `/patients/{id}/protected` | put /patients/{id}/protected | `id`* | — |  | Protect one patient against recycling |
+| POST | `/patients/{id}/reconstruct` | post /patients/{id}/reconstruct | `id`*, body: object | — |  | Reconstruct tags & optionally files of patient |
+| GET | `/patients/{id}/series` | get /patients/{id}/series | `full`, `requestedTags`, `short`, `id`* | — | yes | Get child series |
+| GET | `/patients/{id}/shared-tags` | get /patients/{id}/shared-tags | `short`, `simplify`, `id`* | — | yes | Get shared tags |
+| GET | `/patients/{id}/statistics` | get /patients/{id}/statistics | `id`* | object | yes | Get patient statistics |
+| GET | `/patients/{id}/studies` | get /patients/{id}/studies | `full`, `requestedTags`, `short`, `id`* | — | yes | Get child studies |
+| GET | `/peers` | get /peers | `expand` | — | yes | List Orthanc peers |
+| GET | `/peers/{id}` | get /peers/{id} | `id`* | — | yes | List operations on peer |
+| PUT | `/peers/{id}` | put /peers/{id} | `id`*, body: object | — |  | Update Orthanc peer |
+| DELETE | `/peers/{id}` | delete /peers/{id} | `id`* | — |  | Delete Orthanc peer |
+| GET | `/peers/{id}/configuration` | get /peers/{id}/configuration | `id`* | — | yes | Get peer configuration |
+| POST | `/peers/{id}/store` | post /peers/{id}/store | `id`*, body: object | object |  | Send to Orthanc peer |
+| POST | `/peers/{id}/store-straight` | post /peers/{id}/store-straight | `id`*, body: — | object |  | Straight store to peer |
+| GET | `/peers/{id}/system` | get /peers/{id}/system | `id`* | — | yes | Get peer system information |
+| GET | `/plugins` | get /plugins | — | — | yes | List plugins |
+| GET | `/plugins/explorer.js` | get /plugins/explorer.js | — | — | yes | JavaScript extensions to Orthanc Explorer |
+| GET | `/plugins/{id}` | get /plugins/{id} | `id`* | — | yes | Get plugin |
+| GET | `/queries` | get /queries | — | — | yes | List query/retrieve operations |
+| GET | `/queries/{id}` | get /queries/{id} | `id`* | — | yes | List operations on a query |
+| DELETE | `/queries/{id}` | delete /queries/{id} | `id`* | — |  | Delete a query |
+| GET | `/queries/{id}/answers` | get /queries/{id}/answers | `expand`, `short`, `simplify`, `id`* | — | yes | List answers to a query |
+| GET | `/queries/{id}/answers/{index}` | get /queries/{id}/answers/{index} | `id`*, `index`* | — | yes | List operations on an answer |
+| GET | `/queries/{id}/answers/{index}/content` | get /queries/{id}/answers/{index}/content | `short`, `simplify`, `id`*, `index`* | — | yes | Get one answer |
+| POST | `/queries/{id}/answers/{index}/query-instances` | post /queries/{id}/answers/{index}/query-instances | `id`*, `index`*, body: object | object |  | Query the child instances of an answer |
+| POST | `/queries/{id}/answers/{index}/query-series` | post /queries/{id}/answers/{index}/query-series | `id`*, `index`*, body: object | object |  | Query the child series of an answer |
+| POST | `/queries/{id}/answers/{index}/query-studies` | post /queries/{id}/answers/{index}/query-studies | `id`*, `index`*, body: object | object |  | Query the child studies of an answer |
+| POST | `/queries/{id}/answers/{index}/retrieve` | post /queries/{id}/answers/{index}/retrieve | `id`*, `index`*, body: object | object |  | Retrieve one answer |
+| GET | `/queries/{id}/level` | get /queries/{id}/level | `id`* | — | yes | Get level of original query |
+| GET | `/queries/{id}/modality` | get /queries/{id}/modality | `id`* | — | yes | Get modality of original query |
+| GET | `/queries/{id}/query` | get /queries/{id}/query | `short`, `simplify`, `id`* | — | yes | Get original query arguments |
+| POST | `/queries/{id}/retrieve` | post /queries/{id}/retrieve | `id`*, body: object | object |  | Retrieve all answers |
+| GET | `/series` | get /series | `expand`, `full`, `limit`, `requestedTags`, `short`, `since` | — | yes | List the available series |
+| GET | `/series/{id}` | get /series/{id} | `full`, `requestedTags`, `short`, `id`* | — | yes | Get information about some series |
+| DELETE | `/series/{id}` | delete /series/{id} | `id`* | — |  | Delete some series |
+| POST | `/series/{id}/anonymize` | post /series/{id}/anonymize | `id`*, body: object | object |  | Anonymize series |
+| GET | `/series/{id}/archive` | get /series/{id}/archive | `filename`, `transcode`, `id`* | — | yes | Create ZIP archive |
+| POST | `/series/{id}/archive` | post /series/{id}/archive | `id`*, body: object | object |  | Create ZIP archive |
+| GET | `/series/{id}/attachments` | get /series/{id}/attachments | `full`, `id`* | — | yes | List attachments |
+| GET | `/series/{id}/attachments/{name}` | get /series/{id}/attachments/{name} | `If-None-Match`, `id`*, `name`* | — | yes | List operations on attachments |
+| PUT | `/series/{id}/attachments/{name}` | put /series/{id}/attachments/{name} | `If-Match`, `id`*, `name`*, body: — | — |  | Set attachment |
+| DELETE | `/series/{id}/attachments/{name}` | delete /series/{id}/attachments/{name} | `If-Match`, `id`*, `name`* | — |  | Delete attachment |
+| POST | `/series/{id}/attachments/{name}/compress` | post /series/{id}/attachments/{name}/compress | `id`*, `name`* | — |  | Compress attachment |
+| GET | `/series/{id}/attachments/{name}/compressed-data` | get /series/{id}/attachments/{name}/compressed-data | `If-None-Match`, `id`*, `name`* | — | yes | Get attachment (no decompression) |
+| GET | `/series/{id}/attachments/{name}/compressed-md5` | get /series/{id}/attachments/{name}/compressed-md5 | `If-None-Match`, `id`*, `name`* | — | yes | Get MD5 of attachment on disk |
+| GET | `/series/{id}/attachments/{name}/compressed-size` | get /series/{id}/attachments/{name}/compressed-size | `If-None-Match`, `id`*, `name`* | — | yes | Get size of attachment on disk |
+| GET | `/series/{id}/attachments/{name}/data` | get /series/{id}/attachments/{name}/data | `If-None-Match`, `id`*, `name`* | — | yes | Get attachment |
+| GET | `/series/{id}/attachments/{name}/info` | get /series/{id}/attachments/{name}/info | `If-None-Match`, `id`*, `name`* | — | yes | Get info about the attachment |
+| GET | `/series/{id}/attachments/{name}/is-compressed` | get /series/{id}/attachments/{name}/is-compressed | `If-None-Match`, `id`*, `name`* | — | yes | Is attachment compressed? |
+| GET | `/series/{id}/attachments/{name}/md5` | get /series/{id}/attachments/{name}/md5 | `If-None-Match`, `id`*, `name`* | — | yes | Get MD5 of attachment |
+| GET | `/series/{id}/attachments/{name}/size` | get /series/{id}/attachments/{name}/size | `If-None-Match`, `id`*, `name`* | — | yes | Get size of attachment |
+| POST | `/series/{id}/attachments/{name}/uncompress` | post /series/{id}/attachments/{name}/uncompress | `id`*, `name`* | — |  | Uncompress attachment |
+| POST | `/series/{id}/attachments/{name}/verify-md5` | post /series/{id}/attachments/{name}/verify-md5 | `id`*, `name`* | — |  | Verify attachment |
+| GET | `/series/{id}/instances` | get /series/{id}/instances | `full`, `requestedTags`, `short`, `id`* | — | yes | Get child instances |
+| GET | `/series/{id}/instances-tags` | get /series/{id}/instances-tags | `ignore-length`, `short`, `simplify`, `id`* | — | yes | Get tags of instances |
+| GET | `/series/{id}/media` | get /series/{id}/media | `extended`, `filename`, `transcode`, `id`* | — | yes | Create DICOMDIR media |
+| POST | `/series/{id}/media` | post /series/{id}/media | `id`*, body: object | object |  | Create DICOMDIR media |
+| GET | `/series/{id}/metadata` | get /series/{id}/metadata | `expand`, `id`* | — | yes | List metadata |
+| GET | `/series/{id}/metadata/{name}` | get /series/{id}/metadata/{name} | `If-None-Match`, `id`*, `name`* | — | yes | Get metadata |
+| PUT | `/series/{id}/metadata/{name}` | put /series/{id}/metadata/{name} | `If-Match`, `id`*, `name`*, body: — | — |  | Set metadata |
+| DELETE | `/series/{id}/metadata/{name}` | delete /series/{id}/metadata/{name} | `If-Match`, `id`*, `name`* | — |  | Delete metadata |
+| POST | `/series/{id}/modify` | post /series/{id}/modify | `id`*, body: object | object |  | Modify series |
+| GET | `/series/{id}/module` | get /series/{id}/module | `ignore-length`, `short`, `simplify`, `id`* | — | yes | Get series module |
+| GET | `/series/{id}/numpy` | get /series/{id}/numpy | `compress`, `rescale`, `id`* | — | yes | Decode series for numpy |
+| GET | `/series/{id}/ordered-slices` | get /series/{id}/ordered-slices | `id`* | object | yes | Order the slices |
+| GET | `/series/{id}/patient` | get /series/{id}/patient | `full`, `requestedTags`, `short`, `id`* | — | yes | Get parent patient |
+| POST | `/series/{id}/reconstruct` | post /series/{id}/reconstruct | `id`*, body: object | — |  | Reconstruct tags & optionally files of series |
+| GET | `/series/{id}/shared-tags` | get /series/{id}/shared-tags | `short`, `simplify`, `id`* | — | yes | Get shared tags |
+| GET | `/series/{id}/statistics` | get /series/{id}/statistics | `id`* | object | yes | Get series statistics |
+| GET | `/series/{id}/study` | get /series/{id}/study | `full`, `requestedTags`, `short`, `id`* | — | yes | Get parent study |
+| GET | `/statistics` | get /statistics | — | object | yes | Get database statistics |
+| GET | `/storage-commitment/{id}` | get /storage-commitment/{id} | `id`* | object | yes | Get storage commitment report |
+| POST | `/storage-commitment/{id}/remove` | post /storage-commitment/{id}/remove | `id`* | — |  | Remove after storage commitment |
+| GET | `/studies` | get /studies | `expand`, `full`, `limit`, `requestedTags`, `short`, `since` | — | yes | List the available studies |
+| GET | `/studies/{id}` | get /studies/{id} | `full`, `requestedTags`, `short`, `id`* | — | yes | Get information about some study |
+| DELETE | `/studies/{id}` | delete /studies/{id} | `id`* | — |  | Delete some study |
+| POST | `/studies/{id}/anonymize` | post /studies/{id}/anonymize | `id`*, body: object | object |  | Anonymize study |
+| GET | `/studies/{id}/archive` | get /studies/{id}/archive | `filename`, `transcode`, `id`* | — | yes | Create ZIP archive |
+| POST | `/studies/{id}/archive` | post /studies/{id}/archive | `id`*, body: object | object |  | Create ZIP archive |
+| GET | `/studies/{id}/attachments` | get /studies/{id}/attachments | `full`, `id`* | — | yes | List attachments |
+| GET | `/studies/{id}/attachments/{name}` | get /studies/{id}/attachments/{name} | `If-None-Match`, `id`*, `name`* | — | yes | List operations on attachments |
+| PUT | `/studies/{id}/attachments/{name}` | put /studies/{id}/attachments/{name} | `If-Match`, `id`*, `name`*, body: — | — |  | Set attachment |
+| DELETE | `/studies/{id}/attachments/{name}` | delete /studies/{id}/attachments/{name} | `If-Match`, `id`*, `name`* | — |  | Delete attachment |
+| POST | `/studies/{id}/attachments/{name}/compress` | post /studies/{id}/attachments/{name}/compress | `id`*, `name`* | — |  | Compress attachment |
+| GET | `/studies/{id}/attachments/{name}/compressed-data` | get /studies/{id}/attachments/{name}/compressed-data | `If-None-Match`, `id`*, `name`* | — | yes | Get attachment (no decompression) |
+| GET | `/studies/{id}/attachments/{name}/compressed-md5` | get /studies/{id}/attachments/{name}/compressed-md5 | `If-None-Match`, `id`*, `name`* | — | yes | Get MD5 of attachment on disk |
+| GET | `/studies/{id}/attachments/{name}/compressed-size` | get /studies/{id}/attachments/{name}/compressed-size | `If-None-Match`, `id`*, `name`* | — | yes | Get size of attachment on disk |
+| GET | `/studies/{id}/attachments/{name}/data` | get /studies/{id}/attachments/{name}/data | `If-None-Match`, `id`*, `name`* | — | yes | Get attachment |
+| GET | `/studies/{id}/attachments/{name}/info` | get /studies/{id}/attachments/{name}/info | `If-None-Match`, `id`*, `name`* | — | yes | Get info about the attachment |
+| GET | `/studies/{id}/attachments/{name}/is-compressed` | get /studies/{id}/attachments/{name}/is-compressed | `If-None-Match`, `id`*, `name`* | — | yes | Is attachment compressed? |
+| GET | `/studies/{id}/attachments/{name}/md5` | get /studies/{id}/attachments/{name}/md5 | `If-None-Match`, `id`*, `name`* | — | yes | Get MD5 of attachment |
+| GET | `/studies/{id}/attachments/{name}/size` | get /studies/{id}/attachments/{name}/size | `If-None-Match`, `id`*, `name`* | — | yes | Get size of attachment |
+| POST | `/studies/{id}/attachments/{name}/uncompress` | post /studies/{id}/attachments/{name}/uncompress | `id`*, `name`* | — |  | Uncompress attachment |
+| POST | `/studies/{id}/attachments/{name}/verify-md5` | post /studies/{id}/attachments/{name}/verify-md5 | `id`*, `name`* | — |  | Verify attachment |
+| GET | `/studies/{id}/instances` | get /studies/{id}/instances | `full`, `requestedTags`, `short`, `id`* | — | yes | Get child instances |
+| GET | `/studies/{id}/instances-tags` | get /studies/{id}/instances-tags | `ignore-length`, `short`, `simplify`, `id`* | — | yes | Get tags of instances |
+| GET | `/studies/{id}/media` | get /studies/{id}/media | `extended`, `filename`, `transcode`, `id`* | — | yes | Create DICOMDIR media |
+| POST | `/studies/{id}/media` | post /studies/{id}/media | `id`*, body: object | object |  | Create DICOMDIR media |
+| POST | `/studies/{id}/merge` | post /studies/{id}/merge | `id`*, body: object | object |  | Merge study |
+| GET | `/studies/{id}/metadata` | get /studies/{id}/metadata | `expand`, `id`* | — | yes | List metadata |
+| GET | `/studies/{id}/metadata/{name}` | get /studies/{id}/metadata/{name} | `If-None-Match`, `id`*, `name`* | — | yes | Get metadata |
+| PUT | `/studies/{id}/metadata/{name}` | put /studies/{id}/metadata/{name} | `If-Match`, `id`*, `name`*, body: — | — |  | Set metadata |
+| DELETE | `/studies/{id}/metadata/{name}` | delete /studies/{id}/metadata/{name} | `If-Match`, `id`*, `name`* | — |  | Delete metadata |
+| POST | `/studies/{id}/modify` | post /studies/{id}/modify | `id`*, body: object | object |  | Modify study |
+| GET | `/studies/{id}/module` | get /studies/{id}/module | `ignore-length`, `short`, `simplify`, `id`* | — | yes | Get study module |
+| GET | `/studies/{id}/module-patient` | get /studies/{id}/module-patient | `ignore-length`, `short`, `simplify`, `id`* | — | yes | Get patient module of study |
+| GET | `/studies/{id}/patient` | get /studies/{id}/patient | `full`, `requestedTags`, `short`, `id`* | — | yes | Get parent patient |
+| POST | `/studies/{id}/reconstruct` | post /studies/{id}/reconstruct | `id`*, body: object | — |  | Reconstruct tags & optionally files of study |
+| GET | `/studies/{id}/series` | get /studies/{id}/series | `full`, `requestedTags`, `short`, `id`* | — | yes | Get child series |
+| GET | `/studies/{id}/shared-tags` | get /studies/{id}/shared-tags | `short`, `simplify`, `id`* | — | yes | Get shared tags |
+| POST | `/studies/{id}/split` | post /studies/{id}/split | `id`*, body: object | object |  | Split study |
+| GET | `/studies/{id}/statistics` | get /studies/{id}/statistics | `id`* | object | yes | Get study statistics |
+| GET | `/system` | get /system | — | object | yes | Get system information |
+| GET | `/tools` | get /tools | — | — | yes | List operations |
+| GET | `/tools/accepted-transfer-syntaxes` | get /tools/accepted-transfer-syntaxes | — | — | yes | Get accepted transfer syntaxes |
+| PUT | `/tools/accepted-transfer-syntaxes` | put /tools/accepted-transfer-syntaxes | body: — | — |  | Set accepted transfer syntaxes |
+| POST | `/tools/bulk-anonymize` | post /tools/bulk-anonymize | body: object | object |  | Anonymize a set of resources |
+| POST | `/tools/bulk-content` | post /tools/bulk-content | body: object | — |  | Describe a set of resources |
+| POST | `/tools/bulk-delete` | post /tools/bulk-delete | body: object | — |  | Delete a set of resources |
+| POST | `/tools/bulk-modify` | post /tools/bulk-modify | body: object | object |  | Modify a set of resources |
+| POST | `/tools/create-archive` | post /tools/create-archive | body: object | object |  | Create ZIP archive |
+| POST | `/tools/create-dicom` | post /tools/create-dicom | body: object | object |  | Create one DICOM instance |
+| POST | `/tools/create-media` | post /tools/create-media | body: object | object |  | Create DICOMDIR media |
+| POST | `/tools/create-media-extended` | post /tools/create-media-extended | body: object | object |  | Create DICOMDIR media |
+| GET | `/tools/default-encoding` | get /tools/default-encoding | — | — | yes | Get default encoding |
+| PUT | `/tools/default-encoding` | put /tools/default-encoding | body: — | — |  | Set default encoding |
+| GET | `/tools/dicom-conformance` | get /tools/dicom-conformance | — | — | yes | Get DICOM conformance |
+| POST | `/tools/dicom-echo` | post /tools/dicom-echo | body: object | — |  | Trigger C-ECHO SCU |
+| POST | `/tools/execute-script` | post /tools/execute-script | body: — | — |  | Execute Lua script |
+| POST | `/tools/find` | post /tools/find | body: object | — |  | Look for local resources |
+| GET | `/tools/generate-uid` | get /tools/generate-uid | `level`* | — | yes | Generate an identifier |
+| POST | `/tools/invalidate-tags` | post /tools/invalidate-tags | — | — |  | Invalidate DICOM-as-JSON summaries |
+| GET | `/tools/log-level` | get /tools/log-level | — | — | yes | Get main log level |
+| PUT | `/tools/log-level` | put /tools/log-level | body: — | — |  | Set main log level |
+| GET | `/tools/log-level-dicom` | get /tools/log-level-dicom | — | — | yes | Get log level for `dicom` |
+| PUT | `/tools/log-level-dicom` | put /tools/log-level-dicom | body: — | — |  | Set log level for `dicom` |
+| GET | `/tools/log-level-generic` | get /tools/log-level-generic | — | — | yes | Get log level for `generic` |
+| PUT | `/tools/log-level-generic` | put /tools/log-level-generic | body: — | — |  | Set log level for `generic` |
+| GET | `/tools/log-level-http` | get /tools/log-level-http | — | — | yes | Get log level for `http` |
+| PUT | `/tools/log-level-http` | put /tools/log-level-http | body: — | — |  | Set log level for `http` |
+| GET | `/tools/log-level-jobs` | get /tools/log-level-jobs | — | — | yes | Get log level for `jobs` |
+| PUT | `/tools/log-level-jobs` | put /tools/log-level-jobs | body: — | — |  | Set log level for `jobs` |
+| GET | `/tools/log-level-lua` | get /tools/log-level-lua | — | — | yes | Get log level for `lua` |
+| PUT | `/tools/log-level-lua` | put /tools/log-level-lua | body: — | — |  | Set log level for `lua` |
+| GET | `/tools/log-level-plugins` | get /tools/log-level-plugins | — | — | yes | Get log level for `plugins` |
+| PUT | `/tools/log-level-plugins` | put /tools/log-level-plugins | body: — | — |  | Set log level for `plugins` |
+| GET | `/tools/log-level-sqlite` | get /tools/log-level-sqlite | — | — | yes | Get log level for `sqlite` |
+| PUT | `/tools/log-level-sqlite` | put /tools/log-level-sqlite | body: — | — |  | Set log level for `sqlite` |
+| POST | `/tools/lookup` | post /tools/lookup | body: — | — |  | Look for DICOM identifiers |
+| GET | `/tools/metrics` | get /tools/metrics | — | — | yes | Are metrics collected? |
+| PUT | `/tools/metrics` | put /tools/metrics | body: — | — |  | Enable collection of metrics |
+| GET | `/tools/metrics-prometheus` | get /tools/metrics-prometheus | — | — | yes | Get usage metrics |
+| GET | `/tools/now` | get /tools/now | — | — | yes | Get UTC time |
+| GET | `/tools/now-local` | get /tools/now-local | — | — | yes | Get local time |
+| POST | `/tools/reconstruct` | post /tools/reconstruct | body: object | — |  | Reconstruct all the index |
+| POST | `/tools/reset` | post /tools/reset | — | — |  | Restart Orthanc |
+| POST | `/tools/shutdown` | post /tools/shutdown | — | — |  | Shutdown Orthanc |
+| GET | `/tools/unknown-sop-class-accepted` | get /tools/unknown-sop-class-accepted | — | — | yes | Is unknown SOP class accepted? |
+| PUT | `/tools/unknown-sop-class-accepted` | put /tools/unknown-sop-class-accepted | body: — | — |  | Set unknown SOP class accepted |

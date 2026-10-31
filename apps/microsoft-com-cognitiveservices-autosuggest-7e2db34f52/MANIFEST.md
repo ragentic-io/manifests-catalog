@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_microsoft_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `0a11fb6db8c9bb0201f4e87e890a88392dd592ba92caceac8f70a9d570cb9582` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,6 +34,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_microsoft_profile_i
 
 14 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/Suggestions` | AutoSuggest | The AutoSuggest API lets you send a search query to Bing and get back a list of query suggestions. This section provides technical details about the query parameters and headers that you use to request suggestions and the JSON response objects that contain them. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/Suggestions` | AutoSuggest | `X-BingApis-SDK`*, `Accept`, `Accept-Language`, `Pragma`, `User-Agent`, `X-MSEdge-ClientID`, `X-MSEdge-ClientIP`, `X-Search-Location`, `cc`, `mkt`, `q`*, `safeSearch`, `setLang`, `ResponseFormat` | Suggestions | yes | The AutoSuggest API lets you send a search query to Bing and get back a list of query suggestions. This section provides technical details about the query parameters and headers that you use to request suggestions and the JSON response objects that contain them. |

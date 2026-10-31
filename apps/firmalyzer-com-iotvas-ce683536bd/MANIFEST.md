@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_firmalyzer.com_static_img_apple
 
 | | |
 | --- | --- |
-| Signed bundle | `a5d2c751decb06436ea80fb4182c90792fda6038da6f0890832bf5044ad47322` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,13 +34,15 @@ logo: "https://api.apis.guru/v2/cache/logo/https_firmalyzer.com_static_img_apple
 
 15 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/device/detect` | detect_device | Detect iot device by service banners and mac address |
-| GET | `/firmware/{firmware_hash}/accounts` | get_accounts | Get default accounts and password hashes of a firmware |
-| GET | `/firmware/{firmware_hash}/config-issues` | get_config_issues | Get default OS configuration issues of a device firmware |
-| GET | `/firmware/{firmware_hash}/expired-certs` | get_expired_certs | Get expired digital certificates embedded in a device firmware |
-| GET | `/firmware/{firmware_hash}/private-keys` | get_private_keys | Get private crypto keys embedded in a device firmware |
-| GET | `/firmware/{firmware_hash}/risk` | get_risk | Get iot device firmware risk analysis |
-| GET | `/firmware/{firmware_hash}/weak-certs` | get_weak_certs | Get certificates with weak fingerprinting algorithms that are mebedded in a device firmware |
-| GET | `/firmware/{firmware_hash}/weak-keys` | get_weak_keys | Get weak crypto keys with short length |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/device/detect` | detect_device | body*: DeviceFeatures | DeviceInfo |  | Detect iot device by service banners and mac address |
+| GET | `/firmware/{firmware_hash}/accounts` | get_accounts | `firmware_hash`* | DefaultAccount[] | yes | Get default accounts and password hashes of a firmware |
+| GET | `/firmware/{firmware_hash}/config-issues` | get_config_issues | `firmware_hash`* | ConfigIssue[] | yes | Get default OS configuration issues of a device firmware |
+| GET | `/firmware/{firmware_hash}/expired-certs` | get_expired_certs | `firmware_hash`* | ExpiredCert[] | yes | Get expired digital certificates embedded in a device firmware |
+| GET | `/firmware/{firmware_hash}/private-keys` | get_private_keys | `firmware_hash`* | CryptoKey[] | yes | Get private crypto keys embedded in a device firmware |
+| GET | `/firmware/{firmware_hash}/risk` | get_risk | `firmware_hash`* | FirmwareRisk | yes | Get iot device firmware risk analysis |
+| GET | `/firmware/{firmware_hash}/weak-certs` | get_weak_certs | `firmware_hash`* | WeakCert[] | yes | Get certificates with weak fingerprinting algorithms that are mebedded in a device firmware |
+| GET | `/firmware/{firmware_hash}/weak-keys` | get_weak_keys | `firmware_hash`* | CryptoKey[] | yes | Get weak crypto keys with short length |

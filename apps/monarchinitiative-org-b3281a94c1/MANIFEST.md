@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `ca161bcde0e1df08acc6d56cbd60e60bf29102c80de96381ae363df45f518d66` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,173 +34,175 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 46 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/association/between/{subject}/{object}` | get_associations_between | Returns associations connecting two entities |
-| GET | `/association/find/{subject_category}` | get_association_by_subject_category_search | Returns list of matching associations for a given subject category |
-| GET | `/association/find/{subject_category}/{object_category}` | get_association_by_subject_and_object_category_search | Returns list of matching associations between a given subject and object category |
-| GET | `/association/from/{subject}` | get_associations_from | Returns list of matching associations starting from a given subject (source) |
-| GET | `/association/to/{object}` | get_associations_to | Returns list of matching associations pointing to a given object (target) |
-| GET | `/association/type/{association_type}` | get_association_by_subject_and_assoc_type | Returns list of matching associations of a given type |
-| GET | `/association/{id}` | get_association_object | Returns the association with a given identifier |
-| GET | `/bioentity/anatomy/{id}/genes` | get_anatomy_gene_associations | Returns genes associated with a given anatomy |
-| GET | `/bioentity/anatomy/{id}/genes/{taxid}` | get_anatomy_gene_by_taxon_associations | Returns gene IDs for all genes associated with a given anatomy, filtered by taxon |
-| GET | `/bioentity/case/{id}/diseases` | get_case_disease_associations | Returns diseases associated with a case |
-| GET | `/bioentity/case/{id}/genotypes` | get_case_genotype_associations | Returns genotypes associated with a case |
-| GET | `/bioentity/case/{id}/models` | get_case_model_associations | Returns models associated with a case |
-| GET | `/bioentity/case/{id}/phenotypes` | get_case_phenotype_associations | Returns phenotypes associated with a case |
-| GET | `/bioentity/case/{id}/variants` | get_case_variant_associations | Returns variants associated with a case |
-| GET | `/bioentity/disease/{id}/cases` | get_disease_case_associations | Returns cases associated with a disease |
-| GET | `/bioentity/disease/{id}/genes` | get_disease_gene_associations | Returns genes associated with a disease |
-| GET | `/bioentity/disease/{id}/genotypes` | get_disease_genotype_associations | Returns genotypes associated with a disease |
-| GET | `/bioentity/disease/{id}/models` | get_disease_model_associations | Returns associations to models of the disease |
-| GET | `/bioentity/disease/{id}/models/{taxon}` | get_disease_model_taxon_associations | Returns associations to models of the disease constrained by taxon |
-| GET | `/bioentity/disease/{id}/pathways` | get_disease_pathway_associations | Returns pathways associated with a disease |
-| GET | `/bioentity/disease/{id}/phenotypes` | get_disease_phenotype_associations | Returns phenotypes associated with disease |
-| GET | `/bioentity/disease/{id}/publications` | get_disease_publication_associations | Returns publications associated with a disease |
-| GET | `/bioentity/disease/{id}/treatment` | get_disease_substance_associations | Returns substances associated with a disease |
-| GET | `/bioentity/disease/{id}/variants` | get_disease_variant_associations | Returns variants associated with a disease |
-| GET | `/bioentity/function/{id}` | get_function_associations | Returns annotations associated to a function term |
-| GET | `/bioentity/function/{id}/genes` | get_function_gene_associations | Returns genes associated to a GO term |
-| GET | `/bioentity/function/{id}/publications` | get_function_publication_associations | Returns publications associated to a GO term |
-| GET | `/bioentity/function/{id}/taxons` | get_function_taxon_associations | Returns taxons associated to a GO term |
-| GET | `/bioentity/gene/{id}/anatomy` | get_gene_anatomy_associations | Returns anatomical entities associated with a gene |
-| GET | `/bioentity/gene/{id}/cases` | get_gene_case_associations | Returns cases associated with a gene |
-| GET | `/bioentity/gene/{id}/diseases` | get_gene_disease_associations | Returns diseases associated with gene |
-| GET | `/bioentity/gene/{id}/expression/anatomy` | get_gene_expression_associations | Returns expression events for a gene |
-| GET | `/bioentity/gene/{id}/function` | get_gene_function_associations | Returns function associations for a gene |
-| GET | `/bioentity/gene/{id}/genotypes` | get_gene_genotype_associations | Returns genotypes associated with a gene |
-| GET | `/bioentity/gene/{id}/homologs` | get_gene_homolog_associations | Returns homologs for a gene |
-| GET | `/bioentity/gene/{id}/interactions` | get_gene_interactions | Returns interactions for a gene |
-| GET | `/bioentity/gene/{id}/models` | get_gene_model_associations | Returns models associated with a gene |
-| GET | `/bioentity/gene/{id}/ortholog/diseases` | get_gene_ortholog_disease_associations | Return diseases associated with orthologs of a gene |
-| GET | `/bioentity/gene/{id}/ortholog/phenotypes` | get_gene_ortholog_phenotype_associations | Return phenotypes associated with orthologs for a gene |
-| GET | `/bioentity/gene/{id}/pathways` | get_gene_pathway_associations | Returns pathways associated with gene |
-| GET | `/bioentity/gene/{id}/phenotypes` | get_gene_phenotype_associations | Returns phenotypes associated with gene |
-| GET | `/bioentity/gene/{id}/publications` | get_gene_publication_associations | Returns publications associated with a gene |
-| GET | `/bioentity/gene/{id}/variants` | get_gene_variant_associations | Returns variants associated with a gene |
-| GET | `/bioentity/genotype/{id}/cases` | get_genotype_case_associations | Returns cases associated with a genotype |
-| GET | `/bioentity/genotype/{id}/diseases` | get_genotype_disease_associations | Returns diseases associated with a genotype |
-| GET | `/bioentity/genotype/{id}/genes` | get_genotype_gene_associations | Returns genes associated with a genotype |
-| GET | `/bioentity/genotype/{id}/genotypes` | get_genotype_genotype_associations | Returns genotypes-genotype associations |
-| GET | `/bioentity/genotype/{id}/models` | get_genotype_model_associations | Returns models associated with a genotype |
-| GET | `/bioentity/genotype/{id}/phenotypes` | get_genotype_phenotype_associations | Returns phenotypes associated with a genotype |
-| GET | `/bioentity/genotype/{id}/publications` | get_genotype_publication_associations | Returns publications associated with a genotype |
-| GET | `/bioentity/genotype/{id}/variants` | get_genotype_variant_associations | Returns genotypes-variant associations |
-| GET | `/bioentity/goterm/{id}/genes` | get_goterm_gene_associations | Returns associations to GO terms for a gene |
-| GET | `/bioentity/model/{id}/cases` | get_model_case_associations | Returns cases associated with a model |
-| GET | `/bioentity/model/{id}/diseases` | get_model_disease_associations | Returns diseases associated with a model |
-| GET | `/bioentity/model/{id}/genes` | get_model_gene_associations | Returns genes associated with a model |
-| GET | `/bioentity/model/{id}/genotypes` | get_model_genotype_associations | Returns genotypes associated with a model |
-| GET | `/bioentity/model/{id}/phenotypes` | get_model_phenotype_associations | Returns phenotypes associated with a model |
-| GET | `/bioentity/model/{id}/publications` | get_model_publication_associations | Returns publications associated with a model |
-| GET | `/bioentity/model/{id}/variants` | get_model_variant_associations | Returns variants associated with a model |
-| GET | `/bioentity/pathway/{id}/diseases` | get_pathway_disease_associations | Returns diseases associated with a pathway |
-| GET | `/bioentity/pathway/{id}/genes` | get_pathway_gene_associations | Returns genes associated with a pathway |
-| GET | `/bioentity/pathway/{id}/phenotypes` | get_pathway_phenotype_associations | Returns phenotypes associated with a pathway |
-| GET | `/bioentity/phenotype/{id}/anatomy` | get_phenotype_anatomy_associations | Returns anatomical entities associated with a phenotype |
-| GET | `/bioentity/phenotype/{id}/cases` | get_phenotype_case_associations | Returns cases associated with a phenotype |
-| GET | `/bioentity/phenotype/{id}/diseases` | get_phenotype_disease_associations | Returns diseases associated with a phenotype |
-| GET | `/bioentity/phenotype/{id}/gene/{taxid}/ids` | get_phenotype_gene_by_taxon_associations | Returns gene IDs for all genes associated with a given phenotype, filtered by taxon |
-| GET | `/bioentity/phenotype/{id}/genes` | get_phenotype_gene_associations | Returns genes associated with a phenotype |
-| GET | `/bioentity/phenotype/{id}/genotypes` | get_phenotype_genotype_associations | Returns genotypes associated with a phenotype |
-| GET | `/bioentity/phenotype/{id}/pathways` | get_phenotype_pathway_associations | Returns pathways associated with a phenotype |
-| GET | `/bioentity/phenotype/{id}/publications` | get_phenotype_publication_associations | Returns publications associated with a phenotype |
-| GET | `/bioentity/phenotype/{id}/variants` | get_phenotype_variant_associations | Returns variants associated with a phenotype |
-| GET | `/bioentity/publication/{id}/diseases` | get_publication_disease_associations | Returns diseases associated with a publication |
-| GET | `/bioentity/publication/{id}/genes` | get_publication_gene_associations | Returns genes associated with a publication |
-| GET | `/bioentity/publication/{id}/genotypes` | get_publication_genotype_associations | Returns genotypes associated with a publication |
-| GET | `/bioentity/publication/{id}/models` | get_publication_model_associations | Returns models associated with a publication |
-| GET | `/bioentity/publication/{id}/phenotypes` | get_publication_phenotype_associations | Returns phenotypes associated with a publication |
-| GET | `/bioentity/publication/{id}/variants` | get_publication_variant_associations | Returns variants associated with a publication |
-| GET | `/bioentity/substance/{id}/participant_in` | get_substance_participant_in_associations | Returns associations between an activity and process and the specified substance |
-| GET | `/bioentity/substance/{id}/roles` | get_substance_role_associations | Returns associations between given drug and roles |
-| GET | `/bioentity/substance/{id}/treats` | get_substance_treats_associations | Returns substances associated with a disease |
-| GET | `/bioentity/variant/{id}/cases` | get_variant_case_associations | Returns cases associated with a variant |
-| GET | `/bioentity/variant/{id}/diseases` | get_variant_disease_associations | Returns diseases associated with a variant |
-| GET | `/bioentity/variant/{id}/genes` | get_variant_gene_associations | Returns genes associated with a variant |
-| GET | `/bioentity/variant/{id}/genotypes` | get_variant_genotype_associations | Returns genotypes associated with a variant |
-| GET | `/bioentity/variant/{id}/models` | get_variant_model_associations | Returns models associated with a variant |
-| GET | `/bioentity/variant/{id}/phenotypes` | get_variant_phenotype_associations | Returns phenotypes associated with a variant |
-| GET | `/bioentity/variant/{id}/publications` | get_variant_publication_associations | Returns publications associated with a variant |
-| GET | `/bioentity/{id}` | get_generic_object | Returns basic info on object of any type |
-| GET | `/bioentity/{id}/associations` | get_generic_associations | Returns associations for an entity regardless of the type |
-| GET | `/bioentity/{type}/{id}` | get_generic_object_by_type | Return basic info on an object for a given type |
-| GET | `/bioentityset/associations` | get_entity_set_associations | Returns compact associations for a given input set |
-| GET | `/bioentityset/descriptor/counts` | get_entity_set_summary | Summary statistics for objects associated |
-| GET | `/bioentityset/graph` | get_entity_set_graph_resource | TODO Graph object spanning all entities |
-| GET | `/bioentityset/homologs/` | get_entity_set_homologs | Returns homology associations for a given input set of genes |
-| GET | `/bioentityset/overrepresentation` | get_over_representation | Summary statistics for objects associated |
-| GET | `/bioentityset/slimmer/anatomy` | get_entity_set_anatomy_slimmer | For a given gene(s), summarize its annotations over a defined set of slim |
-| GET | `/bioentityset/slimmer/function` | get_entity_set_function_slimmer | For a given gene(s), summarize its annotations over a defined set of slim |
-| GET | `/bioentityset/slimmer/phenotype` | get_entity_set_phenotype_slimmer | For a given gene(s), summarize its annotations over a defined set of slim |
-| GET | `/cam/activity` | get_activity_collection | Returns list of models |
-| GET | `/cam/instance/{id}` | get_instance_object | Returns list of matches |
-| GET | `/cam/instances` | get_model_instances | Returns list of all instances |
-| GET | `/cam/model` | get_model_collection | Returns list of ALL models |
-| GET | `/cam/model/contributors` | get_model_contributors | Returns list of all contributors across all models |
-| GET | `/cam/model/properties` | get_model_properties | Returns list of all properties used across all models |
-| GET | `/cam/model/property_values` | get_model_property_values | Returns list property-values for all models |
-| GET | `/cam/model/query` | get_model_query | Returns list of models matching query |
-| GET | `/cam/model/{id}` | get_model_object | Returns a complete model |
-| GET | `/cam/physical_interaction` | get_physical_interaction | Returns list of models |
-| GET | `/evidence/graph/{id}` | get_evidence_graph_object | Returns evidence graph object for a given association |
-| GET | `/evidence/graph/{id}/table` | get_evidence_graph_table | Returns evidence as a association_results object given an association |
-| GET | `/genome/features/within/{build}/{reference}/{begin}/{end}` | get_features_within_resource | Returns list of matches |
-| GET | `/graph/edges/from/{id}` | get_edge_resource | Returns edges emanating from a given node |
-| GET | `/graph/node/{id}` | get_node_resource | Returns a graph node |
-| GET | `/identifier/mapper/{source}/{target}/` | get_identifier_mapper | TODO maps a list of identifiers from a source to a target |
-| GET | `/identifier/prefixes/` | get_prefix_collection | Returns list of prefixes |
-| GET | `/identifier/prefixes/contract/{uri}` | get_prefix_contract | Returns contracted URI |
-| GET | `/identifier/prefixes/expand/{id}` | get_prefix_expand | Returns expanded URI |
-| GET | `/individual/pedigree/{id}` | get_pedigree | Returns list of matches |
-| GET | `/individual/{id}` | get_individual | Returns list of matches |
-| GET | `/mart/case/{object_category}/{taxon}` | get_mart_case_associations_resource | Bulk download of case associations |
-| GET | `/mart/disease/{object_category}/{taxon}` | get_mart_disease_associations_resource | Bulk download of disease associations |
-| GET | `/mart/gene/{object_category}/{taxon}` | get_mart_gene_associations_resource | Bulk download of gene associations |
-| GET | `/mart/ortholog/{taxon1}/{taxon2}` | get_mart_ortholog_associations_resource | Bulk download of orthologs |
-| GET | `/mart/paralog/{taxon1}/{taxon2}` | get_mart_paralog_associations_resource | Bulk download of paralogs |
-| GET | `/metadata/datasets` | get_metadata_for_datasets | Get metadata for all datasets from SciGraph |
-| POST | `/mme/disease` | post_disease_mme | Match a patient to diseases based on their phenotypes |
-| POST | `/mme/fly` | post_fly_mme | Match a patient to fruit fly genes based on similar phenotypes |
-| POST | `/mme/mouse` | post_mouse_mme | Match a patient to mouse genes based on similar phenotypes |
-| POST | `/mme/nematode` | post_nematode_mme | Match a patient to nematode genes based on similar phenotypes |
-| POST | `/mme/zebrafish` | post_zebrafish_mme | Match a patient to zebrafish genes based on similar phenotypes |
-| GET | `/nlp/annotate/` | get_annotate | Annotate a given text using SciGraph annotator |
-| POST | `/nlp/annotate/` | post_annotate | Annotate a given text using SciGraph annotator |
-| GET | `/nlp/annotate/entities` | get_annotate_entities | Annotate a given content using SciGraph annotator and get all entities from content |
-| POST | `/nlp/annotate/entities` | post_annotate_entities | Annotate a given content using SciGraph annotator and get all entities from content |
-| GET | `/ontol/identifier/` | get_ontol_identifier_resource | Fetches a map from CURIEs/IDs to labels |
-| POST | `/ontol/identifier/` | post_ontol_identifier_resource | Fetches a map from CURIEs/IDs to labels |
-| GET | `/ontol/information_content/{subject_category}/{object_category}/{subject_taxon}` | get_information_content_resource | Returns information content (IC) for a set of relevant ontology classes |
-| GET | `/ontol/labeler/` | get_ontol_labeler_resource | Fetches a map from CURIEs/IDs to labels |
-| GET | `/ontol/subgraph/{ontology}/{node}` | get_extract_ontology_subgraph_resource | Extract a subgraph from an ontology |
-| POST | `/ontol/subgraph/{ontology}/{node}` | post_extract_ontology_subgraph_resource | Extract a subgraph from an ontology |
-| GET | `/ontology/shared/{subject}/{object}` | get_ontology_terms_shared_ancestor | Returns the ancestor ontology terms shared by two ontology terms |
-| GET | `/ontology/subset/{id}` | get_ontology_subset | Returns meta data of an ontology subset (slim) |
-| GET | `/ontology/term/{id}` | get_ontology_term | Returns meta data of an ontology term |
-| GET | `/ontology/term/{id}/graph` | get_ontology_term_graph | Returns graph of an ontology term |
-| GET | `/ontology/term/{id}/subgraph` | get_ontology_term_subgraph | Extract a subgraph from an ontology term |
-| GET | `/ontology/term/{id}/subsets` | get_ontology_term_subsets | Returns subsets (slims) associated to an ontology term |
-| GET | `/owl/ontology/dlquery/{query}` | get_dl_query | Placeholder - use OWLery for now |
-| GET | `/owl/ontology/sparql/{query}` | get_sparql_query | Placeholder - use direct SPARQL endpoint for now |
-| GET | `/pair/sim/jaccard/{id1}/{id2}` | get_pair_sim_jaccard_resource | Get pairwise similarity |
-| GET | `/relation/usage/` | get_relation_usage_resource | All relations used plus count of associations |
-| GET | `/relation/usage/between/{subject_category}/{object_category}` | get_relation_usage_between_resource | All relations used plus count of associations |
-| GET | `/relation/usage/pivot` | get_relation_usage_pivot_resource | Relation usage count for all subj x obj category combinations |
-| GET | `/relation/usage/pivot/label` | get_relation_usage_pivot_label_resource | Relation usage count for all subj x obj category combinations, showing label |
-| GET | `/search/entity/autocomplete/{term}` | get_autocomplete | Returns list of matching concepts or entities using lexical search |
-| GET | `/search/entity/hpo-pl/{term}` | get_search_hpo_entities | Returns list of matching concepts or entities using lexical search |
-| GET | `/search/entity/{term}` | get_search_entities | Returns list of matching concepts or entities using lexical search |
-| GET | `/sim/compare` | get_sim_compare | Compare a reference profile vs one profiles |
-| POST | `/sim/compare` | post_sim_compare | Compare a reference profile vs one or more profiles |
-| GET | `/sim/score` | get_annotation_score | Get annotation score |
-| POST | `/sim/score` | post_annotation_score | Get annotation score |
-| GET | `/sim/search` | get_sim_search | Search for phenotypically similar diseases or model genes |
-| GET | `/variation/set/` | get_variant_sets_collection | Returns list of variant sets |
-| POST | `/variation/set/` | post_variant_sets_collection | Creates a new variant set |
-| GET | `/variation/set/analyze/{id}` | get_variant_analyze | Returns list of matches |
-| GET | `/variation/set/archive/{year}/{month}/{day}` | get_variant_sets_archive_collection | Returns list of variant sets from a specified time period |
-| DELETE | `/variation/set/{id}` | delete_variant_set_item | Deletes variant set |
-| GET | `/variation/set/{id}` | get_variant_set_item | Returns a variant set |
-| PUT | `/variation/set/{id}` | put_variant_set_item | Updates a variant set |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/association/between/{subject}/{object}` | get_associations_between | `object`*, `subject`*, `rows`, `start`, `evidence`, `unselect_evidence`, `exclude_automatic_assertions`, `use_compact_associations` | AssociationResults[] | yes | Returns associations connecting two entities |
+| GET | `/association/find/{subject_category}` | get_association_by_subject_category_search | `subject_category`*, `rows`, `start`, `evidence`, `unselect_evidence`, `exclude_automatic_assertions`, `use_compact_associations`, `subject_taxon`, `object_taxon`, `relation` | AssociationResults[] | yes | Returns list of matching associations for a given subject category |
+| GET | `/association/find/{subject_category}/{object_category}` | get_association_by_subject_and_object_category_search | `object_category`*, `subject_category`*, `rows`, `start`, `evidence`, `unselect_evidence`, `exclude_automatic_assertions`, `use_compact_associations`, `subject`, `object`, `subject_taxon`, `object_taxon`, `relation` | AssociationResults[] | yes | Returns list of matching associations between a given subject and object category |
+| GET | `/association/from/{subject}` | get_associations_from | `subject`*, `rows`, `start`, `evidence`, `unselect_evidence`, `exclude_automatic_assertions`, `use_compact_associations`, `object_taxon`, `relation` | AssociationResults[] | yes | Returns list of matching associations starting from a given subject (source) |
+| GET | `/association/to/{object}` | get_associations_to | `object`*, `rows`, `start`, `evidence`, `unselect_evidence`, `exclude_automatic_assertions`, `use_compact_associations` | AssociationResults[] | yes | Returns list of matching associations pointing to a given object (target) |
+| GET | `/association/type/{association_type}` | get_association_by_subject_and_assoc_type | `association_type`*, `rows`, `start`, `evidence`, `unselect_evidence`, `exclude_automatic_assertions`, `use_compact_associations`, `subject`, `object` | AssociationResults[] | yes | Returns list of matching associations of a given type |
+| GET | `/association/{id}` | get_association_object | `id`* | AssociationResults[] | yes | Returns the association with a given identifier |
+| GET | `/bioentity/anatomy/{id}/genes` | get_anatomy_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genes associated with a given anatomy |
+| GET | `/bioentity/anatomy/{id}/genes/{taxid}` | get_anatomy_gene_by_taxon_associations | `taxid`*, `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | — | yes | Returns gene IDs for all genes associated with a given anatomy, filtered by taxon |
+| GET | `/bioentity/case/{id}/diseases` | get_case_disease_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns diseases associated with a case |
+| GET | `/bioentity/case/{id}/genotypes` | get_case_genotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns genotypes associated with a case |
+| GET | `/bioentity/case/{id}/models` | get_case_model_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns models associated with a case |
+| GET | `/bioentity/case/{id}/phenotypes` | get_case_phenotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns phenotypes associated with a case |
+| GET | `/bioentity/case/{id}/variants` | get_case_variant_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns variants associated with a case |
+| GET | `/bioentity/disease/{id}/cases` | get_disease_case_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns cases associated with a disease |
+| GET | `/bioentity/disease/{id}/genes` | get_disease_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q`, `association_type` | AssociationResults | yes | Returns genes associated with a disease |
+| GET | `/bioentity/disease/{id}/genotypes` | get_disease_genotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genotypes associated with a disease |
+| GET | `/bioentity/disease/{id}/models` | get_disease_model_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns associations to models of the disease |
+| GET | `/bioentity/disease/{id}/models/{taxon}` | get_disease_model_taxon_associations | `taxon`*, `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns associations to models of the disease constrained by taxon |
+| GET | `/bioentity/disease/{id}/pathways` | get_disease_pathway_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns pathways associated with a disease |
+| GET | `/bioentity/disease/{id}/phenotypes` | get_disease_phenotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | D2PAssociationResults | yes | Returns phenotypes associated with disease |
+| GET | `/bioentity/disease/{id}/publications` | get_disease_publication_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns publications associated with a disease |
+| GET | `/bioentity/disease/{id}/treatment` | get_disease_substance_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | — | yes | Returns substances associated with a disease |
+| GET | `/bioentity/disease/{id}/variants` | get_disease_variant_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns variants associated with a disease |
+| GET | `/bioentity/function/{id}` | get_function_associations | `id`*, `start`, `rows`, `evidence` | — | yes | Returns annotations associated to a function term |
+| GET | `/bioentity/function/{id}/genes` | get_function_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q`, `relationship_type` | AssociationResults | yes | Returns genes associated to a GO term |
+| GET | `/bioentity/function/{id}/publications` | get_function_publication_associations | `id`*, `start`, `rows`, `evidence` | — | yes | Returns publications associated to a GO term |
+| GET | `/bioentity/function/{id}/taxons` | get_function_taxon_associations | `id`*, `start`, `rows`, `evidence` | — | yes | Returns taxons associated to a GO term |
+| GET | `/bioentity/gene/{id}/anatomy` | get_gene_anatomy_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns anatomical entities associated with a gene |
+| GET | `/bioentity/gene/{id}/cases` | get_gene_case_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns cases associated with a gene |
+| GET | `/bioentity/gene/{id}/diseases` | get_gene_disease_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q`, `association_type` | AssociationResults | yes | Returns diseases associated with gene |
+| GET | `/bioentity/gene/{id}/expression/anatomy` | get_gene_expression_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns expression events for a gene |
+| GET | `/bioentity/gene/{id}/function` | get_gene_function_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns function associations for a gene |
+| GET | `/bioentity/gene/{id}/genotypes` | get_gene_genotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genotypes associated with a gene |
+| GET | `/bioentity/gene/{id}/homologs` | get_gene_homolog_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `homology_type`, `direct_taxon` | AssociationResults | yes | Returns homologs for a gene |
+| GET | `/bioentity/gene/{id}/interactions` | get_gene_interactions | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns interactions for a gene |
+| GET | `/bioentity/gene/{id}/models` | get_gene_model_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns models associated with a gene |
+| GET | `/bioentity/gene/{id}/ortholog/diseases` | get_gene_ortholog_disease_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Return diseases associated with orthologs of a gene |
+| GET | `/bioentity/gene/{id}/ortholog/phenotypes` | get_gene_ortholog_phenotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Return phenotypes associated with orthologs for a gene |
+| GET | `/bioentity/gene/{id}/pathways` | get_gene_pathway_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns pathways associated with gene |
+| GET | `/bioentity/gene/{id}/phenotypes` | get_gene_phenotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns phenotypes associated with gene |
+| GET | `/bioentity/gene/{id}/publications` | get_gene_publication_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns publications associated with a gene |
+| GET | `/bioentity/gene/{id}/variants` | get_gene_variant_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns variants associated with a gene |
+| GET | `/bioentity/genotype/{id}/cases` | get_genotype_case_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns cases associated with a genotype |
+| GET | `/bioentity/genotype/{id}/diseases` | get_genotype_disease_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns diseases associated with a genotype |
+| GET | `/bioentity/genotype/{id}/genes` | get_genotype_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genes associated with a genotype |
+| GET | `/bioentity/genotype/{id}/genotypes` | get_genotype_genotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genotypes-genotype associations |
+| GET | `/bioentity/genotype/{id}/models` | get_genotype_model_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns models associated with a genotype |
+| GET | `/bioentity/genotype/{id}/phenotypes` | get_genotype_phenotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns phenotypes associated with a genotype |
+| GET | `/bioentity/genotype/{id}/publications` | get_genotype_publication_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns publications associated with a genotype |
+| GET | `/bioentity/genotype/{id}/variants` | get_genotype_variant_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genotypes-variant associations |
+| GET | `/bioentity/goterm/{id}/genes` | get_goterm_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `relationship_type` | AssociationResults | yes | Returns associations to GO terms for a gene |
+| GET | `/bioentity/model/{id}/cases` | get_model_case_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns cases associated with a model |
+| GET | `/bioentity/model/{id}/diseases` | get_model_disease_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns diseases associated with a model |
+| GET | `/bioentity/model/{id}/genes` | get_model_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genes associated with a model |
+| GET | `/bioentity/model/{id}/genotypes` | get_model_genotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genotypes associated with a model |
+| GET | `/bioentity/model/{id}/phenotypes` | get_model_phenotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns phenotypes associated with a model |
+| GET | `/bioentity/model/{id}/publications` | get_model_publication_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns publications associated with a model |
+| GET | `/bioentity/model/{id}/variants` | get_model_variant_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns variants associated with a model |
+| GET | `/bioentity/pathway/{id}/diseases` | get_pathway_disease_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns diseases associated with a pathway |
+| GET | `/bioentity/pathway/{id}/genes` | get_pathway_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genes associated with a pathway |
+| GET | `/bioentity/pathway/{id}/phenotypes` | get_pathway_phenotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns phenotypes associated with a pathway |
+| GET | `/bioentity/phenotype/{id}/anatomy` | get_phenotype_anatomy_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | NamedObject[] | yes | Returns anatomical entities associated with a phenotype |
+| GET | `/bioentity/phenotype/{id}/cases` | get_phenotype_case_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns cases associated with a phenotype |
+| GET | `/bioentity/phenotype/{id}/diseases` | get_phenotype_disease_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | D2PAssociationResults | yes | Returns diseases associated with a phenotype |
+| GET | `/bioentity/phenotype/{id}/gene/{taxid}/ids` | get_phenotype_gene_by_taxon_associations | `taxid`*, `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | — | yes | Returns gene IDs for all genes associated with a given phenotype, filtered by taxon |
+| GET | `/bioentity/phenotype/{id}/genes` | get_phenotype_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genes associated with a phenotype |
+| GET | `/bioentity/phenotype/{id}/genotypes` | get_phenotype_genotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genotypes associated with a phenotype |
+| GET | `/bioentity/phenotype/{id}/pathways` | get_phenotype_pathway_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns pathways associated with a phenotype |
+| GET | `/bioentity/phenotype/{id}/publications` | get_phenotype_publication_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns publications associated with a phenotype |
+| GET | `/bioentity/phenotype/{id}/variants` | get_phenotype_variant_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns variants associated with a phenotype |
+| GET | `/bioentity/publication/{id}/diseases` | get_publication_disease_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns diseases associated with a publication |
+| GET | `/bioentity/publication/{id}/genes` | get_publication_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genes associated with a publication |
+| GET | `/bioentity/publication/{id}/genotypes` | get_publication_genotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genotypes associated with a publication |
+| GET | `/bioentity/publication/{id}/models` | get_publication_model_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns models associated with a publication |
+| GET | `/bioentity/publication/{id}/phenotypes` | get_publication_phenotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns phenotypes associated with a publication |
+| GET | `/bioentity/publication/{id}/variants` | get_publication_variant_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns variants associated with a publication |
+| GET | `/bioentity/substance/{id}/participant_in` | get_substance_participant_in_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | Association[] | yes | Returns associations between an activity and process and the specified substance |
+| GET | `/bioentity/substance/{id}/roles` | get_substance_role_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | Association[] | yes | Returns associations between given drug and roles |
+| GET | `/bioentity/substance/{id}/treats` | get_substance_treats_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | — | yes | Returns substances associated with a disease |
+| GET | `/bioentity/variant/{id}/cases` | get_variant_case_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns cases associated with a variant |
+| GET | `/bioentity/variant/{id}/diseases` | get_variant_disease_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns diseases associated with a variant |
+| GET | `/bioentity/variant/{id}/genes` | get_variant_gene_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genes associated with a variant |
+| GET | `/bioentity/variant/{id}/genotypes` | get_variant_genotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns genotypes associated with a variant |
+| GET | `/bioentity/variant/{id}/models` | get_variant_model_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | AssociationResults | yes | Returns models associated with a variant |
+| GET | `/bioentity/variant/{id}/phenotypes` | get_variant_phenotype_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns phenotypes associated with a variant |
+| GET | `/bioentity/variant/{id}/publications` | get_variant_publication_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns publications associated with a variant |
+| GET | `/bioentity/{id}` | get_generic_object | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct` | BioObject | yes | Returns basic info on object of any type |
+| GET | `/bioentity/{id}/associations` | get_generic_associations | `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `taxon`, `direct_taxon`, `relation`, `sort`, `q` | AssociationResults | yes | Returns associations for an entity regardless of the type |
+| GET | `/bioentity/{type}/{id}` | get_generic_object_by_type | `type`*, `id`*, `rows`, `start`, `facet`, `facet_fields`, `unselect_evidence`, `exclude_automatic_assertions`, `fetch_objects`, `use_compact_associations`, `slim`, `evidence`, `direct`, `get_association_counts`, `distinct_counts` | — | yes | Return basic info on an object for a given type |
+| GET | `/bioentityset/associations` | get_entity_set_associations | `subject`, `background`, `object_category`, `object_slim` | AssociationResults[] | yes | Returns compact associations for a given input set |
+| GET | `/bioentityset/descriptor/counts` | get_entity_set_summary | `subject`, `background`, `object_category`, `object_slim` | — | yes | Summary statistics for objects associated |
+| GET | `/bioentityset/graph` | get_entity_set_graph_resource | `subject`, `background`, `object_category`, `object_slim` | — | yes | TODO Graph object spanning all entities |
+| GET | `/bioentityset/homologs/` | get_entity_set_homologs | `subject` | AssociationResults[] | yes | Returns homology associations for a given input set of genes |
+| GET | `/bioentityset/overrepresentation` | get_over_representation | `object_category`, `subject`, `background`, `subject_category`, `max_p_value`, `ontology`, `taxon` | — | yes | Summary statistics for objects associated |
+| GET | `/bioentityset/slimmer/anatomy` | get_entity_set_anatomy_slimmer | `subject`*, `slim`*, `exclude_automatic_assertions`, `rows`, `start` | — | yes | For a given gene(s), summarize its annotations over a defined set of slim |
+| GET | `/bioentityset/slimmer/function` | get_entity_set_function_slimmer | `relationship_type`, `subject`*, `slim`*, `exclude_automatic_assertions`, `rows`, `start` | — | yes | For a given gene(s), summarize its annotations over a defined set of slim |
+| GET | `/bioentityset/slimmer/phenotype` | get_entity_set_phenotype_slimmer | `subject`*, `slim`*, `exclude_automatic_assertions`, `rows`, `start` | — | yes | For a given gene(s), summarize its annotations over a defined set of slim |
+| GET | `/cam/activity` | get_activity_collection | `title`, `contributor` | — | yes | Returns list of models |
+| GET | `/cam/instance/{id}` | get_instance_object | `id`*, `title`, `contributor` | Association[] | yes | Returns list of matches |
+| GET | `/cam/instances` | get_model_instances | — | — | yes | Returns list of all instances |
+| GET | `/cam/model` | get_model_collection | — | — | yes | Returns list of ALL models |
+| GET | `/cam/model/contributors` | get_model_contributors | — | — | yes | Returns list of all contributors across all models |
+| GET | `/cam/model/properties` | get_model_properties | `title`, `contributor` | — | yes | Returns list of all properties used across all models |
+| GET | `/cam/model/property_values` | get_model_property_values | `title`, `contributor` | — | yes | Returns list property-values for all models |
+| GET | `/cam/model/query` | get_model_query | `title`, `contributor` | — | yes | Returns list of models matching query |
+| GET | `/cam/model/{id}` | get_model_object | `id`* | — | yes | Returns a complete model |
+| GET | `/cam/physical_interaction` | get_physical_interaction | `title`, `contributor` | — | yes | Returns list of models |
+| GET | `/evidence/graph/{id}` | get_evidence_graph_object | `id`* | Graph[] | yes | Returns evidence graph object for a given association |
+| GET | `/evidence/graph/{id}/table` | get_evidence_graph_table | `id`*, `is_publication` | AssociationResults[] | yes | Returns evidence as a association_results object given an association |
+| GET | `/genome/features/within/{build}/{reference}/{begin}/{end}` | get_features_within_resource | `build`*, `reference`*, `begin`*, `end`* | SequenceFeature[] | yes | Returns list of matches |
+| GET | `/graph/edges/from/{id}` | get_edge_resource | `id`*, `depth`, `direction`, `relationship_type`, `entail`, `graph` | Graph[] | yes | Returns edges emanating from a given node |
+| GET | `/graph/node/{id}` | get_node_resource | `id`* | BioObject[] | yes | Returns a graph node |
+| GET | `/identifier/mapper/{source}/{target}/` | get_identifier_mapper | `source`*, `target`* | Association[] | yes | TODO maps a list of identifiers from a source to a target |
+| GET | `/identifier/prefixes/` | get_prefix_collection | — | — | yes | Returns list of prefixes |
+| GET | `/identifier/prefixes/contract/{uri}` | get_prefix_contract | `uri`* | — | yes | Returns contracted URI |
+| GET | `/identifier/prefixes/expand/{id}` | get_prefix_expand | `id`* | — | yes | Returns expanded URI |
+| GET | `/individual/pedigree/{id}` | get_pedigree | `id`* | Association[] | yes | Returns list of matches |
+| GET | `/individual/{id}` | get_individual | `id`* | Association[] | yes | Returns list of matches |
+| GET | `/mart/case/{object_category}/{taxon}` | get_mart_case_associations_resource | `taxon`*, `object_category`*, `slim` | — | yes | Bulk download of case associations |
+| GET | `/mart/disease/{object_category}/{taxon}` | get_mart_disease_associations_resource | `taxon`*, `object_category`*, `slim` | — | yes | Bulk download of disease associations |
+| GET | `/mart/gene/{object_category}/{taxon}` | get_mart_gene_associations_resource | `taxon`*, `object_category`*, `slim` | — | yes | Bulk download of gene associations |
+| GET | `/mart/ortholog/{taxon1}/{taxon2}` | get_mart_ortholog_associations_resource | `taxon2`*, `taxon1`* | — | yes | Bulk download of orthologs |
+| GET | `/mart/paralog/{taxon1}/{taxon2}` | get_mart_paralog_associations_resource | `taxon2`*, `taxon1`* | — | yes | Bulk download of paralogs |
+| GET | `/metadata/datasets` | get_metadata_for_datasets | — | — | yes | Get metadata for all datasets from SciGraph |
+| POST | `/mme/disease` | post_disease_mme | body*: mme | — |  | Match a patient to diseases based on their phenotypes |
+| POST | `/mme/fly` | post_fly_mme | body*: mme | — |  | Match a patient to fruit fly genes based on similar phenotypes |
+| POST | `/mme/mouse` | post_mouse_mme | body*: mme | — |  | Match a patient to mouse genes based on similar phenotypes |
+| POST | `/mme/nematode` | post_nematode_mme | body*: mme | — |  | Match a patient to nematode genes based on similar phenotypes |
+| POST | `/mme/zebrafish` | post_zebrafish_mme | body*: mme | — |  | Match a patient to zebrafish genes based on similar phenotypes |
+| GET | `/nlp/annotate/` | get_annotate | `content`, `include_category`, `exclude_category`, `min_length`, `longest_only`, `include_abbreviation`, `include_acronym`, `include_numbers` | — | yes | Annotate a given text using SciGraph annotator |
+| POST | `/nlp/annotate/` | post_annotate | `content`, `include_category`, `exclude_category`, `min_length`, `longest_only`, `include_abbreviation`, `include_acronym`, `include_numbers` | — |  | Annotate a given text using SciGraph annotator |
+| GET | `/nlp/annotate/entities` | get_annotate_entities | `content`, `include_category`, `exclude_category`, `min_length`, `longest_only`, `include_abbreviation`, `include_acronym`, `include_numbers` | EntityAnnotationResult | yes | Annotate a given content using SciGraph annotator and get all entities from content |
+| POST | `/nlp/annotate/entities` | post_annotate_entities | `content`, `include_category`, `exclude_category`, `min_length`, `longest_only`, `include_abbreviation`, `include_acronym`, `include_numbers` | EntityAnnotationResult |  | Annotate a given content using SciGraph annotator and get all entities from content |
+| GET | `/ontol/identifier/` | get_ontol_identifier_resource | `label`* | — | yes | Fetches a map from CURIEs/IDs to labels |
+| POST | `/ontol/identifier/` | post_ontol_identifier_resource | `label`* | — |  | Fetches a map from CURIEs/IDs to labels |
+| GET | `/ontol/information_content/{subject_category}/{object_category}/{subject_taxon}` | get_information_content_resource | `subject_category`*, `object_category`*, `subject_taxon`*, `evidence` | — | yes | Returns information content (IC) for a set of relevant ontology classes |
+| GET | `/ontol/labeler/` | get_ontol_labeler_resource | `id`* | — | yes | Fetches a map from CURIEs/IDs to labels |
+| GET | `/ontol/subgraph/{ontology}/{node}` | get_extract_ontology_subgraph_resource | `node`*, `ontology`*, `cnode`, `include_ancestors`, `include_descendants`, `relation`, `include_meta` | — | yes | Extract a subgraph from an ontology |
+| POST | `/ontol/subgraph/{ontology}/{node}` | post_extract_ontology_subgraph_resource | `node`*, `ontology`*, `cnode`, `include_ancestors`, `include_descendants`, `relation`, `include_meta` | — |  | Extract a subgraph from an ontology |
+| GET | `/ontology/shared/{subject}/{object}` | get_ontology_terms_shared_ancestor | `subject`*, `object`* | — | yes | Returns the ancestor ontology terms shared by two ontology terms |
+| GET | `/ontology/subset/{id}` | get_ontology_subset | `id`* | — | yes | Returns meta data of an ontology subset (slim) |
+| GET | `/ontology/term/{id}` | get_ontology_term | `id`* | — | yes | Returns meta data of an ontology term |
+| GET | `/ontology/term/{id}/graph` | get_ontology_term_graph | `id`*, `graph_type` | — | yes | Returns graph of an ontology term |
+| GET | `/ontology/term/{id}/subgraph` | get_ontology_term_subgraph | `id`*, `cnode`, `include_ancestors`, `include_descendants`, `relation`, `include_meta` | — | yes | Extract a subgraph from an ontology term |
+| GET | `/ontology/term/{id}/subsets` | get_ontology_term_subsets | `id`* | — | yes | Returns subsets (slims) associated to an ontology term |
+| GET | `/owl/ontology/dlquery/{query}` | get_dl_query | `query`* | Association[] | yes | Placeholder - use OWLery for now |
+| GET | `/owl/ontology/sparql/{query}` | get_sparql_query | `query`* | Association[] | yes | Placeholder - use direct SPARQL endpoint for now |
+| GET | `/pair/sim/jaccard/{id1}/{id2}` | get_pair_sim_jaccard_resource | `id2`*, `id1`*, `object_category` | — | yes | Get pairwise similarity |
+| GET | `/relation/usage/` | get_relation_usage_resource | `subject_taxon`, `evidence` | AssociationResults[] | yes | All relations used plus count of associations |
+| GET | `/relation/usage/between/{subject_category}/{object_category}` | get_relation_usage_between_resource | `subject_category`*, `object_category`*, `subject_taxon`, `evidence` | AssociationResults[] | yes | All relations used plus count of associations |
+| GET | `/relation/usage/pivot` | get_relation_usage_pivot_resource | `subject_taxon`, `evidence` | AssociationResults[] | yes | Relation usage count for all subj x obj category combinations |
+| GET | `/relation/usage/pivot/label` | get_relation_usage_pivot_label_resource | `subject_taxon`, `evidence` | AssociationResults[] | yes | Relation usage count for all subj x obj category combinations, showing label |
+| GET | `/search/entity/autocomplete/{term}` | get_autocomplete | `term`*, `fq`, `category`, `prefix`, `include_eqs`, `boost_fx`, `boost_q`, `taxon`, `rows`, `start`, `highlight_class`, `min_match`, `exclude_groups`, `minimal_tokenizer` | AutocompleteResults | yes | Returns list of matching concepts or entities using lexical search |
+| GET | `/search/entity/hpo-pl/{term}` | get_search_hpo_entities | `term`*, `rows`, `start`, `phenotype_group`, `phenotype_group_label`, `anatomical_system`, `anatomical_system_label`, `highlight_class` | LayResults | yes | Returns list of matching concepts or entities using lexical search |
+| GET | `/search/entity/{term}` | get_search_entities | `term`*, `fq`, `category`, `prefix`, `include_eqs`, `boost_fx`, `boost_q`, `taxon`, `rows`, `start`, `highlight_class`, `min_match`, `exclude_groups`, `minimal_tokenizer` | SearchResult | yes | Returns list of matching concepts or entities using lexical search |
+| GET | `/sim/compare` | get_sim_compare | `is_feature_set`, `metric`, `ref_id`, `query_id` | SimResult | yes | Compare a reference profile vs one profiles |
+| POST | `/sim/compare` | post_sim_compare | body*: CompareInput | SimResult |  | Compare a reference profile vs one or more profiles |
+| GET | `/sim/score` | get_annotation_score | `id`, `absent_id` | SufficiencyOutput | yes | Get annotation score |
+| POST | `/sim/score` | post_annotation_score | body*: SufficiencyPostInput | SufficiencyOutput |  | Get annotation score |
+| GET | `/sim/search` | get_sim_search | `is_feature_set`, `metric`, `id`, `limit`, `taxon` | SimResult | yes | Search for phenotypically similar diseases or model genes |
+| GET | `/variation/set/` | get_variant_sets_collection | `page`, `per_page` | Page_of_variant_sets | yes | Returns list of variant sets |
+| POST | `/variation/set/` | post_variant_sets_collection | body*: variant_set | — |  | Creates a new variant set |
+| GET | `/variation/set/analyze/{id}` | get_variant_analyze | `id`* | Association[] | yes | Returns list of matches |
+| GET | `/variation/set/archive/{year}/{month}/{day}` | get_variant_sets_archive_collection | `year`*, `month`*, `day`*, `page`, `per_page` | Page_of_variant_sets | yes | Returns list of variant sets from a specified time period |
+| GET | `/variation/set/{id}` | get_variant_set_item | `id`* | variant_set | yes | Returns a variant set |
+| PUT | `/variation/set/{id}` | put_variant_set_item | `id`*, body*: variant_set | — |  | Updates a variant set |
+| DELETE | `/variation/set/{id}` | delete_variant_set_item | `id`* | — |  | Deletes variant set |

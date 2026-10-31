@@ -18,6 +18,21 @@
         "from": "d7networks-com-8c57f59e9d",
         "kind": "EXPOSES",
         "to": "operation:post:/sendbatch"
+      },
+      {
+        "from": "operation:post:/send",
+        "kind": "ACCEPTS",
+        "to": "schema:SendSMSRequest"
+      },
+      {
+        "from": "operation:post:/sendbatch",
+        "kind": "ACCEPTS",
+        "to": "schema:BulkSMSRequest"
+      },
+      {
+        "from": "schema:BulkSMSRequest",
+        "kind": "REFERENCES",
+        "to": "schema:Message"
       }
     ],
     "nodes": [
@@ -27,12 +42,22 @@
       },
       {
         "deprecated": false,
+        "description": "Check account balance",
         "id": "operation:get:/balance",
         "kind": "operation",
         "method": "get",
         "name": "BalanceGet",
         "path": "/balance",
         "pointer": "#/paths/~1balance/get",
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "auth": []
@@ -42,12 +67,43 @@
       },
       {
         "deprecated": false,
+        "description": "Send SMS to recipients using D7 SMS Gateway",
         "id": "operation:post:/send",
         "kind": "operation",
         "method": "post",
         "name": "SendPost",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/send",
         "pointer": "#/paths/~1send/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "SendSMSRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          },
+          {
+            "status": "500"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "auth": []
@@ -57,12 +113,40 @@
       },
       {
         "deprecated": false,
+        "description": "Send Bulk SMS to multiple recipients using D7 SMS Gateway",
         "id": "operation:post:/sendbatch",
         "kind": "operation",
         "method": "post",
         "name": "SendbatchPost",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Accept",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/sendbatch",
         "pointer": "#/paths/~1sendbatch/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "BulkSMSRequest"
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "auth": []
@@ -71,19 +155,24 @@
         "summary": "Bulk SMS"
       },
       {
+        "description": "Bulk SMS Request",
         "id": "schema:BulkSMSRequest",
         "kind": "schema",
-        "name": "BulkSMSRequest"
+        "name": "BulkSMSRequest",
+        "type": "object"
       },
       {
         "id": "schema:Message",
         "kind": "schema",
-        "name": "Message"
+        "name": "Message",
+        "type": "object"
       },
       {
+        "description": "Send SMS Request",
         "id": "schema:SendSMSRequest",
         "kind": "schema",
-        "name": "SendSMSRequest"
+        "name": "SendSMSRequest",
+        "type": "object"
       }
     ]
   },

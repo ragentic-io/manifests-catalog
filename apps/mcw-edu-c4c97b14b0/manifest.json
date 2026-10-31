@@ -503,6 +503,291 @@
         "from": "mcw-edu-c4c97b14b0",
         "kind": "EXPOSES",
         "to": "operation:get:/strains/{rgdId}"
+      },
+      {
+        "from": "operation:post:/annotations/",
+        "kind": "ACCEPTS",
+        "to": "schema:AnnotationRequest"
+      },
+      {
+        "from": "operation:post:/annotations/",
+        "kind": "RETURNS",
+        "to": "schema:Annotation"
+      },
+      {
+        "from": "operation:get:/annotations/accId/{rgdId}",
+        "kind": "RETURNS",
+        "to": "schema:MapPair"
+      },
+      {
+        "from": "operation:get:/annotations/reference/{refRgdId}",
+        "kind": "RETURNS",
+        "to": "schema:Annotation"
+      },
+      {
+        "from": "operation:get:/annotations/rgdId/{rgdId}",
+        "kind": "RETURNS",
+        "to": "schema:Annotation"
+      },
+      {
+        "from": "operation:get:/annotations/rgdId/{rgdId}/{ontologyPrefix}",
+        "kind": "RETURNS",
+        "to": "schema:Annotation"
+      },
+      {
+        "from": "operation:get:/annotations/{accId}/{rgdId}",
+        "kind": "RETURNS",
+        "to": "schema:Annotation"
+      },
+      {
+        "from": "operation:get:/annotations/{accId}/{speciesTypeKey}/{includeChildren}",
+        "kind": "RETURNS",
+        "to": "schema:Annotation"
+      },
+      {
+        "from": "operation:post:/enrichment/annotatedGenes",
+        "kind": "ACCEPTS",
+        "to": "schema:EnrichmentGeneRequest"
+      },
+      {
+        "from": "operation:post:/enrichment/data",
+        "kind": "ACCEPTS",
+        "to": "schema:EnrichmentRequest"
+      },
+      {
+        "from": "operation:get:/genes/affyId/{affyId}/{speciesTypeKey}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/alias/{aliasSymbol}/{speciesTypeKey}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/allele/{rgdId}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:post:/genes/annotation",
+        "kind": "ACCEPTS",
+        "to": "schema:AnnotatedGeneRequest"
+      },
+      {
+        "from": "operation:post:/genes/annotation",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/annotation/{accId}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/annotation/{accId}/{speciesTypeKey}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/keyword/{keyword}/{speciesTypeKey}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/map/{mapKey}",
+        "kind": "RETURNS",
+        "to": "schema:MappedGene"
+      },
+      {
+        "from": "operation:get:/genes/mapped/{chr}/{start}/{stop}/{mapKey}",
+        "kind": "RETURNS",
+        "to": "schema:MappedGene"
+      },
+      {
+        "from": "operation:post:/genes/orthologs",
+        "kind": "ACCEPTS",
+        "to": "schema:OrthologRequest"
+      },
+      {
+        "from": "operation:get:/genes/orthologs/{rgdId}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/region/{chr}/{start}/{stop}/{mapKey}",
+        "kind": "RETURNS",
+        "to": "schema:MappedGenePosition"
+      },
+      {
+        "from": "operation:get:/genes/species/{speciesTypeKey}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/{chr}/{start}/{stop}/{mapKey}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/{rgdId}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:get:/genes/{symbol}/{speciesTypeKey}",
+        "kind": "RETURNS",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/EnsemblGene",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/EnsemblProtein",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/EnsemblTranscript",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/GTEx",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/GenBankNucleotide",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/GenBankProtein",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/HGNC",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/MGI",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/NCBIGene",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:post:/lookup/id/map/UniProt",
+        "kind": "ACCEPTS",
+        "to": "schema:RGDIDListRequest"
+      },
+      {
+        "from": "operation:get:/lookup/maps/{speciesTypeKey}",
+        "kind": "RETURNS",
+        "to": "schema:Map"
+      },
+      {
+        "from": "operation:get:/maps/chr/{chromosome}/{mapKey}",
+        "kind": "RETURNS",
+        "to": "schema:Chromosome"
+      },
+      {
+        "from": "operation:get:/maps/{speciesTypeKey}",
+        "kind": "RETURNS",
+        "to": "schema:Map"
+      },
+      {
+        "from": "operation:get:/ontology/term/{accId}",
+        "kind": "RETURNS",
+        "to": "schema:Term"
+      },
+      {
+        "from": "operation:get:/pathways/diagrams/search/{searchString}",
+        "kind": "RETURNS",
+        "to": "schema:Pathway"
+      },
+      {
+        "from": "operation:get:/pathways/diagramsForCategory/{category}",
+        "kind": "RETURNS",
+        "to": "schema:Pathway"
+      },
+      {
+        "from": "operation:get:/qtls/mapped/{chr}/{start}/{stop}/{mapKey}",
+        "kind": "RETURNS",
+        "to": "schema:MappedQTL"
+      },
+      {
+        "from": "operation:get:/qtls/{chr}/{start}/{stop}/{mapKey}",
+        "kind": "RETURNS",
+        "to": "schema:QTL"
+      },
+      {
+        "from": "operation:get:/qtls/{rgdId}",
+        "kind": "RETURNS",
+        "to": "schema:QTL"
+      },
+      {
+        "from": "operation:get:/sslps/mapped/{chr}/{start}/{stop}/{mapKey}",
+        "kind": "RETURNS",
+        "to": "schema:MappedSSLP"
+      },
+      {
+        "from": "operation:get:/strains/all",
+        "kind": "RETURNS",
+        "to": "schema:Strain"
+      },
+      {
+        "from": "operation:get:/strains/{chr}/{start}/{stop}/{mapKey}",
+        "kind": "RETURNS",
+        "to": "schema:Strain"
+      },
+      {
+        "from": "operation:get:/strains/{rgdId}",
+        "kind": "RETURNS",
+        "to": "schema:Strain"
+      },
+      {
+        "from": "schema:MappedGene",
+        "kind": "REFERENCES",
+        "to": "schema:Gene"
+      },
+      {
+        "from": "schema:MappedQTL",
+        "kind": "REFERENCES",
+        "to": "schema:QTL"
+      },
+      {
+        "from": "schema:MappedSSLP",
+        "kind": "REFERENCES",
+        "to": "schema:SSLP"
+      },
+      {
+        "from": "schema:Pathway",
+        "kind": "REFERENCES",
+        "to": "schema:PathwayObject"
+      },
+      {
+        "from": "schema:Pathway",
+        "kind": "REFERENCES",
+        "to": "schema:Reference"
+      },
+      {
+        "from": "schema:Strain",
+        "kind": "REFERENCES",
+        "to": "schema:Status"
+      },
+      {
+        "from": "schema:Term",
+        "kind": "REFERENCES",
+        "to": "schema:TermXRef"
       }
     ],
     "nodes": [
@@ -516,10 +801,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getAffectedGenomicModelsUsingGET",
+        "parameters": [
+          {
+            "description": "The taxon ID for species",
+            "in": "path",
+            "name": "taxonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/agr/affectedGenomicModels/{taxonId}",
         "pointer": "#/paths/~1agr~1affectedGenomicModels~1{taxonId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get affected genomic models (rat strains with gene alleles) submitted by RGD to AGR by taxonId"
+        "summary": "Get affected genomic models (rat strains with gene alleles) submitted by RGD to AGR by taxonId",
+        "tags": [
+          "AGR"
+        ]
       },
       {
         "deprecated": false,
@@ -527,10 +840,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getAllelesForTaxonUsingGET",
+        "parameters": [
+          {
+            "description": "The taxon ID for species",
+            "in": "path",
+            "name": "taxonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/agr/alleles/{taxonId}",
         "pointer": "#/paths/~1agr~1alleles~1{taxonId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get gene allele records submitted by RGD to AGR by taxonId"
+        "summary": "Get gene allele records submitted by RGD to AGR by taxonId",
+        "tags": [
+          "AGR"
+        ]
       },
       {
         "deprecated": false,
@@ -538,10 +879,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getExpressionForTaxonUsingGET",
+        "parameters": [
+          {
+            "description": "The taxon ID for species",
+            "in": "path",
+            "name": "taxonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/agr/expression/{taxonId}",
         "pointer": "#/paths/~1agr~1expression~1{taxonId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get expression annotations submitted by RGD to AGR by taxonId"
+        "summary": "Get expression annotations submitted by RGD to AGR by taxonId",
+        "tags": [
+          "AGR"
+        ]
       },
       {
         "deprecated": false,
@@ -549,10 +918,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getPhenotypesForTaxonUsingGET",
+        "parameters": [
+          {
+            "description": "The taxon ID for species",
+            "in": "path",
+            "name": "taxonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/agr/phenotypes/{taxonId}",
         "pointer": "#/paths/~1agr~1phenotypes~1{taxonId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get phenotype annotations submitted by RGD to AGR by taxonId"
+        "summary": "Get phenotype annotations submitted by RGD to AGR by taxonId",
+        "tags": [
+          "AGR"
+        ]
       },
       {
         "deprecated": false,
@@ -560,10 +957,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getVariantsForTaxonUsingGET",
+        "parameters": [
+          {
+            "description": "The taxon ID for species",
+            "in": "path",
+            "name": "taxonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/agr/variants/{taxonId}",
         "pointer": "#/paths/~1agr~1variants~1{taxonId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get basic variant records submitted by RGD to AGR by taxonId"
+        "summary": "Get basic variant records submitted by RGD to AGR by taxonId",
+        "tags": [
+          "AGR"
+        ]
       },
       {
         "deprecated": false,
@@ -571,10 +996,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenesForLatestAssemblyUsingGET",
+        "parameters": [
+          {
+            "description": "The taxon ID for species",
+            "in": "path",
+            "name": "taxonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/agr/{taxonId}",
         "pointer": "#/paths/~1agr~1{taxonId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get gene records submitted by RGD to AGR by taxonId"
+        "summary": "Get gene records submitted by RGD to AGR by taxonId",
+        "tags": [
+          "AGR"
+        ]
       },
       {
         "deprecated": false,
@@ -584,8 +1037,37 @@
         "name": "getAnnotationsUsingPOST",
         "path": "/annotations/",
         "pointer": "#/paths/~1annotations~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AnnotationRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Annotation[]"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Return a list of genes annotated to an ontology term"
+        "summary": "Return a list of genes annotated to an ontology term",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -593,10 +1075,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getTermAccIdsUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/annotations/accId/{rgdId}",
         "pointer": "#/paths/~1annotations~1accId~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MapPair[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list ontology term accession IDs annotated to an rgd object"
+        "summary": "Returns a list ontology term accession IDs annotated to an rgd object",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -604,10 +1114,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnnotationCountByAccIdUsingGET",
+        "parameters": [
+          {
+            "description": "Ontology term accession ID",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "true: return annotations for the term and children, false: return annotations for the term only",
+            "in": "path",
+            "name": "includeChildren",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
         "path": "/annotations/count/{accId}/{includeChildren}",
         "pointer": "#/paths/~1annotations~1count~1{accId}~1{includeChildren}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns annotation count for ontology accession ID"
+        "summary": "Returns annotation count for ontology accession ID",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -615,10 +1160,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnnotationCountByAccIdAndSpeciesUsingGET",
+        "parameters": [
+          {
+            "description": "Ontology term accession ID",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A list of species type keys can be found using the lookup service",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "true: return annotations for the term and children, false: return annotations for the term only",
+            "in": "path",
+            "name": "includeChildren",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
         "path": "/annotations/count/{accId}/{speciesTypeKey}/{includeChildren}",
         "pointer": "#/paths/~1annotations~1count~1{accId}~1{speciesTypeKey}~1{includeChildren}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns annotation count for ontology accession ID and speicies"
+        "summary": "Returns annotation count for ontology accession ID and speicies",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -626,10 +1213,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnnotationCountByAccIdAndObjectTypeUsingGET",
+        "parameters": [
+          {
+            "description": "Ontology term accession ID",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A list of species type keys can be found using the lookup service",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "true: return annotations for the term and children, false: return annotations for the term only",
+            "in": "path",
+            "name": "includeChildren",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "description": "A list of object types can be found using the lookup service",
+            "in": "path",
+            "name": "objectType",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/annotations/count/{accId}/{speciesTypeKey}/{includeChildren}/{objectType}",
         "pointer": "#/paths/~1annotations~1count~1{accId}~1{speciesTypeKey}~1{includeChildren}~1{objectType}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "integer:int32"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns annotation count for ontology accession ID and object type"
+        "summary": "Returns annotation count for ontology accession ID and object type",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -637,10 +1273,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnnotsByRefrerenceUsingGET",
+        "parameters": [
+          {
+            "description": "Reference RGD ID",
+            "in": "path",
+            "name": "refRgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/annotations/reference/{refRgdId}",
         "pointer": "#/paths/~1annotations~1reference~1{refRgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Annotation[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of annotations for a reference"
+        "summary": "Returns a list of annotations for a reference",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -648,10 +1312,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnnotationsByRgdIdUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/annotations/rgdId/{rgdId}",
         "pointer": "#/paths/~1annotations~1rgdId~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Annotation[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of annotations by RGD ID"
+        "summary": "Returns a list of annotations by RGD ID",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -659,10 +1351,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnnotationsByRgdIdAndOntologyUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Ontology Prefix.",
+            "in": "path",
+            "name": "ontologyPrefix",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/annotations/rgdId/{rgdId}/{ontologyPrefix}",
         "pointer": "#/paths/~1annotations~1rgdId~1{rgdId}~1{ontologyPrefix}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Annotation[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of annotations by RGD ID and ontology prefix"
+        "summary": "Returns a list of annotations by RGD ID and ontology prefix",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -670,10 +1397,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnnotationsByAccIdAndRgdIdUsingGET",
+        "parameters": [
+          {
+            "description": "Ontology Term Accession ID",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/annotations/{accId}/{rgdId}",
         "pointer": "#/paths/~1annotations~1{accId}~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Annotation[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of annotations by RGD ID and ontology term accession ID"
+        "summary": "Returns a list of annotations by RGD ID and ontology term accession ID",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -681,10 +1443,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getAnnotationsUsingGET",
+        "parameters": [
+          {
+            "description": "Ontology term accession ID",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A list of species type keys can be found using the lookup service",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "true: return annotations for the term and children, false: return annotations for the term only",
+            "in": "path",
+            "name": "includeChildren",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
         "path": "/annotations/{accId}/{speciesTypeKey}/{includeChildren}",
         "pointer": "#/paths/~1annotations~1{accId}~1{speciesTypeKey}~1{includeChildren}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Annotation[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list annotations for an ontology term or a term and it's children"
+        "summary": "Returns a list annotations for an ontology term or a term and it's children",
+        "tags": [
+          "Annotation"
+        ]
       },
       {
         "deprecated": false,
@@ -694,8 +1498,37 @@
         "name": "getEnrichmentDataUsingPOST",
         "path": "/enrichment/annotatedGenes",
         "pointer": "#/paths/~1enrichment~1annotatedGenes/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EnrichmentGeneRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Return a list of genes annotated to the term.Genes are rgdids separated by comma.Species type is an integer value.term is the ontology"
+        "summary": "Return a list of genes annotated to the term.Genes are rgdids separated by comma.Species type is an integer value.term is the ontology",
+        "tags": [
+          "enrichment-web-service"
+        ]
       },
       {
         "deprecated": false,
@@ -705,8 +1538,37 @@
         "name": "getEnrichmentDataUsingPOST_1",
         "path": "/enrichment/data",
         "pointer": "#/paths/~1enrichment~1data/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "EnrichmentRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Return a chart of ontology terms annotated to the genes.Genes are rgdids separated by comma.Species type is an integer value.Aspect is the Ontology group"
+        "summary": "Return a chart of ontology terms annotated to the genes.Genes are rgdids separated by comma.Species type is an integer value.Aspect is the Ontology group",
+        "tags": [
+          "enrichment-web-service"
+        ]
       },
       {
         "deprecated": false,
@@ -714,10 +1576,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenesByAffyIdUsingGET",
+        "parameters": [
+          {
+            "description": "Affymetrix ID",
+            "in": "path",
+            "name": "affyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A list of RGD species type keys can be found in the lookup service",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/affyId/{affyId}/{speciesTypeKey}",
         "pointer": "#/paths/~1genes~1affyId~1{affyId}~1{speciesTypeKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of genes for an affymetrix ID"
+        "summary": "Return a list of genes for an affymetrix ID",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -725,10 +1622,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenesByAliasSymbolUsingGET",
+        "parameters": [
+          {
+            "description": "Gene alias symbol",
+            "in": "path",
+            "name": "aliasSymbol",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "A list of RGD species type keys can be found in the lookup service",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/alias/{aliasSymbol}/{speciesTypeKey}",
         "pointer": "#/paths/~1genes~1alias~1{aliasSymbol}~1{speciesTypeKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of genes for an alias and species"
+        "summary": "Return a list of genes for an alias and species",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -736,10 +1668,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getGeneAllelesUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID of gene",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/allele/{rgdId}",
         "pointer": "#/paths/~1genes~1allele~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of gene alleles"
+        "summary": "Return a list of gene alleles",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -749,8 +1709,37 @@
         "name": "getAnnotatedGenesUsingPOST",
         "path": "/genes/annotation",
         "pointer": "#/paths/~1genes~1annotation/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "AnnotatedGeneRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Return a list of genes annotated to an ontology term"
+        "summary": "Return a list of genes annotated to an ontology term",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -758,10 +1747,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getAllAnnotatedGenesUsingGET",
+        "parameters": [
+          {
+            "description": "Accesstion ID",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/genes/annotation/{accId}",
         "pointer": "#/paths/~1genes~1annotation~1{accId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of genes annotated to an ontology term"
+        "summary": "Return a list of genes annotated to an ontology term",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -769,10 +1786,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenesAnnotatedUsingGET",
+        "parameters": [
+          {
+            "description": "Ontology term accession ID",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Species type key.",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/annotation/{accId}/{speciesTypeKey}",
         "pointer": "#/paths/~1genes~1annotation~1{accId}~1{speciesTypeKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of genes annotated to an ontology term"
+        "summary": "Return a list of genes annotated to an ontology term",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -780,10 +1832,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenesByKeywordUsingGET",
+        "parameters": [
+          {
+            "description": "Search keyword",
+            "in": "path",
+            "name": "keyword",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Species type key.",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/keyword/{keyword}/{speciesTypeKey}",
         "pointer": "#/paths/~1genes~1keyword~1{keyword}~1{speciesTypeKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of genes by keyword and species type key"
+        "summary": "Return a list of genes by keyword and species type key",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -791,10 +1878,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getGeneByMapKeyUsingGET",
+        "parameters": [
+          {
+            "description": "A list of RGD assembly map keys can be found in the lookup service",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/map/{mapKey}",
         "pointer": "#/paths/~1genes~1map~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MappedGene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of all genes with position information for an assembly"
+        "summary": "Return a list of all genes with position information for an assembly",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -802,10 +1917,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getMappedGenesByPositionUsingGET",
+        "parameters": [
+          {
+            "description": "Chromosome",
+            "in": "path",
+            "name": "chr",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start Position",
+            "in": "path",
+            "name": "start",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Stop Position",
+            "in": "path",
+            "name": "stop",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "A list of RGD assembly map keys can be found in the lookup service",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/mapped/{chr}/{start}/{stop}/{mapKey}",
         "pointer": "#/paths/~1genes~1mapped~1{chr}~1{start}~1{stop}~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MappedGene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of genes position and map key"
+        "summary": "Return a list of genes position and map key",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -815,8 +1979,37 @@
         "name": "getOrthologsByListUsingPOST",
         "path": "/genes/orthologs",
         "pointer": "#/paths/~1genes~1orthologs/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "OrthologRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Return a list of gene orthologs"
+        "summary": "Return a list of gene orthologs",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -824,10 +2017,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getGeneOrthologsUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID of a gene",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/orthologs/{rgdId}",
         "pointer": "#/paths/~1genes~1orthologs~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of gene orthologs"
+        "summary": "Return a list of gene orthologs",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -835,10 +2056,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenesInRegionUsingGET",
+        "parameters": [
+          {
+            "description": "Chromosome",
+            "in": "path",
+            "name": "chr",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start Position",
+            "in": "path",
+            "name": "start",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Stop Position",
+            "in": "path",
+            "name": "stop",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "A list of RGD assembly map keys can be found in the lookup service",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/region/{chr}/{start}/{stop}/{mapKey}",
         "pointer": "#/paths/~1genes~1region~1{chr}~1{start}~1{stop}~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MappedGenePosition[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of genes in region"
+        "summary": "Return a list of genes in region",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -846,10 +2116,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenesBySpeciesUsingGET",
+        "parameters": [
+          {
+            "description": "A list of RGD species type keys can be found in the lookup service",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/species/{speciesTypeKey}",
         "pointer": "#/paths/~1genes~1species~1{speciesTypeKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of all genes for a species in RGD"
+        "summary": "Return a list of all genes for a species in RGD",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -857,10 +2155,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenesByPositionUsingGET",
+        "parameters": [
+          {
+            "description": "Chromosome",
+            "in": "path",
+            "name": "chr",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start Position",
+            "in": "path",
+            "name": "start",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Stop Position",
+            "in": "path",
+            "name": "stop",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "A list of RGD assembly map keys can be found in the lookup service",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/{chr}/{start}/{stop}/{mapKey}",
         "pointer": "#/paths/~1genes~1{chr}~1{start}~1{stop}~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of genes position and map key"
+        "summary": "Return a list of genes position and map key",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -868,10 +2215,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getGeneByRgdIdUsingGET",
+        "parameters": [
+          {
+            "description": "The RGD ID of a Gene in RGD",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/{rgdId}",
         "pointer": "#/paths/~1genes~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a gene record by RGD ID"
+        "summary": "Get a gene record by RGD ID",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -879,10 +2254,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getGeneBySymbolUsingGET",
+        "parameters": [
+          {
+            "description": "Gene Symbol",
+            "in": "path",
+            "name": "symbol",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Species type key.",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/genes/{symbol}/{speciesTypeKey}",
         "pointer": "#/paths/~1genes~1{symbol}~1{speciesTypeKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Gene"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Get a gene record by symbol and species type key"
+        "summary": "Get a gene record by symbol and species type key",
+        "tags": [
+          "Gene"
+        ]
       },
       {
         "deprecated": false,
@@ -892,8 +2302,27 @@
         "name": "getGeneTypesUsingGET",
         "path": "/lookup/geneTypes",
         "pointer": "#/paths/~1lookup~1geneTypes/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list of gene types avialable in RGD"
+        "summary": "Returns a list of gene types avialable in RGD",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -903,8 +2332,37 @@
         "name": "getEnsemblGeneMappingUsingPOST",
         "path": "/lookup/id/map/EnsemblGene",
         "pointer": "#/paths/~1lookup~1id~1map~1EnsemblGene/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to Ensembl Gene IDs"
+        "summary": "Translate RGD IDs to Ensembl Gene IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -912,10 +2370,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getEnsemblGeneMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/EnsemblGene/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1EnsemblGene~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to an Ensembl Gene  ID"
+        "summary": "Translate an RGD ID to an Ensembl Gene  ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -925,8 +2411,37 @@
         "name": "getEnsemblProteinMappingUsingPOST",
         "path": "/lookup/id/map/EnsemblProtein",
         "pointer": "#/paths/~1lookup~1id~1map~1EnsemblProtein/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to Ensembl Protein IDs"
+        "summary": "Translate RGD IDs to Ensembl Protein IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -934,10 +2449,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getEnsemblProteinMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/EnsemblProtein/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1EnsemblProtein~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to an Ensembl Protein ID"
+        "summary": "Translate an RGD ID to an Ensembl Protein ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -947,8 +2490,37 @@
         "name": "getEnsemblTranscriptMappingUsingPOST",
         "path": "/lookup/id/map/EnsemblTranscript",
         "pointer": "#/paths/~1lookup~1id~1map~1EnsemblTranscript/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to Ensembl Transcript IDs"
+        "summary": "Translate RGD IDs to Ensembl Transcript IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -956,10 +2528,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getEnsemblTranscriptMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/EnsemblTranscript/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1EnsemblTranscript~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to an Ensembl Transcript ID"
+        "summary": "Translate an RGD ID to an Ensembl Transcript ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -969,8 +2569,37 @@
         "name": "getGTEXMappingUsingPOST",
         "path": "/lookup/id/map/GTEx",
         "pointer": "#/paths/~1lookup~1id~1map~1GTEx/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to GTEx IDs"
+        "summary": "Translate RGD IDs to GTEx IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -978,10 +2607,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getGTEXMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/GTEx/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1GTEx~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to an GTEx ID"
+        "summary": "Translate an RGD ID to an GTEx ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -991,8 +2648,37 @@
         "name": "getGenBankNucleotideMappingUsingPOST",
         "path": "/lookup/id/map/GenBankNucleotide",
         "pointer": "#/paths/~1lookup~1id~1map~1GenBankNucleotide/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to GenBank Nucleotide IDs"
+        "summary": "Translate RGD IDs to GenBank Nucleotide IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1000,10 +2686,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenBankNucleotideMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/GenBankNucleotide/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1GenBankNucleotide~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to a GenBank Nucleotide ID"
+        "summary": "Translate an RGD ID to a GenBank Nucleotide ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1013,8 +2727,37 @@
         "name": "getGenBankProteinMappingUsingPOST",
         "path": "/lookup/id/map/GenBankProtein",
         "pointer": "#/paths/~1lookup~1id~1map~1GenBankProtein/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to GenBank Protein IDs"
+        "summary": "Translate RGD IDs to GenBank Protein IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1022,10 +2765,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getGenBankProteinMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/GenBankProtein/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1GenBankProtein~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to a GenBank Protein ID"
+        "summary": "Translate an RGD ID to a GenBank Protein ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1035,8 +2806,37 @@
         "name": "getHGNCMappingUsingPOST",
         "path": "/lookup/id/map/HGNC",
         "pointer": "#/paths/~1lookup~1id~1map~1HGNC/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to HGNC IDs"
+        "summary": "Translate RGD IDs to HGNC IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1044,10 +2844,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getHGNCMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/HGNC/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1HGNC~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to an HGNC ID"
+        "summary": "Translate an RGD ID to an HGNC ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1057,8 +2885,37 @@
         "name": "getMGIMappingUsingPOST",
         "path": "/lookup/id/map/MGI",
         "pointer": "#/paths/~1lookup~1id~1map~1MGI/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to MGI IDs"
+        "summary": "Translate RGD IDs to MGI IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1066,10 +2923,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getMGIMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/MGI/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1MGI~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to an MGI ID"
+        "summary": "Translate an RGD ID to an MGI ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1079,8 +2964,37 @@
         "name": "getNCBIGeneMappingUsingPOST",
         "path": "/lookup/id/map/NCBIGene",
         "pointer": "#/paths/~1lookup~1id~1map~1NCBIGene/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to NCBI Gene IDs"
+        "summary": "Translate RGD IDs to NCBI Gene IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1088,10 +3002,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getNCBIGeneMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/NCBIGene/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1NCBIGene~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to an NCBI Gene ID"
+        "summary": "Translate an RGD ID to an NCBI Gene ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1101,8 +3043,37 @@
         "name": "getUniProtMappingUsingPOST",
         "path": "/lookup/id/map/UniProt",
         "pointer": "#/paths/~1lookup~1id~1map~1UniProt/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": false,
+          "type": "RGDIDListRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "201"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Translate RGD IDs to UniProt IDs"
+        "summary": "Translate RGD IDs to UniProt IDs",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1110,10 +3081,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getUniProtMappingUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/id/map/UniProt/{rgdId}",
         "pointer": "#/paths/~1lookup~1id~1map~1UniProt~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Translate an RGD ID to a UniProt ID"
+        "summary": "Translate an RGD ID to a UniProt ID",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1121,10 +3120,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getMapsUsingGET",
+        "parameters": [
+          {
+            "description": "RGD species type key.",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/lookup/maps/{speciesTypeKey}",
         "pointer": "#/paths/~1lookup~1maps~1{speciesTypeKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Map[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list assembly maps for a species"
+        "summary": "Return a list assembly maps for a species",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1134,8 +3161,27 @@
         "name": "getSpeciesTypesUsingGET",
         "path": "/lookup/speciesTypeKeys",
         "pointer": "#/paths/~1lookup~1speciesTypeKeys/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a Map of species type keys available in RGD"
+        "summary": "Return a Map of species type keys available in RGD",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1143,10 +3189,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getMapsUsingGET_1",
+        "parameters": [
+          {
+            "description": "RGD term acc",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/lookup/standardUnit/{accId}",
         "pointer": "#/paths/~1lookup~1standardUnit~1{accId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a standardUnit for an ontology if it exists"
+        "summary": "Return a standardUnit for an ontology if it exists",
+        "tags": [
+          "Lookup"
+        ]
       },
       {
         "deprecated": false,
@@ -1154,10 +3228,46 @@
         "kind": "operation",
         "method": "get",
         "name": "getChromosomeByAssemblyUsingGET",
+        "parameters": [
+          {
+            "description": "chromosome",
+            "in": "path",
+            "name": "chromosome",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "mapKey",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/maps/chr/{chromosome}/{mapKey}",
         "pointer": "#/paths/~1maps~1chr~1{chromosome}~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Chromosome"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of chromosomes"
+        "summary": "Return a list of chromosomes",
+        "tags": [
+          "Chromosome",
+          "Map"
+        ]
       },
       {
         "deprecated": false,
@@ -1165,10 +3275,39 @@
         "kind": "operation",
         "method": "get",
         "name": "getChromosomesByAssemblyUsingGET",
+        "parameters": [
+          {
+            "description": "mapKey",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/maps/chr/{mapKey}",
         "pointer": "#/paths/~1maps~1chr~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "string[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of chromosomes"
+        "summary": "Return a list of chromosomes",
+        "tags": [
+          "Chromosome",
+          "Map"
+        ]
       },
       {
         "deprecated": false,
@@ -1176,10 +3315,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getMapsBySpeciesUsingGET",
+        "parameters": [
+          {
+            "description": "species Key",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/maps/{speciesTypeKey}",
         "pointer": "#/paths/~1maps~1{speciesTypeKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Map[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of assemblies"
+        "summary": "Return a list of assemblies",
+        "tags": [
+          "Map"
+        ]
       },
       {
         "deprecated": false,
@@ -1187,10 +3354,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getOntDagsUsingGET",
+        "parameters": [
+          {
+            "description": "Accession ID",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ontology/ont/{accId}",
         "pointer": "#/paths/~1ontology~1ont~1{accId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns child and parent terms for Accession ID"
+        "summary": "Returns child and parent terms for Accession ID",
+        "tags": [
+          "Ontology"
+        ]
       },
       {
         "deprecated": false,
@@ -1198,10 +3393,45 @@
         "kind": "operation",
         "method": "get",
         "name": "isDescendantOfUsingGET",
+        "parameters": [
+          {
+            "description": "Child Term Accession ID",
+            "in": "path",
+            "name": "accId1",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Parent Term Accession ID",
+            "in": "path",
+            "name": "accId2",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ontology/term/{accId1}/{accId2}",
         "pointer": "#/paths/~1ontology~1term~1{accId1}~1{accId2}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "boolean"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns true or false for terms"
+        "summary": "Returns true or false for terms",
+        "tags": [
+          "Ontology"
+        ]
       },
       {
         "deprecated": false,
@@ -1209,10 +3439,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getTermUsingGET",
+        "parameters": [
+          {
+            "description": "Term Accession ID",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/ontology/term/{accId}",
         "pointer": "#/paths/~1ontology~1term~1{accId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Term"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns term for Accession ID"
+        "summary": "Returns term for Accession ID",
+        "tags": [
+          "Ontology"
+        ]
       },
       {
         "deprecated": false,
@@ -1220,10 +3478,38 @@
         "kind": "operation",
         "method": "get",
         "name": "searchPathwaysUsingGET",
+        "parameters": [
+          {
+            "description": "Free text search string",
+            "in": "path",
+            "name": "searchString",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/pathways/diagrams/search/{searchString}",
         "pointer": "#/paths/~1pathways~1diagrams~1search~1{searchString}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Pathway[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of pathways based on search term"
+        "summary": "Return a list of pathways based on search term",
+        "tags": [
+          "Pathway"
+        ]
       },
       {
         "deprecated": false,
@@ -1231,10 +3517,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getPathwaysWithDiagramsForCategoryUsingGET",
+        "parameters": [
+          {
+            "description": "Pathway Category",
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/pathways/diagramsForCategory/{category}",
         "pointer": "#/paths/~1pathways~1diagramsForCategory~1{category}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Pathway[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of pathways based on category provided"
+        "summary": "Return a list of pathways based on category provided",
+        "tags": [
+          "Pathway"
+        ]
       },
       {
         "deprecated": false,
@@ -1242,10 +3556,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getChartInfoUsingGET",
+        "parameters": [
+          {
+            "description": "Species Type Key - 3=rat 4=chinchilla",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Reference RGD ID for a study",
+            "in": "path",
+            "name": "refRgdId",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "List of term accession IDs",
+            "in": "path",
+            "name": "termString",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/phenotype/phenominer/chart/{speciesTypeKey}/{refRgdId}/{termString}",
         "pointer": "#/paths/~1phenotype~1phenominer~1chart~1{speciesTypeKey}~1{refRgdId}~1{termString}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms.  Results will be all records that match all terms submitted.  Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139).  Species type is an integer value (3=rat, 4=chinchilla).  Reference RGD ID for a study works like a filter."
+        "summary": "Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms.  Results will be all records that match all terms submitted.  Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139).  Species type is an integer value (3=rat, 4=chinchilla).  Reference RGD ID for a study works like a filter.",
+        "tags": [
+          "Quantitative Phenotype"
+        ]
       },
       {
         "deprecated": false,
@@ -1253,10 +3609,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getChartInfoUsingGET_1",
+        "parameters": [
+          {
+            "description": "Species Type Key - 3=rat 4=chinchilla",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "List of term accession IDs",
+            "in": "path",
+            "name": "termString",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/phenotype/phenominer/chart/{speciesTypeKey}/{termString}",
         "pointer": "#/paths/~1phenotype~1phenominer~1chart~1{speciesTypeKey}~1{termString}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms.  Results will be all records that match all terms submitted.  Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139).  Species type is an integer value (3=rat, 4=chinchilla)"
+        "summary": "Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms.  Results will be all records that match all terms submitted.  Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139).  Species type is an integer value (3=rat, 4=chinchilla)",
+        "tags": [
+          "Quantitative Phenotype"
+        ]
       },
       {
         "deprecated": false,
@@ -1264,10 +3655,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getMappedQTLByPositionUsingGET",
+        "parameters": [
+          {
+            "description": "Chromosome",
+            "in": "path",
+            "name": "chr",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start Position",
+            "in": "path",
+            "name": "start",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Stop Position",
+            "in": "path",
+            "name": "stop",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "A list of assembly map keys can be found using the lookup service",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/qtls/mapped/{chr}/{start}/{stop}/{mapKey}",
         "pointer": "#/paths/~1qtls~1mapped~1{chr}~1{start}~1{stop}~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MappedQTL[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list QTL for given position and assembly map"
+        "summary": "Returns a list QTL for given position and assembly map",
+        "tags": [
+          "QTL"
+        ]
       },
       {
         "deprecated": false,
@@ -1275,10 +3715,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getQtlListByPositionUsingGET",
+        "parameters": [
+          {
+            "description": "Chromosome",
+            "in": "path",
+            "name": "chr",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start Position",
+            "in": "path",
+            "name": "start",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Stop Position",
+            "in": "path",
+            "name": "stop",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "A list of assembly map keys can be found using the lookup service",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/qtls/{chr}/{start}/{stop}/{mapKey}",
         "pointer": "#/paths/~1qtls~1{chr}~1{start}~1{stop}~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QTL[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list QTL for given position and assembly map"
+        "summary": "Returns a list QTL for given position and assembly map",
+        "tags": [
+          "QTL"
+        ]
       },
       {
         "deprecated": false,
@@ -1286,10 +3775,38 @@
         "kind": "operation",
         "method": "get",
         "name": "getQTLByRgdIdUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/qtls/{rgdId}",
         "pointer": "#/paths/~1qtls~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "QTL"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a QTL for provided RGD ID"
+        "summary": "Return a QTL for provided RGD ID",
+        "tags": [
+          "QTL"
+        ]
       },
       {
         "deprecated": false,
@@ -1297,10 +3814,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getMappedSSLPByPositionUsingGET",
+        "parameters": [
+          {
+            "description": "Chromosome",
+            "in": "path",
+            "name": "chr",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start Position",
+            "in": "path",
+            "name": "start",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Stop Position",
+            "in": "path",
+            "name": "stop",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "A list of assembly map keys can be found using the lookup service",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/sslps/mapped/{chr}/{start}/{stop}/{mapKey}",
         "pointer": "#/paths/~1sslps~1mapped~1{chr}~1{start}~1{stop}~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "MappedSSLP[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Returns a list SSLP for given position and assembly map"
+        "summary": "Returns a list SSLP for given position and assembly map",
+        "tags": [
+          "SSLP"
+        ]
       },
       {
         "deprecated": false,
@@ -1308,10 +3874,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getActiveObjectCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/activeObject/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1activeObject~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of active objects by type, for specified species and date"
+        "summary": "Count of active objects by type, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1319,10 +3920,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getGeneTypeCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/geneType/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1geneType~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of gene types, for specified species and date"
+        "summary": "Count of gene types, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1330,10 +3966,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getObjectStatusCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/objectStatus/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1objectStatus~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of objects with given status, for specified species and date"
+        "summary": "Count of objects with given status, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1341,10 +4012,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getObjectsWithRefSeqCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/objectWithRefSeq/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1objectWithRefSeq~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of objects with reference sequence(s), by object type, for specified species and date"
+        "summary": "Count of objects with reference sequence(s), by object type, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1352,10 +4058,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getObjectsWithReferenceCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/objectWithReference/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1objectWithReference~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of objects with reference, by object type, for specified species and date"
+        "summary": "Count of objects with reference, by object type, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1363,10 +4104,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getObjectsWithXDBsCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "objectKey",
+            "in": "path",
+            "name": "objectKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/objectWithXdb/{speciesTypeKey}/{objectKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1objectWithXdb~1{speciesTypeKey}~1{objectKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of objects with external database ids, by database id, for specified species, object type and date"
+        "summary": "Count of objects with external database ids, by database id, for specified species, object type and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1374,10 +4157,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getProteinInteractionCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/proteinInteraction/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1proteinInteraction~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of protein interactions, for specified species and date"
+        "summary": "Count of protein interactions, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1385,10 +4203,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getQtlInheritanceTypeCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/qtlInheritanceType/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1qtlInheritanceType~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of strains, by qtl inheritance type, for specified species and date"
+        "summary": "Count of strains, by qtl inheritance type, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1396,10 +4249,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getRetiredObjectCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/retiredObject/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1retiredObject~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of retired objects by type, for specified species and date"
+        "summary": "Count of retired objects by type, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1407,10 +4295,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getStrainTypeCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/strainType/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1strainType~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of strain types, for specified species and date"
+        "summary": "Count of strain types, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1418,10 +4341,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getWithdrawnObjectCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/withdrawnObject/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1withdrawnObject~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of withdrawn objects by type, for specified species and date"
+        "summary": "Count of withdrawn objects by type, for specified species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1429,10 +4387,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getXdbsCountUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateYYYYMMDD",
+            "in": "path",
+            "name": "dateYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/count/xdb/{speciesTypeKey}/{dateYYYYMMDD}",
         "pointer": "#/paths/~1stats~1count~1xdb~1{speciesTypeKey}~1{dateYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count of external database ids, for specied species and date"
+        "summary": "Count of external database ids, for specied species and date",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1440,10 +4433,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getActiveObjectDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/activeObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1activeObject~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of active objects, by type, for specified species and date range"
+        "summary": "Count difference of active objects, by type, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1451,10 +4486,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getGeneTypeDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/geneType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1geneType~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of gene types, for specified species and date range"
+        "summary": "Count difference of gene types, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1462,10 +4539,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getObjectStatusDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/objectStatus/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1objectStatus~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of objects with given status, for specified species and date range"
+        "summary": "Count difference of objects with given status, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1473,10 +4592,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getObjectsWithRefSeqDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/objectWithRefSeq/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1objectWithRefSeq~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of objects with reference sequence(s), by object type, for specified species and date range"
+        "summary": "Count difference of objects with reference sequence(s), by object type, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1484,10 +4645,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getObjectsWithReferenceDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/objectWithReference/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1objectWithReference~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of objects with reference, by object type, for specified species and date range"
+        "summary": "Count difference of objects with reference, by object type, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1495,10 +4698,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getObjectsWithXDBsDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "objectKey",
+            "in": "path",
+            "name": "objectKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/objectWithXdb/{speciesTypeKey}/{objectKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1objectWithXdb~1{speciesTypeKey}~1{objectKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of objects with external database ids, by database id, for specified species, object type and date range"
+        "summary": "Count difference of objects with external database ids, by database id, for specified species, object type and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1506,10 +4758,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getProteinInteractionDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/proteinInteraction/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1proteinInteraction~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of protein interactions, for specified species and date range"
+        "summary": "Count difference of protein interactions, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1517,10 +4811,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getQtlInheritanceTypeDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/qtlInheritanceType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1qtlInheritanceType~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of strains, by qtl inheritance type, for specified species and date range"
+        "summary": "Count difference of strains, by qtl inheritance type, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1528,10 +4864,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getRetiredObjectDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/retiredObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1retiredObject~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of retired objects, by type, for specified species and date range"
+        "summary": "Count difference of retired objects, by type, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1539,10 +4917,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getStrainTypeDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/strainType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1strainType~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of strain types, for specified species and date range"
+        "summary": "Count difference of strain types, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1550,10 +4970,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getWithdrawnObjectDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/withdrawnObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1withdrawnObject~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of withdrawn objects, by type, for specified species and date range"
+        "summary": "Count difference of withdrawn objects, by type, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1561,10 +5023,52 @@
         "kind": "operation",
         "method": "get",
         "name": "getXdbsDiffUsingGET",
+        "parameters": [
+          {
+            "description": "speciesTypeKey",
+            "in": "path",
+            "name": "speciesTypeKey",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "dateFromYYYYMMDD",
+            "in": "path",
+            "name": "dateFromYYYYMMDD",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "dateToYYYYMMDD",
+            "in": "path",
+            "name": "dateToYYYYMMDD",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/diff/xdb/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}",
         "pointer": "#/paths/~1stats~1diff~1xdb~1{speciesTypeKey}~1{dateFromYYYYMMDD}~1{dateToYYYYMMDD}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Count difference of external database ids, for specified species and date range"
+        "summary": "Count difference of external database ids, for specified species and date range",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1572,10 +5076,45 @@
         "kind": "operation",
         "method": "get",
         "name": "getTermStatsUsingGET",
+        "parameters": [
+          {
+            "description": "accId",
+            "in": "path",
+            "name": "accId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "filterAccId",
+            "in": "path",
+            "name": "filterAccId",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/stats/term/{accId}/{filterAccId}",
         "pointer": "#/paths/~1stats~1term~1{accId}~1{filterAccId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "getTermStats"
+        "summary": "getTermStats",
+        "tags": [
+          "Statistics"
+        ]
       },
       {
         "deprecated": false,
@@ -1585,8 +5124,27 @@
         "name": "getAllStrainsUsingGET",
         "path": "/strains/all",
         "pointer": "#/paths/~1strains~1all/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Strain[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all active strains in RGD"
+        "summary": "Return all active strains in RGD",
+        "tags": [
+          "Rat Strain"
+        ]
       },
       {
         "deprecated": false,
@@ -1594,10 +5152,59 @@
         "kind": "operation",
         "method": "get",
         "name": "getStrainsByPositionUsingGET",
+        "parameters": [
+          {
+            "description": "Chromosome",
+            "in": "path",
+            "name": "chr",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Start Position",
+            "in": "path",
+            "name": "start",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Stop Position",
+            "in": "path",
+            "name": "stop",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "RGD Map Key (available through lookup service)",
+            "in": "path",
+            "name": "mapKey",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/strains/{chr}/{start}/{stop}/{mapKey}",
         "pointer": "#/paths/~1strains~1{chr}~1{start}~1{stop}~1{mapKey}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Strain[]"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return all active strains by position"
+        "summary": "Return all active strains by position",
+        "tags": [
+          "Rat Strain"
+        ]
       },
       {
         "deprecated": false,
@@ -1605,130 +5212,182 @@
         "kind": "operation",
         "method": "get",
         "name": "getStrainByRgdIdUsingGET",
+        "parameters": [
+          {
+            "description": "RGD ID of the strain",
+            "in": "path",
+            "name": "rgdId",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/strains/{rgdId}",
         "pointer": "#/paths/~1strains~1{rgdId}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Strain"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Return a strain by RGD ID"
+        "summary": "Return a strain by RGD ID",
+        "tags": [
+          "Rat Strain"
+        ]
       },
       {
         "id": "schema:AnnotatedGeneRequest",
         "kind": "schema",
-        "name": "AnnotatedGeneRequest"
+        "name": "AnnotatedGeneRequest",
+        "type": "object"
       },
       {
         "id": "schema:Annotation",
         "kind": "schema",
-        "name": "Annotation"
+        "name": "Annotation",
+        "type": "object"
       },
       {
         "id": "schema:AnnotationRequest",
         "kind": "schema",
-        "name": "AnnotationRequest"
+        "name": "AnnotationRequest",
+        "type": "object"
       },
       {
         "id": "schema:Chromosome",
         "kind": "schema",
-        "name": "Chromosome"
+        "name": "Chromosome",
+        "type": "object"
       },
       {
         "id": "schema:EnrichmentGeneRequest",
         "kind": "schema",
-        "name": "EnrichmentGeneRequest"
+        "name": "EnrichmentGeneRequest",
+        "type": "object"
       },
       {
         "id": "schema:EnrichmentRequest",
         "kind": "schema",
-        "name": "EnrichmentRequest"
+        "name": "EnrichmentRequest",
+        "type": "object"
       },
       {
         "id": "schema:Gene",
         "kind": "schema",
-        "name": "Gene"
+        "name": "Gene",
+        "type": "object"
       },
       {
         "id": "schema:Map",
         "kind": "schema",
-        "name": "Map"
+        "name": "Map",
+        "type": "object"
       },
       {
         "id": "schema:MapPair",
         "kind": "schema",
-        "name": "MapPair"
+        "name": "MapPair",
+        "type": "object"
       },
       {
         "id": "schema:MappedGene",
         "kind": "schema",
-        "name": "MappedGene"
+        "name": "MappedGene",
+        "type": "object"
       },
       {
         "id": "schema:MappedGenePosition",
         "kind": "schema",
-        "name": "MappedGenePosition"
+        "name": "MappedGenePosition",
+        "type": "object"
       },
       {
         "id": "schema:MappedQTL",
         "kind": "schema",
-        "name": "MappedQTL"
+        "name": "MappedQTL",
+        "type": "object"
       },
       {
         "id": "schema:MappedSSLP",
         "kind": "schema",
-        "name": "MappedSSLP"
+        "name": "MappedSSLP",
+        "type": "object"
       },
       {
         "id": "schema:OrthologRequest",
         "kind": "schema",
-        "name": "OrthologRequest"
+        "name": "OrthologRequest",
+        "type": "object"
       },
       {
         "id": "schema:Pathway",
         "kind": "schema",
-        "name": "Pathway"
+        "name": "Pathway",
+        "type": "object"
       },
       {
         "id": "schema:PathwayObject",
         "kind": "schema",
-        "name": "PathwayObject"
+        "name": "PathwayObject",
+        "type": "object"
       },
       {
         "id": "schema:QTL",
         "kind": "schema",
-        "name": "QTL"
+        "name": "QTL",
+        "type": "object"
       },
       {
         "id": "schema:RGDIDListRequest",
         "kind": "schema",
-        "name": "RGDIDListRequest"
+        "name": "RGDIDListRequest",
+        "type": "object"
       },
       {
         "id": "schema:Reference",
         "kind": "schema",
-        "name": "Reference"
+        "name": "Reference",
+        "type": "object"
       },
       {
         "id": "schema:SSLP",
         "kind": "schema",
-        "name": "SSLP"
+        "name": "SSLP",
+        "type": "object"
       },
       {
         "id": "schema:Status",
         "kind": "schema",
-        "name": "Status"
+        "name": "Status",
+        "type": "object"
       },
       {
         "id": "schema:Strain",
         "kind": "schema",
-        "name": "Strain"
+        "name": "Strain",
+        "type": "object"
       },
       {
         "id": "schema:Term",
         "kind": "schema",
-        "name": "Term"
+        "name": "Term",
+        "type": "object"
       },
       {
         "id": "schema:TermXRef",
         "kind": "schema",
-        "name": "TermXRef"
+        "name": "TermXRef",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_biztoc.com_favicon.png"
 
 | | |
 | --- | --- |
-| Signed bundle | `77ce8fe2b1daad1c242f3f144f547b4fae73fc0e5ad391a58845e90489b00052` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,6 +32,8 @@ logo: "https://api.apis.guru/v2/cache/logo/https_biztoc.com_favicon.png"
 
 ## Operations (1)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/ai/news` | getNews | Retrieves the latest news whose content contains the query string. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/ai/news` | getNews | `query` | — | yes | Retrieves the latest news whose content contains the query string. |

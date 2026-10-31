@@ -83,6 +83,86 @@
         "from": "healthcare-gov-f236f25289",
         "kind": "EXPOSES",
         "to": "operation:get:/{stateName}{mediaTypeExtension}"
+      },
+      {
+        "from": "operation:get:/api/articles{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:articlesList"
+      },
+      {
+        "from": "operation:get:/api/blog{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:blogList"
+      },
+      {
+        "from": "operation:get:/api/glossary{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:glossaryList"
+      },
+      {
+        "from": "operation:get:/api/questions{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:questionsList"
+      },
+      {
+        "from": "operation:get:/api/states{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:statesList"
+      },
+      {
+        "from": "operation:get:/api/topics{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:topicsList"
+      },
+      {
+        "from": "operation:get:/blog/{pageName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:blogPage"
+      },
+      {
+        "from": "operation:get:/es/blog/{pageName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:blogPage"
+      },
+      {
+        "from": "operation:get:/es/glossary/{pageName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:glossaryPage"
+      },
+      {
+        "from": "operation:get:/es/question/{pageName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:questionPage"
+      },
+      {
+        "from": "operation:get:/es/{pageName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:page"
+      },
+      {
+        "from": "operation:get:/es/{stateName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:statePage"
+      },
+      {
+        "from": "operation:get:/glossary/{pageName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:glossaryPage"
+      },
+      {
+        "from": "operation:get:/question/{pageName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:questionPage"
+      },
+      {
+        "from": "operation:get:/{pageName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:page"
+      },
+      {
+        "from": "operation:get:/{stateName}{mediaTypeExtension}",
+        "kind": "RETURNS",
+        "to": "schema:statePage"
       }
     ],
     "nodes": [
@@ -92,234 +172,673 @@
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/api/articles{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/articles{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/articles{mediaTypeExtension}",
         "pointer": "#/paths/~1api~1articles{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "articlesList"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/api/blog{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/blog{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/blog{mediaTypeExtension}",
         "pointer": "#/paths/~1api~1blog{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "blogList"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/api/glossary{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/glossary{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/glossary{mediaTypeExtension}",
         "pointer": "#/paths/~1api~1glossary{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "glossaryList"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/api/questions{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/questions{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/questions{mediaTypeExtension}",
         "pointer": "#/paths/~1api~1questions{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "questionsList"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/api/states{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/states{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/states{mediaTypeExtension}",
         "pointer": "#/paths/~1api~1states{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "statesList"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/api/topics{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /api/topics{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/api/topics{mediaTypeExtension}",
         "pointer": "#/paths/~1api~1topics{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "topicsList"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/blog/{pageName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /blog/{pageName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "pageName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/blog/{pageName}{mediaTypeExtension}",
         "pointer": "#/paths/~1blog~1{pageName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "blogPage"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/es/blog/{pageName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /es/blog/{pageName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "pageName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/es/blog/{pageName}{mediaTypeExtension}",
         "pointer": "#/paths/~1es~1blog~1{pageName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "blogPage"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/es/glossary/{pageName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /es/glossary/{pageName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "pageName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/es/glossary/{pageName}{mediaTypeExtension}",
         "pointer": "#/paths/~1es~1glossary~1{pageName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "glossaryPage"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/es/question/{pageName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /es/question/{pageName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "pageName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/es/question/{pageName}{mediaTypeExtension}",
         "pointer": "#/paths/~1es~1question~1{pageName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "questionPage"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/es/{pageName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /es/{pageName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "pageName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/es/{pageName}{mediaTypeExtension}",
         "pointer": "#/paths/~1es~1{pageName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "page"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/es/{stateName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /es/{stateName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "stateName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/es/{stateName}{mediaTypeExtension}",
         "pointer": "#/paths/~1es~1{stateName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "statePage"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/glossary/{pageName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /glossary/{pageName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "pageName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/glossary/{pageName}{mediaTypeExtension}",
         "pointer": "#/paths/~1glossary~1{pageName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "glossaryPage"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/question/{pageName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /question/{pageName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "pageName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/question/{pageName}{mediaTypeExtension}",
         "pointer": "#/paths/~1question~1{pageName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "questionPage"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/{pageName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /{pageName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "pageName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{pageName}{mediaTypeExtension}",
         "pointer": "#/paths/~1{pageName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "page"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "deprecated": false,
+        "description": "Returns pages content.",
         "id": "operation:get:/{stateName}{mediaTypeExtension}",
         "kind": "operation",
         "method": "get",
         "name": "get /{stateName}{mediaTypeExtension}",
+        "parameters": [
+          {
+            "description": "Omiting the param causes html to be returned.",
+            "enum": [
+              ".json"
+            ],
+            "in": "path",
+            "name": "mediaTypeExtension",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "stateName",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/{stateName}{mediaTypeExtension}",
         "pointer": "#/paths/~1{stateName}{mediaTypeExtension}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "statePage"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [],
         "summary": null
       },
       {
         "id": "schema:articlesList",
         "kind": "schema",
-        "name": "articlesList"
+        "name": "articlesList",
+        "type": "object"
       },
       {
         "id": "schema:blogList",
         "kind": "schema",
-        "name": "blogList"
+        "name": "blogList",
+        "type": "object"
       },
       {
         "id": "schema:blogPage",
         "kind": "schema",
-        "name": "blogPage"
+        "name": "blogPage",
+        "type": "object"
       },
       {
         "id": "schema:glossaryList",
         "kind": "schema",
-        "name": "glossaryList"
+        "name": "glossaryList",
+        "type": "object"
       },
       {
         "id": "schema:glossaryPage",
         "kind": "schema",
-        "name": "glossaryPage"
+        "name": "glossaryPage",
+        "type": "object"
       },
       {
         "id": "schema:page",
         "kind": "schema",
-        "name": "page"
+        "name": "page",
+        "type": "object"
       },
       {
         "id": "schema:questionPage",
         "kind": "schema",
-        "name": "questionPage"
+        "name": "questionPage",
+        "type": "object"
       },
       {
         "id": "schema:questionsList",
         "kind": "schema",
-        "name": "questionsList"
+        "name": "questionsList",
+        "type": "object"
       },
       {
         "id": "schema:statePage",
         "kind": "schema",
-        "name": "statePage"
+        "name": "statePage",
+        "type": "object"
       },
       {
         "id": "schema:statesList",
         "kind": "schema",
-        "name": "statesList"
+        "name": "statesList",
+        "type": "object"
       },
       {
         "id": "schema:topicsList",
         "kind": "schema",
-        "name": "topicsList"
+        "name": "topicsList",
+        "type": "object"
       }
     ]
   },

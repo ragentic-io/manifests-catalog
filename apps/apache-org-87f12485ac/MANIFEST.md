@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_TheASF_profile_imag
 
 | | |
 | --- | --- |
-| Signed bundle | `7f2e81d1803022755aada27f0ac0a2baf01b80eba709d4b5c9104130a7b998bf` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,78 +34,80 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter_com_TheASF_profile_imag
 
 85 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/config` | get_config | Get current configuration |
-| GET | `/connections` | get_connections | List connections |
-| POST | `/connections` | post_connection | Create a connection |
-| POST | `/connections/test` | test_connection | Test a connection |
-| DELETE | `/connections/{connection_id}` | delete_connection | Delete a connection |
-| GET | `/connections/{connection_id}` | get_connection | Get a connection |
-| PATCH | `/connections/{connection_id}` | patch_connection | Update a connection |
-| GET | `/dagSources/{file_token}` | get_dag_source | Get a source code |
-| GET | `/dagWarnings` | get_dag_warnings | List dag warnings |
-| GET | `/dags` | get_dags | List DAGs |
-| PATCH | `/dags` | patch_dags | Update DAGs |
-| DELETE | `/dags/{dag_id}` | delete_dag | Delete a DAG |
-| GET | `/dags/{dag_id}` | get_dag | Get basic information about a DAG |
-| PATCH | `/dags/{dag_id}` | patch_dag | Update a DAG |
-| POST | `/dags/{dag_id}/clearTaskInstances` | post_clear_task_instances | Clear a set of task instances |
-| GET | `/dags/{dag_id}/dagRuns` | get_dag_runs | List DAG runs |
-| POST | `/dags/{dag_id}/dagRuns` | post_dag_run | Trigger a new DAG run |
-| DELETE | `/dags/{dag_id}/dagRuns/{dag_run_id}` | delete_dag_run | Delete a DAG run |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}` | get_dag_run | Get a DAG run |
-| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}` | update_dag_run_state | Modify a DAG run |
-| POST | `/dags/{dag_id}/dagRuns/{dag_run_id}/clear` | clear_dag_run | Clear a DAG run |
-| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/setNote` | set_dag_run_note | Update the DagRun note. |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances` | get_task_instances | List task instances |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}` | get_task_instance | Get a task instance |
-| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}` | patch_task_instance | Updates the state of a task instance |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/links` | get_extra_links | List extra links |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/listMapped` | get_mapped_task_instances | List mapped task instances |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/logs/{task_try_number}` | get_log | Get logs |
-| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/setNote` | set_task_instance_note | Update the TaskInstance note. |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries` | get_xcom_entries | List XCom entries |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries/{xcom_key}` | get_xcom_entry | Get an XCom entry |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}` | get_mapped_task_instance | Get a mapped task instance |
-| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}` | patch_mapped_task_instance | Updates the state of a mapped task instance |
-| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/setNote` | set_mapped_task_instance_note | Update the TaskInstance note. |
-| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/upstreamDatasetEvents` | get_upstream_dataset_events | Get dataset events for a DAG run |
-| GET | `/dags/{dag_id}/details` | get_dag_details | Get a simplified representation of DAG |
-| GET | `/dags/{dag_id}/tasks` | get_tasks | Get tasks for DAG |
-| GET | `/dags/{dag_id}/tasks/{task_id}` | get_task | Get simplified representation of a task |
-| POST | `/dags/{dag_id}/updateTaskInstancesState` | post_set_task_instances_state | Set a state of task instances |
-| POST | `/dags/~/dagRuns/list` | get_dag_runs_batch | List DAG runs (batch) |
-| POST | `/dags/~/dagRuns/~/taskInstances/list` | get_task_instances_batch | List task instances (batch) |
-| GET | `/datasets` | get_datasets | List datasets |
-| GET | `/datasets/events` | get_dataset_events | Get dataset events |
-| GET | `/datasets/{uri}` | get_dataset | Get a dataset |
-| GET | `/eventLogs` | get_event_logs | List log entries |
-| GET | `/eventLogs/{event_log_id}` | get_event_log | Get a log entry |
-| GET | `/health` | get_health | Get instance status |
-| GET | `/importErrors` | get_import_errors | List import errors |
-| GET | `/importErrors/{import_error_id}` | get_import_error | Get an import error |
-| GET | `/permissions` | get_permissions | List permissions |
-| GET | `/plugins` | get_plugins | Get a list of loaded plugins |
-| GET | `/pools` | get_pools | List pools |
-| POST | `/pools` | post_pool | Create a pool |
-| DELETE | `/pools/{pool_name}` | delete_pool | Delete a pool |
-| GET | `/pools/{pool_name}` | get_pool | Get a pool |
-| PATCH | `/pools/{pool_name}` | patch_pool | Update a pool |
-| GET | `/providers` | get_providers | List providers |
-| GET | `/roles` | get_roles | List roles |
-| POST | `/roles` | post_role | Create a role |
-| DELETE | `/roles/{role_name}` | delete_role | Delete a role |
-| GET | `/roles/{role_name}` | get_role | Get a role |
-| PATCH | `/roles/{role_name}` | patch_role | Update a role |
-| GET | `/users` | get_users | List users |
-| POST | `/users` | post_user | Create a user |
-| DELETE | `/users/{username}` | delete_user | Delete a user |
-| GET | `/users/{username}` | get_user | Get a user |
-| PATCH | `/users/{username}` | patch_user | Update a user |
-| GET | `/variables` | get_variables | List variables |
-| POST | `/variables` | post_variables | Create a variable |
-| DELETE | `/variables/{variable_key}` | delete_variable | Delete a variable |
-| GET | `/variables/{variable_key}` | get_variable | Get a variable |
-| PATCH | `/variables/{variable_key}` | patch_variable | Update a variable |
-| GET | `/version` | get_version | Get version information |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/config` | get_config | — | Config | yes | Get current configuration |
+| GET | `/connections` | get_connections | `limit`, `offset`, `order_by` | ConnectionCollection | yes | List connections |
+| POST | `/connections` | post_connection | body*: Connection | Connection |  | Create a connection |
+| POST | `/connections/test` | test_connection | body*: Connection | ConnectionTest |  | Test a connection |
+| GET | `/connections/{connection_id}` | get_connection | `connection_id`* | Connection | yes | Get a connection |
+| DELETE | `/connections/{connection_id}` | delete_connection | `connection_id`* | — |  | Delete a connection |
+| PATCH | `/connections/{connection_id}` | patch_connection | `connection_id`*, `update_mask`, body*: Connection | Connection |  | Update a connection |
+| GET | `/dagSources/{file_token}` | get_dag_source | `file_token`* | object | yes | Get a source code |
+| GET | `/dagWarnings` | get_dag_warnings | `dag_id`, `warning_type`, `limit`, `offset`, `order_by` | DagWarningCollection | yes | List dag warnings |
+| GET | `/dags` | get_dags | `limit`, `offset`, `order_by`, `tags`, `only_active`, `dag_id_pattern` | DAGCollection | yes | List DAGs |
+| PATCH | `/dags` | patch_dags | `limit`, `offset`, `tags`, `update_mask`, `only_active`, `dag_id_pattern`*, body*: DAG | DAGCollection |  | Update DAGs |
+| GET | `/dags/{dag_id}` | get_dag | `dag_id`* | DAG | yes | Get basic information about a DAG |
+| DELETE | `/dags/{dag_id}` | delete_dag | `dag_id`* | — |  | Delete a DAG |
+| PATCH | `/dags/{dag_id}` | patch_dag | `dag_id`*, `update_mask`, body*: DAG | DAG |  | Update a DAG |
+| POST | `/dags/{dag_id}/clearTaskInstances` | post_clear_task_instances | `dag_id`*, body*: ClearTaskInstances | TaskInstanceReferenceCollection |  | Clear a set of task instances |
+| GET | `/dags/{dag_id}/dagRuns` | get_dag_runs | `dag_id`*, `limit`, `offset`, `execution_date_gte`, `execution_date_lte`, `start_date_gte`, `start_date_lte`, `end_date_gte`, `end_date_lte`, `state`, `order_by` | DAGRunCollection | yes | List DAG runs |
+| POST | `/dags/{dag_id}/dagRuns` | post_dag_run | `dag_id`*, body*: DAGRun | DAGRun |  | Trigger a new DAG run |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}` | get_dag_run | `dag_id`*, `dag_run_id`* | DAGRun | yes | Get a DAG run |
+| DELETE | `/dags/{dag_id}/dagRuns/{dag_run_id}` | delete_dag_run | `dag_id`*, `dag_run_id`* | — |  | Delete a DAG run |
+| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}` | update_dag_run_state | `dag_id`*, `dag_run_id`*, body*: UpdateDagRunState | DAGRun |  | Modify a DAG run |
+| POST | `/dags/{dag_id}/dagRuns/{dag_run_id}/clear` | clear_dag_run | `dag_id`*, `dag_run_id`*, body*: ClearDagRun | DAGRun |  | Clear a DAG run |
+| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/setNote` | set_dag_run_note | `dag_id`*, `dag_run_id`*, body*: SetDagRunNote | DAGRun |  | Update the DagRun note. |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances` | get_task_instances | `dag_id`*, `dag_run_id`*, `execution_date_gte`, `execution_date_lte`, `start_date_gte`, `start_date_lte`, `end_date_gte`, `end_date_lte`, `duration_gte`, `duration_lte`, `state`, `pool`, `queue`, `limit`, `offset` | TaskInstanceCollection | yes | List task instances |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}` | get_task_instance | `dag_id`*, `dag_run_id`*, `task_id`* | TaskInstance | yes | Get a task instance |
+| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}` | patch_task_instance | `dag_id`*, `dag_run_id`*, `task_id`*, body*: UpdateTaskInstance | TaskInstanceReference |  | Updates the state of a task instance |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/links` | get_extra_links | `dag_id`*, `dag_run_id`*, `task_id`* | ExtraLinkCollection | yes | List extra links |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/listMapped` | get_mapped_task_instances | `dag_id`*, `dag_run_id`*, `task_id`*, `limit`, `offset`, `execution_date_gte`, `execution_date_lte`, `start_date_gte`, `start_date_lte`, `end_date_gte`, `end_date_lte`, `duration_gte`, `duration_lte`, `state`, `pool`, `queue`, `order_by` | TaskInstanceCollection | yes | List mapped task instances |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/logs/{task_try_number}` | get_log | `dag_id`*, `dag_run_id`*, `task_id`*, `task_try_number`*, `full_content`, `map_index`, `token` | object | yes | Get logs |
+| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/setNote` | set_task_instance_note | `dag_id`*, `dag_run_id`*, `task_id`*, body*: SetTaskInstanceNote | TaskInstance |  | Update the TaskInstance note. |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries` | get_xcom_entries | `dag_id`*, `dag_run_id`*, `task_id`*, `limit`, `offset` | XComCollection | yes | List XCom entries |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries/{xcom_key}` | get_xcom_entry | `dag_id`*, `dag_run_id`*, `task_id`*, `xcom_key`*, `deserialize` | XCom | yes | Get an XCom entry |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}` | get_mapped_task_instance | `dag_id`*, `dag_run_id`*, `task_id`*, `map_index`* | TaskInstance | yes | Get a mapped task instance |
+| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}` | patch_mapped_task_instance | `dag_id`*, `dag_run_id`*, `task_id`*, `map_index`*, body: UpdateTaskInstance | TaskInstanceReference |  | Updates the state of a mapped task instance |
+| PATCH | `/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/setNote` | set_mapped_task_instance_note | `dag_id`*, `dag_run_id`*, `task_id`*, `map_index`*, body*: SetTaskInstanceNote | TaskInstance |  | Update the TaskInstance note. |
+| GET | `/dags/{dag_id}/dagRuns/{dag_run_id}/upstreamDatasetEvents` | get_upstream_dataset_events | `dag_id`*, `dag_run_id`* | DatasetEventCollection | yes | Get dataset events for a DAG run |
+| GET | `/dags/{dag_id}/details` | get_dag_details | `dag_id`* | DAGDetail | yes | Get a simplified representation of DAG |
+| GET | `/dags/{dag_id}/tasks` | get_tasks | `dag_id`*, `order_by` | TaskCollection | yes | Get tasks for DAG |
+| GET | `/dags/{dag_id}/tasks/{task_id}` | get_task | `dag_id`*, `task_id`* | Task | yes | Get simplified representation of a task |
+| POST | `/dags/{dag_id}/updateTaskInstancesState` | post_set_task_instances_state | `dag_id`*, body*: UpdateTaskInstancesState | TaskInstanceReferenceCollection |  | Set a state of task instances |
+| POST | `/dags/~/dagRuns/list` | get_dag_runs_batch | body*: ListDagRunsForm | DAGRunCollection |  | List DAG runs (batch) |
+| POST | `/dags/~/dagRuns/~/taskInstances/list` | get_task_instances_batch | body*: ListTaskInstanceForm | TaskInstanceCollection |  | List task instances (batch) |
+| GET | `/datasets` | get_datasets | `limit`, `offset`, `order_by`, `uri_pattern` | DatasetCollection | yes | List datasets |
+| GET | `/datasets/events` | get_dataset_events | `limit`, `offset`, `order_by`, `dataset_id`, `source_dag_id`, `source_task_id`, `source_run_id`, `source_map_index` | DatasetEventCollection | yes | Get dataset events |
+| GET | `/datasets/{uri}` | get_dataset | `uri`* | Dataset | yes | Get a dataset |
+| GET | `/eventLogs` | get_event_logs | `limit`, `offset`, `order_by` | EventLogCollection | yes | List log entries |
+| GET | `/eventLogs/{event_log_id}` | get_event_log | `event_log_id`* | EventLog | yes | Get a log entry |
+| GET | `/health` | get_health | — | HealthInfo | yes | Get instance status |
+| GET | `/importErrors` | get_import_errors | `limit`, `offset`, `order_by` | ImportErrorCollection | yes | List import errors |
+| GET | `/importErrors/{import_error_id}` | get_import_error | `import_error_id`* | ImportError | yes | Get an import error |
+| GET | `/permissions` | get_permissions | `limit`, `offset` | ActionCollection | yes | List permissions |
+| GET | `/plugins` | get_plugins | `limit`, `offset` | PluginCollection | yes | Get a list of loaded plugins |
+| GET | `/pools` | get_pools | `limit`, `offset`, `order_by` | PoolCollection | yes | List pools |
+| POST | `/pools` | post_pool | body*: Pool | Pool |  | Create a pool |
+| GET | `/pools/{pool_name}` | get_pool | `pool_name`* | Pool | yes | Get a pool |
+| DELETE | `/pools/{pool_name}` | delete_pool | `pool_name`* | — |  | Delete a pool |
+| PATCH | `/pools/{pool_name}` | patch_pool | `pool_name`*, `update_mask`, body*: Pool | Pool |  | Update a pool |
+| GET | `/providers` | get_providers | — | ProviderCollection\|CollectionInfo | yes | List providers |
+| GET | `/roles` | get_roles | `limit`, `offset`, `order_by` | RoleCollection | yes | List roles |
+| POST | `/roles` | post_role | body*: Role | Role |  | Create a role |
+| GET | `/roles/{role_name}` | get_role | `role_name`* | Role | yes | Get a role |
+| DELETE | `/roles/{role_name}` | delete_role | `role_name`* | — |  | Delete a role |
+| PATCH | `/roles/{role_name}` | patch_role | `role_name`*, `update_mask`, body*: Role | Role |  | Update a role |
+| GET | `/users` | get_users | `limit`, `offset`, `order_by` | UserCollection | yes | List users |
+| POST | `/users` | post_user | body*: User | User |  | Create a user |
+| GET | `/users/{username}` | get_user | `username`* | UserCollectionItem | yes | Get a user |
+| DELETE | `/users/{username}` | delete_user | `username`* | — |  | Delete a user |
+| PATCH | `/users/{username}` | patch_user | `username`*, `update_mask`, body*: User | Role |  | Update a user |
+| GET | `/variables` | get_variables | `limit`, `offset`, `order_by` | VariableCollection | yes | List variables |
+| POST | `/variables` | post_variables | body*: Variable | Variable |  | Create a variable |
+| GET | `/variables/{variable_key}` | get_variable | `variable_key`* | Variable | yes | Get a variable |
+| DELETE | `/variables/{variable_key}` | delete_variable | `variable_key`* | — |  | Delete a variable |
+| PATCH | `/variables/{variable_key}` | patch_variable | `variable_key`*, `update_mask`, body*: Variable | Variable |  | Update a variable |
+| GET | `/version` | get_version | — | VersionInfo | yes | Get version information |

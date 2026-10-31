@@ -13,6 +13,51 @@
         "from": "landregistry-gov-uk-deed-35efd8af96",
         "kind": "EXPOSES",
         "to": "operation:get:/deed/{deed_reference}"
+      },
+      {
+        "from": "operation:post:/deed/",
+        "kind": "ACCEPTS",
+        "to": "schema:Deed_Application"
+      },
+      {
+        "from": "operation:get:/deed/{deed_reference}",
+        "kind": "RETURNS",
+        "to": "schema:Operative_Deed"
+      },
+      {
+        "from": "schema:Borrowers",
+        "kind": "REFERENCES",
+        "to": "schema:PrivateIndividualName"
+      },
+      {
+        "from": "schema:Deed_Application",
+        "kind": "REFERENCES",
+        "to": "schema:Borrowers"
+      },
+      {
+        "from": "schema:OpBorrowers",
+        "kind": "REFERENCES",
+        "to": "schema:Borrower"
+      },
+      {
+        "from": "schema:Operative_Deed",
+        "kind": "REFERENCES",
+        "to": "schema:AdditionalProvisions"
+      },
+      {
+        "from": "schema:Operative_Deed",
+        "kind": "REFERENCES",
+        "to": "schema:ChargeClause"
+      },
+      {
+        "from": "schema:Operative_Deed",
+        "kind": "REFERENCES",
+        "to": "schema:Lender"
+      },
+      {
+        "from": "schema:Operative_Deed",
+        "kind": "REFERENCES",
+        "to": "schema:OpBorrowers"
       }
     ],
     "nodes": [
@@ -22,75 +67,128 @@
       },
       {
         "deprecated": false,
+        "description": "The post Deed endpoint creates a new deed based on the JSON provided.",
         "id": "operation:post:/deed/",
         "kind": "operation",
         "method": "post",
         "name": "addDeed",
         "path": "/deed/",
         "pointer": "#/paths/~1deed~1/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "Deed_Application"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "string"
+          },
+          {
+            "status": "400",
+            "type": "Error"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Deed"
       },
       {
         "deprecated": false,
+        "description": "The Deed endpoint returns details of a specific deed based on the unique deed reference.",
         "id": "operation:get:/deed/{deed_reference}",
         "kind": "operation",
         "method": "get",
         "name": "get /deed/{deed_reference}",
+        "parameters": [
+          {
+            "description": "Unique reference of the deed.",
+            "in": "path",
+            "name": "deed_reference",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/deed/{deed_reference}",
         "pointer": "#/paths/~1deed~1{deed_reference}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Operative_Deed"
+          },
+          {
+            "status": "404",
+            "type": "Error"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Deed"
+        "summary": "Deed",
+        "tags": [
+          "Deed"
+        ]
       },
       {
         "id": "schema:AdditionalProvisions",
         "kind": "schema",
-        "name": "AdditionalProvisions"
+        "name": "AdditionalProvisions",
+        "type": "object[]"
       },
       {
         "id": "schema:Borrower",
         "kind": "schema",
-        "name": "Borrower"
+        "name": "Borrower",
+        "type": "object"
       },
       {
         "id": "schema:Borrowers",
         "kind": "schema",
-        "name": "Borrowers"
+        "name": "Borrowers",
+        "type": "PrivateIndividualName[]"
       },
       {
         "id": "schema:ChargeClause",
         "kind": "schema",
-        "name": "ChargeClause"
+        "name": "ChargeClause",
+        "type": "object"
       },
       {
         "id": "schema:Deed_Application",
         "kind": "schema",
-        "name": "Deed_Application"
+        "name": "Deed_Application",
+        "type": "object"
       },
       {
         "id": "schema:Error",
         "kind": "schema",
-        "name": "Error"
+        "name": "Error",
+        "type": "object"
       },
       {
         "id": "schema:Lender",
         "kind": "schema",
-        "name": "Lender"
+        "name": "Lender",
+        "type": "object"
       },
       {
         "id": "schema:OpBorrowers",
         "kind": "schema",
-        "name": "OpBorrowers"
+        "name": "OpBorrowers",
+        "type": "Borrower[]"
       },
       {
         "id": "schema:Operative_Deed",
         "kind": "schema",
-        "name": "Operative_Deed"
+        "name": "Operative_Deed",
+        "type": "object"
       },
       {
         "id": "schema:PrivateIndividualName",
         "kind": "schema",
-        "name": "PrivateIndividualName"
+        "name": "PrivateIndividualName",
+        "type": "object"
       }
     ]
   },

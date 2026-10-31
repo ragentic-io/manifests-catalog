@@ -67,12 +67,12 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:post:/api/Company"
+        "to": "operation:put:/api/Company"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/Company"
+        "to": "operation:post:/api/Company"
       },
       {
         "from": "avaza-com-1781a9ce58",
@@ -132,12 +132,12 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/Expense"
+        "to": "operation:get:/api/Expense"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/Expense"
+        "to": "operation:put:/api/Expense"
       },
       {
         "from": "avaza-com-1781a9ce58",
@@ -147,7 +147,7 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/Expense"
+        "to": "operation:delete:/api/Expense"
       },
       {
         "from": "avaza-com-1781a9ce58",
@@ -242,12 +242,12 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:post:/api/Project"
+        "to": "operation:put:/api/Project"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/Project"
+        "to": "operation:post:/api/Project"
       },
       {
         "from": "avaza-com-1781a9ce58",
@@ -267,12 +267,12 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:post:/api/ProjectMember"
+        "to": "operation:put:/api/ProjectMember"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/ProjectMember"
+        "to": "operation:post:/api/ProjectMember"
       },
       {
         "from": "avaza-com-1781a9ce58",
@@ -297,11 +297,6 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/Section"
-      },
-      {
-        "from": "avaza-com-1781a9ce58",
-        "kind": "EXPOSES",
         "to": "operation:get:/api/Section"
       },
       {
@@ -312,7 +307,7 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/Task"
+        "to": "operation:delete:/api/Section"
       },
       {
         "from": "avaza-com-1781a9ce58",
@@ -322,12 +317,17 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
+        "to": "operation:put:/api/Task"
+      },
+      {
+        "from": "avaza-com-1781a9ce58",
+        "kind": "EXPOSES",
         "to": "operation:post:/api/Task"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:put:/api/Task"
+        "to": "operation:delete:/api/Task"
       },
       {
         "from": "avaza-com-1781a9ce58",
@@ -362,22 +362,22 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:post:/api/Timesheet"
-      },
-      {
-        "from": "avaza-com-1781a9ce58",
-        "kind": "EXPOSES",
         "to": "operation:put:/api/Timesheet"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/Timesheet/{id}"
+        "to": "operation:post:/api/Timesheet"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
         "to": "operation:get:/api/Timesheet/{id}"
+      },
+      {
+        "from": "avaza-com-1781a9ce58",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/Timesheet/{id}"
       },
       {
         "from": "avaza-com-1781a9ce58",
@@ -397,22 +397,17 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/TimesheetTimer/{id}"
-      },
-      {
-        "from": "avaza-com-1781a9ce58",
-        "kind": "EXPOSES",
         "to": "operation:post:/api/TimesheetTimer/{id}"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:get:/api/UserProfile"
+        "to": "operation:delete:/api/TimesheetTimer/{id}"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/Webhook"
+        "to": "operation:get:/api/UserProfile"
       },
       {
         "from": "avaza-com-1781a9ce58",
@@ -427,12 +422,852 @@
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
-        "to": "operation:delete:/api/Webhook/{id}"
+        "to": "operation:delete:/api/Webhook"
       },
       {
         "from": "avaza-com-1781a9ce58",
         "kind": "EXPOSES",
         "to": "operation:get:/api/Webhook/{id}"
+      },
+      {
+        "from": "avaza-com-1781a9ce58",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/api/Webhook/{id}"
+      },
+      {
+        "from": "operation:post:/ScheduleSeries/AddBooking",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateBooking"
+      },
+      {
+        "from": "operation:post:/ScheduleSeries/AddBooking",
+        "kind": "RETURNS",
+        "to": "schema:ScheduleSeriesDetails"
+      },
+      {
+        "from": "operation:post:/ScheduleSeries/AddLeave",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateLeave"
+      },
+      {
+        "from": "operation:post:/ScheduleSeries/AddLeave",
+        "kind": "RETURNS",
+        "to": "schema:ScheduleSeriesDetails"
+      },
+      {
+        "from": "operation:put:/ScheduleSeries/EditBooking",
+        "kind": "ACCEPTS",
+        "to": "schema:EditBooking"
+      },
+      {
+        "from": "operation:put:/ScheduleSeries/EditBooking",
+        "kind": "RETURNS",
+        "to": "schema:ScheduleSeriesDetails"
+      },
+      {
+        "from": "operation:put:/ScheduleSeries/EditLeave",
+        "kind": "ACCEPTS",
+        "to": "schema:EditLeave"
+      },
+      {
+        "from": "operation:put:/ScheduleSeries/EditLeave",
+        "kind": "RETURNS",
+        "to": "schema:ScheduleSeriesDetails"
+      },
+      {
+        "from": "operation:get:/api/Account",
+        "kind": "RETURNS",
+        "to": "schema:AccountDetails"
+      },
+      {
+        "from": "operation:get:/api/Bill",
+        "kind": "RETURNS",
+        "to": "schema:BillList"
+      },
+      {
+        "from": "operation:post:/api/Bill",
+        "kind": "ACCEPTS",
+        "to": "schema:NewBill"
+      },
+      {
+        "from": "operation:post:/api/Bill",
+        "kind": "RETURNS",
+        "to": "schema:Bill"
+      },
+      {
+        "from": "operation:get:/api/BillPayment",
+        "kind": "RETURNS",
+        "to": "schema:BillPaymentList"
+      },
+      {
+        "from": "operation:post:/api/BillPayment",
+        "kind": "ACCEPTS",
+        "to": "schema:NewBillPayment"
+      },
+      {
+        "from": "operation:post:/api/BillPayment",
+        "kind": "RETURNS",
+        "to": "schema:BillPayment"
+      },
+      {
+        "from": "operation:get:/api/BillPayment/{id}",
+        "kind": "RETURNS",
+        "to": "schema:BillPayment"
+      },
+      {
+        "from": "operation:get:/api/Company",
+        "kind": "RETURNS",
+        "to": "schema:CompanyList"
+      },
+      {
+        "from": "operation:put:/api/Company",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateCompany"
+      },
+      {
+        "from": "operation:put:/api/Company",
+        "kind": "RETURNS",
+        "to": "schema:Company"
+      },
+      {
+        "from": "operation:post:/api/Company",
+        "kind": "ACCEPTS",
+        "to": "schema:NewCompany"
+      },
+      {
+        "from": "operation:post:/api/Company",
+        "kind": "RETURNS",
+        "to": "schema:Company"
+      },
+      {
+        "from": "operation:get:/api/Company/Lookup",
+        "kind": "RETURNS",
+        "to": "schema:CompanyDropdownList"
+      },
+      {
+        "from": "operation:get:/api/Company/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Company"
+      },
+      {
+        "from": "operation:get:/api/Contact",
+        "kind": "RETURNS",
+        "to": "schema:ContactList"
+      },
+      {
+        "from": "operation:post:/api/Contact",
+        "kind": "ACCEPTS",
+        "to": "schema:NewCompanyContact"
+      },
+      {
+        "from": "operation:post:/api/Contact",
+        "kind": "RETURNS",
+        "to": "schema:CompanyContact"
+      },
+      {
+        "from": "operation:get:/api/Contact/{id}",
+        "kind": "RETURNS",
+        "to": "schema:CompanyContact"
+      },
+      {
+        "from": "operation:get:/api/CreditNote",
+        "kind": "RETURNS",
+        "to": "schema:CreditNoteList"
+      },
+      {
+        "from": "operation:get:/api/CreditNote/{id}",
+        "kind": "RETURNS",
+        "to": "schema:CreditNote"
+      },
+      {
+        "from": "operation:get:/api/Currency",
+        "kind": "RETURNS",
+        "to": "schema:CurrencyList"
+      },
+      {
+        "from": "operation:get:/api/Estimate",
+        "kind": "RETURNS",
+        "to": "schema:EstimateList"
+      },
+      {
+        "from": "operation:post:/api/Estimate",
+        "kind": "ACCEPTS",
+        "to": "schema:NewEstimate"
+      },
+      {
+        "from": "operation:post:/api/Estimate",
+        "kind": "RETURNS",
+        "to": "schema:EstimateDetails"
+      },
+      {
+        "from": "operation:get:/api/Expense",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseList"
+      },
+      {
+        "from": "operation:put:/api/Expense",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateExpense"
+      },
+      {
+        "from": "operation:put:/api/Expense",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseDetails"
+      },
+      {
+        "from": "operation:post:/api/Expense",
+        "kind": "ACCEPTS",
+        "to": "schema:NewExpense"
+      },
+      {
+        "from": "operation:post:/api/Expense",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseDetails"
+      },
+      {
+        "from": "operation:delete:/api/Expense",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseDeleteResultSet"
+      },
+      {
+        "from": "operation:post:/api/Expense/Attachment",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseAttachmentUploadResult"
+      },
+      {
+        "from": "operation:get:/api/Expense/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseDetails"
+      },
+      {
+        "from": "operation:get:/api/ExpenseCategory",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseCategoryList"
+      },
+      {
+        "from": "operation:get:/api/ExpenseGroup/Lookup",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseGroupDropdownList"
+      },
+      {
+        "from": "operation:get:/api/ExpenseMerchant/Lookup",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseMerchantDropdownList"
+      },
+      {
+        "from": "operation:get:/api/ExpensePaymentMethod/Lookup",
+        "kind": "RETURNS",
+        "to": "schema:ExpensePaymentMethodDropdownList"
+      },
+      {
+        "from": "operation:get:/api/ExpenseSummary",
+        "kind": "RETURNS",
+        "to": "schema:ExpenseSummaryResult"
+      },
+      {
+        "from": "operation:get:/api/FixedAmount",
+        "kind": "RETURNS",
+        "to": "schema:FixedAmountList"
+      },
+      {
+        "from": "operation:get:/api/Inventory",
+        "kind": "RETURNS",
+        "to": "schema:InventoryList"
+      },
+      {
+        "from": "operation:get:/api/Invoice",
+        "kind": "RETURNS",
+        "to": "schema:InvoiceList"
+      },
+      {
+        "from": "operation:post:/api/Invoice",
+        "kind": "ACCEPTS",
+        "to": "schema:NewInvoice"
+      },
+      {
+        "from": "operation:post:/api/Invoice",
+        "kind": "RETURNS",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "operation:get:/api/Payment",
+        "kind": "RETURNS",
+        "to": "schema:PaymentList"
+      },
+      {
+        "from": "operation:post:/api/Payment",
+        "kind": "ACCEPTS",
+        "to": "schema:NewPayment"
+      },
+      {
+        "from": "operation:post:/api/Payment",
+        "kind": "RETURNS",
+        "to": "schema:Payment"
+      },
+      {
+        "from": "operation:get:/api/Payment/{id}",
+        "kind": "RETURNS",
+        "to": "schema:Payment"
+      },
+      {
+        "from": "operation:get:/api/Project",
+        "kind": "RETURNS",
+        "to": "schema:ProjectList"
+      },
+      {
+        "from": "operation:put:/api/Project",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateProjectModel"
+      },
+      {
+        "from": "operation:put:/api/Project",
+        "kind": "RETURNS",
+        "to": "schema:ProjectDetails"
+      },
+      {
+        "from": "operation:post:/api/Project",
+        "kind": "ACCEPTS",
+        "to": "schema:NewProjectModel"
+      },
+      {
+        "from": "operation:post:/api/Project",
+        "kind": "RETURNS",
+        "to": "schema:ProjectDetails"
+      },
+      {
+        "from": "operation:get:/api/Project/Lookup",
+        "kind": "RETURNS",
+        "to": "schema:ProjectDropdownList"
+      },
+      {
+        "from": "operation:get:/api/Project/{id}",
+        "kind": "RETURNS",
+        "to": "schema:ProjectDetails"
+      },
+      {
+        "from": "operation:get:/api/ProjectMember",
+        "kind": "RETURNS",
+        "to": "schema:ProjectMemberList"
+      },
+      {
+        "from": "operation:put:/api/ProjectMember",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateProjectMember"
+      },
+      {
+        "from": "operation:put:/api/ProjectMember",
+        "kind": "RETURNS",
+        "to": "schema:ProjectMemberDetails"
+      },
+      {
+        "from": "operation:post:/api/ProjectMember",
+        "kind": "ACCEPTS",
+        "to": "schema:NewProjectMember"
+      },
+      {
+        "from": "operation:post:/api/ProjectMember",
+        "kind": "RETURNS",
+        "to": "schema:ProjectMemberDetails"
+      },
+      {
+        "from": "operation:get:/api/ProjectTimesheetCategory",
+        "kind": "RETURNS",
+        "to": "schema:ProjectTimesheetCategoryList"
+      },
+      {
+        "from": "operation:post:/api/ProjectTimesheetCategory",
+        "kind": "ACCEPTS",
+        "to": "schema:AssignProjectTimesheetCategory"
+      },
+      {
+        "from": "operation:post:/api/ProjectTimesheetCategory",
+        "kind": "RETURNS",
+        "to": "schema:ProjectTimesheetCategoryDetails"
+      },
+      {
+        "from": "operation:get:/api/ScheduleAssignment",
+        "kind": "RETURNS",
+        "to": "schema:ScheduleAssignmentList"
+      },
+      {
+        "from": "operation:get:/api/ScheduleSeries",
+        "kind": "RETURNS",
+        "to": "schema:ScheduleSeriesList"
+      },
+      {
+        "from": "operation:get:/api/Section",
+        "kind": "RETURNS",
+        "to": "schema:SectionList"
+      },
+      {
+        "from": "operation:post:/api/Section",
+        "kind": "ACCEPTS",
+        "to": "schema:NewSection"
+      },
+      {
+        "from": "operation:post:/api/Section",
+        "kind": "RETURNS",
+        "to": "schema:SectionDetails"
+      },
+      {
+        "from": "operation:get:/api/Task",
+        "kind": "RETURNS",
+        "to": "schema:TaskList"
+      },
+      {
+        "from": "operation:put:/api/Task",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTask"
+      },
+      {
+        "from": "operation:put:/api/Task",
+        "kind": "RETURNS",
+        "to": "schema:TaskDetails"
+      },
+      {
+        "from": "operation:post:/api/Task",
+        "kind": "ACCEPTS",
+        "to": "schema:NewTask"
+      },
+      {
+        "from": "operation:post:/api/Task",
+        "kind": "RETURNS",
+        "to": "schema:TaskDetails"
+      },
+      {
+        "from": "operation:get:/api/Task/Lookup",
+        "kind": "RETURNS",
+        "to": "schema:TaskDropdownList"
+      },
+      {
+        "from": "operation:get:/api/Task/{id}",
+        "kind": "RETURNS",
+        "to": "schema:TaskDetails"
+      },
+      {
+        "from": "operation:get:/api/TaskStatus",
+        "kind": "RETURNS",
+        "to": "schema:TaskStatusList"
+      },
+      {
+        "from": "operation:get:/api/TaskType",
+        "kind": "RETURNS",
+        "to": "schema:TaskTypeList"
+      },
+      {
+        "from": "operation:get:/api/Tax",
+        "kind": "RETURNS",
+        "to": "schema:TaxList"
+      },
+      {
+        "from": "operation:get:/api/Timesheet",
+        "kind": "RETURNS",
+        "to": "schema:TimesheetList"
+      },
+      {
+        "from": "operation:put:/api/Timesheet",
+        "kind": "ACCEPTS",
+        "to": "schema:UpdateTimesheetModel"
+      },
+      {
+        "from": "operation:put:/api/Timesheet",
+        "kind": "RETURNS",
+        "to": "schema:TimesheetDetails"
+      },
+      {
+        "from": "operation:post:/api/Timesheet",
+        "kind": "ACCEPTS",
+        "to": "schema:NewTimesheet"
+      },
+      {
+        "from": "operation:post:/api/Timesheet",
+        "kind": "RETURNS",
+        "to": "schema:TimesheetDetails"
+      },
+      {
+        "from": "operation:get:/api/Timesheet/{id}",
+        "kind": "RETURNS",
+        "to": "schema:TimesheetDetails"
+      },
+      {
+        "from": "operation:get:/api/TimesheetSummary",
+        "kind": "RETURNS",
+        "to": "schema:TimesheetSummaryResult"
+      },
+      {
+        "from": "operation:get:/api/UserProfile",
+        "kind": "RETURNS",
+        "to": "schema:UserList"
+      },
+      {
+        "from": "operation:get:/api/Webhook",
+        "kind": "RETURNS",
+        "to": "schema:WebhookList"
+      },
+      {
+        "from": "operation:post:/api/Webhook",
+        "kind": "ACCEPTS",
+        "to": "schema:CreateSubscription"
+      },
+      {
+        "from": "operation:post:/api/Webhook",
+        "kind": "RETURNS",
+        "to": "schema:SubscribeResult"
+      },
+      {
+        "from": "operation:get:/api/Webhook/{id}",
+        "kind": "RETURNS",
+        "to": "schema:WebhookList"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillIssuerDetails"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillLineItem"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillLinks"
+      },
+      {
+        "from": "schema:Bill",
+        "kind": "REFERENCES",
+        "to": "schema:BillRecipientDetails"
+      },
+      {
+        "from": "schema:BillList",
+        "kind": "REFERENCES",
+        "to": "schema:Bill"
+      },
+      {
+        "from": "schema:BillPayment",
+        "kind": "REFERENCES",
+        "to": "schema:BillPaymentAllocation"
+      },
+      {
+        "from": "schema:BillPaymentList",
+        "kind": "REFERENCES",
+        "to": "schema:BillPayment"
+      },
+      {
+        "from": "schema:Company",
+        "kind": "REFERENCES",
+        "to": "schema:CompanyContact"
+      },
+      {
+        "from": "schema:CompanyDropdownList",
+        "kind": "REFERENCES",
+        "to": "schema:CompanyMinimal"
+      },
+      {
+        "from": "schema:CompanyList",
+        "kind": "REFERENCES",
+        "to": "schema:Company"
+      },
+      {
+        "from": "schema:ContactList",
+        "kind": "REFERENCES",
+        "to": "schema:CompanyContact"
+      },
+      {
+        "from": "schema:CreditNote",
+        "kind": "REFERENCES",
+        "to": "schema:CreditNoteAllocation"
+      },
+      {
+        "from": "schema:CreditNote",
+        "kind": "REFERENCES",
+        "to": "schema:CreditNoteLineItem"
+      },
+      {
+        "from": "schema:CreditNoteList",
+        "kind": "REFERENCES",
+        "to": "schema:CreditNote"
+      },
+      {
+        "from": "schema:CurrencyList",
+        "kind": "REFERENCES",
+        "to": "schema:Currency"
+      },
+      {
+        "from": "schema:EstimateDetails",
+        "kind": "REFERENCES",
+        "to": "schema:EstimateLineItemDetails"
+      },
+      {
+        "from": "schema:EstimateDetails",
+        "kind": "REFERENCES",
+        "to": "schema:EstimateLinks"
+      },
+      {
+        "from": "schema:EstimateDetails",
+        "kind": "REFERENCES",
+        "to": "schema:IssuerDetails"
+      },
+      {
+        "from": "schema:EstimateDetails",
+        "kind": "REFERENCES",
+        "to": "schema:RecipientDetails"
+      },
+      {
+        "from": "schema:EstimateList",
+        "kind": "REFERENCES",
+        "to": "schema:EstimateDetails"
+      },
+      {
+        "from": "schema:ExpenseAttachmentUploadResult",
+        "kind": "REFERENCES",
+        "to": "schema:FileAttachmentDetails"
+      },
+      {
+        "from": "schema:ExpenseCategoryList",
+        "kind": "REFERENCES",
+        "to": "schema:ExpenseCategoryDetails"
+      },
+      {
+        "from": "schema:ExpenseDeleteResultSet",
+        "kind": "REFERENCES",
+        "to": "schema:ExpenseDeleteResult"
+      },
+      {
+        "from": "schema:ExpenseGroupDropdownList",
+        "kind": "REFERENCES",
+        "to": "schema:ExpenseGroupMinimal"
+      },
+      {
+        "from": "schema:ExpenseList",
+        "kind": "REFERENCES",
+        "to": "schema:ExpenseDetails"
+      },
+      {
+        "from": "schema:ExpenseMerchantDropdownList",
+        "kind": "REFERENCES",
+        "to": "schema:ExpenseMerchantMinimal"
+      },
+      {
+        "from": "schema:ExpensePaymentMethodDropdownList",
+        "kind": "REFERENCES",
+        "to": "schema:ExpensePaymentMethodMinimal"
+      },
+      {
+        "from": "schema:ExpenseSummaryResult",
+        "kind": "REFERENCES",
+        "to": "schema:ExpenseSummaryGroup"
+      },
+      {
+        "from": "schema:FixedAmountList",
+        "kind": "REFERENCES",
+        "to": "schema:FixedAmountDetails"
+      },
+      {
+        "from": "schema:InventoryList",
+        "kind": "REFERENCES",
+        "to": "schema:InventoryItem"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceLineItem"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:InvoiceLinks"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:IssuerDetails"
+      },
+      {
+        "from": "schema:Invoice",
+        "kind": "REFERENCES",
+        "to": "schema:RecipientDetails"
+      },
+      {
+        "from": "schema:InvoiceList",
+        "kind": "REFERENCES",
+        "to": "schema:Invoice"
+      },
+      {
+        "from": "schema:NewBill",
+        "kind": "REFERENCES",
+        "to": "schema:NewBillLineItem"
+      },
+      {
+        "from": "schema:NewBillPayment",
+        "kind": "REFERENCES",
+        "to": "schema:NewBillPaymentAllocation"
+      },
+      {
+        "from": "schema:NewEstimate",
+        "kind": "REFERENCES",
+        "to": "schema:NewEstimateLineItem"
+      },
+      {
+        "from": "schema:NewInvoice",
+        "kind": "REFERENCES",
+        "to": "schema:NewInvoiceLineItem"
+      },
+      {
+        "from": "schema:NewPayment",
+        "kind": "REFERENCES",
+        "to": "schema:NewPaymentAllocation"
+      },
+      {
+        "from": "schema:NewTask",
+        "kind": "REFERENCES",
+        "to": "schema:NewTag"
+      },
+      {
+        "from": "schema:Payment",
+        "kind": "REFERENCES",
+        "to": "schema:PaymentAllocation"
+      },
+      {
+        "from": "schema:PaymentList",
+        "kind": "REFERENCES",
+        "to": "schema:Payment"
+      },
+      {
+        "from": "schema:ProjectCompanyGroup",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectDropdownSelection"
+      },
+      {
+        "from": "schema:ProjectDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectMemberDetails"
+      },
+      {
+        "from": "schema:ProjectDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectSectionDetails"
+      },
+      {
+        "from": "schema:ProjectDetails",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectTagItem"
+      },
+      {
+        "from": "schema:ProjectDropdownList",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectCompanyGroup"
+      },
+      {
+        "from": "schema:ProjectList",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectListDetails"
+      },
+      {
+        "from": "schema:ProjectMemberList",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectMemberDetails"
+      },
+      {
+        "from": "schema:ProjectTimesheetCategoryList",
+        "kind": "REFERENCES",
+        "to": "schema:ProjectTimesheetCategoryDetails"
+      },
+      {
+        "from": "schema:ScheduleAssignmentList",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduleAssignmentDetails"
+      },
+      {
+        "from": "schema:ScheduleSeriesList",
+        "kind": "REFERENCES",
+        "to": "schema:ScheduleSeriesDetails"
+      },
+      {
+        "from": "schema:SectionList",
+        "kind": "REFERENCES",
+        "to": "schema:SectionDetails"
+      },
+      {
+        "from": "schema:TaskDetails",
+        "kind": "REFERENCES",
+        "to": "schema:AssignedToUser"
+      },
+      {
+        "from": "schema:TaskDetails",
+        "kind": "REFERENCES",
+        "to": "schema:TagItem"
+      },
+      {
+        "from": "schema:TaskDropdownList",
+        "kind": "REFERENCES",
+        "to": "schema:TaskSectionGroup"
+      },
+      {
+        "from": "schema:TaskList",
+        "kind": "REFERENCES",
+        "to": "schema:TaskDetails"
+      },
+      {
+        "from": "schema:TaskSectionGroup",
+        "kind": "REFERENCES",
+        "to": "schema:TaskDropdownSelection"
+      },
+      {
+        "from": "schema:TaskStatusList",
+        "kind": "REFERENCES",
+        "to": "schema:TaskStatusDetails"
+      },
+      {
+        "from": "schema:TaskTypeList",
+        "kind": "REFERENCES",
+        "to": "schema:AccountTaskTypeDetails"
+      },
+      {
+        "from": "schema:TaxItem",
+        "kind": "REFERENCES",
+        "to": "schema:TaxComponent"
+      },
+      {
+        "from": "schema:TaxList",
+        "kind": "REFERENCES",
+        "to": "schema:TaxItem"
+      },
+      {
+        "from": "schema:TimesheetList",
+        "kind": "REFERENCES",
+        "to": "schema:TimesheetListDetails"
+      },
+      {
+        "from": "schema:TimesheetSummaryResult",
+        "kind": "REFERENCES",
+        "to": "schema:TimesheetSummaryGroup"
+      },
+      {
+        "from": "schema:UpdateTask",
+        "kind": "REFERENCES",
+        "to": "schema:NewTag"
+      },
+      {
+        "from": "schema:UserDetails",
+        "kind": "REFERENCES",
+        "to": "schema:RoleDetails"
+      },
+      {
+        "from": "schema:UserDetails",
+        "kind": "REFERENCES",
+        "to": "schema:UserTagDetails"
+      },
+      {
+        "from": "schema:UserList",
+        "kind": "REFERENCES",
+        "to": "schema:UserDetails"
+      },
+      {
+        "from": "schema:WebhookList",
+        "kind": "REFERENCES",
+        "to": "schema:WebhookDetails"
       }
     ],
     "nodes": [
@@ -448,6 +1283,24 @@
         "name": "ScheduleSeries_AddBooking",
         "path": "/ScheduleSeries/AddBooking",
         "pointer": "#/paths/~1ScheduleSeries~1AddBooking/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "CreateBooking"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduleSeriesDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -455,7 +1308,10 @@
             ]
           }
         ],
-        "summary": "Create new Schedule Booking"
+        "summary": "Create new Schedule Booking",
+        "tags": [
+          "ScheduleSeries"
+        ]
       },
       {
         "deprecated": false,
@@ -465,6 +1321,24 @@
         "name": "ScheduleSeries_AddLeave",
         "path": "/ScheduleSeries/AddLeave",
         "pointer": "#/paths/~1ScheduleSeries~1AddLeave/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "CreateLeave"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduleSeriesDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -472,7 +1346,10 @@
             ]
           }
         ],
-        "summary": "Create new Leave Booking"
+        "summary": "Create new Leave Booking",
+        "tags": [
+          "ScheduleSeries"
+        ]
       },
       {
         "deprecated": false,
@@ -482,6 +1359,24 @@
         "name": "ScheduleSeries_EditBooking",
         "path": "/ScheduleSeries/EditBooking",
         "pointer": "#/paths/~1ScheduleSeries~1EditBooking/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "EditBooking"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduleSeriesDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -489,7 +1384,10 @@
             ]
           }
         ],
-        "summary": "Edit Booking"
+        "summary": "Edit Booking",
+        "tags": [
+          "ScheduleSeries"
+        ]
       },
       {
         "deprecated": false,
@@ -499,6 +1397,24 @@
         "name": "ScheduleSeries_EditLeave",
         "path": "/ScheduleSeries/EditLeave",
         "pointer": "#/paths/~1ScheduleSeries~1EditLeave/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "EditLeave"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduleSeriesDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -506,7 +1422,10 @@
             ]
           }
         ],
-        "summary": "Edit Leave Booking"
+        "summary": "Edit Leave Booking",
+        "tags": [
+          "ScheduleSeries"
+        ]
       },
       {
         "deprecated": false,
@@ -516,6 +1435,16 @@
         "name": "Account_Get",
         "path": "/api/Account",
         "pointer": "#/paths/~1api~1Account/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "AccountDetails"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -523,16 +1452,64 @@
             ]
           }
         ],
-        "summary": "Account Details"
+        "summary": "Account Details",
+        "tags": [
+          "Account"
+        ]
       },
       {
         "deprecated": false,
+        "description": "TransactionStatusCode values are: \"Draft\", \"Verified\", \"Late\", \"Paid\", \"Partial\", \"Void\"",
         "id": "operation:get:/api/Bill",
         "kind": "operation",
         "method": "get",
         "name": "Bill_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "CompanyIDFK",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Bill",
         "pointer": "#/paths/~1api~1Bill/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -540,7 +1517,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Bills"
+        "summary": "Gets list of Bills",
+        "tags": [
+          "Bill"
+        ]
       },
       {
         "deprecated": false,
@@ -550,6 +1530,24 @@
         "name": "Bill_Post",
         "path": "/api/Bill",
         "pointer": "#/paths/~1api~1Bill/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewBill"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Bill"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -557,7 +1555,10 @@
             ]
           }
         ],
-        "summary": "Create a new draft Bill"
+        "summary": "Create a new draft Bill",
+        "tags": [
+          "Bill"
+        ]
       },
       {
         "deprecated": false,
@@ -565,8 +1566,26 @@
         "kind": "operation",
         "method": "get",
         "name": "Bill_GetByID",
+        "parameters": [
+          {
+            "description": "Bill Transaction ID number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Bill/{id}",
         "pointer": "#/paths/~1api~1Bill~1{id}/get",
+        "responses": [
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -574,7 +1593,10 @@
             ]
           }
         ],
-        "summary": "Gets a Bill by Bill ID"
+        "summary": "Gets a Bill by Bill ID",
+        "tags": [
+          "Bill"
+        ]
       },
       {
         "deprecated": false,
@@ -582,8 +1604,40 @@
         "kind": "operation",
         "method": "get",
         "name": "BillPayment_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/BillPayment",
         "pointer": "#/paths/~1api~1BillPayment/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillPaymentList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -591,7 +1645,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Bill Payments"
+        "summary": "Gets list of Bill Payments",
+        "tags": [
+          "BillPayment"
+        ]
       },
       {
         "deprecated": false,
@@ -601,6 +1658,24 @@
         "name": "BillPayment_Post",
         "path": "/api/BillPayment",
         "pointer": "#/paths/~1api~1BillPayment/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewBillPayment"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillPayment"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -608,7 +1683,10 @@
             ]
           }
         ],
-        "summary": "Create new Bill Payment and optionally assign payment allocations to Bills"
+        "summary": "Create new Bill Payment and optionally assign payment allocations to Bills",
+        "tags": [
+          "BillPayment"
+        ]
       },
       {
         "deprecated": false,
@@ -616,8 +1694,30 @@
         "kind": "operation",
         "method": "get",
         "name": "BillPayment_GetByID",
+        "parameters": [
+          {
+            "description": "Invoice Transaction ID Number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/BillPayment/{id}",
         "pointer": "#/paths/~1api~1BillPayment~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "BillPayment"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -625,7 +1725,10 @@
             ]
           }
         ],
-        "summary": "Gets a Bill Payment by Payment Transaction ID"
+        "summary": "Gets a Bill Payment by Payment Transaction ID",
+        "tags": [
+          "BillPayment"
+        ]
       },
       {
         "deprecated": false,
@@ -633,8 +1736,47 @@
         "kind": "operation",
         "method": "get",
         "name": "Company_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of results per page",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "1 based page number to retrieve",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "(optional) Supply one of: \"DateUpdated\", \"DateCreated\", \"CompanyName\",\"DateUpdated desc\",\"DateCreated desc\", \"CompanyName desc\"",
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/Company",
         "pointer": "#/paths/~1api~1Company/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CompanyList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -642,7 +1784,49 @@
             ]
           }
         ],
-        "summary": "Gets list of Companies"
+        "summary": "Gets list of Companies",
+        "tags": [
+          "Company"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Requires CompanyID and a list of field names to update.",
+        "id": "operation:put:/api/Company",
+        "kind": "operation",
+        "method": "put",
+        "name": "Company_Put",
+        "path": "/api/Company",
+        "pointer": "#/paths/~1api~1Company/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "UpdateCompany"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Company"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "write_contacts"
+            ]
+          }
+        ],
+        "summary": "Update a Company record.",
+        "tags": [
+          "Company"
+        ]
       },
       {
         "deprecated": false,
@@ -652,6 +1836,27 @@
         "name": "Company_Post",
         "path": "/api/Company",
         "pointer": "#/paths/~1api~1Company/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewCompany"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Company"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -659,33 +1864,50 @@
             ]
           }
         ],
-        "summary": "Create a Company"
+        "summary": "Create a Company",
+        "tags": [
+          "Company"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:put:/api/Company",
-        "kind": "operation",
-        "method": "put",
-        "name": "Company_Put",
-        "path": "/api/Company",
-        "pointer": "#/paths/~1api~1Company/put",
-        "security": [
-          {
-            "oauth2": [
-              "write_contacts"
-            ]
-          }
-        ],
-        "summary": "Update a Company record."
-      },
-      {
-        "deprecated": false,
+        "description": "Certain roles see a restricted set of companies based on their project memberships",
         "id": "operation:get:/api/Company/Lookup",
         "kind": "operation",
         "method": "get",
         "name": "CompanyLookup",
+        "parameters": [
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Search string to match against Company title",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/Company/Lookup",
         "pointer": "#/paths/~1api~1Company~1Lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CompanyDropdownList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -693,7 +1915,10 @@
             ]
           }
         ],
-        "summary": "Gets minimal list of Companies."
+        "summary": "Gets minimal list of Companies.",
+        "tags": [
+          "Company"
+        ]
       },
       {
         "deprecated": false,
@@ -701,8 +1926,30 @@
         "kind": "operation",
         "method": "get",
         "name": "Company_GetByID",
+        "parameters": [
+          {
+            "description": "Company ID Number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Company/{id}",
         "pointer": "#/paths/~1api~1Company~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Company"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -710,7 +1957,10 @@
             ]
           }
         ],
-        "summary": "Gets Company by Company ID"
+        "summary": "Gets Company by Company ID",
+        "tags": [
+          "Company"
+        ]
       },
       {
         "deprecated": false,
@@ -718,8 +1968,52 @@
         "kind": "operation",
         "method": "get",
         "name": "Contact_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "CompanyIDFK",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Contact",
         "pointer": "#/paths/~1api~1Contact/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ContactList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -727,7 +2021,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Contacts"
+        "summary": "Gets list of Contacts",
+        "tags": [
+          "Contact"
+        ]
       },
       {
         "deprecated": false,
@@ -737,6 +2034,27 @@
         "name": "Contact_Post",
         "path": "/api/Contact",
         "pointer": "#/paths/~1api~1Contact/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewCompanyContact"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "CompanyContact"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -744,7 +2062,10 @@
             ]
           }
         ],
-        "summary": "Create a Contact"
+        "summary": "Create a Contact",
+        "tags": [
+          "Contact"
+        ]
       },
       {
         "deprecated": false,
@@ -752,8 +2073,30 @@
         "kind": "operation",
         "method": "get",
         "name": "Contact_GetByID",
+        "parameters": [
+          {
+            "description": "Contact ID number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Contact/{id}",
         "pointer": "#/paths/~1api~1Contact~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CompanyContact"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -761,7 +2104,10 @@
             ]
           }
         ],
-        "summary": "Gets Contact by Contact ID"
+        "summary": "Gets Contact by Contact ID",
+        "tags": [
+          "Contact"
+        ]
       },
       {
         "deprecated": false,
@@ -769,8 +2115,40 @@
         "kind": "operation",
         "method": "get",
         "name": "CreditNote_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/CreditNote",
         "pointer": "#/paths/~1api~1CreditNote/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreditNoteList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -778,7 +2156,10 @@
             ]
           }
         ],
-        "summary": "Gets list of CreditNotes"
+        "summary": "Gets list of CreditNotes",
+        "tags": [
+          "CreditNote"
+        ]
       },
       {
         "deprecated": false,
@@ -786,8 +2167,30 @@
         "kind": "operation",
         "method": "get",
         "name": "CreditNote_GetByID",
+        "parameters": [
+          {
+            "description": "Credit Note ID Number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/CreditNote/{id}",
         "pointer": "#/paths/~1api~1CreditNote~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CreditNote"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -795,7 +2198,10 @@
             ]
           }
         ],
-        "summary": "Gets Credit Note by CreditNoteID"
+        "summary": "Gets Credit Note by CreditNoteID",
+        "tags": [
+          "CreditNote"
+        ]
       },
       {
         "deprecated": false,
@@ -805,17 +2211,72 @@
         "name": "Currency_Get",
         "path": "/api/Currency",
         "pointer": "#/paths/~1api~1Currency/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "CurrencyList"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Gets list of Currencies"
+        "summary": "Gets list of Currencies",
+        "tags": [
+          "Currency"
+        ]
       },
       {
         "deprecated": false,
+        "description": "EstimateStatusCode values are: \"Draft\", \"Sent\", \"Accepted\", \"Converted\", \"Expired\", \"Rejected\"",
         "id": "operation:get:/api/Estimate",
         "kind": "operation",
         "method": "get",
         "name": "Estimate_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "CompanyIDFK",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Estimate",
         "pointer": "#/paths/~1api~1Estimate/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "EstimateList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -823,7 +2284,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Estimates"
+        "summary": "Gets list of Estimates",
+        "tags": [
+          "Estimate"
+        ]
       },
       {
         "deprecated": false,
@@ -833,6 +2297,24 @@
         "name": "Estimate_Post",
         "path": "/api/Estimate",
         "pointer": "#/paths/~1api~1Estimate/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewEstimate"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "EstimateDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -840,7 +2322,10 @@
             ]
           }
         ],
-        "summary": "Create a new draft Estimate"
+        "summary": "Create a new draft Estimate",
+        "tags": [
+          "Estimate"
+        ]
       },
       {
         "deprecated": false,
@@ -848,8 +2333,26 @@
         "kind": "operation",
         "method": "get",
         "name": "Estimate_GetByID",
+        "parameters": [
+          {
+            "description": "Estimate Estimate ID number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Estimate/{id}",
         "pointer": "#/paths/~1api~1Estimate~1{id}/get",
+        "responses": [
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -857,24 +2360,10 @@
             ]
           }
         ],
-        "summary": "Gets Estimate by Estimate ID"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/Expense",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Expense_Delete",
-        "path": "/api/Expense",
-        "pointer": "#/paths/~1api~1Expense/delete",
-        "security": [
-          {
-            "oauth2": [
-              "write_expenses"
-            ]
-          }
-        ],
-        "summary": "Delete a Timesheet Entry"
+        "summary": "Gets Estimate by Estimate ID",
+        "tags": [
+          "Estimate"
+        ]
       },
       {
         "deprecated": false,
@@ -882,8 +2371,124 @@
         "kind": "operation",
         "method": "get",
         "name": "Expense_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "ExpenseDateFrom",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "ExpenseDateTo",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "UserEmail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "CategoryName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "CustomerID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "ProjectID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "isChargeable",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "isInvoiced",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "ExpenseReimbursementIDFK",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "in": "query",
+            "name": "ExpensePaymentMethodIDFK",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "ExpenseApprovalStatusCode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Search",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/Expense",
         "pointer": "#/paths/~1api~1Expense/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -891,24 +2496,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Expenses"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:post:/api/Expense",
-        "kind": "operation",
-        "method": "post",
-        "name": "Expense_Post",
-        "path": "/api/Expense",
-        "pointer": "#/paths/~1api~1Expense/post",
-        "security": [
-          {
-            "oauth2": [
-              "write_expenses"
-            ]
-          }
-        ],
-        "summary": "Create an Expense"
+        "summary": "Gets list of Expenses",
+        "tags": [
+          "Expense"
+        ]
       },
       {
         "deprecated": false,
@@ -918,6 +2509,24 @@
         "name": "Expense_Put",
         "path": "/api/Expense",
         "pointer": "#/paths/~1api~1Expense/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "UpdateExpense"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -925,7 +2534,86 @@
             ]
           }
         ],
-        "summary": "Update an Expense"
+        "summary": "Update an Expense",
+        "tags": [
+          "Expense"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/api/Expense",
+        "kind": "operation",
+        "method": "post",
+        "name": "Expense_Post",
+        "path": "/api/Expense",
+        "pointer": "#/paths/~1api~1Expense/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewExpense"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseDetails"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "write_expenses"
+            ]
+          }
+        ],
+        "summary": "Create an Expense",
+        "tags": [
+          "Expense"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/Expense",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Expense_Delete",
+        "path": "/api/Expense",
+        "pointer": "#/paths/~1api~1Expense/delete",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "integer:int64[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseDeleteResultSet"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "write_expenses"
+            ]
+          }
+        ],
+        "summary": "Delete a Timesheet Entry",
+        "tags": [
+          "Expense"
+        ]
       },
       {
         "deprecated": false,
@@ -933,8 +2621,24 @@
         "kind": "operation",
         "method": "post",
         "name": "ExpenseAttachment",
+        "parameters": [
+          {
+            "description": "Upload software package",
+            "in": "formData",
+            "name": "File",
+            "required": true,
+            "type": "file"
+          }
+        ],
         "path": "/api/Expense/Attachment",
         "pointer": "#/paths/~1api~1Expense~1Attachment/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseAttachmentUploadResult"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -942,7 +2646,10 @@
             ]
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "Expense"
+        ]
       },
       {
         "deprecated": false,
@@ -950,8 +2657,30 @@
         "kind": "operation",
         "method": "get",
         "name": "Expense_GetByID",
+        "parameters": [
+          {
+            "description": "Expense ID number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Expense/{id}",
         "pointer": "#/paths/~1api~1Expense~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseDetails"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -959,7 +2688,10 @@
             ]
           }
         ],
-        "summary": "Gets an Expense Entry by Expense ID"
+        "summary": "Gets an Expense Entry by Expense ID",
+        "tags": [
+          "Expense"
+        ]
       },
       {
         "deprecated": false,
@@ -967,8 +2699,42 @@
         "kind": "operation",
         "method": "post",
         "name": "ExpenseApproval",
+        "parameters": [
+          {
+            "description": "The user to submit the Expenses for.",
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Send email alerts to expense approvers.",
+            "in": "query",
+            "name": "SendNotifications",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/ExpenseApproval/Submit",
         "pointer": "#/paths/~1api~1ExpenseApproval~1Submit/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "integer:int64[]"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -976,16 +2742,39 @@
             ]
           }
         ],
-        "summary": "Submit Expenses for Approval."
+        "summary": "Submit Expenses for Approval.",
+        "tags": [
+          "Expense"
+        ]
       },
       {
         "deprecated": false,
+        "description": "The default sort order is by Name asc",
         "id": "operation:get:/api/ExpenseCategory",
         "kind": "operation",
         "method": "get",
         "name": "ExpenseCategory_Get",
+        "parameters": [
+          {
+            "description": "Optional filter on for enabled/disabled categories.",
+            "in": "query",
+            "name": "isEnabled",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/ExpenseCategory",
         "pointer": "#/paths/~1api~1ExpenseCategory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseCategoryList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -993,16 +2782,50 @@
             ]
           }
         ],
-        "summary": "Gets list of Expense Categories"
+        "summary": "Gets list of Expense Categories",
+        "tags": [
+          "ExpenseCategory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Expense Groups are for adhoc grouping of reported expenses.",
         "id": "operation:get:/api/ExpenseGroup/Lookup",
         "kind": "operation",
         "method": "get",
         "name": "ExpenseGroupLookup",
+        "parameters": [
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Search string to match against Expense Group Name",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/ExpenseGroup/Lookup",
         "pointer": "#/paths/~1api~1ExpenseGroup~1Lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseGroupDropdownList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1010,7 +2833,10 @@
             ]
           }
         ],
-        "summary": "Gets minimal list of Expense Groups."
+        "summary": "Gets minimal list of Expense Groups.",
+        "tags": [
+          "ExpenseGroup"
+        ]
       },
       {
         "deprecated": false,
@@ -1018,8 +2844,38 @@
         "kind": "operation",
         "method": "get",
         "name": "ExpenseMerchangeLookup",
+        "parameters": [
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Search string to match against Expense Group Name",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/ExpenseMerchant/Lookup",
         "pointer": "#/paths/~1api~1ExpenseMerchant~1Lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseMerchantDropdownList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1027,7 +2883,10 @@
             ]
           }
         ],
-        "summary": "Gets minimal list of Expense Merchants."
+        "summary": "Gets minimal list of Expense Merchants.",
+        "tags": [
+          "ExpenseMerchant"
+        ]
       },
       {
         "deprecated": false,
@@ -1037,6 +2896,13 @@
         "name": "ExpensePaymentMethodLookup",
         "path": "/api/ExpensePaymentMethod/Lookup",
         "pointer": "#/paths/~1api~1ExpensePaymentMethod~1Lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpensePaymentMethodDropdownList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1044,7 +2910,10 @@
             ]
           }
         ],
-        "summary": "Gets minimal list of Expense Payment Methods."
+        "summary": "Gets minimal list of Expense Payment Methods.",
+        "tags": [
+          "ExpensePaymentMethod"
+        ]
       },
       {
         "deprecated": false,
@@ -1052,8 +2921,52 @@
         "kind": "operation",
         "method": "get",
         "name": "ExpenseSummary_Get",
+        "parameters": [
+          {
+            "description": "(Optional) Combine one, two or three levels of Grouping.",
+            "in": "query",
+            "name": "model.groupBy",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "(Required) Filter for expenses with expense dates greater or equal to the specified date.",
+            "in": "query",
+            "name": "model.expenseDateFrom",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "(Required) Filter for expenses with an expense date smaller or equal to the specified date.",
+            "in": "query",
+            "name": "model.expenseDateTo",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "(Optional) Defaults to the current user.",
+            "in": "query",
+            "name": "model.userID",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "(Optional) Filter by Project",
+            "in": "query",
+            "name": "model.projectID",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/ExpenseSummary",
         "pointer": "#/paths/~1api~1ExpenseSummary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ExpenseSummaryResult"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1061,7 +2974,10 @@
             ]
           }
         ],
-        "summary": "Gets Basic Summary of Expense Statistics"
+        "summary": "Gets Basic Summary of Expense Statistics",
+        "tags": [
+          "ExpenseSummary"
+        ]
       },
       {
         "deprecated": false,
@@ -1069,8 +2985,79 @@
         "kind": "operation",
         "method": "get",
         "name": "FixedAmount_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "EntryDateFrom",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "EntryDateTo",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "(Optional) The ProjectID of a Project to filter Fixed Amounts for",
+            "in": "query",
+            "name": "ProjectID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "(Optional) The TaskID of a Task to filter Fixed Amounts for",
+            "in": "query",
+            "name": "TaskID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "isInvoiced",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional sorting instruction.",
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/FixedAmount",
         "pointer": "#/paths/~1api~1FixedAmount/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "FixedAmountList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1078,7 +3065,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Fixed Amounts"
+        "summary": "Gets list of Fixed Amounts",
+        "tags": [
+          "FixedAmount"
+        ]
       },
       {
         "deprecated": false,
@@ -1086,8 +3076,40 @@
         "kind": "operation",
         "method": "get",
         "name": "Inventory_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Inventory",
         "pointer": "#/paths/~1api~1Inventory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InventoryList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1095,7 +3117,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Inventory"
+        "summary": "Gets list of Inventory",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
         "deprecated": false,
@@ -1103,8 +3128,26 @@
         "kind": "operation",
         "method": "get",
         "name": "Inventory_GetByID",
+        "parameters": [
+          {
+            "description": "InventoryItem ID number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Inventory/{id}",
         "pointer": "#/paths/~1api~1Inventory~1{id}/get",
+        "responses": [
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1112,16 +3155,64 @@
             ]
           }
         ],
-        "summary": "Gets InventoryItem by InventoryItem ID"
+        "summary": "Gets InventoryItem by InventoryItem ID",
+        "tags": [
+          "Inventory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "TransactionStatusCode values are: \"Draft\", \"Sent\", \"Late\", \"Paid\", \"Partial\", \"Void\"",
         "id": "operation:get:/api/Invoice",
         "kind": "operation",
         "method": "get",
         "name": "Invoice_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "CompanyIDFK",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Invoice",
         "pointer": "#/paths/~1api~1Invoice/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "InvoiceList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1129,7 +3220,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Invoices"
+        "summary": "Gets list of Invoices",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -1139,6 +3233,24 @@
         "name": "Invoice_Post",
         "path": "/api/Invoice",
         "pointer": "#/paths/~1api~1Invoice/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewInvoice"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Invoice"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1146,7 +3258,10 @@
             ]
           }
         ],
-        "summary": "Create a new draft invoice"
+        "summary": "Create a new draft invoice",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -1154,8 +3269,26 @@
         "kind": "operation",
         "method": "get",
         "name": "Invoice_GetByID",
+        "parameters": [
+          {
+            "description": "Invoice Transaction ID number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Invoice/{id}",
         "pointer": "#/paths/~1api~1Invoice~1{id}/get",
+        "responses": [
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1163,7 +3296,10 @@
             ]
           }
         ],
-        "summary": "Gets Invoice by Invoice ID"
+        "summary": "Gets Invoice by Invoice ID",
+        "tags": [
+          "Invoice"
+        ]
       },
       {
         "deprecated": false,
@@ -1171,8 +3307,40 @@
         "kind": "operation",
         "method": "get",
         "name": "Payment_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Payment",
         "pointer": "#/paths/~1api~1Payment/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "PaymentList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1180,7 +3348,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Payments"
+        "summary": "Gets list of Payments",
+        "tags": [
+          "Payment"
+        ]
       },
       {
         "deprecated": false,
@@ -1190,6 +3361,24 @@
         "name": "Payment_Post",
         "path": "/api/Payment",
         "pointer": "#/paths/~1api~1Payment/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewPayment"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "Payment"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1197,7 +3386,10 @@
             ]
           }
         ],
-        "summary": "Create new Payment and optionally assign payment allocations to Invoices"
+        "summary": "Create new Payment and optionally assign payment allocations to Invoices",
+        "tags": [
+          "Payment"
+        ]
       },
       {
         "deprecated": false,
@@ -1205,8 +3397,30 @@
         "kind": "operation",
         "method": "get",
         "name": "Payment_GetByID",
+        "parameters": [
+          {
+            "description": "Invoice Transaction ID Number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Payment/{id}",
         "pointer": "#/paths/~1api~1Payment~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Payment"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1214,7 +3428,10 @@
             ]
           }
         ],
-        "summary": "Gets Payment by Payment Transaction ID"
+        "summary": "Gets Payment by Payment Transaction ID",
+        "tags": [
+          "Payment"
+        ]
       },
       {
         "deprecated": false,
@@ -1222,8 +3439,59 @@
         "kind": "operation",
         "method": "get",
         "name": "Project_Get",
+        "parameters": [
+          {
+            "description": "Only show project records updated after a certain date (UTC)",
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "A column to sort on.",
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to the projects that the supplied UserID can add timesheets to",
+            "in": "query",
+            "name": "TimesheetUserID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Include Archived Projects in the results",
+            "in": "query",
+            "name": "includeArchived",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/Project",
         "pointer": "#/paths/~1api~1Project/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1231,7 +3499,49 @@
             ]
           }
         ],
-        "summary": "Gets list of Projects"
+        "summary": "Gets list of Projects",
+        "tags": [
+          "Project"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Update a Project",
+        "id": "operation:put:/api/Project",
+        "kind": "operation",
+        "method": "put",
+        "name": "Project_Put",
+        "path": "/api/Project",
+        "pointer": "#/paths/~1api~1Project/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "UpdateProjectModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectDetails"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "write_projects"
+            ]
+          }
+        ],
+        "summary": "Update an Project",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -1241,6 +3551,27 @@
         "name": "Project_Post",
         "path": "/api/Project",
         "pointer": "#/paths/~1api~1Project/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewProjectModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectDetails"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1248,24 +3579,10 @@
             ]
           }
         ],
-        "summary": "Create a Project"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:put:/api/Project",
-        "kind": "operation",
-        "method": "put",
-        "name": "Project_Put",
-        "path": "/api/Project",
-        "pointer": "#/paths/~1api~1Project/put",
-        "security": [
-          {
-            "oauth2": [
-              "write_projects"
-            ]
-          }
-        ],
-        "summary": "Update an Project"
+        "summary": "Create a Project",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -1273,8 +3590,52 @@
         "kind": "operation",
         "method": "get",
         "name": "ProjectLookup",
+        "parameters": [
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optionally Filter to the projects that the supplied UserID can add timesheets to",
+            "in": "query",
+            "name": "TimesheetUserID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optionally Filter for a specific Company ID",
+            "in": "query",
+            "name": "CompanyIDFK",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Search string to match against Project title and Customer name",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/Project/Lookup",
         "pointer": "#/paths/~1api~1Project~1Lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectDropdownList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1282,7 +3643,10 @@
             ]
           }
         ],
-        "summary": "Gets minimal list of active Projects for the current user"
+        "summary": "Gets minimal list of active Projects for the current user",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
@@ -1290,8 +3654,30 @@
         "kind": "operation",
         "method": "get",
         "name": "Project_GetByID",
+        "parameters": [
+          {
+            "description": "Project ID number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Project/{id}",
         "pointer": "#/paths/~1api~1Project~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectDetails"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1299,16 +3685,46 @@
             ]
           }
         ],
-        "summary": "Gets Project by Project ID"
+        "summary": "Gets Project by Project ID",
+        "tags": [
+          "Project"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Include at least one of ProjectID or UserID parameters.",
         "id": "operation:get:/api/ProjectMember",
         "kind": "operation",
         "method": "get",
         "name": "ProjectMember_Get",
+        "parameters": [
+          {
+            "description": "Get Project members filtered by ProjectID",
+            "in": "query",
+            "name": "ProjectID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Get Project members filtered by UserID",
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/ProjectMember",
         "pointer": "#/paths/~1api~1ProjectMember/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectMemberList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1316,33 +3732,38 @@
             ]
           }
         ],
-        "summary": "Gets list of Project Members"
+        "summary": "Gets list of Project Members",
+        "tags": [
+          "ProjectMember"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/api/ProjectMember",
-        "kind": "operation",
-        "method": "post",
-        "name": "ProjectMember_Post",
-        "path": "/api/ProjectMember",
-        "pointer": "#/paths/~1api~1ProjectMember/post",
-        "security": [
-          {
-            "oauth2": [
-              "write_projects"
-            ]
-          }
-        ],
-        "summary": "Assign a user as a Member of a Project"
-      },
-      {
-        "deprecated": false,
+        "description": "Fields are only updated if their field name is in the FieldsToUpdate string collection.",
         "id": "operation:put:/api/ProjectMember",
         "kind": "operation",
         "method": "put",
         "name": "ProjectMember_Put",
         "path": "/api/ProjectMember",
         "pointer": "#/paths/~1api~1ProjectMember/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "UpdateProjectMember"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectMemberDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1350,16 +3771,78 @@
             ]
           }
         ],
-        "summary": "Update a Member of a Project"
+        "summary": "Update a Member of a Project",
+        "tags": [
+          "ProjectMember"
+        ]
       },
       {
         "deprecated": false,
+        "description": "the Amount columns for Cost, Budget, Rates should be specified as a decimal.",
+        "id": "operation:post:/api/ProjectMember",
+        "kind": "operation",
+        "method": "post",
+        "name": "ProjectMember_Post",
+        "path": "/api/ProjectMember",
+        "pointer": "#/paths/~1api~1ProjectMember/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewProjectMember"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectMemberDetails"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "write_projects"
+            ]
+          }
+        ],
+        "summary": "Assign a user as a Member of a Project",
+        "tags": [
+          "ProjectMember"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The default sort order is by isBillable desc, Name asc",
         "id": "operation:get:/api/ProjectTimesheetCategory",
         "kind": "operation",
         "method": "get",
         "name": "ProjectTimesheetCategory_Get",
+        "parameters": [
+          {
+            "description": "Get categories filtered by ProjectID",
+            "in": "query",
+            "name": "ProjectID",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/ProjectTimesheetCategory",
         "pointer": "#/paths/~1api~1ProjectTimesheetCategory/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectTimesheetCategoryList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1367,7 +3850,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Project Timesheet Categories"
+        "summary": "Gets list of Project Timesheet Categories",
+        "tags": [
+          "ProjectTimesheetCategory"
+        ]
       },
       {
         "deprecated": false,
@@ -1377,6 +3863,24 @@
         "name": "ProjectTimesheetCategory_Post",
         "path": "/api/ProjectTimesheetCategory",
         "pointer": "#/paths/~1api~1ProjectTimesheetCategory/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "AssignProjectTimesheetCategory"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "ProjectTimesheetCategoryDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1384,16 +3888,95 @@
             ]
           }
         ],
-        "summary": "Assign a TimeSheetCategory to a Project."
+        "summary": "Assign a TimeSheetCategory to a Project.",
+        "tags": [
+          "ProjectTimesheetCategory"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Schedule assignments are per-day, and link to a parent Schedule Series.",
         "id": "operation:get:/api/ScheduleAssignment",
         "kind": "operation",
         "method": "get",
         "name": "ScheduleAssignment_Get",
+        "parameters": [
+          {
+            "description": "Limit results to records updated after the specified date",
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter for schedule assignement that are on or after a specific date",
+            "in": "query",
+            "name": "ScheduleDateFrom",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter for schedules that are on or before a specific date",
+            "in": "query",
+            "name": "ScheduleDateTo",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter to records for a particular Schedule Series",
+            "in": "query",
+            "name": "ScheduleSeriesID",
+            "required": false,
+            "type": "integer:int64"
+          },
+          {
+            "description": "The UserID of a schedule user to filter assignments for.",
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The email of the user who has been scheduled",
+            "in": "query",
+            "name": "UserEmail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional sorting instruction.",
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/ScheduleAssignment",
         "pointer": "#/paths/~1api~1ScheduleAssignment/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduleAssignmentList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1401,16 +3984,137 @@
             ]
           }
         ],
-        "summary": "Gets list of Schedule Assignments."
+        "summary": "Gets list of Schedule Assignments.",
+        "tags": [
+          "ScheduleAssignment"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Schedule Series represents a strip of time assigned to a user over a date range, for a certain number of hours per day.",
         "id": "operation:get:/api/ScheduleSeries",
         "kind": "operation",
         "method": "get",
         "name": "ScheduleSeries_Get",
+        "parameters": [
+          {
+            "description": "Limit results to records updated after the specified date",
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter for schedules that start on or after a specific date",
+            "in": "query",
+            "name": "ScheduleStartDateFrom",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter for schedules that start on or before a specific date",
+            "in": "query",
+            "name": "ScheduleStartDateTo",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter for schedules that end on or after a specific date",
+            "in": "query",
+            "name": "ScheduleEndDateFrom",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Filter for schedules that end on or before a specific date",
+            "in": "query",
+            "name": "ScheduleEndDateTo",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The UserID of a schedule user to filter assignments for.",
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "The email of the user who has been scheduled",
+            "in": "query",
+            "name": "UserEmail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter for schedule records linked to a specific timesheeet category",
+            "in": "query",
+            "name": "TimeSheetCategoryID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter for schedule records with a specific timesheeet category name (exact string match)",
+            "in": "query",
+            "name": "TimeSheetCategoryName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filter to records of a particular leave type",
+            "in": "query",
+            "name": "LeaveTypeID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter to only include books linked to a specific project",
+            "in": "query",
+            "name": "ProjectID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Filter to only include records linked to projects, where that project belongs to a specific customer company",
+            "in": "query",
+            "name": "CompanyID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional sorting instruction.",
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/ScheduleSeries",
         "pointer": "#/paths/~1api~1ScheduleSeries/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "ScheduleSeriesList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1418,24 +4122,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Schedule Series"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/Section",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Section_Delete",
-        "path": "/api/Section",
-        "pointer": "#/paths/~1api~1Section/delete",
-        "security": [
-          {
-            "oauth2": [
-              "write_projects"
-            ]
-          }
-        ],
-        "summary": "Delete a Section"
+        "summary": "Gets list of Schedule Series",
+        "tags": [
+          "ScheduleSeries"
+        ]
       },
       {
         "deprecated": false,
@@ -1443,8 +4133,27 @@
         "kind": "operation",
         "method": "get",
         "name": "Section_Get",
+        "parameters": [
+          {
+            "description": "Get sections for Project with ProjectID",
+            "in": "query",
+            "name": "ProjectID",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Section",
         "pointer": "#/paths/~1api~1Section/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "SectionList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1452,7 +4161,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Sections"
+        "summary": "Gets list of Sections",
+        "tags": [
+          "Section"
+        ]
       },
       {
         "deprecated": false,
@@ -1462,6 +4174,24 @@
         "name": "Section_Post",
         "path": "/api/Section",
         "pointer": "#/paths/~1api~1Section/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewSection"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "SectionDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1469,16 +4199,34 @@
             ]
           }
         ],
-        "summary": "Create a Section"
+        "summary": "Create a Section",
+        "tags": [
+          "Section"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/Task",
+        "id": "operation:delete:/api/Section",
         "kind": "operation",
         "method": "delete",
-        "name": "Task_Delete",
-        "path": "/api/Task",
-        "pointer": "#/paths/~1api~1Task/delete",
+        "name": "Section_Delete",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "SectionID",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/Section",
+        "pointer": "#/paths/~1api~1Section/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1486,7 +4234,10 @@
             ]
           }
         ],
-        "summary": "Delete a Task"
+        "summary": "Delete a Section",
+        "tags": [
+          "Section"
+        ]
       },
       {
         "deprecated": false,
@@ -1494,8 +4245,62 @@
         "kind": "operation",
         "method": "get",
         "name": "Task_Get",
+        "parameters": [
+          {
+            "description": "Optional filter to records updated after a specific date.",
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "Number of items per page.",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Optional sorting instruction.",
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional filter to only display tasks linked to a Task Status where isComplete=false, or where isComplete=true",
+            "in": "query",
+            "name": "isComplete",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Optional filter to only display tasks belonging to a specific ProjectID",
+            "in": "query",
+            "name": "ProjectID",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Task",
         "pointer": "#/paths/~1api~1Task/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1503,7 +4308,49 @@
             ]
           }
         ],
-        "summary": "Gets list of Tasks"
+        "summary": "Gets list of Tasks",
+        "tags": [
+          "Task"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Requires TaskID and a list of field names to update.",
+        "id": "operation:put:/api/Task",
+        "kind": "operation",
+        "method": "put",
+        "name": "Task_Put",
+        "path": "/api/Task",
+        "pointer": "#/paths/~1api~1Task/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "UpdateTask"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskDetails"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "write_projects"
+            ]
+          }
+        ],
+        "summary": "Update a Task.",
+        "tags": [
+          "Task"
+        ]
       },
       {
         "deprecated": false,
@@ -1513,6 +4360,24 @@
         "name": "Task_Post",
         "path": "/api/Task",
         "pointer": "#/paths/~1api~1Task/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewTask"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1520,16 +4385,34 @@
             ]
           }
         ],
-        "summary": "Create a Task"
+        "summary": "Create a Task",
+        "tags": [
+          "Task"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:put:/api/Task",
+        "id": "operation:delete:/api/Task",
         "kind": "operation",
-        "method": "put",
-        "name": "Task_Put",
+        "method": "delete",
+        "name": "Task_Delete",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "TaskID",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Task",
-        "pointer": "#/paths/~1api~1Task/put",
+        "pointer": "#/paths/~1api~1Task/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1537,16 +4420,64 @@
             ]
           }
         ],
-        "summary": "Update a Task."
+        "summary": "Delete a Task",
+        "tags": [
+          "Task"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Groups Tasks by Section.",
         "id": "operation:get:/api/Task/Lookup",
         "kind": "operation",
         "method": "get",
         "name": "TaskLookup",
+        "parameters": [
+          {
+            "description": "(required) The ProjectID to use when filtering Tasks",
+            "in": "query",
+            "name": "projectID",
+            "required": true,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "(optional) true/false to hide completed tasks.",
+            "in": "query",
+            "name": "hideCompleted",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "(optional) Search string to match against Task title.",
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/Task/Lookup",
         "pointer": "#/paths/~1api~1Task~1Lookup/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskDropdownList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1554,7 +4485,10 @@
             ]
           }
         ],
-        "summary": "Gets minimal list of Tasks for the current user"
+        "summary": "Gets minimal list of Tasks for the current user",
+        "tags": [
+          "Task"
+        ]
       },
       {
         "deprecated": false,
@@ -1562,8 +4496,30 @@
         "kind": "operation",
         "method": "get",
         "name": "Task_GetByID",
+        "parameters": [
+          {
+            "description": "Task ID number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Task/{id}",
         "pointer": "#/paths/~1api~1Task~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskDetails"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1571,7 +4527,10 @@
             ]
           }
         ],
-        "summary": "Gets Task by Task ID"
+        "summary": "Gets Task by Task ID",
+        "tags": [
+          "Task"
+        ]
       },
       {
         "deprecated": false,
@@ -1581,6 +4540,13 @@
         "name": "TaskStatus_Get",
         "path": "/api/TaskStatus",
         "pointer": "#/paths/~1api~1TaskStatus/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskStatusList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1588,7 +4554,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Task Statuses"
+        "summary": "Gets list of Task Statuses",
+        "tags": [
+          "TaskStatus"
+        ]
       },
       {
         "deprecated": false,
@@ -1598,6 +4567,13 @@
         "name": "TaskType_Get",
         "path": "/api/TaskType",
         "pointer": "#/paths/~1api~1TaskType/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaskTypeList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1605,7 +4581,10 @@
             ]
           }
         ],
-        "summary": "Gets list of Task Types"
+        "summary": "Gets list of Task Types",
+        "tags": [
+          "TaskType"
+        ]
       },
       {
         "deprecated": false,
@@ -1615,6 +4594,13 @@
         "name": "Tax_Get",
         "path": "/api/Tax",
         "pointer": "#/paths/~1api~1Tax/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TaxList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1622,7 +4608,10 @@
             ]
           }
         ],
-        "summary": "Get List of Taxes configured in the Avaza account."
+        "summary": "Get List of Taxes configured in the Avaza account.",
+        "tags": [
+          "Tax"
+        ]
       },
       {
         "deprecated": false,
@@ -1630,8 +4619,109 @@
         "kind": "operation",
         "method": "get",
         "name": "Timesheet_Get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UpdatedAfter",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "EntryDateFrom",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "in": "query",
+            "name": "EntryDateTo",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The UserID of a timesheet user to filter timesheets for.",
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "UserEmail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "CategoryName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ProjectID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "in": "query",
+            "name": "isBillable",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "isInvoiced",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "isTimerRunning",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Number of items per page (max 1000)",
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Page to display.",
+            "in": "query",
+            "name": "pageNumber",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "Defaults to false.",
+            "in": "query",
+            "name": "includeInvoiceDetails",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Optional sorting instruction.",
+            "in": "query",
+            "name": "Sort",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/Timesheet",
         "pointer": "#/paths/~1api~1Timesheet/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimesheetList"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1639,7 +4729,49 @@
             ]
           }
         ],
-        "summary": "Gets list of Timsheets"
+        "summary": "Gets list of Timsheets",
+        "tags": [
+          "Timesheet"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "The FieldsToUpdate field expects a string array collection of the field names you would like updated.",
+        "id": "operation:put:/api/Timesheet",
+        "kind": "operation",
+        "method": "put",
+        "name": "Timesheet_Put",
+        "path": "/api/Timesheet",
+        "pointer": "#/paths/~1api~1Timesheet/put",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "UpdateTimesheetModel"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimesheetDetails"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "write_timesheets"
+            ]
+          }
+        ],
+        "summary": "Update a Timesheet",
+        "tags": [
+          "Timesheet"
+        ]
       },
       {
         "deprecated": false,
@@ -1649,6 +4781,24 @@
         "name": "Timesheet_Post",
         "path": "/api/Timesheet",
         "pointer": "#/paths/~1api~1Timesheet/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "NewTimesheet"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimesheetDetails"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1656,41 +4806,10 @@
             ]
           }
         ],
-        "summary": "Create a new Timesheet Entry"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:put:/api/Timesheet",
-        "kind": "operation",
-        "method": "put",
-        "name": "Timesheet_Put",
-        "path": "/api/Timesheet",
-        "pointer": "#/paths/~1api~1Timesheet/put",
-        "security": [
-          {
-            "oauth2": [
-              "write_timesheets"
-            ]
-          }
-        ],
-        "summary": "Update a Timesheet"
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/Timesheet/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Timesheet_Delete",
-        "path": "/api/Timesheet/{id}",
-        "pointer": "#/paths/~1api~1Timesheet~1{id}/delete",
-        "security": [
-          {
-            "oauth2": [
-              "write_timesheets"
-            ]
-          }
-        ],
-        "summary": "Delete a Timesheet Entry"
+        "summary": "Create a new Timesheet Entry",
+        "tags": [
+          "Timesheet"
+        ]
       },
       {
         "deprecated": false,
@@ -1698,8 +4817,30 @@
         "kind": "operation",
         "method": "get",
         "name": "Timesheet_GetByID",
+        "parameters": [
+          {
+            "description": "Timesheet ID number",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
         "path": "/api/Timesheet/{id}",
         "pointer": "#/paths/~1api~1Timesheet~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimesheetDetails"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1707,16 +4848,35 @@
             ]
           }
         ],
-        "summary": "Gets a Timesheet Entry by Timesheet ID"
+        "summary": "Gets a Timesheet Entry by Timesheet ID",
+        "tags": [
+          "Timesheet"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:post:/api/TimesheetSubmission",
+        "id": "operation:delete:/api/Timesheet/{id}",
         "kind": "operation",
-        "method": "post",
-        "name": "TimesheetSubmission_Post",
-        "path": "/api/TimesheetSubmission",
-        "pointer": "#/paths/~1api~1TimesheetSubmission/post",
+        "method": "delete",
+        "name": "Timesheet_Delete",
+        "parameters": [
+          {
+            "description": "The id of the timesheet entry to be deleted",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          }
+        ],
+        "path": "/api/Timesheet/{id}",
+        "pointer": "#/paths/~1api~1Timesheet~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1724,7 +4884,68 @@
             ]
           }
         ],
-        "summary": "Submit Timesheets for Approval."
+        "summary": "Delete a Timesheet Entry",
+        "tags": [
+          "Timesheet"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Either provide a a specific Day (WholeDayOf) or any day in a Week (WholeWeekOf) to submit all draft timesheets in that day or week",
+        "id": "operation:post:/api/TimesheetSubmission",
+        "kind": "operation",
+        "method": "post",
+        "name": "TimesheetSubmission_Post",
+        "parameters": [
+          {
+            "description": "Send email alerts to timesheet approvers.",
+            "in": "query",
+            "name": "SendNotifications",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A date (yyyy-MM-dd) that falls within a Week to have all timesheets in that week submitted.",
+            "in": "query",
+            "name": "WholeWeekOf",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "A date (yyyy-MM-dd) to submit all timesheets on this day",
+            "in": "query",
+            "name": "WholeDayOf",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "The user to submit timesheets for.",
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/api/TimesheetSubmission",
+        "pointer": "#/paths/~1api~1TimesheetSubmission/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "write_timesheets"
+            ]
+          }
+        ],
+        "summary": "Submit Timesheets for Approval.",
+        "tags": [
+          "TimesheetSubmission"
+        ]
       },
       {
         "deprecated": false,
@@ -1732,8 +4953,66 @@
         "kind": "operation",
         "method": "get",
         "name": "TimesheetSummary_Get",
+        "parameters": [
+          {
+            "description": "(Optional) Combine one, two or three levels of Grouping.",
+            "in": "query",
+            "name": "model.groupBy",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "(Required) Filter for timesheets greater or equal to the specified date.",
+            "in": "query",
+            "name": "model.entryDateFrom",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "(Required) Filter for timesheets with an entry date smaller or equal to the specified date.",
+            "in": "query",
+            "name": "model.entryDateTo",
+            "required": false,
+            "type": "string:date-time"
+          },
+          {
+            "description": "(Optional) Defaults to the current user.",
+            "in": "query",
+            "name": "model.userID",
+            "required": false,
+            "type": "integer:int32[]"
+          },
+          {
+            "description": "(Optional) Filter by Project",
+            "in": "query",
+            "name": "model.projectID",
+            "required": false,
+            "type": "integer:int32"
+          },
+          {
+            "description": "(Optional) Filter by the billable status of Timesheets.",
+            "in": "query",
+            "name": "model.isBillable",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "(Optional) Filter for timesheets by whether they have been Invoiced or not.",
+            "in": "query",
+            "name": "model.isInvoiced",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/api/TimesheetSummary",
         "pointer": "#/paths/~1api~1TimesheetSummary/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "TimesheetSummaryResult"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1741,7 +5020,10 @@
             ]
           }
         ],
-        "summary": "Gets Basic Summary of Timesheet Statistics"
+        "summary": "Gets Basic Summary of Timesheet Statistics",
+        "tags": [
+          "TimesheetSummary"
+        ]
       },
       {
         "deprecated": false,
@@ -1749,8 +5031,30 @@
         "kind": "operation",
         "method": "get",
         "name": "TimesheetTimer_GetRunningTimer",
+        "parameters": [
+          {
+            "description": "Optional - User ID number if impersonating a different user.",
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/TimesheetTimer",
         "pointer": "#/paths/~1api~1TimesheetTimer/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1758,24 +5062,10 @@
             ]
           }
         ],
-        "summary": "Gets the  Running Timer if there is one for a user."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/TimesheetTimer/{id}",
-        "kind": "operation",
-        "method": "delete",
-        "name": "TimesheetTimer_StopTimer",
-        "path": "/api/TimesheetTimer/{id}",
-        "pointer": "#/paths/~1api~1TimesheetTimer~1{id}/delete",
-        "security": [
-          {
-            "oauth2": [
-              "write_timesheets"
-            ]
-          }
-        ],
-        "summary": "Stop the timer running on an existing Timesheet Entry"
+        "summary": "Gets the  Running Timer if there is one for a user.",
+        "tags": [
+          "TimesheetTimer"
+        ]
       },
       {
         "deprecated": false,
@@ -1783,8 +5073,40 @@
         "kind": "operation",
         "method": "post",
         "name": "TimesheetTimer_StartTimer",
+        "parameters": [
+          {
+            "description": "id of timesheet entry that should be used as the basis for running a timer.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Optional - User ID number if impersonating a different user.",
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/TimesheetTimer/{id}",
         "pointer": "#/paths/~1api~1TimesheetTimer~1{id}/post",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1792,16 +5114,108 @@
             ]
           }
         ],
-        "summary": "Starts a Timer running on an existing Timesheet Entry"
+        "summary": "Starts a Timer running on an existing Timesheet Entry",
+        "tags": [
+          "TimesheetTimer"
+        ]
       },
       {
         "deprecated": false,
+        "id": "operation:delete:/api/TimesheetTimer/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "TimesheetTimer_StopTimer",
+        "parameters": [
+          {
+            "description": "The ID of the existing timesheet entry that needs its timer stopped",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int64"
+          },
+          {
+            "description": "Optional - User ID number if impersonating a different user.",
+            "in": "query",
+            "name": "UserID",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/api/TimesheetTimer/{id}",
+        "pointer": "#/paths/~1api~1TimesheetTimer~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "404"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "write_timesheets"
+            ]
+          }
+        ],
+        "summary": "Stop the timer running on an existing Timesheet Entry",
+        "tags": [
+          "TimesheetTimer"
+        ]
+      },
+      {
+        "deprecated": false,
+        "description": "Admin and Invoice Managers can see all.",
         "id": "operation:get:/api/UserProfile",
         "kind": "operation",
         "method": "get",
         "name": "UserProfile_Get",
+        "parameters": [
+          {
+            "description": "Optional list of comma separated role codes to filter users by (e.g.",
+            "in": "query",
+            "name": "Roles",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Tags",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Optional boolean (true/false) to filter to only show current authenticated user (always true for non Admin/InvoiceManager users)",
+            "in": "query",
+            "name": "CurrentUserOnly",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Optionally filter by Company ID",
+            "in": "query",
+            "name": "CompanyIDFK",
+            "required": false,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/UserProfile",
         "pointer": "#/paths/~1api~1UserProfile/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "UserList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1809,24 +5223,10 @@
             ]
           }
         ],
-        "summary": "Get Collection of Users who have roles in the current Avaza account."
-      },
-      {
-        "deprecated": false,
-        "id": "operation:delete:/api/Webhook",
-        "kind": "operation",
-        "method": "delete",
-        "name": "Webhook_DeleteByUrl",
-        "path": "/api/Webhook",
-        "pointer": "#/paths/~1api~1Webhook/delete",
-        "security": [
-          {
-            "oauth2": [
-              "webhook_notifications"
-            ]
-          }
-        ],
-        "summary": "Delete webhook subscription by URL"
+        "summary": "Get Collection of Users who have roles in the current Avaza account.",
+        "tags": [
+          "UserProfile"
+        ]
       },
       {
         "deprecated": false,
@@ -1836,6 +5236,13 @@
         "name": "Webhook_Get",
         "path": "/api/Webhook",
         "pointer": "#/paths/~1api~1Webhook/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhookList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1843,16 +5250,44 @@
             ]
           }
         ],
-        "summary": "Get list of Webhook Subscriptions"
+        "summary": "Get list of Webhook Subscriptions",
+        "tags": [
+          "Webhook"
+        ]
       },
       {
         "deprecated": false,
+        "description": "When you receive a webhook, you should respond with Http 200 OK Status Code, otherwise we will retry.",
         "id": "operation:post:/api/Webhook",
         "kind": "operation",
         "method": "post",
         "name": "Webhook_Post",
         "path": "/api/Webhook",
         "pointer": "#/paths/~1api~1Webhook/post",
+        "request": {
+          "content_types": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "required": true,
+          "type": "CreateSubscription"
+        },
+        "responses": [
+          {
+            "status": "201",
+            "type": "SubscribeResult"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "409"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1876,16 +5311,38 @@
             ]
           }
         ],
-        "summary": "Subscribe to Webhook. On success, returns ID of webhook subscription."
+        "summary": "Subscribe to Webhook. On success, returns ID of webhook subscription.",
+        "tags": [
+          "Webhook"
+        ]
       },
       {
         "deprecated": false,
-        "id": "operation:delete:/api/Webhook/{id}",
+        "id": "operation:delete:/api/Webhook",
         "kind": "operation",
         "method": "delete",
-        "name": "Webhook_Delete",
-        "path": "/api/Webhook/{id}",
-        "pointer": "#/paths/~1api~1Webhook~1{id}/delete",
+        "name": "Webhook_DeleteByUrl",
+        "parameters": [
+          {
+            "description": "Target URL that should be used to delete subscriptions",
+            "in": "query",
+            "name": "target_url",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "path": "/api/Webhook",
+        "pointer": "#/paths/~1api~1Webhook/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oauth2": [
@@ -1893,7 +5350,10 @@
             ]
           }
         ],
-        "summary": "Delete Webhook Subscription by ID"
+        "summary": "Delete webhook subscription by URL",
+        "tags": [
+          "Webhook"
+        ]
       },
       {
         "deprecated": false,
@@ -1901,8 +5361,23 @@
         "kind": "operation",
         "method": "get",
         "name": "Webhook_GetByID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
         "path": "/api/Webhook/{id}",
         "pointer": "#/paths/~1api~1Webhook~1{id}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "WebhookList"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "oauth2": [
@@ -1910,667 +5385,848 @@
             ]
           }
         ],
-        "summary": "Get Webhook Subscription by SubscriptionID"
+        "summary": "Get Webhook Subscription by SubscriptionID",
+        "tags": [
+          "Webhook"
+        ]
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/api/Webhook/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "Webhook_Delete",
+        "parameters": [
+          {
+            "description": "Subscription id to be deleted",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer:int32"
+          }
+        ],
+        "path": "/api/Webhook/{id}",
+        "pointer": "#/paths/~1api~1Webhook~1{id}/delete",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          }
+        ],
+        "safe": false,
+        "security": [
+          {
+            "oauth2": [
+              "webhook_notifications"
+            ]
+          }
+        ],
+        "summary": "Delete Webhook Subscription by ID",
+        "tags": [
+          "Webhook"
+        ]
       },
       {
         "id": "schema:AccountDetails",
         "kind": "schema",
-        "name": "AccountDetails"
+        "name": "AccountDetails",
+        "type": "object"
       },
       {
         "id": "schema:AccountTaskTypeDetails",
         "kind": "schema",
-        "name": "AccountTaskTypeDetails"
+        "name": "AccountTaskTypeDetails",
+        "type": "object"
       },
       {
         "id": "schema:AssignProjectTimesheetCategory",
         "kind": "schema",
-        "name": "AssignProjectTimesheetCategory"
+        "name": "AssignProjectTimesheetCategory",
+        "type": "object"
       },
       {
         "id": "schema:AssignedToUser",
         "kind": "schema",
-        "name": "AssignedToUser"
+        "name": "AssignedToUser",
+        "type": "object"
       },
       {
         "id": "schema:Bill",
         "kind": "schema",
-        "name": "Bill"
+        "name": "Bill",
+        "type": "object"
       },
       {
         "id": "schema:BillIssuerDetails",
         "kind": "schema",
-        "name": "BillIssuerDetails"
+        "name": "BillIssuerDetails",
+        "type": "object"
       },
       {
         "id": "schema:BillLineItem",
         "kind": "schema",
-        "name": "BillLineItem"
+        "name": "BillLineItem",
+        "type": "object"
       },
       {
         "id": "schema:BillLinks",
         "kind": "schema",
-        "name": "BillLinks"
+        "name": "BillLinks",
+        "type": "object"
       },
       {
         "id": "schema:BillList",
         "kind": "schema",
-        "name": "BillList"
+        "name": "BillList",
+        "type": "object"
       },
       {
         "id": "schema:BillPayment",
         "kind": "schema",
-        "name": "BillPayment"
+        "name": "BillPayment",
+        "type": "object"
       },
       {
         "id": "schema:BillPaymentAllocation",
         "kind": "schema",
-        "name": "BillPaymentAllocation"
+        "name": "BillPaymentAllocation",
+        "type": "object"
       },
       {
         "id": "schema:BillPaymentList",
         "kind": "schema",
-        "name": "BillPaymentList"
+        "name": "BillPaymentList",
+        "type": "object"
       },
       {
         "id": "schema:BillRecipientDetails",
         "kind": "schema",
-        "name": "BillRecipientDetails"
+        "name": "BillRecipientDetails",
+        "type": "object"
       },
       {
         "id": "schema:Company",
         "kind": "schema",
-        "name": "Company"
+        "name": "Company",
+        "type": "object"
       },
       {
         "id": "schema:CompanyContact",
         "kind": "schema",
-        "name": "CompanyContact"
+        "name": "CompanyContact",
+        "type": "object"
       },
       {
         "id": "schema:CompanyDropdownList",
         "kind": "schema",
-        "name": "CompanyDropdownList"
+        "name": "CompanyDropdownList",
+        "type": "object"
       },
       {
         "id": "schema:CompanyList",
         "kind": "schema",
-        "name": "CompanyList"
+        "name": "CompanyList",
+        "type": "object"
       },
       {
         "id": "schema:CompanyMinimal",
         "kind": "schema",
-        "name": "CompanyMinimal"
+        "name": "CompanyMinimal",
+        "type": "object"
       },
       {
         "id": "schema:ContactList",
         "kind": "schema",
-        "name": "ContactList"
+        "name": "ContactList",
+        "type": "object"
       },
       {
         "id": "schema:CreateBooking",
         "kind": "schema",
-        "name": "CreateBooking"
+        "name": "CreateBooking",
+        "type": "object"
       },
       {
         "id": "schema:CreateLeave",
         "kind": "schema",
-        "name": "CreateLeave"
+        "name": "CreateLeave",
+        "type": "object"
       },
       {
+        "description": "New Subscription to be Created",
         "id": "schema:CreateSubscription",
         "kind": "schema",
-        "name": "CreateSubscription"
+        "name": "CreateSubscription",
+        "type": "object"
       },
       {
         "id": "schema:CreditNote",
         "kind": "schema",
-        "name": "CreditNote"
+        "name": "CreditNote",
+        "type": "object"
       },
       {
         "id": "schema:CreditNoteAllocation",
         "kind": "schema",
-        "name": "CreditNoteAllocation"
+        "name": "CreditNoteAllocation",
+        "type": "object"
       },
       {
         "id": "schema:CreditNoteLineItem",
         "kind": "schema",
-        "name": "CreditNoteLineItem"
+        "name": "CreditNoteLineItem",
+        "type": "object"
       },
       {
         "id": "schema:CreditNoteList",
         "kind": "schema",
-        "name": "CreditNoteList"
+        "name": "CreditNoteList",
+        "type": "object"
       },
       {
         "id": "schema:Currency",
         "kind": "schema",
-        "name": "Currency"
+        "name": "Currency",
+        "type": "object"
       },
       {
         "id": "schema:CurrencyList",
         "kind": "schema",
-        "name": "CurrencyList"
+        "name": "CurrencyList",
+        "type": "object"
       },
       {
         "id": "schema:EditBooking",
         "kind": "schema",
-        "name": "EditBooking"
+        "name": "EditBooking",
+        "type": "object"
       },
       {
         "id": "schema:EditLeave",
         "kind": "schema",
-        "name": "EditLeave"
+        "name": "EditLeave",
+        "type": "object"
       },
       {
         "id": "schema:EstimateDetails",
         "kind": "schema",
-        "name": "EstimateDetails"
+        "name": "EstimateDetails",
+        "type": "object"
       },
       {
         "id": "schema:EstimateLineItemDetails",
         "kind": "schema",
-        "name": "EstimateLineItemDetails"
+        "name": "EstimateLineItemDetails",
+        "type": "object"
       },
       {
         "id": "schema:EstimateLinks",
         "kind": "schema",
-        "name": "EstimateLinks"
+        "name": "EstimateLinks",
+        "type": "object"
       },
       {
         "id": "schema:EstimateList",
         "kind": "schema",
-        "name": "EstimateList"
+        "name": "EstimateList",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseAttachmentUploadResult",
         "kind": "schema",
-        "name": "ExpenseAttachmentUploadResult"
+        "name": "ExpenseAttachmentUploadResult",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseCategoryDetails",
         "kind": "schema",
-        "name": "ExpenseCategoryDetails"
+        "name": "ExpenseCategoryDetails",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseCategoryList",
         "kind": "schema",
-        "name": "ExpenseCategoryList"
+        "name": "ExpenseCategoryList",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseDeleteResult",
         "kind": "schema",
-        "name": "ExpenseDeleteResult"
+        "name": "ExpenseDeleteResult",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseDeleteResultSet",
         "kind": "schema",
-        "name": "ExpenseDeleteResultSet"
+        "name": "ExpenseDeleteResultSet",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseDetails",
         "kind": "schema",
-        "name": "ExpenseDetails"
+        "name": "ExpenseDetails",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseGroupDropdownList",
         "kind": "schema",
-        "name": "ExpenseGroupDropdownList"
+        "name": "ExpenseGroupDropdownList",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseGroupMinimal",
         "kind": "schema",
-        "name": "ExpenseGroupMinimal"
+        "name": "ExpenseGroupMinimal",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseList",
         "kind": "schema",
-        "name": "ExpenseList"
+        "name": "ExpenseList",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseMerchantDropdownList",
         "kind": "schema",
-        "name": "ExpenseMerchantDropdownList"
+        "name": "ExpenseMerchantDropdownList",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseMerchantMinimal",
         "kind": "schema",
-        "name": "ExpenseMerchantMinimal"
+        "name": "ExpenseMerchantMinimal",
+        "type": "object"
       },
       {
         "id": "schema:ExpensePaymentMethodDropdownList",
         "kind": "schema",
-        "name": "ExpensePaymentMethodDropdownList"
+        "name": "ExpensePaymentMethodDropdownList",
+        "type": "object"
       },
       {
         "id": "schema:ExpensePaymentMethodMinimal",
         "kind": "schema",
-        "name": "ExpensePaymentMethodMinimal"
+        "name": "ExpensePaymentMethodMinimal",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseSummaryGroup",
         "kind": "schema",
-        "name": "ExpenseSummaryGroup"
+        "name": "ExpenseSummaryGroup",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseSummaryRequest",
         "kind": "schema",
-        "name": "ExpenseSummaryRequest"
+        "name": "ExpenseSummaryRequest",
+        "type": "object"
       },
       {
         "id": "schema:ExpenseSummaryResult",
         "kind": "schema",
-        "name": "ExpenseSummaryResult"
+        "name": "ExpenseSummaryResult",
+        "type": "object"
       },
       {
         "id": "schema:FileAttachmentDetails",
         "kind": "schema",
-        "name": "FileAttachmentDetails"
+        "name": "FileAttachmentDetails",
+        "type": "object"
       },
       {
         "id": "schema:FixedAmountDetails",
         "kind": "schema",
-        "name": "FixedAmountDetails"
+        "name": "FixedAmountDetails",
+        "type": "object"
       },
       {
         "id": "schema:FixedAmountList",
         "kind": "schema",
-        "name": "FixedAmountList"
+        "name": "FixedAmountList",
+        "type": "object"
       },
       {
         "id": "schema:InventoryItem",
         "kind": "schema",
-        "name": "InventoryItem"
+        "name": "InventoryItem",
+        "type": "object"
       },
       {
         "id": "schema:InventoryList",
         "kind": "schema",
-        "name": "InventoryList"
+        "name": "InventoryList",
+        "type": "object"
       },
       {
         "id": "schema:Invoice",
         "kind": "schema",
-        "name": "Invoice"
+        "name": "Invoice",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceLineItem",
         "kind": "schema",
-        "name": "InvoiceLineItem"
+        "name": "InvoiceLineItem",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceLinks",
         "kind": "schema",
-        "name": "InvoiceLinks"
+        "name": "InvoiceLinks",
+        "type": "object"
       },
       {
         "id": "schema:InvoiceList",
         "kind": "schema",
-        "name": "InvoiceList"
+        "name": "InvoiceList",
+        "type": "object"
       },
       {
         "id": "schema:IssuerDetails",
         "kind": "schema",
-        "name": "IssuerDetails"
+        "name": "IssuerDetails",
+        "type": "object"
       },
       {
+        "description": "New Bill to be created",
         "id": "schema:NewBill",
         "kind": "schema",
-        "name": "NewBill"
+        "name": "NewBill",
+        "type": "object"
       },
       {
+        "description": "Line item to be added to new invoice",
         "id": "schema:NewBillLineItem",
         "kind": "schema",
-        "name": "NewBillLineItem"
+        "name": "NewBillLineItem",
+        "type": "object"
       },
       {
         "id": "schema:NewBillPayment",
         "kind": "schema",
-        "name": "NewBillPayment"
+        "name": "NewBillPayment",
+        "type": "object"
       },
       {
         "id": "schema:NewBillPaymentAllocation",
         "kind": "schema",
-        "name": "NewBillPaymentAllocation"
+        "name": "NewBillPaymentAllocation",
+        "type": "object"
       },
       {
         "id": "schema:NewCompany",
         "kind": "schema",
-        "name": "NewCompany"
+        "name": "NewCompany",
+        "type": "object"
       },
       {
         "id": "schema:NewCompanyContact",
         "kind": "schema",
-        "name": "NewCompanyContact"
+        "name": "NewCompanyContact",
+        "type": "object"
       },
       {
+        "description": "New Estimate to be created",
         "id": "schema:NewEstimate",
         "kind": "schema",
-        "name": "NewEstimate"
+        "name": "NewEstimate",
+        "type": "object"
       },
       {
+        "description": "Line item to be added to new Estimate",
         "id": "schema:NewEstimateLineItem",
         "kind": "schema",
-        "name": "NewEstimateLineItem"
+        "name": "NewEstimateLineItem",
+        "type": "object"
       },
       {
         "id": "schema:NewExpense",
         "kind": "schema",
-        "name": "NewExpense"
+        "name": "NewExpense",
+        "type": "object"
       },
       {
+        "description": "New invoice to be created",
         "id": "schema:NewInvoice",
         "kind": "schema",
-        "name": "NewInvoice"
+        "name": "NewInvoice",
+        "type": "object"
       },
       {
+        "description": "Line item to be added to new invoice",
         "id": "schema:NewInvoiceLineItem",
         "kind": "schema",
-        "name": "NewInvoiceLineItem"
+        "name": "NewInvoiceLineItem",
+        "type": "object"
       },
       {
         "id": "schema:NewPayment",
         "kind": "schema",
-        "name": "NewPayment"
+        "name": "NewPayment",
+        "type": "object"
       },
       {
         "id": "schema:NewPaymentAllocation",
         "kind": "schema",
-        "name": "NewPaymentAllocation"
+        "name": "NewPaymentAllocation",
+        "type": "object"
       },
       {
         "id": "schema:NewProjectMember",
         "kind": "schema",
-        "name": "NewProjectMember"
+        "name": "NewProjectMember",
+        "type": "object"
       },
       {
         "id": "schema:NewProjectModel",
         "kind": "schema",
-        "name": "NewProjectModel"
+        "name": "NewProjectModel",
+        "type": "object"
       },
       {
         "id": "schema:NewSection",
         "kind": "schema",
-        "name": "NewSection"
+        "name": "NewSection",
+        "type": "object"
       },
       {
         "id": "schema:NewTag",
         "kind": "schema",
-        "name": "NewTag"
+        "name": "NewTag",
+        "type": "object"
       },
       {
         "id": "schema:NewTask",
         "kind": "schema",
-        "name": "NewTask"
+        "name": "NewTask",
+        "type": "object"
       },
       {
         "id": "schema:NewTimesheet",
         "kind": "schema",
-        "name": "NewTimesheet"
+        "name": "NewTimesheet",
+        "type": "object"
       },
       {
         "id": "schema:Payment",
         "kind": "schema",
-        "name": "Payment"
+        "name": "Payment",
+        "type": "object"
       },
       {
         "id": "schema:PaymentAllocation",
         "kind": "schema",
-        "name": "PaymentAllocation"
+        "name": "PaymentAllocation",
+        "type": "object"
       },
       {
         "id": "schema:PaymentList",
         "kind": "schema",
-        "name": "PaymentList"
+        "name": "PaymentList",
+        "type": "object"
       },
       {
         "id": "schema:ProjectCompanyGroup",
         "kind": "schema",
-        "name": "ProjectCompanyGroup"
+        "name": "ProjectCompanyGroup",
+        "type": "object"
       },
       {
         "id": "schema:ProjectDetails",
         "kind": "schema",
-        "name": "ProjectDetails"
+        "name": "ProjectDetails",
+        "type": "object"
       },
       {
         "id": "schema:ProjectDropdownList",
         "kind": "schema",
-        "name": "ProjectDropdownList"
+        "name": "ProjectDropdownList",
+        "type": "object"
       },
       {
         "id": "schema:ProjectDropdownSelection",
         "kind": "schema",
-        "name": "ProjectDropdownSelection"
+        "name": "ProjectDropdownSelection",
+        "type": "object"
       },
       {
         "id": "schema:ProjectList",
         "kind": "schema",
-        "name": "ProjectList"
+        "name": "ProjectList",
+        "type": "object"
       },
       {
         "id": "schema:ProjectListDetails",
         "kind": "schema",
-        "name": "ProjectListDetails"
+        "name": "ProjectListDetails",
+        "type": "object"
       },
       {
         "id": "schema:ProjectMemberDetails",
         "kind": "schema",
-        "name": "ProjectMemberDetails"
+        "name": "ProjectMemberDetails",
+        "type": "object"
       },
       {
         "id": "schema:ProjectMemberList",
         "kind": "schema",
-        "name": "ProjectMemberList"
+        "name": "ProjectMemberList",
+        "type": "object"
       },
       {
         "id": "schema:ProjectSectionDetails",
         "kind": "schema",
-        "name": "ProjectSectionDetails"
+        "name": "ProjectSectionDetails",
+        "type": "object"
       },
       {
         "id": "schema:ProjectTagItem",
         "kind": "schema",
-        "name": "ProjectTagItem"
+        "name": "ProjectTagItem",
+        "type": "object"
       },
       {
         "id": "schema:ProjectTimesheetCategoryDetails",
         "kind": "schema",
-        "name": "ProjectTimesheetCategoryDetails"
+        "name": "ProjectTimesheetCategoryDetails",
+        "type": "object"
       },
       {
         "id": "schema:ProjectTimesheetCategoryList",
         "kind": "schema",
-        "name": "ProjectTimesheetCategoryList"
+        "name": "ProjectTimesheetCategoryList",
+        "type": "object"
       },
       {
         "id": "schema:RecipientDetails",
         "kind": "schema",
-        "name": "RecipientDetails"
+        "name": "RecipientDetails",
+        "type": "object"
       },
       {
         "id": "schema:RoleDetails",
         "kind": "schema",
-        "name": "RoleDetails"
+        "name": "RoleDetails",
+        "type": "object"
       },
       {
         "id": "schema:ScheduleAssignmentDetails",
         "kind": "schema",
-        "name": "ScheduleAssignmentDetails"
+        "name": "ScheduleAssignmentDetails",
+        "type": "object"
       },
       {
         "id": "schema:ScheduleAssignmentList",
         "kind": "schema",
-        "name": "ScheduleAssignmentList"
+        "name": "ScheduleAssignmentList",
+        "type": "object"
       },
       {
         "id": "schema:ScheduleSeriesDetails",
         "kind": "schema",
-        "name": "ScheduleSeriesDetails"
+        "name": "ScheduleSeriesDetails",
+        "type": "object"
       },
       {
         "id": "schema:ScheduleSeriesList",
         "kind": "schema",
-        "name": "ScheduleSeriesList"
+        "name": "ScheduleSeriesList",
+        "type": "object"
       },
       {
         "id": "schema:SectionDetails",
         "kind": "schema",
-        "name": "SectionDetails"
+        "name": "SectionDetails",
+        "type": "object"
       },
       {
         "id": "schema:SectionList",
         "kind": "schema",
-        "name": "SectionList"
+        "name": "SectionList",
+        "type": "object"
       },
       {
         "id": "schema:SubscribeResult",
         "kind": "schema",
-        "name": "SubscribeResult"
+        "name": "SubscribeResult",
+        "type": "object"
       },
       {
         "id": "schema:TagItem",
         "kind": "schema",
-        "name": "TagItem"
+        "name": "TagItem",
+        "type": "object"
       },
       {
         "id": "schema:TaskDetails",
         "kind": "schema",
-        "name": "TaskDetails"
+        "name": "TaskDetails",
+        "type": "object"
       },
       {
         "id": "schema:TaskDropdownList",
         "kind": "schema",
-        "name": "TaskDropdownList"
+        "name": "TaskDropdownList",
+        "type": "object"
       },
       {
         "id": "schema:TaskDropdownSelection",
         "kind": "schema",
-        "name": "TaskDropdownSelection"
+        "name": "TaskDropdownSelection",
+        "type": "object"
       },
       {
         "id": "schema:TaskList",
         "kind": "schema",
-        "name": "TaskList"
+        "name": "TaskList",
+        "type": "object"
       },
       {
         "id": "schema:TaskSectionGroup",
         "kind": "schema",
-        "name": "TaskSectionGroup"
+        "name": "TaskSectionGroup",
+        "type": "object"
       },
       {
         "id": "schema:TaskStatusDetails",
         "kind": "schema",
-        "name": "TaskStatusDetails"
+        "name": "TaskStatusDetails",
+        "type": "object"
       },
       {
         "id": "schema:TaskStatusList",
         "kind": "schema",
-        "name": "TaskStatusList"
+        "name": "TaskStatusList",
+        "type": "object"
       },
       {
         "id": "schema:TaskTypeList",
         "kind": "schema",
-        "name": "TaskTypeList"
+        "name": "TaskTypeList",
+        "type": "object"
       },
       {
         "id": "schema:TaxComponent",
         "kind": "schema",
-        "name": "TaxComponent"
+        "name": "TaxComponent",
+        "type": "object"
       },
       {
         "id": "schema:TaxItem",
         "kind": "schema",
-        "name": "TaxItem"
+        "name": "TaxItem",
+        "type": "object"
       },
       {
         "id": "schema:TaxList",
         "kind": "schema",
-        "name": "TaxList"
+        "name": "TaxList",
+        "type": "object"
       },
       {
         "id": "schema:TimesheetDetails",
         "kind": "schema",
-        "name": "TimesheetDetails"
+        "name": "TimesheetDetails",
+        "type": "object"
       },
       {
         "id": "schema:TimesheetList",
         "kind": "schema",
-        "name": "TimesheetList"
+        "name": "TimesheetList",
+        "type": "object"
       },
       {
         "id": "schema:TimesheetListDetails",
         "kind": "schema",
-        "name": "TimesheetListDetails"
+        "name": "TimesheetListDetails",
+        "type": "object"
       },
       {
         "id": "schema:TimesheetSummaryGroup",
         "kind": "schema",
-        "name": "TimesheetSummaryGroup"
+        "name": "TimesheetSummaryGroup",
+        "type": "object"
       },
       {
         "id": "schema:TimesheetSummaryRequest",
         "kind": "schema",
-        "name": "TimesheetSummaryRequest"
+        "name": "TimesheetSummaryRequest",
+        "type": "object"
       },
       {
         "id": "schema:TimesheetSummaryResult",
         "kind": "schema",
-        "name": "TimesheetSummaryResult"
+        "name": "TimesheetSummaryResult",
+        "type": "object"
       },
       {
         "id": "schema:UpdateCompany",
         "kind": "schema",
-        "name": "UpdateCompany"
+        "name": "UpdateCompany",
+        "type": "object"
       },
       {
         "id": "schema:UpdateExpense",
         "kind": "schema",
-        "name": "UpdateExpense"
+        "name": "UpdateExpense",
+        "type": "object"
       },
       {
         "id": "schema:UpdateProjectMember",
         "kind": "schema",
-        "name": "UpdateProjectMember"
+        "name": "UpdateProjectMember",
+        "type": "object"
       },
       {
         "id": "schema:UpdateProjectModel",
         "kind": "schema",
-        "name": "UpdateProjectModel"
+        "name": "UpdateProjectModel",
+        "type": "object"
       },
       {
         "id": "schema:UpdateTask",
         "kind": "schema",
-        "name": "UpdateTask"
+        "name": "UpdateTask",
+        "type": "object"
       },
       {
         "id": "schema:UpdateTimesheetModel",
         "kind": "schema",
-        "name": "UpdateTimesheetModel"
+        "name": "UpdateTimesheetModel",
+        "type": "object"
       },
       {
         "id": "schema:UserDetails",
         "kind": "schema",
-        "name": "UserDetails"
+        "name": "UserDetails",
+        "type": "object"
       },
       {
         "id": "schema:UserList",
         "kind": "schema",
-        "name": "UserList"
+        "name": "UserList",
+        "type": "object"
       },
       {
         "id": "schema:UserTagDetails",
         "kind": "schema",
-        "name": "UserTagDetails"
+        "name": "UserTagDetails",
+        "type": "object"
       },
       {
         "id": "schema:WebhookDetails",
         "kind": "schema",
-        "name": "WebhookDetails"
+        "name": "WebhookDetails",
+        "type": "object"
       },
       {
         "id": "schema:WebhookList",
         "kind": "schema",
-        "name": "WebhookList"
+        "name": "WebhookList",
+        "type": "object"
       }
     ]
   },

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Atlassian_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `f6aaca694c21d912bb736e4316203c013e1f4b0d198c5fc387fe8a4bd3f5c2a2` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,492 +34,494 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_Atlassian_profile_i
 
 544 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/rest/api/3/announcementBanner` | getBanner | Get announcement banner configuration |
-| PUT | `/rest/api/3/announcementBanner` | setBanner | Update announcement banner configuration |
-| POST | `/rest/api/3/app/field/value` | updateMultipleCustomFieldValues | Update custom fields |
-| GET | `/rest/api/3/app/field/{fieldIdOrKey}/context/configuration` | getCustomFieldConfiguration | Get custom field configurations |
-| PUT | `/rest/api/3/app/field/{fieldIdOrKey}/context/configuration` | updateCustomFieldConfiguration | Update custom field configurations |
-| PUT | `/rest/api/3/app/field/{fieldIdOrKey}/value` | updateCustomFieldValue | Update custom field value |
-| GET | `/rest/api/3/application-properties` | getApplicationProperty | Get application property |
-| GET | `/rest/api/3/application-properties/advanced-settings` | getAdvancedSettings | Get advanced settings |
-| PUT | `/rest/api/3/application-properties/{id}` | setApplicationProperty | Set application property |
-| GET | `/rest/api/3/applicationrole` | getAllApplicationRoles | Get all application roles |
-| GET | `/rest/api/3/applicationrole/{key}` | getApplicationRole | Get application role |
-| GET | `/rest/api/3/attachment/content/{id}` | getAttachmentContent | Get attachment content |
-| GET | `/rest/api/3/attachment/meta` | getAttachmentMeta | Get Jira attachment settings |
-| GET | `/rest/api/3/attachment/thumbnail/{id}` | getAttachmentThumbnail | Get attachment thumbnail |
-| DELETE | `/rest/api/3/attachment/{id}` | removeAttachment | Delete attachment |
-| GET | `/rest/api/3/attachment/{id}` | getAttachment | Get attachment metadata |
-| GET | `/rest/api/3/attachment/{id}/expand/human` | expandAttachmentForHumans | Get all metadata for an expanded attachment |
-| GET | `/rest/api/3/attachment/{id}/expand/raw` | expandAttachmentForMachines | Get contents metadata for an expanded attachment |
-| GET | `/rest/api/3/auditing/record` | getAuditRecords | Get audit records |
-| GET | `/rest/api/3/avatar/{type}/system` | getAllSystemAvatars | Get system avatars by type |
-| POST | `/rest/api/3/comment/list` | getCommentsByIds | Get comments by IDs |
-| GET | `/rest/api/3/comment/{commentId}/properties` | getCommentPropertyKeys | Get comment property keys |
-| DELETE | `/rest/api/3/comment/{commentId}/properties/{propertyKey}` | deleteCommentProperty | Delete comment property |
-| GET | `/rest/api/3/comment/{commentId}/properties/{propertyKey}` | getCommentProperty | Get comment property |
-| PUT | `/rest/api/3/comment/{commentId}/properties/{propertyKey}` | setCommentProperty | Set comment property |
-| POST | `/rest/api/3/component` | createComponent | Create component |
-| DELETE | `/rest/api/3/component/{id}` | deleteComponent | Delete component |
-| GET | `/rest/api/3/component/{id}` | getComponent | Get component |
-| PUT | `/rest/api/3/component/{id}` | updateComponent | Update component |
-| GET | `/rest/api/3/component/{id}/relatedIssueCounts` | getComponentRelatedIssues | Get component issues count |
-| GET | `/rest/api/3/configuration` | getConfiguration | Get global settings |
-| GET | `/rest/api/3/configuration/timetracking` | getSelectedTimeTrackingImplementation | Get selected time tracking provider |
-| PUT | `/rest/api/3/configuration/timetracking` | selectTimeTrackingImplementation | Select time tracking provider |
-| GET | `/rest/api/3/configuration/timetracking/list` | getAvailableTimeTrackingImplementations | Get all time tracking providers |
-| GET | `/rest/api/3/configuration/timetracking/options` | getSharedTimeTrackingConfiguration | Get time tracking settings |
-| PUT | `/rest/api/3/configuration/timetracking/options` | setSharedTimeTrackingConfiguration | Set time tracking settings |
-| GET | `/rest/api/3/customFieldOption/{id}` | getCustomFieldOption | Get custom field option |
-| GET | `/rest/api/3/dashboard` | getAllDashboards | Get all dashboards |
-| POST | `/rest/api/3/dashboard` | createDashboard | Create dashboard |
-| GET | `/rest/api/3/dashboard/gadgets` | getAllAvailableDashboardGadgets | Get available gadgets |
-| GET | `/rest/api/3/dashboard/search` | getDashboardsPaginated | Search for dashboards |
-| GET | `/rest/api/3/dashboard/{dashboardId}/gadget` | getAllGadgets | Get gadgets |
-| POST | `/rest/api/3/dashboard/{dashboardId}/gadget` | addGadget | Add gadget to dashboard |
-| DELETE | `/rest/api/3/dashboard/{dashboardId}/gadget/{gadgetId}` | removeGadget | Remove gadget from dashboard |
-| PUT | `/rest/api/3/dashboard/{dashboardId}/gadget/{gadgetId}` | updateGadget | Update gadget on dashboard |
-| GET | `/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties` | getDashboardItemPropertyKeys | Get dashboard item property keys |
-| DELETE | `/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}` | deleteDashboardItemProperty | Delete dashboard item property |
-| GET | `/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}` | getDashboardItemProperty | Get dashboard item property |
-| PUT | `/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}` | setDashboardItemProperty | Set dashboard item property |
-| DELETE | `/rest/api/3/dashboard/{id}` | deleteDashboard | Delete dashboard |
-| GET | `/rest/api/3/dashboard/{id}` | getDashboard | Get dashboard |
-| PUT | `/rest/api/3/dashboard/{id}` | updateDashboard | Update dashboard |
-| POST | `/rest/api/3/dashboard/{id}/copy` | copyDashboard | Copy dashboard |
-| GET | `/rest/api/3/events` | getEvents | Get events |
-| POST | `/rest/api/3/expression/analyse` | analyseExpression | Analyse Jira expression |
-| POST | `/rest/api/3/expression/eval` | evaluateJiraExpression | Evaluate Jira expression |
-| GET | `/rest/api/3/field` | getFields | Get fields |
-| POST | `/rest/api/3/field` | createCustomField | Create custom field |
-| GET | `/rest/api/3/field/search` | getFieldsPaginated | Get fields paginated |
-| GET | `/rest/api/3/field/search/trashed` | getTrashedFieldsPaginated | Get fields in trash paginated |
-| PUT | `/rest/api/3/field/{fieldId}` | updateCustomField | Update custom field |
-| GET | `/rest/api/3/field/{fieldId}/context` | getContextsForField | Get custom field contexts |
-| POST | `/rest/api/3/field/{fieldId}/context` | createCustomFieldContext | Create custom field context |
-| GET | `/rest/api/3/field/{fieldId}/context/defaultValue` | getDefaultValues | Get custom field contexts default values |
-| PUT | `/rest/api/3/field/{fieldId}/context/defaultValue` | setDefaultValues | Set custom field contexts default values |
-| GET | `/rest/api/3/field/{fieldId}/context/issuetypemapping` | getIssueTypeMappingsForContexts | Get issue types for custom field context |
-| POST | `/rest/api/3/field/{fieldId}/context/mapping` | getCustomFieldContextsForProjectsAndIssueTypes | Get custom field contexts for projects and issue types |
-| GET | `/rest/api/3/field/{fieldId}/context/projectmapping` | getProjectContextMapping | Get project mappings for custom field context |
-| DELETE | `/rest/api/3/field/{fieldId}/context/{contextId}` | deleteCustomFieldContext | Delete custom field context |
-| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}` | updateCustomFieldContext | Update custom field context |
-| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}/issuetype` | addIssueTypesToContext | Add issue types to context |
-| POST | `/rest/api/3/field/{fieldId}/context/{contextId}/issuetype/remove` | removeIssueTypesFromContext | Remove issue types from context |
-| GET | `/rest/api/3/field/{fieldId}/context/{contextId}/option` | getOptionsForContext | Get custom field options (context) |
-| POST | `/rest/api/3/field/{fieldId}/context/{contextId}/option` | createCustomFieldOption | Create custom field options (context) |
-| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}/option` | updateCustomFieldOption | Update custom field options (context) |
-| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}/option/move` | reorderCustomFieldOptions | Reorder custom field options (context) |
-| DELETE | `/rest/api/3/field/{fieldId}/context/{contextId}/option/{optionId}` | deleteCustomFieldOption | Delete custom field options (context) |
-| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}/project` | assignProjectsToCustomFieldContext | Assign custom field context to projects |
-| POST | `/rest/api/3/field/{fieldId}/context/{contextId}/project/remove` | removeCustomFieldContextFromProjects | Remove custom field context from projects |
-| GET | `/rest/api/3/field/{fieldId}/contexts` | getContextsForFieldDeprecated | Get contexts for a field |
-| GET | `/rest/api/3/field/{fieldId}/screens` | getScreensForField | Get screens for a field |
-| GET | `/rest/api/3/field/{fieldKey}/option` | getAllIssueFieldOptions | Get all issue field options |
-| POST | `/rest/api/3/field/{fieldKey}/option` | createIssueFieldOption | Create issue field option |
-| GET | `/rest/api/3/field/{fieldKey}/option/suggestions/edit` | getSelectableIssueFieldOptions | Get selectable issue field options |
-| GET | `/rest/api/3/field/{fieldKey}/option/suggestions/search` | getVisibleIssueFieldOptions | Get visible issue field options |
-| DELETE | `/rest/api/3/field/{fieldKey}/option/{optionId}` | deleteIssueFieldOption | Delete issue field option |
-| GET | `/rest/api/3/field/{fieldKey}/option/{optionId}` | getIssueFieldOption | Get issue field option |
-| PUT | `/rest/api/3/field/{fieldKey}/option/{optionId}` | updateIssueFieldOption | Update issue field option |
-| DELETE | `/rest/api/3/field/{fieldKey}/option/{optionId}/issue` | replaceIssueFieldOption | Replace issue field option |
-| DELETE | `/rest/api/3/field/{id}` | deleteCustomField | Delete custom field |
-| POST | `/rest/api/3/field/{id}/restore` | restoreCustomField | Restore custom field from trash |
-| POST | `/rest/api/3/field/{id}/trash` | trashCustomField | Move custom field to trash |
-| GET | `/rest/api/3/fieldconfiguration` | getAllFieldConfigurations | Get all field configurations |
-| POST | `/rest/api/3/fieldconfiguration` | createFieldConfiguration | Create field configuration |
-| DELETE | `/rest/api/3/fieldconfiguration/{id}` | deleteFieldConfiguration | Delete field configuration |
-| PUT | `/rest/api/3/fieldconfiguration/{id}` | updateFieldConfiguration | Update field configuration |
-| GET | `/rest/api/3/fieldconfiguration/{id}/fields` | getFieldConfigurationItems | Get field configuration items |
-| PUT | `/rest/api/3/fieldconfiguration/{id}/fields` | updateFieldConfigurationItems | Update field configuration items |
-| GET | `/rest/api/3/fieldconfigurationscheme` | getAllFieldConfigurationSchemes | Get all field configuration schemes |
-| POST | `/rest/api/3/fieldconfigurationscheme` | createFieldConfigurationScheme | Create field configuration scheme |
-| GET | `/rest/api/3/fieldconfigurationscheme/mapping` | getFieldConfigurationSchemeMappings | Get field configuration issue type items |
-| GET | `/rest/api/3/fieldconfigurationscheme/project` | getFieldConfigurationSchemeProjectMapping | Get field configuration schemes for projects |
-| PUT | `/rest/api/3/fieldconfigurationscheme/project` | assignFieldConfigurationSchemeToProject | Assign field configuration scheme to project |
-| DELETE | `/rest/api/3/fieldconfigurationscheme/{id}` | deleteFieldConfigurationScheme | Delete field configuration scheme |
-| PUT | `/rest/api/3/fieldconfigurationscheme/{id}` | updateFieldConfigurationScheme | Update field configuration scheme |
-| PUT | `/rest/api/3/fieldconfigurationscheme/{id}/mapping` | setFieldConfigurationSchemeMapping | Assign issue types to field configurations |
-| POST | `/rest/api/3/fieldconfigurationscheme/{id}/mapping/delete` | removeIssueTypesFromGlobalFieldConfigurationScheme | Remove issue types from field configuration scheme |
-| GET | `/rest/api/3/filter` | getFilters | Get filters |
-| POST | `/rest/api/3/filter` | createFilter | Create filter |
-| GET | `/rest/api/3/filter/defaultShareScope` | getDefaultShareScope | Get default share scope |
-| PUT | `/rest/api/3/filter/defaultShareScope` | setDefaultShareScope | Set default share scope |
-| GET | `/rest/api/3/filter/favourite` | getFavouriteFilters | Get favorite filters |
-| GET | `/rest/api/3/filter/my` | getMyFilters | Get my filters |
-| GET | `/rest/api/3/filter/search` | getFiltersPaginated | Search for filters |
-| DELETE | `/rest/api/3/filter/{id}` | deleteFilter | Delete filter |
-| GET | `/rest/api/3/filter/{id}` | getFilter | Get filter |
-| PUT | `/rest/api/3/filter/{id}` | updateFilter | Update filter |
-| DELETE | `/rest/api/3/filter/{id}/columns` | resetColumns | Reset columns |
-| GET | `/rest/api/3/filter/{id}/columns` | getColumns | Get columns |
-| PUT | `/rest/api/3/filter/{id}/columns` | setColumns | Set columns |
-| DELETE | `/rest/api/3/filter/{id}/favourite` | deleteFavouriteForFilter | Remove filter as favorite |
-| PUT | `/rest/api/3/filter/{id}/favourite` | setFavouriteForFilter | Add filter as favorite |
-| PUT | `/rest/api/3/filter/{id}/owner` | changeFilterOwner | Change filter owner |
-| GET | `/rest/api/3/filter/{id}/permission` | getSharePermissions | Get share permissions |
-| POST | `/rest/api/3/filter/{id}/permission` | addSharePermission | Add share permission |
-| DELETE | `/rest/api/3/filter/{id}/permission/{permissionId}` | deleteSharePermission | Delete share permission |
-| GET | `/rest/api/3/filter/{id}/permission/{permissionId}` | getSharePermission | Get share permission |
-| DELETE | `/rest/api/3/group` | removeGroup | Remove group |
-| GET | `/rest/api/3/group` | getGroup | Get group |
-| POST | `/rest/api/3/group` | createGroup | Create group |
-| GET | `/rest/api/3/group/bulk` | bulkGetGroups | Bulk get groups |
-| GET | `/rest/api/3/group/member` | getUsersFromGroup | Get users from group |
-| DELETE | `/rest/api/3/group/user` | removeUserFromGroup | Remove user from group |
-| POST | `/rest/api/3/group/user` | addUserToGroup | Add user to group |
-| GET | `/rest/api/3/groups/picker` | findGroups | Find groups |
-| GET | `/rest/api/3/groupuserpicker` | findUsersAndGroups | Find users and groups |
-| GET | `/rest/api/3/instance/license` | getLicense | Get license |
-| POST | `/rest/api/3/issue` | createIssue | Create issue |
-| POST | `/rest/api/3/issue/bulk` | createIssues | Bulk create issue |
-| GET | `/rest/api/3/issue/createmeta` | getCreateIssueMeta | Get create issue metadata |
-| GET | `/rest/api/3/issue/picker` | getIssuePickerResource | Get issue picker suggestions |
-| POST | `/rest/api/3/issue/properties` | bulkSetIssuesPropertiesList | Bulk set issues properties by list |
-| POST | `/rest/api/3/issue/properties/multi` | bulkSetIssuePropertiesByIssue | Bulk set issue properties by issue |
-| DELETE | `/rest/api/3/issue/properties/{propertyKey}` | bulkDeleteIssueProperty | Bulk delete issue property |
-| PUT | `/rest/api/3/issue/properties/{propertyKey}` | bulkSetIssueProperty | Bulk set issue property |
-| POST | `/rest/api/3/issue/watching` | getIsWatchingIssueBulk | Get is watching issue bulk |
-| DELETE | `/rest/api/3/issue/{issueIdOrKey}` | deleteIssue | Delete issue |
-| GET | `/rest/api/3/issue/{issueIdOrKey}` | getIssue | Get issue |
-| PUT | `/rest/api/3/issue/{issueIdOrKey}` | editIssue | Edit issue |
-| PUT | `/rest/api/3/issue/{issueIdOrKey}/assignee` | assignIssue | Assign issue |
-| POST | `/rest/api/3/issue/{issueIdOrKey}/attachments` | addAttachment | Add attachment |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/changelog` | getChangeLogs | Get changelogs |
-| POST | `/rest/api/3/issue/{issueIdOrKey}/changelog/list` | getChangeLogsByIds | Get changelogs by IDs |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/comment` | getComments | Get comments |
-| POST | `/rest/api/3/issue/{issueIdOrKey}/comment` | addComment | Add comment |
-| DELETE | `/rest/api/3/issue/{issueIdOrKey}/comment/{id}` | deleteComment | Delete comment |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/comment/{id}` | getComment | Get comment |
-| PUT | `/rest/api/3/issue/{issueIdOrKey}/comment/{id}` | updateComment | Update comment |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/editmeta` | getEditIssueMeta | Get edit issue metadata |
-| POST | `/rest/api/3/issue/{issueIdOrKey}/notify` | notify | Send notification for issue |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/properties` | getIssuePropertyKeys | Get issue property keys |
-| DELETE | `/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}` | deleteIssueProperty | Delete issue property |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}` | getIssueProperty | Get issue property |
-| PUT | `/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}` | setIssueProperty | Set issue property |
-| DELETE | `/rest/api/3/issue/{issueIdOrKey}/remotelink` | deleteRemoteIssueLinkByGlobalId | Delete remote issue link by global ID |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/remotelink` | getRemoteIssueLinks | Get remote issue links |
-| POST | `/rest/api/3/issue/{issueIdOrKey}/remotelink` | createOrUpdateRemoteIssueLink | Create or update remote issue link |
-| DELETE | `/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}` | deleteRemoteIssueLinkById | Delete remote issue link by ID |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}` | getRemoteIssueLinkById | Get remote issue link by ID |
-| PUT | `/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}` | updateRemoteIssueLink | Update remote issue link by ID |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/transitions` | getTransitions | Get transitions |
-| POST | `/rest/api/3/issue/{issueIdOrKey}/transitions` | doTransition | Transition issue |
-| DELETE | `/rest/api/3/issue/{issueIdOrKey}/votes` | removeVote | Delete vote |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/votes` | getVotes | Get votes |
-| POST | `/rest/api/3/issue/{issueIdOrKey}/votes` | addVote | Add vote |
-| DELETE | `/rest/api/3/issue/{issueIdOrKey}/watchers` | removeWatcher | Delete watcher |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/watchers` | getIssueWatchers | Get issue watchers |
-| POST | `/rest/api/3/issue/{issueIdOrKey}/watchers` | addWatcher | Add watcher |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/worklog` | getIssueWorklog | Get issue worklogs |
-| POST | `/rest/api/3/issue/{issueIdOrKey}/worklog` | addWorklog | Add worklog |
-| DELETE | `/rest/api/3/issue/{issueIdOrKey}/worklog/{id}` | deleteWorklog | Delete worklog |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/worklog/{id}` | getWorklog | Get worklog |
-| PUT | `/rest/api/3/issue/{issueIdOrKey}/worklog/{id}` | updateWorklog | Update worklog |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties` | getWorklogPropertyKeys | Get worklog property keys |
-| DELETE | `/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}` | deleteWorklogProperty | Delete worklog property |
-| GET | `/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}` | getWorklogProperty | Get worklog property |
-| PUT | `/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}` | setWorklogProperty | Set worklog property |
-| POST | `/rest/api/3/issueLink` | linkIssues | Create issue link |
-| DELETE | `/rest/api/3/issueLink/{linkId}` | deleteIssueLink | Delete issue link |
-| GET | `/rest/api/3/issueLink/{linkId}` | getIssueLink | Get issue link |
-| GET | `/rest/api/3/issueLinkType` | getIssueLinkTypes | Get issue link types |
-| POST | `/rest/api/3/issueLinkType` | createIssueLinkType | Create issue link type |
-| DELETE | `/rest/api/3/issueLinkType/{issueLinkTypeId}` | deleteIssueLinkType | Delete issue link type |
-| GET | `/rest/api/3/issueLinkType/{issueLinkTypeId}` | getIssueLinkType | Get issue link type |
-| PUT | `/rest/api/3/issueLinkType/{issueLinkTypeId}` | updateIssueLinkType | Update issue link type |
-| GET | `/rest/api/3/issuesecurityschemes` | getIssueSecuritySchemes | Get issue security schemes |
-| GET | `/rest/api/3/issuesecurityschemes/{id}` | getIssueSecurityScheme | Get issue security scheme |
-| GET | `/rest/api/3/issuesecurityschemes/{issueSecuritySchemeId}/members` | getIssueSecurityLevelMembers | Get issue security level members |
-| GET | `/rest/api/3/issuetype` | getIssueAllTypes | Get all issue types for user |
-| POST | `/rest/api/3/issuetype` | createIssueType | Create issue type |
-| GET | `/rest/api/3/issuetype/project` | getIssueTypesForProject | Get issue types for project |
-| DELETE | `/rest/api/3/issuetype/{id}` | deleteIssueType | Delete issue type |
-| GET | `/rest/api/3/issuetype/{id}` | getIssueType | Get issue type |
-| PUT | `/rest/api/3/issuetype/{id}` | updateIssueType | Update issue type |
-| GET | `/rest/api/3/issuetype/{id}/alternatives` | getAlternativeIssueTypes | Get alternative issue types |
-| POST | `/rest/api/3/issuetype/{id}/avatar2` | createIssueTypeAvatar | Load issue type avatar |
-| GET | `/rest/api/3/issuetype/{issueTypeId}/properties` | getIssueTypePropertyKeys | Get issue type property keys |
-| DELETE | `/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}` | deleteIssueTypeProperty | Delete issue type property |
-| GET | `/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}` | getIssueTypeProperty | Get issue type property |
-| PUT | `/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}` | setIssueTypeProperty | Set issue type property |
-| GET | `/rest/api/3/issuetypescheme` | getAllIssueTypeSchemes | Get all issue type schemes |
-| POST | `/rest/api/3/issuetypescheme` | createIssueTypeScheme | Create issue type scheme |
-| GET | `/rest/api/3/issuetypescheme/mapping` | getIssueTypeSchemesMapping | Get issue type scheme items |
-| GET | `/rest/api/3/issuetypescheme/project` | getIssueTypeSchemeForProjects | Get issue type schemes for projects |
-| PUT | `/rest/api/3/issuetypescheme/project` | assignIssueTypeSchemeToProject | Assign issue type scheme to project |
-| DELETE | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}` | deleteIssueTypeScheme | Delete issue type scheme |
-| PUT | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}` | updateIssueTypeScheme | Update issue type scheme |
-| PUT | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}/issuetype` | addIssueTypesToIssueTypeScheme | Add issue types to issue type scheme |
-| PUT | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}/issuetype/move` | reorderIssueTypesInIssueTypeScheme | Change order of issue types |
-| DELETE | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}/issuetype/{issueTypeId}` | removeIssueTypeFromIssueTypeScheme | Remove issue type from issue type scheme |
-| GET | `/rest/api/3/issuetypescreenscheme` | getIssueTypeScreenSchemes | Get issue type screen schemes |
-| POST | `/rest/api/3/issuetypescreenscheme` | createIssueTypeScreenScheme | Create issue type screen scheme |
-| GET | `/rest/api/3/issuetypescreenscheme/mapping` | getIssueTypeScreenSchemeMappings | Get issue type screen scheme items |
-| GET | `/rest/api/3/issuetypescreenscheme/project` | getIssueTypeScreenSchemeProjectAssociations | Get issue type screen schemes for projects |
-| PUT | `/rest/api/3/issuetypescreenscheme/project` | assignIssueTypeScreenSchemeToProject | Assign issue type screen scheme to project |
-| DELETE | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}` | deleteIssueTypeScreenScheme | Delete issue type screen scheme |
-| PUT | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}` | updateIssueTypeScreenScheme | Update issue type screen scheme |
-| PUT | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/mapping` | appendMappingsForIssueTypeScreenScheme | Append mappings to issue type screen scheme |
-| PUT | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/mapping/default` | updateDefaultScreenScheme | Update issue type screen scheme default screen scheme |
-| POST | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/mapping/remove` | removeMappingsFromIssueTypeScreenScheme | Remove mappings from issue type screen scheme |
-| GET | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/project` | getProjectsForIssueTypeScreenScheme | Get issue type screen scheme projects |
-| GET | `/rest/api/3/jql/autocompletedata` | getAutoComplete | Get field reference data (GET) |
-| POST | `/rest/api/3/jql/autocompletedata` | getAutoCompletePost | Get field reference data (POST) |
-| GET | `/rest/api/3/jql/autocompletedata/suggestions` | getFieldAutoCompleteForQueryString | Get field auto complete suggestions |
-| GET | `/rest/api/3/jql/function/computation` | getPrecomputations | Get precomputation |
-| POST | `/rest/api/3/jql/function/computation` | updatePrecomputations | Update precomputations |
-| POST | `/rest/api/3/jql/match` | matchIssues | Check issues against JQL |
-| POST | `/rest/api/3/jql/parse` | parseJqlQueries | Parse JQL query |
-| POST | `/rest/api/3/jql/pdcleaner` | migrateQueries | Convert user identifiers to account IDs in JQL queries |
-| POST | `/rest/api/3/jql/sanitize` | sanitiseJqlQueries | Sanitize JQL queries |
-| GET | `/rest/api/3/label` | getAllLabels | Get all labels |
-| GET | `/rest/api/3/license/approximateLicenseCount` | getApproximateLicenseCount | Get approximate license count |
-| GET | `/rest/api/3/license/approximateLicenseCount/product/{applicationKey}` | getApproximateApplicationLicenseCount | Get approximate application license count |
-| GET | `/rest/api/3/mypermissions` | getMyPermissions | Get my permissions |
-| DELETE | `/rest/api/3/mypreferences` | removePreference | Delete preference |
-| GET | `/rest/api/3/mypreferences` | getPreference | Get preference |
-| PUT | `/rest/api/3/mypreferences` | setPreference | Set preference |
-| DELETE | `/rest/api/3/mypreferences/locale` | deleteLocale | Delete locale |
-| GET | `/rest/api/3/mypreferences/locale` | getLocale | Get locale |
-| PUT | `/rest/api/3/mypreferences/locale` | setLocale | Set locale |
-| GET | `/rest/api/3/myself` | getCurrentUser | Get current user |
-| GET | `/rest/api/3/notificationscheme` | getNotificationSchemes | Get notification schemes paginated |
-| POST | `/rest/api/3/notificationscheme` | createNotificationScheme | Create notification scheme |
-| GET | `/rest/api/3/notificationscheme/project` | getNotificationSchemeToProjectMappings | Get projects using notification schemes paginated |
-| GET | `/rest/api/3/notificationscheme/{id}` | getNotificationScheme | Get notification scheme |
-| PUT | `/rest/api/3/notificationscheme/{id}` | updateNotificationScheme | Update notification scheme |
-| PUT | `/rest/api/3/notificationscheme/{id}/notification` | addNotifications | Add notifications to notification scheme |
-| DELETE | `/rest/api/3/notificationscheme/{notificationSchemeId}` | deleteNotificationScheme | Delete notification scheme |
-| DELETE | `/rest/api/3/notificationscheme/{notificationSchemeId}/notification/{notificationId}` | removeNotificationFromNotificationScheme | Remove notification from notification scheme |
-| GET | `/rest/api/3/permissions` | getAllPermissions | Get all permissions |
-| POST | `/rest/api/3/permissions/check` | getBulkPermissions | Get bulk permissions |
-| POST | `/rest/api/3/permissions/project` | getPermittedProjects | Get permitted projects |
-| GET | `/rest/api/3/permissionscheme` | getAllPermissionSchemes | Get all permission schemes |
-| POST | `/rest/api/3/permissionscheme` | createPermissionScheme | Create permission scheme |
-| DELETE | `/rest/api/3/permissionscheme/{schemeId}` | deletePermissionScheme | Delete permission scheme |
-| GET | `/rest/api/3/permissionscheme/{schemeId}` | getPermissionScheme | Get permission scheme |
-| PUT | `/rest/api/3/permissionscheme/{schemeId}` | updatePermissionScheme | Update permission scheme |
-| GET | `/rest/api/3/permissionscheme/{schemeId}/permission` | getPermissionSchemeGrants | Get permission scheme grants |
-| POST | `/rest/api/3/permissionscheme/{schemeId}/permission` | createPermissionGrant | Create permission grant |
-| DELETE | `/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId}` | deletePermissionSchemeEntity | Delete permission scheme grant |
-| GET | `/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId}` | getPermissionSchemeGrant | Get permission scheme grant |
-| GET | `/rest/api/3/priority` | getPriorities | Get priorities |
-| POST | `/rest/api/3/priority` | createPriority | Create priority |
-| PUT | `/rest/api/3/priority/default` | setDefaultPriority | Set default priority |
-| PUT | `/rest/api/3/priority/move` | movePriorities | Move priorities |
-| GET | `/rest/api/3/priority/search` | searchPriorities | Search priorities |
-| DELETE | `/rest/api/3/priority/{id}` | deletePriority | Delete priority |
-| GET | `/rest/api/3/priority/{id}` | getPriority | Get priority |
-| PUT | `/rest/api/3/priority/{id}` | updatePriority | Update priority |
-| GET | `/rest/api/3/project` | getAllProjects | Get all projects |
-| POST | `/rest/api/3/project` | createProject | Create project |
-| GET | `/rest/api/3/project/recent` | getRecent | Get recent projects |
-| GET | `/rest/api/3/project/search` | searchProjects | Get projects paginated |
-| GET | `/rest/api/3/project/type` | getAllProjectTypes | Get all project types |
-| GET | `/rest/api/3/project/type/accessible` | getAllAccessibleProjectTypes | Get licensed project types |
-| GET | `/rest/api/3/project/type/{projectTypeKey}` | getProjectTypeByKey | Get project type by key |
-| GET | `/rest/api/3/project/type/{projectTypeKey}/accessible` | getAccessibleProjectTypeByKey | Get accessible project type by key |
-| DELETE | `/rest/api/3/project/{projectIdOrKey}` | deleteProject | Delete project |
-| GET | `/rest/api/3/project/{projectIdOrKey}` | getProject | Get project |
-| PUT | `/rest/api/3/project/{projectIdOrKey}` | updateProject | Update project |
-| POST | `/rest/api/3/project/{projectIdOrKey}/archive` | archiveProject | Archive project |
-| PUT | `/rest/api/3/project/{projectIdOrKey}/avatar` | updateProjectAvatar | Set project avatar |
-| DELETE | `/rest/api/3/project/{projectIdOrKey}/avatar/{id}` | deleteProjectAvatar | Delete project avatar |
-| POST | `/rest/api/3/project/{projectIdOrKey}/avatar2` | createProjectAvatar | Load project avatar |
-| GET | `/rest/api/3/project/{projectIdOrKey}/avatars` | getAllProjectAvatars | Get all project avatars |
-| GET | `/rest/api/3/project/{projectIdOrKey}/component` | getProjectComponentsPaginated | Get project components paginated |
-| GET | `/rest/api/3/project/{projectIdOrKey}/components` | getProjectComponents | Get project components |
-| POST | `/rest/api/3/project/{projectIdOrKey}/delete` | deleteProjectAsynchronously | Delete project asynchronously |
-| GET | `/rest/api/3/project/{projectIdOrKey}/features` | getFeaturesForProject | Get project features |
-| PUT | `/rest/api/3/project/{projectIdOrKey}/features/{featureKey}` | toggleFeatureForProject | Set project feature state |
-| GET | `/rest/api/3/project/{projectIdOrKey}/properties` | getProjectPropertyKeys | Get project property keys |
-| DELETE | `/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}` | deleteProjectProperty | Delete project property |
-| GET | `/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}` | getProjectProperty | Get project property |
-| PUT | `/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}` | setProjectProperty | Set project property |
-| POST | `/rest/api/3/project/{projectIdOrKey}/restore` | restore | Restore deleted or archived project |
-| GET | `/rest/api/3/project/{projectIdOrKey}/role` | getProjectRoles | Get project roles for project |
-| DELETE | `/rest/api/3/project/{projectIdOrKey}/role/{id}` | deleteActor | Delete actors from project role |
-| GET | `/rest/api/3/project/{projectIdOrKey}/role/{id}` | getProjectRole | Get project role for project |
-| POST | `/rest/api/3/project/{projectIdOrKey}/role/{id}` | addActorUsers | Add actors to project role |
-| PUT | `/rest/api/3/project/{projectIdOrKey}/role/{id}` | setActors | Set actors for project role |
-| GET | `/rest/api/3/project/{projectIdOrKey}/roledetails` | getProjectRoleDetails | Get project role details |
-| GET | `/rest/api/3/project/{projectIdOrKey}/statuses` | getAllStatuses | Get all statuses for project |
-| PUT | `/rest/api/3/project/{projectIdOrKey}/type/{newProjectTypeKey}` | updateProjectType | Update project type |
-| GET | `/rest/api/3/project/{projectIdOrKey}/version` | getProjectVersionsPaginated | Get project versions paginated |
-| GET | `/rest/api/3/project/{projectIdOrKey}/versions` | getProjectVersions | Get project versions |
-| GET | `/rest/api/3/project/{projectId}/email` | getProjectEmail | Get project's sender email |
-| PUT | `/rest/api/3/project/{projectId}/email` | updateProjectEmail | Set project's sender email |
-| GET | `/rest/api/3/project/{projectId}/hierarchy` | getHierarchy | Get project issue type hierarchy |
-| GET | `/rest/api/3/project/{projectKeyOrId}/issuesecuritylevelscheme` | getProjectIssueSecurityScheme | Get project issue security scheme |
-| GET | `/rest/api/3/project/{projectKeyOrId}/notificationscheme` | getNotificationSchemeForProject | Get project notification scheme |
-| GET | `/rest/api/3/project/{projectKeyOrId}/permissionscheme` | getAssignedPermissionScheme | Get assigned permission scheme |
-| PUT | `/rest/api/3/project/{projectKeyOrId}/permissionscheme` | assignPermissionScheme | Assign permission scheme |
-| GET | `/rest/api/3/project/{projectKeyOrId}/securitylevel` | getSecurityLevelsForProject | Get project issue security levels |
-| GET | `/rest/api/3/projectCategory` | getAllProjectCategories | Get all project categories |
-| POST | `/rest/api/3/projectCategory` | createProjectCategory | Create project category |
-| DELETE | `/rest/api/3/projectCategory/{id}` | removeProjectCategory | Delete project category |
-| GET | `/rest/api/3/projectCategory/{id}` | getProjectCategoryById | Get project category by ID |
-| PUT | `/rest/api/3/projectCategory/{id}` | updateProjectCategory | Update project category |
-| GET | `/rest/api/3/projectvalidate/key` | validateProjectKey | Validate project key |
-| GET | `/rest/api/3/projectvalidate/validProjectKey` | getValidProjectKey | Get valid project key |
-| GET | `/rest/api/3/projectvalidate/validProjectName` | getValidProjectName | Get valid project name |
-| GET | `/rest/api/3/resolution` | getResolutions | Get resolutions |
-| POST | `/rest/api/3/resolution` | createResolution | Create resolution |
-| PUT | `/rest/api/3/resolution/default` | setDefaultResolution | Set default resolution |
-| PUT | `/rest/api/3/resolution/move` | moveResolutions | Move resolutions |
-| GET | `/rest/api/3/resolution/search` | searchResolutions | Search resolutions |
-| DELETE | `/rest/api/3/resolution/{id}` | deleteResolution | Delete resolution |
-| GET | `/rest/api/3/resolution/{id}` | getResolution | Get resolution |
-| PUT | `/rest/api/3/resolution/{id}` | updateResolution | Update resolution |
-| GET | `/rest/api/3/role` | getAllProjectRoles | Get all project roles |
-| POST | `/rest/api/3/role` | createProjectRole | Create project role |
-| DELETE | `/rest/api/3/role/{id}` | deleteProjectRole | Delete project role |
-| GET | `/rest/api/3/role/{id}` | getProjectRoleById | Get project role by ID |
-| POST | `/rest/api/3/role/{id}` | partialUpdateProjectRole | Partial update project role |
-| PUT | `/rest/api/3/role/{id}` | fullyUpdateProjectRole | Fully update project role |
-| DELETE | `/rest/api/3/role/{id}/actors` | deleteProjectRoleActorsFromRole | Delete default actors from project role |
-| GET | `/rest/api/3/role/{id}/actors` | getProjectRoleActorsForRole | Get default actors for project role |
-| POST | `/rest/api/3/role/{id}/actors` | addProjectRoleActorsToRole | Add default actors to project role |
-| GET | `/rest/api/3/screens` | getScreens | Get screens |
-| POST | `/rest/api/3/screens` | createScreen | Create screen |
-| POST | `/rest/api/3/screens/addToDefault/{fieldId}` | addFieldToDefaultScreen | Add field to default screen |
-| DELETE | `/rest/api/3/screens/{screenId}` | deleteScreen | Delete screen |
-| PUT | `/rest/api/3/screens/{screenId}` | updateScreen | Update screen |
-| GET | `/rest/api/3/screens/{screenId}/availableFields` | getAvailableScreenFields | Get available screen fields |
-| GET | `/rest/api/3/screens/{screenId}/tabs` | getAllScreenTabs | Get all screen tabs |
-| POST | `/rest/api/3/screens/{screenId}/tabs` | addScreenTab | Create screen tab |
-| DELETE | `/rest/api/3/screens/{screenId}/tabs/{tabId}` | deleteScreenTab | Delete screen tab |
-| PUT | `/rest/api/3/screens/{screenId}/tabs/{tabId}` | renameScreenTab | Update screen tab |
-| GET | `/rest/api/3/screens/{screenId}/tabs/{tabId}/fields` | getAllScreenTabFields | Get all screen tab fields |
-| POST | `/rest/api/3/screens/{screenId}/tabs/{tabId}/fields` | addScreenTabField | Add screen tab field |
-| DELETE | `/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}` | removeScreenTabField | Remove screen tab field |
-| POST | `/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}/move` | moveScreenTabField | Move screen tab field |
-| POST | `/rest/api/3/screens/{screenId}/tabs/{tabId}/move/{pos}` | moveScreenTab | Move screen tab |
-| GET | `/rest/api/3/screenscheme` | getScreenSchemes | Get screen schemes |
-| POST | `/rest/api/3/screenscheme` | createScreenScheme | Create screen scheme |
-| DELETE | `/rest/api/3/screenscheme/{screenSchemeId}` | deleteScreenScheme | Delete screen scheme |
-| PUT | `/rest/api/3/screenscheme/{screenSchemeId}` | updateScreenScheme | Update screen scheme |
-| GET | `/rest/api/3/search` | searchForIssuesUsingJql | Search for issues using JQL (GET) |
-| POST | `/rest/api/3/search` | searchForIssuesUsingJqlPost | Search for issues using JQL (POST) |
-| GET | `/rest/api/3/securitylevel/{id}` | getIssueSecurityLevel | Get issue security level |
-| GET | `/rest/api/3/serverInfo` | getServerInfo | Get Jira instance info |
-| GET | `/rest/api/3/settings/columns` | getIssueNavigatorDefaultColumns | Get issue navigator default columns |
-| PUT | `/rest/api/3/settings/columns` | setIssueNavigatorDefaultColumns | Set issue navigator default columns |
-| GET | `/rest/api/3/status` | getStatuses | Get all statuses |
-| GET | `/rest/api/3/status/{idOrName}` | getStatus | Get status |
-| GET | `/rest/api/3/statuscategory` | getStatusCategories | Get all status categories |
-| GET | `/rest/api/3/statuscategory/{idOrKey}` | getStatusCategory | Get status category |
-| DELETE | `/rest/api/3/statuses` | deleteStatusesById | Bulk delete Statuses |
-| GET | `/rest/api/3/statuses` | getStatusesById | Bulk get statuses |
-| POST | `/rest/api/3/statuses` | createStatuses | Bulk create statuses |
-| PUT | `/rest/api/3/statuses` | updateStatuses | Bulk update statuses |
-| GET | `/rest/api/3/statuses/search` | search | Search statuses paginated |
-| GET | `/rest/api/3/task/{taskId}` | getTask | Get task |
-| POST | `/rest/api/3/task/{taskId}/cancel` | cancelTask | Cancel task |
-| GET | `/rest/api/3/uiModifications` | getUiModifications | Get UI modifications |
-| POST | `/rest/api/3/uiModifications` | createUiModification | Create UI modification |
-| DELETE | `/rest/api/3/uiModifications/{uiModificationId}` | deleteUiModification | Delete UI modification |
-| PUT | `/rest/api/3/uiModifications/{uiModificationId}` | updateUiModification | Update UI modification |
-| GET | `/rest/api/3/universal_avatar/type/{type}/owner/{entityId}` | getAvatars | Get avatars |
-| POST | `/rest/api/3/universal_avatar/type/{type}/owner/{entityId}` | storeAvatar | Load avatar |
-| DELETE | `/rest/api/3/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id}` | deleteAvatar | Delete avatar |
-| GET | `/rest/api/3/universal_avatar/view/type/{type}` | getAvatarImageByType | Get avatar image by type |
-| GET | `/rest/api/3/universal_avatar/view/type/{type}/avatar/{id}` | getAvatarImageByID | Get avatar image by ID |
-| GET | `/rest/api/3/universal_avatar/view/type/{type}/owner/{entityId}` | getAvatarImageByOwner | Get avatar image by owner |
-| DELETE | `/rest/api/3/user` | removeUser | Delete user |
-| GET | `/rest/api/3/user` | getUser | Get user |
-| POST | `/rest/api/3/user` | createUser | Create user |
-| GET | `/rest/api/3/user/assignable/multiProjectSearch` | findBulkAssignableUsers | Find users assignable to projects |
-| GET | `/rest/api/3/user/assignable/search` | findAssignableUsers | Find users assignable to issues |
-| GET | `/rest/api/3/user/bulk` | bulkGetUsers | Bulk get users |
-| GET | `/rest/api/3/user/bulk/migration` | bulkGetUsersMigration | Get account IDs for users |
-| DELETE | `/rest/api/3/user/columns` | resetUserColumns | Reset user default columns |
-| GET | `/rest/api/3/user/columns` | getUserDefaultColumns | Get user default columns |
-| PUT | `/rest/api/3/user/columns` | setUserColumns | Set user default columns |
-| GET | `/rest/api/3/user/email` | getUserEmail | Get user email |
-| GET | `/rest/api/3/user/email/bulk` | getUserEmailBulk | Get user email bulk |
-| GET | `/rest/api/3/user/groups` | getUserGroups | Get user groups |
-| GET | `/rest/api/3/user/permission/search` | findUsersWithAllPermissions | Find users with permissions |
-| GET | `/rest/api/3/user/picker` | findUsersForPicker | Find users for picker |
-| GET | `/rest/api/3/user/properties` | getUserPropertyKeys | Get user property keys |
-| DELETE | `/rest/api/3/user/properties/{propertyKey}` | deleteUserProperty | Delete user property |
-| GET | `/rest/api/3/user/properties/{propertyKey}` | getUserProperty | Get user property |
-| PUT | `/rest/api/3/user/properties/{propertyKey}` | setUserProperty | Set user property |
-| GET | `/rest/api/3/user/search` | findUsers | Find users |
-| GET | `/rest/api/3/user/search/query` | findUsersByQuery | Find users by query |
-| GET | `/rest/api/3/user/search/query/key` | findUserKeysByQuery | Find user keys by query |
-| GET | `/rest/api/3/user/viewissue/search` | findUsersWithBrowsePermission | Find users with browse permission |
-| GET | `/rest/api/3/users` | getAllUsersDefault | Get all users default |
-| GET | `/rest/api/3/users/search` | getAllUsers | Get all users |
-| POST | `/rest/api/3/version` | createVersion | Create version |
-| DELETE | `/rest/api/3/version/{id}` | deleteVersion | Delete version |
-| GET | `/rest/api/3/version/{id}` | getVersion | Get version |
-| PUT | `/rest/api/3/version/{id}` | updateVersion | Update version |
-| PUT | `/rest/api/3/version/{id}/mergeto/{moveIssuesTo}` | mergeVersions | Merge versions |
-| POST | `/rest/api/3/version/{id}/move` | moveVersion | Move version |
-| GET | `/rest/api/3/version/{id}/relatedIssueCounts` | getVersionRelatedIssues | Get version's related issues count |
-| POST | `/rest/api/3/version/{id}/removeAndSwap` | deleteAndReplaceVersion | Delete and replace version |
-| GET | `/rest/api/3/version/{id}/unresolvedIssueCount` | getVersionUnresolvedIssues | Get version's unresolved issues count |
-| DELETE | `/rest/api/3/webhook` | deleteWebhookById | Delete webhooks by ID |
-| GET | `/rest/api/3/webhook` | getDynamicWebhooksForApp | Get dynamic webhooks for app |
-| POST | `/rest/api/3/webhook` | registerDynamicWebhooks | Register dynamic webhooks |
-| GET | `/rest/api/3/webhook/failed` | getFailedWebhooks | Get failed webhooks |
-| PUT | `/rest/api/3/webhook/refresh` | refreshWebhooks | Extend webhook life |
-| GET | `/rest/api/3/workflow` | getAllWorkflows | Get all workflows |
-| POST | `/rest/api/3/workflow` | createWorkflow | Create workflow |
-| GET | `/rest/api/3/workflow/rule/config` | getWorkflowTransitionRuleConfigurations | Get workflow transition rule configurations |
-| PUT | `/rest/api/3/workflow/rule/config` | updateWorkflowTransitionRuleConfigurations | Update workflow transition rule configurations |
-| PUT | `/rest/api/3/workflow/rule/config/delete` | deleteWorkflowTransitionRuleConfigurations | Delete workflow transition rule configurations |
-| GET | `/rest/api/3/workflow/search` | getWorkflowsPaginated | Get workflows paginated |
-| DELETE | `/rest/api/3/workflow/transitions/{transitionId}/properties` | deleteWorkflowTransitionProperty | Delete workflow transition property |
-| GET | `/rest/api/3/workflow/transitions/{transitionId}/properties` | getWorkflowTransitionProperties | Get workflow transition properties |
-| POST | `/rest/api/3/workflow/transitions/{transitionId}/properties` | createWorkflowTransitionProperty | Create workflow transition property |
-| PUT | `/rest/api/3/workflow/transitions/{transitionId}/properties` | updateWorkflowTransitionProperty | Update workflow transition property |
-| DELETE | `/rest/api/3/workflow/{entityId}` | deleteInactiveWorkflow | Delete inactive workflow |
-| GET | `/rest/api/3/workflowscheme` | getAllWorkflowSchemes | Get all workflow schemes |
-| POST | `/rest/api/3/workflowscheme` | createWorkflowScheme | Create workflow scheme |
-| GET | `/rest/api/3/workflowscheme/project` | getWorkflowSchemeProjectAssociations | Get workflow scheme project associations |
-| PUT | `/rest/api/3/workflowscheme/project` | assignSchemeToProject | Assign workflow scheme to project |
-| DELETE | `/rest/api/3/workflowscheme/{id}` | deleteWorkflowScheme | Delete workflow scheme |
-| GET | `/rest/api/3/workflowscheme/{id}` | getWorkflowScheme | Get workflow scheme |
-| PUT | `/rest/api/3/workflowscheme/{id}` | updateWorkflowScheme | Update workflow scheme |
-| POST | `/rest/api/3/workflowscheme/{id}/createdraft` | createWorkflowSchemeDraftFromParent | Create draft workflow scheme |
-| DELETE | `/rest/api/3/workflowscheme/{id}/default` | deleteDefaultWorkflow | Delete default workflow |
-| GET | `/rest/api/3/workflowscheme/{id}/default` | getDefaultWorkflow | Get default workflow |
-| PUT | `/rest/api/3/workflowscheme/{id}/default` | updateDefaultWorkflow | Update default workflow |
-| DELETE | `/rest/api/3/workflowscheme/{id}/draft` | deleteWorkflowSchemeDraft | Delete draft workflow scheme |
-| GET | `/rest/api/3/workflowscheme/{id}/draft` | getWorkflowSchemeDraft | Get draft workflow scheme |
-| PUT | `/rest/api/3/workflowscheme/{id}/draft` | updateWorkflowSchemeDraft | Update draft workflow scheme |
-| DELETE | `/rest/api/3/workflowscheme/{id}/draft/default` | deleteDraftDefaultWorkflow | Delete draft default workflow |
-| GET | `/rest/api/3/workflowscheme/{id}/draft/default` | getDraftDefaultWorkflow | Get draft default workflow |
-| PUT | `/rest/api/3/workflowscheme/{id}/draft/default` | updateDraftDefaultWorkflow | Update draft default workflow |
-| DELETE | `/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}` | deleteWorkflowSchemeDraftIssueType | Delete workflow for issue type in draft workflow scheme |
-| GET | `/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}` | getWorkflowSchemeDraftIssueType | Get workflow for issue type in draft workflow scheme |
-| PUT | `/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}` | setWorkflowSchemeDraftIssueType | Set workflow for issue type in draft workflow scheme |
-| POST | `/rest/api/3/workflowscheme/{id}/draft/publish` | publishDraftWorkflowScheme | Publish draft workflow scheme |
-| DELETE | `/rest/api/3/workflowscheme/{id}/draft/workflow` | deleteDraftWorkflowMapping | Delete issue types for workflow in draft workflow scheme |
-| GET | `/rest/api/3/workflowscheme/{id}/draft/workflow` | getDraftWorkflow | Get issue types for workflows in draft workflow scheme |
-| PUT | `/rest/api/3/workflowscheme/{id}/draft/workflow` | updateDraftWorkflowMapping | Set issue types for workflow in workflow scheme |
-| DELETE | `/rest/api/3/workflowscheme/{id}/issuetype/{issueType}` | deleteWorkflowSchemeIssueType | Delete workflow for issue type in workflow scheme |
-| GET | `/rest/api/3/workflowscheme/{id}/issuetype/{issueType}` | getWorkflowSchemeIssueType | Get workflow for issue type in workflow scheme |
-| PUT | `/rest/api/3/workflowscheme/{id}/issuetype/{issueType}` | setWorkflowSchemeIssueType | Set workflow for issue type in workflow scheme |
-| DELETE | `/rest/api/3/workflowscheme/{id}/workflow` | deleteWorkflowMapping | Delete issue types for workflow in workflow scheme |
-| GET | `/rest/api/3/workflowscheme/{id}/workflow` | getWorkflow | Get issue types for workflows in workflow scheme |
-| PUT | `/rest/api/3/workflowscheme/{id}/workflow` | updateWorkflowMapping | Set issue types for workflow in workflow scheme |
-| GET | `/rest/api/3/worklog/deleted` | getIdsOfWorklogsDeletedSince | Get IDs of deleted worklogs |
-| POST | `/rest/api/3/worklog/list` | getWorklogsForIds | Get worklogs |
-| GET | `/rest/api/3/worklog/updated` | getIdsOfWorklogsModifiedSince | Get IDs of updated worklogs |
-| GET | `/rest/atlassian-connect/1/addons/{addonKey}/properties` | AddonPropertiesResource.getAddonProperties_get | Get app properties |
-| DELETE | `/rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey}` | AddonPropertiesResource.deleteAddonProperty_delete | Delete app property |
-| GET | `/rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey}` | AddonPropertiesResource.getAddonProperty_get | Get app property |
-| PUT | `/rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey}` | AddonPropertiesResource.putAddonProperty_put | Set app property |
-| DELETE | `/rest/atlassian-connect/1/app/module/dynamic` | DynamicModulesResource.removeModules_delete | Remove modules |
-| GET | `/rest/atlassian-connect/1/app/module/dynamic` | DynamicModulesResource.getModules_get | Get modules |
-| POST | `/rest/atlassian-connect/1/app/module/dynamic` | DynamicModulesResource.registerModules_post | Register modules |
-| PUT | `/rest/atlassian-connect/1/migration/field` | AppIssueFieldValueUpdateResource.updateIssueFields_put | Bulk update custom field value |
-| PUT | `/rest/atlassian-connect/1/migration/properties/{entityType}` | MigrationResource.updateEntityPropertiesValue_put | Bulk update entity properties |
-| POST | `/rest/atlassian-connect/1/migration/workflow/rule/search` | MigrationResource.workflowRuleSearch_post | Get workflow transition rule configurations |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/rest/api/3/announcementBanner` | getBanner | — | AnnouncementBannerConfiguration | yes | Get announcement banner configuration |
+| PUT | `/rest/api/3/announcementBanner` | setBanner | body*: AnnouncementBannerConfigurationUpdate | — |  | Update announcement banner configuration |
+| POST | `/rest/api/3/app/field/value` | updateMultipleCustomFieldValues | `generateChangelog`, body*: MultipleCustomFieldValuesUpdateDetails | — |  | Update custom fields |
+| GET | `/rest/api/3/app/field/{fieldIdOrKey}/context/configuration` | getCustomFieldConfiguration | `fieldIdOrKey`*, `id`, `fieldContextId`, `issueId`, `projectKeyOrId`, `issueTypeId`, `startAt`, `maxResults` | PageBeanContextualConfiguration | yes | Get custom field configurations |
+| PUT | `/rest/api/3/app/field/{fieldIdOrKey}/context/configuration` | updateCustomFieldConfiguration | `fieldIdOrKey`*, body*: CustomFieldConfigurations | — |  | Update custom field configurations |
+| PUT | `/rest/api/3/app/field/{fieldIdOrKey}/value` | updateCustomFieldValue | `fieldIdOrKey`*, `generateChangelog`, body*: CustomFieldValueUpdateDetails | — |  | Update custom field value |
+| GET | `/rest/api/3/application-properties` | getApplicationProperty | `key`, `permissionLevel`, `keyFilter` | ApplicationProperty[] | yes | Get application property |
+| GET | `/rest/api/3/application-properties/advanced-settings` | getAdvancedSettings | — | ApplicationProperty[] | yes | Get advanced settings |
+| PUT | `/rest/api/3/application-properties/{id}` | setApplicationProperty | `id`*, body*: SimpleApplicationPropertyBean | ApplicationProperty |  | Set application property |
+| GET | `/rest/api/3/applicationrole` | getAllApplicationRoles | — | ApplicationRole[] | yes | Get all application roles |
+| GET | `/rest/api/3/applicationrole/{key}` | getApplicationRole | `key`* | ApplicationRole | yes | Get application role |
+| GET | `/rest/api/3/attachment/content/{id}` | getAttachmentContent | `id`*, `redirect` | object | yes | Get attachment content |
+| GET | `/rest/api/3/attachment/meta` | getAttachmentMeta | — | AttachmentSettings | yes | Get Jira attachment settings |
+| GET | `/rest/api/3/attachment/thumbnail/{id}` | getAttachmentThumbnail | `id`*, `redirect`, `fallbackToDefault`, `width`, `height` | object | yes | Get attachment thumbnail |
+| GET | `/rest/api/3/attachment/{id}` | getAttachment | `id`* | AttachmentMetadata | yes | Get attachment metadata |
+| DELETE | `/rest/api/3/attachment/{id}` | removeAttachment | `id`* | — |  | Delete attachment |
+| GET | `/rest/api/3/attachment/{id}/expand/human` | expandAttachmentForHumans | `id`* | AttachmentArchiveMetadataReadable | yes | Get all metadata for an expanded attachment |
+| GET | `/rest/api/3/attachment/{id}/expand/raw` | expandAttachmentForMachines | `id`* | AttachmentArchiveImpl | yes | Get contents metadata for an expanded attachment |
+| GET | `/rest/api/3/auditing/record` | getAuditRecords | `offset`, `limit`, `filter`, `from`, `to` | AuditRecords | yes | Get audit records |
+| GET | `/rest/api/3/avatar/{type}/system` | getAllSystemAvatars | `type`* | SystemAvatars | yes | Get system avatars by type |
+| POST | `/rest/api/3/comment/list` | getCommentsByIds | `expand`, body*: IssueCommentListRequestBean | PageBeanComment |  | Get comments by IDs |
+| GET | `/rest/api/3/comment/{commentId}/properties` | getCommentPropertyKeys | `commentId`* | PropertyKeys | yes | Get comment property keys |
+| GET | `/rest/api/3/comment/{commentId}/properties/{propertyKey}` | getCommentProperty | `commentId`*, `propertyKey`* | EntityProperty | yes | Get comment property |
+| PUT | `/rest/api/3/comment/{commentId}/properties/{propertyKey}` | setCommentProperty | `commentId`*, `propertyKey`*, body*: — | — |  | Set comment property |
+| DELETE | `/rest/api/3/comment/{commentId}/properties/{propertyKey}` | deleteCommentProperty | `commentId`*, `propertyKey`* | — |  | Delete comment property |
+| POST | `/rest/api/3/component` | createComponent | body*: ProjectComponent | ProjectComponent |  | Create component |
+| GET | `/rest/api/3/component/{id}` | getComponent | `id`* | ProjectComponent | yes | Get component |
+| PUT | `/rest/api/3/component/{id}` | updateComponent | `id`*, body*: ProjectComponent | ProjectComponent |  | Update component |
+| DELETE | `/rest/api/3/component/{id}` | deleteComponent | `id`*, `moveIssuesTo` | — |  | Delete component |
+| GET | `/rest/api/3/component/{id}/relatedIssueCounts` | getComponentRelatedIssues | `id`* | ComponentIssuesCount | yes | Get component issues count |
+| GET | `/rest/api/3/configuration` | getConfiguration | — | Configuration | yes | Get global settings |
+| GET | `/rest/api/3/configuration/timetracking` | getSelectedTimeTrackingImplementation | — | TimeTrackingProvider | yes | Get selected time tracking provider |
+| PUT | `/rest/api/3/configuration/timetracking` | selectTimeTrackingImplementation | body*: TimeTrackingProvider | — |  | Select time tracking provider |
+| GET | `/rest/api/3/configuration/timetracking/list` | getAvailableTimeTrackingImplementations | — | TimeTrackingProvider[] | yes | Get all time tracking providers |
+| GET | `/rest/api/3/configuration/timetracking/options` | getSharedTimeTrackingConfiguration | — | TimeTrackingConfiguration | yes | Get time tracking settings |
+| PUT | `/rest/api/3/configuration/timetracking/options` | setSharedTimeTrackingConfiguration | body*: TimeTrackingConfiguration | TimeTrackingConfiguration |  | Set time tracking settings |
+| GET | `/rest/api/3/customFieldOption/{id}` | getCustomFieldOption | `id`* | CustomFieldOption | yes | Get custom field option |
+| GET | `/rest/api/3/dashboard` | getAllDashboards | `filter`, `startAt`, `maxResults` | PageOfDashboards | yes | Get all dashboards |
+| POST | `/rest/api/3/dashboard` | createDashboard | body*: DashboardDetails | Dashboard |  | Create dashboard |
+| GET | `/rest/api/3/dashboard/gadgets` | getAllAvailableDashboardGadgets | — | AvailableDashboardGadgetsResponse | yes | Get available gadgets |
+| GET | `/rest/api/3/dashboard/search` | getDashboardsPaginated | `dashboardName`, `accountId`, `owner`, `groupname`, `groupId`, `projectId`, `orderBy`, `startAt`, `maxResults`, `status`, `expand` | PageBeanDashboard | yes | Search for dashboards |
+| GET | `/rest/api/3/dashboard/{dashboardId}/gadget` | getAllGadgets | `dashboardId`*, `moduleKey`, `uri`, `gadgetId` | DashboardGadgetResponse | yes | Get gadgets |
+| POST | `/rest/api/3/dashboard/{dashboardId}/gadget` | addGadget | `dashboardId`*, body*: DashboardGadgetSettings | DashboardGadget |  | Add gadget to dashboard |
+| PUT | `/rest/api/3/dashboard/{dashboardId}/gadget/{gadgetId}` | updateGadget | `dashboardId`*, `gadgetId`*, body*: DashboardGadgetUpdateRequest | — |  | Update gadget on dashboard |
+| DELETE | `/rest/api/3/dashboard/{dashboardId}/gadget/{gadgetId}` | removeGadget | `dashboardId`*, `gadgetId`* | — |  | Remove gadget from dashboard |
+| GET | `/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties` | getDashboardItemPropertyKeys | `dashboardId`*, `itemId`* | PropertyKeys | yes | Get dashboard item property keys |
+| GET | `/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}` | getDashboardItemProperty | `dashboardId`*, `itemId`*, `propertyKey`* | EntityProperty | yes | Get dashboard item property |
+| PUT | `/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}` | setDashboardItemProperty | `dashboardId`*, `itemId`*, `propertyKey`*, body*: — | — |  | Set dashboard item property |
+| DELETE | `/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}` | deleteDashboardItemProperty | `dashboardId`*, `itemId`*, `propertyKey`* | — |  | Delete dashboard item property |
+| GET | `/rest/api/3/dashboard/{id}` | getDashboard | `id`* | Dashboard | yes | Get dashboard |
+| PUT | `/rest/api/3/dashboard/{id}` | updateDashboard | `id`*, body*: DashboardDetails | Dashboard |  | Update dashboard |
+| DELETE | `/rest/api/3/dashboard/{id}` | deleteDashboard | `id`* | — |  | Delete dashboard |
+| POST | `/rest/api/3/dashboard/{id}/copy` | copyDashboard | `id`*, body*: DashboardDetails | Dashboard |  | Copy dashboard |
+| GET | `/rest/api/3/events` | getEvents | — | IssueEvent[] | yes | Get events |
+| POST | `/rest/api/3/expression/analyse` | analyseExpression | `check`, body*: JiraExpressionForAnalysis | JiraExpressionsAnalysis |  | Analyse Jira expression |
+| POST | `/rest/api/3/expression/eval` | evaluateJiraExpression | `expand`, body*: JiraExpressionEvalRequestBean | JiraExpressionResult |  | Evaluate Jira expression |
+| GET | `/rest/api/3/field` | getFields | — | FieldDetails[] | yes | Get fields |
+| POST | `/rest/api/3/field` | createCustomField | body*: CustomFieldDefinitionJsonBean | FieldDetails |  | Create custom field |
+| GET | `/rest/api/3/field/search` | getFieldsPaginated | `startAt`, `maxResults`, `type`, `id`, `query`, `orderBy`, `expand` | PageBeanField | yes | Get fields paginated |
+| GET | `/rest/api/3/field/search/trashed` | getTrashedFieldsPaginated | `startAt`, `maxResults`, `id`, `query`, `expand`, `orderBy` | PageBeanField | yes | Get fields in trash paginated |
+| PUT | `/rest/api/3/field/{fieldId}` | updateCustomField | `fieldId`*, body*: UpdateCustomFieldDetails | — |  | Update custom field |
+| GET | `/rest/api/3/field/{fieldId}/context` | getContextsForField | `fieldId`*, `isAnyIssueType`, `isGlobalContext`, `contextId`, `startAt`, `maxResults` | PageBeanCustomFieldContext | yes | Get custom field contexts |
+| POST | `/rest/api/3/field/{fieldId}/context` | createCustomFieldContext | `fieldId`*, body*: CreateCustomFieldContext | CreateCustomFieldContext |  | Create custom field context |
+| GET | `/rest/api/3/field/{fieldId}/context/defaultValue` | getDefaultValues | `fieldId`*, `contextId`, `startAt`, `maxResults` | PageBeanCustomFieldContextDefaultValue | yes | Get custom field contexts default values |
+| PUT | `/rest/api/3/field/{fieldId}/context/defaultValue` | setDefaultValues | `fieldId`*, body*: CustomFieldContextDefaultValueUpdate | — |  | Set custom field contexts default values |
+| GET | `/rest/api/3/field/{fieldId}/context/issuetypemapping` | getIssueTypeMappingsForContexts | `fieldId`*, `contextId`, `startAt`, `maxResults` | PageBeanIssueTypeToContextMapping | yes | Get issue types for custom field context |
+| POST | `/rest/api/3/field/{fieldId}/context/mapping` | getCustomFieldContextsForProjectsAndIssueTypes | `fieldId`*, `startAt`, `maxResults`, body*: ProjectIssueTypeMappings | PageBeanContextForProjectAndIssueType |  | Get custom field contexts for projects and issue types |
+| GET | `/rest/api/3/field/{fieldId}/context/projectmapping` | getProjectContextMapping | `fieldId`*, `contextId`, `startAt`, `maxResults` | PageBeanCustomFieldContextProjectMapping | yes | Get project mappings for custom field context |
+| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}` | updateCustomFieldContext | `fieldId`*, `contextId`*, body*: CustomFieldContextUpdateDetails | — |  | Update custom field context |
+| DELETE | `/rest/api/3/field/{fieldId}/context/{contextId}` | deleteCustomFieldContext | `fieldId`*, `contextId`* | — |  | Delete custom field context |
+| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}/issuetype` | addIssueTypesToContext | `fieldId`*, `contextId`*, body*: IssueTypeIds | — |  | Add issue types to context |
+| POST | `/rest/api/3/field/{fieldId}/context/{contextId}/issuetype/remove` | removeIssueTypesFromContext | `fieldId`*, `contextId`*, body*: IssueTypeIds | — |  | Remove issue types from context |
+| GET | `/rest/api/3/field/{fieldId}/context/{contextId}/option` | getOptionsForContext | `fieldId`*, `contextId`*, `optionId`, `onlyOptions`, `startAt`, `maxResults` | PageBeanCustomFieldContextOption | yes | Get custom field options (context) |
+| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}/option` | updateCustomFieldOption | `fieldId`*, `contextId`*, body*: BulkCustomFieldOptionUpdateRequest | CustomFieldUpdatedContextOptionsList |  | Update custom field options (context) |
+| POST | `/rest/api/3/field/{fieldId}/context/{contextId}/option` | createCustomFieldOption | `fieldId`*, `contextId`*, body*: BulkCustomFieldOptionCreateRequest | CustomFieldCreatedContextOptionsList |  | Create custom field options (context) |
+| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}/option/move` | reorderCustomFieldOptions | `fieldId`*, `contextId`*, body*: OrderOfCustomFieldOptions | — |  | Reorder custom field options (context) |
+| DELETE | `/rest/api/3/field/{fieldId}/context/{contextId}/option/{optionId}` | deleteCustomFieldOption | `fieldId`*, `contextId`*, `optionId`* | — |  | Delete custom field options (context) |
+| PUT | `/rest/api/3/field/{fieldId}/context/{contextId}/project` | assignProjectsToCustomFieldContext | `fieldId`*, `contextId`*, body*: ProjectIds | — |  | Assign custom field context to projects |
+| POST | `/rest/api/3/field/{fieldId}/context/{contextId}/project/remove` | removeCustomFieldContextFromProjects | `fieldId`*, `contextId`*, body*: ProjectIds | — |  | Remove custom field context from projects |
+| GET | `/rest/api/3/field/{fieldId}/contexts` | getContextsForFieldDeprecated | `fieldId`*, `startAt`, `maxResults` | PageBeanContext | yes | Get contexts for a field |
+| GET | `/rest/api/3/field/{fieldId}/screens` | getScreensForField | `fieldId`*, `startAt`, `maxResults`, `expand` | PageBeanScreenWithTab | yes | Get screens for a field |
+| GET | `/rest/api/3/field/{fieldKey}/option` | getAllIssueFieldOptions | `startAt`, `maxResults`, `fieldKey`* | PageBeanIssueFieldOption | yes | Get all issue field options |
+| POST | `/rest/api/3/field/{fieldKey}/option` | createIssueFieldOption | `fieldKey`*, body*: IssueFieldOptionCreateBean | IssueFieldOption |  | Create issue field option |
+| GET | `/rest/api/3/field/{fieldKey}/option/suggestions/edit` | getSelectableIssueFieldOptions | `startAt`, `maxResults`, `projectId`, `fieldKey`* | PageBeanIssueFieldOption | yes | Get selectable issue field options |
+| GET | `/rest/api/3/field/{fieldKey}/option/suggestions/search` | getVisibleIssueFieldOptions | `startAt`, `maxResults`, `projectId`, `fieldKey`* | PageBeanIssueFieldOption | yes | Get visible issue field options |
+| GET | `/rest/api/3/field/{fieldKey}/option/{optionId}` | getIssueFieldOption | `fieldKey`*, `optionId`* | IssueFieldOption | yes | Get issue field option |
+| PUT | `/rest/api/3/field/{fieldKey}/option/{optionId}` | updateIssueFieldOption | `fieldKey`*, `optionId`*, body*: IssueFieldOption | IssueFieldOption |  | Update issue field option |
+| DELETE | `/rest/api/3/field/{fieldKey}/option/{optionId}` | deleteIssueFieldOption | `fieldKey`*, `optionId`* | — |  | Delete issue field option |
+| DELETE | `/rest/api/3/field/{fieldKey}/option/{optionId}/issue` | replaceIssueFieldOption | `replaceWith`, `jql`, `overrideScreenSecurity`, `overrideEditableFlag`, `fieldKey`*, `optionId`* | — |  | Replace issue field option |
+| DELETE | `/rest/api/3/field/{id}` | deleteCustomField | `id`* | — |  | Delete custom field |
+| POST | `/rest/api/3/field/{id}/restore` | restoreCustomField | `id`* | — |  | Restore custom field from trash |
+| POST | `/rest/api/3/field/{id}/trash` | trashCustomField | `id`* | — |  | Move custom field to trash |
+| GET | `/rest/api/3/fieldconfiguration` | getAllFieldConfigurations | `startAt`, `maxResults`, `id`, `isDefault`, `query` | PageBeanFieldConfigurationDetails | yes | Get all field configurations |
+| POST | `/rest/api/3/fieldconfiguration` | createFieldConfiguration | body*: FieldConfigurationDetails | FieldConfiguration |  | Create field configuration |
+| PUT | `/rest/api/3/fieldconfiguration/{id}` | updateFieldConfiguration | `id`*, body*: FieldConfigurationDetails | — |  | Update field configuration |
+| DELETE | `/rest/api/3/fieldconfiguration/{id}` | deleteFieldConfiguration | `id`* | — |  | Delete field configuration |
+| GET | `/rest/api/3/fieldconfiguration/{id}/fields` | getFieldConfigurationItems | `id`*, `startAt`, `maxResults` | PageBeanFieldConfigurationItem | yes | Get field configuration items |
+| PUT | `/rest/api/3/fieldconfiguration/{id}/fields` | updateFieldConfigurationItems | `id`*, body*: FieldConfigurationItemsDetails | — |  | Update field configuration items |
+| GET | `/rest/api/3/fieldconfigurationscheme` | getAllFieldConfigurationSchemes | `startAt`, `maxResults`, `id` | PageBeanFieldConfigurationScheme | yes | Get all field configuration schemes |
+| POST | `/rest/api/3/fieldconfigurationscheme` | createFieldConfigurationScheme | body*: UpdateFieldConfigurationSchemeDetails | FieldConfigurationScheme |  | Create field configuration scheme |
+| GET | `/rest/api/3/fieldconfigurationscheme/mapping` | getFieldConfigurationSchemeMappings | `startAt`, `maxResults`, `fieldConfigurationSchemeId` | PageBeanFieldConfigurationIssueTypeItem | yes | Get field configuration issue type items |
+| GET | `/rest/api/3/fieldconfigurationscheme/project` | getFieldConfigurationSchemeProjectMapping | `startAt`, `maxResults`, `projectId`* | PageBeanFieldConfigurationSchemeProjects | yes | Get field configuration schemes for projects |
+| PUT | `/rest/api/3/fieldconfigurationscheme/project` | assignFieldConfigurationSchemeToProject | body*: FieldConfigurationSchemeProjectAssociation | — |  | Assign field configuration scheme to project |
+| PUT | `/rest/api/3/fieldconfigurationscheme/{id}` | updateFieldConfigurationScheme | `id`*, body*: UpdateFieldConfigurationSchemeDetails | — |  | Update field configuration scheme |
+| DELETE | `/rest/api/3/fieldconfigurationscheme/{id}` | deleteFieldConfigurationScheme | `id`* | — |  | Delete field configuration scheme |
+| PUT | `/rest/api/3/fieldconfigurationscheme/{id}/mapping` | setFieldConfigurationSchemeMapping | `id`*, body*: AssociateFieldConfigurationsWithIssueTypesRequest | — |  | Assign issue types to field configurations |
+| POST | `/rest/api/3/fieldconfigurationscheme/{id}/mapping/delete` | removeIssueTypesFromGlobalFieldConfigurationScheme | `id`*, body*: IssueTypeIdsToRemove | — |  | Remove issue types from field configuration scheme |
+| GET | `/rest/api/3/filter` | getFilters | `expand` | Filter[] | yes | Get filters |
+| POST | `/rest/api/3/filter` | createFilter | `expand`, `overrideSharePermissions`, body*: Filter | Filter |  | Create filter |
+| GET | `/rest/api/3/filter/defaultShareScope` | getDefaultShareScope | — | DefaultShareScope | yes | Get default share scope |
+| PUT | `/rest/api/3/filter/defaultShareScope` | setDefaultShareScope | body*: DefaultShareScope | DefaultShareScope |  | Set default share scope |
+| GET | `/rest/api/3/filter/favourite` | getFavouriteFilters | `expand` | Filter[] | yes | Get favorite filters |
+| GET | `/rest/api/3/filter/my` | getMyFilters | `expand`, `includeFavourites` | Filter[] | yes | Get my filters |
+| GET | `/rest/api/3/filter/search` | getFiltersPaginated | `filterName`, `accountId`, `owner`, `groupname`, `groupId`, `projectId`, `id`, `orderBy`, `startAt`, `maxResults`, `expand`, `overrideSharePermissions` | PageBeanFilterDetails | yes | Search for filters |
+| GET | `/rest/api/3/filter/{id}` | getFilter | `id`*, `expand`, `overrideSharePermissions` | Filter | yes | Get filter |
+| PUT | `/rest/api/3/filter/{id}` | updateFilter | `id`*, `expand`, `overrideSharePermissions`, body*: Filter | Filter |  | Update filter |
+| DELETE | `/rest/api/3/filter/{id}` | deleteFilter | `id`* | — |  | Delete filter |
+| GET | `/rest/api/3/filter/{id}/columns` | getColumns | `id`* | ColumnItem[] | yes | Get columns |
+| PUT | `/rest/api/3/filter/{id}/columns` | setColumns | `id`*, body: string[] | — |  | Set columns |
+| DELETE | `/rest/api/3/filter/{id}/columns` | resetColumns | `id`* | — |  | Reset columns |
+| PUT | `/rest/api/3/filter/{id}/favourite` | setFavouriteForFilter | `id`*, `expand` | Filter |  | Add filter as favorite |
+| DELETE | `/rest/api/3/filter/{id}/favourite` | deleteFavouriteForFilter | `id`*, `expand` | Filter |  | Remove filter as favorite |
+| PUT | `/rest/api/3/filter/{id}/owner` | changeFilterOwner | `id`*, body*: ChangeFilterOwner | — |  | Change filter owner |
+| GET | `/rest/api/3/filter/{id}/permission` | getSharePermissions | `id`* | SharePermission[] | yes | Get share permissions |
+| POST | `/rest/api/3/filter/{id}/permission` | addSharePermission | `id`*, body*: SharePermissionInputBean | SharePermission[] |  | Add share permission |
+| GET | `/rest/api/3/filter/{id}/permission/{permissionId}` | getSharePermission | `id`*, `permissionId`* | SharePermission | yes | Get share permission |
+| DELETE | `/rest/api/3/filter/{id}/permission/{permissionId}` | deleteSharePermission | `id`*, `permissionId`* | — |  | Delete share permission |
+| GET | `/rest/api/3/group` | getGroup | `groupname`, `groupId`, `expand` | Group | yes | Get group |
+| POST | `/rest/api/3/group` | createGroup | body*: AddGroupBean | Group |  | Create group |
+| DELETE | `/rest/api/3/group` | removeGroup | `groupname`, `groupId`, `swapGroup`, `swapGroupId` | — |  | Remove group |
+| GET | `/rest/api/3/group/bulk` | bulkGetGroups | `startAt`, `maxResults`, `groupId`, `groupName`, `accessType`, `applicationKey` | PageBeanGroupDetails | yes | Bulk get groups |
+| GET | `/rest/api/3/group/member` | getUsersFromGroup | `groupname`, `groupId`, `includeInactiveUsers`, `startAt`, `maxResults` | PageBeanUserDetails | yes | Get users from group |
+| POST | `/rest/api/3/group/user` | addUserToGroup | `groupname`, `groupId`, body*: UpdateUserToGroupBean | Group |  | Add user to group |
+| DELETE | `/rest/api/3/group/user` | removeUserFromGroup | `groupname`, `groupId`, `username`, `accountId`* | — |  | Remove user from group |
+| GET | `/rest/api/3/groups/picker` | findGroups | `accountId`, `query`, `exclude`, `excludeId`, `maxResults`, `caseInsensitive`, `userName` | FoundGroups | yes | Find groups |
+| GET | `/rest/api/3/groupuserpicker` | findUsersAndGroups | `query`*, `maxResults`, `showAvatar`, `fieldId`, `projectId`, `issueTypeId`, `avatarSize`, `caseInsensitive`, `excludeConnectAddons` | FoundUsersAndGroups | yes | Find users and groups |
+| GET | `/rest/api/3/instance/license` | getLicense | — | License | yes | Get license |
+| POST | `/rest/api/3/issue` | createIssue | `updateHistory`, body*: IssueUpdateDetails | CreatedIssue |  | Create issue |
+| POST | `/rest/api/3/issue/bulk` | createIssues | body*: IssuesUpdateBean | CreatedIssues |  | Bulk create issue |
+| GET | `/rest/api/3/issue/createmeta` | getCreateIssueMeta | `projectIds`, `projectKeys`, `issuetypeIds`, `issuetypeNames`, `expand` | IssueCreateMetadata | yes | Get create issue metadata |
+| GET | `/rest/api/3/issue/picker` | getIssuePickerResource | `query`, `currentJQL`, `currentIssueKey`, `currentProjectId`, `showSubTasks`, `showSubTaskParent` | IssuePickerSuggestions | yes | Get issue picker suggestions |
+| POST | `/rest/api/3/issue/properties` | bulkSetIssuesPropertiesList | body*: IssueEntityProperties | — |  | Bulk set issues properties by list |
+| POST | `/rest/api/3/issue/properties/multi` | bulkSetIssuePropertiesByIssue | body*: MultiIssueEntityProperties | — |  | Bulk set issue properties by issue |
+| PUT | `/rest/api/3/issue/properties/{propertyKey}` | bulkSetIssueProperty | `propertyKey`*, body*: BulkIssuePropertyUpdateRequest | — |  | Bulk set issue property |
+| DELETE | `/rest/api/3/issue/properties/{propertyKey}` | bulkDeleteIssueProperty | `propertyKey`*, body*: IssueFilterForBulkPropertyDelete | — |  | Bulk delete issue property |
+| POST | `/rest/api/3/issue/watching` | getIsWatchingIssueBulk | body*: IssueList | BulkIssueIsWatching |  | Get is watching issue bulk |
+| GET | `/rest/api/3/issue/{issueIdOrKey}` | getIssue | `issueIdOrKey`*, `fields`, `fieldsByKeys`, `expand`, `properties`, `updateHistory` | IssueBean | yes | Get issue |
+| PUT | `/rest/api/3/issue/{issueIdOrKey}` | editIssue | `issueIdOrKey`*, `notifyUsers`, `overrideScreenSecurity`, `overrideEditableFlag`, body*: IssueUpdateDetails | — |  | Edit issue |
+| DELETE | `/rest/api/3/issue/{issueIdOrKey}` | deleteIssue | `issueIdOrKey`*, `deleteSubtasks` | — |  | Delete issue |
+| PUT | `/rest/api/3/issue/{issueIdOrKey}/assignee` | assignIssue | `issueIdOrKey`*, body*: User | — |  | Assign issue |
+| POST | `/rest/api/3/issue/{issueIdOrKey}/attachments` | addAttachment | `issueIdOrKey`*, body: string:binary | Attachment[] |  | Add attachment |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/changelog` | getChangeLogs | `issueIdOrKey`*, `startAt`, `maxResults` | PageBeanChangelog | yes | Get changelogs |
+| POST | `/rest/api/3/issue/{issueIdOrKey}/changelog/list` | getChangeLogsByIds | `issueIdOrKey`*, body*: IssueChangelogIds | PageOfChangelogs |  | Get changelogs by IDs |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/comment` | getComments | `issueIdOrKey`*, `startAt`, `maxResults`, `orderBy`, `expand` | PageOfComments | yes | Get comments |
+| POST | `/rest/api/3/issue/{issueIdOrKey}/comment` | addComment | `issueIdOrKey`*, `expand`, body*: Comment | Comment |  | Add comment |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/comment/{id}` | getComment | `issueIdOrKey`*, `id`*, `expand` | Comment | yes | Get comment |
+| PUT | `/rest/api/3/issue/{issueIdOrKey}/comment/{id}` | updateComment | `issueIdOrKey`*, `id`*, `notifyUsers`, `overrideEditableFlag`, `expand`, body*: Comment | Comment |  | Update comment |
+| DELETE | `/rest/api/3/issue/{issueIdOrKey}/comment/{id}` | deleteComment | `issueIdOrKey`*, `id`* | — |  | Delete comment |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/editmeta` | getEditIssueMeta | `issueIdOrKey`*, `overrideScreenSecurity`, `overrideEditableFlag` | IssueUpdateMetadata | yes | Get edit issue metadata |
+| POST | `/rest/api/3/issue/{issueIdOrKey}/notify` | notify | `issueIdOrKey`*, body*: Notification | — |  | Send notification for issue |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/properties` | getIssuePropertyKeys | `issueIdOrKey`* | PropertyKeys | yes | Get issue property keys |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}` | getIssueProperty | `issueIdOrKey`*, `propertyKey`* | EntityProperty | yes | Get issue property |
+| PUT | `/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}` | setIssueProperty | `issueIdOrKey`*, `propertyKey`*, body*: — | — |  | Set issue property |
+| DELETE | `/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}` | deleteIssueProperty | `issueIdOrKey`*, `propertyKey`* | — |  | Delete issue property |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/remotelink` | getRemoteIssueLinks | `issueIdOrKey`*, `globalId` | RemoteIssueLink | yes | Get remote issue links |
+| POST | `/rest/api/3/issue/{issueIdOrKey}/remotelink` | createOrUpdateRemoteIssueLink | `issueIdOrKey`*, body*: RemoteIssueLinkRequest | RemoteIssueLinkIdentifies |  | Create or update remote issue link |
+| DELETE | `/rest/api/3/issue/{issueIdOrKey}/remotelink` | deleteRemoteIssueLinkByGlobalId | `issueIdOrKey`*, `globalId`* | — |  | Delete remote issue link by global ID |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}` | getRemoteIssueLinkById | `issueIdOrKey`*, `linkId`* | RemoteIssueLink | yes | Get remote issue link by ID |
+| PUT | `/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}` | updateRemoteIssueLink | `issueIdOrKey`*, `linkId`*, body*: RemoteIssueLinkRequest | — |  | Update remote issue link by ID |
+| DELETE | `/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}` | deleteRemoteIssueLinkById | `issueIdOrKey`*, `linkId`* | — |  | Delete remote issue link by ID |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/transitions` | getTransitions | `issueIdOrKey`*, `expand`, `transitionId`, `skipRemoteOnlyCondition`, `includeUnavailableTransitions`, `sortByOpsBarAndStatus` | Transitions | yes | Get transitions |
+| POST | `/rest/api/3/issue/{issueIdOrKey}/transitions` | doTransition | `issueIdOrKey`*, body*: IssueUpdateDetails | — |  | Transition issue |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/votes` | getVotes | `issueIdOrKey`* | Votes | yes | Get votes |
+| POST | `/rest/api/3/issue/{issueIdOrKey}/votes` | addVote | `issueIdOrKey`* | — |  | Add vote |
+| DELETE | `/rest/api/3/issue/{issueIdOrKey}/votes` | removeVote | `issueIdOrKey`* | — |  | Delete vote |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/watchers` | getIssueWatchers | `issueIdOrKey`* | Watchers | yes | Get issue watchers |
+| POST | `/rest/api/3/issue/{issueIdOrKey}/watchers` | addWatcher | `issueIdOrKey`*, body*: string | — |  | Add watcher |
+| DELETE | `/rest/api/3/issue/{issueIdOrKey}/watchers` | removeWatcher | `issueIdOrKey`*, `username`, `accountId` | — |  | Delete watcher |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/worklog` | getIssueWorklog | `issueIdOrKey`*, `startAt`, `maxResults`, `startedAfter`, `startedBefore`, `expand` | PageOfWorklogs | yes | Get issue worklogs |
+| POST | `/rest/api/3/issue/{issueIdOrKey}/worklog` | addWorklog | `issueIdOrKey`*, `notifyUsers`, `adjustEstimate`, `newEstimate`, `reduceBy`, `expand`, `overrideEditableFlag`, body*: Worklog | Worklog |  | Add worklog |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/worklog/{id}` | getWorklog | `issueIdOrKey`*, `id`*, `expand` | Worklog | yes | Get worklog |
+| PUT | `/rest/api/3/issue/{issueIdOrKey}/worklog/{id}` | updateWorklog | `issueIdOrKey`*, `id`*, `notifyUsers`, `adjustEstimate`, `newEstimate`, `expand`, `overrideEditableFlag`, body*: Worklog | Worklog |  | Update worklog |
+| DELETE | `/rest/api/3/issue/{issueIdOrKey}/worklog/{id}` | deleteWorklog | `issueIdOrKey`*, `id`*, `notifyUsers`, `adjustEstimate`, `newEstimate`, `increaseBy`, `overrideEditableFlag` | — |  | Delete worklog |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties` | getWorklogPropertyKeys | `issueIdOrKey`*, `worklogId`* | PropertyKeys | yes | Get worklog property keys |
+| GET | `/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}` | getWorklogProperty | `issueIdOrKey`*, `worklogId`*, `propertyKey`* | EntityProperty | yes | Get worklog property |
+| PUT | `/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}` | setWorklogProperty | `issueIdOrKey`*, `worklogId`*, `propertyKey`*, body*: — | — |  | Set worklog property |
+| DELETE | `/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}` | deleteWorklogProperty | `issueIdOrKey`*, `worklogId`*, `propertyKey`* | — |  | Delete worklog property |
+| POST | `/rest/api/3/issueLink` | linkIssues | body*: LinkIssueRequestJsonBean | — |  | Create issue link |
+| GET | `/rest/api/3/issueLink/{linkId}` | getIssueLink | `linkId`* | IssueLink | yes | Get issue link |
+| DELETE | `/rest/api/3/issueLink/{linkId}` | deleteIssueLink | `linkId`* | — |  | Delete issue link |
+| GET | `/rest/api/3/issueLinkType` | getIssueLinkTypes | — | IssueLinkTypes | yes | Get issue link types |
+| POST | `/rest/api/3/issueLinkType` | createIssueLinkType | body*: IssueLinkType | IssueLinkType |  | Create issue link type |
+| GET | `/rest/api/3/issueLinkType/{issueLinkTypeId}` | getIssueLinkType | `issueLinkTypeId`* | IssueLinkType | yes | Get issue link type |
+| PUT | `/rest/api/3/issueLinkType/{issueLinkTypeId}` | updateIssueLinkType | `issueLinkTypeId`*, body*: IssueLinkType | IssueLinkType |  | Update issue link type |
+| DELETE | `/rest/api/3/issueLinkType/{issueLinkTypeId}` | deleteIssueLinkType | `issueLinkTypeId`* | — |  | Delete issue link type |
+| GET | `/rest/api/3/issuesecurityschemes` | getIssueSecuritySchemes | — | SecuritySchemes | yes | Get issue security schemes |
+| GET | `/rest/api/3/issuesecurityschemes/{id}` | getIssueSecurityScheme | `id`* | SecurityScheme | yes | Get issue security scheme |
+| GET | `/rest/api/3/issuesecurityschemes/{issueSecuritySchemeId}/members` | getIssueSecurityLevelMembers | `issueSecuritySchemeId`*, `startAt`, `maxResults`, `issueSecurityLevelId`, `expand` | PageBeanIssueSecurityLevelMember | yes | Get issue security level members |
+| GET | `/rest/api/3/issuetype` | getIssueAllTypes | — | IssueTypeDetails[] | yes | Get all issue types for user |
+| POST | `/rest/api/3/issuetype` | createIssueType | body*: IssueTypeCreateBean | IssueTypeDetails |  | Create issue type |
+| GET | `/rest/api/3/issuetype/project` | getIssueTypesForProject | `projectId`*, `level` | IssueTypeDetails[] | yes | Get issue types for project |
+| GET | `/rest/api/3/issuetype/{id}` | getIssueType | `id`* | IssueTypeDetails | yes | Get issue type |
+| PUT | `/rest/api/3/issuetype/{id}` | updateIssueType | `id`*, body*: IssueTypeUpdateBean | IssueTypeDetails |  | Update issue type |
+| DELETE | `/rest/api/3/issuetype/{id}` | deleteIssueType | `id`*, `alternativeIssueTypeId` | — |  | Delete issue type |
+| GET | `/rest/api/3/issuetype/{id}/alternatives` | getAlternativeIssueTypes | `id`* | IssueTypeDetails[] | yes | Get alternative issue types |
+| POST | `/rest/api/3/issuetype/{id}/avatar2` | createIssueTypeAvatar | `id`*, `x`, `y`, `size`*, body*: — | Avatar |  | Load issue type avatar |
+| GET | `/rest/api/3/issuetype/{issueTypeId}/properties` | getIssueTypePropertyKeys | `issueTypeId`* | PropertyKeys | yes | Get issue type property keys |
+| GET | `/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}` | getIssueTypeProperty | `issueTypeId`*, `propertyKey`* | EntityProperty | yes | Get issue type property |
+| PUT | `/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}` | setIssueTypeProperty | `issueTypeId`*, `propertyKey`*, body*: — | — |  | Set issue type property |
+| DELETE | `/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}` | deleteIssueTypeProperty | `issueTypeId`*, `propertyKey`* | — |  | Delete issue type property |
+| GET | `/rest/api/3/issuetypescheme` | getAllIssueTypeSchemes | `startAt`, `maxResults`, `id`, `orderBy`, `expand`, `queryString` | PageBeanIssueTypeScheme | yes | Get all issue type schemes |
+| POST | `/rest/api/3/issuetypescheme` | createIssueTypeScheme | body*: IssueTypeSchemeDetails | IssueTypeSchemeID |  | Create issue type scheme |
+| GET | `/rest/api/3/issuetypescheme/mapping` | getIssueTypeSchemesMapping | `startAt`, `maxResults`, `issueTypeSchemeId` | PageBeanIssueTypeSchemeMapping | yes | Get issue type scheme items |
+| GET | `/rest/api/3/issuetypescheme/project` | getIssueTypeSchemeForProjects | `startAt`, `maxResults`, `projectId`* | PageBeanIssueTypeSchemeProjects | yes | Get issue type schemes for projects |
+| PUT | `/rest/api/3/issuetypescheme/project` | assignIssueTypeSchemeToProject | body*: IssueTypeSchemeProjectAssociation | — |  | Assign issue type scheme to project |
+| PUT | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}` | updateIssueTypeScheme | `issueTypeSchemeId`*, body*: IssueTypeSchemeUpdateDetails | — |  | Update issue type scheme |
+| DELETE | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}` | deleteIssueTypeScheme | `issueTypeSchemeId`* | — |  | Delete issue type scheme |
+| PUT | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}/issuetype` | addIssueTypesToIssueTypeScheme | `issueTypeSchemeId`*, body*: IssueTypeIds | — |  | Add issue types to issue type scheme |
+| PUT | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}/issuetype/move` | reorderIssueTypesInIssueTypeScheme | `issueTypeSchemeId`*, body*: OrderOfIssueTypes | — |  | Change order of issue types |
+| DELETE | `/rest/api/3/issuetypescheme/{issueTypeSchemeId}/issuetype/{issueTypeId}` | removeIssueTypeFromIssueTypeScheme | `issueTypeSchemeId`*, `issueTypeId`* | — |  | Remove issue type from issue type scheme |
+| GET | `/rest/api/3/issuetypescreenscheme` | getIssueTypeScreenSchemes | `startAt`, `maxResults`, `id`, `queryString`, `orderBy`, `expand` | PageBeanIssueTypeScreenScheme | yes | Get issue type screen schemes |
+| POST | `/rest/api/3/issuetypescreenscheme` | createIssueTypeScreenScheme | body*: IssueTypeScreenSchemeDetails | IssueTypeScreenSchemeId |  | Create issue type screen scheme |
+| GET | `/rest/api/3/issuetypescreenscheme/mapping` | getIssueTypeScreenSchemeMappings | `startAt`, `maxResults`, `issueTypeScreenSchemeId` | PageBeanIssueTypeScreenSchemeItem | yes | Get issue type screen scheme items |
+| GET | `/rest/api/3/issuetypescreenscheme/project` | getIssueTypeScreenSchemeProjectAssociations | `startAt`, `maxResults`, `projectId`* | PageBeanIssueTypeScreenSchemesProjects | yes | Get issue type screen schemes for projects |
+| PUT | `/rest/api/3/issuetypescreenscheme/project` | assignIssueTypeScreenSchemeToProject | body*: IssueTypeScreenSchemeProjectAssociation | — |  | Assign issue type screen scheme to project |
+| PUT | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}` | updateIssueTypeScreenScheme | `issueTypeScreenSchemeId`*, body*: IssueTypeScreenSchemeUpdateDetails | — |  | Update issue type screen scheme |
+| DELETE | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}` | deleteIssueTypeScreenScheme | `issueTypeScreenSchemeId`* | — |  | Delete issue type screen scheme |
+| PUT | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/mapping` | appendMappingsForIssueTypeScreenScheme | `issueTypeScreenSchemeId`*, body*: IssueTypeScreenSchemeMappingDetails | — |  | Append mappings to issue type screen scheme |
+| PUT | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/mapping/default` | updateDefaultScreenScheme | `issueTypeScreenSchemeId`*, body*: UpdateDefaultScreenScheme | — |  | Update issue type screen scheme default screen scheme |
+| POST | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/mapping/remove` | removeMappingsFromIssueTypeScreenScheme | `issueTypeScreenSchemeId`*, body*: IssueTypeIds | — |  | Remove mappings from issue type screen scheme |
+| GET | `/rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/project` | getProjectsForIssueTypeScreenScheme | `issueTypeScreenSchemeId`*, `startAt`, `maxResults`, `query` | PageBeanProjectDetails | yes | Get issue type screen scheme projects |
+| GET | `/rest/api/3/jql/autocompletedata` | getAutoComplete | — | JQLReferenceData | yes | Get field reference data (GET) |
+| POST | `/rest/api/3/jql/autocompletedata` | getAutoCompletePost | body*: SearchAutoCompleteFilter | JQLReferenceData |  | Get field reference data (POST) |
+| GET | `/rest/api/3/jql/autocompletedata/suggestions` | getFieldAutoCompleteForQueryString | `fieldName`, `fieldValue`, `predicateName`, `predicateValue` | AutoCompleteSuggestions | yes | Get field auto complete suggestions |
+| GET | `/rest/api/3/jql/function/computation` | getPrecomputations | `functionKey`, `startAt`, `maxResults`, `orderBy`, `filter` | PageBeanJqlFunctionPrecomputationBean | yes | Get precomputation |
+| POST | `/rest/api/3/jql/function/computation` | updatePrecomputations | body*: JqlFunctionPrecomputationUpdateRequestBean | — |  | Update precomputations |
+| POST | `/rest/api/3/jql/match` | matchIssues | body*: IssuesAndJQLQueries | IssueMatches |  | Check issues against JQL |
+| POST | `/rest/api/3/jql/parse` | parseJqlQueries | `validation`, body*: JqlQueriesToParse | ParsedJqlQueries |  | Parse JQL query |
+| POST | `/rest/api/3/jql/pdcleaner` | migrateQueries | body*: JQLPersonalDataMigrationRequest | ConvertedJQLQueries |  | Convert user identifiers to account IDs in JQL queries |
+| POST | `/rest/api/3/jql/sanitize` | sanitiseJqlQueries | body*: JqlQueriesToSanitize | SanitizedJqlQueries |  | Sanitize JQL queries |
+| GET | `/rest/api/3/label` | getAllLabels | `startAt`, `maxResults` | PageBeanString | yes | Get all labels |
+| GET | `/rest/api/3/license/approximateLicenseCount` | getApproximateLicenseCount | — | LicenseMetric | yes | Get approximate license count |
+| GET | `/rest/api/3/license/approximateLicenseCount/product/{applicationKey}` | getApproximateApplicationLicenseCount | `applicationKey`* | LicenseMetric | yes | Get approximate application license count |
+| GET | `/rest/api/3/mypermissions` | getMyPermissions | `projectKey`, `projectId`, `issueKey`, `issueId`, `permissions`, `projectUuid`, `projectConfigurationUuid`, `commentId` | Permissions | yes | Get my permissions |
+| GET | `/rest/api/3/mypreferences` | getPreference | `key`* | string | yes | Get preference |
+| PUT | `/rest/api/3/mypreferences` | setPreference | `key`*, body*: string | — |  | Set preference |
+| DELETE | `/rest/api/3/mypreferences` | removePreference | `key`* | — |  | Delete preference |
+| GET | `/rest/api/3/mypreferences/locale` | getLocale | — | Locale | yes | Get locale |
+| PUT | `/rest/api/3/mypreferences/locale` | setLocale | body*: Locale | — |  | Set locale |
+| DELETE | `/rest/api/3/mypreferences/locale` | deleteLocale | — | — |  | Delete locale |
+| GET | `/rest/api/3/myself` | getCurrentUser | `expand` | User | yes | Get current user |
+| GET | `/rest/api/3/notificationscheme` | getNotificationSchemes | `startAt`, `maxResults`, `id`, `projectId`, `onlyDefault`, `expand` | PageBeanNotificationScheme | yes | Get notification schemes paginated |
+| POST | `/rest/api/3/notificationscheme` | createNotificationScheme | body*: CreateNotificationSchemeDetails | NotificationSchemeId |  | Create notification scheme |
+| GET | `/rest/api/3/notificationscheme/project` | getNotificationSchemeToProjectMappings | `startAt`, `maxResults`, `notificationSchemeId`, `projectId` | PageBeanNotificationSchemeAndProjectMappingJsonBean | yes | Get projects using notification schemes paginated |
+| GET | `/rest/api/3/notificationscheme/{id}` | getNotificationScheme | `id`*, `expand` | NotificationScheme | yes | Get notification scheme |
+| PUT | `/rest/api/3/notificationscheme/{id}` | updateNotificationScheme | `id`*, body*: UpdateNotificationSchemeDetails | — |  | Update notification scheme |
+| PUT | `/rest/api/3/notificationscheme/{id}/notification` | addNotifications | `id`*, body*: AddNotificationsDetails | — |  | Add notifications to notification scheme |
+| DELETE | `/rest/api/3/notificationscheme/{notificationSchemeId}` | deleteNotificationScheme | `notificationSchemeId`* | — |  | Delete notification scheme |
+| DELETE | `/rest/api/3/notificationscheme/{notificationSchemeId}/notification/{notificationId}` | removeNotificationFromNotificationScheme | `notificationSchemeId`*, `notificationId`* | — |  | Remove notification from notification scheme |
+| GET | `/rest/api/3/permissions` | getAllPermissions | — | Permissions | yes | Get all permissions |
+| POST | `/rest/api/3/permissions/check` | getBulkPermissions | body*: BulkPermissionsRequestBean | BulkPermissionGrants |  | Get bulk permissions |
+| POST | `/rest/api/3/permissions/project` | getPermittedProjects | body*: PermissionsKeysBean | PermittedProjects |  | Get permitted projects |
+| GET | `/rest/api/3/permissionscheme` | getAllPermissionSchemes | `expand` | PermissionSchemes | yes | Get all permission schemes |
+| POST | `/rest/api/3/permissionscheme` | createPermissionScheme | `expand`, body*: PermissionScheme | PermissionScheme |  | Create permission scheme |
+| GET | `/rest/api/3/permissionscheme/{schemeId}` | getPermissionScheme | `schemeId`*, `expand` | PermissionScheme | yes | Get permission scheme |
+| PUT | `/rest/api/3/permissionscheme/{schemeId}` | updatePermissionScheme | `schemeId`*, `expand`, body*: PermissionScheme | PermissionScheme |  | Update permission scheme |
+| DELETE | `/rest/api/3/permissionscheme/{schemeId}` | deletePermissionScheme | `schemeId`* | — |  | Delete permission scheme |
+| GET | `/rest/api/3/permissionscheme/{schemeId}/permission` | getPermissionSchemeGrants | `schemeId`*, `expand` | PermissionGrants | yes | Get permission scheme grants |
+| POST | `/rest/api/3/permissionscheme/{schemeId}/permission` | createPermissionGrant | `schemeId`*, `expand`, body*: PermissionGrant | PermissionGrant |  | Create permission grant |
+| GET | `/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId}` | getPermissionSchemeGrant | `schemeId`*, `permissionId`*, `expand` | PermissionGrant | yes | Get permission scheme grant |
+| DELETE | `/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId}` | deletePermissionSchemeEntity | `schemeId`*, `permissionId`* | — |  | Delete permission scheme grant |
+| GET | `/rest/api/3/priority` | getPriorities | — | Priority[] | yes | Get priorities |
+| POST | `/rest/api/3/priority` | createPriority | body*: CreatePriorityDetails | PriorityId |  | Create priority |
+| PUT | `/rest/api/3/priority/default` | setDefaultPriority | body*: SetDefaultPriorityRequest | — |  | Set default priority |
+| PUT | `/rest/api/3/priority/move` | movePriorities | body*: ReorderIssuePriorities | — |  | Move priorities |
+| GET | `/rest/api/3/priority/search` | searchPriorities | `startAt`, `maxResults`, `id`, `onlyDefault` | PageBeanPriority | yes | Search priorities |
+| GET | `/rest/api/3/priority/{id}` | getPriority | `id`* | Priority | yes | Get priority |
+| PUT | `/rest/api/3/priority/{id}` | updatePriority | `id`*, body*: UpdatePriorityDetails | — |  | Update priority |
+| DELETE | `/rest/api/3/priority/{id}` | deletePriority | `id`*, `replaceWith`* | — |  | Delete priority |
+| GET | `/rest/api/3/project` | getAllProjects | `expand`, `recent`, `properties` | Project[] | yes | Get all projects |
+| POST | `/rest/api/3/project` | createProject | body*: CreateProjectDetails | ProjectIdentifiers |  | Create project |
+| GET | `/rest/api/3/project/recent` | getRecent | `expand`, `properties` | Project[] | yes | Get recent projects |
+| GET | `/rest/api/3/project/search` | searchProjects | `startAt`, `maxResults`, `orderBy`, `id`, `keys`, `query`, `typeKey`, `categoryId`, `action`, `expand`, `status`, `properties`, `propertyQuery` | PageBeanProject | yes | Get projects paginated |
+| GET | `/rest/api/3/project/type` | getAllProjectTypes | — | ProjectType[] | yes | Get all project types |
+| GET | `/rest/api/3/project/type/accessible` | getAllAccessibleProjectTypes | — | ProjectType[] | yes | Get licensed project types |
+| GET | `/rest/api/3/project/type/{projectTypeKey}` | getProjectTypeByKey | `projectTypeKey`* | ProjectType | yes | Get project type by key |
+| GET | `/rest/api/3/project/type/{projectTypeKey}/accessible` | getAccessibleProjectTypeByKey | `projectTypeKey`* | ProjectType | yes | Get accessible project type by key |
+| GET | `/rest/api/3/project/{projectIdOrKey}` | getProject | `projectIdOrKey`*, `expand`, `properties` | Project | yes | Get project |
+| PUT | `/rest/api/3/project/{projectIdOrKey}` | updateProject | `projectIdOrKey`*, `expand`, body*: UpdateProjectDetails | Project |  | Update project |
+| DELETE | `/rest/api/3/project/{projectIdOrKey}` | deleteProject | `projectIdOrKey`*, `enableUndo` | — |  | Delete project |
+| POST | `/rest/api/3/project/{projectIdOrKey}/archive` | archiveProject | `projectIdOrKey`* | — |  | Archive project |
+| PUT | `/rest/api/3/project/{projectIdOrKey}/avatar` | updateProjectAvatar | `projectIdOrKey`*, body*: Avatar | — |  | Set project avatar |
+| DELETE | `/rest/api/3/project/{projectIdOrKey}/avatar/{id}` | deleteProjectAvatar | `projectIdOrKey`*, `id`* | — |  | Delete project avatar |
+| POST | `/rest/api/3/project/{projectIdOrKey}/avatar2` | createProjectAvatar | `projectIdOrKey`*, `x`, `y`, `size`, body*: — | Avatar |  | Load project avatar |
+| GET | `/rest/api/3/project/{projectIdOrKey}/avatars` | getAllProjectAvatars | `projectIdOrKey`* | ProjectAvatars | yes | Get all project avatars |
+| GET | `/rest/api/3/project/{projectIdOrKey}/component` | getProjectComponentsPaginated | `projectIdOrKey`*, `startAt`, `maxResults`, `orderBy`, `query` | PageBeanComponentWithIssueCount | yes | Get project components paginated |
+| GET | `/rest/api/3/project/{projectIdOrKey}/components` | getProjectComponents | `projectIdOrKey`* | ProjectComponent[] | yes | Get project components |
+| POST | `/rest/api/3/project/{projectIdOrKey}/delete` | deleteProjectAsynchronously | `projectIdOrKey`* | — |  | Delete project asynchronously |
+| GET | `/rest/api/3/project/{projectIdOrKey}/features` | getFeaturesForProject | `projectIdOrKey`* | ContainerForProjectFeatures | yes | Get project features |
+| PUT | `/rest/api/3/project/{projectIdOrKey}/features/{featureKey}` | toggleFeatureForProject | `projectIdOrKey`*, `featureKey`*, body*: ProjectFeatureState | ContainerForProjectFeatures |  | Set project feature state |
+| GET | `/rest/api/3/project/{projectIdOrKey}/properties` | getProjectPropertyKeys | `projectIdOrKey`* | PropertyKeys | yes | Get project property keys |
+| GET | `/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}` | getProjectProperty | `projectIdOrKey`*, `propertyKey`* | EntityProperty | yes | Get project property |
+| PUT | `/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}` | setProjectProperty | `projectIdOrKey`*, `propertyKey`*, body*: — | — |  | Set project property |
+| DELETE | `/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}` | deleteProjectProperty | `projectIdOrKey`*, `propertyKey`* | — |  | Delete project property |
+| POST | `/rest/api/3/project/{projectIdOrKey}/restore` | restore | `projectIdOrKey`* | Project |  | Restore deleted or archived project |
+| GET | `/rest/api/3/project/{projectIdOrKey}/role` | getProjectRoles | `projectIdOrKey`* | object | yes | Get project roles for project |
+| GET | `/rest/api/3/project/{projectIdOrKey}/role/{id}` | getProjectRole | `projectIdOrKey`*, `id`*, `excludeInactiveUsers` | ProjectRole | yes | Get project role for project |
+| PUT | `/rest/api/3/project/{projectIdOrKey}/role/{id}` | setActors | `projectIdOrKey`*, `id`*, body*: ProjectRoleActorsUpdateBean | ProjectRole |  | Set actors for project role |
+| POST | `/rest/api/3/project/{projectIdOrKey}/role/{id}` | addActorUsers | `projectIdOrKey`*, `id`*, body*: ActorsMap | ProjectRole |  | Add actors to project role |
+| DELETE | `/rest/api/3/project/{projectIdOrKey}/role/{id}` | deleteActor | `projectIdOrKey`*, `id`*, `user`, `group`, `groupId` | — |  | Delete actors from project role |
+| GET | `/rest/api/3/project/{projectIdOrKey}/roledetails` | getProjectRoleDetails | `projectIdOrKey`*, `currentMember`, `excludeConnectAddons` | ProjectRoleDetails[] | yes | Get project role details |
+| GET | `/rest/api/3/project/{projectIdOrKey}/statuses` | getAllStatuses | `projectIdOrKey`* | IssueTypeWithStatus[] | yes | Get all statuses for project |
+| PUT | `/rest/api/3/project/{projectIdOrKey}/type/{newProjectTypeKey}` | updateProjectType | `projectIdOrKey`*, `newProjectTypeKey`* | Project |  | Update project type |
+| GET | `/rest/api/3/project/{projectIdOrKey}/version` | getProjectVersionsPaginated | `projectIdOrKey`*, `startAt`, `maxResults`, `orderBy`, `query`, `status`, `expand` | PageBeanVersion | yes | Get project versions paginated |
+| GET | `/rest/api/3/project/{projectIdOrKey}/versions` | getProjectVersions | `projectIdOrKey`*, `expand` | Version[] | yes | Get project versions |
+| GET | `/rest/api/3/project/{projectId}/email` | getProjectEmail | `projectId`* | ProjectEmailAddress | yes | Get project's sender email |
+| PUT | `/rest/api/3/project/{projectId}/email` | updateProjectEmail | `projectId`*, body*: ProjectEmailAddress | — |  | Set project's sender email |
+| GET | `/rest/api/3/project/{projectId}/hierarchy` | getHierarchy | `projectId`* | ProjectIssueTypeHierarchy | yes | Get project issue type hierarchy |
+| GET | `/rest/api/3/project/{projectKeyOrId}/issuesecuritylevelscheme` | getProjectIssueSecurityScheme | `projectKeyOrId`* | SecurityScheme | yes | Get project issue security scheme |
+| GET | `/rest/api/3/project/{projectKeyOrId}/notificationscheme` | getNotificationSchemeForProject | `projectKeyOrId`*, `expand` | NotificationScheme | yes | Get project notification scheme |
+| GET | `/rest/api/3/project/{projectKeyOrId}/permissionscheme` | getAssignedPermissionScheme | `projectKeyOrId`*, `expand` | PermissionScheme | yes | Get assigned permission scheme |
+| PUT | `/rest/api/3/project/{projectKeyOrId}/permissionscheme` | assignPermissionScheme | `projectKeyOrId`*, `expand`, body*: IdBean | PermissionScheme |  | Assign permission scheme |
+| GET | `/rest/api/3/project/{projectKeyOrId}/securitylevel` | getSecurityLevelsForProject | `projectKeyOrId`* | ProjectIssueSecurityLevels | yes | Get project issue security levels |
+| GET | `/rest/api/3/projectCategory` | getAllProjectCategories | — | ProjectCategory[] | yes | Get all project categories |
+| POST | `/rest/api/3/projectCategory` | createProjectCategory | body*: ProjectCategory | ProjectCategory |  | Create project category |
+| GET | `/rest/api/3/projectCategory/{id}` | getProjectCategoryById | `id`* | ProjectCategory | yes | Get project category by ID |
+| PUT | `/rest/api/3/projectCategory/{id}` | updateProjectCategory | `id`*, body*: ProjectCategory | UpdatedProjectCategory |  | Update project category |
+| DELETE | `/rest/api/3/projectCategory/{id}` | removeProjectCategory | `id`* | — |  | Delete project category |
+| GET | `/rest/api/3/projectvalidate/key` | validateProjectKey | `key` | ErrorCollection | yes | Validate project key |
+| GET | `/rest/api/3/projectvalidate/validProjectKey` | getValidProjectKey | `key` | string | yes | Get valid project key |
+| GET | `/rest/api/3/projectvalidate/validProjectName` | getValidProjectName | `name`* | string | yes | Get valid project name |
+| GET | `/rest/api/3/resolution` | getResolutions | — | Resolution[] | yes | Get resolutions |
+| POST | `/rest/api/3/resolution` | createResolution | body*: CreateResolutionDetails | ResolutionId |  | Create resolution |
+| PUT | `/rest/api/3/resolution/default` | setDefaultResolution | body*: SetDefaultResolutionRequest | — |  | Set default resolution |
+| PUT | `/rest/api/3/resolution/move` | moveResolutions | body*: ReorderIssueResolutionsRequest | — |  | Move resolutions |
+| GET | `/rest/api/3/resolution/search` | searchResolutions | `startAt`, `maxResults`, `id`, `onlyDefault` | PageBeanResolutionJsonBean | yes | Search resolutions |
+| GET | `/rest/api/3/resolution/{id}` | getResolution | `id`* | Resolution | yes | Get resolution |
+| PUT | `/rest/api/3/resolution/{id}` | updateResolution | `id`*, body*: UpdateResolutionDetails | — |  | Update resolution |
+| DELETE | `/rest/api/3/resolution/{id}` | deleteResolution | `id`*, `replaceWith`* | — |  | Delete resolution |
+| GET | `/rest/api/3/role` | getAllProjectRoles | — | ProjectRole[] | yes | Get all project roles |
+| POST | `/rest/api/3/role` | createProjectRole | body*: CreateUpdateRoleRequestBean | ProjectRole |  | Create project role |
+| GET | `/rest/api/3/role/{id}` | getProjectRoleById | `id`* | ProjectRole | yes | Get project role by ID |
+| PUT | `/rest/api/3/role/{id}` | fullyUpdateProjectRole | `id`*, body*: CreateUpdateRoleRequestBean | ProjectRole |  | Fully update project role |
+| POST | `/rest/api/3/role/{id}` | partialUpdateProjectRole | `id`*, body*: CreateUpdateRoleRequestBean | ProjectRole |  | Partial update project role |
+| DELETE | `/rest/api/3/role/{id}` | deleteProjectRole | `id`*, `swap` | — |  | Delete project role |
+| GET | `/rest/api/3/role/{id}/actors` | getProjectRoleActorsForRole | `id`* | ProjectRole | yes | Get default actors for project role |
+| POST | `/rest/api/3/role/{id}/actors` | addProjectRoleActorsToRole | `id`*, body*: ActorInputBean | ProjectRole |  | Add default actors to project role |
+| DELETE | `/rest/api/3/role/{id}/actors` | deleteProjectRoleActorsFromRole | `id`*, `user`, `groupId`, `group` | ProjectRole |  | Delete default actors from project role |
+| GET | `/rest/api/3/screens` | getScreens | `startAt`, `maxResults`, `id`, `queryString`, `scope`, `orderBy` | PageBeanScreen | yes | Get screens |
+| POST | `/rest/api/3/screens` | createScreen | body*: ScreenDetails | Screen |  | Create screen |
+| POST | `/rest/api/3/screens/addToDefault/{fieldId}` | addFieldToDefaultScreen | `fieldId`* | — |  | Add field to default screen |
+| PUT | `/rest/api/3/screens/{screenId}` | updateScreen | `screenId`*, body*: UpdateScreenDetails | Screen |  | Update screen |
+| DELETE | `/rest/api/3/screens/{screenId}` | deleteScreen | `screenId`* | — |  | Delete screen |
+| GET | `/rest/api/3/screens/{screenId}/availableFields` | getAvailableScreenFields | `screenId`* | ScreenableField[] | yes | Get available screen fields |
+| GET | `/rest/api/3/screens/{screenId}/tabs` | getAllScreenTabs | `screenId`*, `projectKey` | ScreenableTab[] | yes | Get all screen tabs |
+| POST | `/rest/api/3/screens/{screenId}/tabs` | addScreenTab | `screenId`*, body*: ScreenableTab | ScreenableTab |  | Create screen tab |
+| PUT | `/rest/api/3/screens/{screenId}/tabs/{tabId}` | renameScreenTab | `screenId`*, `tabId`*, body*: ScreenableTab | ScreenableTab |  | Update screen tab |
+| DELETE | `/rest/api/3/screens/{screenId}/tabs/{tabId}` | deleteScreenTab | `screenId`*, `tabId`* | — |  | Delete screen tab |
+| GET | `/rest/api/3/screens/{screenId}/tabs/{tabId}/fields` | getAllScreenTabFields | `screenId`*, `tabId`*, `projectKey` | ScreenableField[] | yes | Get all screen tab fields |
+| POST | `/rest/api/3/screens/{screenId}/tabs/{tabId}/fields` | addScreenTabField | `screenId`*, `tabId`*, body*: AddFieldBean | ScreenableField |  | Add screen tab field |
+| DELETE | `/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}` | removeScreenTabField | `screenId`*, `tabId`*, `id`* | — |  | Remove screen tab field |
+| POST | `/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}/move` | moveScreenTabField | `screenId`*, `tabId`*, `id`*, body*: MoveFieldBean | — |  | Move screen tab field |
+| POST | `/rest/api/3/screens/{screenId}/tabs/{tabId}/move/{pos}` | moveScreenTab | `screenId`*, `tabId`*, `pos`* | — |  | Move screen tab |
+| GET | `/rest/api/3/screenscheme` | getScreenSchemes | `startAt`, `maxResults`, `id`, `expand`, `queryString`, `orderBy` | PageBeanScreenScheme | yes | Get screen schemes |
+| POST | `/rest/api/3/screenscheme` | createScreenScheme | body*: ScreenSchemeDetails | ScreenSchemeId |  | Create screen scheme |
+| PUT | `/rest/api/3/screenscheme/{screenSchemeId}` | updateScreenScheme | `screenSchemeId`*, body*: UpdateScreenSchemeDetails | — |  | Update screen scheme |
+| DELETE | `/rest/api/3/screenscheme/{screenSchemeId}` | deleteScreenScheme | `screenSchemeId`* | — |  | Delete screen scheme |
+| GET | `/rest/api/3/search` | searchForIssuesUsingJql | `jql`, `startAt`, `maxResults`, `validateQuery`, `fields`, `expand`, `properties`, `fieldsByKeys` | SearchResults | yes | Search for issues using JQL (GET) |
+| POST | `/rest/api/3/search` | searchForIssuesUsingJqlPost | body*: SearchRequestBean | SearchResults |  | Search for issues using JQL (POST) |
+| GET | `/rest/api/3/securitylevel/{id}` | getIssueSecurityLevel | `id`* | SecurityLevel | yes | Get issue security level |
+| GET | `/rest/api/3/serverInfo` | getServerInfo | — | ServerInformation | yes | Get Jira instance info |
+| GET | `/rest/api/3/settings/columns` | getIssueNavigatorDefaultColumns | — | ColumnItem[] | yes | Get issue navigator default columns |
+| PUT | `/rest/api/3/settings/columns` | setIssueNavigatorDefaultColumns | body: string[] | — |  | Set issue navigator default columns |
+| GET | `/rest/api/3/status` | getStatuses | — | StatusDetails[] | yes | Get all statuses |
+| GET | `/rest/api/3/status/{idOrName}` | getStatus | `idOrName`* | StatusDetails | yes | Get status |
+| GET | `/rest/api/3/statuscategory` | getStatusCategories | — | StatusCategory[] | yes | Get all status categories |
+| GET | `/rest/api/3/statuscategory/{idOrKey}` | getStatusCategory | `idOrKey`* | StatusCategory | yes | Get status category |
+| GET | `/rest/api/3/statuses` | getStatusesById | `expand`, `id` | JiraStatus[] | yes | Bulk get statuses |
+| PUT | `/rest/api/3/statuses` | updateStatuses | body*: StatusUpdateRequest | — |  | Bulk update statuses |
+| POST | `/rest/api/3/statuses` | createStatuses | body*: StatusCreateRequest | JiraStatus[] |  | Bulk create statuses |
+| DELETE | `/rest/api/3/statuses` | deleteStatusesById | `id` | — |  | Bulk delete Statuses |
+| GET | `/rest/api/3/statuses/search` | search | `expand`, `projectId`, `startAt`, `maxResults`, `searchString`, `statusCategory` | PageOfStatuses | yes | Search statuses paginated |
+| GET | `/rest/api/3/task/{taskId}` | getTask | `taskId`* | TaskProgressBeanObject | yes | Get task |
+| POST | `/rest/api/3/task/{taskId}/cancel` | cancelTask | `taskId`* | — |  | Cancel task |
+| GET | `/rest/api/3/uiModifications` | getUiModifications | `startAt`, `maxResults`, `expand` | PageBeanUiModificationDetails | yes | Get UI modifications |
+| POST | `/rest/api/3/uiModifications` | createUiModification | body*: CreateUiModificationDetails | UiModificationIdentifiers |  | Create UI modification |
+| PUT | `/rest/api/3/uiModifications/{uiModificationId}` | updateUiModification | `uiModificationId`*, body*: UpdateUiModificationDetails | — |  | Update UI modification |
+| DELETE | `/rest/api/3/uiModifications/{uiModificationId}` | deleteUiModification | `uiModificationId`* | — |  | Delete UI modification |
+| GET | `/rest/api/3/universal_avatar/type/{type}/owner/{entityId}` | getAvatars | `type`*, `entityId`* | Avatars | yes | Get avatars |
+| POST | `/rest/api/3/universal_avatar/type/{type}/owner/{entityId}` | storeAvatar | `type`*, `entityId`*, `x`, `y`, `size`*, body*: — | Avatar |  | Load avatar |
+| DELETE | `/rest/api/3/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id}` | deleteAvatar | `type`*, `owningObjectId`*, `id`* | — |  | Delete avatar |
+| GET | `/rest/api/3/universal_avatar/view/type/{type}` | getAvatarImageByType | `type`*, `size`, `format` | object | yes | Get avatar image by type |
+| GET | `/rest/api/3/universal_avatar/view/type/{type}/avatar/{id}` | getAvatarImageByID | `type`*, `id`*, `size`, `format` | object | yes | Get avatar image by ID |
+| GET | `/rest/api/3/universal_avatar/view/type/{type}/owner/{entityId}` | getAvatarImageByOwner | `type`*, `entityId`*, `size`, `format` | object | yes | Get avatar image by owner |
+| GET | `/rest/api/3/user` | getUser | `accountId`, `username`, `key`, `expand` | User | yes | Get user |
+| POST | `/rest/api/3/user` | createUser | body*: NewUserDetails | User |  | Create user |
+| DELETE | `/rest/api/3/user` | removeUser | `accountId`*, `username`, `key` | — |  | Delete user |
+| GET | `/rest/api/3/user/assignable/multiProjectSearch` | findBulkAssignableUsers | `query`, `username`, `accountId`, `projectKeys`*, `startAt`, `maxResults` | User[] | yes | Find users assignable to projects |
+| GET | `/rest/api/3/user/assignable/search` | findAssignableUsers | `query`, `sessionId`, `username`, `accountId`, `project`, `issueKey`, `startAt`, `maxResults`, `actionDescriptorId`, `recommend` | User[] | yes | Find users assignable to issues |
+| GET | `/rest/api/3/user/bulk` | bulkGetUsers | `startAt`, `maxResults`, `username`, `key`, `accountId`* | PageBeanUser | yes | Bulk get users |
+| GET | `/rest/api/3/user/bulk/migration` | bulkGetUsersMigration | `startAt`, `maxResults`, `username`, `key` | UserMigrationBean[] | yes | Get account IDs for users |
+| GET | `/rest/api/3/user/columns` | getUserDefaultColumns | `accountId`, `username` | ColumnItem[] | yes | Get user default columns |
+| PUT | `/rest/api/3/user/columns` | setUserColumns | `accountId`, body: string[] | — |  | Set user default columns |
+| DELETE | `/rest/api/3/user/columns` | resetUserColumns | `accountId`, `username` | — |  | Reset user default columns |
+| GET | `/rest/api/3/user/email` | getUserEmail | `accountId`* | UnrestrictedUserEmail | yes | Get user email |
+| GET | `/rest/api/3/user/email/bulk` | getUserEmailBulk | `accountId`* | UnrestrictedUserEmail | yes | Get user email bulk |
+| GET | `/rest/api/3/user/groups` | getUserGroups | `accountId`*, `username`, `key` | GroupName[] | yes | Get user groups |
+| GET | `/rest/api/3/user/permission/search` | findUsersWithAllPermissions | `query`, `username`, `accountId`, `permissions`*, `issueKey`, `projectKey`, `startAt`, `maxResults` | User[] | yes | Find users with permissions |
+| GET | `/rest/api/3/user/picker` | findUsersForPicker | `query`*, `maxResults`, `showAvatar`, `exclude`, `excludeAccountIds`, `avatarSize`, `excludeConnectUsers` | FoundUsers | yes | Find users for picker |
+| GET | `/rest/api/3/user/properties` | getUserPropertyKeys | `accountId`, `userKey`, `username` | PropertyKeys | yes | Get user property keys |
+| GET | `/rest/api/3/user/properties/{propertyKey}` | getUserProperty | `accountId`, `userKey`, `username`, `propertyKey`* | EntityProperty | yes | Get user property |
+| PUT | `/rest/api/3/user/properties/{propertyKey}` | setUserProperty | `accountId`, `userKey`, `username`, `propertyKey`*, body*: — | — |  | Set user property |
+| DELETE | `/rest/api/3/user/properties/{propertyKey}` | deleteUserProperty | `accountId`, `userKey`, `username`, `propertyKey`* | — |  | Delete user property |
+| GET | `/rest/api/3/user/search` | findUsers | `query`, `username`, `accountId`, `startAt`, `maxResults`, `property` | User[] | yes | Find users |
+| GET | `/rest/api/3/user/search/query` | findUsersByQuery | `query`*, `startAt`, `maxResults` | PageBeanUser | yes | Find users by query |
+| GET | `/rest/api/3/user/search/query/key` | findUserKeysByQuery | `query`*, `startAt`, `maxResults` | PageBeanUserKey | yes | Find user keys by query |
+| GET | `/rest/api/3/user/viewissue/search` | findUsersWithBrowsePermission | `query`, `username`, `accountId`, `issueKey`, `projectKey`, `startAt`, `maxResults` | User[] | yes | Find users with browse permission |
+| GET | `/rest/api/3/users` | getAllUsersDefault | `startAt`, `maxResults` | User[] | yes | Get all users default |
+| GET | `/rest/api/3/users/search` | getAllUsers | `startAt`, `maxResults` | User[] | yes | Get all users |
+| POST | `/rest/api/3/version` | createVersion | body*: Version | Version |  | Create version |
+| GET | `/rest/api/3/version/{id}` | getVersion | `id`*, `expand` | Version | yes | Get version |
+| PUT | `/rest/api/3/version/{id}` | updateVersion | `id`*, body*: Version | Version |  | Update version |
+| DELETE | `/rest/api/3/version/{id}` | deleteVersion | `id`*, `moveFixIssuesTo`, `moveAffectedIssuesTo` | — |  | Delete version |
+| PUT | `/rest/api/3/version/{id}/mergeto/{moveIssuesTo}` | mergeVersions | `id`*, `moveIssuesTo`* | — |  | Merge versions |
+| POST | `/rest/api/3/version/{id}/move` | moveVersion | `id`*, body*: VersionMoveBean | Version |  | Move version |
+| GET | `/rest/api/3/version/{id}/relatedIssueCounts` | getVersionRelatedIssues | `id`* | VersionIssueCounts | yes | Get version's related issues count |
+| POST | `/rest/api/3/version/{id}/removeAndSwap` | deleteAndReplaceVersion | `id`*, body*: DeleteAndReplaceVersionBean | — |  | Delete and replace version |
+| GET | `/rest/api/3/version/{id}/unresolvedIssueCount` | getVersionUnresolvedIssues | `id`* | VersionUnresolvedIssuesCount | yes | Get version's unresolved issues count |
+| GET | `/rest/api/3/webhook` | getDynamicWebhooksForApp | `startAt`, `maxResults` | PageBeanWebhook | yes | Get dynamic webhooks for app |
+| POST | `/rest/api/3/webhook` | registerDynamicWebhooks | body*: WebhookRegistrationDetails | ContainerForRegisteredWebhooks |  | Register dynamic webhooks |
+| DELETE | `/rest/api/3/webhook` | deleteWebhookById | body*: ContainerForWebhookIDs | — |  | Delete webhooks by ID |
+| GET | `/rest/api/3/webhook/failed` | getFailedWebhooks | `maxResults`, `after` | FailedWebhooks | yes | Get failed webhooks |
+| PUT | `/rest/api/3/webhook/refresh` | refreshWebhooks | body*: ContainerForWebhookIDs | WebhooksExpirationDate |  | Extend webhook life |
+| GET | `/rest/api/3/workflow` | getAllWorkflows | `workflowName` | DeprecatedWorkflow[] | yes | Get all workflows |
+| POST | `/rest/api/3/workflow` | createWorkflow | body*: CreateWorkflowDetails | WorkflowIDs |  | Create workflow |
+| GET | `/rest/api/3/workflow/rule/config` | getWorkflowTransitionRuleConfigurations | `startAt`, `maxResults`, `types`*, `keys`, `workflowNames`, `withTags`, `draft`, `expand` | PageBeanWorkflowTransitionRules | yes | Get workflow transition rule configurations |
+| PUT | `/rest/api/3/workflow/rule/config` | updateWorkflowTransitionRuleConfigurations | body*: WorkflowTransitionRulesUpdate | WorkflowTransitionRulesUpdateErrors |  | Update workflow transition rule configurations |
+| PUT | `/rest/api/3/workflow/rule/config/delete` | deleteWorkflowTransitionRuleConfigurations | body*: WorkflowsWithTransitionRulesDetails | WorkflowTransitionRulesUpdateErrors |  | Delete workflow transition rule configurations |
+| GET | `/rest/api/3/workflow/search` | getWorkflowsPaginated | `startAt`, `maxResults`, `workflowName`, `expand`, `queryString`, `orderBy`, `isActive` | PageBeanWorkflow | yes | Get workflows paginated |
+| GET | `/rest/api/3/workflow/transitions/{transitionId}/properties` | getWorkflowTransitionProperties | `transitionId`*, `includeReservedKeys`, `key`, `workflowName`*, `workflowMode` | WorkflowTransitionProperty | yes | Get workflow transition properties |
+| PUT | `/rest/api/3/workflow/transitions/{transitionId}/properties` | updateWorkflowTransitionProperty | `transitionId`*, `key`*, `workflowName`*, `workflowMode`, body*: WorkflowTransitionProperty | WorkflowTransitionProperty |  | Update workflow transition property |
+| POST | `/rest/api/3/workflow/transitions/{transitionId}/properties` | createWorkflowTransitionProperty | `transitionId`*, `key`*, `workflowName`*, `workflowMode`, body*: WorkflowTransitionProperty | WorkflowTransitionProperty |  | Create workflow transition property |
+| DELETE | `/rest/api/3/workflow/transitions/{transitionId}/properties` | deleteWorkflowTransitionProperty | `transitionId`*, `key`*, `workflowName`*, `workflowMode` | — |  | Delete workflow transition property |
+| DELETE | `/rest/api/3/workflow/{entityId}` | deleteInactiveWorkflow | `entityId`* | — |  | Delete inactive workflow |
+| GET | `/rest/api/3/workflowscheme` | getAllWorkflowSchemes | `startAt`, `maxResults` | PageBeanWorkflowScheme | yes | Get all workflow schemes |
+| POST | `/rest/api/3/workflowscheme` | createWorkflowScheme | body*: WorkflowScheme | WorkflowScheme |  | Create workflow scheme |
+| GET | `/rest/api/3/workflowscheme/project` | getWorkflowSchemeProjectAssociations | `projectId`* | ContainerOfWorkflowSchemeAssociations | yes | Get workflow scheme project associations |
+| PUT | `/rest/api/3/workflowscheme/project` | assignSchemeToProject | body*: WorkflowSchemeProjectAssociation | — |  | Assign workflow scheme to project |
+| GET | `/rest/api/3/workflowscheme/{id}` | getWorkflowScheme | `id`*, `returnDraftIfExists` | WorkflowScheme | yes | Get workflow scheme |
+| PUT | `/rest/api/3/workflowscheme/{id}` | updateWorkflowScheme | `id`*, body*: WorkflowScheme | WorkflowScheme |  | Update workflow scheme |
+| DELETE | `/rest/api/3/workflowscheme/{id}` | deleteWorkflowScheme | `id`* | — |  | Delete workflow scheme |
+| POST | `/rest/api/3/workflowscheme/{id}/createdraft` | createWorkflowSchemeDraftFromParent | `id`* | WorkflowScheme |  | Create draft workflow scheme |
+| GET | `/rest/api/3/workflowscheme/{id}/default` | getDefaultWorkflow | `id`*, `returnDraftIfExists` | DefaultWorkflow | yes | Get default workflow |
+| PUT | `/rest/api/3/workflowscheme/{id}/default` | updateDefaultWorkflow | `id`*, body*: DefaultWorkflow | WorkflowScheme |  | Update default workflow |
+| DELETE | `/rest/api/3/workflowscheme/{id}/default` | deleteDefaultWorkflow | `id`*, `updateDraftIfNeeded` | WorkflowScheme |  | Delete default workflow |
+| GET | `/rest/api/3/workflowscheme/{id}/draft` | getWorkflowSchemeDraft | `id`* | WorkflowScheme | yes | Get draft workflow scheme |
+| PUT | `/rest/api/3/workflowscheme/{id}/draft` | updateWorkflowSchemeDraft | `id`*, body*: WorkflowScheme | WorkflowScheme |  | Update draft workflow scheme |
+| DELETE | `/rest/api/3/workflowscheme/{id}/draft` | deleteWorkflowSchemeDraft | `id`* | — |  | Delete draft workflow scheme |
+| GET | `/rest/api/3/workflowscheme/{id}/draft/default` | getDraftDefaultWorkflow | `id`* | DefaultWorkflow | yes | Get draft default workflow |
+| PUT | `/rest/api/3/workflowscheme/{id}/draft/default` | updateDraftDefaultWorkflow | `id`*, body*: DefaultWorkflow | WorkflowScheme |  | Update draft default workflow |
+| DELETE | `/rest/api/3/workflowscheme/{id}/draft/default` | deleteDraftDefaultWorkflow | `id`* | WorkflowScheme |  | Delete draft default workflow |
+| GET | `/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}` | getWorkflowSchemeDraftIssueType | `id`*, `issueType`* | IssueTypeWorkflowMapping | yes | Get workflow for issue type in draft workflow scheme |
+| PUT | `/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}` | setWorkflowSchemeDraftIssueType | `id`*, `issueType`*, body*: IssueTypeWorkflowMapping | WorkflowScheme |  | Set workflow for issue type in draft workflow scheme |
+| DELETE | `/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}` | deleteWorkflowSchemeDraftIssueType | `id`*, `issueType`* | WorkflowScheme |  | Delete workflow for issue type in draft workflow scheme |
+| POST | `/rest/api/3/workflowscheme/{id}/draft/publish` | publishDraftWorkflowScheme | `id`*, `validateOnly`, body*: PublishDraftWorkflowScheme | — |  | Publish draft workflow scheme |
+| GET | `/rest/api/3/workflowscheme/{id}/draft/workflow` | getDraftWorkflow | `id`*, `workflowName` | IssueTypesWorkflowMapping | yes | Get issue types for workflows in draft workflow scheme |
+| PUT | `/rest/api/3/workflowscheme/{id}/draft/workflow` | updateDraftWorkflowMapping | `id`*, `workflowName`*, body*: IssueTypesWorkflowMapping | WorkflowScheme |  | Set issue types for workflow in workflow scheme |
+| DELETE | `/rest/api/3/workflowscheme/{id}/draft/workflow` | deleteDraftWorkflowMapping | `id`*, `workflowName`* | — |  | Delete issue types for workflow in draft workflow scheme |
+| GET | `/rest/api/3/workflowscheme/{id}/issuetype/{issueType}` | getWorkflowSchemeIssueType | `id`*, `issueType`*, `returnDraftIfExists` | IssueTypeWorkflowMapping | yes | Get workflow for issue type in workflow scheme |
+| PUT | `/rest/api/3/workflowscheme/{id}/issuetype/{issueType}` | setWorkflowSchemeIssueType | `id`*, `issueType`*, body*: IssueTypeWorkflowMapping | WorkflowScheme |  | Set workflow for issue type in workflow scheme |
+| DELETE | `/rest/api/3/workflowscheme/{id}/issuetype/{issueType}` | deleteWorkflowSchemeIssueType | `id`*, `issueType`*, `updateDraftIfNeeded` | WorkflowScheme |  | Delete workflow for issue type in workflow scheme |
+| GET | `/rest/api/3/workflowscheme/{id}/workflow` | getWorkflow | `id`*, `workflowName`, `returnDraftIfExists` | IssueTypesWorkflowMapping | yes | Get issue types for workflows in workflow scheme |
+| PUT | `/rest/api/3/workflowscheme/{id}/workflow` | updateWorkflowMapping | `id`*, `workflowName`*, body*: IssueTypesWorkflowMapping | WorkflowScheme |  | Set issue types for workflow in workflow scheme |
+| DELETE | `/rest/api/3/workflowscheme/{id}/workflow` | deleteWorkflowMapping | `id`*, `workflowName`*, `updateDraftIfNeeded` | — |  | Delete issue types for workflow in workflow scheme |
+| GET | `/rest/api/3/worklog/deleted` | getIdsOfWorklogsDeletedSince | `since` | ChangedWorklogs | yes | Get IDs of deleted worklogs |
+| POST | `/rest/api/3/worklog/list` | getWorklogsForIds | `expand`, body*: WorklogIdsRequestBean | Worklog[] |  | Get worklogs |
+| GET | `/rest/api/3/worklog/updated` | getIdsOfWorklogsModifiedSince | `since`, `expand` | ChangedWorklogs | yes | Get IDs of updated worklogs |
+| GET | `/rest/atlassian-connect/1/addons/{addonKey}/properties` | AddonPropertiesResource.getAddonProperties_get | `addonKey`* | PropertyKeys | yes | Get app properties |
+| GET | `/rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey}` | AddonPropertiesResource.getAddonProperty_get | `addonKey`*, `propertyKey`* | EntityProperty | yes | Get app property |
+| PUT | `/rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey}` | AddonPropertiesResource.putAddonProperty_put | `addonKey`*, `propertyKey`*, body*: — | OperationMessage |  | Set app property |
+| DELETE | `/rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey}` | AddonPropertiesResource.deleteAddonProperty_delete | `addonKey`*, `propertyKey`* | — |  | Delete app property |
+| GET | `/rest/atlassian-connect/1/app/module/dynamic` | DynamicModulesResource.getModules_get | — | ConnectModules | yes | Get modules |
+| POST | `/rest/atlassian-connect/1/app/module/dynamic` | DynamicModulesResource.registerModules_post | body*: ConnectModules | — |  | Register modules |
+| DELETE | `/rest/atlassian-connect/1/app/module/dynamic` | DynamicModulesResource.removeModules_delete | `moduleKey` | — |  | Remove modules |
+| PUT | `/rest/atlassian-connect/1/migration/field` | AppIssueFieldValueUpdateResource.updateIssueFields_put | `Atlassian-Transfer-Id`*, body*: ConnectCustomFieldValues | — |  | Bulk update custom field value |
+| PUT | `/rest/atlassian-connect/1/migration/properties/{entityType}` | MigrationResource.updateEntityPropertiesValue_put | `Atlassian-Transfer-Id`*, `entityType`*, body*: EntityPropertyDetails[] | — |  | Bulk update entity properties |
+| POST | `/rest/atlassian-connect/1/migration/workflow/rule/search` | MigrationResource.workflowRuleSearch_post | `Atlassian-Transfer-Id`*, body*: WorkflowRulesSearch | WorkflowRulesSearchDetails |  | Get workflow transition rule configurations |

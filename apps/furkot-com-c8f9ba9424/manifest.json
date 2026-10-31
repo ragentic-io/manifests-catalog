@@ -13,6 +13,16 @@
         "from": "furkot-com-c8f9ba9424",
         "kind": "EXPOSES",
         "to": "operation:get:/trip/{trip_id}/stop"
+      },
+      {
+        "from": "operation:get:/trip",
+        "kind": "RETURNS",
+        "to": "schema:Trip"
+      },
+      {
+        "from": "operation:get:/trip/{trip_id}/stop",
+        "kind": "RETURNS",
+        "to": "schema:Step"
       }
     ],
     "nodes": [
@@ -22,12 +32,20 @@
       },
       {
         "deprecated": false,
+        "description": "list user's trips",
         "id": "operation:get:/trip",
         "kind": "operation",
         "method": "get",
         "name": "get /trip",
         "path": "/trip",
         "pointer": "#/paths/~1trip/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Trip[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "furkot_auth_access_code": [
@@ -44,12 +62,29 @@
       },
       {
         "deprecated": false,
+        "description": "list stops for a trip identified by {trip_id}",
         "id": "operation:get:/trip/{trip_id}/stop",
         "kind": "operation",
         "method": "get",
         "name": "get /trip/{trip_id}/stop",
+        "parameters": [
+          {
+            "description": "id of the trip",
+            "in": "path",
+            "name": "trip_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "path": "/trip/{trip_id}/stop",
         "pointer": "#/paths/~1trip~1{trip_id}~1stop/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "Step[]"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "furkot_auth_access_code": [
@@ -67,12 +102,14 @@
       {
         "id": "schema:Step",
         "kind": "schema",
-        "name": "Step"
+        "name": "Step",
+        "type": "object"
       },
       {
         "id": "schema:Trip",
         "kind": "schema",
-        "name": "Trip"
+        "name": "Trip",
+        "type": "object"
       }
     ]
   },

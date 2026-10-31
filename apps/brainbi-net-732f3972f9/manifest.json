@@ -82,58 +82,155 @@
       },
       {
         "deprecated": false,
+        "description": "To update a product, please use the listed attributes listed underneath.",
         "id": "operation:get:/api/analyze/pricing",
         "kind": "operation",
         "method": "get",
         "name": "[beta]ScrapeProductCopy",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/analyze/pricing",
         "pointer": "#/paths/~1api~1analyze~1pricing/get",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "[BETA] Scrape Product Copy"
+        "summary": "[BETA] Scrape Product Copy",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This resource lists all cusomters that are currently saved in your account.",
         "id": "operation:get:/api/customers",
         "kind": "operation",
         "method": "get",
         "name": "customers",
+        "parameters": [
+          {
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/customers",
         "pointer": "#/paths/~1api~1customers/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Customers"
+        "summary": "Customers",
+        "tags": [
+          "Customers"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to make the initial call with your email and password (same as on brainbi.net) and get your bearer token in response.",
         "id": "operation:post:/api/login",
         "kind": "operation",
         "method": "post",
         "name": "loginAndGetBearerToken",
+        "parameters": [
+          {
+            "description": "The same email you use for our platform.",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The password email you use for our platform.",
+            "in": "query",
+            "name": "password",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/login",
         "pointer": "#/paths/~1api~1login/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Login and get bearer token"
       },
       {
         "deprecated": false,
+        "description": "Once you are done, call this endpoint to lock your account!",
         "id": "operation:post:/api/logout",
         "kind": "operation",
         "method": "post",
         "name": "logout",
+        "parameters": [
+          {
+            "description": "The same email you use for our platform.",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/logout",
         "pointer": "#/paths/~1api~1logout/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Logout"
       },
       {
         "deprecated": false,
+        "description": "This resource lists all orders that are currently saved in your account.",
         "id": "operation:get:/api/orders",
         "kind": "operation",
         "method": "get",
         "name": "orders",
+        "parameters": [
+          {
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/orders",
         "pointer": "#/paths/~1api~1orders/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Orders"
+        "summary": "Orders",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
@@ -141,21 +238,60 @@
         "kind": "operation",
         "method": "delete",
         "name": "orders1",
+        "parameters": [
+          {
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/orders/1137",
         "pointer": "#/paths/~1api~1orders~11137/delete",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Orders"
+        "summary": "Orders",
+        "tags": [
+          "Orders"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This resource lists all products that are currently saved in you account.",
         "id": "operation:get:/api/products",
         "kind": "operation",
         "method": "get",
         "name": "products",
+        "parameters": [
+          {
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/products",
         "pointer": "#/paths/~1api~1products/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Products"
+        "summary": "Products",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
@@ -163,76 +299,331 @@
         "kind": "operation",
         "method": "delete",
         "name": "products1",
+        "parameters": [
+          {
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/products/1137",
         "pointer": "#/paths/~1api~1products~11137/delete",
+        "request": {
+          "content_types": [
+            "application/octet-stream"
+          ],
+          "required": false
+        },
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
-        "summary": "Products"
+        "summary": "Products",
+        "tags": [
+          "Products"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to make the initial call with your email and password (same as on brainbi.net) and get your bearer token in response.",
         "id": "operation:post:/api/register",
         "kind": "operation",
         "method": "post",
         "name": "register",
+        "parameters": [
+          {
+            "description": "required",
+            "in": "query",
+            "name": "first_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "last_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "company_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "shop_url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "store_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "store_url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "password",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required (always 1)",
+            "in": "query",
+            "name": "fromuser",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/register",
         "pointer": "#/paths/~1api~1register/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Register"
       },
       {
         "deprecated": false,
+        "description": "Use this endpoint to make the initial call with your email and password (same as on brainbi.net) and get your bearer token in response.",
         "id": "operation:post:/api/register_woocommerce",
         "kind": "operation",
         "method": "post",
         "name": "registerAndCreateStoreConnectionForWooCommerce",
+        "parameters": [
+          {
+            "description": "required",
+            "in": "query",
+            "name": "first_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "last_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "company_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "shop_url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "email",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "store_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "store_url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "password",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required (always 1)",
+            "in": "query",
+            "name": "fromuser",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "api_url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "consumer_key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "required",
+            "in": "query",
+            "name": "consumer_secret",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/register_woocommerce",
         "pointer": "#/paths/~1api~1register_woocommerce/post",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": false,
         "security": [],
         "summary": "Register and Create Store Connection for WooCommerce"
       },
       {
         "deprecated": false,
+        "description": "This resource lists all pricing rules that are currently saved in you account.",
         "id": "operation:get:/api/rule",
         "kind": "operation",
         "method": "get",
         "name": "rules",
+        "parameters": [
+          {
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/rule",
         "pointer": "#/paths/~1api~1rule/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Rules"
+        "summary": "Rules",
+        "tags": [
+          "Pricing Rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This resource lists all data that wa saved for pricing rules.",
         "id": "operation:get:/api/rule/ruleData/1",
         "kind": "operation",
         "method": "get",
         "name": "ruleData",
+        "parameters": [
+          {
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/rule/ruleData/1",
         "pointer": "#/paths/~1api~1rule~1ruleData~11/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Rule Data"
+        "summary": "Rule Data",
+        "tags": [
+          "Pricing Rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This resource lists only the latest data point that wa saved for a pricing rule.",
         "id": "operation:get:/api/rule/ruleData/1/latest",
         "kind": "operation",
         "method": "get",
         "name": "ruleDataLatest",
+        "parameters": [
+          {
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/rule/ruleData/1/latest",
         "pointer": "#/paths/~1api~1rule~1ruleData~11~1latest/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "Rule Data Latest"
+        "summary": "Rule Data Latest",
+        "tags": [
+          "Pricing Rules"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This resource lists all pricing rules that are currently saved in you account.",
         "id": "operation:get:/api/seo/ranking/latest",
         "kind": "operation",
         "method": "get",
         "name": "seoLatestRankings",
+        "parameters": [
+          {
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/api/seo/ranking/latest",
         "pointer": "#/paths/~1api~1seo~1ranking~1latest/get",
+        "responses": [
+          {
+            "status": "200"
+          }
+        ],
+        "safe": true,
         "security": [],
-        "summary": "SEO Latest Rankings"
+        "summary": "SEO Latest Rankings",
+        "tags": [
+          "SEO"
+        ]
       }
     ]
   },

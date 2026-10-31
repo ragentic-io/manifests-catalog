@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_opendatasoft_profil
 
 | | |
 | --- | --- |
-| Signed bundle | `138e2951a89673e30a8e2c27db2f8307067435615348d8835bfee86182b06d07` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,41 +34,43 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_opendatasoft_profil
 
 16 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | getRoot | — |
-| GET | `/pages` | getPages | — |
-| GET | `/pages/{slug}` | getPage | — |
-| GET | `/{source}` | getSource | — |
-| GET | `/{source}/aggregates` | aggregateDatasets | — |
-| GET | `/{source}/datasets` | getDatasets | — |
-| GET | `/{source}/datasets/{dataset_id}` | getDataset | — |
-| GET | `/{source}/datasets/{dataset_id}/aggregates` | aggregateRecords | — |
-| GET | `/{source}/datasets/{dataset_id}/attachments` | getDatasetAttachements | — |
-| GET | `/{source}/datasets/{dataset_id}/attachments/{attachment_id}` | downloadDatasetAttachement | — |
-| GET | `/{source}/datasets/{dataset_id}/exports/csv` | exportRecordsCSV | — |
-| GET | `/{source}/datasets/{dataset_id}/exports/geojson` | exportRecordsGEOJSON | — |
-| GET | `/{source}/datasets/{dataset_id}/exports/ical` | exportRecordsICAL | — |
-| GET | `/{source}/datasets/{dataset_id}/exports/json` | exportRecordsJSON | — |
-| GET | `/{source}/datasets/{dataset_id}/exports/ov2` | exportRecordsOV2 | — |
-| GET | `/{source}/datasets/{dataset_id}/exports/shp` | exportRecordsSHP | — |
-| GET | `/{source}/datasets/{dataset_id}/exports/xls` | exportRecordsXLS | — |
-| GET | `/{source}/datasets/{dataset_id}/facets` | getRecordsFacets | — |
-| PUT | `/{source}/datasets/{dataset_id}/feedback` | sendDatasetFeedback | — |
-| GET | `/{source}/datasets/{dataset_id}/files/{file_id}` | getDatasetFile | — |
-| GET | `/{source}/datasets/{dataset_id}/records` | getRecords | — |
-| GET | `/{source}/datasets/{dataset_id}/records/{record_id}` | getRecord | — |
-| GET | `/{source}/datasets/{dataset_id}/reuses` | getDatasetReuses | — |
-| GET | `/{source}/datasets/{dataset_id}/reuses/{reuse_id}` | getDatasetReuse | — |
-| GET | `/{source}/datasets/{dataset_id}/snapshots` | getDatasetSnapshots | — |
-| GET | `/{source}/datasets/{dataset_id}/snapshots/{snapshot_id}` | downloadDatasetSnapshot | — |
-| GET | `/{source}/exports/csv` | exportDatasetsCSV | — |
-| GET | `/{source}/exports/json` | exportDatasetsJson | — |
-| GET | `/{source}/exports/rdf` | exportDatasetsRDF | — |
-| GET | `/{source}/exports/rss` | exportDatasetsRSS | — |
-| GET | `/{source}/exports/ttl` | exportDatasetsTTL | — |
-| GET | `/{source}/exports/xls` | exportDatasetsXLS | — |
-| GET | `/{source}/facets` | getDatasetsFacets | — |
-| GET | `/{source}/metadata_templates` | getMetadataTemplatesTypes | — |
-| GET | `/{source}/metadata_templates/{metadata_template_type}` | getMetadataTemplatesType | — |
-| GET | `/{source}/metadata_templates/{metadata_template_type}/{metadata_template_name}` | getMetadataTemplate | — |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | getRoot | — | object | yes | — |
+| GET | `/pages` | getPages | — | object | yes | — |
+| GET | `/pages/{slug}` | getPage | `slug`* | object | yes | — |
+| GET | `/{source}` | getSource | `source`* | object | yes | — |
+| GET | `/{source}/aggregates` | aggregateDatasets | `source`*, `select`, `where`, `group_by`, `order_by`, `limit`, `offset`, `facet`, `refine`, `exclude` | object | yes | — |
+| GET | `/{source}/datasets` | getDatasets | `source`*, `select`, `where`, `group_by`, `sort`, `order_by`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `pretty`, `timezone`, `include_app_metas` | object | yes | — |
+| GET | `/{source}/datasets/{dataset_id}` | getDataset | `source`*, `dataset_id`*, `select`, `pretty`, `timezone`, `include_app_metas` | object | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/aggregates` | aggregateRecords | `source`*, `dataset_id`*, `select`, `where`, `group_by`, `order_by`, `limit`, `offset`, `facet`, `refine`, `exclude` | object | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/attachments` | getDatasetAttachements | `source`*, `dataset_id`* | object | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/attachments/{attachment_id}` | downloadDatasetAttachement | `source`*, `dataset_id`*, `attachment_id`* | — | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/exports/csv` | exportRecordsCSV | `source`*, `dataset_id`*, `select`, `where`, `sort`, `order_by`, `limit`, `offset`, `facet`, `refine`, `exclude`, `timezone`, `delimiter` | file | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/exports/geojson` | exportRecordsGEOJSON | `source`*, `dataset_id`*, `select`, `where`, `sort`, `order_by`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone`, `pretty` | file | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/exports/ical` | exportRecordsICAL | `source`*, `dataset_id`*, `select`, `where`, `sort`, `order_by`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone` | file | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/exports/json` | exportRecordsJSON | `source`*, `dataset_id`*, `select`, `where`, `sort`, `order_by`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `pretty`, `timezone` | file | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/exports/ov2` | exportRecordsOV2 | `source`*, `dataset_id`*, `select`, `where`, `sort`, `order_by`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone` | file | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/exports/shp` | exportRecordsSHP | `source`*, `dataset_id`*, `select`, `where`, `sort`, `order_by`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone` | file | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/exports/xls` | exportRecordsXLS | `source`*, `dataset_id`*, `select`, `where`, `sort`, `order_by`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone` | file | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/facets` | getRecordsFacets | `source`*, `dataset_id`*, `where`, `facet`, `refine`, `exclude`, `search`, `timezone` | object | yes | — |
+| PUT | `/{source}/datasets/{dataset_id}/feedback` | sendDatasetFeedback | `source`*, `dataset_id`*, body*: object | — |  | — |
+| GET | `/{source}/datasets/{dataset_id}/files/{file_id}` | getDatasetFile | `source`*, `dataset_id`*, `file_id`*, `thumbnail_size` | — | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/records` | getRecords | `source`*, `dataset_id`*, `select`, `where`, `group_by`, `sort`, `order_by`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `pretty`, `timezone` | object | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/records/{record_id}` | getRecord | `source`*, `dataset_id`*, `record_id`*, `select`, `pretty`, `timezone` | object | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/reuses` | getDatasetReuses | `source`*, `dataset_id`*, `limit`, `offset`, `timezone` | object | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/reuses/{reuse_id}` | getDatasetReuse | `source`*, `dataset_id`*, `reuse_id`*, `timezone` | object | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/snapshots` | getDatasetSnapshots | `source`*, `dataset_id`*, `timezone` | object | yes | — |
+| GET | `/{source}/datasets/{dataset_id}/snapshots/{snapshot_id}` | downloadDatasetSnapshot | `source`*, `dataset_id`*, `snapshot_id`*, `timezone` | — | yes | — |
+| GET | `/{source}/exports/csv` | exportDatasetsCSV | `source`*, `where`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone`, `include_app_metas`, `delimiter` | file | yes | — |
+| GET | `/{source}/exports/json` | exportDatasetsJson | `source`*, `where`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `pretty`, `timezone`, `include_app_metas` | file | yes | — |
+| GET | `/{source}/exports/rdf` | exportDatasetsRDF | `source`*, `where`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone`, `include_app_metas` | file | yes | — |
+| GET | `/{source}/exports/rss` | exportDatasetsRSS | `source`*, `where`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone`, `include_app_metas` | file | yes | — |
+| GET | `/{source}/exports/ttl` | exportDatasetsTTL | `source`*, `where`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone`, `include_app_metas` | file | yes | — |
+| GET | `/{source}/exports/xls` | exportDatasetsXLS | `source`*, `where`, `limit`, `offset`, `search`, `facet`, `refine`, `exclude`, `timezone`, `include_app_metas` | file | yes | — |
+| GET | `/{source}/facets` | getDatasetsFacets | `source`*, `facet`, `refine`, `exclude`, `where`, `search`, `timezone` | object | yes | — |
+| GET | `/{source}/metadata_templates` | getMetadataTemplatesTypes | `source`* | object | yes | — |
+| GET | `/{source}/metadata_templates/{metadata_template_type}` | getMetadataTemplatesType | `source`*, `metadata_template_type`* | object | yes | — |
+| GET | `/{source}/metadata_templates/{metadata_template_type}/{metadata_template_name}` | getMetadataTemplate | `source`*, `metadata_template_type`*, `metadata_template_name`* | object | yes | — |

@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_apactadk_profile_im
 
 | | |
 | --- | --- |
-| Signed bundle | `42ecb7f4e15c429d1383a8f259686676e5b96e04c5c0a2056562dd0835fc1507` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,295 +34,297 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_apactadk_profile_im
 
 90 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/activities` | get /activities | Get a list of activities |
-| POST | `/activities` | post /activities | Create an activity |
-| DELETE | `/activities/bulkDelete` | delete /activities/bulkDelete | Bulk delete activities |
-| DELETE | `/activities/{activity_id}` | delete /activities/{activity_id} | Delete an activity |
-| PUT | `/activities/{activity_id}` | put /activities/{activity_id} | Edit an activity |
-| GET | `/cities` | get /cities | Get list of cities supported in Apacta |
-| GET | `/cities/{city_id}` | get /cities/{city_id} | Get details about one city |
-| GET | `/clocking_records` | get /clocking_records | Get a list of clocking records |
-| POST | `/clocking_records` | post /clocking_records | Create clocking record for authenticated user |
-| POST | `/clocking_records/checkout` | post /clocking_records/checkout | Checkout active clocking record for authenticated user |
-| DELETE | `/clocking_records/{clocking_record_id}` | delete /clocking_records/{clocking_record_id} | Delete a clocking record |
-| GET | `/clocking_records/{clocking_record_id}` | get /clocking_records/{clocking_record_id} | Details of 1 clocking_record |
-| PUT | `/clocking_records/{clocking_record_id}` | put /clocking_records/{clocking_record_id} | Edit a clocking record |
-| GET | `/companies` | get /companies | Get a list of companies |
-| GET | `/companies/subscription_self_service` | get /companies/subscription_self_service | URL for subscription selfservice |
-| GET | `/companies/{company_id}` | get /companies/{company_id} | Details of 1 company |
-| GET | `/companies/{company_id}/companies_integration_feature_settings` | get /companies/{company_id}/companies_integration_feature_settings | List a company integration feature settings |
-| POST | `/companies/{company_id}/companies_integration_feature_settings` | post /companies/{company_id}/companies_integration_feature_settings | Add a company integration feature setting |
-| GET | `/companies/{company_id}/companies_integration_feature_settings/{c_integration_feature_setting_id}` | get /companies/{company_id}/companies_integration_feature_settings/{c_integration_feature_setting_id} | View a company integration feature setting |
-| PUT | `/companies/{company_id}/companies_integration_feature_settings/{c_integration_feature_setting_id}` | put /companies/{company_id}/companies_integration_feature_settings/{c_integration_feature_setting_id} | Edit a company integration feature setting |
-| GET | `/companies/{company_id}/form_templates/` | get /companies/{company_id}/form_templates/ | Get a list of company form templates |
-| DELETE | `/companies/{company_id}/form_templates/{form_template_id}` | delete /companies/{company_id}/form_templates/{form_template_id} | Delete a form template company |
-| GET | `/companies/{company_id}/form_templates/{form_template_id}` | get /companies/{company_id}/form_templates/{form_template_id} | Get a company form template |
-| GET | `/companies/{company_id}/integration_feature_settings` | get /companies/{company_id}/integration_feature_settings | Get a list of integration feature settings |
-| GET | `/companies/{company_id}/integration_feature_settings/{integration_feature_setting_id}` | get /companies/{company_id}/integration_feature_settings/{integration_feature_setting_id} | Show details of 1 integration feature setting |
-| GET | `/companies/{company_id}/integration_settings` | get /companies/{company_id}/integration_settings | Get a list of company integration settings |
-| POST | `/companies/{company_id}/integration_settings` | post /companies/{company_id}/integration_settings | Add a company integration setting |
-| DELETE | `/companies/{company_id}/integration_settings/{companies_integration_setting_id}` | delete /companies/{company_id}/integration_settings/{companies_integration_setting_id} | Delete a company integration setting |
-| GET | `/companies/{company_id}/integration_settings/{companies_integration_setting_id}` | get /companies/{company_id}/integration_settings/{companies_integration_setting_id} | Get a company integration setting |
-| PUT | `/companies/{company_id}/integration_settings/{companies_integration_setting_id}` | put /companies/{company_id}/integration_settings/{companies_integration_setting_id} | Edit a company integration setting |
-| DELETE | `/companies/{company_id}/price_margins/{price_margins_id}` | delete /companies/{company_id}/price_margins/{price_margins_id} | Delete a company price margin |
-| GET | `/companies/{company_id}/price_margins/{price_margins_id}` | get /companies/{company_id}/price_margins/{price_margins_id} | Get a list of company price margins |
-| POST | `/companies/{company_id}/price_margins/{price_margins_id}` | post /companies/{company_id}/price_margins/{price_margins_id} | Add a company price margin |
-| GET | `/companies_vendors` | getCompaiesVendorsList | Get a list of companies vendors |
-| POST | `/companies_vendors` | addCompaniesVendor | Add a new companies vendor |
-| DELETE | `/companies_vendors/bulkDelete` | bulkCompaniesVendors | Bulk delete companies vendors |
-| DELETE | `/companies_vendors/{companies_vendor_id}` | delete /companies_vendors/{companies_vendor_id} | Delete a companies vendor |
-| GET | `/companies_vendors/{companies_vendor_id}` | getCompaniesVendor | Get a companies vendor |
-| PUT | `/companies_vendors/{companies_vendor_id}` | editCompaniesVendor | Edit a companies vendor |
-| GET | `/companies_vendors/{companies_vendor_id}/expense_statistics` | getCompaniesVendorsExpenseStatistics | Get companies vendor expense statistics |
-| GET | `/company_settings` | getCompaySettingsList | Get a list of company settings |
-| GET | `/contact_custom_field_attributes` | get /contact_custom_field_attributes | Get a list of contact custom field attributes |
-| GET | `/contact_custom_field_attributes/{contact_custom_field_attribute_id}` | get /contact_custom_field_attributes/{contact_custom_field_attribute_id} | Details of 1 contact custom field attribute |
-| GET | `/contact_types` | get /contact_types | Get list of contact types supported in Apacta |
-| GET | `/contact_types/{contact_type_id}` | get /contact_types/{contact_type_id} | Get details about one contact type |
-| GET | `/contacts` | get /contacts | Get a list of contacts |
-| POST | `/contacts` | post /contacts | Add a new contact |
-| DELETE | `/contacts/bulkDelete` | bulkDeleteContacts | Bulk delete contacts |
-| DELETE | `/contacts/{contact_id}` | delete /contacts/{contact_id} | Delete a contact |
-| GET | `/contacts/{contact_id}` | get /contacts/{contact_id} | Details of 1 contact |
-| PUT | `/contacts/{contact_id}` | put /contacts/{contact_id} | Edit a contact |
-| GET | `/contacts/{contact_id}/contact_custom_field_values` | get /contacts/{contact_id}/contact_custom_field_values | Get a list of contact custom field values |
-| GET | `/contacts/{contact_id}/contact_persons` | getContactPersonsList | Get a list of contact people |
-| POST | `/contacts/{contact_id}/contact_persons` | addContactPerson | Add a new contact person to a contact |
-| DELETE | `/contacts/{contact_id}/contact_persons/{contact_person_id}` | delete /contacts/{contact_id}/contact_persons/{contact_person_id} | Delete a contact person |
-| GET | `/contacts/{contact_id}/contact_persons/{contact_person_id}` | getContactPerson | Get a contact person |
-| PUT | `/contacts/{contact_id}/contact_persons/{contact_person_id}` | editContactPerson | Edit a contact person |
-| GET | `/countries` | get /countries | Get list of countries supported in Apacta |
-| GET | `/countries/{country_id}` | get /countries/{country_id} | Get details about one country |
-| GET | `/currencies` | get /currencies | Get list of currencies supported in Apacta |
-| GET | `/currencies/{currency_id}` | get /currencies/{currency_id} | Get details about one currency |
-| GET | `/driving_types` | get-driving_types | List the driving types of the company |
-| POST | `/driving_types` | post-driving_types | Create driving type |
-| DELETE | `/driving_types/bulkDelete` | bulkDeleteDrivingTypes | Bulk delete driving types |
-| DELETE | `/driving_types/{driving_type_id}` | delete-driving_types-driving_type_id | Delete driving type |
-| GET | `/driving_types/{driving_type_id}` | get-driving_types-driving_type_id | View driving type |
-| PUT | `/driving_types/{driving_type_id}` | put-driving_types-driving_type_id | Edit driving type |
-| GET | `/employee_hours` | get /employee_hours | Used to retrieve details about the logged in user's hours |
-| GET | `/events` | get /events | Show list of events |
-| POST | `/events` | post /events | Create event |
-| GET | `/events/is_user_free` | get /events/is_user_free | Check if user is available at given datetime range |
-| DELETE | `/events/{event_id}` | delete /events/{event_id} | Delete event |
-| GET | `/events/{event_id}` | get /events/{event_id} | Show event |
-| PUT | `/events/{event_id}` | put /events/{event_id} | Edit event |
-| GET | `/expense_files` | get /expense_files | Show list of expense files |
-| POST | `/expense_files` | post /expense_files | Add file to expense |
-| DELETE | `/expense_files/{expense_file_id}` | delete /expense_files/{expense_file_id} | Delete file |
-| GET | `/expense_files/{expense_file_id}` | get /expense_files/{expense_file_id} | Show file |
-| PUT | `/expense_files/{expense_file_id}` | put /expense_files/{expense_file_id} | Edit file |
-| GET | `/expense_lines` | get /expense_lines | Show list of expense lines |
-| POST | `/expense_lines` | post /expense_lines | Add line to expense |
-| DELETE | `/expense_lines/{expense_line_id}` | delete /expense_lines/{expense_line_id} | Delete expense line |
-| GET | `/expense_lines/{expense_line_id}` | get /expense_lines/{expense_line_id} | Show expense line |
-| PUT | `/expense_lines/{expense_line_id}` | put /expense_lines/{expense_line_id} | Edit expense line |
-| GET | `/expenses` | get /expenses | Show list of expenses |
-| POST | `/expenses` | post /expenses | Add line to expense |
-| DELETE | `/expenses/bulkDelete` | bulkDeleteExpenses | Bulk delete expenses |
-| GET | `/expenses/highest_amount` | get /expenses/highest_amount | Show highest Expense amount(`total_selling_price`) |
-| DELETE | `/expenses/sendEmails` | sendEmailsExpenses | Bulk delete expenses |
-| DELETE | `/expenses/{expense_id}` | delete /expenses/{expense_id} | Delete expense |
-| GET | `/expenses/{expense_id}` | get /expenses/{expense_id} | Show expense |
-| PUT | `/expenses/{expense_id}` | put /expenses/{expense_id} | Edit expense |
-| GET | `/expenses/{expense_id}/original_files` | get /expenses/{expense_id}/original_files | Show list of all OIOUBL files for the expense |
-| GET | `/expenses/{expense_id}/original_files/{file_id}` | get /expenses/{expense_id}/original_files/{file_id} | Show OIOUBL file |
-| GET | `/financial_statistics` | getFinancialStatistics | Get general statistics |
-| GET | `/financial_statistics/expensesSalesPrice` | getExpensesSalesPrice | Get expenses sales price |
-| GET | `/financial_statistics/invoicedAmount` | getInvoicedAmount | Get invoiced amount |
-| GET | `/financial_statistics/margin` | getMargin | Get margin |
-| GET | `/financial_statistics/materialRentalsCostPrice` | getMaterialRentalsCostPrice | Get products material rentals cost price |
-| GET | `/financial_statistics/overview` | getFinancialStatisticsOverview | Get statistics overview |
-| GET | `/financial_statistics/productsCostPrice` | getProductsCostPrice | Get products cost price |
-| GET | `/financial_statistics/workingHours` | get /financial_statistics/workingHours | Get Total working hours grouped by time entry type |
-| GET | `/form_field_types` | get /form_field_types | Get list of form field types |
-| GET | `/form_field_types/{form_field_type_id}` | get /form_field_types/{form_field_type_id} | Get details about single `FormField` |
-| POST | `/form_fields` | post /form_fields | Add a new field to a `Form` |
-| GET | `/form_fields/{form_field_id}` | get /form_fields/{form_field_id} | Get details about single `FormField` |
-| GET | `/form_templates` | get /form_templates | Get array of form_templates for your company |
-| GET | `/form_templates/{form_template_id}` | get /form_templates/{form_template_id} | View one form template |
-| GET | `/forms` | get /forms | Retrieve array of forms |
-| POST | `/forms` | post /forms | Add new form |
-| GET | `/forms/undelete/{form_id}` | get /forms/undelete/{form_id} | Undelete form and related entities to it |
-| GET | `/forms/view_time_form_pdf/{form_id}` | get /forms/view_time_form_pdf/{form_id} | Generate time form pdf |
-| DELETE | `/forms/{form_id}` | delete /forms/{form_id} | Delete a form |
-| GET | `/forms/{form_id}` | get /forms/{form_id} | View form |
-| PUT | `/forms/{form_id}` | put /forms/{form_id} | Edit a form |
-| GET | `/integrations` | get-integrations-list | Get integrations list |
-| POST | `/integrations/billysAuthenticate` | post /integrations/billysAuthenticate | Authenticate to Billys |
-| GET | `/integrations/contactsSync` | get-integrations-contactsSync | Force Synchronization with ERP systems |
-| GET | `/integrations/productsSync` | get /integrations/productsSync | Sync products from erp integration |
-| GET | `/integrations/{integration_id}` | get-integrations-view | View integration details |
-| GET | `/invoice_line_text_template` | get /invoice_line_text_template | Get a list of invoice line text templates |
-| POST | `/invoice_line_text_template` | post /invoice_line_text_template | Add a new invoice line text template |
-| DELETE | `/invoice_line_text_template/{invoice_line_text_template_id}` | delete /invoice_line_text_template/{invoice_line_text_template_id} | Delete an invoice line text template |
-| GET | `/invoice_line_text_template/{invoice_line_text_template_id}` | get /invoice_line_text_template/{invoice_line_text_template_id} | Get a single invoice line text template |
-| POST | `/invoice_line_text_template/{invoice_line_text_template_id}` | post /invoice_line_text_template/{invoice_line_text_template_id} | Edit an invoice line text template |
-| POST | `/invoice_line_texts/` | post /invoice_line_texts/ | Add invoice line text |
-| POST | `/invoice_line_texts/{invoice_line_text_id}` | post /invoice_line_texts/{invoice_line_text_id} | Edit invoice line text |
-| GET | `/invoice_lines` | get /invoice_lines | View list of invoice lines |
-| POST | `/invoice_lines` | post /invoice_lines | Add invoice line |
-| DELETE | `/invoice_lines/{invoice_line_id}` | delete /invoice_lines/{invoice_line_id} | Delete invoice line |
-| GET | `/invoice_lines/{invoice_line_id}` | get /invoice_lines/{invoice_line_id} | View invoice line |
-| PUT | `/invoice_lines/{invoice_line_id}` | put /invoice_lines/{invoice_line_id} | Edit invoice line |
-| GET | `/invoices` | get /invoices | View list of invoices |
-| POST | `/invoices` | post /invoices | Add invoice |
-| DELETE | `/invoices/bulkDelete` | bulkDeleteInvoices | Bulk delete invoices |
-| GET | `/invoices/vatOptions` | get /invoices/vatOptions | List VAT options |
-| DELETE | `/invoices/{invoice_id}` | delete /invoices/{invoice_id} | Delete invoice |
-| GET | `/invoices/{invoice_id}` | get /invoices/{invoice_id} | View invoice |
-| PUT | `/invoices/{invoice_id}` | put /invoices/{invoice_id} | Edit invoice |
-| POST | `/invoices/{invoice_id}/copy` | post /invoices/{invoice_id}/copy | Create a copy of an invoice |
-| GET | `/invoices/{invoice_id}/emails/{email_id}` | getOneInvoiceEmails | Get an invoice emails |
-| GET | `/invoices/{invoice_id}/files` | getInvoiceFiles | Get list of invoice files |
-| POST | `/invoices/{invoice_id}/files` | createInvoiceFile | Create a new invoice file |
-| DELETE | `/invoices/{invoice_id}/files/{file_id}` | delete /invoices/{invoice_id}/files/{file_id} | Delete invoice file |
-| GET | `/invoices/{invoice_id}/files/{file_id}` | getOneInvoiceFiles | Get an invoice files |
-| POST | `/invoices/{invoice_id}/linkProjectPdf` | post /invoices/{invoice_id}/linkProjectPdf | Creates an invoice file containing the project's pdf overview |
-| POST | `/invoices/{invoice_id}/unlinkProjectPdf` | post /invoices/{invoice_id}/unlinkProjectPdf | Deletes the linked project overview pdf |
-| GET | `/mass_messages_users` | get /mass_messages_users | View list of mass messages for specific user |
-| GET | `/mass_messages_users/{mass_messages_user_id}` | get /mass_messages_users/{mass_messages_user_id} | View mass message |
-| PUT | `/mass_messages_users/{mass_messages_user_id}` | put /mass_messages_users/{mass_messages_user_id} | Edit mass message |
-| GET | `/materials` | get /materials | View list of all materials |
-| POST | `/materials` | post /materials | Add material |
-| DELETE | `/materials/{material_id}` | delete /materials/{material_id} | Delete material |
-| GET | `/materials/{material_id}` | get /materials/{material_id} | View material |
-| PUT | `/materials/{material_id}` | put /materials/{material_id} | Edit material |
-| GET | `/materials/{material_id}/rentals/` | get /materials/{material_id}/rentals/ | Show list of rentals for specific material |
-| POST | `/materials/{material_id}/rentals/` | post /materials/{material_id}/rentals/ | Add material rental |
-| POST | `/materials/{material_id}/rentals/checkout/` | post /materials/{material_id}/rentals/checkout/ | Checkout material rental |
-| DELETE | `/materials/{material_id}/rentals/{material_rental_id}/` | delete /materials/{material_id}/rentals/{material_rental_id}/ | Delete material rental |
-| GET | `/materials/{material_id}/rentals/{material_rental_id}/` | get /materials/{material_id}/rentals/{material_rental_id}/ | Show rental foor materi |
-| PUT | `/materials/{material_id}/rentals/{material_rental_id}/` | put /materials/{material_id}/rentals/{material_rental_id}/ | Edit material rental |
-| GET | `/offer_statuses` | get /offer_statuses | Get list of offer statuses |
-| POST | `/offer_statuses` | post /offer_statuses | Create a new offer status |
-| DELETE | `/offer_statuses/bulkDelete` | delete /offer_statuses/bulkDelete | Bulk delete offer statuses |
-| DELETE | `/offer_statuses/{offer_status_id}` | delete /offer_statuses/{offer_status_id} | Delete a offer status |
-| GET | `/offer_statuses/{offer_status_id}` | get /offer_statuses/{offer_status_id} | Get a single offer status |
-| PUT | `/offer_statuses/{offer_status_id}` | put /offer_statuses/{offer_status_id} | Edit a offer status |
-| GET | `/offers` | get /offers | View list of offers |
-| POST | `/offers` | post /offers | Add new offer |
-| DELETE | `/offers/{offer_id}` | delete /offers/{offer_id} | Delete an offer |
-| GET | `/offers/{offer_id}` | get /offers/{offer_id} | View offer |
-| PUT | `/offers/{offer_id}` | put /offers/{offer_id} | Edit an offer |
-| GET | `/offers/{offer_id}/changelog` | get /offers/{offer_id}/changelog | Get list of changelog history for the offer. Returns offer object with contact and user objects if they are provided |
-| GET | `/overview/rejection_reasons` | get /overview/rejection_reasons | Get a statistics data for rejection reasons |
-| GET | `/payment_term_types` | get /payment_term_types | Get a list of payment term types |
-| GET | `/payment_term_types/{payment_term_type_id}` | get /payment_term_types/{payment_term_type_id} | Details of 1 payment term type |
-| GET | `/payment_terms` | get /payment_terms | Get a list of payment terms |
-| GET | `/payment_terms/erp` | get /payment_terms/erp | Get integration payment terms list |
-| GET | `/payment_terms/{payment_term_id}` | get /payment_terms/{payment_term_id} | Details of 1 payment term |
-| GET | `/ping` | get /ping | Check if API is up and API key works |
-| GET | `/products` | get /products | List products |
-| POST | `/products` | post /products | Add new product |
-| DELETE | `/products/bulkDelete` | bulkDeleteProducts | Bulk delete products |
-| POST | `/products/undelete/{product_id}` | post /products/undelete/{product_id} | Restore a deleted product |
-| DELETE | `/products/{product_id}` | delete /products/{product_id} | Delete a product |
-| GET | `/products/{product_id}` | get /products/{product_id} | View single product |
-| PUT | `/products/{product_id}` | put /products/{product_id} | Edit a product |
-| POST | `/products/{product_id}/uploadImage` | Upload or delete product image | — |
-| GET | `/products/{product_id}/variants` | get /products/{product_id}/variants | Get a product's variants |
-| POST | `/products/{product_id}/variants` | post /products/{product_id}/variants | Add a new variant to a product |
-| DELETE | `/products/{product_id}/variants/{variant_type}/{variant_id}` | delete /products/{product_id}/variants/{variant_type}/{variant_id} | Delete a product variant |
-| GET | `/project_custom_field_attributes` | get /project_custom_field_attributes | Get a list of project custom field attributes |
-| GET | `/project_custom_field_attributes/{project_custom_field_attribute_id}` | get /project_custom_field_attributes/{project_custom_field_attribute_id} | Details of 1 project custom field attribute |
-| GET | `/project_status_types` | get /project_status_types | Get a list of project status types |
-| GET | `/project_statuses` | get /project_statuses | Get list of project statuses |
-| POST | `/project_statuses` | post /project_statuses | Create a new project status |
-| POST | `/project_statuses/add_default` | post /project_statuses/add_default | Add default project statuses to company |
-| DELETE | `/project_statuses/bulkDelete` | delete /project_statuses/bulkDelete | Bulk delete project statuses |
-| DELETE | `/project_statuses/{project_status_id}` | delete /project_statuses/{project_status_id} | Delete a project status |
-| GET | `/project_statuses/{project_status_id}` | get /project_statuses/{project_status_id} | Get a single project status |
-| PUT | `/project_statuses/{project_status_id}` | put /project_statuses/{project_status_id} | Edit a project status |
-| GET | `/projects` | get /projects | View list of projects |
-| POST | `/projects` | post /projects | Add a project |
-| GET | `/projects/has_projects_with_custom_statuses` | get /projects/has_projects_with_custom_statuses | Check if the company has projects with custom statuses |
-| DELETE | `/projects/{project_id}` | delete /projects/{project_id} | Delete a project |
-| GET | `/projects/{project_id}` | get /projects/{project_id} | View specific project |
-| PUT | `/projects/{project_id}` | put /projects/{project_id} | Edit a project |
-| GET | `/projects/{project_id}/all_files` | get /projects/{project_id}/all_files | Show list of all files uploaded to project |
-| GET | `/projects/{project_id}/files` | get /projects/{project_id}/files | Show list of files uploaded to project |
-| DELETE | `/projects/{project_id}/files/{file_id}/` | delete /projects/{project_id}/files/{file_id}/ | Delete file |
-| GET | `/projects/{project_id}/files/{file_id}/` | get /projects/{project_id}/files/{file_id}/ | Show file |
-| PUT | `/projects/{project_id}/files/{file_id}/` | put /projects/{project_id}/files/{file_id}/ | Edit file |
-| GET | `/projects/{project_id}/project_files` | get /projects/{project_id}/project_files | Show list of project files uploaded to project |
-| POST | `/projects/{project_id}/project_files` | post /projects/{project_id}/project_files | Add project file to projects |
-| DELETE | `/projects/{project_id}/project_files/{project_file_id}/` | delete /projects/{project_id}/project_files/{project_file_id}/ | Delete project file |
-| GET | `/projects/{project_id}/project_files/{project_file_id}/` | get /projects/{project_id}/project_files/{project_file_id}/ | Show project file |
-| PUT | `/projects/{project_id}/project_files/{project_file_id}/` | put /projects/{project_id}/project_files/{project_file_id}/ | Edit project file |
-| POST | `/projects/{project_id}/send_bulk_pdf` | post /projects/{project_id}/send_bulk_pdf | Send bulk forms pdf by email |
-| GET | `/projects/{project_id}/users/` | get /projects/{project_id}/users/ | Show list of users added to project |
-| POST | `/projects/{project_id}/users/` | post /projects/{project_id}/users/ | Add user to project |
-| DELETE | `/projects/{project_id}/users/{user_id}` | delete /projects/{project_id}/users/{user_id} | Delete user from project |
-| GET | `/projects/{project_id}/users/{user_id}` | get /projects/{project_id}/users/{user_id} | View specific user assigned to project |
-| GET | `/reports` | — | — |
-| GET | `/roles` | get /roles | Get a list of roles |
-| GET | `/stock_locations` | get /stock_locations | List stock_locations |
-| POST | `/stock_locations` | post /stock_locations | Add new stock_locations |
-| DELETE | `/stock_locations/{location_id}` | delete /stock_locations/{location_id} | Delete location |
-| GET | `/stock_locations/{location_id}` | get /stock_locations/{location_id} | View single location |
-| PUT | `/stock_locations/{location_id}` | put /stock_locations/{location_id} | Edit location |
-| GET | `/time_entries` | get /time_entries | List time entries |
-| POST | `/time_entries` | post /time_entries | Add new time entry |
-| DELETE | `/time_entries/{time_entry_id}` | delete /time_entries/{time_entry_id} | Delete time entry |
-| GET | `/time_entries/{time_entry_id}` | get /time_entries/{time_entry_id} | View time entry |
-| PUT | `/time_entries/{time_entry_id}` | put /time_entries/{time_entry_id} | Edit time entry |
-| GET | `/time_entry_intervals` | get /time_entry_intervals | List possible time entry intervals |
-| GET | `/time_entry_intervals/{time_entry_interval_id}` | get /time_entry_intervals/{time_entry_interval_id} | View time entry interval |
-| GET | `/time_entry_rates` | get /time_entry_rates | List time entry rates |
-| POST | `/time_entry_rates` | post /time_entry_rates | Add new time entry rate |
-| DELETE | `/time_entry_rates/{time_entry_rate_id}` | delete /time_entry_rates/{time_entry_rate_id} | Delete time entry rate |
-| GET | `/time_entry_rates/{time_entry_rate_id}` | get /time_entry_rates/{time_entry_rate_id} | View time entry rate |
-| PUT | `/time_entry_rates/{time_entry_rate_id}` | put /time_entry_rates/{time_entry_rate_id} | Edit time entry rate |
-| GET | `/time_entry_rule_groups` | get /time_entry_rule_groups | List time entry rule groups |
-| GET | `/time_entry_types` | get /time_entry_types | List time entries types |
-| POST | `/time_entry_types` | post /time_entry_types | Add new time entry type |
-| POST | `/time_entry_types/bulkActivate` | bulkActivateTimeEntryTypes | Bulk activate time entry types |
-| POST | `/time_entry_types/bulkDeactivate` | bulkDeactivateTimeEntryTypes | Bulk deactivate time entry types |
-| DELETE | `/time_entry_types/bulkDelete` | bulkDeleteTimeEntryTypes | Bulk delete time entry types |
-| DELETE | `/time_entry_types/{time_entry_type_id}` | delete /time_entry_types/{time_entry_type_id} | Delete time entry type |
-| GET | `/time_entry_types/{time_entry_type_id}` | get /time_entry_types/{time_entry_type_id} | View time entry type |
-| PUT | `/time_entry_types/{time_entry_type_id}` | put /time_entry_types/{time_entry_type_id} | Edit time entry type |
-| GET | `/time_entry_unit_types` | get /time_entry_unit_types | List possible time entry unit types |
-| GET | `/time_entry_unit_types/{time_entry_unit_type_id}` | get /time_entry_unit_types/{time_entry_unit_type_id} | View time entry unit type |
-| GET | `/time_entry_value_types` | get /time_entry_value_types | List possible time entry value types |
-| GET | `/time_entry_value_types/{time_entry_value_type_id}` | get /time_entry_value_types/{time_entry_value_type_id} | View time entry value type |
-| GET | `/user_custom_field_attributes` | get /user_custom_field_attributes | Get a list of user custom field attributes |
-| GET | `/user_custom_field_attributes/{user_custom_field_attribute_id}` | get /user_custom_field_attributes/{user_custom_field_attribute_id} | Details of 1 user custom field attribute |
-| GET | `/users` | get /users | Get list of users in company |
-| POST | `/users` | post /users | Add user to company |
-| POST | `/users/bulkActivate` | usersBulkActivate | Activate multiple users |
-| POST | `/users/bulkDeactivate` | usersBulkDeactivate | Deactivate multiple users |
-| GET | `/users/resendWelcomeSms` | get /users/resendWelcomeSms | Resend Welcome SMS to the user |
-| DELETE | `/users/{user_id}` | delete /users/{user_id} | Delete user |
-| GET | `/users/{user_id}` | get /users/{user_id} | View user |
-| PUT | `/users/{user_id}` | put /users/{user_id} | Edit user |
-| GET | `/users/{user_id}/integration_settings` | get /users/{user_id}/integration_settings | Get a list of user integration settings |
-| POST | `/users/{user_id}/integration_settings` | post /users/{user_id}/integration_settings | Add a user integration setting |
-| DELETE | `/users/{user_id}/integration_settings/{integration_settings_user_id}` | delete /users/{user_id}/integration_settings/{integration_settings_user_id} | Delete a user integration setting |
-| GET | `/users/{user_id}/integration_settings/{integration_settings_user_id}` | get /users/{user_id}/integration_settings/{integration_settings_user_id} | Get a user integration setting |
-| PUT | `/users/{user_id}/integration_settings/{integration_settings_user_id}` | put /users/{user_id}/integration_settings/{integration_settings_user_id} | Edit a user integration setting |
-| POST | `/users/{user_id}/uploadImage` | post /users/{user_id}/uploadImage | Upload a new image to a user |
-| GET | `/users/{user_id}/user_custom_field_value` | get /users/{user_id}/user_custom_field_value | Get a list of user custom field values |
-| GET | `/users/{user_id}/user_custom_field_value/{user_custom_field_value_id}` | get /users/{user_id}/user_custom_field_value/{user_custom_field_value_id} | Get a single record of user custom field value |
-| PUT | `/users/{user_id}/user_custom_field_value/{user_custom_field_value_id}` | put /users/{user_id}/user_custom_field_value/{user_custom_field_value_id} | Update a single record of user custom field value |
-| GET | `/vendor_product_price_files` | get /vendor_product_price_files | Get a list of price files |
-| POST | `/vendor_product_price_files` | post /vendor_product_price_files | Upload a vendor price file |
-| GET | `/vendor_product_price_files/{vendor_product_price_file_id}` | get /vendor_product_price_files/{vendor_product_price_file_id} | Get a single price file |
-| GET | `/vendor_products` | get /vendor_products | List vendor products |
-| GET | `/vendor_products/{vendor_product_id}` | get /vendor_products/{vendor_product_id} | View single vendor product |
-| GET | `/vendors` | getVendorsList | Get a list of vendors |
-| POST | `/vendors` | addVendor | Add a new vendor |
-| DELETE | `/vendors/{vendor_id}` | delete /vendors/{vendor_id} | Delete a vendor |
-| GET | `/vendors/{vendor_id}` | getVendor | Get a vendor |
-| PUT | `/vendors/{vendor_id}` | editVendor | Edit a vendor |
-| GET | `/wages/downloadSalaryFile` | get /wages/downloadSalaryFile | Download salary file |
-| POST | `/wall_comments` | post /wall_comments | Add wall comment |
-| GET | `/wall_comments/{wall_comment_id}` | get /wall_comments/{wall_comment_id} | View wall comment |
-| GET | `/wall_posts` | get /wall_posts | View list of wall posts |
-| POST | `/wall_posts` | post /wall_posts | Add a wall post |
-| GET | `/wall_posts/{wall_post_id}` | get /wall_posts/{wall_post_id} | View wall post |
-| GET | `/wall_posts/{wall_post_id}/wall_comments` | get /wall_posts/{wall_post_id}/wall_comments | See wall comments to a wall post |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/activities` | get /activities | — | object | yes | Get a list of activities |
+| POST | `/activities` | post /activities | body*: object | EmptySuccessResponse |  | Create an activity |
+| DELETE | `/activities/bulkDelete` | delete /activities/bulkDelete | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete activities |
+| PUT | `/activities/{activity_id}` | put /activities/{activity_id} | `activity_id`*, body*: object | EmptySuccessResponse |  | Edit an activity |
+| DELETE | `/activities/{activity_id}` | delete /activities/{activity_id} | `activity_id`* | EmptySuccessResponse |  | Delete an activity |
+| GET | `/cities` | get /cities | `zip_code`, `name`, `include_all` | object | yes | Get list of cities supported in Apacta |
+| GET | `/cities/{city_id}` | get /cities/{city_id} | `city_id`* | object | yes | Get details about one city |
+| GET | `/clocking_records` | get /clocking_records | `active` | object | yes | Get a list of clocking records |
+| POST | `/clocking_records` | post /clocking_records | body*: object | object |  | Create clocking record for authenticated user |
+| POST | `/clocking_records/checkout` | post /clocking_records/checkout | — | object |  | Checkout active clocking record for authenticated user |
+| GET | `/clocking_records/{clocking_record_id}` | get /clocking_records/{clocking_record_id} | `clocking_record_id`* | object | yes | Details of 1 clocking_record |
+| PUT | `/clocking_records/{clocking_record_id}` | put /clocking_records/{clocking_record_id} | `clocking_record_id`* | object |  | Edit a clocking record |
+| DELETE | `/clocking_records/{clocking_record_id}` | delete /clocking_records/{clocking_record_id} | `clocking_record_id`* | object |  | Delete a clocking record |
+| GET | `/companies` | get /companies | — | object | yes | Get a list of companies |
+| GET | `/companies/subscription_self_service` | get /companies/subscription_self_service | — | object | yes | URL for subscription selfservice |
+| GET | `/companies/{company_id}` | get /companies/{company_id} | `company_id`* | object | yes | Details of 1 company |
+| GET | `/companies/{company_id}/companies_integration_feature_settings` | get /companies/{company_id}/companies_integration_feature_settings | `company_id`* | object | yes | List a company integration feature settings |
+| POST | `/companies/{company_id}/companies_integration_feature_settings` | post /companies/{company_id}/companies_integration_feature_settings | `company_id`*, body: object | CreateSuccessResponse |  | Add a company integration feature setting |
+| GET | `/companies/{company_id}/companies_integration_feature_settings/{c_integration_feature_setting_id}` | get /companies/{company_id}/companies_integration_feature_settings/{c_integration_feature_setting_id} | `company_id`*, `c_integration_feature_setting_id`* | object | yes | View a company integration feature setting |
+| PUT | `/companies/{company_id}/companies_integration_feature_settings/{c_integration_feature_setting_id}` | put /companies/{company_id}/companies_integration_feature_settings/{c_integration_feature_setting_id} | `company_id`*, `c_integration_feature_setting_id`* | object |  | Edit a company integration feature setting |
+| GET | `/companies/{company_id}/form_templates/` | get /companies/{company_id}/form_templates/ | `company_id`*, `form_template_id`* | object | yes | Get a list of company form templates |
+| GET | `/companies/{company_id}/form_templates/{form_template_id}` | get /companies/{company_id}/form_templates/{form_template_id} | `company_id`*, `id`*, `form_template_id`* | object | yes | Get a company form template |
+| DELETE | `/companies/{company_id}/form_templates/{form_template_id}` | delete /companies/{company_id}/form_templates/{form_template_id} | `company_id`*, `form_template_id`* | EmptySuccessResponse |  | Delete a form template company |
+| GET | `/companies/{company_id}/integration_feature_settings` | get /companies/{company_id}/integration_feature_settings | `company_id`* | object | yes | Get a list of integration feature settings |
+| GET | `/companies/{company_id}/integration_feature_settings/{integration_feature_setting_id}` | get /companies/{company_id}/integration_feature_settings/{integration_feature_setting_id} | `company_id`*, `integration_feature_setting_id`* | object | yes | Show details of 1 integration feature setting |
+| GET | `/companies/{company_id}/integration_settings` | get /companies/{company_id}/integration_settings | `company_id`*, `identifier` | object | yes | Get a list of company integration settings |
+| POST | `/companies/{company_id}/integration_settings` | post /companies/{company_id}/integration_settings | `company_id`*, body: object | CreateSuccessResponse |  | Add a company integration setting |
+| GET | `/companies/{company_id}/integration_settings/{companies_integration_setting_id}` | get /companies/{company_id}/integration_settings/{companies_integration_setting_id} | `company_id`*, `companies_integration_setting_id`* | object | yes | Get a company integration setting |
+| PUT | `/companies/{company_id}/integration_settings/{companies_integration_setting_id}` | put /companies/{company_id}/integration_settings/{companies_integration_setting_id} | `company_id`*, `companies_integration_setting_id`* | EmptySuccessResponse |  | Edit a company integration setting |
+| DELETE | `/companies/{company_id}/integration_settings/{companies_integration_setting_id}` | delete /companies/{company_id}/integration_settings/{companies_integration_setting_id} | `company_id`*, `companies_integration_setting_id`* | EmptySuccessResponse |  | Delete a company integration setting |
+| GET | `/companies/{company_id}/price_margins/{price_margins_id}` | get /companies/{company_id}/price_margins/{price_margins_id} | `company_id`*, `price_margins_id`* | object | yes | Get a list of company price margins |
+| POST | `/companies/{company_id}/price_margins/{price_margins_id}` | post /companies/{company_id}/price_margins/{price_margins_id} | `company_id`*, `price_margins_id`*, body: object | CreateSuccessResponse |  | Add a company price margin |
+| DELETE | `/companies/{company_id}/price_margins/{price_margins_id}` | delete /companies/{company_id}/price_margins/{price_margins_id} | `company_id`*, `price_margin_id`*, `price_margins_id`* | EmptySuccessResponse |  | Delete a company price margin |
+| GET | `/companies_vendors` | getCompaiesVendorsList | — | object | yes | Get a list of companies vendors |
+| POST | `/companies_vendors` | addCompaniesVendor | body: object | object |  | Add a new companies vendor |
+| DELETE | `/companies_vendors/bulkDelete` | bulkCompaniesVendors | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete companies vendors |
+| GET | `/companies_vendors/{companies_vendor_id}` | getCompaniesVendor | `companies_vendor_id`* | object | yes | Get a companies vendor |
+| PUT | `/companies_vendors/{companies_vendor_id}` | editCompaniesVendor | `companies_vendor_id`*, body: object | object |  | Edit a companies vendor |
+| DELETE | `/companies_vendors/{companies_vendor_id}` | delete /companies_vendors/{companies_vendor_id} | `companies_vendor_id`* | object |  | Delete a companies vendor |
+| GET | `/companies_vendors/{companies_vendor_id}/expense_statistics` | getCompaniesVendorsExpenseStatistics | `companies_vendor_id`* | object | yes | Get companies vendor expense statistics |
+| GET | `/company_settings` | getCompaySettingsList | `name`, `description` | object | yes | Get a list of company settings |
+| GET | `/contact_custom_field_attributes` | get /contact_custom_field_attributes | — | object | yes | Get a list of contact custom field attributes |
+| GET | `/contact_custom_field_attributes/{contact_custom_field_attribute_id}` | get /contact_custom_field_attributes/{contact_custom_field_attribute_id} | `contact_custom_field_attribute_id`* | object | yes | Details of 1 contact custom field attribute |
+| GET | `/contact_types` | get /contact_types | `identifier` | object | yes | Get list of contact types supported in Apacta |
+| GET | `/contact_types/{contact_type_id}` | get /contact_types/{contact_type_id} | `contact_type_id`* | object | yes | Get details about one contact type |
+| GET | `/contacts` | get /contacts | `name`, `cvr`, `ean`, `erp_id`, `contact_type`, `city`, `modified_gte` | object | yes | Get a list of contacts |
+| POST | `/contacts` | post /contacts | body: object | object |  | Add a new contact |
+| DELETE | `/contacts/bulkDelete` | bulkDeleteContacts | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete contacts |
+| GET | `/contacts/{contact_id}` | get /contacts/{contact_id} | `contact_id`* | object | yes | Details of 1 contact |
+| PUT | `/contacts/{contact_id}` | put /contacts/{contact_id} | `contact_id`*, body: object | object |  | Edit a contact |
+| DELETE | `/contacts/{contact_id}` | delete /contacts/{contact_id} | `contact_id`* | object |  | Delete a contact |
+| GET | `/contacts/{contact_id}/contact_custom_field_values` | get /contacts/{contact_id}/contact_custom_field_values | `contact_id`* | object | yes | Get a list of contact custom field values |
+| GET | `/contacts/{contact_id}/contact_persons` | getContactPersonsList | `contact_id`*, `q`, `created_gte`, `created_lte` | object | yes | Get a list of contact people |
+| POST | `/contacts/{contact_id}/contact_persons` | addContactPerson | `contact_id`*, body: object | object |  | Add a new contact person to a contact |
+| GET | `/contacts/{contact_id}/contact_persons/{contact_person_id}` | getContactPerson | `contact_id`*, `contact_person_id`* | object | yes | Get a contact person |
+| PUT | `/contacts/{contact_id}/contact_persons/{contact_person_id}` | editContactPerson | `contact_id`*, `contact_person_id`*, body: object | object |  | Edit a contact person |
+| DELETE | `/contacts/{contact_id}/contact_persons/{contact_person_id}` | delete /contacts/{contact_id}/contact_persons/{contact_person_id} | `contact_id`*, `contact_person_id`* | object |  | Delete a contact person |
+| GET | `/countries` | get /countries | — | object | yes | Get list of countries supported in Apacta |
+| GET | `/countries/{country_id}` | get /countries/{country_id} | `country_id`* | object | yes | Get details about one country |
+| GET | `/currencies` | get /currencies | — | object | yes | Get list of currencies supported in Apacta |
+| GET | `/currencies/{currency_id}` | get /currencies/{currency_id} | `currency_id`* | object | yes | Get details about one currency |
+| GET | `/driving_types` | get-driving_types | `q`, `sort`, `direction` | object | yes | List the driving types of the company |
+| POST | `/driving_types` | post-driving_types | body: object | CreateSuccessResponse |  | Create driving type |
+| DELETE | `/driving_types/bulkDelete` | bulkDeleteDrivingTypes | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete driving types |
+| GET | `/driving_types/{driving_type_id}` | get-driving_types-driving_type_id | `driving_type_id`*, `driving_type_id`* | DrivingType | yes | View driving type |
+| PUT | `/driving_types/{driving_type_id}` | put-driving_types-driving_type_id | `driving_type_id`* | DrivingType |  | Edit driving type |
+| DELETE | `/driving_types/{driving_type_id}` | delete-driving_types-driving_type_id | `driving_type_id`* | EmptySuccessResponse |  | Delete driving type |
+| GET | `/employee_hours` | get /employee_hours | `date_from`*, `date_to`* | object | yes | Used to retrieve details about the logged in user's hours |
+| GET | `/events` | get /events | `user_id`, `project_id`, `start[][gt]`, `start[][lt]`, `start[][eq]`, `end[][gt]`, `end[][lt]`, `end[][eq]`, `tags`, `without_users` | object | yes | Show list of events |
+| POST | `/events` | post /events | body: object | object |  | Create event |
+| GET | `/events/is_user_free` | get /events/is_user_free | `user_id`*, `start`*, `end`* | object | yes | Check if user is available at given datetime range |
+| GET | `/events/{event_id}` | get /events/{event_id} | `event_id`* | object | yes | Show event |
+| PUT | `/events/{event_id}` | put /events/{event_id} | `event_id`* | object |  | Edit event |
+| DELETE | `/events/{event_id}` | delete /events/{event_id} | `event_id`* | object |  | Delete event |
+| GET | `/expense_files` | get /expense_files | `created_by_id`, `expense_id` | object | yes | Show list of expense files |
+| POST | `/expense_files` | post /expense_files | body*: object | object |  | Add file to expense |
+| GET | `/expense_files/{expense_file_id}` | get /expense_files/{expense_file_id} | `expense_file_id`* | object | yes | Show file |
+| PUT | `/expense_files/{expense_file_id}` | put /expense_files/{expense_file_id} | `expense_file_id`* | object |  | Edit file |
+| DELETE | `/expense_files/{expense_file_id}` | delete /expense_files/{expense_file_id} | `expense_file_id`* | object |  | Delete file |
+| GET | `/expense_lines` | get /expense_lines | `created_by_id`, `currency_id`, `expense_id` | object | yes | Show list of expense lines |
+| POST | `/expense_lines` | post /expense_lines | body: object | object |  | Add line to expense |
+| GET | `/expense_lines/{expense_line_id}` | get /expense_lines/{expense_line_id} | `expense_line_id`* | object | yes | Show expense line |
+| PUT | `/expense_lines/{expense_line_id}` | put /expense_lines/{expense_line_id} | `expense_line_id`* | object |  | Edit expense line |
+| DELETE | `/expense_lines/{expense_line_id}` | delete /expense_lines/{expense_line_id} | `expense_line_id`* | object |  | Delete expense line |
+| GET | `/expenses` | get /expenses | `created_by_id`, `company_id`, `contact_id`, `project_id`, `due_date`, `gt_created`, `lt_created`, `status`, `is_imported`, `min_amount`, `max_amount`, `projects` | object | yes | Show list of expenses |
+| POST | `/expenses` | post /expenses | body: object | object |  | Add line to expense |
+| DELETE | `/expenses/bulkDelete` | bulkDeleteExpenses | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete expenses |
+| GET | `/expenses/highest_amount` | get /expenses/highest_amount | `gt_created`*, `lt_created`* | object | yes | Show highest Expense amount(`total_selling_price`) |
+| DELETE | `/expenses/sendEmails` | sendEmailsExpenses | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete expenses |
+| GET | `/expenses/{expense_id}` | get /expenses/{expense_id} | `expense_id`* | object | yes | Show expense |
+| PUT | `/expenses/{expense_id}` | put /expenses/{expense_id} | `expense_id`* | object |  | Edit expense |
+| DELETE | `/expenses/{expense_id}` | delete /expenses/{expense_id} | `expense_id`* | object |  | Delete expense |
+| GET | `/expenses/{expense_id}/original_files` | get /expenses/{expense_id}/original_files | `expense_id`* | object | yes | Show list of all OIOUBL files for the expense |
+| GET | `/expenses/{expense_id}/original_files/{file_id}` | get /expenses/{expense_id}/original_files/{file_id} | `expense_id`*, `file_id`* | object | yes | Show OIOUBL file |
+| GET | `/financial_statistics` | getFinancialStatistics | `date_from`, `date_to`, `project_id`, `project_status_ids[]`, `only_not_invoiced`, `details` | object | yes | Get general statistics |
+| GET | `/financial_statistics/expensesSalesPrice` | getExpensesSalesPrice | `date_from`, `date_to`, `project_id` | object | yes | Get expenses sales price |
+| GET | `/financial_statistics/invoicedAmount` | getInvoicedAmount | `date_from`, `date_to`, `project_id` | object | yes | Get invoiced amount |
+| GET | `/financial_statistics/margin` | getMargin | `date_from`, `date_to`, `project_id` | object | yes | Get margin |
+| GET | `/financial_statistics/materialRentalsCostPrice` | getMaterialRentalsCostPrice | `date_from`, `date_to`, `project_id` | object | yes | Get products material rentals cost price |
+| GET | `/financial_statistics/overview` | getFinancialStatisticsOverview | `date_from`, `date_to`, `project_id` | object | yes | Get statistics overview |
+| GET | `/financial_statistics/productsCostPrice` | getProductsCostPrice | `date_from`, `date_to`, `project_id` | object | yes | Get products cost price |
+| GET | `/financial_statistics/workingHours` | get /financial_statistics/workingHours | `date_from`, `date_to`, `project_id` | object | yes | Get Total working hours grouped by time entry type |
+| GET | `/form_field_types` | get /form_field_types | `name`, `identifier` | object | yes | Get list of form field types |
+| GET | `/form_field_types/{form_field_type_id}` | get /form_field_types/{form_field_type_id} | `form_field_type_id`* | object | yes | Get details about single `FormField` |
+| POST | `/form_fields` | post /form_fields | body: object | object |  | Add a new field to a `Form` |
+| GET | `/form_fields/{form_field_id}` | get /form_fields/{form_field_id} | `form_field_id`* | object | yes | Get details about single `FormField` |
+| GET | `/form_templates` | get /form_templates | `name`, `identifier`, `pdf_template_identifier`, `description` | object | yes | Get array of form_templates for your company |
+| GET | `/form_templates/{form_template_id}` | get /form_templates/{form_template_id} | `form_template_id`* | object | yes | View one form template |
+| GET | `/forms` | get /forms | `extended`, `date_from`, `date_to`, `show`, `project_id`, `created_by_id`, `form_template_id`, `form_template_type`, `employee_name` | object | yes | Retrieve array of forms |
+| POST | `/forms` | post /forms | body: object | object |  | Add new form |
+| GET | `/forms/undelete/{form_id}` | get /forms/undelete/{form_id} | `form_id`* | EmptySuccessResponse | yes | Undelete form and related entities to it |
+| GET | `/forms/view_time_form_pdf/{form_id}` | get /forms/view_time_form_pdf/{form_id} | `form_id`* | EmptySuccessResponse | yes | Generate time form pdf |
+| GET | `/forms/{form_id}` | get /forms/{form_id} | `form_id`* | object | yes | View form |
+| PUT | `/forms/{form_id}` | put /forms/{form_id} | `form_id`* | — |  | Edit a form |
+| DELETE | `/forms/{form_id}` | delete /forms/{form_id} | `form_id`* | — |  | Delete a form |
+| GET | `/integrations` | get-integrations-list | — | object | yes | Get integrations list |
+| POST | `/integrations/billysAuthenticate` | post /integrations/billysAuthenticate | — | object |  | Authenticate to Billys |
+| GET | `/integrations/contactsSync` | get-integrations-contactsSync | — | object | yes | Force Synchronization with ERP systems |
+| GET | `/integrations/productsSync` | get /integrations/productsSync | — | object | yes | Sync products from erp integration |
+| GET | `/integrations/{integration_id}` | get-integrations-view | `integration_id`* | object | yes | View integration details |
+| GET | `/invoice_line_text_template` | get /invoice_line_text_template | — | object | yes | Get a list of invoice line text templates |
+| POST | `/invoice_line_text_template` | post /invoice_line_text_template | body*: object | CreateSuccessResponse |  | Add a new invoice line text template |
+| GET | `/invoice_line_text_template/{invoice_line_text_template_id}` | get /invoice_line_text_template/{invoice_line_text_template_id} | `invoice_line_text_template_id`* | object | yes | Get a single invoice line text template |
+| POST | `/invoice_line_text_template/{invoice_line_text_template_id}` | post /invoice_line_text_template/{invoice_line_text_template_id} | `invoice_line_text_template_id`*, body*: object | EmptySuccessResponse |  | Edit an invoice line text template |
+| DELETE | `/invoice_line_text_template/{invoice_line_text_template_id}` | delete /invoice_line_text_template/{invoice_line_text_template_id} | `invoice_line_text_template_id`* | EmptySuccessResponse |  | Delete an invoice line text template |
+| POST | `/invoice_line_texts/` | post /invoice_line_texts/ | body*: object | CreateSuccessResponse |  | Add invoice line text |
+| POST | `/invoice_line_texts/{invoice_line_text_id}` | post /invoice_line_texts/{invoice_line_text_id} | `invoice_line_text_id`*, body*: object | EmptySuccessResponse |  | Edit invoice line text |
+| GET | `/invoice_lines` | get /invoice_lines | `invoice_id`, `product_id`, `user_id`, `name`, `discount_text` | object | yes | View list of invoice lines |
+| POST | `/invoice_lines` | post /invoice_lines | body: object | object |  | Add invoice line |
+| GET | `/invoice_lines/{invoice_line_id}` | get /invoice_lines/{invoice_line_id} | `invoice_line_id`* | object | yes | View invoice line |
+| PUT | `/invoice_lines/{invoice_line_id}` | put /invoice_lines/{invoice_line_id} | `invoice_line_id`*, body: object | object |  | Edit invoice line |
+| DELETE | `/invoice_lines/{invoice_line_id}` | delete /invoice_lines/{invoice_line_id} | `invoice_line_id`* | object |  | Delete invoice line |
+| GET | `/invoices` | get /invoices | `contact_id`, `project_id`, `invoice_number`, `offer_number`, `is_draft`, `is_offer`, `is_locked`, `is_fixed_price`, `date_from`, `date_to`, `issued_date`, `sent_as_draft` | object | yes | View list of invoices |
+| POST | `/invoices` | post /invoices | body: object | object |  | Add invoice |
+| DELETE | `/invoices/bulkDelete` | bulkDeleteInvoices | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete invoices |
+| GET | `/invoices/vatOptions` | get /invoices/vatOptions | — | object | yes | List VAT options |
+| GET | `/invoices/{invoice_id}` | get /invoices/{invoice_id} | `invoice_id`* | object | yes | View invoice |
+| PUT | `/invoices/{invoice_id}` | put /invoices/{invoice_id} | `invoice_id`*, body: object | object |  | Edit invoice |
+| DELETE | `/invoices/{invoice_id}` | delete /invoices/{invoice_id} | `invoice_id`* | object |  | Delete invoice |
+| POST | `/invoices/{invoice_id}/copy` | post /invoices/{invoice_id}/copy | `invoice_id`*, `project_id`, `contact_id` | CreateSuccessResponse |  | Create a copy of an invoice |
+| GET | `/invoices/{invoice_id}/emails/{email_id}` | getOneInvoiceEmails | `invoice_id`*, `email_id`* | object | yes | Get an invoice emails |
+| GET | `/invoices/{invoice_id}/files` | getInvoiceFiles | `invoice_id`* | object | yes | Get list of invoice files |
+| POST | `/invoices/{invoice_id}/files` | createInvoiceFile | `invoice_id`*, body*: object | CreateSuccessResponse |  | Create a new invoice file |
+| GET | `/invoices/{invoice_id}/files/{file_id}` | getOneInvoiceFiles | `invoice_id`*, `file_id`* | object | yes | Get an invoice files |
+| DELETE | `/invoices/{invoice_id}/files/{file_id}` | delete /invoices/{invoice_id}/files/{file_id} | `invoice_id`*, `file_id`* | object |  | Delete invoice file |
+| POST | `/invoices/{invoice_id}/linkProjectPdf` | post /invoices/{invoice_id}/linkProjectPdf | `invoice_id`* | EmptySuccessResponse |  | Creates an invoice file containing the project's pdf overview |
+| POST | `/invoices/{invoice_id}/unlinkProjectPdf` | post /invoices/{invoice_id}/unlinkProjectPdf | `invoice_id`* | EmptySuccessResponse |  | Deletes the linked project overview pdf |
+| GET | `/mass_messages_users` | get /mass_messages_users | `is_read` | object | yes | View list of mass messages for specific user |
+| GET | `/mass_messages_users/{mass_messages_user_id}` | get /mass_messages_users/{mass_messages_user_id} | `mass_messages_user_id`* | object | yes | View mass message |
+| PUT | `/mass_messages_users/{mass_messages_user_id}` | put /mass_messages_users/{mass_messages_user_id} | `mass_messages_user_id`* | object |  | Edit mass message |
+| GET | `/materials` | get /materials | `barcode`, `name`, `project_id`, `currently_rented` | object | yes | View list of all materials |
+| POST | `/materials` | post /materials | body: object | object |  | Add material |
+| GET | `/materials/{material_id}` | get /materials/{material_id} | `material_id`* | object | yes | View material |
+| PUT | `/materials/{material_id}` | put /materials/{material_id} | `material_id`* | object |  | Edit material |
+| DELETE | `/materials/{material_id}` | delete /materials/{material_id} | `material_id`* | object |  | Delete material |
+| GET | `/materials/{material_id}/rentals/` | get /materials/{material_id}/rentals/ | `material_id`* | object | yes | Show list of rentals for specific material |
+| POST | `/materials/{material_id}/rentals/` | post /materials/{material_id}/rentals/ | `material_id`*, body: object | object |  | Add material rental |
+| POST | `/materials/{material_id}/rentals/checkout/` | post /materials/{material_id}/rentals/checkout/ | `material_id`*, body: object | object |  | Checkout material rental |
+| GET | `/materials/{material_id}/rentals/{material_rental_id}/` | get /materials/{material_id}/rentals/{material_rental_id}/ | `material_id`*, `material_rental_id`* | object | yes | Show rental foor materi |
+| PUT | `/materials/{material_id}/rentals/{material_rental_id}/` | put /materials/{material_id}/rentals/{material_rental_id}/ | `material_id`*, `material_rental_id`* | object |  | Edit material rental |
+| DELETE | `/materials/{material_id}/rentals/{material_rental_id}/` | delete /materials/{material_id}/rentals/{material_rental_id}/ | `material_id`*, `material_rental_id`* | object |  | Delete material rental |
+| GET | `/offer_statuses` | get /offer_statuses | — | object | yes | Get list of offer statuses |
+| POST | `/offer_statuses` | post /offer_statuses | body*: object | EmptySuccessResponse |  | Create a new offer status |
+| DELETE | `/offer_statuses/bulkDelete` | delete /offer_statuses/bulkDelete | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete offer statuses |
+| GET | `/offer_statuses/{offer_status_id}` | get /offer_statuses/{offer_status_id} | `offer_status_id`* | object | yes | Get a single offer status |
+| PUT | `/offer_statuses/{offer_status_id}` | put /offer_statuses/{offer_status_id} | `offer_status_id`* | EmptySuccessResponse |  | Edit a offer status |
+| DELETE | `/offer_statuses/{offer_status_id}` | delete /offer_statuses/{offer_status_id} | `offer_status_id`* | EmptySuccessResponse |  | Delete a offer status |
+| GET | `/offers` | get /offers | — | object | yes | View list of offers |
+| POST | `/offers` | post /offers | body: object | CreateSuccessResponse |  | Add new offer |
+| GET | `/offers/{offer_id}` | get /offers/{offer_id} | `offer_id`* | object | yes | View offer |
+| PUT | `/offers/{offer_id}` | put /offers/{offer_id} | `offer_id`*, body: object | EmptySuccessResponse |  | Edit an offer |
+| DELETE | `/offers/{offer_id}` | delete /offers/{offer_id} | `offer_id`* | EmptySuccessResponse |  | Delete an offer |
+| GET | `/offers/{offer_id}/changelog` | get /offers/{offer_id}/changelog | `offer_id`* | object | yes | Get list of changelog history for the offer. Returns offer object with contact and user objects if they are provided |
+| GET | `/overview/rejection_reasons` | get /overview/rejection_reasons | — | object | yes | Get a statistics data for rejection reasons |
+| GET | `/payment_term_types` | get /payment_term_types | — | object | yes | Get a list of payment term types |
+| GET | `/payment_term_types/{payment_term_type_id}` | get /payment_term_types/{payment_term_type_id} | `payment_term_type_id`* | object | yes | Details of 1 payment term type |
+| GET | `/payment_terms` | get /payment_terms | — | object | yes | Get a list of payment terms |
+| GET | `/payment_terms/erp` | get /payment_terms/erp | — | object | yes | Get integration payment terms list |
+| GET | `/payment_terms/{payment_term_id}` | get /payment_terms/{payment_term_id} | `payment_term_id`* | object | yes | Details of 1 payment term |
+| GET | `/ping` | get /ping | — | object | yes | Check if API is up and API key works |
+| GET | `/products` | get /products | `name`, `product_number`, `barcode`, `modified_gte` | object | yes | List products |
+| POST | `/products` | post /products | body: object | object |  | Add new product |
+| DELETE | `/products/bulkDelete` | bulkDeleteProducts | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete products |
+| POST | `/products/undelete/{product_id}` | post /products/undelete/{product_id} | `product_id`* | EmptySuccessResponse |  | Restore a deleted product |
+| GET | `/products/{product_id}` | get /products/{product_id} | `product_id`* | object | yes | View single product |
+| PUT | `/products/{product_id}` | put /products/{product_id} | `product_id`* | object |  | Edit a product |
+| DELETE | `/products/{product_id}` | delete /products/{product_id} | `product_id`* | object |  | Delete a product |
+| POST | `/products/{product_id}/uploadImage` | Upload or delete product image | `product_id`*, body: object | — |  | — |
+| GET | `/products/{product_id}/variants` | get /products/{product_id}/variants | `product_id`* | object | yes | Get a product's variants |
+| POST | `/products/{product_id}/variants` | post /products/{product_id}/variants | `product_id`*, `name`, body*: object | EmptySuccessResponse |  | Add a new variant to a product |
+| DELETE | `/products/{product_id}/variants/{variant_type}/{variant_id}` | delete /products/{product_id}/variants/{variant_type}/{variant_id} | `product_id`*, `variant_type`*, `variant_id`* | EmptySuccessResponse |  | Delete a product variant |
+| GET | `/project_custom_field_attributes` | get /project_custom_field_attributes | — | object | yes | Get a list of project custom field attributes |
+| GET | `/project_custom_field_attributes/{project_custom_field_attribute_id}` | get /project_custom_field_attributes/{project_custom_field_attribute_id} | `project_custom_field_attribute_id`* | object | yes | Details of 1 project custom field attribute |
+| GET | `/project_status_types` | get /project_status_types | — | object | yes | Get a list of project status types |
+| GET | `/project_statuses` | get /project_statuses | — | object | yes | Get list of project statuses |
+| POST | `/project_statuses` | post /project_statuses | body*: object | CreateSuccessResponse |  | Create a new project status |
+| POST | `/project_statuses/add_default` | post /project_statuses/add_default | — | AddDefaultProjectStatusesError |  | Add default project statuses to company |
+| DELETE | `/project_statuses/bulkDelete` | delete /project_statuses/bulkDelete | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete project statuses |
+| GET | `/project_statuses/{project_status_id}` | get /project_statuses/{project_status_id} | `project_status_id`* | object | yes | Get a single project status |
+| PUT | `/project_statuses/{project_status_id}` | put /project_statuses/{project_status_id} | `project_status_id`* | EmptySuccessResponse |  | Edit a project status |
+| DELETE | `/project_statuses/{project_status_id}` | delete /project_statuses/{project_status_id} | `project_status_id`* | EmptySuccessResponse |  | Delete a project status |
+| GET | `/projects` | get /projects | `show_all`, `sort`, `direction`, `contact_id`, `company_id`, `project_status_id`, `project_status_ids`, `name`, `erp_project_id`, `erp_task_id`, `start_time_gte`, `start_time_lte`, `start_time_eq`, `event_start[][gt]`, `event_start[][lt]`, `event_start[][eq]`, `event_end[][gt]`, `event_end[][lt]`, `event_end[][eq]` | object | yes | View list of projects |
+| POST | `/projects` | post /projects | body: object | object |  | Add a project |
+| GET | `/projects/has_projects_with_custom_statuses` | get /projects/has_projects_with_custom_statuses | — | object | yes | Check if the company has projects with custom statuses |
+| GET | `/projects/{project_id}` | get /projects/{project_id} | `project_id`* | object | yes | View specific project |
+| PUT | `/projects/{project_id}` | put /projects/{project_id} | `project_id`*, body: object | object |  | Edit a project |
+| DELETE | `/projects/{project_id}` | delete /projects/{project_id} | `project_id`* | object |  | Delete a project |
+| GET | `/projects/{project_id}/all_files` | get /projects/{project_id}/all_files | `project_id`* | object | yes | Show list of all files uploaded to project |
+| GET | `/projects/{project_id}/files` | get /projects/{project_id}/files | `project_id`* | object | yes | Show list of files uploaded to project |
+| GET | `/projects/{project_id}/files/{file_id}/` | get /projects/{project_id}/files/{file_id}/ | `project_id`*, `file_id`* | object | yes | Show file |
+| PUT | `/projects/{project_id}/files/{file_id}/` | put /projects/{project_id}/files/{file_id}/ | `project_id`*, `file_id`* | object |  | Edit file |
+| DELETE | `/projects/{project_id}/files/{file_id}/` | delete /projects/{project_id}/files/{file_id}/ | `project_id`*, `file_id`* | object |  | Delete file |
+| GET | `/projects/{project_id}/project_files` | get /projects/{project_id}/project_files | `project_id`* | object | yes | Show list of project files uploaded to project |
+| POST | `/projects/{project_id}/project_files` | post /projects/{project_id}/project_files | `project_id`*, body*: object | object |  | Add project file to projects |
+| GET | `/projects/{project_id}/project_files/{project_file_id}/` | get /projects/{project_id}/project_files/{project_file_id}/ | `project_id`*, `project_file_id`* | object | yes | Show project file |
+| PUT | `/projects/{project_id}/project_files/{project_file_id}/` | put /projects/{project_id}/project_files/{project_file_id}/ | `project_id`*, `project_file_id`* | object |  | Edit project file |
+| DELETE | `/projects/{project_id}/project_files/{project_file_id}/` | delete /projects/{project_id}/project_files/{project_file_id}/ | `project_file_id`*, `project_id`* | object |  | Delete project file |
+| POST | `/projects/{project_id}/send_bulk_pdf` | post /projects/{project_id}/send_bulk_pdf | `project_id`*, body*: object | EmptySuccessResponse |  | Send bulk forms pdf by email |
+| GET | `/projects/{project_id}/users/` | get /projects/{project_id}/users/ | `project_id`* | object | yes | Show list of users added to project |
+| POST | `/projects/{project_id}/users/` | post /projects/{project_id}/users/ | `project_id`*, body: object | object |  | Add user to project |
+| GET | `/projects/{project_id}/users/{user_id}` | get /projects/{project_id}/users/{user_id} | `user_id`*, `project_id`* | object | yes | View specific user assigned to project |
+| DELETE | `/projects/{project_id}/users/{user_id}` | delete /projects/{project_id}/users/{user_id} | `user_id`*, `project_id`* | object |  | Delete user from project |
+| GET | `/reports` | — | — | — | yes | — |
+| GET | `/roles` | get /roles | — | object | yes | Get a list of roles |
+| GET | `/stock_locations` | get /stock_locations | `name` | object | yes | List stock_locations |
+| POST | `/stock_locations` | post /stock_locations | body: object | object |  | Add new stock_locations |
+| GET | `/stock_locations/{location_id}` | get /stock_locations/{location_id} | `location_id`* | object | yes | View single location |
+| PUT | `/stock_locations/{location_id}` | put /stock_locations/{location_id} | `location_id`* | object |  | Edit location |
+| DELETE | `/stock_locations/{location_id}` | delete /stock_locations/{location_id} | `location_id`* | object |  | Delete location |
+| GET | `/time_entries` | get /time_entries | `user_id`, `form_id`, `project_id`, `gt_from_time`, `lt_from_time`, `gt_to_time`, `lt_to_time`, `lt_sum`, `gt_sum` | object | yes | List time entries |
+| POST | `/time_entries` | post /time_entries | body: object | object |  | Add new time entry |
+| GET | `/time_entries/{time_entry_id}` | get /time_entries/{time_entry_id} | `time_entry_id`* | object | yes | View time entry |
+| PUT | `/time_entries/{time_entry_id}` | put /time_entries/{time_entry_id} | `time_entry_id`* | object |  | Edit time entry |
+| DELETE | `/time_entries/{time_entry_id}` | delete /time_entries/{time_entry_id} | `time_entry_id`* | object |  | Delete time entry |
+| GET | `/time_entry_intervals` | get /time_entry_intervals | — | object | yes | List possible time entry intervals |
+| GET | `/time_entry_intervals/{time_entry_interval_id}` | get /time_entry_intervals/{time_entry_interval_id} | `time_entry_interval_id`* | object | yes | View time entry interval |
+| GET | `/time_entry_rates` | get /time_entry_rates | — | object | yes | List time entry rates |
+| POST | `/time_entry_rates` | post /time_entry_rates | body: object | object |  | Add new time entry rate |
+| GET | `/time_entry_rates/{time_entry_rate_id}` | get /time_entry_rates/{time_entry_rate_id} | `time_entry_rate_id`* | object | yes | View time entry rate |
+| PUT | `/time_entry_rates/{time_entry_rate_id}` | put /time_entry_rates/{time_entry_rate_id} | `time_entry_rate_id`* | object |  | Edit time entry rate |
+| DELETE | `/time_entry_rates/{time_entry_rate_id}` | delete /time_entry_rates/{time_entry_rate_id} | `time_entry_rate_id`* | object |  | Delete time entry rate |
+| GET | `/time_entry_rule_groups` | get /time_entry_rule_groups | `q` | object | yes | List time entry rule groups |
+| GET | `/time_entry_types` | get /time_entry_types | — | object | yes | List time entries types |
+| POST | `/time_entry_types` | post /time_entry_types | body: object | object |  | Add new time entry type |
+| POST | `/time_entry_types/bulkActivate` | bulkActivateTimeEntryTypes | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk activate time entry types |
+| POST | `/time_entry_types/bulkDeactivate` | bulkDeactivateTimeEntryTypes | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk deactivate time entry types |
+| DELETE | `/time_entry_types/bulkDelete` | bulkDeleteTimeEntryTypes | body*: BulkActionRequestBody | EmptySuccessResponse |  | Bulk delete time entry types |
+| GET | `/time_entry_types/{time_entry_type_id}` | get /time_entry_types/{time_entry_type_id} | `time_entry_type_id`* | object | yes | View time entry type |
+| PUT | `/time_entry_types/{time_entry_type_id}` | put /time_entry_types/{time_entry_type_id} | `time_entry_type_id`* | object |  | Edit time entry type |
+| DELETE | `/time_entry_types/{time_entry_type_id}` | delete /time_entry_types/{time_entry_type_id} | `time_entry_type_id`* | object |  | Delete time entry type |
+| GET | `/time_entry_unit_types` | get /time_entry_unit_types | — | object | yes | List possible time entry unit types |
+| GET | `/time_entry_unit_types/{time_entry_unit_type_id}` | get /time_entry_unit_types/{time_entry_unit_type_id} | `time_entry_unit_type_id`* | object | yes | View time entry unit type |
+| GET | `/time_entry_value_types` | get /time_entry_value_types | — | object | yes | List possible time entry value types |
+| GET | `/time_entry_value_types/{time_entry_value_type_id}` | get /time_entry_value_types/{time_entry_value_type_id} | `time_entry_value_type_id`* | object | yes | View time entry value type |
+| GET | `/user_custom_field_attributes` | get /user_custom_field_attributes | — | object | yes | Get a list of user custom field attributes |
+| GET | `/user_custom_field_attributes/{user_custom_field_attribute_id}` | get /user_custom_field_attributes/{user_custom_field_attribute_id} | `user_custom_field_attribute_id`* | object | yes | Details of 1 user custom field attribute |
+| GET | `/users` | get /users | `first_name`, `last_name`, `email`, `stock_location_id`, `is_active` | object | yes | Get list of users in company |
+| POST | `/users` | post /users | body: object | object |  | Add user to company |
+| POST | `/users/bulkActivate` | usersBulkActivate | body: BulkActionRequestBody | EmptySuccessResponse |  | Activate multiple users |
+| POST | `/users/bulkDeactivate` | usersBulkDeactivate | body: BulkActionRequestBody | EmptySuccessResponse |  | Deactivate multiple users |
+| GET | `/users/resendWelcomeSms` | get /users/resendWelcomeSms | — | object | yes | Resend Welcome SMS to the user |
+| GET | `/users/{user_id}` | get /users/{user_id} | `user_id`* | object | yes | View user |
+| PUT | `/users/{user_id}` | put /users/{user_id} | `user_id`* | object |  | Edit user |
+| DELETE | `/users/{user_id}` | delete /users/{user_id} | `user_id`* | object |  | Delete user |
+| GET | `/users/{user_id}/integration_settings` | get /users/{user_id}/integration_settings | `user_id`* | object | yes | Get a list of user integration settings |
+| POST | `/users/{user_id}/integration_settings` | post /users/{user_id}/integration_settings | `user_id`*, body: object | CreateSuccessResponse |  | Add a user integration setting |
+| GET | `/users/{user_id}/integration_settings/{integration_settings_user_id}` | get /users/{user_id}/integration_settings/{integration_settings_user_id} | `user_id`*, `integration_settings_user_id`* | object | yes | Get a user integration setting |
+| PUT | `/users/{user_id}/integration_settings/{integration_settings_user_id}` | put /users/{user_id}/integration_settings/{integration_settings_user_id} | `user_id`*, `integration_settings_user_id`* | EmptySuccessResponse |  | Edit a user integration setting |
+| DELETE | `/users/{user_id}/integration_settings/{integration_settings_user_id}` | delete /users/{user_id}/integration_settings/{integration_settings_user_id} | `user_id`*, `integration_settings_user_id`* | EmptySuccessResponse |  | Delete a user integration setting |
+| POST | `/users/{user_id}/uploadImage` | post /users/{user_id}/uploadImage | `user_id`*, body: object | CreateSuccessResponse |  | Upload a new image to a user |
+| GET | `/users/{user_id}/user_custom_field_value` | get /users/{user_id}/user_custom_field_value | `user_id`* | object | yes | Get a list of user custom field values |
+| GET | `/users/{user_id}/user_custom_field_value/{user_custom_field_value_id}` | get /users/{user_id}/user_custom_field_value/{user_custom_field_value_id} | `user_id`*, `user_custom_field_value_id`* | object | yes | Get a single record of user custom field value |
+| PUT | `/users/{user_id}/user_custom_field_value/{user_custom_field_value_id}` | put /users/{user_id}/user_custom_field_value/{user_custom_field_value_id} | `user_id`*, `user_custom_field_value_id`* | object |  | Update a single record of user custom field value |
+| GET | `/vendor_product_price_files` | get /vendor_product_price_files | `file_name`, `vendor_name`, `vendor_ids`, `status` | object | yes | Get a list of price files |
+| POST | `/vendor_product_price_files` | post /vendor_product_price_files | body*: object | CreateSuccessResponse |  | Upload a vendor price file |
+| GET | `/vendor_product_price_files/{vendor_product_price_file_id}` | get /vendor_product_price_files/{vendor_product_price_file_id} | `vendor_product_price_file_id`* | object | yes | Get a single price file |
+| GET | `/vendor_products` | get /vendor_products | `name`, `product_number`, `barcode`, `vendor_id` | object | yes | List vendor products |
+| GET | `/vendor_products/{vendor_product_id}` | get /vendor_products/{vendor_product_id} | `vendor_product_id`* | object | yes | View single vendor product |
+| GET | `/vendors` | getVendorsList | `with_custom`, `email`, `name`, `cvr` | object | yes | Get a list of vendors |
+| POST | `/vendors` | addVendor | body: object | object |  | Add a new vendor |
+| GET | `/vendors/{vendor_id}` | getVendor | `vendor_id`* | object | yes | Get a vendor |
+| PUT | `/vendors/{vendor_id}` | editVendor | `vendor_id`*, body: object | object |  | Edit a vendor |
+| DELETE | `/vendors/{vendor_id}` | delete /vendors/{vendor_id} | `vendor_id`* | object |  | Delete a vendor |
+| GET | `/wages/downloadSalaryFile` | get /wages/downloadSalaryFile | `date_from`, `date_to`, `company_id` | — | yes | Download salary file |
+| POST | `/wall_comments` | post /wall_comments | body: object | object |  | Add wall comment |
+| GET | `/wall_comments/{wall_comment_id}` | get /wall_comments/{wall_comment_id} | `wall_comment_id`* | object | yes | View wall comment |
+| GET | `/wall_posts` | get /wall_posts | `project_id`, `user_id` | object | yes | View list of wall posts |
+| POST | `/wall_posts` | post /wall_posts | body: object | object |  | Add a wall post |
+| GET | `/wall_posts/{wall_post_id}` | get /wall_posts/{wall_post_id} | `wall_post_id`* | object | yes | View wall post |
+| GET | `/wall_posts/{wall_post_id}/wall_comments` | get /wall_posts/{wall_post_id}/wall_comments | `wall_post_id`* | object | yes | See wall comments to a wall post |

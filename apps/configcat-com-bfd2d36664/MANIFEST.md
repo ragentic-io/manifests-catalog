@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.configcat.com_resources_con
 
 | | |
 | --- | --- |
-| Signed bundle | `47cc610671bf406468ac2fe042de16ac8a504fded18d0d303ebeca425a9b5a6b` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,67 +34,69 @@ logo: "https://api.apis.guru/v2/cache/logo/https_api.configcat.com_resources_con
 
 77 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| POST | `/v1/code-references` | post /v1/code-references | — |
-| POST | `/v1/code-references/delete-reports` | post /v1/code-references/delete-reports | — |
-| DELETE | `/v1/configs/{configId}` | delete-config | Delete Config |
-| GET | `/v1/configs/{configId}` | get-config | Get Config |
-| PUT | `/v1/configs/{configId}` | update-config | Update Config |
-| GET | `/v1/configs/{configId}/deleted-settings` | get-deleted-settings | List Deleted Settings |
-| GET | `/v1/configs/{configId}/environments/{environmentId}` | get-sdk-keys | Get SDK Key |
-| GET | `/v1/configs/{configId}/environments/{environmentId}/values` | get-setting-values | Get values |
-| GET | `/v1/configs/{configId}/settings` | get-settings | List Flags |
-| POST | `/v1/configs/{configId}/settings` | create-setting | Create Flag |
-| DELETE | `/v1/environments/{environmentId}` | delete-environment | Delete Environment |
-| GET | `/v1/environments/{environmentId}` | get-environment | Get Environment |
-| PUT | `/v1/environments/{environmentId}` | update-environment | Update Environment |
-| DELETE | `/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}` | delete-integration-link | Delete Integration link |
-| POST | `/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}` | add-or-update-integration-link | Add or update Integration link |
-| GET | `/v1/environments/{environmentId}/settings/{settingId}/value` | get-setting-value | Get value |
-| PATCH | `/v1/environments/{environmentId}/settings/{settingId}/value` | update-setting-value | Update value |
-| PUT | `/v1/environments/{environmentId}/settings/{settingId}/value` | replace-setting-value | Replace value |
-| GET | `/v1/integrationLink/{integrationLinkType}/{key}/details` | get-integration-link-details | Get Integration link |
-| POST | `/v1/jira/Connect` | post /v1/jira/Connect | — |
-| POST | `/v1/jira/environments/{environmentId}/settings/{settingId}/integrationLinks/{key}` | jira-add-or-update-integration-link | — |
-| GET | `/v1/me` | get-me | Get authenticated user details |
-| GET | `/v1/organizations` | get-organizations | List Organizations |
-| GET | `/v1/organizations/{organizationId}/auditlogs` | get-organization-auditlogs | List Audit log items for Organization |
-| GET | `/v1/organizations/{organizationId}/members` | get-organization-members | List Organization Members |
-| DELETE | `/v1/organizations/{organizationId}/members/{userId}` | delete-organization-member | Delete Member from Organization |
-| POST | `/v1/organizations/{organizationId}/members/{userId}` | add-member-to-group | Update Member Permissions |
-| POST | `/v1/organizations/{organizationId}/products` | create-product | Create Product |
-| DELETE | `/v1/permissions/{permissionGroupId}` | delete-permission-group | Delete Permission Group |
-| GET | `/v1/permissions/{permissionGroupId}` | get-permission-group | Get Permission Group |
-| PUT | `/v1/permissions/{permissionGroupId}` | update-permission-group | Update Permission Group |
-| GET | `/v1/products` | get-products | List Products |
-| DELETE | `/v1/products/{productId}` | delete-product | Delete Product |
-| GET | `/v1/products/{productId}` | get-product | Get Product |
-| PUT | `/v1/products/{productId}` | update-product | Update Product |
-| GET | `/v1/products/{productId}/auditlogs` | get-auditlogs | List Audit log items for Product |
-| GET | `/v1/products/{productId}/configs` | get-configs | List Configs |
-| POST | `/v1/products/{productId}/configs` | create-config | Create Config |
-| GET | `/v1/products/{productId}/environments` | get-environments | List Environments |
-| POST | `/v1/products/{productId}/environments` | create-environment | Create Environment |
-| GET | `/v1/products/{productId}/members` | get-product-members | List Product Members |
-| POST | `/v1/products/{productId}/members/invite` | invite-member | Invite Member |
-| DELETE | `/v1/products/{productId}/members/{userId}` | delete-product-member | Delete Member from Product |
-| GET | `/v1/products/{productId}/permissions` | get-permission-groups | List Permission Groups |
-| POST | `/v1/products/{productId}/permissions` | create-permission-group | Create Permission Group |
-| GET | `/v1/products/{productId}/segments` | get-segments | List Segments |
-| POST | `/v1/products/{productId}/segments` | create-segment | Create Segment |
-| GET | `/v1/products/{productId}/tags` | get-tags | List Tags |
-| POST | `/v1/products/{productId}/tags` | create-tag | Create Tag |
-| DELETE | `/v1/segments/{segmentId}` | delete-segment | Delete Segment |
-| GET | `/v1/segments/{segmentId}` | get-segment | Get Segment |
-| PUT | `/v1/segments/{segmentId}` | update-segment | Update Segment |
-| DELETE | `/v1/settings/{settingId}` | delete-setting | Delete Flag |
-| GET | `/v1/settings/{settingId}` | get-setting | Get Flag |
-| PATCH | `/v1/settings/{settingId}` | update-setting | Update Flag |
-| GET | `/v1/settings/{settingKeyOrId}/value` | get-setting-value-by-sdkkey | Get value |
-| PATCH | `/v1/settings/{settingKeyOrId}/value` | update-setting-value-by-sdkkey | Update value |
-| PUT | `/v1/settings/{settingKeyOrId}/value` | replace-setting-value-by-sdkkey | Replace value |
-| DELETE | `/v1/tags/{tagId}` | delete-tag | Delete Tag |
-| GET | `/v1/tags/{tagId}` | get-tag | Get Tag |
-| PUT | `/v1/tags/{tagId}` | update-tag | Update Tag |
-| GET | `/v1/tags/{tagId}/settings` | get-settings-by-tag | List Settings by Tag |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| POST | `/v1/code-references` | post /v1/code-references | body*: CodeReferenceRequest | — |  | — |
+| POST | `/v1/code-references/delete-reports` | post /v1/code-references/delete-reports | body*: DeleteRepositoryReportsRequest | — |  | — |
+| GET | `/v1/configs/{configId}` | get-config | `configId`* | ConfigModel-haljson | yes | Get Config |
+| PUT | `/v1/configs/{configId}` | update-config | `configId`*, body*: UpdateConfigRequest | ConfigModel-haljson |  | Update Config |
+| DELETE | `/v1/configs/{configId}` | delete-config | `configId`* | — |  | Delete Config |
+| GET | `/v1/configs/{configId}/deleted-settings` | get-deleted-settings | `configId`* | SettingModel-haljson[] | yes | List Deleted Settings |
+| GET | `/v1/configs/{configId}/environments/{environmentId}` | get-sdk-keys | `configId`*, `environmentId`* | SdkKeysModel | yes | Get SDK Key |
+| GET | `/v1/configs/{configId}/environments/{environmentId}/values` | get-setting-values | `configId`*, `environmentId`* | ConfigSettingValuesModel | yes | Get values |
+| GET | `/v1/configs/{configId}/settings` | get-settings | `configId`* | SettingModel-haljson[] | yes | List Flags |
+| POST | `/v1/configs/{configId}/settings` | create-setting | `configId`*, body*: CreateSettingInitialValues | SettingModel-haljson |  | Create Flag |
+| GET | `/v1/environments/{environmentId}` | get-environment | `environmentId`* | EnvironmentModel-haljson | yes | Get Environment |
+| PUT | `/v1/environments/{environmentId}` | update-environment | `environmentId`*, body*: UpdateEnvironmentModel | EnvironmentModel-haljson |  | Update Environment |
+| DELETE | `/v1/environments/{environmentId}` | delete-environment | `environmentId`* | — |  | Delete Environment |
+| POST | `/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}` | add-or-update-integration-link | `environmentId`*, `settingId`*, `integrationLinkType`*, `key`*, body: AddOrUpdateIntegrationLinkModel | IntegrationLinkModel |  | Add or update Integration link |
+| DELETE | `/v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}` | delete-integration-link | `environmentId`*, `settingId`*, `integrationLinkType`*, `key`* | DeleteIntegrationLinkModel |  | Delete Integration link |
+| GET | `/v1/environments/{environmentId}/settings/{settingId}/value` | get-setting-value | `environmentId`*, `settingId`* | SettingValueModel-haljson | yes | Get value |
+| PUT | `/v1/environments/{environmentId}/settings/{settingId}/value` | replace-setting-value | `environmentId`*, `settingId`*, `reason`, body*: UpdateSettingValueModel | SettingValueModel-haljson |  | Replace value |
+| PATCH | `/v1/environments/{environmentId}/settings/{settingId}/value` | update-setting-value | `environmentId`*, `settingId`*, `reason`, body*: JsonPatch | SettingValueModel-haljson |  | Update value |
+| GET | `/v1/integrationLink/{integrationLinkType}/{key}/details` | get-integration-link-details | `integrationLinkType`*, `key`* | IntegrationLinkDetailsModel | yes | Get Integration link |
+| POST | `/v1/jira/Connect` | post /v1/jira/Connect | body: ConnectRequest | — |  | — |
+| POST | `/v1/jira/environments/{environmentId}/settings/{settingId}/integrationLinks/{key}` | jira-add-or-update-integration-link | `environmentId`*, `settingId`*, `key`*, body: AddOrUpdateJiraIntegrationLinkModel | IntegrationLinkModel |  | — |
+| GET | `/v1/me` | get-me | — | MeModel | yes | Get authenticated user details |
+| GET | `/v1/organizations` | get-organizations | — | OrganizationModel-haljson[] | yes | List Organizations |
+| GET | `/v1/organizations/{organizationId}/auditlogs` | get-organization-auditlogs | `organizationId`*, `productId`, `configId`, `environmentId`, `auditLogType`, `fromUtcDateTime`, `toUtcDateTime` | AuditLogItemModel[] | yes | List Audit log items for Organization |
+| GET | `/v1/organizations/{organizationId}/members` | get-organization-members | `organizationId`* | UserModel[] | yes | List Organization Members |
+| POST | `/v1/organizations/{organizationId}/members/{userId}` | add-member-to-group | `organizationId`*, `userId`*, body*: AddUserToGroupRequest | — |  | Update Member Permissions |
+| DELETE | `/v1/organizations/{organizationId}/members/{userId}` | delete-organization-member | `organizationId`*, `userId`* | — |  | Delete Member from Organization |
+| POST | `/v1/organizations/{organizationId}/products` | create-product | `organizationId`*, body*: CreateProductRequest | ProductModel-haljson |  | Create Product |
+| GET | `/v1/permissions/{permissionGroupId}` | get-permission-group | `permissionGroupId`* | PermissionGroupModel-haljson | yes | Get Permission Group |
+| PUT | `/v1/permissions/{permissionGroupId}` | update-permission-group | `permissionGroupId`*, body*: UpdatePermissionGroupRequest | PermissionGroupModel-haljson |  | Update Permission Group |
+| DELETE | `/v1/permissions/{permissionGroupId}` | delete-permission-group | `permissionGroupId`* | — |  | Delete Permission Group |
+| GET | `/v1/products` | get-products | — | ProductModel-haljson[] | yes | List Products |
+| GET | `/v1/products/{productId}` | get-product | `productId`* | ProductModel-haljson | yes | Get Product |
+| PUT | `/v1/products/{productId}` | update-product | `productId`*, body*: UpdateProductRequest | ProductModel-haljson |  | Update Product |
+| DELETE | `/v1/products/{productId}` | delete-product | `productId`* | — |  | Delete Product |
+| GET | `/v1/products/{productId}/auditlogs` | get-auditlogs | `productId`*, `configId`, `environmentId`, `auditLogType`, `fromUtcDateTime`, `toUtcDateTime` | AuditLogItemModel[] | yes | List Audit log items for Product |
+| GET | `/v1/products/{productId}/configs` | get-configs | `productId`* | ConfigModel-haljson[] | yes | List Configs |
+| POST | `/v1/products/{productId}/configs` | create-config | `productId`*, body*: CreateConfigRequest | ConfigModel-haljson |  | Create Config |
+| GET | `/v1/products/{productId}/environments` | get-environments | `productId`* | EnvironmentModel-haljson[] | yes | List Environments |
+| POST | `/v1/products/{productId}/environments` | create-environment | `productId`*, body*: CreateEnvironmentModel | EnvironmentModel-haljson |  | Create Environment |
+| GET | `/v1/products/{productId}/members` | get-product-members | `productId`* | MemberModel[] | yes | List Product Members |
+| POST | `/v1/products/{productId}/members/invite` | invite-member | `productId`*, body*: InviteMembersRequest | — |  | Invite Member |
+| DELETE | `/v1/products/{productId}/members/{userId}` | delete-product-member | `productId`*, `userId`* | — |  | Delete Member from Product |
+| GET | `/v1/products/{productId}/permissions` | get-permission-groups | `productId`* | PermissionGroupModel-haljson[] | yes | List Permission Groups |
+| POST | `/v1/products/{productId}/permissions` | create-permission-group | `productId`*, body*: CreatePermissionGroupRequest | PermissionGroupModel-haljson |  | Create Permission Group |
+| GET | `/v1/products/{productId}/segments` | get-segments | `productId`* | SegmentListModel-haljson[] | yes | List Segments |
+| POST | `/v1/products/{productId}/segments` | create-segment | `productId`*, body*: CreateSegmentModel | SegmentModel-haljson |  | Create Segment |
+| GET | `/v1/products/{productId}/tags` | get-tags | `productId`* | TagModel-haljson[] | yes | List Tags |
+| POST | `/v1/products/{productId}/tags` | create-tag | `productId`*, body*: CreateTagModel | TagModel-haljson |  | Create Tag |
+| GET | `/v1/segments/{segmentId}` | get-segment | `segmentId`* | SegmentModel-haljson | yes | Get Segment |
+| PUT | `/v1/segments/{segmentId}` | update-segment | `segmentId`*, body*: UpdateSegmentModel | SegmentModel-haljson |  | Update Segment |
+| DELETE | `/v1/segments/{segmentId}` | delete-segment | `segmentId`* | — |  | Delete Segment |
+| GET | `/v1/settings/{settingId}` | get-setting | `settingId`* | SettingModel-haljson | yes | Get Flag |
+| DELETE | `/v1/settings/{settingId}` | delete-setting | `settingId`* | — |  | Delete Flag |
+| PATCH | `/v1/settings/{settingId}` | update-setting | `settingId`*, body*: JsonPatch | SettingModel-haljson |  | Update Flag |
+| GET | `/v1/settings/{settingKeyOrId}/value` | get-setting-value-by-sdkkey | `settingKeyOrId`*, `X-CONFIGCAT-SDKKEY` | SettingValueModel-haljson | yes | Get value |
+| PUT | `/v1/settings/{settingKeyOrId}/value` | replace-setting-value-by-sdkkey | `settingKeyOrId`*, `reason`, `X-CONFIGCAT-SDKKEY`, body*: UpdateSettingValueModel | SettingValueModel-haljson |  | Replace value |
+| PATCH | `/v1/settings/{settingKeyOrId}/value` | update-setting-value-by-sdkkey | `settingKeyOrId`*, `reason`, `X-CONFIGCAT-SDKKEY`, body*: JsonPatch | SettingValueModel-haljson |  | Update value |
+| GET | `/v1/tags/{tagId}` | get-tag | `tagId`* | TagModel-haljson | yes | Get Tag |
+| PUT | `/v1/tags/{tagId}` | update-tag | `tagId`*, body*: UpdateTagModel | TagModel-haljson |  | Update Tag |
+| DELETE | `/v1/tags/{tagId}` | delete-tag | `tagId`* | — |  | Delete Tag |
+| GET | `/v1/tags/{tagId}/settings` | get-settings-by-tag | `tagId`* | SettingModel-haljson[] | yes | List Settings by Tag |

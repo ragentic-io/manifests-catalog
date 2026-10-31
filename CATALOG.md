@@ -2,549 +2,552 @@
 
 # Catalog
 
-535 applications: 16 published and 519 drafts. Drafts can be browsed but not connected until reviewed and published.
+538 applications: 16 published and 522 drafts. Drafts can be browsed but not connected until reviewed and published.
 
 ## Published (16)
 
 | Application | Id | Protocol | Version | Operations | Readiness | Signature |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Ably Control API](apps/ably-control-openapi/MANIFEST.md) | `ably-control-openapi` | openapi | 1.1.0 | 24 | `isolated_setup_fixture_passed_live_review_required` | signed |
-| [Connect to Chatwoot Cloud](apps/chatwoot/MANIFEST.md) | `chatwoot` | openapi | 1.1.0 | 157 | `definition_imported` | signed |
-| [Clerk Backend Read API](apps/clerk-openapi/MANIFEST.md) | `clerk-openapi` | openapi | 2026-08-20 | 83 | `reviewed_publication_user_test_required` | signed |
-| [Color Name API](apps/color-pizza-85d41d756d/MANIFEST.md) | `color-pizza-85d41d756d` | openapi | 1.1.0 | 7 | `public_probe_verified_user_save_review_required` | signed |
-| [DigitalOcean API](apps/digitalocean-com-12effa1d34/MANIFEST.md) | `digitalocean-com-12effa1d34` | openapi | 2.0 | 858 | `canonical_text_only_setup_reviewed_live_provider_check_required` | signed |
-| [Connect to Discord](apps/discord-openapi/MANIFEST.md) | `discord-openapi` | openapi | 10 | 250 | `definition_imported` | signed |
-| [Connect to the Figma platform](apps/figma-openapi/MANIFEST.md) | `figma-openapi` | openapi | 0.46.0 | 59 | `definition_imported` | signed |
-| [Figshare](apps/figshare/MANIFEST.md) | `figshare` | openapi | 2.0 | 158 | `definition_imported` | signed |
-| [Flagsmith Management API](apps/flagsmith-management-openapi/MANIFEST.md) | `flagsmith-management-openapi` | openapi | v1 | 54 | `reviewed_publication_user_test_required` | signed |
-| [Gitea](apps/gitea/MANIFEST.md) | `gitea` | openapi | 0.0.0+GITEA-API-APP-VERSION | 554 | `reviewed_publication_user_test_required` | signed |
-| [GOV.UK Pay](apps/govuk-pay/MANIFEST.md) | `govuk-pay` | openapi | 1.0.3 | 16 | `definition_imported` | signed |
-| [GrowthBook REST API](apps/growthbook-openapi/MANIFEST.md) | `growthbook-openapi` | openapi | 5.1.0 | 442 | `reviewed_publication_user_test_required` | signed |
+| [Ably Control API](apps/ably-control-openapi/MANIFEST.md) | `ably-control-openapi` | openapi | 1.1.0 | 24 | `isolated_setup_fixture_passed_live_review_required` | pending |
+| [Connect to Chatwoot Cloud](apps/chatwoot/MANIFEST.md) | `chatwoot` | openapi | 1.1.0 | 157 | `definition_imported` | pending |
+| [Clerk Backend Read API](apps/clerk-openapi/MANIFEST.md) | `clerk-openapi` | openapi | 2026-08-20 | 83 | `reviewed_publication_user_test_required` | pending |
+| [Color Name API](apps/color-pizza-85d41d756d/MANIFEST.md) | `color-pizza-85d41d756d` | openapi | 1.1.0 | 7 | `public_probe_verified_user_save_review_required` | pending |
+| [DigitalOcean API](apps/digitalocean-com-12effa1d34/MANIFEST.md) | `digitalocean-com-12effa1d34` | openapi | 2.0 | 858 | `canonical_text_only_setup_reviewed_live_provider_check_required` | pending |
+| [Connect to Discord](apps/discord-openapi/MANIFEST.md) | `discord-openapi` | openapi | 10 | 250 | `definition_imported` | pending |
+| [Connect to the Figma platform](apps/figma-openapi/MANIFEST.md) | `figma-openapi` | openapi | 0.46.0 | 59 | `definition_imported` | pending |
+| [Figshare](apps/figshare/MANIFEST.md) | `figshare` | openapi | 2.0 | 158 | `definition_imported` | pending |
+| [Flagsmith Management API](apps/flagsmith-management-openapi/MANIFEST.md) | `flagsmith-management-openapi` | openapi | v1 | 54 | `reviewed_publication_user_test_required` | pending |
+| [Gitea](apps/gitea/MANIFEST.md) | `gitea` | openapi | 0.0.0+GITEA-API-APP-VERSION | 554 | `reviewed_publication_user_test_required` | pending |
+| [GOV.UK Pay](apps/govuk-pay/MANIFEST.md) | `govuk-pay` | openapi | 1.0.3 | 16 | `definition_imported` | pending |
+| [GrowthBook REST API](apps/growthbook-openapi/MANIFEST.md) | `growthbook-openapi` | openapi | 5.1.0 | 442 | `reviewed_publication_user_test_required` | pending |
 | [Connection to Linear](apps/linear-graphql/MANIFEST.md) | `linear-graphql` | graphql | 8397645bc0a4+query-mutation.1 | 574 | `reviewed_publication_user_test_required` | signed |
-| [Connection to Stripe](apps/stripe-openapi/MANIFEST.md) | `stripe-openapi` | openapi | 2026-09-30.endive | 612 | `definition_imported` | signed |
-| [Webflow Site Data API](apps/webflow-data-api/MANIFEST.md) | `webflow-data-api` | openapi | 2.0.0 | 112 | `reviewed_publication_user_test_required` | signed |
-| [WorkOS API](apps/workos-openapi/MANIFEST.md) | `workos-openapi` | openapi | 1.0 | 268 | `setup_fixture_reviewed_user_credential_test_required` | signed |
+| [Connection to Stripe](apps/stripe-openapi/MANIFEST.md) | `stripe-openapi` | openapi | 2026-09-30.endive | 612 | `definition_imported` | pending |
+| [Webflow Site Data API](apps/webflow-data-api/MANIFEST.md) | `webflow-data-api` | openapi | 2.0.0 | 112 | `reviewed_publication_user_test_required` | pending |
+| [WorkOS API](apps/workos-openapi/MANIFEST.md) | `workos-openapi` | openapi | 1.0 | 268 | `setup_fixture_reviewed_user_credential_test_required` | pending |
 
-## Drafts (519)
+## Drafts (522)
 
 | Application | Id | Protocol | Version | Operations | Readiness | Signature |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Events API](apps/1password-com-events-438fa39131/MANIFEST.md) | `1password-com-events-438fa39131` | openapi | 1.0.0 | 3 | `discovered` | signed |
-| [1Password Connect](apps/1password-local-connect-f8c78b4d73/MANIFEST.md) | `1password-local-connect-f8c78b4d73` | openapi | 1.5.7 | 15 | `discovered` | signed |
-| [Authentiq API](apps/6-dot-authentiqio-appspot-com-ceffde5b7a/MANIFEST.md) | `6-dot-authentiqio-appspot-com-ceffde5b7a` | openapi | 6 | 14 | `discovered` | signed |
-| [Platform API](apps/ably-io-platform-640c6f8fb1/MANIFEST.md) | `ably-io-platform-640c6f8fb1` | openapi | 1.1.0 | 22 | `discovered` | signed |
-| [Control API v1](apps/ably-net-control-ded2e27e6e/MANIFEST.md) | `ably-net-control-ded2e27e6e` | openapi | 1.0.14 | 22 | `discovered` | signed |
-| [IP geolocation API](apps/abstractapi-com-geolocation-f50d3a81df/MANIFEST.md) | `abstractapi-com-geolocation-f50d3a81df` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [Adafruit IO REST API](apps/adafruit-com-eaefac1842/MANIFEST.md) | `adafruit-com-eaefac1842` | openapi | 2.0.0 | 71 | `discovered` | signed |
-| [Adobe Experience Manager (AEM) API](apps/adobe-com-aem-bce9eb2146/MANIFEST.md) | `adobe-com-aem-bce9eb2146` | openapi | 3.7.1-pre.0 | 48 | `discovered` | signed |
-| [Account API](apps/adyen-com-accountservice-c646f56f31/MANIFEST.md) | `adyen-com-accountservice-c646f56f31` | openapi | 6 | 20 | `discovered` | signed |
-| [Afterbanks API](apps/afterbanks-com-13b0a66f26/MANIFEST.md) | `afterbanks-com-13b0a66f26` | openapi | 3.0.0 | 3 | `discovered` | signed |
-| [AGCO API](apps/agco-ats-com-2c21633b46/MANIFEST.md) | `agco-ats-com-2c21633b46` | openapi | v1 | 277 | `discovered` | signed |
-| [Airbyte Configuration API](apps/airbyte-local-config-5178b90805/MANIFEST.md) | `airbyte-local-config-5178b90805` | openapi | 1.0.0 | 102 | `discovered` | signed |
-| [airportsapi](apps/airport-web-appspot-com-4e1eee65bb/MANIFEST.md) | `airport-web-appspot-com-4e1eee65bb` | openapi | v1 | 1 | `discovered` | signed |
-| [Akeneo PIM REST API](apps/akeneo-com-388235a66f/MANIFEST.md) | `akeneo-com-388235a66f` | openapi | 1.0.0 | 140 | `discovered` | signed |
-| [Alerter System API](apps/alertersystem-com-2bbb44cd25/MANIFEST.md) | `alertersystem-com-2bbb44cd25` | openapi | 1.6.0 | 422 | `discovered` | signed |
-| [Flight Offers Search](apps/amadeus-com-f4570d52ea/MANIFEST.md) | `amadeus-com-f4570d52ea` | openapi | 2.2.0 | 2 | `discovered` | signed |
-| [AWS Migration Hub](apps/amazonaws-com-awsmigrationhub-c8f041be05/MANIFEST.md) | `amazonaws-com-awsmigrationhub-c8f041be05` | openapi | 2017-05-31 | 17 | `discovered` | signed |
-| [Atmosphere API](apps/amentum-space-atmosphere-8f1f0b180f/MANIFEST.md) | `amentum-space-atmosphere-8f1f0b180f` | openapi | 1.1.1 | 3 | `discovered` | signed |
-| [Anchore Engine API Server](apps/anchore-io-e3b0971f3b/MANIFEST.md) | `anchore-io-e3b0971f3b` | openapi | 0.1.20 | 112 | `discovered` | signed |
-| [Airflow API (Stable)](apps/apache-org-87f12485ac/MANIFEST.md) | `apache-org-87f12485ac` | openapi | 2.5.1 | 73 | `discovered` | signed |
-| [Apacta](apps/apacta-com-a902934201/MANIFEST.md) | `apacta-com-a902934201` | openapi | 0.0.42 | 290 | `discovered` | signed |
-| [Account API](apps/api-ebay-com-sell-account-788bb05560/MANIFEST.md) | `api-ebay-com-sell-account-788bb05560` | openapi | v1.9.0 | 36 | `discovered` | signed |
-| [Vehicle Enquiry API](apps/api-gov-uk-vehicle-enquiry-9e04c95d5a/MANIFEST.md) | `api-gov-uk-vehicle-enquiry-9e04c95d5a` | openapi | 1.1.0 | 1 | `discovered` | signed |
-| [api.video](apps/api-video-3e22d65e37/MANIFEST.md) | `api-video-3e22d65e37` | openapi | 1 | 47 | `discovered` | signed |
-| [Swagger API2Cart](apps/api2cart-com-c7c27215ce/MANIFEST.md) | `api2cart-com-c7c27215ce` | openapi | 1.1 | 146 | `discovered` | signed |
-| [Apicurio Registry API [v2]](apps/apicurio-local-registry-f8e8ccae25/MANIFEST.md) | `apicurio-local-registry-f8e8ccae25` | openapi | 2.4.x | 64 | `discovered` | signed |
-| [ApiDapp](apps/apidapp-com-e898718cf9/MANIFEST.md) | `apidapp-com-e898718cf9` | openapi | 2019-02-14T16:47:01Z | 54 | `discovered` | signed |
-| [Accounting API](apps/apideck-com-accounting-dbb8c0a771/MANIFEST.md) | `apideck-com-accounting-dbb8c0a771` | openapi | 9.3.0 | 53 | `discovered` | signed |
-| [Registry API](apps/apigee-local-registry-71b81033ab/MANIFEST.md) | `apigee-local-registry-71b81033ab` | openapi | 0.0.1 | 35 | `discovered` | signed |
-| [Marketcheck APIs](apps/apigee-net-marketcheck-cars-73e0b295bb/MANIFEST.md) | `apigee-net-marketcheck-cars-73e0b295bb` | openapi | 2.01 | 71 | `discovered` | signed |
-| [APIMATIC API Transformer](apps/apimatic-io-e0ac7dd13d/MANIFEST.md) | `apimatic-io-e0ac7dd13d` | openapi | 1.0 | 1 | `discovered` | signed |
-| [APIs.guru](apps/apis-guru-4c890897bd/MANIFEST.md) | `apis-guru-4c890897bd` | openapi | 2.2.0 | 7 | `discovered` | signed |
-| [Department of Food, Public Distribution & Consumer Affairs (PDS), Jharkhand](apps/apisetu-gov-in-aaharjh-0c7ff9a89a/MANIFEST.md) | `apisetu-gov-in-aaharjh-0c7ff9a89a` | openapi | 3.0.0 | 1 | `discovered` | signed |
-| [Bulk WHOIS API](apps/apispot-io-whois-9c5a8b22f5/MANIFEST.md) | `apispot-io-whois-9c5a8b22f5` | openapi | 1.0 | 8 | `discovered` | signed |
-| [Identity API](apps/apiz-ebay-com-commerce-identity-2a70f54e01/MANIFEST.md) | `apiz-ebay-com-commerce-identity-2a70f54e01` | openapi | v1.1.0 | 1 | `discovered` | signed |
-| [App Center Client](apps/appcenter-ms-c7565593d8/MANIFEST.md) | `appcenter-ms-c7565593d8` | openapi | v0.1 | 352 | `discovered` | signed |
-| [App Store Connect API](apps/apple-com-app-store-connect-4363eb7323/MANIFEST.md) | `apple-com-app-store-connect-4363eb7323` | openapi | 1.4.1 | 252 | `discovered` | signed |
-| [PowerTools Developer](apps/apptigent-com-9cf2f231e5/MANIFEST.md) | `apptigent-com-9cf2f231e5` | openapi | 2021.1.01 | 88 | `discovered` | signed |
-| [AppVeyor REST API](apps/appveyor-com-d1bbef2745/MANIFEST.md) | `appveyor-com-d1bbef2745` | openapi | 1.0.0 | 53 | `discovered` | signed |
-| [Appwrite](apps/appwrite-io-client-848307f56a/MANIFEST.md) | `appwrite-io-client-848307f56a` | openapi | 0.9.3 | 61 | `discovered` | signed |
-| [Search Services](apps/archive-org-search-473d8271c4/MANIFEST.md) | `archive-org-search-473d8271c4` | openapi | 1.0.0 | 3 | `discovered` | signed |
-| [Arespass](apps/arespass-net-20b4b2ccd1/MANIFEST.md) | `arespass-net-20b4b2ccd1` | openapi | 1.0 | 2 | `discovered` | signed |
-| [ART19 Content API Documentation](apps/art19-com-9669d3806e/MANIFEST.md) | `art19-com-9669d3806e` | openapi | 1.0.0 | 22 | `discovered` | signed |
-| [Asana](apps/asana-com-6cdd16e9a7/MANIFEST.md) | `asana-com-6cdd16e9a7` | openapi | 1.0 | 167 | `discovered` | signed |
-| [SearchLy API v1](apps/asuarez-dev-searchly-d1e368a75f/MANIFEST.md) | `asuarez-dev-searchly-d1e368a75f` | openapi | 1.0 | 3 | `discovered` | signed |
-| [The Jira Cloud platform REST API](apps/atlassian-com-jira-97765110a1/MANIFEST.md) | `atlassian-com-jira-97765110a1` | openapi | 1001.0.0-SNAPSHOT | 487 | `discovered` | signed |
-| [Auckland Museum API](apps/aucklandmuseum-com-703afaec5f/MANIFEST.md) | `aucklandmuseum-com-703afaec5f` | openapi | 2.0.0 | 6 | `discovered` | signed |
-| [Authentiq Connect API](apps/authentiq-io-7873537c51/MANIFEST.md) | `authentiq-io-7873537c51` | openapi | 1.0 | 9 | `discovered` | signed |
-| [CIS Automotive API](apps/autodealerdata-com-ec66ea6b25/MANIFEST.md) | `autodealerdata-com-ec66ea6b25` | openapi | 1.0 | 35 | `discovered` | signed |
-| [Datto\|Autotask PSA Rest API](apps/autotask-net-51422169c8/MANIFEST.md) | `autotask-net-51422169c8` | openapi | v1 | 2958 | `discovered` | signed |
-| [Avaza API Documentation](apps/avaza-com-1781a9ce58/MANIFEST.md) | `avaza-com-1781a9ce58` | openapi | v1 | 86 | `discovered` | signed |
-| [Azure Enterprise Knowledge Graph Service](apps/azure-com-enterpriseknowledgegraph-enterpriseknowledgegraphswagger-8169178425/MANIFEST.md) | `azure-com-enterpriseknowledgegraph-enterpriseknowledgegraphswagger-8169178425` | openapi | 2018-12-03 | 7 | `discovered` | signed |
-| [balldontlie](apps/balldontlie-io-93779ca935/MANIFEST.md) | `balldontlie-io-93779ca935` | openapi | 1.0.0 | 7 | `discovered` | signed |
-| [Bandsintown API](apps/bandsintown-com-11dc9b9fd7/MANIFEST.md) | `bandsintown-com-11dc9b9fd7` | openapi | 3.0.0 | 2 | `discovered` | signed |
-| [BBC Nitro API](apps/bbc-com-48de9242cd/MANIFEST.md) | `bbc-com-48de9242cd` | openapi | 1.0.0 | 25 | `discovered` | signed |
-| [BBC iPlayer Business Layer](apps/bbci-co-uk-0e500193fa/MANIFEST.md) | `bbci-co-uk-0e500193fa` | openapi | 1.0 | 30 | `discovered` | signed |
-| [BC Laws](apps/bclaws-ca-bclaws-3d8bc64e33/MANIFEST.md) | `bclaws-ca-bclaws-3d8bc64e33` | openapi | 1.0.0 | 7 | `discovered` | signed |
-| [BeezUP Merchant API](apps/beezup-com-8a3b4ef40f/MANIFEST.md) | `beezup-com-8a3b4ef40f` | openapi | 2.0 | 226 | `discovered` | signed |
-| [Betfair: Exchange Streaming API](apps/betfair-com-84ad41b192/MANIFEST.md) | `betfair-com-84ad41b192` | openapi | 1.0.1423 | 1 | `discovered` | signed |
-| [SEDRA IV API](apps/bethmardutho-org-2075c1f937/MANIFEST.md) | `bethmardutho-org-2075c1f937` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [Bhagavad Gita API](apps/bhagavadgita-io-9cc9c5d4fa/MANIFEST.md) | `bhagavadgita-io-9cc9c5d4fa` | openapi | 1.0 | 6 | `discovered` | signed |
-| [Budgea API Documentation](apps/biapi-pro-15dd262bf4/MANIFEST.md) | `biapi-pro-15dd262bf4` | openapi | 2.0 | 167 | `discovered` | signed |
+| [Events API](apps/1password-com-events-438fa39131/MANIFEST.md) | `1password-com-events-438fa39131` | openapi | 1.0.0 | 3 | `discovered` | pending |
+| [1Password Connect](apps/1password-local-connect-f8c78b4d73/MANIFEST.md) | `1password-local-connect-f8c78b4d73` | openapi | 1.5.7 | 15 | `discovered` | pending |
+| [Authentiq API](apps/6-dot-authentiqio-appspot-com-ceffde5b7a/MANIFEST.md) | `6-dot-authentiqio-appspot-com-ceffde5b7a` | openapi | 6 | 14 | `discovered` | pending |
+| [Platform API](apps/ably-io-platform-640c6f8fb1/MANIFEST.md) | `ably-io-platform-640c6f8fb1` | openapi | 1.1.0 | 22 | `discovered` | pending |
+| [Control API v1](apps/ably-net-control-ded2e27e6e/MANIFEST.md) | `ably-net-control-ded2e27e6e` | openapi | 1.0.14 | 22 | `discovered` | pending |
+| [IP geolocation API](apps/abstractapi-com-geolocation-f50d3a81df/MANIFEST.md) | `abstractapi-com-geolocation-f50d3a81df` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [Adafruit IO REST API](apps/adafruit-com-eaefac1842/MANIFEST.md) | `adafruit-com-eaefac1842` | openapi | 2.0.0 | 71 | `discovered` | pending |
+| [Adobe Experience Manager (AEM) API](apps/adobe-com-aem-bce9eb2146/MANIFEST.md) | `adobe-com-aem-bce9eb2146` | openapi | 3.7.1-pre.0 | 48 | `discovered` | pending |
+| [Account API](apps/adyen-com-accountservice-c646f56f31/MANIFEST.md) | `adyen-com-accountservice-c646f56f31` | openapi | 6 | 20 | `discovered` | pending |
+| [Afterbanks API](apps/afterbanks-com-13b0a66f26/MANIFEST.md) | `afterbanks-com-13b0a66f26` | openapi | 3.0.0 | 3 | `discovered` | pending |
+| [AGCO API](apps/agco-ats-com-2c21633b46/MANIFEST.md) | `agco-ats-com-2c21633b46` | openapi | v1 | 277 | `discovered` | pending |
+| [Airbyte Configuration API](apps/airbyte-local-config-5178b90805/MANIFEST.md) | `airbyte-local-config-5178b90805` | openapi | 1.0.0 | 102 | `discovered` | pending |
+| [airportsapi](apps/airport-web-appspot-com-4e1eee65bb/MANIFEST.md) | `airport-web-appspot-com-4e1eee65bb` | openapi | v1 | 1 | `discovered` | pending |
+| [Akeneo PIM REST API](apps/akeneo-com-388235a66f/MANIFEST.md) | `akeneo-com-388235a66f` | openapi | 1.0.0 | 140 | `discovered` | pending |
+| [Alerter System API](apps/alertersystem-com-2bbb44cd25/MANIFEST.md) | `alertersystem-com-2bbb44cd25` | openapi | 1.6.0 | 422 | `discovered` | pending |
+| [Flight Offers Search](apps/amadeus-com-f4570d52ea/MANIFEST.md) | `amadeus-com-f4570d52ea` | openapi | 2.2.0 | 2 | `discovered` | pending |
+| [AWS Migration Hub](apps/amazonaws-com-awsmigrationhub-c8f041be05/MANIFEST.md) | `amazonaws-com-awsmigrationhub-c8f041be05` | openapi | 2017-05-31 | 17 | `discovered` | pending |
+| [Atmosphere API](apps/amentum-space-atmosphere-8f1f0b180f/MANIFEST.md) | `amentum-space-atmosphere-8f1f0b180f` | openapi | 1.1.1 | 3 | `discovered` | pending |
+| [Anchore Engine API Server](apps/anchore-io-e3b0971f3b/MANIFEST.md) | `anchore-io-e3b0971f3b` | openapi | 0.1.20 | 112 | `discovered` | pending |
+| [Airflow API (Stable)](apps/apache-org-87f12485ac/MANIFEST.md) | `apache-org-87f12485ac` | openapi | 2.5.1 | 73 | `discovered` | pending |
+| [Apacta](apps/apacta-com-a902934201/MANIFEST.md) | `apacta-com-a902934201` | openapi | 0.0.42 | 290 | `discovered` | pending |
+| [Account API](apps/api-ebay-com-sell-account-788bb05560/MANIFEST.md) | `api-ebay-com-sell-account-788bb05560` | openapi | v1.9.0 | 36 | `discovered` | pending |
+| [Vehicle Enquiry API](apps/api-gov-uk-vehicle-enquiry-9e04c95d5a/MANIFEST.md) | `api-gov-uk-vehicle-enquiry-9e04c95d5a` | openapi | 1.1.0 | 1 | `discovered` | pending |
+| [api.video](apps/api-video-3e22d65e37/MANIFEST.md) | `api-video-3e22d65e37` | openapi | 1 | 47 | `discovered` | pending |
+| [Swagger API2Cart](apps/api2cart-com-c7c27215ce/MANIFEST.md) | `api2cart-com-c7c27215ce` | openapi | 1.1 | 146 | `discovered` | pending |
+| [Apicurio Registry API [v2]](apps/apicurio-local-registry-f8e8ccae25/MANIFEST.md) | `apicurio-local-registry-f8e8ccae25` | openapi | 2.4.x | 64 | `discovered` | pending |
+| [ApiDapp](apps/apidapp-com-e898718cf9/MANIFEST.md) | `apidapp-com-e898718cf9` | openapi | 2019-02-14T16:47:01Z | 54 | `discovered` | pending |
+| [Accounting API](apps/apideck-com-accounting-dbb8c0a771/MANIFEST.md) | `apideck-com-accounting-dbb8c0a771` | openapi | 9.3.0 | 53 | `discovered` | pending |
+| [Registry API](apps/apigee-local-registry-71b81033ab/MANIFEST.md) | `apigee-local-registry-71b81033ab` | openapi | 0.0.1 | 35 | `discovered` | pending |
+| [Marketcheck APIs](apps/apigee-net-marketcheck-cars-73e0b295bb/MANIFEST.md) | `apigee-net-marketcheck-cars-73e0b295bb` | openapi | 2.01 | 71 | `discovered` | pending |
+| [APIMATIC API Transformer](apps/apimatic-io-e0ac7dd13d/MANIFEST.md) | `apimatic-io-e0ac7dd13d` | openapi | 1.0 | 1 | `discovered` | pending |
+| [APIs.guru](apps/apis-guru-4c890897bd/MANIFEST.md) | `apis-guru-4c890897bd` | openapi | 2.2.0 | 7 | `discovered` | pending |
+| [Department of Food, Public Distribution & Consumer Affairs (PDS), Jharkhand](apps/apisetu-gov-in-aaharjh-0c7ff9a89a/MANIFEST.md) | `apisetu-gov-in-aaharjh-0c7ff9a89a` | openapi | 3.0.0 | 1 | `discovered` | pending |
+| [Bulk WHOIS API](apps/apispot-io-whois-9c5a8b22f5/MANIFEST.md) | `apispot-io-whois-9c5a8b22f5` | openapi | 1.0 | 8 | `discovered` | pending |
+| [Identity API](apps/apiz-ebay-com-commerce-identity-2a70f54e01/MANIFEST.md) | `apiz-ebay-com-commerce-identity-2a70f54e01` | openapi | v1.1.0 | 1 | `discovered` | pending |
+| [App Center Client](apps/appcenter-ms-c7565593d8/MANIFEST.md) | `appcenter-ms-c7565593d8` | openapi | v0.1 | 352 | `discovered` | pending |
+| [App Store Connect API](apps/apple-com-app-store-connect-4363eb7323/MANIFEST.md) | `apple-com-app-store-connect-4363eb7323` | openapi | 1.4.1 | 252 | `discovered` | pending |
+| [PowerTools Developer](apps/apptigent-com-9cf2f231e5/MANIFEST.md) | `apptigent-com-9cf2f231e5` | openapi | 2021.1.01 | 88 | `discovered` | pending |
+| [AppVeyor REST API](apps/appveyor-com-d1bbef2745/MANIFEST.md) | `appveyor-com-d1bbef2745` | openapi | 1.0.0 | 53 | `discovered` | pending |
+| [Appwrite](apps/appwrite-io-client-848307f56a/MANIFEST.md) | `appwrite-io-client-848307f56a` | openapi | 0.9.3 | 61 | `discovered` | pending |
+| [Search Services](apps/archive-org-search-473d8271c4/MANIFEST.md) | `archive-org-search-473d8271c4` | openapi | 1.0.0 | 3 | `discovered` | pending |
+| [Arespass](apps/arespass-net-20b4b2ccd1/MANIFEST.md) | `arespass-net-20b4b2ccd1` | openapi | 1.0 | 2 | `discovered` | pending |
+| [ART19 Content API Documentation](apps/art19-com-9669d3806e/MANIFEST.md) | `art19-com-9669d3806e` | openapi | 1.0.0 | 22 | `discovered` | pending |
+| [Asana](apps/asana-com-6cdd16e9a7/MANIFEST.md) | `asana-com-6cdd16e9a7` | openapi | 1.0 | 167 | `discovered` | pending |
+| [SearchLy API v1](apps/asuarez-dev-searchly-d1e368a75f/MANIFEST.md) | `asuarez-dev-searchly-d1e368a75f` | openapi | 1.0 | 3 | `discovered` | pending |
+| [The Jira Cloud platform REST API](apps/atlassian-com-jira-97765110a1/MANIFEST.md) | `atlassian-com-jira-97765110a1` | openapi | 1001.0.0-SNAPSHOT | 487 | `discovered` | pending |
+| [Auckland Museum API](apps/aucklandmuseum-com-703afaec5f/MANIFEST.md) | `aucklandmuseum-com-703afaec5f` | openapi | 2.0.0 | 6 | `discovered` | pending |
+| [Authentiq Connect API](apps/authentiq-io-7873537c51/MANIFEST.md) | `authentiq-io-7873537c51` | openapi | 1.0 | 9 | `discovered` | pending |
+| [CIS Automotive API](apps/autodealerdata-com-ec66ea6b25/MANIFEST.md) | `autodealerdata-com-ec66ea6b25` | openapi | 1.0 | 35 | `discovered` | pending |
+| [Datto\|Autotask PSA Rest API](apps/autotask-net-51422169c8/MANIFEST.md) | `autotask-net-51422169c8` | openapi | v1 | 2958 | `discovered` | pending |
+| [Avaza API Documentation](apps/avaza-com-1781a9ce58/MANIFEST.md) | `avaza-com-1781a9ce58` | openapi | v1 | 86 | `discovered` | pending |
+| [Azure Enterprise Knowledge Graph Service](apps/azure-com-enterpriseknowledgegraph-enterpriseknowledgegraphswagger-8169178425/MANIFEST.md) | `azure-com-enterpriseknowledgegraph-enterpriseknowledgegraphswagger-8169178425` | openapi | 2018-12-03 | 7 | `discovered` | pending |
+| [balldontlie](apps/balldontlie-io-93779ca935/MANIFEST.md) | `balldontlie-io-93779ca935` | openapi | 1.0.0 | 7 | `discovered` | pending |
+| [Bandsintown API](apps/bandsintown-com-11dc9b9fd7/MANIFEST.md) | `bandsintown-com-11dc9b9fd7` | openapi | 3.0.0 | 2 | `discovered` | pending |
+| [BBC Nitro API](apps/bbc-com-48de9242cd/MANIFEST.md) | `bbc-com-48de9242cd` | openapi | 1.0.0 | 25 | `discovered` | pending |
+| [BBC iPlayer Business Layer](apps/bbci-co-uk-0e500193fa/MANIFEST.md) | `bbci-co-uk-0e500193fa` | openapi | 1.0 | 30 | `discovered` | pending |
+| [BC Laws](apps/bclaws-ca-bclaws-3d8bc64e33/MANIFEST.md) | `bclaws-ca-bclaws-3d8bc64e33` | openapi | 1.0.0 | 7 | `discovered` | pending |
+| [BeezUP Merchant API](apps/beezup-com-8a3b4ef40f/MANIFEST.md) | `beezup-com-8a3b4ef40f` | openapi | 2.0 | 226 | `discovered` | pending |
+| [Betfair: Exchange Streaming API](apps/betfair-com-84ad41b192/MANIFEST.md) | `betfair-com-84ad41b192` | openapi | 1.0.1423 | 1 | `discovered` | pending |
+| [SEDRA IV API](apps/bethmardutho-org-2075c1f937/MANIFEST.md) | `bethmardutho-org-2075c1f937` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [Bhagavad Gita API](apps/bhagavadgita-io-9cc9c5d4fa/MANIFEST.md) | `bhagavadgita-io-9cc9c5d4fa` | openapi | 1.0 | 6 | `discovered` | pending |
+| [Budgea API Documentation](apps/biapi-pro-15dd262bf4/MANIFEST.md) | `biapi-pro-15dd262bf4` | openapi | 2.0 | 167 | `discovered` | pending |
 | [BigCommerce Storefront](apps/bigcommerce-graphql/MANIFEST.md) | `bigcommerce-graphql` | graphql | 2026-10-29-snapshot | 29 | `discovered` | signed |
-| [IP Geolocation API](apps/bigdatacloud-net-b029b2f754/MANIFEST.md) | `bigdatacloud-net-b029b2f754` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [1,000,000+ Recipe and Grocery List API (v2)](apps/bigoven-com-6088c28d5c/MANIFEST.md) | `bigoven-com-6088c28d5c` | openapi | partner | 66 | `discovered` | signed |
-| [Big Red Cloud API](apps/bigredcloud-com-7c629f8ab5/MANIFEST.md) | `bigredcloud-com-7c629f8ab5` | openapi | v1 | 111 | `discovered` | signed |
-| [Billbee API](apps/billbee-io-15cf84b1c7/MANIFEST.md) | `billbee-io-15cf84b1c7` | openapi | v1 | 76 | `discovered` | signed |
-| [Billingo API v3](apps/billingo-hu-233dabf482/MANIFEST.md) | `billingo-hu-233dabf482` | openapi | 3.0.7 | 31 | `discovered` | signed |
-| [BIN Lookup API](apps/bintable-com-f91c06de36/MANIFEST.md) | `bintable-com-f91c06de36` | openapi | 1.0.0-oas3 | 2 | `discovered` | signed |
-| [Bitbucket API](apps/bitbucket-org-9a1bf340b1/MANIFEST.md) | `bitbucket-org-9a1bf340b1` | openapi | 2.0 | 303 | `discovered` | signed |
-| [BizToc](apps/biztoc-com-8a4fa2d963/MANIFEST.md) | `biztoc-com-8a4fa2d963` | openapi | v1 | 1 | `discovered` | signed |
-| [IBM Containers API](apps/bluemix-net-containers-a191e8e68a/MANIFEST.md) | `bluemix-net-containers-a191e8e68a` | openapi | 3.0.0 | 47 | `discovered` | signed |
-| [Botify API](apps/botify-com-f89164fc79/MANIFEST.md) | `botify-com-f89164fc79` | openapi | 1.0.0 | 26 | `discovered` | signed |
-| [FastAPI](apps/botschaft-local-2fbcac135f/MANIFEST.md) | `botschaft-local-2fbcac135f` | openapi | 0.1.0 | 10 | `discovered` | signed |
-| [Box Platform API](apps/box-com-a4158c78f7/MANIFEST.md) | `box-com-a4158c78f7` | openapi | 2.0.0 | 260 | `discovered` | signed |
-| [brainbi](apps/brainbi-net-732f3972f9/MANIFEST.md) | `brainbi-net-732f3972f9` | openapi | 1.0.0 | 14 | `discovered` | signed |
-| [BrandLovers Marketplace API V1](apps/brandlovers-com-f9d45876ac/MANIFEST.md) | `brandlovers-com-f9d45876ac` | openapi | 1.0.0 | 36 | `discovered` | signed |
-| [Braze Endpoints](apps/braze-com-cbda575be3/MANIFEST.md) | `braze-com-cbda575be3` | openapi | 1.0.0 | 31 | `discovered` | signed |
-| [KYC API Documentation](apps/brex-io-1f5cc76f03/MANIFEST.md) | `brex-io-1f5cc76f03` | openapi | 2021.12 | 54 | `discovered` | signed |
-| [bridgedb webservices](apps/bridgedb-org-8ce3b0faf4/MANIFEST.md) | `bridgedb-org-8ce3b0faf4` | openapi | 0.9.0 | 13 | `discovered` | signed |
-| [Rocket Services](apps/britbox-co-uk-07791e265a/MANIFEST.md) | `britbox-co-uk-07791e265a` | openapi | 3.730.300-ref-1-39-0 | 121 | `discovered` | signed |
-| [Browshot API](apps/browshot-com-27bf3eba3b/MANIFEST.md) | `browshot-com-27bf3eba3b` | openapi | 1.17.0 | 17 | `discovered` | signed |
-| [Bufferapp](apps/bufferapp-com-413edb6b6c/MANIFEST.md) | `bufferapp-com-413edb6b6c` | openapi | 1 | 18 | `discovered` | signed |
-| [BulkSMS JSON REST API](apps/bulksms-com-fefe281aa1/MANIFEST.md) | `bulksms-com-fefe281aa1` | openapi | 1.0.0 | 15 | `discovered` | signed |
-| [Bungie.Net API](apps/bungie-net-06a4b6db6c/MANIFEST.md) | `bungie-net-06a4b6db6c` | openapi | 2.18.0 | 134 | `discovered` | signed |
-| [bunq API](apps/bunq-com-a0d7cc5912/MANIFEST.md) | `bunq-com-a0d7cc5912` | openapi | 1.0 | 421 | `discovered` | signed |
-| [Automata Market Intelligence API](apps/byautomata-io-2a34e3c15d/MANIFEST.md) | `byautomata-io-2a34e3c15d` | openapi | 1.0.1 | 4 | `discovered` | signed |
-| [API for the COVID-19 Tracking QR Code Signin Server.](apps/c19qrserver-local-b3fc02e2b6/MANIFEST.md) | `c19qrserver-local-b3fc02e2b6` | openapi | 1.1 | 14 | `discovered` | signed |
-| [Call Control API](apps/callcontrol-com-65c8280166/MANIFEST.md) | `callcontrol-com-65c8280166` | openapi | 2015-11-01 | 6 | `discovered` | signed |
-| [CallFire API Documentation](apps/callfire-com-f193375214/MANIFEST.md) | `callfire-com-f193375214` | openapi | V2 | 122 | `discovered` | signed |
-| [CalorieNinjas](apps/calorieninjas-com-a55829e7a9/MANIFEST.md) | `calorieninjas-com-a55829e7a9` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [Canada Holidays API](apps/canada-holidays-ca-b17af93a11/MANIFEST.md) | `canada-holidays-ca-b17af93a11` | openapi | 1.8.0 | 6 | `discovered` | signed |
-| [Prime ReportStream](apps/cdcgov-local-prime-data-hub-2c85ef0e0b/MANIFEST.md) | `cdcgov-local-prime-data-hub-2c85ef0e0b` | openapi | 0.2.0-oas3 | 14 | `discovered` | signed |
-| [Cenit IO - REST API Specification](apps/cenit-io-748c6627e2/MANIFEST.md) | `cenit-io-748c6627e2` | openapi | v1 | 40 | `discovered` | signed |
-| [Chaingateway.io](apps/chaingateway-io-de83e31e78/MANIFEST.md) | `chaingateway-io-de83e31e78` | openapi | 1.0 | 21 | `discovered` | signed |
-| [API V1](apps/change-local-7214c70ad9/MANIFEST.md) | `change-local-7214c70ad9` | openapi | v1 | 8 | `discovered` | signed |
-| [Channel 4 API](apps/channel4-com-37709f74ee/MANIFEST.md) | `channel4-com-37709f74ee` | openapi | 1.0.0 | 68 | `discovered` | signed |
-| [Chomp Food Database API Documentation](apps/chompthis-com-c0c31d1cc4/MANIFEST.md) | `chompthis-com-c0c31d1cc4` | openapi | 1.0.0-oas3 | 4 | `discovered` | signed |
-| [hashlookup CIRCL API](apps/circl-lu-hashlookup-915d37343f/MANIFEST.md) | `circl-lu-hashlookup-915d37343f` | openapi | 1.2 | 11 | `discovered` | signed |
-| [CircleCI REST API](apps/circleci-com-63cac92d73/MANIFEST.md) | `circleci-com-63cac92d73` | openapi | v1 | 22 | `discovered` | signed |
-| [REST API Version 2](apps/circuitsandbox-net-8e8b0c9d27/MANIFEST.md) | `circuitsandbox-net-8e8b0c9d27` | openapi | 2.9.235 | 123 | `discovered` | signed |
-| [ClearBlade API](apps/clearblade-com-e6cc33d043/MANIFEST.md) | `clearblade-com-e6cc33d043` | openapi | 3.0 | 220 | `discovered` | signed |
-| [Clever-Cloud API](apps/clever-cloud-com-801b4557a6/MANIFEST.md) | `clever-cloud-com-801b4557a6` | openapi | 1.0.0 | 324 | `discovered` | signed |
-| [Data API](apps/clever-com-95c826aebb/MANIFEST.md) | `clever-com-95c826aebb` | openapi | 1.2.0 | 44 | `discovered` | signed |
-| [ClickMeter API](apps/clickmeter-com-be34dda88d/MANIFEST.md) | `clickmeter-com-be34dda88d` | openapi | v2 | 104 | `discovered` | signed |
-| [ClickSend REST API v3](apps/clicksend-com-55845bae13/MANIFEST.md) | `clicksend-com-55845bae13` | openapi | 1.0.0 | 205 | `discovered` | signed |
-| [clickup20](apps/clickup-com-9bd7bad2b4/MANIFEST.md) | `clickup-com-9bd7bad2b4` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [Climate FieldView Platform APIs](apps/climate-com-1100609298/MANIFEST.md) | `climate-com-1100609298` | openapi | 4.0.11 | 26 | `discovered` | signed |
-| [climateKuul live](apps/climatekuul-com-70382207ed/MANIFEST.md) | `climatekuul-com-70382207ed` | openapi | 1.0 | 26 | `discovered` | signed |
-| [ecwid](apps/cloud-elements-com-ecwid-910423229a/MANIFEST.md) | `cloud-elements-com-ecwid-910423229a` | openapi | api-v2 | 42 | `discovered` | signed |
-| [ocrapi](apps/cloudmersive-com-ocr-287ded8748/MANIFEST.md) | `cloudmersive-com-ocr-287ded8748` | openapi | v1 | 19 | `discovered` | signed |
-| [Cloud-RF API](apps/cloudrf-com-f64ed5319f/MANIFEST.md) | `cloudrf-com-f64ed5319f` | openapi | 2.0.0 | 11 | `discovered` | signed |
-| [Clubhouse API](apps/clubhouseapi-com-fd1214f521/MANIFEST.md) | `clubhouseapi-com-fd1214f521` | openapi | 1 | 41 | `discovered` | signed |
-| [Cnab Online](apps/cnab-online-herokuapp-com-e385dc6c46/MANIFEST.md) | `cnab-online-herokuapp-com-e385dc6c46` | openapi | 1.0.0 | 4 | `discovered` | signed |
-| [Accounting API](apps/codat-io-accounting-3dbdf3c172/MANIFEST.md) | `codat-io-accounting-3dbdf3c172` | openapi | 2.1.0 | 127 | `discovered` | signed |
-| [CodeScan API](apps/code-scan-com-5784d82ef7/MANIFEST.md) | `code-scan-com-5784d82ef7` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [Debian Code Search](apps/codesearch-debian-net-715c51c8ba/MANIFEST.md) | `codesearch-debian-net-715c51c8ba` | openapi | 1.4.0 | 2 | `discovered` | signed |
-| [College Football Data API](apps/collegefootballdata-com-9746553a52/MANIFEST.md) | `collegefootballdata-com-9746553a52` | openapi | 4.4.12 | 51 | `discovered` | signed |
-| [Public Api](apps/combell-com-f719729799/MANIFEST.md) | `combell-com-f719729799` | openapi | v2 | 75 | `discovered` | signed |
-| [ConfigCat Public Management API](apps/configcat-com-bfd2d36664/MANIFEST.md) | `configcat-com-bfd2d36664` | openapi | v1 | 62 | `discovered` | signed |
-| [Conjur](apps/conjur-local-ddb00d9d8d/MANIFEST.md) | `conjur-local-ddb00d9d8d` | openapi | 5.3.0 | 41 | `discovered` | signed |
-| [ContentGroove API](apps/contentgroove-com-b799901b88/MANIFEST.md) | `contentgroove-com-b799901b88` | openapi | 1.0.0 | 15 | `discovered` | signed |
-| [Contract.fit API](apps/contract-p-fit-3cae6b0d08/MANIFEST.md) | `contract-p-fit-3cae6b0d08` | openapi | 1.0 | 135 | `discovered` | signed |
-| [Contribly](apps/contribly-com-527754d439/MANIFEST.md) | `contribly-com-527754d439` | openapi | 1.0.0 | 44 | `discovered` | signed |
-| [Corrently.io](apps/corrently-io-5f679f3b65/MANIFEST.md) | `corrently-io-5f679f3b65` | openapi | 2.0.0 | 26 | `discovered` | signed |
-| [COVID-19 data API](apps/covid19-api-com-bd13d781dc/MANIFEST.md) | `covid19-api-com-bd13d781dc` | openapi | 1.2.6 | 9 | `discovered` | signed |
-| [Co-WIN Certificate API](apps/cowin-gov-cin-cowincert-f94c72eff9/MANIFEST.md) | `cowin-gov-cin-cowincert-f94c72eff9` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [PeerTube](apps/cpy-re-peertube-048871dd3b/MANIFEST.md) | `cpy-re-peertube-048871dd3b` | openapi | 5.1.0 | 186 | `discovered` | signed |
-| [Credas API](apps/credas-co-uk-pi-88bd05e53d/MANIFEST.md) | `credas-co-uk-pi-88bd05e53d` | openapi | v1 | 37 | `discovered` | signed |
-| [Crediwatch's Covid APIs](apps/crediwatch-com-covid19-25fc1f38e3/MANIFEST.md) | `crediwatch-com-covid19-25fc1f38e3` | openapi | 1.3.0 | 5 | `discovered` | signed |
-| [Crossbrowsertesting.com Screenshot Comparisons API](apps/crossbrowsertesting-com-f5b404ed74/MANIFEST.md) | `crossbrowsertesting-com-f5b404ed74` | openapi | 3.0.0 | 3 | `discovered` | signed |
-| [CyCAT.org API](apps/cycat-org-939e89e150/MANIFEST.md) | `cycat-org-939e89e150` | openapi | 0.9 | 14 | `discovered` | signed |
-| [D7SMS](apps/d7networks-com-8c57f59e9d/MANIFEST.md) | `d7networks-com-8c57f59e9d` | openapi | 1.0.2 | 3 | `discovered` | signed |
+| [IP Geolocation API](apps/bigdatacloud-net-b029b2f754/MANIFEST.md) | `bigdatacloud-net-b029b2f754` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [1,000,000+ Recipe and Grocery List API (v2)](apps/bigoven-com-6088c28d5c/MANIFEST.md) | `bigoven-com-6088c28d5c` | openapi | partner | 66 | `discovered` | pending |
+| [Big Red Cloud API](apps/bigredcloud-com-7c629f8ab5/MANIFEST.md) | `bigredcloud-com-7c629f8ab5` | openapi | v1 | 111 | `discovered` | pending |
+| [Billbee API](apps/billbee-io-15cf84b1c7/MANIFEST.md) | `billbee-io-15cf84b1c7` | openapi | v1 | 76 | `discovered` | pending |
+| [Billingo API v3](apps/billingo-hu-233dabf482/MANIFEST.md) | `billingo-hu-233dabf482` | openapi | 3.0.7 | 31 | `discovered` | pending |
+| [BIN Lookup API](apps/bintable-com-f91c06de36/MANIFEST.md) | `bintable-com-f91c06de36` | openapi | 1.0.0-oas3 | 2 | `discovered` | pending |
+| [Bitbucket API](apps/bitbucket-org-9a1bf340b1/MANIFEST.md) | `bitbucket-org-9a1bf340b1` | openapi | 2.0 | 303 | `discovered` | pending |
+| [BizToc](apps/biztoc-com-8a4fa2d963/MANIFEST.md) | `biztoc-com-8a4fa2d963` | openapi | v1 | 1 | `discovered` | pending |
+| [IBM Containers API](apps/bluemix-net-containers-a191e8e68a/MANIFEST.md) | `bluemix-net-containers-a191e8e68a` | openapi | 3.0.0 | 47 | `discovered` | pending |
+| [Botify API](apps/botify-com-f89164fc79/MANIFEST.md) | `botify-com-f89164fc79` | openapi | 1.0.0 | 26 | `discovered` | pending |
+| [FastAPI](apps/botschaft-local-2fbcac135f/MANIFEST.md) | `botschaft-local-2fbcac135f` | openapi | 0.1.0 | 10 | `discovered` | pending |
+| [Box Platform API](apps/box-com-a4158c78f7/MANIFEST.md) | `box-com-a4158c78f7` | openapi | 2.0.0 | 260 | `discovered` | pending |
+| [brainbi](apps/brainbi-net-732f3972f9/MANIFEST.md) | `brainbi-net-732f3972f9` | openapi | 1.0.0 | 14 | `discovered` | pending |
+| [BrandLovers Marketplace API V1](apps/brandlovers-com-f9d45876ac/MANIFEST.md) | `brandlovers-com-f9d45876ac` | openapi | 1.0.0 | 36 | `discovered` | pending |
+| [Braze Endpoints](apps/braze-com-cbda575be3/MANIFEST.md) | `braze-com-cbda575be3` | openapi | 1.0.0 | 31 | `discovered` | pending |
+| [KYC API Documentation](apps/brex-io-1f5cc76f03/MANIFEST.md) | `brex-io-1f5cc76f03` | openapi | 2021.12 | 54 | `discovered` | pending |
+| [bridgedb webservices](apps/bridgedb-org-8ce3b0faf4/MANIFEST.md) | `bridgedb-org-8ce3b0faf4` | openapi | 0.9.0 | 13 | `discovered` | pending |
+| [Rocket Services](apps/britbox-co-uk-07791e265a/MANIFEST.md) | `britbox-co-uk-07791e265a` | openapi | 3.730.300-ref-1-39-0 | 121 | `discovered` | pending |
+| [Browshot API](apps/browshot-com-27bf3eba3b/MANIFEST.md) | `browshot-com-27bf3eba3b` | openapi | 1.17.0 | 17 | `discovered` | pending |
+| [Bufferapp](apps/bufferapp-com-413edb6b6c/MANIFEST.md) | `bufferapp-com-413edb6b6c` | openapi | 1 | 18 | `discovered` | pending |
+| [BulkSMS JSON REST API](apps/bulksms-com-fefe281aa1/MANIFEST.md) | `bulksms-com-fefe281aa1` | openapi | 1.0.0 | 15 | `discovered` | pending |
+| [Bungie.Net API](apps/bungie-net-06a4b6db6c/MANIFEST.md) | `bungie-net-06a4b6db6c` | openapi | 2.18.0 | 134 | `discovered` | pending |
+| [bunq API](apps/bunq-com-a0d7cc5912/MANIFEST.md) | `bunq-com-a0d7cc5912` | openapi | 1.0 | 421 | `discovered` | pending |
+| [Automata Market Intelligence API](apps/byautomata-io-2a34e3c15d/MANIFEST.md) | `byautomata-io-2a34e3c15d` | openapi | 1.0.1 | 4 | `discovered` | pending |
+| [API for the COVID-19 Tracking QR Code Signin Server.](apps/c19qrserver-local-b3fc02e2b6/MANIFEST.md) | `c19qrserver-local-b3fc02e2b6` | openapi | 1.1 | 14 | `discovered` | pending |
+| [Call Control API](apps/callcontrol-com-65c8280166/MANIFEST.md) | `callcontrol-com-65c8280166` | openapi | 2015-11-01 | 6 | `discovered` | pending |
+| [CallFire API Documentation](apps/callfire-com-f193375214/MANIFEST.md) | `callfire-com-f193375214` | openapi | V2 | 122 | `discovered` | pending |
+| [CalorieNinjas](apps/calorieninjas-com-a55829e7a9/MANIFEST.md) | `calorieninjas-com-a55829e7a9` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [Canada Holidays API](apps/canada-holidays-ca-b17af93a11/MANIFEST.md) | `canada-holidays-ca-b17af93a11` | openapi | 1.8.0 | 6 | `discovered` | pending |
+| [Prime ReportStream](apps/cdcgov-local-prime-data-hub-2c85ef0e0b/MANIFEST.md) | `cdcgov-local-prime-data-hub-2c85ef0e0b` | openapi | 0.2.0-oas3 | 14 | `discovered` | pending |
+| [Cenit IO - REST API Specification](apps/cenit-io-748c6627e2/MANIFEST.md) | `cenit-io-748c6627e2` | openapi | v1 | 40 | `discovered` | pending |
+| [Chaingateway.io](apps/chaingateway-io-de83e31e78/MANIFEST.md) | `chaingateway-io-de83e31e78` | openapi | 1.0 | 21 | `discovered` | pending |
+| [API V1](apps/change-local-7214c70ad9/MANIFEST.md) | `change-local-7214c70ad9` | openapi | v1 | 8 | `discovered` | pending |
+| [Channel 4 API](apps/channel4-com-37709f74ee/MANIFEST.md) | `channel4-com-37709f74ee` | openapi | 1.0.0 | 68 | `discovered` | pending |
+| [Chomp Food Database API Documentation](apps/chompthis-com-c0c31d1cc4/MANIFEST.md) | `chompthis-com-c0c31d1cc4` | openapi | 1.0.0-oas3 | 4 | `discovered` | pending |
+| [hashlookup CIRCL API](apps/circl-lu-hashlookup-915d37343f/MANIFEST.md) | `circl-lu-hashlookup-915d37343f` | openapi | 1.2 | 11 | `discovered` | pending |
+| [CircleCI REST API](apps/circleci-com-63cac92d73/MANIFEST.md) | `circleci-com-63cac92d73` | openapi | v1 | 22 | `discovered` | pending |
+| [REST API Version 2](apps/circuitsandbox-net-8e8b0c9d27/MANIFEST.md) | `circuitsandbox-net-8e8b0c9d27` | openapi | 2.9.235 | 123 | `discovered` | pending |
+| [ClearBlade API](apps/clearblade-com-e6cc33d043/MANIFEST.md) | `clearblade-com-e6cc33d043` | openapi | 3.0 | 220 | `discovered` | pending |
+| [Clever-Cloud API](apps/clever-cloud-com-801b4557a6/MANIFEST.md) | `clever-cloud-com-801b4557a6` | openapi | 1.0.0 | 324 | `discovered` | pending |
+| [Data API](apps/clever-com-95c826aebb/MANIFEST.md) | `clever-com-95c826aebb` | openapi | 1.2.0 | 44 | `discovered` | pending |
+| [ClickMeter API](apps/clickmeter-com-be34dda88d/MANIFEST.md) | `clickmeter-com-be34dda88d` | openapi | v2 | 104 | `discovered` | pending |
+| [ClickSend REST API v3](apps/clicksend-com-55845bae13/MANIFEST.md) | `clicksend-com-55845bae13` | openapi | 1.0.0 | 205 | `discovered` | pending |
+| [clickup20](apps/clickup-com-9bd7bad2b4/MANIFEST.md) | `clickup-com-9bd7bad2b4` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [Climate FieldView Platform APIs](apps/climate-com-1100609298/MANIFEST.md) | `climate-com-1100609298` | openapi | 4.0.11 | 26 | `discovered` | pending |
+| [climateKuul live](apps/climatekuul-com-70382207ed/MANIFEST.md) | `climatekuul-com-70382207ed` | openapi | 1.0 | 26 | `discovered` | pending |
+| [ecwid](apps/cloud-elements-com-ecwid-910423229a/MANIFEST.md) | `cloud-elements-com-ecwid-910423229a` | openapi | api-v2 | 42 | `discovered` | pending |
+| [ocrapi](apps/cloudmersive-com-ocr-287ded8748/MANIFEST.md) | `cloudmersive-com-ocr-287ded8748` | openapi | v1 | 19 | `discovered` | pending |
+| [Cloud-RF API](apps/cloudrf-com-f64ed5319f/MANIFEST.md) | `cloudrf-com-f64ed5319f` | openapi | 2.0.0 | 11 | `discovered` | pending |
+| [Clubhouse API](apps/clubhouseapi-com-fd1214f521/MANIFEST.md) | `clubhouseapi-com-fd1214f521` | openapi | 1 | 41 | `discovered` | pending |
+| [Cnab Online](apps/cnab-online-herokuapp-com-e385dc6c46/MANIFEST.md) | `cnab-online-herokuapp-com-e385dc6c46` | openapi | 1.0.0 | 4 | `discovered` | pending |
+| [Accounting API](apps/codat-io-accounting-3dbdf3c172/MANIFEST.md) | `codat-io-accounting-3dbdf3c172` | openapi | 2.1.0 | 127 | `discovered` | pending |
+| [CodeScan API](apps/code-scan-com-5784d82ef7/MANIFEST.md) | `code-scan-com-5784d82ef7` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [Debian Code Search](apps/codesearch-debian-net-715c51c8ba/MANIFEST.md) | `codesearch-debian-net-715c51c8ba` | openapi | 1.4.0 | 2 | `discovered` | pending |
+| [College Football Data API](apps/collegefootballdata-com-9746553a52/MANIFEST.md) | `collegefootballdata-com-9746553a52` | openapi | 4.4.12 | 51 | `discovered` | pending |
+| [Public Api](apps/combell-com-f719729799/MANIFEST.md) | `combell-com-f719729799` | openapi | v2 | 75 | `discovered` | pending |
+| [ConfigCat Public Management API](apps/configcat-com-bfd2d36664/MANIFEST.md) | `configcat-com-bfd2d36664` | openapi | v1 | 62 | `discovered` | pending |
+| [Conjur](apps/conjur-local-ddb00d9d8d/MANIFEST.md) | `conjur-local-ddb00d9d8d` | openapi | 5.3.0 | 41 | `discovered` | pending |
+| [ContentGroove API](apps/contentgroove-com-b799901b88/MANIFEST.md) | `contentgroove-com-b799901b88` | openapi | 1.0.0 | 15 | `discovered` | pending |
+| [Contract.fit API](apps/contract-p-fit-3cae6b0d08/MANIFEST.md) | `contract-p-fit-3cae6b0d08` | openapi | 1.0 | 135 | `discovered` | pending |
+| [Contribly](apps/contribly-com-527754d439/MANIFEST.md) | `contribly-com-527754d439` | openapi | 1.0.0 | 44 | `discovered` | pending |
+| [Corrently.io](apps/corrently-io-5f679f3b65/MANIFEST.md) | `corrently-io-5f679f3b65` | openapi | 2.0.0 | 26 | `discovered` | pending |
+| [COVID-19 data API](apps/covid19-api-com-bd13d781dc/MANIFEST.md) | `covid19-api-com-bd13d781dc` | openapi | 1.2.6 | 9 | `discovered` | pending |
+| [Co-WIN Certificate API](apps/cowin-gov-cin-cowincert-f94c72eff9/MANIFEST.md) | `cowin-gov-cin-cowincert-f94c72eff9` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [PeerTube](apps/cpy-re-peertube-048871dd3b/MANIFEST.md) | `cpy-re-peertube-048871dd3b` | openapi | 5.1.0 | 186 | `discovered` | pending |
+| [Credas API](apps/credas-co-uk-pi-88bd05e53d/MANIFEST.md) | `credas-co-uk-pi-88bd05e53d` | openapi | v1 | 37 | `discovered` | pending |
+| [Crediwatch's Covid APIs](apps/crediwatch-com-covid19-25fc1f38e3/MANIFEST.md) | `crediwatch-com-covid19-25fc1f38e3` | openapi | 1.3.0 | 5 | `discovered` | pending |
+| [Crossbrowsertesting.com Screenshot Comparisons API](apps/crossbrowsertesting-com-f5b404ed74/MANIFEST.md) | `crossbrowsertesting-com-f5b404ed74` | openapi | 3.0.0 | 3 | `discovered` | pending |
+| [CyCAT.org API](apps/cycat-org-939e89e150/MANIFEST.md) | `cycat-org-939e89e150` | openapi | 0.9 | 14 | `discovered` | pending |
+| [D7SMS](apps/d7networks-com-8c57f59e9d/MANIFEST.md) | `d7networks-com-8c57f59e9d` | openapi | 1.0.2 | 3 | `discovered` | pending |
 | [Dagster](apps/dagster/MANIFEST.md) | `dagster` | graphql | 2026-10-30-snapshot | 107 | `discovered` | signed |
-| [DaniWeb Connect API](apps/daniweb-com-e816d1eb1c/MANIFEST.md) | `daniweb-com-e816d1eb1c` | openapi | 4 | 67 | `discovered` | signed |
-| [Data2CRM.API](apps/data2crm-com-31e48d6ffa/MANIFEST.md) | `data2crm-com-31e48d6ffa` | openapi | 1 | 336 | `discovered` | signed |
-| [Open Skills API](apps/dataatwork-org-4b0e1658ba/MANIFEST.md) | `dataatwork-org-4b0e1658ba` | openapi | 1.0 | 13 | `discovered` | signed |
-| [Dataflow Kit Web Scraper](apps/dataflowkit-com-eedf72e8eb/MANIFEST.md) | `dataflowkit-com-eedf72e8eb` | openapi | 1.3 | 5 | `discovered` | signed |
-| [Datasette API](apps/datasette-local-0cff3b0c02/MANIFEST.md) | `datasette-local-0cff3b0c02` | openapi | v1 | 1 | `discovered` | signed |
-| [Deep Art Effects](apps/deeparteffects-com-fe0b952af1/MANIFEST.md) | `deeparteffects-com-fe0b952af1` | openapi | 2017-02-10T16:24:46Z | 3 | `discovered` | signed |
+| [DaniWeb Connect API](apps/daniweb-com-e816d1eb1c/MANIFEST.md) | `daniweb-com-e816d1eb1c` | openapi | 4 | 67 | `discovered` | pending |
+| [Data2CRM.API](apps/data2crm-com-31e48d6ffa/MANIFEST.md) | `data2crm-com-31e48d6ffa` | openapi | 1 | 336 | `discovered` | pending |
+| [Open Skills API](apps/dataatwork-org-4b0e1658ba/MANIFEST.md) | `dataatwork-org-4b0e1658ba` | openapi | 1.0 | 13 | `discovered` | pending |
+| [Dataflow Kit Web Scraper](apps/dataflowkit-com-eedf72e8eb/MANIFEST.md) | `dataflowkit-com-eedf72e8eb` | openapi | 1.3 | 5 | `discovered` | pending |
+| [Datasette API](apps/datasette-local-0cff3b0c02/MANIFEST.md) | `datasette-local-0cff3b0c02` | openapi | v1 | 1 | `discovered` | pending |
+| [Deep Art Effects](apps/deeparteffects-com-fe0b952af1/MANIFEST.md) | `deeparteffects-com-fe0b952af1` | openapi | 2017-02-10T16:24:46Z | 3 | `discovered` | pending |
 | [DeepL Voice](apps/deepl-voice/MANIFEST.md) | `deepl-voice` | asyncapi | 1.0.0 | 2 | `discovered` | signed |
-| [Forem API V1](apps/dev-to-48023251c6/MANIFEST.md) | `dev-to-48023251c6` | openapi | 1.0.0 | 40 | `discovered` | signed |
-| [DLx](apps/digitallinguistics-io-e31f6be2a6/MANIFEST.md) | `digitallinguistics-io-e31f6be2a6` | openapi | 0.3.1 | 18 | `discovered` | signed |
-| [Authorized Partner API Specification](apps/digitallocker-gov-in-authpartner-1c66ef17bf/MANIFEST.md) | `digitallocker-gov-in-authpartner-1c66ef17bf` | openapi | 1.0.0 | 22 | `discovered` | signed |
-| [DigitalNZ API](apps/digitalnz-org-111321483a/MANIFEST.md) | `digitalnz-org-111321483a` | openapi | 3 | 3 | `discovered` | signed |
-| [Discourse API Documentation](apps/discourse-local-6ace1b2d2f/MANIFEST.md) | `discourse-local-6ace1b2d2f` | openapi | latest | 84 | `discovered` | signed |
-| [D&D 5e API](apps/dnd5eapi-co-ce075b330f/MANIFEST.md) | `dnd5eapi-co-ce075b330f` | openapi | 0.1 | 47 | `discovered` | signed |
-| [DVP Data API](apps/docker-com-dvp-d259e12592/MANIFEST.md) | `docker-com-dvp-d259e12592` | openapi | 1.0.0 | 8 | `discovered` | signed |
-| [DocuSign REST API](apps/docusign-net-8246642800/MANIFEST.md) | `docusign-net-8246642800` | openapi | v2.1 | 393 | `discovered` | signed |
-| [Nookipedia](apps/dodo-ac-72323481b6/MANIFEST.md) | `dodo-ac-72323481b6` | openapi | 1.5.0 | 30 | `discovered` | signed |
-| [Domains-Index API](apps/domainsdb-info-e32ca676df/MANIFEST.md) | `domainsdb-info-e32ca676df` | openapi | 1.0 | 14 | `discovered` | signed |
-| [doqs.dev \| PDF filling API](apps/doqs-dev-2471eafdc4/MANIFEST.md) | `doqs-dev-2471eafdc4` | openapi | 1.0 | 14 | `discovered` | signed |
-| [DRACOON API](apps/dracoon-team-58f03219ef/MANIFEST.md) | `dracoon-team-58f03219ef` | openapi | 4.42.2 | 297 | `discovered` | signed |
-| [drchrono-com-cff45834a4](apps/drchrono-com-cff45834a4/MANIFEST.md) | `drchrono-com-cff45834a4` | openapi | v4 (Hunt Valley) | 263 | `discovered` | signed |
+| [Forem API V1](apps/dev-to-48023251c6/MANIFEST.md) | `dev-to-48023251c6` | openapi | 1.0.0 | 40 | `discovered` | pending |
+| [DLx](apps/digitallinguistics-io-e31f6be2a6/MANIFEST.md) | `digitallinguistics-io-e31f6be2a6` | openapi | 0.3.1 | 18 | `discovered` | pending |
+| [Authorized Partner API Specification](apps/digitallocker-gov-in-authpartner-1c66ef17bf/MANIFEST.md) | `digitallocker-gov-in-authpartner-1c66ef17bf` | openapi | 1.0.0 | 22 | `discovered` | pending |
+| [DigitalNZ API](apps/digitalnz-org-111321483a/MANIFEST.md) | `digitalnz-org-111321483a` | openapi | 3 | 3 | `discovered` | pending |
+| [Discourse API Documentation](apps/discourse-local-6ace1b2d2f/MANIFEST.md) | `discourse-local-6ace1b2d2f` | openapi | latest | 84 | `discovered` | pending |
+| [D&D 5e API](apps/dnd5eapi-co-ce075b330f/MANIFEST.md) | `dnd5eapi-co-ce075b330f` | openapi | 0.1 | 47 | `discovered` | pending |
+| [DVP Data API](apps/docker-com-dvp-d259e12592/MANIFEST.md) | `docker-com-dvp-d259e12592` | openapi | 1.0.0 | 8 | `discovered` | pending |
+| [DocuSign REST API](apps/docusign-net-8246642800/MANIFEST.md) | `docusign-net-8246642800` | openapi | v2.1 | 393 | `discovered` | pending |
+| [Nookipedia](apps/dodo-ac-72323481b6/MANIFEST.md) | `dodo-ac-72323481b6` | openapi | 1.5.0 | 30 | `discovered` | pending |
+| [Domains-Index API](apps/domainsdb-info-e32ca676df/MANIFEST.md) | `domainsdb-info-e32ca676df` | openapi | 1.0 | 14 | `discovered` | pending |
+| [doqs.dev \| PDF filling API](apps/doqs-dev-2471eafdc4/MANIFEST.md) | `doqs-dev-2471eafdc4` | openapi | 1.0 | 14 | `discovered` | pending |
+| [DRACOON API](apps/dracoon-team-58f03219ef/MANIFEST.md) | `dracoon-team-58f03219ef` | openapi | 4.42.2 | 297 | `discovered` | pending |
+| [drchrono-com-cff45834a4](apps/drchrono-com-cff45834a4/MANIFEST.md) | `drchrono-com-cff45834a4` | openapi | v4 (Hunt Valley) | 263 | `discovered` | pending |
 | [dxFeed dxLink](apps/dxfeed-dxlink/MANIFEST.md) | `dxfeed-dxlink` | asyncapi | 1.0.2 | 2 | `discovered` | signed |
-| [EasyPDFServer](apps/easypdfserver-com-cb3e565957/MANIFEST.md) | `easypdfserver-com-cb3e565957` | openapi | 1 | 1 | `discovered` | signed |
-| [CROssBAR Data API](apps/ebi-ac-uk-fa28fcb75b/MANIFEST.md) | `ebi-ac-uk-fa28fcb75b` | openapi | 1.0 | 13 | `discovered` | signed |
+| [EasyPDFServer](apps/easypdfserver-com-cb3e565957/MANIFEST.md) | `easypdfserver-com-cb3e565957` | openapi | 1 | 1 | `discovered` | pending |
+| [CROssBAR Data API](apps/ebi-ac-uk-fa28fcb75b/MANIFEST.md) | `ebi-ac-uk-fa28fcb75b` | openapi | 1.0 | 13 | `discovered` | pending |
 | [ElevenLabs Agents](apps/elevenlabs-agents/MANIFEST.md) | `elevenlabs-agents` | asyncapi | 1.0.0 | 2 | `discovered` | signed |
-| [ElevenLabs API Documentation](apps/elevenlabs-io-e2d214894a/MANIFEST.md) | `elevenlabs-io-e2d214894a` | openapi | 1.0 | 19 | `discovered` | signed |
-| [elmah.io API](apps/elmah-io-b51946df5c/MANIFEST.md) | `elmah-io-b51946df5c` | openapi | v3 | 22 | `discovered` | signed |
-| [Enode API](apps/enode-io-d73ca68d82/MANIFEST.md) | `enode-io-d73ca68d82` | openapi | 1.3.10 | 28 | `discovered` | signed |
-| [API v1.0.0](apps/envoice-in-6968a8aaf9/MANIFEST.md) | `envoice-in-6968a8aaf9` | openapi | v1 | 61 | `discovered` | signed |
-| [Net API](apps/eos-local-c77cfae7a1/MANIFEST.md) | `eos-local-c77cfae7a1` | openapi | 1.0.0 | 4 | `discovered` | signed |
-| [U.S. EPA Enforcement and Compliance History Online (ECHO) - Clean Air Act](apps/epa-gov-air-680387149c/MANIFEST.md) | `epa-gov-air-680387149c` | openapi | 2019.10.15 | 16 | `discovered` | signed |
-| [ESG Rating Data](apps/esgenterprise-com-cfcb24777d/MANIFEST.md) | `esgenterprise-com-cfcb24777d` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [Etherpad API](apps/etherpad-local-3aeff8477f/MANIFEST.md) | `etherpad-local-3aeff8477f` | openapi | 1.2.15 | 96 | `discovered` | signed |
-| [EtMDB REST API v1](apps/etmdb-com-912f9edb2e/MANIFEST.md) | `etmdb-com-912f9edb2e` | openapi | 1.0.0 | 27 | `discovered` | signed |
-| [ETSI GS MEC 010-2 - Part 2: Application lifecycle, rules and requirements management](apps/etsi-local-mec010-2-apppkgmgmt-6e0798eb16/MANIFEST.md) | `etsi-local-mec010-2-apppkgmgmt-6e0798eb16` | openapi | 2.1.1 | 16 | `discovered` | signed |
-| [Europeana Search & Record API](apps/europeana-eu-4419263958/MANIFEST.md) | `europeana-eu-4419263958` | openapi | version unknown | 9 | `discovered` | signed |
-| [EVEMarketer Marketstat API](apps/evemarketer-com-95d38a14c4/MANIFEST.md) | `evemarketer-com-95d38a14c4` | openapi | 1.0.1 | 4 | `discovered` | signed |
-| [ExaVault](apps/exavault-com-3410475e44/MANIFEST.md) | `exavault-com-3410475e44` | openapi | 2.0 | 59 | `discovered` | signed |
-| [ExchangeRate-API](apps/exchangerate-api-com-847890cf3d/MANIFEST.md) | `exchangerate-api-com-847890cf3d` | openapi | 4 | 1 | `discovered` | signed |
-| [Ex Libris APIs](apps/exlibrisgroup-com-tasklists-323d004164/MANIFEST.md) | `exlibrisgroup-com-tasklists-323d004164` | openapi | 1.0 | 10 | `discovered` | signed |
-| [JSON storage](apps/extendsclass-com-json-storage-9ebbe90fb0/MANIFEST.md) | `extendsclass-com-json-storage-9ebbe90fb0` | openapi | 0.1 | 5 | `discovered` | signed |
-| [Extpose](apps/extpose-com-45ea8d0ff9/MANIFEST.md) | `extpose-com-45ea8d0ff9` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [Exude API Service](apps/exude-api-herokuapp-com-dc28fe10a9/MANIFEST.md) | `exude-api-herokuapp-com-dc28fe10a9` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [Facial Recognition Reverse Image Face Search API](apps/facecheck-id-3199066b65/MANIFEST.md) | `facecheck-id-3199066b65` | openapi | v1.02 | 4 | `discovered` | signed |
-| [Api Documentation](apps/faceidentity-beta-azurewebsites-net-06d671ca37/MANIFEST.md) | `faceidentity-beta-azurewebsites-net-06d671ca37` | openapi | 1.0 | 2 | `discovered` | signed |
-| [Faretrotter Travel API](apps/faretrotter-com-73ce579405/MANIFEST.md) | `faretrotter-com-73ce579405` | openapi | 2.0 | 2 | `discovered` | signed |
-| [OpenFEC](apps/fec-gov-beb9ee76e4/MANIFEST.md) | `fec-gov-beb9ee76e4` | openapi | 1.0 | 91 | `discovered` | signed |
-| [Figshare API](apps/figshare-com-9fa4877926/MANIFEST.md) | `figshare-com-9fa4877926` | openapi | 2.0.0 | 136 | `discovered` | signed |
-| [Files.com API](apps/files-com-205f715a55/MANIFEST.md) | `files-com-205f715a55` | openapi | 0.0.1 | 222 | `discovered` | signed |
-| [Fire Financial Services Business API](apps/fire-com-c991b87ce7/MANIFEST.md) | `fire-com-c991b87ce7` | openapi | 1.0 | 39 | `discovered` | signed |
-| [IoTVAS API](apps/firmalyzer-com-iotvas-ce683536bd/MANIFEST.md) | `firmalyzer-com-iotvas-ce683536bd` | openapi | 1.0 | 8 | `discovered` | signed |
+| [ElevenLabs API Documentation](apps/elevenlabs-io-e2d214894a/MANIFEST.md) | `elevenlabs-io-e2d214894a` | openapi | 1.0 | 19 | `discovered` | pending |
+| [elmah.io API](apps/elmah-io-b51946df5c/MANIFEST.md) | `elmah-io-b51946df5c` | openapi | v3 | 22 | `discovered` | pending |
+| [Enode API](apps/enode-io-d73ca68d82/MANIFEST.md) | `enode-io-d73ca68d82` | openapi | 1.3.10 | 28 | `discovered` | pending |
+| [API v1.0.0](apps/envoice-in-6968a8aaf9/MANIFEST.md) | `envoice-in-6968a8aaf9` | openapi | v1 | 61 | `discovered` | pending |
+| [Net API](apps/eos-local-c77cfae7a1/MANIFEST.md) | `eos-local-c77cfae7a1` | openapi | 1.0.0 | 4 | `discovered` | pending |
+| [U.S. EPA Enforcement and Compliance History Online (ECHO) - Clean Air Act](apps/epa-gov-air-680387149c/MANIFEST.md) | `epa-gov-air-680387149c` | openapi | 2019.10.15 | 16 | `discovered` | pending |
+| [ESG Rating Data](apps/esgenterprise-com-cfcb24777d/MANIFEST.md) | `esgenterprise-com-cfcb24777d` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [Etherpad API](apps/etherpad-local-3aeff8477f/MANIFEST.md) | `etherpad-local-3aeff8477f` | openapi | 1.2.15 | 96 | `discovered` | pending |
+| [EtMDB REST API v1](apps/etmdb-com-912f9edb2e/MANIFEST.md) | `etmdb-com-912f9edb2e` | openapi | 1.0.0 | 27 | `discovered` | pending |
+| [ETSI GS MEC 010-2 - Part 2: Application lifecycle, rules and requirements management](apps/etsi-local-mec010-2-apppkgmgmt-6e0798eb16/MANIFEST.md) | `etsi-local-mec010-2-apppkgmgmt-6e0798eb16` | openapi | 2.1.1 | 16 | `discovered` | pending |
+| [Europeana Search & Record API](apps/europeana-eu-4419263958/MANIFEST.md) | `europeana-eu-4419263958` | openapi | version unknown | 9 | `discovered` | pending |
+| [EVEMarketer Marketstat API](apps/evemarketer-com-95d38a14c4/MANIFEST.md) | `evemarketer-com-95d38a14c4` | openapi | 1.0.1 | 4 | `discovered` | pending |
+| [ExaVault](apps/exavault-com-3410475e44/MANIFEST.md) | `exavault-com-3410475e44` | openapi | 2.0 | 59 | `discovered` | pending |
+| [ExchangeRate-API](apps/exchangerate-api-com-847890cf3d/MANIFEST.md) | `exchangerate-api-com-847890cf3d` | openapi | 4 | 1 | `discovered` | pending |
+| [Ex Libris APIs](apps/exlibrisgroup-com-tasklists-323d004164/MANIFEST.md) | `exlibrisgroup-com-tasklists-323d004164` | openapi | 1.0 | 10 | `discovered` | pending |
+| [JSON storage](apps/extendsclass-com-json-storage-9ebbe90fb0/MANIFEST.md) | `extendsclass-com-json-storage-9ebbe90fb0` | openapi | 0.1 | 5 | `discovered` | pending |
+| [Extpose](apps/extpose-com-45ea8d0ff9/MANIFEST.md) | `extpose-com-45ea8d0ff9` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [Exude API Service](apps/exude-api-herokuapp-com-dc28fe10a9/MANIFEST.md) | `exude-api-herokuapp-com-dc28fe10a9` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [Facebook Pages](apps/facebook/MANIFEST.md) | `facebook` | openapi | v26.0 | 4 | `hand_built_definition_unsigned_draft_page_token_missing` | pending |
+| [Facial Recognition Reverse Image Face Search API](apps/facecheck-id-3199066b65/MANIFEST.md) | `facecheck-id-3199066b65` | openapi | v1.02 | 4 | `discovered` | pending |
+| [Api Documentation](apps/faceidentity-beta-azurewebsites-net-06d671ca37/MANIFEST.md) | `faceidentity-beta-azurewebsites-net-06d671ca37` | openapi | 1.0 | 2 | `discovered` | pending |
+| [Faretrotter Travel API](apps/faretrotter-com-73ce579405/MANIFEST.md) | `faretrotter-com-73ce579405` | openapi | 2.0 | 2 | `discovered` | pending |
+| [OpenFEC](apps/fec-gov-beb9ee76e4/MANIFEST.md) | `fec-gov-beb9ee76e4` | openapi | 1.0 | 91 | `discovered` | pending |
+| [Figshare API](apps/figshare-com-9fa4877926/MANIFEST.md) | `figshare-com-9fa4877926` | openapi | 2.0.0 | 136 | `discovered` | pending |
+| [Files.com API](apps/files-com-205f715a55/MANIFEST.md) | `files-com-205f715a55` | openapi | 0.0.1 | 222 | `discovered` | pending |
+| [Fire Financial Services Business API](apps/fire-com-c991b87ce7/MANIFEST.md) | `fire-com-c991b87ce7` | openapi | 1.0 | 39 | `discovered` | pending |
+| [IoTVAS API](apps/firmalyzer-com-iotvas-ce683536bd/MANIFEST.md) | `firmalyzer-com-iotvas-ce683536bd` | openapi | 1.0 | 8 | `discovered` | pending |
 | [First AML](apps/firstaml-graphql/MANIFEST.md) | `firstaml-graphql` | graphql | 2026-10-29-snapshot | 39 | `discovered` | signed |
 | [FRC Events](apps/firstinspires-org-a07d0a3343/MANIFEST.md) | `firstinspires-org-a07d0a3343` | openapi | 1.0.0 | 0 | `discovered` | signed |
-| [Flat API](apps/flat-io-1bc724239a/MANIFEST.md) | `flat-io-1bc724239a` | openapi | 2.13.0 | 81 | `discovered` | signed |
-| [Flickr API Schema](apps/flickr-com-85b010c898/MANIFEST.md) | `flickr-com-85b010c898` | openapi | 1.0.0 | 25 | `discovered` | signed |
-| [API v1](apps/formapi-io-469f613c31/MANIFEST.md) | `formapi-io-469f613c31` | openapi | v1 | 35 | `discovered` | signed |
-| [Frankie Financial API](apps/frankiefinancial-io-2c8a494465/MANIFEST.md) | `frankiefinancial-io-2c8a494465` | openapi | 1.5.3 | 46 | `discovered` | signed |
-| [Freesound](apps/freesound-org-fc3603d552/MANIFEST.md) | `freesound-org-fc3603d552` | openapi | 2.0.0 | 2 | `discovered` | signed |
-| [News Plugin](apps/freetv-app-com-dadd2d75dd/MANIFEST.md) | `freetv-app-com-dadd2d75dd` | openapi | v1 | 1 | `discovered` | signed |
-| [Fulfillment.com APIv2](apps/fulfillment-com-74465b75d4/MANIFEST.md) | `fulfillment-com-74465b75d4` | openapi | 2.0 | 13 | `discovered` | signed |
-| [Barcode API](apps/fungenerators-com-barcode-6fa2b2cfff/MANIFEST.md) | `fungenerators-com-barcode-6fa2b2cfff` | openapi | 1.5 | 4 | `discovered` | signed |
-| [FunTranslations Braille API](apps/funtranslations-com-braile-2493978c25/MANIFEST.md) | `funtranslations-com-braile-2493978c25` | openapi | 2.3 | 5 | `discovered` | signed |
-| [Furkot Trips](apps/furkot-com-c8f9ba9424/MANIFEST.md) | `furkot-com-c8f9ba9424` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [MIMIC REST API](apps/gambitcomm-local-mimic-39ac5b4efb/MANIFEST.md) | `gambitcomm-local-mimic-39ac5b4efb` | openapi | 21.00 | 356 | `discovered` | signed |
-| [GameSparks Game Details API](apps/gamesparks-net-game-details-c877dd97b6/MANIFEST.md) | `gamesparks-net-game-details-c877dd97b6` | openapi | v2 | 76 | `discovered` | signed |
-| [GererMesAffaires {REST:API}](apps/gerermesaffaires-com-6928ccda14/MANIFEST.md) | `gerermesaffaires-com-6928ccda14` | openapi | 1.0.6 | 280 | `discovered` | signed |
-| [Postman API](apps/getpostman-com-03c9f8ed78/MANIFEST.md) | `getpostman-com-03c9f8ed78` | openapi | 1.20.0 | 57 | `discovered` | signed |
-| [Sandbox API](apps/getsandbox-com-5c68c9c38b/MANIFEST.md) | `getsandbox-com-5c68c9c38b` | openapi | v1 | 9 | `discovered` | signed |
-| [bng2latlong](apps/getthedata-com-bng2latlong-9dc97c7bf4/MANIFEST.md) | `getthedata-com-bng2latlong-9dc97c7bf4` | openapi | 1.0 | 1 | `discovered` | signed |
-| [Getty Images](apps/gettyimages-com-e8b5b43038/MANIFEST.md) | `gettyimages-com-e8b5b43038` | openapi | 3 | 52 | `discovered` | signed |
-| [Giphy API](apps/giphy-com-6652c97fac/MANIFEST.md) | `giphy-com-6652c97fac` | openapi | 1.0 | 10 | `discovered` | signed |
-| [Gisgraphy webservices](apps/gisgraphy-com-54d5a6f16c/MANIFEST.md) | `gisgraphy-com-54d5a6f16c` | openapi | 4.0.0 | 6 | `discovered` | signed |
-| [GitHub v3 REST API](apps/github-com-3aeb002460/MANIFEST.md) | `github-com-3aeb002460` | openapi | 1.1.4 | 845 | `discovered` | signed |
+| [Flat API](apps/flat-io-1bc724239a/MANIFEST.md) | `flat-io-1bc724239a` | openapi | 2.13.0 | 81 | `discovered` | pending |
+| [Flickr API Schema](apps/flickr-com-85b010c898/MANIFEST.md) | `flickr-com-85b010c898` | openapi | 1.0.0 | 25 | `discovered` | pending |
+| [API v1](apps/formapi-io-469f613c31/MANIFEST.md) | `formapi-io-469f613c31` | openapi | v1 | 35 | `discovered` | pending |
+| [Frankie Financial API](apps/frankiefinancial-io-2c8a494465/MANIFEST.md) | `frankiefinancial-io-2c8a494465` | openapi | 1.5.3 | 46 | `discovered` | pending |
+| [Freesound](apps/freesound-org-fc3603d552/MANIFEST.md) | `freesound-org-fc3603d552` | openapi | 2.0.0 | 2 | `discovered` | pending |
+| [News Plugin](apps/freetv-app-com-dadd2d75dd/MANIFEST.md) | `freetv-app-com-dadd2d75dd` | openapi | v1 | 1 | `discovered` | pending |
+| [Fulfillment.com APIv2](apps/fulfillment-com-74465b75d4/MANIFEST.md) | `fulfillment-com-74465b75d4` | openapi | 2.0 | 13 | `discovered` | pending |
+| [Barcode API](apps/fungenerators-com-barcode-6fa2b2cfff/MANIFEST.md) | `fungenerators-com-barcode-6fa2b2cfff` | openapi | 1.5 | 4 | `discovered` | pending |
+| [FunTranslations Braille API](apps/funtranslations-com-braile-2493978c25/MANIFEST.md) | `funtranslations-com-braile-2493978c25` | openapi | 2.3 | 5 | `discovered` | pending |
+| [Furkot Trips](apps/furkot-com-c8f9ba9424/MANIFEST.md) | `furkot-com-c8f9ba9424` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [MIMIC REST API](apps/gambitcomm-local-mimic-39ac5b4efb/MANIFEST.md) | `gambitcomm-local-mimic-39ac5b4efb` | openapi | 21.00 | 356 | `discovered` | pending |
+| [GameSparks Game Details API](apps/gamesparks-net-game-details-c877dd97b6/MANIFEST.md) | `gamesparks-net-game-details-c877dd97b6` | openapi | v2 | 76 | `discovered` | pending |
+| [GererMesAffaires {REST:API}](apps/gerermesaffaires-com-6928ccda14/MANIFEST.md) | `gerermesaffaires-com-6928ccda14` | openapi | 1.0.6 | 280 | `discovered` | pending |
+| [Postman API](apps/getpostman-com-03c9f8ed78/MANIFEST.md) | `getpostman-com-03c9f8ed78` | openapi | 1.20.0 | 57 | `discovered` | pending |
+| [Sandbox API](apps/getsandbox-com-5c68c9c38b/MANIFEST.md) | `getsandbox-com-5c68c9c38b` | openapi | v1 | 9 | `discovered` | pending |
+| [bng2latlong](apps/getthedata-com-bng2latlong-9dc97c7bf4/MANIFEST.md) | `getthedata-com-bng2latlong-9dc97c7bf4` | openapi | 1.0 | 1 | `discovered` | pending |
+| [Getty Images](apps/gettyimages-com-e8b5b43038/MANIFEST.md) | `gettyimages-com-e8b5b43038` | openapi | 3 | 52 | `discovered` | pending |
+| [Giphy API](apps/giphy-com-6652c97fac/MANIFEST.md) | `giphy-com-6652c97fac` | openapi | 1.0 | 10 | `discovered` | pending |
+| [Gisgraphy webservices](apps/gisgraphy-com-54d5a6f16c/MANIFEST.md) | `gisgraphy-com-54d5a6f16c` | openapi | 4.0.0 | 6 | `discovered` | pending |
+| [GitHub v3 REST API](apps/github-com-3aeb002460/MANIFEST.md) | `github-com-3aeb002460` | openapi | 1.1.4 | 845 | `discovered` | pending |
 | [GitHub GraphQL](apps/github-graphql/MANIFEST.md) | `github-graphql` | graphql | 2026-10-29 | 309 | `discovered` | signed |
-| [Gitlab](apps/gitlab-com-20a83b42cd/MANIFEST.md) | `gitlab-com-20a83b42cd` | openapi | v3 | 358 | `discovered` | signed |
-| [Go-UPC Barcode-Lookup API](apps/go-upc-com-c023fd8fcd/MANIFEST.md) | `go-upc-com-c023fd8fcd` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [goog.io \| Unoffical Google Search API](apps/goog-io-47f3b8e321/MANIFEST.md) | `goog-io-47f3b8e321` | openapi | 0.1.0 | 6 | `discovered` | signed |
-| [Travel Partner API](apps/google-com-d4c9d90273/MANIFEST.md) | `google-com-d4c9d90273` | openapi | v3 | 23 | `discovered` | signed |
-| [Google Home](apps/google-home-be124b1ba0/MANIFEST.md) | `google-home-be124b1ba0` | openapi | 2.0 | 30 | `discovered` | signed |
-| [Abusive Experience Report API](apps/googleapis-com-abusiveexperiencereport-d174cfabf6/MANIFEST.md) | `googleapis-com-abusiveexperiencereport-d174cfabf6` | openapi | v1 | 2 | `discovered` | signed |
-| [BC Data Catalogue API](apps/gov-bc-ca-bcdc-d237132223/MANIFEST.md) | `gov-bc-ca-bcdc-d237132223` | openapi | 3.0.1 | 22 | `discovered` | signed |
-| [GraphHopper Directions API](apps/graphhopper-com-9a0c28adb4/MANIFEST.md) | `graphhopper-com-9a0c28adb4` | openapi | 1.0.0 | 16 | `discovered` | signed |
-| [Greenwire Public API](apps/greenpeace-org-47606de21e/MANIFEST.md) | `greenpeace-org-47606de21e` | openapi | 1.0.0 | 6 | `discovered` | signed |
-| [Greip API](apps/greip-io-85d4b0136f/MANIFEST.md) | `greip-io-85d4b0136f` | openapi | 1.0.0 | 5 | `discovered` | signed |
-| [Groundhog Day API](apps/groundhog-day-com-fe02f748d7/MANIFEST.md) | `groundhog-day-com-fe02f748d7` | openapi | 1.2.1 | 5 | `discovered` | signed |
-| [GSMTasks Project API](apps/gsmtasks-com-dc6969f2df/MANIFEST.md) | `gsmtasks-com-dc6969f2df` | openapi | 2.4.13 | 261 | `discovered` | signed |
-| [Metadata](apps/haloapi-com-metadata-8dcfd8ffc9/MANIFEST.md) | `haloapi-com-metadata-8dcfd8ffc9` | openapi | 1.0 | 37 | `discovered` | signed |
-| [Handwrytten API](apps/handwrytten-com-50ca2009b6/MANIFEST.md) | `handwrytten-com-50ca2009b6` | openapi | 1.0.0 | 30 | `discovered` | signed |
+| [Gitlab](apps/gitlab-com-20a83b42cd/MANIFEST.md) | `gitlab-com-20a83b42cd` | openapi | v3 | 358 | `discovered` | pending |
+| [Go-UPC Barcode-Lookup API](apps/go-upc-com-c023fd8fcd/MANIFEST.md) | `go-upc-com-c023fd8fcd` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [goog.io \| Unoffical Google Search API](apps/goog-io-47f3b8e321/MANIFEST.md) | `goog-io-47f3b8e321` | openapi | 0.1.0 | 6 | `discovered` | pending |
+| [Travel Partner API](apps/google-com-d4c9d90273/MANIFEST.md) | `google-com-d4c9d90273` | openapi | v3 | 23 | `discovered` | pending |
+| [Google Home](apps/google-home-be124b1ba0/MANIFEST.md) | `google-home-be124b1ba0` | openapi | 2.0 | 30 | `discovered` | pending |
+| [Abusive Experience Report API](apps/googleapis-com-abusiveexperiencereport-d174cfabf6/MANIFEST.md) | `googleapis-com-abusiveexperiencereport-d174cfabf6` | openapi | v1 | 2 | `discovered` | pending |
+| [BC Data Catalogue API](apps/gov-bc-ca-bcdc-d237132223/MANIFEST.md) | `gov-bc-ca-bcdc-d237132223` | openapi | 3.0.1 | 22 | `discovered` | pending |
+| [GraphHopper Directions API](apps/graphhopper-com-9a0c28adb4/MANIFEST.md) | `graphhopper-com-9a0c28adb4` | openapi | 1.0.0 | 16 | `discovered` | pending |
+| [Greenwire Public API](apps/greenpeace-org-47606de21e/MANIFEST.md) | `greenpeace-org-47606de21e` | openapi | 1.0.0 | 6 | `discovered` | pending |
+| [Greip API](apps/greip-io-85d4b0136f/MANIFEST.md) | `greip-io-85d4b0136f` | openapi | 1.0.0 | 5 | `discovered` | pending |
+| [Groundhog Day API](apps/groundhog-day-com-fe02f748d7/MANIFEST.md) | `groundhog-day-com-fe02f748d7` | openapi | 1.2.1 | 5 | `discovered` | pending |
+| [GSMTasks Project API](apps/gsmtasks-com-dc6969f2df/MANIFEST.md) | `gsmtasks-com-dc6969f2df` | openapi | 2.4.13 | 261 | `discovered` | pending |
+| [Metadata](apps/haloapi-com-metadata-8dcfd8ffc9/MANIFEST.md) | `haloapi-com-metadata-8dcfd8ffc9` | openapi | 1.0 | 37 | `discovered` | pending |
+| [Handwrytten API](apps/handwrytten-com-50ca2009b6/MANIFEST.md) | `handwrytten-com-50ca2009b6` | openapi | 1.0.0 | 30 | `discovered` | pending |
 | [Hashnode](apps/hashnode-graphql/MANIFEST.md) | `hashnode-graphql` | graphql | 2026-10-29-snapshot | 24 | `discovered` | signed |
-| [Healthcare](apps/healthcare-gov-f236f25289/MANIFEST.md) | `healthcare-gov-f236f25289` | openapi | 1.0.0 | 16 | `discovered` | signed |
-| [HERE Network Positioning API v2](apps/here-com-positioning-3020113342/MANIFEST.md) | `here-com-positioning-3020113342` | openapi | 2.1.1 | 3 | `discovered` | signed |
-| [Hetzner Cloud API](apps/hetzner-cloud-009314bf88/MANIFEST.md) | `hetzner-cloud-009314bf88` | openapi | 1.0.0 | 144 | `discovered` | signed |
-| [HHS Media Services API](apps/hhs-gov-840dd3bfca/MANIFEST.md) | `hhs-gov-840dd3bfca` | openapi | 2 | 31 | `discovered` | signed |
-| [Highways England API](apps/highwaysengland-co-uk-d4909a20c3/MANIFEST.md) | `highwaysengland-co-uk-d4909a20c3` | openapi | v1 | 10 | `discovered` | signed |
-| [shinobiapi](apps/hillbillysoftware-com-shinobi-008fa86dcd/MANIFEST.md) | `hillbillysoftware-com-shinobi-008fa86dcd` | openapi | v1 | 58 | `discovered` | signed |
+| [Healthcare](apps/healthcare-gov-f236f25289/MANIFEST.md) | `healthcare-gov-f236f25289` | openapi | 1.0.0 | 16 | `discovered` | pending |
+| [HERE Network Positioning API v2](apps/here-com-positioning-3020113342/MANIFEST.md) | `here-com-positioning-3020113342` | openapi | 2.1.1 | 3 | `discovered` | pending |
+| [Hetzner Cloud API](apps/hetzner-cloud-009314bf88/MANIFEST.md) | `hetzner-cloud-009314bf88` | openapi | 1.0.0 | 144 | `discovered` | pending |
+| [HHS Media Services API](apps/hhs-gov-840dd3bfca/MANIFEST.md) | `hhs-gov-840dd3bfca` | openapi | 2 | 31 | `discovered` | pending |
+| [Highways England API](apps/highwaysengland-co-uk-d4909a20c3/MANIFEST.md) | `highwaysengland-co-uk-d4909a20c3` | openapi | v1 | 10 | `discovered` | pending |
+| [shinobiapi](apps/hillbillysoftware-com-shinobi-008fa86dcd/MANIFEST.md) | `hillbillysoftware-com-shinobi-008fa86dcd` | openapi | v1 | 58 | `discovered` | pending |
 | [Hodoflow](apps/hodoflow-graphql/MANIFEST.md) | `hodoflow-graphql` | graphql | 2026-10-29-snapshot | 2 | `discovered` | signed |
-| [ATM Locator API](apps/hsbc-com-atm-9287ac2c86/MANIFEST.md) | `hsbc-com-atm-9287ac2c86` | openapi | 2.2.1 | 5 | `discovered` | signed |
-| [httpbin.org](apps/httpbin-org-917ed08996/MANIFEST.md) | `httpbin-org-917ed08996` | openapi | 0.9.2 | 78 | `discovered` | signed |
-| [Custom Behavioral Events API](apps/hubapi-com-analytics-4cfce89b8c/MANIFEST.md) | `hubapi-com-analytics-4cfce89b8c` | openapi | v3 | 1 | `discovered` | signed |
-| [Hubhopper Partner Integration API(s) - Production](apps/hubhopper-com-1105ceb6a4/MANIFEST.md) | `hubhopper-com-1105ceb6a4` | openapi | v5 | 7 | `discovered` | signed |
-| [Growth Services](apps/i-cue-solutions-eaeeb81dee/MANIFEST.md) | `i-cue-solutions-eaeeb81dee` | openapi | v1 | 64 | `discovered` | signed |
-| [IBANAPI OpenApi Documentation](apps/ibanapi-com-93066a4fb5/MANIFEST.md) | `ibanapi-com-93066a4fb5` | openapi | 1.0.0 | 3 | `discovered` | signed |
-| [Use a [New Version](https://icons8.github.io/icons8-docs/) Instead](apps/icons8-com-9b3b0d9003/MANIFEST.md) | `icons8-com-9b3b0d9003` | openapi | 1.0.0 | 8 | `discovered` | signed |
-| [ID4i API](apps/id4i-de-2c0d200710/MANIFEST.md) | `id4i-de-2c0d200710` | openapi | 1.0.2 | 107 | `discovered` | signed |
-| [eNanoMapper database](apps/ideaconsult-net-enanomapper-80144d64c7/MANIFEST.md) | `ideaconsult-net-enanomapper-80144d64c7` | openapi | 4.0.0 | 13 | `discovered` | signed |
-| [API Reference - Ideal Postcodes](apps/ideal-postcodes-co-uk-984b3d4119/MANIFEST.md) | `ideal-postcodes-co-uk-984b3d4119` | openapi | 3.7.0 | 26 | `discovered` | signed |
-| [Image-Charts](apps/image-charts-com-61ca1a7bde/MANIFEST.md) | `image-charts-com-61ca1a7bde` | openapi | 6.1.19 | 2 | `discovered` | signed |
-| [Impala Hotel Booking API](apps/impala-travel-hotels-b7caa74eb3/MANIFEST.md) | `impala-travel-hotels-b7caa74eb3` | openapi | 1.003 | 10 | `discovered` | signed |
-| [Increase API](apps/increase-com-c7bcfd5c22/MANIFEST.md) | `increase-com-c7bcfd5c22` | openapi | 0.0.1 | 115 | `discovered` | signed |
-| [Infermedica API](apps/infermedica-com-cb2bbdb64a/MANIFEST.md) | `infermedica-com-cb2bbdb64a` | openapi | v2 | 20 | `discovered` | signed |
-| [Influx OSS API Service](apps/influxdata-com-df14225f6f/MANIFEST.md) | `influxdata-com-df14225f6f` | openapi | 2.0.0 | 197 | `discovered` | signed |
-| [Dados Abertos - API](apps/inpe-br-dados-abertos-d92349b925/MANIFEST.md) | `inpe-br-dados-abertos-d92349b925` | openapi | 1.0 | 6 | `discovered` | signed |
-| [Instagram API](apps/instagram-com-055878d4c9/MANIFEST.md) | `instagram-com-055878d4c9` | openapi | 1.0.0 | 27 | `discovered` | signed |
-| [Intel Product Catalogue Service](apps/intel-com-product-catalogue-520fbcba9a/MANIFEST.md) | `intel-com-product-catalogue-520fbcba9a` | openapi | 0.1.0 | 4 | `discovered` | signed |
-| [Brain Web API](apps/intellifi-nl-97e4426a35/MANIFEST.md) | `intellifi-nl-97e4426a35` | openapi | 2.23.2+0.gfbc3926.dirty | 77 | `discovered` | signed |
-| [IBKR 3rd Party Web API](apps/interactivebrokers-com-7f55dc6fd5/MANIFEST.md) | `interactivebrokers-com-7f55dc6fd5` | openapi | 1.0.0 | 16 | `discovered` | signed |
-| [Interzoid Convert Currency Rate API](apps/interzoid-com-convertcurrency-700ca4d3c6/MANIFEST.md) | `interzoid-com-convertcurrency-700ca4d3c6` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [IP2Location IP Geolocation](apps/ip2location-com-geolocation-cb56fe7b4f/MANIFEST.md) | `ip2location-com-geolocation-cb56fe7b4f` | openapi | 1.0 | 1 | `discovered` | signed |
-| [IP2Location.io IP Geolocation API](apps/ip2location-io-da3692e152/MANIFEST.md) | `ip2location-io-da3692e152` | openapi | 1.0 | 1 | `discovered` | signed |
-| [IP2Proxy Proxy Detection](apps/ip2proxy-com-b5a60ff697/MANIFEST.md) | `ip2proxy-com-b5a60ff697` | openapi | 1.0 | 1 | `discovered` | signed |
-| [IP2WHOIS Domain Lookup](apps/ip2whois-com-9fb6da56b3/MANIFEST.md) | `ip2whois-com-9fb6da56b3` | openapi | 1.0 | 1 | `discovered` | signed |
+| [ATM Locator API](apps/hsbc-com-atm-9287ac2c86/MANIFEST.md) | `hsbc-com-atm-9287ac2c86` | openapi | 2.2.1 | 5 | `discovered` | pending |
+| [httpbin.org](apps/httpbin-org-917ed08996/MANIFEST.md) | `httpbin-org-917ed08996` | openapi | 0.9.2 | 78 | `discovered` | pending |
+| [Custom Behavioral Events API](apps/hubapi-com-analytics-4cfce89b8c/MANIFEST.md) | `hubapi-com-analytics-4cfce89b8c` | openapi | v3 | 1 | `discovered` | pending |
+| [Hubhopper Partner Integration API(s) - Production](apps/hubhopper-com-1105ceb6a4/MANIFEST.md) | `hubhopper-com-1105ceb6a4` | openapi | v5 | 7 | `discovered` | pending |
+| [Growth Services](apps/i-cue-solutions-eaeeb81dee/MANIFEST.md) | `i-cue-solutions-eaeeb81dee` | openapi | v1 | 64 | `discovered` | pending |
+| [IBANAPI OpenApi Documentation](apps/ibanapi-com-93066a4fb5/MANIFEST.md) | `ibanapi-com-93066a4fb5` | openapi | 1.0.0 | 3 | `discovered` | pending |
+| [Use a [New Version](https://icons8.github.io/icons8-docs/) Instead](apps/icons8-com-9b3b0d9003/MANIFEST.md) | `icons8-com-9b3b0d9003` | openapi | 1.0.0 | 8 | `discovered` | pending |
+| [ID4i API](apps/id4i-de-2c0d200710/MANIFEST.md) | `id4i-de-2c0d200710` | openapi | 1.0.2 | 107 | `discovered` | pending |
+| [eNanoMapper database](apps/ideaconsult-net-enanomapper-80144d64c7/MANIFEST.md) | `ideaconsult-net-enanomapper-80144d64c7` | openapi | 4.0.0 | 13 | `discovered` | pending |
+| [API Reference - Ideal Postcodes](apps/ideal-postcodes-co-uk-984b3d4119/MANIFEST.md) | `ideal-postcodes-co-uk-984b3d4119` | openapi | 3.7.0 | 26 | `discovered` | pending |
+| [Image-Charts](apps/image-charts-com-61ca1a7bde/MANIFEST.md) | `image-charts-com-61ca1a7bde` | openapi | 6.1.19 | 2 | `discovered` | pending |
+| [Impala Hotel Booking API](apps/impala-travel-hotels-b7caa74eb3/MANIFEST.md) | `impala-travel-hotels-b7caa74eb3` | openapi | 1.003 | 10 | `discovered` | pending |
+| [Increase API](apps/increase-com-c7bcfd5c22/MANIFEST.md) | `increase-com-c7bcfd5c22` | openapi | 0.0.1 | 115 | `discovered` | pending |
+| [Infermedica API](apps/infermedica-com-cb2bbdb64a/MANIFEST.md) | `infermedica-com-cb2bbdb64a` | openapi | v2 | 20 | `discovered` | pending |
+| [Influx OSS API Service](apps/influxdata-com-df14225f6f/MANIFEST.md) | `influxdata-com-df14225f6f` | openapi | 2.0.0 | 197 | `discovered` | pending |
+| [Dados Abertos - API](apps/inpe-br-dados-abertos-d92349b925/MANIFEST.md) | `inpe-br-dados-abertos-d92349b925` | openapi | 1.0 | 6 | `discovered` | pending |
+| [Instagram API](apps/instagram-com-055878d4c9/MANIFEST.md) | `instagram-com-055878d4c9` | openapi | 1.0.0 | 27 | `discovered` | pending |
+| [Intel Product Catalogue Service](apps/intel-com-product-catalogue-520fbcba9a/MANIFEST.md) | `intel-com-product-catalogue-520fbcba9a` | openapi | 0.1.0 | 4 | `discovered` | pending |
+| [Brain Web API](apps/intellifi-nl-97e4426a35/MANIFEST.md) | `intellifi-nl-97e4426a35` | openapi | 2.23.2+0.gfbc3926.dirty | 77 | `discovered` | pending |
+| [IBKR 3rd Party Web API](apps/interactivebrokers-com-7f55dc6fd5/MANIFEST.md) | `interactivebrokers-com-7f55dc6fd5` | openapi | 1.0.0 | 16 | `discovered` | pending |
+| [Interzoid Convert Currency Rate API](apps/interzoid-com-convertcurrency-700ca4d3c6/MANIFEST.md) | `interzoid-com-convertcurrency-700ca4d3c6` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [IP2Location IP Geolocation](apps/ip2location-com-geolocation-cb56fe7b4f/MANIFEST.md) | `ip2location-com-geolocation-cb56fe7b4f` | openapi | 1.0 | 1 | `discovered` | pending |
+| [IP2Location.io IP Geolocation API](apps/ip2location-io-da3692e152/MANIFEST.md) | `ip2location-io-da3692e152` | openapi | 1.0 | 1 | `discovered` | pending |
+| [IP2Proxy Proxy Detection](apps/ip2proxy-com-b5a60ff697/MANIFEST.md) | `ip2proxy-com-b5a60ff697` | openapi | 1.0 | 1 | `discovered` | pending |
+| [IP2WHOIS Domain Lookup](apps/ip2whois-com-9fb6da56b3/MANIFEST.md) | `ip2whois-com-9fb6da56b3` | openapi | 1.0 | 1 | `discovered` | pending |
 | [ipinfodb-com-9f0a644c09](apps/ipinfodb-com-9f0a644c09/MANIFEST.md) | `ipinfodb-com-9f0a644c09` | openapi | 1.0.0 | 0 | `discovered` | signed |
-| [IPQualityScore API](apps/ipqualityscore-com-b9b36672a2/MANIFEST.md) | `ipqualityscore-com-b9b36672a2` | openapi | 1.0.0 | 3 | `discovered` | signed |
-| [ipTwist](apps/iptwist-com-28f28276ed/MANIFEST.md) | `iptwist-com-28f28276ed` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [iQualify Management API](apps/iqualify-com-1161f53a87/MANIFEST.md) | `iqualify-com-1161f53a87` | openapi | v1 | 84 | `discovered` | signed |
-| [ISBNdb API](apps/isbndb-com-ab6de86aea/MANIFEST.md) | `isbndb-com-ab6de86aea` | openapi | 1.0.1 | 10 | `discovered` | signed |
-| [API iSendPro](apps/isendpro-com-879010763d/MANIFEST.md) | `isendpro-com-879010763d` | openapi | 1.1.1 | 14 | `discovered` | signed |
+| [IPQualityScore API](apps/ipqualityscore-com-b9b36672a2/MANIFEST.md) | `ipqualityscore-com-b9b36672a2` | openapi | 1.0.0 | 3 | `discovered` | pending |
+| [ipTwist](apps/iptwist-com-28f28276ed/MANIFEST.md) | `iptwist-com-28f28276ed` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [iQualify Management API](apps/iqualify-com-1161f53a87/MANIFEST.md) | `iqualify-com-1161f53a87` | openapi | v1 | 84 | `discovered` | pending |
+| [ISBNdb API](apps/isbndb-com-ab6de86aea/MANIFEST.md) | `isbndb-com-ab6de86aea` | openapi | 1.0.1 | 10 | `discovered` | pending |
+| [API iSendPro](apps/isendpro-com-879010763d/MANIFEST.md) | `isendpro-com-879010763d` | openapi | 1.1.1 | 14 | `discovered` | pending |
 | [Entertainment Express API](apps/iva-api-com-30715df28f/MANIFEST.md) | `iva-api-com-30715df28f` | openapi | 2.0 | 0 | `discovered` | signed |
-| [IX-API](apps/ix-api-net-6be78f3c09/MANIFEST.md) | `ix-api-net-6be78f3c09` | openapi | 2.1.0 | 78 | `discovered` | signed |
-| [Product Library API](apps/izettle-com-products-9b34a9848d/MANIFEST.md) | `izettle-com-products-9b34a9848d` | openapi | 1.0.0 | 32 | `discovered` | signed |
-| [Firebase Cloud Messaging API](apps/javatpoint-com-313b35ffad/MANIFEST.md) | `javatpoint-com-313b35ffad` | openapi | v1 | 1 | `discovered` | signed |
-| [Jellyfin API](apps/jellyfin-local-3effdb3793/MANIFEST.md) | `jellyfin-local-3effdb3793` | openapi | v1 | 408 | `discovered` | signed |
-| [Jokes One API](apps/jokes-one-805b77145f/MANIFEST.md) | `jokes-one-805b77145f` | openapi | 1.1 | 12 | `discovered` | signed |
-| [Developer documentation](apps/journy-io-0a221123fd/MANIFEST.md) | `journy-io-0a221123fd` | openapi | 1.0.0 | 16 | `discovered` | signed |
-| [JSON2Video API](apps/json2video-com-8ab8cbe92b/MANIFEST.md) | `json2video-com-8ab8cbe92b` | openapi | 2.0.0 | 2 | `discovered` | signed |
-| [Jumpseller API](apps/jumpseller-com-22da8fd5e7/MANIFEST.md) | `jumpseller-com-22da8fd5e7` | openapi | 1.0.0 | 142 | `discovered` | signed |
-| [Just Eat UK](apps/just-eat-co-uk-89d3d5b6d6/MANIFEST.md) | `just-eat-co-uk-89d3d5b6d6` | openapi | 1.0.0 | 98 | `discovered` | signed |
-| [Keycloak Admin REST API](apps/keycloak-local-9baab45f69/MANIFEST.md) | `keycloak-local-9baab45f69` | openapi | 1 | 281 | `discovered` | signed |
-| [KeyServ](apps/keyserv-solutions-f3d640eee5/MANIFEST.md) | `keyserv-solutions-f3d640eee5` | openapi | 1.4.5 | 24 | `discovered` | signed |
-| [Open AI Klarna product Api](apps/klarna-com-openai-72c869c37f/MANIFEST.md) | `klarna-com-openai-72c869c37f` | openapi | v0 | 1 | `discovered` | signed |
-| [koomalooma Partner API](apps/koomalooma-com-27e3ebc477/MANIFEST.md) | `koomalooma-com-27e3ebc477` | openapi | 1.0 | 2 | `discovered` | signed |
-| [Kubernetes](apps/kubernetes-io-6c0e3bccbd/MANIFEST.md) | `kubernetes-io-6c0e3bccbd` | openapi | unversioned | 833 | `discovered` | signed |
-| [KumpeApps API](apps/kumpeapps-com-40be117e32/MANIFEST.md) | `kumpeapps-com-40be117e32` | openapi | 5.0.0 | 33 | `discovered` | signed |
-| [LambdaTest Screenshots API Documentation](apps/lambdatest-com-9a395c4957/MANIFEST.md) | `lambdatest-com-9a395c4957` | openapi | 1.0.1 | 9 | `discovered` | signed |
-| [Deed API](apps/landregistry-gov-uk-deed-35efd8af96/MANIFEST.md) | `landregistry-gov-uk-deed-35efd8af96` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [LanguageTool API](apps/languagetool-org-8df7992099/MANIFEST.md) | `languagetool-org-8df7992099` | openapi | 1.1.2 | 5 | `discovered` | signed |
-| [LaunchDarkly REST API](apps/launchdarkly-com-4d65c261b6/MANIFEST.md) | `launchdarkly-com-4d65c261b6` | openapi | 5.3.0 | 105 | `discovered` | signed |
-| [LGTM API specification](apps/lgtm-com-080c155f0f/MANIFEST.md) | `lgtm-com-080c155f0f` | openapi | v1.0 | 29 | `discovered` | signed |
-| [LibreTranslate](apps/libretranslate-local-21d0e2362f/MANIFEST.md) | `libretranslate-local-21d0e2362f` | openapi | 1.3.9 | 6 | `discovered` | signed |
-| [Linode API](apps/linode-com-8d975483fd/MANIFEST.md) | `linode-com-8d975483fd` | openapi | 4.145.0 | 350 | `discovered` | signed |
-| [LinQR](apps/linqr-app-a03ea78590/MANIFEST.md) | `linqr-app-a03ea78590` | openapi | 2.0 | 14 | `discovered` | signed |
-| [Reimbursements API](apps/linuxfoundation-org-reimbursement-9815e25777/MANIFEST.md) | `linuxfoundation-org-reimbursement-9815e25777` | openapi | 1.0 | 5 | `discovered` | signed |
-| [Listen API: Podcast Search, Directory, and Insights API](apps/listennotes-com-dcc1252509/MANIFEST.md) | `listennotes-com-dcc1252509` | openapi | 2.0 | 23 | `discovered` | signed |
-| [DFlight API](apps/ljaero-com-dflight-018a8d4928/MANIFEST.md) | `ljaero-com-dflight-018a8d4928` | openapi | V 1.0.0 | 24 | `discovered` | signed |
-| [API docs \| logoraisr.com](apps/logoraisr-com-61f17073dd/MANIFEST.md) | `logoraisr-com-61f17073dd` | openapi | v1 | 10 | `discovered` | signed |
-| [Loket.nl API](apps/loket-nl-b4aae265b0/MANIFEST.md) | `loket-nl-b4aae265b0` | openapi | V2 | 641 | `discovered` | signed |
-| [LH Partner API](apps/lufthansa-com-partner-25682f4f90/MANIFEST.md) | `lufthansa-com-partner-25682f4f90` | openapi | 1.0 | 16 | `discovered` | signed |
+| [IX-API](apps/ix-api-net-6be78f3c09/MANIFEST.md) | `ix-api-net-6be78f3c09` | openapi | 2.1.0 | 78 | `discovered` | pending |
+| [Product Library API](apps/izettle-com-products-9b34a9848d/MANIFEST.md) | `izettle-com-products-9b34a9848d` | openapi | 1.0.0 | 32 | `discovered` | pending |
+| [Firebase Cloud Messaging API](apps/javatpoint-com-313b35ffad/MANIFEST.md) | `javatpoint-com-313b35ffad` | openapi | v1 | 1 | `discovered` | pending |
+| [Jellyfin API](apps/jellyfin-local-3effdb3793/MANIFEST.md) | `jellyfin-local-3effdb3793` | openapi | v1 | 408 | `discovered` | pending |
+| [Jokes One API](apps/jokes-one-805b77145f/MANIFEST.md) | `jokes-one-805b77145f` | openapi | 1.1 | 12 | `discovered` | pending |
+| [Developer documentation](apps/journy-io-0a221123fd/MANIFEST.md) | `journy-io-0a221123fd` | openapi | 1.0.0 | 16 | `discovered` | pending |
+| [JSON2Video API](apps/json2video-com-8ab8cbe92b/MANIFEST.md) | `json2video-com-8ab8cbe92b` | openapi | 2.0.0 | 2 | `discovered` | pending |
+| [Jumpseller API](apps/jumpseller-com-22da8fd5e7/MANIFEST.md) | `jumpseller-com-22da8fd5e7` | openapi | 1.0.0 | 142 | `discovered` | pending |
+| [Just Eat UK](apps/just-eat-co-uk-89d3d5b6d6/MANIFEST.md) | `just-eat-co-uk-89d3d5b6d6` | openapi | 1.0.0 | 98 | `discovered` | pending |
+| [Keycloak Admin REST API](apps/keycloak-local-9baab45f69/MANIFEST.md) | `keycloak-local-9baab45f69` | openapi | 1 | 281 | `discovered` | pending |
+| [KeyServ](apps/keyserv-solutions-f3d640eee5/MANIFEST.md) | `keyserv-solutions-f3d640eee5` | openapi | 1.4.5 | 24 | `discovered` | pending |
+| [Open AI Klarna product Api](apps/klarna-com-openai-72c869c37f/MANIFEST.md) | `klarna-com-openai-72c869c37f` | openapi | v0 | 1 | `discovered` | pending |
+| [koomalooma Partner API](apps/koomalooma-com-27e3ebc477/MANIFEST.md) | `koomalooma-com-27e3ebc477` | openapi | 1.0 | 2 | `discovered` | pending |
+| [Kubernetes](apps/kubernetes-io-6c0e3bccbd/MANIFEST.md) | `kubernetes-io-6c0e3bccbd` | openapi | unversioned | 833 | `discovered` | pending |
+| [KumpeApps API](apps/kumpeapps-com-40be117e32/MANIFEST.md) | `kumpeapps-com-40be117e32` | openapi | 5.0.0 | 33 | `discovered` | pending |
+| [LambdaTest Screenshots API Documentation](apps/lambdatest-com-9a395c4957/MANIFEST.md) | `lambdatest-com-9a395c4957` | openapi | 1.0.1 | 9 | `discovered` | pending |
+| [Deed API](apps/landregistry-gov-uk-deed-35efd8af96/MANIFEST.md) | `landregistry-gov-uk-deed-35efd8af96` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [LanguageTool API](apps/languagetool-org-8df7992099/MANIFEST.md) | `languagetool-org-8df7992099` | openapi | 1.1.2 | 5 | `discovered` | pending |
+| [LaunchDarkly REST API](apps/launchdarkly-com-4d65c261b6/MANIFEST.md) | `launchdarkly-com-4d65c261b6` | openapi | 5.3.0 | 105 | `discovered` | pending |
+| [LGTM API specification](apps/lgtm-com-080c155f0f/MANIFEST.md) | `lgtm-com-080c155f0f` | openapi | v1.0 | 29 | `discovered` | pending |
+| [LibreTranslate](apps/libretranslate-local-21d0e2362f/MANIFEST.md) | `libretranslate-local-21d0e2362f` | openapi | 1.3.9 | 6 | `discovered` | pending |
+| [LinkedIn](apps/linkedin/MANIFEST.md) | `linkedin` | openapi | 202610 | 3 | `hand_built_definition_unsigned_draft` | pending |
+| [Linode API](apps/linode-com-8d975483fd/MANIFEST.md) | `linode-com-8d975483fd` | openapi | 4.145.0 | 350 | `discovered` | pending |
+| [LinQR](apps/linqr-app-a03ea78590/MANIFEST.md) | `linqr-app-a03ea78590` | openapi | 2.0 | 14 | `discovered` | pending |
+| [Reimbursements API](apps/linuxfoundation-org-reimbursement-9815e25777/MANIFEST.md) | `linuxfoundation-org-reimbursement-9815e25777` | openapi | 1.0 | 5 | `discovered` | pending |
+| [Listen API: Podcast Search, Directory, and Insights API](apps/listennotes-com-dcc1252509/MANIFEST.md) | `listennotes-com-dcc1252509` | openapi | 2.0 | 23 | `discovered` | pending |
+| [DFlight API](apps/ljaero-com-dflight-018a8d4928/MANIFEST.md) | `ljaero-com-dflight-018a8d4928` | openapi | V 1.0.0 | 24 | `discovered` | pending |
+| [API docs \| logoraisr.com](apps/logoraisr-com-61f17073dd/MANIFEST.md) | `logoraisr-com-61f17073dd` | openapi | v1 | 10 | `discovered` | pending |
+| [Loket.nl API](apps/loket-nl-b4aae265b0/MANIFEST.md) | `loket-nl-b4aae265b0` | openapi | V2 | 641 | `discovered` | pending |
+| [LH Partner API](apps/lufthansa-com-partner-25682f4f90/MANIFEST.md) | `lufthansa-com-partner-25682f4f90` | openapi | 1.0 | 16 | `discovered` | pending |
 | [Lumar](apps/lumar-graphql/MANIFEST.md) | `lumar-graphql` | graphql | 2026-10-29-snapshot | 444 | `discovered` | signed |
-| [Lumminary API](apps/lumminary-com-f4e9c61a8b/MANIFEST.md) | `lumminary-com-f4e9c61a8b` | openapi | 1.0 | 17 | `discovered` | signed |
-| [Magento B2B](apps/magento-com-b78b77639d/MANIFEST.md) | `magento-com-b78b77639d` | openapi | 2.2.10 | 455 | `discovered` | signed |
-| [Otoroshi Admin API](apps/maif-local-otoroshi-fc34aa53a6/MANIFEST.md) | `maif-local-otoroshi-fc34aa53a6` | openapi | 1.5.0-dev | 102 | `discovered` | signed |
-| [MailboxValidator Free Email Checker](apps/mailboxvalidator-com-checker-3102385c42/MANIFEST.md) | `mailboxvalidator-com-checker-3102385c42` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [Mailscript](apps/mailscript-com-2fc9dce0ed/MANIFEST.md) | `mailscript-com-2fc9dce0ed` | openapi | 0.4.0 | 38 | `discovered` | signed |
-| [Mandrill](apps/mandrillapp-com-0c6ef759e0/MANIFEST.md) | `mandrillapp-com-0c6ef759e0` | openapi | 1.0 | 90 | `discovered` | signed |
-| [GeoDB Cities API](apps/mashape-com-geodb-0d164f19c5/MANIFEST.md) | `mashape-com-geodb-0d164f19c5` | openapi | 1.0.0 | 26 | `discovered` | signed |
-| [Mastodon API Specification (https://github.com/mastodon/mastodon)](apps/mastodon-local-d03546f163/MANIFEST.md) | `mastodon-local-d03546f163` | openapi | 1.0 | 127 | `discovered` | signed |
-| [Numbers API](apps/math-tools-2090b3ff5e/MANIFEST.md) | `math-tools-2090b3ff5e` | openapi | 1.5 | 26 | `discovered` | signed |
-| [M-Bus HTTPD API](apps/mbus-local-d629a8851d/MANIFEST.md) | `mbus-local-d629a8851d` | openapi | 0.3.5 | 7 | `discovered` | signed |
-| [Rat Genome Database REST API](apps/mcw-edu-c4c97b14b0/MANIFEST.md) | `mcw-edu-c4c97b14b0` | openapi | 1.1 | 100 | `discovered` | signed |
-| [Medium API](apps/medium-com-4609d127e3/MANIFEST.md) | `medium-com-4609d127e3` | openapi | 1.0 | 32 | `discovered` | signed |
-| [Meilisearch v1.0](apps/meilisearch-com-d0461774bf/MANIFEST.md) | `meilisearch-com-d0461774bf` | openapi | 1.0.0 | 65 | `discovered` | signed |
-| [Meraki Dashboard API](apps/meraki-com-053c3fac06/MANIFEST.md) | `meraki-com-053c3fac06` | openapi | 0.0.0-streaming | 263 | `discovered` | signed |
-| [The Mercure protocol](apps/mercure-local-d0b0cbfe99/MANIFEST.md) | `mercure-local-d0b0cbfe99` | openapi | 0.3.2 | 5 | `discovered` | signed |
-| [Swagger2OpenAPI Converter](apps/mermade-org-uk-openapi-converter-d0feefa17b/MANIFEST.md) | `mermade-org-uk-openapi-converter-d0feefa17b` | openapi | 1.0.0 | 6 | `discovered` | signed |
-| [Meshery API.](apps/meshery-local-7c5633eeaa/MANIFEST.md) | `meshery-local-7c5633eeaa` | openapi | 0.4.27 | 75 | `discovered` | signed |
-| [Interactive documentation for your Premium plan](apps/meteosource-com-72db3e6009/MANIFEST.md) | `meteosource-com-72db3e6009` | openapi | v1 | 7 | `discovered` | signed |
-| [Miataru](apps/miataru-com-27315a2077/MANIFEST.md) | `miataru-com-27315a2077` | openapi | 1.0.0 | 5 | `discovered` | signed |
-| [Microcks API v1.7](apps/microcks-local-ed7da239dc/MANIFEST.md) | `microcks-local-ed7da239dc` | openapi | 1.7.0 | 44 | `discovered` | signed |
-| [AutoSuggest Client](apps/microsoft-com-cognitiveservices-autosuggest-7e2db34f52/MANIFEST.md) | `microsoft-com-cognitiveservices-autosuggest-7e2db34f52` | openapi | 1.0 | 1 | `discovered` | signed |
-| [MineSkin API](apps/mineskin-org-98730fc013/MANIFEST.md) | `mineskin-org-98730fc013` | openapi | 1.0.0 | 9 | `discovered` | signed |
-| [Mist API](apps/mist-com-b9dbb1cecf/MANIFEST.md) | `mist-com-b9dbb1cecf` | openapi | 0.36.1 | 775 | `discovered` | signed |
-| [Image Moderation](apps/moderatecontent-com-10f789603a/MANIFEST.md) | `moderatecontent-com-10f789603a` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [Mon-voyage-pas-cher.com Public API](apps/mon-voyage-pas-cher-com-e13a6fe77e/MANIFEST.md) | `mon-voyage-pas-cher-com-e13a6fe77e` | openapi | 0.0.1 | 21 | `discovered` | signed |
-| [BioLink API](apps/monarchinitiative-org-b3281a94c1/MANIFEST.md) | `monarchinitiative-org-b3281a94c1` | openapi | 1.1.14 | 168 | `discovered` | signed |
+| [Lumminary API](apps/lumminary-com-f4e9c61a8b/MANIFEST.md) | `lumminary-com-f4e9c61a8b` | openapi | 1.0 | 17 | `discovered` | pending |
+| [Magento B2B](apps/magento-com-b78b77639d/MANIFEST.md) | `magento-com-b78b77639d` | openapi | 2.2.10 | 455 | `discovered` | pending |
+| [Otoroshi Admin API](apps/maif-local-otoroshi-fc34aa53a6/MANIFEST.md) | `maif-local-otoroshi-fc34aa53a6` | openapi | 1.5.0-dev | 102 | `discovered` | pending |
+| [MailboxValidator Free Email Checker](apps/mailboxvalidator-com-checker-3102385c42/MANIFEST.md) | `mailboxvalidator-com-checker-3102385c42` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [Mailscript](apps/mailscript-com-2fc9dce0ed/MANIFEST.md) | `mailscript-com-2fc9dce0ed` | openapi | 0.4.0 | 38 | `discovered` | pending |
+| [Mandrill](apps/mandrillapp-com-0c6ef759e0/MANIFEST.md) | `mandrillapp-com-0c6ef759e0` | openapi | 1.0 | 90 | `discovered` | pending |
+| [GeoDB Cities API](apps/mashape-com-geodb-0d164f19c5/MANIFEST.md) | `mashape-com-geodb-0d164f19c5` | openapi | 1.0.0 | 26 | `discovered` | pending |
+| [Mastodon API Specification (https://github.com/mastodon/mastodon)](apps/mastodon-local-d03546f163/MANIFEST.md) | `mastodon-local-d03546f163` | openapi | 1.0 | 127 | `discovered` | pending |
+| [Numbers API](apps/math-tools-2090b3ff5e/MANIFEST.md) | `math-tools-2090b3ff5e` | openapi | 1.5 | 26 | `discovered` | pending |
+| [M-Bus HTTPD API](apps/mbus-local-d629a8851d/MANIFEST.md) | `mbus-local-d629a8851d` | openapi | 0.3.5 | 7 | `discovered` | pending |
+| [Rat Genome Database REST API](apps/mcw-edu-c4c97b14b0/MANIFEST.md) | `mcw-edu-c4c97b14b0` | openapi | 1.1 | 100 | `discovered` | pending |
+| [Medium API](apps/medium-com-4609d127e3/MANIFEST.md) | `medium-com-4609d127e3` | openapi | 1.0 | 32 | `discovered` | pending |
+| [Meilisearch v1.0](apps/meilisearch-com-d0461774bf/MANIFEST.md) | `meilisearch-com-d0461774bf` | openapi | 1.0.0 | 65 | `discovered` | pending |
+| [Meraki Dashboard API](apps/meraki-com-053c3fac06/MANIFEST.md) | `meraki-com-053c3fac06` | openapi | 0.0.0-streaming | 263 | `discovered` | pending |
+| [The Mercure protocol](apps/mercure-local-d0b0cbfe99/MANIFEST.md) | `mercure-local-d0b0cbfe99` | openapi | 0.3.2 | 5 | `discovered` | pending |
+| [Swagger2OpenAPI Converter](apps/mermade-org-uk-openapi-converter-d0feefa17b/MANIFEST.md) | `mermade-org-uk-openapi-converter-d0feefa17b` | openapi | 1.0.0 | 6 | `discovered` | pending |
+| [Meshery API.](apps/meshery-local-7c5633eeaa/MANIFEST.md) | `meshery-local-7c5633eeaa` | openapi | 0.4.27 | 75 | `discovered` | pending |
+| [Interactive documentation for your Premium plan](apps/meteosource-com-72db3e6009/MANIFEST.md) | `meteosource-com-72db3e6009` | openapi | v1 | 7 | `discovered` | pending |
+| [Miataru](apps/miataru-com-27315a2077/MANIFEST.md) | `miataru-com-27315a2077` | openapi | 1.0.0 | 5 | `discovered` | pending |
+| [Microcks API v1.7](apps/microcks-local-ed7da239dc/MANIFEST.md) | `microcks-local-ed7da239dc` | openapi | 1.7.0 | 44 | `discovered` | pending |
+| [AutoSuggest Client](apps/microsoft-com-cognitiveservices-autosuggest-7e2db34f52/MANIFEST.md) | `microsoft-com-cognitiveservices-autosuggest-7e2db34f52` | openapi | 1.0 | 1 | `discovered` | pending |
+| [MineSkin API](apps/mineskin-org-98730fc013/MANIFEST.md) | `mineskin-org-98730fc013` | openapi | 1.0.0 | 9 | `discovered` | pending |
+| [Mist API](apps/mist-com-b9dbb1cecf/MANIFEST.md) | `mist-com-b9dbb1cecf` | openapi | 0.36.1 | 775 | `discovered` | pending |
+| [Image Moderation](apps/moderatecontent-com-10f789603a/MANIFEST.md) | `moderatecontent-com-10f789603a` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [Mon-voyage-pas-cher.com Public API](apps/mon-voyage-pas-cher-com-e13a6fe77e/MANIFEST.md) | `mon-voyage-pas-cher-com-e13a6fe77e` | openapi | 0.0.1 | 21 | `discovered` | pending |
+| [BioLink API](apps/monarchinitiative-org-b3281a94c1/MANIFEST.md) | `monarchinitiative-org-b3281a94c1` | openapi | 1.1.14 | 168 | `discovered` | pending |
 | [monday.com](apps/monday-graphql/MANIFEST.md) | `monday-graphql` | graphql | 2026-10-29-snapshot | 336 | `discovered` | signed |
-| [MotaWord API](apps/motaword-com-d28be915b5/MANIFEST.md) | `motaword-com-d28be915b5` | openapi | 1.0 | 222 | `discovered` | signed |
-| [Remote Settings PROD](apps/mozilla-com-kinto-6c569c5493/MANIFEST.md) | `mozilla-com-kinto-6c569c5493` | openapi | 1.22 | 19 | `discovered` | signed |
-| [Mtaa API Documentation](apps/mtaa-api-herokuapp-com-298576f9ea/MANIFEST.md) | `mtaa-api-herokuapp-com-298576f9ea` | openapi | 1.0 | 5 | `discovered` | signed |
-| [Musixmatch API](apps/musixmatch-com-e9d207a949/MANIFEST.md) | `musixmatch-com-e9d207a949` | openapi | 1.1.0 | 16 | `discovered` | signed |
-| [nextAuth API](apps/n-auth-com-2b8277647d/MANIFEST.md) | `n-auth-com-2b8277647d` | openapi | 2.2 | 55 | `discovered` | signed |
-| [NamSor API v2](apps/namsor-com-a0324e0999/MANIFEST.md) | `namsor-com-a0324e0999` | openapi | 2.0.24 | 84 | `discovered` | signed |
-| [APOD](apps/nasa-gov-apod-a37cfd6576/MANIFEST.md) | `nasa-gov-apod-a37cfd6576` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [Native Ads Publisher API](apps/nativeads-com-bf9e25b35d/MANIFEST.md) | `nativeads-com-bf9e25b35d` | openapi | 1.0.0 | 4 | `discovered` | signed |
-| [Advicent.FactFinderService](apps/naviplancentral-com-factfinder-e19a60b7bc/MANIFEST.md) | `naviplancentral-com-factfinder-e19a60b7bc` | openapi | v1 | 151 | `discovered` | signed |
-| [NBA Stats API](apps/nba-com-7ea8a5e2ab/MANIFEST.md) | `nba-com-7ea8a5e2ab` | openapi | version | 91 | `discovered` | signed |
-| [Account and Transaction API Specification - UK](apps/nbg-gr-5fdc9d2f20/MANIFEST.md) | `nbg-gr-5fdc9d2f20` | openapi | v3.1.5 | 21 | `discovered` | signed |
-| [Health Data Consent Manager](apps/ndhm-gov-in-ndhm-cm-06c88a9e22/MANIFEST.md) | `ndhm-gov-in-ndhm-cm-06c88a9e22` | openapi | 0.5 | 22 | `discovered` | signed |
-| [Neblio REST API Suite](apps/nebl-io-5c42dec023/MANIFEST.md) | `nebl-io-5c42dec023` | openapi | 1.3.0 | 50 | `discovered` | signed |
-| [Netatmo](apps/netatmo-net-ca25a67633/MANIFEST.md) | `netatmo-net-ca25a67633` | openapi | 1.1.5 | 22 | `discovered` | signed |
-| [NetBox API](apps/netbox-dev-a623bf2fd2/MANIFEST.md) | `netbox-dev-a623bf2fd2` | openapi | 3.4 | 844 | `discovered` | signed |
-| [Labs64 NetLicensing RESTful API Test Center](apps/netlicensing-io-3a1d6c96b5/MANIFEST.md) | `netlicensing-io-3a1d6c96b5` | openapi | 2.x | 40 | `discovered` | signed |
-| [Netlify's API documentation](apps/netlify-com-28ad9919fb/MANIFEST.md) | `netlify-com-28ad9919fb` | openapi | 2.15.0 | 120 | `discovered` | signed |
-| [Neutrino API](apps/neutrinoapi-net-b4a869ab3d/MANIFEST.md) | `neutrinoapi-net-b4a869ab3d` | openapi | 3.6.3 | 27 | `discovered` | signed |
-| [Account API](apps/nexmo-com-account-c8d34fd206/MANIFEST.md) | `nexmo-com-account-c8d34fd206` | openapi | 1.0.4 | 8 | `discovered` | signed |
-| [nFusion Solutions Market Data API](apps/nfusionsolutions-biz-d68285160b/MANIFEST.md) | `nfusionsolutions-biz-d68285160b` | openapi | 1 | 17 | `discovered` | signed |
-| [nic.at Domainfinder API Documentation](apps/nic-at-domainfinder-84dc5ebe84/MANIFEST.md) | `nic-at-domainfinder-84dc5ebe84` | openapi | 1.1.0 | 1 | `discovered` | signed |
-| [NLPCloud](apps/nlpcloud-io-cdafe2a1bb/MANIFEST.md) | `nlpcloud-io-cdafe2a1bb` | openapi | 1.0.0 | 5 | `discovered` | signed |
-| [Noosh API application](apps/noosh-com-ae3325b2d7/MANIFEST.md) | `noosh-com-ae3325b2d7` | openapi | 1.0 | 102 | `discovered` | signed |
-| [Nordigen Account Information Services API](apps/nordigen-com-e20fcb5af6/MANIFEST.md) | `nordigen-com-e20fcb5af6` | openapi | 2.0 (v2) | 28 | `discovered` | signed |
-| [Notion API](apps/notion-com-880f7ff4c2/MANIFEST.md) | `notion-com-880f7ff4c2` | openapi | 1.0.0 | 13 | `discovered` | signed |
-| [NOWPayments API](apps/nowpayments-io-a656a5bbe0/MANIFEST.md) | `nowpayments-io-a656a5bbe0` | openapi | 1.0.0 | 16 | `discovered` | signed |
-| [NPR Authorization Service](apps/npr-org-authorization-f33fb39fcf/MANIFEST.md) | `npr-org-authorization-f33fb39fcf` | openapi | 2 | 3 | `discovered` | signed |
-| [High Performance Building Database](apps/nrel-gov-building-case-studies-0836f80ff7/MANIFEST.md) | `nrel-gov-building-case-studies-0836f80ff7` | openapi | 1.0 | 2 | `discovered` | signed |
-| [Georg API](apps/nrm-se-georg-9ff5845303/MANIFEST.md) | `nrm-se-georg-9ff5845303` | openapi | 2.1 | 5 | `discovered` | signed |
-| [Ntropy Transaction API v1](apps/ntropy-network-72b2892c97/MANIFEST.md) | `ntropy-network-72b2892c97` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [Archive API](apps/nytimes-com-archive-b66b63c9da/MANIFEST.md) | `nytimes-com-archive-b66b63c9da` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [Mobility API](apps/o2-cz-mobility-ec9c923929/MANIFEST.md) | `o2-cz-mobility-ec9c923929` | openapi | 1.2.0 | 2 | `discovered` | signed |
-| [obono RKSV API](apps/obono-at-882246735b/MANIFEST.md) | `obono-at-882246735b` | openapi | 1.4.0.0 | 18 | `discovered` | signed |
-| [Users (Okta API)](apps/okta-local-b103a1863b/MANIFEST.md) | `okta-local-b103a1863b` | openapi | 1.0.0 | 19 | `discovered` | signed |
-| [OMDb](apps/omdbapi-com-c93ec4ffd7/MANIFEST.md) | `omdbapi-com-c93ec4ffd7` | openapi | 1 | 1 | `discovered` | signed |
-| [OnSched Consumer API](apps/onsched-com-consumer-31633d1114/MANIFEST.md) | `onsched-com-consumer-31633d1114` | openapi | v1 | 38 | `discovered` | signed |
-| [OpenAI API](apps/openai-com-bb438e1309/MANIFEST.md) | `openai-com-bb438e1309` | openapi | 1.2.0 | 28 | `discovered` | signed |
-| [OpenAPI Generator Online](apps/openapi-generator-tech-0b013007c7/MANIFEST.md) | `openapi-generator-tech-0b013007c7` | openapi | 6.2.1 | 7 | `discovered` | signed |
-| [OpenAQ](apps/openaq-local-3b051985ed/MANIFEST.md) | `openaq-local-3b051985ed` | openapi | 2.0.0 | 36 | `discovered` | signed |
-| [Swiss NextGen Banking API-Framework](apps/openbankingproject-ch-715d175c21/MANIFEST.md) | `openbankingproject-ch-715d175c21` | openapi | 1.3.8_2020-12-14 - Swiss edition 1.3.8.1-CH | 34 | `discovered` | signed |
-| [OpenCage Geocoder](apps/opencagedata-com-e1532a6c2d/MANIFEST.md) | `opencagedata-com-e1532a6c2d` | openapi | 1 | 1 | `discovered` | signed |
-| [OpenChannel Market API](apps/openchannel-io-market-b0e1f704bc/MANIFEST.md) | `openchannel-io-market-b0e1f704bc` | openapi | 2.0.24 | 72 | `discovered` | signed |
-| [ODN API](apps/opendatanetwork-com-56f4360ca6/MANIFEST.md) | `opendatanetwork-com-56f4360ca6` | openapi | 1.0.0 | 9 | `discovered` | signed |
-| [opendatasoft](apps/opendatasoft-com-cfab2567e0/MANIFEST.md) | `opendatasoft-com-cfab2567e0` | openapi | 2.1.0 | 36 | `discovered` | signed |
-| [OpenFIGI API](apps/openfigi-com-b83b2ae1c2/MANIFEST.md) | `openfigi-com-b83b2ae1c2` | openapi | 1.4.0 | 2 | `discovered` | signed |
-| [OpenIndex Retrieval Plugin API](apps/openindex-ai-0fd697d1d0/MANIFEST.md) | `openindex-ai-0fd697d1d0` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [OSDB REST API v1](apps/openlinksw-com-osdb-11d1c23341/MANIFEST.md) | `openlinksw-com-osdb-11d1c23341` | openapi | 1.0.0 | 10 | `discovered` | signed |
-| [Open Policy Agent (OPA) REST API](apps/openpolicy-local-cdf95308f7/MANIFEST.md) | `openpolicy-local-cdf95308f7` | openapi | 0.28.0 | 16 | `discovered` | signed |
-| [Open States API v3](apps/openstates-org-422d8ecd69/MANIFEST.md) | `openstates-org-422d8ecd69` | openapi | 2021.11.12 | 12 | `discovered` | signed |
-| [Smartphone Test Farm](apps/openstf-io-9473238017/MANIFEST.md) | `openstf-io-9473238017` | openapi | 2.3.0 | 10 | `discovered` | signed |
-| [Open Build Service API](apps/opensuse-org-obs-2814b66dd3/MANIFEST.md) | `opensuse-org-obs-2814b66dd3` | openapi | 2.10.50 | 81 | `discovered` | signed |
+| [MotaWord API](apps/motaword-com-d28be915b5/MANIFEST.md) | `motaword-com-d28be915b5` | openapi | 1.0 | 222 | `discovered` | pending |
+| [Remote Settings PROD](apps/mozilla-com-kinto-6c569c5493/MANIFEST.md) | `mozilla-com-kinto-6c569c5493` | openapi | 1.22 | 19 | `discovered` | pending |
+| [Mtaa API Documentation](apps/mtaa-api-herokuapp-com-298576f9ea/MANIFEST.md) | `mtaa-api-herokuapp-com-298576f9ea` | openapi | 1.0 | 5 | `discovered` | pending |
+| [Musixmatch API](apps/musixmatch-com-e9d207a949/MANIFEST.md) | `musixmatch-com-e9d207a949` | openapi | 1.1.0 | 16 | `discovered` | pending |
+| [nextAuth API](apps/n-auth-com-2b8277647d/MANIFEST.md) | `n-auth-com-2b8277647d` | openapi | 2.2 | 55 | `discovered` | pending |
+| [NamSor API v2](apps/namsor-com-a0324e0999/MANIFEST.md) | `namsor-com-a0324e0999` | openapi | 2.0.24 | 84 | `discovered` | pending |
+| [APOD](apps/nasa-gov-apod-a37cfd6576/MANIFEST.md) | `nasa-gov-apod-a37cfd6576` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [Native Ads Publisher API](apps/nativeads-com-bf9e25b35d/MANIFEST.md) | `nativeads-com-bf9e25b35d` | openapi | 1.0.0 | 4 | `discovered` | pending |
+| [Advicent.FactFinderService](apps/naviplancentral-com-factfinder-e19a60b7bc/MANIFEST.md) | `naviplancentral-com-factfinder-e19a60b7bc` | openapi | v1 | 151 | `discovered` | pending |
+| [NBA Stats API](apps/nba-com-7ea8a5e2ab/MANIFEST.md) | `nba-com-7ea8a5e2ab` | openapi | version | 91 | `discovered` | pending |
+| [Account and Transaction API Specification - UK](apps/nbg-gr-5fdc9d2f20/MANIFEST.md) | `nbg-gr-5fdc9d2f20` | openapi | v3.1.5 | 21 | `discovered` | pending |
+| [Health Data Consent Manager](apps/ndhm-gov-in-ndhm-cm-06c88a9e22/MANIFEST.md) | `ndhm-gov-in-ndhm-cm-06c88a9e22` | openapi | 0.5 | 22 | `discovered` | pending |
+| [Neblio REST API Suite](apps/nebl-io-5c42dec023/MANIFEST.md) | `nebl-io-5c42dec023` | openapi | 1.3.0 | 50 | `discovered` | pending |
+| [Netatmo](apps/netatmo-net-ca25a67633/MANIFEST.md) | `netatmo-net-ca25a67633` | openapi | 1.1.5 | 22 | `discovered` | pending |
+| [NetBox API](apps/netbox-dev-a623bf2fd2/MANIFEST.md) | `netbox-dev-a623bf2fd2` | openapi | 3.4 | 844 | `discovered` | pending |
+| [Labs64 NetLicensing RESTful API Test Center](apps/netlicensing-io-3a1d6c96b5/MANIFEST.md) | `netlicensing-io-3a1d6c96b5` | openapi | 2.x | 40 | `discovered` | pending |
+| [Netlify's API documentation](apps/netlify-com-28ad9919fb/MANIFEST.md) | `netlify-com-28ad9919fb` | openapi | 2.15.0 | 120 | `discovered` | pending |
+| [Neutrino API](apps/neutrinoapi-net-b4a869ab3d/MANIFEST.md) | `neutrinoapi-net-b4a869ab3d` | openapi | 3.6.3 | 27 | `discovered` | pending |
+| [Account API](apps/nexmo-com-account-c8d34fd206/MANIFEST.md) | `nexmo-com-account-c8d34fd206` | openapi | 1.0.4 | 8 | `discovered` | pending |
+| [nFusion Solutions Market Data API](apps/nfusionsolutions-biz-d68285160b/MANIFEST.md) | `nfusionsolutions-biz-d68285160b` | openapi | 1 | 17 | `discovered` | pending |
+| [nic.at Domainfinder API Documentation](apps/nic-at-domainfinder-84dc5ebe84/MANIFEST.md) | `nic-at-domainfinder-84dc5ebe84` | openapi | 1.1.0 | 1 | `discovered` | pending |
+| [NLPCloud](apps/nlpcloud-io-cdafe2a1bb/MANIFEST.md) | `nlpcloud-io-cdafe2a1bb` | openapi | 1.0.0 | 5 | `discovered` | pending |
+| [Noosh API application](apps/noosh-com-ae3325b2d7/MANIFEST.md) | `noosh-com-ae3325b2d7` | openapi | 1.0 | 102 | `discovered` | pending |
+| [Nordigen Account Information Services API](apps/nordigen-com-e20fcb5af6/MANIFEST.md) | `nordigen-com-e20fcb5af6` | openapi | 2.0 (v2) | 28 | `discovered` | pending |
+| [Notion API](apps/notion-com-880f7ff4c2/MANIFEST.md) | `notion-com-880f7ff4c2` | openapi | 1.0.0 | 13 | `discovered` | pending |
+| [NOWPayments API](apps/nowpayments-io-a656a5bbe0/MANIFEST.md) | `nowpayments-io-a656a5bbe0` | openapi | 1.0.0 | 16 | `discovered` | pending |
+| [NPR Authorization Service](apps/npr-org-authorization-f33fb39fcf/MANIFEST.md) | `npr-org-authorization-f33fb39fcf` | openapi | 2 | 3 | `discovered` | pending |
+| [High Performance Building Database](apps/nrel-gov-building-case-studies-0836f80ff7/MANIFEST.md) | `nrel-gov-building-case-studies-0836f80ff7` | openapi | 1.0 | 2 | `discovered` | pending |
+| [Georg API](apps/nrm-se-georg-9ff5845303/MANIFEST.md) | `nrm-se-georg-9ff5845303` | openapi | 2.1 | 5 | `discovered` | pending |
+| [Ntropy Transaction API v1](apps/ntropy-network-72b2892c97/MANIFEST.md) | `ntropy-network-72b2892c97` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [Archive API](apps/nytimes-com-archive-b66b63c9da/MANIFEST.md) | `nytimes-com-archive-b66b63c9da` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [Mobility API](apps/o2-cz-mobility-ec9c923929/MANIFEST.md) | `o2-cz-mobility-ec9c923929` | openapi | 1.2.0 | 2 | `discovered` | pending |
+| [obono RKSV API](apps/obono-at-882246735b/MANIFEST.md) | `obono-at-882246735b` | openapi | 1.4.0.0 | 18 | `discovered` | pending |
+| [Users (Okta API)](apps/okta-local-b103a1863b/MANIFEST.md) | `okta-local-b103a1863b` | openapi | 1.0.0 | 19 | `discovered` | pending |
+| [OMDb](apps/omdbapi-com-c93ec4ffd7/MANIFEST.md) | `omdbapi-com-c93ec4ffd7` | openapi | 1 | 1 | `discovered` | pending |
+| [OnSched Consumer API](apps/onsched-com-consumer-31633d1114/MANIFEST.md) | `onsched-com-consumer-31633d1114` | openapi | v1 | 38 | `discovered` | pending |
+| [OpenAI API](apps/openai-com-bb438e1309/MANIFEST.md) | `openai-com-bb438e1309` | openapi | 1.2.0 | 28 | `discovered` | pending |
+| [OpenAPI Generator Online](apps/openapi-generator-tech-0b013007c7/MANIFEST.md) | `openapi-generator-tech-0b013007c7` | openapi | 6.2.1 | 7 | `discovered` | pending |
+| [OpenAQ](apps/openaq-local-3b051985ed/MANIFEST.md) | `openaq-local-3b051985ed` | openapi | 2.0.0 | 36 | `discovered` | pending |
+| [Swiss NextGen Banking API-Framework](apps/openbankingproject-ch-715d175c21/MANIFEST.md) | `openbankingproject-ch-715d175c21` | openapi | 1.3.8_2020-12-14 - Swiss edition 1.3.8.1-CH | 34 | `discovered` | pending |
+| [OpenCage Geocoder](apps/opencagedata-com-e1532a6c2d/MANIFEST.md) | `opencagedata-com-e1532a6c2d` | openapi | 1 | 1 | `discovered` | pending |
+| [OpenChannel Market API](apps/openchannel-io-market-b0e1f704bc/MANIFEST.md) | `openchannel-io-market-b0e1f704bc` | openapi | 2.0.24 | 72 | `discovered` | pending |
+| [ODN API](apps/opendatanetwork-com-56f4360ca6/MANIFEST.md) | `opendatanetwork-com-56f4360ca6` | openapi | 1.0.0 | 9 | `discovered` | pending |
+| [opendatasoft](apps/opendatasoft-com-cfab2567e0/MANIFEST.md) | `opendatasoft-com-cfab2567e0` | openapi | 2.1.0 | 36 | `discovered` | pending |
+| [OpenFIGI API](apps/openfigi-com-b83b2ae1c2/MANIFEST.md) | `openfigi-com-b83b2ae1c2` | openapi | 1.4.0 | 2 | `discovered` | pending |
+| [OpenIndex Retrieval Plugin API](apps/openindex-ai-0fd697d1d0/MANIFEST.md) | `openindex-ai-0fd697d1d0` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [OSDB REST API v1](apps/openlinksw-com-osdb-11d1c23341/MANIFEST.md) | `openlinksw-com-osdb-11d1c23341` | openapi | 1.0.0 | 10 | `discovered` | pending |
+| [Open Policy Agent (OPA) REST API](apps/openpolicy-local-cdf95308f7/MANIFEST.md) | `openpolicy-local-cdf95308f7` | openapi | 0.28.0 | 16 | `discovered` | pending |
+| [Open States API v3](apps/openstates-org-422d8ecd69/MANIFEST.md) | `openstates-org-422d8ecd69` | openapi | 2021.11.12 | 12 | `discovered` | pending |
+| [Smartphone Test Farm](apps/openstf-io-9473238017/MANIFEST.md) | `openstf-io-9473238017` | openapi | 2.3.0 | 10 | `discovered` | pending |
+| [Open Build Service API](apps/opensuse-org-obs-2814b66dd3/MANIFEST.md) | `opensuse-org-obs-2814b66dd3` | openapi | 2.10.50 | 81 | `discovered` | pending |
 | [Open Targets Platform](apps/opentargets-graphql/MANIFEST.md) | `opentargets-graphql` | graphql | 2026-10-29-snapshot | 20 | `discovered` | signed |
-| [Open Targets Platform REST API](apps/opentargets-io-dae9422126/MANIFEST.md) | `opentargets-io-dae9422126` | openapi | 19.02.1 | 31 | `discovered` | signed |
-| [OpenTrials API](apps/opentrials-local-56db3f8f72/MANIFEST.md) | `opentrials-local-56db3f8f72` | openapi | 0.0.1 | 17 | `discovered` | signed |
-| [OpenUV - Global Real-Time UV Index Forecast API](apps/openuv-io-7353da1170/MANIFEST.md) | `openuv-io-7353da1170` | openapi | v1 | 3 | `discovered` | signed |
+| [Open Targets Platform REST API](apps/opentargets-io-dae9422126/MANIFEST.md) | `opentargets-io-dae9422126` | openapi | 19.02.1 | 31 | `discovered` | pending |
+| [OpenTrials API](apps/opentrials-local-56db3f8f72/MANIFEST.md) | `opentrials-local-56db3f8f72` | openapi | 0.0.1 | 17 | `discovered` | pending |
+| [OpenUV - Global Real-Time UV Index Forecast API](apps/openuv-io-7353da1170/MANIFEST.md) | `openuv-io-7353da1170` | openapi | v1 | 3 | `discovered` | pending |
 | [OpsLevel](apps/opslevel-graphql/MANIFEST.md) | `opslevel-graphql` | graphql | 2026-10-29-snapshot | 197 | `discovered` | signed |
-| [OPTIMADE API](apps/optimade-local-7867449a19/MANIFEST.md) | `optimade-local-7867449a19` | openapi | 1.1.0~develop | 8 | `discovered` | signed |
-| [groov View Public API](apps/opto22-com-groov-3a44b2112c/MANIFEST.md) | `opto22-com-groov-3a44b2112c` | openapi | R4.2a | 10 | `discovered` | signed |
-| [Orbit API](apps/orbit-love-477bc7bc1b/MANIFEST.md) | `orbit-love-477bc7bc1b` | openapi | v1 | 33 | `discovered` | signed |
-| [Daymet Single Pixel Extraction Tool API](apps/ornl-gov-daymet-fc5cda01d0/MANIFEST.md) | `ornl-gov-daymet-fc5cda01d0` | openapi | 1.0.2 | 4 | `discovered` | signed |
-| [Orthanc API](apps/orthanc-server-com-9e673aad78/MANIFEST.md) | `orthanc-server-com-9e673aad78` | openapi | 1.11.3 | 274 | `discovered` | signed |
-| [OSF APIv2 Documentation](apps/osf-io-6b10e45113/MANIFEST.md) | `osf-io-6b10e45113` | openapi | 2.0 | 156 | `discovered` | signed |
-| [ote-godaddy-com-abuse-3db64ec434](apps/ote-godaddy-com-abuse-3db64ec434/MANIFEST.md) | `ote-godaddy-com-abuse-3db64ec434` | openapi | 1.0.0 | 3 | `discovered` | signed |
-| [Oxford Dictionaries](apps/oxforddictionaries-com-916cc3e965/MANIFEST.md) | `oxforddictionaries-com-916cc3e965` | openapi | 1.11.0 | 26 | `discovered` | signed |
-| [paccurate.io](apps/paccurate-io-23b050f64b/MANIFEST.md) | `paccurate-io-23b050f64b` | openapi | 0.1.1 | 1 | `discovered` | signed |
-| [PandaScore REST API for All Videogames](apps/pandascore-co-0e0b5c263d/MANIFEST.md) | `pandascore-co-0e0b5c263d` | openapi | 2.23.1 | 56 | `discovered` | signed |
-| [papiNet API](apps/papinet-io-order-status-1ef573d634/MANIFEST.md) | `papinet-io-order-status-1ef573d634` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [Bills API](apps/parliament-uk-bills-65239ef3fd/MANIFEST.md) | `parliament-uk-bills-65239ef3fd` | openapi | v1 | 19 | `discovered` | signed |
-| [Swagger API-REST for Patrowl Engines](apps/patrowl-local-8281d88f9b/MANIFEST.md) | `patrowl-local-8281d88f9b` | openapi | 1.0.0 | 14 | `discovered` | signed |
-| [PAYONE Link API](apps/pay1-de-link-9d67ce3f6d/MANIFEST.md) | `pay1-de-link-9d67ce3f6d` | openapi | v1 | 4 | `discovered` | signed |
-| [Paylocity API](apps/paylocity-com-070d82ac4a/MANIFEST.md) | `paylocity-com-070d82ac4a` | openapi | 2 | 30 | `discovered` | signed |
-| [GOV.UK Pay API](apps/payments-service-gov-uk-payments-a694dce2a0/MANIFEST.md) | `payments-service-gov-uk-payments-a694dce2a0` | openapi | 1.0.3 | 10 | `discovered` | signed |
-| [EmailVerify](apps/paypi-dev-5c2f79e765/MANIFEST.md) | `paypi-dev-5c2f79e765` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [PayRun.IO](apps/payrun-io-4b1646c290/MANIFEST.md) | `payrun-io-4b1646c290` | openapi | 22.23.10.42 | 389 | `discovered` | signed |
-| [PDF Blocks API](apps/pdfblocks-com-83f72fb0ee/MANIFEST.md) | `pdfblocks-com-83f72fb0ee` | openapi | 1.5.0 | 12 | `discovered` | signed |
-| [PdfBroker.io API](apps/pdfbroker-io-5463dfcff3/MANIFEST.md) | `pdfbroker-io-5463dfcff3` | openapi | v1 | 7 | `discovered` | signed |
-| [PDF Generator API](apps/pdfgeneratorapi-com-ab7f0ee2fb/MANIFEST.md) | `pdfgeneratorapi-com-ab7f0ee2fb` | openapi | 3.1.1 | 11 | `discovered` | signed |
-| [Pendo Feedback API](apps/pendo-io-75e6e214e8/MANIFEST.md) | `pendo-io-75e6e214e8` | openapi | 1.0.0 | 31 | `discovered` | signed |
-| [Self Service Developer API](apps/peoplefinderspro-com-8806392105/MANIFEST.md) | `peoplefinderspro-com-8806392105` | openapi | 1.0.0 | 5 | `discovered` | signed |
-| [OpenAPI definition](apps/peoplegeneratorapi-live-61ad92f0d0/MANIFEST.md) | `peoplegeneratorapi-live-61ad92f0d0` | openapi | v0 | 46 | `discovered` | signed |
-| [PhantAuth](apps/phantauth-net-2309dfa94a/MANIFEST.md) | `phantauth-net-2309dfa94a` | openapi | 1.0.0 | 10 | `discovered` | signed |
-| [Polling Places API](apps/phila-gov-pollingplaces-3de61822ed/MANIFEST.md) | `phila-gov-pollingplaces-3de61822ed` | openapi | 1.0 | 1 | `discovered` | signed |
+| [OPTIMADE API](apps/optimade-local-7867449a19/MANIFEST.md) | `optimade-local-7867449a19` | openapi | 1.1.0~develop | 8 | `discovered` | pending |
+| [groov View Public API](apps/opto22-com-groov-3a44b2112c/MANIFEST.md) | `opto22-com-groov-3a44b2112c` | openapi | R4.2a | 10 | `discovered` | pending |
+| [Orbit API](apps/orbit-love-477bc7bc1b/MANIFEST.md) | `orbit-love-477bc7bc1b` | openapi | v1 | 33 | `discovered` | pending |
+| [Daymet Single Pixel Extraction Tool API](apps/ornl-gov-daymet-fc5cda01d0/MANIFEST.md) | `ornl-gov-daymet-fc5cda01d0` | openapi | 1.0.2 | 4 | `discovered` | pending |
+| [Orthanc API](apps/orthanc-server-com-9e673aad78/MANIFEST.md) | `orthanc-server-com-9e673aad78` | openapi | 1.11.3 | 274 | `discovered` | pending |
+| [OSF APIv2 Documentation](apps/osf-io-6b10e45113/MANIFEST.md) | `osf-io-6b10e45113` | openapi | 2.0 | 156 | `discovered` | pending |
+| [ote-godaddy-com-abuse-3db64ec434](apps/ote-godaddy-com-abuse-3db64ec434/MANIFEST.md) | `ote-godaddy-com-abuse-3db64ec434` | openapi | 1.0.0 | 3 | `discovered` | pending |
+| [Oxford Dictionaries](apps/oxforddictionaries-com-916cc3e965/MANIFEST.md) | `oxforddictionaries-com-916cc3e965` | openapi | 1.11.0 | 26 | `discovered` | pending |
+| [paccurate.io](apps/paccurate-io-23b050f64b/MANIFEST.md) | `paccurate-io-23b050f64b` | openapi | 0.1.1 | 1 | `discovered` | pending |
+| [PandaScore REST API for All Videogames](apps/pandascore-co-0e0b5c263d/MANIFEST.md) | `pandascore-co-0e0b5c263d` | openapi | 2.23.1 | 56 | `discovered` | pending |
+| [papiNet API](apps/papinet-io-order-status-1ef573d634/MANIFEST.md) | `papinet-io-order-status-1ef573d634` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [Bills API](apps/parliament-uk-bills-65239ef3fd/MANIFEST.md) | `parliament-uk-bills-65239ef3fd` | openapi | v1 | 19 | `discovered` | pending |
+| [Swagger API-REST for Patrowl Engines](apps/patrowl-local-8281d88f9b/MANIFEST.md) | `patrowl-local-8281d88f9b` | openapi | 1.0.0 | 14 | `discovered` | pending |
+| [PAYONE Link API](apps/pay1-de-link-9d67ce3f6d/MANIFEST.md) | `pay1-de-link-9d67ce3f6d` | openapi | v1 | 4 | `discovered` | pending |
+| [Paylocity API](apps/paylocity-com-070d82ac4a/MANIFEST.md) | `paylocity-com-070d82ac4a` | openapi | 2 | 30 | `discovered` | pending |
+| [GOV.UK Pay API](apps/payments-service-gov-uk-payments-a694dce2a0/MANIFEST.md) | `payments-service-gov-uk-payments-a694dce2a0` | openapi | 1.0.3 | 10 | `discovered` | pending |
+| [EmailVerify](apps/paypi-dev-5c2f79e765/MANIFEST.md) | `paypi-dev-5c2f79e765` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [PayRun.IO](apps/payrun-io-4b1646c290/MANIFEST.md) | `payrun-io-4b1646c290` | openapi | 22.23.10.42 | 389 | `discovered` | pending |
+| [PDF Blocks API](apps/pdfblocks-com-83f72fb0ee/MANIFEST.md) | `pdfblocks-com-83f72fb0ee` | openapi | 1.5.0 | 12 | `discovered` | pending |
+| [PdfBroker.io API](apps/pdfbroker-io-5463dfcff3/MANIFEST.md) | `pdfbroker-io-5463dfcff3` | openapi | v1 | 7 | `discovered` | pending |
+| [PDF Generator API](apps/pdfgeneratorapi-com-ab7f0ee2fb/MANIFEST.md) | `pdfgeneratorapi-com-ab7f0ee2fb` | openapi | 3.1.1 | 11 | `discovered` | pending |
+| [Pendo Feedback API](apps/pendo-io-75e6e214e8/MANIFEST.md) | `pendo-io-75e6e214e8` | openapi | 1.0.0 | 31 | `discovered` | pending |
+| [Self Service Developer API](apps/peoplefinderspro-com-8806392105/MANIFEST.md) | `peoplefinderspro-com-8806392105` | openapi | 1.0.0 | 5 | `discovered` | pending |
+| [OpenAPI definition](apps/peoplegeneratorapi-live-61ad92f0d0/MANIFEST.md) | `peoplegeneratorapi-live-61ad92f0d0` | openapi | v0 | 46 | `discovered` | pending |
+| [PhantAuth](apps/phantauth-net-2309dfa94a/MANIFEST.md) | `phantauth-net-2309dfa94a` | openapi | 1.0.0 | 10 | `discovered` | pending |
+| [Polling Places API](apps/phila-gov-pollingplaces-3de61822ed/MANIFEST.md) | `phila-gov-pollingplaces-3de61822ed` | openapi | 1.0 | 1 | `discovered` | pending |
 | [Pickware](apps/pickware-graphql/MANIFEST.md) | `pickware-graphql` | graphql | 2026-10-29-snapshot | 131 | `discovered` | signed |
-| [Pinecone API](apps/pinecone-io-7ac816b553/MANIFEST.md) | `pinecone-io-7ac816b553` | openapi | 20230401.1 | 15 | `discovered` | signed |
-| [The Plaid API](apps/plaid-com-04cea18042/MANIFEST.md) | `plaid-com-04cea18042` | openapi | 2020-09-14_1.334.0 | 198 | `discovered` | signed |
-| [PocketSmith](apps/pocketsmith-com-f56bf574eb/MANIFEST.md) | `pocketsmith-com-f56bf574eb` | openapi | 2.0 | 56 | `discovered` | signed |
-| [Portfolio Optimizer](apps/portfoliooptimizer-io-2ce2df2cd0/MANIFEST.md) | `portfoliooptimizer-io-2ce2df2cd0` | openapi | 1.0.9 | 83 | `discovered` | signed |
-| [Postmark Account-level API](apps/postmarkapp-com-account-39dab9caa5/MANIFEST.md) | `postmarkapp-com-account-39dab9caa5` | openapi | 0.9.0 | 23 | `discovered` | signed |
-| [PowerDNS Authoritative HTTP API](apps/powerdns-local-fc48b17403/MANIFEST.md) | `powerdns-local-fc48b17403` | openapi | 0.0.13 | 32 | `discovered` | signed |
-| [TV API](apps/pressassociation-io-3fa8464cd6/MANIFEST.md) | `pressassociation-io-3fa8464cd6` | openapi | 2.0 | 18 | `discovered` | signed |
-| [Probely Developers](apps/probely-com-092bb6642e/MANIFEST.md) | `probely-com-092bb6642e` | openapi | 1.2.0 | 147 | `discovered` | signed |
-| [ProxyKingdom-Api](apps/proxykingdom-com-3dd647724e/MANIFEST.md) | `proxykingdom-com-3dd647724e` | openapi | v1 | 1 | `discovered` | signed |
-| [ContentDepot](apps/prss-org-599d96e6d4/MANIFEST.md) | `prss-org-599d96e6d4` | openapi | 2.0.0 | 36 | `discovered` | signed |
-| [PTV Timetable API - Version 3](apps/ptv-vic-gov-au-77681cf73d/MANIFEST.md) | `ptv-vic-gov-au-77681cf73d` | openapi | v3 | 26 | `discovered` | signed |
-| [Qualpay Payment Gateway API](apps/qualpay-com-d5378a1db7/MANIFEST.md) | `qualpay-com-d5378a1db7` | openapi | 1.7.0 | 14 | `discovered` | signed |
-| [Qualtrics API](apps/qualtrics-com-80ca3be788/MANIFEST.md) | `qualtrics-com-80ca3be788` | openapi | 0.2 | 8 | `discovered` | signed |
-| [Coronavirus API](apps/quarantine-country-5342519b30/MANIFEST.md) | `quarantine-country-5342519b30` | openapi | 1.0 | 6 | `discovered` | signed |
-| [QuickChart API](apps/quickchart-io-a104c26918/MANIFEST.md) | `quickchart-io-a104c26918` | openapi | 1.0.0 | 4 | `discovered` | signed |
-| [They Said So Quotes API](apps/quotes-rest-7bbda97284/MANIFEST.md) | `quotes-rest-7bbda97284` | openapi | 3.1 | 47 | `discovered` | signed |
+| [Pinecone API](apps/pinecone-io-7ac816b553/MANIFEST.md) | `pinecone-io-7ac816b553` | openapi | 20230401.1 | 15 | `discovered` | pending |
+| [The Plaid API](apps/plaid-com-04cea18042/MANIFEST.md) | `plaid-com-04cea18042` | openapi | 2020-09-14_1.334.0 | 198 | `discovered` | pending |
+| [PocketSmith](apps/pocketsmith-com-f56bf574eb/MANIFEST.md) | `pocketsmith-com-f56bf574eb` | openapi | 2.0 | 56 | `discovered` | pending |
+| [Portfolio Optimizer](apps/portfoliooptimizer-io-2ce2df2cd0/MANIFEST.md) | `portfoliooptimizer-io-2ce2df2cd0` | openapi | 1.0.9 | 83 | `discovered` | pending |
+| [Postmark Account-level API](apps/postmarkapp-com-account-39dab9caa5/MANIFEST.md) | `postmarkapp-com-account-39dab9caa5` | openapi | 0.9.0 | 23 | `discovered` | pending |
+| [PowerDNS Authoritative HTTP API](apps/powerdns-local-fc48b17403/MANIFEST.md) | `powerdns-local-fc48b17403` | openapi | 0.0.13 | 32 | `discovered` | pending |
+| [TV API](apps/pressassociation-io-3fa8464cd6/MANIFEST.md) | `pressassociation-io-3fa8464cd6` | openapi | 2.0 | 18 | `discovered` | pending |
+| [Probely Developers](apps/probely-com-092bb6642e/MANIFEST.md) | `probely-com-092bb6642e` | openapi | 1.2.0 | 147 | `discovered` | pending |
+| [ProxyKingdom-Api](apps/proxykingdom-com-3dd647724e/MANIFEST.md) | `proxykingdom-com-3dd647724e` | openapi | v1 | 1 | `discovered` | pending |
+| [ContentDepot](apps/prss-org-599d96e6d4/MANIFEST.md) | `prss-org-599d96e6d4` | openapi | 2.0.0 | 36 | `discovered` | pending |
+| [PTV Timetable API - Version 3](apps/ptv-vic-gov-au-77681cf73d/MANIFEST.md) | `ptv-vic-gov-au-77681cf73d` | openapi | v3 | 26 | `discovered` | pending |
+| [Qualpay Payment Gateway API](apps/qualpay-com-d5378a1db7/MANIFEST.md) | `qualpay-com-d5378a1db7` | openapi | 1.7.0 | 14 | `discovered` | pending |
+| [Qualtrics API](apps/qualtrics-com-80ca3be788/MANIFEST.md) | `qualtrics-com-80ca3be788` | openapi | 0.2 | 8 | `discovered` | pending |
+| [Coronavirus API](apps/quarantine-country-5342519b30/MANIFEST.md) | `quarantine-country-5342519b30` | openapi | 1.0 | 6 | `discovered` | pending |
+| [QuickChart API](apps/quickchart-io-a104c26918/MANIFEST.md) | `quickchart-io-a104c26918` | openapi | 1.0.0 | 4 | `discovered` | pending |
+| [They Said So Quotes API](apps/quotes-rest-7bbda97284/MANIFEST.md) | `quotes-rest-7bbda97284` | openapi | 3.1 | 47 | `discovered` | pending |
 | [Railway Public GraphQL API](apps/railway-platform/MANIFEST.md) | `railway-platform` | graphql | 2026-10-29-snapshot | 391 | `discovered` | signed |
-| [Random Lovecraft](apps/randomlovecraft-com-0853fbaaf8/MANIFEST.md) | `randomlovecraft-com-0853fbaaf8` | openapi | 1.0 | 4 | `discovered` | signed |
-| [Randommer API](apps/randommer-io-2330eea89c/MANIFEST.md) | `randommer-io-2330eea89c` | openapi | v1 | 25 | `discovered` | signed |
-| [DynamicDocs](apps/rapidapi-com-dynamicdocs-6243f48336/MANIFEST.md) | `rapidapi-com-dynamicdocs-6243f48336` | openapi | 1.0 | 1 | `discovered` | signed |
-| [RAWG Video Games Database API](apps/rawg-io-0750ed3858/MANIFEST.md) | `rawg-io-0750ed3858` | openapi | v1.0 | 30 | `discovered` | signed |
-| [Request Baskets API](apps/rbaskets-in-5fff6e45ef/MANIFEST.md) | `rbaskets-in-5fff6e45ef` | openapi | 1.0.0 | 20 | `discovered` | signed |
-| [Rebilly REST API](apps/rebilly-com-f3e32461fd/MANIFEST.md) | `rebilly-com-f3e32461fd` | openapi | 2.1 | 184 | `discovered` | signed |
-| [Redeal Analytics API](apps/redeal-io-00133e3edb/MANIFEST.md) | `redeal-io-00133e3edb` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [Catalog Inventory](apps/redhat-com-catalog-inventory-d1b1c69129/MANIFEST.md) | `redhat-com-catalog-inventory-d1b1c69129` | openapi | 1.0.0 | 38 | `discovered` | signed |
-| [Patchman-engine API](apps/redhat-local-patchman-engine-598e8711ee/MANIFEST.md) | `redhat-local-patchman-engine-598e8711ee` | openapi | v1.15.3 | 21 | `discovered` | signed |
-| [Refuge Restrooms API](apps/refugerestrooms-org-1e8c318003/MANIFEST.md) | `refugerestrooms-org-1e8c318003` | openapi | 0.0.1 | 4 | `discovered` | signed |
-| [Car Registration API](apps/regcheck-org-uk-5b89c209bd/MANIFEST.md) | `regcheck-org-uk-5b89c209bd` | openapi | 1.0.0 | 1 | `discovered` | signed |
-| [topupsapi](apps/reloadly-com-150ea11299/MANIFEST.md) | `reloadly-com-150ea11299` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [Background Removal API](apps/remove-bg-2cf8b7596a/MANIFEST.md) | `remove-bg-2cf8b7596a` | openapi | 1.0.0 | 3 | `discovered` | signed |
-| [RESTful4Up](apps/restful4up-local-a468beb1ee/MANIFEST.md) | `restful4up-local-a468beb1ee` | openapi | 1.0.0 | 5 | `discovered` | signed |
-| [ChannelShipper & Royal Mail Public API](apps/royalmail-com-click-and-drop-ddba8709b1/MANIFEST.md) | `royalmail-com-click-and-drop-ddba8709b1` | openapi | 1.0.0 | 12 | `discovered` | signed |
-| [Rudder API](apps/rudder-example-local-a609ff0aef/MANIFEST.md) | `rudder-example-local-a609ff0aef` | openapi | 16 | 134 | `discovered` | signed |
-| [Rumble API (deprecated)](apps/rumble-run-2952170141/MANIFEST.md) | `rumble-run-2952170141` | openapi | 2.15.0 | 116 | `discovered` | signed |
-| [Runscope API](apps/runscope-com-ee9ccc6b2c/MANIFEST.md) | `runscope-com-ee9ccc6b2c` | openapi | 1.0.0 | 29 | `discovered` | signed |
-| [Sakari](apps/sakari-io-92946e5b52/MANIFEST.md) | `sakari-io-92946e5b52` | openapi | 1.0.1 | 26 | `discovered` | signed |
+| [Random Lovecraft](apps/randomlovecraft-com-0853fbaaf8/MANIFEST.md) | `randomlovecraft-com-0853fbaaf8` | openapi | 1.0 | 4 | `discovered` | pending |
+| [Randommer API](apps/randommer-io-2330eea89c/MANIFEST.md) | `randommer-io-2330eea89c` | openapi | v1 | 25 | `discovered` | pending |
+| [DynamicDocs](apps/rapidapi-com-dynamicdocs-6243f48336/MANIFEST.md) | `rapidapi-com-dynamicdocs-6243f48336` | openapi | 1.0 | 1 | `discovered` | pending |
+| [RAWG Video Games Database API](apps/rawg-io-0750ed3858/MANIFEST.md) | `rawg-io-0750ed3858` | openapi | v1.0 | 30 | `discovered` | pending |
+| [Request Baskets API](apps/rbaskets-in-5fff6e45ef/MANIFEST.md) | `rbaskets-in-5fff6e45ef` | openapi | 1.0.0 | 20 | `discovered` | pending |
+| [Rebilly REST API](apps/rebilly-com-f3e32461fd/MANIFEST.md) | `rebilly-com-f3e32461fd` | openapi | 2.1 | 184 | `discovered` | pending |
+| [Redeal Analytics API](apps/redeal-io-00133e3edb/MANIFEST.md) | `redeal-io-00133e3edb` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [Catalog Inventory](apps/redhat-com-catalog-inventory-d1b1c69129/MANIFEST.md) | `redhat-com-catalog-inventory-d1b1c69129` | openapi | 1.0.0 | 38 | `discovered` | pending |
+| [Patchman-engine API](apps/redhat-local-patchman-engine-598e8711ee/MANIFEST.md) | `redhat-local-patchman-engine-598e8711ee` | openapi | v1.15.3 | 21 | `discovered` | pending |
+| [Refuge Restrooms API](apps/refugerestrooms-org-1e8c318003/MANIFEST.md) | `refugerestrooms-org-1e8c318003` | openapi | 0.0.1 | 4 | `discovered` | pending |
+| [Car Registration API](apps/regcheck-org-uk-5b89c209bd/MANIFEST.md) | `regcheck-org-uk-5b89c209bd` | openapi | 1.0.0 | 1 | `discovered` | pending |
+| [topupsapi](apps/reloadly-com-150ea11299/MANIFEST.md) | `reloadly-com-150ea11299` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [Background Removal API](apps/remove-bg-2cf8b7596a/MANIFEST.md) | `remove-bg-2cf8b7596a` | openapi | 1.0.0 | 3 | `discovered` | pending |
+| [RESTful4Up](apps/restful4up-local-a468beb1ee/MANIFEST.md) | `restful4up-local-a468beb1ee` | openapi | 1.0.0 | 5 | `discovered` | pending |
+| [ChannelShipper & Royal Mail Public API](apps/royalmail-com-click-and-drop-ddba8709b1/MANIFEST.md) | `royalmail-com-click-and-drop-ddba8709b1` | openapi | 1.0.0 | 12 | `discovered` | pending |
+| [Rudder API](apps/rudder-example-local-a609ff0aef/MANIFEST.md) | `rudder-example-local-a609ff0aef` | openapi | 16 | 134 | `discovered` | pending |
+| [Rumble API (deprecated)](apps/rumble-run-2952170141/MANIFEST.md) | `rumble-run-2952170141` | openapi | 2.15.0 | 116 | `discovered` | pending |
+| [Runscope API](apps/runscope-com-ee9ccc6b2c/MANIFEST.md) | `runscope-com-ee9ccc6b2c` | openapi | 1.0.0 | 29 | `discovered` | pending |
+| [Sakari](apps/sakari-io-92946e5b52/MANIFEST.md) | `sakari-io-92946e5b52` | openapi | 1.0.1 | 26 | `discovered` | pending |
 | [Saleor](apps/saleor-graphql/MANIFEST.md) | `saleor-graphql` | graphql | 2026-10-29-snapshot | 423 | `discovered` | signed |
-| [SalesLoft Platform](apps/salesloft-com-078b31c4c8/MANIFEST.md) | `salesloft-com-078b31c4c8` | openapi | v2 | 118 | `discovered` | signed |
+| [SalesLoft Platform](apps/salesloft-com-078b31c4c8/MANIFEST.md) | `salesloft-com-078b31c4c8` | openapi | v2 | 118 | `discovered` | pending |
 | [SAP Developer Center](apps/sap-developers-graphql/MANIFEST.md) | `sap-developers-graphql` | graphql | 2026-10-29-snapshot | 6 | `discovered` | signed |
-| [perfectpdf api](apps/scideas-net-perfectpdf-d6d996ea76/MANIFEST.md) | `scideas-net-perfectpdf-d6d996ea76` | openapi | 1.0 | 1 | `discovered` | signed |
-| [Email Activity (beta)](apps/sendgrid-com-14227c25de/MANIFEST.md) | `sendgrid-com-14227c25de` | openapi | 1.0.0 | 334 | `discovered` | signed |
-| [setlist.fm API](apps/setlist-fm-0233f7d3cc/MANIFEST.md) | `setlist-fm-0233f7d3cc` | openapi | 1.0 | 15 | `discovered` | signed |
-| [ShipEngine API](apps/shipengine-com-51597320a1/MANIFEST.md) | `shipengine-com-51597320a1` | openapi | 1.1.202303022103 | 84 | `discovered` | signed |
-| [Shop](apps/shop-app-8b1cb6422b/MANIFEST.md) | `shop-app-8b1cb6422b` | openapi | v1 | 2 | `discovered` | signed |
-| [カラーミーショップアプリストア API](apps/shop-pro-jp-57b39c5557/MANIFEST.md) | `shop-pro-jp-57b39c5557` | openapi | 1.0.0 | 18 | `discovered` | signed |
+| [perfectpdf api](apps/scideas-net-perfectpdf-d6d996ea76/MANIFEST.md) | `scideas-net-perfectpdf-d6d996ea76` | openapi | 1.0 | 1 | `discovered` | pending |
+| [Email Activity (beta)](apps/sendgrid-com-14227c25de/MANIFEST.md) | `sendgrid-com-14227c25de` | openapi | 1.0.0 | 334 | `discovered` | pending |
+| [setlist.fm API](apps/setlist-fm-0233f7d3cc/MANIFEST.md) | `setlist-fm-0233f7d3cc` | openapi | 1.0 | 15 | `discovered` | pending |
+| [ShipEngine API](apps/shipengine-com-51597320a1/MANIFEST.md) | `shipengine-com-51597320a1` | openapi | 1.1.202303022103 | 84 | `discovered` | pending |
+| [Shop](apps/shop-app-8b1cb6422b/MANIFEST.md) | `shop-app-8b1cb6422b` | openapi | v1 | 2 | `discovered` | pending |
+| [カラーミーショップアプリストア API](apps/shop-pro-jp-57b39c5557/MANIFEST.md) | `shop-pro-jp-57b39c5557` | openapi | 1.0.0 | 18 | `discovered` | pending |
 | [Shopify Storefront](apps/shopify-graphql/MANIFEST.md) | `shopify-graphql` | graphql | 2026-10-29-snapshot+rights.20261030 | 75 | `source_reviewed` | signed |
-| [Shorten.REST API Documentation](apps/shorten-rest-5530e0df56/MANIFEST.md) | `shorten-rest-5530e0df56` | openapi | 1.0.0 | 7 | `discovered` | signed |
-| [Shutterstock API Explorer](apps/shutterstock-com-1aa777c288/MANIFEST.md) | `shutterstock-com-1aa777c288` | openapi | 1.1.32 | 118 | `discovered` | signed |
-| [SimpliVPNAPI](apps/simplivpn-net-fda50abd90/MANIFEST.md) | `simplivpn-net-fda50abd90` | openapi | 1.0 | 7 | `discovered` | signed |
-| [Sinao API](apps/sinao-app-cd45c696e1/MANIFEST.md) | `sinao-app-cd45c696e1` | openapi | 1.1.0 | 272 | `discovered` | signed |
-| [Slack Web API](apps/slack-com-03caecac84/MANIFEST.md) | `slack-com-03caecac84` | openapi | 1.7.0 | 174 | `discovered` | signed |
-| [smart-me](apps/smart-me-com-06c3e616ff/MANIFEST.md) | `smart-me-com-06c3e616ff` | openapi | v1 | 64 | `discovered` | signed |
-| [sms77.io API](apps/sms77-io-9ba4cb17e2/MANIFEST.md) | `sms77-io-9ba4cb17e2` | openapi | 1.0.0 | 16 | `discovered` | signed |
-| [Snyk API](apps/snyk-io-0e8bc5e0ab/MANIFEST.md) | `snyk-io-0e8bc5e0ab` | openapi | 1.0.0 | 103 | `discovered` | signed |
+| [Shorten.REST API Documentation](apps/shorten-rest-5530e0df56/MANIFEST.md) | `shorten-rest-5530e0df56` | openapi | 1.0.0 | 7 | `discovered` | pending |
+| [Shutterstock API Explorer](apps/shutterstock-com-1aa777c288/MANIFEST.md) | `shutterstock-com-1aa777c288` | openapi | 1.1.32 | 118 | `discovered` | pending |
+| [SimpliVPNAPI](apps/simplivpn-net-fda50abd90/MANIFEST.md) | `simplivpn-net-fda50abd90` | openapi | 1.0 | 7 | `discovered` | pending |
+| [Sinao API](apps/sinao-app-cd45c696e1/MANIFEST.md) | `sinao-app-cd45c696e1` | openapi | 1.1.0 | 272 | `discovered` | pending |
+| [Slack Web API](apps/slack-com-03caecac84/MANIFEST.md) | `slack-com-03caecac84` | openapi | 1.7.0 | 174 | `discovered` | pending |
+| [smart-me](apps/smart-me-com-06c3e616ff/MANIFEST.md) | `smart-me-com-06c3e616ff` | openapi | v1 | 64 | `discovered` | pending |
+| [sms77.io API](apps/sms77-io-9ba4cb17e2/MANIFEST.md) | `sms77-io-9ba4cb17e2` | openapi | 1.0.0 | 16 | `discovered` | pending |
+| [Snyk API](apps/snyk-io-0e8bc5e0ab/MANIFEST.md) | `snyk-io-0e8bc5e0ab` | openapi | 1.0.0 | 103 | `discovered` | pending |
 | [Sorare](apps/sorare-graphql/MANIFEST.md) | `sorare-graphql` | graphql | 2026-10-29-snapshot | 316 | `discovered` | signed |
-| [spoonacular API](apps/spoonacular-com-2e36b48e0d/MANIFEST.md) | `spoonacular-com-2e36b48e0d` | openapi | 1.1 | 99 | `discovered` | signed |
-| [CBB v3 Scores](apps/sportsdata-io-cbb-v3-scores-8229e6f14e/MANIFEST.md) | `sportsdata-io-cbb-v3-scores-8229e6f14e` | openapi | 1.0 | 16 | `discovered` | signed |
-| [Spotify Web API](apps/spotify-com-0fa3d40aff/MANIFEST.md) | `spotify-com-0fa3d40aff` | openapi | 1.0.0 | 88 | `discovered` | signed |
-| [StatSocial Platform API](apps/statsocial-com-ed8c05108a/MANIFEST.md) | `statsocial-com-ed8c05108a` | openapi | 1.0.0 | 17 | `discovered` | signed |
-| [Stellastra](apps/stellastra-com-9ea4f017d5/MANIFEST.md) | `stellastra-com-9ea4f017d5` | openapi | 1.0 | 1 | `discovered` | signed |
-| [Storecove API](apps/storecove-com-afe802be92/MANIFEST.md) | `storecove-com-afe802be92` | openapi | 2.0.1 | 30 | `discovered` | signed |
-| [Stream Chat API](apps/stream-io-api-com-267f68179f/MANIFEST.md) | `stream-io-api-com-267f68179f` | openapi | v79.19.1 | 116 | `discovered` | signed |
-| [Stripe API](apps/stripe-com-1ffda32ad7/MANIFEST.md) | `stripe-com-1ffda32ad7` | openapi | 2022-11-15 | 446 | `discovered` | signed |
-| [Svix API](apps/svix-com-f7fd464e48/MANIFEST.md) | `svix-com-f7fd464e48` | openapi | 1.4 | 52 | `discovered` | signed |
-| [Swagger Generator](apps/swagger-io-generator-9f67f712c0/MANIFEST.md) | `swagger-io-generator-9f67f712c0` | openapi | 2.4.30 | 7 | `discovered` | signed |
-| [SwaggerHub Registry API](apps/swaggerhub-com-0409d1f446/MANIFEST.md) | `swaggerhub-com-0409d1f446` | openapi | 1.0.66 | 87 | `discovered` | signed |
-| [TAGGUN Receipt OCR Scanning API](apps/taggun-io-8c34f7b2b9/MANIFEST.md) | `taggun-io-8c34f7b2b9` | openapi | 1.10.9 | 13 | `discovered` | signed |
-| [Taxrates.io API](apps/taxrates-io-7e2f0ff23c/MANIFEST.md) | `taxrates-io-7e2f0ff23c` | openapi | 1.0.0 | 3 | `discovered` | signed |
-| [TCGdex API](apps/tcgdex-net-a9745c06e8/MANIFEST.md) | `tcgdex-net-a9745c06e8` | openapi | 2.0.0 | 33 | `discovered` | signed |
-| [Transport for London Unified API](apps/tfl-gov-uk-584d61302c/MANIFEST.md) | `tfl-gov-uk-584d61302c` | openapi | v1 | 84 | `discovered` | signed |
-| [The Blue Alliance API v3](apps/thebluealliance-com-1d53178261/MANIFEST.md) | `thebluealliance-com-1d53178261` | openapi | 3.8.2 | 65 | `discovered` | signed |
-| [The SMS Works API](apps/thesmsworks-co-uk-ac6836a868/MANIFEST.md) | `thesmsworks-co-uk-ac6836a868` | openapi | 1.8.0 | 18 | `discovered` | signed |
-| [ThreatJammer.com User API](apps/threatjammer-com-d1cf944e09/MANIFEST.md) | `threatjammer-com-d1cf944e09` | openapi | 1.2.20 | 96 | `discovered` | signed |
-| [Tisane API Documentation](apps/tisane-ai-eca83f791d/MANIFEST.md) | `tisane-ai-eca83f791d` | openapi | 1.0.0 | 6 | `discovered` | signed |
-| [TokenJay API services](apps/tokenjay-app-db8a58094e/MANIFEST.md) | `tokenjay-app-db8a58094e` | openapi | 1.0.0 | 27 | `discovered` | signed |
-| [Endpoints](apps/tokenmetrics-com-7f730a49f5/MANIFEST.md) | `tokenmetrics-com-7f730a49f5` | openapi | 1.0.0 | 14 | `discovered` | signed |
-| [Traccar](apps/traccar-org-8fbc86ce89/MANIFEST.md) | `traccar-org-8fbc86ce89` | openapi | 5.6 | 61 | `discovered` | signed |
-| [Trakt API](apps/trakt-tv-c82682b8ff/MANIFEST.md) | `trakt-tv-c82682b8ff` | openapi | 1.0.0 | 183 | `discovered` | signed |
-| [trash nothing](apps/trashnothing-com-873315e544/MANIFEST.md) | `trashnothing-com-873315e544` | openapi | 1.3 | 76 | `discovered` | signed |
-| [Trello](apps/trello-com-2545d6f01d/MANIFEST.md) | `trello-com-2545d6f01d` | openapi | 1.0 | 324 | `discovered` | signed |
-| [TVmaze user API](apps/tvmaze-com-b69e30cda5/MANIFEST.md) | `tvmaze-com-b69e30cda5` | openapi | 1.0 | 42 | `discovered` | signed |
-| [Twilio - Api](apps/twilio-com-api-4d65470668/MANIFEST.md) | `twilio-com-api-4d65470668` | openapi | 1.42.0 | 199 | `discovered` | signed |
-| [Fitbit Plus API](apps/twinehealth-com-f0b7b71379/MANIFEST.md) | `twinehealth-com-f0b7b71379` | openapi | v7.78.1 | 62 | `discovered` | signed |
-| [Twitter API v2](apps/twitter-com-current-073e1829da/MANIFEST.md) | `twitter-com-current-073e1829da` | openapi | 2.61 | 80 | `discovered` | signed |
-| [UniCourt Enterprise APIs](apps/unicourt-com-38149da945/MANIFEST.md) | `unicourt-com-38149da945` | openapi | 1.0.0 | 158 | `discovered` | signed |
-| [Up API](apps/up-com-au-18d891e465/MANIFEST.md) | `up-com-au-18d891e465` | openapi | v1 | 18 | `discovered` | signed |
-| [Urlbox API](apps/urlbox-io-dc1e4c4a07/MANIFEST.md) | `urlbox-io-dc1e4c4a07` | openapi | v1 | 1 | `discovered` | signed |
-| [Benefits Intake](apps/va-gov-benefits-9d3147018c/MANIFEST.md) | `va-gov-benefits-9d3147018c` | openapi | 1.0.0 | 6 | `discovered` | signed |
-| [Vectara REST API](apps/vectara-io-78a472cb88/MANIFEST.md) | `vectara-io-78a472cb88` | openapi | 1.0.0 | 9 | `discovered` | signed |
-| [Velo Payments APIs](apps/velopayments-com-69c6a6efc4/MANIFEST.md) | `velopayments-com-69c6a6efc4` | openapi | 2.34.63 | 100 | `discovered` | signed |
+| [spoonacular API](apps/spoonacular-com-2e36b48e0d/MANIFEST.md) | `spoonacular-com-2e36b48e0d` | openapi | 1.1 | 99 | `discovered` | pending |
+| [CBB v3 Scores](apps/sportsdata-io-cbb-v3-scores-8229e6f14e/MANIFEST.md) | `sportsdata-io-cbb-v3-scores-8229e6f14e` | openapi | 1.0 | 16 | `discovered` | pending |
+| [Spotify Web API](apps/spotify-com-0fa3d40aff/MANIFEST.md) | `spotify-com-0fa3d40aff` | openapi | 1.0.0 | 88 | `discovered` | pending |
+| [StatSocial Platform API](apps/statsocial-com-ed8c05108a/MANIFEST.md) | `statsocial-com-ed8c05108a` | openapi | 1.0.0 | 17 | `discovered` | pending |
+| [Stellastra](apps/stellastra-com-9ea4f017d5/MANIFEST.md) | `stellastra-com-9ea4f017d5` | openapi | 1.0 | 1 | `discovered` | pending |
+| [Storecove API](apps/storecove-com-afe802be92/MANIFEST.md) | `storecove-com-afe802be92` | openapi | 2.0.1 | 30 | `discovered` | pending |
+| [Stream Chat API](apps/stream-io-api-com-267f68179f/MANIFEST.md) | `stream-io-api-com-267f68179f` | openapi | v79.19.1 | 116 | `discovered` | pending |
+| [Stripe API](apps/stripe-com-1ffda32ad7/MANIFEST.md) | `stripe-com-1ffda32ad7` | openapi | 2022-11-15 | 446 | `discovered` | pending |
+| [Svix API](apps/svix-com-f7fd464e48/MANIFEST.md) | `svix-com-f7fd464e48` | openapi | 1.4 | 52 | `discovered` | pending |
+| [Swagger Generator](apps/swagger-io-generator-9f67f712c0/MANIFEST.md) | `swagger-io-generator-9f67f712c0` | openapi | 2.4.30 | 7 | `discovered` | pending |
+| [SwaggerHub Registry API](apps/swaggerhub-com-0409d1f446/MANIFEST.md) | `swaggerhub-com-0409d1f446` | openapi | 1.0.66 | 87 | `discovered` | pending |
+| [TAGGUN Receipt OCR Scanning API](apps/taggun-io-8c34f7b2b9/MANIFEST.md) | `taggun-io-8c34f7b2b9` | openapi | 1.10.9 | 13 | `discovered` | pending |
+| [Taxrates.io API](apps/taxrates-io-7e2f0ff23c/MANIFEST.md) | `taxrates-io-7e2f0ff23c` | openapi | 1.0.0 | 3 | `discovered` | pending |
+| [TCGdex API](apps/tcgdex-net-a9745c06e8/MANIFEST.md) | `tcgdex-net-a9745c06e8` | openapi | 2.0.0 | 33 | `discovered` | pending |
+| [Transport for London Unified API](apps/tfl-gov-uk-584d61302c/MANIFEST.md) | `tfl-gov-uk-584d61302c` | openapi | v1 | 84 | `discovered` | pending |
+| [The Blue Alliance API v3](apps/thebluealliance-com-1d53178261/MANIFEST.md) | `thebluealliance-com-1d53178261` | openapi | 3.8.2 | 65 | `discovered` | pending |
+| [The SMS Works API](apps/thesmsworks-co-uk-ac6836a868/MANIFEST.md) | `thesmsworks-co-uk-ac6836a868` | openapi | 1.8.0 | 18 | `discovered` | pending |
+| [ThreatJammer.com User API](apps/threatjammer-com-d1cf944e09/MANIFEST.md) | `threatjammer-com-d1cf944e09` | openapi | 1.2.20 | 96 | `discovered` | pending |
+| [Tisane API Documentation](apps/tisane-ai-eca83f791d/MANIFEST.md) | `tisane-ai-eca83f791d` | openapi | 1.0.0 | 6 | `discovered` | pending |
+| [TokenJay API services](apps/tokenjay-app-db8a58094e/MANIFEST.md) | `tokenjay-app-db8a58094e` | openapi | 1.0.0 | 27 | `discovered` | pending |
+| [Endpoints](apps/tokenmetrics-com-7f730a49f5/MANIFEST.md) | `tokenmetrics-com-7f730a49f5` | openapi | 1.0.0 | 14 | `discovered` | pending |
+| [Traccar](apps/traccar-org-8fbc86ce89/MANIFEST.md) | `traccar-org-8fbc86ce89` | openapi | 5.6 | 61 | `discovered` | pending |
+| [Trakt API](apps/trakt-tv-c82682b8ff/MANIFEST.md) | `trakt-tv-c82682b8ff` | openapi | 1.0.0 | 183 | `discovered` | pending |
+| [trash nothing](apps/trashnothing-com-873315e544/MANIFEST.md) | `trashnothing-com-873315e544` | openapi | 1.3 | 76 | `discovered` | pending |
+| [Trello](apps/trello-com-2545d6f01d/MANIFEST.md) | `trello-com-2545d6f01d` | openapi | 1.0 | 324 | `discovered` | pending |
+| [TVmaze user API](apps/tvmaze-com-b69e30cda5/MANIFEST.md) | `tvmaze-com-b69e30cda5` | openapi | 1.0 | 42 | `discovered` | pending |
+| [Twilio - Api](apps/twilio-com-api-4d65470668/MANIFEST.md) | `twilio-com-api-4d65470668` | openapi | 1.42.0 | 199 | `discovered` | pending |
+| [Fitbit Plus API](apps/twinehealth-com-f0b7b71379/MANIFEST.md) | `twinehealth-com-f0b7b71379` | openapi | v7.78.1 | 62 | `discovered` | pending |
+| [Twitter API v2](apps/twitter-com-current-073e1829da/MANIFEST.md) | `twitter-com-current-073e1829da` | openapi | 2.61 | 80 | `discovered` | pending |
+| [UniCourt Enterprise APIs](apps/unicourt-com-38149da945/MANIFEST.md) | `unicourt-com-38149da945` | openapi | 1.0.0 | 158 | `discovered` | pending |
+| [Up API](apps/up-com-au-18d891e465/MANIFEST.md) | `up-com-au-18d891e465` | openapi | v1 | 18 | `discovered` | pending |
+| [Urlbox API](apps/urlbox-io-dc1e4c4a07/MANIFEST.md) | `urlbox-io-dc1e4c4a07` | openapi | v1 | 1 | `discovered` | pending |
+| [Benefits Intake](apps/va-gov-benefits-9d3147018c/MANIFEST.md) | `va-gov-benefits-9d3147018c` | openapi | 1.0.0 | 6 | `discovered` | pending |
+| [Vectara REST API](apps/vectara-io-78a472cb88/MANIFEST.md) | `vectara-io-78a472cb88` | openapi | 1.0.0 | 9 | `discovered` | pending |
+| [Velo Payments APIs](apps/velopayments-com-69c6a6efc4/MANIFEST.md) | `velopayments-com-69c6a6efc4` | openapi | 2.34.63 | 100 | `discovered` | pending |
 | [Vendure](apps/vendure/MANIFEST.md) | `vendure` | graphql | 2026-10-29-snapshot | 51 | `discovered` | signed |
-| [Vercel API](apps/vercel-com-9baad27eab/MANIFEST.md) | `vercel-com-9baad27eab` | openapi | 0.0.1 | 113 | `discovered` | signed |
+| [Vercel API](apps/vercel-com-9baad27eab/MANIFEST.md) | `vercel-com-9baad27eab` | openapi | 0.0.1 | 113 | `discovered` | pending |
 | [Verse](apps/verse-graphql/MANIFEST.md) | `verse-graphql` | graphql | 2026-10-29-snapshot | 27 | `discovered` | signed |
-| [API V1](apps/versioneye-com-cab673ae67/MANIFEST.md) | `versioneye-com-cab673ae67` | openapi | v1 | 3 | `discovered` | signed |
-| [Visual Crossing Weather API](apps/visualcrossing-com-weather-2eea0e78d5/MANIFEST.md) | `visualcrossing-com-weather-2eea0e78d5` | openapi | 4.6 | 5 | `discovered` | signed |
-| [VSOnline](apps/visualstudio-com-d7342c2c4a/MANIFEST.md) | `visualstudio-com-d7342c2c4a` | openapi | v1 | 152 | `discovered` | signed |
-| [VocaDbWeb](apps/vocadb-net-e468ab3366/MANIFEST.md) | `vocadb-net-e468ab3366` | openapi | 1.0 | 129 | `discovered` | signed |
+| [API V1](apps/versioneye-com-cab673ae67/MANIFEST.md) | `versioneye-com-cab673ae67` | openapi | v1 | 3 | `discovered` | pending |
+| [Visual Crossing Weather API](apps/visualcrossing-com-weather-2eea0e78d5/MANIFEST.md) | `visualcrossing-com-weather-2eea0e78d5` | openapi | 4.6 | 5 | `discovered` | pending |
+| [VSOnline](apps/visualstudio-com-d7342c2c4a/MANIFEST.md) | `visualstudio-com-d7342c2c4a` | openapi | v1 | 152 | `discovered` | pending |
+| [VocaDbWeb](apps/vocadb-net-e468ab3366/MANIFEST.md) | `vocadb-net-e468ab3366` | openapi | 1.0 | 129 | `discovered` | pending |
 | [VTEX Intelligent Search](apps/vtex-graphql/MANIFEST.md) | `vtex-graphql` | graphql | 2026-10-29-snapshot | 18 | `discovered` | signed |
-| [Catalog API](apps/vtex-local-catalog-api-161bece793/MANIFEST.md) | `vtex-local-catalog-api-161bece793` | openapi | 1.0 | 162 | `discovered` | signed |
-| [Google Pay Passes API](apps/walletobjects-googleapis-com-pay-passes-3fbd126eff/MANIFEST.md) | `walletobjects-googleapis-com-pay-passes-3fbd126eff` | openapi | v1 | 95 | `discovered` | signed |
-| [Inventory Management](apps/walmart-com-inventory-5cdae4c1b6/MANIFEST.md) | `walmart-com-inventory-5cdae4c1b6` | openapi | 1.0.0 | 7 | `discovered` | signed |
-| [Enterobase-API](apps/warwick-ac-uk-enterobase-8334ab8049/MANIFEST.md) | `warwick-ac-uk-enterobase-8334ab8049` | openapi | v2.0 | 26 | `discovered` | signed |
-| [The Water Linked Underwater GPS API](apps/waterlinked-com-7cb3f1a452/MANIFEST.md) | `waterlinked-com-7cb3f1a452` | openapi | 1.0.0 | 38 | `discovered` | signed |
-| [Wealth Reader API](apps/wealthreader-com-4c96195310/MANIFEST.md) | `wealthreader-com-4c96195310` | openapi | 1.0.0 | 3 | `discovered` | signed |
-| [Weatherbit - Interactive Swagger UI Documentation](apps/weatherbit-io-174e1e3888/MANIFEST.md) | `weatherbit-io-174e1e3888` | openapi | 2.0.0 | 47 | `discovered` | signed |
-| [WeGA API](apps/weber-gesamtausgabe-de-26b96f06de/MANIFEST.md) | `weber-gesamtausgabe-de-26b96f06de` | openapi | 1.0.0 | 10 | `discovered` | signed |
-| [Lucidtech API](apps/webflow-com-1130fb3c56/MANIFEST.md) | `webflow-com-1130fb3c56` | openapi | 2023-03-01T16:45:37Z | 121 | `discovered` | signed |
-| [WebScraping.AI](apps/webscraping-ai-748fba92d8/MANIFEST.md) | `webscraping-ai-748fba92d8` | openapi | 2.0.7 | 4 | `discovered` | signed |
-| [Wellknown](apps/wellknown-ai-c559d4e640/MANIFEST.md) | `wellknown-ai-c559d4e640` | openapi | 1.0.0 | 2 | `discovered` | signed |
-| [WINSMS](apps/winsms-co-za-c6d3c336e8/MANIFEST.md) | `winsms-co-za-c6d3c336e8` | openapi | 1.0.0 | 11 | `discovered` | signed |
-| [WireMock](apps/wiremock-org-admin-ae75783bb4/MANIFEST.md) | `wiremock-org-admin-ae75783bb4` | openapi | 2.35.0 | 33 | `discovered` | signed |
-| [Wolfram](apps/wolframalpha-com-9dcbc6dc41/MANIFEST.md) | `wolframalpha-com-9dcbc6dc41` | openapi | v0.1 | 2 | `discovered` | signed |
-| [Wordnik](apps/wordnik-com-8111655317/MANIFEST.md) | `wordnik-com-8111655317` | openapi | 4.0 | 16 | `discovered` | signed |
-| [XTRF Home Portal API](apps/xtrf-eu-95e6c80a3b/MANIFEST.md) | `xtrf-eu-95e6c80a3b` | openapi | 2.0 | 284 | `discovered` | signed |
-| [YNAB API Endpoints](apps/youneedabudget-com-f2aa706446/MANIFEST.md) | `youneedabudget-com-f2aa706446` | openapi | 1.0.0 | 31 | `discovered` | signed |
-| [Zapier Natural Language Actions (NLA) API - Beta](apps/zapier-com-nla-9baaf2d99e/MANIFEST.md) | `zapier-com-nla-9baaf2d99e` | openapi | 1.0.0 | 4 | `discovered` | signed |
-| [Aggregators API Service](apps/zeno-fm-066551a7d3/MANIFEST.md) | `zeno-fm-066551a7d3` | openapi | 0.6-99cfdac | 18 | `discovered` | signed |
-| [Zoom API](apps/zoom-us-caf3a7abc4/MANIFEST.md) | `zoom-us-caf3a7abc4` | openapi | 2.0.0 | 373 | `discovered` | signed |
+| [Catalog API](apps/vtex-local-catalog-api-161bece793/MANIFEST.md) | `vtex-local-catalog-api-161bece793` | openapi | 1.0 | 162 | `discovered` | pending |
+| [Google Pay Passes API](apps/walletobjects-googleapis-com-pay-passes-3fbd126eff/MANIFEST.md) | `walletobjects-googleapis-com-pay-passes-3fbd126eff` | openapi | v1 | 95 | `discovered` | pending |
+| [Inventory Management](apps/walmart-com-inventory-5cdae4c1b6/MANIFEST.md) | `walmart-com-inventory-5cdae4c1b6` | openapi | 1.0.0 | 7 | `discovered` | pending |
+| [Enterobase-API](apps/warwick-ac-uk-enterobase-8334ab8049/MANIFEST.md) | `warwick-ac-uk-enterobase-8334ab8049` | openapi | v2.0 | 26 | `discovered` | pending |
+| [The Water Linked Underwater GPS API](apps/waterlinked-com-7cb3f1a452/MANIFEST.md) | `waterlinked-com-7cb3f1a452` | openapi | 1.0.0 | 38 | `discovered` | pending |
+| [Wealth Reader API](apps/wealthreader-com-4c96195310/MANIFEST.md) | `wealthreader-com-4c96195310` | openapi | 1.0.0 | 3 | `discovered` | pending |
+| [Weatherbit - Interactive Swagger UI Documentation](apps/weatherbit-io-174e1e3888/MANIFEST.md) | `weatherbit-io-174e1e3888` | openapi | 2.0.0 | 47 | `discovered` | pending |
+| [WeGA API](apps/weber-gesamtausgabe-de-26b96f06de/MANIFEST.md) | `weber-gesamtausgabe-de-26b96f06de` | openapi | 1.0.0 | 10 | `discovered` | pending |
+| [Lucidtech API](apps/webflow-com-1130fb3c56/MANIFEST.md) | `webflow-com-1130fb3c56` | openapi | 2023-03-01T16:45:37Z | 121 | `discovered` | pending |
+| [WebScraping.AI](apps/webscraping-ai-748fba92d8/MANIFEST.md) | `webscraping-ai-748fba92d8` | openapi | 2.0.7 | 4 | `discovered` | pending |
+| [Wellknown](apps/wellknown-ai-c559d4e640/MANIFEST.md) | `wellknown-ai-c559d4e640` | openapi | 1.0.0 | 2 | `discovered` | pending |
+| [WINSMS](apps/winsms-co-za-c6d3c336e8/MANIFEST.md) | `winsms-co-za-c6d3c336e8` | openapi | 1.0.0 | 11 | `discovered` | pending |
+| [WireMock](apps/wiremock-org-admin-ae75783bb4/MANIFEST.md) | `wiremock-org-admin-ae75783bb4` | openapi | 2.35.0 | 33 | `discovered` | pending |
+| [Wolfram](apps/wolframalpha-com-9dcbc6dc41/MANIFEST.md) | `wolframalpha-com-9dcbc6dc41` | openapi | v0.1 | 2 | `discovered` | pending |
+| [Wordnik](apps/wordnik-com-8111655317/MANIFEST.md) | `wordnik-com-8111655317` | openapi | 4.0 | 16 | `discovered` | pending |
+| [X](apps/x/MANIFEST.md) | `x` | openapi | 2.173 | 257 | `definition_imported_unsigned_draft` | pending |
+| [XTRF Home Portal API](apps/xtrf-eu-95e6c80a3b/MANIFEST.md) | `xtrf-eu-95e6c80a3b` | openapi | 2.0 | 284 | `discovered` | pending |
+| [YNAB API Endpoints](apps/youneedabudget-com-f2aa706446/MANIFEST.md) | `youneedabudget-com-f2aa706446` | openapi | 1.0.0 | 31 | `discovered` | pending |
+| [Zapier Natural Language Actions (NLA) API - Beta](apps/zapier-com-nla-9baaf2d99e/MANIFEST.md) | `zapier-com-nla-9baaf2d99e` | openapi | 1.0.0 | 4 | `discovered` | pending |
+| [Aggregators API Service](apps/zeno-fm-066551a7d3/MANIFEST.md) | `zeno-fm-066551a7d3` | openapi | 0.6-99cfdac | 18 | `discovered` | pending |
+| [Zoom API](apps/zoom-us-caf3a7abc4/MANIFEST.md) | `zoom-us-caf3a7abc4` | openapi | 2.0.0 | 373 | `discovered` | pending |

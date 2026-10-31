@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 | | |
 | --- | --- |
-| Signed bundle | `e35076947045da529505ad0786ece4618f373ac221bd06acb3e95cda48614735` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,286 +34,288 @@ logo: "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo
 
 65 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/` | get / | Get themes, social providers, auth providers, and event listeners available on this server |
-| POST | `/` | post / | Import a realm Imports a realm from a full representation of that realm. |
-| GET | `/{id}/name` | get /{id}/name | Need this for admin console to display simple name of provider when displaying client detail KEYCLOAK-4328 |
-| DELETE | `/{realm}` | delete /{realm} | Delete the realm |
-| GET | `/{realm}` | get /{realm} | Get the top-level representation of the realm It will not include nested information like User and Client representations. |
-| PUT | `/{realm}` | put /{realm} | Update the top-level information of the realm Any user, roles or client information in the representation will be ignored. |
-| DELETE | `/{realm}/admin-events` | delete /{realm}/admin-events | Delete all admin events |
-| GET | `/{realm}/admin-events` | get /{realm}/admin-events | Get admin events Returns all admin events, or filters events based on URL query parameters listed here |
-| DELETE | `/{realm}/attack-detection/brute-force/users` | delete /{realm}/attack-detection/brute-force/users | Clear any user login failures for all users This can release temporary disabled users |
-| DELETE | `/{realm}/attack-detection/brute-force/users/{userId}` | delete /{realm}/attack-detection/brute-force/users/{userId} | Clear any user login failures for the user This can release temporary disabled user |
-| GET | `/{realm}/attack-detection/brute-force/users/{userId}` | get /{realm}/attack-detection/brute-force/users/{userId} | Get status of a username in brute force detection |
-| GET | `/{realm}/authentication/authenticator-providers` | get /{realm}/authentication/authenticator-providers | Get authenticator providers Returns a list of authenticator providers. |
-| GET | `/{realm}/authentication/client-authenticator-providers` | get /{realm}/authentication/client-authenticator-providers | Get client authenticator providers Returns a list of client authenticator providers. |
-| GET | `/{realm}/authentication/config-description/{providerId}` | get /{realm}/authentication/config-description/{providerId} | Get authenticator provider’s configuration description |
-| DELETE | `/{realm}/authentication/config/{id}` | delete /{realm}/authentication/config/{id} | Delete authenticator configuration |
-| GET | `/{realm}/authentication/config/{id}` | get /{realm}/authentication/config/{id} | Get authenticator configuration |
-| PUT | `/{realm}/authentication/config/{id}` | put /{realm}/authentication/config/{id} | Update authenticator configuration |
-| POST | `/{realm}/authentication/executions` | post /{realm}/authentication/executions | Add new authentication execution |
-| DELETE | `/{realm}/authentication/executions/{executionId}` | delete /{realm}/authentication/executions/{executionId} | Delete execution |
-| GET | `/{realm}/authentication/executions/{executionId}` | get /{realm}/authentication/executions/{executionId} | Get Single Execution |
-| POST | `/{realm}/authentication/executions/{executionId}/config` | post /{realm}/authentication/executions/{executionId}/config | Update execution with new configuration |
-| POST | `/{realm}/authentication/executions/{executionId}/lower-priority` | post /{realm}/authentication/executions/{executionId}/lower-priority | Lower execution’s priority |
-| POST | `/{realm}/authentication/executions/{executionId}/raise-priority` | post /{realm}/authentication/executions/{executionId}/raise-priority | Raise execution’s priority |
-| GET | `/{realm}/authentication/flows` | get /{realm}/authentication/flows | Get authentication flows Returns a list of authentication flows. |
-| POST | `/{realm}/authentication/flows` | post /{realm}/authentication/flows | Create a new authentication flow |
-| POST | `/{realm}/authentication/flows/{flowAlias}/copy` | post /{realm}/authentication/flows/{flowAlias}/copy | Copy existing authentication flow under a new name The new name is given as 'newName' attribute of the passed JSON object |
-| GET | `/{realm}/authentication/flows/{flowAlias}/executions` | get /{realm}/authentication/flows/{flowAlias}/executions | Get authentication executions for a flow |
-| PUT | `/{realm}/authentication/flows/{flowAlias}/executions` | put /{realm}/authentication/flows/{flowAlias}/executions | Update authentication executions of a flow |
-| POST | `/{realm}/authentication/flows/{flowAlias}/executions/execution` | post /{realm}/authentication/flows/{flowAlias}/executions/execution | Add new authentication execution to a flow |
-| POST | `/{realm}/authentication/flows/{flowAlias}/executions/flow` | post /{realm}/authentication/flows/{flowAlias}/executions/flow | Add new flow with new execution to existing flow |
-| DELETE | `/{realm}/authentication/flows/{id}` | delete /{realm}/authentication/flows/{id} | Delete an authentication flow |
-| GET | `/{realm}/authentication/flows/{id}` | get /{realm}/authentication/flows/{id} | Get authentication flow for id |
-| PUT | `/{realm}/authentication/flows/{id}` | put /{realm}/authentication/flows/{id} | Update an authentication flow |
-| GET | `/{realm}/authentication/form-action-providers` | get /{realm}/authentication/form-action-providers | Get form action providers Returns a list of form action providers. |
-| GET | `/{realm}/authentication/form-providers` | get /{realm}/authentication/form-providers | Get form providers Returns a list of form providers. |
-| GET | `/{realm}/authentication/per-client-config-description` | get /{realm}/authentication/per-client-config-description | Get configuration descriptions for all clients |
-| POST | `/{realm}/authentication/register-required-action` | post /{realm}/authentication/register-required-action | Register a new required actions |
-| GET | `/{realm}/authentication/required-actions` | get /{realm}/authentication/required-actions | Get required actions Returns a list of required actions. |
-| DELETE | `/{realm}/authentication/required-actions/{alias}` | delete /{realm}/authentication/required-actions/{alias} | Delete required action |
-| GET | `/{realm}/authentication/required-actions/{alias}` | get /{realm}/authentication/required-actions/{alias} | Get required action for alias |
-| PUT | `/{realm}/authentication/required-actions/{alias}` | put /{realm}/authentication/required-actions/{alias} | Update required action |
-| POST | `/{realm}/authentication/required-actions/{alias}/lower-priority` | post /{realm}/authentication/required-actions/{alias}/lower-priority | Lower required action’s priority |
-| POST | `/{realm}/authentication/required-actions/{alias}/raise-priority` | post /{realm}/authentication/required-actions/{alias}/raise-priority | Raise required action’s priority |
-| GET | `/{realm}/authentication/unregistered-required-actions` | get /{realm}/authentication/unregistered-required-actions | Get unregistered required actions Returns a list of unregistered required actions. |
-| POST | `/{realm}/clear-keys-cache` | post /{realm}/clear-keys-cache | Clear cache of external public keys (Public keys of clients or Identity providers) |
-| POST | `/{realm}/clear-realm-cache` | post /{realm}/clear-realm-cache | Clear realm cache |
-| POST | `/{realm}/clear-user-cache` | post /{realm}/clear-user-cache | Clear user cache |
-| POST | `/{realm}/client-description-converter` | post /{realm}/client-description-converter | Base path for importing clients under this realm. |
-| GET | `/{realm}/client-registration-policy/providers` | get /{realm}/client-registration-policy/providers | Base path for retrieve providers with the configProperties properly filled |
-| GET | `/{realm}/client-scopes` | get /{realm}/client-scopes | Get client scopes belonging to the realm Returns a list of client scopes belonging to the realm |
-| POST | `/{realm}/client-scopes` | post /{realm}/client-scopes | Create a new client scope Client Scope’s name must be unique! |
-| DELETE | `/{realm}/client-scopes/{id1}/protocol-mappers/models/{id2}` | delete /{realm}/client-scopes/{id1}/protocol-mappers/models/{id2} | Delete the mapper |
-| GET | `/{realm}/client-scopes/{id1}/protocol-mappers/models/{id2}` | get /{realm}/client-scopes/{id1}/protocol-mappers/models/{id2} | Get mapper by id |
-| PUT | `/{realm}/client-scopes/{id1}/protocol-mappers/models/{id2}` | put /{realm}/client-scopes/{id1}/protocol-mappers/models/{id2} | Update the mapper |
-| DELETE | `/{realm}/client-scopes/{id}` | delete /{realm}/client-scopes/{id} | Delete the client scope |
-| GET | `/{realm}/client-scopes/{id}` | get /{realm}/client-scopes/{id} | Get representation of the client scope |
-| PUT | `/{realm}/client-scopes/{id}` | put /{realm}/client-scopes/{id} | Update the client scope |
-| POST | `/{realm}/client-scopes/{id}/protocol-mappers/add-models` | post /{realm}/client-scopes/{id}/protocol-mappers/add-models | Create multiple mappers |
-| GET | `/{realm}/client-scopes/{id}/protocol-mappers/models` | get /{realm}/client-scopes/{id}/protocol-mappers/models | Get mappers |
-| POST | `/{realm}/client-scopes/{id}/protocol-mappers/models` | post /{realm}/client-scopes/{id}/protocol-mappers/models | Create a mapper |
-| GET | `/{realm}/client-scopes/{id}/protocol-mappers/protocol/{protocol}` | get /{realm}/client-scopes/{id}/protocol-mappers/protocol/{protocol} | Get mappers by name for a specific protocol |
-| GET | `/{realm}/client-scopes/{id}/scope-mappings` | get /{realm}/client-scopes/{id}/scope-mappings | Get all scope mappings for the client |
-| DELETE | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}` | delete /{realm}/client-scopes/{id}/scope-mappings/clients/{client} | Remove client-level roles from the client’s scope. |
-| GET | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}` | get /{realm}/client-scopes/{id}/scope-mappings/clients/{client} | Get the roles associated with a client’s scope Returns roles for the client. |
-| POST | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}` | post /{realm}/client-scopes/{id}/scope-mappings/clients/{client} | Add client-level roles to the client’s scope |
-| GET | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}/available` | get /{realm}/client-scopes/{id}/scope-mappings/clients/{client}/available | The available client-level roles Returns the roles for the client that can be associated with the client’s scope |
-| GET | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}/composite` | get /{realm}/client-scopes/{id}/scope-mappings/clients/{client}/composite | Get effective client roles Returns the roles for the client that are associated with the client’s scope. |
-| DELETE | `/{realm}/client-scopes/{id}/scope-mappings/realm` | delete /{realm}/client-scopes/{id}/scope-mappings/realm | Remove a set of realm-level roles from the client’s scope |
-| GET | `/{realm}/client-scopes/{id}/scope-mappings/realm` | get /{realm}/client-scopes/{id}/scope-mappings/realm | Get realm-level roles associated with the client’s scope |
-| POST | `/{realm}/client-scopes/{id}/scope-mappings/realm` | post /{realm}/client-scopes/{id}/scope-mappings/realm | Add a set of realm-level roles to the client’s scope |
-| GET | `/{realm}/client-scopes/{id}/scope-mappings/realm/available` | get /{realm}/client-scopes/{id}/scope-mappings/realm/available | Get realm-level roles that are available to attach to this client’s scope |
-| GET | `/{realm}/client-scopes/{id}/scope-mappings/realm/composite` | get /{realm}/client-scopes/{id}/scope-mappings/realm/composite | Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists. |
-| GET | `/{realm}/client-session-stats` | get /{realm}/client-session-stats | Get client session stats Returns a JSON map. |
-| GET | `/{realm}/clients` | get /{realm}/clients | Get clients belonging to the realm Returns a list of clients belonging to the realm |
-| POST | `/{realm}/clients` | post /{realm}/clients | Create a new client Client’s client_id must be unique! |
-| GET | `/{realm}/clients-initial-access` | get /{realm}/clients-initial-access | — |
-| POST | `/{realm}/clients-initial-access` | post /{realm}/clients-initial-access | Create a new initial access token. |
-| DELETE | `/{realm}/clients-initial-access/{id}` | delete /{realm}/clients-initial-access/{id} | — |
-| DELETE | `/{realm}/clients/{id1}/protocol-mappers/models/{id2}` | delete /{realm}/clients/{id1}/protocol-mappers/models/{id2} | Delete the mapper |
-| GET | `/{realm}/clients/{id1}/protocol-mappers/models/{id2}` | get /{realm}/clients/{id1}/protocol-mappers/models/{id2} | Get mapper by id |
-| PUT | `/{realm}/clients/{id1}/protocol-mappers/models/{id2}` | put /{realm}/clients/{id1}/protocol-mappers/models/{id2} | Update the mapper |
-| DELETE | `/{realm}/clients/{id}` | delete /{realm}/clients/{id} | Delete the client |
-| GET | `/{realm}/clients/{id}` | get /{realm}/clients/{id} | Get representation of the client |
-| PUT | `/{realm}/clients/{id}` | put /{realm}/clients/{id} | Update the client |
-| GET | `/{realm}/clients/{id}/certificates/{attr}` | get /{realm}/clients/{id}/certificates/{attr} | Get key info |
-| POST | `/{realm}/clients/{id}/certificates/{attr}/download` | post /{realm}/clients/{id}/certificates/{attr}/download | Get a keystore file for the client, containing private key and public certificate |
-| POST | `/{realm}/clients/{id}/certificates/{attr}/generate` | post /{realm}/clients/{id}/certificates/{attr}/generate | Generate a new certificate with new key pair |
-| POST | `/{realm}/clients/{id}/certificates/{attr}/generate-and-download` | post /{realm}/clients/{id}/certificates/{attr}/generate-and-download | Generate a new keypair and certificate, and get the private key file Generates a keypair and certificate and serves the private key in a specified keystore format. |
-| POST | `/{realm}/clients/{id}/certificates/{attr}/upload` | post /{realm}/clients/{id}/certificates/{attr}/upload | Upload certificate and eventually private key |
-| POST | `/{realm}/clients/{id}/certificates/{attr}/upload-certificate` | post /{realm}/clients/{id}/certificates/{attr}/upload-certificate | Upload only certificate, not private key |
-| GET | `/{realm}/clients/{id}/client-secret` | get /{realm}/clients/{id}/client-secret | Get the client secret |
-| POST | `/{realm}/clients/{id}/client-secret` | post /{realm}/clients/{id}/client-secret | Generate a new secret for the client |
-| GET | `/{realm}/clients/{id}/default-client-scopes` | get /{realm}/clients/{id}/default-client-scopes | Get default client scopes. |
-| DELETE | `/{realm}/clients/{id}/default-client-scopes/{clientScopeId}` | delete /{realm}/clients/{id}/default-client-scopes/{clientScopeId} | — |
-| PUT | `/{realm}/clients/{id}/default-client-scopes/{clientScopeId}` | put /{realm}/clients/{id}/default-client-scopes/{clientScopeId} | — |
-| GET | `/{realm}/clients/{id}/evaluate-scopes/generate-example-access-token` | get /{realm}/clients/{id}/evaluate-scopes/generate-example-access-token | Create JSON with payload of example access token |
-| GET | `/{realm}/clients/{id}/evaluate-scopes/protocol-mappers` | get /{realm}/clients/{id}/evaluate-scopes/protocol-mappers | Return list of all protocol mappers, which will be used when generating tokens issued for particular client. |
-| GET | `/{realm}/clients/{id}/evaluate-scopes/scope-mappings/{roleContainerId}/granted` | get /{realm}/clients/{id}/evaluate-scopes/scope-mappings/{roleContainerId}/granted | Get effective scope mapping of all roles of particular role container, which this client is defacto allowed to have in the accessToken issued for him. |
-| GET | `/{realm}/clients/{id}/evaluate-scopes/scope-mappings/{roleContainerId}/not-granted` | get /{realm}/clients/{id}/evaluate-scopes/scope-mappings/{roleContainerId}/not-granted | Get roles, which this client doesn’t have scope for and can’t have them in the accessToken issued for him. |
-| GET | `/{realm}/clients/{id}/installation/providers/{providerId}` | get /{realm}/clients/{id}/installation/providers/{providerId} | — |
-| GET | `/{realm}/clients/{id}/management/permissions` | get /{realm}/clients/{id}/management/permissions | Return object stating whether client Authorization permissions have been initialized or not and a reference |
-| PUT | `/{realm}/clients/{id}/management/permissions` | put /{realm}/clients/{id}/management/permissions | Return object stating whether client Authorization permissions have been initialized or not and a reference |
-| POST | `/{realm}/clients/{id}/nodes` | post /{realm}/clients/{id}/nodes | Register a cluster node with the client Manually register cluster node to this client - usually it’s not needed to call this directly as adapter should handle by sending registration request to Keycloak |
-| DELETE | `/{realm}/clients/{id}/nodes/{node}` | delete /{realm}/clients/{id}/nodes/{node} | Unregister a cluster node from the client |
-| GET | `/{realm}/clients/{id}/offline-session-count` | get /{realm}/clients/{id}/offline-session-count | Get application offline session count Returns a number of offline user sessions associated with this client { "count": number } |
-| GET | `/{realm}/clients/{id}/offline-sessions` | get /{realm}/clients/{id}/offline-sessions | Get offline sessions for client Returns a list of offline user sessions associated with this client |
-| GET | `/{realm}/clients/{id}/optional-client-scopes` | get /{realm}/clients/{id}/optional-client-scopes | Get optional client scopes. |
-| DELETE | `/{realm}/clients/{id}/optional-client-scopes/{clientScopeId}` | delete /{realm}/clients/{id}/optional-client-scopes/{clientScopeId} | — |
-| PUT | `/{realm}/clients/{id}/optional-client-scopes/{clientScopeId}` | put /{realm}/clients/{id}/optional-client-scopes/{clientScopeId} | — |
-| POST | `/{realm}/clients/{id}/protocol-mappers/add-models` | post /{realm}/clients/{id}/protocol-mappers/add-models | Create multiple mappers |
-| GET | `/{realm}/clients/{id}/protocol-mappers/models` | get /{realm}/clients/{id}/protocol-mappers/models | Get mappers |
-| POST | `/{realm}/clients/{id}/protocol-mappers/models` | post /{realm}/clients/{id}/protocol-mappers/models | Create a mapper |
-| GET | `/{realm}/clients/{id}/protocol-mappers/protocol/{protocol}` | get /{realm}/clients/{id}/protocol-mappers/protocol/{protocol} | Get mappers by name for a specific protocol |
-| POST | `/{realm}/clients/{id}/push-revocation` | post /{realm}/clients/{id}/push-revocation | Push the client’s revocation policy to its admin URL If the client has an admin URL, push revocation policy to it. |
-| POST | `/{realm}/clients/{id}/registration-access-token` | post /{realm}/clients/{id}/registration-access-token | Generate a new registration access token for the client |
-| GET | `/{realm}/clients/{id}/roles` | get /{realm}/clients/{id}/roles | Get all roles for the realm or client |
-| POST | `/{realm}/clients/{id}/roles` | post /{realm}/clients/{id}/roles | Create a new role for the realm or client |
-| DELETE | `/{realm}/clients/{id}/roles/{role-name}` | delete /{realm}/clients/{id}/roles/{role-name} | Delete a role by name |
-| GET | `/{realm}/clients/{id}/roles/{role-name}` | get /{realm}/clients/{id}/roles/{role-name} | Get a role by name |
-| PUT | `/{realm}/clients/{id}/roles/{role-name}` | put /{realm}/clients/{id}/roles/{role-name} | Update a role by name |
-| DELETE | `/{realm}/clients/{id}/roles/{role-name}/composites` | delete /{realm}/clients/{id}/roles/{role-name}/composites | Remove roles from the role’s composite |
-| GET | `/{realm}/clients/{id}/roles/{role-name}/composites` | get /{realm}/clients/{id}/roles/{role-name}/composites | Get composites of the role |
-| POST | `/{realm}/clients/{id}/roles/{role-name}/composites` | post /{realm}/clients/{id}/roles/{role-name}/composites | Add a composite to the role |
-| GET | `/{realm}/clients/{id}/roles/{role-name}/composites/clients/{client}` | get /{realm}/clients/{id}/roles/{role-name}/composites/clients/{client} | An app-level roles for the specified app for the role’s composite |
-| GET | `/{realm}/clients/{id}/roles/{role-name}/composites/realm` | get /{realm}/clients/{id}/roles/{role-name}/composites/realm | Get realm-level roles of the role’s composite |
-| GET | `/{realm}/clients/{id}/roles/{role-name}/groups` | get /{realm}/clients/{id}/roles/{role-name}/groups | Return List of Groups that have the specified role name |
-| GET | `/{realm}/clients/{id}/roles/{role-name}/management/permissions` | get /{realm}/clients/{id}/roles/{role-name}/management/permissions | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
-| PUT | `/{realm}/clients/{id}/roles/{role-name}/management/permissions` | put /{realm}/clients/{id}/roles/{role-name}/management/permissions | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
-| GET | `/{realm}/clients/{id}/roles/{role-name}/users` | get /{realm}/clients/{id}/roles/{role-name}/users | Return List of Users that have the specified role name |
-| GET | `/{realm}/clients/{id}/scope-mappings` | get /{realm}/clients/{id}/scope-mappings | Get all scope mappings for the client |
-| DELETE | `/{realm}/clients/{id}/scope-mappings/clients/{client}` | delete /{realm}/clients/{id}/scope-mappings/clients/{client} | Remove client-level roles from the client’s scope. |
-| GET | `/{realm}/clients/{id}/scope-mappings/clients/{client}` | get /{realm}/clients/{id}/scope-mappings/clients/{client} | Get the roles associated with a client’s scope Returns roles for the client. |
-| POST | `/{realm}/clients/{id}/scope-mappings/clients/{client}` | post /{realm}/clients/{id}/scope-mappings/clients/{client} | Add client-level roles to the client’s scope |
-| GET | `/{realm}/clients/{id}/scope-mappings/clients/{client}/available` | get /{realm}/clients/{id}/scope-mappings/clients/{client}/available | The available client-level roles Returns the roles for the client that can be associated with the client’s scope |
-| GET | `/{realm}/clients/{id}/scope-mappings/clients/{client}/composite` | get /{realm}/clients/{id}/scope-mappings/clients/{client}/composite | Get effective client roles Returns the roles for the client that are associated with the client’s scope. |
-| DELETE | `/{realm}/clients/{id}/scope-mappings/realm` | delete /{realm}/clients/{id}/scope-mappings/realm | Remove a set of realm-level roles from the client’s scope |
-| GET | `/{realm}/clients/{id}/scope-mappings/realm` | get /{realm}/clients/{id}/scope-mappings/realm | Get realm-level roles associated with the client’s scope |
-| POST | `/{realm}/clients/{id}/scope-mappings/realm` | post /{realm}/clients/{id}/scope-mappings/realm | Add a set of realm-level roles to the client’s scope |
-| GET | `/{realm}/clients/{id}/scope-mappings/realm/available` | get /{realm}/clients/{id}/scope-mappings/realm/available | Get realm-level roles that are available to attach to this client’s scope |
-| GET | `/{realm}/clients/{id}/scope-mappings/realm/composite` | get /{realm}/clients/{id}/scope-mappings/realm/composite | Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists. |
-| GET | `/{realm}/clients/{id}/service-account-user` | get /{realm}/clients/{id}/service-account-user | Get a user dedicated to the service account |
-| GET | `/{realm}/clients/{id}/session-count` | get /{realm}/clients/{id}/session-count | Get application session count Returns a number of user sessions associated with this client { "count": number } |
-| GET | `/{realm}/clients/{id}/test-nodes-available` | get /{realm}/clients/{id}/test-nodes-available | Test if registered cluster nodes are available Tests availability by sending 'ping' request to all cluster nodes. |
-| GET | `/{realm}/clients/{id}/user-sessions` | get /{realm}/clients/{id}/user-sessions | Get user sessions for client Returns a list of user sessions associated with this client |
-| GET | `/{realm}/components` | get /{realm}/components | — |
-| POST | `/{realm}/components` | post /{realm}/components | — |
-| DELETE | `/{realm}/components/{id}` | delete /{realm}/components/{id} | — |
-| GET | `/{realm}/components/{id}` | get /{realm}/components/{id} | — |
-| PUT | `/{realm}/components/{id}` | put /{realm}/components/{id} | — |
-| GET | `/{realm}/components/{id}/sub-component-types` | get /{realm}/components/{id}/sub-component-types | List of subcomponent types that are available to configure for a particular parent component. |
-| GET | `/{realm}/credential-registrators` | get /{realm}/credential-registrators | — |
-| GET | `/{realm}/default-default-client-scopes` | get /{realm}/default-default-client-scopes | Get realm default client scopes. |
-| DELETE | `/{realm}/default-default-client-scopes/{clientScopeId}` | delete /{realm}/default-default-client-scopes/{clientScopeId} | — |
-| PUT | `/{realm}/default-default-client-scopes/{clientScopeId}` | put /{realm}/default-default-client-scopes/{clientScopeId} | — |
-| GET | `/{realm}/default-groups` | get /{realm}/default-groups | Get group hierarchy. |
-| DELETE | `/{realm}/default-groups/{groupId}` | delete /{realm}/default-groups/{groupId} | — |
-| PUT | `/{realm}/default-groups/{groupId}` | put /{realm}/default-groups/{groupId} | — |
-| GET | `/{realm}/default-optional-client-scopes` | get /{realm}/default-optional-client-scopes | Get realm optional client scopes. |
-| DELETE | `/{realm}/default-optional-client-scopes/{clientScopeId}` | delete /{realm}/default-optional-client-scopes/{clientScopeId} | — |
-| PUT | `/{realm}/default-optional-client-scopes/{clientScopeId}` | put /{realm}/default-optional-client-scopes/{clientScopeId} | — |
-| DELETE | `/{realm}/events` | delete /{realm}/events | Delete all events |
-| GET | `/{realm}/events` | get /{realm}/events | Get events Returns all events, or filters them based on URL query parameters listed here |
-| GET | `/{realm}/events/config` | get /{realm}/events/config | Get the events provider configuration Returns JSON object with events provider configuration |
-| PUT | `/{realm}/events/config` | put /{realm}/events/config | Update the events provider Change the events provider and/or its configuration |
-| GET | `/{realm}/group-by-path/{path}` | get /{realm}/group-by-path/{path} | — |
-| GET | `/{realm}/groups` | get /{realm}/groups | Get group hierarchy. |
-| POST | `/{realm}/groups` | post /{realm}/groups | create or add a top level realm groupSet or create child. |
-| GET | `/{realm}/groups/count` | get /{realm}/groups/count | Returns the groups counts. |
-| DELETE | `/{realm}/groups/{id}` | delete /{realm}/groups/{id} | — |
-| GET | `/{realm}/groups/{id}` | get /{realm}/groups/{id} | — |
-| PUT | `/{realm}/groups/{id}` | put /{realm}/groups/{id} | Update group, ignores subgroups. |
-| POST | `/{realm}/groups/{id}/children` | post /{realm}/groups/{id}/children | Set or create child. |
-| GET | `/{realm}/groups/{id}/management/permissions` | get /{realm}/groups/{id}/management/permissions | Return object stating whether client Authorization permissions have been initialized or not and a reference |
-| PUT | `/{realm}/groups/{id}/management/permissions` | put /{realm}/groups/{id}/management/permissions | Return object stating whether client Authorization permissions have been initialized or not and a reference |
-| GET | `/{realm}/groups/{id}/members` | get /{realm}/groups/{id}/members | Get users Returns a list of users, filtered according to query parameters |
-| GET | `/{realm}/groups/{id}/role-mappings` | get /{realm}/groups/{id}/role-mappings | Get role mappings |
-| DELETE | `/{realm}/groups/{id}/role-mappings/clients/{client}` | delete /{realm}/groups/{id}/role-mappings/clients/{client} | Delete client-level roles from user role mapping |
-| GET | `/{realm}/groups/{id}/role-mappings/clients/{client}` | get /{realm}/groups/{id}/role-mappings/clients/{client} | Get client-level role mappings for the user, and the app |
-| POST | `/{realm}/groups/{id}/role-mappings/clients/{client}` | post /{realm}/groups/{id}/role-mappings/clients/{client} | Add client-level roles to the user role mapping |
-| GET | `/{realm}/groups/{id}/role-mappings/clients/{client}/available` | get /{realm}/groups/{id}/role-mappings/clients/{client}/available | Get available client-level roles that can be mapped to the user |
-| GET | `/{realm}/groups/{id}/role-mappings/clients/{client}/composite` | get /{realm}/groups/{id}/role-mappings/clients/{client}/composite | Get effective client-level role mappings This recurses any composite roles |
-| DELETE | `/{realm}/groups/{id}/role-mappings/realm` | delete /{realm}/groups/{id}/role-mappings/realm | Delete realm-level role mappings |
-| GET | `/{realm}/groups/{id}/role-mappings/realm` | get /{realm}/groups/{id}/role-mappings/realm | Get realm-level role mappings |
-| POST | `/{realm}/groups/{id}/role-mappings/realm` | post /{realm}/groups/{id}/role-mappings/realm | Add realm-level role mappings to the user |
-| GET | `/{realm}/groups/{id}/role-mappings/realm/available` | get /{realm}/groups/{id}/role-mappings/realm/available | Get realm-level roles that can be mapped |
-| GET | `/{realm}/groups/{id}/role-mappings/realm/composite` | get /{realm}/groups/{id}/role-mappings/realm/composite | Get effective realm-level role mappings This will recurse all composite roles to get the result. |
-| POST | `/{realm}/identity-provider/import-config` | post /{realm}/identity-provider/import-config | Import identity provider from uploaded JSON file |
-| GET | `/{realm}/identity-provider/instances` | get /{realm}/identity-provider/instances | Get identity providers |
-| POST | `/{realm}/identity-provider/instances` | post /{realm}/identity-provider/instances | Create a new identity provider |
-| DELETE | `/{realm}/identity-provider/instances/{alias}` | delete /{realm}/identity-provider/instances/{alias} | Delete the identity provider |
-| GET | `/{realm}/identity-provider/instances/{alias}` | get /{realm}/identity-provider/instances/{alias} | Get the identity provider |
-| PUT | `/{realm}/identity-provider/instances/{alias}` | put /{realm}/identity-provider/instances/{alias} | Update the identity provider |
-| GET | `/{realm}/identity-provider/instances/{alias}/export` | get /{realm}/identity-provider/instances/{alias}/export | Export public broker configuration for identity provider |
-| GET | `/{realm}/identity-provider/instances/{alias}/management/permissions` | get /{realm}/identity-provider/instances/{alias}/management/permissions | Return object stating whether client Authorization permissions have been initialized or not and a reference |
-| PUT | `/{realm}/identity-provider/instances/{alias}/management/permissions` | put /{realm}/identity-provider/instances/{alias}/management/permissions | Return object stating whether client Authorization permissions have been initialized or not and a reference |
-| GET | `/{realm}/identity-provider/instances/{alias}/mapper-types` | get /{realm}/identity-provider/instances/{alias}/mapper-types | Get mapper types for identity provider |
-| GET | `/{realm}/identity-provider/instances/{alias}/mappers` | get /{realm}/identity-provider/instances/{alias}/mappers | Get mappers for identity provider |
-| POST | `/{realm}/identity-provider/instances/{alias}/mappers` | post /{realm}/identity-provider/instances/{alias}/mappers | Add a mapper to identity provider |
-| DELETE | `/{realm}/identity-provider/instances/{alias}/mappers/{id}` | delete /{realm}/identity-provider/instances/{alias}/mappers/{id} | Delete a mapper for the identity provider |
-| GET | `/{realm}/identity-provider/instances/{alias}/mappers/{id}` | get /{realm}/identity-provider/instances/{alias}/mappers/{id} | Get mapper by id for the identity provider |
-| PUT | `/{realm}/identity-provider/instances/{alias}/mappers/{id}` | put /{realm}/identity-provider/instances/{alias}/mappers/{id} | Update a mapper for the identity provider |
-| GET | `/{realm}/identity-provider/providers/{provider_id}` | get /{realm}/identity-provider/providers/{provider_id} | Get identity providers |
-| GET | `/{realm}/keys` | get /{realm}/keys | — |
-| POST | `/{realm}/logout-all` | post /{realm}/logout-all | Removes all user sessions. |
-| POST | `/{realm}/partial-export` | post /{realm}/partial-export | Partial export of existing realm into a JSON file. |
-| POST | `/{realm}/partialImport` | post /{realm}/partialImport | Partial import from a JSON file to an existing realm. |
-| POST | `/{realm}/push-revocation` | post /{realm}/push-revocation | Push the realm’s revocation policy to any client that has an admin url associated with it. |
-| GET | `/{realm}/roles` | get /{realm}/roles | Get all roles for the realm or client |
-| POST | `/{realm}/roles` | post /{realm}/roles | Create a new role for the realm or client |
-| DELETE | `/{realm}/roles-by-id/{role-id}` | delete /{realm}/roles-by-id/{role-id} | Delete the role |
-| GET | `/{realm}/roles-by-id/{role-id}` | get /{realm}/roles-by-id/{role-id} | Get a specific role’s representation |
-| PUT | `/{realm}/roles-by-id/{role-id}` | put /{realm}/roles-by-id/{role-id} | Update the role |
-| DELETE | `/{realm}/roles-by-id/{role-id}/composites` | delete /{realm}/roles-by-id/{role-id}/composites | Remove a set of roles from the role’s composite |
-| GET | `/{realm}/roles-by-id/{role-id}/composites` | get /{realm}/roles-by-id/{role-id}/composites | Get role’s children Returns a set of role’s children provided the role is a composite. |
-| POST | `/{realm}/roles-by-id/{role-id}/composites` | post /{realm}/roles-by-id/{role-id}/composites | Make the role a composite role by associating some child roles |
-| GET | `/{realm}/roles-by-id/{role-id}/composites/clients/{client}` | get /{realm}/roles-by-id/{role-id}/composites/clients/{client} | Get client-level roles for the client that are in the role’s composite |
-| GET | `/{realm}/roles-by-id/{role-id}/composites/realm` | get /{realm}/roles-by-id/{role-id}/composites/realm | Get realm-level roles that are in the role’s composite |
-| GET | `/{realm}/roles-by-id/{role-id}/management/permissions` | get /{realm}/roles-by-id/{role-id}/management/permissions | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
-| PUT | `/{realm}/roles-by-id/{role-id}/management/permissions` | put /{realm}/roles-by-id/{role-id}/management/permissions | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
-| DELETE | `/{realm}/roles/{role-name}` | delete /{realm}/roles/{role-name} | Delete a role by name |
-| GET | `/{realm}/roles/{role-name}` | get /{realm}/roles/{role-name} | Get a role by name |
-| PUT | `/{realm}/roles/{role-name}` | put /{realm}/roles/{role-name} | Update a role by name |
-| DELETE | `/{realm}/roles/{role-name}/composites` | delete /{realm}/roles/{role-name}/composites | Remove roles from the role’s composite |
-| GET | `/{realm}/roles/{role-name}/composites` | get /{realm}/roles/{role-name}/composites | Get composites of the role |
-| POST | `/{realm}/roles/{role-name}/composites` | post /{realm}/roles/{role-name}/composites | Add a composite to the role |
-| GET | `/{realm}/roles/{role-name}/composites/clients/{client}` | get /{realm}/roles/{role-name}/composites/clients/{client} | An app-level roles for the specified app for the role’s composite |
-| GET | `/{realm}/roles/{role-name}/composites/realm` | get /{realm}/roles/{role-name}/composites/realm | Get realm-level roles of the role’s composite |
-| GET | `/{realm}/roles/{role-name}/groups` | get /{realm}/roles/{role-name}/groups | Return List of Groups that have the specified role name |
-| GET | `/{realm}/roles/{role-name}/management/permissions` | get /{realm}/roles/{role-name}/management/permissions | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
-| PUT | `/{realm}/roles/{role-name}/management/permissions` | put /{realm}/roles/{role-name}/management/permissions | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
-| GET | `/{realm}/roles/{role-name}/users` | get /{realm}/roles/{role-name}/users | Return List of Users that have the specified role name |
-| DELETE | `/{realm}/sessions/{session}` | delete /{realm}/sessions/{session} | Remove a specific user session. |
-| POST | `/{realm}/testLDAPConnection` | post /{realm}/testLDAPConnection | Test LDAP connection |
-| POST | `/{realm}/testSMTPConnection` | post /{realm}/testSMTPConnection | — |
-| GET | `/{realm}/user-storage/{id}/name` | get /{realm}/user-storage/{id}/name | Need this for admin console to display simple name of provider when displaying user detail KEYCLOAK-4328 |
-| POST | `/{realm}/user-storage/{id}/remove-imported-users` | post /{realm}/user-storage/{id}/remove-imported-users | Remove imported users |
-| POST | `/{realm}/user-storage/{id}/sync` | post /{realm}/user-storage/{id}/sync | Trigger sync of users Action can be "triggerFullSync" or "triggerChangedUsersSync" |
-| POST | `/{realm}/user-storage/{id}/unlink-users` | post /{realm}/user-storage/{id}/unlink-users | Unlink imported users from a storage provider |
-| POST | `/{realm}/user-storage/{parentId}/mappers/{id}/sync` | post /{realm}/user-storage/{parentId}/mappers/{id}/sync | Trigger sync of mapper data related to ldap mapper (roles, groups, …​) direction is "fedToKeycloak" or "keycloakToFed" |
-| GET | `/{realm}/users` | get /{realm}/users | Get users Returns a list of users, filtered according to query parameters |
-| POST | `/{realm}/users` | post /{realm}/users | Create a new user Username must be unique. |
-| GET | `/{realm}/users-management-permissions` | get /{realm}/users-management-permissions | — |
-| PUT | `/{realm}/users-management-permissions` | put /{realm}/users-management-permissions | — |
-| GET | `/{realm}/users/count` | get /{realm}/users/count | Returns the number of users that match the given criteria. |
-| DELETE | `/{realm}/users/{id}` | delete /{realm}/users/{id} | Delete the user |
-| GET | `/{realm}/users/{id}` | get /{realm}/users/{id} | Get representation of the user |
-| PUT | `/{realm}/users/{id}` | put /{realm}/users/{id} | Update the user |
-| GET | `/{realm}/users/{id}/configured-user-storage-credential-types` | get /{realm}/users/{id}/configured-user-storage-credential-types | Return credential types, which are provided by the user storage where user is stored. |
-| GET | `/{realm}/users/{id}/consents` | get /{realm}/users/{id}/consents | Get consents granted by the user |
-| DELETE | `/{realm}/users/{id}/consents/{client}` | delete /{realm}/users/{id}/consents/{client} | Revoke consent and offline tokens for particular client from user |
-| GET | `/{realm}/users/{id}/credentials` | get /{realm}/users/{id}/credentials | — |
-| DELETE | `/{realm}/users/{id}/credentials/{credentialId}` | delete /{realm}/users/{id}/credentials/{credentialId} | Remove a credential for a user |
-| POST | `/{realm}/users/{id}/credentials/{credentialId}/moveAfter/{newPreviousCredentialId}` | post /{realm}/users/{id}/credentials/{credentialId}/moveAfter/{newPreviousCredentialId} | Move a credential to a position behind another credential |
-| POST | `/{realm}/users/{id}/credentials/{credentialId}/moveToFirst` | post /{realm}/users/{id}/credentials/{credentialId}/moveToFirst | Move a credential to a first position in the credentials list of the user |
-| PUT | `/{realm}/users/{id}/credentials/{credentialId}/userLabel` | put /{realm}/users/{id}/credentials/{credentialId}/userLabel | Update a credential label for a user |
-| PUT | `/{realm}/users/{id}/disable-credential-types` | put /{realm}/users/{id}/disable-credential-types | Disable all credentials for a user of a specific type |
-| PUT | `/{realm}/users/{id}/execute-actions-email` | put /{realm}/users/{id}/execute-actions-email | Send a update account email to the user An email contains a link the user can click to perform a set of required actions. |
-| GET | `/{realm}/users/{id}/federated-identity` | get /{realm}/users/{id}/federated-identity | Get social logins associated with the user |
-| DELETE | `/{realm}/users/{id}/federated-identity/{provider}` | delete /{realm}/users/{id}/federated-identity/{provider} | Remove a social login provider from user |
-| POST | `/{realm}/users/{id}/federated-identity/{provider}` | post /{realm}/users/{id}/federated-identity/{provider} | Add a social login provider to the user |
-| GET | `/{realm}/users/{id}/groups` | get /{realm}/users/{id}/groups | — |
-| GET | `/{realm}/users/{id}/groups/count` | get /{realm}/users/{id}/groups/count | — |
-| DELETE | `/{realm}/users/{id}/groups/{groupId}` | delete /{realm}/users/{id}/groups/{groupId} | — |
-| PUT | `/{realm}/users/{id}/groups/{groupId}` | put /{realm}/users/{id}/groups/{groupId} | — |
-| POST | `/{realm}/users/{id}/impersonation` | post /{realm}/users/{id}/impersonation | Impersonate the user |
-| POST | `/{realm}/users/{id}/logout` | post /{realm}/users/{id}/logout | Remove all user sessions associated with the user Also send notification to all clients that have an admin URL to invalidate the sessions for the particular user. |
-| GET | `/{realm}/users/{id}/offline-sessions/{clientId}` | get /{realm}/users/{id}/offline-sessions/{clientId} | Get offline sessions associated with the user and client |
-| PUT | `/{realm}/users/{id}/reset-password` | put /{realm}/users/{id}/reset-password | Set up a new password for the user. |
-| GET | `/{realm}/users/{id}/role-mappings` | get /{realm}/users/{id}/role-mappings | Get role mappings |
-| DELETE | `/{realm}/users/{id}/role-mappings/clients/{client}` | delete /{realm}/users/{id}/role-mappings/clients/{client} | Delete client-level roles from user role mapping |
-| GET | `/{realm}/users/{id}/role-mappings/clients/{client}` | get /{realm}/users/{id}/role-mappings/clients/{client} | Get client-level role mappings for the user, and the app |
-| POST | `/{realm}/users/{id}/role-mappings/clients/{client}` | post /{realm}/users/{id}/role-mappings/clients/{client} | Add client-level roles to the user role mapping |
-| GET | `/{realm}/users/{id}/role-mappings/clients/{client}/available` | get /{realm}/users/{id}/role-mappings/clients/{client}/available | Get available client-level roles that can be mapped to the user |
-| GET | `/{realm}/users/{id}/role-mappings/clients/{client}/composite` | get /{realm}/users/{id}/role-mappings/clients/{client}/composite | Get effective client-level role mappings This recurses any composite roles |
-| DELETE | `/{realm}/users/{id}/role-mappings/realm` | delete /{realm}/users/{id}/role-mappings/realm | Delete realm-level role mappings |
-| GET | `/{realm}/users/{id}/role-mappings/realm` | get /{realm}/users/{id}/role-mappings/realm | Get realm-level role mappings |
-| POST | `/{realm}/users/{id}/role-mappings/realm` | post /{realm}/users/{id}/role-mappings/realm | Add realm-level role mappings to the user |
-| GET | `/{realm}/users/{id}/role-mappings/realm/available` | get /{realm}/users/{id}/role-mappings/realm/available | Get realm-level roles that can be mapped |
-| GET | `/{realm}/users/{id}/role-mappings/realm/composite` | get /{realm}/users/{id}/role-mappings/realm/composite | Get effective realm-level role mappings This will recurse all composite roles to get the result. |
-| PUT | `/{realm}/users/{id}/send-verify-email` | put /{realm}/users/{id}/send-verify-email | Send an email-verification email to the user An email contains a link the user can click to verify their email address. |
-| GET | `/{realm}/users/{id}/sessions` | get /{realm}/users/{id}/sessions | Get sessions associated with the user |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/` | get / | — | ServerInfoRepresentation | yes | Get themes, social providers, auth providers, and event listeners available on this server |
+| POST | `/` | post / | body*: RealmRepresentation | — |  | Import a realm Imports a realm from a full representation of that realm. |
+| GET | `/{id}/name` | get /{id}/name | `id`* | object | yes | Need this for admin console to display simple name of provider when displaying client detail KEYCLOAK-4328 |
+| GET | `/{realm}` | get /{realm} | `realm`* | RealmRepresentation | yes | Get the top-level representation of the realm It will not include nested information like User and Client representations. |
+| PUT | `/{realm}` | put /{realm} | `realm`*, body*: RealmRepresentation | — |  | Update the top-level information of the realm Any user, roles or client information in the representation will be ignored. |
+| DELETE | `/{realm}` | delete /{realm} | `realm`* | — |  | Delete the realm |
+| GET | `/{realm}/admin-events` | get /{realm}/admin-events | `realm`*, `authClient`, `authIpAddress`, `authRealm`, `authUser`, `dateFrom`, `dateTo`, `first`, `max`, `operationTypes`, `resourcePath`, `resourceTypes` | AdminEventRepresentation[] | yes | Get admin events Returns all admin events, or filters events based on URL query parameters listed here |
+| DELETE | `/{realm}/admin-events` | delete /{realm}/admin-events | `realm`* | — |  | Delete all admin events |
+| DELETE | `/{realm}/attack-detection/brute-force/users` | delete /{realm}/attack-detection/brute-force/users | `realm`* | — |  | Clear any user login failures for all users This can release temporary disabled users |
+| GET | `/{realm}/attack-detection/brute-force/users/{userId}` | get /{realm}/attack-detection/brute-force/users/{userId} | `realm`*, `userId`* | object | yes | Get status of a username in brute force detection |
+| DELETE | `/{realm}/attack-detection/brute-force/users/{userId}` | delete /{realm}/attack-detection/brute-force/users/{userId} | `realm`*, `userId`* | — |  | Clear any user login failures for the user This can release temporary disabled user |
+| GET | `/{realm}/authentication/authenticator-providers` | get /{realm}/authentication/authenticator-providers | `realm`* | object[] | yes | Get authenticator providers Returns a list of authenticator providers. |
+| GET | `/{realm}/authentication/client-authenticator-providers` | get /{realm}/authentication/client-authenticator-providers | `realm`* | object[] | yes | Get client authenticator providers Returns a list of client authenticator providers. |
+| GET | `/{realm}/authentication/config-description/{providerId}` | get /{realm}/authentication/config-description/{providerId} | `realm`*, `providerId`* | AuthenticatorConfigInfoRepresentation | yes | Get authenticator provider’s configuration description |
+| GET | `/{realm}/authentication/config/{id}` | get /{realm}/authentication/config/{id} | `realm`*, `id`* | AuthenticatorConfigRepresentation | yes | Get authenticator configuration |
+| PUT | `/{realm}/authentication/config/{id}` | put /{realm}/authentication/config/{id} | `realm`*, `id`*, body*: AuthenticatorConfigRepresentation | — |  | Update authenticator configuration |
+| DELETE | `/{realm}/authentication/config/{id}` | delete /{realm}/authentication/config/{id} | `realm`*, `id`* | — |  | Delete authenticator configuration |
+| POST | `/{realm}/authentication/executions` | post /{realm}/authentication/executions | `realm`*, body*: AuthenticationExecutionRepresentation | — |  | Add new authentication execution |
+| GET | `/{realm}/authentication/executions/{executionId}` | get /{realm}/authentication/executions/{executionId} | `realm`*, `executionId`* | — | yes | Get Single Execution |
+| DELETE | `/{realm}/authentication/executions/{executionId}` | delete /{realm}/authentication/executions/{executionId} | `realm`*, `executionId`* | — |  | Delete execution |
+| POST | `/{realm}/authentication/executions/{executionId}/config` | post /{realm}/authentication/executions/{executionId}/config | `realm`*, `executionId`*, body*: AuthenticatorConfigRepresentation | — |  | Update execution with new configuration |
+| POST | `/{realm}/authentication/executions/{executionId}/lower-priority` | post /{realm}/authentication/executions/{executionId}/lower-priority | `realm`*, `executionId`* | — |  | Lower execution’s priority |
+| POST | `/{realm}/authentication/executions/{executionId}/raise-priority` | post /{realm}/authentication/executions/{executionId}/raise-priority | `realm`*, `executionId`* | — |  | Raise execution’s priority |
+| GET | `/{realm}/authentication/flows` | get /{realm}/authentication/flows | `realm`* | AuthenticationFlowRepresentation[] | yes | Get authentication flows Returns a list of authentication flows. |
+| POST | `/{realm}/authentication/flows` | post /{realm}/authentication/flows | `realm`*, body*: AuthenticationFlowRepresentation | — |  | Create a new authentication flow |
+| POST | `/{realm}/authentication/flows/{flowAlias}/copy` | post /{realm}/authentication/flows/{flowAlias}/copy | `realm`*, `flowAlias`*, body*: object | — |  | Copy existing authentication flow under a new name The new name is given as 'newName' attribute of the passed JSON object |
+| GET | `/{realm}/authentication/flows/{flowAlias}/executions` | get /{realm}/authentication/flows/{flowAlias}/executions | `realm`*, `flowAlias`* | — | yes | Get authentication executions for a flow |
+| PUT | `/{realm}/authentication/flows/{flowAlias}/executions` | put /{realm}/authentication/flows/{flowAlias}/executions | `realm`*, `flowAlias`*, body*: AuthenticationExecutionInfoRepresentation | — |  | Update authentication executions of a flow |
+| POST | `/{realm}/authentication/flows/{flowAlias}/executions/execution` | post /{realm}/authentication/flows/{flowAlias}/executions/execution | `realm`*, `flowAlias`*, body*: object | — |  | Add new authentication execution to a flow |
+| POST | `/{realm}/authentication/flows/{flowAlias}/executions/flow` | post /{realm}/authentication/flows/{flowAlias}/executions/flow | `realm`*, `flowAlias`*, body*: object | — |  | Add new flow with new execution to existing flow |
+| GET | `/{realm}/authentication/flows/{id}` | get /{realm}/authentication/flows/{id} | `realm`*, `id`* | AuthenticationFlowRepresentation | yes | Get authentication flow for id |
+| PUT | `/{realm}/authentication/flows/{id}` | put /{realm}/authentication/flows/{id} | `realm`*, `id`*, body*: AuthenticationFlowRepresentation | — |  | Update an authentication flow |
+| DELETE | `/{realm}/authentication/flows/{id}` | delete /{realm}/authentication/flows/{id} | `realm`*, `id`* | — |  | Delete an authentication flow |
+| GET | `/{realm}/authentication/form-action-providers` | get /{realm}/authentication/form-action-providers | `realm`* | object[] | yes | Get form action providers Returns a list of form action providers. |
+| GET | `/{realm}/authentication/form-providers` | get /{realm}/authentication/form-providers | `realm`* | object[] | yes | Get form providers Returns a list of form providers. |
+| GET | `/{realm}/authentication/per-client-config-description` | get /{realm}/authentication/per-client-config-description | `realm`* | object | yes | Get configuration descriptions for all clients |
+| POST | `/{realm}/authentication/register-required-action` | post /{realm}/authentication/register-required-action | `realm`*, body*: object | — |  | Register a new required actions |
+| GET | `/{realm}/authentication/required-actions` | get /{realm}/authentication/required-actions | `realm`* | RequiredActionProviderRepresentation[] | yes | Get required actions Returns a list of required actions. |
+| GET | `/{realm}/authentication/required-actions/{alias}` | get /{realm}/authentication/required-actions/{alias} | `realm`*, `alias`* | RequiredActionProviderRepresentation | yes | Get required action for alias |
+| PUT | `/{realm}/authentication/required-actions/{alias}` | put /{realm}/authentication/required-actions/{alias} | `realm`*, `alias`*, body*: RequiredActionProviderRepresentation | — |  | Update required action |
+| DELETE | `/{realm}/authentication/required-actions/{alias}` | delete /{realm}/authentication/required-actions/{alias} | `realm`*, `alias`* | — |  | Delete required action |
+| POST | `/{realm}/authentication/required-actions/{alias}/lower-priority` | post /{realm}/authentication/required-actions/{alias}/lower-priority | `realm`*, `alias`* | — |  | Lower required action’s priority |
+| POST | `/{realm}/authentication/required-actions/{alias}/raise-priority` | post /{realm}/authentication/required-actions/{alias}/raise-priority | `realm`*, `alias`* | — |  | Raise required action’s priority |
+| GET | `/{realm}/authentication/unregistered-required-actions` | get /{realm}/authentication/unregistered-required-actions | `realm`* | object[] | yes | Get unregistered required actions Returns a list of unregistered required actions. |
+| POST | `/{realm}/clear-keys-cache` | post /{realm}/clear-keys-cache | `realm`* | — |  | Clear cache of external public keys (Public keys of clients or Identity providers) |
+| POST | `/{realm}/clear-realm-cache` | post /{realm}/clear-realm-cache | `realm`* | — |  | Clear realm cache |
+| POST | `/{realm}/clear-user-cache` | post /{realm}/clear-user-cache | `realm`* | — |  | Clear user cache |
+| POST | `/{realm}/client-description-converter` | post /{realm}/client-description-converter | `realm`*, body*: string | ClientRepresentation |  | Base path for importing clients under this realm. |
+| GET | `/{realm}/client-registration-policy/providers` | get /{realm}/client-registration-policy/providers | `realm`* | ComponentTypeRepresentation[] | yes | Base path for retrieve providers with the configProperties properly filled |
+| GET | `/{realm}/client-scopes` | get /{realm}/client-scopes | `realm`* | ClientScopeRepresentation[] | yes | Get client scopes belonging to the realm Returns a list of client scopes belonging to the realm |
+| POST | `/{realm}/client-scopes` | post /{realm}/client-scopes | `realm`*, body*: ClientScopeRepresentation | — |  | Create a new client scope Client Scope’s name must be unique! |
+| GET | `/{realm}/client-scopes/{id1}/protocol-mappers/models/{id2}` | get /{realm}/client-scopes/{id1}/protocol-mappers/models/{id2} | `realm`*, `id1`*, `id2`* | ProtocolMapperRepresentation | yes | Get mapper by id |
+| PUT | `/{realm}/client-scopes/{id1}/protocol-mappers/models/{id2}` | put /{realm}/client-scopes/{id1}/protocol-mappers/models/{id2} | `realm`*, `id1`*, `id2`*, body*: ProtocolMapperRepresentation | — |  | Update the mapper |
+| DELETE | `/{realm}/client-scopes/{id1}/protocol-mappers/models/{id2}` | delete /{realm}/client-scopes/{id1}/protocol-mappers/models/{id2} | `realm`*, `id1`*, `id2`* | — |  | Delete the mapper |
+| GET | `/{realm}/client-scopes/{id}` | get /{realm}/client-scopes/{id} | `realm`*, `id`* | ClientScopeRepresentation | yes | Get representation of the client scope |
+| PUT | `/{realm}/client-scopes/{id}` | put /{realm}/client-scopes/{id} | `realm`*, `id`*, body*: ClientScopeRepresentation | — |  | Update the client scope |
+| DELETE | `/{realm}/client-scopes/{id}` | delete /{realm}/client-scopes/{id} | `realm`*, `id`* | — |  | Delete the client scope |
+| POST | `/{realm}/client-scopes/{id}/protocol-mappers/add-models` | post /{realm}/client-scopes/{id}/protocol-mappers/add-models | `realm`*, `id`*, body*: ProtocolMapperRepresentation[] | — |  | Create multiple mappers |
+| GET | `/{realm}/client-scopes/{id}/protocol-mappers/models` | get /{realm}/client-scopes/{id}/protocol-mappers/models | `realm`*, `id`* | ProtocolMapperRepresentation[] | yes | Get mappers |
+| POST | `/{realm}/client-scopes/{id}/protocol-mappers/models` | post /{realm}/client-scopes/{id}/protocol-mappers/models | `realm`*, `id`*, body*: ProtocolMapperRepresentation | — |  | Create a mapper |
+| GET | `/{realm}/client-scopes/{id}/protocol-mappers/protocol/{protocol}` | get /{realm}/client-scopes/{id}/protocol-mappers/protocol/{protocol} | `realm`*, `id`*, `protocol`* | ProtocolMapperRepresentation[] | yes | Get mappers by name for a specific protocol |
+| GET | `/{realm}/client-scopes/{id}/scope-mappings` | get /{realm}/client-scopes/{id}/scope-mappings | `realm`*, `id`* | MappingsRepresentation | yes | Get all scope mappings for the client |
+| GET | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}` | get /{realm}/client-scopes/{id}/scope-mappings/clients/{client} | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get the roles associated with a client’s scope Returns roles for the client. |
+| POST | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}` | post /{realm}/client-scopes/{id}/scope-mappings/clients/{client} | `realm`*, `id`*, `client`*, body*: RoleRepresentation[] | — |  | Add client-level roles to the client’s scope |
+| DELETE | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}` | delete /{realm}/client-scopes/{id}/scope-mappings/clients/{client} | `realm`*, `id`*, `client`*, body*: RoleRepresentation[] | — |  | Remove client-level roles from the client’s scope. |
+| GET | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}/available` | get /{realm}/client-scopes/{id}/scope-mappings/clients/{client}/available | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | The available client-level roles Returns the roles for the client that can be associated with the client’s scope |
+| GET | `/{realm}/client-scopes/{id}/scope-mappings/clients/{client}/composite` | get /{realm}/client-scopes/{id}/scope-mappings/clients/{client}/composite | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get effective client roles Returns the roles for the client that are associated with the client’s scope. |
+| GET | `/{realm}/client-scopes/{id}/scope-mappings/realm` | get /{realm}/client-scopes/{id}/scope-mappings/realm | `realm`*, `id`* | RoleRepresentation[] | yes | Get realm-level roles associated with the client’s scope |
+| POST | `/{realm}/client-scopes/{id}/scope-mappings/realm` | post /{realm}/client-scopes/{id}/scope-mappings/realm | `realm`*, `id`*, body*: RoleRepresentation[] | — |  | Add a set of realm-level roles to the client’s scope |
+| DELETE | `/{realm}/client-scopes/{id}/scope-mappings/realm` | delete /{realm}/client-scopes/{id}/scope-mappings/realm | `realm`*, `id`*, body*: RoleRepresentation[] | — |  | Remove a set of realm-level roles from the client’s scope |
+| GET | `/{realm}/client-scopes/{id}/scope-mappings/realm/available` | get /{realm}/client-scopes/{id}/scope-mappings/realm/available | `realm`*, `id`* | RoleRepresentation[] | yes | Get realm-level roles that are available to attach to this client’s scope |
+| GET | `/{realm}/client-scopes/{id}/scope-mappings/realm/composite` | get /{realm}/client-scopes/{id}/scope-mappings/realm/composite | `realm`*, `id`* | RoleRepresentation[] | yes | Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists. |
+| GET | `/{realm}/client-session-stats` | get /{realm}/client-session-stats | `realm`* | object[] | yes | Get client session stats Returns a JSON map. |
+| GET | `/{realm}/clients` | get /{realm}/clients | `realm`*, `clientId`, `first`, `max`, `search`, `viewableOnly` | ClientRepresentation[] | yes | Get clients belonging to the realm Returns a list of clients belonging to the realm |
+| POST | `/{realm}/clients` | post /{realm}/clients | `realm`*, body*: ClientRepresentation | — |  | Create a new client Client’s client_id must be unique! |
+| GET | `/{realm}/clients-initial-access` | get /{realm}/clients-initial-access | `realm`* | ClientInitialAccessPresentation[] | yes | — |
+| POST | `/{realm}/clients-initial-access` | post /{realm}/clients-initial-access | `realm`*, body*: ClientInitialAccessCreatePresentation | ClientInitialAccessPresentation |  | Create a new initial access token. |
+| DELETE | `/{realm}/clients-initial-access/{id}` | delete /{realm}/clients-initial-access/{id} | `realm`*, `id`* | — |  | — |
+| GET | `/{realm}/clients/{id1}/protocol-mappers/models/{id2}` | get /{realm}/clients/{id1}/protocol-mappers/models/{id2} | `realm`*, `id1`*, `id2`* | ProtocolMapperRepresentation | yes | Get mapper by id |
+| PUT | `/{realm}/clients/{id1}/protocol-mappers/models/{id2}` | put /{realm}/clients/{id1}/protocol-mappers/models/{id2} | `realm`*, `id1`*, `id2`*, body*: ProtocolMapperRepresentation | — |  | Update the mapper |
+| DELETE | `/{realm}/clients/{id1}/protocol-mappers/models/{id2}` | delete /{realm}/clients/{id1}/protocol-mappers/models/{id2} | `realm`*, `id1`*, `id2`* | — |  | Delete the mapper |
+| GET | `/{realm}/clients/{id}` | get /{realm}/clients/{id} | `realm`*, `id`* | ClientRepresentation | yes | Get representation of the client |
+| PUT | `/{realm}/clients/{id}` | put /{realm}/clients/{id} | `realm`*, `id`*, body*: ClientRepresentation | — |  | Update the client |
+| DELETE | `/{realm}/clients/{id}` | delete /{realm}/clients/{id} | `realm`*, `id`* | — |  | Delete the client |
+| GET | `/{realm}/clients/{id}/certificates/{attr}` | get /{realm}/clients/{id}/certificates/{attr} | `realm`*, `id`*, `attr`* | CertificateRepresentation | yes | Get key info |
+| POST | `/{realm}/clients/{id}/certificates/{attr}/download` | post /{realm}/clients/{id}/certificates/{attr}/download | `realm`*, `id`*, `attr`*, body*: KeyStoreConfig | string:byte |  | Get a keystore file for the client, containing private key and public certificate |
+| POST | `/{realm}/clients/{id}/certificates/{attr}/generate` | post /{realm}/clients/{id}/certificates/{attr}/generate | `realm`*, `id`*, `attr`* | CertificateRepresentation |  | Generate a new certificate with new key pair |
+| POST | `/{realm}/clients/{id}/certificates/{attr}/generate-and-download` | post /{realm}/clients/{id}/certificates/{attr}/generate-and-download | `realm`*, `id`*, `attr`*, body*: KeyStoreConfig | string:byte |  | Generate a new keypair and certificate, and get the private key file Generates a keypair and certificate and serves the private key in a specified keystore format. |
+| POST | `/{realm}/clients/{id}/certificates/{attr}/upload` | post /{realm}/clients/{id}/certificates/{attr}/upload | `realm`*, `id`*, `attr`* | CertificateRepresentation |  | Upload certificate and eventually private key |
+| POST | `/{realm}/clients/{id}/certificates/{attr}/upload-certificate` | post /{realm}/clients/{id}/certificates/{attr}/upload-certificate | `realm`*, `id`*, `attr`* | CertificateRepresentation |  | Upload only certificate, not private key |
+| GET | `/{realm}/clients/{id}/client-secret` | get /{realm}/clients/{id}/client-secret | `realm`*, `id`* | CredentialRepresentation | yes | Get the client secret |
+| POST | `/{realm}/clients/{id}/client-secret` | post /{realm}/clients/{id}/client-secret | `realm`*, `id`* | CredentialRepresentation |  | Generate a new secret for the client |
+| GET | `/{realm}/clients/{id}/default-client-scopes` | get /{realm}/clients/{id}/default-client-scopes | `realm`*, `id`* | ClientScopeRepresentation[] | yes | Get default client scopes. |
+| PUT | `/{realm}/clients/{id}/default-client-scopes/{clientScopeId}` | put /{realm}/clients/{id}/default-client-scopes/{clientScopeId} | `realm`*, `id`*, `clientScopeId`* | — |  | — |
+| DELETE | `/{realm}/clients/{id}/default-client-scopes/{clientScopeId}` | delete /{realm}/clients/{id}/default-client-scopes/{clientScopeId} | `realm`*, `id`*, `clientScopeId`* | — |  | — |
+| GET | `/{realm}/clients/{id}/evaluate-scopes/generate-example-access-token` | get /{realm}/clients/{id}/evaluate-scopes/generate-example-access-token | `realm`*, `id`*, `scope`, `userId` | AccessToken | yes | Create JSON with payload of example access token |
+| GET | `/{realm}/clients/{id}/evaluate-scopes/protocol-mappers` | get /{realm}/clients/{id}/evaluate-scopes/protocol-mappers | `realm`*, `id`*, `scope` | ClientScopeEvaluateResource-ProtocolMapperEvaluationRepresentation[] | yes | Return list of all protocol mappers, which will be used when generating tokens issued for particular client. |
+| GET | `/{realm}/clients/{id}/evaluate-scopes/scope-mappings/{roleContainerId}/granted` | get /{realm}/clients/{id}/evaluate-scopes/scope-mappings/{roleContainerId}/granted | `realm`*, `id`*, `roleContainerId`*, `scope` | RoleRepresentation[] | yes | Get effective scope mapping of all roles of particular role container, which this client is defacto allowed to have in the accessToken issued for him. |
+| GET | `/{realm}/clients/{id}/evaluate-scopes/scope-mappings/{roleContainerId}/not-granted` | get /{realm}/clients/{id}/evaluate-scopes/scope-mappings/{roleContainerId}/not-granted | `realm`*, `id`*, `roleContainerId`*, `scope` | RoleRepresentation[] | yes | Get roles, which this client doesn’t have scope for and can’t have them in the accessToken issued for him. |
+| GET | `/{realm}/clients/{id}/installation/providers/{providerId}` | get /{realm}/clients/{id}/installation/providers/{providerId} | `realm`*, `id`*, `providerId`* | — | yes | — |
+| GET | `/{realm}/clients/{id}/management/permissions` | get /{realm}/clients/{id}/management/permissions | `realm`*, `id`* | ManagementPermissionReference | yes | Return object stating whether client Authorization permissions have been initialized or not and a reference |
+| PUT | `/{realm}/clients/{id}/management/permissions` | put /{realm}/clients/{id}/management/permissions | `realm`*, `id`*, body*: ManagementPermissionReference | ManagementPermissionReference |  | Return object stating whether client Authorization permissions have been initialized or not and a reference |
+| POST | `/{realm}/clients/{id}/nodes` | post /{realm}/clients/{id}/nodes | `realm`*, `id`*, body*: object | — |  | Register a cluster node with the client Manually register cluster node to this client - usually it’s not needed to call this directly as adapter should handle by sending registration request to Keycloak |
+| DELETE | `/{realm}/clients/{id}/nodes/{node}` | delete /{realm}/clients/{id}/nodes/{node} | `realm`*, `id`*, `node`* | — |  | Unregister a cluster node from the client |
+| GET | `/{realm}/clients/{id}/offline-session-count` | get /{realm}/clients/{id}/offline-session-count | `realm`*, `id`* | object | yes | Get application offline session count Returns a number of offline user sessions associated with this client { "count": number } |
+| GET | `/{realm}/clients/{id}/offline-sessions` | get /{realm}/clients/{id}/offline-sessions | `realm`*, `id`*, `first`, `max` | UserSessionRepresentation[] | yes | Get offline sessions for client Returns a list of offline user sessions associated with this client |
+| GET | `/{realm}/clients/{id}/optional-client-scopes` | get /{realm}/clients/{id}/optional-client-scopes | `realm`*, `id`* | ClientScopeRepresentation[] | yes | Get optional client scopes. |
+| PUT | `/{realm}/clients/{id}/optional-client-scopes/{clientScopeId}` | put /{realm}/clients/{id}/optional-client-scopes/{clientScopeId} | `realm`*, `id`*, `clientScopeId`* | — |  | — |
+| DELETE | `/{realm}/clients/{id}/optional-client-scopes/{clientScopeId}` | delete /{realm}/clients/{id}/optional-client-scopes/{clientScopeId} | `realm`*, `id`*, `clientScopeId`* | — |  | — |
+| POST | `/{realm}/clients/{id}/protocol-mappers/add-models` | post /{realm}/clients/{id}/protocol-mappers/add-models | `realm`*, `id`*, body*: ProtocolMapperRepresentation[] | — |  | Create multiple mappers |
+| GET | `/{realm}/clients/{id}/protocol-mappers/models` | get /{realm}/clients/{id}/protocol-mappers/models | `realm`*, `id`* | ProtocolMapperRepresentation[] | yes | Get mappers |
+| POST | `/{realm}/clients/{id}/protocol-mappers/models` | post /{realm}/clients/{id}/protocol-mappers/models | `realm`*, `id`*, body*: ProtocolMapperRepresentation | — |  | Create a mapper |
+| GET | `/{realm}/clients/{id}/protocol-mappers/protocol/{protocol}` | get /{realm}/clients/{id}/protocol-mappers/protocol/{protocol} | `realm`*, `id`*, `protocol`* | ProtocolMapperRepresentation[] | yes | Get mappers by name for a specific protocol |
+| POST | `/{realm}/clients/{id}/push-revocation` | post /{realm}/clients/{id}/push-revocation | `realm`*, `id`* | GlobalRequestResult |  | Push the client’s revocation policy to its admin URL If the client has an admin URL, push revocation policy to it. |
+| POST | `/{realm}/clients/{id}/registration-access-token` | post /{realm}/clients/{id}/registration-access-token | `realm`*, `id`* | ClientRepresentation |  | Generate a new registration access token for the client |
+| GET | `/{realm}/clients/{id}/roles` | get /{realm}/clients/{id}/roles | `realm`*, `id`*, `briefRepresentation`, `first`, `max`, `search` | RoleRepresentation[] | yes | Get all roles for the realm or client |
+| POST | `/{realm}/clients/{id}/roles` | post /{realm}/clients/{id}/roles | `realm`*, `id`*, body*: RoleRepresentation | — |  | Create a new role for the realm or client |
+| GET | `/{realm}/clients/{id}/roles/{role-name}` | get /{realm}/clients/{id}/roles/{role-name} | `realm`*, `id`*, `role-name`* | RoleRepresentation | yes | Get a role by name |
+| PUT | `/{realm}/clients/{id}/roles/{role-name}` | put /{realm}/clients/{id}/roles/{role-name} | `realm`*, `id`*, `role-name`*, body*: RoleRepresentation | — |  | Update a role by name |
+| DELETE | `/{realm}/clients/{id}/roles/{role-name}` | delete /{realm}/clients/{id}/roles/{role-name} | `realm`*, `id`*, `role-name`* | — |  | Delete a role by name |
+| GET | `/{realm}/clients/{id}/roles/{role-name}/composites` | get /{realm}/clients/{id}/roles/{role-name}/composites | `realm`*, `id`*, `role-name`* | RoleRepresentation[] | yes | Get composites of the role |
+| POST | `/{realm}/clients/{id}/roles/{role-name}/composites` | post /{realm}/clients/{id}/roles/{role-name}/composites | `realm`*, `id`*, `role-name`*, body*: RoleRepresentation[] | — |  | Add a composite to the role |
+| DELETE | `/{realm}/clients/{id}/roles/{role-name}/composites` | delete /{realm}/clients/{id}/roles/{role-name}/composites | `realm`*, `id`*, `role-name`*, body*: RoleRepresentation[] | — |  | Remove roles from the role’s composite |
+| GET | `/{realm}/clients/{id}/roles/{role-name}/composites/clients/{client}` | get /{realm}/clients/{id}/roles/{role-name}/composites/clients/{client} | `realm`*, `id`*, `role-name`*, `client`* | RoleRepresentation[] | yes | An app-level roles for the specified app for the role’s composite |
+| GET | `/{realm}/clients/{id}/roles/{role-name}/composites/realm` | get /{realm}/clients/{id}/roles/{role-name}/composites/realm | `realm`*, `id`*, `role-name`* | RoleRepresentation[] | yes | Get realm-level roles of the role’s composite |
+| GET | `/{realm}/clients/{id}/roles/{role-name}/groups` | get /{realm}/clients/{id}/roles/{role-name}/groups | `realm`*, `id`*, `role-name`*, `briefRepresentation`, `first`, `max` | GroupRepresentation[] | yes | Return List of Groups that have the specified role name |
+| GET | `/{realm}/clients/{id}/roles/{role-name}/management/permissions` | get /{realm}/clients/{id}/roles/{role-name}/management/permissions | `realm`*, `id`*, `role-name`* | ManagementPermissionReference | yes | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
+| PUT | `/{realm}/clients/{id}/roles/{role-name}/management/permissions` | put /{realm}/clients/{id}/roles/{role-name}/management/permissions | `realm`*, `id`*, `role-name`*, body*: ManagementPermissionReference | ManagementPermissionReference |  | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
+| GET | `/{realm}/clients/{id}/roles/{role-name}/users` | get /{realm}/clients/{id}/roles/{role-name}/users | `realm`*, `id`*, `role-name`*, `first`, `max` | UserRepresentation[] | yes | Return List of Users that have the specified role name |
+| GET | `/{realm}/clients/{id}/scope-mappings` | get /{realm}/clients/{id}/scope-mappings | `realm`*, `id`* | MappingsRepresentation | yes | Get all scope mappings for the client |
+| GET | `/{realm}/clients/{id}/scope-mappings/clients/{client}` | get /{realm}/clients/{id}/scope-mappings/clients/{client} | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get the roles associated with a client’s scope Returns roles for the client. |
+| POST | `/{realm}/clients/{id}/scope-mappings/clients/{client}` | post /{realm}/clients/{id}/scope-mappings/clients/{client} | `realm`*, `id`*, `client`*, body*: RoleRepresentation[] | — |  | Add client-level roles to the client’s scope |
+| DELETE | `/{realm}/clients/{id}/scope-mappings/clients/{client}` | delete /{realm}/clients/{id}/scope-mappings/clients/{client} | `realm`*, `id`*, `client`*, body*: RoleRepresentation[] | — |  | Remove client-level roles from the client’s scope. |
+| GET | `/{realm}/clients/{id}/scope-mappings/clients/{client}/available` | get /{realm}/clients/{id}/scope-mappings/clients/{client}/available | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | The available client-level roles Returns the roles for the client that can be associated with the client’s scope |
+| GET | `/{realm}/clients/{id}/scope-mappings/clients/{client}/composite` | get /{realm}/clients/{id}/scope-mappings/clients/{client}/composite | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get effective client roles Returns the roles for the client that are associated with the client’s scope. |
+| GET | `/{realm}/clients/{id}/scope-mappings/realm` | get /{realm}/clients/{id}/scope-mappings/realm | `realm`*, `id`* | RoleRepresentation[] | yes | Get realm-level roles associated with the client’s scope |
+| POST | `/{realm}/clients/{id}/scope-mappings/realm` | post /{realm}/clients/{id}/scope-mappings/realm | `realm`*, `id`*, body*: RoleRepresentation[] | — |  | Add a set of realm-level roles to the client’s scope |
+| DELETE | `/{realm}/clients/{id}/scope-mappings/realm` | delete /{realm}/clients/{id}/scope-mappings/realm | `realm`*, `id`*, body*: RoleRepresentation[] | — |  | Remove a set of realm-level roles from the client’s scope |
+| GET | `/{realm}/clients/{id}/scope-mappings/realm/available` | get /{realm}/clients/{id}/scope-mappings/realm/available | `realm`*, `id`* | RoleRepresentation[] | yes | Get realm-level roles that are available to attach to this client’s scope |
+| GET | `/{realm}/clients/{id}/scope-mappings/realm/composite` | get /{realm}/clients/{id}/scope-mappings/realm/composite | `realm`*, `id`* | RoleRepresentation[] | yes | Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists. |
+| GET | `/{realm}/clients/{id}/service-account-user` | get /{realm}/clients/{id}/service-account-user | `realm`*, `id`* | UserRepresentation | yes | Get a user dedicated to the service account |
+| GET | `/{realm}/clients/{id}/session-count` | get /{realm}/clients/{id}/session-count | `realm`*, `id`* | object | yes | Get application session count Returns a number of user sessions associated with this client { "count": number } |
+| GET | `/{realm}/clients/{id}/test-nodes-available` | get /{realm}/clients/{id}/test-nodes-available | `realm`*, `id`* | GlobalRequestResult | yes | Test if registered cluster nodes are available Tests availability by sending 'ping' request to all cluster nodes. |
+| GET | `/{realm}/clients/{id}/user-sessions` | get /{realm}/clients/{id}/user-sessions | `realm`*, `id`*, `first`, `max` | UserSessionRepresentation[] | yes | Get user sessions for client Returns a list of user sessions associated with this client |
+| GET | `/{realm}/components` | get /{realm}/components | `realm`*, `name`, `parent`, `type` | ComponentRepresentation[] | yes | — |
+| POST | `/{realm}/components` | post /{realm}/components | `realm`*, body*: ComponentRepresentation | — |  | — |
+| GET | `/{realm}/components/{id}` | get /{realm}/components/{id} | `realm`*, `id`* | ComponentRepresentation | yes | — |
+| PUT | `/{realm}/components/{id}` | put /{realm}/components/{id} | `realm`*, `id`*, body*: ComponentRepresentation | — |  | — |
+| DELETE | `/{realm}/components/{id}` | delete /{realm}/components/{id} | `realm`*, `id`* | — |  | — |
+| GET | `/{realm}/components/{id}/sub-component-types` | get /{realm}/components/{id}/sub-component-types | `realm`*, `id`*, `type` | ComponentTypeRepresentation[] | yes | List of subcomponent types that are available to configure for a particular parent component. |
+| GET | `/{realm}/credential-registrators` | get /{realm}/credential-registrators | `realm`* | string[] | yes | — |
+| GET | `/{realm}/default-default-client-scopes` | get /{realm}/default-default-client-scopes | `realm`* | ClientScopeRepresentation[] | yes | Get realm default client scopes. |
+| PUT | `/{realm}/default-default-client-scopes/{clientScopeId}` | put /{realm}/default-default-client-scopes/{clientScopeId} | `realm`*, `clientScopeId`* | — |  | — |
+| DELETE | `/{realm}/default-default-client-scopes/{clientScopeId}` | delete /{realm}/default-default-client-scopes/{clientScopeId} | `realm`*, `clientScopeId`* | — |  | — |
+| GET | `/{realm}/default-groups` | get /{realm}/default-groups | `realm`* | GroupRepresentation[] | yes | Get group hierarchy. |
+| PUT | `/{realm}/default-groups/{groupId}` | put /{realm}/default-groups/{groupId} | `realm`*, `groupId`* | — |  | — |
+| DELETE | `/{realm}/default-groups/{groupId}` | delete /{realm}/default-groups/{groupId} | `realm`*, `groupId`* | — |  | — |
+| GET | `/{realm}/default-optional-client-scopes` | get /{realm}/default-optional-client-scopes | `realm`* | ClientScopeRepresentation[] | yes | Get realm optional client scopes. |
+| PUT | `/{realm}/default-optional-client-scopes/{clientScopeId}` | put /{realm}/default-optional-client-scopes/{clientScopeId} | `realm`*, `clientScopeId`* | — |  | — |
+| DELETE | `/{realm}/default-optional-client-scopes/{clientScopeId}` | delete /{realm}/default-optional-client-scopes/{clientScopeId} | `realm`*, `clientScopeId`* | — |  | — |
+| GET | `/{realm}/events` | get /{realm}/events | `realm`*, `client`, `dateFrom`, `dateTo`, `first`, `ipAddress`, `max`, `type`, `user` | EventRepresentation[] | yes | Get events Returns all events, or filters them based on URL query parameters listed here |
+| DELETE | `/{realm}/events` | delete /{realm}/events | `realm`* | — |  | Delete all events |
+| GET | `/{realm}/events/config` | get /{realm}/events/config | `realm`* | RealmEventsConfigRepresentation | yes | Get the events provider configuration Returns JSON object with events provider configuration |
+| PUT | `/{realm}/events/config` | put /{realm}/events/config | `realm`*, body*: RealmEventsConfigRepresentation | — |  | Update the events provider Change the events provider and/or its configuration |
+| GET | `/{realm}/group-by-path/{path}` | get /{realm}/group-by-path/{path} | `realm`*, `path`* | GroupRepresentation | yes | — |
+| GET | `/{realm}/groups` | get /{realm}/groups | `realm`*, `briefRepresentation`, `first`, `max`, `search` | GroupRepresentation[] | yes | Get group hierarchy. |
+| POST | `/{realm}/groups` | post /{realm}/groups | `realm`*, body*: GroupRepresentation | — |  | create or add a top level realm groupSet or create child. |
+| GET | `/{realm}/groups/count` | get /{realm}/groups/count | `realm`*, `search`, `top` | object | yes | Returns the groups counts. |
+| GET | `/{realm}/groups/{id}` | get /{realm}/groups/{id} | `realm`*, `id`* | GroupRepresentation | yes | — |
+| PUT | `/{realm}/groups/{id}` | put /{realm}/groups/{id} | `realm`*, `id`*, body*: GroupRepresentation | — |  | Update group, ignores subgroups. |
+| DELETE | `/{realm}/groups/{id}` | delete /{realm}/groups/{id} | `realm`*, `id`* | — |  | — |
+| POST | `/{realm}/groups/{id}/children` | post /{realm}/groups/{id}/children | `realm`*, `id`*, body*: GroupRepresentation | — |  | Set or create child. |
+| GET | `/{realm}/groups/{id}/management/permissions` | get /{realm}/groups/{id}/management/permissions | `realm`*, `id`* | ManagementPermissionReference | yes | Return object stating whether client Authorization permissions have been initialized or not and a reference |
+| PUT | `/{realm}/groups/{id}/management/permissions` | put /{realm}/groups/{id}/management/permissions | `realm`*, `id`*, body*: ManagementPermissionReference | ManagementPermissionReference |  | Return object stating whether client Authorization permissions have been initialized or not and a reference |
+| GET | `/{realm}/groups/{id}/members` | get /{realm}/groups/{id}/members | `realm`*, `id`*, `briefRepresentation`, `first`, `max` | UserRepresentation[] | yes | Get users Returns a list of users, filtered according to query parameters |
+| GET | `/{realm}/groups/{id}/role-mappings` | get /{realm}/groups/{id}/role-mappings | `realm`*, `id`* | MappingsRepresentation | yes | Get role mappings |
+| GET | `/{realm}/groups/{id}/role-mappings/clients/{client}` | get /{realm}/groups/{id}/role-mappings/clients/{client} | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get client-level role mappings for the user, and the app |
+| POST | `/{realm}/groups/{id}/role-mappings/clients/{client}` | post /{realm}/groups/{id}/role-mappings/clients/{client} | `realm`*, `id`*, `client`*, body*: RoleRepresentation[] | — |  | Add client-level roles to the user role mapping |
+| DELETE | `/{realm}/groups/{id}/role-mappings/clients/{client}` | delete /{realm}/groups/{id}/role-mappings/clients/{client} | `realm`*, `id`*, `client`*, body*: RoleRepresentation[] | — |  | Delete client-level roles from user role mapping |
+| GET | `/{realm}/groups/{id}/role-mappings/clients/{client}/available` | get /{realm}/groups/{id}/role-mappings/clients/{client}/available | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get available client-level roles that can be mapped to the user |
+| GET | `/{realm}/groups/{id}/role-mappings/clients/{client}/composite` | get /{realm}/groups/{id}/role-mappings/clients/{client}/composite | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get effective client-level role mappings This recurses any composite roles |
+| GET | `/{realm}/groups/{id}/role-mappings/realm` | get /{realm}/groups/{id}/role-mappings/realm | `realm`*, `id`* | RoleRepresentation[] | yes | Get realm-level role mappings |
+| POST | `/{realm}/groups/{id}/role-mappings/realm` | post /{realm}/groups/{id}/role-mappings/realm | `realm`*, `id`*, body*: RoleRepresentation[] | — |  | Add realm-level role mappings to the user |
+| DELETE | `/{realm}/groups/{id}/role-mappings/realm` | delete /{realm}/groups/{id}/role-mappings/realm | `realm`*, `id`*, body*: RoleRepresentation[] | — |  | Delete realm-level role mappings |
+| GET | `/{realm}/groups/{id}/role-mappings/realm/available` | get /{realm}/groups/{id}/role-mappings/realm/available | `realm`*, `id`* | RoleRepresentation[] | yes | Get realm-level roles that can be mapped |
+| GET | `/{realm}/groups/{id}/role-mappings/realm/composite` | get /{realm}/groups/{id}/role-mappings/realm/composite | `realm`*, `id`* | RoleRepresentation[] | yes | Get effective realm-level role mappings This will recurse all composite roles to get the result. |
+| POST | `/{realm}/identity-provider/import-config` | post /{realm}/identity-provider/import-config | `realm`* | object |  | Import identity provider from uploaded JSON file |
+| GET | `/{realm}/identity-provider/instances` | get /{realm}/identity-provider/instances | `realm`* | IdentityProviderRepresentation[] | yes | Get identity providers |
+| POST | `/{realm}/identity-provider/instances` | post /{realm}/identity-provider/instances | `realm`*, body*: IdentityProviderRepresentation | — |  | Create a new identity provider |
+| GET | `/{realm}/identity-provider/instances/{alias}` | get /{realm}/identity-provider/instances/{alias} | `realm`*, `alias`* | IdentityProviderRepresentation | yes | Get the identity provider |
+| PUT | `/{realm}/identity-provider/instances/{alias}` | put /{realm}/identity-provider/instances/{alias} | `realm`*, `alias`*, body*: IdentityProviderRepresentation | — |  | Update the identity provider |
+| DELETE | `/{realm}/identity-provider/instances/{alias}` | delete /{realm}/identity-provider/instances/{alias} | `realm`*, `alias`* | — |  | Delete the identity provider |
+| GET | `/{realm}/identity-provider/instances/{alias}/export` | get /{realm}/identity-provider/instances/{alias}/export | `realm`*, `alias`*, `format` | — | yes | Export public broker configuration for identity provider |
+| GET | `/{realm}/identity-provider/instances/{alias}/management/permissions` | get /{realm}/identity-provider/instances/{alias}/management/permissions | `realm`*, `alias`* | ManagementPermissionReference | yes | Return object stating whether client Authorization permissions have been initialized or not and a reference |
+| PUT | `/{realm}/identity-provider/instances/{alias}/management/permissions` | put /{realm}/identity-provider/instances/{alias}/management/permissions | `realm`*, `alias`*, body*: ManagementPermissionReference | ManagementPermissionReference |  | Return object stating whether client Authorization permissions have been initialized or not and a reference |
+| GET | `/{realm}/identity-provider/instances/{alias}/mapper-types` | get /{realm}/identity-provider/instances/{alias}/mapper-types | `realm`*, `alias`* | — | yes | Get mapper types for identity provider |
+| GET | `/{realm}/identity-provider/instances/{alias}/mappers` | get /{realm}/identity-provider/instances/{alias}/mappers | `realm`*, `alias`* | IdentityProviderMapperRepresentation[] | yes | Get mappers for identity provider |
+| POST | `/{realm}/identity-provider/instances/{alias}/mappers` | post /{realm}/identity-provider/instances/{alias}/mappers | `realm`*, `alias`*, body*: IdentityProviderMapperRepresentation | — |  | Add a mapper to identity provider |
+| GET | `/{realm}/identity-provider/instances/{alias}/mappers/{id}` | get /{realm}/identity-provider/instances/{alias}/mappers/{id} | `realm`*, `alias`*, `id`* | IdentityProviderMapperRepresentation | yes | Get mapper by id for the identity provider |
+| PUT | `/{realm}/identity-provider/instances/{alias}/mappers/{id}` | put /{realm}/identity-provider/instances/{alias}/mappers/{id} | `realm`*, `alias`*, `id`*, body*: IdentityProviderMapperRepresentation | — |  | Update a mapper for the identity provider |
+| DELETE | `/{realm}/identity-provider/instances/{alias}/mappers/{id}` | delete /{realm}/identity-provider/instances/{alias}/mappers/{id} | `realm`*, `alias`*, `id`* | — |  | Delete a mapper for the identity provider |
+| GET | `/{realm}/identity-provider/providers/{provider_id}` | get /{realm}/identity-provider/providers/{provider_id} | `realm`*, `provider_id`* | — | yes | Get identity providers |
+| GET | `/{realm}/keys` | get /{realm}/keys | `realm`* | KeysMetadataRepresentation | yes | — |
+| POST | `/{realm}/logout-all` | post /{realm}/logout-all | `realm`* | — |  | Removes all user sessions. |
+| POST | `/{realm}/partial-export` | post /{realm}/partial-export | `realm`*, `exportClients`, `exportGroupsAndRoles` | RealmRepresentation |  | Partial export of existing realm into a JSON file. |
+| POST | `/{realm}/partialImport` | post /{realm}/partialImport | `realm`*, body*: PartialImportRepresentation | — |  | Partial import from a JSON file to an existing realm. |
+| POST | `/{realm}/push-revocation` | post /{realm}/push-revocation | `realm`* | — |  | Push the realm’s revocation policy to any client that has an admin url associated with it. |
+| GET | `/{realm}/roles` | get /{realm}/roles | `realm`*, `briefRepresentation`, `first`, `max`, `search` | RoleRepresentation[] | yes | Get all roles for the realm or client |
+| POST | `/{realm}/roles` | post /{realm}/roles | `realm`*, body*: RoleRepresentation | — |  | Create a new role for the realm or client |
+| GET | `/{realm}/roles-by-id/{role-id}` | get /{realm}/roles-by-id/{role-id} | `realm`*, `role-id`* | RoleRepresentation | yes | Get a specific role’s representation |
+| PUT | `/{realm}/roles-by-id/{role-id}` | put /{realm}/roles-by-id/{role-id} | `realm`*, `role-id`*, body*: RoleRepresentation | — |  | Update the role |
+| DELETE | `/{realm}/roles-by-id/{role-id}` | delete /{realm}/roles-by-id/{role-id} | `realm`*, `role-id`* | — |  | Delete the role |
+| GET | `/{realm}/roles-by-id/{role-id}/composites` | get /{realm}/roles-by-id/{role-id}/composites | `realm`*, `role-id`* | RoleRepresentation[] | yes | Get role’s children Returns a set of role’s children provided the role is a composite. |
+| POST | `/{realm}/roles-by-id/{role-id}/composites` | post /{realm}/roles-by-id/{role-id}/composites | `realm`*, `role-id`*, body*: RoleRepresentation[] | — |  | Make the role a composite role by associating some child roles |
+| DELETE | `/{realm}/roles-by-id/{role-id}/composites` | delete /{realm}/roles-by-id/{role-id}/composites | `realm`*, `role-id`*, body*: RoleRepresentation[] | — |  | Remove a set of roles from the role’s composite |
+| GET | `/{realm}/roles-by-id/{role-id}/composites/clients/{client}` | get /{realm}/roles-by-id/{role-id}/composites/clients/{client} | `realm`*, `role-id`*, `client`* | RoleRepresentation[] | yes | Get client-level roles for the client that are in the role’s composite |
+| GET | `/{realm}/roles-by-id/{role-id}/composites/realm` | get /{realm}/roles-by-id/{role-id}/composites/realm | `realm`*, `role-id`* | RoleRepresentation[] | yes | Get realm-level roles that are in the role’s composite |
+| GET | `/{realm}/roles-by-id/{role-id}/management/permissions` | get /{realm}/roles-by-id/{role-id}/management/permissions | `realm`*, `role-id`* | ManagementPermissionReference | yes | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
+| PUT | `/{realm}/roles-by-id/{role-id}/management/permissions` | put /{realm}/roles-by-id/{role-id}/management/permissions | `realm`*, `role-id`*, body*: ManagementPermissionReference | ManagementPermissionReference |  | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
+| GET | `/{realm}/roles/{role-name}` | get /{realm}/roles/{role-name} | `realm`*, `role-name`* | RoleRepresentation | yes | Get a role by name |
+| PUT | `/{realm}/roles/{role-name}` | put /{realm}/roles/{role-name} | `realm`*, `role-name`*, body*: RoleRepresentation | — |  | Update a role by name |
+| DELETE | `/{realm}/roles/{role-name}` | delete /{realm}/roles/{role-name} | `realm`*, `role-name`* | — |  | Delete a role by name |
+| GET | `/{realm}/roles/{role-name}/composites` | get /{realm}/roles/{role-name}/composites | `realm`*, `role-name`* | RoleRepresentation[] | yes | Get composites of the role |
+| POST | `/{realm}/roles/{role-name}/composites` | post /{realm}/roles/{role-name}/composites | `realm`*, `role-name`*, body*: RoleRepresentation[] | — |  | Add a composite to the role |
+| DELETE | `/{realm}/roles/{role-name}/composites` | delete /{realm}/roles/{role-name}/composites | `realm`*, `role-name`*, body*: RoleRepresentation[] | — |  | Remove roles from the role’s composite |
+| GET | `/{realm}/roles/{role-name}/composites/clients/{client}` | get /{realm}/roles/{role-name}/composites/clients/{client} | `realm`*, `role-name`*, `client`* | RoleRepresentation[] | yes | An app-level roles for the specified app for the role’s composite |
+| GET | `/{realm}/roles/{role-name}/composites/realm` | get /{realm}/roles/{role-name}/composites/realm | `realm`*, `role-name`* | RoleRepresentation[] | yes | Get realm-level roles of the role’s composite |
+| GET | `/{realm}/roles/{role-name}/groups` | get /{realm}/roles/{role-name}/groups | `realm`*, `role-name`*, `briefRepresentation`, `first`, `max` | GroupRepresentation[] | yes | Return List of Groups that have the specified role name |
+| GET | `/{realm}/roles/{role-name}/management/permissions` | get /{realm}/roles/{role-name}/management/permissions | `realm`*, `role-name`* | ManagementPermissionReference | yes | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
+| PUT | `/{realm}/roles/{role-name}/management/permissions` | put /{realm}/roles/{role-name}/management/permissions | `realm`*, `role-name`*, body*: ManagementPermissionReference | ManagementPermissionReference |  | Return object stating whether role Authoirzation permissions have been initialized or not and a reference |
+| GET | `/{realm}/roles/{role-name}/users` | get /{realm}/roles/{role-name}/users | `realm`*, `role-name`*, `first`, `max` | UserRepresentation[] | yes | Return List of Users that have the specified role name |
+| DELETE | `/{realm}/sessions/{session}` | delete /{realm}/sessions/{session} | `realm`*, `session`* | — |  | Remove a specific user session. |
+| POST | `/{realm}/testLDAPConnection` | post /{realm}/testLDAPConnection | `realm`*, body*: TestLdapConnectionRepresentation | — |  | Test LDAP connection |
+| POST | `/{realm}/testSMTPConnection` | post /{realm}/testSMTPConnection | `realm`*, body*: object | — |  | — |
+| GET | `/{realm}/user-storage/{id}/name` | get /{realm}/user-storage/{id}/name | `realm`*, `id`* | object | yes | Need this for admin console to display simple name of provider when displaying user detail KEYCLOAK-4328 |
+| POST | `/{realm}/user-storage/{id}/remove-imported-users` | post /{realm}/user-storage/{id}/remove-imported-users | `realm`*, `id`* | — |  | Remove imported users |
+| POST | `/{realm}/user-storage/{id}/sync` | post /{realm}/user-storage/{id}/sync | `realm`*, `id`*, `action` | SynchronizationResult |  | Trigger sync of users Action can be "triggerFullSync" or "triggerChangedUsersSync" |
+| POST | `/{realm}/user-storage/{id}/unlink-users` | post /{realm}/user-storage/{id}/unlink-users | `realm`*, `id`* | — |  | Unlink imported users from a storage provider |
+| POST | `/{realm}/user-storage/{parentId}/mappers/{id}/sync` | post /{realm}/user-storage/{parentId}/mappers/{id}/sync | `realm`*, `parentId`*, `id`*, `direction` | SynchronizationResult |  | Trigger sync of mapper data related to ldap mapper (roles, groups, …​) direction is "fedToKeycloak" or "keycloakToFed" |
+| GET | `/{realm}/users` | get /{realm}/users | `realm`*, `briefRepresentation`, `email`, `first`, `firstName`, `lastName`, `max`, `search`, `username` | UserRepresentation[] | yes | Get users Returns a list of users, filtered according to query parameters |
+| POST | `/{realm}/users` | post /{realm}/users | `realm`*, body*: UserRepresentation | — |  | Create a new user Username must be unique. |
+| GET | `/{realm}/users-management-permissions` | get /{realm}/users-management-permissions | `realm`* | ManagementPermissionReference | yes | — |
+| PUT | `/{realm}/users-management-permissions` | put /{realm}/users-management-permissions | `realm`*, body*: ManagementPermissionReference | ManagementPermissionReference |  | — |
+| GET | `/{realm}/users/count` | get /{realm}/users/count | `realm`*, `email`, `firstName`, `lastName`, `search`, `username` | integer:int32 | yes | Returns the number of users that match the given criteria. |
+| GET | `/{realm}/users/{id}` | get /{realm}/users/{id} | `realm`*, `id`* | UserRepresentation | yes | Get representation of the user |
+| PUT | `/{realm}/users/{id}` | put /{realm}/users/{id} | `realm`*, `id`*, body*: UserRepresentation | — |  | Update the user |
+| DELETE | `/{realm}/users/{id}` | delete /{realm}/users/{id} | `realm`*, `id`* | — |  | Delete the user |
+| GET | `/{realm}/users/{id}/configured-user-storage-credential-types` | get /{realm}/users/{id}/configured-user-storage-credential-types | `realm`*, `id`* | string[] | yes | Return credential types, which are provided by the user storage where user is stored. |
+| GET | `/{realm}/users/{id}/consents` | get /{realm}/users/{id}/consents | `realm`*, `id`* | object[] | yes | Get consents granted by the user |
+| DELETE | `/{realm}/users/{id}/consents/{client}` | delete /{realm}/users/{id}/consents/{client} | `realm`*, `id`*, `client`* | — |  | Revoke consent and offline tokens for particular client from user |
+| GET | `/{realm}/users/{id}/credentials` | get /{realm}/users/{id}/credentials | `realm`*, `id`* | CredentialRepresentation[] | yes | — |
+| DELETE | `/{realm}/users/{id}/credentials/{credentialId}` | delete /{realm}/users/{id}/credentials/{credentialId} | `realm`*, `id`*, `credentialId`* | — |  | Remove a credential for a user |
+| POST | `/{realm}/users/{id}/credentials/{credentialId}/moveAfter/{newPreviousCredentialId}` | post /{realm}/users/{id}/credentials/{credentialId}/moveAfter/{newPreviousCredentialId} | `realm`*, `id`*, `credentialId`*, `newPreviousCredentialId`* | — |  | Move a credential to a position behind another credential |
+| POST | `/{realm}/users/{id}/credentials/{credentialId}/moveToFirst` | post /{realm}/users/{id}/credentials/{credentialId}/moveToFirst | `realm`*, `id`*, `credentialId`* | — |  | Move a credential to a first position in the credentials list of the user |
+| PUT | `/{realm}/users/{id}/credentials/{credentialId}/userLabel` | put /{realm}/users/{id}/credentials/{credentialId}/userLabel | `realm`*, `id`*, `credentialId`*, body*: string | — |  | Update a credential label for a user |
+| PUT | `/{realm}/users/{id}/disable-credential-types` | put /{realm}/users/{id}/disable-credential-types | `realm`*, `id`*, body*: string[] | — |  | Disable all credentials for a user of a specific type |
+| PUT | `/{realm}/users/{id}/execute-actions-email` | put /{realm}/users/{id}/execute-actions-email | `realm`*, `id`*, `client_id`, `lifespan`, `redirect_uri`, body*: string[] | — |  | Send a update account email to the user An email contains a link the user can click to perform a set of required actions. |
+| GET | `/{realm}/users/{id}/federated-identity` | get /{realm}/users/{id}/federated-identity | `realm`*, `id`* | FederatedIdentityRepresentation[] | yes | Get social logins associated with the user |
+| POST | `/{realm}/users/{id}/federated-identity/{provider}` | post /{realm}/users/{id}/federated-identity/{provider} | `realm`*, `id`*, `provider`*, body*: FederatedIdentityRepresentation | — |  | Add a social login provider to the user |
+| DELETE | `/{realm}/users/{id}/federated-identity/{provider}` | delete /{realm}/users/{id}/federated-identity/{provider} | `realm`*, `id`*, `provider`* | — |  | Remove a social login provider from user |
+| GET | `/{realm}/users/{id}/groups` | get /{realm}/users/{id}/groups | `realm`*, `id`*, `briefRepresentation`, `first`, `max`, `search` | GroupRepresentation[] | yes | — |
+| GET | `/{realm}/users/{id}/groups/count` | get /{realm}/users/{id}/groups/count | `realm`*, `id`*, `search` | object | yes | — |
+| PUT | `/{realm}/users/{id}/groups/{groupId}` | put /{realm}/users/{id}/groups/{groupId} | `realm`*, `id`*, `groupId`* | — |  | — |
+| DELETE | `/{realm}/users/{id}/groups/{groupId}` | delete /{realm}/users/{id}/groups/{groupId} | `realm`*, `id`*, `groupId`* | — |  | — |
+| POST | `/{realm}/users/{id}/impersonation` | post /{realm}/users/{id}/impersonation | `realm`*, `id`* | object |  | Impersonate the user |
+| POST | `/{realm}/users/{id}/logout` | post /{realm}/users/{id}/logout | `realm`*, `id`* | — |  | Remove all user sessions associated with the user Also send notification to all clients that have an admin URL to invalidate the sessions for the particular user. |
+| GET | `/{realm}/users/{id}/offline-sessions/{clientId}` | get /{realm}/users/{id}/offline-sessions/{clientId} | `realm`*, `id`*, `clientId`* | UserSessionRepresentation[] | yes | Get offline sessions associated with the user and client |
+| PUT | `/{realm}/users/{id}/reset-password` | put /{realm}/users/{id}/reset-password | `realm`*, `id`*, body*: CredentialRepresentation | — |  | Set up a new password for the user. |
+| GET | `/{realm}/users/{id}/role-mappings` | get /{realm}/users/{id}/role-mappings | `realm`*, `id`* | MappingsRepresentation | yes | Get role mappings |
+| GET | `/{realm}/users/{id}/role-mappings/clients/{client}` | get /{realm}/users/{id}/role-mappings/clients/{client} | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get client-level role mappings for the user, and the app |
+| POST | `/{realm}/users/{id}/role-mappings/clients/{client}` | post /{realm}/users/{id}/role-mappings/clients/{client} | `realm`*, `id`*, `client`*, body*: RoleRepresentation[] | — |  | Add client-level roles to the user role mapping |
+| DELETE | `/{realm}/users/{id}/role-mappings/clients/{client}` | delete /{realm}/users/{id}/role-mappings/clients/{client} | `realm`*, `id`*, `client`*, body*: RoleRepresentation[] | — |  | Delete client-level roles from user role mapping |
+| GET | `/{realm}/users/{id}/role-mappings/clients/{client}/available` | get /{realm}/users/{id}/role-mappings/clients/{client}/available | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get available client-level roles that can be mapped to the user |
+| GET | `/{realm}/users/{id}/role-mappings/clients/{client}/composite` | get /{realm}/users/{id}/role-mappings/clients/{client}/composite | `realm`*, `id`*, `client`* | RoleRepresentation[] | yes | Get effective client-level role mappings This recurses any composite roles |
+| GET | `/{realm}/users/{id}/role-mappings/realm` | get /{realm}/users/{id}/role-mappings/realm | `realm`*, `id`* | RoleRepresentation[] | yes | Get realm-level role mappings |
+| POST | `/{realm}/users/{id}/role-mappings/realm` | post /{realm}/users/{id}/role-mappings/realm | `realm`*, `id`*, body*: RoleRepresentation[] | — |  | Add realm-level role mappings to the user |
+| DELETE | `/{realm}/users/{id}/role-mappings/realm` | delete /{realm}/users/{id}/role-mappings/realm | `realm`*, `id`*, body*: RoleRepresentation[] | — |  | Delete realm-level role mappings |
+| GET | `/{realm}/users/{id}/role-mappings/realm/available` | get /{realm}/users/{id}/role-mappings/realm/available | `realm`*, `id`* | RoleRepresentation[] | yes | Get realm-level roles that can be mapped |
+| GET | `/{realm}/users/{id}/role-mappings/realm/composite` | get /{realm}/users/{id}/role-mappings/realm/composite | `realm`*, `id`* | RoleRepresentation[] | yes | Get effective realm-level role mappings This will recurse all composite roles to get the result. |
+| PUT | `/{realm}/users/{id}/send-verify-email` | put /{realm}/users/{id}/send-verify-email | `realm`*, `id`*, `client_id`, `redirect_uri` | — |  | Send an email-verification email to the user An email contains a link the user can click to verify their email address. |
+| GET | `/{realm}/users/{id}/sessions` | get /{realm}/users/{id}/sessions | `realm`*, `id`* | UserSessionRepresentation[] | yes | Get sessions associated with the user |

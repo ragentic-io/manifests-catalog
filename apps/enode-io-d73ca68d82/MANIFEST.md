@@ -11,7 +11,7 @@ logo: "https://enode.com/favicon.ico"
 
 | | |
 | --- | --- |
-| Signed bundle | `7f2425439267503b0324ee085ab0d62535a1cc34dd786e025ae65eef37875cac` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -32,33 +32,35 @@ logo: "https://enode.com/favicon.ico"
 
 ## Operations (28)
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/chargers` | getChargers | List Chargers |
-| GET | `/chargers/{chargerId}` | getCharger | Get Charger |
-| POST | `/chargers/{chargerId}/charging` | controlChargerCharging | Control Charging |
-| GET | `/charging-locations` | getCharginglocations | List Charging Locations |
-| POST | `/charging-locations` | postCharginglocations | Create Charging Location |
-| DELETE | `/charging-locations/{chargingLocationId}` | deleteCharginglocationsCharginglocationid | Delete Charging Location |
-| GET | `/charging-locations/{chargingLocationId}` | getCharginglocationsCharginglocationid | Get Charging Location |
-| PUT | `/charging-locations/{chargingLocationId}` | putCharginglocationsCharginglocationid | Update Charging Location |
-| GET | `/health/ready` | getHealthReady | Check Service Readiness |
-| GET | `/health/vendors` | getHealthVendors | Check Available Vendors |
-| GET | `/me` | getMe | Get My User |
-| DELETE | `/me/vendors/{vendor}` | disconnectVendor | Disconnect Vendor |
-| GET | `/statistics/charging` | getStatisticsCharging | Get User Charging Statistics |
-| DELETE | `/users/{userId}` | deleteUsersUserid | Unlink User |
-| DELETE | `/users/{userId}/authorization` | deleteUsersUseridAuthorization | Deauthorize User |
-| POST | `/users/{userId}/link` | postUsersUseridLink | Link User |
-| GET | `/vehicles` | getVehicles | List Vehicles |
-| GET | `/vehicles/{vehicleId}` | getVehiclesVehicleid | Get Vehicle |
-| GET | `/vehicles/{vehicleId}/charge-state` | getVehicleChargestate | Get Vehicle Charge State |
-| POST | `/vehicles/{vehicleId}/charging` | postVehiclesVehicleidCharging | Start / Stop Charging |
-| GET | `/vehicles/{vehicleId}/information` | getVehiclesVehicleidInformation | Get Vehicle Information |
-| GET | `/vehicles/{vehicleId}/location` | getVehiclesVehicleidLocation | Get Vehicle Location |
-| GET | `/vehicles/{vehicleId}/odometer` | getVehiclesVehicleidOdometer | Get Vehicle Odometer |
-| GET | `/vehicles/{vehicleId}/smart-charging-policy` | getVehiclesVehicleidSmartchargingpolicy | Get Vehicle Smart Charging Policy |
-| PUT | `/vehicles/{vehicleId}/smart-charging-policy` | putVehiclesVehicleidSmartchargingpolicy | Update Vehicle Smart Charging Policy |
-| POST | `/vehicles/{vehicleId}/watch` | postVehiclesVehicleidWatch | Start Watching Vehicle |
-| PUT | `/webhooks/firehose` | putWebhooksFirehose | Update Firehose Webhook |
-| POST | `/webhooks/firehose/test` | postWebhooksFirehoseTest | Test Firehose Webhook |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/chargers` | getChargers | `field[]` | array | yes | List Chargers |
+| GET | `/chargers/{chargerId}` | getCharger | `chargerId`*, `—` | object | yes | Get Charger |
+| POST | `/chargers/{chargerId}/charging` | controlChargerCharging | `chargerId`*, body: object | — |  | Control Charging |
+| GET | `/charging-locations` | getCharginglocations | — | array | yes | List Charging Locations |
+| POST | `/charging-locations` | postCharginglocations | body: object | — |  | Create Charging Location |
+| GET | `/charging-locations/{chargingLocationId}` | getCharginglocationsCharginglocationid | `chargingLocationId`* | — | yes | Get Charging Location |
+| PUT | `/charging-locations/{chargingLocationId}` | putCharginglocationsCharginglocationid | `chargingLocationId`*, body: — | — |  | Update Charging Location |
+| DELETE | `/charging-locations/{chargingLocationId}` | deleteCharginglocationsCharginglocationid | `chargingLocationId`* | — |  | Delete Charging Location |
+| GET | `/health/ready` | getHealthReady | — | — | yes | Check Service Readiness |
+| GET | `/health/vendors` | getHealthVendors | — | object[] | yes | Check Available Vendors |
+| GET | `/me` | getMe | — | object | yes | Get My User |
+| DELETE | `/me/vendors/{vendor}` | disconnectVendor | `vendor`* | — |  | Disconnect Vendor |
+| GET | `/statistics/charging` | getStatisticsCharging | `resolution`, `startDate`*, `endDate`, `vehicleId`, `chargingLocationId` | object[] | yes | Get User Charging Statistics |
+| DELETE | `/users/{userId}` | deleteUsersUserid | `userId`* | — |  | Unlink User |
+| DELETE | `/users/{userId}/authorization` | deleteUsersUseridAuthorization | `userId`* | — |  | Deauthorize User |
+| POST | `/users/{userId}/link` | postUsersUseridLink | `userId`*, body: object | object |  | Link User |
+| GET | `/vehicles` | getVehicles | `field[]` | array | yes | List Vehicles |
+| GET | `/vehicles/{vehicleId}` | getVehiclesVehicleid | `vehicleId`*, `field[]` | object | yes | Get Vehicle |
+| GET | `/vehicles/{vehicleId}/charge-state` | getVehicleChargestate | `—` | object | yes | Get Vehicle Charge State |
+| POST | `/vehicles/{vehicleId}/charging` | postVehiclesVehicleidCharging | `—` | — |  | Start / Stop Charging |
+| GET | `/vehicles/{vehicleId}/information` | getVehiclesVehicleidInformation | `—` | object | yes | Get Vehicle Information |
+| GET | `/vehicles/{vehicleId}/location` | getVehiclesVehicleidLocation | `—` | object | yes | Get Vehicle Location |
+| GET | `/vehicles/{vehicleId}/odometer` | getVehiclesVehicleidOdometer | `—` | object | yes | Get Vehicle Odometer |
+| GET | `/vehicles/{vehicleId}/smart-charging-policy` | getVehiclesVehicleidSmartchargingpolicy | `—` | — | yes | Get Vehicle Smart Charging Policy |
+| PUT | `/vehicles/{vehicleId}/smart-charging-policy` | putVehiclesVehicleidSmartchargingpolicy | `vehicleId`*, body: object | — |  | Update Vehicle Smart Charging Policy |
+| POST | `/vehicles/{vehicleId}/watch` | postVehiclesVehicleidWatch | `vehicleId`*, body: object | — |  | Start Watching Vehicle |
+| PUT | `/webhooks/firehose` | putWebhooksFirehose | body: object | — |  | Update Firehose Webhook |
+| POST | `/webhooks/firehose/test` | postWebhooksFirehoseTest | — | — |  | Test Firehose Webhook |

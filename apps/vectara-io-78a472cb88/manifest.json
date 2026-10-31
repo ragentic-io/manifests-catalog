@@ -48,6 +48,241 @@
         "from": "vectara-io-78a472cb88",
         "kind": "EXPOSES",
         "to": "operation:post:/v1/upload"
+      },
+      {
+        "from": "operation:post:/v1/create-corpus",
+        "kind": "ACCEPTS",
+        "to": "schema:adminCreateCorpusRequest"
+      },
+      {
+        "from": "operation:post:/v1/create-corpus",
+        "kind": "RETURNS",
+        "to": "schema:adminCreateCorpusResponse"
+      },
+      {
+        "from": "operation:post:/v1/delete-corpus",
+        "kind": "ACCEPTS",
+        "to": "schema:adminDeleteCorpusRequest"
+      },
+      {
+        "from": "operation:post:/v1/delete-corpus",
+        "kind": "RETURNS",
+        "to": "schema:adminDeleteCorpusResponse"
+      },
+      {
+        "from": "operation:post:/v1/delete-doc",
+        "kind": "ACCEPTS",
+        "to": "schema:vectaraDeleteDocumentRequest"
+      },
+      {
+        "from": "operation:post:/v1/delete-doc",
+        "kind": "RETURNS",
+        "to": "schema:vectaraDeleteDocumentResponse"
+      },
+      {
+        "from": "operation:post:/v1/index",
+        "kind": "ACCEPTS",
+        "to": "schema:vectaraIndexDocumentRequest"
+      },
+      {
+        "from": "operation:post:/v1/index",
+        "kind": "RETURNS",
+        "to": "schema:vectaraIndexDocumentResponse"
+      },
+      {
+        "from": "operation:post:/v1/list-corpora",
+        "kind": "ACCEPTS",
+        "to": "schema:adminListCorporaRequest"
+      },
+      {
+        "from": "operation:post:/v1/list-corpora",
+        "kind": "RETURNS",
+        "to": "schema:adminListCorporaResponse"
+      },
+      {
+        "from": "operation:post:/v1/query",
+        "kind": "ACCEPTS",
+        "to": "schema:servingBatchQueryRequest"
+      },
+      {
+        "from": "operation:post:/v1/query",
+        "kind": "RETURNS",
+        "to": "schema:servingBatchQueryResponse"
+      },
+      {
+        "from": "operation:post:/v1/reset-corpus",
+        "kind": "ACCEPTS",
+        "to": "schema:adminResetCorpusRequest"
+      },
+      {
+        "from": "operation:post:/v1/reset-corpus",
+        "kind": "RETURNS",
+        "to": "schema:adminResetCorpusResponse"
+      },
+      {
+        "from": "operation:post:/v1/stream-query",
+        "kind": "ACCEPTS",
+        "to": "schema:servingBatchQueryRequest"
+      },
+      {
+        "from": "schema:adminCorpus",
+        "kind": "REFERENCES",
+        "to": "schema:adminDimension"
+      },
+      {
+        "from": "schema:adminCorpus",
+        "kind": "REFERENCES",
+        "to": "schema:adminFilterAttribute"
+      },
+      {
+        "from": "schema:adminCreateCorpusRequest",
+        "kind": "REFERENCES",
+        "to": "schema:adminCorpus"
+      },
+      {
+        "from": "schema:adminCreateCorpusResponse",
+        "kind": "REFERENCES",
+        "to": "schema:comvectaraStatus"
+      },
+      {
+        "from": "schema:adminDeleteCorpusResponse",
+        "kind": "REFERENCES",
+        "to": "schema:comvectaraStatus"
+      },
+      {
+        "from": "schema:adminFilterAttribute",
+        "kind": "REFERENCES",
+        "to": "schema:adminFilterAttributeLevel"
+      },
+      {
+        "from": "schema:adminFilterAttribute",
+        "kind": "REFERENCES",
+        "to": "schema:adminFilterAttributeType"
+      },
+      {
+        "from": "schema:adminListCorporaResponse",
+        "kind": "REFERENCES",
+        "to": "schema:adminCorpus"
+      },
+      {
+        "from": "schema:adminListCorporaResponse",
+        "kind": "REFERENCES",
+        "to": "schema:comvectaraStatus"
+      },
+      {
+        "from": "schema:adminResetCorpusResponse",
+        "kind": "REFERENCES",
+        "to": "schema:comvectaraStatus"
+      },
+      {
+        "from": "schema:comvectaraStatus",
+        "kind": "REFERENCES",
+        "to": "schema:vectaraStatusCode"
+      },
+      {
+        "from": "schema:googlerpcStatus",
+        "kind": "REFERENCES",
+        "to": "schema:protobufAny"
+      },
+      {
+        "from": "schema:indexingSection",
+        "kind": "REFERENCES",
+        "to": "schema:vectaraindexingCustomDimension"
+      },
+      {
+        "from": "schema:servingBatchQueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:servingQueryRequest"
+      },
+      {
+        "from": "schema:servingBatchQueryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:comvectaraStatus"
+      },
+      {
+        "from": "schema:servingBatchQueryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:servingPerformanceMetrics"
+      },
+      {
+        "from": "schema:servingBatchQueryResponse",
+        "kind": "REFERENCES",
+        "to": "schema:servingResponseSet"
+      },
+      {
+        "from": "schema:servingCorpusKey",
+        "kind": "REFERENCES",
+        "to": "schema:CorpusKeySemantics"
+      },
+      {
+        "from": "schema:servingCorpusKey",
+        "kind": "REFERENCES",
+        "to": "schema:vectaraservingCustomDimension"
+      },
+      {
+        "from": "schema:servingQueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:QueryRequestRerankingConfig"
+      },
+      {
+        "from": "schema:servingQueryRequest",
+        "kind": "REFERENCES",
+        "to": "schema:servingCorpusKey"
+      },
+      {
+        "from": "schema:servingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:servingAttribute"
+      },
+      {
+        "from": "schema:servingResponse",
+        "kind": "REFERENCES",
+        "to": "schema:servingCorpusKey"
+      },
+      {
+        "from": "schema:servingResponseSet",
+        "kind": "REFERENCES",
+        "to": "schema:comvectaraStatus"
+      },
+      {
+        "from": "schema:servingResponseSet",
+        "kind": "REFERENCES",
+        "to": "schema:servingResponse"
+      },
+      {
+        "from": "schema:servingResponseSet",
+        "kind": "REFERENCES",
+        "to": "schema:servingResponseSetDocument"
+      },
+      {
+        "from": "schema:servingResponseSetDocument",
+        "kind": "REFERENCES",
+        "to": "schema:servingAttribute"
+      },
+      {
+        "from": "schema:vectaraIndexDocumentRequest",
+        "kind": "REFERENCES",
+        "to": "schema:vectaraindexingDocument"
+      },
+      {
+        "from": "schema:vectaraIndexDocumentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:comvectaraStatus"
+      },
+      {
+        "from": "schema:vectaraIndexDocumentResponse",
+        "kind": "REFERENCES",
+        "to": "schema:vectaraStorageQuota"
+      },
+      {
+        "from": "schema:vectaraindexingDocument",
+        "kind": "REFERENCES",
+        "to": "schema:indexingSection"
+      },
+      {
+        "from": "schema:vectaraindexingDocument",
+        "kind": "REFERENCES",
+        "to": "schema:vectaraindexingCustomDimension"
       }
     ],
     "nodes": [
@@ -57,42 +292,132 @@
       },
       {
         "deprecated": false,
+        "description": "Create Corpus",
         "id": "operation:post:/v1/create-corpus",
         "kind": "operation",
         "method": "post",
         "name": "CreateCorpus",
+        "parameters": [
+          {
+            "description": "The Customer ID to use for the request.",
+            "in": "header",
+            "name": "customer-id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/create-corpus",
         "pointer": "#/paths/~1v1~1create-corpus/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "adminCreateCorpusRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "adminCreateCorpusResponse"
+          },
+          {
+            "status": "default",
+            "type": "googlerpcStatus"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "AdminService"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete Corpus",
         "id": "operation:post:/v1/delete-corpus",
         "kind": "operation",
         "method": "post",
         "name": "DeleteCorpus",
+        "parameters": [
+          {
+            "description": "The Customer ID to use for the request.",
+            "in": "header",
+            "name": "customer-id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/delete-corpus",
         "pointer": "#/paths/~1v1~1delete-corpus/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "adminDeleteCorpusRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "adminDeleteCorpusResponse"
+          },
+          {
+            "status": "default",
+            "type": "googlerpcStatus"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "AdminService"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Delete",
         "id": "operation:post:/v1/delete-doc",
         "kind": "operation",
         "method": "post",
         "name": "Delete",
+        "parameters": [
+          {
+            "description": "The Customer ID to use for the request.",
+            "in": "header",
+            "name": "customer-id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/delete-doc",
         "pointer": "#/paths/~1v1~1delete-doc/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "vectaraDeleteDocumentRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "vectaraDeleteDocumentResponse"
+          },
+          {
+            "status": "default",
+            "type": "googlerpcStatus"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
@@ -101,16 +426,47 @@
             "oAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "IndexService"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Index",
         "id": "operation:post:/v1/index",
         "kind": "operation",
         "method": "post",
         "name": "Index",
+        "parameters": [
+          {
+            "description": "The Customer ID to use for the request.",
+            "in": "header",
+            "name": "customer-id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/index",
         "pointer": "#/paths/~1v1~1index/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "vectaraIndexDocumentRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "vectaraIndexDocumentResponse"
+          },
+          {
+            "status": "default",
+            "type": "googlerpcStatus"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
@@ -119,31 +475,93 @@
             "oAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "IndexService"
+        ]
       },
       {
         "deprecated": false,
+        "description": "List Corpora",
         "id": "operation:post:/v1/list-corpora",
         "kind": "operation",
         "method": "post",
         "name": "ListCorpora",
+        "parameters": [
+          {
+            "description": "The Customer ID to use for the request.",
+            "in": "header",
+            "name": "customer-id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/list-corpora",
         "pointer": "#/paths/~1v1~1list-corpora/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "adminListCorporaRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "adminListCorporaResponse"
+          },
+          {
+            "status": "default",
+            "type": "googlerpcStatus"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "AdminService"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Query",
         "id": "operation:post:/v1/query",
         "kind": "operation",
         "method": "post",
         "name": "Query",
+        "parameters": [
+          {
+            "description": "The Customer ID to use for the request.",
+            "in": "header",
+            "name": "customer-id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/query",
         "pointer": "#/paths/~1v1~1query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "servingBatchQueryRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "servingBatchQueryResponse"
+          },
+          {
+            "status": "default",
+            "type": "googlerpcStatus"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
@@ -152,31 +570,93 @@
             "oAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "QueryService"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Reset Corpus",
         "id": "operation:post:/v1/reset-corpus",
         "kind": "operation",
         "method": "post",
         "name": "ResetCorpus",
+        "parameters": [
+          {
+            "description": "The Customer ID to use for the request.",
+            "in": "header",
+            "name": "customer-id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/reset-corpus",
         "pointer": "#/paths/~1v1~1reset-corpus/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "adminResetCorpusRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "adminResetCorpusResponse"
+          },
+          {
+            "status": "default",
+            "type": "googlerpcStatus"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "oAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "AdminService"
+        ]
       },
       {
         "deprecated": false,
+        "description": "Stream Query",
         "id": "operation:post:/v1/stream-query",
         "kind": "operation",
         "method": "post",
         "name": "StreamQuery",
+        "parameters": [
+          {
+            "description": "The Customer ID to use for the request.",
+            "in": "header",
+            "name": "customer-id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "path": "/v1/stream-query",
         "pointer": "#/paths/~1v1~1stream-query/post",
+        "request": {
+          "content_types": [
+            "application/json"
+          ],
+          "required": true,
+          "type": "servingBatchQueryRequest"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "default",
+            "type": "googlerpcStatus"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
@@ -185,16 +665,73 @@
             "oAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "QueryService"
+        ]
       },
       {
         "deprecated": false,
+        "description": "File Upload",
         "id": "operation:post:/v1/upload",
         "kind": "operation",
         "method": "post",
         "name": "FileUpload",
+        "parameters": [
+          {
+            "description": "Customer ID",
+            "in": "query",
+            "name": "c",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Corpus ID",
+            "in": "query",
+            "name": "o",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "If true, the server returns the extracted document that was indexed",
+            "in": "query",
+            "name": "d",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/v1/upload",
         "pointer": "#/paths/~1v1~1upload/post",
+        "request": {
+          "content_types": [
+            "multipart/form-data"
+          ],
+          "required": false,
+          "type": "object"
+        },
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "401"
+          },
+          {
+            "status": "403"
+          },
+          {
+            "status": "409"
+          },
+          {
+            "status": "507"
+          }
+        ],
+        "safe": false,
         "security": [
           {
             "ApiKeyAuth": []
@@ -203,192 +740,243 @@
             "oAuth": []
           }
         ],
-        "summary": null
+        "summary": null,
+        "tags": [
+          "IndexService"
+        ]
       },
       {
+        "description": "Semantics controls the interpretation of the query string by the server, and can be used to override the default semantics assigned in the corpus definition.",
         "id": "schema:CorpusKeySemantics",
         "kind": "schema",
-        "name": "CorpusKeySemantics"
+        "name": "CorpusKeySemantics",
+        "type": "string"
       },
       {
+        "description": "Configuration options to apply to the reranking.",
         "id": "schema:QueryRequestRerankingConfig",
         "kind": "schema",
-        "name": "QueryRequestRerankingConfig"
+        "name": "QueryRequestRerankingConfig",
+        "type": "object"
       },
       {
         "id": "schema:adminCorpus",
         "kind": "schema",
-        "name": "adminCorpus"
+        "name": "adminCorpus",
+        "type": "object"
       },
       {
         "id": "schema:adminCreateCorpusRequest",
         "kind": "schema",
-        "name": "adminCreateCorpusRequest"
+        "name": "adminCreateCorpusRequest",
+        "type": "object"
       },
       {
         "id": "schema:adminCreateCorpusResponse",
         "kind": "schema",
-        "name": "adminCreateCorpusResponse"
+        "name": "adminCreateCorpusResponse",
+        "type": "object"
       },
       {
         "id": "schema:adminDeleteCorpusRequest",
         "kind": "schema",
-        "name": "adminDeleteCorpusRequest"
+        "name": "adminDeleteCorpusRequest",
+        "type": "object"
       },
       {
         "id": "schema:adminDeleteCorpusResponse",
         "kind": "schema",
-        "name": "adminDeleteCorpusResponse"
+        "name": "adminDeleteCorpusResponse",
+        "type": "object"
       },
       {
+        "description": "A custom dimension is additional numeric metadata that you want to affect Vectara's scoring.",
         "id": "schema:adminDimension",
         "kind": "schema",
-        "name": "adminDimension"
+        "name": "adminDimension",
+        "type": "object"
       },
       {
+        "description": "Defines metadata fields that can be used in predicate queries.",
         "id": "schema:adminFilterAttribute",
         "kind": "schema",
-        "name": "adminFilterAttribute"
+        "name": "adminFilterAttribute",
+        "type": "object"
       },
       {
         "id": "schema:adminFilterAttributeLevel",
         "kind": "schema",
-        "name": "adminFilterAttributeLevel"
+        "name": "adminFilterAttributeLevel",
+        "type": "string"
       },
       {
         "id": "schema:adminFilterAttributeType",
         "kind": "schema",
-        "name": "adminFilterAttributeType"
+        "name": "adminFilterAttributeType",
+        "type": "string"
       },
       {
         "id": "schema:adminListCorporaRequest",
         "kind": "schema",
-        "name": "adminListCorporaRequest"
+        "name": "adminListCorporaRequest",
+        "type": "object"
       },
       {
         "id": "schema:adminListCorporaResponse",
         "kind": "schema",
-        "name": "adminListCorporaResponse"
+        "name": "adminListCorporaResponse",
+        "type": "object"
       },
       {
         "id": "schema:adminResetCorpusRequest",
         "kind": "schema",
-        "name": "adminResetCorpusRequest"
+        "name": "adminResetCorpusRequest",
+        "type": "object"
       },
       {
         "id": "schema:adminResetCorpusResponse",
         "kind": "schema",
-        "name": "adminResetCorpusResponse"
+        "name": "adminResetCorpusResponse",
+        "type": "object"
       },
       {
         "id": "schema:comvectaraStatus",
         "kind": "schema",
-        "name": "comvectaraStatus"
+        "name": "comvectaraStatus",
+        "type": "object"
       },
       {
         "id": "schema:googlerpcStatus",
         "kind": "schema",
-        "name": "googlerpcStatus"
+        "name": "googlerpcStatus",
+        "type": "object"
       },
       {
+        "description": "A section within a structured document.",
         "id": "schema:indexingSection",
         "kind": "schema",
-        "name": "indexingSection"
+        "name": "indexingSection",
+        "type": "object"
       },
       {
+        "description": "`Any` contains an arbitrary serialized protocol buffer message along with a URL that describes the type of the serialized message.",
         "id": "schema:protobufAny",
         "kind": "schema",
-        "name": "protobufAny"
+        "name": "protobufAny",
+        "type": "object"
       },
       {
         "id": "schema:servingAttribute",
         "kind": "schema",
-        "name": "servingAttribute"
+        "name": "servingAttribute",
+        "type": "object"
       },
       {
         "id": "schema:servingBatchQueryRequest",
         "kind": "schema",
-        "name": "servingBatchQueryRequest"
+        "name": "servingBatchQueryRequest",
+        "type": "object"
       },
       {
         "id": "schema:servingBatchQueryResponse",
         "kind": "schema",
-        "name": "servingBatchQueryResponse"
+        "name": "servingBatchQueryResponse",
+        "type": "object"
       },
       {
         "id": "schema:servingCorpusKey",
         "kind": "schema",
-        "name": "servingCorpusKey"
+        "name": "servingCorpusKey",
+        "type": "object"
       },
       {
+        "description": "Basic performance metrics that can be attached to a server response.",
         "id": "schema:servingPerformanceMetrics",
         "kind": "schema",
-        "name": "servingPerformanceMetrics"
+        "name": "servingPerformanceMetrics",
+        "type": "object"
       },
       {
         "id": "schema:servingQueryRequest",
         "kind": "schema",
-        "name": "servingQueryRequest"
+        "name": "servingQueryRequest",
+        "type": "object"
       },
       {
         "id": "schema:servingResponse",
         "kind": "schema",
-        "name": "servingResponse"
+        "name": "servingResponse",
+        "type": "object"
       },
       {
         "id": "schema:servingResponseSet",
         "kind": "schema",
-        "name": "servingResponseSet"
+        "name": "servingResponseSet",
+        "type": "object"
       },
       {
         "id": "schema:servingResponseSetDocument",
         "kind": "schema",
-        "name": "servingResponseSetDocument"
+        "name": "servingResponseSetDocument",
+        "type": "object"
       },
       {
+        "description": "Request to delete a document from an index.",
         "id": "schema:vectaraDeleteDocumentRequest",
         "kind": "schema",
-        "name": "vectaraDeleteDocumentRequest"
+        "name": "vectaraDeleteDocumentRequest",
+        "type": "object"
       },
       {
         "id": "schema:vectaraDeleteDocumentResponse",
         "kind": "schema",
-        "name": "vectaraDeleteDocumentResponse"
+        "name": "vectaraDeleteDocumentResponse",
+        "type": "object"
       },
       {
         "id": "schema:vectaraIndexDocumentRequest",
         "kind": "schema",
-        "name": "vectaraIndexDocumentRequest"
+        "name": "vectaraIndexDocumentRequest",
+        "type": "object"
       },
       {
         "id": "schema:vectaraIndexDocumentResponse",
         "kind": "schema",
-        "name": "vectaraIndexDocumentResponse"
+        "name": "vectaraIndexDocumentResponse",
+        "type": "object"
       },
       {
         "id": "schema:vectaraStatusCode",
         "kind": "schema",
-        "name": "vectaraStatusCode"
+        "name": "vectaraStatusCode",
+        "type": "string"
       },
       {
         "id": "schema:vectaraStorageQuota",
         "kind": "schema",
-        "name": "vectaraStorageQuota"
+        "name": "vectaraStorageQuota",
+        "type": "object"
       },
       {
+        "description": "The value of a custom dimension.",
         "id": "schema:vectaraindexingCustomDimension",
         "kind": "schema",
-        "name": "vectaraindexingCustomDimension"
+        "name": "vectaraindexingCustomDimension",
+        "type": "object"
       },
       {
+        "description": "A document to index.",
         "id": "schema:vectaraindexingDocument",
         "kind": "schema",
-        "name": "vectaraindexingDocument"
+        "name": "vectaraindexingDocument",
+        "type": "object"
       },
       {
+        "description": "Defined the weight of a custom dimension at query time.",
         "id": "schema:vectaraservingCustomDimension",
         "kind": "schema",
-        "name": "vectaraservingCustomDimension"
+        "name": "vectaraservingCustomDimension",
+        "type": "object"
       }
     ]
   },

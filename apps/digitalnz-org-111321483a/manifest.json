@@ -18,6 +18,11 @@
         "from": "digitalnz-org-111321483a",
         "kind": "EXPOSES",
         "to": "operation:get:/records/{record_id}/more_like_this.{format}"
+      },
+      {
+        "from": "operation:get:/records/{record_id}.{format}",
+        "kind": "RETURNS",
+        "to": "schema:record"
       }
     ],
     "nodes": [
@@ -27,53 +32,476 @@
       },
       {
         "deprecated": false,
+        "description": "This is the main search endpoint allowing queries against the records database.",
         "id": "operation:get:/records.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /records.{format}",
+        "parameters": [
+          {
+            "description": "Note - There is a small difference with some field names in the response between JSON and XML.",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DigitalNZ API no longer requires a key to access public content.",
+            "in": "header",
+            "name": "Authentication-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This field enables queries based on one or more search terms and provides the functionality of the main search box on [digitalnz.org](https://digitalnz.org).",
+            "in": "query",
+            "name": "text",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "These are the same categories that are used across the tabs in [digitalnz.org](https://digitalnz.org/records?text=&tab=Videos)",
+            "enum": [
+              "Newspapers",
+              "Images",
+              "Books",
+              "Articles",
+              "Journals",
+              "Archives",
+              "Audio",
+              "Other",
+              "Manuscripts",
+              "Reference sources",
+              "Research papers",
+              "Videos",
+              "Music Score",
+              "Groups",
+              "Data",
+              "Websites",
+              "Sets"
+            ],
+            "in": "query",
+            "name": "and[category][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allows filtering for records from a particular Content Partner.",
+            "in": "query",
+            "name": "and[content_partner][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allows filtering for records from a particular *primary_collection*.",
+            "in": "query",
+            "name": "and[primary_collection][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Allows filtering for records from a particular Collection.",
+            "in": "query",
+            "name": "and[collection][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "enum": [
+              "Share",
+              "Modify",
+              "Use commercially",
+              "All rights reserved",
+              "Unknown"
+            ],
+            "in": "query",
+            "name": "and[usage][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Examples: `\"Cats\"` `\"Weddings\"` `\"climb*\"`",
+            "in": "query",
+            "name": "and[subject][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Examples: `\"Conference item\"` `\"Magazines\"`",
+            "in": "query",
+            "name": "and[dc_type][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Examples: `\"Photolithographs\"` `\"Glass*\"`",
+            "in": "query",
+            "name": "and[format][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This field can be used for text-based location search.",
+            "in": "query",
+            "name": "and[placename][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Examples: `\"Revelle Jackson\"` `\"Nicholas Chevalier\"` `\"Rita Angus\"`",
+            "in": "query",
+            "name": "and[creator][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Examples: `\"Pukeko\"` `\"Club\"` `\"Break*\"`\"",
+            "in": "query",
+            "name": "and[title][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This field can be useful for querying and sorting (see the 'sort' param further down).",
+            "in": "query",
+            "name": "and[date]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This field allows searching specifically by year.",
+            "in": "query",
+            "name": "and[year]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This field allows searching specifically by decade.",
+            "in": "query",
+            "name": "and[decade]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "This field allows searching specifically by century.",
+            "in": "query",
+            "name": "and[century]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "All of the above `and[___][]` filters in this document are also able to be used with this syntax to exclude specific matches.",
+            "in": "query",
+            "name": "without[{filter_field}]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "All of the above `and[___][]` filters in this document are also able to be used with the `and[or][___][]` syntax to allow multi-select *OR* queries within one…",
+            "in": "query",
+            "name": "and[or][{filter_field}][]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Some DigitalNZ partners offer their metadata for use in commercial applications.",
+            "in": "query",
+            "name": "and[is_commercial_use]",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Filters results to only those records that have an image available in the *large_thumbnail_url* field.",
+            "enum": [
+              "Y"
+            ],
+            "in": "query",
+            "name": "and[has_large_thumbnail_url]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Filters results to only those records that have latitude and longitude coordinates present in the metadata.",
+            "enum": [
+              true,
+              false
+            ],
+            "in": "query",
+            "name": "and[has_lat_lng]",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "A geographic bounding box scoping a search to a geographic region.",
+            "in": "query",
+            "name": "geo_bbox",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated whitelist of fields to be returned.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Used to control the order of the results in conjunction with the *direction* field.",
+            "enum": [
+              "syndication_date",
+              "date"
+            ],
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "asc",
+            "description": "Used in conjunction with *sort* to order the results - *asc* - Ascending, oldest first.",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "Specify which page of results to return.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "The number of records to return per page of search results.",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Shows a breakdown of record counts for the specified facets based on the current result set.",
+            "in": "query",
+            "name": "facets",
+            "required": false,
+            "type": "string[]"
+          },
+          {
+            "description": "This value specifies which page of facet results to return.",
+            "in": "query",
+            "name": "facets_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 10,
+            "description": "The number of facets to return per page of facet results.",
+            "in": "query",
+            "name": "facets_per_page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": false,
+            "description": "This field can be used when filtering into some facets, to maintain the context of the wider facet values.",
+            "in": "query",
+            "name": "exclude_filters_from_facets",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
         "path": "/records.{format}",
         "pointer": "#/paths/~1records.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "400",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "Run queries against DigitalNZ metadata search service."
+        "summary": "Run queries against DigitalNZ metadata search service.",
+        "tags": [
+          "API calls"
+        ]
       },
       {
         "deprecated": false,
+        "description": "If you know its `record_id` you can use this endpoint to view all metadata associated with that specific record.",
         "id": "operation:get:/records/{record_id}.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /records/{record_id}.{format}",
+        "parameters": [
+          {
+            "description": "Every record has a unique, persistent *record_id*.",
+            "in": "path",
+            "name": "record_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Note - There is a small difference with some field names in the response between JSON and XML.",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DigitalNZ API no longer requires a key to access public content.",
+            "in": "header",
+            "name": "Authentication-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated whitelist of fields to be returned.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/records/{record_id}.{format}",
         "pointer": "#/paths/~1records~1{record_id}.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "record"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "View metadata associated with a single record."
+        "summary": "View metadata associated with a single record.",
+        "tags": [
+          "API calls"
+        ]
       },
       {
         "deprecated": false,
+        "description": "This feature returns a set of search results that are similar (ie have similar metadata) to a specific record.",
         "id": "operation:get:/records/{record_id}/more_like_this.{format}",
         "kind": "operation",
         "method": "get",
         "name": "get /records/{record_id}/more_like_this.{format}",
+        "parameters": [
+          {
+            "description": "Every record has a unique, persistent *record_id*.",
+            "in": "path",
+            "name": "record_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Note - There is a small difference with some field names in the response between JSON and XML.",
+            "enum": [
+              "json",
+              "xml"
+            ],
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The DigitalNZ API no longer requires a key to access public content.",
+            "in": "header",
+            "name": "Authentication-Token",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated whitelist of fields to be returned.",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Comma-separated list of fields used to evaluate relatedness.",
+            "in": "query",
+            "name": "mlt_fields",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "More Like This (MLT) queries can be filtered in the same ways as regular searches, using the same syntax outined in the GET /records call above.",
+            "in": "query",
+            "name": "filtering",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "path": "/records/{record_id}/more_like_this.{format}",
         "pointer": "#/paths/~1records~1{record_id}~1more_like_this.{format}/get",
+        "responses": [
+          {
+            "status": "200",
+            "type": "object"
+          },
+          {
+            "status": "403",
+            "type": "object"
+          },
+          {
+            "status": "404",
+            "type": "object"
+          }
+        ],
+        "safe": true,
         "security": [
           {
             "ApiKeyAuth": []
           }
         ],
-        "summary": "The \"More Like This\" call returns similar records to the specified ID.\n"
+        "summary": "The \"More Like This\" call returns similar records to the specified ID.\n",
+        "tags": [
+          "API calls"
+        ]
       },
       {
+        "description": "*NOTE:* There are a lot of fields that are very rarely used in DigitalNZ.",
         "id": "schema:record",
         "kind": "schema",
-        "name": "record"
+        "name": "record",
+        "type": "object"
       }
     ]
   },

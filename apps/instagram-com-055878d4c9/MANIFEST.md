@@ -11,7 +11,7 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_instagram_profile_i
 
 | | |
 | --- | --- |
-| Signed bundle | `22515518e93444a0f970e474db8c68c8860b4869a76535d6a2bb9455dd49ac5f` in `browse-bundles/`, expires 2026-11-29 15:10 UTC |
+| Signed bundle | Not signed yet: these sources are waiting for the signing job. |
 | Endpoint | — |
 | Credential | — |
 | Connection test | — |
@@ -34,32 +34,34 @@ logo: "https://api.apis.guru/v2/cache/logo/https_twitter.com_instagram_profile_i
 
 36 schema nodes in the graph.
 
-| Method | Path | Name | Summary |
-| --- | --- | --- | --- |
-| GET | `/geographies/{geo-id}/media/recent` | get /geographies/{geo-id}/media/recent | Get recent media from a custom geo-id. |
-| GET | `/locations/search` | get /locations/search | Search for a location by geographic coordinate. |
-| GET | `/locations/{location-id}` | get /locations/{location-id} | Get information about a location. |
-| GET | `/locations/{location-id}/media/recent` | get /locations/{location-id}/media/recent | Get a list of recent media objects from a given location. |
-| GET | `/media/popular` | get /media/popular | Get a list of currently popular media. |
-| GET | `/media/search` | get /media/search | Search for media in a given area. |
-| GET | `/media/shortcode/{shortcode}` | get /media/shortcode/{shortcode} | Get information about a media object. |
-| GET | `/media/{media-id}` | get /media/{media-id} | Get information about a media object. |
-| GET | `/media/{media-id}/comments` | get /media/{media-id}/comments | Get a list of recent comments on a media object. |
-| POST | `/media/{media-id}/comments` | post /media/{media-id}/comments | Create a comment on a media object. |
-| DELETE | `/media/{media-id}/comments/{comment-id}` | delete /media/{media-id}/comments/{comment-id} | Remove a comment. |
-| DELETE | `/media/{media-id}/likes` | delete /media/{media-id}/likes | Remove a like on this media by the current user. |
-| GET | `/media/{media-id}/likes` | get /media/{media-id}/likes | Get a list of users who have liked this media. |
-| POST | `/media/{media-id}/likes` | post /media/{media-id}/likes | Set a like on this media by the current user. |
-| GET | `/tags/search` | get /tags/search | Search for tags by name. |
-| GET | `/tags/{tag-name}` | get /tags/{tag-name} | Get information about a tag object. |
-| GET | `/tags/{tag-name}/media/recent` | get /tags/{tag-name}/media/recent | Get a list of recently tagged media. |
-| GET | `/users/search` | get /users/search | Search for a user by name. |
-| GET | `/users/self/feed` | get /users/self/feed | See the authenticated user's feed. |
-| GET | `/users/self/media/liked` | get /users/self/media/liked | See the list of media liked by the authenticated user. |
-| GET | `/users/self/requested-by` | get /users/self/requested-by | List the users who have requested this user's permission to follow. |
-| GET | `/users/{user-id}` | get /users/{user-id} | Get basic information about a user. |
-| GET | `/users/{user-id}/followed-by` | get /users/{user-id}/followed-by | Get the list of users this user is followed by. |
-| GET | `/users/{user-id}/follows` | get /users/{user-id}/follows | Get the list of users this user follows. |
-| GET | `/users/{user-id}/media/recent` | get /users/{user-id}/media/recent | Get the most recent media published by a user. |
-| GET | `/users/{user-id}/relationship` | get /users/{user-id}/relationship | Get information about a relationship to another user. |
-| POST | `/users/{user-id}/relationship` | post /users/{user-id}/relationship | Modify the relationship between the current user and the target user. |
+Parameters marked * are required. Safe operations only read, so a preview may call them.
+
+| Method | Path | Name | Parameters | Returns | Safe | Summary |
+| --- | --- | --- | --- | --- | --- | --- |
+| GET | `/geographies/{geo-id}/media/recent` | get /geographies/{geo-id}/media/recent | `geo-id`*, `count`, `min_id` | MediaListResponse | yes | Get recent media from a custom geo-id. |
+| GET | `/locations/search` | get /locations/search | `distance`, `facebook_places_id`, `foursquare_id`, `lat`, `lng`, `foursquare_v2_id` | LocationSearchResponse | yes | Search for a location by geographic coordinate. |
+| GET | `/locations/{location-id}` | get /locations/{location-id} | `location-id`* | LocationInfoResponse | yes | Get information about a location. |
+| GET | `/locations/{location-id}/media/recent` | get /locations/{location-id}/media/recent | `location-id`*, `min_timestamp`, `max_timestamp`, `min_id`, `max_id` | MediaListResponse | yes | Get a list of recent media objects from a given location. |
+| GET | `/media/popular` | get /media/popular | — | MediaSearchResponse | yes | Get a list of currently popular media. |
+| GET | `/media/search` | get /media/search | `lat`*, `lng`*, `min_timestamp`, `max_timestamp`, `distance` | MediaSearchResponse | yes | Search for media in a given area. |
+| GET | `/media/shortcode/{shortcode}` | get /media/shortcode/{shortcode} | `shortcode`* | MediaEntryResponse | yes | Get information about a media object. |
+| GET | `/media/{media-id}` | get /media/{media-id} | `media-id`* | MediaEntryResponse | yes | Get information about a media object. |
+| GET | `/media/{media-id}/comments` | get /media/{media-id}/comments | `media-id`* | CommentsResponse | yes | Get a list of recent comments on a media object. |
+| POST | `/media/{media-id}/comments` | post /media/{media-id}/comments | `media-id`*, `text`* | StatusResponse |  | Create a comment on a media object. |
+| DELETE | `/media/{media-id}/comments/{comment-id}` | delete /media/{media-id}/comments/{comment-id} | `media-id`*, `comment-id`* | StatusResponse |  | Remove a comment. |
+| GET | `/media/{media-id}/likes` | get /media/{media-id}/likes | `media-id`* | UsersInfoResponse | yes | Get a list of users who have liked this media. |
+| POST | `/media/{media-id}/likes` | post /media/{media-id}/likes | `media-id`* | StatusResponse |  | Set a like on this media by the current user. |
+| DELETE | `/media/{media-id}/likes` | delete /media/{media-id}/likes | `media-id`* | StatusResponse |  | Remove a like on this media by the current user. |
+| GET | `/tags/search` | get /tags/search | `q`* | TagSearchResponse | yes | Search for tags by name. |
+| GET | `/tags/{tag-name}` | get /tags/{tag-name} | `tag-name`* | TagInfoResponse | yes | Get information about a tag object. |
+| GET | `/tags/{tag-name}/media/recent` | get /tags/{tag-name}/media/recent | `tag-name`*, `count`, `min_tag_id`, `max_tag_id` | TagMediaListResponse | yes | Get a list of recently tagged media. |
+| GET | `/users/search` | get /users/search | `q`*, `count` | UsersInfoResponse | yes | Search for a user by name. |
+| GET | `/users/self/feed` | get /users/self/feed | `count`, `min_id`, `max_id` | MediaListResponse | yes | See the authenticated user's feed. |
+| GET | `/users/self/media/liked` | get /users/self/media/liked | `count`, `max_like_id` | MediaListResponse | yes | See the list of media liked by the authenticated user. |
+| GET | `/users/self/requested-by` | get /users/self/requested-by | — | UsersInfoResponse | yes | List the users who have requested this user's permission to follow. |
+| GET | `/users/{user-id}` | get /users/{user-id} | `user-id`* | UserResponse | yes | Get basic information about a user. |
+| GET | `/users/{user-id}/followed-by` | get /users/{user-id}/followed-by | `user-id`* | UsersPagingResponse | yes | Get the list of users this user is followed by. |
+| GET | `/users/{user-id}/follows` | get /users/{user-id}/follows | `user-id`* | UsersPagingResponse | yes | Get the list of users this user follows. |
+| GET | `/users/{user-id}/media/recent` | get /users/{user-id}/media/recent | `user-id`*, `count`, `max_timestamp`, `min_timestamp`, `min_id`, `max_id` | MediaListResponse | yes | Get the most recent media published by a user. |
+| GET | `/users/{user-id}/relationship` | get /users/{user-id}/relationship | `user-id`* | RelationshipResponse | yes | Get information about a relationship to another user. |
+| POST | `/users/{user-id}/relationship` | post /users/{user-id}/relationship | `user-id`*, `action`* | RelationshipPostResponse |  | Modify the relationship between the current user and the target user. |
