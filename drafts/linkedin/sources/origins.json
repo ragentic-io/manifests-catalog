@@ -1,0 +1,54 @@
+{
+  "not_official": "LinkedIn publishes no official OpenAPI definition for these products. drafts/linkedin/definition.openapi.json was written by hand from the pages below; only URLs, hashes of the bytes fetched and the facts used are recorded here, not copies of the documentation.",
+  "documentation": [
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+      "sha256": "ca45c43214ce4029897ca53571b100fcda91fce769256089010ce8dc0797a47e",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "page_last_updated": "2025-02-05",
+      "used_for": "OpenID Connect discovery: authorization/token endpoints, GET https://api.linkedin.com/v2/userinfo and its claims; scopes openid profile email"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+      "sha256": "11ebfe4e1f8c5d84203730f53185c24f0453282303d91489330305efaeb46c89",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "page_last_updated": "2025-02-05",
+      "used_for": "Share on LinkedIn self-serve product; w_member_social creates posts on behalf of the authenticated member"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+      "sha256": "81b1b84fc05d404b8c2fe9fea7b289868bd3584f2df8dca82e59bafca4091d62",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "page_last_updated": "2026-05-13",
+      "used_for": "POST /rest/posts body (author, commentary, visibility, distribution, lifecycleState, isReshareDisabledByAuthor), 201 with x-restli-id, DELETE /rest/posts/{encoded URN} 204; LinkedIn-Version and X-Restli-Protocol-Version headers; organization posting requires Community Management roles"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+      "sha256": "9f1b0ee529424ce8100355c80a983bf1e76d8d5cd14fe674025b1c6ddd914810",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "page_last_updated": "2025-11-17",
+      "used_for": "3-legged authorization code flow; client_id/client_secret sent in the form body; 60-day access tokens"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+      "sha256": "dec042daf8883562d4679acab3cf9262592ad888de9bdd3093d10400b3e9691e",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "page_last_updated": "2026-10-15",
+      "used_for": "latest version header 202610; version sunset schedule"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+      "sha256": "47d31cb349e78afe274b03eac3916b28015d0cc3a6ebfd248e68a7192a93dcc5",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "page_last_updated": "2025-08-20",
+      "used_for": "daily application/member rate limits shown in the developer portal"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+      "sha256": "715bb07f4a1dd4191318207d7a953a0f977a697703a9898976241db099fca569",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "page_last_updated": "2025-05-31",
+      "used_for": "programmatic refresh tokens only for approved Marketing Developer Platform partners"
+    }
+  ]
+}

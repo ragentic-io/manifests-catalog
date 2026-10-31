@@ -1,0 +1,281 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "LinkedIn member sign-in and posting (independent, hand-built)",
+    "version": "202610",
+    "description": "Minimal operation set for LinkedIn's self-serve products Sign In with LinkedIn using OpenID Connect and Share on LinkedIn, written by Ragentic from LinkedIn's public documentation (see x-ragentic-origins). This is NOT an official LinkedIn definition and is not endorsed by LinkedIn. Organization (company page) posting, reading posts and other Community Management features require LinkedIn product approval and are deliberately not included.",
+    "x-ragentic-not-official": true,
+    "x-ragentic-origins": [
+      "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+      "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+      "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+    ]
+  },
+  "servers": [
+    {
+      "url": "https://api.linkedin.com"
+    }
+  ],
+  "paths": {
+    "/v2/userinfo": {
+      "get": {
+        "operationId": "getUserInfo",
+        "summary": "Get the signed-in member's OpenID Connect profile",
+        "description": "Returns the OpenID Connect claims of the authenticated member. The `sub` claim is the member ID used to build the person URN `urn:li:person:{sub}` for createPost. Requires the openid and profile scopes; email and email_verified require the email scope.",
+        "security": [
+          {
+            "LinkedInOAuth": [
+              "openid",
+              "profile"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OpenID Connect userinfo claims",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInfo"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing, expired or revoked access token"
+          }
+        }
+      }
+    },
+    "/rest/posts": {
+      "post": {
+        "operationId": "createPost",
+        "summary": "Create a post as the signed-in member",
+        "description": "Creates a post authored by the authenticated member (Share on LinkedIn, scope w_member_social). `author` must be `urn:li:person:{sub}` where sub comes from getUserInfo. The connector sends the LinkedIn-Version and X-Restli-Protocol-Version headers. On success LinkedIn answers 201 with the new post URN in the x-restli-id response header and an empty body. Posting as an organization requires the Community Management API and is not supported by this definition.",
+        "security": [
+          {
+            "LinkedInOAuth": [
+              "w_member_social"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MemberPost"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Post created; the post URN is in the x-restli-id header",
+            "headers": {
+              "x-restli-id": {
+                "description": "URN of the created post, for example urn:li:share:{id} or urn:li:ugcPost:{id}",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing, expired or revoked access token"
+          },
+          "403": {
+            "description": "The token lacks w_member_social or author is not the authenticated member"
+          },
+          "422": {
+            "description": "Invalid post content"
+          }
+        }
+      }
+    },
+    "/rest/posts/{postUrn}": {
+      "delete": {
+        "operationId": "deletePost",
+        "summary": "Delete a post created by the signed-in member",
+        "description": "Deletes a post by its URN (as returned in x-restli-id by createPost). The URN must be URL-encoded in the path. Deletion is idempotent and answers 204.",
+        "security": [
+          {
+            "LinkedInOAuth": [
+              "w_member_social"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "postUrn",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded post URN, for example urn%3Ali%3Ashare%3A6844785523593134080",
+            "schema": {
+              "type": "string",
+              "pattern": "^urn(%3A|:)li(%3A|:)(share|ugcPost)(%3A|:)[0-9]+$"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted (or already deleted)"
+          },
+          "401": {
+            "description": "Missing, expired or revoked access token"
+          },
+          "403": {
+            "description": "The post does not belong to the authenticated member"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "LinkedInOAuth": {
+        "type": "oauth2",
+        "description": "LinkedIn 3-legged OAuth 2.0 authorization code flow. Self-serve access tokens last 60 days; programmatic refresh tokens are only issued to approved partners, so members reconnect when the token expires.",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://www.linkedin.com/oauth/v2/authorization",
+            "tokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+            "scopes": {
+              "openid": "Use OpenID Connect to sign in",
+              "profile": "Name and photo",
+              "email": "Primary email address",
+              "w_member_social": "Create, modify and delete posts on behalf of the member"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "UserInfo": {
+        "type": "object",
+        "required": [
+          "sub"
+        ],
+        "properties": {
+          "sub": {
+            "type": "string",
+            "description": "Member identifier; build the author URN as urn:li:person:{sub}"
+          },
+          "name": {
+            "type": "string"
+          },
+          "given_name": {
+            "type": "string"
+          },
+          "family_name": {
+            "type": "string"
+          },
+          "picture": {
+            "type": "string",
+            "format": "uri"
+          },
+          "locale": {
+            "description": "Member locale. Documented as text (sample: en-US); an object {country, language} is also accepted so a response in that form still validates",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "country": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "email_verified": {
+            "type": "boolean"
+          }
+        }
+      },
+      "MemberPost": {
+        "type": "object",
+        "required": [
+          "author",
+          "commentary",
+          "visibility",
+          "distribution",
+          "lifecycleState"
+        ],
+        "properties": {
+          "author": {
+            "type": "string",
+            "pattern": "^urn:li:person:[A-Za-z0-9_-]+$",
+            "description": "urn:li:person:{sub} of the authenticated member"
+          },
+          "commentary": {
+            "type": "string",
+            "maxLength": 3000,
+            "description": "Post text. LinkedIn's little-text format reserves characters such as ( ) [ ] { } < > @ | ~ _ * which must be escaped with a backslash."
+          },
+          "visibility": {
+            "type": "string",
+            "enum": [
+              "PUBLIC",
+              "CONNECTIONS",
+              "LOGGED_IN"
+            ],
+            "default": "PUBLIC"
+          },
+          "distribution": {
+            "type": "object",
+            "required": [
+              "feedDistribution"
+            ],
+            "properties": {
+              "feedDistribution": {
+                "type": "string",
+                "enum": [
+                  "MAIN_FEED",
+                  "NONE"
+                ],
+                "default": "MAIN_FEED"
+              },
+              "targetEntities": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                },
+                "default": []
+              },
+              "thirdPartyDistributionChannels": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "default": []
+              }
+            }
+          },
+          "lifecycleState": {
+            "type": "string",
+            "enum": [
+              "PUBLISHED"
+            ],
+            "default": "PUBLISHED"
+          },
+          "isReshareDisabledByAuthor": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    }
+  }
+}

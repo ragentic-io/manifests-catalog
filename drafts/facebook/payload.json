@@ -1,0 +1,846 @@
+{
+ "a2ui": {
+  "messages": [
+   {
+    "createSurface": {
+     "catalogId": "https://a2ui.org/specification/v1_0/catalogs/basic/catalog.json",
+     "dataModel": {
+      "name": "facebook",
+      "status": "Authorize the application to verify and save your connection.",
+      "workspace": ""
+     },
+     "metadata": {
+      "extensions": {
+       "io_ragentic_theme": {
+        "primaryColor": "#475569"
+       }
+      }
+     },
+     "sendDataModel": false,
+     "surfaceId": "setup-facebook"
+    },
+    "version": "v1.0"
+   },
+   {
+    "updateComponents": {
+     "components": [
+      {
+       "children": [
+        "independent-label",
+        "title",
+        "independent-attribution",
+        "steps",
+        "connection-name",
+        "workspace",
+        "save",
+        "status",
+        "credentials"
+       ],
+       "component": "Column",
+       "id": "root"
+      },
+      {
+       "component": "Text",
+       "id": "independent-label",
+       "text": "Independent integration"
+      },
+      {
+       "component": "Text",
+       "id": "title",
+       "text": "## Connect Facebook"
+      },
+      {
+       "component": "Tabs",
+       "id": "steps",
+       "tabs": [
+        {
+         "child": "step-0",
+         "title": "1. Create a Meta app"
+        },
+        {
+         "child": "step-1",
+         "title": "2. Authorize"
+        },
+        {
+         "child": "step-2",
+         "title": "3. Verify and save"
+        }
+       ]
+      },
+      {
+       "component": "TextField",
+       "id": "connection-name",
+       "label": "Connection name",
+       "value": {
+        "@path": "/name"
+       }
+      },
+      {
+       "component": "TextField",
+       "id": "workspace",
+       "label": "Workspace",
+       "value": {
+        "@path": "/workspace"
+       }
+      },
+      {
+       "component": "Text",
+       "id": "save-label",
+       "text": "Connect and save"
+      },
+      {
+       "action": {
+        "event": {
+         "context": {
+          "app": "facebook",
+          "name": {
+           "@path": "/name"
+          },
+          "workspace": {
+           "@path": "/workspace"
+          }
+         },
+         "name": "registry_oauth"
+        }
+       },
+       "child": "save-label",
+       "component": "Button",
+       "id": "save",
+       "variant": "primary"
+      },
+      {
+       "component": "Text",
+       "id": "status",
+       "text": {
+        "@path": "/status"
+       }
+      },
+      {
+       "component": "Text",
+       "id": "credentials-label",
+       "text": "Manage credentials"
+      },
+      {
+       "action": {
+        "event": {
+         "context": {},
+         "name": "registry_credentials"
+        }
+       },
+       "child": "credentials-label",
+       "component": "Button",
+       "id": "credentials"
+      },
+      {
+       "children": [
+        "step-0-text",
+        "step-0-link-0",
+        "step-0-link-1"
+       ],
+       "component": "Column",
+       "id": "step-0"
+      },
+      {
+       "component": "Text",
+       "id": "step-0-text",
+       "text": "In Meta for Developers create a Business app with Facebook Login for Business and request pages_show_list, pages_read_engagement and pages_manage_posts. Register the redirect URI https://graphx.ragentic.io/registry/oauth/callback in Facebook Login settings (Valid OAuth Redirect URIs). Your Ragentic operator installs the app's client ID (and secret) in Ragentic's OAuth registrations file; they never go in this form or in the catalog. Without Meta App Review the app works only for people with a role on the app and Pages they manage; managing other people's Pages needs App Review and Business Verification."
+      },
+      {
+       "component": "Text",
+       "id": "step-0-link-0-label",
+       "text": "Meta for Developers apps"
+      },
+      {
+       "action": {
+        "functionCall": {
+         "@call": "openUrl",
+         "args": {
+          "url": "https://developers.facebook.com/apps/"
+         }
+        }
+       },
+       "child": "step-0-link-0-label",
+       "component": "Button",
+       "id": "step-0-link-0"
+      },
+      {
+       "component": "Text",
+       "id": "step-0-link-1-label",
+       "text": "Permissions reference"
+      },
+      {
+       "action": {
+        "functionCall": {
+         "@call": "openUrl",
+         "args": {
+          "url": "https://developers.facebook.com/docs/permissions"
+         }
+        }
+       },
+       "child": "step-0-link-1-label",
+       "component": "Button",
+       "id": "step-0-link-1"
+      },
+      {
+       "children": [
+        "step-1-text",
+        "step-1-link-0"
+       ],
+       "component": "Column",
+       "id": "step-1"
+      },
+      {
+       "component": "Text",
+       "id": "step-1-text",
+       "text": "Connect opens Facebook to grant the three Page permissions and choose which Pages to share. Ragentic stores the resulting user access token. Reading a Page feed and publishing to a Page need that Page's own access token, which this connection does not obtain yet: listing your Pages works, Page feed and publishing calls are rejected by Meta until Ragentic adds Page-token support."
+      },
+      {
+       "component": "Text",
+       "id": "step-1-link-0-label",
+       "text": "Pages API overview"
+      },
+      {
+       "action": {
+        "functionCall": {
+         "@call": "openUrl",
+         "args": {
+          "url": "https://developers.facebook.com/docs/pages-api/overview"
+         }
+        }
+       },
+       "child": "step-1-link-0-label",
+       "component": "Button",
+       "id": "step-1-link-0"
+      },
+      {
+       "children": [
+        "step-2-text",
+        "step-2-link-0"
+       ],
+       "component": "Column",
+       "id": "step-2"
+      },
+      {
+       "component": "Text",
+       "id": "step-2-text",
+       "text": "After you approve, Ragentic reads GET /v26.0/me to confirm the user (it posts nothing), then saves the encrypted token. Graph API v26.0 is pinned; Meta's Platform and Pages rate limits apply."
+      },
+      {
+       "component": "Text",
+       "id": "step-2-link-0-label",
+       "text": "Rate limits"
+      },
+      {
+       "action": {
+        "functionCall": {
+         "@call": "openUrl",
+         "args": {
+          "url": "https://developers.facebook.com/docs/graph-api/overview/rate-limiting"
+         }
+        }
+       },
+       "child": "step-2-link-0-label",
+       "component": "Button",
+       "id": "step-2-link-0"
+      },
+      {
+       "component": "Text",
+       "id": "independent-attribution",
+       "text": "Independent connector for Facebook. Not affiliated with or endorsed by Facebook."
+      }
+     ],
+     "surfaceId": "setup-facebook"
+    },
+    "version": "v1.0"
+   }
+  ],
+  "version": "v1.0"
+ },
+ "app": "facebook",
+ "expires": 1801100824,
+ "graph": {
+  "edges": [
+   {
+    "from": "facebook",
+    "kind": "EXPOSES",
+    "to": "operation:get:/v26.0/me"
+   },
+   {
+    "from": "facebook",
+    "kind": "EXPOSES",
+    "to": "operation:get:/v26.0/me/accounts"
+   },
+   {
+    "from": "facebook",
+    "kind": "EXPOSES",
+    "to": "operation:get:/v26.0/{pageId}/feed"
+   },
+   {
+    "from": "facebook",
+    "kind": "EXPOSES",
+    "to": "operation:post:/v26.0/{pageId}/feed"
+   }
+  ],
+  "nodes": [
+   {
+    "id": "facebook",
+    "kind": "application"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:get:/v26.0/me",
+    "kind": "operation",
+    "method": "get",
+    "name": "Get the signed-in Facebook user's ID and name",
+    "path": "/v26.0/me",
+    "pointer": "#/paths/~1v26.0~1me/get",
+    "security": [
+     {
+      "FacebookLogin": []
+     }
+    ],
+    "summary": "Get the signed-in Facebook user's ID and name"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:get:/v26.0/me/accounts",
+    "kind": "operation",
+    "method": "get",
+    "name": "List the Facebook Pages the user granted this app",
+    "path": "/v26.0/me/accounts",
+    "pointer": "#/paths/~1v26.0~1me~1accounts/get",
+    "security": [
+     {
+      "FacebookLogin": [
+       "pages_show_list"
+      ]
+     }
+    ],
+    "summary": "List the Facebook Pages the user granted this app"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:get:/v26.0/{pageId}/feed",
+    "kind": "operation",
+    "method": "get",
+    "name": "Read a Page's feed (requires a Page access token)",
+    "path": "/v26.0/{pageId}/feed",
+    "pointer": "#/paths/~1v26.0~1{pageId}~1feed/get",
+    "security": [
+     {
+      "FacebookPageToken": [
+       "pages_read_engagement"
+      ]
+     }
+    ],
+    "summary": "Read a Page's feed (requires a Page access token)"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:post:/v26.0/{pageId}/feed",
+    "kind": "operation",
+    "method": "post",
+    "name": "Publish a post to a Page (requires a Page access token)",
+    "path": "/v26.0/{pageId}/feed",
+    "pointer": "#/paths/~1v26.0~1{pageId}~1feed/post",
+    "security": [
+     {
+      "FacebookPageToken": [
+       "pages_manage_posts",
+       "pages_read_engagement",
+       "pages_show_list"
+      ]
+     }
+    ],
+    "summary": "Publish a post to a Page (requires a Page access token)"
+   }
+  ]
+ },
+ "kind": "bundle",
+ "manifest": {
+  "apiVersion": "ragentic.dev/v1",
+  "kind": "ConnectorTemplate",
+  "metadata": {
+   "name": "facebook"
+  },
+  "spec": {
+   "base": {
+    "endpoint": "https://graph.facebook.com",
+    "headers": {},
+    "protocol": "openapi",
+    "specification": {
+     "document": {
+      "components": {
+       "parameters": {
+        "PageId": {
+         "description": "Numeric Page ID from listPages",
+         "in": "path",
+         "name": "pageId",
+         "required": true,
+         "schema": {
+          "pattern": "^[0-9]+$",
+          "type": "string"
+         }
+        }
+       },
+       "schemas": {
+        "Page": {
+         "properties": {
+          "category": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "name": {
+           "type": "string"
+          },
+          "tasks": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          }
+         },
+         "type": "object"
+        },
+        "PagePost": {
+         "properties": {
+          "created_time": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "message": {
+           "type": "string"
+          },
+          "permalink_url": {
+           "type": "string"
+          }
+         },
+         "type": "object"
+        },
+        "Paging": {
+         "properties": {
+          "cursors": {
+           "properties": {
+            "after": {
+             "type": "string"
+            },
+            "before": {
+             "type": "string"
+            }
+           },
+           "type": "object"
+          },
+          "next": {
+           "type": "string"
+          },
+          "previous": {
+           "type": "string"
+          }
+         },
+         "type": "object"
+        }
+       },
+       "securitySchemes": {
+        "FacebookLogin": {
+         "description": "Facebook Login (manually built flow) issuing a user access token.",
+         "flows": {
+          "authorizationCode": {
+           "authorizationUrl": "https://www.facebook.com/v26.0/dialog/oauth",
+           "scopes": {
+            "pages_manage_posts": "Create, edit and delete the Page's posts",
+            "pages_read_engagement": "Read content posted on the Page",
+            "pages_show_list": "List the Pages a person manages"
+           },
+           "tokenUrl": "https://graph.facebook.com/v26.0/oauth/access_token"
+          }
+         },
+         "type": "oauth2"
+        },
+        "FacebookPageToken": {
+         "description": "A Page access token for the target Page, obtained from /me/accounts with a user access token that has the listed permissions. Not yet derived by Ragentic.",
+         "scheme": "bearer",
+         "type": "http"
+        }
+       }
+      },
+      "info": {
+       "description": "Minimal Pages operation set for Meta's Graph API v26.0, written by Ragentic from Meta's public documentation (see x-ragentic-origins). This is NOT an official Meta definition and is not endorsed by Meta. Reading a Page feed and publishing to a Page require a Page access token; see each operation and the setup guide.",
+       "title": "Facebook Pages via the Meta Graph API v26.0 (independent, hand-built)",
+       "version": "v26.0",
+       "x-ragentic-not-official": true,
+       "x-ragentic-origins": [
+        "https://developers.facebook.com/docs/graph-api/changelog",
+        "https://developers.facebook.com/docs/pages-api/overview",
+        "https://developers.facebook.com/docs/pages-api/getting-started",
+        "https://developers.facebook.com/docs/pages-api/posts/",
+        "https://developers.facebook.com/docs/graph-api/reference/page/feed",
+        "https://developers.facebook.com/docs/facebook-login/guides/advanced/manual-flow",
+        "https://developers.facebook.com/docs/permissions"
+       ]
+      },
+      "openapi": "3.0.3",
+      "paths": {
+       "/v26.0/me": {
+        "get": {
+         "description": "Returns the app-scoped ID of the user who authorized the connection. Used by the connection test.",
+         "operationId": "getMe",
+         "parameters": [
+          {
+           "in": "query",
+           "name": "fields",
+           "required": false,
+           "schema": {
+            "default": "id,name",
+            "type": "string"
+           }
+          }
+         ],
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "id": {
+                "type": "string"
+               },
+               "name": {
+                "type": "string"
+               }
+              },
+              "required": [
+               "id"
+              ],
+              "type": "object"
+             }
+            }
+           },
+           "description": "The user node"
+          }
+         },
+         "security": [
+          {
+           "FacebookLogin": []
+          }
+         ],
+         "summary": "Get the signed-in Facebook user's ID and name"
+        }
+       },
+       "/v26.0/me/accounts": {
+        "get": {
+         "description": "Lists Pages the user can perform tasks on and granted to the app (pages_show_list). The default `fields` value deliberately omits access_token so Page access tokens are never returned into tool output; do not request that field.",
+         "operationId": "listPages",
+         "parameters": [
+          {
+           "description": "Comma-separated Page fields. Keep the default; never add access_token.",
+           "in": "query",
+           "name": "fields",
+           "required": false,
+           "schema": {
+            "default": "id,name,category,tasks",
+            "pattern": "^(?!.*access_token)[a-z_,]+$",
+            "type": "string"
+           }
+          },
+          {
+           "in": "query",
+           "name": "limit",
+           "required": false,
+           "schema": {
+            "default": 25,
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+           }
+          },
+          {
+           "description": "Paging cursor from paging.cursors.after",
+           "in": "query",
+           "name": "after",
+           "required": false,
+           "schema": {
+            "type": "string"
+           }
+          }
+         ],
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "data": {
+                "items": {
+                 "$ref": "#/components/schemas/Page"
+                },
+                "type": "array"
+               },
+               "paging": {
+                "$ref": "#/components/schemas/Paging"
+               }
+              },
+              "type": "object"
+             }
+            }
+           },
+           "description": "Pages and paging cursors"
+          }
+         },
+         "security": [
+          {
+           "FacebookLogin": [
+            "pages_show_list"
+           ]
+          }
+         ],
+         "summary": "List the Facebook Pages the user granted this app"
+        }
+       },
+       "/v26.0/{pageId}/feed": {
+        "get": {
+         "description": "Reads posts on a Page the user manages. Meta requires a Page access token with pages_read_engagement for this call. This connector holds the user access token and does not yet derive Page access tokens, so Meta rejects this call until Ragentic adds that step (see the setup guide).",
+         "operationId": "getPageFeed",
+         "parameters": [
+          {
+           "$ref": "#/components/parameters/PageId"
+          },
+          {
+           "in": "query",
+           "name": "fields",
+           "required": false,
+           "schema": {
+            "default": "id,message,created_time,permalink_url",
+            "type": "string"
+           }
+          },
+          {
+           "in": "query",
+           "name": "limit",
+           "required": false,
+           "schema": {
+            "default": 25,
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+           }
+          },
+          {
+           "in": "query",
+           "name": "after",
+           "required": false,
+           "schema": {
+            "type": "string"
+           }
+          }
+         ],
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "data": {
+                "items": {
+                 "$ref": "#/components/schemas/PagePost"
+                },
+                "type": "array"
+               },
+               "paging": {
+                "$ref": "#/components/schemas/Paging"
+               }
+              },
+              "type": "object"
+             }
+            }
+           },
+           "description": "Page posts and paging cursors"
+          }
+         },
+         "security": [
+          {
+           "FacebookPageToken": [
+            "pages_read_engagement"
+           ]
+          }
+         ],
+         "summary": "Read a Page's feed (requires a Page access token)"
+        },
+        "post": {
+         "description": "Publishes a post in the voice of the Page. Meta requires a Page access token, the CREATE_CONTENT task on the Page and pages_manage_posts, pages_read_engagement and pages_show_list. This connector holds the user access token and does not yet derive Page access tokens, so Meta rejects this call until Ragentic adds that step (see the setup guide).",
+         "operationId": "publishPagePost",
+         "parameters": [
+          {
+           "$ref": "#/components/parameters/PageId"
+          }
+         ],
+         "requestBody": {
+          "content": {
+           "application/json": {
+            "schema": {
+             "properties": {
+              "link": {
+               "format": "uri",
+               "type": "string"
+              },
+              "message": {
+               "description": "Post text",
+               "type": "string"
+              },
+              "published": {
+               "default": true,
+               "description": "false to create an unpublished (scheduled) post",
+               "type": "boolean"
+              },
+              "scheduled_publish_time": {
+               "description": "Unix timestamp or ISO 8601 time between 10 minutes and 30 days ahead; requires published=false",
+               "oneOf": [
+                {
+                 "type": "integer"
+                },
+                {
+                 "type": "string"
+                }
+               ]
+              }
+             },
+             "type": "object"
+            }
+           }
+          },
+          "required": true
+         },
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "id": {
+                "type": "string"
+               }
+              },
+              "type": "object"
+             }
+            }
+           },
+           "description": "The new post ID ({page-id}_{post-id})"
+          }
+         },
+         "security": [
+          {
+           "FacebookPageToken": [
+            "pages_manage_posts",
+            "pages_read_engagement",
+            "pages_show_list"
+           ]
+          }
+         ],
+         "summary": "Publish a post to a Page (requires a Page access token)"
+        }
+       }
+      },
+      "servers": [
+       {
+        "url": "https://graph.facebook.com"
+       }
+      ]
+     }
+    },
+    "type": "app"
+   },
+   "category": "app",
+   "connector": {},
+   "description": "Connect Facebook Pages through the Meta Graph API v26.0 with an independent Ragentic integration: list your Pages; Page feed and publishing need Page tokens (see setup). Not affiliated with or endorsed by Facebook.",
+   "status": "published",
+   "title": "Facebook Pages"
+  }
+ },
+ "not_before": 1793404800,
+ "protocol": "openapi",
+ "provenance": {
+  "commit": null,
+  "fetched_at": "2026-10-31T18:00:29Z",
+  "license": null,
+  "normalization": "Hand-built OpenAPI 3.0 for Graph API v26.0 from Meta's public documentation (origins); not an official Meta definition. upstream_sha256 is the hash of drafts/facebook/sources/origins.json.",
+  "origins": [
+   "https://developers.facebook.com/docs/graph-api/changelog",
+   "https://developers.facebook.com/docs/pages-api/overview",
+   "https://developers.facebook.com/docs/pages-api/getting-started",
+   "https://developers.facebook.com/docs/pages-api/posts/",
+   "https://developers.facebook.com/docs/graph-api/reference/page/feed",
+   "https://developers.facebook.com/docs/facebook-login/guides/advanced/manual-flow",
+   "https://developers.facebook.com/docs/permissions",
+   "https://developers.facebook.com/docs/facebook-login/guides/access-tokens",
+   "https://developers.facebook.com/docs/graph-api/overview/rate-limiting"
+  ],
+  "repository": "ragentic-io/manifests-catalog",
+  "sha256": "bc01d111089a2cb31a0620e89ed14f627fe2d0731fba1e1c1f63831a5f82e70c",
+  "source_id": "ragentic-io/manifests-catalog:drafts/facebook/definition.openapi.json",
+  "source_updated": null,
+  "upstream_sha256": "ac59030745d3d2dd65c203e46e9a8233a83d756161d93e8a257bd4ad9da7b200",
+  "url": "https://github.com/ragentic-io/manifests-catalog/blob/main/drafts/facebook/definition.openapi.json"
+ },
+ "readiness": "hand_built_definition_unsigned_draft_page_token_missing",
+ "review_required": {
+  "authentication": true,
+  "branding": true,
+  "connection_test": true,
+  "external_references": [
+   "Hand-built definition, not official: compare each operation against the cited documentation before signing.",
+   "getPageFeed and publishPagePost need a Page access token; Ragentic does not yet derive one from the user token, so those two operations fail until it does.",
+   "Meta documents the token exchange as GET with query parameters; Ragentic POSTs a form with client_secret_post and always adds PKCE. Confirm both in a live authorization.",
+   "Meta App Review and Business Verification are needed for Pages the app's own role-holders do not manage."
+  ],
+  "rights": true,
+  "setup_guide": true,
+  "source_currency": true
+ },
+ "rights": {
+  "brand": {
+   "attribution": "Independent connector for Facebook. Not affiliated with or endorsed by Facebook.",
+   "independent_integration": true,
+   "logo": null
+  },
+  "brand_policy_url": "https://www.meta.com/brand/resources/",
+  "independent_attribution": "Independent connector for Facebook. Not affiliated with or endorsed by Facebook.",
+  "mark_policy": "Provider name in plain text only for identification; no provider logo, favicon, or brand color; independent attribution shown in setup.",
+  "source": {
+   "attribution": "Operation definition written by Ragentic from Meta's public Graph API documentation",
+   "definition_url": "https://github.com/ragentic-io/manifests-catalog/blob/main/drafts/facebook/definition.openapi.json",
+   "license_sha256": null,
+   "license_text": null,
+   "license_url": null,
+   "spdx": null,
+   "terms_note": "Not an official Meta definition; no Meta documentation text is reproduced. Use of the Graph API is governed by the Meta Platform Terms and Developer Policies.",
+   "terms_url": "https://developers.facebook.com/terms/"
+  }
+ },
+ "setup": {
+  "credential": {
+   "provider": {
+    "authorizationEndpoint": "https://www.facebook.com/v26.0/dialog/oauth",
+    "clientAuthentication": "client_secret_post",
+    "scopes": [
+     "pages_show_list",
+     "pages_read_engagement",
+     "pages_manage_posts"
+    ],
+    "tokenEndpoint": "https://graph.facebook.com/v26.0/oauth/access_token"
+   },
+   "type": "oauth2_authorization_code"
+  },
+  "probe": {
+   "endpoint": "https://graph.facebook.com/v26.0/me",
+   "identityPath": [
+    "id"
+   ],
+   "method": "GET",
+   "protocol": "openapi"
+  }
+ },
+ "version": "v26.0"
+}

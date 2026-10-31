@@ -1,0 +1,1540 @@
+{
+ "a2ui": {
+  "messages": [
+   {
+    "createSurface": {
+     "catalogId": "https://a2ui.org/specification/v1_0/catalogs/basic/catalog.json",
+     "dataModel": {
+      "name": "bluesky",
+      "status": "Test the connection before saving.",
+      "workspace": ""
+     },
+     "metadata": {
+      "extensions": {
+       "io_ragentic_theme": {
+        "primaryColor": "#475569"
+       }
+      }
+     },
+     "sendDataModel": false,
+     "surfaceId": "setup-bluesky"
+    },
+    "version": "v1.0"
+   },
+   {
+    "updateComponents": {
+     "components": [
+      {
+       "children": [
+        "independent-label",
+        "title",
+        "independent-attribution",
+        "steps",
+        "connection-name",
+        "workspace",
+        "username",
+        "token",
+        "test",
+        "save",
+        "status",
+        "credentials"
+       ],
+       "component": "Column",
+       "id": "root"
+      },
+      {
+       "component": "Text",
+       "id": "independent-label",
+       "text": "Independent integration"
+      },
+      {
+       "component": "Text",
+       "id": "title",
+       "text": "## Connect Bluesky"
+      },
+      {
+       "component": "Tabs",
+       "id": "steps",
+       "tabs": [
+        {
+         "child": "step-0",
+         "title": "1. Sign in"
+        },
+        {
+         "child": "step-1",
+         "title": "2. Create an app password"
+        },
+        {
+         "child": "step-2",
+         "title": "3. Test and save"
+        }
+       ]
+      },
+      {
+       "component": "TextField",
+       "id": "connection-name",
+       "label": "Connection name",
+       "value": {
+        "@path": "/name"
+       }
+      },
+      {
+       "component": "TextField",
+       "id": "workspace",
+       "label": "Workspace",
+       "value": {
+        "@path": "/workspace"
+       }
+      },
+      {
+       "component": "TextField",
+       "id": "username",
+       "label": "Bluesky handle or DID",
+       "value": {
+        "@path": "/username"
+       }
+      },
+      {
+       "component": "TextField",
+       "id": "token",
+       "label": "Bluesky app password",
+       "value": {
+        "@path": "/token"
+       },
+       "variant": "obscured"
+      },
+      {
+       "component": "Text",
+       "id": "test-label",
+       "text": "Test connection"
+      },
+      {
+       "action": {
+        "event": {
+         "context": {
+          "app": "bluesky",
+          "name": {
+           "@path": "/name"
+          },
+          "token": {
+           "@path": "/token"
+          },
+          "username": {
+           "@path": "/username"
+          },
+          "workspace": {
+           "@path": "/workspace"
+          }
+         },
+         "name": "registry_test"
+        }
+       },
+       "child": "test-label",
+       "component": "Button",
+       "id": "test"
+      },
+      {
+       "component": "Text",
+       "id": "save-label",
+       "text": "Save connection"
+      },
+      {
+       "action": {
+        "event": {
+         "context": {
+          "app": "bluesky",
+          "name": {
+           "@path": "/name"
+          },
+          "token": {
+           "@path": "/token"
+          },
+          "username": {
+           "@path": "/username"
+          },
+          "workspace": {
+           "@path": "/workspace"
+          }
+         },
+         "name": "registry_save"
+        }
+       },
+       "child": "save-label",
+       "component": "Button",
+       "id": "save",
+       "variant": "primary"
+      },
+      {
+       "component": "Text",
+       "id": "status",
+       "text": {
+        "@path": "/status"
+       }
+      },
+      {
+       "component": "Text",
+       "id": "credentials-label",
+       "text": "Manage credentials"
+      },
+      {
+       "action": {
+        "event": {
+         "context": {},
+         "name": "registry_credentials"
+        }
+       },
+       "child": "credentials-label",
+       "component": "Button",
+       "id": "credentials"
+      },
+      {
+       "children": [
+        "step-0-text",
+        "step-0-link-0"
+       ],
+       "component": "Column",
+       "id": "step-0"
+      },
+      {
+       "component": "Text",
+       "id": "step-0-text",
+       "text": "Sign in to the Bluesky account this connection should act as. This guide is for accounts hosted on bsky.social; accounts on another PDS are not supported by this bundle."
+      },
+      {
+       "component": "Text",
+       "id": "step-0-link-0-label",
+       "text": "Bluesky"
+      },
+      {
+       "action": {
+        "functionCall": {
+         "@call": "openUrl",
+         "args": {
+          "url": "https://bsky.app/"
+         }
+        }
+       },
+       "child": "step-0-link-0-label",
+       "component": "Button",
+       "id": "step-0-link-0"
+      },
+      {
+       "children": [
+        "step-1-text",
+        "step-1-link-0"
+       ],
+       "component": "Column",
+       "id": "step-1"
+      },
+      {
+       "component": "Text",
+       "id": "step-1-text",
+       "text": "Open Settings → Privacy and security → App passwords and add a new app password for Ragentic. Do not use your main account password. Leave direct-message access off. You can revoke the app password at any time, which disconnects Ragentic."
+      },
+      {
+       "component": "Text",
+       "id": "step-1-link-0-label",
+       "text": "App passwords"
+      },
+      {
+       "action": {
+        "functionCall": {
+         "@call": "openUrl",
+         "args": {
+          "url": "https://bsky.app/settings/app-passwords"
+         }
+        }
+       },
+       "child": "step-1-link-0-label",
+       "component": "Button",
+       "id": "step-1-link-0"
+      },
+      {
+       "children": [
+        "step-2-text",
+        "step-2-link-0",
+        "step-2-link-1"
+       ],
+       "component": "Column",
+       "id": "step-2"
+      },
+      {
+       "component": "Text",
+       "id": "step-2-text",
+       "text": "Enter your handle (for example alice.bsky.social) or DID and the app password. Test creates a session at bsky.social and reads com.atproto.server.getSession; it posts nothing. Save encrypts the handle and app password after a successful Test; Ragentic renews the short-lived session token from them. Reading profiles, feeds and threads also works without an account at public.api.bsky.app."
+      },
+      {
+       "component": "Text",
+       "id": "step-2-link-0-label",
+       "text": "Bluesky HTTP API reference"
+      },
+      {
+       "action": {
+        "functionCall": {
+         "@call": "openUrl",
+         "args": {
+          "url": "https://docs.bsky.app/docs/category/http-reference"
+         }
+        }
+       },
+       "child": "step-2-link-0-label",
+       "component": "Button",
+       "id": "step-2-link-0"
+      },
+      {
+       "component": "Text",
+       "id": "step-2-link-1-label",
+       "text": "Rate limits"
+      },
+      {
+       "action": {
+        "functionCall": {
+         "@call": "openUrl",
+         "args": {
+          "url": "https://docs.bsky.app/docs/advanced-guides/rate-limits"
+         }
+        }
+       },
+       "child": "step-2-link-1-label",
+       "component": "Button",
+       "id": "step-2-link-1"
+      },
+      {
+       "component": "Text",
+       "id": "independent-attribution",
+       "text": "Independent connector for Bluesky. Not affiliated with or endorsed by Bluesky."
+      }
+     ],
+     "surfaceId": "setup-bluesky"
+    },
+    "version": "v1.0"
+   }
+  ],
+  "version": "v1.0"
+ },
+ "app": "bluesky",
+ "expires": 1801100824,
+ "graph": {
+  "edges": [
+   {
+    "from": "bluesky",
+    "kind": "EXPOSES",
+    "to": "operation:get:/xrpc/app.bsky.actor.getProfile"
+   },
+   {
+    "from": "bluesky",
+    "kind": "EXPOSES",
+    "to": "operation:get:/xrpc/app.bsky.actor.searchActors"
+   },
+   {
+    "from": "bluesky",
+    "kind": "EXPOSES",
+    "to": "operation:get:/xrpc/app.bsky.feed.getAuthorFeed"
+   },
+   {
+    "from": "bluesky",
+    "kind": "EXPOSES",
+    "to": "operation:get:/xrpc/app.bsky.feed.getPostThread"
+   },
+   {
+    "from": "bluesky",
+    "kind": "EXPOSES",
+    "to": "operation:get:/xrpc/app.bsky.feed.searchPosts"
+   },
+   {
+    "from": "bluesky",
+    "kind": "EXPOSES",
+    "to": "operation:post:/xrpc/com.atproto.repo.createRecord"
+   },
+   {
+    "from": "bluesky",
+    "kind": "EXPOSES",
+    "to": "operation:post:/xrpc/com.atproto.repo.deleteRecord"
+   },
+   {
+    "from": "bluesky",
+    "kind": "EXPOSES",
+    "to": "operation:post:/xrpc/com.atproto.repo.uploadBlob"
+   },
+   {
+    "from": "bluesky",
+    "kind": "EXPOSES",
+    "to": "operation:get:/xrpc/com.atproto.server.getSession"
+   }
+  ],
+  "nodes": [
+   {
+    "id": "bluesky",
+    "kind": "application"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:get:/xrpc/app.bsky.actor.getProfile",
+    "kind": "operation",
+    "method": "get",
+    "name": "Get an actor's profile",
+    "path": "/xrpc/app.bsky.actor.getProfile",
+    "pointer": "#/paths/~1xrpc~1app.bsky.actor.getProfile/get",
+    "security": [
+     {
+      "atprotoSession": []
+     }
+    ],
+    "summary": "Get an actor's profile"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:get:/xrpc/app.bsky.actor.searchActors",
+    "kind": "operation",
+    "method": "get",
+    "name": "Search for actors (profiles)",
+    "path": "/xrpc/app.bsky.actor.searchActors",
+    "pointer": "#/paths/~1xrpc~1app.bsky.actor.searchActors/get",
+    "security": [
+     {
+      "atprotoSession": []
+     }
+    ],
+    "summary": "Search for actors (profiles)"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:get:/xrpc/app.bsky.feed.getAuthorFeed",
+    "kind": "operation",
+    "method": "get",
+    "name": "Get an actor's author feed",
+    "path": "/xrpc/app.bsky.feed.getAuthorFeed",
+    "pointer": "#/paths/~1xrpc~1app.bsky.feed.getAuthorFeed/get",
+    "security": [
+     {
+      "atprotoSession": []
+     }
+    ],
+    "summary": "Get an actor's author feed"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:get:/xrpc/app.bsky.feed.getPostThread",
+    "kind": "operation",
+    "method": "get",
+    "name": "Get a post thread",
+    "path": "/xrpc/app.bsky.feed.getPostThread",
+    "pointer": "#/paths/~1xrpc~1app.bsky.feed.getPostThread/get",
+    "security": [
+     {
+      "atprotoSession": []
+     }
+    ],
+    "summary": "Get a post thread"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:get:/xrpc/app.bsky.feed.searchPosts",
+    "kind": "operation",
+    "method": "get",
+    "name": "Search posts",
+    "path": "/xrpc/app.bsky.feed.searchPosts",
+    "pointer": "#/paths/~1xrpc~1app.bsky.feed.searchPosts/get",
+    "security": [
+     {
+      "atprotoSession": []
+     }
+    ],
+    "summary": "Search posts"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:post:/xrpc/com.atproto.repo.createRecord",
+    "kind": "operation",
+    "method": "post",
+    "name": "Create a record (for example a post)",
+    "path": "/xrpc/com.atproto.repo.createRecord",
+    "pointer": "#/paths/~1xrpc~1com.atproto.repo.createRecord/post",
+    "security": [
+     {
+      "atprotoSession": []
+     }
+    ],
+    "summary": "Create a record (for example a post)"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:post:/xrpc/com.atproto.repo.deleteRecord",
+    "kind": "operation",
+    "method": "post",
+    "name": "Delete a record",
+    "path": "/xrpc/com.atproto.repo.deleteRecord",
+    "pointer": "#/paths/~1xrpc~1com.atproto.repo.deleteRecord/post",
+    "security": [
+     {
+      "atprotoSession": []
+     }
+    ],
+    "summary": "Delete a record"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:post:/xrpc/com.atproto.repo.uploadBlob",
+    "kind": "operation",
+    "method": "post",
+    "name": "Upload a blob (image or video) for a record",
+    "path": "/xrpc/com.atproto.repo.uploadBlob",
+    "pointer": "#/paths/~1xrpc~1com.atproto.repo.uploadBlob/post",
+    "security": [
+     {
+      "atprotoSession": []
+     }
+    ],
+    "summary": "Upload a blob (image or video) for a record"
+   },
+   {
+    "deprecated": false,
+    "id": "operation:get:/xrpc/com.atproto.server.getSession",
+    "kind": "operation",
+    "method": "get",
+    "name": "Get the current session's account",
+    "path": "/xrpc/com.atproto.server.getSession",
+    "pointer": "#/paths/~1xrpc~1com.atproto.server.getSession/get",
+    "security": [
+     {
+      "atprotoSession": []
+     }
+    ],
+    "summary": "Get the current session's account"
+   }
+  ]
+ },
+ "kind": "bundle",
+ "manifest": {
+  "apiVersion": "ragentic.dev/v1",
+  "kind": "ConnectorTemplate",
+  "metadata": {
+   "name": "bluesky"
+  },
+  "spec": {
+   "base": {
+    "endpoint": "https://bsky.social",
+    "headers": {},
+    "protocol": "openapi",
+    "specification": {
+     "document": {
+      "components": {
+       "securitySchemes": {
+        "atprotoSession": {
+         "bearerFormat": "JWT",
+         "description": "accessJwt from com.atproto.server.createSession with the account handle (or DID) and an app password. Ragentic's atproto_session credential creates and renews it.",
+         "scheme": "bearer",
+         "type": "http"
+        }
+       }
+      },
+      "info": {
+       "description": "Selected AT Protocol XRPC methods converted by Ragentic to OpenAPI 3.0 from the official lexicons of bluesky-social/atproto (pinned commit, MIT OR Apache-2.0). This is NOT an official Bluesky definition and is not endorsed by Bluesky Social PBC. Requests go to the account's PDS at https://bsky.social, which serves com.atproto.* itself and proxies app.bsky.* reads to the Bluesky AppView. The same app.bsky.* reads also work without authentication at https://public.api.bsky.app. Cross-lexicon object references are named (x-lexicon-ref / x-lexicon-union), not inlined.",
+       "title": "Bluesky (AT Protocol) profiles, feeds, search and posting (independent conversion)",
+       "version": "atproto-lexicons@d3080834ac43",
+       "x-ragentic-not-official": true
+      },
+      "openapi": "3.0.3",
+      "paths": {
+       "/xrpc/app.bsky.actor.getProfile": {
+        "get": {
+         "description": "Get detailed profile view of an actor. Does not require auth, but contains relevant metadata with auth.",
+         "operationId": "getProfile",
+         "parameters": [
+          {
+           "description": "Handle or DID of account to fetch profile of.",
+           "in": "query",
+           "name": "actor",
+           "required": true,
+           "schema": {
+            "description": "Handle or DID of account to fetch profile of.",
+            "format": "at-identifier",
+            "type": "string"
+           }
+          }
+         ],
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "description": "Lexicon object app.bsky.actor.defs#profileViewDetailed.",
+              "type": "object",
+              "x-lexicon-ref": "app.bsky.actor.defs#profileViewDetailed"
+             }
+            }
+           },
+           "description": "OK"
+          },
+          "400": {
+           "description": "XRPC error {error, message}"
+          },
+          "401": {
+           "description": "Missing or expired session"
+          }
+         },
+         "security": [
+          {
+           "atprotoSession": []
+          }
+         ],
+         "summary": "Get an actor's profile",
+         "x-lexicon": "app.bsky.actor.getProfile"
+        }
+       },
+       "/xrpc/app.bsky.actor.searchActors": {
+        "get": {
+         "description": "Find actors (profiles) matching search criteria. Does not require auth.",
+         "operationId": "searchActors",
+         "parameters": [
+          {
+           "description": "DEPRECATED: use 'q' instead.",
+           "in": "query",
+           "name": "term",
+           "required": false,
+           "schema": {
+            "description": "DEPRECATED: use 'q' instead.",
+            "type": "string"
+           }
+          },
+          {
+           "description": "Search query string. Syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended.",
+           "in": "query",
+           "name": "q",
+           "required": false,
+           "schema": {
+            "description": "Search query string. Syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended.",
+            "type": "string"
+           }
+          },
+          {
+           "in": "query",
+           "name": "limit",
+           "required": false,
+           "schema": {
+            "default": 25,
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+           }
+          },
+          {
+           "in": "query",
+           "name": "cursor",
+           "required": false,
+           "schema": {
+            "type": "string"
+           }
+          }
+         ],
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "actors": {
+                "items": {
+                 "description": "Lexicon object app.bsky.actor.defs#profileView.",
+                 "type": "object",
+                 "x-lexicon-ref": "app.bsky.actor.defs#profileView"
+                },
+                "type": "array"
+               },
+               "cursor": {
+                "type": "string"
+               }
+              },
+              "required": [
+               "actors"
+              ],
+              "type": "object"
+             }
+            }
+           },
+           "description": "OK"
+          },
+          "400": {
+           "description": "XRPC error {error, message}"
+          },
+          "401": {
+           "description": "Missing or expired session"
+          }
+         },
+         "security": [
+          {
+           "atprotoSession": []
+          }
+         ],
+         "summary": "Search for actors (profiles)",
+         "x-lexicon": "app.bsky.actor.searchActors"
+        }
+       },
+       "/xrpc/app.bsky.feed.getAuthorFeed": {
+        "get": {
+         "description": "Get a view of an actor's 'author feed' (post and reposts by the author). Does not require auth.",
+         "operationId": "getAuthorFeed",
+         "parameters": [
+          {
+           "in": "query",
+           "name": "actor",
+           "required": true,
+           "schema": {
+            "format": "at-identifier",
+            "type": "string"
+           }
+          },
+          {
+           "in": "query",
+           "name": "limit",
+           "required": false,
+           "schema": {
+            "default": 50,
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+           }
+          },
+          {
+           "in": "query",
+           "name": "cursor",
+           "required": false,
+           "schema": {
+            "type": "string"
+           }
+          },
+          {
+           "description": "Combinations of post/repost types to include in response.",
+           "in": "query",
+           "name": "filter",
+           "required": false,
+           "schema": {
+            "default": "posts_with_replies",
+            "description": "Combinations of post/repost types to include in response.",
+            "type": "string",
+            "x-lexicon-knownValues": [
+             "posts_with_replies",
+             "posts_no_replies",
+             "posts_with_media",
+             "posts_and_author_threads",
+             "posts_with_video"
+            ]
+           }
+          },
+          {
+           "in": "query",
+           "name": "includePins",
+           "required": false,
+           "schema": {
+            "default": false,
+            "type": "boolean"
+           }
+          }
+         ],
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "cursor": {
+                "type": "string"
+               },
+               "feed": {
+                "items": {
+                 "description": "Lexicon object app.bsky.feed.defs#feedViewPost.",
+                 "type": "object",
+                 "x-lexicon-ref": "app.bsky.feed.defs#feedViewPost"
+                },
+                "type": "array"
+               }
+              },
+              "required": [
+               "feed"
+              ],
+              "type": "object"
+             }
+            }
+           },
+           "description": "OK"
+          },
+          "400": {
+           "description": "XRPC error {error, message}"
+          },
+          "401": {
+           "description": "Missing or expired session"
+          }
+         },
+         "security": [
+          {
+           "atprotoSession": []
+          }
+         ],
+         "summary": "Get an actor's author feed",
+         "x-lexicon": "app.bsky.feed.getAuthorFeed"
+        }
+       },
+       "/xrpc/app.bsky.feed.getPostThread": {
+        "get": {
+         "description": "Get posts in a thread. Does not require auth, but additional metadata and filtering will be applied for authed requests.",
+         "operationId": "getPostThread",
+         "parameters": [
+          {
+           "description": "Reference (AT-URI) to post record.",
+           "in": "query",
+           "name": "uri",
+           "required": true,
+           "schema": {
+            "description": "Reference (AT-URI) to post record.",
+            "format": "at-uri",
+            "type": "string"
+           }
+          },
+          {
+           "description": "How many levels of reply depth should be included in response.",
+           "in": "query",
+           "name": "depth",
+           "required": false,
+           "schema": {
+            "default": 6,
+            "description": "How many levels of reply depth should be included in response.",
+            "maximum": 1000,
+            "minimum": 0,
+            "type": "integer"
+           }
+          },
+          {
+           "description": "How many levels of parent (and grandparent, etc) post to include.",
+           "in": "query",
+           "name": "parentHeight",
+           "required": false,
+           "schema": {
+            "default": 80,
+            "description": "How many levels of parent (and grandparent, etc) post to include.",
+            "maximum": 1000,
+            "minimum": 0,
+            "type": "integer"
+           }
+          }
+         ],
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "thread": {
+                "description": "One of: app.bsky.feed.defs#threadViewPost, app.bsky.feed.defs#notFoundPost, app.bsky.feed.defs#blockedPost (identified by $type).",
+                "type": "object",
+                "x-lexicon-union": [
+                 "app.bsky.feed.defs#threadViewPost",
+                 "app.bsky.feed.defs#notFoundPost",
+                 "app.bsky.feed.defs#blockedPost"
+                ]
+               },
+               "threadgate": {
+                "description": "Lexicon object app.bsky.feed.defs#threadgateView.",
+                "type": "object",
+                "x-lexicon-ref": "app.bsky.feed.defs#threadgateView"
+               }
+              },
+              "required": [
+               "thread"
+              ],
+              "type": "object"
+             }
+            }
+           },
+           "description": "OK"
+          },
+          "400": {
+           "description": "XRPC error {error, message}"
+          },
+          "401": {
+           "description": "Missing or expired session"
+          }
+         },
+         "security": [
+          {
+           "atprotoSession": []
+          }
+         ],
+         "summary": "Get a post thread",
+         "x-lexicon": "app.bsky.feed.getPostThread"
+        }
+       },
+       "/xrpc/app.bsky.feed.searchPosts": {
+        "get": {
+         "description": "Find posts matching search criteria, returning views of those posts. Note that this API endpoint may require authentication (eg, not public) for some service providers and implementations.",
+         "operationId": "searchPosts",
+         "parameters": [
+          {
+           "description": "Search query string; syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended.",
+           "in": "query",
+           "name": "q",
+           "required": true,
+           "schema": {
+            "description": "Search query string; syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended.",
+            "type": "string"
+           }
+          },
+          {
+           "description": "Specifies the ranking order of results.",
+           "in": "query",
+           "name": "sort",
+           "required": false,
+           "schema": {
+            "default": "latest",
+            "description": "Specifies the ranking order of results.",
+            "type": "string",
+            "x-lexicon-knownValues": [
+             "top",
+             "latest"
+            ]
+           }
+          },
+          {
+           "description": "Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).",
+           "in": "query",
+           "name": "since",
+           "required": false,
+           "schema": {
+            "description": "Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).",
+            "type": "string"
+           }
+          },
+          {
+           "description": "Filter results for posts before the indicated datetime (not inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYY-MM-DD).",
+           "in": "query",
+           "name": "until",
+           "required": false,
+           "schema": {
+            "description": "Filter results for posts before the indicated datetime (not inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYY-MM-DD).",
+            "type": "string"
+           }
+          },
+          {
+           "description": "Filter to posts which mention the given account. Handles are resolved to DID before query-time. Only matches rich-text facet mentions.",
+           "in": "query",
+           "name": "mentions",
+           "required": false,
+           "schema": {
+            "description": "Filter to posts which mention the given account. Handles are resolved to DID before query-time. Only matches rich-text facet mentions.",
+            "format": "at-identifier",
+            "type": "string"
+           }
+          },
+          {
+           "description": "Filter to posts by the given account. Handles are resolved to DID before query-time.",
+           "in": "query",
+           "name": "author",
+           "required": false,
+           "schema": {
+            "description": "Filter to posts by the given account. Handles are resolved to DID before query-time.",
+            "format": "at-identifier",
+            "type": "string"
+           }
+          },
+          {
+           "description": "Filter to posts in the given language. Expected to be based on post language field, though server may override language detection.",
+           "in": "query",
+           "name": "lang",
+           "required": false,
+           "schema": {
+            "description": "Filter to posts in the given language. Expected to be based on post language field, though server may override language detection.",
+            "format": "language",
+            "type": "string"
+           }
+          },
+          {
+           "description": "Filter to posts with URLs (facet links or embeds) linking to the given domain (hostname). Server may apply hostname normalization.",
+           "in": "query",
+           "name": "domain",
+           "required": false,
+           "schema": {
+            "description": "Filter to posts with URLs (facet links or embeds) linking to the given domain (hostname). Server may apply hostname normalization.",
+            "type": "string"
+           }
+          },
+          {
+           "description": "Filter to posts with links (facet links or embeds) pointing to this URL. Server may apply URL normalization or fuzzy matching.",
+           "in": "query",
+           "name": "url",
+           "required": false,
+           "schema": {
+            "description": "Filter to posts with links (facet links or embeds) pointing to this URL. Server may apply URL normalization or fuzzy matching.",
+            "format": "uri",
+            "type": "string"
+           }
+          },
+          {
+           "description": "Filter to posts with the given tag (hashtag), based on rich-text facet or tag field. Do not include the hash (#) prefix. Multiple tags can be specified, with 'AND' matching.",
+           "in": "query",
+           "name": "tag",
+           "required": false,
+           "schema": {
+            "description": "Filter to posts with the given tag (hashtag), based on rich-text facet or tag field. Do not include the hash (#) prefix. Multiple tags can be specified, with 'AND' matching.",
+            "items": {
+             "maxLength": 640,
+             "type": "string"
+            },
+            "type": "array"
+           }
+          },
+          {
+           "in": "query",
+           "name": "limit",
+           "required": false,
+           "schema": {
+            "default": 25,
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+           }
+          },
+          {
+           "description": "Optional pagination mechanism; may not necessarily allow scrolling through entire result set.",
+           "in": "query",
+           "name": "cursor",
+           "required": false,
+           "schema": {
+            "description": "Optional pagination mechanism; may not necessarily allow scrolling through entire result set.",
+            "type": "string"
+           }
+          }
+         ],
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "cursor": {
+                "type": "string"
+               },
+               "hitsTotal": {
+                "description": "Count of search hits. Optional, may be rounded/truncated, and may not be possible to paginate through all hits.",
+                "type": "integer"
+               },
+               "posts": {
+                "items": {
+                 "description": "Lexicon object app.bsky.feed.defs#postView.",
+                 "type": "object",
+                 "x-lexicon-ref": "app.bsky.feed.defs#postView"
+                },
+                "type": "array"
+               }
+              },
+              "required": [
+               "posts"
+              ],
+              "type": "object"
+             }
+            }
+           },
+           "description": "OK"
+          },
+          "400": {
+           "description": "XRPC error {error, message}"
+          },
+          "401": {
+           "description": "Missing or expired session"
+          }
+         },
+         "security": [
+          {
+           "atprotoSession": []
+          }
+         ],
+         "summary": "Search posts",
+         "x-lexicon": "app.bsky.feed.searchPosts"
+        }
+       },
+       "/xrpc/com.atproto.repo.createRecord": {
+        "post": {
+         "description": "Create a single new repository record. Requires auth, implemented by PDS.",
+         "operationId": "createRecord",
+         "requestBody": {
+          "content": {
+           "application/json": {
+            "schema": {
+             "properties": {
+              "collection": {
+               "description": "The NSID of the record collection.",
+               "format": "nsid",
+               "type": "string"
+              },
+              "record": {
+               "description": "The record itself; must contain $type. For a post use collection app.bsky.feed.post and this shape (lexicon app.bsky.feed.post).",
+               "properties": {
+                "$type": {
+                 "enum": [
+                  "app.bsky.feed.post"
+                 ],
+                 "type": "string"
+                },
+                "createdAt": {
+                 "description": "Client-declared timestamp when this post was originally created.",
+                 "format": "date-time",
+                 "type": "string"
+                },
+                "embed": {
+                 "description": "One of: app.bsky.embed.images, app.bsky.embed.video, app.bsky.embed.gallery, app.bsky.embed.external, app.bsky.embed.record, app.bsky.embed.recordWithMedia (identified by $type).",
+                 "type": "object",
+                 "x-lexicon-union": [
+                  "app.bsky.embed.images",
+                  "app.bsky.embed.video",
+                  "app.bsky.embed.gallery",
+                  "app.bsky.embed.external",
+                  "app.bsky.embed.record",
+                  "app.bsky.embed.recordWithMedia"
+                 ]
+                },
+                "entities": {
+                 "description": "DEPRECATED: replaced by app.bsky.richtext.facet.",
+                 "items": {
+                  "description": "Lexicon object app.bsky.feed.post#entity.",
+                  "type": "object",
+                  "x-lexicon-ref": "app.bsky.feed.post#entity"
+                 },
+                 "type": "array"
+                },
+                "facets": {
+                 "description": "Annotations of text (mentions, URLs, hashtags, etc)",
+                 "items": {
+                  "description": "Lexicon object app.bsky.richtext.facet.",
+                  "type": "object",
+                  "x-lexicon-ref": "app.bsky.richtext.facet"
+                 },
+                 "type": "array"
+                },
+                "labels": {
+                 "description": "Self-label values for this post. Effectively content warnings. One of: com.atproto.label.defs#selfLabels (identified by $type).",
+                 "type": "object",
+                 "x-lexicon-union": [
+                  "com.atproto.label.defs#selfLabels"
+                 ]
+                },
+                "langs": {
+                 "description": "Indicates human language of post primary text content.",
+                 "items": {
+                  "format": "language",
+                  "type": "string"
+                 },
+                 "maxItems": 3,
+                 "type": "array"
+                },
+                "reply": {
+                 "description": "Lexicon object app.bsky.feed.post#replyRef.",
+                 "type": "object",
+                 "x-lexicon-ref": "app.bsky.feed.post#replyRef"
+                },
+                "tags": {
+                 "description": "Additional hashtags, in addition to any included in post text and facets.",
+                 "items": {
+                  "maxLength": 640,
+                  "type": "string"
+                 },
+                 "maxItems": 8,
+                 "type": "array"
+                },
+                "text": {
+                 "description": "The primary post content. May be an empty string, if there are embeds.",
+                 "maxLength": 3000,
+                 "type": "string"
+                }
+               },
+               "required": [
+                "$type",
+                "text",
+                "createdAt"
+               ],
+               "type": "object"
+              },
+              "repo": {
+               "description": "The handle or DID of the repo (aka, current account).",
+               "format": "at-identifier",
+               "type": "string"
+              },
+              "rkey": {
+               "description": "The Record Key.",
+               "format": "record-key",
+               "maxLength": 512,
+               "type": "string"
+              },
+              "swapCommit": {
+               "description": "Compare and swap with the previous commit by CID.",
+               "format": "cid",
+               "type": "string"
+              },
+              "validate": {
+               "description": "Can be set to 'false' to skip Lexicon schema validation of record data, 'true' to require it, or leave unset to validate only for known Lexicons.",
+               "type": "boolean"
+              }
+             },
+             "required": [
+              "repo",
+              "collection",
+              "record"
+             ],
+             "type": "object"
+            }
+           }
+          },
+          "required": true
+         },
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "cid": {
+                "format": "cid",
+                "type": "string"
+               },
+               "commit": {
+                "description": "Lexicon object com.atproto.repo.defs#commitMeta.",
+                "type": "object",
+                "x-lexicon-ref": "com.atproto.repo.defs#commitMeta"
+               },
+               "uri": {
+                "format": "at-uri",
+                "type": "string"
+               },
+               "validationStatus": {
+                "type": "string",
+                "x-lexicon-knownValues": [
+                 "valid",
+                 "unknown"
+                ]
+               }
+              },
+              "required": [
+               "uri",
+               "cid"
+              ],
+              "type": "object"
+             }
+            }
+           },
+           "description": "OK"
+          },
+          "400": {
+           "description": "XRPC error {error, message}"
+          },
+          "401": {
+           "description": "Missing or expired session"
+          }
+         },
+         "security": [
+          {
+           "atprotoSession": []
+          }
+         ],
+         "summary": "Create a record (for example a post)",
+         "x-lexicon": "com.atproto.repo.createRecord"
+        }
+       },
+       "/xrpc/com.atproto.repo.deleteRecord": {
+        "post": {
+         "description": "Delete a repository record, or ensure it doesn't exist. Requires auth, implemented by PDS.",
+         "operationId": "deleteRecord",
+         "requestBody": {
+          "content": {
+           "application/json": {
+            "schema": {
+             "properties": {
+              "collection": {
+               "description": "The NSID of the record collection.",
+               "format": "nsid",
+               "type": "string"
+              },
+              "repo": {
+               "description": "The handle or DID of the repo (aka, current account).",
+               "format": "at-identifier",
+               "type": "string"
+              },
+              "rkey": {
+               "description": "The Record Key.",
+               "format": "record-key",
+               "type": "string"
+              },
+              "swapCommit": {
+               "description": "Compare and swap with the previous commit by CID.",
+               "format": "cid",
+               "type": "string"
+              },
+              "swapRecord": {
+               "description": "Compare and swap with the previous record by CID.",
+               "format": "cid",
+               "type": "string"
+              }
+             },
+             "required": [
+              "repo",
+              "collection",
+              "rkey"
+             ],
+             "type": "object"
+            }
+           }
+          },
+          "required": true
+         },
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "commit": {
+                "description": "Lexicon object com.atproto.repo.defs#commitMeta.",
+                "type": "object",
+                "x-lexicon-ref": "com.atproto.repo.defs#commitMeta"
+               }
+              },
+              "type": "object"
+             }
+            }
+           },
+           "description": "OK"
+          },
+          "400": {
+           "description": "XRPC error {error, message}"
+          },
+          "401": {
+           "description": "Missing or expired session"
+          }
+         },
+         "security": [
+          {
+           "atprotoSession": []
+          }
+         ],
+         "summary": "Delete a record",
+         "x-lexicon": "com.atproto.repo.deleteRecord"
+        }
+       },
+       "/xrpc/com.atproto.repo.uploadBlob": {
+        "post": {
+         "description": "Upload a new blob, to be referenced from a repository record. The blob will be deleted if it is not referenced within a time window (eg, minutes). Blob restrictions (mimetype, size, etc) are enforced when the reference is created. Requires auth, implemented by PDS.",
+         "operationId": "uploadBlob",
+         "requestBody": {
+          "content": {
+           "*/*": {
+            "schema": {
+             "format": "binary",
+             "type": "string"
+            }
+           }
+          },
+          "description": "Raw blob bytes; set Content-Type to the blob's MIME type. Size limits are set by the PDS.",
+          "required": true
+         },
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "blob": {
+                "description": "Blob reference: {$type: blob, ref: {$link: CID}, mimeType, size}.",
+                "type": "object",
+                "x-lexicon-type": "blob"
+               }
+              },
+              "required": [
+               "blob"
+              ],
+              "type": "object"
+             }
+            }
+           },
+           "description": "OK"
+          },
+          "400": {
+           "description": "XRPC error {error, message}"
+          },
+          "401": {
+           "description": "Missing or expired session"
+          }
+         },
+         "security": [
+          {
+           "atprotoSession": []
+          }
+         ],
+         "summary": "Upload a blob (image or video) for a record",
+         "x-lexicon": "com.atproto.repo.uploadBlob"
+        }
+       },
+       "/xrpc/com.atproto.server.getSession": {
+        "get": {
+         "description": "Get information about the current auth session. Requires auth.",
+         "operationId": "getSession",
+         "parameters": [],
+         "responses": {
+          "200": {
+           "content": {
+            "application/json": {
+             "schema": {
+              "properties": {
+               "active": {
+                "type": "boolean"
+               },
+               "did": {
+                "format": "did",
+                "type": "string"
+               },
+               "didDoc": {
+                "additionalProperties": true,
+                "type": "object"
+               },
+               "email": {
+                "type": "string"
+               },
+               "emailAuthFactor": {
+                "type": "boolean"
+               },
+               "emailConfirmed": {
+                "type": "boolean"
+               },
+               "handle": {
+                "format": "handle",
+                "type": "string"
+               },
+               "status": {
+                "description": "If active=false, this optional field indicates a possible reason for why the account is not active. If active=false and no status is supplied, then the host makes no claim for why the repository is no longer being hosted.",
+                "type": "string",
+                "x-lexicon-knownValues": [
+                 "takendown",
+                 "suspended",
+                 "deactivated"
+                ]
+               }
+              },
+              "required": [
+               "handle",
+               "did"
+              ],
+              "type": "object"
+             }
+            }
+           },
+           "description": "OK"
+          },
+          "400": {
+           "description": "XRPC error {error, message}"
+          },
+          "401": {
+           "description": "Missing or expired session"
+          }
+         },
+         "security": [
+          {
+           "atprotoSession": []
+          }
+         ],
+         "summary": "Get the current session's account",
+         "x-lexicon": "com.atproto.server.getSession"
+        }
+       }
+      },
+      "servers": [
+       {
+        "url": "https://bsky.social"
+       }
+      ]
+     }
+    },
+    "type": "app"
+   },
+   "category": "app",
+   "connector": {},
+   "description": "Connect to Bluesky (AT Protocol) with an independent Ragentic integration: read profiles, feeds, threads and search, and post with an app password. Not affiliated with or endorsed by Bluesky.",
+   "status": "published",
+   "title": "Bluesky"
+  }
+ },
+ "not_before": 1793404800,
+ "protocol": "openapi",
+ "provenance": {
+  "commit": "d3080834ac43dbb94e97e82fdd85b1a0f12558ad",
+  "fetched_at": "2026-10-31T18:02:00Z",
+  "license": {
+   "name": "MIT OR Apache-2.0",
+   "sha256": "6187b4a0ac575f87358486c3aafcfbe08148e012ef76a2f6c6ea58f661703285",
+   "url": "https://github.com/bluesky-social/atproto/blob/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/LICENSE.txt"
+  },
+  "normalization": "Ragentic conversion of the pinned lexicons listed in origins to OpenAPI 3.0 (drafts/bluesky/build via drafts/build.py); queries become GET /xrpc/<nsid>, procedures POST; cross-lexicon refs named, not inlined. Not an official definition.",
+  "origins": [
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/packages/api/lexicons/app/bsky/actor/getProfile.json",
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/packages/api/lexicons/app/bsky/actor/searchActors.json",
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/packages/api/lexicons/app/bsky/feed/getAuthorFeed.json",
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/packages/api/lexicons/app/bsky/feed/getPostThread.json",
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/packages/api/lexicons/app/bsky/feed/post.json",
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/packages/api/lexicons/app/bsky/feed/searchPosts.json",
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/lexicons/com/atproto/repo/createRecord.json",
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/lexicons/com/atproto/repo/deleteRecord.json",
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/lexicons/com/atproto/repo/uploadBlob.json",
+   "https://raw.githubusercontent.com/bluesky-social/atproto/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/lexicons/com/atproto/server/getSession.json"
+  ],
+  "repository": "bluesky-social/atproto",
+  "sha256": "4e4d4dd494357e3ea36bd482292a8adff6fa75cac78fc3dfa76bba694b7fd531",
+  "source_id": "bluesky-social/atproto:lexicons",
+  "source_updated": null,
+  "upstream_sha256": "e7e8a500bc4fa34e3f4261702c0f04d51dfe7e2974448d07a7210dd8f8766640",
+  "url": "https://github.com/ragentic-io/manifests-catalog/blob/main/drafts/bluesky/definition.openapi.json"
+ },
+ "readiness": "draft_unsigned_requires_ragentic_atproto_session",
+ "review_required": {
+  "authentication": true,
+  "branding": true,
+  "connection_test": true,
+  "external_references": [
+   "Requires Ragentic's atproto_session credential type (ragentic-io/ragentic PR on branch feat/social-connectors-catalog); older Ragentic servers reject this bundle's setup."
+  ],
+  "rights": true,
+  "setup_guide": true,
+  "source_currency": true
+ },
+ "rights": {
+  "brand": {
+   "attribution": "Independent connector for Bluesky. Not affiliated with or endorsed by Bluesky.",
+   "independent_integration": true,
+   "logo": null
+  },
+  "independent_attribution": "Independent connector for Bluesky. Not affiliated with or endorsed by Bluesky.",
+  "mark_policy": "Provider name in plain text only for identification; no provider logo, favicon, or brand color; independent attribution shown in setup.",
+  "source": {
+   "attribution": "AT Protocol lexicons, Copyright (c) 2022-2026 Bluesky Social PBC, and Contributors",
+   "copyright_notice": "Copyright (c) 2022-2026 Bluesky Social PBC, and Contributors",
+   "definition_url": "https://github.com/bluesky-social/atproto/tree/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/lexicons",
+   "license_sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1",
+   "license_text": "Dual MIT/Apache-2.0 License\n\nCopyright (c) 2022-2026 Bluesky Social PBC, and Contributors\n\nExcept as otherwise noted in individual files, this software is licensed under the MIT license (<http://opensource.org/licenses/MIT>), or the Apache License, Version 2.0 (<http://www.apache.org/licenses/LICENSE-2.0>).\n\nDownstream projects and end users may chose either license individually, or both together, at their discretion. The motivation for this dual-licensing is the additional software patent assurance provided by Apache 2.0.\n\n---\n\nMIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+   "license_url": "https://github.com/bluesky-social/atproto/blob/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/LICENSE-MIT.txt",
+   "spdx": "MIT OR Apache-2.0"
+  },
+  "source_attribution": "AT Protocol lexicons, Copyright (c) 2022-2026 Bluesky Social PBC, and Contributors",
+  "source_license": "MIT OR Apache-2.0",
+  "source_license_sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1",
+  "source_license_text": "Dual MIT/Apache-2.0 License\n\nCopyright (c) 2022-2026 Bluesky Social PBC, and Contributors\n\nExcept as otherwise noted in individual files, this software is licensed under the MIT license (<http://opensource.org/licenses/MIT>), or the Apache License, Version 2.0 (<http://www.apache.org/licenses/LICENSE-2.0>).\n\nDownstream projects and end users may chose either license individually, or both together, at their discretion. The motivation for this dual-licensing is the additional software patent assurance provided by Apache 2.0.\n\n---\n\nMIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+  "source_license_url": "https://github.com/bluesky-social/atproto/blob/d3080834ac43dbb94e97e82fdd85b1a0f12558ad/LICENSE-MIT.txt"
+ },
+ "setup": {
+  "credential": {
+   "service": "https://bsky.social",
+   "type": "atproto_session"
+  },
+  "probe": {
+   "endpoint": "https://bsky.social/xrpc/com.atproto.server.getSession",
+   "identityPath": [
+    "did"
+   ],
+   "method": "GET",
+   "protocol": "openapi"
+  }
+ },
+ "version": "1.0.0-draft"
+}
