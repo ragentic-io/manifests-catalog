@@ -1,0 +1,157 @@
+{
+  "a2ui": {},
+  "app": "wellknown-ai-c559d4e640",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "wellknown-ai-c559d4e640",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/plugins"
+      },
+      {
+        "from": "wellknown-ai-c559d4e640",
+        "kind": "EXPOSES",
+        "to": "operation:get:/plugins"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "wellknown-ai-c559d4e640",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/plugins",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/plugins",
+        "path": "/api/plugins",
+        "pointer": "#/paths/~1api~1plugins/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/plugins",
+        "kind": "operation",
+        "method": "get",
+        "name": "getProvider",
+        "path": "/plugins",
+        "pointer": "#/paths/~1plugins/get",
+        "security": [],
+        "summary": "List all the Wellknown AI Plugins."
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "wellknown-ai-c559d4e640"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {},
+            "info": {
+              "contact": {
+                "email": "cfortuner@gmail.com",
+                "name": "Wellknown",
+                "url": "https://wellknown.ai"
+              },
+              "description": "A registry of AI Plugins.",
+              "title": "Wellknown",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "open_data"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_wellknown.ai_icon.png"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://www.wellknown.ai/api/doc",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "wellknown.ai"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/api/plugins": {
+                "get": {
+                  "description": "Returns a list of Wellknown ai-plugins json objects from the Wellknown ai-plugins registry.",
+                  "responses": {
+                    "200": {
+                      "description": "A list of Wellknown ai-plugins json objects."
+                    }
+                  }
+                }
+              },
+              "/plugins": {
+                "get": {
+                  "description": "List all the Wellknown AI Plugins. Returns ai-plugin.json objects in an array",
+                  "operationId": "getProvider",
+                  "parameters": [],
+                  "responses": {
+                    "200": {
+                      "description": "OK"
+                    }
+                  },
+                  "summary": "List all the Wellknown AI Plugins.",
+                  "tags": [
+                    "Plugins"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://wellknown.ai/api"
+              }
+            ],
+            "tags": []
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Wellknown"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:48.605818Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://www.wellknown.ai/api/doc",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "19694c7355f94f9407cdb38b286f8044693498a1efb085117e1b092eb4466d07",
+    "source_id": "wellknown.ai",
+    "source_updated": "2023-04-05T10:29:36.555Z",
+    "url": "https://api.apis.guru/v2/specs/wellknown.ai/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

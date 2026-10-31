@@ -1,0 +1,756 @@
+{
+  "a2ui": {},
+  "app": "swagger-io-generator-9f67f712c0",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "swagger-io-generator-9f67f712c0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/gen/clients"
+      },
+      {
+        "from": "swagger-io-generator-9f67f712c0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/gen/clients/{language}"
+      },
+      {
+        "from": "swagger-io-generator-9f67f712c0",
+        "kind": "EXPOSES",
+        "to": "operation:post:/gen/clients/{language}"
+      },
+      {
+        "from": "swagger-io-generator-9f67f712c0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/gen/download/{fileId}"
+      },
+      {
+        "from": "swagger-io-generator-9f67f712c0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/gen/servers"
+      },
+      {
+        "from": "swagger-io-generator-9f67f712c0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/gen/servers/{framework}"
+      },
+      {
+        "from": "swagger-io-generator-9f67f712c0",
+        "kind": "EXPOSES",
+        "to": "operation:post:/gen/servers/{framework}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "swagger-io-generator-9f67f712c0",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/gen/clients",
+        "kind": "operation",
+        "method": "get",
+        "name": "clientOptions",
+        "path": "/gen/clients",
+        "pointer": "#/paths/~1gen~1clients/get",
+        "security": [],
+        "summary": "Gets languages supported by the client generator"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/gen/clients/{language}",
+        "kind": "operation",
+        "method": "get",
+        "name": "getClientOptions",
+        "path": "/gen/clients/{language}",
+        "pointer": "#/paths/~1gen~1clients~1{language}/get",
+        "security": [],
+        "summary": "Returns options for a client library"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/gen/clients/{language}",
+        "kind": "operation",
+        "method": "post",
+        "name": "generateClient",
+        "path": "/gen/clients/{language}",
+        "pointer": "#/paths/~1gen~1clients~1{language}/post",
+        "security": [],
+        "summary": "Generates a client library"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/gen/download/{fileId}",
+        "kind": "operation",
+        "method": "get",
+        "name": "downloadFile",
+        "path": "/gen/download/{fileId}",
+        "pointer": "#/paths/~1gen~1download~1{fileId}/get",
+        "security": [],
+        "summary": "Downloads a pre-generated file"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/gen/servers",
+        "kind": "operation",
+        "method": "get",
+        "name": "serverOptions",
+        "path": "/gen/servers",
+        "pointer": "#/paths/~1gen~1servers/get",
+        "security": [],
+        "summary": "Gets languages supported by the server generator"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/gen/servers/{framework}",
+        "kind": "operation",
+        "method": "get",
+        "name": "getServerOptions",
+        "path": "/gen/servers/{framework}",
+        "pointer": "#/paths/~1gen~1servers~1{framework}/get",
+        "security": [],
+        "summary": "Returns options for a server framework"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/gen/servers/{framework}",
+        "kind": "operation",
+        "method": "post",
+        "name": "generateServerForLanguage",
+        "path": "/gen/servers/{framework}",
+        "pointer": "#/paths/~1gen~1servers~1{framework}/post",
+        "security": [],
+        "summary": "Generates a server library"
+      },
+      {
+        "id": "schema:AuthorizationValue",
+        "kind": "schema",
+        "name": "AuthorizationValue"
+      },
+      {
+        "id": "schema:CliOption",
+        "kind": "schema",
+        "name": "CliOption"
+      },
+      {
+        "id": "schema:GeneratorInput",
+        "kind": "schema",
+        "name": "GeneratorInput"
+      },
+      {
+        "id": "schema:ResponseCode",
+        "kind": "schema",
+        "name": "ResponseCode"
+      },
+      {
+        "id": "schema:SecuritySchemeDefinition",
+        "kind": "schema",
+        "name": "SecuritySchemeDefinition"
+      },
+      {
+        "id": "schema:UrlMatcher",
+        "kind": "schema",
+        "name": "UrlMatcher"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "swagger-io-generator-9f67f712c0"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/api",
+            "definitions": {
+              "AuthorizationValue": {
+                "properties": {
+                  "keyName": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "urlMatcher": {
+                    "$ref": "#/definitions/UrlMatcher"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "CliOption": {
+                "properties": {
+                  "default": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "enum": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "optionName": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "description": "Data type is based on the types supported by the JSON-Schema",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "GeneratorInput": {
+                "properties": {
+                  "authorizationValue": {
+                    "$ref": "#/definitions/AuthorizationValue"
+                  },
+                  "options": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "securityDefinition": {
+                    "$ref": "#/definitions/SecuritySchemeDefinition"
+                  },
+                  "spec": {
+                    "type": "object"
+                  },
+                  "swaggerUrl": {
+                    "example": "http://petstore.swagger.io/v2/swagger.json",
+                    "type": "string"
+                  },
+                  "usingFlattenSpec": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              },
+              "ResponseCode": {
+                "properties": {
+                  "code": {
+                    "description": "File download code",
+                    "example": "d40029be-eda6-4d62-b1ef-d05e2e91a72a",
+                    "type": "string"
+                  },
+                  "link": {
+                    "description": "URL for fetching the generated client",
+                    "example": "http://generator.swagger.io:80/api/gen/download/d40029be-eda6-4d62-b1ef-d05e2e91a72a",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "SecuritySchemeDefinition": {
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "UrlMatcher": {
+                "type": "object"
+              }
+            },
+            "host": "generator.swagger.io",
+            "info": {
+              "contact": {
+                "name": "apiteam@swagger.io"
+              },
+              "description": "This is an online swagger codegen server.  You can find out more at https://github.com/swagger-api/swagger-codegen or on [irc.freenode.net, #swagger](http://swagger.io/irc/).",
+              "license": {
+                "name": "Apache 2.0",
+                "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+              },
+              "termsOfService": "http://swagger.io/terms/",
+              "title": "Swagger Generator",
+              "version": "2.4.30",
+              "x-apisguru-categories": [
+                "developer_tools",
+                "tools"
+              ],
+              "x-logo": {
+                "backgroundColor": "#98C600",
+                "url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_SwaggerApi_profile_image.jpeg"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://generator.swagger.io/api/swagger.json",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "swagger.io",
+              "x-serviceName": "generator"
+            },
+            "paths": {
+              "/gen/clients": {
+                "get": {
+                  "description": "",
+                  "operationId": "clientOptions",
+                  "parameters": [],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    }
+                  },
+                  "summary": "Gets languages supported by the client generator",
+                  "tags": [
+                    "clients"
+                  ]
+                }
+              },
+              "/gen/clients/{language}": {
+                "get": {
+                  "description": "",
+                  "operationId": "getClientOptions",
+                  "parameters": [
+                    {
+                      "description": "The target language for the client library",
+                      "enum": [
+                        "ada",
+                        "akka-scala",
+                        "android",
+                        "apex",
+                        "bash",
+                        "clojure",
+                        "cpprest",
+                        "csharp",
+                        "csharp-dotnet2",
+                        "cwiki",
+                        "dart",
+                        "dart-jaguar",
+                        "dynamic-html",
+                        "eiffel",
+                        "elixir",
+                        "elm",
+                        "erlang-client",
+                        "flash",
+                        "go",
+                        "groovy",
+                        "haskell-http-client",
+                        "html",
+                        "html2",
+                        "java",
+                        "javascript",
+                        "javascript-closure-angular",
+                        "jaxrs-cxf-client",
+                        "jmeter",
+                        "kotlin",
+                        "lua",
+                        "objc",
+                        "perl",
+                        "php",
+                        "powershell",
+                        "python",
+                        "qt5cpp",
+                        "r",
+                        "ruby",
+                        "rust",
+                        "scala",
+                        "scalaz",
+                        "swagger",
+                        "swagger-yaml",
+                        "swift",
+                        "swift3",
+                        "swift4",
+                        "swift5",
+                        "tizen",
+                        "typescript-angular",
+                        "typescript-angularjs",
+                        "typescript-aurelia",
+                        "typescript-fetch",
+                        "typescript-inversify",
+                        "typescript-jquery",
+                        "typescript-node",
+                        "ue4cpp"
+                      ],
+                      "in": "path",
+                      "name": "language",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "additionalProperties": {
+                          "$ref": "#/definitions/CliOption"
+                        },
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "summary": "Returns options for a client library",
+                  "tags": [
+                    "clients"
+                  ]
+                },
+                "post": {
+                  "description": "Accepts a `GeneratorInput` options map for spec location and generation options",
+                  "operationId": "generateClient",
+                  "parameters": [
+                    {
+                      "description": "The target language for the client library",
+                      "enum": [
+                        "ada",
+                        "akka-scala",
+                        "android",
+                        "apex",
+                        "bash",
+                        "clojure",
+                        "cpprest",
+                        "csharp",
+                        "csharp-dotnet2",
+                        "cwiki",
+                        "dart",
+                        "dart-jaguar",
+                        "dynamic-html",
+                        "eiffel",
+                        "elixir",
+                        "elm",
+                        "erlang-client",
+                        "flash",
+                        "go",
+                        "groovy",
+                        "haskell-http-client",
+                        "html",
+                        "html2",
+                        "java",
+                        "javascript",
+                        "javascript-closure-angular",
+                        "jaxrs-cxf-client",
+                        "jmeter",
+                        "kotlin",
+                        "lua",
+                        "objc",
+                        "perl",
+                        "php",
+                        "powershell",
+                        "python",
+                        "qt5cpp",
+                        "r",
+                        "ruby",
+                        "rust",
+                        "scala",
+                        "scalaz",
+                        "swagger",
+                        "swagger-yaml",
+                        "swift",
+                        "swift3",
+                        "swift4",
+                        "swift5",
+                        "tizen",
+                        "typescript-angular",
+                        "typescript-angularjs",
+                        "typescript-aurelia",
+                        "typescript-fetch",
+                        "typescript-inversify",
+                        "typescript-jquery",
+                        "typescript-node",
+                        "ue4cpp"
+                      ],
+                      "in": "path",
+                      "name": "language",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "Configuration for building the client library",
+                      "in": "body",
+                      "name": "body",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/definitions/GeneratorInput"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "$ref": "#/definitions/ResponseCode"
+                      }
+                    }
+                  },
+                  "summary": "Generates a client library",
+                  "tags": [
+                    "clients"
+                  ]
+                }
+              },
+              "/gen/download/{fileId}": {
+                "get": {
+                  "description": "A valid `fileId` is generated by the `/clients/{language}` or `/servers/{language}` POST operations.  The fileId code can be used just once, after which a new `fileId` will need to be requested.",
+                  "operationId": "downloadFile",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "fileId",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/octet-stream"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "summary": "Downloads a pre-generated file",
+                  "tags": [
+                    "clients",
+                    "servers"
+                  ]
+                }
+              },
+              "/gen/servers": {
+                "get": {
+                  "description": "",
+                  "operationId": "serverOptions",
+                  "parameters": [],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    }
+                  },
+                  "summary": "Gets languages supported by the server generator",
+                  "tags": [
+                    "servers"
+                  ]
+                }
+              },
+              "/gen/servers/{framework}": {
+                "get": {
+                  "description": "",
+                  "operationId": "getServerOptions",
+                  "parameters": [
+                    {
+                      "description": "The target language for the server framework",
+                      "enum": [
+                        "ada-server",
+                        "aspnetcore",
+                        "erlang-server",
+                        "finch",
+                        "go-server",
+                        "haskell",
+                        "inflector",
+                        "java-pkmst",
+                        "java-play-framework",
+                        "java-vertx",
+                        "jaxrs",
+                        "jaxrs-cxf",
+                        "jaxrs-cxf-cdi",
+                        "jaxrs-resteasy",
+                        "jaxrs-resteasy-eap",
+                        "jaxrs-spec",
+                        "kotlin-server",
+                        "lumen",
+                        "msf4j",
+                        "nancyfx",
+                        "nodejs-server",
+                        "php-silex",
+                        "php-symfony",
+                        "pistache-server",
+                        "python-flask",
+                        "rails5",
+                        "restbed",
+                        "rust-server",
+                        "scala-lagom-server",
+                        "scalatra",
+                        "sinatra",
+                        "slim",
+                        "spring",
+                        "undertow",
+                        "ze-ph"
+                      ],
+                      "in": "path",
+                      "name": "framework",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "additionalProperties": {
+                          "$ref": "#/definitions/CliOption"
+                        },
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "summary": "Returns options for a server framework",
+                  "tags": [
+                    "servers"
+                  ]
+                },
+                "post": {
+                  "description": "Accepts a `GeneratorInput` options map for spec location and generation options.",
+                  "operationId": "generateServerForLanguage",
+                  "parameters": [
+                    {
+                      "description": "framework",
+                      "enum": [
+                        "ada-server",
+                        "aspnetcore",
+                        "erlang-server",
+                        "finch",
+                        "go-server",
+                        "haskell",
+                        "inflector",
+                        "java-pkmst",
+                        "java-play-framework",
+                        "java-vertx",
+                        "jaxrs",
+                        "jaxrs-cxf",
+                        "jaxrs-cxf-cdi",
+                        "jaxrs-resteasy",
+                        "jaxrs-resteasy-eap",
+                        "jaxrs-spec",
+                        "kotlin-server",
+                        "lumen",
+                        "msf4j",
+                        "nancyfx",
+                        "nodejs-server",
+                        "php-silex",
+                        "php-symfony",
+                        "pistache-server",
+                        "python-flask",
+                        "rails5",
+                        "restbed",
+                        "rust-server",
+                        "scala-lagom-server",
+                        "scalatra",
+                        "sinatra",
+                        "slim",
+                        "spring",
+                        "undertow",
+                        "ze-ph"
+                      ],
+                      "in": "path",
+                      "name": "framework",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "parameters",
+                      "in": "body",
+                      "name": "body",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/definitions/GeneratorInput"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "$ref": "#/definitions/ResponseCode"
+                      }
+                    }
+                  },
+                  "summary": "Generates a server library",
+                  "tags": [
+                    "servers"
+                  ]
+                }
+              }
+            },
+            "schemes": [
+              "https"
+            ],
+            "swagger": "2.0",
+            "tags": [
+              {
+                "name": "gen"
+              },
+              {
+                "name": "clients"
+              },
+              {
+                "name": "servers"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Swagger Generator"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:46.655057Z",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://generator.swagger.io/api/swagger.json",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "4a289a06fef4a03bc0cf85458434baeac300bf8cb7c44adf74fac746d4053db1",
+    "source_id": "swagger.io:generator",
+    "source_updated": "2023-03-06T07:12:59.965Z",
+    "url": "https://api.apis.guru/v2/specs/swagger.io/generator/2.4.30/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "2.4.30"
+}

@@ -1,0 +1,5237 @@
+{
+  "a2ui": {},
+  "app": "verse-graphql",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "amount",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "artwork",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "assetType",
+        "to": "schema:AssetType"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "currencyAmount",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "currencySymbol",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "edition",
+        "to": "schema:Edition"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "entryType",
+        "to": "schema:ActivityEntryType"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "fromBlockchainAddress",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "fromEthereumAddress",
+        "to": "schema:EthereumAddress"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "fromUserId",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "offerId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "timestamp",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "toBlockchainAddress",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "toEthereumAddress",
+        "to": "schema:EthereumAddress"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "toUserId",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:ActivityEntry",
+        "kind": "FIELD",
+        "name": "transactionHash",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ActivityEntryConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:ActivityEntry"
+      },
+      {
+        "from": "schema:ActivityEntryConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:ActivityPageFilter",
+        "kind": "FIELD",
+        "name": "activityType",
+        "to": "schema:ActivityEntryType"
+      },
+      {
+        "from": "schema:ActivityPageFilter",
+        "kind": "FIELD",
+        "name": "addresses",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ActivityPageFilter",
+        "kind": "FIELD",
+        "name": "artworkId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ActivityPageFilter",
+        "kind": "FIELD",
+        "name": "artworkIds",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ActivityPageFilter",
+        "kind": "FIELD",
+        "name": "assetIds",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ActivityPageFilter",
+        "kind": "FIELD",
+        "name": "assetType",
+        "to": "schema:AssetType"
+      },
+      {
+        "from": "schema:ActivityPageFilter",
+        "kind": "FIELD",
+        "name": "executedOnVerse",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ActivityPageFilter",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:TagsFilter"
+      },
+      {
+        "from": "schema:ActivityPageFilter",
+        "kind": "FIELD",
+        "name": "userId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Amount",
+        "kind": "FIELD",
+        "name": "currency",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Amount",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:ArtblocksProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "allowUserCuration",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ArtblocksProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "artblocksProjectId",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ArtblocksProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "aspectRatio",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:ArtblocksProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "iframeUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ArtblocksProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "showStaticPreview",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "artist",
+        "to": "schema:Person"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "artworkKind",
+        "to": "schema:ArtworkKind"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "banner",
+        "to": "schema:StaticAsset"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "bestOffer",
+        "to": "schema:MarketplaceOrder"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "blockchain",
+        "to": "schema:ProductChain"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "collection",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "contractAddress",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "cover",
+        "to": "schema:StaticAsset"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:Markdown"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "displayStyle",
+        "to": "schema:DisplayStyle"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "expectedSaleDate",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "features",
+        "to": "schema:Feature"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "floorListing",
+        "to": "schema:MarketplaceOrder"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ArtworkID"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "isHidden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "license",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "osSlug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "primaryMarketListing",
+        "to": "schema:PrimaryMarketListing"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "requiresShippingDetails",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "saleDetails",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "saleType",
+        "to": "schema:ArtworkSaleType"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "secondaryMarketDisabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "secondaryMarketSaleWithPhysical",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "updatedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Artwork",
+        "kind": "FIELD",
+        "name": "year",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ArtworkConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:ArtworkConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:ArtworkConnection",
+        "kind": "FIELD",
+        "name": "totalCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ArtworkVolume",
+        "kind": "FIELD",
+        "name": "artwork",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:ArtworkVolume",
+        "kind": "FIELD",
+        "name": "openseaSales",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ArtworkVolume",
+        "kind": "FIELD",
+        "name": "openseaVolume",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ArtworkVolume",
+        "kind": "FIELD",
+        "name": "primarySales",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ArtworkVolume",
+        "kind": "FIELD",
+        "name": "primaryVolume",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ArtworkVolume",
+        "kind": "FIELD",
+        "name": "secondarySales",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ArtworkVolume",
+        "kind": "FIELD",
+        "name": "secondaryVolume",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ArtworkVolume",
+        "kind": "FIELD",
+        "name": "totalSales",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ArtworkVolume",
+        "kind": "FIELD",
+        "name": "totalVolume",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ArtworksPageFilter",
+        "kind": "FIELD",
+        "name": "collectionIds",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ArtworksPageFilter",
+        "kind": "FIELD",
+        "name": "containsTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ArtworksPageFilter",
+        "kind": "FIELD",
+        "name": "ids",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ArtworksPageFilter",
+        "kind": "FIELD",
+        "name": "notContainsTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ArtworksPageFilter",
+        "kind": "FIELD",
+        "name": "search",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ArtworksPageFilter",
+        "kind": "FIELD",
+        "name": "showHidden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ArtworksPageRequest",
+        "kind": "FIELD",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:ArtworksPageRequest",
+        "kind": "FIELD",
+        "name": "filter",
+        "to": "schema:ArtworksPageFilter"
+      },
+      {
+        "from": "schema:ArtworksPageRequest",
+        "kind": "FIELD",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Asset",
+        "kind": "FIELD",
+        "name": "artwork",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:Asset",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:AssetPrimitive"
+      },
+      {
+        "from": "schema:Asset",
+        "kind": "FIELD",
+        "name": "assetType",
+        "to": "schema:AssetType"
+      },
+      {
+        "from": "schema:Asset",
+        "kind": "FIELD",
+        "name": "creator",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:Asset",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Asset",
+        "kind": "FIELD",
+        "name": "lastTransferredAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Asset",
+        "kind": "FIELD",
+        "name": "smListing",
+        "to": "schema:SecondaryMarketListing"
+      },
+      {
+        "from": "schema:Asset",
+        "kind": "FIELD",
+        "name": "stats",
+        "to": "schema:EditionStats"
+      },
+      {
+        "from": "schema:AssetAdvancedFeatureFilter",
+        "kind": "FIELD",
+        "name": "bool",
+        "to": "schema:AssetFilterFeatureBool"
+      },
+      {
+        "from": "schema:AssetAdvancedFeatureFilter",
+        "kind": "FIELD",
+        "name": "exists",
+        "to": "schema:AssetFilterFeatureExists"
+      },
+      {
+        "from": "schema:AssetAdvancedFeatureFilter",
+        "kind": "FIELD",
+        "name": "filter",
+        "to": "schema:AssetFilterFeature"
+      },
+      {
+        "from": "schema:AssetConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:AssetConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:AssetConnection",
+        "kind": "FIELD",
+        "name": "totalCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "advancedFeatures",
+        "to": "schema:AssetAdvancedFeatureFilter"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "artistIds",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "artworkIds",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "assetType",
+        "to": "schema:AssetType"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "availability",
+        "to": "schema:AssetFilterAvailabilityOption"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "excludeCollectionTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "features",
+        "to": "schema:AssetFilterFeature"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "hashes",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "ids",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "includeCollectionTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "owners",
+        "to": "schema:AssetFilterOwner"
+      },
+      {
+        "from": "schema:AssetFilter",
+        "kind": "FIELD",
+        "name": "search",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssetFilterFeature",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssetFilterFeature",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssetFilterFeatureBool",
+        "kind": "FIELD",
+        "name": "must",
+        "to": "schema:AssetAdvancedFeatureFilter"
+      },
+      {
+        "from": "schema:AssetFilterFeatureBool",
+        "kind": "FIELD",
+        "name": "mustNot",
+        "to": "schema:AssetAdvancedFeatureFilter"
+      },
+      {
+        "from": "schema:AssetFilterFeatureBool",
+        "kind": "FIELD",
+        "name": "should",
+        "to": "schema:AssetAdvancedFeatureFilter"
+      },
+      {
+        "from": "schema:AssetFilterFeatureExists",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssetFilterOwner",
+        "kind": "FIELD",
+        "name": "blockchainAddress",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssetFilterOwner",
+        "kind": "FIELD",
+        "name": "userId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssetInput",
+        "kind": "FIELD",
+        "name": "assetId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:AssetInput",
+        "kind": "FIELD",
+        "name": "assetType",
+        "to": "schema:AssetType"
+      },
+      {
+        "from": "schema:AssetSorting",
+        "kind": "FIELD",
+        "name": "direction",
+        "to": "schema:SortDirection"
+      },
+      {
+        "from": "schema:AssetSorting",
+        "kind": "FIELD",
+        "name": "sort",
+        "to": "schema:AssetSortOption"
+      },
+      {
+        "from": "schema:AudioAsset",
+        "kind": "FIELD",
+        "name": "baseUrlTemplate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AudioAsset",
+        "kind": "FIELD",
+        "name": "duration",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:AudioAsset",
+        "kind": "FIELD",
+        "name": "fileSize",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:AudioAsset",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:StaticAssetID"
+      },
+      {
+        "from": "schema:AudioAsset",
+        "kind": "FIELD",
+        "name": "mimeType",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BitcoinProductAddress",
+        "kind": "FIELD",
+        "name": "address",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BlockchainAddress",
+        "kind": "FIELD",
+        "name": "address",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BlockchainAddressEditionOwner",
+        "kind": "FIELD",
+        "name": "blockchainAddress",
+        "to": "schema:EthereumAddress"
+      },
+      {
+        "from": "schema:Bookmark",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:Bookmark",
+        "kind": "FIELD",
+        "name": "hash",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "banner",
+        "to": "schema:StaticAsset"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "bestOffer",
+        "to": "schema:MarketplaceOrder"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "blockchain",
+        "to": "schema:ProductChain"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "contract",
+        "to": "schema:ContractInfo"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:Markdown"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "floorListing",
+        "to": "schema:MarketplaceOrder"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "isHidden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "license",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "previewAsset",
+        "to": "schema:StaticAsset"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "saleDetails",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "saleType",
+        "to": "schema:ArtworkSaleType"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "updatedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Collection",
+        "kind": "FIELD",
+        "name": "year",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CollectionConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "schema:CollectionConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:CollectionConnection",
+        "kind": "FIELD",
+        "name": "totalCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CollectionVolume",
+        "kind": "FIELD",
+        "name": "collection",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "schema:CollectionVolume",
+        "kind": "FIELD",
+        "name": "openseaSales",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CollectionVolume",
+        "kind": "FIELD",
+        "name": "openseaVolume",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CollectionVolume",
+        "kind": "FIELD",
+        "name": "primarySales",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CollectionVolume",
+        "kind": "FIELD",
+        "name": "primaryVolume",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CollectionVolume",
+        "kind": "FIELD",
+        "name": "secondarySales",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CollectionVolume",
+        "kind": "FIELD",
+        "name": "secondaryVolume",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CollectionVolume",
+        "kind": "FIELD",
+        "name": "totalSales",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CollectionVolume",
+        "kind": "FIELD",
+        "name": "totalVolume",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CollectionsPageFilter",
+        "kind": "FIELD",
+        "name": "containsTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CollectionsPageFilter",
+        "kind": "FIELD",
+        "name": "ids",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:CollectionsPageFilter",
+        "kind": "FIELD",
+        "name": "notContainsTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CollectionsPageFilter",
+        "kind": "FIELD",
+        "name": "search",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CollectionsPageFilter",
+        "kind": "FIELD",
+        "name": "showHidden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:CollectionsPageFilter",
+        "kind": "FIELD",
+        "name": "slugs",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CollectionsPageRequest",
+        "kind": "FIELD",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:CollectionsPageRequest",
+        "kind": "FIELD",
+        "name": "filter",
+        "to": "schema:CollectionsPageFilter"
+      },
+      {
+        "from": "schema:CollectionsPageRequest",
+        "kind": "FIELD",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ContractInfo",
+        "kind": "FIELD",
+        "name": "chain",
+        "to": "schema:ProductChain"
+      },
+      {
+        "from": "schema:ContractInfo",
+        "kind": "FIELD",
+        "name": "contractAddress",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ContractInfo",
+        "kind": "FIELD",
+        "name": "contractType",
+        "to": "schema:ContractType"
+      },
+      {
+        "from": "schema:DecreasingSupplySettings",
+        "kind": "FIELD",
+        "name": "decreaseBy",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:DecreasingSupplySettings",
+        "kind": "FIELD",
+        "name": "decreaseRateSeconds",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:DecreasingSupplySettings",
+        "kind": "FIELD",
+        "name": "nextDecreaseAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:DutchAuctionSettings",
+        "kind": "FIELD",
+        "name": "currentBracket",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:DutchAuctionSettings",
+        "kind": "FIELD",
+        "name": "decreaseRateSeconds",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:DutchAuctionSettings",
+        "kind": "FIELD",
+        "name": "nextBracketAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:DutchAuctionSettings",
+        "kind": "FIELD",
+        "name": "rebate",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "artwork",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "artworkId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "bestOffer",
+        "to": "schema:MarketplaceOrder"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "contractInfo",
+        "to": "schema:ContractInfo"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "createdAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "editionNumber",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "features",
+        "to": "schema:FeatureValue"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "floorListing",
+        "to": "schema:MarketplaceOrder"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "hash",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "isBalanceBacked",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "mintingOptionType",
+        "to": "schema:MintingOptionType"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "osListing",
+        "to": "schema:OpenseaListing"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "owner",
+        "to": "schema:EditionOwner"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "primaryMarketListingId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "smListing",
+        "to": "schema:SecondaryMarketListing"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "staticAsset",
+        "to": "schema:StaticAsset"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "stats",
+        "to": "schema:EditionStats"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "status",
+        "to": "schema:EditionStatus"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Edition",
+        "kind": "FIELD",
+        "name": "tokenId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:EditionStats",
+        "kind": "FIELD",
+        "name": "lastSalePrice",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:EditionStats",
+        "kind": "FIELD",
+        "name": "lastSaleTime",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:EthereumAddress",
+        "kind": "FIELD",
+        "name": "address",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:EthereumAddress",
+        "kind": "FIELD",
+        "name": "ensName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "about",
+        "to": "schema:Markdown"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "contentBanner",
+        "to": "schema:StaticAsset"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "cover",
+        "to": "schema:ImageAsset"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "endDate",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ExhibitionID"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "isHidden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "keyDetails",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "startDate",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "subtitle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Exhibition",
+        "kind": "FIELD",
+        "name": "updatedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:ExhibitionConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:Exhibition"
+      },
+      {
+        "from": "schema:ExhibitionConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:ExhibitionConnection",
+        "kind": "FIELD",
+        "name": "totalCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ExhibitionsPageFilter",
+        "kind": "FIELD",
+        "name": "containsTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ExhibitionsPageFilter",
+        "kind": "FIELD",
+        "name": "ids",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ExhibitionsPageFilter",
+        "kind": "FIELD",
+        "name": "notContainsTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ExhibitionsPageFilter",
+        "kind": "FIELD",
+        "name": "personIds",
+        "to": "schema:PersonID"
+      },
+      {
+        "from": "schema:ExhibitionsPageFilter",
+        "kind": "FIELD",
+        "name": "search",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ExhibitionsPageFilter",
+        "kind": "FIELD",
+        "name": "slugs",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ExhibitionsPageRequest",
+        "kind": "FIELD",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:ExhibitionsPageRequest",
+        "kind": "FIELD",
+        "name": "filter",
+        "to": "schema:ExhibitionsPageFilter"
+      },
+      {
+        "from": "schema:ExhibitionsPageRequest",
+        "kind": "FIELD",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ExploreFilter",
+        "kind": "FIELD",
+        "name": "artistIds",
+        "to": "schema:PersonID"
+      },
+      {
+        "from": "schema:ExploreFilter",
+        "kind": "FIELD",
+        "name": "assetType",
+        "to": "schema:ExploreFilterAssetType"
+      },
+      {
+        "from": "schema:ExploreFilter",
+        "kind": "FIELD",
+        "name": "containsTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ExploreFilter",
+        "kind": "FIELD",
+        "name": "exploreTab",
+        "to": "schema:ExploreTabFilter"
+      },
+      {
+        "from": "schema:ExploreFilter",
+        "kind": "FIELD",
+        "name": "market",
+        "to": "schema:ExploreFilterMarket"
+      },
+      {
+        "from": "schema:ExploreFilter",
+        "kind": "FIELD",
+        "name": "notContainsTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ExploreFilter",
+        "kind": "FIELD",
+        "name": "personIds",
+        "to": "schema:PersonID"
+      },
+      {
+        "from": "schema:ExploreSorting",
+        "kind": "FIELD",
+        "name": "direction",
+        "to": "schema:SortDirection"
+      },
+      {
+        "from": "schema:ExploreSorting",
+        "kind": "FIELD",
+        "name": "sort",
+        "to": "schema:ExploreSortOption"
+      },
+      {
+        "from": "schema:ExtensionSettings",
+        "kind": "FIELD",
+        "name": "extendUpToMsec",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ExtensionSettings",
+        "kind": "FIELD",
+        "name": "extensionCutoff",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:FeatureInterface",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FeatureInterface",
+        "kind": "FIELD",
+        "name": "totalEntries",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:FeatureValueInterface",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FeatureValueInterface",
+        "kind": "FIELD",
+        "name": "valueJson",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FeeEstimation",
+        "kind": "FIELD",
+        "name": "marketplaceAmount",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:FeeEstimation",
+        "kind": "FIELD",
+        "name": "marketplaceFee",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:FeeEstimation",
+        "kind": "FIELD",
+        "name": "royaltyAmount",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:FeeEstimation",
+        "kind": "FIELD",
+        "name": "royaltyFee",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:FeeEstimation",
+        "kind": "FIELD",
+        "name": "youWillReceive",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:GalleriesPageFilter",
+        "kind": "FIELD",
+        "name": "ids",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:GalleriesPageFilter",
+        "kind": "FIELD",
+        "name": "search",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:GalleriesPageFilter",
+        "kind": "FIELD",
+        "name": "slugs",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:GalleriesPageRequest",
+        "kind": "FIELD",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:GalleriesPageRequest",
+        "kind": "FIELD",
+        "name": "filter",
+        "to": "schema:GalleriesPageFilter"
+      },
+      {
+        "from": "schema:GalleriesPageRequest",
+        "kind": "FIELD",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Gallery",
+        "kind": "FIELD",
+        "name": "bio",
+        "to": "schema:Markdown"
+      },
+      {
+        "from": "schema:Gallery",
+        "kind": "FIELD",
+        "name": "cover",
+        "to": "schema:ImageAsset"
+      },
+      {
+        "from": "schema:Gallery",
+        "kind": "FIELD",
+        "name": "establishedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Gallery",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:GalleryID"
+      },
+      {
+        "from": "schema:Gallery",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Gallery",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Gallery",
+        "kind": "FIELD",
+        "name": "updatedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:GalleryConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:Gallery"
+      },
+      {
+        "from": "schema:GalleryConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:GalleryConnection",
+        "kind": "FIELD",
+        "name": "totalCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:GenerativeProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "allowUserCuration",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:GenerativeProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "aspectRatio",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:GenerativeProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "iframeUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:GenerativeProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "showStaticPreview",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:IFrameAsset",
+        "kind": "FIELD",
+        "name": "aspectRatio",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:IFrameAsset",
+        "kind": "FIELD",
+        "name": "baseUrlTemplate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:IFrameAsset",
+        "kind": "FIELD",
+        "name": "caption",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:IFrameAsset",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:StaticAssetID"
+      },
+      {
+        "from": "schema:IFrameAsset",
+        "kind": "FIELD",
+        "name": "iframeUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:IFrameAsset",
+        "kind": "FIELD",
+        "name": "previewImageUrlTemplate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:IStaticAsset",
+        "kind": "FIELD",
+        "name": "baseUrlTemplate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:IStaticAsset",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:StaticAssetID"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "aspectRatio",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "author",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "baseUrlTemplate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "caption",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "fileSize",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "height",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:StaticAssetID"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "isGif",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "mimeType",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ImageAsset",
+        "kind": "FIELD",
+        "name": "width",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:InputAmount",
+        "kind": "FIELD",
+        "name": "currency",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:InputAmount",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:Link",
+        "kind": "FIELD",
+        "name": "categories",
+        "to": "schema:LinkCategory"
+      },
+      {
+        "from": "schema:Link",
+        "kind": "FIELD",
+        "name": "date",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:Link",
+        "kind": "FIELD",
+        "name": "excerpt",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Link",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:LinkID"
+      },
+      {
+        "from": "schema:Link",
+        "kind": "FIELD",
+        "name": "imageAsset",
+        "to": "schema:ImageAsset"
+      },
+      {
+        "from": "schema:Link",
+        "kind": "FIELD",
+        "name": "imageUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Link",
+        "kind": "FIELD",
+        "name": "title",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Link",
+        "kind": "FIELD",
+        "name": "url",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:LinkConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:Link"
+      },
+      {
+        "from": "schema:LinkConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:LinkConnection",
+        "kind": "FIELD",
+        "name": "totalCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:LinkedWallet",
+        "kind": "FIELD",
+        "name": "address",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:LinkedWallet",
+        "kind": "FIELD",
+        "name": "network",
+        "to": "schema:LinkedWalletNetwork"
+      },
+      {
+        "from": "schema:LinkedWallet",
+        "kind": "FIELD",
+        "name": "userId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:LinksPageFilter",
+        "kind": "FIELD",
+        "name": "ids",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:LinksPageFilter",
+        "kind": "FIELD",
+        "name": "search",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:LinksPageRequest",
+        "kind": "FIELD",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:LinksPageRequest",
+        "kind": "FIELD",
+        "name": "filter",
+        "to": "schema:LinksPageFilter"
+      },
+      {
+        "from": "schema:LinksPageRequest",
+        "kind": "FIELD",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "artwork",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "chain",
+        "to": "schema:Chain"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "collection",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "createdAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "criteria",
+        "to": "schema:MarketplaceOrderCriteria"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "expiresAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "externalOfferSender",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "filledQuantity",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "maker",
+        "to": "schema:UserOrBlockchainAddress"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "orderSide",
+        "to": "schema:MarketplaceOrderSide"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "price",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "source",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "sourceOrderId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "updatedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:MarketplaceOrder",
+        "kind": "FIELD",
+        "name": "usdPrice",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:MarketplaceOrderConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:MarketplaceOrder"
+      },
+      {
+        "from": "schema:MarketplaceOrderConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:MarketplaceOrderCriteria",
+        "kind": "FIELD",
+        "name": "displayOnly",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:MarketplaceOrderCriteria",
+        "kind": "FIELD",
+        "name": "kind",
+        "to": "schema:MarketplaceOrderCriteriaKind"
+      },
+      {
+        "from": "schema:MarketplaceOrderCriteria",
+        "kind": "FIELD",
+        "name": "numericTraits",
+        "to": "schema:MarketplaceOrderNumericTrait"
+      },
+      {
+        "from": "schema:MarketplaceOrderCriteria",
+        "kind": "FIELD",
+        "name": "traitMode",
+        "to": "schema:MarketplaceOrderTraitCriteriaMode"
+      },
+      {
+        "from": "schema:MarketplaceOrderCriteria",
+        "kind": "FIELD",
+        "name": "traits",
+        "to": "schema:MarketplaceOrderTrait"
+      },
+      {
+        "from": "schema:MarketplaceOrderFilter",
+        "kind": "FIELD",
+        "name": "artworkId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrderFilter",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:AssetInput"
+      },
+      {
+        "from": "schema:MarketplaceOrderFilter",
+        "kind": "FIELD",
+        "name": "collectionId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrderFilter",
+        "kind": "FIELD",
+        "name": "openseaSlug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrderFilter",
+        "kind": "FIELD",
+        "name": "side",
+        "to": "schema:MarketplaceOrderSide"
+      },
+      {
+        "from": "schema:MarketplaceOrderFilter",
+        "kind": "FIELD",
+        "name": "token",
+        "to": "schema:MarketplaceOrderTokenFilter"
+      },
+      {
+        "from": "schema:MarketplaceOrderNumericTrait",
+        "kind": "FIELD",
+        "name": "maxValue",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:MarketplaceOrderNumericTrait",
+        "kind": "FIELD",
+        "name": "minValue",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:MarketplaceOrderNumericTrait",
+        "kind": "FIELD",
+        "name": "type",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrderTokenFilter",
+        "kind": "FIELD",
+        "name": "contractAddress",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrderTokenFilter",
+        "kind": "FIELD",
+        "name": "tokenId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrderTrait",
+        "kind": "FIELD",
+        "name": "type",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrderTrait",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:MarketplaceOrdersRequest",
+        "kind": "FIELD",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:MarketplaceOrdersRequest",
+        "kind": "FIELD",
+        "name": "filter",
+        "to": "schema:MarketplaceOrderFilter"
+      },
+      {
+        "from": "schema:MarketplaceOrdersRequest",
+        "kind": "FIELD",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:MarketplaceStats",
+        "kind": "FIELD",
+        "name": "period",
+        "to": "schema:MarketplaceStatsPeriod"
+      },
+      {
+        "from": "schema:MarketplaceStats",
+        "kind": "FIELD",
+        "name": "topArtworksByVolume",
+        "to": "schema:ArtworkVolume"
+      },
+      {
+        "from": "schema:MarketplaceStats",
+        "kind": "FIELD",
+        "name": "topCollectionsByVolume",
+        "to": "schema:CollectionVolume"
+      },
+      {
+        "from": "schema:MarketplaceStats",
+        "kind": "FIELD",
+        "name": "topSales",
+        "to": "schema:StatsSale"
+      },
+      {
+        "from": "schema:MintPassConfiguration",
+        "kind": "FIELD",
+        "name": "requiredArtworks",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:OpenseaListing",
+        "kind": "FIELD",
+        "name": "artwork",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:OpenseaListing",
+        "kind": "FIELD",
+        "name": "chain",
+        "to": "schema:Chain"
+      },
+      {
+        "from": "schema:OpenseaListing",
+        "kind": "FIELD",
+        "name": "edition",
+        "to": "schema:Edition"
+      },
+      {
+        "from": "schema:OpenseaListing",
+        "kind": "FIELD",
+        "name": "endsAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:OpenseaListing",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:OpenseaListing",
+        "kind": "FIELD",
+        "name": "listingType",
+        "to": "schema:OpenseaListingType"
+      },
+      {
+        "from": "schema:OpenseaListing",
+        "kind": "FIELD",
+        "name": "price",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:OpenseaListing",
+        "kind": "FIELD",
+        "name": "startsAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PMAuctionBracket",
+        "kind": "FIELD",
+        "name": "from",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:PMAuctionBracket",
+        "kind": "FIELD",
+        "name": "step",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:PMAuctionStats",
+        "kind": "FIELD",
+        "name": "bidsCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PMAuctionStats",
+        "kind": "FIELD",
+        "name": "highestBid",
+        "to": "schema:PrimaryMarketBid"
+      },
+      {
+        "from": "schema:PMAuctionStrategy",
+        "kind": "FIELD",
+        "name": "auctionBrackets",
+        "to": "schema:PMAuctionBracket"
+      },
+      {
+        "from": "schema:PMAuctionStrategy",
+        "kind": "FIELD",
+        "name": "currentStep",
+        "to": "schema:Decimal"
+      },
+      {
+        "from": "schema:PMAuctionStrategy",
+        "kind": "FIELD",
+        "name": "entryBid",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:PMAuctionStrategy",
+        "kind": "FIELD",
+        "name": "extensionSettings",
+        "to": "schema:ExtensionSettings"
+      },
+      {
+        "from": "schema:PMAuctionStrategy",
+        "kind": "FIELD",
+        "name": "lowestWinningBid",
+        "to": "schema:PrimaryMarketBid"
+      },
+      {
+        "from": "schema:PMAuctionStrategy",
+        "kind": "FIELD",
+        "name": "minimumBid",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:PMAuctionStrategy",
+        "kind": "FIELD",
+        "name": "pmListingId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PMAuctionStrategy",
+        "kind": "FIELD",
+        "name": "rankedAuctionSettings",
+        "to": "schema:RankedAuctionSettings"
+      },
+      {
+        "from": "schema:PMAuctionStrategy",
+        "kind": "FIELD",
+        "name": "stats",
+        "to": "schema:PMAuctionStats"
+      },
+      {
+        "from": "schema:PMBuyNowLimitedEditionStrategy",
+        "kind": "FIELD",
+        "name": "decreasingSupply",
+        "to": "schema:DecreasingSupplySettings"
+      },
+      {
+        "from": "schema:PMBuyNowLimitedEditionStrategy",
+        "kind": "FIELD",
+        "name": "dutchAuction",
+        "to": "schema:DutchAuctionSettings"
+      },
+      {
+        "from": "schema:PMBuyNowLimitedEditionStrategy",
+        "kind": "FIELD",
+        "name": "maxEditions",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PMBuyNowLimitedEditionStrategy",
+        "kind": "FIELD",
+        "name": "pmListingId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PMBuyNowLimitedEditionStrategy",
+        "kind": "FIELD",
+        "name": "price",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:PMBuyNowLimitedEditionStrategy",
+        "kind": "FIELD",
+        "name": "stats",
+        "to": "schema:PMBuyNowStats"
+      },
+      {
+        "from": "schema:PMBuyNowOpenEditionStrategy",
+        "kind": "FIELD",
+        "name": "dutchAuction",
+        "to": "schema:DutchAuctionSettings"
+      },
+      {
+        "from": "schema:PMBuyNowOpenEditionStrategy",
+        "kind": "FIELD",
+        "name": "pmListingId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PMBuyNowOpenEditionStrategy",
+        "kind": "FIELD",
+        "name": "price",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:PMBuyNowOpenEditionStrategy",
+        "kind": "FIELD",
+        "name": "stats",
+        "to": "schema:PMBuyNowStats"
+      },
+      {
+        "from": "schema:PMBuyNowStats",
+        "kind": "FIELD",
+        "name": "issuedEditions",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PageInfo",
+        "kind": "FIELD",
+        "name": "endCursor",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:PageInfo",
+        "kind": "FIELD",
+        "name": "hasNextPage",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PageInfo",
+        "kind": "FIELD",
+        "name": "hasPreviousPage",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PageInfo",
+        "kind": "FIELD",
+        "name": "startCursor",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "banner",
+        "to": "schema:ImageAsset"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "bio",
+        "to": "schema:Markdown"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "bioLine",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "birthYear",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "categoriesTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "cover",
+        "to": "schema:ImageAsset"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "deathYear",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:PersonID"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "isArtist",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "isCurator",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "isGallery",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "location",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "profileLinks",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "twitterHandle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Person",
+        "kind": "FIELD",
+        "name": "updatedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PersonConnection",
+        "kind": "FIELD",
+        "name": "nodes",
+        "to": "schema:Person"
+      },
+      {
+        "from": "schema:PersonConnection",
+        "kind": "FIELD",
+        "name": "pageInfo",
+        "to": "schema:PageInfo"
+      },
+      {
+        "from": "schema:PersonConnection",
+        "kind": "FIELD",
+        "name": "totalCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PersonSorting",
+        "kind": "FIELD",
+        "name": "direction",
+        "to": "schema:SortDirection"
+      },
+      {
+        "from": "schema:PersonSorting",
+        "kind": "FIELD",
+        "name": "sort",
+        "to": "schema:PersonSort"
+      },
+      {
+        "from": "schema:PersonsPageFilter",
+        "kind": "FIELD",
+        "name": "categoriesTags",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PersonsPageFilter",
+        "kind": "FIELD",
+        "name": "ids",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PersonsPageFilter",
+        "kind": "FIELD",
+        "name": "personTypes",
+        "to": "schema:PersonType"
+      },
+      {
+        "from": "schema:PersonsPageFilter",
+        "kind": "FIELD",
+        "name": "search",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PersonsPageFilter",
+        "kind": "FIELD",
+        "name": "slugs",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PersonsPageRequest",
+        "kind": "FIELD",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "schema:PersonsPageRequest",
+        "kind": "FIELD",
+        "name": "filter",
+        "to": "schema:PersonsPageFilter"
+      },
+      {
+        "from": "schema:PersonsPageRequest",
+        "kind": "FIELD",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PersonsPageRequest",
+        "kind": "FIELD",
+        "name": "sorting",
+        "to": "schema:PersonSorting"
+      },
+      {
+        "from": "schema:PossibleStringFeatureValue",
+        "kind": "FIELD",
+        "name": "numberOfEntries",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PossibleStringFeatureValue",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PreviewUserInput",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PreviewUserInput",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PrimaryMarketBid",
+        "kind": "FIELD",
+        "name": "amount",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:PrimaryMarketBid",
+        "kind": "FIELD",
+        "name": "bidder",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:PrimaryMarketBid",
+        "kind": "FIELD",
+        "name": "createdAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PrimaryMarketBid",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "artwork",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "createdAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "editionTarget",
+        "to": "schema:Edition"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "endReason",
+        "to": "schema:PMListingEndReason"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "endedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "endsAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "startedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "startsAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PrimaryMarketListing",
+        "kind": "FIELD",
+        "name": "strategy",
+        "to": "schema:PrimaryMarketStrategy"
+      },
+      {
+        "from": "schema:PrimaryMarketSale",
+        "kind": "FIELD",
+        "name": "amount",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:PrimaryMarketSale",
+        "kind": "FIELD",
+        "name": "buyerId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PrimaryMarketSale",
+        "kind": "FIELD",
+        "name": "createdAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PrimaryMarketSale",
+        "kind": "FIELD",
+        "name": "edition",
+        "to": "schema:Edition"
+      },
+      {
+        "from": "schema:PrimaryMarketSale",
+        "kind": "FIELD",
+        "name": "editionId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PrimaryMarketSale",
+        "kind": "FIELD",
+        "name": "finishedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:PrimaryMarketSale",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:PrimaryMarketSale",
+        "kind": "FIELD",
+        "name": "pmListing",
+        "to": "schema:PrimaryMarketListing"
+      },
+      {
+        "from": "schema:PrimaryMarketSale",
+        "kind": "FIELD",
+        "name": "status",
+        "to": "schema:PrimaryMarketSaleStatus"
+      },
+      {
+        "from": "schema:ProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "allowUserSelection",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "artworkId",
+        "to": "schema:ArtworkID"
+      },
+      {
+        "from": "schema:ProjectArtworkKind",
+        "kind": "FIELD",
+        "name": "withRepetitions",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:QuasiDragonsCompositeArtworkKind",
+        "kind": "FIELD",
+        "name": "artworkId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:QuasiDragonsCompositeArtworkKind",
+        "kind": "FIELD",
+        "name": "baseTileArtworkId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:QuasiDragonsCompositeArtworkKind",
+        "kind": "FIELD",
+        "name": "compositeBuilderIframeUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:QuasiDragonsCompositeArtworkKind",
+        "kind": "FIELD",
+        "name": "generatorIframeUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "activityPage",
+        "to": "schema:ActivityEntryConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "artworksPage",
+        "to": "schema:ArtworkConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "assetsPage",
+        "to": "schema:AssetConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "collectionsPage",
+        "to": "schema:CollectionConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "editionByContract",
+        "to": "schema:Edition"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "editionByNumber",
+        "to": "schema:Edition"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "estimateSecondaryMarketFees",
+        "to": "schema:FeeEstimation"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "exhibitionsPage",
+        "to": "schema:ExhibitionConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "explore",
+        "to": "schema:CollectionConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "galleriesPage",
+        "to": "schema:GalleryConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "linksPage",
+        "to": "schema:LinkConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "mintPassConfiguration",
+        "to": "schema:MintPassConfiguration"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "orders",
+        "to": "schema:MarketplaceOrderConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "personsPage",
+        "to": "schema:PersonConnection"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "primaryMarketListing",
+        "to": "schema:PrimaryMarketListing"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "primaryMarketSale",
+        "to": "schema:PrimaryMarketSale"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "projectStaticAssetByHash",
+        "to": "schema:StaticAsset"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "reverseResolveENS",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "search",
+        "to": "schema:SearchResult"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "searchUsers",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "secondaryMarketSale",
+        "to": "schema:SecondaryMarketSale"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "stats",
+        "to": "schema:MarketplaceStats"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "userById",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "userByLinkedWallet",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "userByUsername",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "usersByLinkedWallet",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:RankedAuctionSettings",
+        "kind": "FIELD",
+        "name": "topNWinners",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:SMBuyNowStrategy",
+        "kind": "FIELD",
+        "name": "price",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:SVGAsset",
+        "kind": "FIELD",
+        "name": "author",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SVGAsset",
+        "kind": "FIELD",
+        "name": "baseUrlTemplate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SVGAsset",
+        "kind": "FIELD",
+        "name": "caption",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SVGAsset",
+        "kind": "FIELD",
+        "name": "fileSize",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:SVGAsset",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:StaticAssetID"
+      },
+      {
+        "from": "schema:SVGAsset",
+        "kind": "FIELD",
+        "name": "mimeType",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SVGAsset",
+        "kind": "FIELD",
+        "name": "previewAspectRatio",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:SVGAsset",
+        "kind": "FIELD",
+        "name": "previewImageUrlTemplate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchResult",
+        "kind": "FIELD",
+        "name": "artists",
+        "to": "schema:Person"
+      },
+      {
+        "from": "schema:SearchResult",
+        "kind": "FIELD",
+        "name": "collections",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "schema:SearchResult",
+        "kind": "FIELD",
+        "name": "exhibitions",
+        "to": "schema:Exhibition"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "additionalStrategies",
+        "to": "schema:AdditionalSecondaryMarketStrategy"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "artwork",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "createdAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "edition",
+        "to": "schema:Edition"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "endedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "isActive",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "listedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:SecondaryMarketListing",
+        "kind": "FIELD",
+        "name": "owner",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:SecondaryMarketSale",
+        "kind": "FIELD",
+        "name": "amount",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:SecondaryMarketSale",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:SecondaryMarketSale",
+        "kind": "FIELD",
+        "name": "buyerId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SecondaryMarketSale",
+        "kind": "FIELD",
+        "name": "createdAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:SecondaryMarketSale",
+        "kind": "FIELD",
+        "name": "editionId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SecondaryMarketSale",
+        "kind": "FIELD",
+        "name": "finishedAt",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:SecondaryMarketSale",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SecondaryMarketSale",
+        "kind": "FIELD",
+        "name": "smListing",
+        "to": "schema:SecondaryMarketListing"
+      },
+      {
+        "from": "schema:SecondaryMarketSale",
+        "kind": "FIELD",
+        "name": "status",
+        "to": "schema:SecondaryMarketSaleStatus"
+      },
+      {
+        "from": "schema:SolanaAddress",
+        "kind": "FIELD",
+        "name": "address",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:StatsFilter",
+        "kind": "FIELD",
+        "name": "tags",
+        "to": "schema:TagsFilter"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "amount",
+        "to": "schema:Amount"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "artwork",
+        "to": "schema:Artwork"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "asset",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "buyer",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "buyerBlockchainAddress",
+        "to": "schema:BlockchainAddress"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "collection",
+        "to": "schema:Collection"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "market",
+        "to": "schema:Market"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "timestamp",
+        "to": "schema:Time"
+      },
+      {
+        "from": "schema:StatsSale",
+        "kind": "FIELD",
+        "name": "txHash",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:StringFeature",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:StringFeature",
+        "kind": "FIELD",
+        "name": "possibleValues",
+        "to": "schema:PossibleStringFeatureValue"
+      },
+      {
+        "from": "schema:StringFeature",
+        "kind": "FIELD",
+        "name": "totalEntries",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:StringFeatureValue",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:StringFeatureValue",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:StringFeatureValue",
+        "kind": "FIELD",
+        "name": "valueJson",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:TagsFilter",
+        "kind": "FIELD",
+        "name": "exclude",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:TagsFilter",
+        "kind": "FIELD",
+        "name": "include",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:TezosAddress",
+        "kind": "FIELD",
+        "name": "address",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UserEditionOwner",
+        "kind": "FIELD",
+        "name": "owner",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "schema:UserPublic",
+        "kind": "FIELD",
+        "name": "bio",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UserPublic",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:UserPublic",
+        "kind": "FIELD",
+        "name": "linkedWallets",
+        "to": "schema:LinkedWallet"
+      },
+      {
+        "from": "schema:UserPublic",
+        "kind": "FIELD",
+        "name": "profileBanner",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UserPublic",
+        "kind": "FIELD",
+        "name": "profilePic",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UserPublic",
+        "kind": "FIELD",
+        "name": "twitterHandle",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:UserPublic",
+        "kind": "FIELD",
+        "name": "username",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "author",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "baseUrlTemplate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "caption",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "fileSize",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "height",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:StaticAssetID"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "mimeType",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "previewAspectRatio",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "previewImageUrlTemplate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:VideoAsset",
+        "kind": "FIELD",
+        "name": "width",
+        "to": "schema:Int"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:activityPage"
+      },
+      {
+        "from": "operation:query:activityPage",
+        "kind": "RETURNS",
+        "to": "schema:ActivityEntryConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:artworksPage"
+      },
+      {
+        "from": "operation:query:artworksPage",
+        "kind": "RETURNS",
+        "to": "schema:ArtworkConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:asset"
+      },
+      {
+        "from": "operation:query:asset",
+        "kind": "RETURNS",
+        "to": "schema:Asset"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:assetsPage"
+      },
+      {
+        "from": "operation:query:assetsPage",
+        "kind": "RETURNS",
+        "to": "schema:AssetConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:collectionsPage"
+      },
+      {
+        "from": "operation:query:collectionsPage",
+        "kind": "RETURNS",
+        "to": "schema:CollectionConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:editionByContract"
+      },
+      {
+        "from": "operation:query:editionByContract",
+        "kind": "RETURNS",
+        "to": "schema:Edition"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:editionByNumber"
+      },
+      {
+        "from": "operation:query:editionByNumber",
+        "kind": "RETURNS",
+        "to": "schema:Edition"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:estimateSecondaryMarketFees"
+      },
+      {
+        "from": "operation:query:estimateSecondaryMarketFees",
+        "kind": "RETURNS",
+        "to": "schema:FeeEstimation"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:exhibitionsPage"
+      },
+      {
+        "from": "operation:query:exhibitionsPage",
+        "kind": "RETURNS",
+        "to": "schema:ExhibitionConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:explore"
+      },
+      {
+        "from": "operation:query:explore",
+        "kind": "RETURNS",
+        "to": "schema:CollectionConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:galleriesPage"
+      },
+      {
+        "from": "operation:query:galleriesPage",
+        "kind": "RETURNS",
+        "to": "schema:GalleryConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:linksPage"
+      },
+      {
+        "from": "operation:query:linksPage",
+        "kind": "RETURNS",
+        "to": "schema:LinkConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:mintPassConfiguration"
+      },
+      {
+        "from": "operation:query:mintPassConfiguration",
+        "kind": "RETURNS",
+        "to": "schema:MintPassConfiguration"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:orders"
+      },
+      {
+        "from": "operation:query:orders",
+        "kind": "RETURNS",
+        "to": "schema:MarketplaceOrderConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:personsPage"
+      },
+      {
+        "from": "operation:query:personsPage",
+        "kind": "RETURNS",
+        "to": "schema:PersonConnection"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:primaryMarketListing"
+      },
+      {
+        "from": "operation:query:primaryMarketListing",
+        "kind": "RETURNS",
+        "to": "schema:PrimaryMarketListing"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:primaryMarketSale"
+      },
+      {
+        "from": "operation:query:primaryMarketSale",
+        "kind": "RETURNS",
+        "to": "schema:PrimaryMarketSale"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:projectStaticAssetByHash"
+      },
+      {
+        "from": "operation:query:projectStaticAssetByHash",
+        "kind": "RETURNS",
+        "to": "schema:StaticAsset"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:reverseResolveENS"
+      },
+      {
+        "from": "operation:query:reverseResolveENS",
+        "kind": "RETURNS",
+        "to": "schema:String"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:search"
+      },
+      {
+        "from": "operation:query:search",
+        "kind": "RETURNS",
+        "to": "schema:SearchResult"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:searchUsers"
+      },
+      {
+        "from": "operation:query:searchUsers",
+        "kind": "RETURNS",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:secondaryMarketSale"
+      },
+      {
+        "from": "operation:query:secondaryMarketSale",
+        "kind": "RETURNS",
+        "to": "schema:SecondaryMarketSale"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:stats"
+      },
+      {
+        "from": "operation:query:stats",
+        "kind": "RETURNS",
+        "to": "schema:MarketplaceStats"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:userById"
+      },
+      {
+        "from": "operation:query:userById",
+        "kind": "RETURNS",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:userByLinkedWallet"
+      },
+      {
+        "from": "operation:query:userByLinkedWallet",
+        "kind": "RETURNS",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:userByUsername"
+      },
+      {
+        "from": "operation:query:userByUsername",
+        "kind": "RETURNS",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "verse-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:usersByLinkedWallet"
+      },
+      {
+        "from": "operation:query:usersByLinkedWallet",
+        "kind": "RETURNS",
+        "to": "schema:UserPublic"
+      },
+      {
+        "from": "operation:query:activityPage",
+        "kind": "ACCEPTS",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "operation:query:activityPage",
+        "kind": "ACCEPTS",
+        "name": "filter",
+        "to": "schema:ActivityPageFilter"
+      },
+      {
+        "from": "operation:query:activityPage",
+        "kind": "ACCEPTS",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:artworksPage",
+        "kind": "ACCEPTS",
+        "name": "request",
+        "to": "schema:ArtworksPageRequest"
+      },
+      {
+        "from": "operation:query:asset",
+        "kind": "ACCEPTS",
+        "name": "assetType",
+        "to": "schema:AssetType"
+      },
+      {
+        "from": "operation:query:asset",
+        "kind": "ACCEPTS",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:assetsPage",
+        "kind": "ACCEPTS",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "operation:query:assetsPage",
+        "kind": "ACCEPTS",
+        "name": "filter",
+        "to": "schema:AssetFilter"
+      },
+      {
+        "from": "operation:query:assetsPage",
+        "kind": "ACCEPTS",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:assetsPage",
+        "kind": "ACCEPTS",
+        "name": "sorting",
+        "to": "schema:AssetSorting"
+      },
+      {
+        "from": "operation:query:collectionsPage",
+        "kind": "ACCEPTS",
+        "name": "request",
+        "to": "schema:CollectionsPageRequest"
+      },
+      {
+        "from": "operation:query:editionByContract",
+        "kind": "ACCEPTS",
+        "name": "chain",
+        "to": "schema:ProductChain"
+      },
+      {
+        "from": "operation:query:editionByContract",
+        "kind": "ACCEPTS",
+        "name": "contractAddress",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:editionByContract",
+        "kind": "ACCEPTS",
+        "name": "tokenId",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:editionByNumber",
+        "kind": "ACCEPTS",
+        "name": "artworkId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:editionByNumber",
+        "kind": "ACCEPTS",
+        "name": "editionNumber",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:estimateSecondaryMarketFees",
+        "kind": "ACCEPTS",
+        "name": "artworkId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:estimateSecondaryMarketFees",
+        "kind": "ACCEPTS",
+        "name": "assetType",
+        "to": "schema:AssetType"
+      },
+      {
+        "from": "operation:query:estimateSecondaryMarketFees",
+        "kind": "ACCEPTS",
+        "name": "price",
+        "to": "schema:InputAmount"
+      },
+      {
+        "from": "operation:query:exhibitionsPage",
+        "kind": "ACCEPTS",
+        "name": "request",
+        "to": "schema:ExhibitionsPageRequest"
+      },
+      {
+        "from": "operation:query:explore",
+        "kind": "ACCEPTS",
+        "name": "after",
+        "to": "schema:Cursor"
+      },
+      {
+        "from": "operation:query:explore",
+        "kind": "ACCEPTS",
+        "name": "filter",
+        "to": "schema:ExploreFilter"
+      },
+      {
+        "from": "operation:query:explore",
+        "kind": "ACCEPTS",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:explore",
+        "kind": "ACCEPTS",
+        "name": "sorting",
+        "to": "schema:ExploreSorting"
+      },
+      {
+        "from": "operation:query:galleriesPage",
+        "kind": "ACCEPTS",
+        "name": "request",
+        "to": "schema:GalleriesPageRequest"
+      },
+      {
+        "from": "operation:query:linksPage",
+        "kind": "ACCEPTS",
+        "name": "request",
+        "to": "schema:LinksPageRequest"
+      },
+      {
+        "from": "operation:query:mintPassConfiguration",
+        "kind": "ACCEPTS",
+        "name": "pmListingId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:orders",
+        "kind": "ACCEPTS",
+        "name": "request",
+        "to": "schema:MarketplaceOrdersRequest"
+      },
+      {
+        "from": "operation:query:personsPage",
+        "kind": "ACCEPTS",
+        "name": "request",
+        "to": "schema:PersonsPageRequest"
+      },
+      {
+        "from": "operation:query:primaryMarketListing",
+        "kind": "ACCEPTS",
+        "name": "artworkId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:primaryMarketSale",
+        "kind": "ACCEPTS",
+        "name": "pmSaleId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:projectStaticAssetByHash",
+        "kind": "ACCEPTS",
+        "name": "artworkId",
+        "to": "schema:ArtworkID"
+      },
+      {
+        "from": "operation:query:projectStaticAssetByHash",
+        "kind": "ACCEPTS",
+        "name": "editionNumber",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:projectStaticAssetByHash",
+        "kind": "ACCEPTS",
+        "name": "hash",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:projectStaticAssetByHash",
+        "kind": "ACCEPTS",
+        "name": "totalEditions",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:projectStaticAssetByHash",
+        "kind": "ACCEPTS",
+        "name": "userInput",
+        "to": "schema:PreviewUserInput"
+      },
+      {
+        "from": "operation:query:reverseResolveENS",
+        "kind": "ACCEPTS",
+        "name": "addresses",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:search",
+        "kind": "ACCEPTS",
+        "name": "query",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchUsers",
+        "kind": "ACCEPTS",
+        "name": "first",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:searchUsers",
+        "kind": "ACCEPTS",
+        "name": "query",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:secondaryMarketSale",
+        "kind": "ACCEPTS",
+        "name": "smSaleId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:stats",
+        "kind": "ACCEPTS",
+        "name": "period",
+        "to": "schema:MarketplaceStatsPeriod"
+      },
+      {
+        "from": "operation:query:userById",
+        "kind": "ACCEPTS",
+        "name": "id",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:userByLinkedWallet",
+        "kind": "ACCEPTS",
+        "name": "address",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:userByLinkedWallet",
+        "kind": "ACCEPTS",
+        "name": "network",
+        "to": "schema:LinkedWalletNetwork"
+      },
+      {
+        "from": "operation:query:userByUsername",
+        "kind": "ACCEPTS",
+        "name": "username",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:usersByLinkedWallet",
+        "kind": "ACCEPTS",
+        "name": "addresses",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:usersByLinkedWallet",
+        "kind": "ACCEPTS",
+        "name": "network",
+        "to": "schema:LinkedWalletNetwork"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "verse-graphql",
+        "kind": "application"
+      },
+      {
+        "id": "schema:ActivityEntry",
+        "kind": "schema",
+        "name": "ActivityEntry"
+      },
+      {
+        "id": "schema:ActivityEntryConnection",
+        "kind": "schema",
+        "name": "ActivityEntryConnection"
+      },
+      {
+        "id": "schema:ActivityEntryType",
+        "kind": "schema",
+        "name": "ActivityEntryType"
+      },
+      {
+        "id": "schema:ActivityPageFilter",
+        "kind": "schema",
+        "name": "ActivityPageFilter"
+      },
+      {
+        "id": "schema:AdditionalSecondaryMarketStrategy",
+        "kind": "schema",
+        "name": "AdditionalSecondaryMarketStrategy"
+      },
+      {
+        "id": "schema:Amount",
+        "kind": "schema",
+        "name": "Amount"
+      },
+      {
+        "id": "schema:ArtblocksProjectArtworkKind",
+        "kind": "schema",
+        "name": "ArtblocksProjectArtworkKind"
+      },
+      {
+        "id": "schema:Artwork",
+        "kind": "schema",
+        "name": "Artwork"
+      },
+      {
+        "id": "schema:ArtworkConnection",
+        "kind": "schema",
+        "name": "ArtworkConnection"
+      },
+      {
+        "id": "schema:ArtworkID",
+        "kind": "schema",
+        "name": "ArtworkID"
+      },
+      {
+        "id": "schema:ArtworkKind",
+        "kind": "schema",
+        "name": "ArtworkKind"
+      },
+      {
+        "id": "schema:ArtworkSaleType",
+        "kind": "schema",
+        "name": "ArtworkSaleType"
+      },
+      {
+        "id": "schema:ArtworkVolume",
+        "kind": "schema",
+        "name": "ArtworkVolume"
+      },
+      {
+        "id": "schema:ArtworksPageFilter",
+        "kind": "schema",
+        "name": "ArtworksPageFilter"
+      },
+      {
+        "id": "schema:ArtworksPageRequest",
+        "kind": "schema",
+        "name": "ArtworksPageRequest"
+      },
+      {
+        "id": "schema:Asset",
+        "kind": "schema",
+        "name": "Asset"
+      },
+      {
+        "id": "schema:AssetAdvancedFeatureFilter",
+        "kind": "schema",
+        "name": "AssetAdvancedFeatureFilter"
+      },
+      {
+        "id": "schema:AssetConnection",
+        "kind": "schema",
+        "name": "AssetConnection"
+      },
+      {
+        "id": "schema:AssetFilter",
+        "kind": "schema",
+        "name": "AssetFilter"
+      },
+      {
+        "id": "schema:AssetFilterAvailabilityOption",
+        "kind": "schema",
+        "name": "AssetFilterAvailabilityOption"
+      },
+      {
+        "id": "schema:AssetFilterFeature",
+        "kind": "schema",
+        "name": "AssetFilterFeature"
+      },
+      {
+        "id": "schema:AssetFilterFeatureBool",
+        "kind": "schema",
+        "name": "AssetFilterFeatureBool"
+      },
+      {
+        "id": "schema:AssetFilterFeatureExists",
+        "kind": "schema",
+        "name": "AssetFilterFeatureExists"
+      },
+      {
+        "id": "schema:AssetFilterOwner",
+        "kind": "schema",
+        "name": "AssetFilterOwner"
+      },
+      {
+        "id": "schema:AssetInput",
+        "kind": "schema",
+        "name": "AssetInput"
+      },
+      {
+        "id": "schema:AssetPrimitive",
+        "kind": "schema",
+        "name": "AssetPrimitive"
+      },
+      {
+        "id": "schema:AssetSortOption",
+        "kind": "schema",
+        "name": "AssetSortOption"
+      },
+      {
+        "id": "schema:AssetSorting",
+        "kind": "schema",
+        "name": "AssetSorting"
+      },
+      {
+        "id": "schema:AssetType",
+        "kind": "schema",
+        "name": "AssetType"
+      },
+      {
+        "id": "schema:AudioAsset",
+        "kind": "schema",
+        "name": "AudioAsset"
+      },
+      {
+        "id": "schema:BitcoinProductAddress",
+        "kind": "schema",
+        "name": "BitcoinProductAddress"
+      },
+      {
+        "id": "schema:BlockchainAddress",
+        "kind": "schema",
+        "name": "BlockchainAddress"
+      },
+      {
+        "id": "schema:BlockchainAddressEditionOwner",
+        "kind": "schema",
+        "name": "BlockchainAddressEditionOwner"
+      },
+      {
+        "id": "schema:Bookmark",
+        "kind": "schema",
+        "name": "Bookmark"
+      },
+      {
+        "id": "schema:Boolean",
+        "kind": "schema",
+        "name": "Boolean"
+      },
+      {
+        "id": "schema:Chain",
+        "kind": "schema",
+        "name": "Chain"
+      },
+      {
+        "id": "schema:Collection",
+        "kind": "schema",
+        "name": "Collection"
+      },
+      {
+        "id": "schema:CollectionConnection",
+        "kind": "schema",
+        "name": "CollectionConnection"
+      },
+      {
+        "id": "schema:CollectionVolume",
+        "kind": "schema",
+        "name": "CollectionVolume"
+      },
+      {
+        "id": "schema:CollectionsPageFilter",
+        "kind": "schema",
+        "name": "CollectionsPageFilter"
+      },
+      {
+        "id": "schema:CollectionsPageRequest",
+        "kind": "schema",
+        "name": "CollectionsPageRequest"
+      },
+      {
+        "id": "schema:ContractInfo",
+        "kind": "schema",
+        "name": "ContractInfo"
+      },
+      {
+        "id": "schema:ContractType",
+        "kind": "schema",
+        "name": "ContractType"
+      },
+      {
+        "id": "schema:Cursor",
+        "kind": "schema",
+        "name": "Cursor"
+      },
+      {
+        "id": "schema:Decimal",
+        "kind": "schema",
+        "name": "Decimal"
+      },
+      {
+        "id": "schema:DecreasingSupplySettings",
+        "kind": "schema",
+        "name": "DecreasingSupplySettings"
+      },
+      {
+        "id": "schema:DisplayStyle",
+        "kind": "schema",
+        "name": "DisplayStyle"
+      },
+      {
+        "id": "schema:DutchAuctionSettings",
+        "kind": "schema",
+        "name": "DutchAuctionSettings"
+      },
+      {
+        "id": "schema:Edition",
+        "kind": "schema",
+        "name": "Edition"
+      },
+      {
+        "id": "schema:EditionOwner",
+        "kind": "schema",
+        "name": "EditionOwner"
+      },
+      {
+        "id": "schema:EditionStats",
+        "kind": "schema",
+        "name": "EditionStats"
+      },
+      {
+        "id": "schema:EditionStatus",
+        "kind": "schema",
+        "name": "EditionStatus"
+      },
+      {
+        "id": "schema:EthereumAddress",
+        "kind": "schema",
+        "name": "EthereumAddress"
+      },
+      {
+        "id": "schema:Exhibition",
+        "kind": "schema",
+        "name": "Exhibition"
+      },
+      {
+        "id": "schema:ExhibitionConnection",
+        "kind": "schema",
+        "name": "ExhibitionConnection"
+      },
+      {
+        "id": "schema:ExhibitionID",
+        "kind": "schema",
+        "name": "ExhibitionID"
+      },
+      {
+        "id": "schema:ExhibitionsPageFilter",
+        "kind": "schema",
+        "name": "ExhibitionsPageFilter"
+      },
+      {
+        "id": "schema:ExhibitionsPageRequest",
+        "kind": "schema",
+        "name": "ExhibitionsPageRequest"
+      },
+      {
+        "id": "schema:ExploreFilter",
+        "kind": "schema",
+        "name": "ExploreFilter"
+      },
+      {
+        "id": "schema:ExploreFilterAssetType",
+        "kind": "schema",
+        "name": "ExploreFilterAssetType"
+      },
+      {
+        "id": "schema:ExploreFilterMarket",
+        "kind": "schema",
+        "name": "ExploreFilterMarket"
+      },
+      {
+        "id": "schema:ExploreSortOption",
+        "kind": "schema",
+        "name": "ExploreSortOption"
+      },
+      {
+        "id": "schema:ExploreSorting",
+        "kind": "schema",
+        "name": "ExploreSorting"
+      },
+      {
+        "id": "schema:ExploreTabFilter",
+        "kind": "schema",
+        "name": "ExploreTabFilter"
+      },
+      {
+        "id": "schema:ExtensionSettings",
+        "kind": "schema",
+        "name": "ExtensionSettings"
+      },
+      {
+        "id": "schema:Feature",
+        "kind": "schema",
+        "name": "Feature"
+      },
+      {
+        "id": "schema:FeatureInterface",
+        "kind": "schema",
+        "name": "FeatureInterface"
+      },
+      {
+        "id": "schema:FeatureValue",
+        "kind": "schema",
+        "name": "FeatureValue"
+      },
+      {
+        "id": "schema:FeatureValueInterface",
+        "kind": "schema",
+        "name": "FeatureValueInterface"
+      },
+      {
+        "id": "schema:FeeEstimation",
+        "kind": "schema",
+        "name": "FeeEstimation"
+      },
+      {
+        "id": "schema:Float",
+        "kind": "schema",
+        "name": "Float"
+      },
+      {
+        "id": "schema:GalleriesPageFilter",
+        "kind": "schema",
+        "name": "GalleriesPageFilter"
+      },
+      {
+        "id": "schema:GalleriesPageRequest",
+        "kind": "schema",
+        "name": "GalleriesPageRequest"
+      },
+      {
+        "id": "schema:Gallery",
+        "kind": "schema",
+        "name": "Gallery"
+      },
+      {
+        "id": "schema:GalleryConnection",
+        "kind": "schema",
+        "name": "GalleryConnection"
+      },
+      {
+        "id": "schema:GalleryID",
+        "kind": "schema",
+        "name": "GalleryID"
+      },
+      {
+        "id": "schema:GenerativeProjectArtworkKind",
+        "kind": "schema",
+        "name": "GenerativeProjectArtworkKind"
+      },
+      {
+        "id": "schema:ID",
+        "kind": "schema",
+        "name": "ID"
+      },
+      {
+        "id": "schema:IFrameAsset",
+        "kind": "schema",
+        "name": "IFrameAsset"
+      },
+      {
+        "id": "schema:IStaticAsset",
+        "kind": "schema",
+        "name": "IStaticAsset"
+      },
+      {
+        "id": "schema:ImageAsset",
+        "kind": "schema",
+        "name": "ImageAsset"
+      },
+      {
+        "id": "schema:InputAmount",
+        "kind": "schema",
+        "name": "InputAmount"
+      },
+      {
+        "id": "schema:Int",
+        "kind": "schema",
+        "name": "Int"
+      },
+      {
+        "id": "schema:Link",
+        "kind": "schema",
+        "name": "Link"
+      },
+      {
+        "id": "schema:LinkCategory",
+        "kind": "schema",
+        "name": "LinkCategory"
+      },
+      {
+        "id": "schema:LinkConnection",
+        "kind": "schema",
+        "name": "LinkConnection"
+      },
+      {
+        "id": "schema:LinkID",
+        "kind": "schema",
+        "name": "LinkID"
+      },
+      {
+        "id": "schema:LinkedWallet",
+        "kind": "schema",
+        "name": "LinkedWallet"
+      },
+      {
+        "id": "schema:LinkedWalletNetwork",
+        "kind": "schema",
+        "name": "LinkedWalletNetwork"
+      },
+      {
+        "id": "schema:LinksPageFilter",
+        "kind": "schema",
+        "name": "LinksPageFilter"
+      },
+      {
+        "id": "schema:LinksPageRequest",
+        "kind": "schema",
+        "name": "LinksPageRequest"
+      },
+      {
+        "id": "schema:Markdown",
+        "kind": "schema",
+        "name": "Markdown"
+      },
+      {
+        "id": "schema:Market",
+        "kind": "schema",
+        "name": "Market"
+      },
+      {
+        "id": "schema:MarketplaceOrder",
+        "kind": "schema",
+        "name": "MarketplaceOrder"
+      },
+      {
+        "id": "schema:MarketplaceOrderConnection",
+        "kind": "schema",
+        "name": "MarketplaceOrderConnection"
+      },
+      {
+        "id": "schema:MarketplaceOrderCriteria",
+        "kind": "schema",
+        "name": "MarketplaceOrderCriteria"
+      },
+      {
+        "id": "schema:MarketplaceOrderCriteriaKind",
+        "kind": "schema",
+        "name": "MarketplaceOrderCriteriaKind"
+      },
+      {
+        "id": "schema:MarketplaceOrderFilter",
+        "kind": "schema",
+        "name": "MarketplaceOrderFilter"
+      },
+      {
+        "id": "schema:MarketplaceOrderNumericTrait",
+        "kind": "schema",
+        "name": "MarketplaceOrderNumericTrait"
+      },
+      {
+        "id": "schema:MarketplaceOrderSide",
+        "kind": "schema",
+        "name": "MarketplaceOrderSide"
+      },
+      {
+        "id": "schema:MarketplaceOrderTokenFilter",
+        "kind": "schema",
+        "name": "MarketplaceOrderTokenFilter"
+      },
+      {
+        "id": "schema:MarketplaceOrderTrait",
+        "kind": "schema",
+        "name": "MarketplaceOrderTrait"
+      },
+      {
+        "id": "schema:MarketplaceOrderTraitCriteriaMode",
+        "kind": "schema",
+        "name": "MarketplaceOrderTraitCriteriaMode"
+      },
+      {
+        "id": "schema:MarketplaceOrdersRequest",
+        "kind": "schema",
+        "name": "MarketplaceOrdersRequest"
+      },
+      {
+        "id": "schema:MarketplaceStats",
+        "kind": "schema",
+        "name": "MarketplaceStats"
+      },
+      {
+        "id": "schema:MarketplaceStatsPeriod",
+        "kind": "schema",
+        "name": "MarketplaceStatsPeriod"
+      },
+      {
+        "id": "schema:MintPassConfiguration",
+        "kind": "schema",
+        "name": "MintPassConfiguration"
+      },
+      {
+        "id": "schema:MintingOptionType",
+        "kind": "schema",
+        "name": "MintingOptionType"
+      },
+      {
+        "id": "schema:OpenseaListing",
+        "kind": "schema",
+        "name": "OpenseaListing"
+      },
+      {
+        "id": "schema:OpenseaListingType",
+        "kind": "schema",
+        "name": "OpenseaListingType"
+      },
+      {
+        "id": "schema:PMAuctionBracket",
+        "kind": "schema",
+        "name": "PMAuctionBracket"
+      },
+      {
+        "id": "schema:PMAuctionStats",
+        "kind": "schema",
+        "name": "PMAuctionStats"
+      },
+      {
+        "id": "schema:PMAuctionStrategy",
+        "kind": "schema",
+        "name": "PMAuctionStrategy"
+      },
+      {
+        "id": "schema:PMBuyNowLimitedEditionStrategy",
+        "kind": "schema",
+        "name": "PMBuyNowLimitedEditionStrategy"
+      },
+      {
+        "id": "schema:PMBuyNowOpenEditionStrategy",
+        "kind": "schema",
+        "name": "PMBuyNowOpenEditionStrategy"
+      },
+      {
+        "id": "schema:PMBuyNowStats",
+        "kind": "schema",
+        "name": "PMBuyNowStats"
+      },
+      {
+        "id": "schema:PMListingEndReason",
+        "kind": "schema",
+        "name": "PMListingEndReason"
+      },
+      {
+        "id": "schema:PageInfo",
+        "kind": "schema",
+        "name": "PageInfo"
+      },
+      {
+        "id": "schema:Person",
+        "kind": "schema",
+        "name": "Person"
+      },
+      {
+        "id": "schema:PersonConnection",
+        "kind": "schema",
+        "name": "PersonConnection"
+      },
+      {
+        "id": "schema:PersonID",
+        "kind": "schema",
+        "name": "PersonID"
+      },
+      {
+        "id": "schema:PersonSort",
+        "kind": "schema",
+        "name": "PersonSort"
+      },
+      {
+        "id": "schema:PersonSorting",
+        "kind": "schema",
+        "name": "PersonSorting"
+      },
+      {
+        "id": "schema:PersonType",
+        "kind": "schema",
+        "name": "PersonType"
+      },
+      {
+        "id": "schema:PersonsPageFilter",
+        "kind": "schema",
+        "name": "PersonsPageFilter"
+      },
+      {
+        "id": "schema:PersonsPageRequest",
+        "kind": "schema",
+        "name": "PersonsPageRequest"
+      },
+      {
+        "id": "schema:PossibleStringFeatureValue",
+        "kind": "schema",
+        "name": "PossibleStringFeatureValue"
+      },
+      {
+        "id": "schema:PreviewUserInput",
+        "kind": "schema",
+        "name": "PreviewUserInput"
+      },
+      {
+        "id": "schema:PrimaryMarketBid",
+        "kind": "schema",
+        "name": "PrimaryMarketBid"
+      },
+      {
+        "id": "schema:PrimaryMarketListing",
+        "kind": "schema",
+        "name": "PrimaryMarketListing"
+      },
+      {
+        "id": "schema:PrimaryMarketSale",
+        "kind": "schema",
+        "name": "PrimaryMarketSale"
+      },
+      {
+        "id": "schema:PrimaryMarketSaleStatus",
+        "kind": "schema",
+        "name": "PrimaryMarketSaleStatus"
+      },
+      {
+        "id": "schema:PrimaryMarketStrategy",
+        "kind": "schema",
+        "name": "PrimaryMarketStrategy"
+      },
+      {
+        "id": "schema:ProductChain",
+        "kind": "schema",
+        "name": "ProductChain"
+      },
+      {
+        "id": "schema:ProjectArtworkKind",
+        "kind": "schema",
+        "name": "ProjectArtworkKind"
+      },
+      {
+        "id": "schema:QuasiDragonsCompositeArtworkKind",
+        "kind": "schema",
+        "name": "QuasiDragonsCompositeArtworkKind"
+      },
+      {
+        "id": "schema:Query",
+        "kind": "schema",
+        "name": "Query"
+      },
+      {
+        "id": "schema:RankedAuctionSettings",
+        "kind": "schema",
+        "name": "RankedAuctionSettings"
+      },
+      {
+        "id": "schema:SMBuyNowStrategy",
+        "kind": "schema",
+        "name": "SMBuyNowStrategy"
+      },
+      {
+        "id": "schema:SVGAsset",
+        "kind": "schema",
+        "name": "SVGAsset"
+      },
+      {
+        "id": "schema:SearchResult",
+        "kind": "schema",
+        "name": "SearchResult"
+      },
+      {
+        "id": "schema:SecondaryMarketListing",
+        "kind": "schema",
+        "name": "SecondaryMarketListing"
+      },
+      {
+        "id": "schema:SecondaryMarketSale",
+        "kind": "schema",
+        "name": "SecondaryMarketSale"
+      },
+      {
+        "id": "schema:SecondaryMarketSaleStatus",
+        "kind": "schema",
+        "name": "SecondaryMarketSaleStatus"
+      },
+      {
+        "id": "schema:SolanaAddress",
+        "kind": "schema",
+        "name": "SolanaAddress"
+      },
+      {
+        "id": "schema:SortDirection",
+        "kind": "schema",
+        "name": "SortDirection"
+      },
+      {
+        "id": "schema:StaticAsset",
+        "kind": "schema",
+        "name": "StaticAsset"
+      },
+      {
+        "id": "schema:StaticAssetID",
+        "kind": "schema",
+        "name": "StaticAssetID"
+      },
+      {
+        "id": "schema:StatsFilter",
+        "kind": "schema",
+        "name": "StatsFilter"
+      },
+      {
+        "id": "schema:StatsSale",
+        "kind": "schema",
+        "name": "StatsSale"
+      },
+      {
+        "id": "schema:String",
+        "kind": "schema",
+        "name": "String"
+      },
+      {
+        "id": "schema:StringFeature",
+        "kind": "schema",
+        "name": "StringFeature"
+      },
+      {
+        "id": "schema:StringFeatureValue",
+        "kind": "schema",
+        "name": "StringFeatureValue"
+      },
+      {
+        "id": "schema:TagsFilter",
+        "kind": "schema",
+        "name": "TagsFilter"
+      },
+      {
+        "id": "schema:TezosAddress",
+        "kind": "schema",
+        "name": "TezosAddress"
+      },
+      {
+        "id": "schema:Time",
+        "kind": "schema",
+        "name": "Time"
+      },
+      {
+        "id": "schema:UserEditionOwner",
+        "kind": "schema",
+        "name": "UserEditionOwner"
+      },
+      {
+        "id": "schema:UserOrBlockchainAddress",
+        "kind": "schema",
+        "name": "UserOrBlockchainAddress"
+      },
+      {
+        "id": "schema:UserPublic",
+        "kind": "schema",
+        "name": "UserPublic"
+      },
+      {
+        "id": "schema:VideoAsset",
+        "kind": "schema",
+        "name": "VideoAsset"
+      },
+      {
+        "arguments": [
+          {
+            "name": "after",
+            "type": "Cursor"
+          },
+          {
+            "name": "filter",
+            "type": "ActivityPageFilter"
+          },
+          {
+            "name": "first",
+            "type": "Int!"
+          }
+        ],
+        "description": null,
+        "field": "activityPage",
+        "id": "operation:query:activityPage",
+        "kind": "operation",
+        "name": "activityPage",
+        "operation": "query",
+        "return_type": "ActivityEntryConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "request",
+            "type": "ArtworksPageRequest!"
+          }
+        ],
+        "description": null,
+        "field": "artworksPage",
+        "id": "operation:query:artworksPage",
+        "kind": "operation",
+        "name": "artworksPage",
+        "operation": "query",
+        "return_type": "ArtworkConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "assetType",
+            "type": "AssetType!"
+          },
+          {
+            "name": "id",
+            "type": "ID!"
+          }
+        ],
+        "description": null,
+        "field": "asset",
+        "id": "operation:query:asset",
+        "kind": "operation",
+        "name": "asset",
+        "operation": "query",
+        "return_type": "Asset"
+      },
+      {
+        "arguments": [
+          {
+            "name": "after",
+            "type": "Cursor"
+          },
+          {
+            "name": "filter",
+            "type": "AssetFilter"
+          },
+          {
+            "name": "first",
+            "type": "Int!"
+          },
+          {
+            "name": "sorting",
+            "type": "AssetSorting"
+          }
+        ],
+        "description": null,
+        "field": "assetsPage",
+        "id": "operation:query:assetsPage",
+        "kind": "operation",
+        "name": "assetsPage",
+        "operation": "query",
+        "return_type": "AssetConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "request",
+            "type": "CollectionsPageRequest!"
+          }
+        ],
+        "description": null,
+        "field": "collectionsPage",
+        "id": "operation:query:collectionsPage",
+        "kind": "operation",
+        "name": "collectionsPage",
+        "operation": "query",
+        "return_type": "CollectionConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "chain",
+            "type": "ProductChain"
+          },
+          {
+            "name": "contractAddress",
+            "type": "String!"
+          },
+          {
+            "name": "tokenId",
+            "type": "String!"
+          }
+        ],
+        "description": null,
+        "field": "editionByContract",
+        "id": "operation:query:editionByContract",
+        "kind": "operation",
+        "name": "editionByContract",
+        "operation": "query",
+        "return_type": "Edition"
+      },
+      {
+        "arguments": [
+          {
+            "name": "artworkId",
+            "type": "ID!"
+          },
+          {
+            "name": "editionNumber",
+            "type": "String!"
+          }
+        ],
+        "description": null,
+        "field": "editionByNumber",
+        "id": "operation:query:editionByNumber",
+        "kind": "operation",
+        "name": "editionByNumber",
+        "operation": "query",
+        "return_type": "Edition"
+      },
+      {
+        "arguments": [
+          {
+            "name": "artworkId",
+            "type": "ID!"
+          },
+          {
+            "name": "assetType",
+            "type": "AssetType!"
+          },
+          {
+            "name": "price",
+            "type": "InputAmount!"
+          }
+        ],
+        "description": null,
+        "field": "estimateSecondaryMarketFees",
+        "id": "operation:query:estimateSecondaryMarketFees",
+        "kind": "operation",
+        "name": "estimateSecondaryMarketFees",
+        "operation": "query",
+        "return_type": "FeeEstimation!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "request",
+            "type": "ExhibitionsPageRequest!"
+          }
+        ],
+        "description": null,
+        "field": "exhibitionsPage",
+        "id": "operation:query:exhibitionsPage",
+        "kind": "operation",
+        "name": "exhibitionsPage",
+        "operation": "query",
+        "return_type": "ExhibitionConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "after",
+            "type": "Cursor"
+          },
+          {
+            "name": "filter",
+            "type": "ExploreFilter"
+          },
+          {
+            "name": "first",
+            "type": "Int!"
+          },
+          {
+            "name": "sorting",
+            "type": "ExploreSorting"
+          }
+        ],
+        "description": null,
+        "field": "explore",
+        "id": "operation:query:explore",
+        "kind": "operation",
+        "name": "explore",
+        "operation": "query",
+        "return_type": "CollectionConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "request",
+            "type": "GalleriesPageRequest!"
+          }
+        ],
+        "description": null,
+        "field": "galleriesPage",
+        "id": "operation:query:galleriesPage",
+        "kind": "operation",
+        "name": "galleriesPage",
+        "operation": "query",
+        "return_type": "GalleryConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "request",
+            "type": "LinksPageRequest!"
+          }
+        ],
+        "description": null,
+        "field": "linksPage",
+        "id": "operation:query:linksPage",
+        "kind": "operation",
+        "name": "linksPage",
+        "operation": "query",
+        "return_type": "LinkConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "pmListingId",
+            "type": "ID!"
+          }
+        ],
+        "description": null,
+        "field": "mintPassConfiguration",
+        "id": "operation:query:mintPassConfiguration",
+        "kind": "operation",
+        "name": "mintPassConfiguration",
+        "operation": "query",
+        "return_type": "MintPassConfiguration!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "request",
+            "type": "MarketplaceOrdersRequest!"
+          }
+        ],
+        "description": null,
+        "field": "orders",
+        "id": "operation:query:orders",
+        "kind": "operation",
+        "name": "orders",
+        "operation": "query",
+        "return_type": "MarketplaceOrderConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "request",
+            "type": "PersonsPageRequest!"
+          }
+        ],
+        "description": null,
+        "field": "personsPage",
+        "id": "operation:query:personsPage",
+        "kind": "operation",
+        "name": "personsPage",
+        "operation": "query",
+        "return_type": "PersonConnection!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "artworkId",
+            "type": "ID!"
+          }
+        ],
+        "description": "Return the active or most recent primary market listing for an artwork.",
+        "field": "primaryMarketListing",
+        "id": "operation:query:primaryMarketListing",
+        "kind": "operation",
+        "name": "primaryMarketListing",
+        "operation": "query",
+        "return_type": "PrimaryMarketListing"
+      },
+      {
+        "arguments": [
+          {
+            "name": "pmSaleId",
+            "type": "ID!"
+          }
+        ],
+        "description": "Return specific pm sale",
+        "field": "primaryMarketSale",
+        "id": "operation:query:primaryMarketSale",
+        "kind": "operation",
+        "name": "primaryMarketSale",
+        "operation": "query",
+        "return_type": "PrimaryMarketSale!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "artworkId",
+            "type": "ArtworkID!"
+          },
+          {
+            "name": "editionNumber",
+            "type": "Int"
+          },
+          {
+            "name": "hash",
+            "type": "String!"
+          },
+          {
+            "name": "totalEditions",
+            "type": "Int"
+          },
+          {
+            "name": "userInput",
+            "type": "[PreviewUserInput!]"
+          }
+        ],
+        "description": null,
+        "field": "projectStaticAssetByHash",
+        "id": "operation:query:projectStaticAssetByHash",
+        "kind": "operation",
+        "name": "projectStaticAssetByHash",
+        "operation": "query",
+        "return_type": "StaticAsset!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "addresses",
+            "type": "[String!]!"
+          }
+        ],
+        "description": null,
+        "field": "reverseResolveENS",
+        "id": "operation:query:reverseResolveENS",
+        "kind": "operation",
+        "name": "reverseResolveENS",
+        "operation": "query",
+        "return_type": "[String!]!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "query",
+            "type": "String!"
+          }
+        ],
+        "description": null,
+        "field": "search",
+        "id": "operation:query:search",
+        "kind": "operation",
+        "name": "search",
+        "operation": "query",
+        "return_type": "SearchResult!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "first",
+            "type": "Int!"
+          },
+          {
+            "name": "query",
+            "type": "String!"
+          }
+        ],
+        "description": "Search usernames with spacing and typo tolerance. Returns up to 20 matches.",
+        "field": "searchUsers",
+        "id": "operation:query:searchUsers",
+        "kind": "operation",
+        "name": "searchUsers",
+        "operation": "query",
+        "return_type": "[UserPublic!]!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "smSaleId",
+            "type": "ID!"
+          }
+        ],
+        "description": "Return specific sm sale",
+        "field": "secondaryMarketSale",
+        "id": "operation:query:secondaryMarketSale",
+        "kind": "operation",
+        "name": "secondaryMarketSale",
+        "operation": "query",
+        "return_type": "SecondaryMarketSale!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "period",
+            "type": "MarketplaceStatsPeriod!"
+          }
+        ],
+        "description": null,
+        "field": "stats",
+        "id": "operation:query:stats",
+        "kind": "operation",
+        "name": "stats",
+        "operation": "query",
+        "return_type": "MarketplaceStats!"
+      },
+      {
+        "arguments": [
+          {
+            "name": "id",
+            "type": "String!"
+          }
+        ],
+        "description": null,
+        "field": "userById",
+        "id": "operation:query:userById",
+        "kind": "operation",
+        "name": "userById",
+        "operation": "query",
+        "return_type": "UserPublic"
+      },
+      {
+        "arguments": [
+          {
+            "name": "address",
+            "type": "String!"
+          },
+          {
+            "name": "network",
+            "type": "LinkedWalletNetwork!"
+          }
+        ],
+        "description": null,
+        "field": "userByLinkedWallet",
+        "id": "operation:query:userByLinkedWallet",
+        "kind": "operation",
+        "name": "userByLinkedWallet",
+        "operation": "query",
+        "return_type": "UserPublic"
+      },
+      {
+        "arguments": [
+          {
+            "name": "username",
+            "type": "String!"
+          }
+        ],
+        "description": "Lookup user by username.",
+        "field": "userByUsername",
+        "id": "operation:query:userByUsername",
+        "kind": "operation",
+        "name": "userByUsername",
+        "operation": "query",
+        "return_type": "UserPublic"
+      },
+      {
+        "arguments": [
+          {
+            "name": "addresses",
+            "type": "[String]!"
+          },
+          {
+            "name": "network",
+            "type": "LinkedWalletNetwork!"
+          }
+        ],
+        "description": null,
+        "field": "usersByLinkedWallet",
+        "id": "operation:query:usersByLinkedWallet",
+        "kind": "operation",
+        "name": "usersByLinkedWallet",
+        "operation": "query",
+        "return_type": "[UserPublic]!"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "verse-graphql"
+    },
+    "spec": {
+      "base": {
+        "protocol": "graphql",
+        "specification": {
+          "text": "type ActivityEntry {\n  \"\"\"\n  USD price when available; legacy records retain whole dollars, transfers retain quantities.\n  \"\"\"\n  amount: String!\n  artwork: Artwork!\n  asset: Asset\n  assetType: AssetType!\n  currencyAmount: String\n  currencySymbol: String\n  edition: Edition\n  entryType: ActivityEntryType!\n  fromBlockchainAddress: String\n  fromEthereumAddress: EthereumAddress\n  fromUserId: UserPublic\n  id: ID!\n  offerId: ID\n  quantity: String\n  timestamp: Time!\n  toBlockchainAddress: String\n  toEthereumAddress: EthereumAddress\n  toUserId: UserPublic\n  transactionHash: String\n}\n\ntype ActivityEntryConnection {\n  nodes: [ActivityEntry!]!\n  pageInfo: PageInfo!\n}\n\nenum ActivityEntryType {\n  NEW_FLOOR_PRICE\n  ONCHAIN_BURN\n  ONCHAIN_MINT\n  ONCHAIN_SALE\n  ONCHAIN_TRANSFER\n  OS_COLLECTION_OFFER\n  OS_LISTED\n  OS_OFFER\n  OS_SALE\n  PM_SALE\n  SM_DELISTED\n  SM_GLOBAL_OFFER\n  SM_LISTED\n  SM_OFFER\n  SM_SALE\n}\n\ninput ActivityPageFilter {\n  activityType: [ActivityEntryType!]\n  addresses: [String!]\n  artworkId: ID\n  artworkIds: [ID!]\n  assetIds: [ID!]\n  assetType: AssetType\n\n  \"\"\"\n  Filter sales by confirmed Verse checkout attribution. True includes native primary/secondary sales and matched on-chain sales; false includes checked on-chain sales without a Verse checkout. Unclassified historical records match neither. Omit for all activity.\n  \"\"\"\n  executedOnVerse: Boolean\n  tags: TagsFilter\n  userId: ID\n}\n\nunion AdditionalSecondaryMarketStrategy = SMBuyNowStrategy\n\ntype Amount {\n  currency: String!\n  value: Decimal!\n}\n\ntype ArtblocksProjectArtworkKind {\n  allowUserCuration: Boolean\n  artblocksProjectId: Int!\n  aspectRatio: Float!\n  iframeUrl: String!\n  showStaticPreview: Boolean\n}\n\ntype Artwork {\n  artist: Person\n  artworkKind: ArtworkKind\n  banner: StaticAsset\n  bestOffer: MarketplaceOrder\n  blockchain: ProductChain!\n  collection: Collection\n  contractAddress: String\n  cover: StaticAsset\n  description: Markdown\n  displayStyle: DisplayStyle!\n  expectedSaleDate: Time\n\n  \"\"\"Traits of the artwork's editions. At most `first` traits when given.\"\"\"\n  features(first: Int): [Feature!]\n  floorListing: MarketplaceOrder\n  id: ArtworkID!\n  isHidden: Boolean!\n  license: String\n  osSlug: String\n  primaryMarketListing: PrimaryMarketListing\n  requiresShippingDetails: Boolean!\n  saleDetails: String\n  saleType: ArtworkSaleType!\n  secondaryMarketDisabled: Boolean!\n  secondaryMarketSaleWithPhysical: Boolean!\n  title: String\n  updatedAt: Time\n  year: String\n}\n\ntype ArtworkConnection {\n  nodes: [Artwork!]!\n  pageInfo: PageInfo!\n  totalCount: Int\n}\n\nscalar ArtworkID\n\nunion ArtworkKind = ArtblocksProjectArtworkKind | GenerativeProjectArtworkKind | ProjectArtworkKind | QuasiDragonsCompositeArtworkKind\n\nenum ArtworkSaleType {\n  NOTFORSALE\n  PRIVATE\n  REGULAR\n  SILENT\n}\n\ntype ArtworkVolume {\n  artwork: Artwork!\n  openseaSales: Int!\n  openseaVolume: String!\n  primarySales: Int!\n  primaryVolume: String!\n  secondarySales: Int!\n  secondaryVolume: String!\n  totalSales: Int!\n  totalVolume: String!\n}\n\ninput ArtworksPageFilter {\n  collectionIds: [ID!]\n  containsTags: [String!]\n  ids: [ID!]\n  notContainsTags: [String!]\n  search: String\n  showHidden: Boolean\n}\n\ninput ArtworksPageRequest {\n  after: Cursor\n  filter: ArtworksPageFilter\n  first: Int! = 20\n}\n\ntype Asset {\n  \"\"\"The edition's artwork. Null for bookmarks.\"\"\"\n  artwork: Artwork\n  asset: AssetPrimitive!\n  assetType: AssetType!\n  creator: UserPublic\n  id: ID!\n\n  \"\"\"\n  Effective last-transfer time used by owner-filtered LAST_TRANSFERRED_AT asset pages.\n  Null outside that page context or when the acquisition time is unknown.\n  \"\"\"\n  lastTransferredAt: Time\n  smListing: SecondaryMarketListing\n  stats: EditionStats!\n}\n\ninput AssetAdvancedFeatureFilter {\n  bool: AssetFilterFeatureBool\n  exists: AssetFilterFeatureExists\n  filter: AssetFilterFeature\n}\n\ntype AssetConnection {\n  nodes: [Asset!]!\n  pageInfo: PageInfo!\n  totalCount: Int!\n}\n\ninput AssetFilter {\n  advancedFeatures: AssetAdvancedFeatureFilter\n  artistIds: [ID!]\n  artworkIds: [ID!]\n  assetType: AssetType! = EDITION\n  availability: [AssetFilterAvailabilityOption!]\n  excludeCollectionTags: [String!]\n  features: [AssetFilterFeature!]\n  hashes: [String!]\n  ids: [ID!]\n  includeCollectionTags: [String!]\n  owners: [AssetFilterOwner!]\n  search: String\n}\n\nenum AssetFilterAvailabilityOption {\n  ACCEPTING_OFFERS\n  BUY_NOW\n}\n\ninput AssetFilterFeature {\n  name: String!\n  value: String!\n}\n\ninput AssetFilterFeatureBool {\n  must: [AssetAdvancedFeatureFilter!]\n  mustNot: [AssetAdvancedFeatureFilter!]\n  should: [AssetAdvancedFeatureFilter!]\n}\n\ninput AssetFilterFeatureExists {\n  name: String!\n}\n\ninput AssetFilterOwner {\n  blockchainAddress: String\n  userId: String\n}\n\ninput AssetInput {\n  assetId: ID!\n  assetType: AssetType!\n}\n\nunion AssetPrimitive = Bookmark | Edition\n\nenum AssetSortOption {\n  CREATED_AT\n  EDITION_NUMBER\n  LAST_SALE_PRICE\n  LAST_SALE_TIME\n  LAST_TRANSFERRED_AT\n  LISTED_AT\n  LIST_PRICE\n  TITLE\n}\n\ninput AssetSorting {\n  direction: SortDirection!\n  sort: AssetSortOption!\n}\n\nenum AssetType {\n  BOOKMARK\n  EDITION\n}\n\ntype AudioAsset implements IStaticAsset {\n  baseUrlTemplate: String!\n  duration: Float\n  fileSize: Int\n  id: StaticAssetID!\n  mimeType: String\n}\n\ntype BitcoinProductAddress implements BlockchainAddress {\n  address: String!\n}\n\ninterface BlockchainAddress {\n  address: String!\n}\n\ntype BlockchainAddressEditionOwner {\n  blockchainAddress: EthereumAddress!\n}\n\ntype Bookmark {\n  asset: Asset!\n  hash: String!\n}\n\nenum Chain {\n  BASE\n  BITCOIN\n  ETHEREUM\n  NOT_SPECIFIED\n  SEPOLIA\n  SHAPE\n  SOLANA\n  TEZOS\n}\n\ntype Collection {\n  banner: StaticAsset\n  bestOffer: MarketplaceOrder\n  blockchain: ProductChain!\n  contract: ContractInfo\n  description: Markdown\n  floorListing: MarketplaceOrder\n  id: ID!\n  isHidden: Boolean!\n  license: String\n  name: String\n  previewAsset: StaticAsset\n  saleDetails: String\n  saleType: ArtworkSaleType!\n  slug: String!\n  tags: [String!]\n  updatedAt: Time\n  year: String\n}\n\ntype CollectionConnection {\n  nodes: [Collection!]!\n  pageInfo: PageInfo!\n  totalCount: Int\n}\n\ntype CollectionVolume {\n  collection: Collection!\n  openseaSales: Int!\n  openseaVolume: String!\n  primarySales: Int!\n  primaryVolume: String!\n  secondarySales: Int!\n  secondaryVolume: String!\n  totalSales: Int!\n  totalVolume: String!\n}\n\ninput CollectionsPageFilter {\n  containsTags: [String!]\n  ids: [ID!]\n  notContainsTags: [String!]\n  search: String\n  showHidden: Boolean\n  slugs: [String!]\n}\n\ninput CollectionsPageRequest {\n  after: Cursor\n  filter: CollectionsPageFilter\n  first: Int! = 20\n}\n\ntype ContractInfo {\n  chain: ProductChain!\n  contractAddress: String!\n  contractType: ContractType!\n}\n\nenum ContractType {\n  ARTBLOCKS\n  CRYPTOPUNKS\n  ERC_721\n  ERC_721_CURATED\n  ERC_721v3\n  ERC_721v3_CUSTOM_v1\n  ERC_721v3_ON_CHAIN\n  ERC_1155\n  ERC_1155_BALANCE_BACKED\n  ERC_1155v2\n  SOLANA\n  TEZOS_CUSTOM_v1\n  TEZOS_FXHASH\n  TEZOS_OBJKT\n}\n\nscalar Cursor\n\nscalar Decimal\n\ntype DecreasingSupplySettings {\n  decreaseBy: Int!\n  decreaseRateSeconds: Int!\n  nextDecreaseAt: Time\n}\n\nenum DisplayStyle {\n  DisplayRegular\n  DisplayWide\n}\n\ntype DutchAuctionSettings {\n  currentBracket: Decimal\n  decreaseRateSeconds: Int!\n  nextBracketAt: Time\n  rebate: Boolean!\n}\n\ntype Edition {\n  artwork: Artwork!\n  artworkId: ID!\n  asset: Asset!\n  bestOffer: MarketplaceOrder\n  contractInfo: ContractInfo\n  createdAt: Time!\n  description: String\n\n  \"\"\"\n  № of Edition. To show a person something like \"you own Edition #4 of 20\"\n  Assets service deduct edition number on its own, based on how many editions there are for primaryMarketListingId\n  \"\"\"\n  editionNumber: Int!\n  features: [FeatureValue!]\n\n  \"\"\"Cheapest active ask on the edition.\"\"\"\n  floorListing: MarketplaceOrder\n  hash: String\n  id: ID!\n  isBalanceBacked: Boolean!\n  mintingOptionType: MintingOptionType!\n  osListing: OpenseaListing\n\n  \"\"\"\n  For balance-backed editions the stored owner columns freeze at import time\n  (often on a marketplace escrow contract), so ownership is resolved from the\n  balance-backed ownership projection instead. Other editions serve the\n  stored owner as before.\n  \"\"\"\n  owner: EditionOwner!\n  primaryMarketListingId: ID!\n\n  \"\"\"smListing would be null if edition was withdrawn\"\"\"\n  smListing: SecondaryMarketListing\n  staticAsset: StaticAsset\n  stats: EditionStats!\n  status: EditionStatus!\n  title: String\n\n  \"\"\"\n  ID of Edition on the blockchain. Assets service generate this field on its own\n  \"\"\"\n  tokenId: String\n}\n\nunion EditionOwner = BlockchainAddressEditionOwner | UserEditionOwner\n\ntype EditionStats {\n  lastSalePrice: Amount\n  lastSaleTime: Time\n}\n\nenum EditionStatus {\n  BURNED\n  DEPOSIT_REQUESTED\n  MINTING\n  NOT_MINTED\n  ON_PLATFORM\n  WITHDRAWAL_REQUESTED\n  WITHDRAWING\n  WITHDRAWN\n}\n\ntype EthereumAddress implements BlockchainAddress {\n  address: String!\n  ensName: String\n}\n\ntype Exhibition {\n  about: Markdown\n  contentBanner: StaticAsset\n  cover: ImageAsset\n  endDate: Time\n  id: ExhibitionID!\n  isHidden: Boolean!\n  keyDetails: String\n  name: String\n  slug: String!\n  startDate: Time\n  subtitle: String\n  tags: [String!]!\n  updatedAt: Time\n}\n\ntype ExhibitionConnection {\n  nodes: [Exhibition!]!\n  pageInfo: PageInfo!\n  totalCount: Int\n}\n\nscalar ExhibitionID\n\ninput ExhibitionsPageFilter {\n  containsTags: [String!]\n  ids: [ID!]\n  notContainsTags: [String!]\n  personIds: [PersonID!]\n  search: String\n  slugs: [String!]\n}\n\ninput ExhibitionsPageRequest {\n  after: Cursor\n  filter: ExhibitionsPageFilter\n  first: Int! = 20\n}\n\ninput ExploreFilter {\n  artistIds: [PersonID!]\n  assetType: [ExploreFilterAssetType!]\n  containsTags: [String!]\n  exploreTab: [ExploreTabFilter!]\n  market: [ExploreFilterMarket!]\n  notContainsTags: [String!]\n  personIds: [PersonID!]\n}\n\nenum ExploreFilterAssetType {\n  IMAGE\n  OTHER\n  VIDEO\n}\n\nenum ExploreFilterMarket {\n  PRIMARY\n  SECONDARY\n}\n\nenum ExploreSortOption {\n  ENDED_AT\n  FEATURED_SCORE\n  FLOOR_PRICE\n  LAST_SALE_TIME\n  RECENCY\n  UPCOMING\n}\n\ninput ExploreSorting {\n  direction: SortDirection!\n  sort: ExploreSortOption!\n}\n\nenum ExploreTabFilter {\n  CLOSED\n  CLOSING_SOON\n  LIVE\n  OPEN\n  UPCOMING\n}\n\ntype ExtensionSettings {\n  extendUpToMsec: Int!\n  extensionCutoff: Time\n}\n\nunion Feature = StringFeature\n\ninterface FeatureInterface {\n  name: String!\n  totalEntries: Int!\n}\n\nunion FeatureValue = StringFeatureValue\n\ninterface FeatureValueInterface {\n  name: String!\n  valueJson: String!\n}\n\ntype FeeEstimation {\n  marketplaceAmount: Amount!\n  marketplaceFee: Decimal!\n  royaltyAmount: Amount!\n  royaltyFee: Decimal!\n  youWillReceive: Amount!\n}\n\ninput GalleriesPageFilter {\n  ids: [ID!]\n  search: String\n  slugs: [String!]\n}\n\ninput GalleriesPageRequest {\n  after: Cursor\n  filter: GalleriesPageFilter\n  first: Int! = 20\n}\n\ntype Gallery {\n  bio: Markdown\n  cover: ImageAsset\n  establishedAt: Time\n  id: GalleryID!\n  name: String\n  slug: String!\n  updatedAt: Time\n}\n\ntype GalleryConnection {\n  nodes: [Gallery!]!\n  pageInfo: PageInfo!\n  totalCount: Int\n}\n\nscalar GalleryID\n\ntype GenerativeProjectArtworkKind {\n  allowUserCuration: Boolean\n  aspectRatio: Float!\n  iframeUrl: String!\n  showStaticPreview: Boolean\n}\n\ntype IFrameAsset implements IStaticAsset {\n  aspectRatio: Float\n  baseUrlTemplate: String!\n  caption: String\n  id: StaticAssetID!\n  iframeUrl: String!\n  previewImageUrlTemplate: String!\n}\n\ninterface IStaticAsset {\n  baseUrlTemplate: String!\n  id: StaticAssetID!\n}\n\ntype ImageAsset implements IStaticAsset {\n  aspectRatio: Float\n  author: String\n  baseUrlTemplate: String!\n  caption: String\n  fileSize: Int\n  height: Int\n  id: StaticAssetID!\n  isGif: Boolean!\n  mimeType: String\n  width: Int\n}\n\ninput InputAmount {\n  currency: String!\n  value: Decimal!\n}\n\ntype Link {\n  categories: [LinkCategory!]!\n  date: Time\n  excerpt: String\n  id: LinkID!\n  imageAsset: ImageAsset\n  imageUrl: String\n  title: String\n  url: String\n}\n\nenum LinkCategory {\n  INTERVIEW\n  NEWS\n  PODCAST\n  VIDEO\n}\n\ntype LinkConnection {\n  nodes: [Link!]!\n  pageInfo: PageInfo!\n  totalCount: Int\n}\n\nscalar LinkID\n\ntype LinkedWallet {\n  address: String!\n  network: LinkedWalletNetwork!\n  userId: ID!\n}\n\nenum LinkedWalletNetwork {\n  Bitcoin\n  Ethereum\n  Solana\n  Tezos\n}\n\ninput LinksPageFilter {\n  ids: [ID!]\n  search: String\n}\n\ninput LinksPageRequest {\n  after: Cursor\n  filter: LinksPageFilter\n  first: Int! = 20\n}\n\nscalar Markdown\n\nenum Market {\n  ONCHAIN\n  OPENSEA\n  PRIMARY\n  SECONDARY\n}\n\ntype MarketplaceOrder {\n  artwork: Artwork\n  asset: Asset\n  chain: Chain!\n  collection: Collection\n  createdAt: Time!\n  criteria: MarketplaceOrderCriteria\n  expiresAt: Time!\n  externalOfferSender: UserPublic\n  filledQuantity: Decimal!\n  id: ID!\n  maker: UserOrBlockchainAddress!\n  orderSide: MarketplaceOrderSide!\n  price: Amount!\n  quantity: Decimal!\n  source: String!\n  sourceOrderId: String!\n  updatedAt: Time!\n  usdPrice: Decimal!\n}\n\ntype MarketplaceOrderConnection {\n  nodes: [MarketplaceOrder!]!\n  pageInfo: PageInfo!\n}\n\ntype MarketplaceOrderCriteria {\n  displayOnly: Boolean!\n  kind: MarketplaceOrderCriteriaKind!\n  numericTraits: [MarketplaceOrderNumericTrait!]!\n  traitMode: MarketplaceOrderTraitCriteriaMode\n  traits: [MarketplaceOrderTrait!]!\n}\n\nenum MarketplaceOrderCriteriaKind {\n  COLLECTION\n  TOKEN\n  TRAIT\n}\n\ninput MarketplaceOrderFilter {\n  artworkId: String\n  asset: AssetInput\n  collectionId: String\n  openseaSlug: String\n  side: MarketplaceOrderSide!\n  token: MarketplaceOrderTokenFilter\n}\n\ntype MarketplaceOrderNumericTrait {\n  maxValue: Decimal\n  minValue: Decimal\n  type: String!\n}\n\nenum MarketplaceOrderSide {\n  ASK\n  BID\n}\n\ninput MarketplaceOrderTokenFilter {\n  contractAddress: String!\n  tokenId: String!\n}\n\ntype MarketplaceOrderTrait {\n  type: String!\n  value: String!\n}\n\nenum MarketplaceOrderTraitCriteriaMode {\n  MULTI\n  NUMERIC\n  STRING\n}\n\ninput MarketplaceOrdersRequest {\n  after: Cursor\n  filter: MarketplaceOrderFilter!\n  first: Int = 20\n}\n\ntype MarketplaceStats {\n  period: MarketplaceStatsPeriod!\n  topArtworksByVolume(filter: StatsFilter): [ArtworkVolume!]!\n  topCollectionsByVolume(filter: StatsFilter): [CollectionVolume!]!\n  topSales(filter: StatsFilter): [StatsSale!]!\n}\n\nenum MarketplaceStatsPeriod {\n  PERIOD_1D\n  PERIOD_7D\n  PERIOD_30D\n  PERIOD_ALL_TIME\n}\n\ntype MintPassConfiguration {\n  requiredArtworks: [Artwork!]!\n}\n\nenum MintingOptionType {\n  DEFAULT\n  FAST\n}\n\ntype OpenseaListing {\n  artwork: Artwork!\n  chain: Chain!\n  edition: Edition!\n  endsAt: Time!\n  id: String!\n  listingType: OpenseaListingType!\n  price: Amount!\n  startsAt: Time!\n}\n\nenum OpenseaListingType {\n  BASIC\n  DUTCH\n  ENGLISH\n}\n\ntype PMAuctionBracket {\n  from: Decimal!\n  step: Decimal!\n}\n\ntype PMAuctionStats {\n  bidsCount: Int!\n  highestBid: PrimaryMarketBid\n}\n\n\"\"\"Users always bid on 1/1 edition\"\"\"\ntype PMAuctionStrategy {\n  auctionBrackets: [PMAuctionBracket!]\n  currentStep: Decimal\n  entryBid: Amount\n  extensionSettings: ExtensionSettings\n  lowestWinningBid: PrimaryMarketBid\n  minimumBid: Amount!\n  pmListingId: ID!\n  rankedAuctionSettings: RankedAuctionSettings\n  stats: PMAuctionStats!\n}\n\n\"\"\"\nBuy Now Limited Edition Strategy, users can buy until editions are depleted  (up to `n` editions, `n` >= 1)\n\"\"\"\ntype PMBuyNowLimitedEditionStrategy {\n  decreasingSupply: DecreasingSupplySettings\n  dutchAuction: DutchAuctionSettings\n  maxEditions: Int!\n  pmListingId: ID!\n  price: Amount!\n  stats: PMBuyNowStats!\n}\n\n\"\"\"\nBuy Now Open Edition Strategy, users can buy until there is still some time left\n\"\"\"\ntype PMBuyNowOpenEditionStrategy {\n  dutchAuction: DutchAuctionSettings\n  pmListingId: ID!\n  price: Amount!\n  stats: PMBuyNowStats!\n}\n\ntype PMBuyNowStats {\n  issuedEditions: Int!\n}\n\nenum PMListingEndReason {\n  SOLD_OUT\n  TIME_IS_OUT\n}\n\ntype PageInfo {\n  endCursor: Cursor\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: Cursor\n}\n\ntype Person {\n  banner: ImageAsset\n  bio: Markdown\n  bioLine: String\n  birthYear: String\n  categoriesTags: [String!]!\n  cover: ImageAsset\n  deathYear: String\n  id: PersonID!\n  isArtist: Boolean!\n  isCurator: Boolean!\n  isGallery: Boolean!\n  location: String\n  name: String\n  profileLinks: [String!]!\n  slug: String!\n  twitterHandle: String\n  updatedAt: Time\n}\n\ntype PersonConnection {\n  nodes: [Person!]!\n  pageInfo: PageInfo!\n  totalCount: Int\n}\n\nscalar PersonID\n\nenum PersonSort {\n  LASTNAME\n  NAME\n  UPDATED_AT\n}\n\ninput PersonSorting {\n  direction: SortDirection!\n  sort: PersonSort!\n}\n\nenum PersonType {\n  ARTIST\n  BOTH\n  CURATOR\n  GALLERY\n}\n\ninput PersonsPageFilter {\n  categoriesTags: [String!]\n  ids: [ID!]\n  personTypes: [PersonType!]\n  search: String\n  slugs: [String!]\n}\n\ninput PersonsPageRequest {\n  after: Cursor\n  filter: PersonsPageFilter\n  first: Int! = 20\n  sorting: PersonSorting\n}\n\ntype PossibleStringFeatureValue {\n  numberOfEntries: Int!\n  value: String!\n}\n\ninput PreviewUserInput {\n  key: String!\n  value: String!\n}\n\n\"\"\"Bid for primary market Bid Strategy\"\"\"\ntype PrimaryMarketBid {\n  amount: Amount!\n  bidder: UserPublic!\n  createdAt: Time!\n  id: ID!\n}\n\ntype PrimaryMarketListing {\n  \"\"\"There is always one primary listing for one artwork\"\"\"\n  artwork: Artwork!\n  createdAt: Time!\n  editionTarget: Edition\n  endReason: PMListingEndReason\n\n  \"\"\"\n  Primary market listing end reasons:\n  * auction has ended\n  * buy now editions depleted\n  * open editions buy time has ended\n  \"\"\"\n  endedAt: Time\n  endsAt: Time!\n  id: ID!\n  startedAt: Time\n  startsAt: Time!\n\n  \"\"\"Selected strategy for this primary market listing\"\"\"\n  strategy: PrimaryMarketStrategy!\n}\n\n\"\"\"\"Proof\" of buying (or winning) something on primary market\"\"\"\ntype PrimaryMarketSale {\n  \"\"\"Zero or null amount for raffle I suppose?\"\"\"\n  amount: Amount!\n\n  \"\"\"Buyer becomes an owner of edition\"\"\"\n  buyerId: ID!\n  createdAt: Time!\n  edition: Edition\n\n  \"\"\"Sale links to some edition\"\"\"\n  editionId: ID\n  finishedAt: Time\n  id: ID!\n  pmListing: PrimaryMarketListing!\n  status: PrimaryMarketSaleStatus!\n}\n\nenum PrimaryMarketSaleStatus {\n  FAILED\n  PENDING\n  SUCCESS\n}\n\n\"\"\"Each strategy would generate a PrimaryMarketSale\"\"\"\nunion PrimaryMarketStrategy = PMAuctionStrategy | PMBuyNowLimitedEditionStrategy | PMBuyNowOpenEditionStrategy\n\nenum ProductChain {\n  BASE\n  BITCOIN\n  ETHEREUM\n  NONE\n  PHYSICAL\n  SEPOLIA\n  SHAPE\n  SOLANA\n  TEZOS\n}\n\ntype ProjectArtworkKind {\n  allowUserSelection: Boolean!\n  artworkId: ArtworkID!\n  withRepetitions: Boolean!\n}\n\ntype QuasiDragonsCompositeArtworkKind {\n  artworkId: String!\n  baseTileArtworkId: String!\n  compositeBuilderIframeUrl: String!\n  generatorIframeUrl: String!\n}\n\ntype Query {\n  activityPage(after: Cursor, filter: ActivityPageFilter, first: Int!): ActivityEntryConnection!\n  artworksPage(request: ArtworksPageRequest!): ArtworkConnection!\n  asset(assetType: AssetType!, id: ID!): Asset\n  assetsPage(after: Cursor, filter: AssetFilter, first: Int!, sorting: AssetSorting): AssetConnection!\n  collectionsPage(request: CollectionsPageRequest!): CollectionConnection!\n  editionByContract(chain: ProductChain, contractAddress: String!, tokenId: String!): Edition\n  editionByNumber(artworkId: ID!, editionNumber: String!): Edition\n  estimateSecondaryMarketFees(artworkId: ID!, assetType: AssetType! = EDITION, price: InputAmount!): FeeEstimation!\n  exhibitionsPage(request: ExhibitionsPageRequest!): ExhibitionConnection!\n  explore(after: Cursor, filter: ExploreFilter, first: Int! = 20, sorting: ExploreSorting): CollectionConnection!\n  galleriesPage(request: GalleriesPageRequest!): GalleryConnection!\n  linksPage(request: LinksPageRequest!): LinkConnection!\n  mintPassConfiguration(pmListingId: ID!): MintPassConfiguration!\n  orders(request: MarketplaceOrdersRequest!): MarketplaceOrderConnection!\n  personsPage(request: PersonsPageRequest!): PersonConnection!\n\n  \"\"\"\n  Return the active or most recent primary market listing for an artwork.\n  \"\"\"\n  primaryMarketListing(artworkId: ID!): PrimaryMarketListing\n\n  \"\"\"Return specific pm sale\"\"\"\n  primaryMarketSale(pmSaleId: ID!): PrimaryMarketSale!\n  projectStaticAssetByHash(artworkId: ArtworkID!, editionNumber: Int, hash: String!, totalEditions: Int, userInput: [PreviewUserInput!]): StaticAsset!\n  reverseResolveENS(addresses: [String!]!): [String!]!\n  search(query: String!): SearchResult!\n\n  \"\"\"\n  Search usernames with spacing and typo tolerance. Returns up to 20 matches.\n  \"\"\"\n  searchUsers(first: Int! = 10, query: String!): [UserPublic!]!\n\n  \"\"\"Return specific sm sale\"\"\"\n  secondaryMarketSale(smSaleId: ID!): SecondaryMarketSale!\n  stats(period: MarketplaceStatsPeriod!): MarketplaceStats!\n  userById(id: String!): UserPublic\n  userByLinkedWallet(address: String!, network: LinkedWalletNetwork!): UserPublic\n\n  \"\"\"Lookup user by username.\"\"\"\n  userByUsername(username: String!): UserPublic\n  usersByLinkedWallet(addresses: [String]!, network: LinkedWalletNetwork!): [UserPublic]!\n}\n\ntype RankedAuctionSettings {\n  topNWinners: Int!\n}\n\ntype SMBuyNowStrategy {\n  price: Amount!\n}\n\ntype SVGAsset implements IStaticAsset {\n  author: String\n  baseUrlTemplate: String!\n  caption: String\n  fileSize: Int\n  id: StaticAssetID!\n  mimeType: String\n  previewAspectRatio: Float\n  previewImageUrlTemplate: String!\n}\n\ntype SearchResult {\n  artists: [Person!]!\n  collections: [Collection!]!\n  exhibitions: [Exhibition!]!\n}\n\ntype SecondaryMarketListing {\n  additionalStrategies: [AdditionalSecondaryMarketStrategy!]!\n  artwork: Artwork!\n  asset: Asset!\n  createdAt: Time!\n  edition: Edition\n  endedAt: Time\n  id: ID!\n  isActive: Boolean!\n  listedAt: Time\n  owner: UserPublic!\n}\n\ntype SecondaryMarketSale {\n  amount: Amount!\n  asset: Asset!\n\n  \"\"\"Buyer becomes a new owner of edition\"\"\"\n  buyerId: ID!\n  createdAt: Time!\n\n  \"\"\"\n  deprecated: use asset field\n  Sale is associated with an edition. Change of ownership happens after the sale\n  \"\"\"\n  editionId: ID\n  finishedAt: Time\n  id: ID!\n  smListing: SecondaryMarketListing!\n  status: SecondaryMarketSaleStatus!\n}\n\nenum SecondaryMarketSaleStatus {\n  FAILED\n  PENDING\n  SUCCESS\n}\n\ntype SolanaAddress implements BlockchainAddress {\n  address: String!\n}\n\nenum SortDirection {\n  ASC\n  DESC\n}\n\nunion StaticAsset = AudioAsset | IFrameAsset | ImageAsset | SVGAsset | VideoAsset\n\nscalar StaticAssetID\n\ninput StatsFilter {\n  tags: TagsFilter\n}\n\ntype StatsSale {\n  amount: Amount!\n  artwork: Artwork!\n  asset: Asset!\n  buyer: UserPublic\n  buyerBlockchainAddress: BlockchainAddress\n  collection: Collection\n  id: ID!\n  market: Market!\n  timestamp: Time!\n  txHash: String\n}\n\ntype StringFeature implements FeatureInterface {\n  name: String!\n\n  \"\"\"At most `first` values when given.\"\"\"\n  possibleValues(first: Int): [PossibleStringFeatureValue!]\n  totalEntries: Int!\n}\n\ntype StringFeatureValue implements FeatureValueInterface {\n  name: String!\n  value: String!\n  valueJson: String!\n}\n\ninput TagsFilter {\n  exclude: [String!]\n  include: [String!]\n}\n\ntype TezosAddress implements BlockchainAddress {\n  address: String!\n}\n\nscalar Time\n\ntype UserEditionOwner {\n  owner: UserPublic!\n}\n\nunion UserOrBlockchainAddress = BitcoinProductAddress | EthereumAddress | SolanaAddress | TezosAddress | UserPublic\n\ntype UserPublic {\n  bio: String\n  id: ID!\n  linkedWallets: [LinkedWallet!]!\n  profileBanner: String\n  profilePic: String\n  twitterHandle: String\n  username: String\n}\n\ntype VideoAsset implements IStaticAsset {\n  author: String\n  baseUrlTemplate: String!\n  caption: String\n  fileSize: Int\n  height: Int\n  id: StaticAssetID!\n  mimeType: String\n  previewAspectRatio: Float\n  previewImageUrlTemplate: String!\n  width: Int\n}\n"
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Verse"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "graphql",
+  "provenance": {
+    "fetched_at": "2026-10-29T23:09:15.642724+00:00",
+    "sha256": "802199e31a24f96c5ee6055f27a9552e63f6a9a13f919297fba7cdf17a0d9389",
+    "source_id": "verse",
+    "url": "https://api.verse.works/schema.graphql"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "2026-10-29-snapshot"
+}

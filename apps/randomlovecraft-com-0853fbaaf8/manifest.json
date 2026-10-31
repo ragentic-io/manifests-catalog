@@ -1,0 +1,374 @@
+{
+  "a2ui": {},
+  "app": "randomlovecraft-com-0853fbaaf8",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "randomlovecraft-com-0853fbaaf8",
+        "kind": "EXPOSES",
+        "to": "operation:get:/books"
+      },
+      {
+        "from": "randomlovecraft-com-0853fbaaf8",
+        "kind": "EXPOSES",
+        "to": "operation:get:/books/{id}/sentences"
+      },
+      {
+        "from": "randomlovecraft-com-0853fbaaf8",
+        "kind": "EXPOSES",
+        "to": "operation:get:/sentences"
+      },
+      {
+        "from": "randomlovecraft-com-0853fbaaf8",
+        "kind": "EXPOSES",
+        "to": "operation:get:/sentences/{id}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "randomlovecraft-com-0853fbaaf8",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/books",
+        "kind": "operation",
+        "method": "get",
+        "name": "get-books",
+        "path": "/books",
+        "pointer": "#/paths/~1books/get",
+        "security": [],
+        "summary": "List all books"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/books/{id}/sentences",
+        "kind": "operation",
+        "method": "get",
+        "name": "get-sentences-from-book",
+        "path": "/books/{id}/sentences",
+        "pointer": "#/paths/~1books~1{id}~1sentences/get",
+        "security": [],
+        "summary": "Random sentences from a specific book"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/sentences",
+        "kind": "operation",
+        "method": "get",
+        "name": "get-sentences",
+        "path": "/sentences",
+        "pointer": "#/paths/~1sentences/get",
+        "security": [],
+        "summary": "A random sentence"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/sentences/{id}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get-specific-sentence",
+        "path": "/sentences/{id}",
+        "pointer": "#/paths/~1sentences~1{id}/get",
+        "security": [],
+        "summary": "A specific sentence"
+      },
+      {
+        "id": "schema:book",
+        "kind": "schema",
+        "name": "book"
+      },
+      {
+        "id": "schema:sentence",
+        "kind": "schema",
+        "name": "sentence"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "randomlovecraft-com-0853fbaaf8"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "book": {
+                  "properties": {
+                    "id": {
+                      "example": "afd6",
+                      "type": "string"
+                    },
+                    "name": {
+                      "example": "The Shadow Out of Time",
+                      "type": "string"
+                    },
+                    "year": {
+                      "example": "1934",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "sentence": {
+                  "properties": {
+                    "book": {
+                      "$ref": "#/components/schemas/book"
+                    },
+                    "id": {
+                      "example": "d75b3350",
+                      "type": "string"
+                    },
+                    "sentence": {
+                      "example": "Around the first week in July I developed an unaccountable set of mixed emotions about that general northeasterly region.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "info": {
+              "description": "Random sentences from the complete works of H.P. Lovecraft. CORS-enabled.",
+              "title": "Random Lovecraft",
+              "version": "1.0",
+              "x-apisguru-categories": [
+                "text"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://raw.githubusercontent.com/dekadans/randomlovecraft.com/master/public/openapi.yaml",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "randomlovecraft.com"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/books": {
+                "get": {
+                  "description": "",
+                  "operationId": "get-books",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "properties": {
+                              "data": {
+                                "items": {
+                                  "$ref": "#/components/schemas/book"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": ""
+                    }
+                  },
+                  "summary": "List all books",
+                  "tags": [
+                    "Books"
+                  ]
+                },
+                "summary": ""
+              },
+              "/books/{id}/sentences": {
+                "get": {
+                  "description": "",
+                  "operationId": "get-sentences-from-book",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "properties": {
+                              "data": {
+                                "items": {
+                                  "$ref": "#/components/schemas/sentence"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": ""
+                    }
+                  },
+                  "summary": "Random sentences from a specific book",
+                  "tags": [
+                    "Sentences"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "description": "Book ID",
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "in": "query",
+                    "name": "limit",
+                    "schema": {
+                      "default": 1,
+                      "maximum": 100,
+                      "type": "integer"
+                    }
+                  }
+                ],
+                "summary": ""
+              },
+              "/sentences": {
+                "get": {
+                  "description": "",
+                  "operationId": "get-sentences",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "properties": {
+                              "data": {
+                                "items": {
+                                  "$ref": "#/components/schemas/sentence"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": ""
+                    }
+                  },
+                  "summary": "A random sentence",
+                  "tags": [
+                    "Sentences"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "in": "query",
+                    "name": "limit",
+                    "schema": {
+                      "default": 1,
+                      "maximum": 100,
+                      "type": "integer"
+                    }
+                  }
+                ],
+                "summary": ""
+              },
+              "/sentences/{id}": {
+                "get": {
+                  "description": "",
+                  "operationId": "get-specific-sentence",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "properties": {
+                              "data": {
+                                "$ref": "#/components/schemas/sentence"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": ""
+                    }
+                  },
+                  "summary": "A specific sentence",
+                  "tags": [
+                    "Sentences"
+                  ]
+                },
+                "parameters": [
+                  {
+                    "description": "Sentence ID",
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ],
+                "summary": ""
+              }
+            },
+            "servers": [
+              {
+                "url": "https://randomlovecraft.com/api"
+              }
+            ],
+            "tags": [
+              {
+                "name": "Sentences"
+              },
+              {
+                "name": "Books"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Random Lovecraft"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:59.201307Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://raw.githubusercontent.com/dekadans/randomlovecraft.com/master/public/openapi.yaml",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "7f10001ce90b0581aac26f3932016bc4d74a07fc7d569e825c29632c3d72b38a",
+    "source_id": "randomlovecraft.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/randomlovecraft.com/1.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0"
+}

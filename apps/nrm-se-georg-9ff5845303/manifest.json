@@ -1,0 +1,477 @@
+{
+  "a2ui": {},
+  "app": "nrm-se-georg-9ff5845303",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "nrm-se-georg-9ff5845303",
+        "kind": "EXPOSES",
+        "to": "operation:get:/autocomplete"
+      },
+      {
+        "from": "nrm-se-georg-9ff5845303",
+        "kind": "EXPOSES",
+        "to": "operation:get:/coordinates"
+      },
+      {
+        "from": "nrm-se-georg-9ff5845303",
+        "kind": "EXPOSES",
+        "to": "operation:get:/reverse"
+      },
+      {
+        "from": "nrm-se-georg-9ff5845303",
+        "kind": "EXPOSES",
+        "to": "operation:get:/search"
+      },
+      {
+        "from": "nrm-se-georg-9ff5845303",
+        "kind": "EXPOSES",
+        "to": "operation:post:/upload"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "nrm-se-georg-9ff5845303",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/autocomplete",
+        "kind": "operation",
+        "method": "get",
+        "name": "autoComplete",
+        "path": "/autocomplete",
+        "pointer": "#/paths/~1autocomplete/get",
+        "security": [],
+        "summary": "Search"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/coordinates",
+        "kind": "operation",
+        "method": "get",
+        "name": "searchCoordinates",
+        "path": "/coordinates",
+        "pointer": "#/paths/~1coordinates/get",
+        "security": [],
+        "summary": "Search coordinates in different formate"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/reverse",
+        "kind": "operation",
+        "method": "get",
+        "name": "getReverseGeoCode",
+        "path": "/reverse",
+        "pointer": "#/paths/~1reverse/get",
+        "security": [],
+        "summary": "Get reverse geocoding"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/search",
+        "kind": "operation",
+        "method": "get",
+        "name": "search",
+        "path": "/search",
+        "pointer": "#/paths/~1search/get",
+        "security": [],
+        "summary": "Get geocoding"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/upload",
+        "kind": "operation",
+        "method": "post",
+        "name": "uploadFile",
+        "path": "/upload",
+        "pointer": "#/paths/~1upload/post",
+        "security": [],
+        "summary": "Batch upload"
+      },
+      {
+        "id": "schema:InputPart",
+        "kind": "schema",
+        "name": "InputPart"
+      },
+      {
+        "id": "schema:MediaType",
+        "kind": "schema",
+        "name": "MediaType"
+      },
+      {
+        "id": "schema:MultipartFormDataInput",
+        "kind": "schema",
+        "name": "MultipartFormDataInput"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "nrm-se-georg-9ff5845303"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/api/",
+            "definitions": {
+              "InputPart": {
+                "properties": {
+                  "bodyAsString": {
+                    "type": "string"
+                  },
+                  "contentTypeFromMessage": {
+                    "type": "boolean"
+                  },
+                  "headers": {
+                    "additionalProperties": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": "object"
+                  },
+                  "mediaType": {
+                    "$ref": "#/definitions/MediaType"
+                  }
+                },
+                "type": "object"
+              },
+              "MediaType": {
+                "properties": {
+                  "parameters": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "subtype": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "wildcardSubtype": {
+                    "type": "boolean"
+                  },
+                  "wildcardType": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              },
+              "MultipartFormDataInput": {
+                "properties": {
+                  "formData": {
+                    "additionalProperties": {
+                      "$ref": "#/definitions/InputPart"
+                    },
+                    "type": "object"
+                  },
+                  "formDataMap": {
+                    "additionalProperties": {
+                      "items": {
+                        "$ref": "#/definitions/InputPart"
+                      },
+                      "type": "array"
+                    },
+                    "type": "object"
+                  },
+                  "parts": {
+                    "items": {
+                      "$ref": "#/definitions/InputPart"
+                    },
+                    "type": "array"
+                  },
+                  "preamble": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "info": {
+              "title": "Georg API",
+              "version": "2.1",
+              "x-apisguru-categories": [
+                "location"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://georg.nrm.se/api/swagger.json",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "nrm.se",
+              "x-serviceName": "georg"
+            },
+            "paths": {
+              "/autocomplete": {
+                "get": {
+                  "description": "Return search results in json",
+                  "operationId": "autoComplete",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "text",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "in": "query",
+                      "name": "sources",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "in": "query",
+                      "name": "layers",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "in": "query",
+                      "name": "countryCode",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "format": "int32",
+                      "in": "query",
+                      "name": "size",
+                      "required": false,
+                      "type": "integer"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "summary": "Search",
+                  "tags": [
+                    "georg"
+                  ]
+                }
+              },
+              "/coordinates": {
+                "get": {
+                  "description": "Return search results in json",
+                  "operationId": "searchCoordinates",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "coordinates",
+                      "required": false,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "summary": "Search coordinates in different formate",
+                  "tags": [
+                    "georg"
+                  ]
+                }
+              },
+              "/reverse": {
+                "get": {
+                  "description": "Return search results in json",
+                  "operationId": "getReverseGeoCode",
+                  "parameters": [
+                    {
+                      "format": "double",
+                      "in": "query",
+                      "name": "lat",
+                      "required": false,
+                      "type": "number"
+                    },
+                    {
+                      "format": "double",
+                      "in": "query",
+                      "name": "lng",
+                      "required": false,
+                      "type": "number"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "summary": "Get reverse geocoding",
+                  "tags": [
+                    "georg"
+                  ]
+                }
+              },
+              "/search": {
+                "get": {
+                  "description": "Return search results in json",
+                  "operationId": "search",
+                  "parameters": [
+                    {
+                      "in": "query",
+                      "name": "text",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "in": "query",
+                      "name": "sources",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "in": "query",
+                      "name": "layers",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "in": "query",
+                      "name": "countryCode",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "format": "int32",
+                      "in": "query",
+                      "name": "size",
+                      "required": false,
+                      "type": "integer"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "successful operation",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "summary": "Get geocoding",
+                  "tags": [
+                    "georg"
+                  ]
+                }
+              },
+              "/upload": {
+                "post": {
+                  "consumes": [
+                    "multipart/form-data"
+                  ],
+                  "description": "Upload csv file with minimum two columns (Id, SourceLocality). Return search results in json",
+                  "operationId": "uploadFile",
+                  "parameters": [
+                    {
+                      "in": "body",
+                      "name": "body",
+                      "required": false,
+                      "schema": {
+                        "$ref": "#/definitions/MultipartFormDataInput"
+                      }
+                    },
+                    {
+                      "in": "query",
+                      "name": "type",
+                      "required": false,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/octet-stream"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "File uploaded"
+                    }
+                  },
+                  "summary": "Batch upload",
+                  "tags": [
+                    "georg"
+                  ]
+                }
+              }
+            },
+            "swagger": "2.0",
+            "tags": [
+              {
+                "description": "Georeference tool",
+                "name": "georg"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Georg API"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:57.378601Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://georg.nrm.se/api/swagger.json",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "3e2a7f4059fd8e179d810bbda6ab8aeaa3f598ad9f42a51d3a260b45ca4e42af",
+    "source_id": "nrm.se:georg",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/nrm.se/georg/2.1/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "2.1"
+}

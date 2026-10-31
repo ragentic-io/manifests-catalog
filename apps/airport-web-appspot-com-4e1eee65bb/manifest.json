@@ -1,0 +1,168 @@
+{
+  "a2ui": {},
+  "app": "airport-web-appspot-com-4e1eee65bb",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "airport-web-appspot-com-4e1eee65bb",
+        "kind": "EXPOSES",
+        "to": "operation:get:/airportsapi/v1/airports/{icao_code}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "airport-web-appspot-com-4e1eee65bb",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/airportsapi/v1/airports/{icao_code}",
+        "kind": "operation",
+        "method": "get",
+        "name": "AirportApi_getAirport",
+        "path": "/airportsapi/v1/airports/{icao_code}",
+        "pointer": "#/paths/~1airportsapi~1v1~1airports~1{icao_code}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "id": "schema:ApiEndpointsAirportResponse",
+        "kind": "schema",
+        "name": "ApiEndpointsAirportResponse"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "airport-web-appspot-com-4e1eee65bb"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/_ah/api",
+            "consumes": [
+              "application/json"
+            ],
+            "definitions": {
+              "ApiEndpointsAirportResponse": {
+                "properties": {
+                  "ICAO": {
+                    "type": "string"
+                  },
+                  "last_update": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "host": "airport-web.appspot.com",
+            "info": {
+              "description": "Get name and website-URL for airports by ICAO code. Covered airports are mostly in Germany.",
+              "title": "airportsapi",
+              "version": "v1",
+              "x-apisguru-categories": [
+                "transport"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_user-images.githubusercontent.com_21603_37955263-098e5b38-31a0-11e8-96fd-5755b16341e3.png"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://airport-web.appspot.com/api/docs/swagger.json",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "airport-web.appspot.com"
+            },
+            "paths": {
+              "/airportsapi/v1/airports/{icao_code}": {
+                "get": {
+                  "operationId": "AirportApi_getAirport",
+                  "parameters": [
+                    {
+                      "in": "path",
+                      "name": "icao_code",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "A successful response",
+                      "schema": {
+                        "$ref": "#/definitions/ApiEndpointsAirportResponse"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "produces": [
+              "application/json"
+            ],
+            "schemes": [
+              "https"
+            ],
+            "securityDefinitions": {
+              "google_id_token": {
+                "authorizationUrl": "",
+                "flow": "implicit",
+                "type": "oauth2",
+                "x-google-issuer": "accounts.google.com",
+                "x-google-jwks_uri": "https://www.googleapis.com/oauth2/v1/certs"
+              }
+            },
+            "swagger": "2.0"
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "airportsapi"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:49.377152Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://airport-web.appspot.com/api/docs/swagger.json",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "8680a59129879e79d6bac507c3b2b63bf55b4cc36e567560a1b2fbed2cdcc867",
+    "source_id": "airport-web.appspot.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/airport-web.appspot.com/v1/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "v1"
+}

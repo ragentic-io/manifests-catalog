@@ -1,0 +1,353 @@
+{
+  "a2ui": {},
+  "app": "furkot-com-c8f9ba9424",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "furkot-com-c8f9ba9424",
+        "kind": "EXPOSES",
+        "to": "operation:get:/trip"
+      },
+      {
+        "from": "furkot-com-c8f9ba9424",
+        "kind": "EXPOSES",
+        "to": "operation:get:/trip/{trip_id}/stop"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "furkot-com-c8f9ba9424",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/trip",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /trip",
+        "path": "/trip",
+        "pointer": "#/paths/~1trip/get",
+        "security": [
+          {
+            "furkot_auth_access_code": [
+              "read:trips"
+            ]
+          },
+          {
+            "furkot_auth_implicit": [
+              "read:trips"
+            ]
+          }
+        ],
+        "summary": null
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/trip/{trip_id}/stop",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /trip/{trip_id}/stop",
+        "path": "/trip/{trip_id}/stop",
+        "pointer": "#/paths/~1trip~1{trip_id}~1stop/get",
+        "security": [
+          {
+            "furkot_auth_access_code": [
+              "read:trips"
+            ]
+          },
+          {
+            "furkot_auth_implicit": [
+              "read:trips"
+            ]
+          }
+        ],
+        "summary": null
+      },
+      {
+        "id": "schema:Step",
+        "kind": "schema",
+        "name": "Step"
+      },
+      {
+        "id": "schema:Trip",
+        "kind": "schema",
+        "name": "Trip"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "furkot-com-c8f9ba9424"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/pub/api",
+            "definitions": {
+              "Step": {
+                "properties": {
+                  "address": {
+                    "description": "address of the stop",
+                    "type": "string"
+                  },
+                  "arrival": {
+                    "description": "arrival at the stop in its local timezone as YYYY-MM-DDThh:mm",
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "coordinates": {
+                    "description": "geographical coordinates of the stop",
+                    "properties": {
+                      "lat": {
+                        "description": "latitude",
+                        "format": "float",
+                        "type": "number"
+                      },
+                      "lon": {
+                        "description": "longitude",
+                        "format": "float",
+                        "type": "number"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "departure": {
+                    "description": "departure from the stop in its local timezone as YYYY-MM-DDThh:mm",
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "name of the stop",
+                    "type": "string"
+                  },
+                  "nights": {
+                    "description": "number of nights",
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "passthru": {
+                    "description": "true for pass-through points anchoring route",
+                    "type": "boolean"
+                  },
+                  "route": {
+                    "description": "route leading to the stop",
+                    "properties": {
+                      "distance": {
+                        "description": "route distance in meters",
+                        "format": "int64",
+                        "type": "integer"
+                      },
+                      "duration": {
+                        "description": "route duration in seconds",
+                        "format": "int64",
+                        "type": "integer"
+                      },
+                      "mode": {
+                        "description": "travel mode",
+                        "enum": [
+                          "car",
+                          "motorcycle",
+                          "bicycle",
+                          "walk",
+                          "other"
+                        ],
+                        "type": "string"
+                      },
+                      "polyline": {
+                        "description": "route path compatible with Google polyline encoding algorithm",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "url": {
+                    "description": "url of the page with more information about the stop",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "Trip": {
+                "properties": {
+                  "begin": {
+                    "description": "begin of the trip in its local timezone as YYYY-MM-DDThh:mm",
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description of the trip (truncated to 200 characters)",
+                    "type": "string"
+                  },
+                  "end": {
+                    "description": "end of the trip in its local timezone as YYYY-MM-DDThh:mm",
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "Unique ID of the trip",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "name of the trip",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "externalDocs": {
+              "description": "Furkot API description",
+              "url": "https://help.furkot.com/widgets/furkot-api.html"
+            },
+            "host": "trips.furkot.com",
+            "info": {
+              "contact": {
+                "email": "trips@furkot.com"
+              },
+              "description": "Furkot provides Rest API to access user trip data.\nUsing Furkot API an application can list user trips and display stops for a specific trip.\nFurkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.\n",
+              "title": "Furkot Trips",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "location"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_cdn.furkot.com_img_furkot-banner-black-4x1.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://help.furkot.com/widgets/furkot-api.yaml",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "furkot.com"
+            },
+            "paths": {
+              "/trip": {
+                "get": {
+                  "description": "list user's trips",
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response",
+                      "schema": {
+                        "items": {
+                          "$ref": "#/definitions/Trip"
+                        },
+                        "type": "array"
+                      }
+                    }
+                  }
+                }
+              },
+              "/trip/{trip_id}/stop": {
+                "get": {
+                  "description": "list stops for a trip identified by {trip_id}",
+                  "parameters": [
+                    {
+                      "description": "id of the trip",
+                      "in": "path",
+                      "name": "trip_id",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response",
+                      "schema": {
+                        "items": {
+                          "$ref": "#/definitions/Step"
+                        },
+                        "type": "array"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "schemes": [
+              "https"
+            ],
+            "security": [
+              {
+                "furkot_auth_access_code": [
+                  "read:trips"
+                ]
+              },
+              {
+                "furkot_auth_implicit": [
+                  "read:trips"
+                ]
+              }
+            ],
+            "securityDefinitions": {
+              "furkot_auth_access_code": {
+                "authorizationUrl": "https://trips.furkot.com/oauth/authorize",
+                "flow": "accessCode",
+                "scopes": {
+                  "read:trips": "list trips and stops info"
+                },
+                "tokenUrl": "https://trips.furkot.com/pub/api/access_token",
+                "type": "oauth2"
+              },
+              "furkot_auth_implicit": {
+                "authorizationUrl": "https://trips.furkot.com/oauth/authorize",
+                "flow": "implicit",
+                "scopes": {
+                  "read:trips": "list users trips info"
+                },
+                "type": "oauth2"
+              }
+            },
+            "swagger": "2.0"
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Furkot Trips"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:40.936206Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://help.furkot.com/widgets/furkot-api.yaml",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "f906f987aa7aa81a467f45bb25fc109df0fed33d8a6f2bee746b05be8b5e7fd3",
+    "source_id": "furkot.com",
+    "source_updated": "2023-03-06T07:12:59.965Z",
+    "url": "https://api.apis.guru/v2/specs/furkot.com/1.0.0/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

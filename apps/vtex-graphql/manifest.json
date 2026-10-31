@@ -1,0 +1,4767 @@
+{
+  "a2ui": {},
+  "app": "vtex-graphql",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "product",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "banners",
+        "to": "schema:Banners"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "correction",
+        "to": "schema:Correction"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "searchSuggestions",
+        "to": "schema:SearchSuggestions"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "productSearch",
+        "to": "schema:ProductSearch"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "sponsoredProducts",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "searchMetadata",
+        "to": "schema:SearchMetadata"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "products",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "productRecommendations",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "productsByIdentifier",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "facets",
+        "to": "schema:Facets"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "autocomplete",
+        "to": "schema:Suggestions"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "topSearches",
+        "to": "schema:SearchSuggestions"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "autocompleteSearchSuggestions",
+        "to": "schema:SearchSuggestions"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "productSuggestions",
+        "to": "schema:ProductSuggestions"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "searchURLsCount",
+        "to": "schema:SearchURLStats"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "pickupPointAvailability",
+        "to": "schema:PickupPointAvailability"
+      },
+      {
+        "from": "schema:Query",
+        "kind": "FIELD",
+        "name": "catalogCount",
+        "to": "schema:CatalogCount"
+      },
+      {
+        "from": "schema:AdvertisementOptions",
+        "kind": "FIELD",
+        "name": "showSponsored",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:AdvertisementOptions",
+        "kind": "FIELD",
+        "name": "sponsoredCount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:AdvertisementOptions",
+        "kind": "FIELD",
+        "name": "repeatSponsoredProducts",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:AdvertisementOptions",
+        "kind": "FIELD",
+        "name": "advertisementPlacement",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Advertisement",
+        "kind": "FIELD",
+        "name": "adId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Advertisement",
+        "kind": "FIELD",
+        "name": "campaignId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Advertisement",
+        "kind": "FIELD",
+        "name": "actionCost",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Advertisement",
+        "kind": "FIELD",
+        "name": "adRequestId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Advertisement",
+        "kind": "FIELD",
+        "name": "adResponseId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ProductSuggestions",
+        "kind": "FIELD",
+        "name": "count",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ProductSuggestions",
+        "kind": "FIELD",
+        "name": "products",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:ProductSuggestions",
+        "kind": "FIELD",
+        "name": "misspelled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:ProductSuggestions",
+        "kind": "FIELD",
+        "name": "operator",
+        "to": "schema:Operator"
+      },
+      {
+        "from": "schema:ProductSuggestions",
+        "kind": "FIELD",
+        "name": "searchId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSuggestions",
+        "kind": "FIELD",
+        "name": "origin",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Banners",
+        "kind": "FIELD",
+        "name": "banners",
+        "to": "schema:SearchBanner"
+      },
+      {
+        "from": "schema:SearchBanner",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchBanner",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchBanner",
+        "kind": "FIELD",
+        "name": "area",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchBanner",
+        "kind": "FIELD",
+        "name": "html",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Benefit",
+        "kind": "FIELD",
+        "name": "featured",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Benefit",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Benefit",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Benefit",
+        "kind": "FIELD",
+        "name": "items",
+        "to": "schema:BenefitItem"
+      },
+      {
+        "from": "schema:Benefit",
+        "kind": "FIELD",
+        "name": "teaserType",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BenefitItem",
+        "kind": "FIELD",
+        "name": "benefitProduct",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:BenefitItem",
+        "kind": "FIELD",
+        "name": "benefitSKUIds",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BenefitItem",
+        "kind": "FIELD",
+        "name": "discount",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:BenefitItem",
+        "kind": "FIELD",
+        "name": "minQuantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "FIELD",
+        "name": "cacheId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "FIELD",
+        "name": "imageUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "FIELD",
+        "name": "titleTag",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "FIELD",
+        "name": "metaTagDescription",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Brand",
+        "kind": "FIELD",
+        "name": "active",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Category",
+        "kind": "FIELD",
+        "name": "cacheId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Category",
+        "kind": "FIELD",
+        "name": "href",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Category",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Category",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Category",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Category",
+        "kind": "FIELD",
+        "name": "titleTag",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Category",
+        "kind": "FIELD",
+        "name": "hasChildren",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Category",
+        "kind": "FIELD",
+        "name": "metaTagDescription",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Category",
+        "kind": "FIELD",
+        "name": "children",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:Correction",
+        "kind": "FIELD",
+        "name": "correction",
+        "to": "schema:SearchCorrection"
+      },
+      {
+        "from": "schema:SearchCorrection",
+        "kind": "FIELD",
+        "name": "text",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchCorrection",
+        "kind": "FIELD",
+        "name": "highlighted",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchCorrection",
+        "kind": "FIELD",
+        "name": "misspelled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:SearchCorrection",
+        "kind": "FIELD",
+        "name": "correction",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PickupPointAvailability",
+        "kind": "FIELD",
+        "name": "pickupPointDistances",
+        "to": "schema:PickupPointDistance"
+      },
+      {
+        "from": "schema:PickupPointDistance",
+        "kind": "FIELD",
+        "name": "pickupId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PickupPointDistance",
+        "kind": "FIELD",
+        "name": "pickupName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PickupPointDistance",
+        "kind": "FIELD",
+        "name": "distance",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:PickupPointDistance",
+        "kind": "FIELD",
+        "name": "isActive",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PickupPointDistance",
+        "kind": "FIELD",
+        "name": "address",
+        "to": "schema:PickupPointAddress"
+      },
+      {
+        "from": "schema:PickupPointAddress",
+        "kind": "FIELD",
+        "name": "street",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PickupPointAddress",
+        "kind": "FIELD",
+        "name": "number",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PickupPointAddress",
+        "kind": "FIELD",
+        "name": "neighborhood",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PickupPointAddress",
+        "kind": "FIELD",
+        "name": "city",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PickupPointAddress",
+        "kind": "FIELD",
+        "name": "state",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PickupPointAddress",
+        "kind": "FIELD",
+        "name": "postalCode",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CatalogCount",
+        "kind": "FIELD",
+        "name": "total",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:QueryArgs",
+        "kind": "FIELD",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:QueryArgs",
+        "kind": "FIELD",
+        "name": "query",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:QueryArgs",
+        "kind": "FIELD",
+        "name": "selectedFacets",
+        "to": "schema:SelectedFacet"
+      },
+      {
+        "from": "schema:Range",
+        "kind": "FIELD",
+        "name": "from",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Range",
+        "kind": "FIELD",
+        "name": "to",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "selected",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "children",
+        "to": "schema:FacetValue"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "range",
+        "to": "schema:Range"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "link",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "linkEncoded",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FacetValue",
+        "kind": "FIELD",
+        "name": "href",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Facet",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Facet",
+        "kind": "FIELD",
+        "name": "values",
+        "to": "schema:FacetValue"
+      },
+      {
+        "from": "schema:Facet",
+        "kind": "FIELD",
+        "name": "type",
+        "to": "schema:FilterType"
+      },
+      {
+        "from": "schema:Facet",
+        "kind": "FIELD",
+        "name": "hidden",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Facet",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "departments",
+        "to": "schema:DepartmentFacet"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "brands",
+        "to": "schema:BrandFacet"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "specificationFilters",
+        "to": "schema:FilterFacets"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "categoriesTrees",
+        "to": "schema:CategoriesTreeFacet"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "priceRanges",
+        "to": "schema:PriceRangesFacet"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "recordsFiltered",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "queryArgs",
+        "to": "schema:QueryArgs"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "facets",
+        "to": "schema:Facet"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "sampling",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Facets",
+        "kind": "FIELD",
+        "name": "breadcrumb",
+        "to": "schema:SearchBreadcrumb"
+      },
+      {
+        "from": "schema:DepartmentFacet",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:DepartmentFacet",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:DepartmentFacet",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DepartmentFacet",
+        "kind": "FIELD",
+        "name": "link",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DepartmentFacet",
+        "kind": "FIELD",
+        "name": "linkEncoded",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DepartmentFacet",
+        "kind": "FIELD",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DepartmentFacet",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DepartmentFacet",
+        "kind": "FIELD",
+        "name": "selected",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:BrandFacet",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:BrandFacet",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:BrandFacet",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BrandFacet",
+        "kind": "FIELD",
+        "name": "link",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BrandFacet",
+        "kind": "FIELD",
+        "name": "linkEncoded",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BrandFacet",
+        "kind": "FIELD",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BrandFacet",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BrandFacet",
+        "kind": "FIELD",
+        "name": "selected",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PriceRangesFacet",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:PriceRangesFacet",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PriceRangesFacet",
+        "kind": "FIELD",
+        "name": "link",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PriceRangesFacet",
+        "kind": "FIELD",
+        "name": "linkEncoded",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PriceRangesFacet",
+        "kind": "FIELD",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PriceRangesFacet",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PriceRangesFacet",
+        "kind": "FIELD",
+        "name": "selected",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:PriceRangesFacet",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "link",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "linkEncoded",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "href",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "children",
+        "to": "schema:CategoriesTreeFacet"
+      },
+      {
+        "from": "schema:CategoriesTreeFacet",
+        "kind": "FIELD",
+        "name": "selected",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:FilterFacet",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:FilterFacet",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FilterFacet",
+        "kind": "FIELD",
+        "name": "link",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FilterFacet",
+        "kind": "FIELD",
+        "name": "linkEncoded",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FilterFacet",
+        "kind": "FIELD",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FilterFacet",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FilterFacet",
+        "kind": "FIELD",
+        "name": "selected",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:FilterFacets",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:FilterFacets",
+        "kind": "FIELD",
+        "name": "facets",
+        "to": "schema:FilterFacet"
+      },
+      {
+        "from": "schema:ItemMetadata",
+        "kind": "FIELD",
+        "name": "items",
+        "to": "schema:ItemMetadataUnit"
+      },
+      {
+        "from": "schema:ItemMetadata",
+        "kind": "FIELD",
+        "name": "priceTable",
+        "to": "schema:ItemPriceTable"
+      },
+      {
+        "from": "schema:ItemPriceTable",
+        "kind": "FIELD",
+        "name": "type",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ItemPriceTable",
+        "kind": "FIELD",
+        "name": "values",
+        "to": "schema:PriceTableItem"
+      },
+      {
+        "from": "schema:PriceTableItem",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PriceTableItem",
+        "kind": "FIELD",
+        "name": "assemblyId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PriceTableItem",
+        "kind": "FIELD",
+        "name": "price",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "skuName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "productId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "refId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "ean",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "imageUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "detailUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "seller",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ItemMetadataUnit",
+        "kind": "FIELD",
+        "name": "assemblyOptions",
+        "to": "schema:AssemblyOption"
+      },
+      {
+        "from": "schema:AssemblyOption",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:AssemblyOption",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssemblyOption",
+        "kind": "FIELD",
+        "name": "required",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:AssemblyOption",
+        "kind": "FIELD",
+        "name": "composition",
+        "to": "schema:CompositionType"
+      },
+      {
+        "from": "schema:AssemblyOption",
+        "kind": "FIELD",
+        "name": "inputValues",
+        "to": "schema:InputValue"
+      },
+      {
+        "from": "schema:InputValue",
+        "kind": "FIELD",
+        "name": "label",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:InputValue",
+        "kind": "FIELD",
+        "name": "maxLength",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:InputValue",
+        "kind": "FIELD",
+        "name": "type",
+        "to": "schema:InputValueType"
+      },
+      {
+        "from": "schema:InputValue",
+        "kind": "FIELD",
+        "name": "defaultValue",
+        "to": "schema:StringOrBoolean"
+      },
+      {
+        "from": "schema:InputValue",
+        "kind": "FIELD",
+        "name": "domain",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CompositionType",
+        "kind": "FIELD",
+        "name": "minQuantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CompositionType",
+        "kind": "FIELD",
+        "name": "maxQuantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CompositionType",
+        "kind": "FIELD",
+        "name": "items",
+        "to": "schema:CompositionItem"
+      },
+      {
+        "from": "schema:CompositionItem",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:CompositionItem",
+        "kind": "FIELD",
+        "name": "minQuantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CompositionItem",
+        "kind": "FIELD",
+        "name": "maxQuantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CompositionItem",
+        "kind": "FIELD",
+        "name": "initialQuantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:CompositionItem",
+        "kind": "FIELD",
+        "name": "priceTable",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:CompositionItem",
+        "kind": "FIELD",
+        "name": "seller",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssemblyOptionInput",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:AssemblyOptionInput",
+        "kind": "FIELD",
+        "name": "quantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:AssemblyOptionInput",
+        "kind": "FIELD",
+        "name": "assemblyId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssemblyOptionInput",
+        "kind": "FIELD",
+        "name": "seller",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AssemblyOptionInput",
+        "kind": "FIELD",
+        "name": "options",
+        "to": "schema:AssemblyOptionInput"
+      },
+      {
+        "from": "schema:PageType",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PageType",
+        "kind": "FIELD",
+        "name": "type",
+        "to": "schema:PageEntityIdentifier"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "brand",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "brandId",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "cacheId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "categoryId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "categories",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "categoryTree",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "clusterHighlights",
+        "to": "schema:ClusterHighlight"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "productClusters",
+        "to": "schema:ProductClusters"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "items",
+        "to": "schema:SKU"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "skuSpecifications",
+        "to": "schema:SkuSpecification"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "link",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "linkText",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "productId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "productName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "properties",
+        "to": "schema:Property"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "propertyGroups",
+        "to": "schema:PropertyGroup"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "productReference",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "titleTag",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "metaTagDescription",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "recommendations",
+        "to": "schema:Recommendation"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "jsonSpecifications",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "benefits",
+        "to": "schema:Benefit"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "itemMetadata",
+        "to": "schema:ItemMetadata"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "specificationGroups",
+        "to": "schema:SpecificationGroup"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "priceRange",
+        "to": "schema:ProductPriceRange"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "releaseDate",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "selectedProperties",
+        "to": "schema:SelectedProperty"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "rule",
+        "to": "schema:Rule"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "advertisement",
+        "to": "schema:Advertisement"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "deliveryPromisesBadges",
+        "to": "schema:BadgeItem"
+      },
+      {
+        "from": "schema:Product",
+        "kind": "FIELD",
+        "name": "specification",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BadgeItem",
+        "kind": "FIELD",
+        "name": "typeName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BadgeItem",
+        "kind": "FIELD",
+        "name": "pickupId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:BadgeItem",
+        "kind": "FIELD",
+        "name": "pickupName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SelectedProperty",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SelectedProperty",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductPriceRange",
+        "kind": "FIELD",
+        "name": "sellingPrice",
+        "to": "schema:PriceRange"
+      },
+      {
+        "from": "schema:ProductPriceRange",
+        "kind": "FIELD",
+        "name": "listPrice",
+        "to": "schema:PriceRange"
+      },
+      {
+        "from": "schema:PriceRange",
+        "kind": "FIELD",
+        "name": "highPrice",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:PriceRange",
+        "kind": "FIELD",
+        "name": "lowPrice",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "brand",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "categoryId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "categoryTree",
+        "to": "schema:Category"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "clusterHighlights",
+        "to": "schema:ClusterHighlight"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "productClusters",
+        "to": "schema:ProductClusters"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "link",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "linkText",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "productId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "productName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "properties",
+        "to": "schema:Property"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "propertyGroups",
+        "to": "schema:PropertyGroup"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "productReference",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "recommendations",
+        "to": "schema:Recommendation"
+      },
+      {
+        "from": "schema:OnlyProduct",
+        "kind": "FIELD",
+        "name": "jsonSpecifications",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductClusters",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ProductClusters",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ClusterHighlight",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:ClusterHighlight",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Seller",
+        "kind": "FIELD",
+        "name": "sellerId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Seller",
+        "kind": "FIELD",
+        "name": "sellerName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Seller",
+        "kind": "FIELD",
+        "name": "addToCartLink",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Seller",
+        "kind": "FIELD",
+        "name": "sellerDefault",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Seller",
+        "kind": "FIELD",
+        "name": "commertialOffer",
+        "to": "schema:Offer"
+      },
+      {
+        "from": "schema:Recommendation",
+        "kind": "FIELD",
+        "name": "buy",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:Recommendation",
+        "kind": "FIELD",
+        "name": "view",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:Recommendation",
+        "kind": "FIELD",
+        "name": "similars",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "itemId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "nameComplete",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "complementName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "ean",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "referenceId",
+        "to": "schema:Reference"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "measurementUnit",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "unitMultiplier",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "kitItems",
+        "to": "schema:KitItem"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "images",
+        "to": "schema:Image"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "videos",
+        "to": "schema:Video"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "sellers",
+        "to": "schema:Seller"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "variations",
+        "to": "schema:Property"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "attachments",
+        "to": "schema:Attachment"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "estimatedDateArrival",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SKU",
+        "kind": "FIELD",
+        "name": "attributes",
+        "to": "schema:SkuNonStructuredAttribute"
+      },
+      {
+        "from": "schema:SkuNonStructuredAttribute",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:SkuNonStructuredAttribute",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SkuNonStructuredAttribute",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SkuNonStructuredAttribute",
+        "kind": "FIELD",
+        "name": "visible",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:SkuSpecification",
+        "kind": "FIELD",
+        "name": "field",
+        "to": "schema:SKUSpecificationField"
+      },
+      {
+        "from": "schema:SkuSpecification",
+        "kind": "FIELD",
+        "name": "values",
+        "to": "schema:SKUSpecificationValue"
+      },
+      {
+        "from": "schema:SKUSpecificationField",
+        "kind": "FIELD",
+        "name": "originalName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SKUSpecificationField",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SKUSpecificationValue",
+        "kind": "FIELD",
+        "name": "originalName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SKUSpecificationValue",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:productSpecification",
+        "kind": "FIELD",
+        "name": "fieldName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:productSpecification",
+        "kind": "FIELD",
+        "name": "fieldValues",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductUniqueIdentifier",
+        "kind": "FIELD",
+        "name": "field",
+        "to": "schema:ProductUniqueIdentifierField"
+      },
+      {
+        "from": "schema:ProductUniqueIdentifier",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:KitItem",
+        "kind": "FIELD",
+        "name": "itemId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:KitItem",
+        "kind": "FIELD",
+        "name": "amount",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:KitItem",
+        "kind": "FIELD",
+        "name": "product",
+        "to": "schema:OnlyProduct"
+      },
+      {
+        "from": "schema:KitItem",
+        "kind": "FIELD",
+        "name": "sku",
+        "to": "schema:SKU"
+      },
+      {
+        "from": "schema:Attachment",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Attachment",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Attachment",
+        "kind": "FIELD",
+        "name": "required",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Attachment",
+        "kind": "FIELD",
+        "name": "domainValues",
+        "to": "schema:DomainValues"
+      },
+      {
+        "from": "schema:DomainValues",
+        "kind": "FIELD",
+        "name": "FieldName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DomainValues",
+        "kind": "FIELD",
+        "name": "MaxCaracters",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DomainValues",
+        "kind": "FIELD",
+        "name": "DomainValues",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "Installments",
+        "to": "schema:Installment"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "Price",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "ListPrice",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "spotPrice",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "PriceWithoutDiscount",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "RewardValue",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "PriceValidUntil",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "AvailableQuantity",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "Tax",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "taxPercentage",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "CacheVersionUsedToCallCheckout",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "DeliverySlaSamples",
+        "to": "schema:DeliverySlaSamples"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "discountHighlights",
+        "to": "schema:Discount"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "teasers",
+        "to": "schema:Teaser"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "giftSkuIds",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "gifts",
+        "to": "schema:Gift"
+      },
+      {
+        "from": "schema:Offer",
+        "kind": "FIELD",
+        "name": "priceToken",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Gift",
+        "kind": "FIELD",
+        "name": "productName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Gift",
+        "kind": "FIELD",
+        "name": "skuName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Gift",
+        "kind": "FIELD",
+        "name": "brand",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Gift",
+        "kind": "FIELD",
+        "name": "linkText",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Gift",
+        "kind": "FIELD",
+        "name": "description",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Gift",
+        "kind": "FIELD",
+        "name": "images",
+        "to": "schema:GiftImage"
+      },
+      {
+        "from": "schema:GiftImage",
+        "kind": "FIELD",
+        "name": "imageUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:GiftImage",
+        "kind": "FIELD",
+        "name": "imageLabel",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:GiftImage",
+        "kind": "FIELD",
+        "name": "imageText",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Teaser",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Teaser",
+        "kind": "FIELD",
+        "name": "conditions",
+        "to": "schema:TeaserCondition"
+      },
+      {
+        "from": "schema:Teaser",
+        "kind": "FIELD",
+        "name": "effects",
+        "to": "schema:TeaserEffects"
+      },
+      {
+        "from": "schema:Teaser",
+        "kind": "FIELD",
+        "name": "generalValues",
+        "to": "schema:GeneralValueTeaser"
+      },
+      {
+        "from": "schema:GeneralValueTeaser",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:GeneralValueTeaser",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AdditionalInfo",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:AdditionalInfo",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:TeaserCondition",
+        "kind": "FIELD",
+        "name": "minimumQuantity",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:TeaserCondition",
+        "kind": "FIELD",
+        "name": "parameters",
+        "to": "schema:TeaserValue"
+      },
+      {
+        "from": "schema:TeaserEffects",
+        "kind": "FIELD",
+        "name": "parameters",
+        "to": "schema:TeaserValue"
+      },
+      {
+        "from": "schema:TeaserValue",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:TeaserValue",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Discount",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Discount",
+        "kind": "FIELD",
+        "name": "additionalInfo",
+        "to": "schema:AdditionalInfo"
+      },
+      {
+        "from": "schema:DeliverySlaSamples",
+        "kind": "FIELD",
+        "name": "DeliverySlaPerTypes",
+        "to": "schema:DeliverySlaPerTypes"
+      },
+      {
+        "from": "schema:DeliverySlaSamples",
+        "kind": "FIELD",
+        "name": "Region",
+        "to": "schema:Region"
+      },
+      {
+        "from": "schema:DeliverySlaPerTypes",
+        "kind": "FIELD",
+        "name": "TypeName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:DeliverySlaPerTypes",
+        "kind": "FIELD",
+        "name": "Price",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:DeliverySlaPerTypes",
+        "kind": "FIELD",
+        "name": "EstimatedTimeSpanToDelivery",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Region",
+        "kind": "FIELD",
+        "name": "IsPersisted",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Region",
+        "kind": "FIELD",
+        "name": "IsRemoved",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:Region",
+        "kind": "FIELD",
+        "name": "Id",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Region",
+        "kind": "FIELD",
+        "name": "Name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Region",
+        "kind": "FIELD",
+        "name": "CountryCode",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Region",
+        "kind": "FIELD",
+        "name": "ZipCode",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Region",
+        "kind": "FIELD",
+        "name": "CultureInfoName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "FIELD",
+        "name": "cacheId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "FIELD",
+        "name": "imageId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "FIELD",
+        "name": "imageLabel",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "FIELD",
+        "name": "imageTag",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "FIELD",
+        "name": "imageUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Image",
+        "kind": "FIELD",
+        "name": "imageText",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Video",
+        "kind": "FIELD",
+        "name": "videoUrl",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SpecificationGroup",
+        "kind": "FIELD",
+        "name": "originalName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SpecificationGroup",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SpecificationGroup",
+        "kind": "FIELD",
+        "name": "specifications",
+        "to": "schema:SpecificationGroupProperty"
+      },
+      {
+        "from": "schema:SpecificationGroupProperty",
+        "kind": "FIELD",
+        "name": "originalName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SpecificationGroupProperty",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SpecificationGroupProperty",
+        "kind": "FIELD",
+        "name": "values",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Property",
+        "kind": "FIELD",
+        "name": "originalName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Property",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Property",
+        "kind": "FIELD",
+        "name": "values",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PropertyGroup",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:PropertyGroup",
+        "kind": "FIELD",
+        "name": "properties",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Installment",
+        "kind": "FIELD",
+        "name": "Value",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Installment",
+        "kind": "FIELD",
+        "name": "InterestRate",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Installment",
+        "kind": "FIELD",
+        "name": "TotalValuePlusInterestRate",
+        "to": "schema:Float"
+      },
+      {
+        "from": "schema:Installment",
+        "kind": "FIELD",
+        "name": "NumberOfInstallments",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Installment",
+        "kind": "FIELD",
+        "name": "PaymentSystemName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Installment",
+        "kind": "FIELD",
+        "name": "PaymentSystemGroupName",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Installment",
+        "kind": "FIELD",
+        "name": "Name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Reference",
+        "kind": "FIELD",
+        "name": "Key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Reference",
+        "kind": "FIELD",
+        "name": "Value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Rule",
+        "kind": "FIELD",
+        "name": "id",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "products",
+        "to": "schema:Product"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "recordsFiltered",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "titleTag",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "metaTagDescription",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "breadcrumb",
+        "to": "schema:SearchBreadcrumb"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "canonical",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "suggestion",
+        "to": "schema:SearchSuggestions"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "correction",
+        "to": "schema:SearchCorrection"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "operator",
+        "to": "schema:Operator"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "fuzzy",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "searchState",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "banners",
+        "to": "schema:SearchBanner"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "redirect",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "options",
+        "to": "schema:ProductSearchOptions"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "searchId",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSearch",
+        "kind": "FIELD",
+        "name": "origin",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:ProductSearchOptions",
+        "kind": "FIELD",
+        "name": "deliveryPromisesEnabled",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:SearchBreadcrumb",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchBreadcrumb",
+        "kind": "FIELD",
+        "name": "href",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchMetadata",
+        "kind": "FIELD",
+        "name": "titleTag",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchMetadata",
+        "kind": "FIELD",
+        "name": "metaTagDescription",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SelectedFacetInput",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SelectedFacetInput",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SelectedFacet",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SelectedFacet",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Options",
+        "kind": "FIELD",
+        "name": "allowRedirect",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "schema:SearchSuggestions",
+        "kind": "FIELD",
+        "name": "searches",
+        "to": "schema:SearchSuggestion"
+      },
+      {
+        "from": "schema:SearchSuggestion",
+        "kind": "FIELD",
+        "name": "term",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchSuggestion",
+        "kind": "FIELD",
+        "name": "count",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:SearchSuggestion",
+        "kind": "FIELD",
+        "name": "attributes",
+        "to": "schema:SearchSuggestionAttribute"
+      },
+      {
+        "from": "schema:SearchSuggestionAttribute",
+        "kind": "FIELD",
+        "name": "key",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchSuggestionAttribute",
+        "kind": "FIELD",
+        "name": "value",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchSuggestionAttribute",
+        "kind": "FIELD",
+        "name": "labelValue",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchURLStats",
+        "kind": "FIELD",
+        "name": "path",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:SearchURLStats",
+        "kind": "FIELD",
+        "name": "count",
+        "to": "schema:Int"
+      },
+      {
+        "from": "schema:Suggestions",
+        "kind": "FIELD",
+        "name": "cacheId",
+        "to": "schema:ID"
+      },
+      {
+        "from": "schema:Suggestions",
+        "kind": "FIELD",
+        "name": "itemsReturned",
+        "to": "schema:Items"
+      },
+      {
+        "from": "schema:Items",
+        "kind": "FIELD",
+        "name": "thumb",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Items",
+        "kind": "FIELD",
+        "name": "name",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Items",
+        "kind": "FIELD",
+        "name": "href",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Items",
+        "kind": "FIELD",
+        "name": "criteria",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Items",
+        "kind": "FIELD",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "schema:Items",
+        "kind": "FIELD",
+        "name": "productId",
+        "to": "schema:String"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:product"
+      },
+      {
+        "from": "operation:query:product",
+        "kind": "RETURNS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:banners"
+      },
+      {
+        "from": "operation:query:banners",
+        "kind": "RETURNS",
+        "to": "schema:Banners"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:correction"
+      },
+      {
+        "from": "operation:query:correction",
+        "kind": "RETURNS",
+        "to": "schema:Correction"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:searchSuggestions"
+      },
+      {
+        "from": "operation:query:searchSuggestions",
+        "kind": "RETURNS",
+        "to": "schema:SearchSuggestions"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:productSearch"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "RETURNS",
+        "to": "schema:ProductSearch"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:sponsoredProducts"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "RETURNS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:searchMetadata"
+      },
+      {
+        "from": "operation:query:searchMetadata",
+        "kind": "RETURNS",
+        "to": "schema:SearchMetadata"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:products"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "RETURNS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:productRecommendations"
+      },
+      {
+        "from": "operation:query:productRecommendations",
+        "kind": "RETURNS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:productsByIdentifier"
+      },
+      {
+        "from": "operation:query:productsByIdentifier",
+        "kind": "RETURNS",
+        "to": "schema:Product"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:facets"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "RETURNS",
+        "to": "schema:Facets"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:autocomplete"
+      },
+      {
+        "from": "operation:query:autocomplete",
+        "kind": "RETURNS",
+        "to": "schema:Suggestions"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:topSearches"
+      },
+      {
+        "from": "operation:query:topSearches",
+        "kind": "RETURNS",
+        "to": "schema:SearchSuggestions"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:autocompleteSearchSuggestions"
+      },
+      {
+        "from": "operation:query:autocompleteSearchSuggestions",
+        "kind": "RETURNS",
+        "to": "schema:SearchSuggestions"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:productSuggestions"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "RETURNS",
+        "to": "schema:ProductSuggestions"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:searchURLsCount"
+      },
+      {
+        "from": "operation:query:searchURLsCount",
+        "kind": "RETURNS",
+        "to": "schema:SearchURLStats"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:pickupPointAvailability"
+      },
+      {
+        "from": "operation:query:pickupPointAvailability",
+        "kind": "RETURNS",
+        "to": "schema:PickupPointAvailability"
+      },
+      {
+        "from": "vtex-graphql",
+        "kind": "EXPOSES",
+        "to": "operation:query:catalogCount"
+      },
+      {
+        "from": "operation:query:catalogCount",
+        "kind": "RETURNS",
+        "to": "schema:CatalogCount"
+      },
+      {
+        "from": "operation:query:product",
+        "kind": "ACCEPTS",
+        "name": "slug",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:product",
+        "kind": "ACCEPTS",
+        "name": "identifier",
+        "to": "schema:ProductUniqueIdentifier"
+      },
+      {
+        "from": "operation:query:product",
+        "kind": "ACCEPTS",
+        "name": "regionId",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:product",
+        "kind": "ACCEPTS",
+        "name": "salesChannel",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:banners",
+        "kind": "ACCEPTS",
+        "name": "fullText",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:banners",
+        "kind": "ACCEPTS",
+        "name": "selectedFacets",
+        "to": "schema:SelectedFacetInput"
+      },
+      {
+        "from": "operation:query:correction",
+        "kind": "ACCEPTS",
+        "name": "fullText",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchSuggestions",
+        "kind": "ACCEPTS",
+        "name": "fullText",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchSuggestions",
+        "kind": "ACCEPTS",
+        "name": "searchState",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "query",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "fullText",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "selectedFacets",
+        "to": "schema:SelectedFacetInput"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "category",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "specificationFilters",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "priceRange",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "collection",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "salesChannel",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "orderBy",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "from",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "to",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "hideUnavailableItems",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "simulationBehavior",
+        "to": "schema:SimulationBehavior"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "productOriginVtex",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "operator",
+        "to": "schema:Operator"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "fuzzy",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "searchState",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "options",
+        "to": "schema:Options"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "variant",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "showSponsored",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "advertisementOptions",
+        "to": "schema:AdvertisementOptions"
+      },
+      {
+        "from": "operation:query:productSearch",
+        "kind": "ACCEPTS",
+        "name": "origin",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "fullText",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "selectedFacets",
+        "to": "schema:SelectedFacetInput"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "priceRange",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "salesChannel",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "orderBy",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "from",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "to",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "hideUnavailableItems",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "simulationBehavior",
+        "to": "schema:SimulationBehavior"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "productOriginVtex",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "operator",
+        "to": "schema:Operator"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "fuzzy",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "searchState",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "options",
+        "to": "schema:Options"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "anonymousId",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "macId",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:sponsoredProducts",
+        "kind": "ACCEPTS",
+        "name": "userId",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchMetadata",
+        "kind": "ACCEPTS",
+        "name": "query",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchMetadata",
+        "kind": "ACCEPTS",
+        "name": "fullText",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchMetadata",
+        "kind": "ACCEPTS",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchMetadata",
+        "kind": "ACCEPTS",
+        "name": "selectedFacets",
+        "to": "schema:SelectedFacetInput"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "query",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "category",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "specificationFilters",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "priceRange",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "collection",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "salesChannel",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "orderBy",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "from",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "to",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "hideUnavailableItems",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "simulationBehavior",
+        "to": "schema:SimulationBehavior"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "shippingOptions",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "variant",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "advertisementOptions",
+        "to": "schema:AdvertisementOptions"
+      },
+      {
+        "from": "operation:query:products",
+        "kind": "ACCEPTS",
+        "name": "searchState",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productRecommendations",
+        "kind": "ACCEPTS",
+        "name": "identifier",
+        "to": "schema:ProductUniqueIdentifier"
+      },
+      {
+        "from": "operation:query:productRecommendations",
+        "kind": "ACCEPTS",
+        "name": "type",
+        "to": "schema:CrossSelingInputEnum"
+      },
+      {
+        "from": "operation:query:productRecommendations",
+        "kind": "ACCEPTS",
+        "name": "groupBy",
+        "to": "schema:CrossSelingGroupByEnum"
+      },
+      {
+        "from": "operation:query:productRecommendations",
+        "kind": "ACCEPTS",
+        "name": "searchState",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productsByIdentifier",
+        "kind": "ACCEPTS",
+        "name": "field",
+        "to": "schema:ProductUniqueIdentifierField"
+      },
+      {
+        "from": "operation:query:productsByIdentifier",
+        "kind": "ACCEPTS",
+        "name": "values",
+        "to": "schema:ID"
+      },
+      {
+        "from": "operation:query:productsByIdentifier",
+        "kind": "ACCEPTS",
+        "name": "salesChannel",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "query",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "fullText",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "map",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "selectedFacets",
+        "to": "schema:SelectedFacetInput"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "hideUnavailableItems",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "removeHiddenFacets",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "behavior",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "operator",
+        "to": "schema:Operator"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "fuzzy",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "searchState",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "from",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "to",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "categoryTreeBehavior",
+        "to": "schema:CategoryTreeBehavior"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "initialAttributes",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:facets",
+        "kind": "ACCEPTS",
+        "name": "variant",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:autocomplete",
+        "kind": "ACCEPTS",
+        "name": "maxRows",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:autocomplete",
+        "kind": "ACCEPTS",
+        "name": "searchTerm",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:topSearches",
+        "kind": "ACCEPTS",
+        "name": "searchState",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:autocompleteSearchSuggestions",
+        "kind": "ACCEPTS",
+        "name": "fullText",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:autocompleteSearchSuggestions",
+        "kind": "ACCEPTS",
+        "name": "searchState",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "fullText",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "facetKey",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "facetValue",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "productOriginVtex",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "simulationBehavior",
+        "to": "schema:SimulationBehavior"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "hideUnavailableItems",
+        "to": "schema:Boolean"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "regionId",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "salesChannel",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "orderBy",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "count",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "shippingOptions",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "variant",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "advertisementOptions",
+        "to": "schema:AdvertisementOptions"
+      },
+      {
+        "from": "operation:query:productSuggestions",
+        "kind": "ACCEPTS",
+        "name": "origin",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:searchURLsCount",
+        "kind": "ACCEPTS",
+        "name": "limit",
+        "to": "schema:Int"
+      },
+      {
+        "from": "operation:query:searchURLsCount",
+        "kind": "ACCEPTS",
+        "name": "sort",
+        "to": "schema:SORT"
+      },
+      {
+        "from": "operation:query:pickupPointAvailability",
+        "kind": "ACCEPTS",
+        "name": "salesChannel",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:pickupPointAvailability",
+        "kind": "ACCEPTS",
+        "name": "zipCode",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:pickupPointAvailability",
+        "kind": "ACCEPTS",
+        "name": "country",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:pickupPointAvailability",
+        "kind": "ACCEPTS",
+        "name": "coordinates",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:catalogCount",
+        "kind": "ACCEPTS",
+        "name": "zipCode",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:catalogCount",
+        "kind": "ACCEPTS",
+        "name": "coordinates",
+        "to": "schema:String"
+      },
+      {
+        "from": "operation:query:catalogCount",
+        "kind": "ACCEPTS",
+        "name": "salesChannel",
+        "to": "schema:String"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "vtex-graphql",
+        "kind": "application"
+      },
+      {
+        "id": "schema:AdditionalInfo",
+        "kind": "schema",
+        "name": "AdditionalInfo"
+      },
+      {
+        "id": "schema:Advertisement",
+        "kind": "schema",
+        "name": "Advertisement"
+      },
+      {
+        "id": "schema:AdvertisementOptions",
+        "kind": "schema",
+        "name": "AdvertisementOptions"
+      },
+      {
+        "id": "schema:AssemblyOption",
+        "kind": "schema",
+        "name": "AssemblyOption"
+      },
+      {
+        "id": "schema:AssemblyOptionInput",
+        "kind": "schema",
+        "name": "AssemblyOptionInput"
+      },
+      {
+        "id": "schema:Attachment",
+        "kind": "schema",
+        "name": "Attachment"
+      },
+      {
+        "id": "schema:BadgeItem",
+        "kind": "schema",
+        "name": "BadgeItem"
+      },
+      {
+        "id": "schema:Banners",
+        "kind": "schema",
+        "name": "Banners"
+      },
+      {
+        "id": "schema:Benefit",
+        "kind": "schema",
+        "name": "Benefit"
+      },
+      {
+        "id": "schema:BenefitItem",
+        "kind": "schema",
+        "name": "BenefitItem"
+      },
+      {
+        "id": "schema:Boolean",
+        "kind": "schema",
+        "name": "Boolean"
+      },
+      {
+        "id": "schema:Brand",
+        "kind": "schema",
+        "name": "Brand"
+      },
+      {
+        "id": "schema:BrandFacet",
+        "kind": "schema",
+        "name": "BrandFacet"
+      },
+      {
+        "id": "schema:CatalogCount",
+        "kind": "schema",
+        "name": "CatalogCount"
+      },
+      {
+        "id": "schema:CategoriesTreeFacet",
+        "kind": "schema",
+        "name": "CategoriesTreeFacet"
+      },
+      {
+        "id": "schema:Category",
+        "kind": "schema",
+        "name": "Category"
+      },
+      {
+        "id": "schema:CategoryTreeBehavior",
+        "kind": "schema",
+        "name": "CategoryTreeBehavior"
+      },
+      {
+        "id": "schema:ClusterHighlight",
+        "kind": "schema",
+        "name": "ClusterHighlight"
+      },
+      {
+        "id": "schema:CompositionItem",
+        "kind": "schema",
+        "name": "CompositionItem"
+      },
+      {
+        "id": "schema:CompositionType",
+        "kind": "schema",
+        "name": "CompositionType"
+      },
+      {
+        "id": "schema:Correction",
+        "kind": "schema",
+        "name": "Correction"
+      },
+      {
+        "id": "schema:CrossSelingGroupByEnum",
+        "kind": "schema",
+        "name": "CrossSelingGroupByEnum"
+      },
+      {
+        "id": "schema:CrossSelingInputEnum",
+        "kind": "schema",
+        "name": "CrossSelingInputEnum"
+      },
+      {
+        "id": "schema:DeliverySlaPerTypes",
+        "kind": "schema",
+        "name": "DeliverySlaPerTypes"
+      },
+      {
+        "id": "schema:DeliverySlaSamples",
+        "kind": "schema",
+        "name": "DeliverySlaSamples"
+      },
+      {
+        "id": "schema:DepartmentFacet",
+        "kind": "schema",
+        "name": "DepartmentFacet"
+      },
+      {
+        "id": "schema:Discount",
+        "kind": "schema",
+        "name": "Discount"
+      },
+      {
+        "id": "schema:DomainValues",
+        "kind": "schema",
+        "name": "DomainValues"
+      },
+      {
+        "id": "schema:Facet",
+        "kind": "schema",
+        "name": "Facet"
+      },
+      {
+        "id": "schema:FacetValue",
+        "kind": "schema",
+        "name": "FacetValue"
+      },
+      {
+        "id": "schema:Facets",
+        "kind": "schema",
+        "name": "Facets"
+      },
+      {
+        "id": "schema:FilterFacet",
+        "kind": "schema",
+        "name": "FilterFacet"
+      },
+      {
+        "id": "schema:FilterFacets",
+        "kind": "schema",
+        "name": "FilterFacets"
+      },
+      {
+        "id": "schema:FilterType",
+        "kind": "schema",
+        "name": "FilterType"
+      },
+      {
+        "id": "schema:Float",
+        "kind": "schema",
+        "name": "Float"
+      },
+      {
+        "id": "schema:GeneralValueTeaser",
+        "kind": "schema",
+        "name": "GeneralValueTeaser"
+      },
+      {
+        "id": "schema:Gift",
+        "kind": "schema",
+        "name": "Gift"
+      },
+      {
+        "id": "schema:GiftImage",
+        "kind": "schema",
+        "name": "GiftImage"
+      },
+      {
+        "id": "schema:ID",
+        "kind": "schema",
+        "name": "ID"
+      },
+      {
+        "id": "schema:Image",
+        "kind": "schema",
+        "name": "Image"
+      },
+      {
+        "id": "schema:InputValue",
+        "kind": "schema",
+        "name": "InputValue"
+      },
+      {
+        "id": "schema:InputValueType",
+        "kind": "schema",
+        "name": "InputValueType"
+      },
+      {
+        "id": "schema:Installment",
+        "kind": "schema",
+        "name": "Installment"
+      },
+      {
+        "id": "schema:InstallmentsCriteria",
+        "kind": "schema",
+        "name": "InstallmentsCriteria"
+      },
+      {
+        "id": "schema:Int",
+        "kind": "schema",
+        "name": "Int"
+      },
+      {
+        "id": "schema:ItemMetadata",
+        "kind": "schema",
+        "name": "ItemMetadata"
+      },
+      {
+        "id": "schema:ItemMetadataUnit",
+        "kind": "schema",
+        "name": "ItemMetadataUnit"
+      },
+      {
+        "id": "schema:ItemPriceTable",
+        "kind": "schema",
+        "name": "ItemPriceTable"
+      },
+      {
+        "id": "schema:Items",
+        "kind": "schema",
+        "name": "Items"
+      },
+      {
+        "id": "schema:ItemsFilter",
+        "kind": "schema",
+        "name": "ItemsFilter"
+      },
+      {
+        "id": "schema:KitItem",
+        "kind": "schema",
+        "name": "KitItem"
+      },
+      {
+        "id": "schema:Offer",
+        "kind": "schema",
+        "name": "Offer"
+      },
+      {
+        "id": "schema:OnlyProduct",
+        "kind": "schema",
+        "name": "OnlyProduct"
+      },
+      {
+        "id": "schema:Operator",
+        "kind": "schema",
+        "name": "Operator"
+      },
+      {
+        "id": "schema:Options",
+        "kind": "schema",
+        "name": "Options"
+      },
+      {
+        "id": "schema:PageEntityIdentifier",
+        "kind": "schema",
+        "name": "PageEntityIdentifier"
+      },
+      {
+        "id": "schema:PageType",
+        "kind": "schema",
+        "name": "PageType"
+      },
+      {
+        "id": "schema:PickupPointAddress",
+        "kind": "schema",
+        "name": "PickupPointAddress"
+      },
+      {
+        "id": "schema:PickupPointAvailability",
+        "kind": "schema",
+        "name": "PickupPointAvailability"
+      },
+      {
+        "id": "schema:PickupPointDistance",
+        "kind": "schema",
+        "name": "PickupPointDistance"
+      },
+      {
+        "id": "schema:PriceRange",
+        "kind": "schema",
+        "name": "PriceRange"
+      },
+      {
+        "id": "schema:PriceRangesFacet",
+        "kind": "schema",
+        "name": "PriceRangesFacet"
+      },
+      {
+        "id": "schema:PriceTableItem",
+        "kind": "schema",
+        "name": "PriceTableItem"
+      },
+      {
+        "id": "schema:Product",
+        "kind": "schema",
+        "name": "Product"
+      },
+      {
+        "id": "schema:ProductClusters",
+        "kind": "schema",
+        "name": "ProductClusters"
+      },
+      {
+        "id": "schema:ProductPriceRange",
+        "kind": "schema",
+        "name": "ProductPriceRange"
+      },
+      {
+        "id": "schema:ProductSearch",
+        "kind": "schema",
+        "name": "ProductSearch"
+      },
+      {
+        "id": "schema:ProductSearchOptions",
+        "kind": "schema",
+        "name": "ProductSearchOptions"
+      },
+      {
+        "id": "schema:ProductSuggestions",
+        "kind": "schema",
+        "name": "ProductSuggestions"
+      },
+      {
+        "id": "schema:ProductUniqueIdentifier",
+        "kind": "schema",
+        "name": "ProductUniqueIdentifier"
+      },
+      {
+        "id": "schema:ProductUniqueIdentifierField",
+        "kind": "schema",
+        "name": "ProductUniqueIdentifierField"
+      },
+      {
+        "id": "schema:Property",
+        "kind": "schema",
+        "name": "Property"
+      },
+      {
+        "id": "schema:PropertyGroup",
+        "kind": "schema",
+        "name": "PropertyGroup"
+      },
+      {
+        "id": "schema:Query",
+        "kind": "schema",
+        "name": "Query"
+      },
+      {
+        "id": "schema:QueryArgs",
+        "kind": "schema",
+        "name": "QueryArgs"
+      },
+      {
+        "id": "schema:Range",
+        "kind": "schema",
+        "name": "Range"
+      },
+      {
+        "id": "schema:Recommendation",
+        "kind": "schema",
+        "name": "Recommendation"
+      },
+      {
+        "id": "schema:Reference",
+        "kind": "schema",
+        "name": "Reference"
+      },
+      {
+        "id": "schema:Region",
+        "kind": "schema",
+        "name": "Region"
+      },
+      {
+        "id": "schema:Rule",
+        "kind": "schema",
+        "name": "Rule"
+      },
+      {
+        "id": "schema:SKU",
+        "kind": "schema",
+        "name": "SKU"
+      },
+      {
+        "id": "schema:SKUSpecificationField",
+        "kind": "schema",
+        "name": "SKUSpecificationField"
+      },
+      {
+        "id": "schema:SKUSpecificationValue",
+        "kind": "schema",
+        "name": "SKUSpecificationValue"
+      },
+      {
+        "id": "schema:SORT",
+        "kind": "schema",
+        "name": "SORT"
+      },
+      {
+        "id": "schema:SearchBanner",
+        "kind": "schema",
+        "name": "SearchBanner"
+      },
+      {
+        "id": "schema:SearchBreadcrumb",
+        "kind": "schema",
+        "name": "SearchBreadcrumb"
+      },
+      {
+        "id": "schema:SearchCorrection",
+        "kind": "schema",
+        "name": "SearchCorrection"
+      },
+      {
+        "id": "schema:SearchMetadata",
+        "kind": "schema",
+        "name": "SearchMetadata"
+      },
+      {
+        "id": "schema:SearchSuggestion",
+        "kind": "schema",
+        "name": "SearchSuggestion"
+      },
+      {
+        "id": "schema:SearchSuggestionAttribute",
+        "kind": "schema",
+        "name": "SearchSuggestionAttribute"
+      },
+      {
+        "id": "schema:SearchSuggestions",
+        "kind": "schema",
+        "name": "SearchSuggestions"
+      },
+      {
+        "id": "schema:SearchURLStats",
+        "kind": "schema",
+        "name": "SearchURLStats"
+      },
+      {
+        "id": "schema:SelectedFacet",
+        "kind": "schema",
+        "name": "SelectedFacet"
+      },
+      {
+        "id": "schema:SelectedFacetInput",
+        "kind": "schema",
+        "name": "SelectedFacetInput"
+      },
+      {
+        "id": "schema:SelectedProperty",
+        "kind": "schema",
+        "name": "SelectedProperty"
+      },
+      {
+        "id": "schema:Seller",
+        "kind": "schema",
+        "name": "Seller"
+      },
+      {
+        "id": "schema:SimulationBehavior",
+        "kind": "schema",
+        "name": "SimulationBehavior"
+      },
+      {
+        "id": "schema:SkuNonStructuredAttribute",
+        "kind": "schema",
+        "name": "SkuNonStructuredAttribute"
+      },
+      {
+        "id": "schema:SkuSpecification",
+        "kind": "schema",
+        "name": "SkuSpecification"
+      },
+      {
+        "id": "schema:SpecificationGroup",
+        "kind": "schema",
+        "name": "SpecificationGroup"
+      },
+      {
+        "id": "schema:SpecificationGroupProperty",
+        "kind": "schema",
+        "name": "SpecificationGroupProperty"
+      },
+      {
+        "id": "schema:String",
+        "kind": "schema",
+        "name": "String"
+      },
+      {
+        "id": "schema:StringOrBoolean",
+        "kind": "schema",
+        "name": "StringOrBoolean"
+      },
+      {
+        "id": "schema:Suggestions",
+        "kind": "schema",
+        "name": "Suggestions"
+      },
+      {
+        "id": "schema:Teaser",
+        "kind": "schema",
+        "name": "Teaser"
+      },
+      {
+        "id": "schema:TeaserCondition",
+        "kind": "schema",
+        "name": "TeaserCondition"
+      },
+      {
+        "id": "schema:TeaserEffects",
+        "kind": "schema",
+        "name": "TeaserEffects"
+      },
+      {
+        "id": "schema:TeaserValue",
+        "kind": "schema",
+        "name": "TeaserValue"
+      },
+      {
+        "id": "schema:Video",
+        "kind": "schema",
+        "name": "Video"
+      },
+      {
+        "id": "schema:productSpecification",
+        "kind": "schema",
+        "name": "productSpecification"
+      },
+      {
+        "arguments": [
+          {
+            "name": "slug",
+            "type": "String"
+          },
+          {
+            "name": "identifier",
+            "type": "ProductUniqueIdentifier"
+          },
+          {
+            "name": "regionId",
+            "type": "String"
+          },
+          {
+            "name": "salesChannel",
+            "type": "Int"
+          }
+        ],
+        "description": "Returns a specified product",
+        "field": "product",
+        "id": "operation:query:product",
+        "kind": "operation",
+        "name": "product",
+        "operation": "query",
+        "return_type": "Product"
+      },
+      {
+        "arguments": [
+          {
+            "name": "fullText",
+            "type": "String"
+          },
+          {
+            "name": "selectedFacets",
+            "type": "[SelectedFacetInput]"
+          }
+        ],
+        "description": "Lists the banners registered for a given query. Check the [configuring banners documentation](https://help.vtex.com/en/tracks/vtex-intelligent-search--19wrbB7nEQcmwzDPl1l4Cb/4ViKEivLJtJsvpaW0aqIQ5) for a full explanation of the banner feature.",
+        "field": "banners",
+        "id": "operation:query:banners",
+        "kind": "operation",
+        "name": "banners",
+        "operation": "query",
+        "return_type": "Banners"
+      },
+      {
+        "arguments": [
+          {
+            "name": "fullText",
+            "type": "String"
+          }
+        ],
+        "description": "Tries to correct a misspelled term from the search.",
+        "field": "correction",
+        "id": "operation:query:correction",
+        "kind": "operation",
+        "name": "correction",
+        "operation": "query",
+        "return_type": "Correction"
+      },
+      {
+        "arguments": [
+          {
+            "name": "fullText",
+            "type": "String!"
+          },
+          {
+            "name": "searchState",
+            "type": "String"
+          }
+        ],
+        "description": "Lists suggested terms similar to the search term.",
+        "field": "searchSuggestions",
+        "id": "operation:query:searchSuggestions",
+        "kind": "operation",
+        "name": "searchSuggestions",
+        "operation": "query",
+        "return_type": "SearchSuggestions"
+      },
+      {
+        "arguments": [
+          {
+            "name": "query",
+            "type": "String"
+          },
+          {
+            "name": "fullText",
+            "type": "String"
+          },
+          {
+            "name": "map",
+            "type": "String"
+          },
+          {
+            "name": "selectedFacets",
+            "type": "[SelectedFacetInput]"
+          },
+          {
+            "name": "category",
+            "type": "String"
+          },
+          {
+            "name": "specificationFilters",
+            "type": "[String]"
+          },
+          {
+            "name": "priceRange",
+            "type": "String"
+          },
+          {
+            "name": "collection",
+            "type": "String"
+          },
+          {
+            "name": "salesChannel",
+            "type": "String"
+          },
+          {
+            "name": "orderBy",
+            "type": "String"
+          },
+          {
+            "name": "from",
+            "type": "Int"
+          },
+          {
+            "name": "to",
+            "type": "Int"
+          },
+          {
+            "name": "hideUnavailableItems",
+            "type": "Boolean"
+          },
+          {
+            "name": "simulationBehavior",
+            "type": "SimulationBehavior"
+          },
+          {
+            "name": "productOriginVtex",
+            "type": "Boolean"
+          },
+          {
+            "name": "operator",
+            "type": "Operator"
+          },
+          {
+            "name": "fuzzy",
+            "type": "String"
+          },
+          {
+            "name": "searchState",
+            "type": "String"
+          },
+          {
+            "name": "options",
+            "type": "Options"
+          },
+          {
+            "name": "variant",
+            "type": "String"
+          },
+          {
+            "name": "showSponsored",
+            "type": "Boolean"
+          },
+          {
+            "name": "advertisementOptions",
+            "type": "AdvertisementOptions"
+          },
+          {
+            "name": "origin",
+            "type": "String"
+          }
+        ],
+        "description": "Lists the products for a given query.",
+        "field": "productSearch",
+        "id": "operation:query:productSearch",
+        "kind": "operation",
+        "name": "productSearch",
+        "operation": "query",
+        "return_type": "ProductSearch"
+      },
+      {
+        "arguments": [
+          {
+            "name": "fullText",
+            "type": "String"
+          },
+          {
+            "name": "selectedFacets",
+            "type": "[SelectedFacetInput]"
+          },
+          {
+            "name": "priceRange",
+            "type": "String"
+          },
+          {
+            "name": "salesChannel",
+            "type": "String"
+          },
+          {
+            "name": "orderBy",
+            "type": "String"
+          },
+          {
+            "name": "from",
+            "type": "Int"
+          },
+          {
+            "name": "to",
+            "type": "Int"
+          },
+          {
+            "name": "hideUnavailableItems",
+            "type": "Boolean"
+          },
+          {
+            "name": "simulationBehavior",
+            "type": "SimulationBehavior"
+          },
+          {
+            "name": "productOriginVtex",
+            "type": "Boolean"
+          },
+          {
+            "name": "operator",
+            "type": "Operator"
+          },
+          {
+            "name": "fuzzy",
+            "type": "String"
+          },
+          {
+            "name": "searchState",
+            "type": "String"
+          },
+          {
+            "name": "options",
+            "type": "Options"
+          },
+          {
+            "name": "anonymousId",
+            "type": "String"
+          },
+          {
+            "name": "macId",
+            "type": "String"
+          },
+          {
+            "name": "userId",
+            "type": "String"
+          }
+        ],
+        "description": null,
+        "field": "sponsoredProducts",
+        "id": "operation:query:sponsoredProducts",
+        "kind": "operation",
+        "name": "sponsoredProducts",
+        "operation": "query",
+        "return_type": "[Product]"
+      },
+      {
+        "arguments": [
+          {
+            "name": "query",
+            "type": "String"
+          },
+          {
+            "name": "fullText",
+            "type": "String"
+          },
+          {
+            "name": "map",
+            "type": "String"
+          },
+          {
+            "name": "selectedFacets",
+            "type": "[SelectedFacetInput]"
+          }
+        ],
+        "description": null,
+        "field": "searchMetadata",
+        "id": "operation:query:searchMetadata",
+        "kind": "operation",
+        "name": "searchMetadata",
+        "operation": "query",
+        "return_type": "SearchMetadata"
+      },
+      {
+        "arguments": [
+          {
+            "name": "query",
+            "type": "String"
+          },
+          {
+            "name": "map",
+            "type": "String"
+          },
+          {
+            "name": "category",
+            "type": "String"
+          },
+          {
+            "name": "specificationFilters",
+            "type": "[String]"
+          },
+          {
+            "name": "priceRange",
+            "type": "String"
+          },
+          {
+            "name": "collection",
+            "type": "String"
+          },
+          {
+            "name": "salesChannel",
+            "type": "String"
+          },
+          {
+            "name": "orderBy",
+            "type": "String"
+          },
+          {
+            "name": "from",
+            "type": "Int"
+          },
+          {
+            "name": "to",
+            "type": "Int"
+          },
+          {
+            "name": "hideUnavailableItems",
+            "type": "Boolean"
+          },
+          {
+            "name": "simulationBehavior",
+            "type": "SimulationBehavior"
+          },
+          {
+            "name": "shippingOptions",
+            "type": "[String]"
+          },
+          {
+            "name": "variant",
+            "type": "String"
+          },
+          {
+            "name": "advertisementOptions",
+            "type": "AdvertisementOptions"
+          },
+          {
+            "name": "searchState",
+            "type": "String"
+          }
+        ],
+        "description": "Returns products list filtered and ordered",
+        "field": "products",
+        "id": "operation:query:products",
+        "kind": "operation",
+        "name": "products",
+        "operation": "query",
+        "return_type": "[Product]"
+      },
+      {
+        "arguments": [
+          {
+            "name": "identifier",
+            "type": "ProductUniqueIdentifier"
+          },
+          {
+            "name": "type",
+            "type": "CrossSelingInputEnum"
+          },
+          {
+            "name": "groupBy",
+            "type": "CrossSelingGroupByEnum"
+          },
+          {
+            "name": "searchState",
+            "type": "String"
+          }
+        ],
+        "description": null,
+        "field": "productRecommendations",
+        "id": "operation:query:productRecommendations",
+        "kind": "operation",
+        "name": "productRecommendations",
+        "operation": "query",
+        "return_type": "[Product]"
+      },
+      {
+        "arguments": [
+          {
+            "name": "field",
+            "type": "ProductUniqueIdentifierField!"
+          },
+          {
+            "name": "values",
+            "type": "[ID!]"
+          },
+          {
+            "name": "salesChannel",
+            "type": "String"
+          }
+        ],
+        "description": null,
+        "field": "productsByIdentifier",
+        "id": "operation:query:productsByIdentifier",
+        "kind": "operation",
+        "name": "productsByIdentifier",
+        "operation": "query",
+        "return_type": "[Product]"
+      },
+      {
+        "arguments": [
+          {
+            "name": "query",
+            "type": "String"
+          },
+          {
+            "name": "fullText",
+            "type": "String"
+          },
+          {
+            "name": "map",
+            "type": "String"
+          },
+          {
+            "name": "selectedFacets",
+            "type": "[SelectedFacetInput]"
+          },
+          {
+            "name": "hideUnavailableItems",
+            "type": "Boolean"
+          },
+          {
+            "name": "removeHiddenFacets",
+            "type": "Boolean"
+          },
+          {
+            "name": "behavior",
+            "type": "String"
+          },
+          {
+            "name": "operator",
+            "type": "Operator"
+          },
+          {
+            "name": "fuzzy",
+            "type": "String"
+          },
+          {
+            "name": "searchState",
+            "type": "String"
+          },
+          {
+            "name": "from",
+            "type": "Int"
+          },
+          {
+            "name": "to",
+            "type": "Int"
+          },
+          {
+            "name": "categoryTreeBehavior",
+            "type": "CategoryTreeBehavior"
+          },
+          {
+            "name": "initialAttributes",
+            "type": "String"
+          },
+          {
+            "name": "variant",
+            "type": "String"
+          }
+        ],
+        "description": "Returns facets category",
+        "field": "facets",
+        "id": "operation:query:facets",
+        "kind": "operation",
+        "name": "facets",
+        "operation": "query",
+        "return_type": "Facets"
+      },
+      {
+        "arguments": [
+          {
+            "name": "maxRows",
+            "type": "Int"
+          },
+          {
+            "name": "searchTerm",
+            "type": "String"
+          }
+        ],
+        "description": "Get auto complete suggestions in search",
+        "field": "autocomplete",
+        "id": "operation:query:autocomplete",
+        "kind": "operation",
+        "name": "autocomplete",
+        "operation": "query",
+        "return_type": "Suggestions"
+      },
+      {
+        "arguments": [
+          {
+            "name": "searchState",
+            "type": "String"
+          }
+        ],
+        "description": "Get list of the 10 most searched terms",
+        "field": "topSearches",
+        "id": "operation:query:topSearches",
+        "kind": "operation",
+        "name": "topSearches",
+        "operation": "query",
+        "return_type": "SearchSuggestions"
+      },
+      {
+        "arguments": [
+          {
+            "name": "fullText",
+            "type": "String!"
+          },
+          {
+            "name": "searchState",
+            "type": "String"
+          }
+        ],
+        "description": "Lists the suggested terms and attributes similar to the search term.",
+        "field": "autocompleteSearchSuggestions",
+        "id": "operation:query:autocompleteSearchSuggestions",
+        "kind": "operation",
+        "name": "autocompleteSearchSuggestions",
+        "operation": "query",
+        "return_type": "SearchSuggestions"
+      },
+      {
+        "arguments": [
+          {
+            "name": "fullText",
+            "type": "String!"
+          },
+          {
+            "name": "facetKey",
+            "type": "String"
+          },
+          {
+            "name": "facetValue",
+            "type": "String"
+          },
+          {
+            "name": "productOriginVtex",
+            "type": "Boolean"
+          },
+          {
+            "name": "simulationBehavior",
+            "type": "SimulationBehavior"
+          },
+          {
+            "name": "hideUnavailableItems",
+            "type": "Boolean"
+          },
+          {
+            "name": "regionId",
+            "type": "String"
+          },
+          {
+            "name": "salesChannel",
+            "type": "Int"
+          },
+          {
+            "name": "orderBy",
+            "type": "String"
+          },
+          {
+            "name": "count",
+            "type": "Int"
+          },
+          {
+            "name": "shippingOptions",
+            "type": "[String]"
+          },
+          {
+            "name": "variant",
+            "type": "String"
+          },
+          {
+            "name": "advertisementOptions",
+            "type": "AdvertisementOptions"
+          },
+          {
+            "name": "origin",
+            "type": "String"
+          }
+        ],
+        "description": "Get product suggestions",
+        "field": "productSuggestions",
+        "id": "operation:query:productSuggestions",
+        "kind": "operation",
+        "name": "productSuggestions",
+        "operation": "query",
+        "return_type": "ProductSuggestions"
+      },
+      {
+        "arguments": [
+          {
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "name": "sort",
+            "type": "SORT"
+          }
+        ],
+        "description": "Get search urls access stats count",
+        "field": "searchURLsCount",
+        "id": "operation:query:searchURLsCount",
+        "kind": "operation",
+        "name": "searchURLsCount",
+        "operation": "query",
+        "return_type": "[SearchURLStats]"
+      },
+      {
+        "arguments": [
+          {
+            "name": "salesChannel",
+            "type": "String!"
+          },
+          {
+            "name": "zipCode",
+            "type": "String!"
+          },
+          {
+            "name": "country",
+            "type": "String!"
+          },
+          {
+            "name": "coordinates",
+            "type": "String"
+          }
+        ],
+        "description": "Pickup points available for a trade policy and delivery location,\nsorted by distance. Mirrors IS v0 pickup-point-availability.",
+        "field": "pickupPointAvailability",
+        "id": "operation:query:pickupPointAvailability",
+        "kind": "operation",
+        "name": "pickupPointAvailability",
+        "operation": "query",
+        "return_type": "PickupPointAvailability"
+      },
+      {
+        "arguments": [
+          {
+            "name": "zipCode",
+            "type": "String!"
+          },
+          {
+            "name": "coordinates",
+            "type": "String"
+          },
+          {
+            "name": "salesChannel",
+            "type": "String"
+          }
+        ],
+        "description": "Number of products deliverable to a location. Mirrors IS v1 catalog-count.\nA total of 0 means the postal code has no products.",
+        "field": "catalogCount",
+        "id": "operation:query:catalogCount",
+        "kind": "operation",
+        "name": "catalogCount",
+        "operation": "query",
+        "return_type": "CatalogCount"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "vtex-graphql"
+    },
+    "spec": {
+      "base": {
+        "protocol": "graphql",
+        "specification": {
+          "text": "directive @withSegment on FIELD_DEFINITION\n\ndirective @toVtexAssets on FIELD_DEFINITION\n\n\nenum SORT {\n  ASC\n  DESC\n}\n\ntype Query {\n  \"\"\"\n  Returns a specified product\n  \"\"\"\n  product(\n    \"\"\"\n    Product slug\n    \"\"\"\n    slug: String\n    \"\"\"\n    Product identifier\n    \"\"\"\n    identifier: ProductUniqueIdentifier\n    \"\"\"\n    Seller id encoded with base64 according to this format SW#{sellerId}\n    \"\"\"\n    regionId: String\n    \"\"\"\n    Trade Policy\n    \"\"\"\n    salesChannel: Int\n  ): Product @cacheControl(scope: SEGMENT, maxAge: SHORT) @withSegment\n\n  \"\"\"\n  Lists the banners registered for a given query. Check the [configuring banners documentation](https://help.vtex.com/en/tracks/vtex-intelligent-search--19wrbB7nEQcmwzDPl1l4Cb/4ViKEivLJtJsvpaW0aqIQ5) for a full explanation of the banner feature.\n  \"\"\"\n  banners(\n    \"\"\"\n    Search term. It can contain any character.\n    \"\"\"\n    fullText: String = \"\"\n    \"\"\"\n    List of the selected facets\n\n    The order in which the terms appear is not relevant to the search.\n\n    You can also repeat the same `facetKey` several times for different values.\n    \"\"\"\n    selectedFacets: [SelectedFacetInput]\n  ): Banners @cacheControl(scope: SEGMENT, maxAge: SHORT) @withSegment\n\n  \"\"\"\n  Tries to correct a misspelled term from the search.\n  \"\"\"\n  correction(\n    \"\"\"\n    Search term. It can contain any character.\n    \"\"\"\n    fullText: String = \"\"\n  ): Correction @cacheControl(scope: SEGMENT, maxAge: SHORT) @withSegment\n\n  \"\"\"\n  Lists suggested terms similar to the search term.\n  \"\"\"\n  searchSuggestions(\n    \"\"\"\n    Search term. It can contain any character.\n    \"\"\"\n    fullText: String!\n    \"\"\"\n    As fuzzy and operator, it controls the search state, but it is for general purposes. This field allows the search engines to apply features that are not handled by the other fields.\n    The possible values in this field are defined by each search engine.\n    \"\"\"\n    searchState: String\n  ): SearchSuggestions\n    @cacheControl(scope: SEGMENT, maxAge: MEDIUM)\n    @withSegment\n\n  \"\"\"\n  Lists the products for a given query.\n  \"\"\"\n  productSearch(\n    \"\"\"\n    **Deprecated**. Use `fullText` instead.\n    \"\"\"\n    query: String = \"\"\n    \"\"\"\n    Search term. It can contain any character.\n    \"\"\"\n    fullText: String = \"\"\n    \"\"\"\n    **Deprecated**. Use `selectedFacets` instead.\n    \"\"\"\n    map: String = \"\"\n    \"\"\"\n    List of the selected facets\n\n    The order in which the terms appear is not relevant to the search.\n\n    You can also repeat the same `facetKey` several times for different values.\n    \"\"\"\n    selectedFacets: [SelectedFacetInput]\n    \"\"\"\n    **Deprecated**. Use `selectedFacets` instead.\n    \"\"\"\n    category: String = \"\"\n    \"\"\"\n    **Deprecated**. Use `selectedFacets` instead.\n    \"\"\"\n    specificationFilters: [String]\n    \"\"\"\n    Filter by price range. e.g.: {a} TO {b} - {a} is the minimum price \"from\" and {b} is the highest price \"to\"\n    \"\"\"\n    priceRange: String = \"\"\n    \"\"\"\n    **Deprecated**. Use `selectedFacets` instead.\n    \"\"\"\n    collection: String = \"\"\n    \"\"\"\n    Filter by availability at a specific sales channel. e.g.: salesChannel:4 if want filter by available products for the sales channel 4\n    \"\"\"\n    salesChannel: String = \"\"\n    \"\"\"\n    Order by a criteria. OrderByPriceDESC/OrderByPriceASC, OrderByTopSaleDESC, OrderByReviewRateDESC, OrderByNameASC/OrderByNameDESC, OrderByReleaseDateDESC, OrderByBestDiscountDESC, OrderByScoreDESC\n    If you want to sort by a specification, use the format {specification key}:{asc|desc}. For example: 'pricePerUnit:asc' or 'size:desc' (this only works on `vtex.search-resolver@1.x`)\n    \"\"\"\n    orderBy: String = \"OrderByScoreDESC\"\n    \"\"\"\n    Pagination item start\n    \"\"\"\n    from: Int = 0\n    \"\"\"\n    Pagination item end\n    \"\"\"\n    to: Int = 9\n    \"\"\"\n    If true, uses isAvailablePerSalesChannel_ parameter on query with segment's sales channel. Will override any given salesChannel arg\n    \"\"\"\n    hideUnavailableItems: Boolean\n    \"\"\"\n    If you want faster searches and do not care about most up to date prices and promotions, use skip value.\n    \"\"\"\n    simulationBehavior: SimulationBehavior = default\n    \"\"\"\n    Each search engine has its own database, but this database might not have all the product information like `clusterHighlights` or `productClusters`.\n    As an alternative, the search engine may use the VTEX API to complete this information by setting this field to true.\n    \"\"\"\n    productOriginVtex: Boolean = false\n    \"\"\"\n    Indicates how the search-engine will deal with the fullText if there is more than one word. Set `and` if the returned products must have all the words in its metadata or `or` otherwise.\n    \"\"\"\n    operator: Operator\n    \"\"\"\n    Indicates how the search engine will correct misspelled words by using fuzzy logic.\n    It can be a number representing the max number of misspelled letters, or the string `auto` suggesting that the search-engine should set this value by itself.\n    \"\"\"\n    fuzzy: String\n    \"\"\"\n    As fuzzy and operator, it controls the search state, but it is for general purposes. This field allows the search engines to apply features that are not handled by the other fields.\n    The possible values in this field are defined by each search engine.\n    \"\"\"\n    searchState: String\n\n    \"\"\"\n    Search options that customize the search result.\n    \"\"\"\n    options: Options\n    variant: String\n\n    \"\"\"\n    **Deprecated**. Use `advertisementOptions` instead.\n    \"\"\"\n    showSponsored: Boolean\n\n    \"\"\"\n    Whether or not to fetch sponsored products. If there are sponsored products for that context, it will be returned.\n    \"\"\"\n    advertisementOptions: AdvertisementOptions\n    \"\"\"\n    Origin of the request for tracking purposes\n    \"\"\"\n    origin: String\n  ): ProductSearch @cacheControl(scope: SEGMENT, maxAge: SHORT) @withSegment\n\n  sponsoredProducts(\n    \"\"\"\n    Search term. It can contain any character.\n    \"\"\"\n    fullText: String = \"\"\n    \"\"\"\n    List of the selected facets\n\n    The order in which the terms appear is not relevant to the search.\n\n    You can also repeat the same `facetKey` several times for different values.\n    \"\"\"\n    selectedFacets: [SelectedFacetInput]\n    \"\"\"\n    Filter by price range. e.g.: {a} TO {b} - {a} is the minimum price \"from\" and {b} is the highest price \"to\"\n    \"\"\"\n    priceRange: String = \"\"\n    \"\"\"\n    Filter by availability at a specific sales channel. e.g.: salesChannel:4 if want filter by available products for the sales channel 4\n    \"\"\"\n    salesChannel: String = \"\"\n    \"\"\"\n    Order by a criteria. OrderByPriceDESC/OrderByPriceASC, OrderByTopSaleDESC, OrderByReviewRateDESC, OrderByNameASC/OrderByNameDESC, OrderByReleaseDateDESC, OrderByBestDiscountDESC, OrderByScoreDESC\n    If you want to sort by a specification, use the format {specification key}:{asc|desc}. For example: \"pricePerUnit:asc\" or \"size:desc\" (this only works on `vtex.search-resolver@1.x`)\n    \"\"\"\n    orderBy: String = \"OrderByScoreDESC\"\n    \"\"\"\n    Pagination item start\n    \"\"\"\n    from: Int = 0\n    \"\"\"\n    Pagination item end\n    \"\"\"\n    to: Int = 9\n    \"\"\"\n    If true, uses isAvailablePerSalesChannel_ parameter on query with segment's sales channel. Will override any given salesChannel arg\n    \"\"\"\n    hideUnavailableItems: Boolean\n    \"\"\"\n    If you want faster searches and do not care about most up to date prices and promotions, use skip value.\n    \"\"\"\n    simulationBehavior: SimulationBehavior = default\n    \"\"\"\n    Each search engine has its own database, but this database might not have all the product information like `clusterHighlights` or `productClusters`.\n    As an alternative, the search engine may use the VTEX API to complete this information by setting this field to true.\n    \"\"\"\n    productOriginVtex: Boolean = false\n    \"\"\"\n    Indicates how the search-engine will deal with the fullText if there is more than one word. Set `and` if the returned products must have all the words in its metadata or `or` otherwise.\n    \"\"\"\n    operator: Operator\n    \"\"\"\n    Indicates how the search engine will correct misspelled words by using fuzzy logic.\n    It can be a number representing the max number of misspelled letters, or the string `auto` suggesting that the search-engine should set this value by itself.\n    \"\"\"\n    fuzzy: String\n    \"\"\"\n    As fuzzy and operator, it controls the search state, but it is for general purposes. This field allows the search engines to apply features that are not handled by the other fields.\n    The possible values in this field are defined by each search engine.\n    \"\"\"\n    searchState: String\n\n    \"\"\"\n    Search options that customize the search result.\n    \"\"\"\n    options: Options\n\n    \"\"\"\n    Identifier for users, logged in or not. Used for A/B tests.\n    \"\"\"\n    anonymousId: String\n\n    \"\"\"\n    Identifier for user device, used for analytics purposes.\n    \"\"\"\n    macId: String\n\n    \"\"\"\n    Identifier for user ID if logged in, used for analytics purposes.\n    \"\"\"\n    userId: String\n  ): [Product] @cacheControl(scope: SEGMENT, maxAge: SHORT) @withSegment\n\n  searchMetadata(\n    \"\"\"\n    Terms that is used in search e.g.: eletronics/samsung\n    \"\"\"\n    query: String = \"\"\n    \"\"\"\n    Text inputted by the user as the search term\n    \"\"\"\n    fullText: String = \"\"\n    \"\"\"\n    Defines terms types: Brand, Category, Department e.g.: c,b\n    \"\"\"\n    map: String = \"\"\n    \"\"\"\n    List of the selected facets\n\n    The order in which the terms appear is not relevant to the search.\n\n    You can also repeat the same `facetKey` several times for different values.\n    \"\"\"\n    selectedFacets: [SelectedFacetInput]\n  ): SearchMetadata @cacheControl(scope: PUBLIC, maxAge: MEDIUM) @withSegment\n\n  \"\"\"\n  Returns products list filtered and ordered\n  \"\"\"\n  products(\n    \"\"\"\n    Terms that is used in search e.g.: eletronics/samsung\n    \"\"\"\n    query: String = \"\"\n    \"\"\"\n    Defines terms types: Brand, Category, Department e.g.: c,b\n    \"\"\"\n    map: String = \"\"\n    \"\"\"\n    Filter by category. {a}/{b} - {a} and {b} are categoryIds\n    \"\"\"\n    category: String = \"\"\n    \"\"\"\n    Array of product specification. specificationFilter_{a}:{b} - {a} is the specificationId, {b} = specification value\n    \"\"\"\n    specificationFilters: [String]\n    \"\"\"\n    Filter by price range. e.g.: {a} TO {b} - {a} is the minimum price \"from\" and {b} is the highest price \"to\"\n    \"\"\"\n    priceRange: String = \"\"\n    \"\"\"\n    Filter by collection. where collection also know as productClusterId\n    \"\"\"\n    collection: String = \"\"\n    \"\"\"\n    Filter by availability at a specific sales channel. e.g.: salesChannel:4 if want filter by available products for the sales channel 4\n    \"\"\"\n    salesChannel: String = \"\"\n    \"\"\"\n    Order by a criteria. OrderByPriceDESC/OrderByPriceASC, OrderByTopSaleDESC, OrderByReviewRateDESC, OrderByNameASC/OrderByNameDESC, OrderByReleaseDateDESC, OrderByBestDiscountDESC, OrderByScoreDESC\n    \"\"\"\n    orderBy: String = \"OrderByScoreDESC\"\n    \"\"\"\n    Pagination item start\n    \"\"\"\n    from: Int = 0\n    \"\"\"\n    Pagination item end\n    \"\"\"\n    to: Int = 9\n    \"\"\"\n    If true, uses isAvailablePerSalesChannel_ parameter on query with segment's sales channel. Will override any given salesChannel arg\n    \"\"\"\n    hideUnavailableItems: Boolean\n    \"\"\"\n    If you want faster searches and do not care about most up to date prices and promotions, use skip value.\n    \"\"\"\n    simulationBehavior: SimulationBehavior = default\n    \"\"\"\n    List of shipping options to filter products\n    \"\"\"\n    shippingOptions: [String]\n    variant: String\n    \"\"\"\n    Options for advertisement in this search request.\n    \"\"\"\n    advertisementOptions: AdvertisementOptions\n    \"\"\"\n    As fuzzy and operator, it controls the search state, but it is for general purposes. This field allows the search engines to apply features that are not handled by the other fields.\n    The possible values in this field are defined by each search engine.\n    \"\"\"\n    searchState: String\n  ): [Product] @cacheControl(scope: SEGMENT, maxAge: SHORT) @withSegment\n\n  productRecommendations(\n    identifier: ProductUniqueIdentifier\n    type: CrossSelingInputEnum\n    groupBy: CrossSelingGroupByEnum\n    \"\"\"\n    As fuzzy and operator, it controls the search state, but it is for general purposes. This field allows the search engines to apply features that are not handled by the other fields.\n    The possible values in this field are defined by each search engine.\n    \"\"\"\n    searchState: String\n  ): [Product] @cacheControl(scope: SEGMENT, maxAge: SHORT) @withSegment\n\n  productsByIdentifier(\n    field: ProductUniqueIdentifierField!\n    values: [ID!]\n    \"\"\"\n    Filter by availability at a specific sales channel.\n    \"\"\"\n    salesChannel: String\n  ): [Product] @cacheControl(scope: SEGMENT, maxAge: SHORT) @withSegment\n\n  \"\"\"\n  Returns facets category\n  \"\"\"\n  facets(\n    \"\"\"\n    **Deprecated**. Use `fullText` instead.\n    \"\"\"\n    query: String = \"\"\n    \"\"\"\n    Search term. It can contain any character.\n    \"\"\"\n    fullText: String = \"\"\n    \"\"\"\n    **Deprecated**. Use `selectedFacets` instead.\n    \"\"\"\n    map: String = \"\"\n    \"\"\"\n    List of the selected facets\n\n    The order in which the terms appear is not relevant to the search.\n\n    You can also repeat the same `facetKey` several times for different values.\n    \"\"\"\n    selectedFacets: [SelectedFacetInput] = []\n    \"\"\"\n    If true, uses isAvailablePerSalesChannel_ parameter on query with segment's sales channel.\n    \"\"\"\n    hideUnavailableItems: Boolean\n    \"\"\"\n    If true, remove hidden facets from the result.\n    \"\"\"\n    removeHiddenFacets: Boolean = false\n    \"\"\"\n    If Static, ignores SpecificationFilters received on the map and query when returning\n    the facets available, which makes the facets never change.\n    \"\"\"\n    behavior: String = \"Static\"\n    \"\"\"\n    Indicates how the search-engine will deal with the fullText if there is more than one word. Set `and` if the returned products must have all the words in its metadata or `or` otherwise.\n    \"\"\"\n    operator: Operator\n    \"\"\"\n    Indicates how the search engine will correct misspelled words by using fuzzy logic.\n    It can be a number representing the max number of misspelled letters, or the string `auto` suggesting that the search-engine should set this value by itself.\n    \"\"\"\n    fuzzy: String\n    \"\"\"\n    As fuzzy and operator, it controls the search state, but it is for general purposes. This field allows the search engines to apply features that are not handled by the other fields.\n    The possible values in this field are defined by each search engine.\n    \"\"\"\n    searchState: String\n    \"\"\"\n    Pagination item start\n    \"\"\"\n    from: Int\n    \"\"\"\n    Pagination item end\n    \"\"\"\n    to: Int\n    \"\"\"\n    Determines the behavior of the category tree\n    \"\"\"\n    categoryTreeBehavior: CategoryTreeBehavior = default\n    \"\"\"\n    Initial attributes (based on the `initialMap` parameter)\n    \"\"\"\n    initialAttributes: String\n    \"\"\"\n    Variant used to A/B test\n    \"\"\"\n    variant: String\n  ): Facets @cacheControl(scope: SEGMENT, maxAge: MEDIUM) @withSegment\n\n  \"\"\"\n  Get auto complete suggestions in search\n  \"\"\"\n  autocomplete(\n    \"\"\"\n    Number of items that is returned\n    \"\"\"\n    maxRows: Int = 12\n    \"\"\"\n    Terms that is used in search e.g.: iphone\n    \"\"\"\n    searchTerm: String\n  ): Suggestions @cacheControl(scope: SEGMENT, maxAge: MEDIUM) @withSegment\n\n  \"\"\"\n  Get list of the 10 most searched terms\n  \"\"\"\n  topSearches(\n        \"\"\"\n    As fuzzy and operator, it controls the search state, but it is for general purposes. This field allows the search engines to apply features that are not handled by the other fields.\n    The possible values in this field are defined by each search engine.\n    \"\"\"\n    searchState: String\n  ): SearchSuggestions\n    @cacheControl(scope: SEGMENT, maxAge: MEDIUM)\n    @withSegment\n\n  \"\"\"\n  Lists the suggested terms and attributes similar to the search term.\n  \"\"\"\n  autocompleteSearchSuggestions(\n    \"\"\"\n    Search term. It can contain any character.\n    \"\"\"\n    fullText: String!\n    \"\"\"\n    As fuzzy and operator, it controls the search state, but it is for general purposes. This field allows the search engines to apply features that are not handled by the other fields.\n    The possible values in this field are defined by each search engine.\n    \"\"\"\n    searchState: String\n  ): SearchSuggestions\n    @cacheControl(scope: SEGMENT, maxAge: MEDIUM)\n    @withSegment\n\n  \"\"\"\n  Get product suggestions\n  \"\"\"\n  productSuggestions(\n    \"\"\"\n    Text inputted by the user as the search term\n    \"\"\"\n    fullText: String!\n    \"\"\"\n    Selected facet key\n    \"\"\"\n    facetKey: String\n    \"\"\"\n    Selected facet value\n    \"\"\"\n    facetValue: String\n    \"\"\"\n    Each search engine has its own database, but this database might not have all the product information like `clusterHighlights` or `productClusters`.\n    As an alternative, the search engine may use the VTEX API to complete this information by setting this field to true.\n    \"\"\"\n    productOriginVtex: Boolean = false\n    \"\"\"\n    If you want faster searches and do not care about most up to date prices and promotions, use skip value.\n    \"\"\"\n    simulationBehavior: SimulationBehavior = default\n    \"\"\"\n    If true, uses isAvailablePerSalesChannel_ parameter on query with segment's sales channel\n    \"\"\"\n    hideUnavailableItems: Boolean\n    \"\"\"\n    Seller id encoded with base64 according to this format SW#{sellerId}\n    \"\"\"\n    regionId: String\n    \"\"\"\n    Sales Channel related to the region ID\n    \"\"\"\n    salesChannel: Int\n    \"\"\"\n    Order by a criteria. OrderByPriceDESC/OrderByPriceASC, OrderByTopSaleDESC, OrderByReviewRateDESC, OrderByNameASC/OrderByNameDESC, OrderByReleaseDateDESC, OrderByBestDiscountDESC, OrderByScoreDESC\n    If you want to sort by a specification, use the format {specification key}:{asc|desc}. For example: \"pricePerUnit:asc\" or \"size:desc\" (this only works on `vtex.search-resolver@1.x`)\n    \"\"\"\n    orderBy: String = \"OrderByScoreDESC\"\n    \"\"\"\n    Number of product suggestions that should be returned\n    \"\"\"\n    count: Int\n    \"\"\"\n    List of shipping options to filter suggestions\n    \"\"\"\n    shippingOptions: [String]\n    variant: String\n    \"\"\"\n    Whether or not to fetch sponsored products. If there are sponsored products for that context, it will be returned.\n    \"\"\"\n    advertisementOptions: AdvertisementOptions\n    \"\"\"\n    Origin of the request for tracking purposes\n    \"\"\"\n    origin: String\n  ): ProductSuggestions\n    @cacheControl(scope: SEGMENT, maxAge: MEDIUM)\n    @withSegment\n\n  \"\"\"\n  Get search urls access stats count\n  \"\"\"\n  searchURLsCount(\n    \"\"\"\n    Number of items that is returned\n    \"\"\"\n    limit: Int = 100\n\n    \"\"\"\n    Sorting strategy, asc: ascending, desc: descending\n    \"\"\"\n    sort: SORT\n  ): [SearchURLStats] @cacheControl(scope: PUBLIC, maxAge: SHORT)\n\n  \"\"\"\n  Pickup points available for a trade policy and delivery location,\n  sorted by distance. Mirrors IS v0 pickup-point-availability.\n  \"\"\"\n  pickupPointAvailability(\n    \"\"\"\n    Trade policy (sales channel) ID\n    \"\"\"\n    salesChannel: String!\n    \"\"\"\n    Postal code\n    \"\"\"\n    zipCode: String!\n    \"\"\"\n    ISO 3166 alpha-3 country code, e.g. BRA\n    \"\"\"\n    country: String!\n    \"\"\"\n    Format: longitude,latitude. Used to sort pickup points by proximity.\n    \"\"\"\n    coordinates: String\n  ): PickupPointAvailability\n    @cacheControl(scope: PRIVATE, maxAge: SHORT)\n    @withSegment\n\n  \"\"\"\n  Number of products deliverable to a location. Mirrors IS v1 catalog-count.\n  A total of 0 means the postal code has no products.\n  \"\"\"\n  catalogCount(\n    \"\"\"\n    Postal code\n    \"\"\"\n    zipCode: String!\n    \"\"\"\n    Format: longitude,latitude. Skips the postal-code lookup when present.\n    \"\"\"\n    coordinates: String\n    \"\"\"\n    Trade policy (sales channel) ID. Defaults to the segment sales channel.\n    \"\"\"\n    salesChannel: String\n  ): CatalogCount @cacheControl(scope: SEGMENT, maxAge: SHORT) @withSegment\n}\n\nenum SimulationBehavior {\n  \"\"\"\n  Does simulation on catalog as usual\n  \"\"\"\n  default\n  \"\"\"\n  Does simulation on catalog only for seller 1P\n  \"\"\"\n  only1P\n  \"\"\"\n  Calls catalog passing a parameter to not simulate each SKU and get its most up to date price.\n  \"\"\"\n  skip\n  \"\"\"\n  Does the simulation on the client side\n  \"\"\"\n  async\n  \"\"\"\n  Only first party sellers will include the regionId\n  \"\"\"\n  regionalize1p\n}\n\nenum CrossSelingGroupByEnum {\n  \"\"\"\n  It's the default behavior, it will group SKUs from the same product and bring only products. Limited by 12 products.\n  \"\"\"\n  PRODUCT\n  \"\"\"\n  Return all skus registered in the catalog for the recommendation.\n  \"\"\"\n  NONE\n}\n\nenum CategoryTreeBehavior {\n  \"\"\"\n  Uses the default value set by the search provider\n  \"\"\"\n  default\n  \"\"\"\n  Show the category tree when it is possible\n  \"\"\"\n  show\n  \"\"\"\n  Hide the category tree in any situation\n  \"\"\"\n  hide\n}\n\ninput AdvertisementOptions {\n  \"\"\"\n  Whether or not to fetch sponsored products in this request.\n  \"\"\"\n  showSponsored: Boolean\n  \"\"\"\n  How many sponsored products should be fetched.\n  \"\"\"\n  sponsoredCount: Int\n  \"\"\"\n  If true, the search will return the same product twice - once as a regular product and once as a sponsored product.\n  \"\"\"\n  repeatSponsoredProducts: Boolean\n  \"\"\"\n  Where the sponsored product is being shown. Used for analytics purposes.\n  \"\"\"\n  advertisementPlacement: String\n}\n\n\ntype Advertisement {\n  \"\"\"\n  ID of the ad item associated with the sponsored product.\n  \"\"\"\n  adId: ID\n  \"\"\"\n  ID of the campaign owner of the ad item.\n  \"\"\"\n  campaignId: ID\n  \"\"\"\n  Cost of the goal action. E.g: CPC, cost per click.\n  \"\"\"\n  actionCost: Float\n  \"\"\"\n  Ad Request ID.\n  \"\"\"\n  adRequestId: ID\n  \"\"\"\n  Ad Response ID.\n  \"\"\"\n  adResponseId: ID\n}\n\n\ntype ProductSuggestions {\n  \"\"\"\n  Number of suggested products\n  \"\"\"\n  count: Int!\n  \"\"\"\n  Suggested products\n  \"\"\"\n  products: [Product]!\n  \"\"\"\n  If the term is misspelled or not\n  \"\"\"\n  misspelled: Boolean\n  \"\"\"\n  Indicates how the search-engine will deal with the fullText if there is more than one word. Set `and` if the returned products must have all the words in its metadata or `or` otherwise.\n  \"\"\"\n  operator: Operator\n  \"\"\"\n  ID used to identify a search query.\n  \"\"\"\n  searchId: String\n  \"\"\"\n  Origin of the request for tracking purposes\n  \"\"\"\n  origin: String\n}\n\n\ntype Banners {\n  \"\"\"\n  List of banners.\n  \"\"\"\n  banners: [SearchBanner]\n}\n\ntype SearchBanner {\n  \"\"\"\n  Banner ID.\n  \"\"\"\n  id: String\n  \"\"\"\n  Banner name.\n  \"\"\"\n  name: String\n  \"\"\"\n  Banner area.\n  \"\"\"\n  area: String\n  \"\"\"\n  Banner HTML.\n  \"\"\"\n  html: String\n}\n\n\n\"\"\" Benefit of a Product \"\"\"\ntype Benefit {\n  \"\"\" Flag which indicates if the benefit is featured or not \"\"\"\n  featured: Boolean\n  \"\"\" Id of the product which the benefit is associated \"\"\"\n  id: String\n  \"\"\" Name of the benefit \"\"\"\n  name: String\n  \"\"\" Items of the benefit \"\"\"\n  items: [BenefitItem]\n  \"\"\" Type of benefit \"\"\"\n  teaserType: String\n}\n\ntype BenefitItem {\n  \"\"\" Product itself \"\"\"\n  benefitProduct: Product\n  \"\"\" IDs of the SKU Items that are taking part in the benefit \"\"\"\n  benefitSKUIds: [String]\n  \"\"\" Discount applied to the benefit product \"\"\"\n  discount: Float\n  \"\"\" Minimum quantity of the benefit product that is required to validate the benefit \"\"\"\n  minQuantity: Int\n}\n\ntype Brand {\n  \"\"\"\n   slug is used as cacheId\n  \"\"\"\n  cacheId: ID\n  \"\"\"\n   Brand id\n  \"\"\"\n  id: Int\n  \"\"\"\n   Brand logo\n  \"\"\"\n  imageUrl: String @toVtexAssets\n  \"\"\"\n   Text link\n  \"\"\"\n  slug: String\n  \"\"\"\n   Name of brand\n  \"\"\"\n  name: String @translatableV2(behavior: \"USER_ONLY\")\n  \"\"\"\n   Title used by html tag\n  \"\"\"\n  titleTag: String @translatableV2(behavior: \"USER_ONLY\")\n  \"\"\"\n   Description used by html tag\n  \"\"\"\n  metaTagDescription: String @translatableV2\n  \"\"\"\n   Brand is active\n  \"\"\"\n  active: Boolean\n}\n\n\ntype Category {\n  \"\"\" id is used as cacheId \"\"\"\n  cacheId: ID\n  \"\"\" URI of category \"\"\"\n  href: String\n  \"\"\" Category text link \"\"\"\n  slug: String\n  \"\"\" Category ID \"\"\"\n  id: Int\n  \"\"\" Category name \"\"\"\n  name: String @translatableV2\n  \"\"\" Title used by html tag\"\"\"\n  titleTag: String @translatableV2\n  \"\"\" Description used by html tag\"\"\"\n  hasChildren: Boolean\n  \"\"\" Has children categories \"\"\"\n  metaTagDescription: String @translatableV2\n  \"\"\" Categories children \"\"\"\n  children: [Category]\n}\n\n\ntype Correction {\n  correction: SearchCorrection\n}\n\n\"\"\"\nObject that indicates if the term was misspelled and suggests a possible correction.\n\"\"\"\ntype SearchCorrection {\n  \"\"\"\n  The corrected term. If the API was not able to correct the term, it will show the original search term.\n  \"\"\"\n  text: String\n  \"\"\"\n  The same as `text`, but it highlights the corrected word. Useful when there is more than one word.\n  \"\"\"\n  highlighted: String\n  \"\"\"\n  Whether the term was misspelled (`true`) or not (`false`).\n  \"\"\"\n  misspelled: Boolean\n  \"\"\"\n  Whether the API was able to suggest a correction (`true`) or not (`false`).\n  \"\"\"\n  correction: Boolean\n}\n\n\ntype PickupPointAvailability {\n  pickupPointDistances: [PickupPointDistance!]\n}\n\ntype PickupPointDistance {\n  pickupId: String!\n  pickupName: String!\n  distance: Float\n  isActive: Boolean\n  address: PickupPointAddress\n}\n\ntype PickupPointAddress {\n  street: String\n  number: String\n  neighborhood: String\n  city: String\n  state: String\n  postalCode: String\n}\n\ntype CatalogCount {\n  total: Int!\n}\n\n\ntype QueryArgs {\n  map: String\n  query: String\n  selectedFacets: [SelectedFacet]\n}\n\ntype Range {\n  from: Float\n  to: Float\n}\n\ntype FacetValue {\n  id: ID\n  quantity: Int!\n  name: String @translatableV2\n  key: String\n  value: String\n  selected: Boolean\n  children: [FacetValue]\n  range: Range\n  link: String\n  linkEncoded: String\n  href: String\n}\n\nenum FilterType {\n  TEXT\n  NUMBER\n  CATEGORYTREE\n  BRAND\n  PRICERANGE\n  DELIVERY\n}\n\ntype Facet {\n  name: String @translatableV2\n  values(from: Int, to: Int): [FacetValue]\n  type: FilterType\n  hidden: Boolean\n  quantity: Int\n}\n\ntype Facets {\n  departments: [DepartmentFacet]\n    @deprecated(reason: \"Use the `facets` instead.\")\n  brands: [BrandFacet] @deprecated(reason: \"Use the `facets` instead.\")\n  specificationFilters: [FilterFacets]\n  categoriesTrees: [CategoriesTreeFacet] @deprecated(reason: \"Use the `facets` instead.\")\n  \"\"\"\n  Price range for the given query.\n  \"\"\"\n  priceRanges: [PriceRangesFacet]\n  recordsFiltered: Int @deprecated(reason: \"Use the recordsFiltered from the `productSearch` instead.\")\n  \"\"\"\n  Info about the searched query.\n  \"\"\"\n  queryArgs: QueryArgs\n  \"\"\"\n  List of facets.\n  \"\"\"\n  facets: [Facet]\n  \"\"\"\n  Indicates whether there was sampling in the aggregation of facets or not. In search results that have many products, only the first 30000 will be aggregated to avoid performance issues.\n  \"\"\"\n  sampling: Boolean\n  \"\"\"\n  Generated breadcrumb for the given query.\n  \"\"\"\n  breadcrumb: [SearchBreadcrumb]\n}\n\ntype DepartmentFacet {\n  id: ID!\n  quantity: Int!\n  name: String @translatableV2\n  link: String!\n  linkEncoded: String!\n  map: String\n  value: String!\n  selected: Boolean!\n}\n\ntype BrandFacet {\n  id: ID!\n  quantity: Int!\n  name: String! @translatableV2(behavior: \"USER_ONLY\")\n  link: String!\n  linkEncoded: String!\n  map: String\n  value: String!\n  selected: Boolean!\n}\n\ntype PriceRangesFacet {\n  quantity: Int!\n  name: String @translatableV2\n  link: String!\n  linkEncoded: String!\n  map: String\n  value: String!\n  selected: Boolean!\n  slug: String\n}\n\ntype CategoriesTreeFacet {\n  id: ID!\n  quantity: Int!\n  name: String @translatableV2\n  link: String!\n  linkEncoded: String!\n  \"\"\"\n  Contains slugified links according to the store structure. /:department/d, /:category/:subcategory, etc\n  \"\"\"\n  href: String!\n  map: String\n  value: String!\n  children: [CategoriesTreeFacet]\n  selected: Boolean!\n}\n\ntype FilterFacet {\n  quantity: Int!\n  name: String @translatableV2\n  link: String!\n  linkEncoded: String!\n  map: String\n  value: String!\n  selected: Boolean!\n}\n\ntype FilterFacets {\n  name: String\n  facets: [FilterFacet]\n}\n\n\ntype ItemMetadata {\n  items: [ItemMetadataUnit]\n  priceTable: [ItemPriceTable]\n}\n\ntype ItemPriceTable {\n  type: String\n  values: [PriceTableItem]\n}\n\ntype PriceTableItem {\n  id: String\n  assemblyId: String\n  price: Int\n}\n\ntype ItemMetadataUnit {\n  id: ID\n  name: String\n  skuName: String\n  productId: String\n  refId: String\n  ean: String\n  imageUrl: String @toVtexAssets\n  detailUrl: String\n  seller: String\n  assemblyOptions: [AssemblyOption]\n}\n\ntype AssemblyOption {\n  id: ID\n  name: String\n  required: Boolean\n  composition: CompositionType\n  inputValues: [InputValue]\n}\n\nscalar StringOrBoolean\n\ntype InputValue {\n  label: String\n  maxLength: Int\n  type: InputValueType\n  defaultValue: StringOrBoolean\n  domain: [String]\n}\n\nenum InputValueType {\n  TEXT\n  BOOLEAN\n  OPTIONS\n}\n\ntype CompositionType {\n  minQuantity: Int\n  maxQuantity: Int\n  items: [CompositionItem]\n}\n\ntype CompositionItem {\n  id: ID\n  minQuantity: Int\n  maxQuantity: Int\n  initialQuantity: Int\n  priceTable: String\n  seller: String\n}\n\ninput AssemblyOptionInput {\n  id: ID!\n  quantity: Int!\n  assemblyId: String!\n  seller: String!\n  options: [AssemblyOptionInput!]\n}\n\n\ntype PageType {\n  id: String\n  type: PageEntityIdentifier\n}\n\nenum PageEntityIdentifier {\n  brand\n  department\n  category\n  subcategory\n  search\n}\n\n\ntype Product {\n  \"\"\"\n  Brand of the product\n  \"\"\"\n  brand: String @translatableV2(behavior: \"USER_ONLY\")\n  \"\"\"\n  Id of the brand of the product\n  \"\"\"\n  brandId: Int\n  \"\"\"\n  linkText is used as cacheId\n  \"\"\"\n  cacheId: ID\n  categoryId: ID\n  \"\"\"\n  Categories of the product\n  \"\"\"\n  categories: [String]\n    @deprecated(\n      reason: \"Use 'categoryTree' field for internationalization support\"\n    )\n  \"\"\"\n  Product's categories\n  \"\"\"\n  categoryTree: [Category]\n  \"\"\"\n  List of related products\n  \"\"\"\n  clusterHighlights: [ClusterHighlight]\n  productClusters: [ProductClusters]\n  \"\"\"\n  Product description\n  \"\"\"\n  description: String @translatableV2\n  \"\"\"\n  SKU objects of the product\n  \"\"\"\n  items(filter: ItemsFilter): [SKU]\n  \"\"\"\n  List of SKU Specifications\n  \"\"\"\n  skuSpecifications: [SkuSpecification]\n  \"\"\"\n  Product URL\n  \"\"\"\n  link: String\n  \"\"\"\n  Product slug\n  \"\"\"\n  linkText: String\n  \"\"\"\n  Product ID\n  \"\"\"\n  productId: ID\n  \"\"\"\n  Product name\n  \"\"\"\n  productName: String @translatableV2\n  \"\"\"\n  Array of product properties\n  \"\"\"\n  properties: [Property]\n  \"\"\"\n  Array of product properties\n  \"\"\"\n  propertyGroups: [PropertyGroup]\n  \"\"\"\n  Product reference\n  \"\"\"\n  productReference: String\n  \"\"\"\n  Title used by html tag\n  \"\"\"\n  titleTag: String @translatableV2\n  \"\"\"\n  Description used by html tag\n  \"\"\"\n  metaTagDescription: String @translatableV2\n  \"\"\"\n  Related Products\n  \"\"\"\n  recommendations(groupBy: CrossSelingGroupByEnum): Recommendation\n  \"\"\"\n  JSON specification of the product\n  \"\"\"\n  jsonSpecifications: String\n  \"\"\"\n  List of benefits associated with this product\n  \"\"\"\n  benefits: [Benefit]\n  itemMetadata: ItemMetadata\n  \"\"\"\n  Array of product SpecificationGroup\n  \"\"\"\n  specificationGroups: [SpecificationGroup]\n\n  \"\"\"\n  Returns highest and lowest prices for available SKUs in product.\n  \"\"\"\n  priceRange: ProductPriceRange\n\n  \"\"\"\n  Product Release Date, for list ordering and product cluster highlight\n  \"\"\"\n  releaseDate: String\n\n  \"\"\"\n  Product properties that will be selected by default. e.g: {key: \"Color\", value: \"Blue\"}\n  \"\"\"\n  selectedProperties: [SelectedProperty]\n  \"\"\"\n  Merchandising rule applied to the product\n  \"\"\"\n  rule: Rule\n  \"\"\"\n  If this product is sponsored, ad information will be added here.\n  \"\"\"\n  advertisement: Advertisement\n  deliveryPromisesBadges: [BadgeItem]\n  specification: String\n}\n\ntype BadgeItem {\n  typeName: String\n  pickupId: String\n  pickupName: String\n}\n\ntype SelectedProperty {\n  key: String\n  value: String\n}\n\nenum ItemsFilter {\n  \"\"\"\n  Returns all items, same as no filter.\n  \"\"\"\n  ALL\n  \"\"\"\n  Returns only the first available item. Returns first if no item is available.\n  \"\"\"\n  FIRST_AVAILABLE\n  \"\"\"\n  Returns all available items. Returns first if no item is available.\n  \"\"\"\n  ALL_AVAILABLE\n}\n\ntype ProductPriceRange {\n  sellingPrice: PriceRange\n  listPrice: PriceRange\n}\n\ntype PriceRange {\n  highPrice: Float\n  lowPrice: Float\n}\n\ntype OnlyProduct {\n  brand: String\n  categoryId: ID\n  categoryTree: [Category]\n  clusterHighlights: [ClusterHighlight]\n  productClusters: [ProductClusters]\n  description: String\n  link: String\n  linkText: String\n  productId: ID\n  productName: String\n  properties: [Property]\n  propertyGroups: [PropertyGroup]\n  productReference: String\n  recommendations: Recommendation\n  jsonSpecifications: String\n}\n\ntype ProductClusters {\n  id: ID\n  name: String\n}\n\ntype ClusterHighlight {\n  id: ID\n  name: String\n}\n\ntype Seller {\n  sellerId: ID\n  sellerName: String\n  addToCartLink: String\n  sellerDefault: Boolean\n  commertialOffer: Offer\n}\n\ntype Recommendation {\n  buy: [Product]\n  view: [Product]\n  similars: [Product]\n}\n\ntype SKU {\n  itemId: ID\n  name: String @translatableV2\n  nameComplete: String @translatableV2\n  complementName: String\n  ean: String\n  referenceId: [Reference]\n  measurementUnit: String\n  unitMultiplier: Float\n  kitItems: [KitItem]\n  images(quantity: Int): [Image]\n  videos: [Video]\n  sellers: [Seller]\n  variations: [Property]\n  attachments: [Attachment] @deprecated(reason: \"Use itemMetaData instead\")\n  estimatedDateArrival: String\n  \"\"\"\n  List of non-structured SKU specifications for this SKU.\n\n  Populated by Intelligent Search from the SKU `attributes` array\n  (`ProductSkuCatalogAttribute`). Represents non-structured SKU\n  specifications created via the Catalog API\n  (`/api/catalog/pvt/specification/nonstructured`). Distinct from\n  `SkuSpecification`, which represents the structured SKU\n  specifications (field/value pairs used for filters and variations).\n  \"\"\"\n  attributes: [SkuNonStructuredAttribute!]\n}\n\n\"\"\"\nNon-structured SKU specification.\n\nBacked by the Intelligent Search `attributes` field on each SKU\n(`ProductSkuCatalogAttribute`). Each entry represents a single\nnon-structured SKU specification as registered in the Catalog via\n`/api/catalog/pvt/specification/nonstructured`. Use `SkuSpecification`\nfor structured SKU specs (field/value pairs).\n\"\"\"\ntype SkuNonStructuredAttribute {\n  \"\"\"\n  Attribute unique identifier (from Catalog)\n  \"\"\"\n  id: ID!\n  \"\"\"\n  Attribute name\n  \"\"\"\n  name: String!\n  \"\"\"\n  Raw attribute value (may contain a JSON-encoded payload)\n  \"\"\"\n  value: String!\n  \"\"\"\n  Whether the attribute is marked as visible in Catalog\n  \"\"\"\n  visible: Boolean!\n}\n\ntype SkuSpecification {\n  field: SKUSpecificationField\n  values: [SKUSpecificationValue]\n}\n\ntype SKUSpecificationField {\n  originalName: String\n  name: String @translatableV2\n}\n\ntype SKUSpecificationValue {\n  originalName: String\n  name: String @translatableV2\n}\n\ntype productSpecification {\n  fieldName: String @translatableV2\n  fieldValues: [String] @translatableV2\n}\n\ninput ProductUniqueIdentifier {\n  field: ProductUniqueIdentifierField!\n  value: ID!\n}\n\nenum ProductUniqueIdentifierField {\n  id\n  slug\n  ean\n  reference\n  sku\n}\n\ntype KitItem {\n  itemId: ID\n  amount: Int\n  product: OnlyProduct\n  sku: SKU\n}\n\ntype Attachment {\n  id: ID\n  name: String\n  required: Boolean\n  domainValues: [DomainValues]\n}\n\ntype DomainValues {\n  FieldName: String\n  MaxCaracters: String\n  DomainValues: String\n}\n\nenum InstallmentsCriteria {\n  MAX_WITHOUT_INTEREST\n  MAX_WITH_INTEREST\n  MAX # Equivalent to MAX_WITHOUT_INTEREST. Kept for backwards-compatibility\n  MIN\n  ALL\n}\n\ntype Offer {\n  Installments(\n    criteria: InstallmentsCriteria = ALL\n    rates: Boolean = true\n    excludedPaymentSystems: [String]\n    includedPaymentSystems: [String]\n  ): [Installment]\n  Price: Float\n  ListPrice: Float\n  spotPrice: Float\n  PriceWithoutDiscount: Float\n  RewardValue: Float\n  PriceValidUntil: String\n  AvailableQuantity: Float\n  Tax: Float\n  taxPercentage: Float\n  CacheVersionUsedToCallCheckout: String\n  DeliverySlaSamples: [DeliverySlaSamples]\n  \"\"\"\n  List of discount highlights\n  \"\"\"\n  discountHighlights: [Discount!]\n  teasers: [Teaser!]\n  \"\"\"\n  List of SKUs for gifts associated with the product\n  \"\"\"\n  giftSkuIds: [String]\n  \"\"\"\n  List of gifts associated with the product\n  \"\"\"\n  gifts: [Gift]\n  \"\"\"\n  Signed price token (Pricing Fallback). Present when price signing is\n  enabled for the account; forward it unchanged on add-to-cart so checkout\n  can validate price integrity even during a Pricing system outage.\n  \"\"\"\n  priceToken: String\n}\n\ntype Gift {\n  productName: String\n  skuName: String\n  brand: String\n  linkText: String\n  description: String\n  images: [GiftImage]\n}\n\ntype GiftImage {\n  imageUrl: String\n  imageLabel: String\n  imageText: String\n}\n\ntype Teaser {\n  name: String\n  conditions: TeaserCondition\n  effects: TeaserEffects\n  generalValues: [GeneralValueTeaser]\n}\n\ntype GeneralValueTeaser {\n  key: String\n  value: String\n}\n\ntype AdditionalInfo {\n  key: String\n  value: String\n}\n\ntype TeaserCondition {\n  minimumQuantity: Int\n  parameters: [TeaserValue]\n}\n\ntype TeaserEffects {\n  parameters: [TeaserValue]\n}\n\ntype TeaserValue {\n  name: String\n  value: String\n}\n\n\"\"\"\nDiscount object\n\"\"\"\ntype Discount {\n  \"\"\"\n  Discount name\n  \"\"\"\n  name: String\n  \"\"\"\n  Additional Info\n  \"\"\"\n  additionalInfo: [AdditionalInfo]\n}\n\ntype DeliverySlaSamples {\n  DeliverySlaPerTypes: [DeliverySlaPerTypes]\n  Region: Region\n}\n\ntype DeliverySlaPerTypes {\n  TypeName: String\n  Price: Float\n  EstimatedTimeSpanToDelivery: String\n}\n\ntype Region {\n  IsPersisted: Boolean\n  IsRemoved: Boolean\n  Id: ID\n  Name: String\n  CountryCode: String\n  ZipCode: String\n  CultureInfoName: String\n}\n\ntype Image {\n  cacheId: ID\n  imageId: ID\n  imageLabel: String\n  imageTag: String\n  imageUrl: String @toVtexAssets\n  imageText: String\n}\n\ntype Video {\n  videoUrl: String\n}\n\ntype SpecificationGroup {\n  originalName: String\n  name: String @translatableV2\n  specifications: [SpecificationGroupProperty]\n}\n\ntype SpecificationGroupProperty {\n  originalName: String\n  name: String @translatableV2\n  values: [String] @translatableV2\n}\n\ntype Property {\n  originalName: String\n  name: String @translatableV2\n  values: [String] @translatableV2\n}\n\ntype PropertyGroup {\n  name: String\n  properties: [String]\n}\n\ntype Installment {\n  Value: Float\n  InterestRate: Float\n  TotalValuePlusInterestRate: Float\n  NumberOfInstallments: Int\n  PaymentSystemName: String\n  PaymentSystemGroupName: String\n  Name: String\n}\n\ntype Reference {\n  Key: String\n  Value: String\n}\n\nenum CrossSelingInputEnum {\n  buy\n  similars\n  view\n  viewAndBought\n  accessories\n  suggestions\n}\n\ntype Rule {\n  id: String\n}\n\n\ntype ProductSearch {\n  \"\"\"\n  List of products.\n  \"\"\"\n  products: [Product]\n  \"\"\"\n  Total number of products.\n  \"\"\"\n  recordsFiltered: Int\n  \"\"\"\n  Title used in the title's tag.\n  \"\"\"\n  titleTag: String\n  \"\"\"\n  String to be used in the `<meta name=\"description\"...` tag.\n  \"\"\"\n  metaTagDescription: String\n  breadcrumb: [SearchBreadcrumb]\n    @deprecated(reason: \"Use the `breadcrumb` from the `facets` query instead.\")\n  canonical: String\n  suggestion: SearchSuggestions\n    @deprecated(reason: \"Use the `suggestion` query instead.\")\n  \"\"\"\n  Object that indicates if the term was misspelled and suggests a possible correction.\n  \"\"\"\n  correction: SearchCorrection\n  \"\"\"\n  Indicates how the search-engine dealt with the fullText when there is more than one word.\\n * `and` - It means that the products contains all the words in the query.\\n * `or` - It means that the results will contain at least one word from the original search query. If `and` was not possible, `or` will be the fallback.\n  \"\"\"\n  operator: Operator\n  \"\"\"\n  Indicates how the search engine corrected the misspelled word by using fuzzy logic. It can be a number representing the max number of misspelled letters, or the string `auto` suggesting that the search-engine should set this value by itself.\n  \"\"\"\n  fuzzy: String\n  \"\"\"\n  As fuzzy and operator, it controls the search state, but it is for general purposes. This field allows the search engines to apply features that are not handled by the other fields.\n  The possible values in this field are defined by each search engine.\n  \"\"\"\n  searchState: String\n  banners: [SearchBanner]\n    @deprecated(reason: \"Use the `banners` query instead.\")\n  \"\"\"\n  Returns the redirect URL set for the given query.\n  \"\"\"\n  redirect: String\n  \"\"\"\n  Options to ProductSearch.\n  \"\"\"\n  options: ProductSearchOptions\n  \"\"\"\n  ID used to identify a search query.\n  \"\"\"\n  searchId: String\n  \"\"\"\n  Origin of the request for tracking purposes\n  \"\"\"\n  origin: String\n}\n\ntype ProductSearchOptions {\n  \"\"\"\n  Indicates if delivery promises is enabled.\n  \"\"\"\n  deliveryPromisesEnabled: Boolean\n}\n\nenum Operator {\n  and\n  or\n}\n\ntype SearchBreadcrumb {\n  \"\"\"\n  Human-readable format of the facet key.\n  \"\"\"\n  name: String @translatableV2\n  \"\"\"\n  Query link.\n  \"\"\"\n  href: String\n}\n\ntype SearchMetadata {\n  titleTag: String\n  metaTagDescription: String @translatableV2\n}\n\ninput SelectedFacetInput {\n  \"\"\"\n  Facet key.\n  \"\"\"\n  key: String\n  \"\"\"\n  Facet value.\n  \"\"\"\n  value: String\n}\n\ntype SelectedFacet {\n  key: String\n  value: String\n}\n\ninput Options {\n  \"\"\"\n  If the search has a redirect enabled, this allows (`true`) or not (`false`) the redirect to be used.\n  \"\"\"\n  allowRedirect: Boolean\n}\n\n\ntype SearchSuggestions {\n  \"\"\"\n  A list of search suggestions.\n  \"\"\"\n  searches: [SearchSuggestion]\n}\n\ntype SearchSuggestion {\n  \"\"\"\n  Search term.\n  \"\"\"\n  term: String!\n  \"\"\"\n  Number of times the term was searched.\n  \"\"\"\n  count: Int!\n  \"\"\"\n  List of facets in which the term can be searched.\n  \"\"\"\n  attributes: [SearchSuggestionAttribute]\n}\n\ntype SearchSuggestionAttribute {\n  \"\"\"\n  Facet key.\n  \"\"\"\n  key: String!\n  \"\"\"\n  Facet value.\n  \"\"\"\n  value: String!\n  \"\"\"\n  Human-readable format of the facet key.\n  \"\"\"\n  labelValue: String!\n}\n\n\ntype SearchURLStats {\n  path: String!\n  count: Int!\n}\n\ntype Suggestions {\n  \"\"\" searchTerm from Query autocomplete is used as cacheId \"\"\"\n  cacheId: ID\n  itemsReturned: [Items]\n}\n\ntype Items {\n  thumb: String\n  name: String @translatableV2\n  href: String\n  criteria: String\n  slug: String\n  productId: String\n}\n\n"
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "VTEX Intelligent Search"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "graphql",
+  "provenance": {
+    "commit": "7ac0428def78d96aa063996701c029e121023daa",
+    "fetched_at": "2026-10-29T23:21:55.816191+00:00",
+    "normalization": null,
+    "repository": "vtex-apps/search-graphql",
+    "sha256": "9a432969b115cea732ec93f9ae242ad6a52ab21101e8feb5076370b6282187d1",
+    "source_id": "vtex",
+    "url": "https://raw.githubusercontent.com/vtex-apps/search-graphql/7ac0428def78d96aa063996701c029e121023daa/graphql/schema.graphql"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "2026-10-29-snapshot"
+}

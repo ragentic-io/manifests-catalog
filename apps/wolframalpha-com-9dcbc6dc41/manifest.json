@@ -1,0 +1,207 @@
+{
+  "a2ui": {},
+  "app": "wolframalpha-com-9dcbc6dc41",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "wolframalpha-com-9dcbc6dc41",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/v1/cloud-plugin"
+      },
+      {
+        "from": "wolframalpha-com-9dcbc6dc41",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/v1/llm-api"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "wolframalpha-com-9dcbc6dc41",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/v1/cloud-plugin",
+        "kind": "operation",
+        "method": "get",
+        "name": "getWolframCloudResults",
+        "path": "/api/v1/cloud-plugin",
+        "pointer": "#/paths/~1api~1v1~1cloud-plugin/get",
+        "security": [],
+        "summary": "Evaluate Wolfram Language code"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/v1/llm-api",
+        "kind": "operation",
+        "method": "get",
+        "name": "getWolframAlphaResults",
+        "path": "/api/v1/llm-api",
+        "pointer": "#/paths/~1api~1v1~1llm-api/get",
+        "security": [],
+        "summary": "Get Wolfram|Alpha results"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "wolframalpha-com-9dcbc6dc41"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "info": {
+              "title": "Wolfram",
+              "version": "v0.1",
+              "x-apisguru-categories": [
+                "machine_learning"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_www.wolframcdn.com_images_icons_Wolfram.png"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://www.wolframalpha.com/.well-known/apispec.json",
+                  "version": "3.1"
+                }
+              ],
+              "x-providerName": "wolframalpha.com"
+            },
+            "openapi": "3.1.0",
+            "paths": {
+              "/api/v1/cloud-plugin": {
+                "get": {
+                  "externalDocs": {
+                    "url": "https://reference.wolfram.com/language/"
+                  },
+                  "operationId": "getWolframCloudResults",
+                  "parameters": [
+                    {
+                      "description": "the input expression",
+                      "in": "query",
+                      "name": "input",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "text/plain": {}
+                      },
+                      "description": "The result of the Wolfram Language evaluation"
+                    },
+                    "400": {
+                      "description": "The request is missing the 'input' parameter"
+                    },
+                    "403": {
+                      "description": "Unauthorized"
+                    },
+                    "500": {
+                      "description": "Wolfram Cloud was unable to generate a result"
+                    },
+                    "503": {
+                      "description": "Service temporarily unavailable. This may be the result of too many requests."
+                    }
+                  },
+                  "summary": "Evaluate Wolfram Language code"
+                }
+              },
+              "/api/v1/llm-api": {
+                "get": {
+                  "externalDocs": {
+                    "url": "https://products.wolframalpha.com/api"
+                  },
+                  "operationId": "getWolframAlphaResults",
+                  "parameters": [
+                    {
+                      "description": "the input",
+                      "in": "query",
+                      "name": "input",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "text/plain": {}
+                      },
+                      "description": "The result of the Wolfram|Alpha query"
+                    },
+                    "400": {
+                      "description": "The request is missing the 'input' parameter"
+                    },
+                    "403": {
+                      "description": "Unauthorized"
+                    },
+                    "500": {
+                      "description": "Wolfram|Alpha was unable to generate a result"
+                    },
+                    "501": {
+                      "description": "Wolfram|Alpha was unable to generate a result"
+                    },
+                    "503": {
+                      "description": "Service temporarily unavailable. This may be the result of too many requests."
+                    }
+                  },
+                  "summary": "Get Wolfram|Alpha results"
+                }
+              }
+            },
+            "servers": [
+              {
+                "description": "Wolfram Server for ChatGPT",
+                "url": "https://www.wolframalpha.com"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Wolfram"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:48.762908Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://www.wolframalpha.com/.well-known/apispec.json",
+        "version": "3.1"
+      }
+    ],
+    "sha256": "49dc67897f210bd9334607a2ed96d2ac6535c02b659222fdf28a920e3aa74322",
+    "source_id": "wolframalpha.com",
+    "source_updated": "2023-04-02T17:50:36.884Z",
+    "url": "https://api.apis.guru/v2/specs/wolframalpha.com/v0.1/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "v0.1"
+}

@@ -1,0 +1,262 @@
+{
+  "a2ui": {},
+  "app": "exude-api-herokuapp-com-dc28fe10a9",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "exude-api-herokuapp-com-dc28fe10a9",
+        "kind": "EXPOSES",
+        "to": "operation:post:/exude/{type}/data"
+      },
+      {
+        "from": "exude-api-herokuapp-com-dc28fe10a9",
+        "kind": "EXPOSES",
+        "to": "operation:post:/exude/{type}/file"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "exude-api-herokuapp-com-dc28fe10a9",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/exude/{type}/data",
+        "kind": "operation",
+        "method": "post",
+        "name": "filterStoppings",
+        "path": "/exude/{type}/data",
+        "pointer": "#/paths/~1exude~1{type}~1data/post",
+        "security": [],
+        "summary": "Filter the stopping words from the provided input data or links"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/exude/{type}/file",
+        "kind": "operation",
+        "method": "post",
+        "name": "filterFileDataStoppings",
+        "path": "/exude/{type}/file",
+        "pointer": "#/paths/~1exude~1{type}~1file/post",
+        "security": [],
+        "summary": "Filter the stopping words from the provided input file"
+      },
+      {
+        "id": "schema:ExudeBean",
+        "kind": "schema",
+        "name": "ExudeBean"
+      },
+      {
+        "id": "schema:ExudeResponseBean",
+        "kind": "schema",
+        "name": "ExudeResponseBean"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "exude-api-herokuapp-com-dc28fe10a9"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "ExudeBean": {
+                  "properties": {
+                    "data": {
+                      "type": "string"
+                    },
+                    "links": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  }
+                },
+                "ExudeResponseBean": {
+                  "properties": {
+                    "data": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "info": {
+              "description": "Exude API is an Open Source project, It is used for the primary ways for filtering the stopping, stemming words from the text data. This API is in a very basic level of development need to work on for later changes.",
+              "termsOfService": "http://uttesh.com/apis/terms/",
+              "title": "Exude API Service",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "text"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "http://uttesh.com/exude-api/exude-service-open-api.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "exude-api.herokuapp.com"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/exude/{type}/data": {
+                "post": {
+                  "operationId": "filterStoppings",
+                  "parameters": [
+                    {
+                      "description": "provide the type of filtering required stopping/swear",
+                      "examples": {
+                        "type": {
+                          "summary": "provide the type of filtering required stopping/swear",
+                          "value": "stopping"
+                        }
+                      },
+                      "in": "path",
+                      "name": "type",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "multipart/form-data": {
+                        "schema": {
+                          "$ref": "#/components/schemas/ExudeBean"
+                        }
+                      }
+                    },
+                    "description": "Filter the stopping words from the provided input data or links",
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ExudeResponseBean"
+                          }
+                        }
+                      },
+                      "description": "Exude response"
+                    }
+                  },
+                  "summary": "Filter the stopping words from the provided input data or links",
+                  "tags": [
+                    "exude"
+                  ]
+                }
+              },
+              "/exude/{type}/file": {
+                "post": {
+                  "operationId": "filterFileDataStoppings",
+                  "parameters": [
+                    {
+                      "description": "provide the type of filtering required stopping/swear",
+                      "in": "path",
+                      "name": "type",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "requestBody": {
+                    "content": {
+                      "multipart/form-data": {
+                        "schema": {
+                          "properties": {
+                            "file": {
+                              "format": "binary",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "description": "Filter the stopping words from the provided input file",
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/ExudeResponseBean"
+                          }
+                        }
+                      },
+                      "description": "model response"
+                    }
+                  },
+                  "summary": "Filter the stopping words from the provided input file",
+                  "tags": [
+                    "exude"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "description": "Use Heruko deployment for testing/development",
+                "url": "https://exude-api.herokuapp.com"
+              },
+              {
+                "description": "Use docker container and deploy on the production environment or locally developmenet",
+                "url": "http://localhost:8080"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "Exude API Service"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:52.981393Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "http://uttesh.com/exude-api/exude-service-open-api.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "ef1b187ba042918ce62d9d27c9f54463c299b654bf56f2ac51ceb1139acd75dc",
+    "source_id": "exude-api.herokuapp.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/exude-api.herokuapp.com/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

@@ -1,0 +1,145 @@
+{
+  "a2ui": {},
+  "app": "nic-at-domainfinder-84dc5ebe84",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "nic-at-domainfinder-84dc5ebe84",
+        "kind": "EXPOSES",
+        "to": "operation:get:/api/v1/suggest"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "nic-at-domainfinder-84dc5ebe84",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/api/v1/suggest",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /api/v1/suggest",
+        "path": "/api/v1/suggest",
+        "pointer": "#/paths/~1api~1v1~1suggest/get",
+        "security": [],
+        "summary": "Get .at domain name suggestions"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "nic-at-domainfinder-84dc5ebe84"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "info": {
+              "title": "nic.at Domainfinder API Documentation",
+              "version": "1.1.0",
+              "x-apisguru-categories": [
+                "developer_tools"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://domainfinder.nic.at/openapi/",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "nic.at",
+              "x-serviceName": "domainfinder"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+              "/api/v1/suggest": {
+                "get": {
+                  "description": "Provides a list of available .at domain names related to the given input term or domain",
+                  "parameters": [
+                    {
+                      "description": "Domainname/term to obtain suggestions for",
+                      "example": "mydomain",
+                      "in": "query",
+                      "name": "term",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "example": [
+                              "mynewdomain.at",
+                              "newdomain.at"
+                            ],
+                            "properties": {
+                              "": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": "List of domain suggestions"
+                    }
+                  },
+                  "summary": "Get .at domain name suggestions"
+                }
+              }
+            }
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "nic.at Domainfinder API Documentation"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:43.926696Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://domainfinder.nic.at/openapi/",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "f0d4740e14072fd49f8de02a9e30b199ab958e4ec076b69edbc76c683a4a6355",
+    "source_id": "nic.at:domainfinder",
+    "source_updated": "2023-03-06T07:12:59.965Z",
+    "url": "https://api.apis.guru/v2/specs/nic.at/domainfinder/1.1.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.1.0"
+}

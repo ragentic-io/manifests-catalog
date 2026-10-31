@@ -1,0 +1,152 @@
+{
+  "a2ui": {},
+  "app": "easypdfserver-com-cb3e565957",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "easypdfserver-com-cb3e565957",
+        "kind": "EXPOSES",
+        "to": "operation:post:/make-pdf"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "easypdfserver-com-cb3e565957",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/make-pdf",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /make-pdf",
+        "path": "/make-pdf",
+        "pointer": "#/paths/~1make-pdf/post",
+        "security": [],
+        "summary": "Generate a PDF from HTML or URL."
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "easypdfserver-com-cb3e565957"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "info": {
+              "description": "API for converting HTML to PDF.",
+              "title": "EasyPDFServer",
+              "version": "1",
+              "x-apisguru-categories": [
+                "text"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://www.easypdfserver.com/openapi.yaml",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "easypdfserver.com"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/make-pdf": {
+                "post": {
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "properties": {
+                            "html": {
+                              "type": "string"
+                            },
+                            "key": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "key"
+                          ],
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "description": "Pass the API key from easypdfserver.com and either HTML or URL to generate your PDF.",
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/pdf": {
+                          "schema": {
+                            "format": "binary",
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Your PDF file"
+                    }
+                  },
+                  "summary": "Generate a PDF from HTML or URL."
+                }
+              }
+            },
+            "servers": [
+              {
+                "description": "Main (production) server",
+                "url": "https://api.easypdfserver.com"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "EasyPDFServer"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:52.332673Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://www.easypdfserver.com/openapi.yaml",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "161ee791f6a0885195e4b801a0130ed21db48fb7e4504f394074c13e6d6e0368",
+    "source_id": "easypdfserver.com",
+    "source_updated": "2021-06-21T12:16:53.715Z",
+    "url": "https://api.apis.guru/v2/specs/easypdfserver.com/1/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1"
+}

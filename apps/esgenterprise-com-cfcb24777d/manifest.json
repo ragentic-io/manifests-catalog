@@ -1,0 +1,193 @@
+{
+  "a2ui": {},
+  "app": "esgenterprise-com-cfcb24777d",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "esgenterprise-com-cfcb24777d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/search"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "esgenterprise-com-cfcb24777d",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/search",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /search",
+        "path": "/search",
+        "pointer": "#/paths/~1search/get",
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "List all company ESG Ratings"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "esgenterprise-com-cfcb24777d"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "securitySchemes": {
+                "api_key": {
+                  "in": "query",
+                  "name": "token",
+                  "type": "apiKey"
+                }
+              }
+            },
+            "info": {
+              "license": {
+                "name": "MIT"
+              },
+              "title": "ESG Rating Data",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "open_data"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://www.esgenterprise.com/wp-content/api/ESGRatingAPI-Definition.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "esgenterprise.com"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/search": {
+                "get": {
+                  "parameters": [
+                    {
+                      "description": "Company name or stock symbol",
+                      "in": "query",
+                      "name": "q",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "properties": {
+                              "company_name": {
+                                "type": "string"
+                              },
+                              "environment_score": {
+                                "format": "double",
+                                "type": "number"
+                              },
+                              "governance_score": {
+                                "format": "double",
+                                "type": "number"
+                              },
+                              "last_processing_date": {
+                                "format": "date",
+                                "type": "string"
+                              },
+                              "social_score": {
+                                "format": "double",
+                                "type": "number"
+                              },
+                              "total": {
+                                "format": "double",
+                                "type": "number"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "description": "An array of ESG Ratings",
+                      "headers": {
+                        "x-next": {
+                          "description": "ESG ratings",
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "security": [
+                    {
+                      "api_key": []
+                    }
+                  ],
+                  "summary": "List all company ESG Ratings",
+                  "tags": [
+                    "rating"
+                  ]
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://tf689y3hbj.execute-api.us-east-1.amazonaws.com/prod/authorization"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "ESG Rating Data"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:52.577907Z",
+    "license": {
+      "name": "MIT"
+    },
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://www.esgenterprise.com/wp-content/api/ESGRatingAPI-Definition.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "43efc7f11a5978b485e022603fbbd7821237b08bf03057c204fb541e384fe0d3",
+    "source_id": "esgenterprise.com",
+    "source_updated": "2021-01-18T09:19:53.944Z",
+    "url": "https://api.apis.guru/v2/specs/esgenterprise.com/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

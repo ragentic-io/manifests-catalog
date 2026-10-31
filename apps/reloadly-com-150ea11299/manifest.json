@@ -1,0 +1,269 @@
+{
+  "a2ui": {},
+  "app": "reloadly-com-150ea11299",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "reloadly-com-150ea11299",
+        "kind": "EXPOSES",
+        "to": "operation:get:/questions"
+      },
+      {
+        "from": "reloadly-com-150ea11299",
+        "kind": "EXPOSES",
+        "to": "operation:post:/questions"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "reloadly-com-150ea11299",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/questions",
+        "kind": "operation",
+        "method": "get",
+        "name": "List All Questions",
+        "path": "/questions",
+        "pointer": "#/paths/~1questions/get",
+        "security": [],
+        "summary": "List All Questions"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/questions",
+        "kind": "operation",
+        "method": "post",
+        "name": "Create a New Question",
+        "path": "/questions",
+        "pointer": "#/paths/~1questions/post",
+        "security": [],
+        "summary": "Create a New Question"
+      },
+      {
+        "id": "schema:Questions_Collection",
+        "kind": "schema",
+        "name": "Questions_Collection"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "reloadly-com-150ea11299"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "Questions_Collection": {}
+              }
+            },
+            "info": {
+              "contact": {
+                "x-twitter": "Reloadly"
+              },
+              "description": "Polls is a simple API allowing consumers to view polls and vote in them.",
+              "title": "topupsapi",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "telecom"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_Reloadly_profile_image.jpeg"
+              },
+              "x-origin": [
+                {
+                  "converter": {
+                    "url": "https://github.com/mermade/oas-kit",
+                    "version": "7.0.4"
+                  },
+                  "format": "openapi",
+                  "url": "https://topupsapi.docs.apiary.io/api-description-document",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "reloadly.com"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/questions": {
+                "get": {
+                  "description": "",
+                  "operationId": "List All Questions",
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "examples": {
+                            "response": {
+                              "value": [
+                                {
+                                  "choices": [
+                                    {
+                                      "choice": "Swift",
+                                      "votes": 2048
+                                    },
+                                    {
+                                      "choice": "Python",
+                                      "votes": 1024
+                                    },
+                                    {
+                                      "choice": "Objective-C",
+                                      "votes": 512
+                                    },
+                                    {
+                                      "choice": "Ruby",
+                                      "votes": 256
+                                    }
+                                  ],
+                                  "published_at": "2015-08-05T08:40:51.620Z",
+                                  "question": "Favourite programming language?"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "description": "OK",
+                      "headers": {}
+                    }
+                  },
+                  "summary": "List All Questions",
+                  "tags": []
+                },
+                "post": {
+                  "description": "You may create your own question using this action. It takes a JSON\nobject containing a question and a collection of answers in the\nform of choices.",
+                  "operationId": "Create a New Question",
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "example": {
+                            "choices": [
+                              "Swift",
+                              "Python",
+                              "Objective-C",
+                              "Ruby"
+                            ],
+                            "question": "Favourite programming language?"
+                          },
+                          "properties": {
+                            "choices": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            "question": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      }
+                    }
+                  },
+                  "responses": {
+                    "201": {
+                      "content": {
+                        "application/json": {
+                          "examples": {
+                            "response": {
+                              "value": {
+                                "choices": [
+                                  {
+                                    "choice": "Swift",
+                                    "votes": 0
+                                  },
+                                  {
+                                    "choice": "Python",
+                                    "votes": 0
+                                  },
+                                  {
+                                    "choice": "Objective-C",
+                                    "votes": 0
+                                  },
+                                  {
+                                    "choice": "Ruby",
+                                    "votes": 0
+                                  }
+                                ],
+                                "published_at": "2015-08-05T08:40:51.620Z",
+                                "question": "Favourite programming language?"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "description": "Created",
+                      "headers": {
+                        "Location": {
+                          "schema": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "summary": "Create a New Question",
+                  "tags": []
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://polls.apiblueprint.org"
+              }
+            ],
+            "tags": []
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "topupsapi"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:59.808727Z",
+    "license": null,
+    "origins": [
+      {
+        "converter": {
+          "url": "https://github.com/mermade/oas-kit",
+          "version": "7.0.4"
+        },
+        "format": "openapi",
+        "url": "https://topupsapi.docs.apiary.io/api-description-document",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "da682ee6289d6761568ba5b596c5896b1dbf493924f2020dfd3f69f8c6b7a701",
+    "source_id": "reloadly.com",
+    "source_updated": "2021-04-07T09:52:45.374Z",
+    "url": "https://api.apis.guru/v2/specs/reloadly.com/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

@@ -1,0 +1,467 @@
+{
+  "a2ui": {},
+  "app": "opencagedata-com-e1532a6c2d",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "opencagedata-com-e1532a6c2d",
+        "kind": "EXPOSES",
+        "to": "operation:get:/v{version}/{format}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "opencagedata-com-e1532a6c2d",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/v{version}/{format}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /v{version}/{format}",
+        "path": "/v{version}/{format}",
+        "pointer": "#/paths/~1v{version}~1{format}/get",
+        "security": [],
+        "summary": null
+      },
+      {
+        "id": "schema:LatLng",
+        "kind": "schema",
+        "name": "LatLng"
+      },
+      {
+        "id": "schema:Response",
+        "kind": "schema",
+        "name": "Response"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "opencagedata-com-e1532a6c2d"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "basePath": "/geocode",
+            "consumes": [
+              "text/plain"
+            ],
+            "definitions": {
+              "LatLng": {
+                "properties": {
+                  "lat": {
+                    "format": "float",
+                    "type": "number"
+                  },
+                  "lng": {
+                    "format": "float",
+                    "type": "number"
+                  }
+                },
+                "type": "object"
+              },
+              "Response": {
+                "properties": {
+                  "documentation": {
+                    "type": "string"
+                  },
+                  "licenses": {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "rate": {
+                    "properties": {
+                      "limit": {
+                        "type": "integer"
+                      },
+                      "remaining": {
+                        "type": "integer"
+                      },
+                      "reset": {
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "results": {
+                    "items": {
+                      "properties": {
+                        "annotations": {
+                          "type": "object"
+                        },
+                        "bounds": {
+                          "properties": {
+                            "northeast": {
+                              "$ref": "#/definitions/LatLng"
+                            },
+                            "southwest": {
+                              "$ref": "#/definitions/LatLng"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "components": {
+                          "type": "object"
+                        },
+                        "confidence": {
+                          "type": "integer"
+                        },
+                        "formatted": {
+                          "type": "string"
+                        },
+                        "geometry": {
+                          "$ref": "#/definitions/LatLng"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "status": {
+                    "properties": {
+                      "code": {
+                        "type": "integer"
+                      },
+                      "message": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "stay_informed": {
+                    "properties": {
+                      "blog": {
+                        "type": "string"
+                      },
+                      "twitter": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "thanks": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "properties": {
+                      "created_http": {
+                        "type": "string"
+                      },
+                      "created_unix": {
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "total_results": {
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "externalDocs": {
+              "description": "OpenCage Geocoder Website",
+              "url": "https://opencagedata.com/api"
+            },
+            "host": "api.opencagedata.com",
+            "info": {
+              "contact": {
+                "name": "OpenCage GmbH",
+                "url": "https://opencagedata.com/contact"
+              },
+              "description": "Worldwide forward and reverse geocoding",
+              "termsOfService": "https://opencagedata.com/terms",
+              "title": "OpenCage Geocoder",
+              "version": "1",
+              "x-apisguru-categories": [
+                "location"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_opencagedata.com_opencagelogo-green.png"
+              },
+              "x-origin": [
+                {
+                  "format": "swagger",
+                  "url": "https://opencagedata.com/swagger.yaml",
+                  "version": "2.0"
+                },
+                {
+                  "format": "swagger",
+                  "url": "https://geocoder.opencagedata.com/swagger.yaml",
+                  "version": "2.0"
+                }
+              ],
+              "x-providerName": "opencagedata.com"
+            },
+            "paths": {
+              "/v{version}/{format}": {
+                "get": {
+                  "description": "geocode a query",
+                  "parameters": [
+                    {
+                      "description": "API version.",
+                      "in": "path",
+                      "name": "version",
+                      "required": true,
+                      "type": "integer"
+                    },
+                    {
+                      "description": "format of the response. One of 'json', 'xml' or 'map'.",
+                      "in": "path",
+                      "name": "format",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "string or lat,lng to be geocoded.",
+                      "in": "query",
+                      "name": "q",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "an application key.",
+                      "in": "query",
+                      "name": "key",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "description": "when true we attempt to abbreviate the formatted field of results.",
+                      "in": "query",
+                      "name": "abbrv",
+                      "type": "boolean"
+                    },
+                    {
+                      "description": "when true we include only address details in the formatted field of results.",
+                      "in": "query",
+                      "name": "address_only",
+                      "type": "boolean"
+                    },
+                    {
+                      "description": "if true the request is included in the response.",
+                      "in": "query",
+                      "name": "add_request",
+                      "type": "boolean"
+                    },
+                    {
+                      "description": "four coordinate points forming the south-west and north-east corners of a bounding box (min long, min lat, max long, max lat).",
+                      "in": "query",
+                      "name": "bounds",
+                      "type": "string"
+                    },
+                    {
+                      "description": "two letter code ISO 3166-1 Alpha 2 code to limit results to that country.",
+                      "in": "query",
+                      "name": "countrycode",
+                      "type": "string"
+                    },
+                    {
+                      "description": "wraps the returned JSON with a function name.",
+                      "in": "query",
+                      "name": "jsonp",
+                      "type": "string"
+                    },
+                    {
+                      "description": "an IETF format language code (ex: 'es' or 'pt-BR').",
+                      "in": "query",
+                      "name": "language",
+                      "type": "string"
+                    },
+                    {
+                      "description": "maximum number of results to return. Default is 10. Maximum is 100.",
+                      "in": "query",
+                      "name": "limit",
+                      "type": "integer"
+                    },
+                    {
+                      "description": "integer from 1-10. Only results with at least this confidence are returned.",
+                      "in": "query",
+                      "name": "min_confidence",
+                      "type": "integer"
+                    },
+                    {
+                      "description": "when true annotations are not added to results.",
+                      "in": "query",
+                      "name": "no_annotations",
+                      "type": "boolean"
+                    },
+                    {
+                      "description": "when true results are not deduplicated.",
+                      "in": "query",
+                      "name": "no_dedupe",
+                      "type": "boolean"
+                    },
+                    {
+                      "description": "when true query content is not logged.",
+                      "in": "query",
+                      "name": "no_record",
+                      "type": "boolean"
+                    },
+                    {
+                      "description": "when true results are pretty printed. Useful for debugging.",
+                      "in": "query",
+                      "name": "pretty",
+                      "type": "boolean"
+                    },
+                    {
+                      "description": "lat,lng to bias results.",
+                      "in": "query",
+                      "name": "proximity",
+                      "type": "string"
+                    },
+                    {
+                      "description": "match nearest road, include roadinfo annotation",
+                      "in": "query",
+                      "name": "roadinfo",
+                      "type": "boolean"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Successful response",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "400": {
+                      "description": "Invalid request",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "401": {
+                      "description": "Unable to authenticate",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "402": {
+                      "description": "Valid request but quota exceeded",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "403": {
+                      "description": "Forbidden",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "404": {
+                      "description": "Invalid API endpoint",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "405": {
+                      "description": "Method not allowed",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "408": {
+                      "description": "Timeout; you can try again",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "410": {
+                      "description": "Request too long",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "426": {
+                      "description": "Upgrade required",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "429": {
+                      "description": "Too many requests",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    },
+                    "503": {
+                      "description": "Internal server error",
+                      "schema": {
+                        "$ref": "#/definitions/Response"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "produces": [
+              "application/json",
+              "application/xml",
+              "text/html"
+            ],
+            "schemes": [
+              "https"
+            ],
+            "swagger": "2.0"
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "OpenCage Geocoder"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:44.342347Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "swagger",
+        "url": "https://opencagedata.com/swagger.yaml",
+        "version": "2.0"
+      },
+      {
+        "format": "swagger",
+        "url": "https://geocoder.opencagedata.com/swagger.yaml",
+        "version": "2.0"
+      }
+    ],
+    "sha256": "1e67508fe2c33f7b9d37edaf5ca8dc9521e236fce36a37266ba45bafbc34fe42",
+    "source_id": "opencagedata.com",
+    "source_updated": "2023-03-06T07:12:59.965Z",
+    "url": "https://api.apis.guru/v2/specs/opencagedata.com/1/swagger.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1"
+}

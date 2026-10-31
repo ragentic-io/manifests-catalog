@@ -1,0 +1,492 @@
+{
+  "a2ui": {},
+  "app": "extendsclass-com-json-storage-9ebbe90fb0",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "extendsclass-com-json-storage-9ebbe90fb0",
+        "kind": "EXPOSES",
+        "to": "operation:post:/bin"
+      },
+      {
+        "from": "extendsclass-com-json-storage-9ebbe90fb0",
+        "kind": "EXPOSES",
+        "to": "operation:delete:/bin/{id}"
+      },
+      {
+        "from": "extendsclass-com-json-storage-9ebbe90fb0",
+        "kind": "EXPOSES",
+        "to": "operation:get:/bin/{id}"
+      },
+      {
+        "from": "extendsclass-com-json-storage-9ebbe90fb0",
+        "kind": "EXPOSES",
+        "to": "operation:patch:/bin/{id}"
+      },
+      {
+        "from": "extendsclass-com-json-storage-9ebbe90fb0",
+        "kind": "EXPOSES",
+        "to": "operation:put:/bin/{id}"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "extendsclass-com-json-storage-9ebbe90fb0",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/bin",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /bin",
+        "path": "/bin",
+        "pointer": "#/paths/~1bin/post",
+        "security": [],
+        "summary": "Create a json bin"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:delete:/bin/{id}",
+        "kind": "operation",
+        "method": "delete",
+        "name": "delete /bin/{id}",
+        "path": "/bin/{id}",
+        "pointer": "#/paths/~1bin~1{id}/delete",
+        "security": [],
+        "summary": "Delete a json bin"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/bin/{id}",
+        "kind": "operation",
+        "method": "get",
+        "name": "get /bin/{id}",
+        "path": "/bin/{id}",
+        "pointer": "#/paths/~1bin~1{id}/get",
+        "security": [],
+        "summary": "Return a json bin"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:patch:/bin/{id}",
+        "kind": "operation",
+        "method": "patch",
+        "name": "patch /bin/{id}",
+        "path": "/bin/{id}",
+        "pointer": "#/paths/~1bin~1{id}/patch",
+        "security": [],
+        "summary": "Partially update a json bin with JSON Merge Patch"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:put:/bin/{id}",
+        "kind": "operation",
+        "method": "put",
+        "name": "put /bin/{id}",
+        "path": "/bin/{id}",
+        "pointer": "#/paths/~1bin~1{id}/put",
+        "security": [],
+        "summary": "Update a json bin"
+      },
+      {
+        "id": "schema:CreateStatus",
+        "kind": "schema",
+        "name": "CreateStatus"
+      },
+      {
+        "id": "schema:DeleteStatus",
+        "kind": "schema",
+        "name": "DeleteStatus"
+      },
+      {
+        "id": "schema:Error",
+        "kind": "schema",
+        "name": "Error"
+      },
+      {
+        "id": "schema:UpdateStatus",
+        "kind": "schema",
+        "name": "UpdateStatus"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "extendsclass-com-json-storage-9ebbe90fb0"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "CreateStatus": {
+                  "properties": {
+                    "id": {
+                      "title": "Id of the bin",
+                      "type": "string"
+                    },
+                    "status": {
+                      "title": "Update status (0: Success)",
+                      "type": "integer"
+                    },
+                    "uri": {
+                      "title": "URI of the bin",
+                      "type": "string"
+                    }
+                  }
+                },
+                "DeleteStatus": {
+                  "properties": {
+                    "status": {
+                      "title": "Update status (0: Success)",
+                      "type": "integer"
+                    }
+                  }
+                },
+                "Error": {
+                  "properties": {
+                    "message": {
+                      "title": "Error message",
+                      "type": "string"
+                    },
+                    "status": {
+                      "title": "Status (1: Error)",
+                      "type": "integer"
+                    }
+                  }
+                },
+                "UpdateStatus": {
+                  "properties": {
+                    "data": {
+                      "title": "Data updated",
+                      "type": "object"
+                    },
+                    "status": {
+                      "title": "Update status (0: Success)",
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            },
+            "info": {
+              "description": "JSON storage API",
+              "title": "JSON storage",
+              "version": "0.1",
+              "x-apisguru-categories": [
+                "developer_tools"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "converter": {
+                    "url": "https://github.com/mermade/oas-kit",
+                    "version": "7.0.4"
+                  },
+                  "format": "openapi",
+                  "url": "https://extendsclass.com/json-storage.openapi.json",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "extendsclass.com",
+              "x-serviceName": "json-storage"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/bin": {
+                "post": {
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/CreateStatus"
+                          }
+                        }
+                      },
+                      "description": "Bin information (id and URL)"
+                    },
+                    "413": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "'JSON data too large' or 'Security key is too large'"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Security key is required for private bin"
+                    }
+                  },
+                  "summary": "Create a json bin"
+                }
+              },
+              "/bin/{id}": {
+                "delete": {
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/DeleteStatus"
+                          }
+                        }
+                      },
+                      "description": "Status of the deletion"
+                    },
+                    "401": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Wrong security key"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Bin not found"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Id must be specified"
+                    }
+                  },
+                  "summary": "Delete a json bin"
+                },
+                "get": {
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "description": "Bin data"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Bin not found"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Id must be specified"
+                    }
+                  },
+                  "summary": "Return a json bin"
+                },
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ],
+                "patch": {
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/UpdateStatus"
+                          }
+                        }
+                      },
+                      "description": "Bin data updated"
+                    },
+                    "401": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Wrong security key"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Bin not found"
+                    },
+                    "413": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "JSON data too large"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Id must be specified"
+                    }
+                  },
+                  "summary": "Partially update a json bin with JSON Merge Patch"
+                },
+                "put": {
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/UpdateStatus"
+                          }
+                        }
+                      },
+                      "description": "Bin data updated"
+                    },
+                    "401": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Wrong security key"
+                    },
+                    "404": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Bin not found"
+                    },
+                    "413": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "JSON data too large"
+                    },
+                    "422": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Error"
+                          }
+                        }
+                      },
+                      "description": "Id must be specified"
+                    }
+                  },
+                  "summary": "Update a json bin"
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://extendsclass.com/api/json-storage"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "JSON storage"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:52.928312Z",
+    "license": null,
+    "origins": [
+      {
+        "converter": {
+          "url": "https://github.com/mermade/oas-kit",
+          "version": "7.0.4"
+        },
+        "format": "openapi",
+        "url": "https://extendsclass.com/json-storage.openapi.json",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "b4cdb477822ed235654c664f8ba5781fe4c71b9d1cc12937ed934c2238a21ada",
+    "source_id": "extendsclass.com:json-storage",
+    "source_updated": "2021-01-18T09:19:53.944Z",
+    "url": "https://api.apis.guru/v2/specs/extendsclass.com/json-storage/0.1/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "0.1"
+}

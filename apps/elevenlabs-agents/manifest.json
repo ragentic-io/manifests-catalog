@@ -1,0 +1,2634 @@
+{
+  "a2ui": {},
+  "app": "elevenlabs-agents",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "elevenlabs-agents",
+        "kind": "EXPOSES",
+        "to": "operation:publish:AgentMessages"
+      },
+      {
+        "from": "operation:publish:AgentMessages",
+        "kind": "RECEIVE",
+        "to": "channel:AgentMessages"
+      },
+      {
+        "from": "elevenlabs-agents",
+        "kind": "EXPOSES",
+        "to": "operation:subscribe:AgentMessages"
+      },
+      {
+        "from": "operation:subscribe:AgentMessages",
+        "kind": "SEND",
+        "to": "channel:AgentMessages"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "elevenlabs-agents",
+        "kind": "application"
+      },
+      {
+        "address": "AgentMessages",
+        "id": "channel:AgentMessages",
+        "kind": "channel",
+        "name": "AgentMessages"
+      },
+      {
+        "app_action": "receive",
+        "channel": "AgentMessages",
+        "connector_action": "send",
+        "definition": {
+          "message": {
+            "oneOf": [
+              {
+                "$ref": "#/components/messages/Audio"
+              },
+              {
+                "$ref": "#/components/messages/UserTranscript"
+              },
+              {
+                "$ref": "#/components/messages/TentativeUserTranscript"
+              },
+              {
+                "$ref": "#/components/messages/AgentResponse"
+              },
+              {
+                "$ref": "#/components/messages/AgentResponseCorrection"
+              },
+              {
+                "$ref": "#/components/messages/AgentChatResponsePart"
+              },
+              {
+                "$ref": "#/components/messages/AgentReasoningResponsePart"
+              },
+              {
+                "$ref": "#/components/messages/Interruption"
+              },
+              {
+                "$ref": "#/components/messages/ConversationMetadata"
+              },
+              {
+                "$ref": "#/components/messages/ConversationHistory"
+              },
+              {
+                "$ref": "#/components/messages/ClientToolCallMessage"
+              },
+              {
+                "$ref": "#/components/messages/RichContentMessage"
+              },
+              {
+                "$ref": "#/components/messages/AgentToolRequestMessage"
+              },
+              {
+                "$ref": "#/components/messages/AgentToolResponseMessage"
+              },
+              {
+                "$ref": "#/components/messages/AgentToolResponseFullPayloadMessage"
+              },
+              {
+                "$ref": "#/components/messages/MCPToolCall"
+              },
+              {
+                "$ref": "#/components/messages/MCPConnectionStatusMessage"
+              },
+              {
+                "$ref": "#/components/messages/VADScore"
+              },
+              {
+                "$ref": "#/components/messages/Ping"
+              },
+              {
+                "$ref": "#/components/messages/ContextUsage"
+              },
+              {
+                "$ref": "#/components/messages/ASRInitiationMetadata"
+              },
+              {
+                "$ref": "#/components/messages/GuardrailTriggered"
+              },
+              {
+                "$ref": "#/components/messages/InternalTurnProbability"
+              },
+              {
+                "$ref": "#/components/messages/InternalTentativeAgentResponse"
+              },
+              {
+                "$ref": "#/components/messages/AgentTyping"
+              },
+              {
+                "$ref": "#/components/messages/ExternalAgentConnected"
+              },
+              {
+                "$ref": "#/components/messages/ExternalAgentDisconnected"
+              },
+              {
+                "$ref": "#/components/messages/ErrorMessage"
+              }
+            ]
+          },
+          "summary": "Messages sent from server to client"
+        },
+        "id": "operation:publish:AgentMessages",
+        "kind": "operation",
+        "name": "send.AgentMessages",
+        "summary": "Messages sent from server to client"
+      },
+      {
+        "app_action": "send",
+        "channel": "AgentMessages",
+        "connector_action": "receive",
+        "definition": {
+          "message": {
+            "oneOf": [
+              {
+                "$ref": "#/components/messages/UserAudio"
+              },
+              {
+                "$ref": "#/components/messages/Pong"
+              },
+              {
+                "$ref": "#/components/messages/UserMessage"
+              },
+              {
+                "$ref": "#/components/messages/UserActivity"
+              },
+              {
+                "$ref": "#/components/messages/UserFeedback"
+              },
+              {
+                "$ref": "#/components/messages/ClientToolResult"
+              },
+              {
+                "$ref": "#/components/messages/MCPToolApprovalResult"
+              },
+              {
+                "$ref": "#/components/messages/ContextualUpdate"
+              },
+              {
+                "$ref": "#/components/messages/ConversationInitiation"
+              },
+              {
+                "$ref": "#/components/messages/MultimodalMessage"
+              }
+            ]
+          },
+          "summary": "Messages received from client to server"
+        },
+        "id": "operation:subscribe:AgentMessages",
+        "kind": "operation",
+        "name": "receive.AgentMessages",
+        "summary": "Messages received from client to server"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "elevenlabs-agents"
+    },
+    "spec": {
+      "base": {
+        "protocol": "asyncapi",
+        "specification": {
+          "document": {
+            "asyncapi": "2.6.0",
+            "channels": {
+              "AgentMessages": {
+                "description": "Main WebSocket channel for agents",
+                "publish": {
+                  "message": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/messages/Audio"
+                      },
+                      {
+                        "$ref": "#/components/messages/UserTranscript"
+                      },
+                      {
+                        "$ref": "#/components/messages/TentativeUserTranscript"
+                      },
+                      {
+                        "$ref": "#/components/messages/AgentResponse"
+                      },
+                      {
+                        "$ref": "#/components/messages/AgentResponseCorrection"
+                      },
+                      {
+                        "$ref": "#/components/messages/AgentChatResponsePart"
+                      },
+                      {
+                        "$ref": "#/components/messages/AgentReasoningResponsePart"
+                      },
+                      {
+                        "$ref": "#/components/messages/Interruption"
+                      },
+                      {
+                        "$ref": "#/components/messages/ConversationMetadata"
+                      },
+                      {
+                        "$ref": "#/components/messages/ConversationHistory"
+                      },
+                      {
+                        "$ref": "#/components/messages/ClientToolCallMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/RichContentMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/AgentToolRequestMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/AgentToolResponseMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/AgentToolResponseFullPayloadMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/MCPToolCall"
+                      },
+                      {
+                        "$ref": "#/components/messages/MCPConnectionStatusMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/VADScore"
+                      },
+                      {
+                        "$ref": "#/components/messages/Ping"
+                      },
+                      {
+                        "$ref": "#/components/messages/ContextUsage"
+                      },
+                      {
+                        "$ref": "#/components/messages/ASRInitiationMetadata"
+                      },
+                      {
+                        "$ref": "#/components/messages/GuardrailTriggered"
+                      },
+                      {
+                        "$ref": "#/components/messages/InternalTurnProbability"
+                      },
+                      {
+                        "$ref": "#/components/messages/InternalTentativeAgentResponse"
+                      },
+                      {
+                        "$ref": "#/components/messages/AgentTyping"
+                      },
+                      {
+                        "$ref": "#/components/messages/ExternalAgentConnected"
+                      },
+                      {
+                        "$ref": "#/components/messages/ExternalAgentDisconnected"
+                      },
+                      {
+                        "$ref": "#/components/messages/ErrorMessage"
+                      }
+                    ]
+                  },
+                  "summary": "Messages sent from server to client"
+                },
+                "subscribe": {
+                  "message": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/messages/UserAudio"
+                      },
+                      {
+                        "$ref": "#/components/messages/Pong"
+                      },
+                      {
+                        "$ref": "#/components/messages/UserMessage"
+                      },
+                      {
+                        "$ref": "#/components/messages/UserActivity"
+                      },
+                      {
+                        "$ref": "#/components/messages/UserFeedback"
+                      },
+                      {
+                        "$ref": "#/components/messages/ClientToolResult"
+                      },
+                      {
+                        "$ref": "#/components/messages/MCPToolApprovalResult"
+                      },
+                      {
+                        "$ref": "#/components/messages/ContextualUpdate"
+                      },
+                      {
+                        "$ref": "#/components/messages/ConversationInitiation"
+                      },
+                      {
+                        "$ref": "#/components/messages/MultimodalMessage"
+                      }
+                    ]
+                  },
+                  "summary": "Messages received from client to server"
+                }
+              }
+            },
+            "components": {
+              "messages": {
+                "ASRInitiationMetadata": {
+                  "contentType": "application/json",
+                  "name": "ASRInitiationMetadataEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ASRInitiationMetadataPayload"
+                  },
+                  "summary": "ASR initialization metadata",
+                  "title": "ASR Initiation Metadata"
+                },
+                "AgentChatResponsePart": {
+                  "contentType": "application/json",
+                  "name": "AgentChatResponsePartClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/AgentChatResponsePartPayload"
+                  },
+                  "summary": "Streaming text chunk from agent (text-only mode)",
+                  "title": "Agent Chat Response Part"
+                },
+                "AgentReasoningResponsePart": {
+                  "contentType": "application/json",
+                  "name": "AgentReasoningResponsePartClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/AgentReasoningResponsePartPayload"
+                  },
+                  "summary": "Streaming reasoning text from agent",
+                  "title": "Agent Reasoning Response Part",
+                  "x-experimental": true
+                },
+                "AgentResponse": {
+                  "contentType": "application/json",
+                  "name": "AgentResponseClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/AgentResponsePayload"
+                  },
+                  "summary": "Agent's text response",
+                  "title": "Agent Response"
+                },
+                "AgentResponseCorrection": {
+                  "contentType": "application/json",
+                  "name": "AgentResponseCorrectionClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/AgentResponseCorrectionPayload"
+                  },
+                  "summary": "Corrected response after interruption",
+                  "title": "Agent Response Correction"
+                },
+                "AgentToolRequestMessage": {
+                  "contentType": "application/json",
+                  "name": "AgentToolRequestClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/AgentToolRequestPayload"
+                  },
+                  "summary": "Event emitted when a tool request is received",
+                  "title": "Agent Tool Request"
+                },
+                "AgentToolResponseFullPayloadMessage": {
+                  "contentType": "application/json",
+                  "name": "AgentToolResponseFullPayloadClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/AgentToolResponseFullPayloadPayload"
+                  },
+                  "summary": "Tool response including the tool's full result payload as a string",
+                  "title": "Agent Tool Response Full Payload"
+                },
+                "AgentToolResponseMessage": {
+                  "contentType": "application/json",
+                  "name": "AgentToolResponseClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/AgentToolResponsePayload"
+                  },
+                  "summary": "Result of agent tool execution",
+                  "title": "Agent Tool Response"
+                },
+                "AgentTyping": {
+                  "contentType": "application/json",
+                  "name": "AgentTypingClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/AgentTypingPayload"
+                  },
+                  "summary": "Indicates when an external agent is typing",
+                  "title": "Agent Typing Indicator"
+                },
+                "Audio": {
+                  "contentType": "application/json",
+                  "name": "AudioClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/AudioPayload"
+                  },
+                  "summary": "Synthesized audio from agent",
+                  "title": "Audio Output"
+                },
+                "ClientToolCallMessage": {
+                  "contentType": "application/json",
+                  "name": "ClientToolCallClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ClientToolCallPayload"
+                  },
+                  "summary": "Tool for client to execute",
+                  "title": "Client Tool Call"
+                },
+                "ClientToolResult": {
+                  "contentType": "application/json",
+                  "name": "ClientToolResultClientToOrchestratorEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ClientToolResultPayload"
+                  },
+                  "summary": "Result of client-side tool execution",
+                  "title": "Client Tool Result"
+                },
+                "ContextUsage": {
+                  "contentType": "application/json",
+                  "name": "ContextUsageClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ContextUsagePayload"
+                  },
+                  "summary": "LLM context-window usage reported after each completed agent turn",
+                  "title": "Context Usage"
+                },
+                "ContextualUpdate": {
+                  "contentType": "application/json",
+                  "name": "ContextualUpdateClientToOrchestratorEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ContextualUpdatePayload"
+                  },
+                  "summary": "Non-interrupting context update",
+                  "title": "Contextual Update"
+                },
+                "ConversationHistory": {
+                  "contentType": "application/json",
+                  "name": "ConversationHistoryClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ConversationHistoryPayload"
+                  },
+                  "summary": "Stored transcript rows replayed when a persistent session is resumed, sent once right after the conversation metadata",
+                  "title": "Conversation History"
+                },
+                "ConversationInitiation": {
+                  "contentType": "application/json",
+                  "name": "ConversationInitiationClientToOrchestratorEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ConversationInitiationPayload"
+                  },
+                  "summary": "Initial configuration and overrides",
+                  "title": "Conversation Initiation"
+                },
+                "ConversationMetadata": {
+                  "contentType": "application/json",
+                  "name": "ConversationInitiationMetadataEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ConversationMetadataPayload"
+                  },
+                  "summary": "Initial connection metadata",
+                  "title": "Conversation Metadata"
+                },
+                "ErrorMessage": {
+                  "contentType": "application/json",
+                  "name": "ErrorClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ErrorPayload"
+                  },
+                  "summary": "Error event sent when connection is closing due to an error",
+                  "title": "Error Message"
+                },
+                "ExternalAgentConnected": {
+                  "contentType": "application/json",
+                  "name": "ExternalAgentConnectedClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ExternalAgentConnectedPayload"
+                  },
+                  "summary": "Indicates that an external agent (e.g., Genesys) has connected",
+                  "title": "External Agent Connected"
+                },
+                "ExternalAgentDisconnected": {
+                  "contentType": "application/json",
+                  "name": "ExternalAgentDisconnectedClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/ExternalAgentDisconnectedPayload"
+                  },
+                  "summary": "Indicates that an external agent (e.g., Genesys) has disconnected and the AI agent resumed control",
+                  "title": "External Agent Disconnected"
+                },
+                "GuardrailTriggered": {
+                  "contentType": "application/json",
+                  "name": "GuardrailTriggeredClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/GuardrailTriggeredPayload"
+                  },
+                  "summary": "Event emitted when a guardrail is triggered",
+                  "title": "Guardrail Triggered"
+                },
+                "InternalTentativeAgentResponse": {
+                  "contentType": "application/json",
+                  "name": "TentativeAgentResponseInternalClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/InternalTentativeAgentResponsePayload"
+                  },
+                  "summary": "Internal tentative agent response (not for public use)",
+                  "title": "Internal Tentative Agent Response"
+                },
+                "InternalTurnProbability": {
+                  "contentType": "application/json",
+                  "name": "TurnProbabilityInternalClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/InternalTurnProbabilityPayload"
+                  },
+                  "summary": "Internal turn probability score (not for public use)",
+                  "title": "Internal Turn Probability"
+                },
+                "Interruption": {
+                  "contentType": "application/json",
+                  "name": "InterruptionEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/InterruptionPayload"
+                  },
+                  "summary": "User interrupted agent speech",
+                  "title": "Interruption"
+                },
+                "MCPConnectionStatusMessage": {
+                  "contentType": "application/json",
+                  "name": "MCPConnectionStatusClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/MCPConnectionStatusPayload"
+                  },
+                  "summary": "Status of MCP service connections",
+                  "title": "MCP Connection Status"
+                },
+                "MCPToolApprovalResult": {
+                  "contentType": "application/json",
+                  "name": "MCPToolApprovalResultClientToOrchestratorEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/MCPToolApprovalResultPayload"
+                  },
+                  "summary": "User approval/rejection of MCP tool execution",
+                  "title": "MCP Tool Approval Result"
+                },
+                "MCPToolCall": {
+                  "contentType": "application/json",
+                  "name": "MCPToolCallClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/MCPToolCallPayload"
+                  },
+                  "summary": "Model Context Protocol tool call",
+                  "title": "MCP Tool Call"
+                },
+                "MultimodalMessage": {
+                  "contentType": "application/json",
+                  "name": "MultimodalMessageClientToOrchestratorEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/MultimodalMessagePayload"
+                  },
+                  "summary": "Multimodal message combining text and a file reference",
+                  "title": "Multimodal Message"
+                },
+                "Ping": {
+                  "contentType": "application/json",
+                  "name": "PingEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/PingPayload"
+                  },
+                  "summary": "Keepalive ping from server",
+                  "title": "Ping"
+                },
+                "Pong": {
+                  "contentType": "application/json",
+                  "name": "PongClientToOrchestratorEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/PongPayload"
+                  },
+                  "summary": "Response to server ping for latency measurement",
+                  "title": "Pong Response"
+                },
+                "RichContentMessage": {
+                  "contentType": "application/json",
+                  "name": "RichContentClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/RichContentPayload"
+                  },
+                  "summary": "Component for the client to display",
+                  "title": "Rich Content",
+                  "x-experimental": true
+                },
+                "TentativeUserTranscript": {
+                  "contentType": "application/json",
+                  "name": "TentativeUserTranscriptionClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/TentativeUserTranscriptPayload"
+                  },
+                  "summary": "In-progress transcription (may change)",
+                  "title": "Tentative User Transcript"
+                },
+                "UserActivity": {
+                  "contentType": "application/json",
+                  "name": "UserActivityClientToOrchestratorEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/UserActivityPayload"
+                  },
+                  "summary": "Signal that user is active (typing, etc.)",
+                  "title": "User Activity Signal"
+                },
+                "UserAudio": {
+                  "contentType": "application/json",
+                  "name": "UserAudio",
+                  "payload": {
+                    "$ref": "#/components/schemas/UserAudioPayload"
+                  },
+                  "summary": "Audio data from user (no type field for performance optimization)",
+                  "title": "User Audio Chunk"
+                },
+                "UserFeedback": {
+                  "contentType": "application/json",
+                  "name": "UserFeedbackClientToOrchestratorEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/UserFeedbackPayload"
+                  },
+                  "summary": "User feedback on agent response",
+                  "title": "User Feedback"
+                },
+                "UserMessage": {
+                  "contentType": "application/json",
+                  "name": "UserMessageClientToOrchestratorEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/UserMessagePayload"
+                  },
+                  "summary": "Text message from user",
+                  "title": "User Text Message"
+                },
+                "UserTranscript": {
+                  "contentType": "application/json",
+                  "name": "UserTranscriptionClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/UserTranscriptPayload"
+                  },
+                  "summary": "Final transcription of user speech",
+                  "title": "User Transcript"
+                },
+                "VADScore": {
+                  "contentType": "application/json",
+                  "name": "VADScoreClientEvent",
+                  "payload": {
+                    "$ref": "#/components/schemas/VADScorePayload"
+                  },
+                  "summary": "Voice Activity Detection score",
+                  "title": "VAD Score"
+                }
+              },
+              "schemas": {
+                "ASRConversationalConfigOverride": {
+                  "description": "Automatic speech recognition configuration overrides",
+                  "properties": {
+                    "keywords": {
+                      "description": "Keywords to boost prediction probability for",
+                      "items": {
+                        "type": "string"
+                      },
+                      "nullable": true,
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ASRInitiationMetadataPayload": {
+                  "properties": {
+                    "asr_initiation_metadata_event": {
+                      "description": "ASR initialization metadata",
+                      "type": "object"
+                    },
+                    "type": {
+                      "const": "asr_initiation_metadata",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "asr_initiation_metadata_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "AgentChatResponsePartData": {
+                  "properties": {
+                    "event_id": {
+                      "description": "Event ID of this chat response part",
+                      "type": "integer"
+                    },
+                    "response_id": {
+                      "description": "Stable identifier shared by all parts of this agent response",
+                      "type": "string"
+                    },
+                    "text": {
+                      "description": "Text chunk (empty for start/stop events)",
+                      "type": "string"
+                    },
+                    "type": {
+                      "$ref": "#/components/schemas/AgentChatResponsePartType"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "AgentChatResponsePartPayload": {
+                  "properties": {
+                    "text_response_part": {
+                      "$ref": "#/components/schemas/AgentChatResponsePartData"
+                    },
+                    "type": {
+                      "const": "agent_chat_response_part",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text_response_part",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "AgentChatResponsePartType": {
+                  "description": "Type of streaming response chunk",
+                  "enum": [
+                    "start",
+                    "delta",
+                    "stop"
+                  ],
+                  "type": "string"
+                },
+                "AgentConfigOverride": {
+                  "description": "Agent-specific configuration overrides",
+                  "properties": {
+                    "first_message": {
+                      "description": "Initial message the agent will say. If empty, agent waits for user to start",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "language": {
+                      "$ref": "#/components/schemas/Language"
+                    },
+                    "native_mcp_server_ids": {
+                      "description": "List of Native MCP server IDs to be used by the agent",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 10,
+                      "nullable": true,
+                      "type": "array"
+                    },
+                    "prompt": {
+                      "$ref": "#/components/schemas/PromptAgentOverride"
+                    }
+                  },
+                  "type": "object"
+                },
+                "AgentReasoningResponsePartData": {
+                  "properties": {
+                    "event_id": {
+                      "description": "Event ID of this reasoning response part",
+                      "type": "string"
+                    },
+                    "text": {
+                      "description": "Reasoning text chunk (empty for start/stop events)",
+                      "type": "string"
+                    },
+                    "type": {
+                      "$ref": "#/components/schemas/AgentReasoningResponsePartType"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "AgentReasoningResponsePartPayload": {
+                  "properties": {
+                    "reasoning_response_part": {
+                      "$ref": "#/components/schemas/AgentReasoningResponsePartData"
+                    },
+                    "type": {
+                      "const": "agent_reasoning_response_part",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "reasoning_response_part",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "AgentReasoningResponsePartType": {
+                  "description": "Type of streaming reasoning response chunk",
+                  "enum": [
+                    "start",
+                    "delta",
+                    "stop"
+                  ],
+                  "type": "string"
+                },
+                "AgentResponseAttachment": {
+                  "properties": {
+                    "mime_type": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "name"
+                  ],
+                  "title": "AgentResponseAttachment",
+                  "type": "object"
+                },
+                "AgentResponseCorrectionData": {
+                  "properties": {
+                    "corrected_agent_response": {
+                      "type": "string"
+                    },
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "original_agent_response": {
+                      "type": "string"
+                    },
+                    "response_id": {
+                      "description": "Identifier of the agent response being corrected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "original_agent_response",
+                    "corrected_agent_response",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "AgentResponseCorrectionPayload": {
+                  "properties": {
+                    "agent_response_correction_event": {
+                      "$ref": "#/components/schemas/AgentResponseCorrectionData"
+                    },
+                    "type": {
+                      "const": "agent_response_correction",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "agent_response_correction_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "AgentResponseData": {
+                  "properties": {
+                    "agent_response": {
+                      "type": "string"
+                    },
+                    "attachments": {
+                      "description": "Files attached to the agent response, e.g. relayed from a human agent reply",
+                      "items": {
+                        "$ref": "#/components/schemas/AgentResponseAttachment"
+                      },
+                      "type": "array"
+                    },
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "response_id": {
+                      "description": "Stable identifier for this agent response across resends",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "agent_response",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "AgentResponsePayload": {
+                  "properties": {
+                    "agent_response_event": {
+                      "$ref": "#/components/schemas/AgentResponseData"
+                    },
+                    "type": {
+                      "const": "agent_response",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "agent_response_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "AgentToolRequestData": {
+                  "properties": {
+                    "event_id": {
+                      "description": "Event ID when the tool was requested",
+                      "type": "integer"
+                    },
+                    "tool_call_id": {
+                      "description": "Unique identifier for the tool call",
+                      "type": "string"
+                    },
+                    "tool_name": {
+                      "description": "Name of the tool being requested",
+                      "type": "string"
+                    },
+                    "tool_type": {
+                      "description": "Type of tool (client, webhook, or mcp)",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "tool_name",
+                    "tool_call_id",
+                    "tool_type",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "AgentToolRequestPayload": {
+                  "properties": {
+                    "agent_tool_request": {
+                      "$ref": "#/components/schemas/AgentToolRequestData"
+                    },
+                    "type": {
+                      "const": "agent_tool_request",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "agent_tool_request",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "AgentToolResponseData": {
+                  "properties": {
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "is_called": {
+                      "description": "Whether the tool has been called and execution started",
+                      "type": "boolean"
+                    },
+                    "is_error": {
+                      "description": "Whether the tool execution resulted in an error",
+                      "type": "boolean"
+                    },
+                    "tool_call_id": {
+                      "description": "Unique identifier for the tool call",
+                      "type": "string"
+                    },
+                    "tool_name": {
+                      "description": "Name of the tool that was executed",
+                      "type": "string"
+                    },
+                    "tool_type": {
+                      "description": "Type of tool (client, system, or mcp)",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "tool_name",
+                    "tool_call_id",
+                    "tool_type",
+                    "is_error",
+                    "is_called",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "AgentToolResponseFullPayloadData": {
+                  "properties": {
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "full_tool_result": {
+                      "description": "The tool's full result, forwarded verbatim as an opaque string",
+                      "type": "string"
+                    },
+                    "is_blocked": {
+                      "default": false,
+                      "description": "Whether the tool call was blocked",
+                      "type": "boolean"
+                    },
+                    "is_called": {
+                      "description": "Whether the tool has been called and execution started",
+                      "type": "boolean"
+                    },
+                    "is_error": {
+                      "description": "Whether the tool execution resulted in an error",
+                      "type": "boolean"
+                    },
+                    "tool_call_id": {
+                      "description": "Unique identifier for the tool call",
+                      "type": "string"
+                    },
+                    "tool_name": {
+                      "description": "Name of the tool that was executed",
+                      "type": "string"
+                    },
+                    "tool_type": {
+                      "description": "Type of tool (client, system, or mcp)",
+                      "type": "string"
+                    },
+                    "truncated": {
+                      "default": false,
+                      "description": "Whether the full_tool_result was truncated to fit the size cap",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "tool_name",
+                    "tool_call_id",
+                    "tool_type",
+                    "is_error",
+                    "is_called",
+                    "event_id",
+                    "full_tool_result"
+                  ],
+                  "type": "object"
+                },
+                "AgentToolResponseFullPayloadPayload": {
+                  "properties": {
+                    "agent_tool_response_full_payload": {
+                      "$ref": "#/components/schemas/AgentToolResponseFullPayloadData"
+                    },
+                    "type": {
+                      "const": "agent_tool_response_full_payload",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "agent_tool_response_full_payload",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "AgentToolResponsePayload": {
+                  "properties": {
+                    "agent_tool_response": {
+                      "$ref": "#/components/schemas/AgentToolResponseData"
+                    },
+                    "type": {
+                      "const": "agent_tool_response",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "agent_tool_response",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "AgentTypingData": {
+                  "properties": {
+                    "duration_ms": {
+                      "description": "Optional duration in milliseconds to automatically clear typing state",
+                      "nullable": true,
+                      "type": "integer"
+                    },
+                    "is_typing": {
+                      "description": "Whether the agent is currently typing",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "is_typing"
+                  ],
+                  "type": "object"
+                },
+                "AgentTypingPayload": {
+                  "properties": {
+                    "agent_typing_event": {
+                      "$ref": "#/components/schemas/AgentTypingData"
+                    },
+                    "type": {
+                      "const": "agent_typing",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "agent_typing_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "AudioAlignmentData": {
+                  "properties": {
+                    "char_durations_ms": {
+                      "description": "Duration in milliseconds for each character",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "char_start_times_ms": {
+                      "description": "Start time in milliseconds for each character",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "chars": {
+                      "description": "Array of individual characters in the synthesized text",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "chars",
+                    "char_start_times_ms",
+                    "char_durations_ms"
+                  ],
+                  "type": "object"
+                },
+                "AudioEventData": {
+                  "properties": {
+                    "alignment": {
+                      "$ref": "#/components/schemas/AudioAlignmentData"
+                    },
+                    "audio_base_64": {
+                      "format": "base64",
+                      "type": "string"
+                    },
+                    "event_id": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "audio_base_64",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "AudioFormat": {
+                  "description": "Audio encoding format",
+                  "enum": [
+                    "pcm_8000",
+                    "pcm_16000",
+                    "pcm_22050",
+                    "pcm_24000",
+                    "pcm_44100",
+                    "pcm_48000",
+                    "ulaw_8000"
+                  ],
+                  "type": "string"
+                },
+                "AudioPayload": {
+                  "properties": {
+                    "audio_event": {
+                      "$ref": "#/components/schemas/AudioEventData"
+                    },
+                    "type": {
+                      "const": "audio",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "audio_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "ClientEvent": {
+                  "description": "Types of events that can be sent from server to client",
+                  "enum": [
+                    "audio",
+                    "agent_response",
+                    "agent_response_correction",
+                    "agent_chat_response_part",
+                    "agent_reasoning_response_part",
+                    "interruption",
+                    "user_transcript",
+                    "tentative_user_transcript",
+                    "conversation_initiation_metadata",
+                    "conversation_history",
+                    "client_tool_call",
+                    "rich_content",
+                    "agent_tool_request",
+                    "agent_tool_response",
+                    "agent_tool_response_full_payload",
+                    "mcp_tool_call",
+                    "mcp_connection_status",
+                    "vad_score",
+                    "ping",
+                    "context_usage",
+                    "asr_initiation_metadata",
+                    "guardrail_triggered",
+                    "internal_turn_probability",
+                    "internal_tentative_agent_response",
+                    "agent_typing",
+                    "external_agent_connected",
+                    "external_agent_disconnected"
+                  ],
+                  "type": "string"
+                },
+                "ClientToolCallData": {
+                  "properties": {
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "parameters": {
+                      "type": "object"
+                    },
+                    "tool_call_id": {
+                      "type": "string"
+                    },
+                    "tool_name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "tool_name",
+                    "tool_call_id",
+                    "parameters",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "ClientToolCallPayload": {
+                  "properties": {
+                    "client_tool_call": {
+                      "$ref": "#/components/schemas/ClientToolCallData"
+                    },
+                    "type": {
+                      "const": "client_tool_call",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "client_tool_call",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "ClientToolResultPayload": {
+                  "properties": {
+                    "is_error": {
+                      "type": "boolean"
+                    },
+                    "result": {
+                      "type": "string"
+                    },
+                    "tool_call_id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "client_tool_result",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "tool_call_id",
+                    "result",
+                    "is_error"
+                  ],
+                  "type": "object"
+                },
+                "ContextUsageData": {
+                  "properties": {
+                    "context_limit_tokens": {
+                      "description": "The model's maximum context window size in tokens",
+                      "type": "integer"
+                    },
+                    "context_tokens": {
+                      "description": "Prompt size of the turn's last LLM generation in provider tokens (uncached input plus cache reads and writes)",
+                      "type": "integer"
+                    },
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "model": {
+                      "description": "Identifier of the LLM whose context window is reported",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "event_id",
+                    "model",
+                    "context_tokens",
+                    "context_limit_tokens"
+                  ],
+                  "type": "object"
+                },
+                "ContextUsagePayload": {
+                  "properties": {
+                    "context_usage_event": {
+                      "$ref": "#/components/schemas/ContextUsageData"
+                    },
+                    "type": {
+                      "const": "context_usage",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "context_usage_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "ContextualUpdatePayload": {
+                  "properties": {
+                    "context_id": {
+                      "description": "Optional identifier for deduplicating contextual updates. When set, only the most recent update with a given context_id is kept in the LLM context.",
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "contextual_update",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "text"
+                  ],
+                  "type": "object"
+                },
+                "ConversationConfigClientOverride": {
+                  "description": "Client-side overrides for conversation configuration",
+                  "properties": {
+                    "agent": {
+                      "$ref": "#/components/schemas/AgentConfigOverride"
+                    },
+                    "asr": {
+                      "$ref": "#/components/schemas/ASRConversationalConfigOverride"
+                    },
+                    "conversation": {
+                      "$ref": "#/components/schemas/ConversationConfigOverride"
+                    },
+                    "tts": {
+                      "$ref": "#/components/schemas/TTSConversationalConfigOverride"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ConversationConfigOverride": {
+                  "description": "Conversation-specific configuration overrides",
+                  "properties": {
+                    "client_events": {
+                      "description": "List of events to send to the client. If not specified, defaults to:\n[audio, interruption, agent_response, user_transcript, tentative_user_transcript,\n conversation_initiation_metadata, ping]\n",
+                      "items": {
+                        "$ref": "#/components/schemas/ClientEvent"
+                      },
+                      "minItems": 1,
+                      "nullable": true,
+                      "type": "array"
+                    },
+                    "text_only": {
+                      "description": "If true, disables audio processing and uses text-only mode",
+                      "nullable": true,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ConversationHistoryData": {
+                  "properties": {
+                    "conversation_id": {
+                      "type": "string"
+                    },
+                    "rows": {
+                      "items": {
+                        "$ref": "#/components/schemas/ConversationHistoryRow"
+                      },
+                      "type": "array"
+                    },
+                    "truncated": {
+                      "description": "Oldest rows were dropped to fit the event size budget",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "conversation_id",
+                    "rows"
+                  ],
+                  "type": "object"
+                },
+                "ConversationHistoryPayload": {
+                  "properties": {
+                    "conversation_history_event": {
+                      "$ref": "#/components/schemas/ConversationHistoryData"
+                    },
+                    "type": {
+                      "const": "conversation_history",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "conversation_history_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "ConversationHistoryRow": {
+                  "properties": {
+                    "index": {
+                      "description": "Zero-based position of the row in the full stored transcript, stable across resumes. May have gaps, and does not start at 0 when `truncated` is true, since dropped rows keep their numbers.",
+                      "type": "integer"
+                    },
+                    "role": {
+                      "enum": [
+                        "user",
+                        "agent"
+                      ],
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "timestamp_unix_secs": {
+                      "description": "Unix time in seconds. Rows replayed from a live session all carry the conversation start time.",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "index",
+                    "role",
+                    "text",
+                    "timestamp_unix_secs"
+                  ],
+                  "type": "object"
+                },
+                "ConversationInitiationPayload": {
+                  "properties": {
+                    "conversation_config_override": {
+                      "$ref": "#/components/schemas/ConversationConfigClientOverride"
+                    },
+                    "custom_llm_extra_body": {
+                      "description": "Additional parameters passed to the LLM provider",
+                      "type": "object"
+                    },
+                    "dynamic_variables": {
+                      "description": "Dynamic variables available in the conversation context",
+                      "type": "object"
+                    },
+                    "source_info": {
+                      "$ref": "#/components/schemas/SourceInfo"
+                    },
+                    "tool_mock_config": {
+                      "$ref": "#/components/schemas/ToolMockConfig"
+                    },
+                    "type": {
+                      "const": "conversation_initiation_client_data",
+                      "type": "string"
+                    },
+                    "user_id": {
+                      "description": "Unique identifier for the user",
+                      "nullable": true,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "ConversationMetadataData": {
+                  "properties": {
+                    "agent_output_audio_format": {
+                      "$ref": "#/components/schemas/AudioFormat"
+                    },
+                    "conversation_id": {
+                      "type": "string"
+                    },
+                    "persistent_session_token": {
+                      "description": "Token that resumes this conversation in a later session. Only sent for persistent sessions; a resumed session receives a new token.",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "user_input_audio_format": {
+                      "$ref": "#/components/schemas/UserInputAudioFormat"
+                    }
+                  },
+                  "required": [
+                    "conversation_id",
+                    "agent_output_audio_format",
+                    "user_input_audio_format"
+                  ],
+                  "type": "object"
+                },
+                "ConversationMetadataPayload": {
+                  "properties": {
+                    "conversation_initiation_metadata_event": {
+                      "$ref": "#/components/schemas/ConversationMetadataData"
+                    },
+                    "type": {
+                      "const": "conversation_initiation_metadata",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "conversation_initiation_metadata_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "ErrorData": {
+                  "properties": {
+                    "code": {
+                      "$ref": "#/components/schemas/WebSocketCloseCode"
+                    },
+                    "debug_message": {
+                      "description": "Detailed debug message (only sent based on error reporting access level)",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "details": {
+                      "additionalProperties": true,
+                      "description": "Additional error context",
+                      "nullable": true,
+                      "type": "object"
+                    },
+                    "error_type": {
+                      "$ref": "#/components/schemas/ErrorType",
+                      "description": "Specific error type for programmatic handling",
+                      "nullable": true
+                    },
+                    "message": {
+                      "description": "Human-readable error description",
+                      "type": "string"
+                    },
+                    "reason": {
+                      "description": "Generic reason without sensitive details (sent to all clients)",
+                      "nullable": true,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "code"
+                  ],
+                  "type": "object"
+                },
+                "ErrorPayload": {
+                  "properties": {
+                    "error_event": {
+                      "$ref": "#/components/schemas/ErrorData"
+                    },
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "error_event"
+                  ],
+                  "type": "object"
+                },
+                "ErrorType": {
+                  "description": "Specific error types that can occur:\n- unknown: Default/unknown error type\n- invalid_message: Invalid JSON or WebSocket message format (code 1008)\n- telephony_agent_error: ASR-only agents cannot handle telephony calls (code 1008)\n- mcp_tool_error: Invalid MCP tool schema or conversion error (code 1008)\n- mcp_https_error: MCP servers require HTTPS URLs (code 1008)\n- value_error: ValueError in message processing (code 1008)\n- missing_fields: Required fields missing from message (code 1008)\n- override_error: Invalid override configuration (code 1008)\n- missing_dynamic_variable_transfer: Missing dynamic variable after agent transfer (code 1008)\n- missing_dynamic_variable: Required dynamic variable not provided (code 1008)\n- websocket_disconnect: WebSocket disconnected\n- safety_violation: Content policy violation detected (code 1002)\n- llm_timeout: LLM response took over 20 seconds (code 1002)\n- transport_receive_timeout: No user input for 60 seconds (code 1002)\n- asyncio_timeout: Internal asyncio task timeout (code 1002)\n- http_exception: HTTP exception converted to WebSocket error (code 1002)\n- max_duration_exceeded: Max call duration exceeded (code 1000)\n- llm_error: OpenAI or custom LLM error (code 1002)\n- custom_llm_error: Custom LLM generation failed (code 1002)\n- cascade_brain_error: All LLMs have failed (code 1002)\n- asr_transcription_error: Audio transcription failed (code 1002)\n- vad_error: Voice activity detection failed (code 1002)\n- turn_probability_error: Turn detection failed (code 1002)\n- tts_cascade_error: All TTS models have failed (code 1002)\n- redis_timeout_error: Redis queries timed out (code 1002)\n- unknown_websocket_crash: Unexpected server error (code 1011)\n",
+                  "enum": [
+                    "unknown",
+                    "invalid_message",
+                    "telephony_agent_error",
+                    "mcp_tool_error",
+                    "mcp_https_error",
+                    "value_error",
+                    "missing_fields",
+                    "override_error",
+                    "missing_dynamic_variable_transfer",
+                    "missing_dynamic_variable",
+                    "websocket_disconnect",
+                    "safety_violation",
+                    "llm_timeout",
+                    "transport_receive_timeout",
+                    "asyncio_timeout",
+                    "http_exception",
+                    "max_duration_exceeded",
+                    "llm_error",
+                    "custom_llm_error",
+                    "cascade_brain_error",
+                    "asr_transcription_error",
+                    "vad_error",
+                    "turn_probability_error",
+                    "tts_cascade_error",
+                    "redis_timeout_error",
+                    "unknown_websocket_crash"
+                  ],
+                  "type": "string"
+                },
+                "ExternalAgentConnectedPayload": {
+                  "properties": {
+                    "external_agent_connected_event": {
+                      "description": "Empty event indicating external agent connection",
+                      "type": "object"
+                    },
+                    "type": {
+                      "const": "external_agent_connected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "ExternalAgentDisconnectedPayload": {
+                  "properties": {
+                    "external_agent_disconnected_event": {
+                      "description": "Empty event indicating external agent disconnection",
+                      "type": "object"
+                    },
+                    "type": {
+                      "const": "external_agent_disconnected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "FeedbackScore": {
+                  "description": "User's feedback score. Pass null to clear the feedback.",
+                  "oneOf": [
+                    {
+                      "enum": [
+                        "like",
+                        "dislike"
+                      ],
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "GuardrailTriggeredPayload": {
+                  "properties": {
+                    "type": {
+                      "const": "guardrail_triggered",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "InternalTentativeAgentResponseData": {
+                  "properties": {
+                    "tentative_agent_response": {
+                      "description": "Tentative response from the agent (internal use)",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "tentative_agent_response"
+                  ],
+                  "type": "object"
+                },
+                "InternalTentativeAgentResponsePayload": {
+                  "properties": {
+                    "tentative_agent_response_internal_event": {
+                      "$ref": "#/components/schemas/InternalTentativeAgentResponseData"
+                    },
+                    "type": {
+                      "const": "internal_tentative_agent_response",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "tentative_agent_response_internal_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "InternalTurnProbabilityData": {
+                  "properties": {
+                    "turn_probability": {
+                      "description": "Probability of turn-taking (0-1)",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "turn_probability"
+                  ],
+                  "type": "object"
+                },
+                "InternalTurnProbabilityPayload": {
+                  "properties": {
+                    "turn_probability_internal_event": {
+                      "$ref": "#/components/schemas/InternalTurnProbabilityData"
+                    },
+                    "type": {
+                      "const": "internal_turn_probability",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "turn_probability_internal_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "InterruptionData": {
+                  "properties": {
+                    "event_id": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "InterruptionPayload": {
+                  "properties": {
+                    "interruption_event": {
+                      "$ref": "#/components/schemas/InterruptionData"
+                    },
+                    "type": {
+                      "const": "interruption",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "interruption_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "Language": {
+                  "description": "Language code for ASR and TTS",
+                  "enum": [
+                    "en",
+                    "ja",
+                    "zh",
+                    "de",
+                    "hi",
+                    "fr",
+                    "ko",
+                    "pt",
+                    "pt-br",
+                    "it",
+                    "es",
+                    "id",
+                    "nl",
+                    "tr",
+                    "pl",
+                    "sv",
+                    "bg",
+                    "ro",
+                    "ar",
+                    "cs",
+                    "el",
+                    "fi",
+                    "ms",
+                    "da",
+                    "ta",
+                    "uk",
+                    "ru",
+                    "hu",
+                    "hr",
+                    "sk",
+                    false,
+                    "vi",
+                    "tl",
+                    "af",
+                    "hy",
+                    "as",
+                    "az",
+                    "be",
+                    "bn",
+                    "bs",
+                    "ca",
+                    "et",
+                    "gl",
+                    "ka",
+                    "gu",
+                    "ha",
+                    "he",
+                    "is",
+                    "ga",
+                    "jv",
+                    "kn",
+                    "kk",
+                    "ky",
+                    "lv",
+                    "lt",
+                    "lb",
+                    "mk",
+                    "ml",
+                    "mr",
+                    "ne",
+                    "ps",
+                    "fa",
+                    "pa",
+                    "sr",
+                    "sd",
+                    "sl",
+                    "so",
+                    "sw",
+                    "te",
+                    "th",
+                    "ur",
+                    "cy"
+                  ],
+                  "type": "string"
+                },
+                "MCPConnectionStatusData": {
+                  "properties": {
+                    "integrations": {
+                      "description": "List of MCP integration statuses",
+                      "items": {
+                        "$ref": "#/components/schemas/MCPIntegrationStatus"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "integrations"
+                  ],
+                  "type": "object"
+                },
+                "MCPConnectionStatusPayload": {
+                  "properties": {
+                    "mcp_connection_status": {
+                      "$ref": "#/components/schemas/MCPConnectionStatusData"
+                    },
+                    "type": {
+                      "const": "mcp_connection_status",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mcp_connection_status",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "MCPIntegrationStatus": {
+                  "properties": {
+                    "integration_id": {
+                      "description": "Unique identifier for the integration",
+                      "type": "string"
+                    },
+                    "integration_type": {
+                      "$ref": "#/components/schemas/MCPIntegrationType"
+                    },
+                    "is_connected": {
+                      "description": "Whether the integration is currently connected",
+                      "type": "boolean"
+                    },
+                    "tool_count": {
+                      "default": 0,
+                      "description": "Number of tools available from this integration",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "integration_id",
+                    "integration_type",
+                    "is_connected",
+                    "tool_count"
+                  ],
+                  "type": "object"
+                },
+                "MCPIntegrationType": {
+                  "description": "Type of MCP integration",
+                  "enum": [
+                    "mcp_server",
+                    "mcp_integration"
+                  ],
+                  "type": "string"
+                },
+                "MCPToolApprovalResultPayload": {
+                  "properties": {
+                    "is_approved": {
+                      "type": "boolean"
+                    },
+                    "tool_call_id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "mcp_tool_approval_result",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "tool_call_id",
+                    "is_approved"
+                  ],
+                  "type": "object"
+                },
+                "MCPToolCallAwaitingApproval": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/MCPToolCallBase"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "approval_timeout_secs": {
+                          "default": 300,
+                          "description": "Timeout in seconds for user approval",
+                          "type": "integer"
+                        },
+                        "state": {
+                          "const": "awaiting_approval",
+                          "description": "Tool call requires user approval",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "approval_timeout_secs"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                },
+                "MCPToolCallBase": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "parameters": {
+                      "description": "Parameters passed to the tool",
+                      "type": "object"
+                    },
+                    "service_id": {
+                      "description": "ID of the MCP service",
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "description": "ISO 8601 timestamp of the tool call",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "tool_call_id": {
+                      "description": "Unique identifier for this tool call",
+                      "type": "string"
+                    },
+                    "tool_description": {
+                      "description": "Optional description of the tool",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "tool_name": {
+                      "description": "Name of the tool being called",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "service_id",
+                    "tool_call_id",
+                    "tool_name",
+                    "parameters",
+                    "timestamp"
+                  ],
+                  "type": "object"
+                },
+                "MCPToolCallFailure": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/MCPToolCallBase"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "error_message": {
+                          "description": "Error message describing the failure",
+                          "type": "string"
+                        },
+                        "state": {
+                          "const": "failure",
+                          "description": "Tool call failed",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "error_message"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                },
+                "MCPToolCallLoading": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/MCPToolCallBase"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "loading",
+                          "description": "Tool call is being executed",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "state"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                },
+                "MCPToolCallPayload": {
+                  "properties": {
+                    "mcp_tool_call": {
+                      "description": "MCP tool call data (polymorphic based on state)",
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/MCPToolCallLoading"
+                        },
+                        {
+                          "$ref": "#/components/schemas/MCPToolCallAwaitingApproval"
+                        },
+                        {
+                          "$ref": "#/components/schemas/MCPToolCallSuccess"
+                        },
+                        {
+                          "$ref": "#/components/schemas/MCPToolCallFailure"
+                        }
+                      ],
+                      "type": "object"
+                    },
+                    "type": {
+                      "const": "mcp_tool_call",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mcp_tool_call",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "MCPToolCallSuccess": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/MCPToolCallBase"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "result": {
+                          "description": "Array of content blocks returned by the tool",
+                          "items": {
+                            "description": "ContentBlock from MCP",
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "state": {
+                          "const": "success",
+                          "description": "Tool call completed successfully",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "result"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                },
+                "MultimodalMessageFileData": {
+                  "properties": {
+                    "file_id": {
+                      "description": "The unique identifier of the file to include in the message",
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "file_input",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "file_id"
+                  ],
+                  "title": "File",
+                  "type": "object"
+                },
+                "MultimodalMessagePayload": {
+                  "properties": {
+                    "file": {
+                      "$ref": "#/components/schemas/MultimodalMessageFileData",
+                      "description": "The file component of the multimodal message",
+                      "nullable": true
+                    },
+                    "files": {
+                      "description": "The file components of the multimodal message",
+                      "items": {
+                        "$ref": "#/components/schemas/MultimodalMessageFileData"
+                      },
+                      "type": "array"
+                    },
+                    "text": {
+                      "$ref": "#/components/schemas/UserMessagePayload",
+                      "description": "The text component of the multimodal message",
+                      "nullable": true
+                    },
+                    "type": {
+                      "const": "multimodal_message",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "PingData": {
+                  "properties": {
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "ping_ms": {
+                      "anyOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "description": "Estimated ping in milliseconds, based on previous ping/pong timing."
+                    }
+                  },
+                  "required": [
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "PingPayload": {
+                  "properties": {
+                    "ping_event": {
+                      "$ref": "#/components/schemas/PingData"
+                    },
+                    "type": {
+                      "const": "ping",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ping_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "PongPayload": {
+                  "properties": {
+                    "event_id": {
+                      "description": "Echo of ping event_id",
+                      "type": "integer"
+                    },
+                    "type": {
+                      "const": "pong",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "PromptAgentOverride": {
+                  "description": "Agent prompt configuration override",
+                  "properties": {
+                    "llm": {
+                      "description": "The LLM model to use for the conversation",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "prompt": {
+                      "description": "The system prompt that defines the agent's behavior",
+                      "nullable": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "RichContentData": {
+                  "properties": {
+                    "component": {
+                      "description": "Which component to display, for example item_card",
+                      "type": "string"
+                    },
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "props": {
+                      "description": "Component-specific properties; the shape of this object is defined by the component",
+                      "type": "object"
+                    },
+                    "rich_content_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "rich_content_id",
+                    "component",
+                    "props",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "RichContentPayload": {
+                  "properties": {
+                    "rich_content": {
+                      "$ref": "#/components/schemas/RichContentData"
+                    },
+                    "type": {
+                      "const": "rich_content",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "rich_content",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "SourceInfo": {
+                  "properties": {
+                    "source": {
+                      "description": "Identifier of the client application",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "version": {
+                      "description": "Version of the client application",
+                      "nullable": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "TTSConversationalConfigOverride": {
+                  "description": "Text-to-speech configuration overrides",
+                  "properties": {
+                    "model_id": {
+                      "description": "ElevenLabs TTS model ID for speech synthesis",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "similarity_boost": {
+                      "description": "Voice similarity boost (0-1). Higher values = more similar to original",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "nullable": true,
+                      "type": "number"
+                    },
+                    "speed": {
+                      "description": "Speech speed multiplier (0.7-5). 1.0 = normal speed",
+                      "maximum": 5,
+                      "minimum": 0.7,
+                      "nullable": true,
+                      "type": "number"
+                    },
+                    "stability": {
+                      "description": "Voice stability (0-1). Lower values = more variable intonation",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "nullable": true,
+                      "type": "number"
+                    },
+                    "voice_id": {
+                      "description": "ElevenLabs voice ID for speech synthesis",
+                      "nullable": true,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "TentativeTranscriptionData": {
+                  "properties": {
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "user_transcript": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "user_transcript",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "TentativeUserTranscriptPayload": {
+                  "properties": {
+                    "tentative_user_transcription_event": {
+                      "$ref": "#/components/schemas/TentativeTranscriptionData"
+                    },
+                    "type": {
+                      "const": "tentative_user_transcript",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "tentative_user_transcription_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "ToolMockConfig": {
+                  "description": "Configuration for mocking tool behavior during conversations.\nAll fields are optional - an empty object or omitted fields use defaults:\n- mocking_strategy defaults to 'none' (no mocking)\n- fallback_strategy defaults to 'raise_error' (fail safely if mock unavailable)\n- mocked_tool_names defaults to empty array (no specific tools selected)\n",
+                  "properties": {
+                    "fallback_strategy": {
+                      "default": "raise_error",
+                      "description": "Behavior when a mocked tool is called but no mock response matches. Defaults to 'raise_error' for safety. Options: 'raise_error' fails the tool call, 'call_real_tool' executes the actual tool",
+                      "enum": [
+                        "raise_error",
+                        "call_real_tool"
+                      ],
+                      "type": "string"
+                    },
+                    "mocked_tool_names": {
+                      "description": "Tool names to mock when mocking_strategy is 'selected'. Only relevant when mocking_strategy is 'selected'.",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "mocking_strategy": {
+                      "default": "none",
+                      "description": "Which tools to mock. Defaults to 'none'. Options: 'none' disables mocking, 'all' mocks every tool, 'selected' mocks only tools in mocked_tool_names",
+                      "enum": [
+                        "none",
+                        "all",
+                        "selected"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "UserActivityPayload": {
+                  "properties": {
+                    "type": {
+                      "const": "user_activity",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "UserAudioPayload": {
+                  "properties": {
+                    "user_audio_chunk": {
+                      "description": "Base64 encoded PCM or μ-law audio chunk",
+                      "format": "base64",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "user_audio_chunk"
+                  ],
+                  "type": "object"
+                },
+                "UserFeedbackPayload": {
+                  "properties": {
+                    "event_id": {
+                      "description": "ID of the event being given feedback on",
+                      "type": "integer"
+                    },
+                    "score": {
+                      "$ref": "#/components/schemas/FeedbackScore"
+                    },
+                    "type": {
+                      "const": "feedback",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "event_id",
+                    "score"
+                  ],
+                  "type": "object"
+                },
+                "UserInputAudioFormat": {
+                  "description": "Audio encoding format for user input",
+                  "enum": [
+                    "pcm_8000",
+                    "pcm_16000",
+                    "pcm_22050",
+                    "pcm_24000",
+                    "pcm_44100",
+                    "pcm_48000",
+                    "ulaw_8000"
+                  ],
+                  "type": "string"
+                },
+                "UserMessagePayload": {
+                  "properties": {
+                    "rich_content_id": {
+                      "description": "Set when the message came from a rich-content button tap rather than typing: the row the button belonged to. Given the row, the text says which button. Best-effort attribution only — older clients never send it.",
+                      "type": "string"
+                    },
+                    "text": {
+                      "description": "User's text message (null for text-only mode signal)",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "user_message",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "UserTranscriptPayload": {
+                  "properties": {
+                    "type": {
+                      "const": "user_transcript",
+                      "type": "string"
+                    },
+                    "user_transcription_event": {
+                      "$ref": "#/components/schemas/UserTranscriptionData"
+                    }
+                  },
+                  "required": [
+                    "user_transcription_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "UserTranscriptionData": {
+                  "properties": {
+                    "event_id": {
+                      "type": "integer"
+                    },
+                    "user_transcript": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "user_transcript",
+                    "event_id"
+                  ],
+                  "type": "object"
+                },
+                "VADScoreData": {
+                  "properties": {
+                    "vad_score": {
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "vad_score"
+                  ],
+                  "type": "object"
+                },
+                "VADScorePayload": {
+                  "properties": {
+                    "type": {
+                      "const": "vad_score",
+                      "type": "string"
+                    },
+                    "vad_score_event": {
+                      "$ref": "#/components/schemas/VADScoreData"
+                    }
+                  },
+                  "required": [
+                    "vad_score_event",
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                "WebSocketCloseCode": {
+                  "description": "WebSocket close codes used by the conversation API:\n- 1000: Normal closure (agent ended conversation, max duration exceeded)\n- 1002: Protocol/operational error (timeouts, safety/policy violations, LLM/TTS/ASR failures, HTTP exceptions)\n- 1008: Input/contract error (invalid messages, missing required fields, auth/validation errors)\n- 1011: Internal server error (unexpected errors)\n",
+                  "enum": [
+                    1000,
+                    1002,
+                    1008,
+                    1011
+                  ],
+                  "type": "integer"
+                }
+              }
+            },
+            "info": {
+              "contact": {
+                "email": "support@elevenlabs.io",
+                "name": "ElevenLabs API Support",
+                "url": "https://elevenlabs.io/docs"
+              },
+              "description": "Real-time Agents with voice synthesis and transcription.\nThis WebSocket API enables bidirectional audio streaming and text messaging\nbetween clients and AI agents.\n\n## Event Flow\n- Audio chunks are sent without type field for performance (detected by presence of user_audio_chunk)\n- All other messages use explicit type field for routing\n- Client events can be selectively enabled via conversation config\n",
+              "title": "ElevenLabs Agents Contract",
+              "version": "1.0.0"
+            },
+            "servers": {
+              "development": {
+                "description": "Local development server",
+                "protocol": "ws",
+                "url": "ws://localhost:8080"
+              },
+              "eu-residency": {
+                "description": "EU residency WebSocket server for GDPR compliance",
+                "protocol": "ws",
+                "url": "wss://api.eu.residency.elevenlabs.io"
+              },
+              "in-residency": {
+                "description": "India residency WebSocket server for data locality",
+                "protocol": "ws",
+                "url": "wss://api.in.residency.elevenlabs.io"
+              },
+              "production": {
+                "description": "Production WebSocket server (US/Global)",
+                "protocol": "ws",
+                "url": "wss://api.elevenlabs.io"
+              },
+              "webrtc": {
+                "description": "WebRTC/LiveKit server for real-time communication",
+                "protocol": "ws",
+                "url": "wss://livekit.rtc.elevenlabs.io"
+              }
+            }
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "ElevenLabs Agents"
+    }
+  },
+  "not_before": 1793376126,
+  "protocol": "asyncapi",
+  "provenance": {
+    "commit": "93991e27a52bcd241c5d2fcb0cb4f23e4c24c2d0",
+    "fetched_at": "2026-10-29T23:24:08.433615+00:00",
+    "normalization": "YAML parsed and serialized to JSON; all document fields retained",
+    "normalized_sha256": "9145e636d39817d4385e3eeb3365298b44ffc7655d0c248ee4d04f1aef8ddc96",
+    "repository": "elevenlabs/packages",
+    "sha256": "407a54ea259c7d46fb7ef1ad70f0d84a3a7cbd4a5693c370f3aec96e02c03d9e",
+    "source_id": "elevenlabs/packages",
+    "upstream_sha256": "f635d9ad4abfd8d9da53e60ebfc4e199670dfe72650f6fb39050b28a281ff7d0",
+    "url": "https://raw.githubusercontent.com/elevenlabs/packages/93991e27a52bcd241c5d2fcb0cb4f23e4c24c2d0/packages/types/schemas/agent.asyncapi.yaml"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "conversion": null,
+    "setup_guide": true,
+    "source_currency": true,
+    "transport_compatibility": true
+  },
+  "rights": {
+    "independent_attribution": "Independent connector for ElevenLabs. Not affiliated with or endorsed by ElevenLabs.",
+    "mark_policy": "Plain-text provider name for identification only; no provider logo, favicon, or brand color.",
+    "source": {
+      "license": "MIT",
+      "license_sha256": "0bfed2a2aa8d106bdb144f55416e193450fbc1e1b3257e3852bc64418069de5a",
+      "license_text": "MIT License\n\nCopyright (c) 2025 ElevenLabs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "license_url": "https://raw.githubusercontent.com/elevenlabs/packages/93991e27a52bcd241c5d2fcb0cb4f23e4c24c2d0/LICENSE",
+      "notice_url": null
+    },
+    "source_attribution": "Copyright (c) 2025 ElevenLabs",
+    "source_license": "MIT",
+    "source_license_sha256": "0bfed2a2aa8d106bdb144f55416e193450fbc1e1b3257e3852bc64418069de5a",
+    "source_license_text": "MIT License\n\nCopyright (c) 2025 ElevenLabs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+    "source_license_url": "https://raw.githubusercontent.com/elevenlabs/packages/93991e27a52bcd241c5d2fcb0cb4f23e4c24c2d0/LICENSE",
+    "source_modifications": "Upstream YAML parsed and serialized to JSON without intentional field changes; Ragentic graph and metadata added separately.",
+    "source_url": "https://raw.githubusercontent.com/elevenlabs/packages/93991e27a52bcd241c5d2fcb0cb4f23e4c24c2d0/packages/types/schemas/agent.asyncapi.yaml"
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}

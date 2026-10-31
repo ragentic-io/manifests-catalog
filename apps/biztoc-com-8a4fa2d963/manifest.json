@@ -1,0 +1,129 @@
+{
+  "a2ui": {},
+  "app": "biztoc-com-8a4fa2d963",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "biztoc-com-8a4fa2d963",
+        "kind": "EXPOSES",
+        "to": "operation:get:/ai/news"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "biztoc-com-8a4fa2d963",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:get:/ai/news",
+        "kind": "operation",
+        "method": "get",
+        "name": "getNews",
+        "path": "/ai/news",
+        "pointer": "#/paths/~1ai~1news/get",
+        "security": [],
+        "summary": "Retrieves the latest news whose content contains the query string."
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "biztoc-com-8a4fa2d963"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "info": {
+              "description": "Get the latest business news articles.",
+              "title": "BizToc",
+              "version": "v1",
+              "x-apisguru-categories": [
+                "media"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_biztoc.com_favicon.png"
+              },
+              "x-origin": [
+                {
+                  "format": "openapi",
+                  "url": "https://ai.biztoc.com/openapi.yaml",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "biztoc.com"
+            },
+            "openapi": "3.0.1",
+            "paths": {
+              "/ai/news": {
+                "get": {
+                  "operationId": "getNews",
+                  "parameters": [
+                    {
+                      "description": "Used to query news articles on their title and body. For example, ?query=apple will return news stories that have 'apple' in their title or body.",
+                      "in": "query",
+                      "name": "query",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "OK"
+                    }
+                  },
+                  "summary": "Retrieves the latest news whose content contains the query string."
+                }
+              }
+            },
+            "servers": [
+              {
+                "url": "https://ai.biztoc.com"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "BizToc"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:38.331908Z",
+    "license": null,
+    "origins": [
+      {
+        "format": "openapi",
+        "url": "https://ai.biztoc.com/openapi.yaml",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "96ad25817d04187b2f6c2ac38a56a6699391904c61c40a309ffbc2f9346dac3f",
+    "source_id": "biztoc.com",
+    "source_updated": "2023-04-02T17:29:03.438Z",
+    "url": "https://api.apis.guru/v2/specs/biztoc.com/v1/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "v1"
+}

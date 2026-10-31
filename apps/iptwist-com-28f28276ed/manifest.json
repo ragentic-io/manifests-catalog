@@ -1,0 +1,235 @@
+{
+  "a2ui": {},
+  "app": "iptwist-com-28f28276ed",
+  "expires": 1795965050,
+  "graph": {
+    "edges": [
+      {
+        "from": "iptwist-com-28f28276ed",
+        "kind": "EXPOSES",
+        "to": "operation:post:/"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "iptwist-com-28f28276ed",
+        "kind": "application"
+      },
+      {
+        "deprecated": false,
+        "id": "operation:post:/",
+        "kind": "operation",
+        "method": "post",
+        "name": "post /",
+        "path": "/",
+        "pointer": "#/paths/~1/post",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Geolocate a given IP address"
+      },
+      {
+        "id": "schema:Request",
+        "kind": "schema",
+        "name": "Request"
+      },
+      {
+        "id": "schema:Response",
+        "kind": "schema",
+        "name": "Response"
+      }
+    ]
+  },
+  "kind": "bundle",
+  "manifest": {
+    "apiVersion": "ragentic.dev/v1",
+    "kind": "ConnectorTemplate",
+    "metadata": {
+      "name": "iptwist-com-28f28276ed"
+    },
+    "spec": {
+      "base": {
+        "protocol": "openapi",
+        "specification": {
+          "document": {
+            "components": {
+              "schemas": {
+                "Request": {
+                  "properties": {
+                    "ip": {
+                      "format": "ipv4",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "Response": {
+                  "properties": {
+                    "city": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "country_code": {
+                      "type": "string"
+                    },
+                    "ip": {
+                      "format": "ipv4",
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "format": "float",
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "format": "float",
+                      "type": "number"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "zip": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "securitySchemes": {
+                "ApiKeyAuth": {
+                  "in": "header",
+                  "name": "X-IPTWIST-TOKEN",
+                  "type": "apiKey"
+                }
+              }
+            },
+            "externalDocs": {
+              "description": "Official Documentation",
+              "url": "https://iptwist.com/documentation"
+            },
+            "info": {
+              "contact": {
+                "email": "support@iptwist.com"
+              },
+              "description": "The reliable, secure, and simple IP geolocation API.",
+              "termsOfService": "https://iptwist.com/legal/terms",
+              "title": "ipTwist",
+              "version": "1.0.0",
+              "x-apisguru-categories": [
+                "developer_tools"
+              ],
+              "x-logo": {
+                "url": "https://api.apis.guru/v2/cache/logo/https_apis.guru_assets_images_no-logo.svg"
+              },
+              "x-origin": [
+                {
+                  "converter": {
+                    "url": "https://github.com/mermade/oas-kit",
+                    "version": "7.0.4"
+                  },
+                  "format": "openapi",
+                  "url": "https://iptwist.com/schema",
+                  "version": "3.0"
+                }
+              ],
+              "x-providerName": "iptwist.com"
+            },
+            "openapi": "3.0.0",
+            "paths": {
+              "/": {
+                "post": {
+                  "requestBody": {
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/Request"
+                        }
+                      }
+                    },
+                    "description": "IP address",
+                    "required": true
+                  },
+                  "responses": {
+                    "200": {
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/components/schemas/Response"
+                          }
+                        }
+                      },
+                      "description": "Successful IP geolocation"
+                    },
+                    "401": {
+                      "description": "Invalid authentication."
+                    },
+                    "403": {
+                      "description": "Monthly quota exceeded."
+                    }
+                  },
+                  "security": [
+                    {
+                      "ApiKeyAuth": []
+                    }
+                  ],
+                  "summary": "Geolocate a given IP address",
+                  "tags": [
+                    "Main"
+                  ]
+                }
+              }
+            },
+            "tags": [
+              {
+                "name": "Main"
+              }
+            ]
+          }
+        },
+        "type": "app"
+      },
+      "category": "app",
+      "connector": {},
+      "status": "draft",
+      "title": "ipTwist"
+    }
+  },
+  "not_before": 1793372990,
+  "protocol": "openapi",
+  "provenance": {
+    "fetched_at": "2026-10-29T18:59:54.983330Z",
+    "license": null,
+    "origins": [
+      {
+        "converter": {
+          "url": "https://github.com/mermade/oas-kit",
+          "version": "7.0.4"
+        },
+        "format": "openapi",
+        "url": "https://iptwist.com/schema",
+        "version": "3.0"
+      }
+    ],
+    "sha256": "a8c3c72d06d9dd7a9b692501a799e0e8f29bc35f4d75f820b1d54437d8b5e683",
+    "source_id": "iptwist.com",
+    "source_updated": "2021-01-18T09:19:53.944Z",
+    "url": "https://api.apis.guru/v2/specs/iptwist.com/1.0.0/openapi.json"
+  },
+  "readiness": "discovered",
+  "review_required": {
+    "authentication": true,
+    "branding": true,
+    "connection_test": true,
+    "external_references": [],
+    "setup_guide": true,
+    "source_currency": true
+  },
+  "setup_verification": "not_live_verified",
+  "version": "1.0.0"
+}
