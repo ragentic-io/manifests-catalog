@@ -129,6 +129,11 @@ def validate_shape(r, p, pub):
             node = node[k]
         missing = need - set(node)
         r.check(not missing, f"{'.'.join(sec)} lacks keys every published bundle has: {sorted(missing)}")
+    # Graph node and edge shapes depend on the protocol (a GraphQL bundle has FIELD
+    # edges and typed operation nodes), so compare only with same-protocol bundles.
+    same = [x for x in pub if x.get("protocol") == p.get("protocol")]
+    r.check(bool(same), f"no published bundle uses protocol {p.get('protocol')!r}")
+    pub = same or pub
     gkeys = set().union(*[set(n) for x in pub for n in x["graph"]["nodes"] if n.get("kind") == "operation"])
     akeys = set().union(*[set(n) for x in pub for n in x["graph"]["nodes"] if n.get("kind") == "application"])
     for n in p["graph"]["nodes"]:

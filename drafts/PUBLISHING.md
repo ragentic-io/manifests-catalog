@@ -6,8 +6,9 @@ and Facebook Pages. Builders never hold the registry key: nothing here is signed
 
 ## Sequence: 17, not 10
 
-The brief said "sequence 10" because this Git snapshot is at sequence 9. Production
-`https://manifests.ragentic.io/v1/index.json` was already at **sequence 16** (16 entries,
+The brief said "sequence 10" because this Git snapshot was at sequence 9 when it was
+written; main has since mirrored sequence 16. Production
+`https://manifests.ragentic.io/v1/index.json` was at **sequence 16** (16 entries,
 expires 2026-11-29 15:10:50 UTC) when these drafts were built on 2026-10-31. A new index
 must extend production's newest index. A lower sequence is a rollback, and a second
 index numbered 10 conflicts with the one production already signed; Ragentic rejects
@@ -87,8 +88,8 @@ done
 
 ## Mirror into this repository
 
-The snapshot must hold every bundle the new index names, including those production
-added in sequences 10–16:
+The snapshot must hold every bundle the new index names (main already mirrors sequence
+16; the loop fetches any bundle still missing):
 
 ```sh
 cd $CATALOG && git switch main && git pull && git switch -c mirror-sequence-17
