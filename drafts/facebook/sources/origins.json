@@ -1,0 +1,59 @@
+{
+  "not_official": "Meta publishes no official OpenAPI definition for the Graph API. drafts/facebook/definition.openapi.json was written by hand from the pages below; only URLs, hashes of the bytes fetched (Meta pages are rendered per request, so hashes record what was read, not a stable pin) and the facts used are recorded here, not copies of the documentation.",
+  "documentation": [
+    {
+      "url": "https://developers.facebook.com/docs/graph-api/changelog",
+      "sha256": "d97d05799613b54b064a72288153ebbff6cfc7b22fb3e6ad576d6425cdf640c4",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "used_for": "Graph API v26.0 is the latest version (introduced 2026-07-29); version availability table"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/pages-api/overview",
+      "sha256": "c7c3ab7cff8ac1657f876111a97584809a73f0766031ddbefbab02e3f07df7ca",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "used_for": "flow: user access token via Facebook Login, /me/accounts returns Page IDs and Page access tokens; App Review for features/permissions"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/pages-api/getting-started",
+      "sha256": "e924af8545b253fedac047738b6fcb664a21d7e13704935b323f8cf916cb1f2b",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "used_for": "GET /{user-id}/accounts; required permissions"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/pages-api/posts/",
+      "sha256": "69196a019b9b9ad3764c784b191f4d59c62a4f68340e6cb2c5fcef4a9adb77d6",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "used_for": "POST /{page-id}/feed with message, link, published, scheduled_publish_time; required Page access token and permissions"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/graph-api/reference/page/feed",
+      "sha256": "0c38c75984c9f23dc55f02ab3954f6cbd9f9f9aad49d7bfd7258ab8da122bb22",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "used_for": "GET /{page-id}/feed fields and requirements (Page access token, pages_read_engagement)"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/facebook-login/guides/advanced/manual-flow",
+      "sha256": "f340d23c87929911f8c47f7c82971252d1ab72a10e5de42c7ba9f5bf2e61996e",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "used_for": "https://www.facebook.com/v26.0/dialog/oauth and https://graph.facebook.com/v26.0/oauth/access_token (client_id, redirect_uri, client_secret, code)"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/permissions",
+      "sha256": "2bbc600254a530f2dc399a77b72e1409bc7d139f2fc4d7f1af8f475762612d6f",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "used_for": "pages_show_list, pages_read_engagement, pages_manage_posts and their dependencies; Meta App Review for data you do not own or manage"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/facebook-login/guides/access-tokens",
+      "sha256": "da2f1ca574ff391167bf849d7991ba42b29c4200b645f3f09a317135b48747bc",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "used_for": "user, Page and app access token types"
+    },
+    {
+      "url": "https://developers.facebook.com/docs/graph-api/overview/rate-limiting",
+      "sha256": "1a21ccf448e2ca850366f38c5cba863ebfd54d7d6eb13659c541ad27e8296641",
+      "fetched_at": "2026-10-31T18:00:29Z",
+      "used_for": "Platform and Pages rate limits"
+    }
+  ]
+}

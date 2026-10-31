@@ -1,0 +1,391 @@
+#!/usr/bin/env python3
+"""Check every drafts/<app>/payload.json before it is signed.
+
+    python3 -I drafts/validate            # offline checks
+    python3 -I drafts/validate --fetch    # also re-download pinned upstream sources
+
+Shape is learned from the published bundles in bundles/ (their signed payloads
+are decoded, never re-signed): a draft must carry exactly the top-level keys
+every published payload carries, and each nested section may only use keys
+that some published payload uses. On top of that it checks the setup,
+A2UI, rights and provenance rules this catalog relies on, that provenance
+hashes match the pinned sources under drafts/<app>/, and that no secret-like
+value is present. Exit status 0 means every draft passed.
+"""
+import base64
+import hashlib
+import json
+import pathlib
+import re
+import sys
+import urllib.parse
+import urllib.request
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+DRAFTS = ROOT / "drafts"
+MAX_PAYLOAD = 16 * 1024 * 1024
+EVENTS = {"registry_test", "registry_save", "registry_credentials", "registry_oauth"}
+CREDENTIAL_TYPES = {"static_bearer", "api_key_header", "basic", "oauth2_authorization_code", "atproto_session"}
+HEADERS_ALLOWED = {
+    "accept", "x-api-version", "x-github-api-version", "stripe-version", "notion-version",
+    "api-username", "linkedin-version", "x-restli-protocol-version",
+}
+SECRET_PATTERNS = [
+    re.compile(p)
+    for p in (
+        r"-----BEGIN [A-Z ]*PRIVATE KEY-----",
+        r"\bey[A-Za-z0-9_-]{10,}\.ey[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}",  # JWT
+        r"\bgh[pousr]_[A-Za-z0-9]{30,}",
+        r"\bsk_(live|test)_[A-Za-z0-9]{10,}",
+        r"\bxox[abpr]-[A-Za-z0-9-]{10,}",
+        r"\bEAA[A-Za-z0-9]{30,}",  # Meta access token
+        r"\bAQ[A-Za-z0-9_-]{60,}",  # LinkedIn token shape
+        r"\b[a-z]{4}-[a-z]{4}-[a-z]{4}-[a-z]{4}\b",  # Bluesky app password shape
+    )
+]
+SECRET_KEYS = re.compile(r"(?i)^(client_secret|password|secret|access_token|refresh_token|api_key|private_key|token)$")
+
+
+def b64(s):
+    return base64.urlsafe_b64decode(s + "=" * (-len(s) % 4))
+
+
+def sha256(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def canonical(obj):
+    return json.dumps(obj, separators=(",", ":"), sort_keys=True, ensure_ascii=False).encode()
+
+
+def published():
+    out = []
+    for f in sorted((ROOT / "bundles").glob("*.json")):
+        bundle = json.loads(f.read_text())
+        out.append(json.loads(b64(bundle["envelope"]["payload"])))
+    if not out:
+        raise SystemExit("no published bundles found under bundles/")
+    return out
+
+
+def keysets(payloads, path):
+    sets = []
+    for p in payloads:
+        node = p
+        for k in path:
+            node = node.get(k) if isinstance(node, dict) else None
+        if isinstance(node, dict):
+            sets.append(set(node))
+    return sets
+
+
+class Report:
+    def __init__(self, app):
+        self.app, self.errors, self.notes = app, [], []
+
+    def check(self, ok, msg):
+        if not ok:
+            self.errors.append(msg)
+        return ok
+
+
+def walk(obj, path=()):
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            yield path + (k,), k, v
+            yield from walk(v, path + (k,))
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            yield from walk(v, path + (i,))
+
+
+def https_url(u):
+    p = urllib.parse.urlparse(u) if isinstance(u, str) else None
+    return bool(p and p.scheme == "https" and p.hostname and not p.username and not p.password)
+
+
+def validate_shape(r, p, pub):
+    required = set.intersection(*[set(x) for x in pub])
+    r.check(set(p) == required, f"top-level keys {sorted(set(p) ^ required)} differ from published payloads")
+    sections = [
+        ("manifest",), ("manifest", "spec"), ("manifest", "spec", "base"), ("manifest", "metadata"),
+        ("provenance",), ("provenance", "license"), ("rights",), ("rights", "brand"), ("setup",),
+        ("setup", "probe"), ("review_required",), ("graph",),
+    ]
+    for sec in sections:
+        allowed = set().union(*keysets(pub, sec)) if keysets(pub, sec) else set()
+        node = p
+        for k in sec:
+            node = node.get(k) if isinstance(node, dict) else None
+        if node is None:
+            continue
+        r.check(isinstance(node, dict), f"{'.'.join(sec)} is not an object")
+        extra = set(node) - allowed
+        r.check(not extra, f"{'.'.join(sec)} has keys no published bundle uses: {sorted(extra)}")
+    for sec in [("manifest",), ("manifest", "spec"), ("manifest", "spec", "base"), ("graph",), ("setup",)]:
+        need = set.intersection(*keysets(pub, sec))
+        node = p
+        for k in sec:
+            node = node[k]
+        missing = need - set(node)
+        r.check(not missing, f"{'.'.join(sec)} lacks keys every published bundle has: {sorted(missing)}")
+    gkeys = set().union(*[set(n) for x in pub for n in x["graph"]["nodes"] if n.get("kind") == "operation"])
+    akeys = set().union(*[set(n) for x in pub for n in x["graph"]["nodes"] if n.get("kind") == "application"])
+    for n in p["graph"]["nodes"]:
+        want = gkeys if n.get("kind") == "operation" else akeys
+        r.check(set(n) == want, f"graph node {n.get('id')} keys {sorted(set(n) ^ want)} differ from published nodes")
+    ekeys = set().union(*[set(e) for x in pub for e in x["graph"]["edges"]])
+    for e in p["graph"]["edges"]:
+        r.check(set(e) == ekeys, f"graph edge keys {sorted(set(e))} differ")
+
+
+def validate_core(r, app, p):
+    m = p["manifest"]
+    r.check(p["kind"] == "bundle", "kind must be bundle")
+    r.check(p["app"] == app == m["metadata"]["name"], "app, directory and manifest.metadata.name must agree")
+    r.check(re.fullmatch(r"[a-z0-9][a-z0-9._-]{0,127}", app) is not None, "app id is not a valid index id")
+    r.check(p["protocol"] == "openapi" == m["spec"]["base"]["protocol"], "protocol must be openapi")
+    r.check(m["apiVersion"] == "ragentic.dev/v1" and m["kind"] == "ConnectorTemplate", "manifest apiVersion/kind")
+    r.check(m["spec"]["status"] == "published" and m["spec"]["category"] == "app", "spec status/category")
+    r.check(m["spec"]["base"]["type"] == "app", "base.type must be app")
+    r.check(isinstance(p["version"], str) and 1 <= len(p["version"]) <= 128, "version must be a 1..128 char string")
+    r.check(isinstance(m["spec"]["title"], str) and 1 <= len(m["spec"]["title"]) <= 256, "title length")
+    r.check(isinstance(p["not_before"], int) and isinstance(p["expires"], int) and p["not_before"] < p["expires"], "validity window")
+    r.check(len(canonical(p)) <= MAX_PAYLOAD, "payload exceeds the 16 MiB consumer limit")
+    r.check(isinstance(p["readiness"], str) and p["readiness"] not in ("discovered", "preview_only"), "readiness must allow setup")
+    r.check(https_url(m["spec"]["base"]["endpoint"]), "base endpoint must be https")
+    for k in m["spec"]["base"]["headers"]:
+        r.check(k.lower() in HEADERS_ALLOWED, f"header {k} is not a reviewed request header")
+    doc = m["spec"]["base"]["specification"].get("document")
+    r.check(set(m["spec"]["base"]["specification"]) == {"document"}, "specification must be {document}")
+    r.check(isinstance(doc, dict) and str(doc.get("openapi", "")).startswith("3."), "document must be OpenAPI 3.x")
+    return doc
+
+
+def resolve_pointer(doc, ptr):
+    node = doc
+    for part in ptr.lstrip("#/").split("/"):
+        part = part.replace("~1", "/").replace("~0", "~")
+        node = node[part]
+    return node
+
+
+def validate_graph(r, app, p, doc):
+    nodes, edges = p["graph"]["nodes"], p["graph"]["edges"]
+    apps = [n for n in nodes if n["kind"] == "application"]
+    ops = [n for n in nodes if n["kind"] == "operation"]
+    r.check(apps == [{"id": app, "kind": "application"}], "graph needs exactly one application node for the app")
+    ids = [n["id"] for n in nodes]
+    r.check(len(ids) == len(set(ids)), "duplicate graph node ids")
+    count = 0
+    for path, item in doc["paths"].items():
+        for method in ("get", "put", "post", "delete", "patch", "head", "options", "trace"):
+            if isinstance(item.get(method), dict):
+                count += 1
+    r.check(len(ops) == count, f"graph has {len(ops)} operations, document has {count}")
+    for n in ops:
+        try:
+            resolve_pointer(doc, n["pointer"])
+        except (KeyError, TypeError):
+            r.check(False, f"pointer {n['pointer']} does not resolve")
+        r.check(n["id"] == f"operation:{n['method']}:{n['path']}", f"operation id {n['id']}")
+    r.check(
+        sorted((e["from"], e["kind"], e["to"]) for e in edges) == sorted((app, "EXPOSES", n["id"]) for n in ops),
+        "edges must be application EXPOSES each operation",
+    )
+
+
+def validate_setup(r, p, doc):
+    setup, base = p["setup"], p["manifest"]["spec"]["base"]
+    cred, probe = setup["credential"], setup["probe"]
+    r.check(cred.get("type") in CREDENTIAL_TYPES, f"credential type {cred.get('type')} is not one Ragentic supports")
+    host = urllib.parse.urlparse(base["endpoint"]).hostname
+    if cred["type"] == "oauth2_authorization_code":
+        prov = cred.get("provider", {})
+        r.check(set(cred) == {"type", "provider"}, "oauth credential keys")
+        r.check(set(prov) <= {"authorizationEndpoint", "tokenEndpoint", "scopes", "clientAuthentication"}, "oauth provider keys")
+        r.check(https_url(prov.get("authorizationEndpoint")) and https_url(prov.get("tokenEndpoint")), "oauth endpoints must be https")
+        r.check(prov.get("clientAuthentication") in ("none", "client_secret_basic", "client_secret_post"), "clientAuthentication")
+        scopes = prov.get("scopes", [])
+        r.check(isinstance(scopes, list) and len(set(scopes)) == len(scopes) and all(re.fullmatch(r"[\x21\x23-\x5b\x5d-\x7e]{1,256}", s) for s in scopes), "scopes")
+    elif cred["type"] == "atproto_session":
+        r.check(set(cred) == {"type", "service"}, "atproto_session keys")
+        svc = urllib.parse.urlparse(cred.get("service", ""))
+        r.check(https_url(cred.get("service")) and svc.path in ("", "/") and svc.hostname == host, "atproto service must be the base endpoint origin")
+    r.check(probe.get("method") == "GET" and probe.get("protocol") == "openapi", "probe must be an OpenAPI GET")
+    r.check(https_url(probe.get("endpoint")) and urllib.parse.urlparse(probe["endpoint"]).hostname == host, "probe host must equal base endpoint host")
+    r.check(("identityPath" in probe) != ("accessCheck" in probe), "probe needs exactly one of identityPath/accessCheck")
+    ip = probe.get("identityPath", [])
+    r.check(isinstance(ip, list) and 1 <= len(ip) <= 8 and all(isinstance(x, str) and x for x in ip), "identityPath")
+    path = urllib.parse.urlparse(probe["endpoint"]).path
+    item = doc["paths"].get(path, {})
+    r.check(isinstance(item.get("get"), dict), f"probe path {path} must be a GET operation in the definition")
+
+
+def validate_a2ui(r, app, p):
+    a = p["a2ui"]
+    msgs = a.get("messages", [])
+    r.check(a.get("version") == "v1.0" and len(msgs) == 2, "a2ui must be two v1.0 messages")
+    cs = msgs[0].get("createSurface", {})
+    uc = msgs[1].get("updateComponents", {})
+    r.check(cs.get("surfaceId") == uc.get("surfaceId") == f"setup-{app}", "surface id must be setup-<app>")
+    r.check(cs.get("sendDataModel") is False, "sendDataModel must be false")
+    dm = cs.get("dataModel", {})
+    r.check(not ({"token", "username", "endpoint", "pathSegment"} & set(dm)), "dataModel must not prefill credentials")
+    comps = uc.get("components", [])
+    byid = {c["id"]: c for c in comps}
+    r.check(len(byid) == len(comps), "duplicate component ids")
+    root = byid.get("root", {})
+    r.check(root.get("component") == "Column", "root must be a Column")
+    for c in comps:
+        for child in c.get("children", []) + ([c["child"]] if "child" in c else []) + [t["child"] for t in c.get("tabs", [])]:
+            r.check(child in byid, f"component {c['id']} references missing {child}")
+        r.check(c["component"] != "Image", f"component {c['id']}: no images or logos in setup")
+        act = c.get("action")
+        if act:
+            if "event" in act:
+                r.check(act["event"].get("name") in EVENTS, f"event {act['event'].get('name')} not allowed")
+                ctx_app = act["event"].get("context", {}).get("app")
+                r.check(ctx_app in (None, app), f"button {c['id']} context app must be {app}")
+            elif "functionCall" in act:
+                fc = act["functionCall"]
+                r.check(fc.get("@call") == "openUrl" and https_url(fc.get("args", {}).get("url")), f"{c['id']}: only static https openUrl")
+            else:
+                r.check(False, f"{c['id']}: unknown action")
+        if c["component"] == "TextField" and c.get("value", {}).get("@path") == "/token":
+            r.check(c.get("variant") == "obscured", "token field must be obscured")
+    attribution = p["rights"]["independent_attribution"]
+    r.check(any(c.get("text") == attribution and c["id"] in root.get("children", []) for c in comps), "setup must show the independent attribution")
+    kind = p["setup"]["credential"]["type"]
+    events = {c["action"]["event"]["name"] for c in comps if "event" in c.get("action", {})}
+    if kind == "oauth2_authorization_code":
+        r.check("registry_oauth" in events and not ({"registry_test", "registry_save"} & events), "oauth setup uses the registry_oauth action only")
+        r.check("token" not in byid, "oauth setup must not ask for a token")
+    else:
+        r.check({"registry_test", "registry_save"} <= events, "token setup needs test and save actions")
+        r.check("token" in root.get("children", []), "token field must be in root")
+    if kind in ("atproto_session", "basic"):
+        r.check(byid.get("username", {}).get("value") == {"@path": "/username"} and "username" in root.get("children", []), "username field required")
+        for bid in ("test", "save"):
+            ctx = byid.get(bid, {}).get("action", {}).get("event", {}).get("context", {})
+            r.check(ctx.get("username") == {"@path": "/username"}, f"{bid} must carry username")
+
+
+def validate_rights(r, p, provider_names):
+    rt = p["rights"]
+    b = rt["brand"]
+    r.check(b.get("logo") is None and b.get("independent_integration") is True, "brand: no logo, independent integration")
+    att = b.get("attribution", "")
+    r.check("not affiliated" in att.lower() and "endorsed" in att.lower(), "attribution must disclaim affiliation and endorsement")
+    r.check(att == rt.get("independent_attribution"), "attribution fields must agree")
+    r.check("no provider logo" in rt.get("mark_policy", ""), "mark policy must exclude logos")
+    for path, key, value in walk(p):
+        if isinstance(key, str) and re.search(r"(?i)logo|favicon|icon", key) and path[0] != "manifest":
+            r.check(value is None, f"{'.'.join(map(str, path))} must be null: no brand marks")
+    desc = p["manifest"]["spec"]["description"]
+    r.check("not affiliated" in desc.lower(), "description must carry the independence notice")
+    for word in ("official integration", "partner", "certified", "endorsed by us"):
+        r.check(word not in json.dumps(p["a2ui"]).lower(), f"setup must not claim '{word}'")
+    src = rt["source"]
+    r.check(src.get("spdx") or src.get("terms_note"), "source must state a licence or a terms note")
+
+
+def validate_secrets(r, p):
+    raw = json.dumps({k: v for k, v in p.items()}, ensure_ascii=False)
+    for pat in SECRET_PATTERNS:
+        m = pat.search(raw)
+        r.check(m is None, f"secret-like value matches {pat.pattern}: {m.group(0)[:12] if m else ''}…")
+    for path, key, value in walk({k: v for k, v in p.items() if k != "manifest"}):
+        if isinstance(key, str) and SECRET_KEYS.match(key):
+            r.check(not (isinstance(value, str) and value), f"{'.'.join(map(str, path))} must not hold a value")
+    for path, key, value in walk(p["manifest"]["spec"]["base"]["specification"]["document"]):
+        if key in ("example", "default") and isinstance(value, str):
+            for pat in SECRET_PATTERNS[:7]:
+                r.check(not pat.search(value), f"definition {'.'.join(map(str, path))} holds a secret-like example")
+
+
+def validate_provenance(r, app, p, doc, fetch):
+    pv = p["provenance"]
+    d = DRAFTS / app
+    r.check(isinstance(pv.get("origins"), list) and pv["origins"], "provenance.origins must list the sources")
+    defn = d / "definition.openapi.json"
+    if defn.exists():
+        r.check(pv["sha256"] == sha256(defn.read_bytes()), "provenance.sha256 does not match definition.openapi.json")
+        r.check(json.loads(defn.read_text()) == doc, "embedded document differs from definition.openapi.json")
+        r.check(doc.get("info", {}).get("x-ragentic-not-official") is True, "hand-built/converted definition must say it is not official")
+    if app == "x":
+        src = json.loads((d / "sources/source.json").read_text())["definition"]
+        r.check(pv["sha256"] == src["sha256"] == pv["upstream_sha256"], "X provenance sha256 must equal the pinned source")
+        r.check(sha256(canonical(doc)) == src["document_sha256"], "embedded X document does not match document_sha256")
+        r.check(pv["origins"] == [src["url"]] and pv["url"] == src["url"], "X origins must be the pinned URL")
+        if fetch:
+            raw = urllib.request.urlopen(src["url"], timeout=60).read()
+            r.check(sha256(raw) == src["sha256"], f"upstream X definition changed: now {sha256(raw)}")
+            r.check(json.loads(raw) == doc, "upstream X definition differs from the embedded document")
+    elif app == "bluesky":
+        manifest_path = d / "sources/lexicons.json"
+        lex = json.loads(manifest_path.read_text())
+        r.check(pv["upstream_sha256"] == sha256(manifest_path.read_bytes()), "upstream_sha256 must hash sources/lexicons.json")
+        r.check(pv["commit"] == lex["commit"] and re.fullmatch(r"[0-9a-f]{40}", lex["commit"]), "pinned commit")
+        r.check(pv["origins"] == [v["url"] for v in lex["lexicons"].values()], "origins must be the pinned lexicon URLs")
+        for name, entry in lex["lexicons"].items():
+            data = (d / "sources/lexicons" / name).read_bytes()
+            r.check(sha256(data) == entry["sha256"], f"lexicon {name} hash mismatch")
+            r.check(f"/{lex['commit']}/" in entry["url"], f"lexicon {name} URL must be commit-pinned")
+            if fetch:
+                r.check(sha256(urllib.request.urlopen(entry["url"], timeout=60).read()) == entry["sha256"], f"upstream {name} differs")
+        r.check(sha256((d / "sources/LICENSE.txt").read_bytes()) == lex["license"]["sha256"] == pv["license"]["sha256"], "licence hash")
+        r.check(sha256((d / "sources/LICENSE-MIT.txt").read_bytes()) == lex["license"]["mit_text_sha256"] == p["rights"]["source"]["license_sha256"], "MIT text hash")
+    else:
+        origins_path = d / "sources/origins.json"
+        origins = json.loads(origins_path.read_text())
+        r.check(pv["upstream_sha256"] == sha256(origins_path.read_bytes()), "upstream_sha256 must hash sources/origins.json")
+        r.check(pv["origins"] == [o["url"] for o in origins["documentation"]], "origins must match sources/origins.json")
+        r.check(all(re.fullmatch(r"[0-9a-f]{64}", o["sha256"]) for o in origins["documentation"]), "each origin needs a sha256")
+        r.check("not_official" in origins, "origins.json must state the definition is not official")
+        for u in doc["info"].get("x-ragentic-origins", []):
+            r.check(u in pv["origins"], f"definition cites {u} which is not in provenance.origins")
+        if fetch:
+            for o in origins["documentation"]:
+                try:
+                    req = urllib.request.Request(o["url"], headers={"User-Agent": "Mozilla/5.0"})
+                    data = urllib.request.urlopen(req, timeout=60).read()
+                    if sha256(data) != o["sha256"]:
+                        r.notes.append(f"doc page changed since pinning (expected for rendered pages): {o['url']}")
+                except Exception as e:  # noqa: BLE001 - report, do not fail on docs being down
+                    r.notes.append(f"could not fetch {o['url']}: {e}")
+
+
+def main(argv):
+    fetch = "--fetch" in argv
+    pub = published()
+    apps = sorted(x.name for x in DRAFTS.iterdir() if (x / "payload.json").exists())
+    failed = False
+    for app in apps:
+        r = Report(app)
+        p = json.loads((DRAFTS / app / "payload.json").read_text())
+        try:
+            validate_shape(r, p, pub)
+            doc = validate_core(r, app, p)
+            validate_graph(r, app, p, doc)
+            validate_setup(r, p, doc)
+            validate_a2ui(r, app, p)
+            validate_rights(r, p, None)
+            validate_secrets(r, p)
+            validate_provenance(r, app, p, doc, fetch)
+        except (KeyError, TypeError, AttributeError) as e:
+            r.errors.append(f"malformed payload: {type(e).__name__} {e}")
+        ops = sum(1 for n in p.get("graph", {}).get("nodes", []) if n.get("kind") == "operation")
+        status = "ok" if not r.errors else "FAIL"
+        print(f"{status} {app}: {ops} operations, credential {p.get('setup', {}).get('credential', {}).get('type')}, {len(canonical(p))} bytes")
+        for e in r.errors:
+            print(f"  error: {e}")
+        for n in r.notes:
+            print(f"  note: {n}")
+        failed |= bool(r.errors)
+    print(f"{len(apps)} drafts checked against {len(pub)} published bundles: {'FAILED' if failed else 'all passed'}")
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

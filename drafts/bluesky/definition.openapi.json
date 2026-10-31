@@ -1,0 +1,930 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Bluesky (AT Protocol) profiles, feeds, search and posting (independent conversion)",
+    "version": "atproto-lexicons@d3080834ac43",
+    "description": "Selected AT Protocol XRPC methods converted by Ragentic to OpenAPI 3.0 from the official lexicons of bluesky-social/atproto (pinned commit, MIT OR Apache-2.0). This is NOT an official Bluesky definition and is not endorsed by Bluesky Social PBC. Requests go to the account's PDS at https://bsky.social, which serves com.atproto.* itself and proxies app.bsky.* reads to the Bluesky AppView. The same app.bsky.* reads also work without authentication at https://public.api.bsky.app. Cross-lexicon object references are named (x-lexicon-ref / x-lexicon-union), not inlined.",
+    "x-ragentic-not-official": true
+  },
+  "servers": [
+    {
+      "url": "https://bsky.social"
+    }
+  ],
+  "paths": {
+    "/xrpc/app.bsky.actor.getProfile": {
+      "get": {
+        "operationId": "getProfile",
+        "summary": "Get an actor's profile",
+        "description": "Get detailed profile view of an actor. Does not require auth, but contains relevant metadata with auth.",
+        "security": [
+          {
+            "atprotoSession": []
+          }
+        ],
+        "x-lexicon": "app.bsky.actor.getProfile",
+        "parameters": [
+          {
+            "name": "actor",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "description": "Handle or DID of account to fetch profile of.",
+              "type": "string",
+              "format": "at-identifier"
+            },
+            "description": "Handle or DID of account to fetch profile of."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Lexicon object app.bsky.actor.defs#profileViewDetailed.",
+                  "type": "object",
+                  "x-lexicon-ref": "app.bsky.actor.defs#profileViewDetailed"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "XRPC error {error, message}"
+          },
+          "401": {
+            "description": "Missing or expired session"
+          }
+        }
+      }
+    },
+    "/xrpc/app.bsky.actor.searchActors": {
+      "get": {
+        "operationId": "searchActors",
+        "summary": "Search for actors (profiles)",
+        "description": "Find actors (profiles) matching search criteria. Does not require auth.",
+        "security": [
+          {
+            "atprotoSession": []
+          }
+        ],
+        "x-lexicon": "app.bsky.actor.searchActors",
+        "parameters": [
+          {
+            "name": "term",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "DEPRECATED: use 'q' instead.",
+              "type": "string"
+            },
+            "description": "DEPRECATED: use 'q' instead."
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Search query string. Syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended.",
+              "type": "string"
+            },
+            "description": "Search query string. Syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 25
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cursor": {
+                      "type": "string"
+                    },
+                    "actors": {
+                      "type": "array",
+                      "items": {
+                        "description": "Lexicon object app.bsky.actor.defs#profileView.",
+                        "type": "object",
+                        "x-lexicon-ref": "app.bsky.actor.defs#profileView"
+                      }
+                    }
+                  },
+                  "required": [
+                    "actors"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "XRPC error {error, message}"
+          },
+          "401": {
+            "description": "Missing or expired session"
+          }
+        }
+      }
+    },
+    "/xrpc/app.bsky.feed.getAuthorFeed": {
+      "get": {
+        "operationId": "getAuthorFeed",
+        "summary": "Get an actor's author feed",
+        "description": "Get a view of an actor's 'author feed' (post and reposts by the author). Does not require auth.",
+        "security": [
+          {
+            "atprotoSession": []
+          }
+        ],
+        "x-lexicon": "app.bsky.feed.getAuthorFeed",
+        "parameters": [
+          {
+            "name": "actor",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "at-identifier"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Combinations of post/repost types to include in response.",
+              "type": "string",
+              "default": "posts_with_replies",
+              "x-lexicon-knownValues": [
+                "posts_with_replies",
+                "posts_no_replies",
+                "posts_with_media",
+                "posts_and_author_threads",
+                "posts_with_video"
+              ]
+            },
+            "description": "Combinations of post/repost types to include in response."
+          },
+          {
+            "name": "includePins",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cursor": {
+                      "type": "string"
+                    },
+                    "feed": {
+                      "type": "array",
+                      "items": {
+                        "description": "Lexicon object app.bsky.feed.defs#feedViewPost.",
+                        "type": "object",
+                        "x-lexicon-ref": "app.bsky.feed.defs#feedViewPost"
+                      }
+                    }
+                  },
+                  "required": [
+                    "feed"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "XRPC error {error, message}"
+          },
+          "401": {
+            "description": "Missing or expired session"
+          }
+        }
+      }
+    },
+    "/xrpc/app.bsky.feed.getPostThread": {
+      "get": {
+        "operationId": "getPostThread",
+        "summary": "Get a post thread",
+        "description": "Get posts in a thread. Does not require auth, but additional metadata and filtering will be applied for authed requests.",
+        "security": [
+          {
+            "atprotoSession": []
+          }
+        ],
+        "x-lexicon": "app.bsky.feed.getPostThread",
+        "parameters": [
+          {
+            "name": "uri",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "description": "Reference (AT-URI) to post record.",
+              "type": "string",
+              "format": "at-uri"
+            },
+            "description": "Reference (AT-URI) to post record."
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "How many levels of reply depth should be included in response.",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000,
+              "default": 6
+            },
+            "description": "How many levels of reply depth should be included in response."
+          },
+          {
+            "name": "parentHeight",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "How many levels of parent (and grandparent, etc) post to include.",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000,
+              "default": 80
+            },
+            "description": "How many levels of parent (and grandparent, etc) post to include."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "thread": {
+                      "type": "object",
+                      "x-lexicon-union": [
+                        "app.bsky.feed.defs#threadViewPost",
+                        "app.bsky.feed.defs#notFoundPost",
+                        "app.bsky.feed.defs#blockedPost"
+                      ],
+                      "description": "One of: app.bsky.feed.defs#threadViewPost, app.bsky.feed.defs#notFoundPost, app.bsky.feed.defs#blockedPost (identified by $type)."
+                    },
+                    "threadgate": {
+                      "description": "Lexicon object app.bsky.feed.defs#threadgateView.",
+                      "type": "object",
+                      "x-lexicon-ref": "app.bsky.feed.defs#threadgateView"
+                    }
+                  },
+                  "required": [
+                    "thread"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "XRPC error {error, message}"
+          },
+          "401": {
+            "description": "Missing or expired session"
+          }
+        }
+      }
+    },
+    "/xrpc/app.bsky.feed.searchPosts": {
+      "get": {
+        "operationId": "searchPosts",
+        "summary": "Search posts",
+        "description": "Find posts matching search criteria, returning views of those posts. Note that this API endpoint may require authentication (eg, not public) for some service providers and implementations.",
+        "security": [
+          {
+            "atprotoSession": []
+          }
+        ],
+        "x-lexicon": "app.bsky.feed.searchPosts",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "description": "Search query string; syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended.",
+              "type": "string"
+            },
+            "description": "Search query string; syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended."
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Specifies the ranking order of results.",
+              "type": "string",
+              "default": "latest",
+              "x-lexicon-knownValues": [
+                "top",
+                "latest"
+              ]
+            },
+            "description": "Specifies the ranking order of results."
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).",
+              "type": "string"
+            },
+            "description": "Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD)."
+          },
+          {
+            "name": "until",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Filter results for posts before the indicated datetime (not inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYY-MM-DD).",
+              "type": "string"
+            },
+            "description": "Filter results for posts before the indicated datetime (not inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYY-MM-DD)."
+          },
+          {
+            "name": "mentions",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Filter to posts which mention the given account. Handles are resolved to DID before query-time. Only matches rich-text facet mentions.",
+              "type": "string",
+              "format": "at-identifier"
+            },
+            "description": "Filter to posts which mention the given account. Handles are resolved to DID before query-time. Only matches rich-text facet mentions."
+          },
+          {
+            "name": "author",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Filter to posts by the given account. Handles are resolved to DID before query-time.",
+              "type": "string",
+              "format": "at-identifier"
+            },
+            "description": "Filter to posts by the given account. Handles are resolved to DID before query-time."
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Filter to posts in the given language. Expected to be based on post language field, though server may override language detection.",
+              "type": "string",
+              "format": "language"
+            },
+            "description": "Filter to posts in the given language. Expected to be based on post language field, though server may override language detection."
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Filter to posts with URLs (facet links or embeds) linking to the given domain (hostname). Server may apply hostname normalization.",
+              "type": "string"
+            },
+            "description": "Filter to posts with URLs (facet links or embeds) linking to the given domain (hostname). Server may apply hostname normalization."
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Filter to posts with links (facet links or embeds) pointing to this URL. Server may apply URL normalization or fuzzy matching.",
+              "type": "string",
+              "format": "uri"
+            },
+            "description": "Filter to posts with links (facet links or embeds) pointing to this URL. Server may apply URL normalization or fuzzy matching."
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Filter to posts with the given tag (hashtag), based on rich-text facet or tag field. Do not include the hash (#) prefix. Multiple tags can be specified, with 'AND' matching.",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 640
+              }
+            },
+            "description": "Filter to posts with the given tag (hashtag), based on rich-text facet or tag field. Do not include the hash (#) prefix. Multiple tags can be specified, with 'AND' matching."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 25
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Optional pagination mechanism; may not necessarily allow scrolling through entire result set.",
+              "type": "string"
+            },
+            "description": "Optional pagination mechanism; may not necessarily allow scrolling through entire result set."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cursor": {
+                      "type": "string"
+                    },
+                    "hitsTotal": {
+                      "description": "Count of search hits. Optional, may be rounded/truncated, and may not be possible to paginate through all hits.",
+                      "type": "integer"
+                    },
+                    "posts": {
+                      "type": "array",
+                      "items": {
+                        "description": "Lexicon object app.bsky.feed.defs#postView.",
+                        "type": "object",
+                        "x-lexicon-ref": "app.bsky.feed.defs#postView"
+                      }
+                    }
+                  },
+                  "required": [
+                    "posts"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "XRPC error {error, message}"
+          },
+          "401": {
+            "description": "Missing or expired session"
+          }
+        }
+      }
+    },
+    "/xrpc/com.atproto.repo.createRecord": {
+      "post": {
+        "operationId": "createRecord",
+        "summary": "Create a record (for example a post)",
+        "description": "Create a single new repository record. Requires auth, implemented by PDS.",
+        "security": [
+          {
+            "atprotoSession": []
+          }
+        ],
+        "x-lexicon": "com.atproto.repo.createRecord",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "description": "The handle or DID of the repo (aka, current account).",
+                    "type": "string",
+                    "format": "at-identifier"
+                  },
+                  "collection": {
+                    "description": "The NSID of the record collection.",
+                    "type": "string",
+                    "format": "nsid"
+                  },
+                  "rkey": {
+                    "description": "The Record Key.",
+                    "type": "string",
+                    "maxLength": 512,
+                    "format": "record-key"
+                  },
+                  "validate": {
+                    "description": "Can be set to 'false' to skip Lexicon schema validation of record data, 'true' to require it, or leave unset to validate only for known Lexicons.",
+                    "type": "boolean"
+                  },
+                  "record": {
+                    "type": "object",
+                    "properties": {
+                      "$type": {
+                        "type": "string",
+                        "enum": [
+                          "app.bsky.feed.post"
+                        ]
+                      },
+                      "text": {
+                        "description": "The primary post content. May be an empty string, if there are embeds.",
+                        "type": "string",
+                        "maxLength": 3000
+                      },
+                      "entities": {
+                        "description": "DEPRECATED: replaced by app.bsky.richtext.facet.",
+                        "type": "array",
+                        "items": {
+                          "description": "Lexicon object app.bsky.feed.post#entity.",
+                          "type": "object",
+                          "x-lexicon-ref": "app.bsky.feed.post#entity"
+                        }
+                      },
+                      "facets": {
+                        "description": "Annotations of text (mentions, URLs, hashtags, etc)",
+                        "type": "array",
+                        "items": {
+                          "description": "Lexicon object app.bsky.richtext.facet.",
+                          "type": "object",
+                          "x-lexicon-ref": "app.bsky.richtext.facet"
+                        }
+                      },
+                      "reply": {
+                        "description": "Lexicon object app.bsky.feed.post#replyRef.",
+                        "type": "object",
+                        "x-lexicon-ref": "app.bsky.feed.post#replyRef"
+                      },
+                      "embed": {
+                        "type": "object",
+                        "x-lexicon-union": [
+                          "app.bsky.embed.images",
+                          "app.bsky.embed.video",
+                          "app.bsky.embed.gallery",
+                          "app.bsky.embed.external",
+                          "app.bsky.embed.record",
+                          "app.bsky.embed.recordWithMedia"
+                        ],
+                        "description": "One of: app.bsky.embed.images, app.bsky.embed.video, app.bsky.embed.gallery, app.bsky.embed.external, app.bsky.embed.record, app.bsky.embed.recordWithMedia (identified by $type)."
+                      },
+                      "langs": {
+                        "description": "Indicates human language of post primary text content.",
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "format": "language"
+                        },
+                        "maxItems": 3
+                      },
+                      "labels": {
+                        "description": "Self-label values for this post. Effectively content warnings. One of: com.atproto.label.defs#selfLabels (identified by $type).",
+                        "type": "object",
+                        "x-lexicon-union": [
+                          "com.atproto.label.defs#selfLabels"
+                        ]
+                      },
+                      "tags": {
+                        "description": "Additional hashtags, in addition to any included in post text and facets.",
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "maxLength": 640
+                        },
+                        "maxItems": 8
+                      },
+                      "createdAt": {
+                        "description": "Client-declared timestamp when this post was originally created.",
+                        "type": "string",
+                        "format": "date-time"
+                      }
+                    },
+                    "required": [
+                      "$type",
+                      "text",
+                      "createdAt"
+                    ],
+                    "description": "The record itself; must contain $type. For a post use collection app.bsky.feed.post and this shape (lexicon app.bsky.feed.post)."
+                  },
+                  "swapCommit": {
+                    "description": "Compare and swap with the previous commit by CID.",
+                    "type": "string",
+                    "format": "cid"
+                  }
+                },
+                "required": [
+                  "repo",
+                  "collection",
+                  "record"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "uri": {
+                      "type": "string",
+                      "format": "at-uri"
+                    },
+                    "cid": {
+                      "type": "string",
+                      "format": "cid"
+                    },
+                    "commit": {
+                      "description": "Lexicon object com.atproto.repo.defs#commitMeta.",
+                      "type": "object",
+                      "x-lexicon-ref": "com.atproto.repo.defs#commitMeta"
+                    },
+                    "validationStatus": {
+                      "type": "string",
+                      "x-lexicon-knownValues": [
+                        "valid",
+                        "unknown"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "uri",
+                    "cid"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "XRPC error {error, message}"
+          },
+          "401": {
+            "description": "Missing or expired session"
+          }
+        }
+      }
+    },
+    "/xrpc/com.atproto.repo.deleteRecord": {
+      "post": {
+        "operationId": "deleteRecord",
+        "summary": "Delete a record",
+        "description": "Delete a repository record, or ensure it doesn't exist. Requires auth, implemented by PDS.",
+        "security": [
+          {
+            "atprotoSession": []
+          }
+        ],
+        "x-lexicon": "com.atproto.repo.deleteRecord",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repo": {
+                    "description": "The handle or DID of the repo (aka, current account).",
+                    "type": "string",
+                    "format": "at-identifier"
+                  },
+                  "collection": {
+                    "description": "The NSID of the record collection.",
+                    "type": "string",
+                    "format": "nsid"
+                  },
+                  "rkey": {
+                    "description": "The Record Key.",
+                    "type": "string",
+                    "format": "record-key"
+                  },
+                  "swapRecord": {
+                    "description": "Compare and swap with the previous record by CID.",
+                    "type": "string",
+                    "format": "cid"
+                  },
+                  "swapCommit": {
+                    "description": "Compare and swap with the previous commit by CID.",
+                    "type": "string",
+                    "format": "cid"
+                  }
+                },
+                "required": [
+                  "repo",
+                  "collection",
+                  "rkey"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "commit": {
+                      "description": "Lexicon object com.atproto.repo.defs#commitMeta.",
+                      "type": "object",
+                      "x-lexicon-ref": "com.atproto.repo.defs#commitMeta"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "XRPC error {error, message}"
+          },
+          "401": {
+            "description": "Missing or expired session"
+          }
+        }
+      }
+    },
+    "/xrpc/com.atproto.repo.uploadBlob": {
+      "post": {
+        "operationId": "uploadBlob",
+        "summary": "Upload a blob (image or video) for a record",
+        "description": "Upload a new blob, to be referenced from a repository record. The blob will be deleted if it is not referenced within a time window (eg, minutes). Blob restrictions (mimetype, size, etc) are enforced when the reference is created. Requires auth, implemented by PDS.",
+        "security": [
+          {
+            "atprotoSession": []
+          }
+        ],
+        "x-lexicon": "com.atproto.repo.uploadBlob",
+        "requestBody": {
+          "required": true,
+          "description": "Raw blob bytes; set Content-Type to the blob's MIME type. Size limits are set by the PDS.",
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "blob": {
+                      "type": "object",
+                      "x-lexicon-type": "blob",
+                      "description": "Blob reference: {$type: blob, ref: {$link: CID}, mimeType, size}."
+                    }
+                  },
+                  "required": [
+                    "blob"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "XRPC error {error, message}"
+          },
+          "401": {
+            "description": "Missing or expired session"
+          }
+        }
+      }
+    },
+    "/xrpc/com.atproto.server.getSession": {
+      "get": {
+        "operationId": "getSession",
+        "summary": "Get the current session's account",
+        "description": "Get information about the current auth session. Requires auth.",
+        "security": [
+          {
+            "atprotoSession": []
+          }
+        ],
+        "x-lexicon": "com.atproto.server.getSession",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "handle": {
+                      "type": "string",
+                      "format": "handle"
+                    },
+                    "did": {
+                      "type": "string",
+                      "format": "did"
+                    },
+                    "didDoc": {
+                      "type": "object",
+                      "additionalProperties": true
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "emailConfirmed": {
+                      "type": "boolean"
+                    },
+                    "emailAuthFactor": {
+                      "type": "boolean"
+                    },
+                    "active": {
+                      "type": "boolean"
+                    },
+                    "status": {
+                      "description": "If active=false, this optional field indicates a possible reason for why the account is not active. If active=false and no status is supplied, then the host makes no claim for why the repository is no longer being hosted.",
+                      "type": "string",
+                      "x-lexicon-knownValues": [
+                        "takendown",
+                        "suspended",
+                        "deactivated"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "handle",
+                    "did"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "XRPC error {error, message}"
+          },
+          "401": {
+            "description": "Missing or expired session"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "atprotoSession": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "accessJwt from com.atproto.server.createSession with the account handle (or DID) and an app password. Ragentic's atproto_session credential creates and renews it."
+      }
+    }
+  }
+}
